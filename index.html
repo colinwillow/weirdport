@@ -555,10 +555,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m246</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m247</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m246</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m247</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -624,9 +624,9 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm246';
+const BUILD = 'm247';
 /* ASSETS:START */
-const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"c2fbdbf7","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","models/characters/donors/colin_anims.glb":"ce8ad9cc","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
+const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"c2fbdbf7","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
 // Every runtime asset URL goes through A(). `npm run bump` writes the sha1 of each file's
 // CONTENTS into ASSETS above, so a file replaced IN PLACE -- same folder, same name, new bytes
@@ -3548,13 +3548,38 @@ const GIRL = {
 // reads 0.997 on `walk_fwd_neutral` and 2.935 on `run_fwd` (both feet agree, and
 // `idle_neutral` reads 0.000, the control). `bodyBorrow` divides his scale back out and puts the
 // borrower's in, so these two lines are the whole of what a borrower's feet are tuned against.
-const COLIN = {
-  file: 'models/characters/donors/colin_anims.glb', donor: 1,
-  authored: 1.3152, h: 1.75,
-  clips: { idle: 'idle_neutral', walk: 'walk_fwd_neutral', run: 'run_fwd' },
-  get walkRef() { return .997 * this.h / this.authored; },
-  get runRef() { return 2.935 * this.h / this.authored; },
-};
+// **AND THEN HE WALKED IN HIMSELF (m247).** *"Can we bring in the Colin model the same way we did
+// for Jack? I'd love to see myself walking around, be able to shoot him and all that."* So the
+// donor is no longer a stripped copy: it is the WHOLE `models/characters/colin.glb` (Shredworld's,
+// byte for byte), a civil like any other, wearing his OWN clips raw -- nothing to retarget, his
+// own feet -- and lending them to Jack from the same load. One file instead of two; the
+// meshless `colin_anims.glb` is gone and `npm run donor` stays for the next donor who is not
+// also a character. Hits are the biker's, because he has none of his own.
+// **HIS FACE IS A BLEND SHAPE AND HIS TEETH HAVE NO TEXTURE** -- Shredworld's two landmines, both
+// carried over (`K.morphOn`, `K.fillMat`): the head mesh in the file is a generic base and
+// `Colin_Head_MIX` at weight 1 is what makes it HIS; the `teeth` primitive is a flat 0.5 grey with
+// no map and reaches a millimetre past his lips, so it wears the head's material. `K.opaque`
+// takes the eyes off `BLEND` -- a transparent surface on a skin sorts against itself.
+// **HIS KNOCK-DOWN PAIRS AGREE (measured, see JACK)**, so `flip: 0`.
+const COLIN = civil('models/characters/colin.glb', [[2, 8]], {
+  hRel: 0, h: 1.75, flip: 0, beside: 1, r: .38, sep: .85,
+  drop: /^(CINEMA_4D|Neutral_Idle$)/,
+  morphOn: { Colin_Head_MIX: 1 }, fillMat: 'head', opaque: 1,
+  // planted-foot speeds in AUTHORED units (`npm run gait`: both feet agree, idle reads 0.000)
+  ownRef: { walk: .997, run: 2.935, flee: 2.935 },
+  clips: {
+    idle: 'idle_neutral',
+    look: ['waving', 'dance_moonwalk', 'dance_wiggle_feet', 'dance_hiphop_01', 'dance_hiphop_02',
+           'dance_hiphop_03', 'dance_twerking', 'walk_fwd_swagger'],
+    walk: 'walk_fwd_neutral', run: 'run_fwd', flee: 'run_fwd',
+    air: 'flying_backwards',
+    downF: 'fall_to_face_down', downB: 'fall_to_back',
+    upF: 'get_up_from_face', upB: 'get_up_from_back',
+  },
+  walk: 1.3, run: 3.4, flee: 3.9,
+  roamWait: [4, 10],
+  downBeat: 1.6, upBeat: 2.2,
+});
 // A DONOR'S BUILDER: the proto and the de-drift, and nobody on the street.
 function buildDonor(g, K) { K.loops = bodyLoops(K); bodyProto(g, K); }
 
@@ -3573,7 +3598,7 @@ function buildDonor(g, K) { K.loops = bodyLoops(K); bodyProto(g, K); }
 // **`legRef`**: his legs are 0.913 of Colin's (Hips height 48.28 against 52.83 armature units),
 // so a stride of Colin's is 0.913 as long on him and the reference speed is too. See `bodyBorrow`.
 const JACK = {
-  hRel: 0, h: 1.75, flip: 0, legRef: 1, borrow: [COLIN, BIKER],
+  hRel: 0, h: 1.75, flip: 0, legRef: 1, beside: 1, borrow: [COLIN, BIKER],
   r: .38, sep: .85,
   clips: {
     // **STANDING NORMAL (m245).** *"He's doing the idle where he looks mopy... bending over, it
@@ -3610,6 +3635,10 @@ const JACK = {
   greet: { r: 10, out: 1.4, face: .35, delay: .25, n: 2, again: 14, clip: 'waving' },
   downBeat: 1.6, upBeat: 2.2,
 };
+// COLIN SAYS HELLO TOO, AND IT IS THE SAME OBJECT -- one set of dials in tune -> JACK.
+COLIN.greet = JACK.greet;
+// his hit reactions are the biker's -- `civil()` gave him BIKER already, written out to be plain
+COLIN.borrow = [BIKER];
 
 // **HE STANDS BESIDE THE SPAWN IN EVERY WORLD (m243).** *"I haven't been able to find him in the
 // level anywhere."* m242 dealt him into the crowd like any civil, and `crowdDeal` is ROUND-ROBIN in
@@ -3619,7 +3648,7 @@ const JACK = {
 // Clancy is: the nearest clear spot to you, a few metres out, every world. `spawnBeside` is the
 // search both populates use. On the test site (-1, 8) is open ground in front of the spawn,
 // checked against every box.
-const JACKK = civil('models/characters/jack.glb', [[-1, 8]], JACK);
+const JACKK = civil('models/characters/jack.glb', [[-1, 8]], JACK);   // test site: in front of the spawn
 
 // SHE IS FIRST OF THE THREE because the blonde borrows from her, and `init()` loads in order.
 const ASIAN = civil('models/characters/beautiful_asian.glb', [[-24, 16]],
@@ -3644,6 +3673,8 @@ const CIVILS = [
   civil('models/characters/beautiful_blonde.glb',   [[-12, 4]],     // clear 2.58
     Object.assign({}, GIRL, { borrow: [ASIAN, BIKER] })),
   civil('models/characters/firefighter.glb',        [[17, -2]]),    // clear 5.62
+  // m247: COLIN BEFORE JACK -- Jack wears his clips, and `bodyBorrow` reads `COLIN.P`.
+  COLIN,
   // m242: Colin's clips, the biker's hit reactions.
   JACKK,
 ];
@@ -19238,8 +19269,8 @@ function crowdDeal(spots, crowd) {
   const civN = crowd.CIVIL || 0;
   const keys = Object.keys(crowd).filter(k => KIND[k] && crowd[k] > 0);
   const left = {}; for (const k of keys) { left[k] = crowd[k]; KIND[k].at = []; }
-  // JACK IS NOT DEALT -- he is placed beside the spawn (m243, `spawnBeside`)
-  if (civN) for (const K of CIVILS) { if (K === JACKK) continue; const k = mphName(K); keys.push(k); left[k] = civN; K.at = []; }
+  // `K.beside` (JACK, COLIN) IS NOT DEALT -- placed beside the spawn (m243, `spawnBeside`)
+  if (civN) for (const K of CIVILS) { if (K.beside) continue; const k = mphName(K); keys.push(k); left[k] = civN; K.at = []; }
   let i = 0;
   while (i < spots.length) {
     let dealt = 0;
@@ -19253,7 +19284,7 @@ function crowdDeal(spots, crowd) {
 function crowdWant(crowd) {
   let want = 0;
   for (const k in crowd) if (k !== 'CIVIL') want += crowd[k];
-  return want + (crowd.CIVIL || 0) * (CIVILS.length - 1);   // less JACK, who is not dealt
+  return want + (crowd.CIVIL || 0) * CIVILS.filter(K => !K.beside).length;   // less the ones placed beside you
 }
 function kitPopulate() {
   const tk = inTK(), R = tk ? KCROWD.r.tkit : KCROWD.r.kit, sx = player.pos.x, sz = player.pos.z;
@@ -19277,7 +19308,7 @@ function kitPopulate() {
     }
     if (done) break;
   }
-  JACKK.at = [spawnBeside(kitStand, sx, sz, 4, CLANCY.at[0])];
+  besidePlace(kitStand, sx, sz);
   kit.crowd = spots.length;
   console.log('[melee] kit crowd: ' + pool.length + ' clear spots, ' + spots.length + ' of ' + want + ' placed');
   if (spots.length < want) note('KIT CROWD ' + spots.length + '/' + want);
@@ -19290,11 +19321,17 @@ function spawnBeside(stand, sx, sz, r0, avoid) {
   for (let rr = r0; rr <= r0 + 10; rr += .75)
     for (let k = 0; k < 16; k++) {
       const th = k * Math.PI / 8 + .2, x = sx + Math.sin(th) * rr, z = sz + Math.cos(th) * rr;
-      if (avoid && Math.hypot(x - avoid[0], z - avoid[1]) < 2.5) continue;
+      if (avoid && avoid.some(q => Math.hypot(x - q[0], z - q[1]) < 2.5)) continue;
       const y = stand(x, z);
       if (y !== null) return [x, z, y];
     }
   return [sx + r0, sz];
+}
+
+// EVERY `beside` KIND, each kept clear of Clancy and of the ones already placed (m247)
+function besidePlace(stand, sx, sz) {
+  const taken = [CLANCY.at[0]];
+  for (const K of CIVILS) if (K.beside) { K.at = [spawnBeside(stand, sx, sz, 4, taken)]; taken.push(K.at[0]); }
 }
 
 function wpPopulate() {
@@ -19320,7 +19357,7 @@ function wpPopulate() {
     }
     if (done) break;
   }
-  JACKK.at = [spawnBeside(wpStand, player.pos.x, player.pos.z, 4, CLANCY.at[0])];
+  besidePlace(wpStand, player.pos.x, player.pos.z);
   // HER CIRCUIT, or she is left out entirely and the chip says so -- see `wpLoop`.
   const loop = wpLoop(pool, SHE.path.length, 12, 34, WPSPOT.flat * 2);
   WP.she = !!loop;
@@ -20021,6 +20058,23 @@ function bodyProto(g, K) {
     else console.warn('[melee] ' + K.file + ': hCrown asked for but no HeadTop_End bone');
   }
   const scale = authored > .01 ? K.h / authored : 1;
+  // **A KIND'S OWN DRESSING (m247, Colin's): `fillMat`, `morphOn`, `opaque`.** Found by MESH name,
+  // never by material name -- his export renamed every material to `Material.00N` once and a
+  // name-keyed lookup failed silently (Shredworld c9). Done on the PROTO, so every clone inherits
+  // it: `Mesh.copy` copies `morphTargetInfluences`, and the materials are cloned per body later.
+  if (K.fillMat || K.morphOn || K.opaque) {
+    const src = K.fillMat && proto.getObjectByName(K.fillMat);
+    const fill = src && src.material && src.material.map ? src.material : null;
+    proto.traverse(o => {
+      if (!o.isMesh) return;
+      if (fill && o.material && !o.material.map) o.material = fill;
+      if (K.morphOn && o.morphTargetDictionary && o.morphTargetInfluences)
+        for (const n in K.morphOn) { const i = o.morphTargetDictionary[n]; if (i !== undefined) o.morphTargetInfluences[i] = K.morphOn[n]; }
+      if (K.opaque) for (const m of (Array.isArray(o.material) ? o.material : [o.material]))
+        if (m) { m.transparent = false; m.alphaTest = 0; m.depthWrite = true; }
+    });
+    if (K.fillMat && !fill) note('NO FILLMAT ' + mphName(K));
+  }
   // the same emissive lift the player gets, so nobody reads as a dark cut-out beside him.
   // `skeletonClone` SHARES materials, so this is done once for every copy.
   proto.traverse(o => {
@@ -26105,8 +26159,6 @@ async function init() {
   await side(HOBO.file, 'loading the locals', { name: 'HOBO', build: buildHobos });
   await side(SKATER.file, 'loading the locals', { name: 'SKATER', build: buildSkaters });
   await side(BIKER.file, 'loading the locals', { name: 'BIKER', build: buildBikers });
-  // THE DONOR, before anybody who borrows from him -- `bodyBorrow` reads `COLIN.P` (m242).
-  await side(COLIN.file, 'loading the locals', { name: 'COLIN', build: g => buildDonor(g, COLIN) });
   // **AFTER THE BIKER, BECAUSE THEY WEAR HIS CLIPS.** `bodyBorrow` reads `BIKER.P`, which only
   // exists once his own `bodyProto` has run -- and a donor that never arrived is reported by
   // `side()` on its own line and again as `NO CLIPS <name>` in the chip, which are the two

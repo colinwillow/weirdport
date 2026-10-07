@@ -7,6 +7,23 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **COLIN IS ON THE STREET, AND HE IS THE DONOR (m247, `COLIN`, `K.beside`, `besidePlace`, `K.morphOn` /
+  `fillMat` / `opaque`).** *"Can we bring in the Colin model the same way we did for Jack? I'd love to
+  see myself walking around, be able to shoot him."* `models/characters/colin.glb` is Shredworld's file
+  byte for byte, a civil wearing his OWN 51 clips raw (nothing retargeted), the biker's hit reactions
+  borrowed because he has none. **The meshless `donors/colin_anims.glb` is gone**: the full Colin loads
+  first in `CIVILS` and Jack borrows from him, so the donor costs nothing extra. `npm run donor` stays
+  for a future donor who is not also a character.
+  **SHREDWORLD'S TWO COLIN LANDMINES CAME WITH HIM AND ARE HANDLED IN `bodyProto` AS KIND FIELDS**: his
+  head mesh is a generic base and `Colin_Head_MIX` at 1 makes it his (`morphOn`); his `teeth` primitive
+  is untextured 0.5 grey and pokes a millimetre past his lips, so any map-less material takes the
+  `head` MESH's material (`fillMat`, found by mesh name -- his materials are `Material.00N`); `opaque`
+  takes the eyes off `BLEND`. `NO FILLMAT COLIN` in the chip if the head ever stops being findable.
+  **`K.beside` GENERALISES m243**: every beside kind (Colin, Jack) is skipped by the crowd deal and placed
+  next to the spawn by `besidePlace`, each 2.5 m clear of Clancy and of the ones already placed. On the
+  test site Colin is at (2, 8), beside Jack at (-1, 8). He shares Jack's hello (`greet`, same object, so
+  tune -> JACK drives both).
+
 - **JACK SAYS HELLO (m246, `K.greet`, `greetStep`).** *"If you walk up to him, within like 10 or 15, he
   looks at you and then waves."* Inside `r` (10 m) he drops whatever he is doing, turns to you with the
   ordinary `faceTo` ease, and only once he is FACING you (`face` .35 rad) and `delay` has passed does he
