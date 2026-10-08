@@ -561,10 +561,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m267</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m268</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m267</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m268</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -630,7 +630,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm267';
+const BUILD = 'm268';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -3149,9 +3149,14 @@ const SKATER = {
   loopX: /^(blade_|grind_|idle_|in_air)/,
   // the clips the gun override needs a hips-down half of -- see `SPLIT.legsRaw`, one body over
   legsRaw: ['blade_casual_forward', 'blade_hard_forward', 'blade_roll_forward', 'idle_normal',
-            'in_air', 'grind_left', 'grind_right'],
-  // the thumb-off roll is a frame of her medium stride held still (Rollergirl's r131 `holdClip`)
-  hold: { from: 'blade_medium_forward', at: 0, name: 'blade_roll_forward' },
+            'in_air', 'grind_left', 'grind_right',
+            'blade_casual_backward', 'blade_roll_backward', 'idle_backward'],
+  // the thumb-off roll is a frame of her medium stride held still (Rollergirl's r131 `holdClip`) --
+  // one riding forward and one riding FAKIE (m268)
+  hold: [{ from: 'blade_medium_forward', at: 0, name: 'blade_roll_forward' },
+         { from: 'blade_medium_backward', at: 0, name: 'blade_roll_backward' }],
+  // her `_backward` clips are authored facing BACKWARDS; turned round at load (m268, `faceForward`)
+  faceFix: /_backward$/,
   turn: 3.0,
   vary: { pace: [.85, 1.2], nerve: [1, 1], react: [.3, 1.2], guard: [0, 0] },
   // A SKATER STOPS LESS AND SURGES LESS THAN A DRUNK, because she is rolling rather than
@@ -3994,6 +3999,7 @@ const BLADE = Object.assign(Object.create(SK8), {
   top: 24, roll: .045, brake: 18, turn: 6.5, turnHi: 2.6,
   pushV: 5.2, pushDur: 1.05, pushFast: .52, shoveDur: .34, plant: .30,
   dip: 0,
+  swivelT: .45,     // how long her body takes to come round on a swivel (m268)
   steady: .85,      // how much of the gun pose's own chest frame is held against her hips' twist (m265)
   clip: Object.assign({}, SK8.clip, { land: '' }),
   own: Object.assign({}, SK8.own, { down: '' }),
@@ -13091,7 +13097,8 @@ PADS.L = bindStick(padL, stick.L,
   // one has to be able to do it -- and a tap cannot collide with steering, because a tap is
   // `trav < tapMove` and `held < tapT`, which no steering hold ever is. Weapons moved to the
   // left wheel (`kitPick`).
-  () => { if (wingTapL()) return; player.jump = 1; },   // tap: jump -- flying, a double tap is her BOOST (m266)
+  // tap: jump -- flying, a double tap is her BOOST (m266); on her skates on the ground, her SWIVEL (m268)
+  () => { if (wingTapL()) return; if (fakieSwivel()) return; player.jump = 1; },
   // flick: a BODY FLIP on the board, otherwise the dodge roll in the flicked direction. The
   // board takes it first and says so, because a dodge roll on a moving deck is nothing.
   // Flying (m266) it is her loop / barrel roll.
@@ -14126,7 +14133,7 @@ function stepGrind(dt) {
   p.vel.set(R.tx * p.railD, 0, R.tz * p.railD);
   p.speed = p.railD;
   p.boardH = Math.atan2(R.tx, R.tz);
-  p.heading = p.boardH; p.faceH = p.boardH;
+  p.heading = p.boardH; p.faceH = p.boardH + (p.blade ? fakieStep(dt) : 0);
   p.crouch += (1 - p.crouch) * Math.min(1, SK8.crouch * dt);
   p.bRollA -= p.bRollA * Math.min(1, 9 * dt); p.bYawA -= p.bYawA * Math.min(1, 9 * dt);
 }
@@ -14229,6 +14236,15 @@ function stepSkate(dt) {
   // he is locked to a line, so gravity, the resolver and the ground snap all have nothing to
   // say. Same shape as the wall and the ledge, one surface along.
   if (p.rail) { stepGrind(dt); return; }
+  // **HER FAKIE (m268): `boardH` IS HER TRAVEL'S LEADING END, and her body is drawn `fkOff` round
+  // from it** -- so every line below (the push, the brake, the steer, the rebuild) works on the end
+  // she is LEADING with, which is what Rollergirl's r22 `dir`/`rel` did for her. Rolling back the
+  // other way (down the far side of a slope, a brake past zero) is a stance change and nothing else:
+  // the lead turns round, the body does not move.
+  if (p.blade && p.grounded) {
+    const sp0 = p.vel.x * Math.sin(p.boardH) + p.vel.z * Math.cos(p.boardH);
+    if (sp0 < -Math.max(.4, S.min)) fakieFlip();
+  }
   const fx = Math.sin(p.boardH), fz = Math.cos(p.boardH);
   let sp = p.vel.x * fx + p.vel.z * fz;         // his speed ALONG the deck -- the wheels' axis
 
@@ -14343,6 +14359,7 @@ function stepSkate(dt) {
   p.speed = Math.hypot(p.vel.x, p.vel.z);
   // LANDING. There is no bail clip, so a bad landing SCRUBS rather than dropping him -- and a
   // 180 is forgiven by folding the angle, because landing switch is a real thing to do.
+  if (wasAir && p.grounded && p.blade) fakieLand();
   if (wasAir && p.grounded) {
     const tr = Math.atan2(p.vel.x, p.vel.z), off0 = Math.abs(wrapAngle(tr - p.boardH));
     const off = p.speed > .5 ? Math.min(off0, Math.PI - off0) : 0;
@@ -14373,7 +14390,8 @@ function stepSkate(dt) {
   const wantC = p.grounded ? (p.shoveT > 0 ? 1 : clamp(p.speed / S.top, 0, 1) * .5) : 0;
   p.crouch += (wantC - p.crouch) * Math.min(1, S.crouch * dt);
   // and he faces the way the board is going -- there is no second facing to keep in step
-  p.heading = p.boardH; p.faceH = p.boardH;
+  // (on her skates, round by her fakie offset, eased through a swivel -- m268)
+  p.heading = p.boardH; p.faceH = p.boardH + (p.blade ? fakieStep(dt) : 0);
 }
 
 // THE DECK IS DRAWN UNDER HIM, AND IT LAGS HIM THROUGH A TURN -- which is most of what makes a
@@ -14500,7 +14518,7 @@ function stepPlayer(dt) {
   // the deck away by making `boardOut()` false and there is nothing to put back.
   {
     const on = boardOut();
-    if (on && !p.board) { p.boardH = p.faceH; p.pushT = 0; p.shoveT = 0; p.deckLag = p.faceH; }
+    if (on && !p.board) { p.boardH = p.faceH; p.pushT = 0; p.shoveT = 0; p.deckLag = p.faceH; fakieReset(); }
     if (!on && p.board) {
       // A KNOCK-DOWN TAKES THE DECK OUT FROM UNDER HIM AND HE HAS TO GET BACK ON. Everything
       // else in `boardBusy` is transient -- a roll, a strike, a swap -- and popping back on
@@ -14510,7 +14528,7 @@ function stepPlayer(dt) {
       p.braked = 0;
       p.rail = null; p.trick = ''; p.trickName = '';
       p.bRoll = 0; p.bYaw = 0; p.bRollA = 0; p.bYawA = 0; p.barrel = 0; p.barrelA = 0;
-      p.pushW = 0; p.sk8L = 0;
+      p.pushW = 0; p.sk8L = 0; fakieReset();
     }
     p.board = on ? 1 : 0;
     p.blade = on && bladeOn() ? 1 : 0;
@@ -14955,19 +14973,26 @@ function bladeAnim(dt, t) {
     else put(has('in_air') ? 'in_air' : 'blade_roll_forward', 1);
   } else {
     const v = p.speed, still = 1 - smooth(A.still[0], A.still[1], v), move = 1 - still;
-    put('idle_normal', still);
+    // FAKIE (m268): her BACKWARD set, turned at load to face where her body does. She has no
+    // `blade_hard_backward`, so a hard fakie push borrows the casual one -- her game's own fallback.
+    const fk = p.stance < 0 && has('blade_casual_backward');
+    const nIdle = fk && has('idle_backward') ? 'idle_backward' : 'idle_normal';
+    const nCas = fk ? 'blade_casual_backward' : 'blade_casual_forward';
+    const nHard = fk ? (has('blade_hard_backward') ? 'blade_hard_backward' : 'blade_casual_backward') : 'blade_hard_forward';
+    const nRoll = fk ? (has('blade_roll_backward') ? 'blade_roll_backward' : nCas) : (has('blade_roll_forward') ? 'blade_roll_forward' : nCas);
+    put(nIdle, still);
     const pu = clamp(p.pushW, 0, 1);
     // BOOSTING SHE IS IN HER SPEED SKATE -- the hard push, quick -- whatever the thumb is doing (m267)
-    if (move > 0 && p.boostFx > 0 && has('blade_hard_forward')) {
-      const k = put('blade_hard_forward', move);
+    if (move > 0 && p.boostFx > 0 && has(nHard)) {
+      const k = put(nHard, move);
       if (k) setScale(k, SKBOOST.rate);
     } else if (move > 0) {
       const u = clamp((v - A.pushV[0]) / Math.max(.1, A.pushV[1] - A.pushV[0]), 0, 1);
-      for (const [nm, w, ref] of [['blade_casual_forward', 1 - u, A.pushV[0]], ['blade_hard_forward', u, A.pushV[1]]]) {
+      for (const [nm, w, ref] of [[nCas, 1 - u, A.pushV[0]], [nHard, u, A.pushV[1]]]) {
         const k = put(nm, move * pu * w);
         if (k) setScale(k, clamp(Math.max(.3, v) / ref, A.rateLo, A.rateHi));
       }
-      put(has('blade_roll_forward') ? 'blade_roll_forward' : 'blade_casual_forward', move * (1 - pu));
+      put(nRoll, move * (1 - pu));
     }
   }
   let sum = 0; for (const k in t) if (k !== gu) sum += t[k];
@@ -15048,7 +15073,7 @@ function wingStart() {
   p.wingSpin = Math.abs(tw) > WING.spinAt ? { a: tw, t: 0 } : null;
   p.wPitch = v > 1 ? clamp(Math.asin(clamp(p.vel.y / v, -1, 1)), -WING.dive, WING.climb) : WING.climb * .6;
   p.wV = Math.max(v, WING.v0); p.wBank = 0; p.wTrick = null; p.wBoost = 0; p.wBoostCool = 0;
-  p.grounded = false; p.coyote = 0; p.airT = 0; p.wing = 1; p.wingRes = null;
+  p.grounded = false; p.coyote = 0; p.airT = 0; p.wing = 1; p.wingRes = null; fakieReset();
   WING.out = 1;
   snd('swoosh', { r: .8, g: .45 });
   return true;
@@ -15363,6 +15388,62 @@ function bladeFxStep(dt) {
             SKBOOST.trailLife * (.7 + Math.random() * .6), BFX_COL[i < 2 ? 0 : 1]);
     }
   }
+}
+
+// ============================================================================================
+// HER FAKIE AND HER SWIVEL (m268, `p.stance`, `p.fkOff`, `fakieFlip`, `fakieLand`, `fakieSwivel`)
+// -- Rollergirl's r21..r24 stance, ported onto the board physics.
+//   STANCE   a state: forward (1) or fakie (-1). `boardH` is always the end she LEADS with, so the
+//            push, the brake and the steer work identically either way round; her body is drawn
+//            `fkOff` from it (0 forward, a half turn fakie).
+//   LANDING  her body against her travel: within 90 deg of her nose she rolls away forward, of her
+//            tail she rolls away FAKIE -- so spinning a 180 in the air lands switch on purpose.
+//   ROLLING BACK  the other way along her line (a slope, a brake past zero) is fakie too.
+//   SWIVEL   a tap of the LEFT pad on the ground: she turns her body round and rolls the same line
+//            the other way up. Her game's gesture; off the ground that tap is still a jump.
+//   CLIPS    her `_backward` set (turned at load to face her body, `faceForward`).
+function fakieNorm() {
+  const p = player;
+  while (p.fkTgt > Math.PI * 1.5) { p.fkTgt -= Math.PI * 2; p.fkOff -= Math.PI * 2; }
+  while (p.fkTgt < -Math.PI * 1.5) { p.fkTgt += Math.PI * 2; p.fkOff += Math.PI * 2; }
+}
+function fakieReset() { const p = player; p.stance = 1; p.fkOff = 0; p.fkTgt = 0; }
+// her travel reversed under her: the LEAD turns round and the body does not move
+function fakieFlip() {
+  const p = player;
+  p.boardH = wrapAngle(p.boardH + Math.PI);
+  p.fkOff = (p.fkOff || 0) - Math.PI; p.fkTgt = (p.fkTgt || 0) - Math.PI;
+  p.deckLag = p.boardH;
+  p.stance = (p.stance || 1) < 0 ? 1 : -1;
+  fakieNorm();
+}
+// landed: her body against the way she is actually going decides which end leads
+function fakieLand() {
+  const p = player, v = Math.hypot(p.vel.x, p.vel.z);
+  const F = p.boardH + (p.fkOff || 0);
+  if (v < .5) { p.fkTgt = p.fkOff || 0; return; }
+  const tr = Math.atan2(p.vel.x, p.vel.z);
+  if (Math.abs(wrapAngle(tr - F)) < Math.PI / 2) { p.stance = 1; p.boardH = wrapAngle(F); p.fkOff = p.fkTgt = 0; }
+  else { p.stance = -1; p.boardH = wrapAngle(F + Math.PI); p.fkOff = p.fkTgt = -Math.PI; }
+  p.deckLag = p.boardH;
+}
+function fakieSwivel() {
+  const p = player;
+  if (!p.blade || !p.grounded || p.rail || p.wing || p.knock) return false;
+  p.stance = (p.stance || 1) < 0 ? 1 : -1;
+  p.fkTgt = (p.fkTgt || 0) + Math.PI * ((stick.L.x || 0) < -.05 ? -1 : 1);
+  fakieNorm();
+  snd('swoosh', { r: 1.3, g: .26 });
+  return true;
+}
+// the drawn offset eases onto its target -- a swivel is a turn you see, not a cut
+function fakieStep(dt) {
+  const p = player;
+  if (p.fkOff === undefined) fakieReset();
+  const d = p.fkTgt - p.fkOff, r = Math.PI / Math.max(.05, BLADE.swivelT) * dt;
+  p.fkOff = Math.abs(d) <= r ? p.fkTgt : p.fkOff + Math.sign(d) * r;
+  if (p.fkOff === p.fkTgt) fakieNorm();
+  return p.fkOff;
 }
 
 function rigAnim(dt) {
@@ -21698,12 +21779,53 @@ function mphSkin(K) {
 //   - **THE ROLL**: a frame of a riding clip, held still (Rollergirl's r131 `holdClip`).
 //   - **THE HIPS-DOWN HALVES**: `SPLIT.legsRaw`'s rule, so the gun pose owns spine-up and her
 //     skating owns hips-down, and they COMPOSE rather than averaging into a shrug.
+// **HER `_backward` CLIPS FACE THE WRONG WAY, AND THE GAME TURNS HER ROUND TOO (m268, `faceForward`).**
+// Rollergirl r24 word for word: measured through her skeleton, every `*_forward` clip's body faces
+// -14..8 deg and 14 of the 15 `*_backward` ones 148-180 -- a backward stroke drawn facing back. Fakie
+// here turns her BODY round already, so the two half turns would cancel into a forward stroke facing
+// the way she rolls. The clip's own half turn comes out at load: `C = Pw^-1 * Ry(pi) * Pw` on the
+// front of every Hips key, in the Hips' parent frame, which turns her about her own hips without
+// moving them. **Decided per clip by measurement against `idle_normal`**, so the one that already
+// faces forward (`blade_onefootback_L_backward`, 1 deg) is left alone and a re-export that fixes it
+// at source needs no edit.
+function faceForward(K, P) {
+  if (K._faced) return; K._faced = 1;
+  let H = null; P.proto.traverse(o => { if (!H && o.isBone && /Hips$/.test(o.name)) H = o; });
+  if (!H || !H.parent) return;
+  P.proto.updateMatrixWorld(true);
+  const Pw = H.parent.getWorldQuaternion(new THREE.Quaternion()), Pi = Pw.clone().invert();
+  const Hb = H.getWorldQuaternion(new THREE.Quaternion());
+  const fl = new THREE.Vector3(0, 0, 1).applyQuaternion(Hb.clone().invert());
+  const q = new THREE.Quaternion(), f = new THREE.Vector3();
+  const yawOf = c => {
+    const t = c && c.tracks.find(t => t.name === H.name + '.quaternion'); if (!t) return null;
+    const v = t.values; let sx = 0, sz = 0;
+    for (let i = 0; i < v.length; i += 4) { f.copy(fl).applyQuaternion(q.set(v[i], v[i + 1], v[i + 2], v[i + 3]).premultiply(Pw)); sx += f.x; sz += f.z; }
+    return Math.atan2(sx, sz);
+  };
+  const ref = yawOf(P.clips.find(c => c.name === 'idle_normal')) || 0;
+  const C = Pi.clone().multiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), Math.PI)).multiply(Pw);
+  let n = 0;
+  for (const c of P.clips) {
+    if (!K.faceFix.test(c.name)) continue;
+    const y = yawOf(c);
+    if (y == null || Math.abs(wrapAngle(y - ref)) < Math.PI / 2) continue;
+    const t = c.tracks.find(t => t.name === H.name + '.quaternion');
+    t.values = Float32Array.from(t.values);             // CLONED: a track's arrays can be shared
+    const v = t.values;
+    for (let i = 0; i < v.length; i += 4) { q.set(v[i], v[i + 1], v[i + 2], v[i + 3]).premultiply(C); v[i] = q.x; v[i + 1] = q.y; v[i + 2] = q.z; v[i + 3] = q.w; }
+    n++;
+  }
+  console.log('[melee] ' + K.file + ': ' + n + ' backward clips turned to face forward');
+}
 function mphExtras(K, P) {
   if (K._xtra) return K._xtra;
   const out = [];
   for (const c of P.clips) if (/_flip$/.test(c.name)) c.tracks = c.tracks.filter(t => !/Hips\.position$/.test(t.name));
-  const H = K.hold, src = H && P.clips.find(c => c.name === H.from);
-  if (src && !P.clips.some(c => c.name === H.name)) {
+  if (K.faceFix) faceForward(K, P);
+  for (const H of [].concat(K.hold || [])) {
+    const src = P.clips.find(c => c.name === H.from);
+    if (!src || P.clips.some(c => c.name === H.name)) continue;
     const t0 = clamp(H.at, 0, 1) * src.duration;
     out.push(new THREE.AnimationClip(H.name, .1, src.tracks.map(tr =>
       new tr.constructor(tr.name, [0], Array.from(tr.createInterpolant().evaluate(t0))))));
@@ -27810,7 +27932,7 @@ function frameBody() {
     // phone. `MOTO12` is the steer angle in degrees while it is being ridden, which is the
     // number every part of the geometry is derived from; anything else is the state's own name.
     const sk8 = !board.ready && !player.blade ? (slotNow().board ? ' · NO BOARD' : '') : (player.board
-      ? (player.blade ? ' · BLADE ' : ' · SK8 ') + player.speed.toFixed(1) + (player.wing ? ' WING' + Math.round(player.wPitch * 180 / Math.PI) : player.grounded ? '' : ' air') +
+      ? (player.blade ? (player.stance < 0 ? ' · BLADE FAKIE ' : ' · BLADE ') : ' · SK8 ') + player.speed.toFixed(1) + (player.wing ? ' WING' + Math.round(player.wPitch * 180 / Math.PI) : player.grounded ? '' : ' air') +
         (player.speedSk ? ' SPEED' : player.boostT > 0 ? ' BOOST' : '') +
         (player.rail ? ' GRIND' + player.railD.toFixed(1) : '') +
         (player.pushW > .5 ? ' push' : '') +
@@ -28472,7 +28594,7 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // carried, and how a carried board should look is a look-at-it decision -- so it is a dial he
   // can reach on the phone rather than a pick shipped with an argument for it. `mel.hold()`
   // prints the line to paste back, and `mel.ride(1|0)` puts him on and off without a gesture.
-  SK8, BLADE, bladeOn, board, boardOut, boardHeld, SKSPEED, SKBOOST, bladeBoost, bladeFxStep, WING, wingSet, stepWing, wingBoost, wingTrick, wingPose, wingFrame, wingTapR, wingTapL, wingOk, ISLE, buildIsle, isleSplash, islePutBack,
+  SK8, BLADE, bladeOn, board, boardOut, boardHeld, SKSPEED, SKBOOST, bladeBoost, bladeFxStep, fakieSwivel, fakieFlip, fakieLand, WING, wingSet, stepWing, wingBoost, wingTrick, wingPose, wingFrame, wingTapR, wingTapL, wingOk, ISLE, buildIsle, isleSplash, islePutBack,
   // THE THREE NEW SYSTEMS, LIVE (m160). Every one of them is a look-at-it decision somewhere,
   // and none of them should need a fight to see one -- which is `mel.fx()`'s own argument.
   DECAL, BRK, HYD, SPOUT, BREAK, WRECKS, SPOUTS, decalPut, brkBlast,

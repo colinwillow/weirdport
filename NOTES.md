@@ -7,6 +7,29 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **HER FAKIE AND HER SWIVEL (m268, `p.stance`, `p.fkOff`, `fakieFlip`, `fakieLand`, `fakieSwivel`, `fakieStep`,
+  `faceForward`)** -- Rollergirl's r21..r24 stance, ported onto the board physics. Her skates only.
+  - **`boardH` IS ALWAYS THE END SHE LEADS WITH, AND HER BODY IS DRAWN `fkOff` FROM IT** (0 forward, a half turn
+    fakie). So every line of `stepSkate` -- push, brake, steer, rebuild -- works unchanged on the leading end, which
+    is what her game's `dir`/`rel` were for. Before this, landing switch rebuilt her speed NEGATIVE along the deck and
+    pushing on read as a brake.
+  - **A STANCE CHANGE NEVER MOVES THE BODY**: `fakieFlip` turns the lead round and takes the same half turn off
+    `fkOff`. It fires when her travel reverses on the ground (a slope, rolling back). `fakieLand` decides from her
+    body against her travel: within 90 deg of her nose she lands forward, of her tail FAKIE -- a 180 lands switch.
+  - **THE SWIVEL is the LEFT pad's tap on the ground** (her game's gesture): stance flips, her body eases round over
+    `BLADE.swivelT` .45 s, the line she rolls is untouched. Off the ground that tap is still a jump; flying it is the
+    wings' boost. The swivel turns the way the left stick leans, else to her right.
+  - **HER `_backward` CLIPS FACE BACKWARDS IN THE FILE** (measured: forward set -14..8 deg, 14 of 15 backward ones
+    148-180; `blade_onefootback_L_backward` is the odd one at 1 deg). `faceForward` premultiplies the Hips keys by
+    `C = Pw^-1 Ry(pi) Pw` for every `_backward` clip over 90 deg off `idle_normal`, once, at the first wear, before
+    the held roll frames and the `__legh` halves are cut. Re-measured with that math: all within +-8 deg
+    (the swan poses keep their own 31 deg, as their forward twins do). Her game's r24, in her parent frame.
+  - Clips in fakie: `idle_backward`, `blade_casual_backward` (also for the hard push and the boost -- she has no
+    `blade_hard_backward`, her game's own fallback), and `blade_roll_backward` held off `blade_medium_backward`.
+  - Probe (`tools/.probe/blade.mjs`): swivel keeps the line (0.0 deg) and turns the body 180; pushing on in fakie
+    13.6 -> 16.4 on `blade_casual_backward`; a second tap back forward; a 180 in the air lands fakie at 11.6 m/s;
+    rolling back is fakie with the body unmoved. Chip: `BLADE FAKIE`.
+
 - **HER SPEED SKATE AND HER BOOST (m267, `SKSPEED`, `SKBOOST`, `bladeBoost`, `bladeFxStep`)** -- Rollergirl's r122
   and r80, ported, on her skates only. Run from `stepPlayer` right after `stepSkate`, so the extra speed rides the
   board physics' own integrator next frame (its pushes taper off at `BLADE.top`, its roll drag is tiny, nothing caps).
