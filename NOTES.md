@@ -7,6 +7,25 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FIRST SHOT AT ANYBODY FROZE THE GAME FOR A SECOND, AND IT WAS PAYING FOR THE WHOLE TRANSFORM ON
+  THAT FRAME (m261, `WARM`, `warmStep`).** *"The first time you shoot somebody it pauses and freezes for like a
+  second or two... start loading earlier."* Nothing is DOWNLOADED on the shot -- every GLB is already in. What
+  the first hit on a new kind paid for, all on one frame: `mphSkin` (a skeleton clone, an action per clip,
+  `mphBorrow`'s retargets), `mphProf` / `flubArea` / `flubPix` for the silhouette, the area CDF and the colour
+  read-back, and then **the shaders** -- the flubber dot program the first time it is drawn, and a SECOND
+  variant of every skin material the first time `flubOpacity` turns `transparent` on, because that flag
+  changes three's program (the OPAQUE define). A shader compile on a phone is the whole second on its own.
+  **SO IT IS DONE IN THE BACKGROUND, ONE KIND AT A TIME.** `warmStep` waits 1.5 s after the rig is up, then
+  warms his OWN body and the burst first (he is half of every transform), then every `.35 s` the NEAREST
+  dnaOK kind that has no `K.mph` yet. Each warm builds the skin, runs the measurements, and compiles the
+  materials in BOTH variants -- set to .5 opacity, compile, back to 1, compile -- through `compileAsync`
+  where the renderer has it (KHR_parallel_shader_compile), so the compile itself does not block either.
+  **One kind per tick, never all at once**, or the freeze just moves to the loading screen's end. It stands
+  down while a transform is running, and a kind already shot is skipped because `K.mph` is the cache.
+  **WHAT IS LEFT:** a shot inside the first second or two, before the queue reaches that kind, still pays. And
+  any kind added to the world later (a crowd deal that brings a new one in) waits its turn in the queue.
+  `mel.WARM` -- `on` 0 is the A/B, `n` is how many kinds are warm.
+
 - **THE COAT LANDED ON A T-POSE, AND THE SKIN WENT BLUE (m260, `FL.tgtWait`, `flubAgain`, `FLUB.floor`).**
   *"It transforms into the guy in T-pose... and 95% of the balls are still just blue."* Two faults.
   **T-POSE:** the swap runs inside `stepMorph`, BEFORE `rigAnim` and the mixer -- so the skin just put on has
