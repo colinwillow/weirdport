@@ -7,6 +7,27 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE TRANSFORM IS ONE OUT-AND-IN NOW, AND IT IS PHYSICS (m255, `FLUB.shape` 4, `flubBurst`, `flubOpacity`,
+  `mphSh`/`mphAt`).** *"Too many little steps. They all appear at once covering the surface, already moving
+  outward along the normal at a random speed; they shoot out, reverse elastically at slightly random moments,
+  spring back and approximate the new mesh. The old character fades out; at the apex the new mesh fades in,
+  the balls stick with a little jiggle, then pop or fall away. And the dots should glow, not be shaded."*
+      frame 0  every voxel on an even coat of the old skin, velocity = its POSED FACE NORMAL (`flubSample`
+               now returns it, off the three skinned corners) x `vMin..vMax` + `vJit`; old body fades `fadeOut`
+      flight   ballistic with drag until its own turn-back (`turn` x the out phase); soles bounce off the floor
+      spring   underdamped (`hz` 3.4, `damp` .32) toward its anchor, then -- once the swap lands -- toward its
+               cell-matched spot on the new skin: the swap is the TARGET CHANGING under a spring already
+               pulling, which is why there is no seam
+      apex     the swap, at `bOut` (.30) of `bDur` (1.7 s) -- `mphSh` gives the burst its own phase shares,
+               so `stepMorph`'s swap moves with it; the new body fades in over `fadeIn`
+      pop      `popAt` + random after the swap: a kick out and up, gravity, shrink over `popLife`
+  **A FADE NEVER LEAVES A SKIN TRANSPARENT** -- `flubOpacity` turns `transparent` on only while it is
+  see-through and remembers the material's own flag; the body taken off is put back to opaque AT the swap
+  (it is detached then, and a skin left at 0 is invisible the next time it is worn), and `flubOff` restores
+  both. **The dots are flat now**: no shading, a soft edge (`soft`), `dotGlow`, alpha-blended so neighbours
+  melt into one form. Probed headless: out to .80 m, old body at opacity 0 by u .15, new at 1 by .45, landed,
+  popped, everything gone by the end.
+
 - **WHAT A VOXEL IS, IS A DIAL (m254, `FLUB.look`, `FLUBQ_VS/FS`, `flubSheet`).** *"Spheres over cubes, or
   circles aimed at the camera, or a sprite sheet -- even the water one."* 0 cube, 1 icosphere (80 tris),
   **2 DOT (default)**, 3 SHEET (`images/water_sprites_01.png`, 3 x 3, one random cell per voxel, tinted by
