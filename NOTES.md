@@ -7,6 +7,18 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **WHAT A VOXEL IS, IS A DIAL (m254, `FLUB.look`, `FLUBQ_VS/FS`, `flubSheet`).** *"Spheres over cubes, or
+  circles aimed at the camera, or a sprite sheet -- even the water one."* 0 cube, 1 icosphere (80 tris),
+  **2 DOT (default)**, 3 SHEET (`images/water_sprites_01.png`, 3 x 3, one random cell per voxel, tinted by
+  the skin colour). 2 and 3 are one `ShaderMaterial` on an instanced quad: centre and size come out of the
+  SAME instance matrix the cube gets, the corners are pushed out in VIEW space so they face the lens, and
+  the in-plane angle is read off that matrix -- so a sprite turns as the voxel tumbles with nothing new to
+  feed. The water sheet is drawn on BLACK with no alpha, so the cut-out is brightness (`cut`), the cracks'
+  rule. `instanceMatrix`/`instanceColor` are declared by three's own prefix for a non-raw ShaderMaterial on
+  an InstancedMesh with colours (checked in the vendored build). `quadK` makes a flat dot a little bigger
+  than a cube so it covers the same. **The shader has never compiled outside a GPU** -- if look 2 or 3
+  draws nothing, that is the first suspect, and 0/1 are plain `MeshBasicMaterial`.
+
 - **AN EVEN COAT, AND THE POP (m253, `flubSample`, `flubArea`, `flubPop`, `FLUB.shape` 3).** *"They don't
   spawn over his whole body -- cover it much more evenly. They should pop out more or less at once, an
   impulse, shoot out into the stretched quasar with Flubber strands, stretch, then elastically shoot back
