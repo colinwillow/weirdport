@@ -7,6 +7,31 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **m248 CRASHED ON EVERY DNA SHOT, AND THE TRANSFORM IS A PARTICLE MORPH NOW (m249, `FLUB`, `flubMorph`,
+  `flubSwap`, `SURGE.mode`).** His screenshot: `FRAME m248 ... mphBlow ... stepMorph ... frameBody`.
+  `mphBlow` places the swap's embers on the blob's measured silhouette `MPH._r`, which only `mphFill`
+  builds -- and the stream never calls it, so the swap threw `null is not an object` every time. It
+  runs only when `MPH._r` exists now. **An effect switched off has to switch off its punctuation too.**
+  *"They could take their colour from the alien's skin and morph in colour to whatever you're morphing
+  into... detach from one body, shoot out into a crazy abstract shape, like Flubber, a nebula, and come
+  back together as the new character."* `SURGE.mode`: 0 blob, 1 stream (m248), **2 flubber (default)**:
+      PEEL    1400 voxels born at random POSED vertices of the old body, each coloured from that body's
+              own texture at that vertex's UV (`flubPix`: one 64 x 64 copy per map, sRGB decoded, x the
+              material colour; unreadable -> the material colour, never a throw)
+      NEBULA  old body hidden; each voxel thrown off its anchor by three crossed low-frequency sines of
+              the anchor, moving (`freq` lobes per metre, `churn` speed) -- lumps, not jitter -- plus a
+              radial push and a lift, glowing as it goes
+      REFORM  every voxel has a target VERTEX on the new body, read off its LIVE pose each frame (a hidden
+              skin's skeleton is never updated by the renderer, so `flubPose` does it), colour sliding
+              to the new skin's
+      SETTLE  new body shown at `land`, voxels shrink into it
+  Anchors live in `rig.root`'s frame, so the cloud walks with him. One `InstancedMesh`, opaque by
+  default (`add` 1 is the glowing version). `FLUB.dur` 2.0 s. Probed headless on two fake skinned
+  bodies through a whole transform: peel 0 -> 1400 voxels in the old colour, nebula out to 1.9 m, back
+  to 0.25 m on the new body in the new colour, body hidden through the middle and shown at the end,
+  pool cleared. **The texture read is a device question** -- the probe has no canvas. Tune ->
+  TRANSFORM: style, flubber length, voxels, voxel size, nebula size / lumps / churn / glow, glow mode.
+
 - **THE TRANSFORM IS ROBITS' SUPERCHARGE NOW (m248, `SURGE`, `surgeEmit`, `surgeMorph`, `surgeStep`).**
   *"In Robits there's a power-up you run through and particles stream out of you, organic and blobby,
   like being on fire but blue... they emit from the normals, it covers the form, then you transform the
