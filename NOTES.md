@@ -7,6 +7,25 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FLUBBER'S CLOUD IS A SHAPE AT HIS SIZE, AND THE SKIN STAYS IN ITS PATCHES (m250, `FLUB.shape`,
+  `flubForm`, `flubKey`, the cell-matched `flubSwap`).** *"It's massive. I meant a quasar -- skinny at the
+  top, skinny at the bottom, wide in the middle, like a spinning top. Or Flubber. And the colours: I thought
+  it'd look like the skin turns into particles and morphs into the other skin."* Both halves were one fault:
+  m249's field threw every voxel off its OWN anchor by an all-directions noise of amplitude 1.25 m plus a
+  radial push -- a screen-filling cloud whose neighbours came from anywhere on the body, i.e. confetti.
+  Now a voxel's place in the form is a function of WHERE ON THE BODY IT CAME FROM, `(height 0..1, angle)`:
+      QUASAR   head -> top jet, feet -> bottom jet, the rest -> disc rings by height, inner rings faster;
+               disc .32 x his height, jets .52 -- measured on a 1.7 m body: rim .47 m, never beyond
+      FLUBBER  `arms` tendrils (7) in random directions per transform; angle picks the tendril, distance
+               from the waist picks how far out, blobs at the core and the tips, a wobble growing to
+               the tip -- reach .85 m on a 1.7 m body
+  So a skin's patch stays one patch through the form (a band of shirt is a ring of the disc). And the
+  landing is matched the same way: the new body is sampled into a 14 x 12 height x angle grid and each
+  voxel takes a vertex from ITS OWN cell, so head lands on head and the colour morphs LOCALLY. Texture read
+  went 64 -> 128 px, and **`mphTint` is a no-op in this style** -- the white-out was washing the skin out
+  of the voxels before they left. Tune -> TRANSFORM: form, form size, quasar disc/jets, flubber arms/reach,
+  spin, wobble, glow.
+
 - **m248 CRASHED ON EVERY DNA SHOT, AND THE TRANSFORM IS A PARTICLE MORPH NOW (m249, `FLUB`, `flubMorph`,
   `flubSwap`, `SURGE.mode`).** His screenshot: `FRAME m248 ... mphBlow ... stepMorph ... frameBody`.
   `mphBlow` places the swap's embers on the blob's measured silhouette `MPH._r`, which only `mphFill`

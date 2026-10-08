@@ -555,10 +555,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m249</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m250</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m249</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m250</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -624,7 +624,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm249';
+const BUILD = 'm250';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"c2fbdbf7","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -7765,7 +7765,7 @@ function mountWeapon(slot, g) {
 // point -- core, body, haze -- which is what makes a ball read as a ball wrapped in light
 // rather than as a flat disc.
 const DOT = (() => {
-  const c = document.createElement('canvas'); c.width = c.height = 64;
+  const c = document.createElement('canvas'); c.width = c.height = 128;
   const g = c.getContext('2d'), gr = g.createRadialGradient(32, 32, 0, 32, 32, 32);
   gr.addColorStop(0, 'rgba(255,255,255,1)');
   gr.addColorStop(.35, 'rgba(255,255,255,.55)');
@@ -20432,6 +20432,8 @@ function mphStride(clips, K) {
 }
 // 0 puts every material back exactly as it was, which is what lets a worn body be worn again.
 function mphTint(mats, k) {
+  // THE FLUBBER WANTS THE SKIN, NOT A WHITE-OUT (m250) -- the voxels are the skin's own colours
+  if (SURGE.mode === 2) k = 0;
   for (const m of mats) {
     let o = m.userData.mph0;
     if (!o) o = m.userData.mph0 = { col: m.color ? m.color.clone() : null,
@@ -21286,17 +21288,25 @@ function surgeStep(dt) {
 // (`flubPix`), sRGB decoded, times the material colour; a map that cannot be read is the material
 // colour, never a throw.
 const FLUB = {
-  n: 1400, size: .055, add: 0,
+  n: 1400, size: .05, add: 0,
   dur: 2.0,
   peel: .26,          // share of `u` over which the voxels are born on the old body
   hide: .30,          // the old body is gone by here
   land: .86,          // and the new one is shown from here
-  amp: 1.25,          // metres the nebula throws a voxel at its peak
-  freq: 3.2,          // how many lobes per metre -- low is Flubber, high is fizz
-  churn: 6.0,         // how fast the lobes move
-  rise: .45,          // and the whole cloud lifts this much at its peak
-  glow: 1.2,          // extra brightness at the nebula's peak
-  spin: 7,
+  // **THE FORM (m250).** *"The nebula is massive... I meant a quasar -- skinny at the top, skinny at
+  // the bottom, wide in the middle, like a spinning top. Or Flubber."* So the cloud is a SHAPE now,
+  // centred on his own body and his own size, not a noise field thrown a metre and a half out:
+  //   0 QUASAR   a thin spinning disc (inner rings faster) with a jet out of each pole
+  //   1 FLUBBER  a core with `arms` wobbling tendrils, each ending in a blob
+  shape: 0,
+  scale: 1,           // the whole form, as a multiple of his own height
+  disc: .32,          // quasar disc radius / jet length, as fractions of his height
+  jet: .52,
+  arms: 7, reach: .42,  // flubber: tendril count, and length as a fraction of his height
+  spin: 3.2,          // rad/s the disc turns at its rim (faster inside)
+  churn: 5.0,         // how fast the tendrils wobble
+  glow: .9,           // extra brightness at the form's peak
+  tumble: 6,          // how fast a voxel turns over
 };
 const FL = { inst: null, P: [], live: 0, sw: 0, c: new THREE.Color(), t: 0, n: 0 };
 const _flA = new THREE.Vector3(), _flB = new THREE.Vector3(), _flM = new THREE.Matrix4(),
@@ -21326,8 +21336,8 @@ function flubPix(tex) {
   try {
     const c = document.createElement('canvas'); c.width = c.height = 64;
     const g = c.getContext('2d', { willReadFrequently: true });
-    g.drawImage(tex.image, 0, 0, 64, 64);
-    tex.userData.flPix = g.getImageData(0, 0, 64, 64).data;
+    g.drawImage(tex.image, 0, 0, 128, 128);
+    tex.userData.flPix = g.getImageData(0, 0, 128, 128).data;
   } catch (e) { console.warn('[melee] flubber: texture unreadable', e); }
   return tex.userData.flPix;
 }
@@ -21340,7 +21350,7 @@ function flubColor(sm, i, out) {
     let u = sm.geometry.attributes.uv.getX(i), v = sm.geometry.attributes.uv.getY(i);
     u -= Math.floor(u); v -= Math.floor(v);
     if (m.map.flipY) v = 1 - v;
-    const o = (((v * 63) | 0) * 64 + ((u * 63) | 0)) * 4;
+    const o = (((v * 127) | 0) * 128 + ((u * 127) | 0)) * 4;
     out.setRGB(px[o] / 255, px[o + 1] / 255, px[o + 2] / 255, THREE.SRGBColorSpace);
   }
   if (m.color) out.multiply(m.color);
@@ -21366,16 +21376,87 @@ function flubPose(model) {
 }
 function flubStart() {
   flubEnsure();
-  FL.live = 1; FL.sw = 0; FL.t = 0;
+  FL.live = 1; FL.sw = 0; FL.t = 0; FL.lo = 1e9; FL.hi = -1e9;
   for (const P of FL.P) { P.born = 0; P.at = Math.random() * FLUB.peel; P.tm = null; }
+  // the tendrils' directions, fresh per transform: around him, tipped up or down a little
+  FL.arm = [];
+  for (let k = 0; k < FLUB.arms; k++) {
+    const a = (k + Math.random() * .6) / FLUB.arms * Math.PI * 2, e = (Math.random() * 2 - 1) * .75;
+    FL.arm.push(new THREE.Vector3(Math.sin(a) * Math.cos(e), Math.sin(e), Math.cos(a) * Math.cos(e)));
+  }
 }
-// THE TARGETS, picked on the body that has just been put on
+// where a voxel came from, as (height 0..1, angle round his axis) -- this is what keeps the skin's
+// patches TOGETHER through the form, and what sends a head voxel to the new HEAD
+function flubKey(P) {
+  const H = Math.max(.2, FL.hi - FL.lo);
+  P.hn = clamp((P.a.y - FL.lo) / H, 0, 1);
+  P.an = Math.atan2(P.a.x, P.a.z);
+}
+// THE TARGETS, on the body just put on -- each voxel lands on the SAME REGION it left (m250): the
+// new body is sampled into a height x angle grid and a voxel takes a vertex from its own cell
 function flubSwap(model) {
   if (!FL.live) return;
   const S = surgeMeshes(model);
   FL.sw = 1;
   if (!S) return;
-  for (const P of FL.P) { const q = flubPick(S); P.tm = q.sm; P.ti = (Math.random() * q.n) | 0; flubColor(P.tm, P.ti, P.cb); }
+  flubPose(model);
+  _flInv.copy(rig.root.matrixWorld).invert();
+  const NH = 14, NA = 12, cells = [], cand = [];
+  for (let c = 0; c < NH * NA; c++) cells.push([]);
+  let lo = 1e9, hi = -1e9;
+  for (let k = 0; k < 3000; k++) {
+    const q = flubPick(S), vi = (Math.random() * q.n) | 0;
+    flubAt(q.sm, vi, _flA).applyMatrix4(_flInv);
+    cand.push([q.sm, vi, _flA.y, Math.atan2(_flA.x, _flA.z)]);
+    if (_flA.y < lo) lo = _flA.y; if (_flA.y > hi) hi = _flA.y;
+  }
+  const H = Math.max(.2, hi - lo);
+  const cellOf = (hn, an) => Math.min(NH - 1, (hn * NH) | 0) * NA + Math.min(NA - 1, (((an / (Math.PI * 2)) + 1) % 1 * NA) | 0);
+  for (const c of cand) cells[cellOf(clamp((c[2] - lo) / H, 0, 1), c[3])].push(c);
+  for (const P of FL.P) {
+    if (!P.born) continue;
+    if (P.hn === undefined) flubKey(P);
+    let L = cells[cellOf(P.hn, P.an)];
+    // an empty cell (an arm-pit, a gap) borrows the nearest one up or down the body
+    for (let d = 1; !L.length && d < NH; d++) {
+      const up = cellOf(clamp(P.hn + d / NH, 0, 1), P.an), dn = cellOf(clamp(P.hn - d / NH, 0, 1), P.an);
+      L = cells[up].length ? cells[up] : cells[dn];
+    }
+    if (!L.length) L = cand;
+    const c = L[(Math.random() * L.length) | 0];
+    P.tm = c[0]; P.ti = c[1]; flubColor(P.tm, P.ti, P.cb);
+  }
+}
+// the FORM position of a voxel, in `rig.root`'s frame, written into `out`
+function flubForm(P, out, t) {
+  const F = FLUB, H = Math.max(.6, FL.hi - FL.lo) * F.scale, cy = FL.lo + (FL.hi - FL.lo) * .5;
+  if (F.shape === 1) {
+    // FLUBBER: the middle of the body is the core, everything further out runs down a tendril
+    const n = FL.arm.length || 1;
+    const k = Math.min(n - 1, ((((P.an / (Math.PI * 2)) + 1) % 1) * n) | 0);
+    const D = FL.arm[k], sp = Math.abs(P.hn - .5) * 2;          // 0 core .. 1 tip
+    const len = F.reach * H * (1 + .18 * Math.sin(t * F.churn * .7 + k * 1.9));
+    const along = sp * len;
+    // a perpendicular wobble that grows toward the tip -- the tendril whips rather than pokes
+    const wx = -D.z, wz = D.x, wob = Math.sin(t * F.churn + sp * 4 + k) * .09 * H * sp;
+    let x = D.x * along + wx * wob, y = cy + D.y * along + Math.cos(t * F.churn * .8 + sp * 3 + k) * .05 * H * sp,
+        z = D.z * along + wz * wob;
+    // the core and the tips are BLOBS: a little ball of scatter round the point
+    const blob = (sp < .18 ? .14 : sp > .82 ? .07 : .025) * H, s = P.s;
+    x += Math.sin(s * 3.1) * Math.cos(s * 1.7) * blob; y += Math.sin(s * 2.3) * blob; z += Math.cos(s * 3.1) * Math.cos(s * 1.7) * blob;
+    return out.set(x, y, z);
+  }
+  // QUASAR: head -> the top jet, feet -> the bottom jet, the rest -> rings of the disc by height
+  if (P.hn > .8 || P.hn < .2) {
+    const top = P.hn > .8, sp = top ? (P.hn - .8) / .2 : (.2 - P.hn) / .2;
+    const h = (.12 + sp * .88) * F.jet * H, w = .025 * H * (1 + sp * 1.5);
+    const a = P.an + t * F.spin * 2;
+    return out.set(Math.sin(a) * w, cy + (top ? h : -h), Math.cos(a) * w);
+  }
+  const rn = (P.hn - .2) / .6, r = (.15 + rn * .85) * F.disc * H;
+  const a = P.an + t * F.spin * (1.4 / (.35 + rn));               // inner rings turn faster
+  const th = (Math.sin(P.s * 5.3)) * .03 * H * (1 - rn * .6);       // thin, and thinnest at the rim
+  return out.set(Math.sin(a) * r, cy + th, Math.cos(a) * r);
 }
 function flubOff() {
   FL.live = 0;
@@ -21390,11 +21471,11 @@ function flubMorph(u, dt) {
   flubPose(model);
   _flInv.copy(rig.root.matrixWorld).invert();
   const S = surgeMeshes(model);
-  // the nebula's strength: up out of the peel, held to the swap, down into the landing
-  const neb = smooth(F.peel * .5, at, u) * (1 - smooth(at, F.land, u));
+  // INTO the form over the peel and up to the swap, OUT of it onto the new body after
+  const form = smooth(F.peel * .35, at * .9, u);
   const pull = smooth(at, F.land, u);
+  const peak = form * (1 - pull);
   const fade = 1 - smooth(F.land, 1, u);
-  const T = FL.t * F.churn, k = F.freq;
   const ca = FL.inst.instanceColor.array;
   for (let i = 0; i < FL.P.length; i++) {
     const P = FL.P[i];
@@ -21402,26 +21483,21 @@ function flubMorph(u, dt) {
       if (u < P.at || !S || FL.sw) { FL.inst.setMatrixAt(i, _flM.makeScale(0, 0, 0)); continue; }
       const q = flubPick(S), vi = (Math.random() * q.n) | 0;
       flubAt(q.sm, vi, _flA).applyMatrix4(_flInv);          // anchored in his frame
-      P.a.copy(_flA); flubColor(q.sm, vi, P.ca); P.born = 1;
+      P.a.copy(_flA); flubColor(q.sm, vi, P.ca); P.born = 1; P.hn = undefined;
+      if (_flA.y < FL.lo) FL.lo = _flA.y; if (_flA.y > FL.hi) FL.hi = _flA.y;
     }
-    // THE FIELD: three crossed low-frequency sines of the anchor, moving -- lobes, not jitter
-    const ax = P.a.x, ay = P.a.y, az = P.a.z, s = P.s;
-    const dx = Math.sin(ay * k + T + s) * Math.cos(az * k * .7 - T * .6) + ax * 1.6;
-    const dy = Math.sin(az * k * .8 + T * 1.3 + s * 1.7) * .7 + F.rise / Math.max(.01, F.amp);
-    const dz = Math.cos(ax * k * .9 - T * .8 + s * .5) * Math.sin(ay * k * .6 + T) + az * 1.6;
-    _flA.set(ax + dx * F.amp * neb, ay + dy * F.amp * neb, az + dz * F.amp * neb);
-    if (pull > 0 && P.tm) {
-      flubAt(P.tm, P.ti, _flB).applyMatrix4(_flInv);
-      _flA.lerp(_flB, pull);
-    }
+    if (P.hn === undefined && u > F.peel) flubKey(P);
+    if (P.hn !== undefined) { flubForm(P, _flB, FL.t); _flA.copy(P.a).lerp(_flB, form); }
+    else _flA.copy(P.a);
+    if (pull > 0 && P.tm) { flubAt(P.tm, P.ti, _flB).applyMatrix4(_flInv); _flA.lerp(_flB, pull); }
     _flA.applyMatrix4(rig.root.matrixWorld);
-    const sz = F.size * fade * (.7 + .6 * ((P.s * 7.13) % 1)) * (1 + neb * .6);
-    P.r += F.spin * neb * dt;
+    const sz = F.size * fade * (.75 + .5 * ((P.s * 7.13) % 1));
+    P.r += F.tumble * peak * dt;
     _flQ.setFromEuler(_flE.set(P.r, P.r * 1.3 + P.s, P.r * .7));
     FL.inst.setMatrixAt(i, _flM.compose(_flA, _flQ, _flS.set(sz, sz, sz)));
     const c = FL.c.copy(P.ca);
-    if (P.tm) c.lerp(P.cb, smooth(at - .08, F.land, u));
-    const g = 1 + F.glow * neb;
+    if (P.tm) c.lerp(P.cb, pull);
+    const g = 1 + F.glow * peak;
     ca[i * 3] = c.r * g; ca[i * 3 + 1] = c.g * g; ca[i * 3 + 2] = c.b * g;
   }
   FL.inst.visible = true;
@@ -25510,10 +25586,15 @@ const TUNE = [
   ['flubber length', FLUB, 'dur',   .6, 5, .05],
   ['flubber voxels', FLUB, 'n',     200, 3000, 50, 'flub'],
   ['voxel size',     FLUB, 'size', .02, .2, .005],
-  ['nebula size',    FLUB, 'amp',    0, 4, .05],
-  ['nebula lumps',   FLUB, 'freq', .5, 12, .1],
-  ['nebula churn',   FLUB, 'churn',  0, 20, .25],
-  ['nebula glow',    FLUB, 'glow',   0, 3, .05],
+  ['form 0 quasar 1 flubber', FLUB, 'shape', 0, 1, 1],
+  ['form size',      FLUB, 'scale', .2, 3, .05],
+  ['quasar disc',    FLUB, 'disc',  .05, 1.5, .01],
+  ['quasar jets',    FLUB, 'jet',   .05, 2, .01],
+  ['flubber arms',   FLUB, 'arms',  2, 16, 1],
+  ['flubber reach',  FLUB, 'reach', .05, 1.5, .01],
+  ['spin',           FLUB, 'spin',  0, 12, .1],
+  ['wobble',         FLUB, 'churn', 0, 20, .25],
+  ['glow',           FLUB, 'glow',  0, 3, .05],
   ['glow (0 solid)', FLUB, 'add',    0, 1, 1, 'flub'],
   ['aura on me',  SURGE, 'self',   0, 1, 1],
   ['length',      SURGE, 'dur',   .5, 4, .05],
