@@ -7,6 +7,27 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **AN EVEN COAT, AND THE POP (m253, `flubSample`, `flubArea`, `flubPop`, `FLUB.shape` 3).** *"They don't
+  spawn over his whole body -- cover it much more evenly. They should pop out more or less at once, an
+  impulse, shoot out into the stretched quasar with Flubber strands, stretch, then elastically shoot back
+  to the centre, and the whole form elongates into the new character -- or squashes, taller or shorter."*
+  **A RANDOM VERTEX IS NOT A RANDOM POINT ON THE SKIN.** A face and hands carry far more vertices per m^2
+  than a jacket, so the voxels piled on the head and extremities. `flubSample` picks a TRIANGLE BY AREA
+  (cumulative table per mesh, built once off the bind pose), a uniform barycentric point in it, skins its
+  three corners and blends them, and reads the colour at the blended UV. Three bone transforms a sample,
+  so it runs at a voxel's BIRTH and once at the SWAP only. The landing spots are now STATIC in `rig.root`'s
+  frame, taken at the swap -- the body is hidden under the cloud, so half a second of pose drift is
+  invisible, and the per-frame cost of the landing is gone. `FLUB NOTEX` in the chip if a skin's texture
+  cannot be read (the voxels would then be the material colour).
+  **THE POP** (default): every voxel born inside `popBorn` (.03 of `u`, ~4 frames) -> each springs,
+  over-running, from its skin spot into the form (the quasar for most, the rubber's arms+balls -- new every
+  time -- for the skin facing one) -> the jets and arms keep stretching (`stretch`) -> `popSnap` before the
+  swap the whole form springs to a point at his middle -> from that point onto the new skin on a spring
+  whose vertical and horizontal scale wobble OPPOSITE ways, harder the more the heights differ (stretch if
+  taller, squash if shorter), the pivot sliding to his FEET so it reaches up rather than through the
+  floor. Probed headless, old 1.7 m body -> new 2.2 m: 1800 born by u .03, burst to 1.8 m, collapsed to a
+  0.01 m point at .61, reformed feet-planted with a 23% stretch over-run, settled, cleared. `dur` 2.2 s.
+
 - **MOUSSA IS ON THE STREET (m252, `MOUSSA`).** Shredworld's `moussa_toon.glb` as `models/characters/moussa.glb`:
   Colin's rig family and Colin's 48 clip NAMES, re-drawn for his proportions, so he is a Colin row on his
   own clips (biker hit reactions borrowed, same as Colin). Measured off HIS file, not copied: walk 1.414,
