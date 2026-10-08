@@ -7,6 +7,18 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE ROCKET WAS BEING STEERED BY THE BOLT'S HOMING (m258, `ROCKET.home`, `boltHome`).** *"The rocket flies
+  tilted and the fire is no longer at its butt... we never edited the rocket, it just got messed up."* He is
+  right that the rocket never changed: `rocketBody`/`rocketFace` are m189 exactly, and `stepBolts` calls
+  `boltHome` on EVERY bolt, rockets included -- curving it toward the straightest body in its cone at chest
+  height, with a lead. That was mostly invisible while the street round the spawn was empty; m242..m252
+  stood three pacifists there and Clancy was always beside you, so most rockets now bend mid-flight. A body
+  turning under you reads from behind as flying sideways to its path with the flame off to one side, and
+  `rocketFace` follows the bend, so the smoke curves away from the nose. Rockets fly straight now
+  (`ROCKET.home` 0; tune -> ROCKET), and homing NEVER steers a shot into `K.pal` -- he dives out of your
+  line of fire (`palDive`), and a bolt that bends into him undoes that. **What changed was the world round
+  the code, not the code** -- worth suspecting first when "nobody touched it" is true.
+
 - **THE RETICLE'S NEON IS DRAWN, NOT FILTERED (m257, `#retic circle.g`, `.fglow`).** *"Sometimes the aimer has
   a weird square texture over it instead of the concentric circles."* His screenshot: a square of speckled
   noise where the rings should be. The glow was two CSS `drop-shadow`s on the WHOLE element, over five
