@@ -561,10 +561,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m263</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m264</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m263</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m264</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -630,7 +630,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm263';
+const BUILD = 'm264';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -6677,6 +6677,44 @@ if (inTest()) buildStreets();
 // **AND IT RETURNS TWO ANSWERS BY CONSTRUCTION, WHICH IS WHY A DECK WORKS.** The highest
 // surface at or a step above his feet: standing under the freeway that is the road at 0.16,
 // standing on it that is the deck at 11. One rule, no case for a bridge.
+// THE ISLAND'S STATE (m264) -- declared HERE, above `groundAt`, which reads it on every call. The
+// rest of it lives with `buildIsle`. A `const` read above its own declaration is a blank page.
+const ISLE = {
+  on: 1,
+  live: 0,
+  sea: -1.15,         // the water's surface. The city is at 0, so the shore is a real drop
+  seg: 520,           // rays round the coast
+  seed: 7,
+  margin: 2.5,        // how far INSIDE the city's edge the land begins, hidden under it
+  grass: [5, 12],     // the berm's width, a range the noise picks from
+  bermH: [.3, 1.4],   // how raised the edge is -- and a rocky stretch adds `rockUp` on top
+  rockUp: 1.2,
+  beach: [10, 22],    // a beach, crest to the waterline
+  cliff: 2.6,         // a cliff
+  rocky: [.52, .70],  // the noise band over which sand turns to rock
+  deep: .85,          // how far under the surface before the sea puts him back
+  safeT: .35, safeR: 2.6,
+  camClear: .7,       // the lens is never let under the surface
+  // ---- the water
+  wave: 1, glint: 1, foam: 1, clear: 1, far: 1800,
+  deepCol: 0x0b4a74, shallowCol: 0x37c2c4, foamCol: 0xf2fbff,
+  // ---- the land: his own painted grass, dirt and stone, tinted (linear multipliers)
+  grassT: [1, 1, 1], sandT: [1.55, 1.36, 1.02], rockT: [.8, .84, .9],
+  tex: 4.5,           // metres per texture tile
+  rocks: 70,          // boulders in the shallows and at the foot of the cliffs
+  // ---- state
+  rect: null, land: null, water: null, rockM: null, lmat: null, wmat: null,
+  safe: null, safeTk: 0, splashes: 0, t: 0, tris: 0, texN: 0, rays: null,
+};
+const isleWorld = () => !!ISLE.on && (inTK() || inTC());
+const seaY = () => ISLE.live ? ISLE.sea : 0;
+// the floor at zero, everywhere it still means something
+function gFloor0(x, z) {
+  const R = ISLE.rect;
+  if (!ISLE.live || !R) return 0;
+  return (x < R[0] || x > R[1] || z < R[2] || z > R[3]) ? -1e3 : 0;
+}
+
 // TRICOL:START
 const TRI = { on: 0, cell: 4, up: .5, x0: 0, z0: 0, nx: 0, nz: 0, grid: null, v: null, n: 0 };
 const _triRaw = [];
@@ -7018,7 +7056,8 @@ const _bnpF = { d: 0, nx: 0, nz: 0, cx: 0, cz: 0 };
 // are the same question asked of two stores -- and `triGround` returning -1e30 for "no ground
 // here" rather than 0 is what leaves the floor at zero doing its job off the edge of the slice.
 function groundAt(x, z, y, step) {
-  let best = 0;
+  // outside the city on the island there is no floor at zero -- the sea is not glass (m264)
+  let best = ISLE.live ? gFloor0(x, z) : 0;
   if (TRI.on) { const t = triGround(x, z, y, step); if (t > best) best = t; }
   for (const b of boxesNear(x, x, z, z, _bnG)) {
     if (x < b.minx || x > b.maxx || z < b.minz || z > b.maxz) continue;
@@ -11265,7 +11304,8 @@ function stepBolts(dt) {
           b.hitAt = [_hitF.x, _hitF.y, _hitF.z];
           b.pos.set(_hitF.x + _hitF.nx * WEAP.boltR, _hitF.y + _hitF.ny * WEAP.boltR,
                     _hitF.z + _hitF.nz * WEAP.boltR);
-        } else if (b.pos.y < 0) { dead = true; b.hitN = [0, 1, 0]; b.hitBox = null; b.hitAt = null; }
+        } else if (b.pos.y < seaY()) { dead = true; b.hitN = [0, 1, 0]; b.hitBox = null; b.hitAt = null;
+          if (ISLE.live && gFloor0(b.pos.x, b.pos.z) < 0) isleSplash(b.pos.x, b.pos.z, .4); }
       }
     }
     if (!dead && DECAL.trail.on && !b.virus && !b.dna && !b.rocket) boltTrail(b);
@@ -19253,7 +19293,7 @@ function buildTCity(g) {
   // ---- 4. THE GROUND. A plane, and it is the whole of the collider: `groundAt` returns 0 with
   //      `TRI.on` false and `BOXES` empty, so what makes this walkable is that nothing was
   //      built. `groundY` sits it a hair under zero so his own asphalt wins the depth test.
-  if (TCITY.plane) {
+  if (TCITY.plane && !isleWorld()) {
     const gp = new THREE.Mesh(new THREE.PlaneGeometry(TCITY.plane, TCITY.plane),
                               new THREE.MeshStandardMaterial({ color: TCITY.groundCol, roughness: .95, metalness: 0 }));
     gp.rotation.x = -Math.PI / 2; gp.position.y = TCITY.groundY;
@@ -19270,6 +19310,481 @@ function buildTCity(g) {
     merged + ' merged buckets from ' + mergedN + ' meshes' +
     (lost ? ', ' + lost + ' REFUSED' : '') + '  ->  DRAW CALLS ' + drew0 + ' -> ' + draws);
   if (lost) note('TC ' + lost + ' NOMERGE');
+}
+
+// ============================================================================================
+// THE ISLAND (m264, `ISLE`, `buildIsle`, `isleStep`, `isleSplash`)
+//
+// *"Turn Weirdport into an island -- water around it, the edges irregular and kind of raised, a
+// shore and a seashore, and nice water shaders so the edges aren't just nothing."*
+//
+// **THE COAST IS GROWN OUT OF THE CITY'S OWN EDGE, NOT TYPED.** The rectangle is MEASURED off
+// the ground-level collider triangles at build time (the kit city reads x -93.5..90.7, z
+// -90.5..93.5), and every one of `seg` rays from its middle carries a PROFILE outward from where
+// it leaves that rectangle: a grass berm rising to a raised crest, then either a sand beach
+// running down under the water or a rock cliff dropping straight into it, then a shelf falling
+// away to the seabed. A periodic noise over the angle picks every number on that profile, so the
+// coast wanders and nothing about it is a circle.
+//
+// **ONE GRID, THREE USES, WHICH IS THE WHOLE REASON IT IS DONE THIS WAY.** The same (angle,
+// distance) grid is (1) the LAND mesh, (2) the floor TRIANGLES in `TRI` and `SURF`, so he walks
+// on exactly what is drawn and a bolt stops on it, and (3) the WATER mesh, whose every vertex
+// carries the seabed's depth under it -- which is what the foam, the shallow colour and the
+// clarity read, with no depth texture and no post pass (this game has neither).
+//
+// **THE LAND STARTS INSIDE THE CITY'S EDGE, UNDER IT.** `margin` metres in, at y -0.06, so his
+// asphalt and lots (all at or above 0) win the depth test and the seam is under a surface.
+// **AND OUTSIDE THE RECTANGLE THE "FLOOR AT ZERO" IS GONE** (`gFloor0`) -- otherwise the sea is
+// a sheet of glass at y 0 he can walk across. Inside it the old floor stays exactly as it was.
+//
+// **THE SEA IS THE "DON'T FALL"**, Rollergirl's rule ported as a rule, not as code: deeper than
+// `deep` under the surface and he is put back where he last stood on dry land, with a splash.
+// The safe spot is saved only where the ground `safeR` out in all four directions is dry, so a
+// put-back can never land him on the brink he just went over.
+// (`ISLE` itself is declared up beside `TRI`, because `groundAt` reads it -- see there)
+
+// a periodic noise over the angle, so the coast closes on itself with no seam
+function isleNoise(seed) {
+  let s = (seed * 7919 + 13) % 233280;
+  const rnd = () => (s = (s * 9301 + 49297) % 233280) / 233280;
+  const H = []; let norm = 0;
+  for (let h = 2; h <= 22; h++) { const a = (.45 + .55 * rnd()) / Math.pow(h, 1.1); H.push([h, rnd() * Math.PI * 2, a]); norm += a; }
+  return th => {
+    let v = 0;
+    for (const q of H) v += Math.sin(q[0] * th + q[1]) * q[2];
+    return clamp(.5 + 1.25 * v / norm, 0, 1);
+  };
+}
+
+// the profile along one ray: [s, y, grass, sand, rock], s metres past the city's edge
+function isleProfile(th, N) {
+  const I = ISLE, sea = I.sea;
+  const n1 = N[0](th), n2 = N[1](th), n3 = N[2](th), n4 = N[3](th);
+  const k = ss01(I.rocky[0], I.rocky[1], n1);                 // 0 sand .. 1 rock
+  const hb = lerp(I.bermH[0], I.bermH[1], n3) + k * I.rockUp;
+  // **THE CLIMB FROM THE STREET TO THE CREST MUST STAY A FLOOR.** `triAdd` keeps nothing steeper
+  // than 60 degrees, and past the city's edge a face that is not a floor is a hole straight into
+  // the sea. A cosine rise peaks at pi/2 times its mean slope, so the crest is set back far
+  // enough to hold that peak near 35 degrees whatever the berm's height.
+  const cs = Math.max(lerp(I.grass[0], I.grass[1], n2) * .55, 1.6 + hb * 2.2);
+  const wb = cs + 2.5 + 3 * n2;
+  const ws = lerp(lerp(I.beach[0], I.beach[1], n4), I.cliff, k);
+  const m = I.margin;
+  return [
+    [-m, -.06, 1, 0, 0, 1],
+    [0, -.02, 1, 0, 0, 2],
+    [1.6, .08, 1, 0, 0, 2],
+    [cs, hb, 1, 0, 0, 3],
+    [wb, hb * .93, .5, .5 * (1 - k), .5 * k, 3],
+    [wb + ws * .5, lerp(sea + .6, sea + .9 + hb * .25, k), .04, 1 - k, k, 4],
+    [wb + ws, sea - .45, 0, (1 - k) * .92, .08 + .92 * k, 5],
+    [wb + ws + 7, sea - 2.2, 0, (1 - k) * .65, .35 + .65 * k, 4],
+    [wb + ws + 20, sea - 6, 0, .35 * (1 - k), .65 + .35 * k, 3],
+    [wb + ws + 42, sea - 13, 0, .12, .88, 2],
+    [wb + ws + 80, sea - 24, 0, 0, 1, 2],
+  ];
+}
+// expand the control points into the fixed radial samples every ray shares
+function isleSamples(P) {
+  const out = [];
+  for (let i = 0; i < P.length - 1; i++) {
+    const a = P[i], b = P[i + 1], n = b[5];
+    for (let j = 0; j < n; j++) {
+      const u = j / n, e = .5 - .5 * Math.cos(Math.PI * u);   // cosine in height, so the crest is round
+      out.push([lerp(a[0], b[0], u), lerp(a[1], b[1], e), lerp(a[2], b[2], u), lerp(a[3], b[3], u), lerp(a[4], b[4], u)]);
+    }
+  }
+  const L = P[P.length - 1]; out.push([L[0], L[1], L[2], L[3], L[4]]);
+  return out;
+}
+
+// the city's ground-level rectangle, measured off what the collider actually holds
+function isleRect() {
+  const v = TRI.v;
+  if (!v || !v.length) return null;
+  let x0 = 1e30, x1 = -1e30, z0 = 1e30, z1 = -1e30;
+  for (let o = 0; o < v.length; o += 9) {
+    if (Math.max(v[o + 1], v[o + 4], v[o + 7]) > 1.2) continue;     // the ground, not a roof
+    for (let c = 0; c < 9; c += 3) {
+      const x = v[o + c], z = v[o + c + 2];
+      if (x < x0) x0 = x; if (x > x1) x1 = x; if (z < z0) z0 = z; if (z > z1) z1 = z;
+    }
+  }
+  return x1 > x0 ? [x0, x1, z0, z1] : null;
+}
+
+// rebuild a store with extra triangles, keeping what it already holds
+function isleAppend(tris) {
+  if (TRI.v) for (let i = 0; i < TRI.v.length; i++) _triRaw.push(TRI.v[i]);
+  let kept = 0;
+  for (let o = 0; o < tris.length; o += 9)
+    kept += triAdd(tris[o], tris[o + 1], tris[o + 2], tris[o + 3], tris[o + 4], tris[o + 5], tris[o + 6], tris[o + 7], tris[o + 8]);
+  triBuild();
+  if (SURF.v) for (let i = 0; i < SURF.v.length; i++) _surfRaw.push(SURF.v[i]);
+  for (let o = 0; o < tris.length; o += 9)
+    surfAdd(tris[o], tris[o + 1], tris[o + 2], tris[o + 3], tris[o + 4], tris[o + 5], tris[o + 6], tris[o + 7], tris[o + 8]);
+  surfBuild();
+  return kept;
+}
+
+// his textures, found BY MATERIAL NAME on the city that is already loaded
+function isleTex(name) {
+  let t = null;
+  tcRoot.traverse(o => {
+    if (t || !o.isMesh) return;
+    for (const m of (Array.isArray(o.material) ? o.material : [o.material]))
+      if (m && m.name === name && m.map) { t = m.map; break; }
+  });
+  return t;
+}
+let _isleWhite = null;
+function isleWhite() {
+  if (!_isleWhite) { _isleWhite = new THREE.DataTexture(new Uint8Array([255, 255, 255, 255]), 1, 1); _isleWhite.needsUpdate = true; }
+  return _isleWhite;
+}
+
+function isleLandMat() {
+  const I = ISLE;
+  const tg = isleTex('WR_Grass_b'), ts = isleTex('WR_Dirt'), tr = isleTex('WR_Stone');
+  I.texN = (tg ? 1 : 0) + (ts ? 1 : 0) + (tr ? 1 : 0);
+  if (I.texN < 3) note('ISLE ' + I.texN + '/3 TEX');
+  const U = {
+    uG: { value: tg || isleWhite() }, uS: { value: ts || isleWhite() }, uR: { value: tr || isleWhite() },
+    uGT: { value: new THREE.Vector3(...(tg ? I.grassT : [.36, .55, .25])) },
+    uST: { value: new THREE.Vector3(...(ts ? I.sandT : [.86, .74, .52])) },
+    uRT: { value: new THREE.Vector3(...(tr ? I.rockT : [.42, .43, .45])) },
+    uTile: { value: 1 / I.tex }, uSea: { value: I.sea }, uT: { value: 0 },
+    uWet: { value: new THREE.Color(I.shallowCol) },
+  };
+  const m = new THREE.MeshStandardMaterial({ roughness: .96, metalness: 0,
+    polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 2 });
+  m.name = 'isle_land';
+  m.onBeforeCompile = sh => {
+    toonPatch(sh);
+    if (!m.userData.noPaint) paintPatch(sh);
+    Object.assign(sh.uniforms, U);
+    sh.vertexShader = 'attribute vec3 aSplat;\nvarying vec3 vSplat;\nvarying vec3 vIW;\n' +
+      sh.vertexShader.replace('#include <begin_vertex>', '#include <begin_vertex>\n  vSplat = aSplat; vIW = (modelMatrix * vec4(transformed, 1.0)).xyz;');
+    sh.fragmentShader = 'uniform sampler2D uG, uS, uR;\nuniform vec3 uGT, uST, uRT, uWet;\nuniform float uTile, uSea, uT;\n' +
+      'varying vec3 vSplat;\nvarying vec3 vIW;\n' +
+      'float iH(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }\n' +
+      'float iN(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f);\n' +
+      '  return mix(mix(iH(i), iH(i + vec2(1, 0)), f.x), mix(iH(i + vec2(0, 1)), iH(i + vec2(1, 1)), f.x), f.y); }\n' +
+      sh.fragmentShader.replace('#include <map_fragment>', `
+  {
+    vec2 uv = vIW.xz * uTile;
+    vec2 uv2 = vec2(uv.x * .83 - uv.y * .56, uv.x * .56 + uv.y * .83) * .37 + .21;
+    float mixk = .35 + .3 * iN(vIW.xz * .05);
+    vec3 g = mix(texture2D(uG, uv).rgb, texture2D(uG, uv2).rgb, mixk) * uGT;
+    vec3 s = mix(texture2D(uS, uv * .9).rgb, texture2D(uS, uv2 * 1.3).rgb, mixk) * uST;
+    vec3 r = mix(texture2D(uR, uv * .6).rgb, texture2D(uR, uv2 * .8).rgb, mixk) * uRT;
+    vec3 w = max(vSplat, vec3(0.0)); w /= max(w.x + w.y + w.z, 1e-3);
+    vec3 c = g * w.x + s * w.y + r * w.z;
+    c *= .88 + .24 * iN(vIW.xz * .11);
+    // wet just above the waterline, then under it the water's own colour and the caustics
+    float wet = 1.0 - smoothstep(uSea, uSea + .55, vIW.y);
+    c *= 1.0 - .32 * wet;
+    float uw = clamp((uSea - vIW.y) / 2.6, 0.0, 1.0);
+    c = mix(c, c * uWet * 1.4, uw * .8);
+    vec2 cp = vIW.xz * .9;
+    float ca = sin(cp.x * 1.7 + uT * 1.1 + sin(cp.y * 1.3 - uT * .7)) * sin(cp.y * 1.9 - uT * .9 + sin(cp.x * 1.1 + uT * .6));
+    c += vec3(.55, .8, .75) * pow(abs(ca), 4.0) * .5 * uw * (1.0 - smoothstep(2.0, 8.0, uSea - vIW.y));
+    diffuseColor.rgb *= c;
+  }`);
+    m.userData.sh = sh;
+  };
+  m.customProgramCacheKey = () => 'isle_land:' + (m.userData.noPaint ? 0 : 1);
+  m.userData.U = U;
+  return m;
+}
+
+function isleWaterMat() {
+  const I = ISLE;
+  const U = Object.assign(THREE.UniformsUtils.clone(THREE.UniformsLib.fog), {
+    uT: { value: 0 }, uWave: { value: 1 }, uGlint: { value: 1 }, uFoam: { value: 1 }, uClear: { value: 1 },
+    uSun: { value: new THREE.Vector3(.6, .5, .6) }, uSunCol: { value: new THREE.Color(1, .95, .85) },
+    uDeep: { value: new THREE.Color(I.deepCol) }, uShallow: { value: new THREE.Color(I.shallowCol) },
+    uFoamC: { value: new THREE.Color(I.foamCol) },
+    uHor: { value: new THREE.Color(SKY.hor) }, uZen: { value: new THREE.Color(SKY.zen) },
+    uSky: { value: isleWhite() }, uSkyOn: { value: 0 }, uSkyK: { value: 1 }, uSkyRot: { value: 0 },
+  });
+  const m = new THREE.ShaderMaterial({
+    uniforms: U, fog: true, transparent: true, depthWrite: true,
+    vertexShader: `
+attribute float aDepth;
+varying vec3 vW;
+varying float vD;
+#include <common>
+#include <fog_pars_vertex>
+#include <logdepthbuf_pars_vertex>
+void main() {
+  vec4 w = modelMatrix * vec4(position, 1.0);
+  vW = w.xyz; vD = aDepth;
+  vec4 mvPosition = viewMatrix * w;
+  gl_Position = projectionMatrix * mvPosition;
+  #include <logdepthbuf_vertex>
+  #include <fog_vertex>
+}`,
+    fragmentShader: `
+uniform float uT, uWave, uGlint, uFoam, uClear, uSkyOn, uSkyK, uSkyRot;
+uniform vec3 uSun, uSunCol, uDeep, uShallow, uFoamC, uHor, uZen;
+uniform sampler2D uSky;
+varying vec3 vW;
+varying float vD;
+#include <common>
+#include <fog_pars_fragment>
+#include <logdepthbuf_pars_fragment>
+float wH(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+float wN(vec2 p) { vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f);
+  return mix(mix(wH(i), wH(i + vec2(1, 0)), f.x), mix(wH(i + vec2(0, 1)), wH(i + vec2(1, 1)), f.x), f.y); }
+vec2 wv(vec2 p, vec2 d, float k, float w, float a) { return d * (a * k * cos(dot(p, d) * k + uT * w)); }
+void main() {
+  #include <logdepthbuf_fragment>
+  vec2 p = vW.xz;
+  float D = max(vD, 0.0);
+  vec2 g = vec2(0.0);
+  g += wv(p, normalize(vec2(1.0, .3)), .32, 1.05, .11);
+  g += wv(p, normalize(vec2(-.45, 1.0)), .53, 1.45, .065);
+  g += wv(p, normalize(vec2(.7, -.8)), 1.25, 2.25, .028);
+  g += wv(p, normalize(vec2(-.9, -.25)), 2.2, 3.2, .013);
+  float e = .18; vec2 q = p * 1.6 + vec2(uT * .33, -uT * .26);
+  float n0 = wN(q);
+  g += vec2(wN(q + vec2(e, 0.0)) - n0, wN(q + vec2(0.0, e)) - n0) / e * .045;
+  g *= uWave * mix(.45, 1.0, smoothstep(0.0, 2.5, D));
+  vec3 n = normalize(vec3(-g.x, 1.0, -g.y));
+  vec3 V = normalize(cameraPosition - vW);
+  float nv = max(dot(n, V), 0.0);
+  float fr = .02 + .98 * pow(1.0 - nv, 5.0);
+  vec3 R = reflect(-V, n); R.y = abs(R.y);
+  vec3 sky;
+  if (uSkyOn > .5) {
+    float a = atan(R.z, R.x) + uSkyRot;
+    sky = texture2D(uSky, vec2(a * RECIPROCAL_PI2 + .5, asin(clamp(R.y, -1.0, 1.0)) * RECIPROCAL_PI + .5)).rgb * uSkyK;
+  } else sky = mix(uHor, uZen, pow(clamp(R.y, 0.0, 1.0), .45));
+  float dk = 1.0 - exp(-D * .3 / max(uClear, .05));
+  vec3 body = mix(uShallow, uDeep, dk);
+  body += uShallow * .22 * max(0.0, dot(n, uSun)) * (1.0 - dk);
+  vec3 col = mix(body, sky, fr * .9);
+  vec3 H = normalize(uSun + V);
+  float nh = max(dot(n, H), 0.0);
+  col += uSunCol * (pow(nh, 240.0) * 5.0 + pow(nh, 28.0) * .18) * uGlint;
+  // THE FOAM: a line where the water meets the land, and the swell rolling in toward it
+  float fn = wN(p * .85 + vec2(uT * .21, uT * .14)) * .6 + wN(p * 2.6 - uT * .3) * .4;
+  float shore = 1.0 - smoothstep(0.0, .32 + fn * .38, D);
+  float roll = sin(D * 3.1 - uT * 1.65 + fn * 2.6);
+  float band = smoothstep(.70, .97, roll) * (1.0 - smoothstep(.15, 2.0, D)) * smoothstep(0.0, .06, D);
+  float foam = clamp((shore + band * .85) * (.5 + .75 * fn), 0.0, 1.0) * uFoam;
+  foam = smoothstep(.22, .72, foam);
+  col = mix(col, uFoamC, foam * .92);
+  float alpha = mix(.42, .97, smoothstep(0.0, 3.2 * uClear, D));
+  alpha = max(max(alpha, foam * .95), fr * .75);
+  gl_FragColor = vec4(col, alpha);
+  #include <tonemapping_fragment>
+  #include <colorspace_fragment>
+  #include <fog_fragment>
+}`,
+  });
+  m.name = 'isle_water';
+  return m;
+}
+
+function buildIsle() {
+  const I = ISLE;
+  I.live = 0;
+  if (!isleWorld()) return;
+  const R = isleRect();
+  if (!R) { note('ISLE NO RECT'); return; }
+  I.rect = R;
+  const cx = (R[0] + R[1]) / 2, cz = (R[2] + R[3]) / 2, hx = (R[1] - R[0]) / 2, hz = (R[3] - R[2]) / 2;
+  const Ns = [isleNoise(I.seed), isleNoise(I.seed + 1), isleNoise(I.seed + 2), isleNoise(I.seed + 3)];
+  const S = I.seg;
+  let M = 0;
+  const rays = [];
+  for (let i = 0; i < S; i++) {
+    const th = i / S * Math.PI * 2, dx = Math.cos(th), dz = Math.sin(th);
+    const rb = Math.min(hx / Math.max(Math.abs(dx), 1e-6), hz / Math.max(Math.abs(dz), 1e-6));
+    const smp = isleSamples(isleProfile(th, Ns));
+    M = smp.length;
+    rays.push({ dx, dz, rb, smp });
+  }
+  I.rays = rays;
+  // ---- the land: one grid, (S rays) x (M samples), closed round the angle
+  const pos = new Float32Array(S * M * 3), spl = new Float32Array(S * M * 3);
+  for (let i = 0; i < S; i++) {
+    const r = rays[i];
+    for (let j = 0; j < M; j++) {
+      const q = r.smp[j], o = (i * M + j) * 3, d = r.rb + q[0];
+      pos[o] = cx + r.dx * d; pos[o + 1] = q[1]; pos[o + 2] = cz + r.dz * d;
+      spl[o] = q[2]; spl[o + 1] = q[3]; spl[o + 2] = q[4];
+    }
+  }
+  const idx = [], tris = [];
+  for (let i = 0; i < S; i++) {
+    const i2 = (i + 1) % S;
+    for (let j = 0; j < M - 1; j++) {
+      const a = i * M + j, b = i * M + j + 1, c = i2 * M + j + 1, d = i2 * M + j;
+      // wound so the faces look UP: from the ray outward, then round the angle
+      idx.push(a, b, c, a, c, d);
+      for (const t of [[a, b, c], [a, c, d]])
+        for (const v of t) tris.push(pos[v * 3], pos[v * 3 + 1], pos[v * 3 + 2]);
+    }
+  }
+  // the winding is DERIVED, not trusted: a face that came out pointing down is turned over
+  {
+    const A = tris;
+    const ux = A[3] - A[0], uz = A[5] - A[2], vx = A[6] - A[0], vz = A[8] - A[2];
+    if (uz * vx - ux * vz < 0) {
+      for (let k = 0; k < idx.length; k += 3) { const t = idx[k + 1]; idx[k + 1] = idx[k + 2]; idx[k + 2] = t; }
+      for (let k = 0; k < tris.length; k += 9) for (let c = 0; c < 3; c++) { const t = tris[k + 3 + c]; tris[k + 3 + c] = tris[k + 6 + c]; tris[k + 6 + c] = t; }
+    }
+  }
+  const lg = new THREE.BufferGeometry();
+  lg.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  lg.setAttribute('aSplat', new THREE.BufferAttribute(spl, 3));
+  lg.setIndex(idx);
+  lg.computeVertexNormals();
+  lg.computeBoundingSphere();
+  I.lmat = isleLandMat();
+  const land = I.land = new THREE.Mesh(lg, I.lmat);
+  land.name = 'isle_land'; land.receiveShadow = true; land.castShadow = false;
+  land.userData.noHole = 1;
+  scene.add(land);
+  // ---- the collider: the same triangles he sees
+  I.tris = isleAppend(tris);
+  // ---- the water: the same grid where the bed is near or under the surface, plus a skirt to the horizon
+  // from the CREST outward: inside it the land is above the sea everywhere, so water there would
+  // be drawn and never seen. The crest is the fourth control point (1 + 2 + 2 samples in).
+  const j0 = 5;
+  const W = M - j0 + 1;                                  // + the skirt ring
+  const wp = new Float32Array(S * W * 3), wd = new Float32Array(S * W);
+  for (let i = 0; i < S; i++) {
+    const r = rays[i];
+    for (let j = 0; j < W; j++) {
+      const o = i * W + j;
+      let d, bed;
+      if (j < W - 1) { const q = r.smp[j0 + j]; d = r.rb + q[0]; bed = q[1]; }
+      else { d = I.far; bed = I.sea - 40; }
+      wp[o * 3] = cx + r.dx * d; wp[o * 3 + 1] = I.sea; wp[o * 3 + 2] = cz + r.dz * d;
+      wd[o] = I.sea - bed;
+    }
+  }
+  const widx = [];
+  for (let i = 0; i < S; i++) {
+    const i2 = (i + 1) % S;
+    for (let j = 0; j < W - 1; j++) {
+      const a = i * W + j, b = i * W + j + 1, c = i2 * W + j + 1, d = i2 * W + j;
+      widx.push(a, b, c, a, c, d);
+    }
+  }
+  {
+    const a = widx[0] * 3, b = widx[1] * 3, c = widx[2] * 3;
+    const ux = wp[b] - wp[a], uz = wp[b + 2] - wp[a + 2], vx = wp[c] - wp[a], vz = wp[c + 2] - wp[a + 2];
+    if (uz * vx - ux * vz < 0) for (let k = 0; k < widx.length; k += 3) { const t = widx[k + 1]; widx[k + 1] = widx[k + 2]; widx[k + 2] = t; }
+  }
+  const wg = new THREE.BufferGeometry();
+  wg.setAttribute('position', new THREE.BufferAttribute(wp, 3));
+  wg.setAttribute('aDepth', new THREE.BufferAttribute(wd, 1));
+  wg.setIndex(widx);
+  wg.computeBoundingSphere();
+  I.wmat = isleWaterMat();
+  const water = I.water = new THREE.Mesh(wg, I.wmat);
+  water.name = 'isle_water'; water.renderOrder = -1; water.frustumCulled = false;
+  water.userData.noHole = 1;
+  scene.add(water);
+  // ---- the boulders: in the shallows and at the foot of the rock stretches. Picture only.
+  if (I.rocks > 0) {
+    const geo = new THREE.IcosahedronGeometry(1, 0);
+    const tr = isleTex('WR_Stone');
+    const rm = new THREE.MeshStandardMaterial({ map: tr || null, color: tr ? 0x9aa0a8 : 0x6c6f74, roughness: .95, flatShading: true });
+    rm.name = 'isle_rock';
+    const inst = I.rockM = new THREE.InstancedMesh(geo, rm, I.rocks);
+    const mt = new THREE.Matrix4(), qq = new THREE.Quaternion(), sc = new THREE.Vector3(), pp = new THREE.Vector3(), eu = new THREE.Euler();
+    let seed = I.seed * 977 + 3;
+    const rnd = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+    let n = 0;
+    for (let tries = 0; n < I.rocks && tries < I.rocks * 20; tries++) {
+      const i = Math.floor(rnd() * S), r = rays[i];
+      const rocky = r.smp.some(q => q[4] > .6 && q[1] > I.sea - .5 && q[1] < I.sea + 1);
+      if (!rocky && rnd() > .25) continue;
+      // somewhere from the waterline out into the shallows
+      let jw = 0;
+      for (let j = 0; j < M; j++) if (r.smp[j][1] < I.sea + .2) { jw = j; break; }
+      const j = Math.min(M - 1, jw + Math.floor(rnd() * 3));
+      const q = r.smp[j], d = r.rb + q[0] + (rnd() - .4) * 3;
+      const s = .5 + rnd() * (rocky ? 1.9 : 1.0);
+      pp.set(cx + r.dx * d, q[1] + s * .25, cz + r.dz * d);
+      qq.setFromEuler(eu.set(rnd() * 6, rnd() * 6, rnd() * 6));
+      sc.set(s * (1 + rnd() * .6), s * (.55 + rnd() * .4), s * (1 + rnd() * .5));
+      inst.setMatrixAt(n++, mt.compose(pp, qq, sc));
+    }
+    inst.count = n;
+    inst.instanceMatrix.needsUpdate = true;
+    inst.castShadow = false; inst.receiveShadow = true; inst.frustumCulled = false;
+    inst.userData.noHole = 1;
+    scene.add(inst);
+  }
+  I.live = 1;
+  console.log('[melee] island: rect ' + R.map(v => v.toFixed(1)).join(',') + ', ' + S + ' rays x ' + M +
+              ' samples, ' + I.tris + ' floor tris into the collider, ' + I.texN + '/3 of his textures, water ' +
+              (S * W) + ' verts, sea at ' + I.sea);
+}
+
+// the sea's splash: his own water drops, thrown up in a crown
+function isleSplash(x, z, k = 1) {
+  const n = Math.round(60 * k), y = ISLE.sea + .05;
+  for (let i = 0; i < n; i++) {
+    const a = Math.random() * Math.PI * 2, r = Math.random();
+    const up = (3.5 + Math.random() * 4.5) * (.6 + .4 * k), out = (.6 + r * 2.4) * (.6 + .4 * k);
+    watAt(x + Math.cos(a) * r * .5 * k, y, z + Math.sin(a) * r * .5 * k, Math.cos(a) * out, up, Math.sin(a) * out,
+          .14 * k + .06, .34 * k + .1, 1.0 + Math.random() * .5, SPOUT.alpha * (.7 + Math.random() * .3), y - .05);
+  }
+}
+
+// put him back on the last dry ground he stood on
+function islePutBack() {
+  const p = player, S = ISLE.safe;
+  isleSplash(p.pos.x, p.pos.z, 1);
+  ISLE.splashes++;
+  if (S) p.pos.set(S.x, S.y + .05, S.z);
+  else { const sp = inTK() ? KCITY.spawn : TCITY.spawn; p.pos.set(sp[0], .3, sp[1]); }
+  p.vel.set(0, 0, 0); p.speed = 0; p.grounded = false; p.airT = 0; p.jumps = 0; p.coyote = 0;
+  cam.pos.set(0, 0, 0);                    // `stepCam` snaps a zeroed lens straight to its place
+  snd('swoosh', { r: .62, g: .38 });
+}
+
+const _isP = new THREE.Vector3();
+function isleStep(dt) {
+  const I = ISLE;
+  if (!I.live) return;
+  I.t += dt;
+  const p = player;
+  // ---- the sea's rule
+  if (p.pos.y < I.sea - I.deep && !p.climb) { islePutBack(); }
+  else if (p.grounded && p.pos.y > I.sea + .3 && !p.knock) {
+    I.safeTk -= dt;
+    if (I.safeTk <= 0) {
+      I.safeTk = I.safeT;
+      const r = I.safeR, y = p.pos.y, lim = I.sea + .3;
+      if (groundAt(p.pos.x + r, p.pos.z, y, 1) > lim && groundAt(p.pos.x - r, p.pos.z, y, 1) > lim &&
+          groundAt(p.pos.x, p.pos.z + r, y, 1) > lim && groundAt(p.pos.x, p.pos.z - r, y, 1) > lim)
+        (I.safe || (I.safe = new THREE.Vector3())).copy(p.pos);
+    }
+  }
+  // ---- the shaders
+  const U = I.wmat.uniforms;
+  U.uT.value = I.t; U.uWave.value = I.wave; U.uGlint.value = I.glint; U.uFoam.value = I.foam; U.uClear.value = I.clear;
+  _isP.copy(_sunOff).normalize(); U.uSun.value.copy(_isP);
+  U.uSunCol.value.copy(sun.color).multiplyScalar(sun.intensity * .45);
+  U.uDeep.value.setHex(I.deepCol); U.uShallow.value.setHex(I.shallowCol); U.uFoamC.value.setHex(I.foamCol);
+  U.uHor.value.setHex(SKY.hor); U.uZen.value.setHex(SKY.zen);
+  const bg = scene.background;
+  if (bg && bg.isTexture) {
+    U.uSky.value = bg; U.uSkyOn.value = 1; U.uSkyK.value = scene.backgroundIntensity == null ? 1 : scene.backgroundIntensity;
+    U.uSkyRot.value = scene.backgroundRotation ? scene.backgroundRotation.y : 0;
+  } else U.uSkyOn.value = 0;
+  const LU = I.lmat.userData.U;
+  LU.uT.value = I.t; LU.uSea.value = I.sea; LU.uTile.value = 1 / I.tex;
+  LU.uWet.value.setHex(I.shallowCol);
 }
 
 // ============================================================================================
@@ -25860,7 +26375,8 @@ function stepCam(dt) {
   cam.pos.z = damp(cam.pos.z, wz, CAM.half, dt);
   // the floor under the LENS, capped at how far it may sit above the subject -- that cap is
   // what stops the camera being left standing on the box he has just dropped off
-  const floor = groundAt(cam.pos.x, cam.pos.z, cam.pos.y, .6) + CAM.clear;
+  let floor = groundAt(cam.pos.x, cam.pos.z, cam.pos.y, .6) + CAM.clear;
+  if (ISLE.live) floor = Math.max(floor, ISLE.sea + ISLE.camClear);     // never under the sea (m264)
   cam.pos.y = Math.max(cam.pos.y, Math.min(floor, cam.tgt.y + CAM.rise));
   camera.position.copy(cam.pos);
   // THE KNOCK. `A` is metres at the peak and decays on its own half-life; the vertical is the
@@ -26421,6 +26937,12 @@ const TUNE = [
   ['white-hot',   SURGE, 'hot',    0, 1, .05],
   ['ROCKET'],
   ['homing (0 straight)', ROCKET, 'home', 0, 1, 1],
+  ['ISLAND (sea)'],
+  ['waves',          ISLE, 'wave',   0, 3, .05],
+  ['sun glint',      ISLE, 'glint',  0, 3, .05],
+  ['foam',           ISLE, 'foam',   0, 2, .05],
+  ['clarity',        ISLE, 'clear',  .2, 4, .05],
+  ['shore tex (m/tile)', ISLE, 'tex', 1, 12, .25],
   ['BLADES (as her)'],
   ['top speed',      BLADE, 'top',    12, 32, .5],
   ['stride kick',    BLADE, 'pushV',  1, 10, .1],
@@ -26621,6 +27143,7 @@ function frameBody() {
     stepAim(dt);          // one eased answer, before anything reads it
     stepKit(dt);
     stepPlayer(dt);
+    isleStep(dt);         // the sea's rule, right after he moved (m264)
     _pt = pT('plyr', _pt);
     // AFTER HIM, because the deck is drawn where he ENDED UP -- read before `stepPlayer` it is
     // a board trailing the man standing on it by a frame, which at 13 m/s is 22 cm.
@@ -26879,7 +27402,8 @@ function frameBody() {
     // the optimisation did nothing" and "it loaded and it is slow anyway" are three bugs and
     // one picture from a phone, and the only thing that separates the first two is a number.
     const tc = (inTC() || inTK()) ? ' · TC' + (TCITY.draws === undefined ? '?' : TCITY.draws) + 'd/' +
-      TRI.n + 't/' + BOXES.length + 'b' : '';
+      TRI.n + 't/' + BOXES.length + 'b' +
+      (ISLE.live ? ' · ISLE' + ISLE.texN + (ISLE.splashes ? ' SPL' + ISLE.splashes : '') : '') : '';
     const wp = inWP() ? ' · WP' + TRI.n + 't/' + BOXES.length + 'b/' + (WP.turned || 0) + 'y' + (WP.painted ? ' · WPPAINT' + WP.painted : '') +
       (WP.tinted ? ' · WPTINT' + WP.tinted : '') + (WP.bodies ? ' · WPCROWD' + WP.bodies : '') +
       // **AND THE TRAFFIC, AS CARS ON LANES (m147).** "the cars are not driving" is three bugs
@@ -27315,6 +27839,8 @@ async function init() {
     await side(KCITY.pieces, 'loading the wall pieces', { name: 'KCITYLIB', build: kitTwinIndex });
     await side(KCITY.bld, 'loading the kit buildings', { name: 'KCITYBLD', build: buildKit });
     await cityDetile();
+    // THE ISLAND (m264): last, because it measures the finished collider and appends to it
+    try { buildIsle(); } catch (e) { ISLE.live = 0; note('ISLE FAIL'); console.warn('[melee] island', e); }
     player.pos.x = KCITY.spawn[0]; player.pos.z = KCITY.spawn[1];
   } else if (inTC()) {
     // **HIS LEVEL, AND NOTHING ELSE AT ALL.** No collider builder, no street grid, no boxes --
@@ -27350,6 +27876,7 @@ async function init() {
     // HIS HYDRANT, after both the claims (the visual) and the ground (the collider) exist (m215)
     await side(HYD.col, 'loading props', { name: 'HYDCOL', build: hydCol });
     await side(HYD.file, 'loading props', { name: 'HYDRANT', build: buildHydrant });
+    try { buildIsle(); } catch (e) { ISLE.live = 0; note('ISLE FAIL'); console.warn('[melee] island', e); }
     // AFTER the collider, so the y he lands on is the one his own road actually has.
     player.pos.x = TCITY.spawn[0]; player.pos.z = TCITY.spawn[1];
   } else {
@@ -27482,7 +28009,7 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // carried, and how a carried board should look is a look-at-it decision -- so it is a dial he
   // can reach on the phone rather than a pick shipped with an argument for it. `mel.hold()`
   // prints the line to paste back, and `mel.ride(1|0)` puts him on and off without a gesture.
-  SK8, BLADE, bladeOn, board, boardOut, boardHeld,
+  SK8, BLADE, bladeOn, board, boardOut, boardHeld, ISLE, buildIsle, isleSplash, islePutBack,
   // THE THREE NEW SYSTEMS, LIVE (m160). Every one of them is a look-at-it decision somewhere,
   // and none of them should need a fight to see one -- which is `mel.fx()`'s own argument.
   DECAL, BRK, HYD, SPOUT, BREAK, WRECKS, SPOUTS, decalPut, brkBlast,

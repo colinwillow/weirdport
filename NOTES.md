@@ -7,6 +7,37 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **WEIRDPORT IS AN ISLAND (m264, `ISLE`, `buildIsle`, `isleStep`, `isleSplash`, `gFloor0`).** *"Turn it into an
+  island -- water around it, the edges irregular and kind of raised, a shore and a seashore, nice water shaders so the
+  edges aren't nothing."* Both toon-city worlds (`tkit`, `toon`). The 520 m grey plane is gone when it is on.
+  - **THE COAST IS GROWN OFF THE CITY'S MEASURED EDGE.** `isleRect` reads the ground-level collider triangles (kit city:
+    x -93.5..90.7, z -90.5..93.5). 520 rays from its middle each carry a profile out from where they leave it: a
+    grass berm up to a raised crest, then a sand BEACH under the water or a rock CLIFF straight into it, then a shelf
+    to the seabed 24 m down. Four periodic noises over the angle pick every number, so the coast closes on itself.
+  - **ONE GRID, THREE USES.** It is the land mesh, the floor triangles appended to `TRI` and `SURF` (so he walks on what
+    is drawn and a bolt stops on it), and the WATER mesh -- every water vertex carries the seabed depth under it
+    (`aDepth`), which is what the foam line, the rolling surf bands, the shallow turquoise and the clarity read. No
+    depth texture, no post pass; this game has neither.
+  - **THE CLIMB FROM THE STREET TO THE CREST MUST STAY A FLOOR.** `triAdd` keeps nothing steeper than 60 deg and past
+    the city's edge a non-floor is a hole into the sea, so the crest is set back to hold a cosine rise near 35 deg.
+    Measured: 360 rays walked outward, holes only on the cliff stretches (about a third of the coast), which is the
+    cliff working -- walk off one and the sea puts you back.
+  - **OUTSIDE THE RECTANGLE THERE IS NO FLOOR AT ZERO.** `groundAt` used to answer 0 everywhere as its last resort, which
+    on an island is a sheet of glass across the sea. `gFloor0` keeps the 0 inside the city and returns -1000 outside
+    it. **`ISLE` is declared up beside `TRI` for that reason** -- `groundAt` reads it on every call, and a `const` read
+    above its declaration is a blank page.
+  - **THE SEA'S RULE**: deeper than `ISLE.deep` under the surface and he is put back on the last dry spot (saved only
+    where the ground `safeR` out in all four directions is dry), with a crown of his own water drops. A bolt that
+    reaches the surface splashes. The lens is clamped above the surface.
+  - **THE SHORE IS PAINTED WITH HIS TEXTURES**, found by MATERIAL NAME on the loaded city: `WR_Grass_b`, `WR_Dirt`
+    (tinted to sand), `WR_Stone` -- splatted per vertex with an anti-tile second sample, wet just above the waterline,
+    tinted and caustic under it. The chip reads `ISLE3` when all three were found; `ISLE n/3 TEX` in the missing list
+    when not. Boulders (one instanced draw) sit in the shallows and at the cliffs' feet, picture only.
+  - Measured headless (`tools/.probe/isle.mjs`, a flat city rect, the shipped `buildIsle`/`stepPlayer`/`isleStep`):
+    29,614 floor tris added, walked straight out from the spawn and put back at 108.6 m on dry sand. **How the water
+    LOOKS is not testable here** -- no GPU. TUNE: waves, sun glint, foam, clarity, shore tex size.
+  - Costs 3 draw calls (land, water, rocks). The water is one transparent mesh to 1.8 km, fogged out by 320 m.
+
 - **HERO KINDS: TURN INTO ROLLERGIRL AND YOU ARE ON HER SKATES (m263, `SKATER.mode`, `BLADE`, `bladeOn`,
   `bladeAnim`, `mphExtras`, `ownFirst`).** *"Some characters are just regular NPCs -- you adopt exactly what you
   always have. Certain characters are Easter eggs, other hero characters, and when you turn into them you have
