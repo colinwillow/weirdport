@@ -7,6 +7,18 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE BURST COATS THE NEW BODY EVENLY, IN ITS OWN COLOURS, AND THE DOTS BREATHE (m256, `flubSwapEven`,
+  `FLUB.sBirth/sPeak/sLand/sWob/colT`).** *"Sometimes the balls don't completely cover what you're
+  transforming into, so it pops in... the colour of the poly they land on... grow a little so they cover
+  more, start small, big at the peak, shrink -- ping-pong in size before they pop."* The cell match took a
+  voxel's spot from the cell it CAME from, so a region the old body had little of got little coat. The burst
+  now samples exactly ONE target per voxel by area over the new skin and pairs the two sets by RANK on the
+  same (height band, angle) key -- a bijection, so the coat is as even as the sampling. Probed on a 2.2 m new
+  body from a 1.7 m old one, landed voxels per fifth of its height: 406 313 322 326 433 (the ends carry the
+  cylinder's caps). Colour goes to the landing spot's own texel within `colT` (.14 s) of the apex. Size:
+  `sBirth` .6 -> `sPeak` 1.7 at the apex -> `sLand` 1.3 on the skin with a damped wobble (`sWob`), then the
+  pop shrinks it away.
+
 - **THE TRANSFORM IS ONE OUT-AND-IN NOW, AND IT IS PHYSICS (m255, `FLUB.shape` 4, `flubBurst`, `flubOpacity`,
   `mphSh`/`mphAt`).** *"Too many little steps. They all appear at once covering the surface, already moving
   outward along the normal at a random speed; they shoot out, reverse elastically at slightly random moments,
