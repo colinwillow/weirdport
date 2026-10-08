@@ -555,10 +555,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m247</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m248</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m247</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m248</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -624,7 +624,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm247';
+const BUILD = 'm248';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"c2fbdbf7","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -21129,8 +21129,143 @@ function mphRingStep(dt) {
   MPH.ring.material.opacity = (1 - u) * (1 - u) * .85;
 }
 
+// ---- THE SURGE (m248, `SURGE`, `surgeEmit`, `surgeStep`) -- ROBITS' SUPERCHARGE, PORTED ------------
+// *"In Robits I made this particle effect -- a power-up you run through in the middle of the map,
+// and particles stream out of you, organic and blobby, almost like you're on fire but blue... they
+// emit from the normals, it covers the form, then you transform the form they're coming out of and
+// the particles dissipate."* It is Robits' `_voxelize` / `_superStart`: every frame, pick random
+// vertices of the SKINNED mesh in their CURRENT pose and print a small additive cube there; the
+// cubes spin, drift and fade. Additive cubes overlapping each other are what reads as blobby fire.
+// **WHAT CHANGED IN THE PORT:**
+//   * it emits ALONG THE SKINNED NORMAL, which is what he described -- the same bone transform run
+//     on `pos` and on `pos + n*eps` gives the posed normal with no second skinning path. Robits
+//     sprayed radially from the body centre, which is the same thing on a sphere and not on an arm;
+//   * the cubes are BUOYANT (they rise, Robits' `kind 1` fire voxels) rather than falling, and
+//     their horizontal drift dies off with `Math.exp(-k*dt)` -- this file's rule, never `*= k`;
+//   * every length is in METRES (Robits' robot is ~35 units tall, so 2.3 -> .085 m).
+// **ONE `InstancedMesh`, ONE DRAW CALL**, pooled; a dead slot is written to zero scale ONCE.
+// **AS THE TRANSFORM (`MORPH.style` 'stream')**: the rate climbs over the old body until it is
+// covered, the swap lands under the densest moment with a burst off the new one, and the rate
+// falls away so the cloud dissipates off him. The blob is still there behind `style: 'blob'`.
+// `SURGE.self` streams it off YOU continuously (tune -> TRANSFORM -> aura on me), which is how to
+// look at it without firing the DNA gun -- Robits' own `_voxSelf`.
+const SURGE = {
+  on: 1,              // 1 = the DNA transform is the stream; 0 = the m113 proxy blob
+  max: 2400,          // pool
+  rate: 2600,         // cubes per second at the peak of a transform
+  selfRate: 700,      // and per second off you with `self` on
+  self: 0,
+  size: .085, life: .72, out: 1.15, rise: .55, buoy: 1.8, drag: 2.2, spin: 5,
+  jit: .35,           // random m/s added on every axis
+  hue: .58, sat: .85, lum: .55,   // Robits' 0x3aa0ff
+  hot: .85,           // how white a cube is when it is born (falls to the hue over its first third)
+  burst: 280,         // thrown off the NEW body at the swap
+  dur: 1.5,           // the transform's length in this style (`MORPH.dur` is the blob's)
+};
+const SG = { inst: null, pool: null, head: 0, any: 0, col: new THREE.Color(), hotC: new THREE.Color(1, 1, 1),
+             acc: 0, selfAcc: 0 };
+const _sgM = new THREE.Matrix4(), _sgQ = new THREE.Quaternion(), _sgE = new THREE.Euler(),
+      _sgS = new THREE.Vector3(), _sgP = new THREE.Vector3(), _sgA = new THREE.Vector3(),
+      _sgB = new THREE.Vector3(), _sgN = new THREE.Vector3(), _sgZ = new THREE.Matrix4().makeScale(0, 0, 0);
+function surgeEnsure() {
+  if (SG.inst) return;
+  const mat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, blending: THREE.AdditiveBlending,
+    depthWrite: false, toneMapped: false });
+  mat.userData.noHole = 1; mat.userData.noPaint = 1;
+  const inst = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), mat, SURGE.max);
+  inst.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(SURGE.max * 3), 3);
+  inst.frustumCulled = false; inst.renderOrder = 7;
+  for (let i = 0; i < SURGE.max; i++) inst.setMatrixAt(i, _sgZ);
+  scene.add(inst);
+  SG.inst = inst;
+  SG.pool = [];
+  for (let i = 0; i < SURGE.max; i++) SG.pool.push({ life: 0, max: 1, x: 0, y: 0, z: 0, vx: 0, vy: 0, vz: 0,
+    rx: 0, ry: 0, rz: 0, dx: 0, dy: 0, dz: 0, size: .08 });
+}
+// every skinned mesh under a model, with its vertex count -- cached on the model
+function surgeMeshes(model) {
+  if (!model) return null;
+  if (model.userData.sgSk) return model.userData.sgSk;
+  const L = []; let tot = 0;
+  model.traverse(o => { if (o.isSkinnedMesh && o.geometry && o.geometry.attributes.position && o.geometry.attributes.normal) {
+    const n = o.geometry.attributes.position.count; tot += n; L.push({ sm: o, n, c: tot }); } });
+  model.userData.sgSk = L.length ? { L, tot } : null;
+  return model.userData.sgSk;
+}
+// `n` cubes off random posed vertices of `model`, each thrown along its own skinned normal
+function surgeEmit(model, n) {
+  const S = surgeMeshes(model);
+  if (!S || n <= 0) return;
+  surgeEnsure();
+  for (let k = 0; k < n; k++) {
+    const r = Math.random() * S.tot;
+    let e = S.L[0]; for (const q of S.L) if (r < q.c) { e = q; break; }
+    const sm = e.sm, g = sm.geometry, i = (Math.random() * e.n) | 0;
+    _sgA.fromBufferAttribute(g.attributes.position, i);
+    _sgN.fromBufferAttribute(g.attributes.normal, i);
+    _sgB.copy(_sgA).addScaledVector(_sgN, .02);
+    if (sm.applyBoneTransform) { sm.applyBoneTransform(i, _sgA); sm.applyBoneTransform(i, _sgB); }
+    sm.localToWorld(_sgA); sm.localToWorld(_sgB);
+    _sgB.sub(_sgA); const L = _sgB.length(); if (L > 1e-6) _sgB.multiplyScalar(1 / L); else _sgB.set(0, 1, 0);
+    let p = null;
+    for (let t = 0; t < 12; t++) { const q = SG.pool[SG.head]; SG.head = (SG.head + 1) % SURGE.max; if (q.life <= 0) { p = q; break; } }
+    if (!p) return;
+    const sp = SURGE.out * (.6 + Math.random() * .8), J = SURGE.jit;
+    p.x = _sgA.x; p.y = _sgA.y; p.z = _sgA.z;
+    p.vx = _sgB.x * sp + (Math.random() * 2 - 1) * J;
+    p.vy = _sgB.y * sp + SURGE.rise * (.3 + Math.random() * .7) + (Math.random() * 2 - 1) * J;
+    p.vz = _sgB.z * sp + (Math.random() * 2 - 1) * J;
+    p.rx = Math.random() * 6.28; p.ry = Math.random() * 6.28; p.rz = Math.random() * 6.28;
+    p.dx = (Math.random() * 2 - 1) * SURGE.spin; p.dy = (Math.random() * 2 - 1) * SURGE.spin; p.dz = (Math.random() * 2 - 1) * SURGE.spin;
+    p.max = SURGE.life * (.7 + Math.random() * .6); p.life = p.max;
+    p.size = SURGE.size * (.7 + Math.random() * .6);
+    SG.any = 1;
+  }
+}
+// the DNA transform's envelope: climbs over the old body, peaks AT the swap, falls off the new one
+function surgeMorph(u, dt) {
+  if (MPH.blob) MPH.blob.visible = false;
+  if (rig.model) rig.model.visible = true;
+  const sw = MORPH.out + MORPH.hold, at = sw / mphSum();
+  const e = u < at ? smooth(0, at * .8, u) : 1 - smooth(at, 1, u);
+  SG.acc += SURGE.rate * e * dt;
+  const n = SG.acc | 0; SG.acc -= n;
+  surgeEmit(rig.model, Math.min(n, 120));
+}
+function surgeStep(dt) {
+  if (SURGE.self && rig.model && !player.mphSt) {
+    SG.selfAcc += SURGE.selfRate * dt;
+    const n = SG.selfAcc | 0; SG.selfAcc -= n;
+    surgeEmit(rig.model, Math.min(n, 60));
+  }
+  if (!SG.inst || !SG.any) return;
+  SG.col.setHSL(SURGE.hue, SURGE.sat, SURGE.lum);
+  const ca = SG.inst.instanceColor.array, dr = Math.exp(-SURGE.drag * dt);
+  let any = 0;
+  for (let i = 0; i < SURGE.max; i++) {
+    const p = SG.pool[i];
+    if (p.life <= 0) continue;
+    p.life -= dt;
+    if (p.life <= 0) { SG.inst.setMatrixAt(i, _sgZ); continue; }
+    any = 1;
+    p.vy += SURGE.buoy * dt; p.vx *= dr; p.vz *= dr;
+    p.x += p.vx * dt; p.y += p.vy * dt; p.z += p.vz * dt;
+    p.rx += p.dx * dt; p.ry += p.dy * dt; p.rz += p.dz * dt;
+    const k = p.life / p.max, sz = p.size * (.25 + .75 * k);
+    _sgQ.setFromEuler(_sgE.set(p.rx, p.ry, p.rz));
+    SG.inst.setMatrixAt(i, _sgM.compose(_sgP.set(p.x, p.y, p.z), _sgQ, _sgS.set(sz, sz, sz)));
+    const h = SURGE.hot * smooth(.66, 1, k), b = .35 + .65 * k;
+    ca[i * 3]     = (SG.col.r + (1 - SG.col.r) * h) * b;
+    ca[i * 3 + 1] = (SG.col.g + (1 - SG.col.g) * h) * b;
+    ca[i * 3 + 2] = (SG.col.b + (1 - SG.col.b) * h) * b;
+  }
+  SG.inst.instanceMatrix.needsUpdate = true; SG.inst.instanceColor.needsUpdate = true;
+  SG.any = any;
+}
+
 function mphBlob(u, dt) {
   const p = player;
+  if (SURGE.on) { surgeMorph(u, dt); return; }
   if (!MORPH.blob || !p.mphPA || !p.mphPB) return;
   const M = mphMesh();
   const w = smooth(0, MORPH.fade[0], u) * (1 - smooth(MORPH.fade[1], 1, u));
@@ -21231,6 +21366,8 @@ function stepMorph(dt) {
         if (dnaNow()) { const ch = WEAP.modes.findIndex(q => !q.dna && !q.auto); if (ch >= 0) setMode(ch); }
       }
       mphTint((to || rig.base).mats, 1);
+      // THE SURGE'S BURST comes off the body that has just ARRIVED (m248)
+      if (SURGE.on) surgeEmit(rig.model, SURGE.burst);
       p.mphSt = 'in'; p.mphT = 0;
       // the swap is the EVENT, so it is where the noise and the debris are -- not the release
       // **THE SWAP IS THE ONE BEAT IN HERE, SO IT IS WHERE ALL THE PUNCTUATION GOES (m115).**
@@ -22316,9 +22453,12 @@ const shape = { ready: 0, idx: {}, mesh: null, n: 0 };
 // nobody can drag. Normalised, `MORPH.dur` stretches all three together and `dur = 0.90` is
 // byte-for-byte the beat m112 shipped.
 const mphSum = () => Math.max(.01, MORPH.out + MORPH.hold + MORPH.back);
-const mphOut = () => MORPH.dur * MORPH.out / mphSum();
-const mphHold = () => MORPH.dur * MORPH.hold / mphSum();
-const mphBack = () => MORPH.dur * MORPH.back / mphSum();
+// THE STREAM HAS ITS OWN LENGTH (m248): a cloud has to be seen BUILDING over the body, which
+// 0.9 s cannot show. Read live, so the switch takes effect on the next transform.
+const mphDur = () => SURGE.on ? SURGE.dur : MORPH.dur;
+const mphOut = () => mphDur() * MORPH.out / mphSum();
+const mphHold = () => mphDur() * MORPH.hold / mphSum();
+const mphBack = () => mphDur() * MORPH.back / mphSum();
 
 // WHICH TARGET A KIND USES. `null` is the player's own body, which is the base and has no delta.
 function shapeIndex(K) {
@@ -25193,6 +25333,17 @@ function stepShafts(dt) {
 // back what the file ships -- captured before anything stored is applied.
 // A NEW ROW IS ONE LINE HERE and nothing else.
 const TUNE = [
+  ['TRANSFORM'],
+  ['stream (0 = blob)', SURGE, 'on',     0, 1, 1],
+  ['aura on me',  SURGE, 'self',   0, 1, 1],
+  ['length',      SURGE, 'dur',   .5, 4, .05],
+  ['density',     SURGE, 'rate',   200, 6000, 50],
+  ['size',        SURGE, 'size',  .02, .3, .005],
+  ['speed',       SURGE, 'out',    0, 5, .05],
+  ['rise',        SURGE, 'buoy',  -4, 8, .1],
+  ['life',        SURGE, 'life',  .2, 2.5, .02],
+  ['hue',         SURGE, 'hue',    0, 1, .01],
+  ['white-hot',   SURGE, 'hot',    0, 1, .05],
   ['JACK'],
   ['arms out',   JACK.arms, 'up',   -10, 40, 1],
   ['forearms down', JACK.arms, 'fore', -20, 30, 1],
@@ -25465,6 +25616,7 @@ function frameBody() {
   markStep(dt, now / 1000);
   stepSparks(dt);
   mphRingStep(dt);   // outlives the transform, so it is not stepped from `stepMorph`
+  surgeStep(dt);     // and so does the surge's cloud (m248)
   stepSmoke(dt);
   stepFlashes(dt);
   decalStep(dt); brkStep(dt); stepLoose(dt); bendStep(dt); burnStep(dt); spoutStep(dt); virusStep(dt); stepFire(dt);
@@ -26230,6 +26382,8 @@ async function init() {
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
 window.melee = window.mel = { fireSheet, BURN, burnStart,
+  // THE SURGE (m248): `mel.SURGE` is live; `mel.surge(n)` throws n cubes off you once
+  SURGE, surge: n => surgeEmit(rig.model, n || 300),
   // set the nearest body on fire, to look at it without a rocket (m210)
   burn: () => { let b = null, bd = 1e9; for (const d of DUMMIES) { const q = Math.hypot(d.root.position.x - player.pos.x, d.root.position.z - player.pos.z); if (q < bd) { bd = q; b = d; } } if (b) burnStart(b); return b ? mphName(b.K) + ' ' + bd.toFixed(1) + 'm' : 'nobody'; },
   CLIPFIX, BEND, BENDS, bendBlast, PROPFIT, ROCKETPOSE, PERF, perfMode, TUNE, tuneToggle, RIG, MOVE, GAIT, CAM, FLICK, MELEE, SLAM, CVOX, WEAP, CLIPS, MARK, HCHG, rig, player, cam, stick, BOXES,

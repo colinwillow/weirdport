@@ -7,6 +7,26 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE TRANSFORM IS ROBITS' SUPERCHARGE NOW (m248, `SURGE`, `surgeEmit`, `surgeMorph`, `surgeStep`).**
+  *"In Robits there's a power-up you run through and particles stream out of you, organic and blobby,
+  like being on fire but blue... they emit from the normals, it covers the form, then you transform the
+  form they're coming out of and the particles dissipate."* Found in `robits/index.html`: the
+  SUPERCHARGE pickup (`_superPickupTick`, the blue sun on `powerup_middle`) starts `_superStart`, which
+  runs `_voxelize(player.model, {hide:false})` -- every frame, random vertices of the SKINNED mesh in
+  their current pose, an additive cube printed at each, spinning, drifting and fading (`_voxTick`).
+  **Ported as one `InstancedMesh` (2400 pool, one draw call), in metres** (Robits' robot is ~35 units,
+  so its 2.3 cube is .085 m), with three changes: cubes leave **along the skinned NORMAL** (the bone
+  transform run on `pos` and `pos + n*.02` gives the posed normal -- no second skinning path), they
+  are **buoyant** like Robits' fire voxels rather than falling, and drift dies with `Math.exp(-k*dt)`.
+  **As the DNA transform** (`SURGE.on`, default 1): the rate climbs over the old body, peaks at the swap,
+  `SURGE.burst` comes off the NEW body at the swap, and the rate falls so the cloud dissipates off him.
+  The body is never hidden in this style; the cubes cover it. It runs `SURGE.dur` (1.5 s) because a
+  cloud has to be seen BUILDING -- the blob keeps `MORPH.dur` .90, and `stream (0 = blob)` in tune
+  brings the m113 blob back for the A/B. **`aura on me`** streams it off you continuously, Robits'
+  `_voxSelf`, so it can be looked at without the DNA gun. Tune -> TRANSFORM has density, size, speed,
+  rise, life, hue, white-hot, length. **The VIRUS turn still uses the blob** -- it removes the old body
+  at the start (`bodyGone` in `virusGo`), so the stream has nothing to come off; that is its own build.
+
 - **COLIN IS ON THE STREET, AND HE IS THE DONOR (m247, `COLIN`, `K.beside`, `besidePlace`, `K.morphOn` /
   `fillMat` / `opaque`).** *"Can we bring in the Colin model the same way we did for Jack? I'd love to
   see myself walking around, be able to shoot him."* `models/characters/colin.glb` is Shredworld's file
