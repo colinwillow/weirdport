@@ -7,6 +7,13 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **MOUSSA IS ON THE STREET (m252, `MOUSSA`).** Shredworld's `moussa_toon.glb` as `models/characters/moussa.glb`:
+  Colin's rig family and Colin's 48 clip NAMES, re-drawn for his proportions, so he is a Colin row on his
+  own clips (biker hit reactions borrowed, same as Colin). Measured off HIS file, not copied: walk 1.414,
+  run 3.886 authored u/s; knock-down pairs agree (178/-175, -2/-1) so `flip: 0`; no face morph, no
+  untextured primitive, so none of Colin's dressing. `beside: 1` -- he spawns by you with Colin and Jack;
+  on the test site at (5, 8). Shares the hello. His Senegal flag patch is NOT ported (no wear mounts here).
+
 - **NO BLACK VOXELS, AND THE DEFAULT FORM IS RUBBER FLUBBER (m251, `FLUB.shape` 2, `flubBoing`, `flubBack`,
   `FLUB.floor`/`hot`/`heat`/`jit`).** *"A lot of the cubes are black... the shape is too stationary... the
   cubes might be large... a central shape with arms with balls on the end that shoot out like rubber bands
