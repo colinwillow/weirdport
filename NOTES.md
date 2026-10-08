@@ -7,6 +7,25 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE ISLAND IS ROUND AND IT FALLS TO THE SEA; THE RIM IS GONE (m270, `ISLE.coast/wobble/minLand/rise`,
+  `isleProfile(th, N, L)`, `ISLE_J0`).** *"From the top down is it square? I'd rather it was closer to circular but
+  irregular. And I don't love the ridge between the water and the land -- I meant the island itself is raised, not a
+  rim round it. Real islands slope down to the beach."* He was right on both, and the ridge was a misreading of
+  "raised": m264's profile ROSE from the city to a crest up to 2.6 m above it, then dropped -- which hid the water from
+  the street and is the opposite of a coast.
+  - **THE WATERLINE IS A WANDERING CIRCLE** round the city's middle: radius = half-diagonal + `coast` 22 +/- `wobble`
+    16 (noise over the angle), never nearer than `minLand` 14 to the city's edge along the ray. Measured: 136..166 m
+    from the middle (the city's corners are 131). The rays still start at the city's square, so the land fills the
+    space between the square and the circle -- widest mid-side, narrowest at the corners.
+  - **THE PROFILE ONLY GOES DOWN**: the city's edge at 0, grass easing down to the top of the beach `rise` .7..1.5 m
+    above the sea, the beach (9..20 m) to the waterline, the shelf under it. The sea went -1.15 -> **-2.2**, so the
+    island itself is the raised thing. A rocky stretch is a short steep BANK (3.5 m) instead of a beach, still downhill.
+    Probe: nothing past the city higher than -0.04 m; no holes on any of 360 rays (m264 had them at every cliff).
+  - **THE WATER MESH STARTS AT THE BEACH TOP (`ISLE_J0` = 12 samples in)**, which is where the land first nears the
+    sea; inside it the land is above the water everywhere.
+  - `tools/.probe/isle.mjs` writes a top-down SVG of the coast from the shipped rays (scratchpad), which is how the
+    shape is checked without a GPU.
+
 - **HER GROUND: RAMPS ARE A SURFACE NOW (m269, `BLADE.surf`, `bladeGradeAt`, `bladeSurfPre`/`Post`, `bladeLandSlope`,
   `bladeTilt`).** The part of Rollergirl's surface-frame model this collider can carry, on her skates only. He dropped
   the grabs (*"placeholder animations... different skates on the ground, silly in the air"*), so this closes the port.
