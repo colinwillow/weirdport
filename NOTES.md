@@ -7,6 +7,19 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE COAT LANDED ON A T-POSE, AND THE SKIN WENT BLUE (m260, `FL.tgtWait`, `flubAgain`, `FLUB.floor`).**
+  *"It transforms into the guy in T-pose... and 95% of the balls are still just blue."* Two faults.
+  **T-POSE:** the swap runs inside `stepMorph`, BEFORE `rigAnim` and the mixer -- so the skin just put on has
+  never been posed and its bones are at BIND. Every landing spot was sampled off a T. And waiting a frame or
+  two is not enough on its own: its clips come up from weight 0 over `skinWeights`' half-life, and a bone at
+  partial weight is partly bind. So the targets are sampled two frames after the swap as a RECORD (triangle +
+  barycentric, `flubSample`'s `rec`) and re-read off his live pose every `tgtEvery` frames until `tgtLive`
+  past the apex (`flubAgain`) -- the same point on the skin, followed into his idle.
+  **BLUE:** `floor` is a LINEAR luminance and .16 linear is mid-grey on screen, so dark clothes, blue spots
+  and shaded skin all crossed it and glowed `hot`. .025 now (near-black only), and the apex `heat` tint .35 ->
+  .12 so the skin's own colours carry the effect. (m259's sampler fix is the other half: before it, three
+  quarters of every texel read was empty.)
+
 - **THE GLOW TEXTURE WAS BROKEN BY A SEARCH-AND-REPLACE IN m250, AND IT IS EVERY GLOW IN THE GAME (m259, `DOT`).**
   *"It's literally the particles. The light on the missile is in the FRONT and off to the left... the blaster
   bullet doesn't look like a ball, it looks like a skewed few shapes. Did you mess with the sprite sheet?"*

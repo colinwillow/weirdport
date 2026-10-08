@@ -561,10 +561,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m259</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m260</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m259</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m260</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -630,7 +630,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm259';
+const BUILD = 'm260';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"c2fbdbf7","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -21356,6 +21356,7 @@ const FLUB = {
   bDur: 1.7,          // burst: the whole thing, seconds
   sBirth: .6, sPeak: 1.7, sLand: 1.3, sWob: .35,   // dot size: born, at the apex, landed, and its wobble
   colT: .14,          // seconds after the apex for a voxel to take its landing spot's colour
+  tgtLive: .45, tgtEvery: 3,   // re-read the landing spots off his live pose until this long past the apex
   bOut: .30,          // and the share of it before the swap -- the apex
   vMin: .7, vMax: 2.4,   // m/s each voxel leaves at, along its normal
   vJit: .35,          // and random m/s on top, any direction
@@ -21381,9 +21382,11 @@ const FLUB = {
   snap: .05,          // the arms start snapping back this share of `u` before the swap
   overshoot: 1.6,     // how far the landing over-runs the new body before it settles (easeOutBack)
   jit: .028,          // every voxel's own drift round its place, as a fraction of his height
-  heat: .35,          // how far the form glows toward `hot` at its peak
+  heat: .12,          // how far the form glows toward `hot` at its peak (m260: .35 drowned the skin)
   hot: [.62, .86, 1.0],   // the heat colour: blue-white, what a dark texel glows instead of black
-  floor: .16,         // a voxel darker than this (luminance) glows toward `hot` instead
+  // **LINEAR luminance (m260).** .16 linear is mid-grey on screen, so dark clothes, blue spots and shaded
+  // skin all crossed it and went blue-white -- "95% of them are still just blue". .025 is near-black only.
+  floor: .025,        // a voxel darker than this glows toward `hot` instead
   disc: .32,          // quasar disc radius / jet length, as fractions of his height
   jet: .52,
   arms: 7, reach: .42,  // flubber: tendril count, and length as a fraction of his height
@@ -21564,7 +21567,7 @@ function flubArea(S) {
   return S;
 }
 // a uniform point on the posed skin: WORLD position into `out`, colour into `col`
-function flubSample(S, out, col, nrm) {
+function flubSample(S, out, col, nrm, rec) {
   flubArea(S);
   const r = Math.random() * S.atot;
   let q = S.L[0]; for (const e of S.L) if (r < e.ac) { q = e; break; }
@@ -21575,6 +21578,7 @@ function flubSample(S, out, col, nrm) {
   const a = I ? I.getX(t * 3) : t * 3, b = I ? I.getX(t * 3 + 1) : t * 3 + 1, c = I ? I.getX(t * 3 + 2) : t * 3 + 2;
   let u = Math.random(), v = Math.random(); if (u + v > 1) { u = 1 - u; v = 1 - v; }
   const w = 1 - u - v;
+  if (rec) { rec.sm = q.sm; rec.a = a; rec.b = b; rec.c = c; rec.u = u; rec.v = v; }
   flubAt(q.sm, a, _fsA); flubAt(q.sm, b, _fsB); flubAt(q.sm, c, _fsC);
   out.set(_fsA.x * w + _fsB.x * u + _fsC.x * v, _fsA.y * w + _fsB.y * u + _fsC.y * v, _fsA.z * w + _fsB.z * u + _fsC.z * v);
   // the POSED face normal, off the three skinned corners -- glTF winds outward
@@ -21586,6 +21590,12 @@ function flubSample(S, out, col, nrm) {
   }
   return out;
 }
+// THE SAME POINT ON THE SKIN, RE-READ OFF ITS CURRENT POSE (m260) -- world position into `out`
+function flubAgain(r, out) {
+  const w = 1 - r.u - r.v;
+  flubAt(r.sm, r.a, _fsA); flubAt(r.sm, r.b, _fsB); flubAt(r.sm, r.c, _fsC);
+  return out.set(_fsA.x * w + _fsB.x * r.u + _fsC.x * r.v, _fsA.y * w + _fsB.y * r.u + _fsC.y * r.v, _fsA.z * w + _fsB.z * r.u + _fsC.z * r.v);
+}
 // A HIDDEN SKIN'S SKELETON IS NEVER UPDATED BY THE RENDERER, so it is done here, once a frame
 function flubPose(model) {
   if (!model) return;
@@ -21596,6 +21606,7 @@ function flubPose(model) {
 function flubStart() {
   flubEnsure();
   FL.live = 1; FL.sw = 0; FL.t = 0; FL.lo = 1e9; FL.hi = -1e9; FL.bBorn = 0; FL.loN = undefined; FL.hiN = undefined;
+  FL.tgtWait = 0; FL.tgtF = 0;
   if (FL.mat && FL.mat.uniforms) { FL.mat.uniforms.uSoft.value = FLUB.soft; FL.mat.uniforms.uGlow.value = FLUB.dotGlow; FL.mat.uniforms.uCut.value = FLUB.cut; }
   // THE POP (shape 3) is born in an IMPULSE -- every voxel within a few frames, not over a quarter
   const born = FLUB.shape === 3 ? FLUB.popBorn : FLUB.peel;
@@ -21645,7 +21656,11 @@ function flubSwap(model) {
   // the body taken off goes back to opaque NOW -- it is detached, and a skin left at opacity 0 is a
   // skin that is invisible the next time it is worn
   if (FL.oldModel && FL.oldModel !== model) flubOpacity(FL.oldModel, 1);
-  if (mphBurst()) { flubOpacity(model, 0); flubSwapEven(model, S); return; }
+  // **NOT YET (m260).** At this instant the new skin has never been animated -- its first mixer update
+  // is LATER this frame (`stepMorph` runs before `rigAnim`), so its bones are at BIND, which is a
+  // T-pose, and every landing spot sampled now is a spot on a T-posed man. `flubBurst` takes them two
+  // frames on, off the pose he is actually standing in; until then the springs pull to the anchors.
+  if (mphBurst()) { flubOpacity(model, 0); FL.tgtWait = 2; return; }
   if (!S) return;
   flubPose(model);
   _flInv.copy(rig.root.matrixWorld).invert();
@@ -21692,8 +21707,8 @@ function flubSwapEven(model, S) {
   const P = FL.P.filter(q => q.born), T = [];
   let lo = 1e9, hi = -1e9;
   for (let k = 0; k < P.length; k++) {
-    const col = new THREE.Color(), p = flubSample(S, new THREE.Vector3(), col).applyMatrix4(_flInv);
-    T.push({ p, col }); if (p.y < lo) lo = p.y; if (p.y > hi) hi = p.y;
+    const col = new THREE.Color(), rec = {}, p = flubSample(S, new THREE.Vector3(), col, null, rec).applyMatrix4(_flInv);
+    T.push({ p, col, rec }); if (p.y < lo) lo = p.y; if (p.y > hi) hi = p.y;
   }
   FL.loN = lo; FL.hiN = hi;
   const H = Math.max(.2, hi - lo), NB = 16;
@@ -21701,7 +21716,7 @@ function flubSwapEven(model, S) {
   for (const t of T) t.k = key(clamp((t.p.y - lo) / H, 0, 1), Math.atan2(t.p.x, t.p.z));
   for (const q of P) { if (q.hn === undefined) flubKey(q); q.k = key(q.hn, q.an); }
   T.sort((a, b) => a.k - b.k); P.sort((a, b) => a.k - b.k);
-  for (let i = 0; i < P.length; i++) { P[i].b = T[i].p; P[i].cb.copy(T[i].col); P[i].tm = 1; }
+  for (let i = 0; i < P.length; i++) { P[i].b = T[i].p; P[i].cb.copy(T[i].col); P[i].tm = 1; P[i].rec = T[i].rec; }
 }
 // the FORM position of a voxel, in `rig.root`'s frame, written into `out`
 function flubForm(P, out, t, u, at) {
@@ -21920,6 +21935,15 @@ function flubBurst(u, dt) {
       }
       for (const P of FL.P) flubKey(P);
     }
+  }
+  if (FL.sw && FL.tgtWait > 0 && --FL.tgtWait === 0) { const S2 = surgeMeshes(model); if (S2) flubSwapEven(model, S2); FL.tgtF = 0; }
+  // **AND RE-READ WHILE HIS IDLE BLENDS IN (m260).** A freshly worn skin's clips come up from weight 0
+  // over `skinWeights`' half-life, and a bone at partial weight is partly BIND -- so the first pose is
+  // still half a T. Every `tgtEvery` frames until `tgtLive` past the apex, each target is re-read off
+  // the SAME point on the skin (same triangle, same barycentric), so the coat follows him into his idle.
+  else if (FL.sw && !FL.tgtWait && t < tAt + F.tgtLive && (++FL.tgtF % F.tgtEvery) === 0) {
+    flubPose(model); _flInv.copy(rig.root.matrixWorld).invert();
+    for (const P of FL.P) if (P.rec && P.b) flubAgain(P.rec, P.b).applyMatrix4(_flInv);
   }
   // the bodies: the old one fades out at once, the new one fades in from the apex
   if (FL.sw) flubOpacity(model, smooth(tAt, tAt + F.fadeIn, t));
