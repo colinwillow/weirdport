@@ -7,6 +7,27 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **HER GROUND: RAMPS ARE A SURFACE NOW (m269, `BLADE.surf`, `bladeGradeAt`, `bladeSurfPre`/`Post`, `bladeLandSlope`,
+  `bladeTilt`).** The part of Rollergirl's surface-frame model this collider can carry, on her skates only. He dropped
+  the grabs (*"placeholder animations... different skates on the ground, silly in the air"*), so this closes the port.
+  - **THIS GROUND ANSWERS A HEIGHT, NOT A NORMAL, SO THE NORMAL IS MEASURED** -- `groundAt` ahead and behind along her
+    line. Grounded, her vertical speed is the grade times her speed (she travels UP the face); after the integrator,
+    if the face behind her turns away from the one ahead faster than `leave` 3 m/s she LEAVES with the climb she had.
+    Before this the board's integrator snapped her up a ramp horizontally and zeroed `vel.y`, so a kicker's lip was a
+    ledge she rolled off: measured on a 20-degree kicker at 14.2 m/s, -0.33 m/s at the lip (old) against **4.94**
+    (new), apex 2.19 -> **2.79 m**, which is `2.2 + vy^2/2g` to 2 cm.
+  - **ONE-SIDED AT THE LIP.** A centred probe straddles the crease and spreads the turn over three frames, none of
+    which then reads as a lip -- the first version never launched. Behind and ahead of where she now is.
+  - **A GRADE HAS TO HOLD OVER TWO DISTANCES (d and 2d) TO BE A FACE**, or every 30 cm kerb in the city reads as a
+    37-degree ramp for a frame and throws her. Probed: a kerb at 13.9 m/s, 0 airborne frames. The tilt uses the same
+    test so a kerb does not tip her either.
+  - **LANDING ON A DOWNSLOPE TURNS THE FALL INTO SPEED** (her `landKeep`, the drop-in): 6.0 -> 10.3 m/s dropping 3 m
+    onto a 22-degree slope. Landing against a slope adds nothing; the board's own scrub still judges a crooked one.
+  - **HER BODY STANDS SQUARE TO THE FACE** (`tiltQ`, premultiplied onto the root after `wingPose`, eased, righting in
+    the air): 20.1 deg on a 20.1-degree face.
+  - **NO VERT, AND THAT IS THE COLLIDER**: `triAdd` keeps nothing past 60 deg, so there is no wall for her game's vert
+    lock to lock to. TUNE: "ramps: surface physics" (the A/B), "lip launch at", "drop-in keeps".
+
 - **HER FAKIE AND HER SWIVEL (m268, `p.stance`, `p.fkOff`, `fakieFlip`, `fakieLand`, `fakieSwivel`, `fakieStep`,
   `faceForward`)** -- Rollergirl's r21..r24 stance, ported onto the board physics. Her skates only.
   - **`boardH` IS ALWAYS THE END SHE LEADS WITH, AND HER BODY IS DRAWN `fkOff` FROM IT** (0 forward, a half turn

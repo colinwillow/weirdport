@@ -561,10 +561,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m268</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m269</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m268</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m269</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -630,7 +630,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm268';
+const BUILD = 'm269';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -3999,6 +3999,8 @@ const BLADE = Object.assign(Object.create(SK8), {
   top: 24, roll: .045, brake: 18, turn: 6.5, turnHi: 2.6,
   pushV: 5.2, pushDur: 1.05, pushFast: .52, shoveDur: .34, plant: .30,
   dip: 0,
+  // HER GROUND (m269): the surface is a FRAME, not just a height -- see `bladeSurf`
+  surf: { on: 1, probe: .4, leave: 3.0, minUp: .15, land: 1, tiltHL: .07, airHL: .22, tiltMax: .9 },
   swivelT: .45,     // how long her body takes to come round on a swivel (m268)
   steady: .85,      // how much of the gun pose's own chest frame is held against her hips' twist (m265)
   clip: Object.assign({}, SK8.clip, { land: '' }),
@@ -14355,11 +14357,15 @@ function stepSkate(dt) {
 
   const wasAir = !p.grounded;
   if (p.sk8L > 0) p.sk8L -= dt;
+  // HER GROUND (m269): on her skates the velocity runs ALONG the surface, so a ramp is climbed
+  // and a lip is LEFT on the ramp's own angle -- see `bladeSurf`
+  const gUp = p.blade && p.grounded && BLADE.surf.on ? bladeSurfPre() : null;
   integrate(dt, 0, 0, 0, 0);
+  if (gUp !== null) bladeSurfPost(gUp);
   p.speed = Math.hypot(p.vel.x, p.vel.z);
   // LANDING. There is no bail clip, so a bad landing SCRUBS rather than dropping him -- and a
   // 180 is forgiven by folding the angle, because landing switch is a real thing to do.
-  if (wasAir && p.grounded && p.blade) fakieLand();
+  if (wasAir && p.grounded && p.blade) { bladeLandSlope(); fakieLand(); }
   if (wasAir && p.grounded) {
     const tr = Math.atan2(p.vel.x, p.vel.z), off0 = Math.abs(wrapAngle(tr - p.boardH));
     const off = p.speed > .5 ? Math.min(off0, Math.PI - off0) : 0;
@@ -15444,6 +15450,97 @@ function fakieStep(dt) {
   p.fkOff = Math.abs(d) <= r ? p.fkTgt : p.fkOff + Math.sign(d) * r;
   if (p.fkOff === p.fkTgt) fakieNorm();
   return p.fkOff;
+}
+
+// ============================================================================================
+// HER GROUND (m269, `BLADE.surf`, `bladeSurfPre`, `bladeSurfPost`, `bladeLandSlope`, `bladeTilt`)
+// -- the half of Rollergirl's surface-frame model this collider can carry.
+//
+// Her game decomposes her velocity against the FACE she is on, so a ramp is the flat ground at a
+// different angle: she climbs it, gravity along it slows her and hands it back, and she leaves its
+// lip travelling the way the face pointed. This game's ground answers a HEIGHT, not a normal, so the
+// normal is MEASURED: `groundAt` a little ahead and behind along her line (and across it, for the
+// tilt). Three things come out of that:
+//   ALONG THE FACE  grounded, her vertical speed is the grade times her speed, so on a ramp she is
+//                   travelling up it, not sliding horizontally into it and being snapped up.
+//   OFF THE LIP     where the surface turns away under her faster than `leave` m/s (a kicker's lip,
+//                   a quarter pipe's coping) she LEAVES with the climb she had -- her game's
+//                   `vel . n` test, measured as the drop in grade times her speed. Only off a face
+//                   she was going UP (`minUp`), so a crest on a downhill does not throw her.
+//   ONTO A SLOPE    landing on a downslope, the fall becomes speed along it (her `landKeep`): the
+//                   drop-in. A slope she lands against costs nothing extra -- the board's own
+//                   landing scrub still decides a crooked one.
+//   THE TILT        her body stands square to the face she is on, eased, and rights in the air.
+// **WHAT THIS CANNOT DO is vert**: `triAdd` keeps nothing steeper than 60 degrees, so a wall past
+// that is not a floor at all -- her game's vert lock has nothing here to lock to.
+// **A GRADE HAS TO HOLD OVER TWO DISTANCES TO BE A FACE.** A 30 cm kerb crossed inside the probe
+// reads as a 37-degree ramp at one width and half that at twice the width; a real face reads the
+// same at both. Taken as the smaller of the two (and nothing if they disagree in sign), so every
+// kerb in the city stays a kerb rather than a launch.
+function bladeGradeAt(x, z, hx, hz, y) {
+  const d = BLADE.surf.probe, Y = y + .6, st = MOVE.step * 2;
+  const g1 = (groundAt(x + hx * d, z + hz * d, Y, st) - groundAt(x - hx * d, z - hz * d, Y, st)) / (2 * d);
+  const g2 = (groundAt(x + hx * d * 2, z + hz * d * 2, Y, st) - groundAt(x - hx * d * 2, z - hz * d * 2, Y, st)) / (4 * d);
+  if (g1 * g2 <= 0) return 0;
+  return Math.abs(g1) < Math.abs(g2) ? g1 : g2;
+}
+function bladeSurfPre() {
+  const p = player, hs = Math.hypot(p.vel.x, p.vel.z);
+  if (hs < .3) return 0;
+  const g = clamp(bladeGradeAt(p.pos.x, p.pos.z, p.vel.x / hs, p.vel.z / hs, p.pos.y), -1.8, 1.8);
+  p.vel.y = g * hs;
+  return g;
+}
+function bladeSurfPost(g0) {
+  const p = player, S = BLADE.surf;
+  if (!p.grounded) return;                       // the integrator already let her go (a real drop)
+  const hs = Math.hypot(p.vel.x, p.vel.z);
+  if (hs < .3) return;
+  // ONE-SIDED, either side of where she now is: a centred probe straddles the crease and spreads
+  // the turn over three frames, none of which then reads as a lip
+  const ux = p.vel.x / hs, uz = p.vel.z / hs, d = S.probe, y = p.pos.y + .6, st = MOVE.step * 2;
+  const h0 = groundAt(p.pos.x, p.pos.z, y, st);
+  const gB = (h0 - groundAt(p.pos.x - ux * d, p.pos.z - uz * d, y, st)) / d;
+  const gB2 = (h0 - groundAt(p.pos.x - ux * d * 2, p.pos.z - uz * d * 2, y, st)) / (2 * d);
+  const gA = (groundAt(p.pos.x + ux * d, p.pos.z + uz * d, y, st) - h0) / d;
+  // the face behind her must be a FACE: the same grade over d and 2d (a kerb is not)
+  if (Math.abs(gB - gB2) > .12) return;
+  const gUp = Math.max(g0, Math.min(gB, gB2));
+  if (gUp < S.minUp) return;
+  if ((gUp - gA) * hs > S.leave) {
+    p.grounded = false; p.airT = 0; p.coyote = MOVE.coyote; p.jumps = Math.max(p.jumps || 0, 1);
+    p.vel.y = gUp * hs;
+    p.pos.y += .02;
+    p.lipped = 1;
+  }
+}
+function bladeLandSlope() {
+  const p = player, S = BLADE.surf;
+  if (!S.on || !S.land) return;
+  const hs = Math.hypot(p.vel.x, p.vel.z), down = Math.max(0, p.fallV || 0);
+  if (hs < .3 || down < .5) return;
+  const gd = -bladeGradeAt(p.pos.x, p.pos.z, p.vel.x / hs, p.vel.z / hs, p.pos.y);   // + is DOWNHILL ahead
+  if (gd <= .05) return;
+  const n = Math.sqrt(1 + gd * gd), along = (hs + down * gd) / n, hs2 = along / n * S.land + hs * (1 - S.land);
+  if (hs2 > hs) { p.vel.x *= hs2 / hs; p.vel.z *= hs2 / hs; }
+}
+// the body square to the face: eased on the ground, righting in the air
+const _btN = new THREE.Vector3(), _btU = new THREE.Vector3(0, 1, 0), _btQ = new THREE.Quaternion(), _btI = new THREE.Quaternion();
+function bladeTilt(dt) {
+  const p = player, S = BLADE.surf, R = rig.root;
+  if (!R) return;
+  if (!p.tiltQ) p.tiltQ = new THREE.Quaternion();
+  const live = p.blade && S.on && !p.wing && !p.wingRes;
+  if (live && p.grounded && !p.rail) {
+    // the same two-distance grade, so a kerb does not tip her for a frame
+    const gx = bladeGradeAt(p.pos.x, p.pos.z, 1, 0, p.pos.y), gz = bladeGradeAt(p.pos.x, p.pos.z, 0, 1, p.pos.y);
+    _btN.set(-gx, 1, -gz).normalize();
+    if (_btN.y < Math.cos(S.tiltMax)) _btN.set(0, 1, 0);       // a cliff edge read as a slope: stay upright
+    _btQ.setFromUnitVectors(_btU, _btN);
+  } else _btQ.identity();
+  p.tiltQ.slerp(_btQ, 1 - Math.exp(-dt * Math.LN2 / (p.grounded ? S.tiltHL : S.airHL)));
+  if (!live) { if (Math.abs(p.tiltQ.w) > .9999) p.tiltQ.identity(); if (p.wing || p.wingRes) return; }
+  if (Math.abs(p.tiltQ.w) < .99999) R.quaternion.premultiply(p.tiltQ);
 }
 
 function rigAnim(dt) {
@@ -27517,6 +27614,9 @@ const TUNE = [
   ['brake',          BLADE, 'brake',  4, 40, 1],
   ['roll drag',      BLADE, 'roll',   0, .2, .005],
   ['gun steady vs hips', BLADE, 'steady', 0, 1, .05],
+  ['ramps: surface physics', BLADE.surf, 'on', 0, 1, 1],
+  ['ramps: lip launch at (m/s)', BLADE.surf, 'leave', .5, 8, .1],
+  ['ramps: drop-in keeps', BLADE.surf, 'land', 0, 1, .05],
   ['speed skate push', SKSPEED, 'acc', 2, 25, .5],
   ['speed skate top',  SKSPEED, 'cap', 20, 45, .5],
   ['boost',            SKBOOST, 'add', 0, 20, .5],
@@ -27780,6 +27880,7 @@ function frameBody() {
     rig.root.rotation.z = player.board ? player.barrelA : 0;
     rig.root.position.add(_roll);      // written by `boardPose`, earlier in this same frame
     wingPose(dt);                      // her wing suit lays her forward about her hips (m266)
+    bladeTilt(dt);                     // her body square to the face she skates (m269)
     wingFrame(dt);
     // **AFTER THE ROOT IS PLACED, NOT ONLY AFTER THE MIXER.** The pin is a bone's WORLD
     // position and the speed cap is measured against how far it moved, so solving before the
@@ -28594,7 +28695,7 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // carried, and how a carried board should look is a look-at-it decision -- so it is a dial he
   // can reach on the phone rather than a pick shipped with an argument for it. `mel.hold()`
   // prints the line to paste back, and `mel.ride(1|0)` puts him on and off without a gesture.
-  SK8, BLADE, bladeOn, board, boardOut, boardHeld, SKSPEED, SKBOOST, bladeBoost, bladeFxStep, fakieSwivel, fakieFlip, fakieLand, WING, wingSet, stepWing, wingBoost, wingTrick, wingPose, wingFrame, wingTapR, wingTapL, wingOk, ISLE, buildIsle, isleSplash, islePutBack,
+  SK8, BLADE, bladeOn, board, boardOut, boardHeld, SKSPEED, SKBOOST, bladeBoost, bladeFxStep, fakieSwivel, fakieFlip, fakieLand, bladeSurfPre, bladeSurfPost, bladeLandSlope, bladeTilt, triAdd, triBuild, TRI, WING, wingSet, stepWing, wingBoost, wingTrick, wingPose, wingFrame, wingTapR, wingTapL, wingOk, ISLE, buildIsle, isleSplash, islePutBack,
   // THE THREE NEW SYSTEMS, LIVE (m160). Every one of them is a look-at-it decision somewhere,
   // and none of them should need a fight to see one -- which is `mel.fx()`'s own argument.
   DECAL, BRK, HYD, SPOUT, BREAK, WRECKS, SPOUTS, decalPut, brkBlast,
