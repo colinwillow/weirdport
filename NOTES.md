@@ -7,6 +7,17 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE RETICLE'S NEON IS DRAWN, NOT FILTERED (m257, `#retic circle.g`, `.fglow`).** *"Sometimes the aimer has
+  a weird square texture over it instead of the concentric circles."* His screenshot: a square of speckled
+  noise where the rings should be. The glow was two CSS `drop-shadow`s on the WHOLE element, over five
+  rings scaled up to 1.95x and spinning on the compositor -- and WebKit rasterises a filtered layer like
+  that as a texture of its own, which on a phone intermittently comes back as garbage the size of the
+  layer. Each ring now carries a wider faint copy of its own stroke behind it (same dasharray, same
+  colour, `stroke-opacity` .28): the same lit tube with no filter in the stack. **A CANDIDATE WITH A
+  MECHANISM, NOT A PROVEN CAUSE** -- nothing here has a compositor; `.fglow` on `#retic` brings the old
+  filter back for the A/B. If the square survives this, the next suspect is the reticle's ANCESTOR stack
+  (anything else with a `filter` or `backdrop-filter` composited over it).
+
 - **THE BURST COATS THE NEW BODY EVENLY, IN ITS OWN COLOURS, AND THE DOTS BREATHE (m256, `flubSwapEven`,
   `FLUB.sBirth/sPeak/sLand/sWob/colT`).** *"Sometimes the balls don't completely cover what you're
   transforming into, so it pops in... the colour of the poly they land on... grow a little so they cover
