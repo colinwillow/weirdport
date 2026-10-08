@@ -7,6 +7,22 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **COLIN WAS A HEAD SHORT BECAUSE HIS TALLEST MESH IS HIS HEADPHONES (m262, `COLIN.h`, `JACK.h`, `MOUSSA.h`).**
+  *"Colin in the game is really short -- him and Jack should be the same height, and Moussa even taller,
+  6'7", Colin and Jack about 6 foot."* All three were `h: 1.75`, and `K.h` is the soles-to-top-of-MESH span.
+  Measured off the files (`tools/.probe/h.mjs`, every mesh's own Y range, draco decoded):
+      colin    headphones 1.074..1.319   head (hair) 0.945..1.297   span 1.316
+      jack     head 0.728..1.038  -- his head IS his top              span 1.038
+      moussa   head 1.130..1.497                                      span 1.485
+  So at 1.75 Colin's HAIR stood at 1.65 and Jack's at 1.75 -- and the screenshot exaggerated it further
+  because Colin was nearer the lens. A real pose of each file (`tools/.probe/pose.mjs`, forward kinematics
+  on the GLB's own nodes and its idle's first frame, plus the borrowed zap idle through the shipped
+  retarget's formula) says the idle costs both of them the same ~4 cm, so it is the SIZE and not the pose.
+  Now: Colin and Jack at **1.80 m to the top of the hair** (Colin's `h` is 1.83 so the headband sits on top
+  of that), Moussa at **1.98** -- 6'7" over 6'0" is x1.097. `K.h` is also each one's collider height and the
+  scale every own-clip reference speed is multiplied by, so their feet and boxes follow with nothing else
+  typed. **The DNA disguise follows too** -- `mphSkin` draws at `P.scale * K.h / K.h`, the NPC's own scale.
+
 - **THE FIRST SHOT AT ANYBODY FROZE THE GAME FOR A SECOND, AND IT WAS PAYING FOR THE WHOLE TRANSFORM ON
   THAT FRAME (m261, `WARM`, `warmStep`).** *"The first time you shoot somebody it pauses and freezes for like a
   second or two... start loading earlier."* Nothing is DOWNLOADED on the shot -- every GLB is already in. What
