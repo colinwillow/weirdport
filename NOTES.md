@@ -7,6 +7,15 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CORRECTION TO m258, WRITTEN THE SAME NIGHT: HOMING WAS NEVER THE CAUSE.** `WEAP.home.on` has been **0**
+  since m36-era (*"the gun goes exactly where it is pointed"*), and `boltHome` returns on its first line --
+  so the rocket was never being steered and m258's two guards are inert. **I diagnosed from the shape of
+  the code without reading the switch above it**, which is this file's "check where it is called before
+  what it does" rule broken one level up: check whether it RUNS at all. Also checked: `git log -L` on
+  `fireRocket`, `aimRaw`, `aimPoint`, `muzzleWorld` and `chargeRelease` -- none touched since m189. So the
+  crooked rocket / crooked blaster ball is in an INPUT those read (the weapon mount, the camera, the
+  pose), not in the shot code. Open; asked for a recording of a shot leaving the gun.
+
 - **THE ROCKET WAS BEING STEERED BY THE BOLT'S HOMING (m258, `ROCKET.home`, `boltHome`).** *"The rocket flies
   tilted and the fire is no longer at its butt... we never edited the rocket, it just got messed up."* He is
   right that the rocket never changed: `rocketBody`/`rocketFace` are m189 exactly, and `stepBolts` calls
