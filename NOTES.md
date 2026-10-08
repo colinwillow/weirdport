@@ -7,6 +7,20 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE GLOW TEXTURE WAS BROKEN BY A SEARCH-AND-REPLACE IN m250, AND IT IS EVERY GLOW IN THE GAME (m259, `DOT`).**
+  *"It's literally the particles. The light on the missile is in the FRONT and off to the left... the blaster
+  bullet doesn't look like a ball, it looks like a skewed few shapes. Did you mess with the sprite sheet?"*
+  Close: m250 meant to raise `flubPix`'s canvas from 64 to 128 and replaced the FIRST
+  `c.width = c.height = 64` in the file -- which is `DOT`'s, the one soft radial texture every `glowSprite`
+  draws. The gradient under it is still centred at (32, 32) and filled over 64 x 64, so from m250 on the dot
+  sat in the TOP-LEFT QUARTER of its own texture: every glow drawn offset toward a corner and clipped (the
+  rocket's tail flame appearing ahead of and beside it; the blaster ball, a stack of three such sprites,
+  three clipped quarter-blobs). And `flubPix` kept its 64 px canvas while drawing and reading 128, so three
+  quarters of every skin read came back transparent black -- part of the black voxels m251 blamed on the atlas
+  gutter. Both put right. **A `replace(..., 1)` on a line that is not unique edits whichever copy comes
+  first** -- the patch script asserted uniqueness on every other edit in that build and not on that one;
+  `git diff` of the build is what found it (the reticle square, m257, may be the same build's doing).
+
 - **CORRECTION TO m258, WRITTEN THE SAME NIGHT: HOMING WAS NEVER THE CAUSE.** `WEAP.home.on` has been **0**
   since m36-era (*"the gun goes exactly where it is pointed"*), and `boltHome` returns on its first line --
   so the rocket was never being steered and m258's two guards are inert. **I diagnosed from the shape of
