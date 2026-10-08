@@ -7,6 +7,46 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **HERO KINDS: TURN INTO ROLLERGIRL AND YOU ARE ON HER SKATES (m263, `SKATER.mode`, `BLADE`, `bladeOn`,
+  `bladeAnim`, `mphExtras`, `ownFirst`).** *"Some characters are just regular NPCs -- you adopt exactly what you
+  always have. Certain characters are Easter eggs, other hero characters, and when you turn into them you have
+  hidden capabilities -- a wing suit, rollerblades... the blaster should stay usable, any weapon stays usable.
+  They're probably just gonna become one game, so everything has to work with everything."*
+  **HER FILE IS ROLLERGIRL'S NOW**, `models/alien_rollerskate_blue.glb` byte for byte from that repo (r157): 81
+  joints (65 Mixamo + a 15-bone tail), 49 clips, 4.4 MB against the old 1.2 MB 13-clip walker. On the street she
+  SKATES (casual / hard strides at Rollergirl's own reference speeds, 4 and 14 m/s at her 1.70 m), idles in her
+  own five idles, falls and gets up in her own clips; a hit drops her to her knees for a beat (no hit clip exists).
+  **A KIND CAN CARRY A `mode`, AND `'blade'` IS THE FIRST.** Wearing her, `boardOut()` answers true, so the board's
+  whole machinery is hers with no second physics path -- push, carve, brake, ollie, the double jump and its flip,
+  the barrel roll, the rail catch, and **the blaster while riding (m167)**, which is the point. No deck is drawn,
+  nothing is held, the left-flick step-off does nothing, and a knock-down does not `boardDrop` -- skates are feet.
+  `boardBusy` still stands the board down for a knock, a roll, a strike or a wall; `p.mphK` only blocks it for a
+  kind with no mode. `p.blade` is the derived fact, beside `p.board`.
+  **HER NUMBERS RIDE ON THE BOARD'S** (`BLADE = Object.create(SK8)` plus her overrides): a skater pivots where a
+  board carves (`turn` 6.5 / `turnHi` 2.6), strides harder and quicker (`pushV` 5.2, `pushFast` .52, `pushDur`
+  1.05, `plant` .30), brakes harder (18), rolls on longer (`roll` .045) and tops out at 24. Anything not named is
+  the board's live value, so the grind, the tricks and the camera follow a retune of the board. Panel rows under
+  BLADES (as her).
+  **HER CLIPS WIN WHERE THEY SHARE A NAME WITH ZAP'S** (`ownFirst`: `front_flip`, `back_flip`, `in_air`) -- without
+  it `mphBorrow` replaced them, and every flip she did would have been zap's retargeted onto her. **Her flips are
+  standing flips** (hips rise 1.55 m), so their Hips POSITION is dropped when she is worn, Rollergirl's `prepClips`
+  rule. Her thumb-off ROLL is the first frame of `blade_medium_forward` held (Rollergirl r131), and every skating
+  clip gets a `__legs` half so the gun's `__up` pose and her skating COMPOSE rather than averaging into a shrug.
+  `mphExtras` builds those once per kind; `loopX` makes them loop when worn.
+  **MEASURED, NOT ARGUED, before shipping:** zap's bind against her new rig, 57 shared bones, worst 0.03 deg -- the
+  borrow (and so every gun pose) still lands. `tools/.probe/blade.mjs` drives the SHIPPED `stepPlayer`/`rigAnim`
+  with her real clip NAMES fabricated as actions (no harness here can build a skin): bladeOn follows the disguise;
+  10 m/s at 1.58 s and 18.7 m/s at 6 s pushing; 18.7 -> 17.1 coasting 2 s; 75 deg carve in 0.6 s at 18 m/s; 14 m/s
+  braked to a stop in 0.75 s; ollie apex 3.86 m; the second tap is the double jump AND plays HER `front_flip`; the
+  blaster arms while she skates with `blade_hard_forward__legs` + `rifle_aim__up` up; revert takes the skates off;
+  an ordinary disguise does not skate.
+  **NOT PORTED, AND IT IS A STATED GAP, NOT A SILENT ONE:** her surface-frame ground model (a vert wall as the flat
+  at another angle) needs a collider that answers with a NORMAL and this one answers with a height; the WING SUIT is
+  the next build; fakie and her `*_backward` clips need Rollergirl's `faceForward` half-turn fix; her tail is held
+  in its clip pose (Rollergirl's tail sim is not here); the grabs, the speed skate, the swivel and the stance switch
+  are not mapped onto this game's pads yet. How any of it LOOKS -- the skin, the gun on her hand, the held roll --
+  is the phone's.
+
 - **COLIN WAS A HEAD SHORT BECAUSE HIS TALLEST MESH IS HIS HEADPHONES (m262, `COLIN.h`, `JACK.h`, `MOUSSA.h`).**
   *"Colin in the game is really short -- him and Jack should be the same height, and Moussa even taller,
   6'7", Colin and Jack about 6 foot."* All three were `h: 1.75`, and `K.h` is the soles-to-top-of-MESH span.

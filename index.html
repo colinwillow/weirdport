@@ -561,10 +561,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m262</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m263</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m262</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m263</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -630,9 +630,9 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm262';
+const BUILD = 'm263';
 /* ASSETS:START */
-const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"c2fbdbf7","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
+const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
 // Every runtime asset URL goes through A(). `npm run bump` writes the sha1 of each file's
 // CONTENTS into ASSETS above, so a file replaced IN PLACE -- same folder, same name, new bytes
@@ -3112,23 +3112,46 @@ const SKATER = {
   at: [[9, 1], [-26, 0], [-7, -25]],
   drop: /^CINEMA_4D/,
   ai: 1, pacifist: 1,
+  // **HER ROLLERGIRL EXPORT (m263), NOT THE 13-CLIP WALKER SHE WAS.** *"The version of her that I
+  // made in that game has a bunch more animations -- she has rollerblades on, she actually skates
+  // rather than walking."* The file is Rollergirl's `models/alien_rollerskate_blue.glb` byte for
+  // byte (r157): 81 joints (65 Mixamo + a 15-bone tail), 49 clips named as a schema --
+  // `blade_<casual|soft|medium|hard>_<forward|backward>`, the variety skates, five idles,
+  // `in_air`, `front_flip` / `back_flip` / `front_twist_flip`, `tuck`, `flip_pose`, the falls and
+  // get-ups, `grind_left/right`. On the street she SKATES now: casual for her amble, hard for her
+  // run, and the idles while she waits.
   clips: {
-    idle: 'idle',
-    look: ['left_turn', 'right_turn'],
-    walk: 'walking', run: 'running',
-    air: 'jump',                     // hers, and any kind that names one holds it while airborne
-    // HER OWN TURNS, AND A WIDER ONE FOR A BIGGER BLOW -- see above for why that is a read and
-    // not a shortcut on a body with wheels under it.
-    hits: ['left_turn', 'right_turn'],
-    big: ['left_turn_90', 'right_turn_90'],
-    // NAMED AND EMPTY. The states run; the poses arrive when they are drawn.
-    downF: '', downB: '', upF: '', upB: '',
+    idle: 'idle_normal',
+    look: ['idle_arms_out', 'idle_arms_crossed', 'idle_arms_behind_back', 'idle_legs_spread'],
+    walk: 'blade_casual_forward', run: 'blade_hard_forward',
+    air: 'in_air',
+    // **NO HIT CLIP IN THE EXPORT** -- this is a skater's set. A blow drops her to her knees for a
+    // beat, which reads as staggered; a big one is the same, and the knock-down is the real fall.
+    hits: ['fall_to_knees'],
+    big: ['fall_to_knees'],
+    downF: 'fall_to_face', downB: 'fall_to_face_02', upF: 'get_up_from_face', upB: 'get_up_from_face',
   },
-  walkRef: .81, runRef: 2.00, tsHi: 1.5, tsLo: .7,
-  // SHE ROLLS, so she is the quickest ambler on the street -- and both of these sit just OVER
-  // their own reference (x1.11 and x1.20, well inside `tsHi`), which is as far as a walk cycle
-  // can be pushed before the feet scramble. A skating clip is the honest way to go faster.
-  walk: .90, run: 2.4, flee: 3.0,
+  // both falls end FACE DOWN and both get-ups start there, so there is no half turn between them
+  flip: 0,
+  // **REFERENCES ARE ROLLERGIRL'S OWN (`MOVES.pushV` [4, 14] at her 1.70 m)**: a skating clip has
+  // no planted foot to measure, so these are the speeds her strides were TUNED to read right at,
+  // and she is 1.68 here, which is the same body.
+  walkRef: 4.0, runRef: 11.0, tsHi: 1.35, tsLo: .55,
+  // she rolls, so she is the quickest thing on the street that is not a car
+  walk: 3.2, run: 7.0, flee: 9.0,
+  // **AND SHE IS A HERO, NOT AN NPC, WHEN YOU ARE HER (m263, `mode`).** Wearing her is not "zap
+  // in her body" -- it is her skates. `bladeOn()` reads this field; any kind can carry one.
+  mode: 'blade',
+  // HER OWN CLIPS WIN OVER ZAP'S ON A NAME THEY SHARE (`front_flip`, `back_flip`, `in_air`), so a
+  // flip while you are her is HER flip, not zap's retargeted onto her.
+  ownFirst: 1,
+  // her skating clips LOOP when worn (the NPC's table only names five of them)
+  loopX: /^(blade_|grind_|idle_|in_air)/,
+  // the clips the gun override needs a hips-down half of -- see `SPLIT.legsRaw`, one body over
+  legsRaw: ['blade_casual_forward', 'blade_hard_forward', 'blade_roll_forward', 'idle_normal',
+            'in_air', 'grind_left', 'grind_right'],
+  // the thumb-off roll is a frame of her medium stride held still (Rollergirl's r131 `holdClip`)
+  hold: { from: 'blade_medium_forward', at: 0, name: 'blade_roll_forward' },
   turn: 3.0,
   vary: { pace: [.85, 1.2], nerve: [1, 1], react: [.3, 1.2], guard: [0, 0] },
   // A SKATER STOPS LESS AND SURGES LESS THAN A DRUNK, because she is rolling rather than
@@ -3942,6 +3965,46 @@ const SK8 = {
   dip: .09,
 };
 const board = { ready: false, group: null, deck: .10 };
+
+// ============================================================================================
+// HER SKATES (m263, `BLADE`, `bladeOn`, `bladeAnim`)
+//
+// *"Some characters will just be regular NPCs -- when you turn into them you have exactly the
+// functionality you always have. Certain characters are like little Easter eggs, more like other
+// hero characters, and when you turn into them you have hidden capabilities -- a wing suit,
+// rollerblades. So when you turn into her, we get all of the functionality you have in the other
+// game."* And: *"the blaster should stay usable -- any weapon we get stays usable."*
+//
+// **A HERO KIND CARRIES A `mode`, AND THIS IS THE FIRST.** Wearing a kind with `mode: 'blade'`
+// puts the player ON HER SKATES: `boardOut()` answers true for as long as she is worn, so the
+// whole board machinery -- push, carve, brake, ollie, the double jump and its flip, the barrel
+// roll, the rail catch, and above all **the blaster while riding (m167)** -- is hers with no
+// second physics path. No deck is drawn, nothing is held, and there is no stepping off: the
+// skates are her feet. Revert and zap is zap again.
+// **THE NUMBERS ARE HERS, ON TOP OF THE BOARD'S.** `Object.create(SK8)`, so anything not named
+// here IS the board's live value (the grind, the tricks, the camera) and a retune of the board
+// still reaches her. What IS named is Rollergirl's own feel, at her own 1.70 m: a skater pivots
+// where a board carves (`turn`), strides harder and quicker (`pushV`, `pushFast`/`pushDur`,
+// `plant` .30), stops harder (`brake`) and rolls on longer (`roll` her .04).
+// **NOT PORTED YET, AND SAID SO**: her surface-frame ground model (riding up a vert wall, a half
+// pipe as the flat at another angle) needs a collider that answers with a NORMAL, and this game's
+// answers with a height; the wing suit is the next build; fakie and her backward clips need the
+// half-turn fix her `*_backward` exports carry (`faceForward`, Rollergirl r24).
+const BLADE = Object.assign(Object.create(SK8), {
+  top: 24, roll: .045, brake: 18, turn: 6.5, turnHi: 2.6,
+  pushV: 5.2, pushDur: 1.05, pushFast: .52, shoveDur: .34, plant: .30,
+  dip: 0,
+  clip: Object.assign({}, SK8.clip, { land: '' }),
+  own: Object.assign({}, SK8.own, { down: '' }),
+  // her strides: casual eases into hard across `pushV` (m/s), each played at speed / its own
+  // reference inside `rate`; she is "still" under `still[0]` and fully rolling past `still[1]`
+  anim: { pushV: [4, 14], rateLo: .55, rateHi: 1.35, still: [.6, 1.8], landT: .22 },
+});
+// WEARING A BLADE KIND, AND FINISHED BECOMING HER -- mid-transform the body is the blob.
+function bladeOn() {
+  const K = player.mphK;
+  return !!(K && K.mode === 'blade' && !player.mphSt && K.mph && rig.model === K.mph.model);
+}
 
 // ============================================================================================
 // THE MOTORCYCLE (m107, `MOTO`, `buildMoto`, `motoBones`, `stepMoto`)
@@ -11474,7 +11537,7 @@ const player = {
   jump: 0, jumps: 0, fallV: 0,
   // THE BOARD (m150). `board` is "he is riding", which is DERIVED from the slot being out and
   // is not a second fact to keep in step with it -- `boardOut()` is the one reader.
-  board: 0, riding: 0, braked: 0,
+  board: 0, riding: 0, braked: 0, blade: 0, railSide: '',
   boardH: 0, pushT: 0, pushW: 0, pushSync: 0, shoveT: 0, shoveV: 0,
   crouch: 0, deckLag: 0, sk8L: 0, pop: 0,
   // THE TRICK. `bRoll`/`bYaw` are radians REMAINING and `bRollA`/`bYawA` what has been applied,
@@ -13852,7 +13915,7 @@ function buildSkateClips(g) {
 // which is Shredworld's own c84 `KIT.on` bug (*one variable, two facts*) with the fields
 // renamed. The deck being IN HIS HAND is still a slot, because that really is what he is
 // carrying; the deck being UNDER HIS FEET is `p.riding` and nothing else.
-function boardOut() { return !!(SK8.on && board.ready && player.riding && !boardBusy()); }
+function boardOut() { return !!(SK8.on && ((board.ready && player.riding) || bladeOn()) && !boardBusy()); }
 function boardHeld() { return !!(SK8.on && board.ready && slotNow().board && !player.riding); }
 // **GETTING ON AND OFF IS THE LEFT PAD'S FLICK, AND IT COSTS NO NEW GESTURE.** Not riding, that
 // flick is the dodge roll -- so the mount takes only the UP/forward half and a sideways or
@@ -13912,7 +13975,7 @@ function boardStepOff() {
 // MOUNTING, which is a different question and gets its own test in `boardMount` -- a man whose
 // hand is in a bag is not also stepping onto a board.
 function boardBusy() { const p = player; return !!(p.knock || p.roll || p.melee || p.chargeGo ||
-  p.slam || p.wall || p.ledge || p.climb || p.mphK || (p.swap && !p.riding)); }
+  p.slam || p.wall || p.ledge || p.climb || (p.mphK && !bladeOn()) || (p.swap && !p.riding && !bladeOn())); }
 
 // **THE GRADE IS SAMPLED, BECAUSE `groundAt` RETURNS A HEIGHT AND NOT A NORMAL.** Two probes
 // `SK8.probe` apart along the way he is pointing is the rise over the run, which is all a
@@ -13985,6 +14048,9 @@ function railCatch() {
   const sgn = dot < 0 ? -1 : 1;
   p.rail = { x: r.x, z: r.z, y: r.y, tx: r.tx * sgn, tz: r.tz * sgn, half: r.half, s0: r.s0 * sgn };
   p.railS = 0;
+  // WHICH SIDE SHE CAME AT IT FROM (m263) -- Rollergirl's rule: drifting toward her right as she
+  // lands on it is a RIGHT grind. Her right along the rail is (-tz, tx).
+  p.railSide = (p.vel.x * -p.rail.tz + p.vel.z * p.rail.tx) >= 0 ? 'right' : 'left';
   p.railD = Math.max(1.5, sp * Math.abs(dot));
   p.boardH = Math.atan2(p.rail.tx, p.rail.tz);
   p.bRoll = 0; p.bYaw = 0; p.trick = ''; p.trickName = '';
@@ -14026,7 +14092,7 @@ function boardFlick(dx, dy, body) {
   if (p.grounded) {
     // THE ONE THING A GROUND FLICK DOES: the left pad flicked DOWN steps off. Everything else
     // on the ground stays deliberately nothing, and the air flicks below are the tricks.
-    if (body) { const up = -dy; if (up < 0 && Math.abs(up) >= Math.abs(dx)) boardStepOff(); }
+    if (body && !p.blade) { const up = -dy; if (up < 0 && Math.abs(up) >= Math.abs(dx)) boardStepOff(); }
     return 1;
   }
   const T = SK8.trick;
@@ -14109,6 +14175,8 @@ function trickStep(dt) {
 
 function stepSkate(dt) {
   const p = player, s = stickWorld();
+  // HER NUMBERS ON SKATES, THE BOARD'S OTHERWISE (m263) -- one physics, two feels
+  const S = p.blade ? BLADE : SK8;
   if (p.railCool > 0) p.railCool -= dt;
   // **THE GRIND OWNS THE BODY AND RETURNS**, above the ground test and above the collider --
   // he is locked to a line, so gravity, the resolver and the ground snap all have nothing to
@@ -14138,53 +14206,53 @@ function stepSkate(dt) {
       // flips positive, the brake becomes a push, and a held brake reads as a 180 into an
       // acceleration. **AND THE ZONE IS NOT A SIGN TEST** -- a thumb held exactly sideways puts
       // `fwdC` at +/-1e-17 and whether he is braking would be decided by rounding.
-      if (!p.braked && fwdC < -SK8.brakeZone && sp > SK8.min) p.braked = 1;
+      if (!p.braked && fwdC < -S.brakeZone && sp > S.min) p.braked = 1;
       const back = !!p.braked;
-      const rate = lerp(SK8.turn, SK8.turnHi, clamp(Math.abs(sp) / SK8.top, 0, 1));
+      const rate = lerp(S.turn, S.turnHi, clamp(Math.abs(sp) / S.top, 0, 1));
       if (!back) p.boardH += clamp(ang * 3, -rate, rate) * dt * s.mag;
-      if (back && sp > SK8.min) sp = Math.max(0, sp - SK8.brake * dt * s.mag);   // a brake
+      if (back && sp > S.min) sp = Math.max(0, sp - S.brake * dt * s.mag);   // a brake
       else if (!back) {
         // **THE CYCLE IS A PHASE, NOT A CLOCK**, because the period moves with the speed.
-        const per = lerp(SK8.pushFast, SK8.pushDur, clamp(sp / SK8.top, 0, 1));
+        const per = lerp(S.pushFast, S.pushDur, clamp(sp / S.top, 0, 1));
         const was = p.pushT;
         p.pushT += dt / per;
         if (p.pushT >= 1) { p.pushT -= 1; p.pushSync = 1; }
         want = 1;
         // the shove fires at the point in the cycle the foot is on the road, which is the one
         // thing a comment claiming it is not enough to make true (Shredworld, c171)
-        if ((was < SK8.plant && p.pushT >= SK8.plant) || (p.pushT < was && p.pushT >= SK8.plant)
-            || (was === 0 && p.pushT >= SK8.plant)) {
-          p.shoveT = SK8.shoveDur; p.shoveV = SK8.pushV * (1 - clamp(sp / SK8.top, 0, 1));
-          footSnd(Math.max(STEP.at + .1, Math.abs(sp)), SK8.top, p.pos.x, p.pos.z, p.stepL, 1, .92);
+        if ((was < S.plant && p.pushT >= S.plant) || (p.pushT < was && p.pushT >= S.plant)
+            || (was === 0 && p.pushT >= S.plant)) {
+          p.shoveT = S.shoveDur; p.shoveV = S.pushV * (1 - clamp(sp / S.top, 0, 1));
+          footSnd(Math.max(STEP.at + .1, Math.abs(sp)), S.top, p.pos.x, p.pos.z, p.stepL, 1, .92);
           p.stepL = p.stepL ? 0 : 1;
         }
       }
     } else { p.pushT = 0; p.braked = 0; }
-    if (sp <= SK8.min) p.braked = 0;       // stopped, so the same held thumb is a push again
+    if (sp <= S.min) p.braked = 0;       // stopped, so the same held thumb is a push again
     p.pushW += (want - p.pushW) * Math.min(1, 7 * dt);
     // the stroke itself, spread over a half sine whose integral over one cycle is exactly 1
     if (p.shoveT > 0) {
-      const u = 1 - p.shoveT / SK8.shoveDur;
-      sp += p.shoveV * (Math.PI / 2) * Math.sin(Math.PI * clamp(u, 0, 1)) * dt / SK8.shoveDur;
+      const u = 1 - p.shoveT / S.shoveDur;
+      sp += p.shoveV * (Math.PI / 2) * Math.sin(Math.PI * clamp(u, 0, 1)) * dt / S.shoveDur;
       p.shoveT -= dt;
     }
-    sp += boardGrade(p.boardH) * SK8.slope * dt;
-    sp *= Math.exp(-SK8.roll * dt);
-    if (Math.abs(sp) < SK8.min && !s.mag) sp = 0;
+    sp += boardGrade(p.boardH) * S.slope * dt;
+    sp *= Math.exp(-S.roll * dt);
+    if (Math.abs(sp) < S.min && !s.mag) sp = 0;
     // **AND THE VELOCITY IS REBUILT ON THE NEW HEADING, NOT THE ONE IT WAS READ OFF.** `fx`/`fz`
     // were taken at the top of the frame, BEFORE the steer -- rebuilding on those turns the
     // deck under a line that never changes, which is a carve that does nothing.
     p.vel.x = Math.sin(p.boardH) * sp; p.vel.z = Math.cos(p.boardH) * sp;
     // THE OLLIE. The right pad's tap is the jump everywhere else and it is the pop here -- one
     // gesture, and which it is comes out of what is under him rather than out of a mode.
-    // **THE DIP (m190)**: his `down` pose for `SK8.dip` before the pop, which is what he drew it for.
+    // **THE DIP (m190)**: his `down` pose for `S.dip` before the pop, which is what he drew it for.
     // Only when that pose exists -- with the borrowed set the tap pops at once, as it always did.
-    if (p.jump && !(p.dipT > 0) && SK8.dip > 0 && rig.actions[SK8.own.down]) { p.jump = 0; p.dipT = SK8.dip; }
+    if (p.jump && !(p.dipT > 0) && S.dip > 0 && rig.actions[S.own.down]) { p.jump = 0; p.dipT = S.dip; }
     let pop = 0;
     if (p.dipT > 0) { p.dipT -= dt; if (p.dipT <= 0) { p.dipT = 0; pop = 1; } }
     else if (p.jump) { p.jump = 0; pop = 1; }
     if (pop) {
-      p.vel.y = SK8.ollie; p.grounded = false; p.coyote = 0; p.airT = 0;
+      p.vel.y = S.ollie; p.grounded = false; p.coyote = 0; p.airT = 0;
       p.pop = 1; p.jumps = 1;
       snd('swoosh', { r: 1.25, g: .34 });
     }
@@ -14195,7 +14263,7 @@ function stepSkate(dt) {
     // turned WITHOUT rebuilding the velocity on it, so a spin turns the board under a line
     // that keeps going, which is the only thing that makes landing sideways mean anything.
     if (s.mag > 0 && !p.barrel)
-      p.boardH += clamp(wrapAngle(Math.atan2(s.x, s.z) - p.boardH), -1, 1) * SK8.turn * 1.6 * s.mag * dt;
+      p.boardH += clamp(wrapAngle(Math.atan2(s.x, s.z) - p.boardH), -1, 1) * S.turn * 1.6 * s.mag * dt;
     // **THE AIR TAP IS THE CATCH, AND THEN THE SECOND JUMP (m169).** *"You can't double jump on
     // a skateboard whereas I kind of wish you could."* The gesture was already free -- in the
     // air this tap was the rail catch and nothing else, so a tap over nothing did nothing at all.
@@ -14212,9 +14280,9 @@ function stepSkate(dt) {
       if (railCatch()) return;
       if (p.jumps > 0 && p.jumps < 2 && !p.rail) {
         p.jumps = 2;
-        p.vel.y = SK8.ollie * SK8.second;
+        p.vel.y = S.ollie * S.second;
         p.coyote = 0;
-        if (!p.trick && !p.barrel) bodyFlip(1, Math.max(.25, airLeft() * SK8.trick.fill));
+        if (!p.trick && !p.barrel) bodyFlip(1, Math.max(.25, airLeft() * S.trick.fill));
         snd('swoosh', { r: 1.1, g: .36 });
       }
     }
@@ -14235,7 +14303,7 @@ function stepSkate(dt) {
     // rotation may still be outstanding and be forgiven; past that he lands on his wheels
     // sideways, which costs him the same as landing crooked does.
     const left = Math.abs(p.bRoll) + Math.abs(p.bYaw);
-    if (off > SK8.land || left > SK8.trick.slop) { p.vel.x *= SK8.scuff; p.vel.z *= SK8.scuff; }
+    if (off > S.land || left > S.trick.slop) { p.vel.x *= S.scuff; p.vel.z *= S.scuff; }
     else { const v = Math.hypot(p.vel.x, p.vel.z); p.vel.x = Math.sin(p.boardH) * v; p.vel.z = Math.cos(p.boardH) * v; }
     // **WRAP THE APPLIED PAIR ON LANDING**, or a landed 360 visibly settles back through a
     // whole turn on the road. What is LEFT is dropped: the trick is over when he is down.
@@ -14246,8 +14314,8 @@ function stepSkate(dt) {
     // **ITS OWN CLOCK, NOT `p.land`.** That one belongs to the gait's two landings and is set
     // in `stepFoot`, which the board branch returns above -- so reading it here is reading
     // whatever was left over from the last time he was on his feet.
-    p.sk8L = rig.actions[SK8.own.down] ? SK8.own.land : clipLen(SK8.clip.land) / 1.4;
-    if (!rig.actions[SK8.own.down] && rig.actions[SK8.clip.land]) playOnce(SK8.clip.land, 1.4);
+    p.sk8L = rig.actions[S.own.down] ? S.own.land : clipLen(S.clip.land) / 1.4;
+    if (!rig.actions[S.own.down] && rig.actions[S.clip.land]) playOnce(S.clip.land, 1.4);
     bumpSnd(Math.abs(p.fallV), p.pos.x, p.pos.z);
   }
   // the crouch is how hard he is working, and it is what the two clip pairs blend on
@@ -14255,8 +14323,8 @@ function stepSkate(dt) {
     const k = Math.min(1, 9 * dt);
     p.bRollA -= p.bRollA * k; p.bYawA -= p.bYawA * k; p.barrelA -= p.barrelA * k;
   }
-  const wantC = p.grounded ? (p.shoveT > 0 ? 1 : clamp(p.speed / SK8.top, 0, 1) * .5) : 0;
-  p.crouch += (wantC - p.crouch) * Math.min(1, SK8.crouch * dt);
+  const wantC = p.grounded ? (p.shoveT > 0 ? 1 : clamp(p.speed / S.top, 0, 1) * .5) : 0;
+  p.crouch += (wantC - p.crouch) * Math.min(1, S.crouch * dt);
   // and he faces the way the board is going -- there is no second facing to keep in step
   p.heading = p.boardH; p.faceH = p.boardH;
 }
@@ -14289,8 +14357,20 @@ function boardPose(dt) {
   // same frame, so a frame that leaves this function early must leave a zero behind rather than
   // last frame's offset -- which is a body permanently displaced off a roll that has ended.
   _roll.set(0, 0, 0);
+  const p = player;
+  // **ON SKATES THERE IS NO DECK (m263)**, but the barrel roll's waist offset below is still
+  // HERS -- it is read by the root block -- so it is computed and nothing is drawn.
+  if (p.board && p.blade) {
+    if (board.ready) board.group.visible = false;
+    if (p.barrelA) {
+      const sa = Math.sin(p.barrelA), h = p.faceH + rig.faceOff + RIG.spin;
+      const k = (rig.hipY || RIG.height * .44) * SK8.trick.pivot;
+      _roll.set(k * sa * Math.cos(h), k * (1 - Math.cos(p.barrelA)), -k * sa * Math.sin(h));
+    }
+    return;
+  }
   if (!board.ready) return;
-  const p = player, on = !!p.board;
+  const on = !!p.board;
   board.group.visible = on || boardHeld();
   if (!on) {
     if (!board.group.visible) return;
@@ -14378,13 +14458,15 @@ function stepPlayer(dt) {
       // A KNOCK-DOWN TAKES THE DECK OUT FROM UNDER HIM AND HE HAS TO GET BACK ON. Everything
       // else in `boardBusy` is transient -- a roll, a strike, a swap -- and popping back on
       // when it ends is right, because he never chose to step off.
-      if (p.knock) boardDrop();
+      // ...EXCEPT ON SKATES (m263): they are her feet, so there is nothing to drop
+      if (p.knock && !p.blade) boardDrop();
       p.braked = 0;
       p.rail = null; p.trick = ''; p.trickName = '';
       p.bRoll = 0; p.bYaw = 0; p.bRollA = 0; p.bYawA = 0; p.barrel = 0; p.barrelA = 0;
       p.pushW = 0; p.sk8L = 0;
     }
     p.board = on ? 1 : 0;
+    p.blade = on && bladeOn() ? 1 : 0;
   }
   if (p.board) { stepSkate(dt); return; }
   if (p.wallCool > 0) p.wallCool = Math.max(0, p.wallCool - dt);
@@ -14795,6 +14877,47 @@ function stepPlayer(dt) {
 // ============================================================================================
 // THE WEIGHT TABLE
 // ============================================================================================
+// **HER BODY ON HER SKATES (m263).** The board branch's shape -- the gun pose over a hips-down half,
+// a whole-body flip owning the air -- with HER clips in the roles, by Rollergirl's own move brain:
+//     on a rail     `grind_left` / `grind_right` by the side she came at it from
+//     in the air    her flip while one runs, `in_air` otherwise
+//     standing      `idle_normal`
+//     pushing       `blade_casual_forward` easing into `blade_hard_forward` with speed, each at
+//                   speed / its own reference (`BLADE.anim.pushV`)
+//     coasting      her medium stride's first frame, held (`blade_roll_forward`)
+// Every row sums to 1 under the gun's spine-up half, which is disjoint from it.
+function bladeAnim(dt, t) {
+  const p = player, A = BLADE.anim, has = n => !!(n && rig.actions[n]);
+  const upNm = gunOut() ? (rocketUp() || (p.fireT > 0 ? CLIPS.shoot : p.aim ? CLIPS.aimPose : CLIPS.aimIdle)) : '';
+  const gu = upNm && rig.actions[upKey(upNm)] ? upKey(upNm) : '';
+  if (gu) t[gu] = 1;
+  const L = n => (gu && rig.actions[n + LEGS] ? n + LEGS : n);
+  const put = (n, w) => { if (w > 0 && has(n)) { const k = L(n); t[k] = (t[k] || 0) + w; return k; } return null; };
+  if (p.rail) {
+    const nm = 'grind_' + (p.railSide || 'right');
+    const k = put(has(nm) ? nm : 'blade_roll_forward', 1);
+    if (k) setScale(k, clamp((p.railD || 6) / 8, .75, 1.4));
+  } else if (!p.grounded) {
+    if (p.trickName && has(p.trickName)) { if (gu) delete t[gu]; t[p.trickName] = 1; }
+    else put(has('in_air') ? 'in_air' : 'blade_roll_forward', 1);
+  } else {
+    const v = p.speed, still = 1 - smooth(A.still[0], A.still[1], v), move = 1 - still;
+    put('idle_normal', still);
+    const pu = clamp(p.pushW, 0, 1);
+    if (move > 0) {
+      const u = clamp((v - A.pushV[0]) / Math.max(.1, A.pushV[1] - A.pushV[0]), 0, 1);
+      for (const [nm, w, ref] of [['blade_casual_forward', 1 - u, A.pushV[0]], ['blade_hard_forward', u, A.pushV[1]]]) {
+        const k = put(nm, move * pu * w);
+        if (k) setScale(k, clamp(Math.max(.3, v) / ref, A.rateLo, A.rateHi));
+      }
+      put(has('blade_roll_forward') ? 'blade_roll_forward' : 'blade_casual_forward', move * (1 - pu));
+    }
+  }
+  let sum = 0; for (const k in t) if (k !== gu) sum += t[k];
+  if (sum < .01) t[has('idle_normal') ? L('idle_normal') : CLIPS.idle] = 1;
+  setWeights(t, dt);
+}
+
 function rigAnim(dt) {
   const p = player, sp = p.speed, t = {};
   p.leapY = 0;          // only the ordinary gait's sprint sets it (m193), so every other state starts at 0
@@ -14825,6 +14948,7 @@ function rigAnim(dt) {
     else setScale(nm, Math.max(0, p.speed / Math.max(.3, GAIT.walkRef)) * CLIMB.rate);
     setWeights(t, dt); return;
   }
+  if (p.board && p.blade) { bladeAnim(dt, t); return; }
   if (p.board) {
     const c = clamp(p.crouch, 0, 1);
     // **RIDING AND SHOOTING IS AN OVERRIDE, NOT A BLEND (m167).** The gun pose keys spine-up
@@ -20596,15 +20720,18 @@ function mphSkin(K) {
   const mixer = new THREE.AnimationMixer(model);
   const actions = {}, clips = {};
   const loops = K.loops || bodyLoops(K);
-  for (const c of P.clips) {
+  // A HERO KIND'S OWN EXTRAS (m263) -- the held rolling frame and the hips-down halves -- go into
+  // the pool beside the proto's clips, so every name `bladeAnim` asks for is an action like any other.
+  const pool = P.clips.concat(mphExtras(K, P));
+  for (const c of pool) {
     clips[c.name] = c;
     const a = mixer.clipAction(c);
-    if (!loops.has(c.name)) { a.setLoop(THREE.LoopOnce, 1); a.clampWhenFinished = true; }
+    if (!loops.has(c.name) && !(K.loopX && K.loopX.test(c.name))) { a.setLoop(THREE.LoopOnce, 1); a.clampWhenFinished = true; }
     a.enabled = true; a.setEffectiveWeight(0); a.play();
     actions[c.name] = a;
   }
   K.mph = { K, model, mixer, actions, clips, cw: {}, bones, faceOff: P.faceOff, mats, h,
-            mounts: {}, bind, stride: mphStride(clips, K) };
+            mounts: {}, bind, stride: mphStride(clips, K), own: new Set(pool.map(c => c.name)) };
   // AFTER THE SKIN EXISTS, because it reads `skin.bones` and hangs the mount on one of them.
   K.mph.mounts = mphMounts(K.mph);
   // **ON THE FRAME THE CLONE IS MADE, WHICH IS ALREADY THE ALLOCATION FRAME (m119).** The whole
@@ -20612,6 +20739,34 @@ function mphSkin(K) {
   // itself allocates nothing; the retarget belongs on the same side of that line.
   mphBorrow(K.mph);
   return K.mph;
+}
+
+// **WHAT A HERO KIND ADDS TO ITS OWN POOL WHEN IT IS WORN (m263).** Built once per kind and kept,
+// because the same clips go to the one skin the DNA gun ever makes of it.
+//   - **HER FLIPS ARE STANDING FLIPS**: the hips rise 1.55 m in `front_flip`, which in the air is
+//     the body leaving its own root. Rollergirl's `prepClips` drops the flips' Hips POSITION and
+//     keeps the rotation -- the arc is the physics' job -- and so does this. The NPC never plays a
+//     flip, so doing it to the shared proto clip costs her nothing.
+//   - **THE ROLL**: a frame of a riding clip, held still (Rollergirl's r131 `holdClip`).
+//   - **THE HIPS-DOWN HALVES**: `SPLIT.legsRaw`'s rule, so the gun pose owns spine-up and her
+//     skating owns hips-down, and they COMPOSE rather than averaging into a shrug.
+function mphExtras(K, P) {
+  if (K._xtra) return K._xtra;
+  const out = [];
+  for (const c of P.clips) if (/_flip$/.test(c.name)) c.tracks = c.tracks.filter(t => !/Hips\.position$/.test(t.name));
+  const H = K.hold, src = H && P.clips.find(c => c.name === H.from);
+  if (src && !P.clips.some(c => c.name === H.name)) {
+    const t0 = clamp(H.at, 0, 1) * src.duration;
+    out.push(new THREE.AnimationClip(H.name, .1, src.tracks.map(tr =>
+      new tr.constructor(tr.name, [0], Array.from(tr.createInterpolant().evaluate(t0))))));
+  }
+  const all = P.clips.concat(out);
+  for (const nm of K.legsRaw || []) {
+    const c = all.find(c => c.name === nm); if (!c) continue;
+    const keep = c.tracks.filter(t => !isUpper(t.name));
+    if (keep.length) out.push(new THREE.AnimationClip(nm + LEGS, c.duration, keep.map(t => t.clone())));
+  }
+  return (K._xtra = out);
 }
 
 // ============================================================================================
@@ -20820,6 +20975,9 @@ function mphBorrow(skin) {
     // AND ZAP'S NAME WINS WHERE THEY COLLIDE. Measured: the only collisions in the whole roster
     // are `in_air` (hobo), `idle_01` (clancy) and `idle_01`/`run_fwd`/`walk_fwd` (the female) --
     // and on every one of them zap's is the clip everything in `CLIPS` was written against.
+    // **EXCEPT ON A HERO KIND (m263, `ownFirst`)**: her `front_flip`, `back_flip` and `in_air` are
+    // the ones she is worn FOR, and zap's retargeted onto her would be zap doing her tricks.
+    if (skin.K && skin.K.ownFirst && skin.own && skin.own.has(nm)) continue;
     const old = skin.actions[nm];
     if (old) { old.setEffectiveWeight(0); old.stop(); }
     skin.cw[nm] = 0;
@@ -26263,6 +26421,13 @@ const TUNE = [
   ['white-hot',   SURGE, 'hot',    0, 1, .05],
   ['ROCKET'],
   ['homing (0 straight)', ROCKET, 'home', 0, 1, 1],
+  ['BLADES (as her)'],
+  ['top speed',      BLADE, 'top',    12, 32, .5],
+  ['stride kick',    BLADE, 'pushV',  1, 10, .1],
+  ['turn (still)',   BLADE, 'turn',   1, 12, .1],
+  ['turn (fast)',    BLADE, 'turnHi', .3, 6, .1],
+  ['brake',          BLADE, 'brake',  4, 40, 1],
+  ['roll drag',      BLADE, 'roll',   0, .2, .005],
   ['JACK'],
   ['arms out',   JACK.arms, 'up',   -10, 40, 1],
   ['forearms down', JACK.arms, 'fore', -20, 30, 1],
@@ -26496,7 +26661,7 @@ function frameBody() {
     rig.root.position.y += player.leapYd;
     // HE STANDS ON THE DECK, so he is lifted by its measured height -- his COLLIDER stays on
     // the ground, which is right: the board is a picture and the man is the body.
-    if (player.board) rig.root.position.y += board.deck;
+    if (player.board && !player.blade) rig.root.position.y += board.deck;
     rig.root.rotation.y = player.faceH + rig.faceOff + RIG.spin + aimComp(dt);
     rig.drawnYaw = rig.root.rotation.y;
     // **THE BARREL ROLL (m167).** No clip: the whole of him turns about his own forward axis,
@@ -26659,8 +26824,8 @@ function frameBody() {
     // it"* and *"he got there and it did not come up"* are three bugs and one picture from a
     // phone. `MOTO12` is the steer angle in degrees while it is being ridden, which is the
     // number every part of the geometry is derived from; anything else is the state's own name.
-    const sk8 = !board.ready ? (slotNow().board ? ' · NO BOARD' : '') : (player.board
-      ? ' · SK8 ' + player.speed.toFixed(1) + (player.grounded ? '' : ' air') +
+    const sk8 = !board.ready && !player.blade ? (slotNow().board ? ' · NO BOARD' : '') : (player.board
+      ? (player.blade ? ' · BLADE ' : ' · SK8 ') + player.speed.toFixed(1) + (player.grounded ? '' : ' air') +
         (player.rail ? ' GRIND' + player.railD.toFixed(1) : '') +
         (player.pushW > .5 ? ' push' : '') +
         (player.trick ? (player.trick === 'f' ? ' FRONT' : ' BACK') : '') +
@@ -27317,7 +27482,7 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // carried, and how a carried board should look is a look-at-it decision -- so it is a dial he
   // can reach on the phone rather than a pick shipped with an argument for it. `mel.hold()`
   // prints the line to paste back, and `mel.ride(1|0)` puts him on and off without a gesture.
-  SK8, board, boardOut, boardHeld,
+  SK8, BLADE, bladeOn, board, boardOut, boardHeld,
   // THE THREE NEW SYSTEMS, LIVE (m160). Every one of them is a look-at-it decision somewhere,
   // and none of them should need a fight to see one -- which is `mel.fx()`'s own argument.
   DECAL, BRK, HYD, SPOUT, BREAK, WRECKS, SPOUTS, decalPut, brkBlast,
