@@ -555,10 +555,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m250</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m251</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m250</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m251</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -624,7 +624,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm250';
+const BUILD = 'm251';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"c2fbdbf7","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -21288,7 +21288,7 @@ function surgeStep(dt) {
 // (`flubPix`), sRGB decoded, times the material colour; a map that cannot be read is the material
 // colour, never a throw.
 const FLUB = {
-  n: 1400, size: .05, add: 0,
+  n: 1800, size: .036, add: 0,
   dur: 2.0,
   peel: .26,          // share of `u` over which the voxels are born on the old body
   hide: .30,          // the old body is gone by here
@@ -21298,8 +21298,21 @@ const FLUB = {
   // centred on his own body and his own size, not a noise field thrown a metre and a half out:
   //   0 QUASAR   a thin spinning disc (inner rings faster) with a jet out of each pole
   //   1 FLUBBER  a core with `arms` wobbling tendrils, each ending in a blob
-  shape: 0,
+  //   2 RUBBER   (m251, the default) a jelly core that throws a DIFFERENT set of arms every time,
+  //              each with a ball on the end, out like rubber bands -- they snap back at the swap and
+  //              the mass wraps out onto the new body with an elastic overshoot
+  shape: 2,
   scale: 1,           // the whole form, as a multiple of his own height
+  core: .17,          // rubber: the jelly core's radius, as a fraction of his height
+  armsMin: 4, armsMax: 9,
+  reachMin: .22, reachMax: .50,   // and how far each arm flies, as fractions of his height
+  boing: 14,          // the spring's frequency -- higher is a stiffer rubber band
+  snap: .05,          // the arms start snapping back this share of `u` before the swap
+  overshoot: 1.6,     // how far the landing over-runs the new body before it settles (easeOutBack)
+  jit: .028,          // every voxel's own drift round its place, as a fraction of his height
+  heat: .35,          // how far the form glows toward `hot` at its peak
+  hot: [.62, .86, 1.0],   // the heat colour: blue-white, what a dark texel glows instead of black
+  floor: .16,         // a voxel darker than this (luminance) glows toward `hot` instead
   disc: .32,          // quasar disc radius / jet length, as fractions of his height
   jet: .52,
   arms: 7, reach: .42,  // flubber: tendril count, and length as a fraction of his height
@@ -21350,10 +21363,23 @@ function flubColor(sm, i, out) {
     let u = sm.geometry.attributes.uv.getX(i), v = sm.geometry.attributes.uv.getY(i);
     u -= Math.floor(u); v -= Math.floor(v);
     if (m.map.flipY) v = 1 - v;
-    const o = (((v * 127) | 0) * 128 + ((u * 127) | 0)) * 4;
+    const X = (u * 127) | 0, Y = (v * 127) | 0;
+    // **AN ATLAS IS MOSTLY GUTTER (m251).** The padding round each UV island is transparent black,
+    // and at 128 px a vertex on an island's edge lands in it -- that was the black voxels. So a
+    // texel with no alpha is skipped for the nearest one that has some, in a growing ring.
+    let o = (Y * 128 + X) * 4;
+    for (let r = 1; px[o + 3] < 128 && r <= 4; r++)
+      for (let dy = -r; dy <= r && px[o + 3] < 128; dy++) for (let dx = -r; dx <= r; dx++) {
+        const xx = X + dx, yy = Y + dy;
+        if (xx < 0 || yy < 0 || xx > 127 || yy > 127) continue;
+        const q = (yy * 128 + xx) * 4; if (px[q + 3] >= 128) { o = q; break; }
+      }
     out.setRGB(px[o] / 255, px[o + 1] / 255, px[o + 2] / 255, THREE.SRGBColorSpace);
   }
   if (m.color) out.multiply(m.color);
+  // AND A GENUINELY DARK ONE (a pupil, a black shoe) GLOWS rather than reading as a hole in the cloud
+  const L = .2126 * out.r + .7152 * out.g + .0722 * out.b;
+  if (L < FLUB.floor) { const k = 1 - L / FLUB.floor; out.r += (FLUB.hot[0] - out.r) * k; out.g += (FLUB.hot[1] - out.g) * k; out.b += (FLUB.hot[2] - out.b) * k; }
   return out;
 }
 // a posed vertex in WORLD space (the skeleton must be current -- see `flubPose`)
@@ -21379,6 +21405,15 @@ function flubStart() {
   FL.live = 1; FL.sw = 0; FL.t = 0; FL.lo = 1e9; FL.hi = -1e9;
   for (const P of FL.P) { P.born = 0; P.at = Math.random() * FLUB.peel; P.tm = null; }
   // the tendrils' directions, fresh per transform: around him, tipped up or down a little
+  // THE RUBBER'S ARMS, NEW EVERY TIME: how many, which way, how far, and when each one lets go
+  const nA = FLUB.armsMin + ((Math.random() * (FLUB.armsMax - FLUB.armsMin + 1)) | 0);
+  FL.rb = [];
+  for (let k = 0; k < nA; k++) {
+    const a = (k + Math.random() * .7) / nA * Math.PI * 2, e = -.45 + Math.random() * 1.25;
+    FL.rb.push({ d: new THREE.Vector3(Math.sin(a) * Math.cos(e), Math.sin(e), Math.cos(a) * Math.cos(e)),
+                 len: FLUB.reachMin + Math.random() * (FLUB.reachMax - FLUB.reachMin),
+                 t0: .30 + Math.random() * .10, w: FLUB.boing * (.8 + Math.random() * .4) });
+  }
   FL.arm = [];
   for (let k = 0; k < FLUB.arms; k++) {
     const a = (k + Math.random() * .6) / FLUB.arms * Math.PI * 2, e = (Math.random() * 2 - 1) * .75;
@@ -21391,7 +21426,19 @@ function flubKey(P) {
   const H = Math.max(.2, FL.hi - FL.lo);
   P.hn = clamp((P.a.y - FL.lo) / H, 0, 1);
   P.an = Math.atan2(P.a.x, P.a.z);
+  // RUBBER: the skin facing an arm is what streams down it, so a patch stays a patch
+  const el = (P.hn - .5) * Math.PI * .9;
+  P.dv = (P.dv || new THREE.Vector3()).set(Math.sin(P.an) * Math.cos(el), Math.sin(el), Math.cos(P.an) * Math.cos(el));
+  P.arm = -1; P.sa = 0;
+  if (FL.rb && Math.random() < .72) {
+    let best = -1, bd = .8;                         // within ~37 degrees of an arm
+    for (let k = 0; k < FL.rb.length; k++) { const d = P.dv.dot(FL.rb[k].d); if (d > bd) { bd = d; best = k; } }
+    if (best >= 0) { P.arm = best; P.sa = (bd - .8) / .2; }
+  }
 }
+// a damped spring from 0 to 1 that over-runs -- the rubber band
+const flubBoing = (tau, w) => tau <= 0 ? 0 : 1 - Math.exp(-w * .45 * tau) * Math.cos(w * tau);
+const flubBack = x => { const c = FLUB.overshoot, c3 = c + 1; return 1 + c3 * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
 // THE TARGETS, on the body just put on -- each voxel lands on the SAME REGION it left (m250): the
 // new body is sampled into a height x angle grid and a voxel takes a vertex from its own cell
 function flubSwap(model) {
@@ -21428,8 +21475,33 @@ function flubSwap(model) {
   }
 }
 // the FORM position of a voxel, in `rig.root`'s frame, written into `out`
-function flubForm(P, out, t) {
+function flubForm(P, out, t, u, at) {
   const F = FLUB, H = Math.max(.6, FL.hi - FL.lo) * F.scale, cy = FL.lo + (FL.hi - FL.lo) * .5;
+  if (F.shape === 2 && FL.rb) {
+    const D = mphDur(), J = F.jit * H, s = P.s;
+    // the core: a jelly ball, wobbling, that BULGES at the swap when the arms come home
+    const bulge = .35 * Math.exp(-Math.pow((u - at) * D * 5, 2));
+    const wob = 1 + .14 * Math.sin(P.dv.y * 3 + t * 6.5 + s) * Math.sin(P.an * 2 + t * 5.1);
+    const rc = F.core * H * wob * (1 + bulge) * (.55 + .45 * ((s * 3.7) % 1));
+    out.set(P.dv.x * rc, cy + P.dv.y * rc * .9, P.dv.z * rc);
+    if (P.arm >= 0) {
+      const A = FL.rb[P.arm];
+      let ext = flubBoing((u - A.t0) * D, A.w);
+      const us = at - F.snap;                       // and SNAP: a stiffer spring back to nothing
+      if (u > us) ext *= Math.exp(-A.w * .6 * (u - us) * D) * Math.cos(A.w * .8 * (u - us) * D);
+      const ball = P.sa > .62, along = (ball ? 1 : P.sa / .62) * A.len * H * ext;
+      // the strand is thin and the ball is round; the strand whips while it is moving
+      const r = (ball ? .075 : .02) * H * Math.max(.2, Math.abs(ext));
+      const px = -A.d.z, pz = A.d.x, whip = Math.sin(t * 11 + P.sa * 5 + P.arm) * .05 * H * P.sa * ext;
+      out.x += A.d.x * along + Math.sin(s * 3.1) * Math.cos(s * 1.7) * r + px * whip;
+      out.y += A.d.y * along + Math.sin(s * 2.3) * r;
+      out.z += A.d.z * along + Math.cos(s * 3.1) * Math.cos(s * 1.7) * r + pz * whip;
+    }
+    // AND EVERY VOXEL DRIFTS ROUND ITS PLACE ON ITS OWN CLOCK -- particles, not a sculpture
+    const w = 3 + (s * 5.3) % 4;
+    out.x += Math.sin(t * w + s) * J; out.y += Math.sin(t * w * 1.3 + s * 2) * J; out.z += Math.cos(t * w * .9 + s * 3) * J;
+    return out;
+  }
   if (F.shape === 1) {
     // FLUBBER: the middle of the body is the core, everything further out runs down a tendril
     const n = FL.arm.length || 1;
@@ -21472,8 +21544,10 @@ function flubMorph(u, dt) {
   _flInv.copy(rig.root.matrixWorld).invert();
   const S = surgeMeshes(model);
   // INTO the form over the peel and up to the swap, OUT of it onto the new body after
-  const form = smooth(F.peel * .35, at * .9, u);
-  const pull = smooth(at, F.land, u);
+  const form = F.shape === 2 ? smooth(F.peel * .5, at * .62, u) : smooth(F.peel * .35, at * .9, u);
+  const pull0 = smooth(at, F.land, u), pull = F.shape === 2 ? flubBack(pull0) : pull0;
+  const H = Math.max(.6, FL.hi - FL.lo), hot = FL.hc || (FL.hc = new THREE.Color());
+  hot.setRGB(F.hot[0], F.hot[1], F.hot[2]);
   const peak = form * (1 - pull);
   const fade = 1 - smooth(F.land, 1, u);
   const ca = FL.inst.instanceColor.array;
@@ -21487,8 +21561,14 @@ function flubMorph(u, dt) {
       if (_flA.y < FL.lo) FL.lo = _flA.y; if (_flA.y > FL.hi) FL.hi = _flA.y;
     }
     if (P.hn === undefined && u > F.peel) flubKey(P);
-    if (P.hn !== undefined) { flubForm(P, _flB, FL.t); _flA.copy(P.a).lerp(_flB, form); }
-    else _flA.copy(P.a);
+    if (P.hn !== undefined) {
+      flubForm(P, _flB, FL.t, u, at);
+      if (F.shape !== 2) {                           // the old two forms get the drift too
+        const w = 3 + (P.s * 5.3) % 4, J = F.jit * H;
+        _flB.x += Math.sin(FL.t * w + P.s) * J; _flB.y += Math.sin(FL.t * w * 1.3 + P.s * 2) * J; _flB.z += Math.cos(FL.t * w * .9 + P.s * 3) * J;
+      }
+      _flA.copy(P.a).lerp(_flB, form);
+    } else _flA.copy(P.a);
     if (pull > 0 && P.tm) { flubAt(P.tm, P.ti, _flB).applyMatrix4(_flInv); _flA.lerp(_flB, pull); }
     _flA.applyMatrix4(rig.root.matrixWorld);
     const sz = F.size * fade * (.75 + .5 * ((P.s * 7.13) % 1));
@@ -21496,7 +21576,8 @@ function flubMorph(u, dt) {
     _flQ.setFromEuler(_flE.set(P.r, P.r * 1.3 + P.s, P.r * .7));
     FL.inst.setMatrixAt(i, _flM.compose(_flA, _flQ, _flS.set(sz, sz, sz)));
     const c = FL.c.copy(P.ca);
-    if (P.tm) c.lerp(P.cb, pull);
+    if (P.tm) c.lerp(P.cb, clamp(pull0, 0, 1));
+    c.lerp(hot, F.heat * peak);
     const g = 1 + F.glow * peak;
     ca[i * 3] = c.r * g; ca[i * 3 + 1] = c.g * g; ca[i * 3 + 2] = c.b * g;
   }
@@ -25586,7 +25667,13 @@ const TUNE = [
   ['flubber length', FLUB, 'dur',   .6, 5, .05],
   ['flubber voxels', FLUB, 'n',     200, 3000, 50, 'flub'],
   ['voxel size',     FLUB, 'size', .02, .2, .005],
-  ['form 0 quasar 1 flubber', FLUB, 'shape', 0, 1, 1],
+  ['form 0 quasar 1 tendrils 2 rubber', FLUB, 'shape', 0, 2, 1],
+  ['rubber core',    FLUB, 'core',  .05, .5, .01],
+  ['rubber reach',   FLUB, 'reachMax', .1, 2, .02],
+  ['rubber bounce',  FLUB, 'boing', 4, 30, .5],
+  ['landing overshoot', FLUB, 'overshoot', 0, 4, .05],
+  ['drift',          FLUB, 'jit',   0, .1, .002],
+  ['heat glow',      FLUB, 'heat',  0, 1, .02],
   ['form size',      FLUB, 'scale', .2, 3, .05],
   ['quasar disc',    FLUB, 'disc',  .05, 1.5, .01],
   ['quasar jets',    FLUB, 'jet',   .05, 2, .01],

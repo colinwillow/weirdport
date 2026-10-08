@@ -7,6 +7,24 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **NO BLACK VOXELS, AND THE DEFAULT FORM IS RUBBER FLUBBER (m251, `FLUB.shape` 2, `flubBoing`, `flubBack`,
+  `FLUB.floor`/`hot`/`heat`/`jit`).** *"A lot of the cubes are black... the shape is too stationary... the
+  cubes might be large... a central shape with arms with balls on the end that shoot out like rubber bands
+  and snap back in, and that makes it transform into the new form."*
+  **THE BLACK WAS THE ATLAS GUTTER.** The padding round every UV island is transparent black, and at 128 px
+  a vertex on an island's edge samples it. A texel with alpha < 128 is now skipped for the nearest opaque
+  one in a growing ring, and anything still darker than `floor` (a pupil, a black shoe) glows toward the
+  blue-white `hot` instead of reading as a hole. The whole form also leans `heat` toward `hot` at its peak.
+  **RUBBER:** the voxels gather into a jelly core (wobbling, `core` .17 of his height); `armsMin..armsMax`
+  arms (4..9) are rolled NEW every transform -- direction, reach (.22..50 of his height), launch time,
+  stiffness -- and each fires out on a damped spring that over-runs (`flubBoing`: 1.27 at the peak, settles
+  ~0.3 s later), a thin strand with a ball on the end that whips while it moves. `snap` before the swap
+  they spring back stiffer, the core BULGES as they land, and after the swap the mass wraps onto the new
+  body on an easeOutBack (`overshoot` 1.6). Which skin streams down an arm is the skin FACING it, so a
+  patch stays a patch. Every voxel also drifts round its place on its own clock (`jit`) -- the forms were
+  sculptures before. 1800 voxels at .036 m (was 1400 at .05). Probed headless: core .51 m, arms out to
+  ~1.2 m at full stretch, back to .34 at the swap, landed on the new body, cleared.
+
 - **THE FLUBBER'S CLOUD IS A SHAPE AT HIS SIZE, AND THE SKIN STAYS IN ITS PATCHES (m250, `FLUB.shape`,
   `flubForm`, `flubKey`, the cell-matched `flubSwap`).** *"It's massive. I meant a quasar -- skinny at the
   top, skinny at the bottom, wide in the middle, like a spinning top. Or Flubber. And the colours: I thought
