@@ -7,6 +7,22 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **ON HER SKATES WITH THE GUN OUT, ZAP'S STANCE STOLE HER HIPS (m265, `__legh`/`__ups` for blades,
+  `rigBladeSpine`, `BLADE.steady`).** *"Her hips don't have any rotation -- she kinda looks like she's doggy
+  paddling with her legs."* m263 built her skating halves as `__legs`, and `__legs` hands the Hips ROTATION to the
+  upper half on purpose (m184: zap's aim poses are BLADED, their spine is authored on a hips at -61 deg). Worn over
+  her stride that means her hips sat frozen at zap's aim angle while her legs went on kicking under them. Her stride
+  is all hips -- measured off the file: `blade_casual_forward` swings the Hips 20.0 deg, `blade_hard_forward` 23.2.
+  - **So the split is Rollergirl's r140 one**: her clips' halves are `__legh` (legs WITH the hips' rotation) and the
+    gun pose is `__ups` (spine-up WITHOUT the hips). `SPLIT.up` now builds a `__ups` half for every upper pose, not
+    only the three square ones; on foot `upKey` still picks `__up` for the bladed ones, so zap's own gait is unchanged.
+  - **And the chest is turned back onto the pose's own frame** (`rigBladeSpine`, `rigSqSpine`'s maths): left alone,
+    a hips-free gun pose on a 23-degree stride swings the barrel with every push. `BLADE.steady` .85 of the
+    correction holds the gun; the rest lets the shoulders ride the stroke. TUNE row "gun steady vs hips".
+  - **Without the gun nothing changed** -- her whole clips play, hips and all. That path was never the fault.
+  - `tools/.probe/blade.mjs`: the legs read `blade_hard_forward__legh` under `rifle_aim__ups` with the gun armed.
+    How it LOOKS is the phone's; nothing here builds a skin.
+
 - **WEIRDPORT IS AN ISLAND (m264, `ISLE`, `buildIsle`, `isleStep`, `isleSplash`, `gFloor0`).** *"Turn it into an
   island -- water around it, the edges irregular and kind of raised, a shore and a seashore, nice water shaders so the
   edges aren't nothing."* Both toon-city worlds (`tkit`, `toon`). The 520 m grey plane is gone when it is on.
