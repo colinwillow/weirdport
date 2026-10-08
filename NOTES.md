@@ -7,6 +7,32 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **HER WING SUIT (m266, `WING`, `wingSet`, `stepWing`, `wingFly`, `wingPose`, `wingFrame`, `wingTapR`/`wingTapL`).**
+  Rollergirl's r142..r156 wing pack ported, and only while you ARE her (`wingOk()` is `bladeOn()`).
+  - **CONTROLS ARE HER GAME'S**: right pad -- tap, then a quick second tap (inside `dblT` .32 s) opens the wings;
+    from the ground the first tap is the ollie that gets her up. Flying, a double tap folds them and a SINGLE tap is
+    eaten (not a jump off thin air). A slower second tap is still the double jump. Left stick flies her RAW (a plane
+    is steered relative to itself): x turns and banks, push UP climbs (`WING.pull` 0, his call there), let go and
+    she levels. Left pad double tap = BOOST, left flick = loop / backward loop / barrel roll. `V` on a keyboard.
+    Right-pad flicks do nothing in flight; the trigger and the blaster are untouched.
+  - **ITS OWN STATE IN `stepPlayer`, ABOVE THE BOARD, AND IT RETURNS.** The board's integrator has gravity and ground
+    steering; a flight has neither. Collisions are the player's own (`resolveBoxes`, `pushCars`, the `SURF` ceiling ray,
+    `groundAt`), sub-stepped by distance like `integrate`. **The velocity is read back off what she actually travelled**,
+    so a wall she scrapes costs her the speed -- her game's rule. Touching ground or a box top folds the wings and she
+    rolls on with her speed; a knock, a put-back by the sea or the disguise ending folds them too.
+  - **THE BODY IS LAID FORWARD ABOUT HER HIPS** (`wingPose`): `Ry(heading) * Rx(lie - pitch) * Ry(bank)` on the root,
+    times the model's own `faceOff + spin`, and the root slid so the hips hold `p.pos + hipY * bodyK()`. Folding stands
+    her upright at once and the difference (`p.wingRes`) is slerped out at `settle`; opened facing away from her line she
+    twists round to it (`p.wingSpin`, her r156). **`rotation.x` is reset when none of that is live** -- the frame code
+    only ever writes `.y` and `.z`, so a quaternion written here would leave a stale X tilt on the Euler for ever.
+  - **THE WINGS ARE HER GAME'S PROCEDURAL STAND-INS**, built lazily on first open, riding her body frame at Spine2,
+    scaled by `bodyK()`. Additive glow jets at the tips and airflow sparks (`spk`) streaming off them.
+  - TUNE "WINGS (as her)": cruise, top speed, turn, pitch rate, push-up/pull-back, boost, camera follow, tip trails.
+    Chip: `BLADE <speed> WING<pitch deg>`.
+  - `tools/.probe/blade.mjs` drives it through the shipped step: opens on tap-tap, flies level near cruise hands off,
+    climbs on push up, turns the right way, boosts, loops 360, lays her forward, folds on landing and she skates on at
+    19 m/s, eases upright, and nobody else can open them. **How it LOOKS is the phone's** -- no skin builds here.
+
 - **ON HER SKATES WITH THE GUN OUT, ZAP'S STANCE STOLE HER HIPS (m265, `__legh`/`__ups` for blades,
   `rigBladeSpine`, `BLADE.steady`).** *"Her hips don't have any rotation -- she kinda looks like she's doggy
   paddling with her legs."* m263 built her skating halves as `__legs`, and `__legs` hands the Hips ROTATION to the
