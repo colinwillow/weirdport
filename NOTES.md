@@ -7,6 +7,22 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **HER SPEED SKATE AND HER BOOST (m267, `SKSPEED`, `SKBOOST`, `bladeBoost`, `bladeFxStep`)** -- Rollergirl's r122
+  and r80, ported, on her skates only. Run from `stepPlayer` right after `stepSkate`, so the extra speed rides the
+  board physics' own integrator next frame (its pushes taper off at `BLADE.top`, its roll drag is tiny, nothing caps).
+  - **SPEED SKATE**: the RIGHT pad held UP (past `at` .55, within 45 deg of up) for `hold` .3 s -- longer than a
+    flick's window, so a flick up is never also this. On the ground: `acc` 9 m/s^2 along her travel up to `cap` 31,
+    over her 24 top. **With a gun out, held up is the TRIGGER, not this** -- her game's own r140 rule; so it is the
+    unarmed hold, and the probe checks both sides of that line. The right pad's x does not orbit the lens while it runs.
+  - **BOOST**: the LEFT pad flicked UP on the ground (on the board that flick did nothing on the ground; off her skates
+    it is still the step-off's family): `add` 8 m/s on a half-sine stroke over .45 s, never past `cap` 36, once per
+    `cool` 1.1 s. Works with the gun out, which is why both exist.
+  - **THE LOOK** for `fx` 1 s (and the whole of a speed skate): `blade_hard_forward` at x1.9 whatever the thumb does,
+    the lens pulls back `pull` and widens `fov` (fast in, slow out), sparks off her toes (cyan) and hands (pink).
+  - Probe (`tools/.probe/blade.mjs`): unarmed hold 19.4 -> 31.0 m/s in her speed skate; boost 9.0 -> 16.6; a second
+    boost refused on cooldown; armed, the same hold arms the trigger and never speed skates.
+  - TUNE rows under "BLADES (as her)". Chip: `SPEED` / `BOOST`.
+
 - **HER WING SUIT (m266, `WING`, `wingSet`, `stepWing`, `wingFly`, `wingPose`, `wingFrame`, `wingTapR`/`wingTapL`).**
   Rollergirl's r142..r156 wing pack ported, and only while you ARE her (`wingOk()` is `bladeOn()`).
   - **CONTROLS ARE HER GAME'S**: right pad -- tap, then a quick second tap (inside `dblT` .32 s) opens the wings;
