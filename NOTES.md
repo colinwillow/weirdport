@@ -7,6 +7,44 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **HER, COPIED RATHER THAN REBUILT (m271, `bladeAnim`, `bladeBody`, `bladeFind`, `bladeUndo`, `bladeFlipGo`,
+  `bladeGunFly`, `BLADE.anim/flip/foot/hipLean/centre/gun`).** *"She's unable to be unarmed whereas by default she should
+  be... it shouldn't just be locked in my hand... she has a very stiff skate... her frozen pose when she's drifting is just
+  one leg out... the shooting when you're flying isn't the same... I'm looking for the same same same same."* Each of
+  those had a cause, and every fix is Rollergirl's own code ported, with her numbers:
+  - **UNARMED.** `stepMorph` forced the gun slot onto every disguise (m123 -- right for the DNA gun's own logic and wrong for
+    her, whose game holsters by default). A blade kind now arrives on slot 0, and the left wheel takes a weapon out and puts
+    it back as it does for him. The board slot is skipped while she is worn (a deck in her hands means nothing).
+  - **THE STIFFNESS WAS THE GUN.** Every disguise came out holding the blaster, so every stride ran under the rifle pose with
+    m265's chest steadier on top. Unarmed she skates on her whole clips; armed, `BLADE.steady` is 0 now -- her game holds
+    nothing steady, it turns the body to the shot instead (below).
+  - **HER MOVE BRAIN, `girlAnimMoves` LINE FOR LINE.** The push only while the thumb PUSHES along her nose (`p.thumbGo`), casual
+    into hard by how hard it pushes (`p.drive`, her r84) never slower than `hardFloor`; thumb off the held roll; standing,
+    `idle_normal` then a different idle every `idleHold` 7 s; cruising, a style skate every 3 s for 3.5 (her r42). Every clip
+    it can play has a `__legh` half, so a gun out composes with all of them.
+  - **THE "ONE LEG OUT" POSE IS HER ROLL FRAME WITHOUT HER FOOT IK.** Her game never draws that frame raw: `footGround` (r36)
+    drops her until the lower skate touches and pulls a foot within 16 cm down with a two-bone IK, soles laid flat on the
+    surface. Ported whole, measured on the rest pose in `mphSkin` before the mixer exists (never `skeleton.pose()` -- her r38).
+    With it: her lean INTO turns at the HIPS (r27/r42) and her hips put on the turn axis (r27: the root sits 0.2 m behind
+    them, which is the "boat").
+  - **HER FLIPS ARE PROCEDURAL AGAIN.** Her game stopped playing flip clips at r25: a state with a clock fitted to the air
+    left (`fill` .75, max 1.0 s, too little air is no flip), her held `tuck` / `flip_pose` blended on `flipShape`, and the turn
+    about her HIPS, faster while tucked, landing exactly on 360. Sideways is her twist flip, not the board's barrel roll.
+    Landed unfinished, the rest unwinds the short way (`settle`).
+  - **HER GUN ON THE GROUND (r140/r141).** Trigger held, her whole drawn body SWIVELS until the barrel is on the lens's bearing
+    (`rig.bl.body`, added to the root's yaw -- `aimComp` is his and stands down for her), the spine TWISTS the residual, and her
+    legs take forward or backward clips by her travel against the way she now faces. Let go more than a quarter turn round
+    and the turn is KEPT: stance flips, `fkOff` takes the half turn, nothing on screen jumps.
+  - **HER GUN IN FLIGHT (r146).** The hold-up trigger is gone in flight: a right thumb held STILL for .25 s arms it (and takes
+    the blaster out if she had none -- put back when she lands, `p.gTemp`); the thumb's offset is a 3D aim, 65 deg either side
+    of the lens and 55 up or down; release fires along it. `aimPoint` walks that 3D line and stops on the ground too. The lens
+    keeps following while she aims and the right pad stops orbiting it. The release is never a wing tap.
+  **`tools/.probe/blade.mjs` drives all of it** on a fabricated skeleton with her joint names (no harness can build her skin):
+  the idle rotation, casual vs hard by thumb, the style skate, soles found, hips centred, the IK moving a sole exactly where
+  asked and the undo restoring it to 0.00000 deg, the flip turning her 160 deg+ at mid-flight, the swivel landing the barrel
+  0.1 deg off the aim, the backward legs, the kept turn, the 3D flight aim, the fire, and the blaster put back on landing.
+  **WHAT NONE OF IT CAN SEE IS HOW SHE LOOKS** -- the IK's numbers, the lean's size and the flip on her real clips are his call.
+
 - **THE ISLAND IS ROUND AND IT FALLS TO THE SEA; THE RIM IS GONE (m270, `ISLE.coast/wobble/minLand/rise`,
   `isleProfile(th, N, L)`, `ISLE_J0`).** *"From the top down is it square? I'd rather it was closer to circular but
   irregular. And I don't love the ridge between the water and the land -- I meant the island itself is raised, not a

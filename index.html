@@ -561,10 +561,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m270</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m271</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m270</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m271</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -630,7 +630,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm270';
+const BUILD = 'm271';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -3150,7 +3150,11 @@ const SKATER = {
   // the clips the gun override needs a hips-down half of -- see `SPLIT.legsRaw`, one body over
   legsRaw: ['blade_casual_forward', 'blade_hard_forward', 'blade_roll_forward', 'idle_normal',
             'in_air', 'grind_left', 'grind_right',
-            'blade_casual_backward', 'blade_roll_backward', 'idle_backward'],
+            'blade_casual_backward', 'blade_roll_backward', 'idle_backward',
+            // m271: every clip her move brain plays, so a gun out composes with all of them
+            'tuck', 'flip_pose', 'idle_arms_out', 'idle_arms_crossed', 'idle_arms_behind_back', 'idle_legs_spread']
+    .concat(['daffy', 'swizzle', 'tiptoe', 'onefootfront_L', 'onefootfront_R', 'onefootback_R', 'pose_duck_L', 'pose_swan_R']
+      .flatMap(n => ['blade_' + n + '_forward', 'blade_' + n + '_backward'])),
   // the thumb-off roll is a frame of her medium stride held still (Rollergirl's r131 `holdClip`) --
   // one riding forward and one riding FAKIE (m268)
   hold: [{ from: 'blade_medium_forward', at: 0, name: 'blade_roll_forward' },
@@ -4002,12 +4006,35 @@ const BLADE = Object.assign(Object.create(SK8), {
   // HER GROUND (m269): the surface is a FRAME, not just a height -- see `bladeSurf`
   surf: { on: 1, probe: .4, leave: 3.0, minUp: .15, land: 1, tiltHL: .07, airHL: .22, tiltMax: .9 },
   swivelT: .45,     // how long her body takes to come round on a swivel (m268)
-  steady: .85,      // how much of the gun pose's own chest frame is held against her hips' twist (m265)
+  // m271: 0 -- her game holds nothing steady; the twist below puts the barrel on the aim instead
+  steady: 0,        // how much of the gun pose's own chest frame is held against her hips' twist (m265)
   clip: Object.assign({}, SK8.clip, { land: '' }),
   own: Object.assign({}, SK8.own, { down: '' }),
   // her strides: casual eases into hard across `pushV` (m/s), each played at speed / its own
   // reference inside `rate`; she is "still" under `still[0]` and fully rolling past `still[1]`
-  anim: { pushV: [4, 14], rateLo: .55, rateHi: 1.35, still: [.6, 1.8], landT: .22 },
+  anim: { pushV: [4, 14], rateLo: .55, rateHi: 1.35, still: [.6, 1.8], landT: .22,
+          // **HER MOVE BRAIN, COPIED (m271, Rollergirl's `MOVES`).** The push shows only while the thumb
+          // PUSHES, casual into hard by how hard it pushes (`drive`, her r84), never slower than `hardFloor`
+          // of its reference; thumb off is the held roll; standing she rotates her idles every `idleHold`;
+          // cruising she slips into a style skate every `styleEvery` for `styleHold`.
+          ahead: .2, softAt: .45, hardAt: .85, byDrive: 1, hardFloor: .8, driveHL: .12,
+          idleV: .6, idleHold: 7, useBack: 1,
+          idleFwd: ['idle_normal', 'idle_arms_out', 'idle_arms_crossed', 'idle_arms_behind_back', 'idle_legs_spread'],
+          idleBack: ['idle_backward'],
+          style: 1, styleV: 5, styleCruise: 17, styleEvery: 3, styleHold: 3.5,
+          styles: ['daffy', 'swizzle', 'tiptoe', 'onefootfront_L', 'onefootfront_R', 'onefootback_R', 'pose_duck_L', 'pose_swan_R'] },
+  // HER PROCEDURAL FLIPS (Rollergirl r25 `FLIPP` + r26 `LAND.flip*`): her held `tuck` / `flip_pose`, the turn
+  // ours, about her hips, faster while tucked; sideways is the twist flip. Fitted to the air she has left.
+  flip: { on: 1, throwAt: .12, tuckAt: .26, openAt: .66, airAt: .92, spinK: .6, twist: 1, settle: 10,
+          fill: .75, min: .35, max: 1.0 },
+  // HER FEET ON THE GROUND AND HER LEAN AT THE HIPS (Rollergirl r36 `FOOTIK`, r42 `RIG.hipLean`, r27 lean)
+  foot: { on: 1, maxDrop: .25, maxRaise: .06, near: .16, align: 1, alignMax: 40 * Math.PI / 180, hl: .05 },
+  hipLean: { on: 1, k: .45, max: .31, minV: 1.5, hl: .08, g: 20 },
+  centre: 1,        // her hips on the axis she turns about (her r27 -- they sit ~0.2 m ahead of her root)
+  // HER BLASTER (Rollergirl r140 twist, r141 swivel, r146 flight aim)
+  gun: { twist: 1, max: 110 * Math.PI / 180, ease: .05,
+         swivel: { on: 1, ease: .12, hold: .35, back: 1.75, fwd: 1.40, minV: 1.0 },
+         fly: { on: 1, holdT: .25, far: .30, yaw: 65 * Math.PI / 180, pitch: 55 * Math.PI / 180, ease: .05 } },
 });
 // WEARING A BLADE KIND, AND FINISHED BECOMING HER -- mid-transform the body is the blob.
 function bladeOn() {
@@ -8423,13 +8450,16 @@ function muzzleWorld() {
 // agreeing. A mark the gun does not keep is worse than no mark at all.
 const _ap = new THREE.Vector3();
 function aimPoint() {
-  const m = muzzleWorld(), h = cam.az;
-  const dx = Math.sin(h), dz = Math.cos(h);
+  // FLYING AS HER, THE AIM IS THE 3D DIRECTION HER RIGHT THUMB HOLDS (m271, Rollergirl r146 `p.gDir`), and
+  // the walk then stops on the ground as well as on a box -- a shot can point down at the street
+  const m = muzzleWorld(), h = cam.az, D = player.wing && player.gDir ? player.gDir : null;
+  const dx = D ? D.x : Math.sin(h), dy = D ? D.y : 0, dz = D ? D.z : Math.cos(h);
+  const hit3 = (x, y, z) => camHit(x, y, z, 0) || (D && groundAt(x, z, y, 1.2) > y);
   const step = 1.1, R = WEAP.range;
   let d = 0, hit = 0;
   for (; d < R; d += step) {
     const e = Math.min(R, d + step);
-    if (camHit(m.x + dx * e, m.y, m.z + dz * e, 0)) { hit = 1; break; }
+    if (hit3(m.x + dx * e, m.y + dy * e, m.z + dz * e)) { hit = 1; break; }
   }
   if (hit) {
     // BISECT. A quantised probe is fine for a yes/no and wrong the moment something continuous
@@ -8439,11 +8469,11 @@ function aimPoint() {
     let lo = d, hi = Math.min(R, d + step);
     for (let k = 0; k < 6; k++) {
       const mid = (lo + hi) * .5;
-      if (camHit(m.x + dx * mid, m.y, m.z + dz * mid, 0)) hi = mid; else lo = mid;
+      if (hit3(m.x + dx * mid, m.y + dy * mid, m.z + dz * mid)) hi = mid; else lo = mid;
     }
     d = lo;
   } else d = R;
-  _ap.set(m.x + dx * d, m.y, m.z + dz * d);
+  _ap.set(m.x + dx * d, m.y + dy * d, m.z + dz * d);
   return { p: _ap, hit, dist: d };
 }
 
@@ -12054,7 +12084,7 @@ function cycleKit() {
   // would honour by dismounting him -- a tap meant to reach the hammer throwing him off the
   // board. One line, and the tap goes on meaning exactly one thing in every state.
   let n = (p.slot + 1) % WEAP.slots.length;
-  if (p.riding) { let g = 0; while (WEAP.slots[n].board && g++ < WEAP.slots.length) n = (n + 1) % WEAP.slots.length; }
+  if (p.riding || bladeOn()) { let g = 0; while (WEAP.slots[n].board && g++ < WEAP.slots.length) n = (n + 1) % WEAP.slots.length; }
   swapGo(n);
 }
 
@@ -12069,6 +12099,7 @@ function kitPick(n) {
   const p = player;
   if (p.swap || p.knock || p.wall || p.ledge || p.mphSt) return;
   if (n === p.slot || !WEAP.slots[n]) return;
+  if (WEAP.slots[n].board && bladeOn()) return;      // on her skates a deck in her hands means nothing (m271)
   swapGo(n);
 }
 // ---- melee ---------------------------------------------------------------------------------
@@ -13486,6 +13517,52 @@ function padUp(on) {
   return Math.hypot(R.x, R.y) > (on ? WEAP.keepAt : WEAP.fireAt);
 }
 
+// **HER FLIGHT TRIGGER (m271, Rollergirl r146 `gunFly`, copied).** *"Press and hold in the middle of the stick,
+// the gun comes out, your blaster charges, and you can move the aimer in three dimensions with the stick -- when
+// you let go it shoots that way."* A right thumb held still near where it landed (travel under `far`) for `holdT`
+// arms it -- longer than a flick, so a flick never does -- and takes the blaster out if it was not (put back when
+// she lands). From there the thumb's offset IS the aim: across turns it up to `yaw` either side of the lens, up
+// and down tilts it up to `pitch`, eased. A thumb that travelled first is a drag and stays one until it lifts.
+function bladeGunFly(dt) {
+  const p = player, F = BLADE.gun.fly, R = stick.R;
+  p.block = 0; p.blockT = 0; p.center = 0; p.centerT = 0; p.bkT = 0; p.bkOn = 0;
+  if (!p.aim) {
+    p.chg = 0;
+    if (R.down && !p.knock && (R.far || 0) < F.far) {
+      if ((p.gHold = (p.gHold || 0) + dt) >= F.holdT) {
+        if (!slotNow().aim || slotNow().rocket) {
+          const gs = WEAP.slots.findIndex(q => q.aim && !q.rocket);
+          if (gs >= 0) { if (!p.gTemp) p.gTemp = p.slot + 1; applySlot(gs); }
+        }
+        if (slotNow().aim) { p.aim = 1; p.chg = 0; p.gYaw = 0; p.gPit = 0; chargeStart(); }
+      }
+    } else if (!R.down) p.gHold = 0;
+    else p.gHold = .0001;
+  }
+  if (p.aim) {
+    if (R.down) {
+      p.chg = Math.min(1, p.chg + dt / WEAP.chargeT);
+      p.gYaw = damp(p.gYaw || 0, -clamp(R.x, -1, 1) * F.yaw, F.ease, dt);      // NEGATED: a thumb right is toward -yaw
+      p.gPit = damp(p.gPit || 0, clamp(-R.y, -1, 1) * F.pitch, F.ease, dt);   // the pad's +Y is DOWN the screen
+      const a = cam.az + p.gYaw, c = Math.cos(p.gPit);
+      (p.gDir || (p.gDir = new THREE.Vector3())).set(Math.sin(a) * c, Math.sin(p.gPit), Math.cos(a) * c);
+      chargeStep(p.chg);
+    } else {
+      if (p.chg >= WEAP.minChg) {
+        fireBolt(p.chg);
+        p.fireT = 1;
+        snd(p.chg > .82 ? 'big' : 'shot', { g: .42 + p.chg * .3, r: 1.12 - p.chg * .3 });
+        playPair(CLIPS.shoot, clipLen(CLIPS.shoot) / WEAP.shootBeat);
+      }
+      p.aim = 0; p.armT = 0; p.chg = 0; p.gHold = 0; chargeStop();
+    }
+  } else if (CHARGE.gain) chargeStop();
+  const showBall = p.chg > .02;
+  chargeFx.visible = showBall;
+  if (showBall) { chargeFx.position.copy(muzzleWorld()); ballSize(chargeFx, (.35 + p.chg * 1.5) * (.92 + Math.random() * .16)); }
+  GUNU.k.value = damp(GUNU.k.value, p.chg * WEAP.glow, .06, dt);
+}
+
 function stepKit(dt) {
   const p = player, s = slotNow(), R = stick.R;
   const up = -R.y, mag = Math.hypot(R.x, R.y);
@@ -13505,6 +13582,11 @@ function stepKit(dt) {
     GUNU.k.value = damp(GUNU.k.value, 0, .06, dt);
     return;
   }
+  // HER FLIGHT TRIGGER (m271, Rollergirl r146) -- see `bladeGunFly`. A blaster it took out for the flight goes
+  // back where it came from once she is down.
+  if (p.gTemp && !p.wing && !p.aim) { const n = p.gTemp - 1; p.gTemp = 0; if (p.slot !== n) applySlot(n); }
+  if (p.wing && BLADE.gun.fly.on && bladeOn()) { bladeGunFly(dt); return; }
+  p.gHold = 0; p.gDir = null;
 
   // ---- DOWN ON THE RIGHT PAD IS A GUARD (m37). *"I want to make it so that down on the right
   //      stick is block. I know I don't have a block animation yet, but I'll put one in."*
@@ -14165,6 +14247,8 @@ function boardFlick(dx, dy, body) {
     // edge of the pad, so without `p.barrel` gating the air spin he would YAW through his own
     // roll -- two rotations at once, which reads as neither. The hold takes over the moment it
     // lands. (Shredworld's `TRICK.rollLock`, which it had to learn the same way.)
+    // HER SIDEWAYS FLICK IS HER TWIST FLIP, not the barrel roll (m271, Rollergirl r25)
+    if (Math.abs(up) < Math.abs(dx) && p.blade && BLADE.flip.on) { bladeFlipGo(dx > 0 ? 'right' : 'left'); return 1; }
     if (Math.abs(up) < Math.abs(dx)) {
       if (p.barrel || p.trick) return 1;            // one body trick per airtime
       p.barrel = Math.sign(dx) * SK8.trick.rollSide * SK8.trick.turn;
@@ -14189,6 +14273,7 @@ function boardFlick(dx, dy, body) {
 // it was the flick's alone, and a second copy is a second thing to keep in step.
 function bodyFlip(front, dur) {
   const p = player;
+  if (p.blade && BLADE.flip.on) return bladeFlipGo(front ? 'up' : 'down');
   // **THE BODY FLIPS ARE A CLIP AND THE DECK IS CARRIED ROUND WITH HIM**, which is `rotation.x`
   // -- one axis, and it composes with the other two rather than replacing them.
   const nm = front ? SK8.clip.flipF : SK8.clip.flipB;
@@ -14206,6 +14291,19 @@ function bodyFlip(front, dur) {
   // **RE-ENTERING A `ONCE` CLIP HAS TO REWIND IT, ON THE STATE** -- these are not in `ONCE`,
   // they loop, so the scale is what ends them and the rewind is what starts them clean.
   playOnce(nm, rate);
+  snd('swoosh', { r: .95, g: .40 });
+  return 1;
+}
+// **HER FLIP IS NO CLIP (m271, Rollergirl r25/r26 `startFlip`).** A state with a clock fitted to the air she
+// has left; `bladeAnim` blends her held `tuck` / `flip_pose` on its own curve, and `bladeBody` turns her about
+// her hips on the same clock -- faster while tucked, landing exactly on 360. Too little air is no flip.
+function bladeFlipGo(dir) {
+  const p = player, F = BLADE.flip;
+  if (p.trick || p.barrel || p.grounded) return 0;
+  const left = airLeft();
+  if (left * F.fill < F.min) return 0;
+  p.trick = dir === 'down' ? 'b' : 'f'; p.trickName = ''; p.trickT = 0; p.bFlip = dir;
+  p.trickDur = clamp(left * F.fill, F.min, F.max);
   snd('swoosh', { r: .95, g: .40 });
   return 1;
 }
@@ -14253,6 +14351,7 @@ function stepSkate(dt) {
   let sp = p.vel.x * fx + p.vel.z * fz;         // his speed ALONG the deck -- the wheels' axis
 
   let want = 0;
+  p.thumbGo = false; p.driveWant = 0;
   if (p.grounded) {
     // **THE WHEELS ARE WHAT STEER, so the heading turns and the velocity is then REBUILT on
     // it.** Doing it the other way round leaves his trajectory going where it was.
@@ -14275,6 +14374,9 @@ function stepSkate(dt) {
       // `fwdC` at +/-1e-17 and whether he is braking would be decided by rounding.
       if (!p.braked && fwdC < -S.brakeZone && sp > S.min) p.braked = 1;
       const back = !!p.braked;
+      // HER THUMB (m271, Rollergirl r23/r84): a push is shown only while it PUSHES -- along her nose past
+      // `ahead` -- and how hard is how hard it is pushed. The move brain reads these, nothing else.
+      if (p.blade) { const A = S.anim, go = !back && fwdC > A.ahead; p.thumbGo = go; p.driveWant = go ? smooth(A.softAt, A.hardAt, s.mag) : 0; }
       const rate = lerp(S.turn, S.turnHi, clamp(Math.abs(sp) / S.top, 0, 1));
       if (!back) p.boardH += clamp(ang * 3, -rate, rate) * dt * s.mag;
       if (back && sp > S.min) sp = Math.max(0, sp - S.brake * dt * s.mag);   // a brake
@@ -14297,6 +14399,7 @@ function stepSkate(dt) {
     } else { p.pushT = 0; p.braked = 0; }
     if (sp <= S.min) p.braked = 0;       // stopped, so the same held thumb is a push again
     p.pushW += (want - p.pushW) * Math.min(1, 7 * dt);
+    if (p.blade) p.drive = damp(p.drive || 0, p.driveWant || 0, S.anim.driveHL, dt);
     // the stroke itself, spread over a half sine whose integral over one cycle is exactly 1
     if (p.shoveT > 0) {
       const u = 1 - p.shoveT / S.shoveDur;
@@ -14963,49 +15066,103 @@ function stepPlayer(dt) {
 // Every row sums to 1 under the gun's spine-up half, which is disjoint from it.
 function bladeAnim(dt, t) {
   const p = player, A = BLADE.anim, has = n => !!(n && rig.actions[n]);
+  const B = rig.bl || (rig.bl = {});
   const upNm = gunOut() ? (rocketUp() || (p.fireT > 0 ? CLIPS.shoot : p.aim ? CLIPS.aimPose : CLIPS.aimIdle)) : '';
   // HER HIPS, ZAP'S ARMS (m265): the gun pose WITHOUT its hips (`__ups`) over her stride WITH
-  // them (`__legh`) -- Rollergirl's r140 split exactly. `rigBladeSpine` then turns the chest back
-  // onto the pose's own frame so the gun does not swing with every stride.
+  // them (`__legh`) -- Rollergirl's r140 split exactly: her skating owns hips-down, the gun spine-up.
   const gu = upNm && rig.actions[upNm + UPS] ? upNm + UPS : upNm && rig.actions[upKey(upNm)] ? upKey(upNm) : '';
   rig.bladeUp = gu && gu === upNm + UPS ? upNm : '';
   if (gu) t[gu] = 1;
   const L = n => (gu && rig.actions[n + LEGH] ? n + LEGH : gu && rig.actions[n + LEGS] ? n + LEGS : n);
   const put = (n, w) => { if (w > 0 && has(n)) { const k = L(n); t[k] = (t[k] || 0) + w; return k; } return null; };
+  const air = has('in_air') ? 'in_air' : 'blade_roll_forward';
   if (p.rail) {
+    B.idle = null; B.style = null;
     const nm = 'grind_' + (p.railSide || 'right');
     const k = put(has(nm) ? nm : 'blade_roll_forward', 1);
     if (k) setScale(k, clamp((p.railD || 6) / 8, .75, 1.4));
   } else if (!p.grounded) {
-    if (p.trickName && has(p.trickName)) { if (gu) delete t[gu]; t[p.trickName] = 1; }
-    else put(has('in_air') ? 'in_air' : 'blade_roll_forward', 1);
+    B.idle = null; B.style = null;
+    if (p.trick && !p.trickName && BLADE.flip.on) {
+      // HER FLIP: the pose is a blend of her HELD poses on the flip's own clock (`bladeFlipShape`), the turn is
+      // `bladeBody`'s. No snap -- the throw eases in like a body winding up.
+      const w = bladeFlipShape(clamp(p.trickT / Math.max(.05, p.trickDur), 0, 1));
+      const tk = has('tuck') ? 'tuck' : air;
+      put(tk, w.tuck); put(has('flip_pose') ? 'flip_pose' : tk, w.pose); put(air, w.air);
+    } else if (p.trickName && has(p.trickName)) { if (gu) delete t[gu]; t[p.trickName] = 1; }
+    else put(air, 1);
   } else {
-    const v = p.speed, still = 1 - smooth(A.still[0], A.still[1], v), move = 1 - still;
-    // FAKIE (m268): her BACKWARD set, turned at load to face where her body does. She has no
-    // `blade_hard_backward`, so a hard fakie push borrows the casual one -- her game's own fallback.
-    const fk = p.stance < 0 && has('blade_casual_backward');
-    const nIdle = fk && has('idle_backward') ? 'idle_backward' : 'idle_normal';
-    const nCas = fk ? 'blade_casual_backward' : 'blade_casual_forward';
-    const nHard = fk ? (has('blade_hard_backward') ? 'blade_hard_backward' : 'blade_casual_backward') : 'blade_hard_forward';
-    const nRoll = fk ? (has('blade_roll_backward') ? 'blade_roll_backward' : nCas) : (has('blade_roll_forward') ? 'blade_roll_forward' : nCas);
-    put(nIdle, still);
-    const pu = clamp(p.pushW, 0, 1);
-    // BOOSTING SHE IS IN HER SPEED SKATE -- the hard push, quick -- whatever the thumb is doing (m267)
-    if (move > 0 && p.boostFx > 0 && has(nHard)) {
-      const k = put(nHard, move);
-      if (k) setScale(k, SKBOOST.rate);
-    } else if (move > 0) {
-      const u = clamp((v - A.pushV[0]) / Math.max(.1, A.pushV[1] - A.pushV[0]), 0, 1);
-      for (const [nm, w, ref] of [[nCas, 1 - u, A.pushV[0]], [nHard, u, A.pushV[1]]]) {
-        const k = put(nm, move * pu * w);
-        if (k) setScale(k, clamp(Math.max(.3, v) / ref, A.rateLo, A.rateHi));
+    // FORWARD OR BACKWARD by her STANCE -- or, while the swivel turns her to a shot, by her travel against the
+    // way she now faces (Rollergirl r141 `legBack`)
+    const back = !!A.useBack && (B.legBack != null ? B.legBack : p.stance < 0) && has('blade_casual_backward');
+    const d = back ? '_backward' : '_forward';
+    const nCas = 'blade_casual' + d;
+    const nHard = has('blade_hard' + d) ? 'blade_hard' + d : nCas;
+    const nRoll = has('blade_roll' + d) ? 'blade_roll' + d : nCas;
+    const v = p.speed, still = 1 - smooth(A.idleV, A.idleV + 1.2, v);
+    if (still > .001) {
+      // *"If she's idling for a long period you could rotate through them"* -- `idle_normal` first, then
+      // another every `idleHold`, never the same twice
+      let list = (back ? A.idleBack : A.idleFwd).filter(has);
+      if (!list.length) list = [has('idle_normal') ? 'idle_normal' : nRoll];
+      if (!B.idle || B.idle.back !== back || !has(B.idle.nm)) B.idle = { nm: list[0], t: 0, back };
+      B.idle.t += dt;
+      if (B.idle.t > A.idleHold && list.length > 1) {
+        let nx; do nx = list[Math.floor(Math.random() * list.length)]; while (nx === B.idle.nm);
+        B.idle.nm = nx; B.idle.t = 0;
       }
-      put(nRoll, move * (1 - pu));
+      put(B.idle.nm, still);
+    } else B.idle = null;                     // moving again: the next stand starts at `idle_normal`
+    const move = 1 - still;
+    // A STYLE SKATE now and then while she cruises (her r42)
+    const sList = A.styles.map(n => 'blade_' + n + d).filter(has);
+    const ok = A.style && sList.length && (p.thumbGo ? v > A.styleCruise : v > A.styleV);
+    if (!ok) { B.style = null; B.styleWait = 0; }
+    else if (B.style) { B.style.t += dt; if (B.style.t > A.styleHold) { B.styleLast = B.style.nm; B.style = null; B.styleWait = 0; } }
+    else if ((B.styleWait = (B.styleWait || 0) + dt) > A.styleEvery) {
+      let nm = sList[Math.floor(Math.random() * sList.length)];
+      if (nm === B.styleLast && sList.length > 1) nm = sList[(sList.indexOf(nm) + 1) % sList.length];
+      B.style = { nm, t: 0 };
+    }
+    if (move > 0) {
+      if (p.boostFx > 0 && has(nHard)) {
+        // BOOSTING SHE IS IN HER SPEED SKATE -- the hard push, quick -- whatever the thumb is doing
+        const k = put(nHard, move); if (k) setScale(k, SKBOOST.rate);
+      } else if (B.style && has(B.style.nm)) {
+        const k = put(B.style.nm, move); if (k) setScale(k, clamp(v / 10, .7, 1.3));
+      } else if (p.thumbGo) {
+        // casual -> hard by HOW HARD THE THUMB PUSHES (`p.drive`), not her speed; the speed only sets how fast
+        // each plays, and a hard push never plays slower than `hardFloor` of its reference
+        const V = A.pushV, u = A.byDrive ? clamp(p.drive || 0, 0, 1) : clamp((v - V[0]) / Math.max(.1, V[1] - V[0]), 0, 1);
+        const pair = [nCas, nHard];
+        for (let i = 0; i < 2; i++) {
+          const w = i ? u : 1 - u; if (w <= 0) continue;
+          const k = put(pair[i], w * move);
+          const vv = i && A.byDrive ? Math.max(v, V[1] * A.hardFloor) : v;
+          if (k) setScale(k, clamp(Math.max(.3, vv) / V[i], A.rateLo, A.rateHi));
+        }
+      } else { const k = put(nRoll, move); if (k) setScale(k, 1); }
     }
   }
   let sum = 0; for (const k in t) if (k !== gu) sum += t[k];
   if (sum < .01) t[has('idle_normal') ? L('idle_normal') : CLIPS.idle] = 1;
   setWeights(t, dt);
+}
+// HER FLIP'S SHAPE (Rollergirl r25 `flipShape` / `flipTurn`): in_air -> flip_pose -> tuck -> flip_pose -> in_air,
+// and the turn is the tuck-weighted rate integrated and normalised, so it lands exactly on 360.
+function bladeFlipShape(u) {
+  const F = BLADE.flip, mid = (F.openAt + F.airAt) / 2;
+  const k1 = smooth(0, F.throwAt, u), k2 = smooth(F.throwAt, F.tuckAt, u);
+  const o1 = smooth(F.openAt, mid, u), o2 = smooth(mid, F.airAt, u);
+  const tuck = k2 * (1 - o1), pose = k1 * (1 - k2) + o1 * (1 - o2);
+  return { tuck, pose, air: 1 - tuck - pose };
+}
+function bladeFlipTurn(u) {
+  u = clamp(u, 0, 1);
+  const N = 48, rate = x => { const w = bladeFlipShape(x); return 1 / Math.max(.15, 1 - BLADE.flip.spinK * (w.tuck + .5 * w.pose)); };
+  let a = 0, all = 0;
+  for (let i = 0; i < N; i++) { const r = rate((i + .5) / N); all += r; a += r * clamp((u - i / N) * N, 0, 1); }
+  return a / all;
 }
 
 // ============================================================================================
@@ -15131,6 +15288,7 @@ let _wTapR = -1e9, _wTapL = -1e9;
 function wingTapR() {
   const p = player, now = performance.now();
   if (!wingOk() && !p.wing) return false;
+  if (p.wing && p.aim) return true;      // the release of an aim is never a tap (m271)
   if (now - _wTapR < WING.dblT * 1000) { _wTapR = -1e9; wingSet(!p.wing); return true; }
   _wTapR = now;
   return !!p.wing;          // flying, a single tap is nothing -- not a jump off thin air
@@ -15543,6 +15701,232 @@ function bladeTilt(dt) {
   p.tiltQ.slerp(_btQ, 1 - Math.exp(-dt * Math.LN2 / (p.grounded ? S.tiltHL : S.airHL)));
   if (!live) { if (Math.abs(p.tiltQ.w) > .9999) p.tiltQ.identity(); if (p.wing || p.wingRes) return; }
   if (Math.abs(p.tiltQ.w) < .99999) R.quaternion.premultiply(p.tiltQ);
+}
+
+// ============================================================================================
+// HER BODY, COPIED (m271, `bladeFind`, `bladeBody`, `bladeUndo`) -- Rollergirl's `poseGirl` after
+// the mixer, in her order, on her skin:
+//   CENTRE      her hips on the axis she turns about (r27): the export's root sits ~0.2 m behind
+//               them, and a body turning about a point behind it is the "boat"
+//   FLIP        her procedural flip (r25): the turn about her HIPS on the flip's clock, faster
+//               while tucked; landed unfinished, the rest unwinds the short way
+//   LEAN        into the turn, AT THE HIPS (r42) -- the legs swing out under her and the foot IK
+//               sets the skates back down, bending the knee that has to bend
+//   SWIVEL      gun up, her whole drawn body turns until the barrel is on the aim (r141), her legs
+//               picking forward or backward clips by her travel against the way she now faces;
+//               let go more than a quarter turn round and the turn is KEPT as her stance
+//   TWIST       the spine takes up what the swivel has not caught yet (r140), and in FLIGHT the
+//               turn is three-dimensional onto the thumb's aim (r146)
+//   FEET        her skates on the surface (r36): the body drops until the lower sole touches, the
+//               other leg gets a two-bone IK if it is near the floor, both soles laid flat
+// **EVERY EDIT IS TAKEN BACK OFF BEFORE THE NEXT MIXER UPDATE (`bladeUndo`)** -- a bone no playing
+// clip keys is never rewritten, and a relative edit on it compounds (City's c128, melee's m204).
+// ============================================================================================
+const _bQ1 = new THREE.Quaternion(), _bQ2 = new THREE.Quaternion(), _bQ3 = new THREE.Quaternion(), _bQ4 = new THREE.Quaternion(),
+      _bV1 = new THREE.Vector3(), _bV2 = new THREE.Vector3(), _bV3 = new THREE.Vector3(), _bV4 = new THREE.Vector3(),
+      _bUP = new THREE.Vector3(0, 1, 0), _bX = new THREE.Vector3(1, 0, 0);
+// MEASURED ON THE REST POSE, before the skin's mixer exists (`mphSkin`): each sole is the floor straight under
+// the ankle, stored in the FOOT BONE's frame; the hips' rest position in the model's frame. Nothing typed.
+// **IT MUST NOT CALL `skeleton.pose()`** -- Rollergirl r36/r38: for the root bone that writes the WORLD bind
+// matrix in as the local one and the whole body is drawn at the wrong size. It only reads.
+function bladeFind(model) {
+  model.updateMatrixWorld(true);
+  const inv = new THREE.Matrix4().copy(model.matrixWorld).invert(), m = new THREE.Matrix4();
+  let lo = Infinity;
+  model.traverse(o => {
+    if (!o.isMesh || !o.geometry || !o.geometry.attributes.position) return;
+    if (!o.geometry.boundingBox) o.geometry.computeBoundingBox();
+    lo = Math.min(lo, o.geometry.boundingBox.clone().applyMatrix4(m.multiplyMatrices(inv, o.matrixWorld)).min.y);
+  });
+  if (!isFinite(lo)) lo = 0;
+  const by = n => { let r = null; model.traverse(o => { if (!r && o.isBone && o.name.endsWith(n)) r = o; }); return r; };
+  const mq = model.getWorldQuaternion(new THREE.Quaternion());
+  let feet = [];
+  for (const side of ['Left', 'Right']) {
+    const up = by(side + 'UpLeg'), kn = by(side + 'Leg'), ft = by(side + 'Foot');
+    if (!up || !kn || !ft || kn.parent !== up || ft.parent !== kn) { feet = null; break; }
+    const fl = model.worldToLocal(ft.getWorldPosition(new THREE.Vector3()));
+    const sole = ft.worldToLocal(model.localToWorld(new THREE.Vector3(fl.x, lo, fl.z)));
+    const fq = ft.getWorldQuaternion(new THREE.Quaternion());
+    const upL = new THREE.Vector3(0, 1, 0).applyQuaternion(mq).applyQuaternion(fq.invert()).normalize();
+    feet.push({ up, kn, ft, sole, upL, save: [new THREE.Quaternion(), new THREE.Quaternion(), new THREE.Quaternion()], dirty: false });
+  }
+  const H = by('Hips');
+  const hips = H ? model.worldToLocal(H.getWorldPosition(new THREE.Vector3())) : null;
+  const tw = ['Spine', 'Spine1', 'Spine2'].map(by).filter(Boolean);
+  console.log('[melee] her body: soles ' + (feet ? 'found' : 'NOT found') + ', hips ' +
+              (hips ? hips.toArray().map(v => v.toFixed(3)).join(',') : 'none') + ', twist bones ' + tw.length + ', floor ' + lo.toFixed(3));
+  return { feet, H, hips, tw, lo, twD: [], twN: 0, leanSave: null };
+}
+// turn `bone` by WORLD rotation `dq` about its own origin
+function bladeWorldRot(bone, dq) {
+  bone.parent.getWorldQuaternion(_bQ1);
+  bone.quaternion.premultiply(_bQ2.copy(_bQ1).invert().multiply(dq).multiply(_bQ1).normalize());
+  bone.updateMatrixWorld(true);
+}
+// TWO-BONE IK, IN WORLD SPACE, WRITTEN BACK AS LOCAL ROTATIONS (her `legIK`, verbatim in shape): the knee
+// opens or closes in the plane it is already bent in, the thigh swings the ankle onto the target, and the
+// foot's up turns toward `nrm` by `alignK`.
+function bladeLegIK(f, dv, nrm, alignK) {
+  const A = f.up.getWorldPosition(_bV1), Bk = f.kn.getWorldPosition(_bV2), C = f.ft.getWorldPosition(_bV3);
+  const T = _bV4.copy(C).add(dv);
+  const l1 = A.distanceTo(Bk), l2 = Bk.distanceTo(C);
+  if (l1 < 1e-5 || l2 < 1e-5) return;
+  const dT = clamp(A.distanceTo(T), Math.abs(l1 - l2) + 1e-4, (l1 + l2) * .999);
+  const ba = A.clone().sub(Bk), bc = C.clone().sub(Bk);
+  const cur = ba.angleTo(bc), want = Math.acos(clamp((l1 * l1 + l2 * l2 - dT * dT) / (2 * l1 * l2), -1, 1));
+  const axis = new THREE.Vector3().crossVectors(ba, bc);
+  const Aw = A.clone(), Tw = T.clone();
+  if (axis.lengthSq() > 1e-10 && Math.abs(want - cur) > 1e-5) bladeWorldRot(f.kn, _bQ3.setFromAxisAngle(axis.normalize(), want - cur));
+  f.ft.getWorldPosition(_bV3);
+  bladeWorldRot(f.up, _bQ3.setFromUnitVectors(_bV3.sub(Aw).normalize(), Tw.sub(Aw).normalize()));
+  if (alignK > .001 && nrm) {
+    f.ft.getWorldQuaternion(_bQ4);
+    const upW = f.upL.clone().applyQuaternion(_bQ4);
+    const ang = Math.min(upW.angleTo(nrm), BLADE.foot.alignMax);
+    const ax = new THREE.Vector3().crossVectors(upW, nrm);
+    if (ax.lengthSq() > 1e-10 && ang > 1e-4) bladeWorldRot(f.ft, _bQ3.setFromAxisAngle(ax.normalize(), ang * alignK));
+  }
+}
+// BEFORE THE MIXER: every edit `bladeBody` made comes back off, in the reverse order it went on
+function bladeUndo() {
+  const sk = player.mphK && player.mphK.mph, BR = sk && sk.blRig;
+  if (!BR) return;
+  for (let i = BR.twN - 1; i >= 0; i--) { const b = BR.tw[i]; if (b) b.quaternion.premultiply(_bQ1.copy(BR.twD[i]).invert()); }
+  BR.twN = 0;
+  if (BR.leanSave && BR.H) { BR.H.quaternion.copy(BR.leanSave); BR.leanSave = null; }
+  if (BR.feet) for (const f of BR.feet) if (f.dirty) { f.up.quaternion.copy(f.save[0]); f.kn.quaternion.copy(f.save[1]); f.ft.quaternion.copy(f.save[2]); f.dirty = false; }
+}
+function bladeTwist(BR, axis, per) {
+  for (let i = 0; i < BR.tw.length; i++) {
+    const b = BR.tw[i]; if (!b.parent) continue;
+    b.parent.updateWorldMatrix(true, false); b.parent.getWorldQuaternion(_bQ1);
+    _bQ3.setFromAxisAngle(axis, per);
+    _bQ2.copy(_bQ1).invert().multiply(_bQ3).multiply(_bQ1);
+    b.quaternion.premultiply(_bQ2);
+    (BR.twD[i] || (BR.twD[i] = new THREE.Quaternion())).copy(_bQ2); BR.twN = i + 1;
+    b.updateMatrixWorld(true);
+  }
+}
+// THE BARREL AS A WORLD DIRECTION -- the mount's own two markers, `barrelH`'s rule in 3D
+function bladeBarrel(out) {
+  const w = WEAP.worn[slotNow().key], host = w && w.host; if (!host) return null;
+  let tip = null; for (const c of host.children) if (/tip/.test(c.name)) tip = c;
+  if (!tip) return null;
+  host.getWorldPosition(_bV1); tip.getWorldPosition(out);
+  out.sub(_bV1);
+  return out.lengthSq() < 1e-10 ? null : out.normalize();
+}
+// her flip's rotation in HER frame (+Z forward, +Y up): +X takes the head FORWARD, a twist is about her spine
+function bladeFlipQ(out) {
+  const p = player, a = 2 * Math.PI * bladeFlipTurn(p.trickT / Math.max(.05, p.trickDur)), d = p.bFlip || 'up';
+  out.setFromAxisAngle(_bX, d === 'down' ? -a : a);
+  if (d === 'right' || d === 'left') out.multiply(_bQ4.setFromAxisAngle(_bUP, (d === 'right' ? -a : a) * BLADE.flip.twist));
+  return out;
+}
+function bladeBody(dt) {
+  const p = player, sk = p.mphK && p.mphK.mph, R = rig.root;
+  if (!sk || !sk.blRig || rig.model !== sk.model || p.mphSt) return;
+  const BR = sk.blRig, M = sk.model, B = rig.bl || (rig.bl = {});
+  // ---- CENTRE: her hips on the axis (r27)
+  if (BR.hips && BLADE.centre) {
+    _bV1.copy(BR.hips).multiply(M.scale).applyQuaternion(M.quaternion);
+    M.position.set(-_bV1.x * BLADE.centre, 0, -_bV1.z * BLADE.centre);
+  } else M.position.set(0, 0, 0);
+  const hipY = BR.hips ? BR.hips.y * M.scale.y : RIG.height * .5;
+  // ---- FLIP: about her hips, on the flip's clock (r25)
+  const fl = p.blade && BLADE.flip.on && p.trick && !p.trickName && !p.grounded;
+  if (fl) B.flipRes = bladeFlipQ(B.flipRes || new THREE.Quaternion());
+  else if (B.flipRes) {
+    B.flipRes.slerp(_bQ1.identity(), Math.min(1, BLADE.flip.settle * dt));
+    if (Math.abs(B.flipRes.w) > .99995) B.flipRes = null;
+  }
+  if (B.flipRes) {
+    _bQ1.setFromAxisAngle(_bUP, p.faceH + (B.body || 0));
+    _bQ2.copy(_bQ1).multiply(B.flipRes).multiply(_bQ3.copy(_bQ1).invert());
+    const px = R.position.x, py = R.position.y + hipY, pz = R.position.z;
+    R.quaternion.premultiply(_bQ2);
+    _bV1.set(0, -hipY, 0).applyQuaternion(_bQ2);
+    R.position.set(px + _bV1.x, py + _bV1.y, pz + _bV1.z);
+  }
+  R.updateMatrixWorld(true);
+  // ---- LEAN: into the turn, at the hips (r27 / r42)
+  const LN = BLADE.hipLean, hs = Math.hypot(p.vel.x, p.vel.z), vb = Math.atan2(p.vel.x, p.vel.z);
+  const lok = p.blade && p.grounded && !p.rail && hs > LN.minV;
+  let lw = 0;
+  if (lok && B.leanOk) {
+    const w = wrapAngle(vb - B.vb) / Math.max(dt, 1e-4), dir = Math.cos(p.faceH - vb) >= 0 ? 1 : -1;
+    lw = clamp(-Math.atan(hs * w / LN.g) * LN.k * dir, -LN.max, LN.max);
+  }
+  B.vb = vb; B.leanOk = lok;
+  B.lean = damp(B.lean || 0, lw, LN.hl, dt);
+  if (LN.on && BR.H && BR.H.parent && p.grounded && Math.abs(B.lean) > 1e-4) {
+    BR.leanSave = BR.H.quaternion.clone();
+    bladeWorldRot(BR.H, _bQ3.setFromAxisAngle(_bV2.set(Math.sin(p.faceH), 0, Math.cos(p.faceH)), B.lean));
+  }
+  // ---- SWIVEL: the whole drawn body toward the shot (r141). Lands on the root's yaw NEXT frame; the twist
+  // below covers this frame's residual exactly.
+  const G = BLADE.gun, S = G.swivel, armed = gunOut() && (p.aim || p.fireT > 0);
+  const sok = S.on && gunOut() && p.blade && !p.knock && !p.rail && !p.melee && !p.wing;
+  B.swT = sok && armed ? S.hold : Math.max(0, (B.swT || 0) - dt);
+  let want = 0;
+  if (sok && B.swT > 0) { const b = barrelH(); want = b == null ? (B.body || 0) : wrapAngle((B.body || 0) + wrapAngle(cam.az - b)); }
+  else if (Math.abs(B.body || 0) > Math.PI / 2 && p.blade && p.grounded && !p.rail && !p.melee && !p.knock) {
+    // KEEP THE TURN: she faces the other way round now, so that is her stance -- the lead, the body and the
+    // drawn offset move together, so nothing on screen jumps
+    p.stance = (p.stance || 1) < 0 ? 1 : -1;
+    p.fkOff = (p.fkOff || 0) + Math.PI; p.fkTgt = (p.fkTgt || 0) + Math.PI; fakieNorm();
+    B.body = wrapAngle(B.body - Math.PI);
+  } else if (!p.grounded && Math.abs(B.body || 0) > Math.PI / 2) want = B.body;      // in the air: held to the landing
+  B.body = wrapAngle((B.body || 0) + wrapAngle(want - (B.body || 0)) * (1 - Math.exp(-Math.LN2 * dt / S.ease)));
+  if (Math.abs(B.body) < 1e-3 && !B.swT) B.body = 0;
+  if (!B.body && !B.swT) B.legBack = null;
+  else {
+    const v = Math.hypot(p.vel.x, p.vel.z), face = p.faceH + B.body;
+    const rel = Math.abs(wrapAngle((v > S.minV ? Math.atan2(p.vel.x, p.vel.z) : p.boardH) - face));
+    if (B.legBack == null) B.legBack = rel > (S.back + S.fwd) / 2;
+    else if (rel > S.back) B.legBack = true;
+    else if (rel < S.fwd) B.legBack = false;
+  }
+  // ---- TWIST: the spine puts the barrel on the aim (r140), in 3D in flight (r146)
+  if (G.twist && BR.tw.length) {
+    const fly = p.wing && p.gDir && gunOut() && (p.aim || p.fireT > 0);
+    B.tw3 = damp(B.tw3 || 0, fly ? 1 : 0, G.ease, dt);
+    if (p.wing) {
+      B.twist = 0;
+      if (fly && B.tw3 > .002 && bladeBarrel(_bV4)) {
+        _bQ4.setFromUnitVectors(_bV4, p.gDir);
+        const ang = 2 * Math.acos(clamp(_bQ4.w, -1, 1)), sn = Math.sqrt(Math.max(0, 1 - _bQ4.w * _bQ4.w));
+        if (sn > 1e-5) bladeTwist(BR, _bV2.set(_bQ4.x / sn, _bQ4.y / sn, _bQ4.z / sn), Math.min(ang, G.max) * B.tw3 / BR.tw.length);
+      }
+    } else {
+      let tw = 0;
+      if (armed && !p.knock) { const b = barrelH(); if (b != null) tw = clamp(wrapAngle(cam.az - b), -G.max, G.max); }
+      B.twist = damp(B.twist || 0, tw, G.ease, dt);
+      if (Math.abs(B.twist) > .002) bladeTwist(BR, _bUP, B.twist / BR.tw.length);
+    }
+  }
+  // ---- FEET: her skates on the surface (r36)
+  const F = BLADE.foot, on = F.on && BR.feet && p.blade && p.grounded && !p.rail && !p.knock && !p.melee && !p.wing;
+  B.ikW = damp(B.ikW || 0, on ? 1 : 0, F.hl, dt);
+  if (!BR.feet) return;
+  const n = _bV3.set(0, 1, 0); if (p.tiltQ) n.applyQuaternion(p.tiltQ);
+  const o = R.position;
+  const soleH = f => { f.ft.localToWorld(_bV1.copy(f.sole)); return _bV1.sub(o).dot(n); };
+  R.updateMatrixWorld(true);
+  let target = 0;
+  if (B.ikW > .01) target = clamp(Math.min(soleH(BR.feet[0]), soleH(BR.feet[1])), -F.maxRaise, F.maxDrop) * B.ikW;
+  B.ikDrop = damp(B.ikDrop || 0, target, F.hl, dt);
+  M.position.y -= B.ikDrop;
+  M.updateMatrixWorld(true);
+  if (B.ikW <= .01) return;
+  for (const f of BR.feet) {
+    const h = soleH(f);
+    const k = B.ikW * (1 - smooth(F.near * .5, F.near, h));
+    if (k < .01) continue;
+    f.save[0].copy(f.up.quaternion); f.save[1].copy(f.kn.quaternion); f.save[2].copy(f.ft.quaternion); f.dirty = true;
+    bladeLegIK(f, _bV2.copy(n).multiplyScalar(-h * k), n.clone(), F.align * k);
+  }
 }
 
 function rigAnim(dt) {
@@ -16120,7 +16504,7 @@ function rigSqSpine() {
 // still ride the stroke a little, which is what an arm held out while skating looks like.
 function rigBladeSpine() {
   const up = rig.bladeUp;
-  if (!up || !player.blade) return;
+  if (!up || !player.blade || !BLADE.steady) return;
   const a = rig.actions[up + UPS], w = Math.min(1, rig.cw[up + UPS] || 0);
   if (!a || !(w > .01) || !rigHipsSpine()) return;
   const H = rig._hips, S = rig._spine;
@@ -21846,6 +22230,7 @@ function mphSkin(K) {
   // pose -- see `bindPose`. `skeletonClone` of a proto nothing has ever animated is a rest pose
   // by construction, and one frame later it is not.
   const bind = bindPose(bones, model);
+  const blRig = K.mode === 'blade' ? bladeFind(model) : null;      // her soles and hips, on the rest pose (m271)
   const mixer = new THREE.AnimationMixer(model);
   const actions = {}, clips = {};
   const loops = K.loops || bodyLoops(K);
@@ -21860,7 +22245,7 @@ function mphSkin(K) {
     actions[c.name] = a;
   }
   K.mph = { K, model, mixer, actions, clips, cw: {}, bones, faceOff: P.faceOff, mats, h,
-            mounts: {}, bind, stride: mphStride(clips, K), own: new Set(pool.map(c => c.name)) };
+            mounts: {}, bind, stride: mphStride(clips, K), own: new Set(pool.map(c => c.name)), blRig };
   // AFTER THE SKIN EXISTS, because it reads `skin.bones` and hangs the mount on one of them.
   K.mph.mounts = mphMounts(K.mph);
   // **ON THE FRAME THE CLONE IS MADE, WHICH IS ALREADY THE ALLOCATION FRAME (m119).** The whole
@@ -23562,7 +23947,11 @@ function stepMorph(dt) {
       // On every path a player can take it is a NO-OP -- you cannot fire the DNA gun without the
       // blaster already out -- so what it actually covers is `mel.dna('hobo')` from the console
       // and whatever a future sample path does.
-      if (p.mphNext) {
+      // **AND BECOMING HER IS EMPTY-HANDED (m271).** *"She's unable to be unarmed, whereas by default
+      // she should be unarmed."* Rollergirl's own default (`GUN.out` 0): she skates with her hands
+      // free, and the left wheel takes a weapon out or puts it back like it does for him.
+      if (p.mphNext && p.mphNext.mode === 'blade') { if (p.slot !== 0) applySlot(0); }
+      else if (p.mphNext) {
         const gs = WEAP.slots.findIndex(q => q.aim);
         if (gs >= 0 && p.slot !== gs) applySlot(gs);
         if (dnaNow()) { const ch = WEAP.modes.findIndex(q => !q.dna && !q.auto); if (ch >= 0) setMode(ch); }
@@ -26962,7 +27351,8 @@ function stepCam(dt) {
   // fix for something broken -- but 17 degrees of permanent lean is half the parry window.
   const dz = (p.block || padUp(p.aim || p.charge || p.center)) ? CAM.deadAim : CAM.dead;
   const ax = Math.abs(rx);
-  if (ax > dz && !p.speedSk) { cam.az -= Math.sign(rx) * ((ax - dz) / (1 - dz)) * CAM.yawRate * dt; p.camWant = null; cam.idle = 0; }
+  const flyAim = p.wing && (p.aim || (p.gHold || 0) > 0);      // flying, her right thumb is the 3D aimer (m271)
+  if (ax > dz && !p.speedSk && !flyAim) { cam.az -= Math.sign(rx) * ((ax - dz) / (1 - dz)) * CAM.yawRate * dt; p.camWant = null; cam.idle = 0; }
   else cam.idle += dt;
   // **AND THE MOUSE IS THE SAME WRITER, NOT A SECOND ONE (m79).** It is spent HERE rather than
   // in the listener for exactly the reason the line above it exists: `cam.az` has one writer and
@@ -26999,7 +27389,7 @@ function stepCam(dt) {
   //               turns, and nothing appears to have happened except that you are dizzy
   // FLYING (m266) the lens comes in behind her like a ship's -- once the thumb has let it be
   if (p.wing) {
-    if (cam.idle > WING.camIdle && !p.aim && !p.chg && !p.lock && p.camWant == null)
+    if ((flyAim || cam.idle > WING.camIdle) && !p.lock && p.camWant == null)      // and the lens keeps following while she aims (her r146)
       cam.az += wrapAngle(p.heading - cam.az) * Math.min(1, WING.camFollow * dt * clamp(p.speed / 5, .3, 1.4));
   }
   else if (p.board && !p.grounded) cam.idle = 0;
@@ -27854,6 +28244,7 @@ function frameBody() {
     stepMorph(dt);
     _pt = pT('body', _pt);
     rigAnim(dt);
+    bladeUndo();          // her edits come off before the mixer, in reverse (m271)
     spineUndo();
     rig.mixer.update(dt);
     rigAirSpine();
@@ -27870,7 +28261,8 @@ function frameBody() {
     // HE STANDS ON THE DECK, so he is lifted by its measured height -- his COLLIDER stays on
     // the ground, which is right: the board is a picture and the man is the body.
     if (player.board && !player.blade) rig.root.position.y += board.deck;
-    rig.root.rotation.y = player.faceH + rig.faceOff + RIG.spin + aimComp(dt);
+    // ON HER SKATES THE GUN TURNS HER WHOLE BODY, her swivel (m271) -- not his rigid barrel comp
+    rig.root.rotation.y = player.faceH + rig.faceOff + RIG.spin + (bladeOn() ? ((rig.bl && rig.bl.body) || 0) : aimComp(dt));
     rig.drawnYaw = rig.root.rotation.y;
     // **THE BARREL ROLL (m167).** No clip: the whole of him turns about his own forward axis,
     // which is `rotation.z` on an XYZ root -- Z applied innermost, so it is his frame and not
@@ -27884,6 +28276,7 @@ function frameBody() {
     rig.root.position.add(_roll);      // written by `boardPose`, earlier in this same frame
     wingPose(dt);                      // her wing suit lays her forward about her hips (m266)
     bladeTilt(dt);                     // her body square to the face she skates (m269)
+    bladeBody(dt);                     // her hips, flip, lean, swivel, twist and feet, in her order (m271)
     wingFrame(dt);
     // **AFTER THE ROOT IS PLACED, NOT ONLY AFTER THE MIXER.** The pin is a bone's WORLD
     // position and the speed cap is measured against how far it moved, so solving before the
@@ -28698,7 +29091,7 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // carried, and how a carried board should look is a look-at-it decision -- so it is a dial he
   // can reach on the phone rather than a pick shipped with an argument for it. `mel.hold()`
   // prints the line to paste back, and `mel.ride(1|0)` puts him on and off without a gesture.
-  SK8, BLADE, bladeOn, board, boardOut, boardHeld, SKSPEED, SKBOOST, bladeBoost, bladeFxStep, fakieSwivel, fakieFlip, fakieLand, bladeSurfPre, bladeSurfPost, bladeLandSlope, bladeTilt, triAdd, triBuild, TRI, WING, wingSet, stepWing, wingBoost, wingTrick, wingPose, wingFrame, wingTapR, wingTapL, wingOk, ISLE, buildIsle, isleSplash, islePutBack,
+  SK8, BLADE, bladeOn, bladeFind, bladeBody, bladeUndo, bladeLegIK, bladeGunFly, bladeFlipGo, bladeAnim, barrelH, aimPoint, applySlot, board, boardOut, boardHeld, SKSPEED, SKBOOST, bladeBoost, bladeFxStep, fakieSwivel, fakieFlip, fakieLand, bladeSurfPre, bladeSurfPost, bladeLandSlope, bladeTilt, triAdd, triBuild, TRI, WING, wingSet, stepWing, wingBoost, wingTrick, wingPose, wingFrame, wingTapR, wingTapL, wingOk, ISLE, buildIsle, isleSplash, islePutBack,
   // THE THREE NEW SYSTEMS, LIVE (m160). Every one of them is a look-at-it decision somewhere,
   // and none of them should need a fight to see one -- which is `mel.fx()`'s own argument.
   DECAL, BRK, HYD, SPOUT, BREAK, WRECKS, SPOUTS, decalPut, brkBlast,
