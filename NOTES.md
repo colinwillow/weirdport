@@ -7,6 +7,17 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FLUNG LEG WAS MY FOOT IK SHARING SCRATCH VECTORS (m273, `bladeBody`, `_bN`/`_bN2`/`_bDV`).** *Second screenshot: standing
+  still, one leg out straight at hip height, style skates already off.* Not a clip: posed through her real skeleton offline,
+  no clip of hers ever lifts an ankle above 0.24 of her height. m271's `bladeBody` handed `bladeLegIK` its target offset in
+  `_bV2` and the surface normal in `_bV3` -- and the IK's first lines write the KNEE's world position into `_bV2` and the
+  ANKLE's into `_bV3`. So every foot was sent to ankle + knee, metres up and out, and the second foot measured its height
+  against the first one's ankle. The first screenshot's "Superman" leg was probably this too, on top of the style skate.
+  **THE PROBE PASSED BECAUSE IT CALLED THE IK WITH FRESH VECTORS** -- it tested the function and not the caller, which is this
+  repo's oldest mistake one call deep. It now runs a stride-lifted foot END TO END through `bladeBody`: fixed, an 11 cm lift
+  is set down to 1.5 cm with an 8 deg thigh correction; with the bug put back, both soles read 0.63 m in the air. **A
+  module-level scratch vector may never be passed as an ARGUMENT to a function that uses the same scratch set.**
+
 - **"STUCK IN THE SUPERMAN POSE" WAS HER STYLE SKATES, AND THEY ARE OFF (m272, `BLADE.anim.style` 0).** *"Her normal skate
   legs are super messed up, they're not even really moving and she's stuck in the Superman pose."* The screenshot is
   `blade_pose_swan_R_forward` -- arms forward, one leg straight back. m271 ported Rollergirl's r42 auto style skates:
