@@ -7,6 +7,30 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **FOUR OF HIS, ONE BUILD (m274): HER COAST IS HER IDLE, HER STRIKE RIDES, THE SWAP CLOCK RUNS ON WHEELS, THE ISLAND
+  UNDERLAPS.** *"When you stop pushing she stays in the step of her stride -- we have a Rollergirl idle pose, play that when
+  you're cruising... I can't melee as her... there's a ring between the island and the Weirdport border... I can't get my
+  blaster out anymore when I'm the girl, and the rocket launcher as well."*
+  - **COAST = `idle_normal` / `idle_backward`**, not the held stride frame (`blade_roll_*`, her r131), which froze her mid-step
+    with her arms swung to one side. `BLADE.anim.rollHold` 1 puts the frame back.
+  - **THE BLASTER: THE SWAP NEVER FINISHED ON WHEELS (`swapTick`).** The reach's clock was advanced inside the on-foot step
+    only, so on her skates (and riding his board) `p.swap` hung part-way for ever: the weapon never arrived and `kitPick`
+    refused every later pick because a swap was "still running". One function, called from both bodies. The launcher comes
+    out the same way -- it was never refused, it was queued behind the hung swap.
+  - **HER RIGHT FLICK IS THE STRIKE, ground and air.** `boardFlick` swallowed it (nothing on the ground, a kickflip of a deck
+    she has not got in the air). On her it passes through to `meleeGo`, which she can play because she wears Zap's pool -- the
+    same clips her own game borrowed.
+  - **AND IT RIDES (`p.melRide`, `BLADE.melee`, her r39/r57).** On foot a strike REWRITES the velocity from its lunge, which
+    on a skater is a dead stop mid-cruise. As her it keeps her velocity, adds `lunge` toward the blow and `boost` along her
+    travel, and only her wheels' drag acts while it plays. **And the board re-entry took her BODY's facing as the lead** --
+    which at the end of a strike is the blow, 90 deg off her line -- so 16 m/s became 2.4 on the frame the strike ended.
+    Moving, the lead is her travel now. Probe: 14.2 m/s in, 14.2 lowest during, 15.4 a second and a half after.
+  - **THE ISLAND'S EDGE IS MEASURED OFF THE COLLIDER, AND THE COLLIDER IS BIGGER THAN THE PICTURE.** The kit city's lots run to
+    -93.5 / +93.5 on the x and z sides where the drawn ground stops at -90.3 / +90.3, so the land (2.5 m inside the collider's
+    edge) began a metre outside the street and a strip of nothing showed round two sides. `ISLE.margin` 6 tucks it under
+    the street everywhere. **What is still true there**: the invisible lot colliders stand 0.23 m over that strip of island,
+    which is his export, not the island.
+
 - **THE FLUNG LEG WAS MY FOOT IK SHARING SCRATCH VECTORS (m273, `bladeBody`, `_bN`/`_bN2`/`_bDV`).** *Second screenshot: standing
   still, one leg out straight at hip height, style skates already off.* Not a clip: posed through her real skeleton offline,
   no clip of hers ever lifts an ankle above 0.24 of her height. m271's `bladeBody` handed `bladeLegIK` its target offset in
