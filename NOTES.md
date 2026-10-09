@@ -7,6 +7,17 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **"STUCK IN THE SUPERMAN POSE" WAS HER STYLE SKATES, AND THEY ARE OFF (m272, `BLADE.anim.style` 0).** *"Her normal skate
+  legs are super messed up, they're not even really moving and she's stuck in the Superman pose."* The screenshot is
+  `blade_pose_swan_R_forward` -- arms forward, one leg straight back. m271 ported Rollergirl's r42 auto style skates:
+  cruising over 5 m/s thumb-off (or over 17 pushing) she slips into one every 3 s and holds it 3.5 s, so she was in a frozen
+  style pose for about half of every cruise. Those clips are the placeholders he already said he does not like (*"they were
+  display holders, they're actually different skates on the ground"*) -- copying her code faithfully copied a feature he had
+  rejected. Off by default, a tune row brings them back, and even then never while the thumb pushes (`styleCruise` 99).
+  **THE CHIP NOW SAYS WHICH CLIP SHE IS IN** (`BLADE 14.2 push hard`, `roll`, `pose_swan_R`, `-B` for her backward set),
+  because "what is she playing" cannot be read off a screenshot. Tune rows for the foot IK and the hip lean too, so if the
+  legs still read wrong the two new layers can be switched off on the phone one at a time.
+
 - **HER, COPIED RATHER THAN REBUILT (m271, `bladeAnim`, `bladeBody`, `bladeFind`, `bladeUndo`, `bladeFlipGo`,
   `bladeGunFly`, `BLADE.anim/flip/foot/hipLean/centre/gun`).** *"She's unable to be unarmed whereas by default she should
   be... it shouldn't just be locked in my hand... she has a very stiff skate... her frozen pose when she's drifting is just
