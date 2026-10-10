@@ -7,6 +7,23 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A BODY STANDING STILL NEVER RE-READ THE FLOOR UNDER IT (m275, `bodySeat`, `SEAT`).** *"Whenever I start the games,
+  a lot of the NPCs are like through the sidewalk or the curb."* Measured before touching anything, through the real kit
+  city collider (`tools/.probe/npcfloor.mjs`, his collision GLB plus the visual's lots and dirt decoded with draco):
+      spawn spots                0 of 26 drawn sunk -- `kitStand` and `bodySpawn` already land on the sidewalk
+      collider vs drawn ground   59 of 130,682 cells differ by 8 cm+ (curb and sidewalk edges)
+      bind-pose soles            every character file at y 0 (accessor min, `lo/h` 0.000 to 0.008)
+  So the spawn was never it. **Only `foeMove` (walking) and `bodyFly` (a launch) ever wrote `y`**, and `bodySep` pushes
+  overlapping pairs in x and z only, so an idle body shoved onto a 25 cm sidewalk kept its road height for ever.
+  `bodySeat` runs after `bodySep` every frame: every grounded body takes `groundAt(.., MOVE.step)`, the same call
+  `foeMove` makes. A floor more than `SEAT.fall` below hands him to `bodyFly` as a fall, never a teleport. Leap, ride,
+  the truck's rider and anything with a `vy` are skipped, because they already have a writer. Probed on the real
+  collider: under the sidewalk 0 -> 0.25, off the kerb 0.25 -> 0, 2 m up -> falls, rider untouched.
+  **THE CHIP SAYS WHICH CASE IT WAS.** `ST<n>` counts lifts over 5 cm. `SUNK<n>` counts bodies that still have a floor
+  above their feet after the seat. **If he still sees sunk bodies with no `SUNK` in the chip, the root is right and the
+  DRAWN body is low** -- a borrowed clip's Hips height (`retarget`'s `k`) or a skin offset, which nothing here can
+  build to test.
+
 - **FOUR OF HIS, ONE BUILD (m274): HER COAST IS HER IDLE, HER STRIKE RIDES, THE SWAP CLOCK RUNS ON WHEELS, THE ISLAND
   UNDERLAPS.** *"When you stop pushing she stays in the step of her stride -- we have a Rollergirl idle pose, play that when
   you're cruising... I can't melee as her... there's a ring between the island and the Weirdport border... I can't get my
