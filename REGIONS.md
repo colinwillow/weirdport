@@ -1,0 +1,213 @@
+# Weirdport — the regions
+
+One entry per region. **Read the entry before building anything in it.** Every region must feel
+like a different place to be — a different shape, a different light, different people, a different
+problem — not the last region with new paint. Each is SMALL and DENSE: a few blocks you come to know
+by heart, not a county. The world rules in `GAME_DESIGN.md` ("dense, vertical, organic, alive")
+apply to every one.
+
+## What has to differ between any two regions
+
+Check a new region against every other on all of these. If two regions match on more than two, one
+of them is not done yet.
+
+| Axis | Examples |
+|---|---|
+| **Dominant shape** | a tower (up), a gorge (down), tunnels (under), a river (along), a crowd (moving) |
+| **Light & weather** | golden hour, drizzle at dusk, neon night, fog, harsh noon, storm |
+| **Palette & materials** | wet brick, raw concrete, painted pastel, rust, glass, moss, alien bioluminescence |
+| **Who lives there** | the faction, and what they think of strangers |
+| **The problem** | what stands between you and the way on |
+| **The tech** | the form this region teaches you to use |
+| **The signature system** | the one living system that only exists here |
+| **The sound** | rain on tin, a crowd chanting, machinery, water, silence |
+
+---
+
+## 0. Gristle Farm — the crash
+
+**Identity:** where you land. Small, warm, and the first place anyone screams at you.
+- **Shape:** a valley floor that climbs. Sunken lanes between hedges, a creek in a gully with a
+  footbridge, the barn with a hayloft and a rope down, a silo with a ladder, an orchard terrace, the
+  road switchbacking up to the river bridge.
+- **Light:** late golden hour turning to dusk. Long shadows, dust in the air, the wreck burning.
+- **Palette:** straw, red barn paint, green hedges, a purple alien scorch on the field.
+- **People:** the farmer and his family, farmhands, cows. Rural, wary, armed.
+- **Problem:** you are an alien; the only way out is the bridge, and the bridge has a police checkpoint.
+- **Tech:** the farm (tractor, animals). This is where you take your **first sample**.
+- **Signature system:** livestock. Cows wander, panic and stampede when frightened, and block lanes.
+- **Sound:** crickets, cows, crackling wreckage.
+- **Way out:** the river bridge checkpoint — walked across as the farmer. The bridge becomes your
+  first portal.
+- **Secret:** Clancy's crash pod, something buried in the field the aliens wanted.
+
+## 1. Old Town — the knot
+
+**Identity:** the old heart of the city. Tight, wet, layered; everything stacked on everything else.
+(The kit city with breakable buildings.)
+- **Shape:** narrow streets that bend, fire escapes and balconies, laundry lines across alleys, a
+  rail cut running through it in a trench, an overpass with a homeless camp under it, the food-cart
+  pod in a lot, building sites wrapped in scaffolding.
+- **Light:** drizzle at dusk, neon signs reflected in puddles, warm windows.
+- **Palette:** wet brick, green copper, neon pink and cyan, tarp blue in the camp.
+- **People:** the homeless, food-cart owners, construction crews, cops on the beat, the hidden good
+  alien at a food cart.
+- **Problem:** the crews are being turned into Skinsuits, so nothing is being rebuilt and the
+  district is slipping toward ruin.
+- **Tech:** the trades. The **construction worker** rebuilds.
+- **Signature system:** district health. Damage and decay versus crews rebuilding.
+- **Sound:** rain on tarps, distant trains, sizzling food carts.
+- **Way on:** the collapsed footbridge over the rail cut to The Pearl. Rebuild it as the worker.
+- **Below:** the tunnel entrances (region 3) start in cellars here.
+
+## 2. The Pearl — the parade
+
+**Identity:** converted warehouses, roof gardens and art. Bright, loud, earnest, and organised.
+- **Shape:** wide old loading docks with raised platforms, rooftop gardens linked by catwalks and
+  rope bridges, a central plaza where the protest lives, murals that cover whole walls.
+- **Light:** bright morning, pastel and clean.
+- **Palette:** painted pastels, murals, raw steel, plants everywhere.
+- **People:** activists, artists, baristas, the protest organiser (infiltrated).
+- **Problem:** a permanent protest has sealed the plaza; barricades block every street through it.
+- **Tech:** the street. As an **activist** you march through the barricades inside the crowd.
+- **Signature system:** the crowd as moving terrain. The protest swells, marches, chants, and
+  clashes with counter-protesters; it pushes you along and closes gaps.
+- **Sound:** drums, chanting, a megaphone.
+- **Way on:** the organiser's rooftop HQ. Expose the infiltrator and the strike ends, which sends
+  Old Town's crews back to work (a ripple between regions).
+
+## 3. The Underneath — the tunnels
+
+**Identity:** the old smuggling tunnels and sewers under the city. Dark, close, and secret. This is
+**connective tissue as a place**: it runs under every downtown region.
+- **Shape:** low brick tunnels, flooded sections, ladders up into cellars, vast cisterns with
+  catwalks, a hidden market, the good aliens' safe house.
+- **Light:** almost none. Lanterns, phone glow, bioluminescent alien growth spreading in from the
+  Hothouse.
+- **Palette:** black, wet stone, lantern orange, alien teal.
+- **People:** the homeless network, smugglers, the hidden aliens. Nobody up top knows they're here.
+- **Problem:** you can't see, and the tunnels are a maze.
+- **Tech:** underground. The **cave miner** sees in the dark and digs through collapses.
+- **Signature system:** water level. Pumps raise and lower it, opening and flooding routes.
+- **Sound:** dripping, echoes, distant trains overhead.
+- **Way on:** shortcuts that surface in every downtown region. Most of the map's portals hide here.
+
+## 4. Hollow Creek — the outskirts
+
+**Identity:** where the city frays into forest. Rough, loud, proud.
+- **Shape:** a trailer park on stilts over the creek, a dirt-bike track over ridges, the logging
+  mill with log flumes and conveyors, the fairground where the rally is held, forest trails up a hill.
+- **Light:** harsh noon sun, dust, then a thunderstorm.
+- **Palette:** rust, tin, flannel red, pine green, mud.
+- **People:** rednecks, bikers, rally-goers, the rally leader (infiltrated).
+- **Problem:** gang turf. Outsiders get run off, and the roads are watched.
+- **Tech:** the **biker**: the motorcycle, the gang's respect, the trucks.
+- **Signature system:** the rally. It builds through the day: trucks arrive, the crowd grows, the
+  leader speaks, it boils over into a brawl with the Pearl's protesters.
+- **Sound:** engines, country radio, a chainsaw at the mill.
+- **Way on:** the freight train along the creek, which you ride as a biker who jumps it.
+
+## 5. The Waterfront — Uplift Corp
+
+**Identity:** industrial docks and the cyborg factory. Cold, efficient, inhuman.
+- **Shape:** container stacks as cliffs, gantry cranes you can climb and ride, conveyor lines through
+  the factory, a dry dock, the river.
+- **Light:** sodium orange floodlights at night, fog off the water.
+- **Palette:** rust, safety yellow, chrome, sick green screens.
+- **People:** dock workers, cyborg workers (Uplift converts), security robots.
+- **Problem:** everything is automated and locked: turrets, doors, cranes.
+- **Tech:** machines. The **engineer / hacker** controls robots, cranes and doors.
+- **Signature system:** the conversion line. Workers go in human and come out cyborg. Shut it down
+  and the cyborgs start turning back.
+- **Sound:** foghorns, machinery, hissing hydraulics.
+- **Way on:** a ferry from Old Town's docks to get in; a hijacked crane to get out.
+
+## 6. Dump Tower — the vertical level
+
+**Identity:** one tower, lobby to penthouse. Gold, glass, and smug. The elite.
+- **Shape:** entirely vertical. The marble lobby, offices, a gym, a sky garden, the boardroom, the
+  penthouse, the helipad. Elevator shafts, window-washer platforms outside, ventilation ducts inside.
+- **Light:** clean daylight inside, and the city spread out below through the glass.
+- **Palette:** gold, marble, glass, red carpet.
+- **People:** executives, security, assistants, the CEO.
+- **Problem:** access control. Every floor needs the right person's badge.
+- **Tech:** business. The **CEO** and the executives open the executive lifts.
+- **Signature system:** the corporate ladder. Each floor's staff answer to the floor above.
+  Impersonate the right boss and whole floors change their behaviour.
+- **Sound:** muzak, elevator dings, quiet money.
+- **Way on:** the aerial tram from the hill to the tower's sky garden; out by glider off the helipad.
+
+## 7. The Gorge — falls and stilt village
+
+**Identity:** a river gorge with waterfalls and a fishing village on stilts. Wild and wet.
+- **Shape:** deep and down. Cliffs, a waterfall with caves behind it, the stilt village with
+  walkways and rope bridges, underwater caves, a lookout at the top.
+- **Light:** mist, rainbows in the spray, green filtered light.
+- **Palette:** moss, basalt, white water, weathered wood.
+- **People:** fishers, river guides, a scuba diver, Islanders.
+- **Problem:** the way on is behind the falls and under the water.
+- **Tech:** underwater. The **scuba diver** swims and breathes under water.
+- **Signature system:** the river. Dam gates upstream change the flow, the falls and the water level.
+- **Sound:** roaring water, birds.
+- **Way on:** the glider from the lookout to the islands.
+
+## 8. The River Islands — gliders and skate
+
+**Identity:** a chain of small river islands. Free, playful, airborne.
+- **Shape:** islands at different heights, connected by gliding, cliff jumps, a skate park on an old
+  pier, kite surfers, and the hang-glider guy's lookout.
+- **Light:** bright windy afternoon, fast-moving clouds.
+- **Palette:** sky blue, sun-bleached wood, bright kites.
+- **People:** skaters, BASE jumpers, kite surfers, the hang-glider guy. (Rollergirl is the Easter
+  egg here.)
+- **Problem:** the gaps between islands.
+- **Tech:** flight. **Glider / wingsuit.**
+- **Signature system:** wind. Gusts change direction and strength and affect every flight.
+- **Sound:** wind, waves, skate wheels.
+- **Way on:** a thermal column up to the Mothership's tether.
+
+## 9. The Hothouse — the alien takeover
+
+**Identity:** part of the city the Skinsuits have terraformed into alien jungle. Beautiful and wrong.
+- **Shape:** familiar streets overgrown: alien vines through buildings, giant pods, bridges of growth.
+  It looks like a jungle, but it is the city underneath.
+- **Light:** perpetual bioluminescent twilight.
+- **Palette:** alien teal, magenta, wet black.
+- **People:** Skinsuits, half-turned civilians in pods.
+- **Problem:** the growth spreads, and it is the enemy's territory.
+- **Tech:** every form you have, combined.
+- **Signature system:** spread. The jungle advances into neighbouring regions over time unless you
+  cut it back. You can watch it eat the city.
+- **Sound:** alien hum, breathing walls.
+- **Way on:** to the Mothership.
+
+## 10. The Mothership — the finale
+
+The evil aliens' ship over the city: organic corridors, the conversion chamber, a view of Weirdport
+below. Every form and every tech is needed one last time.
+
+---
+
+## The connective tissue
+
+Getting from one region to the next is an EVENT, never a loading screen. Each transition has its own
+travel moment, and once crossed it becomes a portal so you can return as the alien.
+
+| From → to | The journey |
+|---|---|
+| Farm → Old Town | the river bridge checkpoint, crossed on foot in disguise |
+| Old Town → The Pearl | the footbridge over the rail cut, which you rebuild |
+| downtown ↔ downtown | the Underneath's tunnels, surfacing in cellars |
+| Old Town → Waterfront | the ferry across the river |
+| Old Town → Hollow Creek | the freight train out of the rail cut |
+| hill → Dump Tower | the aerial tram |
+| Hollow Creek → The Gorge | down the log flume and the river rapids |
+| The Gorge → River Islands | the glider off the lookout |
+| River Islands → Mothership | the thermal up to the tether |
+| everywhere | portals, once activated |
+
+## What is not decided
+
+- The **order** of chapters past Old Town. The table above is a web, not a line, and it could branch.
+- Whether **Hothouse** is a fixed region or grows across the map as a spreading threat.
+- The real names. These are working names.

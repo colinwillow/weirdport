@@ -20,6 +20,8 @@ between them. Design context lives in `GAME_DESIGN.md`.
 Read `GAME_DESIGN.md` → "The world: dense, vertical, organic, alive" before building any place.
 **Intimate, vertical, organic, interactive, and one place finished at a time.** Never a flat plane
 with spaced-out rectangles on it, never a grid of separate areas. Build small and finish it.
+**Before building in a region, read its entry in `REGIONS.md`** and check it against the "what has to
+differ" table there, so no region feels like the last one.
 
 ## Phase A — the game skeleton (no new art needed)
 
