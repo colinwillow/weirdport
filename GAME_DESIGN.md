@@ -148,6 +148,41 @@ Each district has a **health** that these systems push up and down, and the look
 healthy, worn, broken, abandoned. Unforeseen outcomes are the point: the player pulls one thread
 and watches what else moves.
 
+## Turf: the city is up for grabs (idea, Colin, not yet scheduled first)
+
+A self-sustaining city whose LOOK and LIFE follow whoever holds each block. Every block carries an
+**influence share** for each faction:
+- the activists / hippies;
+- the rednecks / bikers;
+- big business (Dump Tower money);
+- small business (food carts, corner shops);
+- the homeless;
+- Uplift's robots;
+- the Skinsuit aliens.
+
+**What influence changes, cheapest first:**
+1. **Who walks there.** The crowd mix follows the shares.
+2. **Dressing on the buildings that are already there.** Flags, banners and graffiti; boarded
+   windows; neon, gold trim and corporate signs; solar panels and gardens; scrap and chain-link;
+   alien growth crawling up the walls.
+3. **The buildings themselves.** Procedurally generated from the kit pieces in each faction's
+   style: rundown walk-ups, a glass tower, a trailer lot, a co-op with a roof garden, a factory,
+   alien pods. Swapped in as a block changes hands.
+
+**What moves influence:** protests and rallies (the crowd system), Skinsuit conversions and Uplift
+conversions, crews rebuilding or not (district health), and you — who you help, who you knock down,
+whose strike you end, whose leader you expose.
+
+**Choose your destiny.** You are always the alien, but which way you tilt the city is yours: back the
+activists, the business owners, the rednecks, or let it go to the robots or the aliens. The city's
+end state, and maybe the ending, reflects who holds it. Factions push against each other at their
+borders (turf flashpoints: a rally marching into protest territory, a developer bulldozing a camp),
+so the map keeps moving even when you don't. Think GTA San Andreas turf wars or SimCity, with the
+main plot running through it: the aliens are trying to win the map too.
+
+**It sits on systems the roadmap already builds**: district health (C0), protests (C1), Skinsuit
+incursions (C2), Uplift (C3), the kit buildings and their generator.
+
 ## World building split
 
 **Blender is for the real worlds** (textures, breakable buildings). The loop builds **greybox

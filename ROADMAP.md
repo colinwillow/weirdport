@@ -15,28 +15,27 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
-**From Colin, after seeing the build: placeholders are being dropped in at random and it looks sloppy.**
-Do these in order, before anything else in this file:
+**From Colin (updated, replaces the earlier STEER): keep going, never wait.**
 
-1. **Take the demo objects out of the world.** `GATE.demo` and `PORTAL.demo` both put things right
-   by the spawn with no reason to be there. Set both to 0. Keep the systems; add `mel.gateDemo()` /
-   `mel.portalDemo()` console hooks so they can still be tested on purpose. Ship that as one build. **— done m292.**
-2. **New rule: nothing appears in the world without an authored reason and an authored place.**
-   Systems ship DORMANT. Things get into the world in exactly two ways:
-   - **named markers in his Blender exports** (empties like `portal_bridge`, `gate_fire_alley`,
-     `npc_farmer_01`), which the game reads and turns into the real thing; or
-   - an **authored placement table** in index.html, each entry with a named spot in a region and a
-     one-line reason it is there.
-   Never "near the spawn", never "somewhere open".
-3. **Write `MARKERS.md`**: the marker vocabulary for his Blender scenes (portals, gates of each type,
-   NPCs by kind and role, quest givers, spawn points, crowd and protest areas, ambient life), with
-   the naming pattern and any custom properties. Then make the loader read those markers from the
-   kit city's GLBs (it already reads `nav_repair` and `fx_hydrant_water_spout` the same way). That
-   is how he authors the game: he places, the game behaves. **— done m293** (`MARKERS.md`).
-4. **Pause the procedural farm.** Do not add to B1 (m288 to m291) until Colin has looked at it and
-   said whether he wants it. Skip B1e and B2.
-5. **Then go deep in Old Town**, the few blocks he already likes: C0 district health, using the
-   worker, fire and repair systems that are already there. Depth in one small place, not breadth.
+- **Never stop or wait for Colin.** If something seems to need him, make the call, log it under
+  "Decisions for Colin", and carry on. (The earlier STEER said to pause until he had looked at the
+  farm; that was wrong and is withdrawn.)
+- **There is no Blender work for about a week.** Places are built in code until then. `MARKERS.md`
+  can wait; do not build anything that depends on his markers.
+- **The placement rule stays:** nothing goes in the world as a "demo", "near the spawn" or
+  "somewhere open". Everything placed comes from an authored placement table: a named spot in a
+  named place, and a one-line reason it is there. (Done: m292 took the demo gates and portals out.)
+- **Now: polish passes on the farm until it is beautiful.** One pass per build, as many passes as it
+  takes; ten is fine. Each pass, pick the weakest-looking thing about the farm and make it better:
+  the light and atmosphere (golden hour, haze, long shadows), the materials and colours (painted, not
+  flat greybox; `REGIONS.md`'s farm palette), detail density (crops, grass tufts, fences, clutter,
+  tools, hay), silhouettes and rooflines, layering and foreground, the wreck as a hero moment. Keep
+  the draw-call budget in mind (merge what does not move).
+- **You may build a screenshot tool for these passes** (`tools/shot.mjs`, headless Chromium from
+  `/opt/pw-browsers`, the player's camera at a named spot) so you can see the farm before and after
+  each pass, instead of polishing blind. If a shot takes more than about two minutes or will not
+  render, drop it and carry on without it.
+- **After the farm looks right:** B1e, then B2, then on down the list.
 
 ## Standing rules for anything built in the world
 
@@ -117,6 +116,18 @@ differ" table there, so no region feels like the last one.
 - [ ] **C4 The glider.** The hang-glider guy at a lookout; his form flies (reuse her wingsuit flight).
 - [ ] **C5 Hidden good aliens.** A network of disguised shopkeepers who give tips and upgrades.
 - [ ] **C6 Chapter 2 greybox (The Pearl)** with its quests and boss — then 3, 4…
+
+## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
+
+- [ ] **D1 Influence model.** Per-block shares for each faction, saved with progress; a map overlay
+  and a chip token showing who holds the block you're in.
+- [ ] **D2 The crowd follows influence.** The NPC mix in a block comes from its shares.
+- [ ] **D3 Faction dressing.** Each faction's set of props, signs, paint and decay on existing
+  buildings, cross-fading as a block changes hands.
+- [ ] **D4 Faction buildings.** Kit-generated building styles per faction, swapped in when a block
+  changes hands for good.
+- [ ] **D5 Pressure.** Factions push at their borders on their own (flashpoint events), and the
+  player's actions move the shares.
 
 ## Ongoing (fill gaps between items, never instead of them)
 
@@ -240,3 +251,9 @@ differ" table there, so no region feels like the last one.
   speakers and the WEIRDPORT 101 stand-in quest are now **dormant**: speakers come from `npc_*`
   markers, and `mel.questOn('q0')` runs the stand-in. Your files have none of the new marker types
   yet, so until you place some, nothing new appears: that's the point.
+- **m293 vs the new STEER:** m293 (`MARKERS.md` + the marker loader) was built under the earlier
+  STEER and landed as the new one arrived. It changes nothing in the world until markers exist, so
+  it stays, and it needs no Blender work this week. The dormant `!` speakers and stand-in quest also
+  stay dormant under the placement rule; they come back via an authored placement table when a place
+  needs them. **The cows** (built m292, parked on `paused/cows-m292` when the farm was paused) come
+  back now that the pause is withdrawn: they're the first farm pass.
