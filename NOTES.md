@@ -7,6 +7,21 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **FEAR IS THE OLD FLEE BRANCH WITH A NEW REASON, NOT A SECOND WAY TO RUN (m279, ROADMAP A4, `FEAR`, `fearSees`, `fearCall`).**
+  `fearStep` runs in `stepDummies` before the AI and only SETS `d.fleeT` -- the same clock a blow sets in `dummyHit`
+  since m38 -- so the run is `foeWander`'s own flee branch. Who can be frightened is exactly who `foeWander` drives:
+  `K.ai && K.pacifist`, minus the sidekick (`pal`), the worker (`repair`), anything turned (`wasK`) and any kind whose
+  file says alien/officer/clancy. Sight: distance `see`, then the cone off `d.h` (forward is `(sin h, cos h)`, so the
+  bearing is `atan2(dx, dz)`) unless inside `feel`, then a line of `camHit` samples eye to eye -- the box test the
+  bolts and camera use, so sight and shots agree about walls. Each body looks every `every` s, staggered by a random
+  first offset. **The flee branch used `K.flee * V.pace` with no fallback** -- harmless while only kinds with a flee
+  speed were ever hit, NaN for one that is merely frightened -- so it falls back to `FEAR.run`.
+  `fearLooks` is the core mechanic: undisguised, or disguised as a kind whose file says alien, is an alien.
+  **A speaker with an unheard `!` does not panic** (or the first quest step is impossible undisguised), and a frightened
+  or calling body cannot be talked to. A caller (`callP`) stands back-to-you with a phone sprite for `callT` once the run
+  ends, then `heatAdd(1, 'call')`; `HEAT` is a stub for A5. No scream recording exists, so a kind with `K.voice` grunts
+  pitched up and the rest are silent. Chip: `FR<frights>/<calls> H<heat>`.
+
 - **A QUEST STEP IS ONE QUESTION ASKED EVERY FRAME, AND IT READS THE SAVE (m278, ROADMAP A3, `QUESTS`, `questTest`).**
   Six step types -- talk / goto / reach / defeat / sample / gate -- and `questTest` is the only code that knows what
   they mean. `sample` and `gate` read `SAVE.forms` and `gate:<id>`, so they cannot pass until A6/A8 exist and need no

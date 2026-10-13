@@ -598,10 +598,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m278</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m279</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m278</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m279</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -670,7 +670,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm278';
+const BUILD = 'm279';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -26437,13 +26437,16 @@ function foeWander(d, dt, t, dd, toP) {
     // DIRECTLY AWAY, and he keeps his nerve for `flee0` seconds -- long enough to be somewhere
     // else rather than to take three steps and turn round.
     faceTo(d, toP + Math.PI, dt);
-    const sp = K.flee * V.pace;
+    // `FEAR.run` for a kind that never had a reason to run before m279 -- `undefined * pace` is NaN
+    const sp = (K.flee || FEAR.run) * V.pace;
     foeMove(d, d.h, sp, dt);
     const nm = K.clips.flee || K.clips.run;
     t[nm] = 1;
-    setSkinScale(d, nm, clamp(sp / (K.clips.flee ? K.fleeRef : K.runRef), K.tsLo, K.tsHi));
+    setSkinScale(d, nm, clamp(sp / ((K.clips.flee ? K.fleeRef : K.runRef) || sp), K.tsLo || .7, K.tsHi || 1.5));
     return;
   }
+  // AND A WITNESS ON THE PHONE (m279), once the run is over
+  if (fearCall(d, dt, t, toP)) return;
   // **HE TRIES, THEN HE HOPS, THEN HE GOES SOMEWHERE ELSE (m74).** *"There was a really short
   // little cube he just got stuck on -- he just indefinitely was kind of stuck, didn't know what
   // to do. He needs to be able to jump up on things."* Both halves are the same detector:
@@ -27444,7 +27447,7 @@ function talkSeed() {
     TALK.n++;
   }
 }
-const talkOk = d => d.talk && !d.wasK && d.st !== 'down' && d.st !== 'up' && !d.vy;
+const talkOk = d => d.talk && !d.wasK && d.st !== 'down' && d.st !== 'up' && !d.vy && !(d.fleeT > 0) && !(d.callT > 0);
 function talkShow() {
   const d = talk.cur; if (!d || !talk.box) return;
   talk.nm.textContent = d.talk.name;
@@ -27672,9 +27675,121 @@ function questStep(dt) {
   }
 }
 
+// ============================================================================================
+// FEAR & WITNESSES (m279, ROADMAP A4) -- they see an alien, they scream, they run, some call it in
+// ============================================================================================
+// **SEEING IS THREE TESTS, CHEAPEST FIRST:** inside `see` metres, inside the body's `cone` off his
+// own heading `d.h` (or inside `feel`, where he notices you whichever way he faces), and a clear
+// line from his eyes to yours -- marched at `losStep` through `camHit`, the same box test every
+// bolt and the camera already trust, so a wall is a wall to sight exactly as it is to a shot.
+// Each body asks at most every `every` seconds, staggered, so a street of thirty is a handful of
+// queries a frame.
+// **WHAT HE SEES IS WHAT YOU ARE DRAWN AS.** Undisguised, or disguised as something that is
+// itself an alien (the warrior, her), is an alien. Disguised as a human, nobody looks twice --
+// that is the core mechanic in one predicate (`fearLooks`).
+// **ONLY THE PEOPLE WHO WOULD RUN ANYWAY.** A pacifist with AI that is not your sidekick and not
+// the worker at his job: exactly the bodies `foeWander` already drives, so the panic is the
+// flee branch that has existed since m38 -- `d.fleeT` -- and not a second way to run away. The
+// cops are not pacifists and A5 decides what they do.
+// **A SPEAKER WITH SOMETHING UNSAID DOES NOT PANIC.** Otherwise the first quest step -- talk to
+// someone with a `!` -- is impossible undisguised, and the people with a `!` are the ones who
+// came looking for you. Once heard, they are as frightened as anyone.
+// **A WITNESS WHO PHONES IT IN** (`callP` of them) stops when the run is over, stands for
+// `callT` with a phone over his head, and then `heatAdd` -- which is A5's to turn into stars. Hit
+// him mid-call and he runs again; the call resumes when he stops.
+const FEAR = {
+  on: 1,
+  see: 16,          // m he can see you from
+  feel: 3,          // m inside which he notices you whichever way he is facing
+  cone: 1.15,       // rad either side of his heading (about 66 deg)
+  losStep: .9,      // m between sight samples along the line
+  eye: 1.55,        // m, both eyes
+  every: .3,        // s between looks, per body
+  flee: 6,          // s of running
+  run: 3.2,         // m/s, for a kind with no `flee` speed of its own
+  again: 10,        // s before the same man can be frightened afresh
+  callP: .45,       // chance a witness phones it in
+  callT: 3,         // s on the phone
+  n: 0, calls: 0,   // chip: frights / calls made
+};
+// A5 builds the stars out of this; until then it is a number that only goes up and down
+const HEAT = { v: 0, calls: 0 };
+function heatAdd(n, why) { HEAT.v = Math.max(0, HEAT.v + n); if (why === 'call') HEAT.calls++; return HEAT.v; }
+const fearLooks = () => { const k = player.mphK; return !k || /alien/i.test(mphName(k)); };
+const fearHuman = d => { const K = d.K; return K.ai && K.pacifist && !K.pal && !K.repair && !d.wasK && !/alien|officer|clancy/i.test(mphName(K)); };
+const fear = { mats: {} };
+function fearMat(kind) {
+  if (fear.mats[kind]) return fear.mats[kind];
+  const c = document.createElement('canvas'); c.width = 128; c.height = 128;
+  const g = c.getContext('2d'); g.textAlign = 'center'; g.textBaseline = 'middle';
+  if (kind === 'call') { g.font = '96px system-ui, "Apple Color Emoji", sans-serif'; g.fillText('\u{1F4DE}', 64, 68); }
+  else { g.font = '900 104px Bungee, system-ui, sans-serif'; g.lineWidth = 14; g.lineJoin = 'round';
+    g.strokeStyle = '#0b0d12'; g.strokeText('!!', 64, 70); g.fillStyle = '#ff4d6d'; g.fillText('!!', 64, 70); }
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+  return (fear.mats[kind] = new THREE.SpriteMaterial({ map: t, transparent: true, depthWrite: false }));
+}
+function fearMark(d, kind) {
+  if (!d.fearMk) { d.fearMk = new THREE.Sprite(fearMat('scream')); d.fearMk.renderOrder = 5; d.root.add(d.fearMk); }
+  const m = d.fearMk;
+  if (!kind) { m.visible = false; return; }
+  m.material = fearMat(kind);
+  const h = d.talkH || (d.talkH = (() => { const v = drawnH(d.model); return v > .6 && v < 4 ? v : 1.75; })());
+  const s = d.root.scale.y || 1;
+  m.scale.set(.55 / s, .55 / s, 1);
+  m.position.set(0, (h + .45) / s, 0);
+  m.visible = true;
+}
+function fearSees(d) {
+  const P = player.pos, R = d.root.position;
+  const dx = P.x - R.x, dz = P.z - R.z, q = Math.hypot(dx, dz);
+  if (q > FEAR.see || Math.abs(P.y - R.y) > 8) return false;
+  if (q > FEAR.feel && Math.abs(wrapAngle(Math.atan2(dx, dz) - d.h)) > FEAR.cone) return false;
+  const y0 = R.y + FEAR.eye, y1 = P.y + FEAR.eye, n = Math.max(1, Math.floor(q / FEAR.losStep));
+  for (let i = 1; i < n; i++) {
+    const u = i / n;
+    if (camHit(R.x + dx * u, y0 + (y1 - y0) * u, R.z + dz * u, 0)) return false;
+  }
+  return true;
+}
+function fearStep(dt) {
+  const looks = FEAR.on && fearLooks();
+  for (const d of DUMMIES) {
+    if (d.fearAg > 0) d.fearAg -= dt;
+    // the mark: `!!` while the panic is fresh, the phone while he is on it
+    if (d.fearMk || d.callT > 0 || d.fearS > 0) {
+      if (d.fearS > 0) d.fearS -= dt;
+      fearMark(d, d.callT > 0 && !(d.fleeT > 0) ? 'call' : d.fearS > 0 ? 'scream' : null);
+    }
+    if (!looks || !fearHuman(d)) continue;
+    if (d.fleeT > 0 || d.callT > 0 || d.fearAg > 0 || d.aggro) continue;
+    if (d.st === 'down' || d.st === 'up' || d.st === 'ride' || d.st === 'leap' || d.vy) continue;
+    if (d.talk && !d.talk.done) continue;
+    if ((d.fearChk = (d.fearChk === undefined ? Math.random() * FEAR.every : d.fearChk) - dt) > 0) continue;
+    d.fearChk = FEAR.every;
+    if (!fearSees(d)) continue;
+    // SEEN. Scream, run, and maybe call it in once the run is over.
+    FEAR.n++;
+    d.fleeT = FEAR.flee * (.8 + Math.random() * .4); d.roamT = 0;
+    d.fearAg = FEAR.again; d.fearS = 1.6;
+    d.caller = Math.random() < FEAR.callP ? 1 : 0;
+    if (d.K.voice) snd(d.K.voice, { g: .9, r: 1.3 + Math.random() * .2, x: d.root.position.x, z: d.root.position.z });
+  }
+}
+// the phone call, inside `foeWander` below the flee: returns true while he is on it
+function fearCall(d, dt, t, toP) {
+  if (d.caller && !(d.fleeT > 0)) { d.caller = 0; d.callT = FEAR.callT; }
+  if (!(d.callT > 0)) return false;
+  d.callT -= dt;
+  faceTo(d, toP + Math.PI, dt);              // back to you, phone to his ear
+  t[d.rest || d.K.clips.idle] = 1;
+  if (d.callT <= 0) { FEAR.calls++; heatAdd(1, 'call'); }
+  return true;
+}
+
 function stepDummies(dt) {
   bodySep(dt);
   bodySeat();
+  fearStep(dt);                 // before the AI, so a fright this frame runs this frame (m279)
   bodyCull();
   for (const d of DUMMIES) {
     const K = d.K;
@@ -29120,6 +29235,8 @@ function frameBody() {
       // T: speakers seeded / scripts heard (m277); `*` = one is in reach right now
       (TALK.n ? ' T' + TALK.n + '/' + TALK.said + (talk.near ? '*' : '') : '') +
       // Q: the active quest and step (m278) -- `Qq0.1` is quest q0 on its second step; no token = none active
+      // FR: frights / calls phoned in / heat (m279) -- frights with no calls is the dice, no frights at all is sight
+      (FEAR.n ? ' FR' + FEAR.n + '/' + FEAR.calls + ' H' + HEAT.v.toFixed(0) : '') +
       (quest.cur ? ' Q' + quest.cur.id + '.' + quest.step + (quest.tgt ? '' : '~') : '') +
       (MISSING.length ? ' · ' + MISSING.join(' · ') : '');
     // **THE KEYS SIT UNDER THE CHIP, AND THE CHIP IS THE ONE HUD ELEMENT THAT GROWS (m128).**
@@ -29605,6 +29722,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   TALK, TALKS, talk,
   // QUESTS (m278): `mel.QUEST` live; `mel.QUESTS` the data; `mel.quest` the state
   QUEST, QUESTS, quest,
+  // FEAR (m279): `mel.FEAR` live, `mel.HEAT` the stub A5 builds on
+  FEAR, HEAT, heatAdd,
   SAVE, progSave, progForm, progRegion, progPortal, progFlag, progChapter, progJuice, progReset,
   // THE SURGE (m248): `mel.SURGE` is live; `mel.surge(n)` throws n cubes off you once
   SURGE, surge: n => surgeEmit(rig.model, n || 300), WARM,

@@ -31,7 +31,7 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
 - [x] m278 **A3 Quests & objectives.** Data-driven quests: steps of type talk / go-to / sample / defeat /
   reach / gate. Current objective as one line on the HUD, a waypoint beam in the world, and a
   "quest complete" moment.
-- [ ] **A4 Fear & witnesses.** Humans who SEE you undisguised react: scream, flee, phone it in.
+- [x] m279 **A4 Fear & witnesses.** Humans who SEE you undisguised react: scream, flee, phone it in.
   Disguised you are ignored. A witness who phones it in raises heat.
 - [ ] **A5 Heat & police.** Wanted stars. 1 = cops come look, 2 = cops chase and arrest-attempt,
   3 = cops shoot, 4 = more cops (military later). Lose heat by breaking line of sight and changing
@@ -111,3 +111,8 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   and the "quest complete" card can be seen now; B2's Chapter 0 script replaces it. The objective
   sits top-centre (the only empty edge). `sample` and `gate` steps read the save, so they will
   start working when A6/A8 write it. `mel.progReset()` replays it.
+- **m279 (A4):** people with an unheard `!` are brave and don't run (otherwise you can't talk to
+  them undisguised); once heard they're as scared as anyone. Disguised as an *alien* kind (the
+  warrior, her) still counts as alien. Cops and the construction worker don't panic. About 45% of
+  witnesses phone it in (`FEAR.callP`). There is no scream sound in the repo, so those with a
+  voice grunt high and the rest are silent: a scream recording would slot straight in.
