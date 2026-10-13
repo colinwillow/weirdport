@@ -7,6 +7,17 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A TILTED STRUT IS ITS OWN GEOMETRY UNDER AN EULER, NOT A ROTATION MULTIPLIED ONTO A TRS (m299, farm pass 5, `FPROPS`, `buildFarmProps`).**
+  I wrote the windmill's legs the m291 way first -- `bx()` then `matrix.multiply(makeRotationZ(...))` -- which rotates
+  BEFORE the non-uniform scale and shears the box; caught on re-reading. A leg is `BoxGeometry(.12, L, .12)` at the
+  midpoint with Euler `(rx, 0, rz)`: XYZ order applies Rz first, so `rz = -asin(dx/L)` puts the y axis's x component at
+  dx/L and then `rx = asin(dz/(L cos rz))` its z (y comes out H/L by construction). The tractor first had `psi = pi/2`,
+  which in this frame runs a box's first dimension along -v -- 90 deg off its own wheels; a box's FIRST dimension runs
+  along `(cos psi, -sin psi)` in (u, v). The weathervane's arrowhead points INTO the wind (its fin streams down it): yaw =
+  downwind + pi. The wind is one direction for the yard -- `FPROPS.wind` [.8, .6], the same vector `FLORA`'s shader leans
+  the crops along -- turned into the farm frame with the frame's inverse. Props are built right after `buildFarm`, before
+  the cows and plants, so `cowClear` and the tuft rule see their colliders. `FARM.barn` carries the barn's numbers.
+
 - **GOD MODE IS ONE KEY THAT NEVER FOLDS, AND FLY REPLACES `stepPlayer` (m298, STEER, `GOD`, `GODPLACES`, `godTo`, `godFlyStep`).**
   *"Colin can't see anything you've built."* The world/collider/fx keys are `display: none` under `body.chipmin`, and
   the chip folds BY DEFAULT (m148) -- so a key added "with the world key" would have been invisible on every cold start.

@@ -704,10 +704,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m298</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m299</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m298</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m299</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -788,7 +788,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm298';
+const BUILD = 'm299';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28932,7 +28932,7 @@ function farmMerge(parts, mat) {
 // One define per kind (`FP_KIND`) and a cache key per kind, so a handful of programs, and NO new draw calls --
 // it is the same merged meshes. The noise is a cheap 3D value noise; nothing is sampled.
 const FPAINT = { on: 1, kinds: { red: 1, wood: 1, stone: 2, cap: 2, roof: 3, hay: 4, dirt: 5, earth: 5, bank: 5, turf: 5, road: 5,
-  hedge: 6, hedge2: 6, metal: 7, pipe: 7, hull: 7, trim: 0, white: 0, dark: 0 }, n: 0 };
+  hedge: 6, hedge2: 6, metal: 7, pipe: 7, hull: 7, trim: 0, white: 0, dark: 0, steel: 7, tractor: 7, straw: 4, cloth: 0, tyre: 0 }, n: 0 };
 const FPAINT_GLSL = `
 float fpH(vec3 p) { p = fract(p * .3183099 + .1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
 float fpN(vec3 x) { vec3 i = floor(x), f = fract(x); f = f * f * (3.0 - 2.0 * f);
@@ -29064,6 +29064,7 @@ function buildFarm() {
   let lo = 1e9, hi = -1e9;
   for (const [a, b] of [[-1, -1], [1, -1], [-1, 1], [1, 1], [0, 0]]) { const y = gnd(bu + a * BW / 2, bv + b * BD / 2); lo = Math.min(lo, y); hi = Math.max(hi, y); }
   const y0 = hi + .12;                                   // the floor, just over the highest corner
+  FARM.barn = { bu, bv, y0, EAVE, RIDGE, D2: BD / 2, W2: BW / 2 };     // for the props (m299)
   bx(bu, bv, lo - .4, y0, BW + .6, BD + .6, 'stone');    // the plinth
   const W2 = BW / 2, D2 = BD / 2;
   // front wall, the big door 4 wide x 3.6 high
@@ -30068,6 +30069,9 @@ const GODPLACES = [
   { id: 'crash',    world: 'tkit', name: 'GRISTLE FARM · the crash site', at: () => CRASH.at && [CRASH.at.you[0], null, CRASH.at.you[1], Math.atan2(CRASH.at.x - CRASH.at.you[0], CRASH.at.z - CRASH.at.you[1])] },
   { id: 'corn',     world: 'tkit', name: 'GRISTLE FARM · the corn', at: () => godMid(FLORA.FIELDS[0]) },
   { id: 'wheat',    world: 'tkit', name: 'GRISTLE FARM · the wheat down to the shore', at: () => godMid(FLORA.FIELDS[1]) },
+  { id: 'windmill', world: 'tkit', name: 'GRISTLE FARM · the windmill pump', at: () => FPROPS.at.windmill && [FPROPS.at.windmill[0], null, FPROPS.at.windmill[1], null] },
+  { id: 'scarecrow', world: 'tkit', name: 'GRISTLE FARM · the scarecrow in the corn', at: () => FPROPS.at.scarecrow && [FPROPS.at.scarecrow[0], null, FPROPS.at.scarecrow[1], null] },
+  { id: 'tractor', world: 'tkit', name: 'GRISTLE FARM · the tractor in the yard', at: () => FPROPS.at.tractor && [FPROPS.at.tractor[0], null, FPROPS.at.tractor[1], null] },
   { id: 'paddock',  world: 'tkit', name: 'GRISTLE FARM · the cows in the paddock', at: () => godFarm(-4.3, 8.5, 0) },
   { id: 'lane',     world: 'tkit', name: 'GRISTLE FARM · the sunken lane', at: () => LANE.at && [LANE.at.x, null, LANE.at.z, null] },
   { id: 'ford',     world: 'tkit', name: 'GRISTLE FARM · the ford and the footbridge', at: () => LANE.at && [LANE.at.ford[0], null, LANE.at.ford[1], null] },
@@ -30213,6 +30217,122 @@ function godStep(dt) {
     godBoot();
   }
   if (GOD.on) { HEAT.v = 0; if (SAVE.juice < JUICE.cap) SAVE.juice = JUICE.cap; }
+}
+
+// ============================================================================================
+// THE FARM'S SILHOUETTE AND CLUTTER (m299, farm polish pass 5, `FPROPS`, `buildFarmProps`)
+// ============================================================================================
+// STEER: *"silhouettes and rooflines ... detail density (fences, clutter, tools, hay)"*. A barn reads as a barn from a
+// distance by its ROOFLINE, and the yard was a barn, a silo and nothing in between. Every piece is in the authored
+// table below with the reason it is where it is (the placement rule); all of it is in the farm's frame.
+// **TWO THINGS MOVE, AND THEY MOVE WITH THE CROPS**: the windmill's wheel spins and its head swings into the wind, and
+// the weathervane points down it -- the same wind direction the corn and wheat lean in (`FLORA`'s `vec2(.8, .6)`),
+// so the whole yard agrees which way the weather is going. They are small separate meshes; everything else is merged
+// into one mesh per material and painted (`farmPaint`) like the barn.
+const FPROPS = {
+  on: 1, n: 0, wind: [.8, .6], spin: 2.2,
+  TABLE: [
+    { id: 'cupola',     why: 'on the barn ridge: the hay barn breathes through it, and it is the roofline you see from the bridge' },
+    { id: 'hayhood',    why: 'over the loft door: the hood and the hook beam the bales are hauled up by' },
+    { id: 'windmill',   why: 'in the paddock beside the trough: the pump that fills it, and the tallest thing on the farm after the silo' },
+    { id: 'scarecrow',  why: 'in the middle of the corn, where the crows are' },
+    { id: 'tractor',    why: 'parked in the yard between the lean-to and the lane, nose to the gate' },
+    { id: 'barrels',    why: 'against the lean-to: diesel and feed' },
+    { id: 'wheelbarrow', why: 'by the hay stack under the loft door, half a load in it' },
+  ],
+  wheel: null, head: null, vane: null, at: {},
+};
+function buildFarmProps() {
+  const A = FARM.at, B = FARM.barn; if (!FPROPS.on || !A || !B) return 0;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .8, metalness: 0 }), o || {});
+  const MAT = { red: M(0xa8352b), trim: M(0xeee6d8), roof: M(0x3f4a45), wood: M(0x7a5232), steel: M(0x9aa3a8, { metalness: .4, roughness: .5 }),
+    tractor: M(0xb5291f, { metalness: .25, roughness: .55 }), tyre: M(0x1c1c1e), straw: M(0xd9b25a), cloth: M(0x4f6f9a), dark: M(0x2a2420) };
+  const F = farmFrame(A.x, A.z, A.th, MAT, 'props'), { bx, geo, gnd, wx, wz } = F;
+  const { bu, bv, y0, EAVE, RIDGE, D2 } = B;
+  const top = y0 + RIDGE;
+  // ---- the cupola on the ridge, a pyramid cap, the weathervane's post
+  bx(bu, bv, top - .4, top + 1.1, 1.3, 1.3, 'red', 0, false);
+  for (const s of [-1, 1]) bx(bu + s * .66, bv, top + .1, top + .95, .04, 1.0, 'trim', 0, false);   // louvres
+  geo(new THREE.ConeGeometry(1.15, .9, 4).rotateY(Math.PI / 4), 'roof', bu, top + 1.55, bv);
+  bx(bu, bv, top + 1.9, top + 2.9, .05, .05, 'steel', 0, false);
+  // ---- the hay hood over the loft door, and its hook beam
+  { const v = bv + D2, y = y0 + EAVE + .9;
+    for (const s of [-1, 1]) bx(bu + s * .9, v + .55, y + .25, y + .37, 2.0, 1.4, 'roof', 0, false, -s * .55);
+    bx(bu, v + .9, y - .1, y + .1, .18, 2.0, 'wood', 0, false);
+    bx(bu, v + 1.85, y - .9, y - .1, .03, .03, 'steel', 0, false); }
+  // ---- the windmill in the paddock: four splayed legs, braces, a platform; the head and the wheel move
+  const wu = bu + 4.6, wv = bv + D2 + 7.2, wg = gnd(wu, wv), H = 9;
+  for (const [a, b] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) {
+    const lx = a * 1.1, lz = b * 1.1, tx = a * .25, tz = b * .25;
+    // its own geometry, tilted by Euler (XYZ: Rz first, then Rx) so the box's y runs foot -> head. NOT a rotation
+    // post-multiplied onto a composed TRS: that rotates before the scale and shears the box (the m291 note)
+    const dx = tx - lx, dz = tz - lz, L = Math.hypot(dx, H, dz), rz = -Math.asin(dx / L), rx = Math.asin(dz / (L * Math.cos(rz)));
+    geo(new THREE.BoxGeometry(.12, L, .12), 'steel', wu + (lx + tx) / 2, wg + H / 2, wv + (lz + tz) / 2, 0, rx, rz);
+  }
+  for (let k = 1; k < 4; k++) { const y = wg + k * H / 4, r = 1.1 - (1.1 - .25) * k / 4;
+    for (const s of [-1, 1]) { bx(wu, wv + s * r, y - .04, y + .04, r * 2, .06, 'steel', 0, false); bx(wu + s * r, wv, y - .04, y + .04, .06, r * 2, 'steel', 0, false); } }
+  bx(wu, wv, wg + H - .1, wg + H + .05, 1.0, 1.0, 'wood', 0, false);
+  bx(wu, wv, wg - .2, wg + 1.4, 2.4, 2.4, 'steel'); F.parts.steel.pop();                   // a collider round its feet
+  // ---- the scarecrow in the corn
+  { const F0 = FLORA.FIELDS[0], su = (F0.u[0] + F0.u[1]) / 2 + .3, sv = (F0.v[0] + F0.v[1]) / 2, g = gnd(su, sv);
+    bx(su, sv, g - .3, g + 2.3, .1, .1, 'wood'); bx(su, sv, g + 1.75, g + 1.85, 1.6, .08, 'wood', 0, false);
+    bx(su, sv, g + 1.15, g + 1.95, .55, .32, 'cloth', 0, false);
+    for (const s of [-1, 1]) bx(su + s * .55, sv, g + 1.6, g + 1.95, .55, .26, 'cloth', 0, false, s * .15);
+    geo(new THREE.SphereGeometry(.22, 10, 8), 'straw', su, g + 2.15, sv);
+    geo(new THREE.CylinderGeometry(.38, .38, .04, 14), 'straw', su, g + 2.32, sv);
+    geo(new THREE.ConeGeometry(.2, .3, 12), 'straw', su, g + 2.48, sv);
+    FPROPS.at.scarecrow = [wx(su, sv - 2), wz(su, sv - 2)]; }
+  // ---- the tractor in the yard, nose to the gate
+  { const tu = 4.8, tv = -9.4, g = gnd(tu, tv), ps = 0;             // unturned: its length runs along u, its axles along v
+    bx(tu, tv, g + .55, g + 1.45, 2.6, 1.1, 'tractor', ps);          // body (collider)
+    bx(tu + .8, tv, g + 1.45, g + 1.75, 1.0, .9, 'tractor', ps, false);   // bonnet hump
+    bx(tu - .55, tv, g + 1.45, g + 2.35, .9, 1.0, 'steel', ps, false);    // the cab frame
+    bx(tu - .55, tv, g + 2.35, g + 2.45, 1.1, 1.2, 'tractor', ps, false); // its roof
+    bx(tu + 1.15, tv + .3, g + 1.75, g + 2.4, .09, .09, 'dark', 0, false); // the exhaust stack
+    for (const s of [-1, 1]) {
+      geo(new THREE.CylinderGeometry(.82, .82, .45, 18).rotateX(Math.PI / 2), 'tyre', tu - .8, g + .82, tv + s * .78);
+      geo(new THREE.CylinderGeometry(.46, .46, .3, 14).rotateX(Math.PI / 2), 'tyre', tu + 1.05, g + .46, tv + s * .62);
+      geo(new THREE.CylinderGeometry(.42, .42, .47, 12).rotateX(Math.PI / 2), 'tractor', tu - .8, g + .82, tv + s * .78);
+    }
+    FPROPS.at.tractor = [wx(tu, tv - 3), wz(tu, tv - 3)]; }
+  // ---- barrels against the lean-to, a wheelbarrow by the hay stack
+  for (const [u, v] of [[2.9, -2.6], [3.0, -1.6], [3.7, -2.1]]) { const g = gnd(u, v);
+    geo(new THREE.CylinderGeometry(.3, .3, .9, 14), u > 3.5 ? 'red' : 'steel', u, g + .45, v); }
+  { const g = gnd(2.95, -2.1); bx(3.25, -2.1, g - .1, g + .9, 1.3, 1.7, 'steel'); F.parts.steel.pop(); }
+  { const u = bu + 1.6, v = bv + D2 + 2.6, g = gnd(u, v);
+    bx(u, v, g + .35, g + .7, .7, 1.0, 'steel', .4, false, .0);
+    bx(u, v, g + .62, g + .74, .6, .8, 'straw', .4, false);
+    geo(new THREE.CylinderGeometry(.18, .18, .06, 12).rotateZ(Math.PI / 2), 'tyre', u + Math.sin(.4) * .5, g + .18, v + Math.cos(.4) * .5); }
+  const r = F.commit();
+  FPROPS.n = r.boxes;
+  // ---- the moving parts: the windmill's head (wheel + tail) and the weathervane, in the farm's frame
+  const head = new THREE.Group(); head.position.set(wu, wg + H + .35, wv); F.grp.add(head);
+  const wheel = new THREE.Group(); wheel.position.set(0, 0, .55); head.add(wheel);
+  const bladeG = new THREE.BoxGeometry(.32, 1.45, .03), bm = MAT.steel;
+  for (let k = 0; k < 14; k++) { const b = new THREE.Mesh(bladeG, bm); const a = k / 14 * Math.PI * 2;
+    b.position.set(Math.sin(a) * .95, Math.cos(a) * .95, 0); b.rotation.set(0, .35, -a); wheel.add(b); }
+  wheel.add(new THREE.Mesh(new THREE.TorusGeometry(1.7, .03, 4, 28), bm));
+  head.add(new THREE.Mesh(new THREE.BoxGeometry(.25, .25, 1.2), MAT.dark));
+  const tail = new THREE.Mesh(new THREE.BoxGeometry(.03, .9, 1.4), MAT.red); tail.position.set(0, .15, -1.2); head.add(tail);
+  const vane = new THREE.Group(); vane.position.set(bu, top + 2.75, bv); F.grp.add(vane);
+  const arrow = new THREE.Mesh(new THREE.BoxGeometry(.04, .06, 1.1), MAT.dark); vane.add(arrow);
+  const fin = new THREE.Mesh(new THREE.BoxGeometry(.03, .35, .3), MAT.dark); fin.position.set(0, .05, -.5); vane.add(fin);
+  const cock = new THREE.Mesh(new THREE.BoxGeometry(.03, .4, .45), MAT.dark); cock.position.set(0, .3, .05); vane.add(cock);
+  for (const o of [head, vane]) o.traverse(m => { if (m.isMesh) m.castShadow = true; });
+  Object.assign(FPROPS, { wheel, head, vane });
+  FPROPS.at.windmill = [wx(wu, wv - 4), wz(wu, wv - 4)];
+  return FPROPS.n;
+}
+function farmPropsStep(dt) {
+  if (!FPROPS.head) return;
+  const A = FARM.at, C = Math.cos(A.th), S = Math.sin(A.th), t = performance.now() * .001;
+  // the wind's direction in the farm's frame (world (wx, wz) -> local (u, v), the inverse of the frame)
+  const wxw = FPROPS.wind[0], wzw = FPROPS.wind[1], lu = wxw * C - wzw * S, lv = wxw * S + wzw * C;
+  const down = Math.atan2(lu, lv);                     // a local heading pointing DOWN the wind
+  // the wheel faces INTO the wind (its +z toward where the wind comes from), the tail streams down it
+  FPROPS.head.rotation.y = down + Math.PI + Math.sin(t * .37) * .12;
+  FPROPS.wheel.rotation.z -= dt * FPROPS.spin * (.8 + .3 * Math.sin(t * .5));
+  FPROPS.vane.rotation.y = down + Math.PI + Math.sin(t * .9) * .18;   // the arrowhead points INTO the wind, the fin down it
 }
 
 function stepDummies(dt) {
@@ -31353,6 +31473,7 @@ function frameBody() {
     _pt = pT('rig', _pt);
   }
   gatePush(dt);                 // gates: after he moves, before the lens follows him (m285)
+  farmPropsStep(dt);            // the windmill and the weathervane turn with the wind (m299)
   floraStep(dt);                // the corn, wheat and tufts sway and part round him (m297)
   cowStep(dt);                  // the herd: brains, bodies, and their bulk against him -- before the lens too (m294)
   kitCamStep();
@@ -32047,6 +32168,8 @@ async function init() {
     try { buildIsle(); } catch (e) { ISLE.live = 0; note('ISLE FAIL'); console.warn('[melee] island', e); }
     // THE FARM (m288): on the island's ring, so after the island -- and in a try, a yard is not worth a boot
     try { buildFarm(); } catch (e) { note('FARM FAIL'); console.warn('[melee] farm', e); }
+    // ITS SILHOUETTE AND CLUTTER (m299): before the cows and the plants, so both see these colliders
+    try { buildFarmProps(); } catch (e) { note('PROPS FAIL'); console.warn('[melee] farm props', e); }
     // HIS MARKERS (m293): portals, gates, regions -- after every builder, so the ground under them exists
     try { mkrApply(); } catch (e) { note('MARK FAIL'); console.warn('[melee] markers', e); }
     try { buildCrash(); } catch (e) { note('CRASH FAIL'); console.warn('[melee] crash', e); }
@@ -32251,6 +32374,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   FPAINT,
   // THE GROWTH (m297): `mel.FLORA` live -- `wind`, `push`, `pushK`; `FLORA.counts` per field
   FLORA,
+  // THE FARM'S PROPS (m299): `mel.FPROPS` -- `wind` (shared direction), `spin`
+  FPROPS,
   FARM, farm: () => { const F = FARM.at; if (!F) return 'no farm in this world'; const p = player; p.pos.set(F.x - Math.sin(F.th) * 12, 2, F.z - Math.cos(F.th) * 12); p.vel.set(0, 0, 0); p.heading = p.faceH = F.th; return 'farm at ' + F.x.toFixed(0) + ',' + F.z.toFixed(0); },
   PORTAL, PORTALS, portal: () => portalOpen(),
   // THE DEMOS, ON PURPOSE ONLY (m292, STEER 1): round where you stand, for testing the systems

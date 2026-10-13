@@ -318,3 +318,9 @@ differ" table there, so no region feels like the last one.
   it's a building). `?god` / `?god=0` in the URL set it too. The menu scrolls by dragging, and a
   button acts on release so a scroll never fires one. **Every farm place from m288–m297 is in the
   list.**
+- **m299 (farm pass 5: silhouette & clutter):** the barn now has a **cupola with a weathervane** on
+  its ridge and a **hay hood with a hook beam** over the loft door; a 9 m **windmill pump** stands
+  in the paddock by the trough, its wheel spinning and turning into the same wind the crops lean in
+  (the vane agrees); a **scarecrow** in the corn; a red **tractor** parked in the yard by the lane
+  gate; barrels against the lean-to; a wheelbarrow of hay by the stack. All from an authored table
+  with a reason each. GOD's places list gained the windmill, the scarecrow and the tractor.
