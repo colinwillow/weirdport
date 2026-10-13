@@ -107,6 +107,10 @@ lead. Rollergirl is an **Easter egg** for now (one of these, maybe), not a story
 
 Regions are fogged on the map until you get there; arriving clears the fog.
 
+**The full region bible is `REGIONS.md`**: each region's shape, light, people, problem, tech, signature
+system and the journey into it, plus the checklist that keeps any two regions from feeling alike.
+It supersedes the short list above where they differ.
+
 ## The world: dense, vertical, organic, alive
 
 **The visual identity is the selling point**: beautifully painted scenes, weirdness, an organic
