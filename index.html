@@ -461,6 +461,12 @@ body.dyn.desk .zone { display: none; }
   fill: var(--rc); text-anchor: middle; dominant-baseline: central; pointer-events: none; user-select: none; }
 #formRow text.sel { fill: var(--ink); }
 /* and the picker it opens: round buttons on a circle over the middle of the screen */
+/* THE TOAST (m285): one line low in the middle, above the juice and health bars -- what a gate needs */
+#toast { position: fixed; left: 50%; bottom: calc(44px + env(safe-area-inset-bottom)); transform: translateX(-50%);
+  z-index: 6; pointer-events: none; max-width: 70vw; text-align: center; opacity: 0; transition: opacity .25s ease;
+  background: rgba(11,13,18,.82); border: 2px solid var(--sun); border-radius: 8px; padding: 5px 12px;
+  font-family: var(--ui); font-size: 15px; font-weight: 600; color: #fff; line-height: 1.2; }
+#toast.on { opacity: 1; }
 #formPick { position: fixed; inset: 0; z-index: 9; display: none; background: rgba(11,13,18,.42); }
 #formPick.on { display: block; }
 #formPick b { position: absolute; width: 78px; height: 78px; margin: -39px 0 0 -39px; border-radius: 50%;
@@ -650,10 +656,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m284</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m285</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m284</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m285</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -668,6 +674,7 @@ body.desk.free #deskHint { display: block; }
 <div id="samp" aria-hidden="true"><b>DNA</b></div>
 <div id="formRow" aria-hidden="true"></div>
 <div id="formPick" aria-hidden="true"></div>
+<div id="toast" aria-hidden="true"></div>
 <div id="qdone" aria-hidden="true"><small>QUEST COMPLETE</small><b></b></div>
 
 <!-- THE BLASTER'S TWO MODES (m52). Above the right pad, because that is the thumb they are
@@ -727,7 +734,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm284';
+const BUILD = 'm285';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28287,6 +28294,158 @@ function juiceStep(dt) {
   }
 }
 
+// ============================================================================================
+// GATES (m285, ROADMAP A8) -- obstacles that ask what you are
+// ============================================================================================
+// **A GATE IS A LINE YOU CANNOT CROSS UNLESS YOU ARE THE RIGHT BODY.** `GATE_TYPES` says what each
+// kind needs (a form name, `formNow()`'s answer) and how it opens:
+//   walk  wear the form and you walk straight through (cordon, fire, barricade, gap)
+//   fix   wear the form and lean on it for `fixT` seconds and it is mended for good (bridge)
+// Bump one in the wrong body and a toast says what it needs. Crossing one sets `gate:<id>` in the
+// save (a `fix` sets it when mended), which is the quests' `gate` step -- A3 read it before this
+// existed.
+// **THE BLOCK IS ITS OWN PUSH, NOT A BOX IN `BOXES`.** A box there blocks everybody always, and the
+// whole point of a gate is that it blocks one body sometimes; and `BOXES` is a spatial index built
+// at load. So `gatePush` runs after the player has moved and before the camera, in the gate's own
+// frame: inside the slab by your radius, on the wrong side for you, and you are put back on the
+// side you came from with the velocity into it removed. Bodies ignore gates -- a cop walks through
+// a cordon by definition, and the crowd is A-phase scenery.
+// **NO LEVEL HAS A GATE IN IT YET** (that is Phase B's bridge into town). Two DEMOS are placed on
+// open ground near the spawn on the first frame -- a cordon about 9 m out and a fire wall about 14 --
+// through the same `spawnBeside` search Clancy uses, so they are never inside a building.
+// `mel.gate('cordon')` drops another in front of you.
+const GATE_TYPES = {
+  cordon:    { need: 'dummy_officer',      pass: 'walk', label: 'POLICE CORDON', say: 'Police line. Only a cop gets waved through.' },
+  fire:      { need: 'firefighter',        pass: 'walk', label: 'FIRE',          say: 'Too hot. A firefighter could walk through this.' },
+  bridge:    { need: 'contruction_worker', pass: 'fix',  label: 'BROKEN BRIDGE', say: 'Broken. A construction worker could fix it.' },
+  barricade: { need: 'fat_activist_01',    pass: 'walk', label: 'BARRICADE',     say: 'Marchers only. An activist could get through.' },
+  gap:       { need: 'glider',             pass: 'walk', label: 'GAP',           say: 'Too far to jump. Something that flies could cross.' },
+};
+const GATE = {
+  on: 1,
+  t: .5,            // m: the slab's thickness
+  hi: 4,            // m above its base it still blocks (no hopping a cordon)
+  fixT: 2,          // s leaning on a `fix` gate to mend it
+  sayAgain: 3,      // s before the same gate says it again
+  demo: 1,          // place the two demo gates near the spawn
+  n: 0, said: 0,    // chip: gates placed / times one stopped you
+};
+const GATES = [];   // live: { id, type, x, y, z, h, w, g (group), side, sayT, fixT, open }
+const gate = { toastEl: null, toastT: 0, demoDone: 0 };
+function toast(txt, sec) {
+  if (!gate.toastEl) gate.toastEl = document.getElementById('toast');
+  const el = gate.toastEl; if (!el) return;
+  el.textContent = txt; el.classList.add('on'); gate.toastT = sec || 2.2;
+}
+function gateMesh(G) {
+  const T = G.type, g = new THREE.Group(), w = G.w;
+  const mat = c => new THREE.MeshStandardMaterial({ color: c, roughness: .7 });
+  const box = (sx, sy, sz, c, x, y) => { const m = new THREE.Mesh(new THREE.BoxGeometry(sx, sy, sz), mat(c)); m.position.set(x || 0, y, 0); g.add(m); return m; };
+  if (T === 'cordon' || T === 'barricade') {
+    const n = Math.max(2, Math.round(w / 2.2));
+    for (let i = 0; i <= n; i++) box(.14, 1.1, .14, T === 'cordon' ? 0x1d2a55 : 0x777777, -w / 2 + i * w / n, .55);
+    if (T === 'cordon') { box(w, .1, .03, 0xffd23a, 0, .95); box(w, .1, .03, 0xffd23a, 0, .6); }
+    else for (let i = 0; i < n; i++) box(w / n - .1, .75, .45, i % 2 ? 0xd9d9d9 : 0xff5a2a, -w / 2 + (i + .5) * w / n, .38);
+  } else if (T === 'fire') {
+    G.flames = [];
+    const fm = new THREE.MeshBasicMaterial({ color: 0xff7a1a, transparent: true, opacity: .8, blending: THREE.AdditiveBlending, depthWrite: false, fog: false });
+    const fm2 = fm.clone(); fm2.color.setHex(0xffd23a);
+    const n = Math.max(3, Math.round(w / .8));
+    for (let i = 0; i < n; i++) {
+      const f = new THREE.Mesh(new THREE.ConeGeometry(.42, 1.8, 6, 1, true), i % 2 ? fm2 : fm);
+      f.position.set(-w / 2 + (i + .5) * w / n, .9, (Math.random() - .5) * .2); f.userData.ph = Math.random() * 6.28;
+      g.add(f); G.flames.push(f);
+    }
+    box(w, .12, .6, 0x2a1d14, 0, .06);
+  } else if (T === 'bridge') {
+    const n = Math.max(4, Math.round(w / .5));
+    G.planks = [];
+    for (let i = 0; i < n; i++) { const m = box(w / n - .06, .1, 1.2, 0x8a5a33, -w / 2 + (i + .5) * w / n, .05); G.planks.push(m); }
+    G.planks.forEach((m, i) => { if (i % 3 === 1) { m.visible = false; } else m.rotation.z = (Math.random() - .5) * .3; });
+  } else {
+    box(w, .06, .3, 0xff4d6d, 0, .03);
+  }
+  g.position.set(G.x, G.y, G.z); g.rotation.y = G.h;
+  scene.add(g);
+  return g;
+}
+// place a gate: centre (x, z), facing h (its NORMAL points along (sin h, cos h)), w wide
+function gateAdd(type, x, z, h, w, id) {
+  if (!GATE_TYPES[type]) return null;
+  const G = { id: id || type + GATES.length, type, x, z, h, w: w || 4.5, side: 0, sayT: 0, fixT: 0,
+    y: groundAt(x, z, player.pos.y + 2, MOVE.step) };
+  if (!(G.y > -1e3)) G.y = player.pos.y;
+  G.open = GATE_TYPES[type].pass === 'fix' && !!SAVE.flags['gate:' + G.id];
+  G.g = gateMesh(G);
+  if (G.open) gateOpen(G);
+  GATES.push(G); GATE.n++;
+  return G;
+}
+function gateOpen(G) {
+  G.open = 1;
+  if (G.planks) G.planks.forEach(m => { m.visible = true; m.rotation.z = 0; });
+}
+function gateDemo() {
+  gate.demoDone = 1;
+  if (!GATE.demo || inWP()) return;
+  const stand = kitWorld() ? kitStand : (x, z) => { const y = groundAt(x, z, 2, MOVE.step); if (!(y > -1e3) || y > 1.5) return null;
+    _wpP.x = x; _wpP.y = y; _wpP.z = z; return resolveBoxes(_wpP, 2.4, 1.6) ? null : y; };
+  const px = player.pos.x, pz = player.pos.z;
+  const a = spawnBeside(stand, px, pz, 9);
+  gateAdd('cordon', a[0], a[1], Math.atan2(px - a[0], pz - a[1]), 4.5, 'demo_cordon');
+  const b = spawnBeside(stand, px, pz, 14, [a]);
+  gateAdd('fire', b[0], b[1], Math.atan2(px - b[0], pz - b[1]), 4.5, 'demo_fire');
+}
+// after he moves, before the camera: keep him on his side of any gate that will not have him
+function gatePush(dt) {
+  if (!GATE.on) return;
+  // the demos wait a beat so the spawn, the crowd and the ground under them have all settled
+  if (!gate.demoDone && rig.ready && (gate.waitT = (gate.waitT || 0) + dt) > 1.5 && player.grounded) gateDemo();
+  const p = player, P = p.pos, r = p.r || .35;
+  const me = formNow();
+  for (const G of GATES) {
+    const T = GATE_TYPES[G.type];
+    const s = Math.sin(G.h), c = Math.cos(G.h);
+    const dx = P.x - G.x, dz = P.z - G.z;
+    const v = dx * s + dz * c, u = dx * c - dz * s;     // v along the normal, u along the gate
+    const sideNow = v >= 0 ? 1 : -1;
+    const inSpan = Math.abs(u) < G.w * .5 + r && P.y > G.y - .5 && P.y < G.y + GATE.hi;
+    const ok = G.open || me === T.need;
+    if (!inSpan) { G.side = sideNow; G.fixT = 0; continue; }
+    const half = GATE.t * .5 + r;
+    if (ok) {
+      // crossing it in the right body is what the quests count
+      if (G.side && sideNow !== G.side && progFlag('gate:' + G.id)) toast(T.label + ': through', 1.4);
+      G.side = sideNow; G.fixT = 0;
+      continue;
+    }
+    if (Math.abs(v) >= half) { G.side = sideNow; G.fixT = 0; continue; }
+    // in the slab, not allowed: back to the side he came from
+    const sd = G.side || sideNow;
+    const nv = sd * half;
+    P.x += (nv - v) * s; P.z += (nv - v) * c;
+    const vn = p.vel.x * s + p.vel.z * c;
+    if (vn * sd < 0) { p.vel.x -= vn * s; p.vel.z -= vn * c; }
+    G.side = sd;
+    if ((G.sayT -= dt) <= 0) { G.sayT = GATE.sayAgain; GATE.said++; toast(T.say, 2.6); }
+  }
+}
+// a `fix` gate is mended by leaning on it as the right body; flames flicker; the toast fades
+function gateStep(dt) {
+  if (gate.toastT > 0 && (gate.toastT -= dt) <= 0 && gate.toastEl) gate.toastEl.classList.remove('on');
+  const P = player.pos, me = formNow(), now = performance.now() * .001;
+  for (const G of GATES) {
+    if (G.flames) for (const f of G.flames) { const k = .8 + .25 * Math.sin(now * 9 + f.userData.ph) + .1 * Math.sin(now * 23 + f.userData.ph * 2); f.scale.set(1, k, 1); f.position.y = .9 * k; }
+    const T = GATE_TYPES[G.type];
+    if (T.pass !== 'fix' || G.open || me !== T.need) continue;
+    const s = Math.sin(G.h), c = Math.cos(G.h), dx = P.x - G.x, dz = P.z - G.z;
+    if (Math.abs(dx * c - dz * s) < G.w * .5 && Math.abs(dx * s + dz * c) < 1.6) {
+      if ((G.fixT += dt) >= GATE.fixT) { gateOpen(G); progFlag('gate:' + G.id); toast(T.label + ': fixed', 2); }
+      else toast('Fixing... ' + Math.round(G.fixT / GATE.fixT * 100) + '%', .3);
+    } else G.fixT = 0;
+  }
+}
+
 function stepDummies(dt) {
   bodySep(dt);
   bodySeat();
@@ -29424,6 +29583,7 @@ function frameBody() {
     dollStep(dt);
     _pt = pT('rig', _pt);
   }
+  gatePush(dt);                 // gates: after he moves, before the lens follows him (m285)
   kitCamStep();
   stepCam(dt);
   talkStep(dt);                 // after the camera: the bubble is projected through it (m277)
@@ -29431,6 +29591,7 @@ function frameBody() {
   sampleStep(dt);               // after the camera too: its ring is projected (m282)
   formStep();                   // the FORMS button appears with the second form (m283)
   juiceStep(dt);                // the tank: drain while worn, snap back at zero (m284)
+  gateStep(dt);                 // gates: flicker, mending, the toast (m285)
   cellStep();
   kitXrayStep();
   // AFTER the camera, because the rim is placed off the bearing the lens was actually drawn at
@@ -29757,6 +29918,8 @@ function frameBody() {
       // J: juice in the tank (m284)
       ' J' + Math.floor(SAVE.juice) + (JUICE.n ? '!' + JUICE.n : '') +
       (SAMPLE.n || SAVE.forms.length > 1 ? ' S' + SAMPLE.n + '/' + SAVE.forms.length : '') +
+      // G: gates placed / times one stopped you (m285)
+      (GATE.n ? ' G' + GATE.n + '/' + GATE.said : '') +
       (quest.cur ? ' Q' + quest.cur.id + '.' + quest.step + (quest.tgt ? '' : '~') : '') +
       (MISSING.length ? ' · ' + MISSING.join(' · ') : '');
     // **THE KEYS SIT UNDER THE CHIP, AND THE CHIP IS THE ONE HUD ELEMENT THAT GROWS (m128).**
@@ -30250,6 +30413,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // FORMS (m283): `mel.formPick('hobo_01')` wears a sampled form; `mel.formNow()` is what you are
   FORMS, formPick, formNow, formOpen,
   // JUICE (m284): `mel.JUICE` live; `mel.juice(n)` fills the tank to n
+  // GATES (m285): `mel.GATES` live; `mel.gate('fire')` drops one 4 m in front of you
+  GATE, GATES, GATE_TYPES, gate: t => { const p = player, h = p.faceH; const g = gateAdd(t || 'cordon', p.pos.x + Math.sin(h) * 4, p.pos.z + Math.cos(h) * 4, h + Math.PI); return g ? g.id : 'types: ' + Object.keys(GATE_TYPES).join(' '); },
   JUICE, juice: n => { SAVE.juice = n == null ? JUICE.cap : +n; progSave(); return SAVE.juice; },
   COPS, heat: n => (HEAT.v = +n || 0),
   SAVE, progSave, progForm, progRegion, progPortal, progFlag, progChapter, progJuice, progReset,

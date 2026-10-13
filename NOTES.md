@@ -7,6 +7,17 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A GATE IS ITS OWN PUSH, NOT A BOX IN `BOXES` (m285, ROADMAP A8, `GATE_TYPES`, `gatePush`, `gateAdd`).**
+  A box in `BOXES` blocks everyone always and that list is a spatial index built at load; a gate blocks one body
+  sometimes. `gatePush` runs after the player moves and before `kitCamStep`/`stepCam`, in the gate's frame (normal is
+  `(sin h, cos h)`, `v` along it, `u` along the gate): inside the slab by `p.r`, in the wrong form, he is put back on
+  `G.side` (the side he was last on, so a fast frame cannot tunnel) and the velocity into it is removed. Blocks up to
+  `GATE.hi` above its base, so a jump does not clear a cordon. Crossing in the right form sets `gate:<id>` (A3's
+  step); a `fix` gate sets it when mended. Needs are FORM NAMES compared with `formNow()`; `gap` needs `glider`, which
+  no file is called yet. Two demo gates go down 1.5 s after `rig.ready` via `spawnBeside` (Clancy's search), not in
+  Weirdport. Visuals are primitives (posts and tape, additive cones, planks), placeholders until he models them.
+  Bodies ignore gates. Toast (`toast()`) is the one-line message low in the middle; chip `G<placed>/<stops>`.
+
 - **THE TRANSFORM IS PAID FOR INSIDE `morphGo`, SO NO PATH TO A FORM SKIPS IT (m284, ROADMAP A7b, `JUICE`, `juicePay`, `juiceStep`).**
   The sampler, the form wheel, the DNA gun and `mel.dna` all end in `morphGo(K)`; `juicePay()` sits after its own
   refusals (busy, not wearable, already that) and before the state is touched, and refuses with a `NO JUICE` card.

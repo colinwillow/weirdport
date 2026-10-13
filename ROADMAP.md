@@ -46,7 +46,7 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
 - [x] m284 **A7b Juice.** The DNA tool's juice meter on the HUD. Transforming costs juice, wearing a form
   drains it, and at zero you snap back to the alien. Juice comes from small tasks, helping people and
   beating Skinsuits. All rates are tunables on the settings panel, so he can feel them out.
-- [ ] **A8 Gates.** Data-driven obstacles that check the current form: police cordon (cop),
+- [x] m285 **A8 Gates.** Data-driven obstacles that check the current form: police cordon (cop),
   fire wall (firefighter), broken bridge (worker repairs it), barricade (activist inside a protest
   crowd), gap (glider). Each says what it needs when you bump into it.
 - [ ] **A8b Portals.** Activatable portal points (a glowing pad). Stepping on one activates it for
@@ -143,3 +143,10 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   wearable. Earned: quest step +15, quest done +30, first time hearing someone out +6, knocking
   down a Skinsuit +20. The meter is a thin green bar above the health bar. All six numbers are on
   the tune panel under **JUICE**. "Helping people" means talking for now; real favours come later.
+- **m285 (A8):** all five gate types exist as data (cordon=cop, fire=firefighter,
+  barricade=activist, gap=glider: walk through in that form; bridge=worker: lean on it for 2 s and
+  it's mended for good). No level has one yet, so two **demo gates** (a police cordon ~9 m and a
+  fire wall ~14 m from where you spawn) are placed on open ground so you can try them; you can walk
+  around them, they're tests, not level design. The gap can't be crossed until the glider form
+  exists (C4). Gates only stop **you**; NPCs walk through. `mel.gate('bridge')` drops one in front
+  of you.
