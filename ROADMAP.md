@@ -157,6 +157,13 @@ differ" table there, so no region feels like the last one.
   blocks, a trance on the people under it (they stare and walk in slow loops), the blaster can shoot
   it down, and they come out of it dazed. Lights flicker and cars stall near it (the
   electromagnetic tell). Then the watcher and the amplifier, which feeds the protests and brawls.
+- [ ] **C2c Placeholder roster (`CHARACTERS.md`).** Build against ROLES, not models: a roster table of
+  every role the regions need, each mapped to a stand-in (existing body + tint + prop + name tag).
+  When his model for a role lands it is one line. GOD mode lists every role and spawns one.
+- [ ] **C2d Smart objects.** Benches, café tables, bus stops, food carts and counters carry use spots
+  (where to stand or sit, which way to face, which clip). NPCs nearby walk to one, use it for a while,
+  and leave. Missing clips fall back to an idle and the chip names the clip, so his animations drop in
+  with no code change. Start in Old Town.
 - [ ] **C3 Uplift cyborgs.** A cyborg variant of a worker (placeholder tint/parts until his models
   land) with its own behaviour.
 - [ ] **C4 The glider.** The hang-glider guy at a lookout; his form flies (reuse her wingsuit flight).

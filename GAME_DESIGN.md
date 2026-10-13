@@ -201,6 +201,10 @@ each greybox is meant to be swapped for a Blender region later. A greybox region
 (for the fog), its gates, its quest NPCs, and its spawn points — all data, so the swap is a file
 change.
 
+**`CHARACTERS.md` is the character plan**: the shared skeleton with blend shapes and texture sets,
+the everyday animation library he needs to author, smart objects (benches, café tables, bus stops)
+that NPCs use, and the full roster with what stands in for each role until its model exists.
+
 ## Characters still needed (for him to make, eventually — none of this blocks the loop)
 
 - **Skinsuit** and **Cyborg** versions of each base civilian (the warrior exists already).
