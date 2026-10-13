@@ -7,6 +7,71 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FARM NEVER BUILT, AND THE MEASUREMENT THAT SAID WHY WAS ITSELF WRONG (m302, `ISLE_J0`, `ISLE.head`, `FARM.need`, `GODCHAP`, `godAlarm`).**
+  STEER: *"THE FARM DOES NOT EXIST IN THE REAL GAME. Colin opened every GOD place and none of them work."* `npm run
+  places` (the planning session's new tool: the REAL kit collider and island, every farm builder, then the shipped
+  `godPlace`) read the widest grass as 14.9 m against `buildFarm`'s 18, so `FARM NO ROOM 15` and `FARM.at` null --
+  and crash, lane, bridge, cows, flora, props and ground paint all return early on that null, so **m288 to m301 were
+  never in his game.** Every one of them was checked by reading code against a farm frame nobody had built.
+  **AND THE 14.9 WAS A SAMPLE INDEX, NOT A COAST.** `isleSamples` gives segment i the NEXT control point's count
+  (`P[i + 1][5]`), so the beach top is sample 1 + 10 + 5 = **16**; `ISLE_J0` was typed 12 off a comment that counted
+  "1 + 1 + 10". Sample 12 is a fifth of the way across the grass: every reader got 2 + (grass - 2) / 5. The ring's real
+  grass is 38 to 66 m on the sides. The water grid also started at 12, under the land (hidden, never wrong to look at).
+  Fixed to 16, **checked at build against the profile it names** (`ISLE J0 a/b` in the chip if they ever disagree), and
+  a ray now carries `gw` (grass) and `L` outright so nothing counts samples to ask.
+  **THE FARM STILL GOT ITS OWN GROUND, AS THE STEER SAID.** "The widest ray" is not an authored place, and the layout
+  needs ~60 m city-edge-to-beach (lane's town bank at v -24 with 3 m to the city; wheat to v +31 with shore past it --
+  `FARM.need` 60, derived from those two, replacing the guessed 18). `ISLE.head` is Gristle Farm's headland: a lobe on
+  the waterline at bearing .12 rad (the +x side, under the low sun, so the yard's shadows fall back toward town),
+  `out` 34 m over a flat middle of +-.375 rad easing to 0 at +-.75, the wobble calmed .65 under it. **Only in `tkit`**:
+  the toon city has no farm and an empty lobe would be empty ground. `buildFarm` stands on the ray nearest `head.th`.
+  **THE CHAPTER BUTTONS MOVE HIM NOW** (`GODCHAP`): 0 the crash, 1 Old Town; 2-6 have no place and say so on the button
+  ("not built: sets the save only"). Chapter 0 clears `inTown`, 1+ sets it.
+  **A BUILDER THAT BAILS OUT IS RED (`godAlarm`)**: in GOD, any note matching `NO ROOM|NO RECT|FAIL` is a red bar at the
+  top (`#alarm`, z 22, over the boot card) until tapped; a new one brings it back.
+  **THE TRACTOR'S GOD SPOT WAS ON THE LANE'S HEDGE** (3 m toward town from the tractor = the yard-side bank, y 2.7):
+  it is in front of the nose now, facing it. Only `npm run places` could have shown that.
+  **`npm run places` NOW ALSO TICKS THE FARM'S FRAME STEPS** 30 times each at the crash -- none had ever run against a
+  real farm, and a step that throws aborts every frame (`frame()` catches it: a frozen picture). Exits 1 on any BAD row.
+  **THE NEW GAME STARTS AT THE CRASH FOR REAL NOW**: `crashSpawn` runs when the save is chapter 0 and not `inTown`, and
+  it never had a `CRASH.at` to run with. His save is almost certainly that, so his next `tkit` boot opens at the wreck.
+  `npm run places`, after the bump:
+  ```
+  ok   buildFarm
+  ok   buildFarmProps
+  ok   buildCrash
+  ok   crashHero
+  ok   buildLane
+  ok   buildBridge
+  ok   buildCows
+  ok   buildGroundPaint
+  ok   buildFlora
+  widest grass 88.5 at -13deg | headland ray 7deg grass 75.6 need 60 | rays 520 rect [-93.5,90.5,-90.3,93.5]
+  FARM.at {"x":123.2,"z":16.7,"th":1.66} | CRASH.at yes | LANE.at yes | BRIDGE.gate yes (side 1) | ISLE.live 1
+  notes ["TC NO OBB JSON","ISLE 0/3 TEX"]
+  ok  oldtown    -> player 0.0,0.1,0.0 ground 0.00 
+  ok  farmyard   -> player 111.3,-0.2,23.8 ground -0.33 
+  ok  hayloft    -> player 125.5,2.9,22.5 ground 7.21 
+  ok  crash      -> player 118.3,-0.3,-16.1 ground -0.45 
+  ok  corn       -> player 113.0,-0.1,3.6 ground -0.30 
+  ok  wheat      -> player 142.7,-1.0,22.0 ground -1.17 
+  ok  windmill   -> player 131.5,-0.7,17.4 ground -0.86 
+  ok  scarecrow  -> player 117.4,-0.2,2.9 ground -0.38 
+  ok  tractor    -> player 113.1,-0.2,9.2 ground -0.33 
+  ok  paddock    -> player 132.0,-0.7,20.2 ground -0.89 
+  ok  lane       -> player 107.2,-0.1,12.1 ground -0.21 
+  ok  ford       -> player 109.7,-0.2,40.0 ground -0.30 
+  ok  bridge     -> player 113.9,3.5,-53.6 ground 3.24 
+  every tkit GOD place is somewhere
+  ok  farmPropsStep  30 frames
+  ok  floraStep      30 frames
+  ok  cowStep        30 frames
+  ok  crashStep      30 frames
+  ok  crashHeroStep  30 frames
+  ok  riverStep      30 frames
+  ok  gradeStep      30 frames
+  ```
+
 - **THE GROUND PAINT SITS ON `triGround`, AND A RIBBON'S WINDING DECIDES WHETHER IT EXISTS (m301, farm pass 7, `GPAINT`, `buildGroundPaint`).**
   One transparent MeshStandard overlay with RGBA vertex colours (three turns on `vertexAlphas` for a 4-wide colour
   attribute): grid patches from `GPAINT.TABLE` with alpha falling off by a noise-wobbled elliptic radius, and the lane's

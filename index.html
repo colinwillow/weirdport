@@ -498,6 +498,12 @@ body.dyn.desk .zone { display: none; }
   background: rgba(11,13,18,.82); border: 2px solid var(--sun); border-radius: 8px; padding: 5px 12px;
   font-family: var(--ui); font-size: 15px; font-weight: 600; color: #fff; line-height: 1.2; }
 #toast.on { opacity: 1; }
+/* THE ALARM (m302): a builder that bailed out, in red, at the top -- only in GOD, tap to dismiss */
+#alarm { position: fixed; left: 50%; top: calc(8px + env(safe-area-inset-top)); transform: translateX(-50%);
+  z-index: 22; display: none; max-width: 78vw; text-align: center; pointer-events: auto;
+  background: rgba(128,12,16,.93); border: 2px solid #ff6060; border-radius: 8px; padding: 6px 12px;
+  font-family: var(--ui); font-size: 14px; font-weight: 700; color: #fff; line-height: 1.25; letter-spacing: .03em; }
+#alarm.on { display: block; }
 /* PORTALS (m286): violet on the pad, and the travel picker is the form picker's shape in violet */
 #padR.port::after { opacity: 1; border-color: #b86dff; }
 #portPick { position: fixed; inset: 0; z-index: 9; display: none; background: rgba(11,13,18,.42); }
@@ -704,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m301</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m302</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m301</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m302</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -726,6 +732,7 @@ body.desk.free #deskHint { display: block; }
 <div id="formRow" aria-hidden="true"></div>
 <div id="formPick" aria-hidden="true"></div>
 <div id="toast" aria-hidden="true"></div>
+<div id="alarm" aria-hidden="true"></div>
 <div id="portPick" aria-hidden="true"></div>
 <canvas id="mini" aria-hidden="true"></canvas>
 <div id="mapFull" aria-hidden="true"><canvas></canvas><small>TAP TO CLOSE</small></div>
@@ -788,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm301';
+const BUILD = 'm302';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -6996,6 +7003,15 @@ const ISLE = {
   grassT: [1, 1, 1], sandT: [1.55, 1.36, 1.02], rockT: [.8, .84, .9],
   tex: 4.5,           // metres per texture tile
   rocks: 70,          // boulders in the shallows and at the foot of the rocky banks
+  // **GRISTLE FARM'S HEADLAND (m302)** -- the one stretch of coast that is AUTHORED rather than rolled. The farm needs
+  // about 60 m of grass between the city's edge and the beach (the sunken lane on the town side, the yard, the fields
+  // down to the shore -- `FARM.need`) and the ring gives 38 on this side, so the waterline is pushed out in a lobe:
+  // `out` metres at its middle, flat across `flat` of its half-width `half` (rad), easing to nothing at the edge, with
+  // the noise's wobble calmed by `calm` under it so a bite of the coast cannot eat the wheat. Bearing `th` is measured
+  // the way the rays are (0 = +x, pi/2 = +z): **the +x side, under the low sun** (it comes from about 40 deg), so the
+  // barn and the wreck throw their long shadows back across the yard toward town, and the sea behind the fields is the
+  // glittering side. Only in the kit city (`tkit`), where the farm is; `buildFarm` stands on the ray nearest `th`.
+  head: { on: 1, th: .12, half: .75, flat: .5, out: 34, calm: .65 },
   // ---- state
   rect: null, land: null, water: null, rockM: null, lmat: null, wmat: null,
   safe: null, safeTk: 0, splashes: 0, t: 0, tris: 0, texN: 0, rays: null,
@@ -20679,7 +20695,14 @@ function isleNoise(seed) {
 // raised, not a rim around it."* Now: the city's edge at 0, grass easing down to the top of the
 // beach `rise` above the sea, the beach to the waterline, the shelf under it. A rocky stretch is a
 // short steep bank instead of a beach -- still DOWNHILL, never a wall.
-const ISLE_J0 = 12;      // the beach top's sample index (1 + 1 + 10): the water starts there
+// THE BEACH TOP'S SAMPLE INDEX: the water starts there. **IT IS 16, AND IT WAS TYPED 12 FROM m264 TO m301.**
+// `isleSamples` gives segment i (point i to point i+1) the NEXT point's count, `P[i + 1][5]`, so the beach top
+// (point 3) is sample 1 + 10 + 5 = 16 -- the comment said "1 + 1 + 10", which counts each segment by its OWN
+// point. Sample 12 is a fifth of the way across the grass, so every reader of `smp[ISLE_J0][0]` got
+// 2 + (grass - 2) / 5: the "14.9 m widest grass" that kept the farm from building for fourteen builds was a ray
+// with 66 m. `buildIsle` now checks the index against the profile it built (`ISLE J0` in the chip if not), and a
+// ray carries its grass width outright (`gw`) so nothing has to count samples to ask.
+const ISLE_J0 = 16;
 function isleProfile(th, N, L) {
   const I = ISLE, sea = I.sea;
   const n1 = N[0](th), n3 = N[2](th), n4 = N[3](th);
@@ -20915,16 +20938,21 @@ function buildIsle() {
   const S = I.seg;
   let M = 0;
   const rays = [];
+  const H = inTK() && I.head && I.head.on ? I.head : null;
   for (let i = 0; i < S; i++) {
     const th = i / S * Math.PI * 2, dx = Math.cos(th), dz = Math.sin(th);
     const rb = Math.min(hx / Math.max(Math.abs(dx), 1e-6), hz / Math.max(Math.abs(dz), 1e-6));
-    // the waterline: a wandering circle, measured from the city's middle
-    const Rw = Math.hypot(hx, hz) + I.coast + I.wobble * (2 * Ns[1](th) - 1);
-    const smp = isleSamples(isleProfile(th, Ns, Math.max(I.minLand, Rw - rb)));
+    // the farm's headland (m302): 1 across its flat middle, easing to 0 at `half` off its bearing
+    const hk = H ? ss01(H.half, H.half * H.flat, Math.abs(Math.atan2(Math.sin(th - H.th), Math.cos(th - H.th)))) : 0;
+    // the waterline: a wandering circle, measured from the city's middle -- and pushed out over the headland
+    const Rw = Math.hypot(hx, hz) + I.coast + I.wobble * (1 - (H ? H.calm : 0) * hk) * (2 * Ns[1](th) - 1) + (H ? H.out * hk : 0);
+    const P = isleProfile(th, Ns, Math.max(I.minLand, Rw - rb)), smp = isleSamples(P);
     M = smp.length;
-    rays.push({ dx, dz, rb, smp });
+    rays.push({ dx, dz, rb, smp, th, gw: P[3][0], L: P[4][0], hk });
   }
   I.rays = rays;
+  // the index every reader of the samples uses, checked against the profile it was meant to name
+  if (Math.abs(rays[0].smp[ISLE_J0][0] - rays[0].gw) > 1e-3) note('ISLE J0 ' + rays[0].smp[ISLE_J0][0].toFixed(1) + '/' + rays[0].gw.toFixed(1));
   // ---- the land: one grid, (S rays) x (M samples), closed round the angle
   const pos = new Float32Array(S * M * 3), spl = new Float32Array(S * M * 3);
   for (let i = 0; i < S; i++) {
@@ -28869,11 +28897,12 @@ function mapStep(dt) {
 // ============================================================================================
 // THE FARM, PART ONE: THE FARMYARD (m288, ROADMAP B1a) -- on the island ring, outside the city
 // ============================================================================================
-// **WHERE: THE WIDEST GRASS ON THE RING, READ OFF THE ISLAND'S OWN RAYS.** `ISLE.rays[i]` runs from
-// the city's edge (`rb`) out through its samples, and sample `ISLE_J0` is the top of the beach --
-// so `smp[ISLE_J0][0]` is how much grass that ray has. The farm takes the widest, a little
-// way in from its middle, and is built in a frame turned to that ray (local +Z = out to sea)
-// plus `FARM.skew`, so nothing on it lines up with the city's grid.
+// **WHERE: ITS OWN HEADLAND (`ISLE.head`, m302), READ OFF THE ISLAND'S OWN RAYS.** `ISLE.rays[i]` runs from
+// the city's edge (`rb`) out through its samples, and carries its grass width as `gw` (city edge to the
+// top of the beach). The farm stands on the ray down the headland's middle, `inset` of the way across,
+// in a frame turned to that ray (local +Z = out to sea) plus `FARM.skew`, so nothing on it lines up
+// with the city's grid. (Until m302 it took "the widest grass on the ring", read through a wrong sample
+// index, and never built -- see `ISLE_J0`.)
 // **WHAT: A PLACE, NOT A PROP LIST** -- GAME_DESIGN's rules, at greybox:
 //   the BARN on a stone plinth, big doors facing town; inside, a stair of hay bales up to the
 //   HAYLOFT; the loft door in the far gable, with a hay stack under it to drop onto;
@@ -28893,6 +28922,11 @@ const FARM = {
   on: 1,
   skew: .21,        // rad off the ray, so the yard does not sit square to anything
   inset: .42,       // how far across the grass band the yard's middle sits (0 city edge .. 1 beach top)
+  // m of grass the layout needs, city edge to beach top (m302): at `inset` .42 the yard's origin sits 2 + .42 (gw - 2)
+  // out, and the lane's town-side bank reaches v -24 with 3 m to the city (26 behind), the wheat v +31 with the shore
+  // past it (34 ahead) -- 26 = 2 + .42 (gw - 2) and 34 = .58 (gw - 2) both give gw ~ 60. It was 18, a guess that the
+  // wrong grass reading (`ISLE_J0`) could never reach and the real one would have passed for a farm that does not fit.
+  need: 60,
   n: 0, tris: 0,    // chip: boxes added / roof triangles kept
   at: null,         // { x, z, th } once built
 };
@@ -29046,10 +29080,10 @@ function farmFrame(Ox, Oz, th, MAT, tag) {
 function buildFarm() {
   if (!FARM.on || !ISLE.live || !ISLE.rays || !ISLE.rect) return 0;
   const R = ISLE.rect, cx0 = (R[0] + R[1]) / 2, cz0 = (R[2] + R[3]) / 2;
-  // the widest grass on the ring
-  let best = null, bw = -1;
-  for (const r of ISLE.rays) { const w = r.smp[ISLE_J0][0]; if (w > bw) { bw = w; best = r; } }
-  if (!best || bw < 18) { note('FARM NO ROOM ' + bw.toFixed(0)); return 0; }
+  // the ray down the middle of ITS HEADLAND (m302) -- an authored bearing, not "the widest grass on the ring"
+  const S = ISLE.rays.length, hth = ISLE.head ? ISLE.head.th : 0;
+  const best = ISLE.rays[((Math.round(hth / (Math.PI * 2) * S) % S) + S) % S], bw = best ? best.gw : 0;
+  if (!best || bw < FARM.need) { note('FARM NO ROOM ' + bw.toFixed(0) + '/' + FARM.need); return 0; }
   const dOut = best.rb + 2 + (bw - 2) * FARM.inset;
   const Ox = cx0 + best.dx * dOut, Oz = cz0 + best.dz * dOut;
   const th = Math.atan2(best.dx, best.dz) + FARM.skew;
@@ -30052,7 +30086,36 @@ function floraStep(dt) {
 //   CHAPTER  a new game at the crash, any chapter, or the save wiped
 // **THE STANDING RULE (STEER):** anything built must be reachable from here in the same build -- a new place is one
 // line in `GODPLACES`, a new system a toggle in the menu.
-const GOD = { on: 0, fly: 0, vy: 0, flyV: 14, flyUp: 8, store: 'mel.god', goKey: 'mel.godGo', n: 0, el: null, menu: null };
+const GOD = { on: 0, fly: 0, vy: 0, flyV: 14, flyUp: 8, store: 'mel.god', goKey: 'mel.godGo', n: 0, el: null, menu: null,
+  alarmEl: null, alarmN: 0, alarmT: 0 };
+// WHERE EACH CHAPTER STARTS (m302) -- the CHAPTER buttons used to set the save's number and move nothing, which read
+// as broken. Each now takes him to its place (a `GODPLACES` id); a chapter with no place yet says so on its button.
+const GODCHAP = [
+  { n: 0, name: 'THE CRASH',         place: 'crash' },     // Gristle Farm, beside the wreck: where a new game starts
+  { n: 1, name: 'OLD TOWN',          place: 'oldtown' },   // the kit city, where the bridge comes in
+  { n: 2, name: 'THE PEARL',         place: null },
+  { n: 3, name: 'THE OUTSKIRTS',     place: null },
+  { n: 4, name: 'THE WATERFRONT',    place: null },
+  { n: 5, name: 'THE SKATE ISLANDS', place: null },
+  { n: 6, name: 'THE MOTHERSHIP',    place: null },
+];
+// A BUILDER THAT BAILED OUT SAYS SO, IN RED (m302). The farm sat behind `FARM NO ROOM 15` -- a token in the chip --
+// for fourteen builds while every farm place in this menu went nowhere. In GOD, any note that a builder gave up
+// (`NO ROOM`, `NO RECT`, `FAIL`) is a red bar at the top until it is tapped away; a later one brings it back.
+const godBad = () => MISSING.filter(m => /NO ROOM|NO RECT|FAIL/.test(m));
+function godAlarm(dt) {
+  if (!GOD.alarmEl) {
+    GOD.alarmEl = document.getElementById('alarm'); if (!GOD.alarmEl) return;
+    GOD.alarmEl.addEventListener('pointerdown', e => { e.preventDefault(); e.stopPropagation(); GOD.alarmT = 0; GOD.alarmEl.classList.remove('on'); });
+  }
+  const bad = godBad();
+  if (GOD.on && bad.length > GOD.alarmN) {
+    GOD.alarmN = bad.length; GOD.alarmT = 30;
+    GOD.alarmEl.textContent = 'BUILD FAILED: ' + bad.join('  ·  ');
+    GOD.alarmEl.classList.add('on');
+  }
+  if (GOD.alarmT > 0 && ((GOD.alarmT -= dt) <= 0 || !GOD.on)) { GOD.alarmT = 0; GOD.alarmEl.classList.remove('on'); }
+}
 {
   let v = null;
   try { v = localStorage.getItem(GOD.store); } catch (e) {}
@@ -30075,7 +30138,7 @@ const GODPLACES = [
   { id: 'wheat',    world: 'tkit', name: 'GRISTLE FARM · the wheat down to the shore', at: () => godMid(FLORA.FIELDS[1]) },
   { id: 'windmill', world: 'tkit', name: 'GRISTLE FARM · the windmill pump', at: () => FPROPS.at.windmill && [FPROPS.at.windmill[0], null, FPROPS.at.windmill[1], null] },
   { id: 'scarecrow', world: 'tkit', name: 'GRISTLE FARM · the scarecrow in the corn', at: () => FPROPS.at.scarecrow && [FPROPS.at.scarecrow[0], null, FPROPS.at.scarecrow[1], null] },
-  { id: 'tractor', world: 'tkit', name: 'GRISTLE FARM · the tractor in the yard', at: () => FPROPS.at.tractor && [FPROPS.at.tractor[0], null, FPROPS.at.tractor[1], null] },
+  { id: 'tractor', world: 'tkit', name: 'GRISTLE FARM · the tractor in the yard', at: () => FPROPS.at.tractor && [FPROPS.at.tractor[0], null, FPROPS.at.tractor[1], FPROPS.at.tractor[2]] },
   { id: 'paddock',  world: 'tkit', name: 'GRISTLE FARM · the cows in the paddock', at: () => godFarm(-4.3, 8.5, 0) },
   { id: 'lane',     world: 'tkit', name: 'GRISTLE FARM · the sunken lane', at: () => LANE.at && [LANE.at.x, null, LANE.at.z, null] },
   { id: 'ford',     world: 'tkit', name: 'GRISTLE FARM · the ford and the footbridge', at: () => LANE.at && [LANE.at.ford[0], null, LANE.at.ford[1], null] },
@@ -30163,7 +30226,13 @@ function godMenuOpen(on) {
   for (const P of GODPLACES.filter(P => P.world !== WORLD.now)) btn(P.name, () => godPlace(P), 'far');
   sec('CHAPTER  ·  now ' + SAVE.ch);
   btn('NEW GAME AT THE CRASH', () => { progReset(); try { sessionStorage.setItem(WORLD.store, 'tkit'); } catch (e) {} location.replace(location.pathname + '?spawn=crash'); });
-  for (let c = 0; c <= 6; c++) btn('CHAPTER ' + c, () => { progChapter(c); if (c >= 1) progFlag('inTown'); toast('Chapter ' + c, 1.4); godMenuOpen(1); });
+  for (const C of GODCHAP) {
+    const P = C.place && GODPLACES.find(q => q.id === C.place);
+    btn('CHAPTER ' + C.n + ' · ' + C.name + (P ? '' : ' (not built: sets the save only)'), () => {
+      progChapter(C.n); progFlag('inTown', C.n >= 1 ? 1 : 0);
+      if (P) godPlace(P); else { toast('Chapter ' + C.n + ': ' + C.name + ' is not built yet', 2.2); godMenuOpen(1); }
+    });
+  }
   btn('WIPE THE SAVE', () => { progReset(); location.replace(location.pathname); }, 'warn');
   sec('SWITCHES');
   btn('FLY ' + (GOD.fly ? 'ON' : 'OFF'), () => { godFly(!GOD.fly); godMenuOpen(1); });
@@ -30221,6 +30290,7 @@ function godStep(dt) {
     godBoot();
   }
   if (GOD.on) { HEAT.v = 0; if (SAVE.juice < JUICE.cap) SAVE.juice = JUICE.cap; }
+  godAlarm(dt);
 }
 
 // ============================================================================================
@@ -30298,7 +30368,8 @@ function buildFarmProps() {
       geo(new THREE.CylinderGeometry(.46, .46, .3, 14).rotateX(Math.PI / 2), 'tyre', tu + 1.05, g + .46, tv + s * .62);
       geo(new THREE.CylinderGeometry(.42, .42, .47, 12).rotateX(Math.PI / 2), 'tractor', tu - .8, g + .82, tv + s * .78);
     }
-    FPROPS.at.tractor = [wx(tu, tv - 3), wz(tu, tv - 3)]; }
+    // GOD's spot (m302): in front of its nose, looking back at it -- 3 m toward town was ON the lane's hedge bank
+    { const X = wx(tu + 3.6, tv), Z = wz(tu + 3.6, tv); FPROPS.at.tractor = [X, Z, Math.atan2(wx(tu, tv) - X, wz(tu, tv) - Z)]; } }
   // ---- barrels against the lean-to, a wheelbarrow by the hay stack
   for (const [u, v] of [[2.9, -2.6], [3.0, -1.6], [3.7, -2.1]]) { const g = gnd(u, v);
     geo(new THREE.CylinderGeometry(.3, .3, .9, 14), u > 3.5 ? 'red' : 'steel', u, g + .45, v); }

@@ -5,7 +5,9 @@
 // the shipped `godPlace` for each GOD place in `tkit` and prints where it put the player.
 // Written because the farm was built for nine builds against a ground it does not fit on: the real
 // island ring is 14.9 m wide at its widest, `buildFarm` wants 18, it returned with
-// `FARM NO ROOM 15`, and every farm place in the GOD menu went nowhere. A place that does not
+// `FARM NO ROOM 15`, and every farm place in the GOD menu went nowhere. (m302: that 14.9 was itself
+// misread -- the grass index was wrong, see `ISLE_J0` -- but the farm still did not exist, which is
+// the half that mattered. It now exits 1 when any tkit GOD place is BAD.) A place that does not
 // exist in the real world is not built, however good it looks in a fabricated test.
 import fs from 'fs';
 import os from 'os';
@@ -56,7 +58,7 @@ const html = fs.readFileSync('index.html', 'utf8');
 let src = html.match(/<script type="module">([\s\S]*?)<\/script>/)[1];
 src = src.replace(/(from\s*)['"]three['"]/g, `$1'${pathToFileURL(path.join(TMP, 'three-shim.mjs')).href}'`)
          .replace(/(from\s*)['"]\.\/vendor\//g, `$1'${ROOT}vendor/`);
-src += '\nglobalThis.__M = { KCITY, buildKCityCol, buildIsle, ISLE, TRI, triBuild, groundAt, WORLD, MOVE, player, kitPopulate, KCROWD, FOE, HICK, HOBO, SKATER, BIKER, DUMMY, CIVILS, CLANCY, kitStand, bodySeat, SEAT, DUMMIES, THREE, buildFarm, buildFarmProps, buildCrash, buildLane, buildBridge, buildCows, buildFlora, crashHero, FARM, CRASH, GODPLACES, godPlace, GOD, LANE, BRIDGE, crashSpawn, SAVE };\n';
+src += '\nglobalThis.__M = { KCITY, buildKCityCol, buildIsle, ISLE, TRI, triBuild, groundAt, WORLD, MOVE, player, kitPopulate, KCROWD, FOE, HICK, HOBO, SKATER, BIKER, DUMMY, CIVILS, CLANCY, kitStand, bodySeat, SEAT, DUMMIES, THREE, buildFarm, buildFarmProps, buildCrash, buildLane, buildBridge, buildCows, buildGroundPaint, buildFlora, crashHero, FARM, MISSING, FLORA, FPROPS, farmPropsStep, floraStep, cowStep, crashStep, crashHeroStep, riverStep, gradeStep, CRASH, GODPLACES, godPlace, GOD, LANE, BRIDGE, crashSpawn, SAVE };\n';
 const f2 = path.join(TMP, 'placecheck.mjs'); fs.writeFileSync(f2, src);
 const quiet = console.error, qw = console.warn, ql = console.log;
 console.error = () => {}; console.warn = () => {};
@@ -119,17 +121,44 @@ M.buildKCityCol({ scene });
 try { M.buildIsle(); } catch (e) { quiet('isle', e.message); }
 console.log = ql;
 
-const farmSteps = ['buildFarm','buildFarmProps','buildCrash','crashHero','buildLane','buildBridge','buildCows','buildFlora'];
+const farmSteps = ['buildFarm','buildFarmProps','buildCrash','crashHero','buildLane','buildBridge','buildCows','buildGroundPaint','buildFlora'];
 console.log = () => {};
 for (const n of farmSteps) { try { M[n](); quiet('ok  ', n); } catch (e) { quiet('FAIL', n, e && e.stack ? e.stack.split('\n').slice(0,3).join(' | ') : e); } }
 console.log = ql;
-{ let bw=0; for (const r of M.ISLE.rays) bw=Math.max(bw, r.smp[12][0]); quiet('widest grass', bw.toFixed(1), 'rays', M.ISLE.rays.length, 'rect', JSON.stringify(M.ISLE.rect)); }
-quiet('FARM.at', JSON.stringify(M.FARM.at), 'CRASH.at', M.CRASH.at ? 'yes' : 'no', 'ISLE.live', M.ISLE.live);
-globalThis.toast = (t) => quiet('   toast:', t);
+// the grass a ray really has is its own `gw` (m302: `smp[12]` was a fifth of the way across it -- see `ISLE_J0`)
+{ const R = M.ISLE.rays; let w = R[0];
+  for (const r of R) if (r.gw > w.gw) w = r;
+  const H = M.ISLE.head, hr = R[((Math.round(H.th / (Math.PI * 2) * R.length) % R.length) + R.length) % R.length];
+  quiet('widest grass', w.gw.toFixed(1), 'at', (Math.atan2(w.dz, w.dx) * 180 / Math.PI).toFixed(0) + 'deg', '| headland ray', (H.th * 180 / Math.PI).toFixed(0) + 'deg',
+        'grass', hr.gw.toFixed(1), 'need', M.FARM.need, '| rays', R.length, 'rect', JSON.stringify(M.ISLE.rect.map(v => +v.toFixed(1)))); }
+quiet('FARM.at', JSON.stringify(M.FARM.at && { x: +M.FARM.at.x.toFixed(1), z: +M.FARM.at.z.toFixed(1), th: +M.FARM.at.th.toFixed(3) }),
+      '| CRASH.at', M.CRASH.at ? 'yes' : 'NO', '| LANE.at', M.LANE.at ? 'yes' : 'NO', '| BRIDGE.gate', M.BRIDGE.gate ? 'yes (side ' + M.BRIDGE.side + ')' : 'NO', '| ISLE.live', M.ISLE.live);
+quiet('notes', JSON.stringify(M.MISSING));
+globalThis.toast = (t) => {};
+let bad = 0;
 for (const P of M.GODPLACES.filter(p => p.world === 'tkit')) {
   M.player.pos.set(0, 0, 0);
   let a = null; try { a = P.at && P.at(); } catch (e) { a = 'THROW ' + e.message; }
   try { M.godPlace(P); } catch (e) { quiet('godPlace throw', P.id, e.message); }
-  quiet(P.id.padEnd(10), 'at', JSON.stringify(a), '-> player', M.player.pos.toArray().map(v => v.toFixed(1)).join(','));
+  const p = M.player.pos, g = M.groundAt(p.x, p.z, 4, 8), R = M.ISLE.rect;
+  const city = p.x > R[0] && p.x < R[1] && p.z > R[2] && p.z < R[3];
+  // sensible: it moved him, he is not under the sea, and a farm place is OUT on the island, not in the city
+  const why = !a ? 'NO PLACE' : (p.x === 0 && p.z === 0 && P.id !== 'oldtown') ? 'UNMOVED' : p.y < M.ISLE.sea + .3 ? 'IN THE SEA'
+            : (P.id !== 'oldtown' && city) ? 'IN THE CITY' : '';
+  if (why) bad++;
+  quiet((why ? 'BAD ' : 'ok  ') + P.id.padEnd(10), '-> player', p.toArray().map(v => v.toFixed(1)).join(','), 'ground', (g > -500 ? g.toFixed(2) : 'none'), why);
 }
-process.exit(0);
+quiet(bad ? bad + ' GOD place(s) BAD' : 'every tkit GOD place is somewhere');
+// ---- AND THE FARM'S OWN STEPS RUN (m302). Until m302 none of them had ever run against a real farm -- they all
+// return early on a null `FARM.at` -- and one that throws is caught by `frame()` and aborts EVERY frame from there
+// on: a frozen picture with a crash card. A second at 30 fps, standing at the crash, each step on its own.
+{ const crash = M.GODPLACES.find(q => q.id === 'crash'); if (crash) M.godPlace(crash);
+  for (const n of ['farmPropsStep', 'floraStep', 'cowStep', 'crashStep', 'crashHeroStep', 'riverStep', 'gradeStep']) {
+    let err = null;
+    console.log = () => {};
+    for (let f = 0; f < 30 && !err; f++) { try { M[n](1 / 30); } catch (e) { err = e; } }
+    console.log = ql;
+    if (err) bad++;
+    quiet((err ? 'BAD ' : 'ok  ') + n.padEnd(14), err ? (err.stack || String(err)).split('\n').slice(0, 3).join(' | ') : '30 frames');
+  } }
+process.exit(bad ? 1 : 0);

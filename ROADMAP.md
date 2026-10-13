@@ -32,7 +32,7 @@ Fix:
    that adds or moves a place, and paste its result in the build's NOTES entry.** A place that only
    exists in a fabricated test does not exist.
 3. A builder that bails out must say so loudly: show a red toast at boot for any `... NO ROOM` /
-   `... FAIL` note while GOD mode is on, not only a token in the chip.
+   `... FAIL` note while GOD mode is on, not only a token in the chip. **— done m302.**
 
 **TOP PRIORITY, BEFORE THE NEXT FARM PASS — GOD MODE (Colin can't see anything you've built).**
 He can't find the farm, any new place, or Rollergirl: the world key only cycles the old worlds, the
@@ -356,3 +356,12 @@ differ" table there, so no region feels like the last one.
   round the trough and windmill, the **paddock trodden pale**, the gate churned, and a **worn track
   with two cart ruts** down the floor of the sunken lane. Noise-edged, one draw call, from an
   authored table with a reason each.
+- **m302 (the farm, for real):** the farm had never been in your game: it needed 18 m of grass
+  and the island seemed to have 15. **The 15 was a misreading** (the code looked at the wrong
+  sample, a fifth of the way across the grass; the real ring is 38–66 m). Fixed. As the STEER asked,
+  the farm still got **its own headland**: the coast bulges out 34 m on the **+x side, under the
+  low sun**, so the yard's long shadows fall back toward town and the sea behind the wheat glitters.
+  It's in `ISLE.head` if you'd rather it sat elsewhere. **Your next kit-city boot starts at the
+  crash** (a chapter-0 save that has never been to town), as a new game should. The CHAPTER buttons
+  now take you somewhere: 0 to the crash, 1 to Old Town; 2–6 say "not built" on the button. In
+  GOD, a builder that gives up shows a **red bar** at the top; tap it away.

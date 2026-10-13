@@ -49,6 +49,9 @@ strictly worse than being wrong — and it comes out of a fixed window he is pay
 
 ```sh
 npm run check      # ~4s: the syntax gate and the boot gate
+npm run places     # ~40s: ONLY for a build that adds or moves a place -- builds the REAL kit city, island and
+                   # farm, sends him to every tkit GOD place, ticks the farm's steps; exits 1 on a BAD row.
+                   # Paste its output in the NOTES entry (STEER, m302: the farm was never in his game for 14 builds)
 ```
 
 Those two earn their seconds because they are the one failure he **cannot** look at and correct:
