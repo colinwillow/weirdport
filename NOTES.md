@@ -7,6 +7,18 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE COP'S AIM IS `shoot_pistol` HELD ON ITS CLAMPED LAST FRAME (m281, ROADMAP A5b, `copFire`, `copExtras`, `copTracer`).**
+  Every non-loop clip on a body is `LoopOnce` + `clampWhenFinished` and is `play()`ed at spawn at weight 0, so it
+  has already run out and holds its end pose; giving `shoot_pistol` weight 1 between rounds therefore holds the aim,
+  and `skinPlay` rewinds it per round. `draw_weapon` plays once per drawing (`d.gun`, cleared below 3 stars). The round
+  leaves `fireLag` after the shoot starts (`d.shotAt`), and only when he faces you within .35 rad. Hit chance is a
+  linear `acc` over `shootR`, divided by `1 + speed/accRun`; `p.roll` always misses. Muzzle is a typed offset off the
+  root (no hand bone looked up) -- the tracer start is approximate.
+  **REINFORCEMENTS ARE SPAWNED AND REMOVED IN `heatStep`, NOT IN `copAI`** -- `heatStep` runs before `stepDummies`
+  walks `DUMMIES`, and splicing that list mid-walk skips the next body (`VTURN`, m162). They need `DUMMY.P`, so a world
+  with no officer loaded gets none. Spot: behind you, `extraR` out, through `kitStand` in the kit worlds or
+  `groundAt` + `resolveBoxes` elsewhere. Chip adds `sh<hits>/<shots>` and `+<extras>`.
+
 - **THE OFFICER HAD WALK AND RUN CLIPS ALL ALONG AND NOBODY NAMED THEM (m280, ROADMAP A5a, `COPS`, `copAI`, `heatStep`).**
   `dummy_officer.glb` carries `walk_01 run_01 run_02 draw_weapon shoot_pistol hit_while_shooting` besides the idle,
   hits, falls and get-ups `DUMMY.clips` used -- read straight out of the JSON chunk, the m67 lesson again: read the

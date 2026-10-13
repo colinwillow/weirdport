@@ -607,10 +607,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m280</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m281</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m280</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m281</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -680,7 +680,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm280';
+const BUILD = 'm281';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -2608,6 +2608,8 @@ const DUMMY = {
     upF: 'get_up_front', upB: 'get_up_back',
     // m280: he walks and runs now -- these were in his file all along (A5b names draw/shoot)
     walk: 'walk_01', run: 'run_01',
+    // m281: the pistol, at three stars
+    draw: 'draw_weapon', shoot: 'shoot_pistol',
   },
   // HE IS A COP (m280): `copAI` drives him off his post when there is heat. The refs are GUESSED,
   // not measured -- `npm run gait` on walk_01/run_01 would settle them.
@@ -27837,9 +27839,22 @@ const COPS = {
   reach: 1.35,               // m he grabs from
   grabEvery: 1.4,            // s between grabs
   grabDmg: 5,
-  n: 0, grabs: 0,            // chip: spots, grabs
+  // THE PISTOL (m281, A5b) -- three stars
+  shootR: 18,                // m: inside this, seeing you, at 3 stars he stops and shoots
+  fireEvery: [1.0, 1.7],     // s between shots, rolled each time so two cops are not a metronome
+  fireLag: .14,              // s into `shoot_pistol` the round leaves (the recoil frame, by eye)
+  acc: [.6, .18],            // hit chance at point blank / at `shootR`, linear between
+  accRun: 14,                // m/s of your speed that halves it (moving targets are harder)
+  shotDmg: 7,
+  tracerT: .07,              // s a tracer is on screen
+  // REINFORCEMENTS (m281) -- four stars
+  extra: 3,                  // at most this many extra officers at once
+  extraEvery: 6,             // s between arrivals
+  extraR: [24, 32],          // m from you, behind you, where they turn up
+  extraGo: 12,               // s at no stars before the extras are taken away
+  n: 0, grabs: 0, shots: 0, hits: 0, extras: 0,   // chip
 };
-Object.assign(HEAT, { lvl: 0, seenT: 99, lx: undefined, lz: undefined, flash: 0 });
+Object.assign(HEAT, { lvl: 0, seenT: 99, lx: undefined, lz: undefined, flash: 0, extraT: 0, calmT: 0 });
 const heatLvl = v => { let n = 0; for (const s of COPS.star) if (v >= s) n++; return n; };
 function heatStep(dt) {
   HEAT.seenT += dt;
@@ -27855,6 +27870,81 @@ function heatStep(dt) {
       if (l > HEAT.lvl) { el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); }
     }
     HEAT.lvl = l;
+  }
+  copExtras(dt);
+  copFxStep(dt);
+}
+// FOUR STARS: more of them, from behind you, every `extraEvery`. Spawned and removed HERE, in
+// `heatStep`, which runs before `stepDummies` walks the list -- a splice inside that loop skips
+// the next body (m162's `VTURN` lesson).
+function copExtras(dt) {
+  if (!COPS.on || !DUMMY.P) return;
+  HEAT.calmT = HEAT.lvl ? 0 : HEAT.calmT + dt;
+  if (HEAT.calmT > COPS.extraGo) {
+    for (let i = DUMMIES.length - 1; i >= 0; i--) if (DUMMIES[i].copExtra) { const d = DUMMIES[i]; bodyGone(d); scene.remove(d.root); }
+    return;
+  }
+  if (HEAT.lvl < 4) { HEAT.extraT = Math.min(HEAT.extraT, 1.5); return; }
+  if ((HEAT.extraT -= dt) > 0) return;
+  HEAT.extraT = COPS.extraEvery;
+  let n = 0; for (const d of DUMMIES) if (d.copExtra) n++;
+  if (n >= COPS.extra) return;
+  const pp = player.pos;
+  for (let k = 0; k < 10; k++) {
+    const a = player.faceH + Math.PI + (Math.random() - .5) * 2.2, r = rnd(COPS.extraR);
+    const x = pp.x + Math.sin(a) * r, z = pp.z + Math.cos(a) * r;
+    let y;
+    if (kitWorld()) { y = kitStand(x, z); if (y == null) continue; }
+    else {
+      y = groundAt(x, z, pp.y + 2, MOVE.step);
+      if (!(y > -1e3) || Math.abs(y - pp.y) > 3) continue;
+      _wpP.x = x; _wpP.y = y; _wpP.z = z;
+      if (resolveBoxes(_wpP, DUMMY.r, 1.6)) continue;
+    }
+    const d = bodySpawn(DUMMY.P, DUMMY, x, z, y);
+    if (!d) return;
+    d.copExtra = 1; d.cx = x; d.cz = z; d.ch = d.h;
+    COPS.extras++;
+    return;
+  }
+}
+// a tracer: one thin additive cylinder from the muzzle to where the round went, pooled
+const copFx = { pool: [], geo: null, mat: null, up: new THREE.Vector3(0, 1, 0), a: new THREE.Vector3(), b: new THREE.Vector3() };
+function copTracer(ax, ay, az, bx, by, bz) {
+  if (!copFx.geo) {
+    copFx.geo = new THREE.CylinderGeometry(.018, .018, 1, 5, 1, true);
+    copFx.mat = new THREE.MeshBasicMaterial({ color: 0xffe08a, transparent: true, opacity: .9,
+      blending: THREE.AdditiveBlending, depthWrite: false, fog: false });
+  }
+  let m = copFx.pool.find(q => q.userData.t <= 0);
+  if (!m) { m = new THREE.Mesh(copFx.geo, copFx.mat); m.frustumCulled = false; scene.add(m); copFx.pool.push(m); }
+  const A = copFx.a.set(ax, ay, az), B = copFx.b.set(bx, by, bz);
+  const L = A.distanceTo(B);
+  m.position.copy(A).add(B).multiplyScalar(.5);
+  m.quaternion.setFromUnitVectors(copFx.up, B.sub(A).divideScalar(L || 1));
+  m.scale.set(1, L, 1);
+  m.userData.t = COPS.tracerT; m.visible = true;
+}
+function copFxStep(dt) {
+  for (const m of copFx.pool) if (m.userData.t > 0 && (m.userData.t -= dt) <= 0) m.visible = false;
+}
+// the round leaves: a roll against distance and how fast you are going, a tracer either way
+function copFire(d) {
+  const P = d.root.position, pp = player.pos, p = player;
+  const dx = pp.x - P.x, dz = pp.z - P.z, q = Math.hypot(dx, dz), h = Math.atan2(dx, dz);
+  const mx = P.x + Math.sin(d.h) * .45 - Math.cos(d.h) * .18, my = P.y + 1.4, mz = P.z + Math.cos(d.h) * .45 + Math.sin(d.h) * .18;
+  const u = clamp(q / COPS.shootR, 0, 1);
+  const pr = (COPS.acc[0] + (COPS.acc[1] - COPS.acc[0]) * u) / (1 + (p.speed || 0) / COPS.accRun);
+  const hit = !p.roll && Math.random() < pr;
+  COPS.shots++;
+  snd('shot', { g: .55, r: .62 + Math.random() * .08, x: P.x, z: P.z });
+  if (hit) {
+    COPS.hits++;
+    copTracer(mx, my, mz, pp.x, pp.y + 1.1, pp.z);
+    playerHurt(COPS.shotDmg, h, FOE.push * .25, 0, FOE.stun * .5, 0);
+  } else {
+    const a = h + (Math.random() < .5 ? -1 : 1) * (.05 + Math.random() * .08), r = q + 3 + Math.random() * 6;
+    copTracer(mx, my, mz, P.x + Math.sin(a) * r, my + (pp.y + 1.1 - my) * (r / Math.max(q, .1)) + (Math.random() - .3) * .6, P.z + Math.cos(a) * r);
   }
 }
 // a blow you land -- from `dummyBlow`, which every fist, bolt and blast reaches
@@ -27880,7 +27970,22 @@ function copAI(d, dt, t) {
   }
   const lvl = HEAT.lvl;
   let sp = 0, clip = K.clips.idle;
-  if (lvl >= 2 && d.copSee) {
+  if (lvl < 3) d.gun = 0;                  // holstered below three stars
+  if (d.shotAt > 0 && (d.shotAt -= dt) <= 0) copFire(d);
+  if (lvl >= 3 && d.copSee && dd > COPS.reach && dd < COPS.shootR) {
+    // THREE STARS: stand, draw, shoot. The draw plays once per drawing; after it the shoot clip
+    // HOLDS its clamped last frame between rounds, which is the aim.
+    faceTo(d, toP, dt);
+    if (!d.gun) { d.gun = 1; d.drawT = skinLen(d, K.clips.draw) || .5; skinPlay(d, K.clips.draw, 1); d.fireT = .3; }
+    if (d.drawT > 0) { d.drawT -= dt; clip = K.clips.draw; }
+    else {
+      clip = K.clips.shoot;
+      if ((d.fireT -= dt) <= 0 && Math.abs(wrapAngle(toP - d.h)) < .35) {
+        d.fireT = rnd(COPS.fireEvery); d.shotAt = COPS.fireLag;
+        skinPlay(d, K.clips.shoot, 1);
+      }
+    }
+  } else if (lvl >= 2 && d.copSee) {
     faceTo(d, toP, dt);
     if (dd > COPS.reach) { sp = K.run; clip = K.clips.run; }
     else if (d.grabT <= 0) {
@@ -29363,7 +29468,7 @@ function frameBody() {
       // FR: frights / calls phoned in / heat (m279) -- frights with no calls is the dice, no frights at all is sight
       (FEAR.n ? ' FR' + FEAR.n + '/' + FEAR.calls : '') +
       // H: heat, stars, cop spots/grabs (m280) -- stars with no spots is all phone calls
-      (HEAT.v > 0 || COPS.n ? ' H' + HEAT.v.toFixed(1) + '*' + HEAT.lvl + ' cs' + COPS.n + '/' + COPS.grabs : '') +
+      (HEAT.v > 0 || COPS.n ? ' H' + HEAT.v.toFixed(1) + '*' + HEAT.lvl + ' cs' + COPS.n + '/' + COPS.grabs + (COPS.shots ? ' sh' + COPS.hits + '/' + COPS.shots : '') + (COPS.extras ? ' +' + COPS.extras : '') : '') +
       (quest.cur ? ' Q' + quest.cur.id + '.' + quest.step + (quest.tgt ? '' : '~') : '') +
       (MISSING.length ? ' · ' + MISSING.join(' · ') : '');
     // **THE KEYS SIT UNDER THE CHIP, AND THE CHIP IS THE ONE HUD ELEMENT THAT GROWS (m128).**

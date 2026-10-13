@@ -33,11 +33,11 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   "quest complete" moment.
 - [x] m279 **A4 Fear & witnesses.** Humans who SEE you undisguised react: scream, flee, phone it in.
   Disguised you are ignored. A witness who phones it in raises heat.
-- [ ] **A5 Heat & police.** Wanted stars. 1 = cops come look, 2 = cops chase and arrest-attempt,
+- [x] m281 **A5 Heat & police.** Wanted stars. 1 = cops come look, 2 = cops chase and arrest-attempt,
   3 = cops shoot, 4 = more cops (military later). Lose heat by breaking line of sight and changing
   form. Chip shows the stars.
   - [x] m280 **A5a** stars, heat rules (calls, spotting, blows; cools out of sight, faster in a human form), cops come look (1) and chase + arrest-grab (2).
-  - [ ] **A5b** cops draw and shoot at 3 stars (`draw_weapon`, `shoot_pistol` are in his file), more cops arrive at 4.
+  - [x] m281 **A5b** cops draw and shoot at 3 stars (`draw_weapon`, `shoot_pistol` are in his file), more cops arrive at 4.
 - [ ] **A6 The sampler.** Stand over a downed human and hold to take a sample → that form is
   unlocked into the form wheel (the existing disguise pipeline). DNA gun becomes debug-only
   (`mel.dna()` or a debug toggle).
@@ -124,3 +124,7 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   seeing you, and 4x faster while you're in a human form. "Arrest" is a grab that hurts and
   staggers (there's no arrest animation); there's no jail/busted screen. The officer walk/run
   speeds are guesses. Side effect: the officer now has walk/run clips, so he may become a DNA form.
+- **m281 (A5b):** at 3 stars a cop who sees you within 18 m stops, draws and shoots (7 damage,
+  ~60% hit point blank down to ~18% at range, halved-ish while you move fast; a dodge roll always
+  makes him miss). At 4 stars an extra officer turns up behind you every 6 s, up to 3; they leave
+  after 12 s with no stars. Gun sound is the blaster pitched down (there's no pistol recording).
