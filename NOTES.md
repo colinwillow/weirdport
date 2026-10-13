@@ -7,6 +7,17 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A QUEST STEP IS ONE QUESTION ASKED EVERY FRAME, AND IT READS THE SAVE (m278, ROADMAP A3, `QUESTS`, `questTest`).**
+  Six step types -- talk / goto / reach / defeat / sample / gate -- and `questTest` is the only code that knows what
+  they mean. `sample` and `gate` read `SAVE.forms` and `gate:<id>`, so they cannot pass until A6/A8 exist and need no
+  edit when they do. Progress is `q:<id>` (step index) and `qdone:<id>` in `SAVE.flags`, so a reload lands on the same
+  step; a `defeat` count within a step is NOT saved. `defeat` counts the EDGE into `d.st === 'down'` (`d.qDn`), because
+  there is no knock-down event to listen to and a level test would count one body every frame. `talk` without `who`
+  counts `talk.heard`, a counter of every finished script (TALK.said only counts first hearings) against a baseline
+  taken when the step began. The beam is ONE additive cylinder, moved to `quest.tgt`; a step with nowhere to point
+  hides it, and the chip says `~` after the step then. First quest is `q0 WEIRDPORT 101` (talk, knock down, get up 3 m)
+  -- a stand-in until B2's Chapter 0 script. Chip: `Qq0.<step>`.
+
 - **TALK LIVES ON THE RIGHT PAD'S TAP, AND THE LEFT TAP STAYS THE JUMP (m277, ROADMAP A2, `TALK`, `TALKS`, `talkTap`).**
   The roadmap said "the right pad lights (the existing interact pattern)" -- there was no interact pattern; the only
   lit states on `#padR` were the trigger's `arm`/`ready` (amber). So `talk` is a third class on the same `::after`

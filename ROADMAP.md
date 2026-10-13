@@ -28,7 +28,7 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
 - [x] m277 **A2 Talk.** NPCs can carry a `talk` script: walk up, the right pad lights (the existing
   interact pattern), tap → speech bubble with name + lines, tap to advance. A `!` marker over the
   head of anyone with something to say.
-- [ ] **A3 Quests & objectives.** Data-driven quests: steps of type talk / go-to / sample / defeat /
+- [x] m278 **A3 Quests & objectives.** Data-driven quests: steps of type talk / go-to / sample / defeat /
   reach / gate. Current objective as one line on the HUD, a waypoint beam in the world, and a
   "quest complete" moment.
 - [ ] **A4 Fear & witnesses.** Humans who SEE you undisguised react: scream, flee, phone it in.
@@ -106,3 +106,8 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   still jumps while someone is in reach. One speaker per character type for now (Dusty the hobo,
   Earl, Sal the worker, Moonbeam, Sage, Knuckles, Jasper, Capt. Reyes) with placeholder lines I
   wrote — rewrite them in `TALKS`. Speakers don't stop or turn to face you yet.
+- **m278 (A3):** a stand-in first quest, **WEIRDPORT 101**: talk to someone with a `!`, knock
+  somebody down, get 3 m up. It runs in every world until done, so the objective line, the beam
+  and the "quest complete" card can be seen now; B2's Chapter 0 script replaces it. The objective
+  sits top-centre (the only empty edge). `sample` and `gate` steps read the save, so they will
+  start working when A6/A8 write it. `mel.progReset()` replays it.

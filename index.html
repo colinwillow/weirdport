@@ -356,6 +356,29 @@ body.dyn.desk .zone { display: none; }
   padding: 7px 12px 16px; font-family: var(--ui); font-size: 17px; line-height: 1.25; font-weight: 600;
 }
 #talk.on { display: block; }
+/* THE OBJECTIVE (m278): one line, top centre, which is the one empty edge -- the chip is
+   top-left and the weapon top-right. Dark pill so it reads on the white floor and the sky. */
+#obj {
+  position: fixed; left: 50%; top: calc(12px + env(safe-area-inset-top)); transform: translateX(-50%);
+  z-index: 5; display: none; pointer-events: none; max-width: 48vw; text-align: center;
+  background: rgba(11,13,18,.78); border: 2px solid var(--sky); border-radius: 8px; padding: 3px 10px 4px;
+  font-family: var(--ui); color: #fff; line-height: 1.15; transition: transform .2s ease, border-color .2s ease;
+}
+#obj.on { display: block; }
+#obj.pulse { border-color: var(--sun); transform: translateX(-50%) scale(1.08); }
+#obj b { display: block; font-family: var(--disp); font-size: 9px; letter-spacing: .1em; color: var(--sky); font-weight: 400; }
+#obj i { font-style: normal; font-size: 14px; font-weight: 600; }
+#qdone {
+  position: fixed; left: 50%; top: 30%; transform: translate(-50%, -50%); z-index: 7; pointer-events: none;
+  display: none; text-align: center; font-family: var(--disp); color: var(--sun);
+  text-shadow: 0 3px 0 var(--ink), 0 0 18px rgba(0,0,0,.5);
+}
+#qdone.on { display: block; animation: qdone 3.2s ease forwards; }
+#qdone small { display: block; font-size: 13px; letter-spacing: .2em; color: #fff; }
+#qdone b { display: block; font-size: 30px; font-weight: 400; }
+@keyframes qdone { 0% { opacity: 0; transform: translate(-50%, -50%) scale(.6); }
+  12% { opacity: 1; transform: translate(-50%, -50%) scale(1.06); } 20% { transform: translate(-50%, -50%) scale(1); }
+  80% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, -60%) scale(1); } }
 #talk .nm { display: block; font-family: var(--disp); font-size: 12px; letter-spacing: .06em; color: var(--hot); margin-bottom: 2px; }
 #talk .go { position: absolute; right: 10px; bottom: 2px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #0b0d1280; }
 #talk::after { content: ''; position: absolute; left: 50%; bottom: -12px; margin-left: -10px;
@@ -575,10 +598,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m277</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m278</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m277</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m278</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -588,6 +611,8 @@ body.desk.free #deskHint { display: block; }
 <div class="pad" id="padL"><div class="knob"></div><div class="hint">move &middot; tap = jump</div></div>
 <div class="pad" id="padR"><div class="knob"></div><div class="hint">look &middot; tap = jump</div></div>
 <div id="talk"><span class="nm"></span><span class="tx"></span><span class="go"></span></div>
+<div id="obj" aria-hidden="true"><b></b><i></i></div>
+<div id="qdone" aria-hidden="true"><small>QUEST COMPLETE</small><b></b></div>
 
 <!-- THE BLASTER'S TWO MODES (m52). Above the right pad, because that is the thumb they are
      about -- and only while the blaster is out, so they are never a HUD element in the play
@@ -645,7 +670,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm277';
+const BUILD = 'm278';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -27394,7 +27419,7 @@ const TALKS = {
     "Third fire this week in Old Town. They're not accidents.",
     "If you see smoke, don't be a hero. Unless you're one of us." ] },
 };
-const talk = { near: null, cur: null, line: 0, kinds: new Set(), mat: null,
+const talk = { near: null, cur: null, line: 0, heard: 0, kinds: new Set(), mat: null,
   box: null, nm: null, tx: null, go: null, hint: null, hint0: '', lit: null, v: new THREE.Vector3() };
 function talkMat() {
   if (talk.mat) return talk.mat;
@@ -27437,7 +27462,7 @@ function talkTap() {
   if (talk.cur) {
     const d = talk.cur;
     if (++talk.line >= d.talk.lines.length) {
-      d.talk.done = 1;
+      d.talk.done = 1; talk.heard++;          // every finish, for A3's "talk to anyone" (m278)
       if (progFlag('talk:' + d.talk.id)) TALK.said++;
       talkClose();
     } else talkShow();
@@ -27500,6 +27525,151 @@ function talkStep(dt) {
     }
   }
   talkLight(talk.cur || talk.near, !!talk.cur);
+}
+
+// ============================================================================================
+// QUESTS & OBJECTIVES (m278, ROADMAP A3) -- data-driven steps, one line on the HUD, a beam
+// ============================================================================================
+// **A QUEST IS A LIST OF STEPS AND A STEP IS ONE TEST.** `QUESTS` is the data; `questTest` is the
+// only code that knows what a step type MEANS, and each type is one question asked every frame:
+//   talk    { who? }          a script finished -- `who` is a TALKS id; without it, anyone
+//   goto    { x, z | who, r } stand within r of a point, or of a body of kind `who`
+//   reach   { y, x?, z?, r? } stand at height y or above (on something, not mid-jump)
+//   defeat  { who?, n }       knock n bodies down (of kind `who`, or anyone)
+//   sample  { form }          the form is in the save (A6 writes it)
+//   gate    { id }            `gate:<id>` is set in the save (A8 writes it)
+// sample and gate cannot complete until A6 and A8 exist, and they do not need to: the test reads
+// the save, so the day the sampler writes a form the step that wanted it passes with no edit here.
+// **PROGRESS IS IN THE SAVE** -- `q:<id>` is the step index, `qdone:<id>` the end -- so a reload
+// lands on the step you were on. Counters within a step (`defeat` n) are not saved; a reload
+// restarts that step's count, which is cheap and honest.
+// **THE ACTIVE QUEST IS THE FIRST ONE NOT DONE**, in table order -- no journal, no picking, until
+// there is more than one at a time worth having. `world` limits a quest to one world key.
+// **THE BEAM IS ONE MESH, MOVED** -- additive, no depth write, tall enough to see over a roof,
+// pointed at whatever the step names (a point, the nearest body that counts, the nearest unheard
+// speaker). A step with nowhere to point (a `reach` with no x) has no beam, which says so.
+const QUEST = {
+  on: 1,
+  beamH: 70, beamR: .45,    // m: tall enough to read over any roof in the kit city
+  beamA: .32,               // its opacity; it is additive, so this is how bright
+  doneT: 3.2,               // s the "quest complete" card stays up
+  stepT: 1.2,               // s the objective line pulses when a step passes
+  n: 0,                     // chip: quests completed this session
+};
+const QUESTS = [
+  { id: 'q0', title: 'WEIRDPORT 101', steps: [
+    { type: 'talk',   text: 'Talk to someone with a !' },
+    { type: 'defeat', n: 1, text: 'Knock somebody down' },
+    { type: 'reach',  y: 3, text: 'Get up high: a roof, a ladder, a stack of anything' },
+  ] },
+];
+const quest = { cur: null, step: -1, base: 0, cnt: 0, beam: null, line: null, card: null,
+  last: '', pulse: 0, tgt: null, d: 0 };
+function questBeam() {
+  if (quest.beam) return quest.beam;
+  const g = new THREE.CylinderGeometry(QUEST.beamR, QUEST.beamR, QUEST.beamH, 12, 1, true);
+  g.translate(0, QUEST.beamH * .5, 0);
+  const m = new THREE.MeshBasicMaterial({ color: 0x46e0ff, transparent: true, opacity: QUEST.beamA,
+    blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, fog: false });
+  quest.beam = new THREE.Mesh(g, m);
+  quest.beam.frustumCulled = false; quest.beam.renderOrder = 4; quest.beam.visible = false;
+  scene.add(quest.beam);
+  return quest.beam;
+}
+const questOf = id => QUESTS.find(q => q.id === id);
+function questPick() {
+  for (const q of QUESTS) {
+    if (SAVE.flags['qdone:' + q.id]) continue;
+    if (q.world && q.world !== WORLD.now) continue;
+    return q;
+  }
+  return null;
+}
+function questEnter(q, i) {
+  quest.cur = q; quest.step = i; quest.cnt = 0; quest.base = talk.heard || 0;
+  if (q && SAVE.flags['q:' + q.id] !== i) progFlag('q:' + q.id, i);
+}
+// the nearest body that answers `ok`, flat distance
+function questNear(ok) {
+  const P = player.pos; let b = null, bd = 1e9;
+  for (const d of DUMMIES) { if (!ok(d)) continue; const q = Math.hypot(d.root.position.x - P.x, d.root.position.z - P.z); if (q < bd) { bd = q; b = d; } }
+  return b;
+}
+// does this step pass NOW? and where should the beam point (`quest.tgt`, or null)?
+function questTest(s) {
+  const p = player, P = p.pos;
+  quest.tgt = null;
+  switch (s.type) {
+    case 'talk': {
+      const b = questNear(d => d.talk && !d.wasK && (s.who ? d.talk.id === s.who : !d.talk.done));
+      if (b) quest.tgt = b.root.position;
+      return s.who ? !!SAVE.flags['talk:' + s.who] : (talk.heard || 0) > quest.base;
+    }
+    case 'goto': {
+      let x = s.x, z = s.z;
+      if (s.who) { const b = questNear(d => mphName(d.K) === s.who); if (!b) return false; x = b.root.position.x; z = b.root.position.z; quest.tgt = b.root.position; }
+      else quest.tgt = { x, y: 0, z };
+      return Math.hypot(P.x - x, P.z - z) < (s.r || 3);
+    }
+    case 'reach': {
+      if (s.x !== undefined) quest.tgt = { x: s.x, y: s.y, z: s.z };
+      const inR = s.x === undefined || Math.hypot(P.x - s.x, P.z - s.z) < (s.r || 4);
+      return inR && p.grounded && P.y >= s.y;
+    }
+    case 'defeat': {
+      const want = d => !d.wasK && (!s.who || mphName(d.K) === s.who);
+      for (const d of DUMMIES) {
+        const dn = d.st === 'down';
+        if (dn && !d.qDn && want(d)) quest.cnt++;
+        d.qDn = dn;
+      }
+      const b = questNear(d => want(d) && d.st !== 'down');
+      if (b) quest.tgt = b.root.position;
+      return quest.cnt >= (s.n || 1);
+    }
+    case 'sample': return SAVE.forms.includes(s.form);
+    case 'gate': return !!SAVE.flags['gate:' + s.id];
+  }
+  return false;
+}
+function questStep(dt) {
+  if (!quest.line) { quest.line = document.getElementById('obj'); quest.card = document.getElementById('qdone'); }
+  const beam = questBeam();
+  if (!QUEST.on) { beam.visible = false; if (quest.line) quest.line.classList.remove('on'); return; }
+  if (!quest.cur) {
+    const q = questPick();
+    if (!q) { beam.visible = false; if (quest.line) quest.line.classList.remove('on'); return; }
+    const i = SAVE.flags['q:' + q.id];
+    questEnter(q, Number.isFinite(i) && i >= 0 && i < q.steps.length ? i : 0);
+  }
+  const q = quest.cur, s = q.steps[quest.step];
+  if (questTest(s)) {
+    if (quest.step + 1 < q.steps.length) { questEnter(q, quest.step + 1); quest.pulse = QUEST.stepT; }
+    else {
+      progFlag('qdone:' + q.id); QUEST.n++;
+      if (quest.card) {
+        quest.card.querySelector('b').textContent = q.title;
+        quest.card.classList.remove('on'); void quest.card.offsetWidth; quest.card.classList.add('on');
+        clearTimeout(quest.cardT); quest.cardT = setTimeout(() => quest.card.classList.remove('on'), QUEST.doneT * 1000);
+      }
+      quest.cur = null; beam.visible = false;
+      return;
+    }
+  }
+  // the beam
+  const T = quest.tgt;
+  beam.visible = !!T;
+  if (T) beam.position.set(T.x, (T.y || 0) - 1, T.z);
+  quest.d = T ? Math.hypot(T.x - player.pos.x, T.z - player.pos.z) : 0;
+  // the line: only rewritten when it changes
+  if (quest.line) {
+    const st = q.steps[quest.step];
+    const txt = st.text + (st.type === 'defeat' && (st.n || 1) > 1 ? ' (' + quest.cnt + '/' + st.n + ')' : '') +
+      (T && quest.d > 6 ? ' · ' + quest.d.toFixed(0) + 'm' : '');
+    if (txt !== quest.last) { quest.last = txt; quest.line.querySelector('i').textContent = txt; quest.line.querySelector('b').textContent = q.title; }
+    quest.line.classList.add('on');
+    if (quest.pulse > 0) { quest.pulse -= dt; quest.line.classList.toggle('pulse', quest.pulse > 0); }
+  }
 }
 
 function stepDummies(dt) {
@@ -28631,6 +28801,7 @@ function frameBody() {
   kitCamStep();
   stepCam(dt);
   talkStep(dt);                 // after the camera: the bubble is projected through it (m277)
+  questStep(dt);                // after talk: a talk step reads what this frame finished (m278)
   cellStep();
   kitXrayStep();
   // AFTER the camera, because the rim is placed off the bearing the lens was actually drawn at
@@ -28948,6 +29119,8 @@ function frameBody() {
       ' · CH' + SAVE.ch + (SAVE.fresh ? ' NEW' : '') + (SAVE.bad ? ' BADSAVE' : '') +
       // T: speakers seeded / scripts heard (m277); `*` = one is in reach right now
       (TALK.n ? ' T' + TALK.n + '/' + TALK.said + (talk.near ? '*' : '') : '') +
+      // Q: the active quest and step (m278) -- `Qq0.1` is quest q0 on its second step; no token = none active
+      (quest.cur ? ' Q' + quest.cur.id + '.' + quest.step + (quest.tgt ? '' : '~') : '') +
       (MISSING.length ? ' · ' + MISSING.join(' · ') : '');
     // **THE KEYS SIT UNDER THE CHIP, AND THE CHIP IS THE ONE HUD ELEMENT THAT GROWS (m128).**
     // Its `top` was typed at 56, which was right for a one-line chip and is wrong the moment
@@ -29430,6 +29603,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
+  // QUESTS (m278): `mel.QUEST` live; `mel.QUESTS` the data; `mel.quest` the state
+  QUEST, QUESTS, quest,
   SAVE, progSave, progForm, progRegion, progPortal, progFlag, progChapter, progJuice, progReset,
   // THE SURGE (m248): `mel.SURGE` is live; `mel.surge(n)` throws n cubes off you once
   SURGE, surge: n => surgeEmit(rig.model, n || 300), WARM,
