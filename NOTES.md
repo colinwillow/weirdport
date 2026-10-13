@@ -7,6 +7,17 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE DNA ROW IS FILTERED BEFORE `buildArcRow`, NOT BESIDE THE SAMPLER (m282, ROADMAP A6, `SAMPLE`, `sampleStep`, `cardShow`).**
+  My first version filtered `WEAP.modes` inside the sampler block, ~15,000 lines below `buildArcRow(modeRow,
+  WEAP.modes, ...)`, which runs at module scope -- the segment would have been drawn from the old list for a mode that
+  no longer existed. It is filtered right above that call now, off its own `?dna` regex (a `SAMPLE.gun` read there
+  would be a TDZ blank page). `modeNow()` indexes `WEAP.modes[WEAP.mode]` so the shorter list is safe.
+  The gesture is the backflip duck's own "held at rest" test (`R.far < MOVE.tapR`); `samp.near` joins the duck's busy
+  list so the two never share a hold. **The downed body's lie clock is CLAMPED while the thumb is down** (an officer's
+  `out` is 1.4 s, shorter than `hold`) -- a clamp, never a set, and only while held. A sample is `progForm` (saved) +
+  `morphGo` (worn now). `FORMK` maps names to kind tables for this session only -- A7 must resolve saved names to
+  tables on a fresh load (the kinds are all in `CIVILS` + the named tables). The quest card is `cardShow` now, shared.
+
 - **THE COP'S AIM IS `shoot_pistol` HELD ON ITS CLAMPED LAST FRAME (m281, ROADMAP A5b, `copFire`, `copExtras`, `copTracer`).**
   Every non-loop clip on a body is `LoopOnce` + `clampWhenFinished` and is `play()`ed at spawn at weight 0, so it
   has already run out and holds its end pose; giving `shoot_pistol` weight 1 between rounds therefore holds the aim,

@@ -377,6 +377,14 @@ body.dyn.desk .zone { display: none; }
 #stars i.on { color: var(--sun); }
 #stars.flash { animation: stars .6s ease 3; }
 @keyframes stars { 50% { transform: scale(1.25); filter: brightness(1.6); } }
+/* THE SAMPLER (m282): green on the pad (the DNA round's colour), and a ring that fills over him */
+#padR.samp::after { opacity: 1; border-color: #6dff8a; }
+#samp { position: fixed; left: 50%; top: 50%; z-index: 6; display: none; pointer-events: none;
+  width: 58px; height: 58px; margin: -29px 0 0 -29px; border-radius: 50%; --u: 0%;
+  background: conic-gradient(#6dff8a var(--u), rgba(11,13,18,.55) var(--u));
+  -webkit-mask: radial-gradient(closest-side, #0000 66%, #000 68%); mask: radial-gradient(closest-side, #0000 66%, #000 68%); }
+#samp.on { display: block; }
+#samp b { display: none; }
 #qdone {
   position: fixed; left: 50%; top: 30%; transform: translate(-50%, -50%); z-index: 7; pointer-events: none;
   display: none; text-align: center; font-family: var(--disp); color: var(--sun);
@@ -607,10 +615,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m281</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m282</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m281</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m282</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -622,6 +630,7 @@ body.desk.free #deskHint { display: block; }
 <div id="talk"><span class="nm"></span><span class="tx"></span><span class="go"></span></div>
 <div id="obj" aria-hidden="true"><b></b><i></i></div>
 <div id="stars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<div id="samp" aria-hidden="true"><b>DNA</b></div>
 <div id="qdone" aria-hidden="true"><small>QUEST COMPLETE</small><b></b></div>
 
 <!-- THE BLASTER'S TWO MODES (m52). Above the right pad, because that is the thumb they are
@@ -680,7 +689,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm281';
+const BUILD = 'm282';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -12085,6 +12094,9 @@ function paintArcRow(el, on, sel) {
   const kids = el.firstChild ? el.firstChild.childNodes : [];
   for (let i = 0; i < kids.length; i++) kids[i].classList.toggle('sel', (i >> 1) === sel);
 }
+// THE DNA GUN IS DEBUG-ONLY (m282, A6): its row is gone unless the URL says `?dna` -- HERE, before
+// the row is built from the list, or the segment would be drawn for a mode that no longer exists
+if (!/[?&]dna\b/.test(location.search)) WEAP.modes = WEAP.modes.filter(m => !m.dna);
 buildArcRow(modeRow, WEAP.modes, MODES.mid, setMode);
 buildArcRow(wepRow, WEAP.slots.map(w => ({ label: w.short || w.label })), WEPROW.mid, i => kitPick(i), WEPROW);
 // ONE PLACE SETS IT, so the lit button, the hint and what the trigger actually does cannot
@@ -13825,8 +13837,9 @@ function stepKit(dt) {
   //      first third of a second of every touch looks exactly as it always did. That is one
   //      constant doing one job in two places rather than a second threshold to tune.
   {
+    // `samp.near`: over a downed body the hold at rest is the SAMPLER instead (m282)
     const busy = p.melee || p.roll || p.knock || p.chargeGo || p.slam || p.block || p.center ||
-                 p.aim || p.charge || p.land || !p.grounded;
+                 p.aim || p.charge || p.land || !p.grounded || samp.near;
     if (!busy && R.down && R.far < MOVE.tapR) {
       p.bkT = Math.min(AIR.hold, p.bkT + dt);
       p.bkOn = p.bkT >= MOVE.tapT ? 1 : 0;
@@ -27668,11 +27681,7 @@ function questStep(dt) {
     if (quest.step + 1 < q.steps.length) { questEnter(q, quest.step + 1); quest.pulse = QUEST.stepT; }
     else {
       progFlag('qdone:' + q.id); QUEST.n++;
-      if (quest.card) {
-        quest.card.querySelector('b').textContent = q.title;
-        quest.card.classList.remove('on'); void quest.card.offsetWidth; quest.card.classList.add('on');
-        clearTimeout(quest.cardT); quest.cardT = setTimeout(() => quest.card.classList.remove('on'), QUEST.doneT * 1000);
-      }
+      cardShow('QUEST COMPLETE', q.title);
       quest.cur = null; beam.visible = false;
       return;
     }
@@ -28011,6 +28020,95 @@ function copAI(d, dt, t) {
     setSkinScale(d, clip, clamp(sp / (clip === K.clips.run ? K.runRef : K.walkRef), K.tsLo, K.tsHi));
   }
   t[clip || K.clips.idle] = 1;
+}
+
+// ============================================================================================
+// THE SAMPLER (m282, ROADMAP A6) -- knock him down, stand over him, hold, and you can BE him
+// ============================================================================================
+// **THE GESTURE IS THE RIGHT PAD HELD AT REST**, the same "thumb down, not travelling" test the
+// backflip's duck has used since m87 (`R.far < MOVE.tapR`) -- and while a sample is in reach the
+// duck stands aside (`samp.near` is in its busy list), exactly as the jump stands aside for TALK.
+// The pad's ring lights GREEN (the DNA round's colour) and its label reads `hold = sample`; a
+// ring over the body fills for `hold` seconds. Lift early and it drains, it does not reset, so
+// a thumb that slips is not a whole second lost.
+// **WHO**: a body on the floor (`d.st === 'down'`), wearable (`dnaOK` -- the same test the DNA gun
+// asked), human (not a file that says alien, not your sidekick, not someone the virus turned).
+// **WHILE YOU HOLD, HE STAYS DOWN** -- his lie clock is clamped just short of the get-up, or an
+// officer's 1.4 s `out` would be over before a sample could be taken. That is a second writer on
+// `d.t`, deliberately a CLAMP and only while the thumb is down, never a set.
+// **TAKING IT DOES TWO THINGS**: `progForm(name)` -- the unlock, saved, which is what A7's wheel
+// and the quests' `sample` step read -- and `morphGo(K)`, so you are wearing it at once. Until
+// the wheel exists that is the only way to put a sampled form on.
+// **THE DNA GUN IS DEBUG NOW**: its row leaves `WEAP.modes` at boot unless the URL says `?dna`.
+// `mel.dna('hick')` still wears anything from the console.
+const SAMPLE = {
+  on: 1,
+  gun: /[?&]dna\b/.test(location.search) ? 1 : 0,   // keep the DNA gun mode on the blaster
+  reach: 1.9,       // m from his root to the downed body's
+  hold: 1.1,        // s of holding to take it
+  drain: 2,         // x: how fast the ring empties when you lift
+  n: 0,             // chip: samples taken
+};
+const FORMK = {};   // name -> kind table, for every form sampled this session (A7 resolves the rest)
+const samp = { near: null, t: 0, el: null, v: new THREE.Vector3(), lit: 0 };
+const sampOk = d => d.st === 'down' && !d.wasK && !d.K.pal && dnaOK(d.K) && !/alien/i.test(mphName(d.K));
+// the card in the middle of the screen -- the quest's, shared, so there is one moment-of-note picture
+function cardShow(top, title, sec) {
+  const c = document.getElementById('qdone'); if (!c) return;
+  c.querySelector('small').textContent = top; c.querySelector('b').textContent = title;
+  c.classList.remove('on'); void c.offsetWidth; c.classList.add('on');
+  clearTimeout(cardShow.t); cardShow.t = setTimeout(() => c.classList.remove('on'), (sec || QUEST.doneT) * 1000);
+}
+function sampleTake(d) {
+  const nm = mphName(d.K);
+  FORMK[nm] = d.K;
+  const fresh = progForm(nm);
+  SAMPLE.n++;
+  cardShow(fresh ? 'NEW FORM' : 'SAMPLE TAKEN', (d.talk && d.talk.name) || nm.replace(/_\d+$/, '').replace(/_/g, ' ').toUpperCase());
+  morphGo(d.K);
+}
+function sampleStep(dt) {
+  if (!samp.el) samp.el = document.getElementById('samp');
+  const p = player, P = p.pos;
+  let best = null, bd = SAMPLE.reach;
+  if (SAMPLE.on && MORPH.on && p.grounded && !p.riding && !p.wing && !p.knock && !p.mphSt) {
+    for (const d of DUMMIES) {
+      if (!sampOk(d)) continue;
+      const R = d.root.position, q = Math.hypot(R.x - P.x, R.z - P.z);
+      if (q < bd && Math.abs(R.y - P.y) < 1.2) { bd = q; best = d; }
+    }
+  }
+  if (best !== samp.near) { samp.near = best; samp.t = 0; }
+  const d = samp.near, R = stick.R;
+  const holding = d && R.down && R.far < MOVE.tapR && !(talk.cur);
+  if (d) {
+    if (holding) {
+      samp.t += dt;
+      // he stays down while you hold -- a clamp on his lie clock, never a set
+      const end = (d.downB || d.K.downBeat) + (d.lie != null ? d.lie : d.K.out) - .05;
+      if (d.t > end) d.t = end;
+      if (samp.t >= SAMPLE.hold) { sampleTake(d); samp.t = 0; samp.near = null; }
+    } else samp.t = Math.max(0, samp.t - dt * SAMPLE.drain);
+  }
+  // the pad: green ring + label, through the same hint the talk uses
+  const lit = d ? 1 : 0;
+  if (lit !== samp.lit) {
+    samp.lit = lit;
+    padR.classList.toggle('samp', !!lit);
+    if (talk.hint && !talk.lit) talk.hint.textContent = lit ? 'hold = sample' : talk.hint0;
+  }
+  // the ring over him
+  if (samp.el) {
+    if (d && samp.near) {
+      const B = d.root.position, v = samp.v.set(B.x, B.y + .5, B.z).project(camera);
+      if (v.z < 1) {
+        samp.el.style.left = ((v.x * .5 + .5) * innerWidth).toFixed(0) + 'px';
+        samp.el.style.top = ((-v.y * .5 + .5) * innerHeight).toFixed(0) + 'px';
+        samp.el.style.setProperty('--u', (samp.t / SAMPLE.hold * 100).toFixed(1) + '%');
+        samp.el.classList.add('on');
+      } else samp.el.classList.remove('on');
+    } else samp.el.classList.remove('on');
+  }
 }
 
 function stepDummies(dt) {
@@ -29147,6 +29245,7 @@ function frameBody() {
   stepCam(dt);
   talkStep(dt);                 // after the camera: the bubble is projected through it (m277)
   questStep(dt);                // after talk: a talk step reads what this frame finished (m278)
+  sampleStep(dt);               // after the camera too: its ring is projected (m282)
   cellStep();
   kitXrayStep();
   // AFTER the camera, because the rim is placed off the bearing the lens was actually drawn at
@@ -29469,6 +29568,8 @@ function frameBody() {
       (FEAR.n ? ' FR' + FEAR.n + '/' + FEAR.calls : '') +
       // H: heat, stars, cop spots/grabs (m280) -- stars with no spots is all phone calls
       (HEAT.v > 0 || COPS.n ? ' H' + HEAT.v.toFixed(1) + '*' + HEAT.lvl + ' cs' + COPS.n + '/' + COPS.grabs + (COPS.shots ? ' sh' + COPS.hits + '/' + COPS.shots : '') + (COPS.extras ? ' +' + COPS.extras : '') : '') +
+      // S: samples taken / forms unlocked (m282)
+      (SAMPLE.n || SAVE.forms.length > 1 ? ' S' + SAMPLE.n + '/' + SAVE.forms.length : '') +
       (quest.cur ? ' Q' + quest.cur.id + '.' + quest.step + (quest.tgt ? '' : '~') : '') +
       (MISSING.length ? ' · ' + MISSING.join(' · ') : '');
     // **THE KEYS SIT UNDER THE CHIP, AND THE CHIP IS THE ONE HUD ELEMENT THAT GROWS (m128).**
@@ -29957,6 +30058,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // FEAR (m279): `mel.FEAR` live, `mel.HEAT` the stub A5 builds on
   FEAR, HEAT, heatAdd,
   // POLICE (m280): `mel.COPS` live; `mel.heat(n)` sets the heat to look at a star level
+  // SAMPLER (m282): `mel.SAMPLE` live, `mel.FORMK` the sampled kinds
+  SAMPLE, FORMK,
   COPS, heat: n => (HEAT.v = +n || 0),
   SAVE, progSave, progForm, progRegion, progPortal, progFlag, progChapter, progJuice, progReset,
   // THE SURGE (m248): `mel.SURGE` is live; `mel.surge(n)` throws n cubes off you once

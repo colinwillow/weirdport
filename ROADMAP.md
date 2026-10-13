@@ -38,7 +38,7 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   form. Chip shows the stars.
   - [x] m280 **A5a** stars, heat rules (calls, spotting, blows; cools out of sight, faster in a human form), cops come look (1) and chase + arrest-grab (2).
   - [x] m281 **A5b** cops draw and shoot at 3 stars (`draw_weapon`, `shoot_pistol` are in his file), more cops arrive at 4.
-- [ ] **A6 The sampler.** Stand over a downed human and hold to take a sample → that form is
+- [x] m282 **A6 The sampler.** Stand over a downed human and hold to take a sample → that form is
   unlocked into the form wheel (the existing disguise pipeline). DNA gun becomes debug-only
   (`mel.dna()` or a debug toggle).
 - [ ] **A7 Form wheel.** Pick any unlocked form from a wheel (or cycle). Your own form is always
@@ -128,3 +128,9 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   ~60% hit point blank down to ~18% at range, halved-ish while you move fast; a dodge roll always
   makes him miss). At 4 stars an extra officer turns up behind you every 6 s, up to 3; they leave
   after 12 s with no stars. Gun sound is the blaster pitched down (there's no pistol recording).
+- **m282 (A6):** the sample gesture is **hold the right pad still** over a downed human (it
+  replaces the backflip duck only while one is in reach); the pad ring goes green and a ring fills
+  over him in 1.1 s. He stays down while you hold. Taking a sample unlocks the form **and puts it
+  on at once** (until A7's wheel exists there's no other way to wear it). Officers can be sampled.
+  The DNA gun mode is gone from the blaster unless you open the game with `?dna`; `mel.dna('hick')`
+  still works in the console.
