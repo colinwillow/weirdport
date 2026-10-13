@@ -673,10 +673,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m287</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m288</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m287</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m288</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -754,7 +754,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm287';
+const BUILD = 'm288';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28647,7 +28647,8 @@ function mapBuild() {
     else { const k = Math.min(1, h / 30), c = Math.round(88 + k * 120); g.fillStyle = 'rgb(' + c + ',' + (c + 8) + ',' + (c + 26) + ')'; }
     if (b.hx !== undefined && b.cs !== undefined) {
       // an oriented box: its own corners, turned by its yaw
-      const ax = b.hx * b.cs, az = -b.hx * b.sn, bx = b.hz * b.sn, bz = b.hz * b.cs;
+      // local x is (cs, sn) in the world and local z is (-sn, cs) -- `boxNear`'s own inverse (m288: m287 had both signs flipped)
+      const ax = b.hx * b.cs, az = b.hx * b.sn, bx = -b.hz * b.sn, bz = b.hz * b.cs;
       g.beginPath();
       g.moveTo(mapU(E, b.cx + ax + bx), mapV(E, b.cz + az + bz));
       g.lineTo(mapU(E, b.cx - ax + bx), mapV(E, b.cz - az + bz));
@@ -28785,6 +28786,187 @@ function mapStep(dt) {
   if (map.fogDirty) mapFog();
   if ((map.miniT = (map.miniT || 0) - dt) <= 0) { map.miniT = 1 / MAP.hz; mapMini(); }
   if (map.open && (map.fullT -= dt) <= 0) { map.fullT = .2; mapFull(); }
+}
+
+// ============================================================================================
+// THE FARM, PART ONE: THE FARMYARD (m288, ROADMAP B1a) -- on the island ring, outside the city
+// ============================================================================================
+// **WHERE: THE WIDEST GRASS ON THE RING, READ OFF THE ISLAND'S OWN RAYS.** `ISLE.rays[i]` runs from
+// the city's edge (`rb`) out through its samples, and sample `ISLE_J0` is the top of the beach --
+// so `smp[ISLE_J0][0]` is how much grass that ray has. The farm takes the widest, a little
+// way in from its middle, and is built in a frame turned to that ray (local +Z = out to sea)
+// plus `FARM.skew`, so nothing on it lines up with the city's grid.
+// **WHAT: A PLACE, NOT A PROP LIST** -- GAME_DESIGN's rules, at greybox:
+//   the BARN on a stone plinth, big doors facing town; inside, a stair of hay bales up to the
+//   HAYLOFT; the loft door in the far gable, with a hay stack under it to drop onto;
+//   a LEAN-TO down one side whose roof you reach off crates, and from it the barn's own eaves
+//   and the gable ROOF up to the ridge (walkable triangles, `isleAppend`) -- street, loft,
+//   lean-to, roof: four layers in one building;
+//   the SILO behind it; a split-rail PADDOCK with leaning posts and a gap for a gate; round
+//   bales lying about; a trough.
+// **COLLIDERS ARE ORIENTED BOXES IN `BOXES`** (`cs/sn/hx/hz`, the toon city's own shape, which
+// `resolveBoxes`, `groundAt` and `boxNear` all already honour), then one `boxGrid()`. The roofs are
+// floor triangles through `isleAppend`, which re-pushes the store it rebuilds.
+// **ONE DRAW CALL PER MATERIAL** -- every piece is collected and merged by colour (`farmMerge`):
+// about eight calls for the whole yard.
+// Still to come (ROADMAP B1b-d): the crash site, the sunken lane and the creek, the road and
+// bridge into town, the cows. `mel.farm()` puts you in the yard.
+const FARM = {
+  on: 1,
+  skew: .21,        // rad off the ray, so the yard does not sit square to anything
+  inset: .42,       // how far across the grass band the yard's middle sits (0 city edge .. 1 beach top)
+  n: 0, tris: 0,    // chip: boxes added / roof triangles kept
+  at: null,         // { x, z, th } once built
+};
+function farmMerge(parts, mat) {
+  let nv = 0, ni = 0;
+  const gs = parts.map(([geo, m]) => { const g = geo.clone(); g.applyMatrix4(m); nv += g.attributes.position.count; ni += g.index ? g.index.count : g.attributes.position.count; return g; });
+  const pos = new Float32Array(nv * 3), nor = new Float32Array(nv * 3), idx = new Uint32Array(ni);
+  let ov = 0, oi = 0;
+  for (const g of gs) {
+    pos.set(g.attributes.position.array, ov * 3);
+    if (g.attributes.normal) nor.set(g.attributes.normal.array, ov * 3);
+    const n = g.attributes.position.count;
+    if (g.index) { const I = g.index.array; for (let k = 0; k < I.length; k++) idx[oi++] = I[k] + ov; }
+    else for (let k = 0; k < n; k++) idx[oi++] = k + ov;
+    ov += n; g.dispose();
+  }
+  const out = new THREE.BufferGeometry();
+  out.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+  out.setAttribute('normal', new THREE.BufferAttribute(nor, 3));
+  out.setIndex(new THREE.BufferAttribute(idx, 1));
+  out.computeBoundingSphere();
+  const mesh = new THREE.Mesh(out, mat);
+  mesh.castShadow = mesh.receiveShadow = true;
+  return mesh;
+}
+function buildFarm() {
+  if (!FARM.on || !ISLE.live || !ISLE.rays || !ISLE.rect) return 0;
+  const R = ISLE.rect, cx0 = (R[0] + R[1]) / 2, cz0 = (R[2] + R[3]) / 2;
+  // the widest grass on the ring
+  let best = null, bw = -1;
+  for (const r of ISLE.rays) { const w = r.smp[ISLE_J0][0]; if (w > bw) { bw = w; best = r; } }
+  if (!best || bw < 18) { note('FARM NO ROOM ' + bw.toFixed(0)); return 0; }
+  const dOut = best.rb + 2 + (bw - 2) * FARM.inset;
+  const Ox = cx0 + best.dx * dOut, Oz = cz0 + best.dz * dOut;
+  const th = Math.atan2(best.dx, best.dz) + FARM.skew, C = Math.cos(th), S = Math.sin(th);
+  FARM.at = { x: Ox, z: Oz, th };
+  // local (u along the tangent, v out to sea) -> world
+  const wx = (u, v) => Ox + u * C + v * S, wz = (u, v) => Oz - u * S + v * C;
+  const gnd = (u, v) => { const y = groundAt(wx(u, v), wz(u, v), 3, 6); return y > -50 ? y : ISLE.sea; };
+  const M = c => new THREE.MeshStandardMaterial({ color: c, roughness: .82, metalness: 0 });
+  const MAT = { red: M(0xa8352b), trim: M(0xeee6d8), roof: M(0x3f4a45), wood: M(0x7a5232), stone: M(0x8d8a82),
+    hay: M(0xd9b25a), metal: Object.assign(M(0xb9c2c6), { metalness: .35, roughness: .5 }), dark: M(0x2a2420) };
+  const parts = {}; for (const k in MAT) parts[k] = [];
+  const grp = new THREE.Group(); grp.position.set(Ox, 0, Oz); grp.rotation.y = th; scene.add(grp);
+  const boxes = [], roofTris = [];
+  const _m = new THREE.Matrix4(), _q = new THREE.Quaternion(), _e = new THREE.Euler(), _s = new THREE.Vector3(), _p = new THREE.Vector3();
+  const geoBox = new THREE.BoxGeometry(1, 1, 1);
+  // a box: local centre (u, v), from y0 to y1 (WORLD heights), w across u, d along v, turned psi; `col` adds a collider
+  function bx(u, v, y0, y1, w, d, mat, psi = 0, col = true, tilt = 0) {
+    _e.set(0, psi, tilt); _q.setFromEuler(_e); _s.set(w, y1 - y0, d); _p.set(u, (y0 + y1) / 2, v);
+    parts[mat].push([geoBox, _m.compose(_p, _q, _s).clone()]);
+    if (!col) return;
+    const t = th + psi, cs = Math.cos(t), sn = -Math.sin(t), hx = w / 2, hz = d / 2;
+    const ex = hx * Math.abs(cs) + hz * Math.abs(sn), ez = hx * Math.abs(sn) + hz * Math.abs(cs);
+    const X = wx(u, v), Z = wz(u, v);
+    boxes.push({ minx: X - ex, maxx: X + ex, minz: Z - ez, maxz: Z + ez, miny: y0, maxy: y1,
+      cx: X, cz: Z, hx, hz, cs, sn, farm: 1 });
+  }
+  function geo(g, mat, u, y, v, ry = 0, rx = 0, rz = 0) {
+    _e.set(rx, ry, rz); _q.setFromEuler(_e); _s.set(1, 1, 1); _p.set(u, y, v);
+    parts[mat].push([g, _m.compose(_p, _q, _s).clone()]);
+  }
+  // a walkable quad in LOCAL (u, y, v), both windings offered -- `triAdd` keeps the one facing up
+  function quad(a, b, c, d) {
+    const W = q => [wx(q[0], q[2]), q[1], wz(q[0], q[2])];
+    const A = W(a), B = W(b), Cc = W(c), D = W(d);
+    for (const t of [[A, B, Cc], [A, Cc, D], [A, Cc, B], [A, D, Cc]]) roofTris.push(...t[0], ...t[1], ...t[2]);
+  }
+  // ---- THE BARN: centre (bu, bv), 10 across, 14 deep, doors toward town (-v)
+  const bu = -6, bv = -2, BW = 10, BD = 14, EAVE = 5, RIDGE = 7.4, T = .3;
+  let lo = 1e9, hi = -1e9;
+  for (const [a, b] of [[-1, -1], [1, -1], [-1, 1], [1, 1], [0, 0]]) { const y = gnd(bu + a * BW / 2, bv + b * BD / 2); lo = Math.min(lo, y); hi = Math.max(hi, y); }
+  const y0 = hi + .12;                                   // the floor, just over the highest corner
+  bx(bu, bv, lo - .4, y0, BW + .6, BD + .6, 'stone');    // the plinth
+  const W2 = BW / 2, D2 = BD / 2;
+  // front wall, the big door 4 wide x 3.6 high
+  bx(bu - 3.5, bv - D2, y0, y0 + EAVE, 3, T, 'red'); bx(bu + 3.5, bv - D2, y0, y0 + EAVE, 3, T, 'red');
+  bx(bu, bv - D2, y0 + 3.6, y0 + EAVE, 4, T, 'red');
+  bx(bu - 2.1, bv - D2 - .05, y0, y0 + 3.7, .2, T + .1, 'trim', 0, false); bx(bu + 2.1, bv - D2 - .05, y0, y0 + 3.7, .2, T + .1, 'trim', 0, false);
+  // the doors themselves, swung open against the wall, white X-braced
+  bx(bu - 4.0, bv - D2 - .25, y0, y0 + 3.5, 2.0, .12, 'red', 0, false); bx(bu + 4.0, bv - D2 - .25, y0, y0 + 3.5, 2.0, .12, 'red', 0, false);
+  for (const s of [-1, 1]) { bx(bu + s * 4.0, bv - D2 - .33, y0 + 1.75, y0 + 1.85, 2.5, .05, 'trim', .0, false, s * .95); bx(bu + s * 4.0, bv - D2 - .33, y0 + 1.75, y0 + 1.85, 2.5, .05, 'trim', 0, false, -s * .95); }
+  // back wall, the loft door 3 wide from 2.9 to 4.6
+  bx(bu - 3.25, bv + D2, y0, y0 + EAVE, 3.5, T, 'red'); bx(bu + 3.25, bv + D2, y0, y0 + EAVE, 3.5, T, 'red');
+  bx(bu, bv + D2, y0, y0 + 2.9, 3, T, 'red'); bx(bu, bv + D2, y0 + 4.6, y0 + EAVE, 3, T, 'red');
+  // side walls, with a white corner trim and a band at the eaves
+  bx(bu - W2, bv, y0, y0 + EAVE, T, BD, 'red'); bx(bu + W2, bv, y0, y0 + EAVE, T, BD, 'red');
+  for (const a of [-1, 1]) for (const b of [-1, 1]) bx(bu + a * (W2 + .05), bv + b * (D2 + .05), y0, y0 + EAVE + .1, .32, .32, 'trim', 0, false);
+  // the gables: a triangle prism each end, the ridge along v
+  const gab = new THREE.ExtrudeGeometry(new THREE.Shape([new THREE.Vector2(-W2 - .15, 0), new THREE.Vector2(W2 + .15, 0), new THREE.Vector2(0, RIDGE - EAVE)]), { depth: T, bevelEnabled: false });
+  geo(gab, 'red', bu, y0 + EAVE, bv - D2 - T / 2); geo(gab, 'red', bu, y0 + EAVE, bv + D2 - T / 2);
+  // the roof: two planks of slope, overhanging .6 at the eaves and the ends, and walkable
+  const run = W2 + .6, rise = (RIDGE - EAVE) * run / W2, ang = Math.atan2(RIDGE - EAVE, W2), sl = Math.hypot(run, rise);
+  for (const s of [-1, 1]) {
+    bx(bu + s * run / 2, bv, y0 + RIDGE - rise / 2 - .1, y0 + RIDGE - rise / 2 + .1, sl, BD + 1.2, 'roof', 0, false, -s * ang);
+    quad([bu, y0 + RIDGE + .08, bv - D2 - .6], [bu, y0 + RIDGE + .08, bv + D2 + .6], [bu + s * run, y0 + RIDGE - rise + .08, bv + D2 + .6], [bu + s * run, y0 + RIDGE - rise + .08, bv - D2 - .6]);
+  }
+  // inside: the hayloft over the back half, and a stair of bales up the -u wall to it
+  const loftF = bv + .75;                                 // the loft's front edge; it runs back to the wall
+  bx(bu, (loftF + bv + D2 + .25) / 2, y0 + 2.8, y0 + 3.0, BW - .6, bv + D2 + .25 - loftF, 'wood');
+  // six bales, .45 a step, the top one ending exactly at the loft's edge (2.7 -> 3.0)
+  for (let i = 0; i < 6; i++) bx(bu - W2 + .9, loftF - (5 - i) * .85 - .425, y0, y0 + .45 * (i + 1), 1.2, .85, 'hay');
+  // bales up in the loft, the middle kept clear to the loft door
+  for (const [u, v, h] of [[-3.6, 5.6, 1], [-3.6, 4.4, .5], [3.4, 5.8, 1.5], [3.4, 4.6, 1], [2.2, 5.8, .5]]) bx(bu + u, bv + v, y0 + 3, y0 + 3 + h, 1.1, 1.1, 'hay');
+  // and a stack under the loft door outside, to drop onto and to climb back by
+  for (const [u, v, h] of [[0, D2 + 1.0, 1.35], [0, D2 + 2.1, .9], [-1.1, D2 + 2.1, .45]]) { const g0 = gnd(bu + u, bv + v); bx(bu + u, bv + v, g0 - .2, g0 + h, 1.1, 1.1, 'hay'); }
+  // ---- THE LEAN-TO down the +u side: posts, a sloping roof you can walk, firewood under it
+  const lu0 = bu + W2, lu1 = lu0 + 3.6, lv0 = bv - 5, lv1 = bv + 3, lh0 = y0 + 3.3, lh1 = y0 + 2.5;
+  for (const v of [lv0, (lv0 + lv1) / 2, lv1]) bx(lu1 - .1, v, gnd(lu1, v) - .2, lh1, .18, .18, 'wood');
+  bx((lu0 + lu1) / 2, (lv0 + lv1) / 2, (lh0 + lh1) / 2 - .06, (lh0 + lh1) / 2 + .06, Math.hypot(lu1 - lu0 + .4, lh0 - lh1), lv1 - lv0 + .5, 'roof', 0, false, -Math.atan2(lh0 - lh1, lu1 - lu0));
+  quad([lu0, lh0 + .07, lv0 - .25], [lu0, lh0 + .07, lv1 + .25], [lu1 + .2, lh1 + .03, lv1 + .25], [lu1 + .2, lh1 + .03, lv0 - .25]);
+  for (let i = 0; i < 3; i++) bx(lu0 + 1.2, lv0 + 1 + i * .9, y0 - .1, y0 + .9 - i * .2, 1.6, .8, 'wood');
+  // crates outside the lean-to: the way up onto it
+  { const u = lu1 + 1.1, v = lv0 + 1.5, g0 = gnd(u, v); bx(u, v, g0 - .1, g0 + .9, 1, 1, 'wood', .2); bx(u + .2, v + 1.1, g0 - .1, g0 + 1.75, 1, 1, 'wood', -.15); }
+  // ---- THE SILO behind the barn's far corner
+  { const su = bu + W2 + 3.4, sv = bv + D2 + 1.5, g0 = gnd(su, sv), H = 11;
+    geo(new THREE.CylinderGeometry(2.3, 2.4, H, 20), 'metal', su, g0 + H / 2 - .1, sv);
+    geo(new THREE.SphereGeometry(2.3, 20, 8, 0, Math.PI * 2, 0, Math.PI / 2), 'metal', su, g0 + H - .1, sv);
+    for (let k = 1; k < 5; k++) geo(new THREE.TorusGeometry(2.42, .06, 4, 24), 'dark', su, g0 + k * H / 5, sv, 0, Math.PI / 2);
+    bx(su, sv, g0 - .2, g0 + H, 3.4, 3.4, 'metal', .4, true); parts.metal.pop();   // the collider only: the drum is drawn round
+    for (let k = 0; k < 18; k++) bx(su, sv - 2.45, g0 + .5 + k * .55, g0 + .56 + k * .55, .5, .05, 'dark', 0, false);   // its ladder (picture)
+  }
+  // ---- THE PADDOCK: split rails on leaning posts, behind and beside the barn, a gap for the gate
+  const fence = [[bu - W2 - 2, bv + D2 + 3], [bu - W2 - 3.5, bv + D2 + 11], [bu + 1, bv + D2 + 14], [bu + W2 + 7, bv + D2 + 10.5], [bu + W2 + 6.2, bv + D2 + 4.5]];
+  for (let i = 0; i < fence.length - 1; i++) {
+    const [u0, v0] = fence[i], [u1, v1] = fence[i + 1], L = Math.hypot(u1 - u0, v1 - v0), n = Math.max(1, Math.round(L / 2.4));
+    // a box turned `psi` has its local x along (cos psi, -sin psi) in (u, v): so this is the rail's own direction
+    const psi = Math.atan2(-(v1 - v0), u1 - u0);
+    for (let k = 0; k < n; k++) {
+      if (i === 1 && k === 1) continue;                         // the gate gap
+      const a = k / n, b = (k + 1) / n, ua = u0 + (u1 - u0) * a, va = v0 + (v1 - v0) * a, ub = u0 + (u1 - u0) * b, vb = v0 + (v1 - v0) * b;
+      const um = (ua + ub) / 2, vm = (va + vb) / 2, gm = gnd(um, vm), seg = L / n;
+      bx(ua, va, gnd(ua, va) - .3, gnd(ua, va) + 1.25, .16, .16, 'wood', Math.sin(i * 7 + k) * .3, false, Math.sin(i * 3 + k * 5) * .08);
+      bx(um, vm, gm + .55, gm + .68, seg + .2, .1, 'wood', psi + Math.sin(k + i) * .03, false);
+      bx(um, vm, gm + 1.0, gm + 1.12, seg + .2, .1, 'wood', psi + Math.cos(k * 2 + i) * .03, false);
+      bx(um, vm, gm - .2, gm + 1.15, seg, .2, 'wood', psi, true); parts.wood.pop();   // the collider, undrawn
+    }
+  }
+  // ---- round bales, a trough
+  for (const [u, v, r] of [[4, -4, .3], [5.5, -2.2, 1.4], [-14, 3, .9], [-13.2, 5.2, 2.2]]) {
+    const g0 = gnd(u, v);
+    geo(new THREE.CylinderGeometry(.75, .75, 1.2, 14), 'hay', u, g0 + .72, v, r, 0, Math.PI / 2);
+    bx(u, v, g0 - .1, g0 + 1.45, 1.2, 1.4, 'hay', r, true); parts.hay.pop();
+  }
+  { const u = bu + 2, v = bv + D2 + 6, g0 = gnd(u, v); bx(u, v, g0 - .1, g0 + .6, 2.4, .7, 'metal', .3); }
+  // ---- commit: one mesh per material, the boxes, the roofs
+  for (const k in parts) if (parts[k].length) grp.add(farmMerge(parts[k], MAT[k]));
+  for (const b of boxes) BOXES.push(b);
+  boxGrid();
+  FARM.n = boxes.length;
+  FARM.tris = isleAppend(roofTris);
+  return FARM.n;
 }
 
 function stepDummies(dt) {
@@ -30266,6 +30448,8 @@ function frameBody() {
       // RG: regions revealed in this world / regions, base builds (m287)
       (map.regs.length ? ' RG' + map.regs.filter(mapSeen).length + '/' + map.regs.length + 'b' + MAP.n : '') +
       (PORTAL.n ? ' PT' + PORTALS.filter(q => q.on).length + '/' + PORTAL.n + (PORTAL.trips ? '>' + PORTAL.trips : '') : '') +
+      // FARM: boxes / roof triangles kept (m288) -- no token is no room on the ring or not the kit city
+      (FARM.n ? ' FARM' + FARM.n + '/' + FARM.tris : '') +
       (GATE.n ? ' G' + GATE.n + '/' + GATE.said : '') +
       (quest.cur ? ' Q' + quest.cur.id + '.' + quest.step + (quest.tgt ? '' : '~') : '') +
       (MISSING.length ? ' · ' + MISSING.join(' · ') : '');
@@ -30594,6 +30778,8 @@ async function init() {
     await cityDetile();
     // THE ISLAND (m264): last, because it measures the finished collider and appends to it
     try { buildIsle(); } catch (e) { ISLE.live = 0; note('ISLE FAIL'); console.warn('[melee] island', e); }
+    // THE FARM (m288): on the island's ring, so after the island -- and in a try, a yard is not worth a boot
+    try { buildFarm(); } catch (e) { note('FARM FAIL'); console.warn('[melee] farm', e); }
     player.pos.x = KCITY.spawn[0]; player.pos.z = KCITY.spawn[1];
   } else if (inTC()) {
     // **HIS LEVEL, AND NOTHING ELSE AT ALL.** No collider builder, no street grid, no boxes --
@@ -30764,6 +30950,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // PORTALS (m286): `mel.PORTALS` live; `mel.portal()` opens the travel picker from anywhere
   // MAP (m287): `mel.MAP` live; `mel.MAPREG.tkit = [...]` names real regions (then `mel.mapBuild()`)
   MAP, MAPREG, mapBuild, mapOpen,
+  // THE FARM (m288): `mel.farm()` puts you in the yard
+  FARM, farm: () => { const F = FARM.at; if (!F) return 'no farm in this world'; const p = player; p.pos.set(F.x - Math.sin(F.th) * 12, 2, F.z - Math.cos(F.th) * 12); p.vel.set(0, 0, 0); p.heading = p.faceH = F.th; return 'farm at ' + F.x.toFixed(0) + ',' + F.z.toFixed(0); },
   PORTAL, PORTALS, portal: () => portalOpen(),
   GATE, GATES, GATE_TYPES, gate: t => { const p = player, h = p.faceH; const g = gateAdd(t || 'cordon', p.pos.x + Math.sin(h) * 4, p.pos.z + Math.cos(h) * 4, h + Math.PI); return g ? g.id : 'types: ' + Object.keys(GATE_TYPES).join(' '); },
   JUICE, juice: n => { SAVE.juice = n == null ? JUICE.cap : +n; progSave(); return SAVE.juice; },

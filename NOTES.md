@@ -7,6 +7,21 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FARM IS BUILT IN A TURNED FRAME, AND THE OBB CONVENTION IS `cs = cos t, sn = -sin t` FOR A MESH TURNED `t` (m288, ROADMAP B1a, `buildFarm`, `farmMerge`).**
+  `boxNear`/`resolveBoxes` read an oriented box's local x as `(cs, sn)` in the world; a THREE mesh turned `t` about +Y
+  has its local x at `(cos t, -sin t)` -- so `sn = -sin t`, which is the toon city's `yaw = -t` written out. **m287's
+  map drew every oriented box mirrored** (both corner offsets had the wrong sign); fixed here, from the same algebra.
+  Placement is the widest grass on the ring: `ISLE.rays[i].smp[ISLE_J0][0]` is that ray's grass (sample 12 is the beach
+  top). Local frame: u along the tangent, v out to sea, `wx/wz` and the group's own rotation agree (local x -> `(C, -S)`).
+  **A box turned `psi` in that frame runs along `(cos psi, -sin psi)` in (u, v)** -- the first fence used
+  `atan2(du, dv) - pi/2` and got the sign of v backwards; it is `atan2(-dv, du)` now. Roofs are floor quads offered in
+  both windings to `isleAppend` (which re-pushes `TRI.v`/`SURF.v` and rebuilds; `triBuild` empties its raw list, so
+  appending without that would delete the city's floors). Colliders go into `BOXES`, then one `boxGrid()`. Every piece
+  is merged per material (`farmMerge`, ~8 draws). The bale stair is .45 a step (MOVE.step is .5 x SZ) ending exactly at
+  the loft's edge. Known: roof triangles are floors only, so a jump from the loft can come up through the roof near the
+  eaves, and the barn's overhang clips a player walking the lean-to right against the wall. Chip: `FARM<boxes>/<tris>`;
+  `FARM FAIL` / `FARM NO ROOM` in the missing list if it could not build.
+
 - **THE MAP IS THE COLLIDER DRAWN FLAT, AND ITS ROTATION COMES FROM THE CAMERA'S OWN DIRECTION (m287, ROADMAP A9, `MAP`, `mapBuild`, `mapMini`).**
   No minimap existed though the roadmap said "tap the minimap". A top-down render into a target was the obvious
   picture and it would have fought `cellStep` (far cells hidden), the x-ray dither, the fog and the sky -- so the base

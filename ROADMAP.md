@@ -61,6 +61,10 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   not a flat field: a sunken lane between hedges, the barn with a hayloft you can climb, a silo, a
   creek with a footbridge, the road climbing to a bridge into town. Cows as placeholders (boxes or an existing body) that moo and
   wander. The crash site: a wreck, smoke, Clancy inside.
+  - [x] m288 **B1a The farmyard** — barn on a plinth, hay-bale stair to the hayloft, loft door over a hay stack, lean-to whose roof you reach off crates, walkable barn roof, silo, split-rail paddock, round bales, trough.
+  - [ ] **B1b The crash site** — the wreck, scorched ground, smoke, Clancy inside; where Chapter 0 starts.
+  - [ ] **B1c The sunken lane and the creek** — a lane cut below the fields between hedges, a creek with a footbridge.
+  - [ ] **B1d The road and the bridge, and the cows** — the road climbing from the farm to a bridge into town; cows that moo and wander.
 - [ ] **B2 Chapter 0 script.** Crash → find Clancy → the farmer sees you and panics → knock him
   down → take his sample → walk to the bridge as him → the cop checkpoint lets the farmer through
   (and stops the alien) → Old Town, fog lifts. Tutorial prompts along the way.
@@ -161,3 +165,9 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   so it's cheap and always matches what you can walk into. **Regions are placeholder quadrants**
   (NORTH-WEST etc.) until Phase B defines real districts (`MAPREG`); the one you spawn in starts
   revealed. Markers: you, the objective (gold), `!` quest givers, portals, gates.
+- **m288 (B1a):** the farm goes on the **widest stretch of grass on the island ring** (measured
+  from the island's own coastline, so it moves if the coast changes), turned ~12° off square. B1
+  was split into four builds (yard, crash site, lane + creek, road + bridge + cows). Greybox
+  colours, merged so the whole yard is about 8 draw calls. Head inside the barn, climb the bales
+  to the loft, drop out of the loft door; or crates → lean-to roof → barn roof. `mel.farm()` takes
+  you there.
