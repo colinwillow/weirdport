@@ -25,7 +25,7 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
 
 - [x] m276 **A1 Progress & save.** A new `localStorage` key `mel.prog`: chapter, forms unlocked, regions
   revealed, quest flags, portals activated, juice. `?fresh` already clears keys — make it clear this one too. Chip shows `CH<n>`.
-- [ ] **A2 Talk.** NPCs can carry a `talk` script: walk up, the right pad lights (the existing
+- [x] m277 **A2 Talk.** NPCs can carry a `talk` script: walk up, the right pad lights (the existing
   interact pattern), tap → speech bubble with name + lines, tap to advance. A `!` marker over the
   head of anyone with something to say.
 - [ ] **A3 Quests & objectives.** Data-driven quests: steps of type talk / go-to / sample / defeat /
@@ -101,3 +101,8 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   URL so the world key's reload cannot wipe it again. `mel.progReset()` in the console resets only
   the save. Juice starts at 0; A7b decides the tank. The object in code is `SAVE` (the name `PROG`
   was taken by the boot loader); the storage key is `mel.prog` as asked.
+- **m277 (A2):** there was no existing "pad lights" interact pattern, so talk lights the right
+  pad's ring **sky blue** (the trigger is amber) and its label says `tap = talk`. The **left** tap
+  still jumps while someone is in reach. One speaker per character type for now (Dusty the hobo,
+  Earl, Sal the worker, Moonbeam, Sage, Knuckles, Jasper, Capt. Reyes) with placeholder lines I
+  wrote — rewrite them in `TALKS`. Speakers don't stop or turn to face you yet.

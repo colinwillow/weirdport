@@ -7,6 +7,20 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **TALK LIVES ON THE RIGHT PAD'S TAP, AND THE LEFT TAP STAYS THE JUMP (m277, ROADMAP A2, `TALK`, `TALKS`, `talkTap`).**
+  The roadmap said "the right pad lights (the existing interact pattern)" -- there was no interact pattern; the only
+  lit states on `#padR` were the trigger's `arm`/`ready` (amber). So `talk` is a third class on the same `::after`
+  ring in SKY, a different hue for a different meaning, and the pad's own `.hint` reads `tap = talk` / `tap = next`.
+  The right tap checks `talkTap()` before the jump; m173 already put the jump on the LEFT tap too, so a body in reach
+  never costs you the jump. Desktop: `E`.
+  Scripts are DATA on the body (`d.talk`), seeded from `TALKS` by `mphName`, ONE speaker per kind (a street of
+  hippies is one Moonbeam). Finishing one sets `talk:<id>` in the save via `progFlag` -- A3's talk step -- and that is
+  why the `!` stays gone after a reload. The `!` is a Sprite PARENTED TO `d.root`, so a culled or removed body takes
+  it along with no second list; its height is `drawnH` measured once, divided by the root's scale. The bubble is DOM,
+  projected through the camera AFTER `stepCam` (one frame of trail otherwise) and clamped on screen.
+  **NOT DONE ON PURPOSE:** the speaker does not stop or face you (his heading has one writer, his AI); nobody refuses
+  an undisguised alien yet (A4 will gate `talk.near`). Chip: `T<speakers>/<heard>`, `*` while one is in reach.
+
 - **THE SAVE IS `SAVE`, NOT `PROG` -- `PROG` IS THE BOOT CARD'S LOAD COUNTER (m276, ROADMAP A1, `SAVE`, `progSave`).**
   The roadmap asked for progress under `mel.prog`. The key is `mel.prog`; the object could not be `PROG`, because
   `const PROG = { done, total, label }` already counts GLBs for the boot card and a second `const` of that name is a
