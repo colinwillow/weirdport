@@ -67,6 +67,7 @@ differ" table there, so no region feels like the last one.
   - [ ] **B1b The crash site** — the wreck, scorched ground, smoke, Clancy inside; where Chapter 0 starts.
   - [ ] **B1c The sunken lane and the creek** — a lane cut below the fields between hedges, a creek with a footbridge.
   - [ ] **B1d The road and the bridge, and the cows** — the road climbing from the farm to a bridge into town; cows that moo and wander.
+  - [ ] **B1e From REGIONS.md's Gristle Farm entry, not in m288** — a rope down from the hayloft, the silo ladder made climbable, an orchard terrace, and cows that panic and stampede (its signature system).
 - [ ] **B2 Chapter 0 script.** Crash → find Clancy → the farmer sees you and panics → knock him
   down → take his sample → walk to the bridge as him → the cop checkpoint lets the farmer through
   (and stops the alien) → Old Town, fog lifts. Tutorial prompts along the way.
@@ -173,3 +174,6 @@ differ" table there, so no region feels like the last one.
   colours, merged so the whole yard is about 8 draw calls. Head inside the barn, climb the bales
   to the loft, drop out of the loft door; or crates → lean-to roof → barn roof. `mel.farm()` takes
   you there.
+- **m288 note:** `REGIONS.md` landed while m288 was building. Its Gristle Farm entry asks for a
+  rope down from the loft, a climbable silo ladder and an orchard terrace that m288 does not have
+  (the silo ladder is only drawn), so I split them out as **B1e**.
