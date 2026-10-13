@@ -332,3 +332,8 @@ differ" table there, so no region feels like the last one.
   (some still glowing) and violet crystals lie down the furrow, and it **hums**, a low electrical
   drone that swells as you get close. The ten scorch marks were merged into one draw call.
   Tune on `mel.CHERO` (pulse, arcEvery, beamA, poolA, humG).
+- **m301 (farm pass 7: the ground):** the farm stood on unbroken grass. Now there is **bare dirt**
+  where the barn doors open onto the lane, a **turning patch** in front of the lean-to, **wet mud**
+  round the trough and windmill, the **paddock trodden pale**, the gate churned, and a **worn track
+  with two cart ruts** down the floor of the sunken lane. Noise-edged, one draw call, from an
+  authored table with a reason each.

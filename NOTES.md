@@ -7,6 +7,16 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE GROUND PAINT SITS ON `triGround`, AND A RIBBON'S WINDING DECIDES WHETHER IT EXISTS (m301, farm pass 7, `GPAINT`, `buildGroundPaint`).**
+  One transparent MeshStandard overlay with RGBA vertex colours (three turns on `vertexAlphas` for a 4-wide colour
+  attribute): grid patches from `GPAINT.TABLE` with alpha falling off by a noise-wobbled elliptic radius, and the lane's
+  floor as a ribbon (`LANE.pts`, stored by `buildLane`) with two darker rut lines. **Heights come from
+  `triGround(x, z, 1.5, 0)`, not `groundAt`** -- the latter answers a box top where a patch crosses a bank or the barn
+  plinth and stretches triangles up its face; capped at 1.5 m, the terrain floor is all `triGround` can see (roofs are
+  above it). **Winding, checked by hand:** a grid of (u, v) with indices (o, o+row, o+1) faces up; the ribbon indexed
+  (along, across) the same way faced DOWN (along x across, with across = along turned +90 deg, points to -y), so
+  FrontSide would have culled the whole lane track -- it is wound (o, o+1, o2) now.
+
 - **THE WRECK'S GLOW IS FAKED ON THE GROUND, NOT LIT (m300, farm pass 6, `CHERO`, `crashHero`, `crashHeroStep`).**
   A `PointLight` would light the field for real and would cost every lit fragment in the city a light loop (and
   recompile every material when it is added). The pool is an additive radial-gradient texture on a 16x16 grid whose

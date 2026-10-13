@@ -704,10 +704,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m300</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m301</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m300</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m301</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -788,7 +788,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm300';
+const BUILD = 'm301';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -29374,6 +29374,7 @@ function buildLane() {
   LANE.n = r.boxes;
   const m = lane[2];
   LANE.at = { x: wx(m[0], m[1]), z: wz(m[0], m[1]), ford: [wx(fordU, fordV), wz(fordU, fordV)] };
+  LANE.pts = lane;                                   // the centreline, for the ground paint (m301)
   return LANE.n;
 }
 
@@ -30451,6 +30452,84 @@ function crashHeroStep(dt) {
     }
   }
   crashHumSet(d < CHERO.humOut ? 1 - smooth(CHERO.humFull, CHERO.humOut, d) : 0);
+}
+
+// ============================================================================================
+// THE FARM'S GROUND (m301, farm polish pass 7, `GPAINT`, `buildGroundPaint`) -- dirt where feet and wheels go
+// ============================================================================================
+// Everything on the farm stood on the same unbroken island grass: no bare yard where the tractor turns, no mud at the
+// trough, no track down the sunken lane. **ONE OVERLAY, ONE DRAW CALL**: patches from the authored table below, each a
+// grid of vertices laid on the ground with an RGBA vertex colour (three's `vertexAlphas`), the alpha falling off
+// toward the patch's edge through a value noise so no edge is a circle; and the lane's floor as a ribbon down its
+// centreline with two darker wheel ruts. Lit like the ground (MeshStandard), transparent, no depth write.
+// **THE VERTICES SIT ON THE TERRAIN'S OWN FLOOR TRIANGLES** (`triGround` capped low), never on `groundAt`'s answer,
+// which would be a box top where a patch runs over a bank or the barn's plinth and stretch a triangle up its face.
+const GPAINT = {
+  on: 1, n: 0,
+  TABLE: [
+    { id: 'yard',    u: -6,  v: -11.6, ru: 4.6, rv: 2.3, col: 0x5d4632, a: .85, why: 'bare dirt where the barn doors open onto the lane: everything goes in and out here' },
+    { id: 'turning', u: 3.8, v: -10.4, ru: 3.6, rv: 2.0, col: 0x5a4430, a: .75, why: 'where the tractor turns in front of the lean-to' },
+    { id: 'trough',  u: -3,  v: 11.6,  ru: 3.4, rv: 2.8, col: 0x3d2f22, a: .9, rough: .35, why: 'mud round the trough and the windmill pump: the cows drink here' },
+    { id: 'paddock', u: -4.3, v: 13.6, ru: 6.5, rv: 5.0, col: 0x79684a, a: .55, why: 'the paddock trodden pale by the herd' },
+    { id: 'gate',    u: -13.6, v: 12,  ru: 2.2, rv: 2.0, col: 0x4a3a2a, a: .8, why: 'the paddock gate, churned' },
+  ],
+  lane: { col: 0x6a5640, rut: 0x3e3226, w: 1.65, a: .85, why: 'the sunken lane: a worn track down its floor, two ruts from carts' },
+};
+const gpH = (x, z) => { const s = Math.sin(x * 127.1 + z * 311.7) * 43758.5453; return s - Math.floor(s); };
+function gpNoise(x, z) {
+  const ix = Math.floor(x), iz = Math.floor(z), fx = x - ix, fz = z - iz, ux = fx * fx * (3 - 2 * fx), uz = fz * fz * (3 - 2 * fz);
+  const a = gpH(ix, iz), b = gpH(ix + 1, iz), c = gpH(ix, iz + 1), d = gpH(ix + 1, iz + 1);
+  return a + (b - a) * ux + (c - a) * uz + (a - b - c + d) * ux * uz;
+}
+function buildGroundPaint() {
+  const A = FARM.at; if (!GPAINT.on || !A) return 0;
+  const C = Math.cos(A.th), S = Math.sin(A.th), W = (u, v) => [A.x + u * C + v * S, A.z - u * S + v * C];
+  const terr = (x, z) => { const t = TRI.on ? triGround(x, z, 1.5, 0) : -1e30; return t > -50 ? t : groundAt(x, z, 1.5, 0); };
+  const pos = [], col = [], idx = [], c = new THREE.Color();
+  const grid = (cu, cv, ru, rv, colour, alpha, cell) => {
+    const nu = Math.ceil(ru * 2 / cell), nv = Math.ceil(rv * 2 / cell), base = pos.length / 3;
+    c.setHex(colour);
+    for (let j = 0; j <= nv; j++) for (let i = 0; i <= nu; i++) {
+      const lu = -ru + i * ru * 2 / nu, lv = -rv + j * rv * 2 / nv, [x, z] = W(cu + lu, cv + lv);
+      const r = Math.hypot(lu / ru, lv / rv) + (gpNoise(x * .55, z * .55) - .5) * .55 + (gpNoise(x * 2.1, z * 2.1) - .5) * .18;
+      const y = terr(x, z);
+      const al = alpha * (1 - smooth(.55, 1, r)) * (y > -50 ? 1 : 0), k = .82 + gpNoise(x * 1.3, z * 1.3) * .3;
+      pos.push(x, y + .045, z); col.push(c.r * k, c.g * k, c.b * k, al);
+      if (i < nu && j < nv) { const o = base + j * (nu + 1) + i; idx.push(o, o + nu + 1, o + 1, o + 1, o + nu + 1, o + nu + 2); }
+    }
+  };
+  for (const P of GPAINT.TABLE) grid(P.u, P.v, P.ru, P.rv, P.col, P.a, .55);
+  // the lane's floor: a ribbon down its centreline, ruts darker, edges fading
+  const L = LANE.pts;
+  if (L && L.length > 1) {
+    const G = GPAINT.lane, cA = new THREE.Color(G.col), cR = new THREE.Color(G.rut), across = [-1, -.6, -.38, -.22, 0, .22, .38, .6, 1];
+    for (let s = 0; s < L.length - 1; s++) {
+      const [u0, v0] = L[s], [u1, v1] = L[s + 1], len = Math.hypot(u1 - u0, v1 - v0), n = Math.max(2, Math.ceil(len / .8));
+      const tu = (u1 - u0) / len, tv = (v1 - v0) / len, nu = -tv, nv = tu, base = pos.length / 3;
+      for (let k = 0; k <= n; k++) {
+        const a = k / n, cu = u0 + (u1 - u0) * a, cv = v0 + (v1 - v0) * a;
+        for (const q of across) {
+          const [x, z] = W(cu + nu * q * G.w, cv + nv * q * G.w), y = terr(x, z);
+          const rut = Math.abs(Math.abs(q) - .38) < .1, cc = rut ? cR : cA, kk = .85 + gpNoise(x * 1.7, z * 1.7) * .3;
+          const al = G.a * (1 - smooth(.6, 1, Math.abs(q) + (gpNoise(x, z) - .5) * .3)) * (y > -50 ? 1 : 0);
+          pos.push(x, y + .05, z); col.push(cc.r * kk, cc.g * kk, cc.b * kk, al);
+        }
+        // wound so the face points UP: (along) x (across) points down when `across` is `along` turned +90 deg in (u, v)
+        if (k < n) for (let q = 0; q < across.length - 1; q++) { const o = base + k * across.length + q, o2 = o + across.length; idx.push(o, o + 1, o2, o + 1, o2 + 1, o2); }
+      }
+    }
+  }
+  if (!idx.length) return 0;
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.setAttribute('color', new THREE.Float32BufferAttribute(col, 4));
+  g.setIndex(idx); g.computeVertexNormals();
+  const m = new THREE.MeshStandardMaterial({ vertexColors: true, transparent: true, depthWrite: false, roughness: .95,
+    polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+  const mesh = new THREE.Mesh(g, m); mesh.receiveShadow = true; mesh.renderOrder = 1;
+  scene.add(mesh);
+  GPAINT.n = idx.length / 3;
+  return GPAINT.n;
 }
 
 function stepDummies(dt) {
@@ -31953,7 +32032,7 @@ function frameBody() {
       // BR: the river and bridge's colliders, ramp tris, times the current put you back (m291)
       // COW: the herd, moos heard, startles (m294) -- COW6 with m0 after a minute nearby is "no audio context yet"
       // FL: plants on the farm (m297)
-      (FLORA.n ? ' FL' + FLORA.n : '') +
+      (FLORA.n ? ' FL' + FLORA.n : '') + (GPAINT.n ? ' GP' + GPAINT.n : '') +
       (COW.n ? ' COW' + COW.n + 'm' + COW.moos + (COW.startles ? 's' + COW.startles : '') : '') +
       (BRIDGE.n ? ' BR' + BRIDGE.n + '/' + BRIDGE.tris + (BRIDGE.putBacks ? '~' + BRIDGE.putBacks : '') : '') +
       (GATE.n ? ' G' + GATE.n + '/' + GATE.said : '') +
@@ -32296,6 +32375,8 @@ async function init() {
     try { buildLane(); } catch (e) { note('LANE FAIL'); console.warn('[melee] lane', e); }
     try { buildBridge(); } catch (e) { note('BRIDGE FAIL'); console.warn('[melee] bridge', e); }
     try { buildCows(); } catch (e) { note('COWS FAIL'); console.warn('[melee] cows', e); }
+    // THE GROUND (m301): dirt, mud and the lane's track, under everything
+    try { buildGroundPaint(); } catch (e) { note('GROUND FAIL'); console.warn('[melee] ground paint', e); }
     // THE GROWTH (m297): last, so the tufts can hug every wall, post and bank the farm built
     try { buildFlora(); } catch (e) { note('FLORA FAIL'); console.warn('[melee] flora', e); }
     player.pos.x = KCITY.spawn[0]; player.pos.z = KCITY.spawn[1];
@@ -32498,6 +32579,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   FLORA,
   // THE FARM'S PROPS (m299): `mel.FPROPS` -- `wind` (shared direction), `spin`
   FPROPS,
+  // THE GROUND PAINT (m301): `mel.GPAINT` -- the patch table and the lane track
+  GPAINT,
   FARM, farm: () => { const F = FARM.at; if (!F) return 'no farm in this world'; const p = player; p.pos.set(F.x - Math.sin(F.th) * 12, 2, F.z - Math.cos(F.th) * 12); p.vel.set(0, 0, 0); p.heading = p.faceH = F.th; return 'farm at ' + F.x.toFixed(0) + ',' + F.z.toFixed(0); },
   PORTAL, PORTALS, portal: () => portalOpen(),
   // THE DEMOS, ON PURPOSE ONLY (m292, STEER 1): round where you stand, for testing the systems
