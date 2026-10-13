@@ -71,6 +71,10 @@ form wheel for good.
 
 ## Who's out there
 
+**The alien races** (Reptilians at the top, Greys as the drone workforce behind Uplift Corp,
+Nordics as the hidden good aliens, Tall Whites as neutral traders, Ethereals as wild tricksters)
+are in `LORE.md`; they refine the enemy list below.
+
 **UFO lore, our spin:** `LORE.md` turns real UFO and paranormal folklore into systems: the orbs as the
 aliens' control grid (shoot one down and people fall out of the trance), electromagnetic effects as
 the tell, crop circles, tractor beams, missing time, Men in Black, implants and more.
@@ -200,6 +204,10 @@ plane with boxes on it — out of the kit pieces and procedural geometry so ever
 each greybox is meant to be swapped for a Blender region later. A greybox region has: its bounds
 (for the fog), its gates, its quest NPCs, and its spawn points — all data, so the swap is a file
 change.
+
+**`CHARACTERS.md` is the character plan**: the shared skeleton with blend shapes and texture sets,
+the everyday animation library he needs to author, smart objects (benches, café tables, bus stops)
+that NPCs use, and the full roster with what stands in for each role until its model exists.
 
 ## Characters still needed (for him to make, eventually — none of this blocks the loop)
 

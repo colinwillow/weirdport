@@ -4,6 +4,28 @@ Real UFO and paranormal folklore, reinterpreted as game systems. We don't follow
 we take what people already half-believe and give it a job in the game. Each entry: the lore, our
 spin, and what it does in play.
 
+## The alien races
+
+UFO lore has a whole cast: reptilians, greys, tall whites, Nordics, energy beings. Here each one has
+a place in the story, a way it changes the city, and a kind of enemy or ally it gives the game. This
+is a draft to play with; nothing is fixed.
+
+| Race | Lore | Our spin | In the game |
+|---|---|---|---|
+| **Reptilians** | shapeshifting lizard people who secretly rule the world | **the ultimate bad guys, at the top of everything.** They wear people (the Skinsuits are their work), climb to power and feed on division. | the bosses and the final enemy; their seat is the top of Dump Tower; every infiltrated leader is one of them |
+| **Greys** | small grey beings; abductions, implants; some say biological drones | **their workforce: drones, half machine.** They run abductions and turn people into mechanical, cyborg versions of themselves. **Uplift Corp is the Greys' human front company.** | the cyborg conversions, the orb grid and the tractor beams; most of the enemies you fight day to day |
+| **Nordics** | tall, human-looking, benevolent visitors | **the good aliens, hiding among people Men-in-Black style** (the food-cart chef, the shopkeeper) | allies: tips, upgrades, safe houses (portals) in the Underneath; the people who point you at the next lead |
+| **Tall Whites** | pale, aloof beings said to keep to themselves | **neutral observers and traders.** They won't take sides, but they'll deal. | merchants for upgrades and juice; ambiguous, and maybe a late twist about whose side they are on (this is the "third race" question) |
+| **Ethereals** | energy beings, lights, poltergeists, ball lightning | **wild, wandering tricksters made of light and lightning** — not part of the grid, and not on anyone's side | chaotic events: weather, lightning, haunted buildings, wild orbs that aren't the Greys'. Win one over and it might lend you an ability (blink, phase through a wall, call lightning) |
+
+**How they fit together:** the Reptilians want the city; the Greys do the work; the Skinsuits are
+how the Reptilians hide; the Nordics are why you have friends here; the Tall Whites are the wild
+card; and the Ethereals are the weather nobody controls. The culture-war theme sits on top: the
+Reptilians stoke both sides, and the Greys' orbs amplify it.
+
+**A word on "Skinwalkers":** that name comes from Navajo tradition, where it is a real and serious
+belief, so the game uses its own name for shapeshifters (the Skinsuits) rather than borrowing it.
+
 ## The orbs (the big one)
 
 **The lore:** glowing spheres seen floating, hovering and darting, from WWII "foo fighters" to modern
@@ -105,6 +127,28 @@ and dogs bark. Clancy's ears go up when something is near.
 
 **Our spin:** an ambient audio layer that gets louder where the grid is strong and drops when you
 free a district. You can hear a district get better.
+
+## Side quests from UFO pop culture
+
+Spins on famous UFO stories and characters, with our own names (parodies, never the real people).
+Each is a small side quest that pays out something useful.
+
+| Spin on | Our version | The side quest | Reward |
+|---|---|---|---|
+| **Bob Lazar & Element 115** | a jittery ex-lab technician who swears he worked on alien craft | find him (he's hiding, and paranoid), earn his trust, and he tells you where a stash of **Element 115** is hidden | 115 powers your ship, upgrades the DNA tool's juice tank, or charges a new weapon |
+| **Area 51 / S-4** | **"Area 15"**, the military base out past the outskirts | sneak in (disguise as military or a contractor) to steal 115 or rescue a captured Grey who wants out | the base itself: a late, high-heat region |
+| **Roswell** | a roadside UFO museum and diner whose "replica" saucer is real | fix the saucer with parts from around the city | a vehicle, or a portal |
+| **Majestic 12** | **"The Majestic Dozen"**, a secret society inside Dump Tower | collect their twelve dossiers hidden across the city | lore, and the way into the boardroom |
+| **Late-night UFO radio** | a conspiracy radio host broadcasting all night | call in tips; his show reports your exploits and points at strange sightings | a quest hub; his voice on every car radio |
+| **The tinfoil-hat bunker** | a prepper ufologist with walls of string and maps | bring him evidence; he maps the orb grid for you | the grid on your map |
+| **Betty & Barney Hill** | an elderly couple with two hours they can't account for | retrace their missing time | an implant to study; Clancy learns to sniff them out |
+| **Travis Walton** | a logger at the Hollow Creek mill who vanished for five days | find him (a Grey ship has him) | the logger form |
+| **The Phoenix Lights** | a huge silent V of lights over the city one night | a timed event: follow it to where it lands | a Tall White trader shows up |
+| **Mothman** | a winged silhouette on the Hollow Creek bridge | it appears before disasters; follow it to stop one | warnings on your map |
+| **The haunted ranch** (Skinwalker Ranch, renamed) | a ranch near the farm full of high strangeness | survive a night there with the Ethereals | an Ethereal ability |
+| **Tic-tac pilots** | a retired navy pilot telling his story at a bar | prove him right: catch a tic-tac on camera | the pilot form (flight) |
+| **Bigfoot** (Pacific Northwest) | a shy giant in the Gorge's forest, maybe an alien's lost pet | find him, then keep him safe from hunters | a friend; the funniest form in the game |
+| **D.B. Cooper** (PNW legend) | the hijacker who jumped with the money and was never found | the trail says he was abducted mid-fall | the money, and a parachute |
 
 ## Further ideas (not yet placed)
 
