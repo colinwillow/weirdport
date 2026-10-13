@@ -15,6 +15,25 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
+**URGENT, NEXT BUILD — THE FARM DOES NOT EXIST IN THE REAL GAME.** Colin opened every GOD place and
+none of them work. Measured with `npm run places` (new; builds the REAL kit city collider and island,
+runs every farm builder, then the shipped `godPlace`): the widest grass on the island ring is
+**14.9 m**, `buildFarm` needs 18, so it returns early with `FARM NO ROOM 15` and `FARM.at` stays null.
+Crash, lane, bridge, cows, flora and props all hang off `FARM.at`, so NONE of m288 to m300 is in his
+game, and every farm place in the GOD menu does nothing. (The CHAPTER buttons only set the chapter
+flag; they move nothing, which is also confusing. Make each one take him to where that chapter starts.)
+Fix:
+1. Give the farm the ground it needs: grow the island out into a farm peninsula at an authored
+   bearing (a lobe on the waterline in `buildIsle`, wide and deep enough for the yard, the fields
+   down to the shore, the lane, the creek and the road to the bridge), and place the farm on it.
+   Do not just lower the 18 m threshold: 15 m of grass cannot hold a farm.
+2. Prove it with `npm run places`: `FARM.at` and `CRASH.at` non-null, and every GOD place in `tkit`
+   moving the player somewhere sensible. **From now on run `npm run places` before pushing any build
+   that adds or moves a place, and paste its result in the build's NOTES entry.** A place that only
+   exists in a fabricated test does not exist.
+3. A builder that bails out must say so loudly: show a red toast at boot for any `... NO ROOM` /
+   `... FAIL` note while GOD mode is on, not only a token in the chip.
+
 **TOP PRIORITY, BEFORE THE NEXT FARM PASS — GOD MODE (Colin can't see anything you've built).**
 He can't find the farm, any new place, or Rollergirl: the world key only cycles the old worlds, the
 form wheel only offers sampled forms, and new things are only reachable through play. Build a

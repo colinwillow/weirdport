@@ -1,0 +1,135 @@
+// npm run places -- DO THE PLACES GOD MODE LISTS ACTUALLY EXIST IN THE REAL KIT CITY?
+//
+// Builds the kit city's REAL collider (his collision GLB, plus the visual's lots and dirt decoded
+// with draco, the way `buildTCity` captures them), the island, and every farm builder, then calls
+// the shipped `godPlace` for each GOD place in `tkit` and prints where it put the player.
+// Written because the farm was built for nine builds against a ground it does not fit on: the real
+// island ring is 14.9 m wide at its widest, `buildFarm` wants 18, it returned with
+// `FARM NO ROOM 15`, and every farm place in the GOD menu went nowhere. A place that does not
+// exist in the real world is not built, however good it looks in a fabricated test.
+import fs from 'fs';
+import os from 'os';
+import path from 'path';
+import { pathToFileURL } from 'url';
+
+// ---- AND IT IS SEEDED, BECAUSE A RANDOMLY RED ROW IS WORSE THAN A PERMANENTLY RED ONE ----
+// `foeRoll` gives every body its own pace, nerve, react and guard out of `Math.random`, which is
+// exactly right in the game and makes this suite report a different answer every run: two rows
+// failed one run and one the next, on code that had not changed. A result you cannot reproduce
+// is not a measurement, and a suite that cries wolf every third run is a suite nobody reads.
+// One fixed stream, so a red row is a fact about the code and can be chased.
+// **THE VARIETY CASES STILL MEAN SOMETHING** -- they roll MANY bodies out of this one stream, so
+// what they measure is the spread across a roster rather than one lucky draw.
+let _seed = 0x2f6e2b1;
+Math.random = () => { _seed = (_seed * 1664525 + 1013904223) >>> 0; return _seed / 4294967296; };
+
+// ---- the same headless page the boot gate builds, lifted between its own markers ----
+const boot = fs.readFileSync('tools/boot.mjs', 'utf8');
+const stubs = boot.slice(boot.indexOf('// STUBS:START'), boot.indexOf('// STUBS:END'));
+(0, eval)(stubs);
+
+if (!fs.existsSync('node_modules/three/package.json')) {
+  fs.mkdirSync('node_modules/three', { recursive: true });
+  fs.writeFileSync('node_modules/three/package.json', JSON.stringify({
+    name: 'three', version: '0.180.0-vendored', type: 'module', main: 'index.js', exports: { '.': './index.js' } }));
+  fs.writeFileSync('node_modules/three/index.js', "export * from '../../vendor/three.module.min.js';\n");
+}
+const TMP = path.join(os.tmpdir(), 'melee-sim');
+fs.mkdirSync(TMP, { recursive: true });
+const ROOT = pathToFileURL(process.cwd() + '/').href;
+fs.writeFileSync(path.join(TMP, 'three-shim.mjs'), `
+export * from '${ROOT}vendor/three.module.min.js';
+import * as T from '${ROOT}vendor/three.module.min.js';
+class R { constructor(){ this.domElement = globalThis.document.createElement('canvas');
+  this.shadowMap={enabled:false,type:0}; this.info={autoReset:true,render:{calls:0,triangles:0},reset(){}};
+  this.extensions={has:()=>false,get:()=>undefined,init(){}}; this.capabilities={isWebGL2:true,getMaxAnisotropy:()=>1,precision:'highp'};
+  this.outputColorSpace=''; this.toneMapping=0; this.toneMappingExposure=1; }
+  setSize(){} setPixelRatio(){} setClearColor(){} setRenderTarget(){} clear(){} render(){} dispose(){}
+  compile(){} initTexture(){} getContext(){return{getParameter:()=>0};} getDrawingBufferSize(v){return v.set(1280,720);} }
+export { R as WebGLRenderer };
+class T2 { constructor(){ this.texture = new T.Texture(); } setSize(){} dispose(){} }
+export { T2 as WebGLRenderTarget };
+class P { fromEquirectangular(){ return { texture: new T.Texture() }; } compileEquirectangularShader(){} dispose(){} }
+export { P as PMREMGenerator };
+`);
+const html = fs.readFileSync('index.html', 'utf8');
+let src = html.match(/<script type="module">([\s\S]*?)<\/script>/)[1];
+src = src.replace(/(from\s*)['"]three['"]/g, `$1'${pathToFileURL(path.join(TMP, 'three-shim.mjs')).href}'`)
+         .replace(/(from\s*)['"]\.\/vendor\//g, `$1'${ROOT}vendor/`);
+src += '\nglobalThis.__M = { KCITY, buildKCityCol, buildIsle, ISLE, TRI, triBuild, groundAt, WORLD, MOVE, player, kitPopulate, KCROWD, FOE, HICK, HOBO, SKATER, BIKER, DUMMY, CIVILS, CLANCY, kitStand, bodySeat, SEAT, DUMMIES, THREE, buildFarm, buildFarmProps, buildCrash, buildLane, buildBridge, buildCows, buildFlora, crashHero, FARM, CRASH, GODPLACES, godPlace, GOD, LANE, BRIDGE, crashSpawn, SAVE };\n';
+const f2 = path.join(TMP, 'placecheck.mjs'); fs.writeFileSync(f2, src);
+const quiet = console.error, qw = console.warn, ql = console.log;
+console.error = () => {}; console.warn = () => {};
+await import(pathToFileURL(f2).href + '?t=' + Date.now());
+await new Promise(r => setTimeout(r, 250));
+console.error = quiet; console.warn = qw;
+const M = globalThis.__M;
+M.WORLD.now = 'tkit';
+// the collision file as a scene, read straight out of the GLB (it is not draco)
+const { openGLB } = await import(ROOT + 'tools/glb.mjs');
+const T = await import(ROOT + 'vendor/three.module.min.js');
+const { json: g, read } = openGLB('models/toon_city_kit/toon_city_collision.glb');
+const objs = g.nodes.map(n => { const o = new T.Object3D(); o.name = n.name || '';
+  if (n.translation) o.position.fromArray(n.translation); if (n.rotation) o.quaternion.fromArray(n.rotation); if (n.scale) o.scale.fromArray(n.scale); return o; });
+g.nodes.forEach((n, i) => {
+  (n.children || []).forEach(c => objs[i].add(objs[c]));
+  if (n.mesh == null) return;
+  for (const pr of g.meshes[n.mesh].primitives) {
+    const geo = new T.BufferGeometry();
+    geo.setAttribute('position', new T.BufferAttribute(new Float32Array(read(pr.attributes.POSITION)), 3));
+    if (pr.indices != null) geo.setIndex(new T.BufferAttribute(new Uint32Array(read(pr.indices)), 1));
+    const m = new T.Mesh(geo, new T.MeshBasicMaterial()); m.name = n.name || ''; objs[i].add(m);
+  }
+});
+const scene = new T.Group(); for (const i of g.scenes[0].nodes) scene.add(objs[i]); scene.updateMatrixWorld(true);
+const FILL = [];
+// ---- THE DRAWN GROUND against the collider, on a 0.5 m grid
+const VH = await import(ROOT + 'tools/vishelp.mjs');
+const { json: vg, bin } = VH.readGLB('models/toon_city_kit/toon_city_visual.glb');
+const W = VH.nodeWorld(vg), C = .5, X0 = -95, NX = 380;
+const top = new Float32Array(NX * NX).fill(-9), who = new Array(NX * NX);
+for (let i = 0; i < vg.nodes.length; i++) {
+  const n = vg.nodes[i]; if (n.mesh === undefined || !/^(ground_wr|road_wr)/.test(n.name || '')) continue; const fill = /^ground_wr_(lots|dirt)/.test(n.name);
+  for (const pr of vg.meshes[n.mesh].primitives) {
+    const d = await VH.decodePrim(vg, bin, pr); if (!d) continue;
+    const p = d.pos, ix = d.index, m = W[i];
+    for (let t = 0; t < ix.length; t += 3) {
+      const P = [0, 1, 2].map(k => VH.xf(m, p[ix[t + k] * 3], p[ix[t + k] * 3 + 1], p[ix[t + k] * 3 + 2])); if (fill) FILL.push(...P[0], ...P[1], ...P[2]);
+      const ux = P[1][0] - P[0][0], uy = P[1][1] - P[0][1], uz = P[1][2] - P[0][2], vx = P[2][0] - P[0][0], vy = P[2][1] - P[0][1], vz = P[2][2] - P[0][2];
+      const ny = uz * vx - ux * vz, nl = Math.hypot(uy * vz - uz * vy, ny, ux * vy - uy * vx);
+      if (nl < 1e-9 || Math.abs(ny / nl) < .7) continue;
+      const x0 = Math.min(P[0][0], P[1][0], P[2][0]), x1 = Math.max(P[0][0], P[1][0], P[2][0]);
+      const z0 = Math.min(P[0][2], P[1][2], P[2][2]), z1 = Math.max(P[0][2], P[1][2], P[2][2]);
+      for (let gx = Math.max(0, Math.ceil((x0 - X0) / C)); gx <= Math.min(NX - 1, Math.floor((x1 - X0) / C)); gx++)
+        for (let gz = Math.max(0, Math.ceil((z0 - X0) / C)); gz <= Math.min(NX - 1, Math.floor((z1 - X0) / C)); gz++) {
+          const x = X0 + gx * C, z = X0 + gz * C;
+          const d0 = (P[1][2] - P[2][2]) * (P[0][0] - P[2][0]) + (P[2][0] - P[1][0]) * (P[0][2] - P[2][2]);
+          const l1 = ((P[1][2] - P[2][2]) * (x - P[2][0]) + (P[2][0] - P[1][0]) * (z - P[2][2])) / d0;
+          const l2 = ((P[2][2] - P[0][2]) * (x - P[2][0]) + (P[0][0] - P[2][0]) * (z - P[2][2])) / d0, l3 = 1 - l1 - l2;
+          if (l1 < -1e-6 || l2 < -1e-6 || l3 < -1e-6) continue;
+          const h = l1 * P[0][1] + l2 * P[1][1] + l3 * P[2][1], o = gx * NX + gz;
+          if (h > top[o]) { top[o] = h; who[o] = n.name; }
+        }
+    }
+  }
+}
+M.KCITY.fill.push(new Float32Array(FILL));
+console.log = () => {};
+M.buildKCityCol({ scene });
+try { M.buildIsle(); } catch (e) { quiet('isle', e.message); }
+console.log = ql;
+
+const farmSteps = ['buildFarm','buildFarmProps','buildCrash','crashHero','buildLane','buildBridge','buildCows','buildFlora'];
+console.log = () => {};
+for (const n of farmSteps) { try { M[n](); quiet('ok  ', n); } catch (e) { quiet('FAIL', n, e && e.stack ? e.stack.split('\n').slice(0,3).join(' | ') : e); } }
+console.log = ql;
+{ let bw=0; for (const r of M.ISLE.rays) bw=Math.max(bw, r.smp[12][0]); quiet('widest grass', bw.toFixed(1), 'rays', M.ISLE.rays.length, 'rect', JSON.stringify(M.ISLE.rect)); }
+quiet('FARM.at', JSON.stringify(M.FARM.at), 'CRASH.at', M.CRASH.at ? 'yes' : 'no', 'ISLE.live', M.ISLE.live);
+globalThis.toast = (t) => quiet('   toast:', t);
+for (const P of M.GODPLACES.filter(p => p.world === 'tkit')) {
+  M.player.pos.set(0, 0, 0);
+  let a = null; try { a = P.at && P.at(); } catch (e) { a = 'THROW ' + e.message; }
+  try { M.godPlace(P); } catch (e) { quiet('godPlace throw', P.id, e.message); }
+  quiet(P.id.padEnd(10), 'at', JSON.stringify(a), '-> player', M.player.pos.toArray().map(v => v.toFixed(1)).join(','));
+}
+process.exit(0);
