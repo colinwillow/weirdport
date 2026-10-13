@@ -7,6 +7,18 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE SAVE IS `SAVE`, NOT `PROG` -- `PROG` IS THE BOOT CARD'S LOAD COUNTER (m276, ROADMAP A1, `SAVE`, `progSave`).**
+  The roadmap asked for progress under `mel.prog`. The key is `mel.prog`; the object could not be `PROG`, because
+  `const PROG = { done, total, label }` already counts GLBs for the boot card and a second `const` of that name is a
+  syntax error -- a BLANK PAGE, which `npm run check` caught. So: `SAVE` holds chapter, forms (by `mphName`, `'zap'`
+  always first), regions, flags, portals and juice; `progForm/Region/Portal/Flag/Chapter/Juice` are the ONLY writers and
+  each saves on the spot and returns whether it changed anything, so a "quest complete" moment can fire exactly once.
+  **`?fresh` DID NOT EXIST** though the roadmap said it did -- nothing in the file read it. It does now: it wipes every
+  `mel.*` key in both stores (tuning, res, chip fold, world pick and the save) before anything reads them, then
+  `history.replaceState`s itself out of the URL, because the world key reloads and a `?fresh` left in the bar would wipe
+  the save on every tap. `mel.progReset()` is a new game that leaves the tuning alone. Chip: `CH<n>`, plus `NEW` on a
+  fresh boot and `BADSAVE` when a stored save would not parse (it then starts a new game rather than throwing).
+
 - **A BODY STANDING STILL NEVER RE-READ THE FLOOR UNDER IT (m275, `bodySeat`, `SEAT`).** *"Whenever I start the games,
   a lot of the NPCs are like through the sidewalk or the curb."* Measured before touching anything, through the real kit
   city collider (`tools/.probe/npcfloor.mjs`, his collision GLB plus the visual's lots and dirt decoded with draco):

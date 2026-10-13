@@ -23,7 +23,7 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
 
 ## Phase A — the game skeleton (no new art needed)
 
-- [ ] **A1 Progress & save.** A new `localStorage` key `mel.prog`: chapter, forms unlocked, regions
+- [x] m276 **A1 Progress & save.** A new `localStorage` key `mel.prog`: chapter, forms unlocked, regions
   revealed, quest flags, portals activated, juice. `?fresh` already clears keys — make it clear this one too. Chip shows `CH<n>`.
 - [ ] **A2 Talk.** NPCs can carry a `talk` script: walk up, the right pad lights (the existing
   interact pattern), tap → speech bubble with name + lines, tap to advance. A `!` marker over the
@@ -93,3 +93,11 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
 ## Done
 
 <!-- the loop moves ticked items here with their build number -->
+
+## Decisions for Colin
+
+- **m276 (A1):** `?fresh` did not exist yet, so I built it: it wipes **every** `mel.*` key (tuning,
+  resolution, chip fold, world pick and the save), not just the save, then removes itself from the
+  URL so the world key's reload cannot wipe it again. `mel.progReset()` in the console resets only
+  the save. Juice starts at 0; A7b decides the tank. The object in code is `SAVE` (the name `PROG`
+  was taken by the boot loader); the storage key is `mel.prog` as asked.
