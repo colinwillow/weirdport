@@ -673,10 +673,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m293</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m294</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m293</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m294</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -754,7 +754,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm293';
+const BUILD = 'm294';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28719,6 +28719,7 @@ function mapMarks(g, E, k) {
     g.moveTo(mapU(E, G.x + c * hw), mapV(E, G.z - s * hw)); g.lineTo(mapU(E, G.x - c * hw), mapV(E, G.z + s * hw)); g.stroke();
   }
   for (const P of PORTALS) dot(P.x, P.z, 7, P.on ? '#b86dff' : null, '#b86dff');
+  for (const c of COWS) dot(c.x, c.z, 3.5, '#f2efe8', '#0b0d12');      // the herd (m294)
   g.font = '700 ' + Math.round(18 * k) + 'px Bungee, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
   for (const d of DUMMIES) if (d.talk && !d.talk.done && !d.wasK) { const R = d.root.position; g.fillStyle = '#ffc247'; g.fillText('!', mapU(E, R.x), mapV(E, R.z)); }
   if (quest.cur && quest.tgt) { dot(quest.tgt.x, quest.tgt.z, 9, '#ffc247', '#0b0d12'); }
@@ -29481,6 +29482,251 @@ function mkrStep() {
       b.talkSeen = 1; TALK.n++;
     }
   }
+}
+
+// ============================================================================================
+// THE COWS (m294, ROADMAP B1d2) -- Gristle Farm's livestock: they graze, they wander, they moo
+// ============================================================================================
+// **GREYBOX COWS, BUILT FROM BOXES, UNTIL HE MAKES REAL ONES** (GAME_DESIGN lists cows among the
+// characters still needed). No body in the roster reads as a cow, and a person on all fours would be
+// worse than a box: a body, four legs that swing in diagonal pairs, a head on a neck that drops to the
+// grass, a muzzle, ears, horns, an udder, a tail that swishes, and coat patches. Holstein, Hereford,
+// Angus and Jersey coats, so six of them are not one cow drawn six times.
+// **ONE DRAW CALL FOR THE HERD.** Every part of every cow is an instance of ONE unit box in one
+// `InstancedMesh`, its matrix composed each frame from the cow's root, the part's pivot, its swing and
+// its size (16 a cow). Colours are per instance (`setColorAt`), set once.
+// **THE BRAIN IS THREE MOODS AND A TROT**: graze (head down, chewing), look (head up, turning), walk
+// (to a clear spot near home) -- and `trot`, a few metres away from a man who runs past too close.
+// A spot is clear when the ground is grass (not beach, not city, not the river's channel) and a 1.1 m
+// probe through `resolveBoxes` touches nothing, so walls, fences, hedgebanks and the levees are all
+// already the herd's fences. They come down into the sunken lane through its openings -- REGIONS.md's
+// "cows ... block lanes" -- and they block YOU (two circles along the body, `cowPush`).
+// **THE MOO IS SYNTHESISED** (`mooAt`) -- there is no cow in `audio/` and a moo is a vowel, which is
+// what a synth does well: two detuned saws and a sub an octave down, through a lowpass that opens from
+// "mm" to "oo" and closes again, a pitch that rises then sags, a little vibrato. Faded by distance
+// like every `snd`, panned off the camera's OWN right vector (its world matrix), so no bearing
+// convention enters it. Panic and the stampede are B1e. `mel.moo()` makes the nearest one moo.
+const COW = {
+  on: 1,
+  walk: [.55, .8],          // m/s
+  trot: 2.1,
+  turn: 1.3,                // rad/s
+  stride: 1.15,             // m a full leg cycle covers
+  graze: [5, 12], look: [2, 4], walkMax: 12,
+  r: .75, step: .32,        // the probe for walls; how high a step it will take (not the bale stair)
+  mooEvery: [8, 24], mooDur: [.9, 1.6], f0: 112, mooG: .3, mooFull: 12, mooOut: 70,
+  shyR: 2.8, shyV: 3,       // a man running past this close, faster than this, startles it
+  n: 0, moos: 0, startles: 0,
+};
+const COWS = [];
+const COWPAL = [
+  { b: 0xefece6, p: 0x1d1d20, h: 0x1d1d20, pat: 1 },   // Holstein, black face
+  { b: 0x7b4a2c, p: 0,        h: 0xeee8dc, pat: 0 },   // Hereford: brown, white face
+  { b: 0x1f1d1e, p: 0,        h: 0x1f1d1e, pat: 0 },   // Angus
+  { b: 0xb98a55, p: 0,        h: 0xa37645, pat: 0 },   // Jersey
+  { b: 0xefece6, p: 0x2a2523, h: 0xefece6, pat: 1 },   // Holstein, white face
+  { b: 0x6b3a22, p: 0xeee8dc, h: 0x6b3a22, pat: 1 },   // brown and white
+];
+const cowK = { mesh: null, A: new THREE.Matrix4(), H: new THREE.Matrix4(), R: new THREE.Matrix4(), T: new THREE.Matrix4(), col: new THREE.Color(), probe: { x: 0, y: 0, z: 0 } };
+const COW_PARTS = 16;
+// is (x, z) somewhere a cow may stand? returns the ground, or null
+function cowClear(x, z) {
+  const g = groundAt(x, z, 3, 6);
+  if (!(g > ISLE.sea + .5)) return null;
+  const R = ISLE.rect;
+  if (R && x > R[0] - 2 && x < R[1] + 2 && z > R[2] - 2 && z < R[3] + 2) return null;
+  if (river.F && FARM.at) {
+    const dx = x - FARM.at.x, dz = z - FARM.at.z, u = (dx * river.F.C - dz * river.F.S) * BRIDGE.side, v = dx * river.F.S + dz * river.F.C;
+    if (u > river.u0 - 2.5 && u < river.u1 + 2.5 && v > river.v0 - 2 && v < river.v1) return null;
+  }
+  const P = cowK.probe; P.x = x; P.y = g; P.z = z;
+  if (resolveBoxes(P, 1.1, 1.5)) return null;
+  return g;
+}
+function cowPick(c) {
+  for (let k = 0; k < 10; k++) {
+    const a = Math.random() * 6.283, r = Math.sqrt(Math.random()) * c.home.r;
+    const x = c.home.x + Math.sin(a) * r, z = c.home.z + Math.cos(a) * r;
+    if (cowClear(x, z) != null) { c.tx = x; c.tz = z; return true; }
+  }
+  return false;
+}
+function buildCows() {
+  const A = FARM.at; if (!COW.on || !A) return 0;
+  const C = Math.cos(A.th), S = Math.sin(A.th), W = (u, v) => [A.x + u * C + v * S, A.z - u * S + v * C];
+  // homes, in the farm's frame: the paddock behind the barn, and the field toward the crash
+  const homes = [[-4.3, 13.2, 4.2], [-4.3, 13.2, 4.2], [-4.3, 13.2, 4.2], [11, 11, 7], [11, 11, 7], [13, 4, 6]];
+  const N = homes.length;
+  const mesh = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: .86 }), N * COW_PARTS);
+  mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
+  mesh.castShadow = true; mesh.receiveShadow = true; mesh.frustumCulled = false;
+  scene.add(mesh); cowK.mesh = mesh;
+  for (let i = 0; i < N; i++) {
+    const [hu, hv, hr] = homes[i], [hx, hz] = W(hu, hv), pal = COWPAL[i % COWPAL.length];
+    const c = { i, home: { x: hx, z: hz, r: hr }, x: hx, z: hz, y: 0, h: Math.random() * 6.283, st: 'graze', t: rnd(COW.graze),
+      sp: rnd(COW.walk), phase: Math.random() * 6.283, pitch: 1, yawH: 0, g: 1, mooT: 2 + Math.random() * 12, mooing: 0,
+      mooK: .85 + Math.random() * .3, stuck: 0, tx: hx, tz: hz, seed: Math.random() * 100, pal,
+      pat: [[.5 + Math.random() * .2, .5, 1.2, .7], [-.3 - Math.random() * .2, .42, 1.12, .62], [-.82, .3, 1.24 - Math.random() * .1, .5]] };
+    // a clear spot to start on
+    for (let k = 0; k < 20; k++) { if (cowPick(c)) { c.x = c.tx; c.z = c.tz; break; } }
+    c.y = groundAt(c.x, c.z, 3, 6);
+    // the colours, once: body, udder, 3 patches, 4 legs, tail, head, muzzle, 2 ears, 2 horns
+    const cols = [pal.b, 0xe0a3a3, pal.p || pal.b, pal.p || pal.b, pal.p || pal.b, pal.b, pal.b, pal.b, pal.b, pal.b,
+                  pal.h, 0xd99a9a, pal.h, pal.h, 0xe9dfc4, 0xe9dfc4];
+    for (let k = 0; k < COW_PARTS; k++) mesh.setColorAt(i * COW_PARTS + k, cowK.col.setHex(cols[k]));
+    COWS.push(c);
+  }
+  mesh.instanceColor.needsUpdate = true;
+  COW.n = N;
+  for (const c of COWS) cowDraw(c);
+  mesh.instanceMatrix.needsUpdate = true;
+  return N;
+}
+// one part: base * T(t) * Ry * Rx * Rz * T(o) * S(s)
+function cowPut(i, base, tx, ty, tz, ry, rx, rz, ox, oy, oz, sx, sy, sz) {
+  const A = cowK.A, T = cowK.T;
+  A.copy(base);
+  if (tx || ty || tz) A.multiply(T.makeTranslation(tx, ty, tz));
+  if (ry) A.multiply(T.makeRotationY(ry));
+  if (rx) A.multiply(T.makeRotationX(rx));
+  if (rz) A.multiply(T.makeRotationZ(rz));
+  if (ox || oy || oz) A.multiply(T.makeTranslation(ox, oy, oz));
+  A.multiply(T.makeScale(sx, sy, sz));
+  cowK.mesh.setMatrixAt(i, A);
+}
+function cowDraw(c) {
+  const b = c.i * COW_PARTS, R = cowK.R, H = cowK.H;
+  const moving = c.st === 'walk' || c.st === 'trot', spd = moving ? (c.st === 'trot' ? COW.trot : c.sp) : 0;
+  const bob = moving ? Math.abs(Math.sin(c.phase)) * (c.st === 'trot' ? .06 : .03) : 0;
+  R.makeRotationY(c.h); R.setPosition(c.x, c.y + bob, c.z);
+  cowPut(b, R, 0, 1.08, 0, 0, 0, 0, 0, 0, 0, .95, .9, 2.0);                      // body
+  cowPut(b + 1, R, 0, .58, -.45, 0, 0, 0, 0, 0, 0, .34, .18, .36);                // udder
+  for (let k = 0; k < 3; k++) {                                                    // coat patches: bands round the upper body
+    const [pz, pl, py, ph] = c.pat[k], on = c.pal.pat ? 1 : 0;
+    cowPut(b + 2 + k, R, 0, py, pz, 0, 0, 0, 0, 0, 0, .97 * on, ph * on, pl * on);
+  }
+  const amp = Math.min(1, spd / .8) * (c.st === 'trot' ? .7 : .45);
+  const legs = [[.3, .72, 0], [-.3, .72, Math.PI], [.3, -.72, Math.PI], [-.3, -.72, 0]];   // diagonal pairs in step
+  for (let k = 0; k < 4; k++) { const [lx, lz, ph] = legs[k];
+    cowPut(b + 5 + k, R, lx, .8, lz, 0, Math.sin(c.phase + ph) * amp, 0, 0, -.39, 0, .17, .78, .17); }
+  const now = performance.now() * .001;
+  cowPut(b + 9, R, 0, 1.45, -1.0, 0, .25 + Math.sin(now * 1.7 + c.seed) * .08, Math.sin(now * 2.3 + c.seed) * .35, 0, -.36, 0, .07, .72, .07);
+  // the head on its neck: lowered and pitched by grazing, turned by looking
+  H.copy(R).multiply(cowK.T.makeTranslation(0, 1.3 - .35 * c.g, .98));
+  if (c.yawH) H.multiply(cowK.T.makeRotationY(c.yawH));
+  H.multiply(cowK.T.makeRotationX(c.pitch));
+  cowPut(b + 10, H, 0, 0, 0, 0, 0, 0, 0, -.06, .32, .48, .52, .62);              // head
+  cowPut(b + 11, H, 0, 0, 0, 0, 0, 0, 0, -.16, .68, .42, .3, .16);               // muzzle
+  cowPut(b + 12, H, 0, 0, 0, 0, 0, 0, .31, .12, .2, .2, .08, .12);               // ears
+  cowPut(b + 13, H, 0, 0, 0, 0, 0, 0, -.31, .12, .2, .2, .08, .12);
+  cowPut(b + 14, H, 0, 0, 0, 0, 0, 0, .17, .27, .22, .07, .17, .07);             // horns
+  cowPut(b + 15, H, 0, 0, 0, 0, 0, 0, -.17, .27, .22, .07, .17, .07);
+}
+// a moo, made rather than played -- see the block above
+function mooAt(x, z, k, dur) {
+  if (!SFX.on || !SFX.ctx || SFX.voices >= SFX.max) return 0;
+  const dd = Math.hypot(x - player.pos.x, z - player.pos.z);
+  if (dd > COW.mooOut) return 0;
+  const dk = 1 - smooth(COW.mooFull, COW.mooOut, dd);
+  if (dk < .03) return 0;
+  const c = SFX.ctx, t = c.currentTime, T = dur, f0 = COW.f0 * k;
+  const out = c.createGain(); out.gain.value = 0;
+  if (c.createStereoPanner) {
+    const pn = c.createStereoPanner(), e = camera.matrixWorld.elements, rx = e[0], rz = e[2];
+    const vx = x - camera.position.x, vz = z - camera.position.z, D = (Math.hypot(rx, rz) * Math.hypot(vx, vz)) || 1;
+    pn.pan.value = clamp((vx * rx + vz * rz) / D, -1, 1) * .75;
+    out.connect(pn); pn.connect(SFX.bus);
+  } else out.connect(SFX.bus);
+  const lp = c.createBiquadFilter(); lp.type = 'lowpass'; lp.Q.value = 4;
+  const pk = c.createBiquadFilter(); pk.type = 'peaking'; pk.frequency.value = 520 * k; pk.Q.value = 2; pk.gain.value = 7;
+  lp.connect(pk); pk.connect(out);
+  const os = [];
+  for (const [type, det, mul, gv] of [['sawtooth', -7, 1, .5], ['sawtooth', 7, 1, .5], ['square', 0, .5, .22]]) {
+    const o = c.createOscillator(); o.type = type; o.detune.value = det;
+    const og = c.createGain(); og.gain.value = gv; o.connect(og); og.connect(lp);
+    const f = o.frequency;
+    f.setValueAtTime(f0 * .82 * mul, t);
+    f.linearRampToValueAtTime(f0 * 1.06 * mul, t + T * .3);
+    f.linearRampToValueAtTime(f0 * .98 * mul, t + T * .75);
+    f.linearRampToValueAtTime(f0 * .72 * mul, t + T);
+    o.start(t); o.stop(t + T + .05); os.push(o);
+  }
+  const lfo = c.createOscillator(), lg = c.createGain();
+  lfo.frequency.value = 5.2; lg.gain.value = f0 * .018; lfo.connect(lg);
+  for (const o of os) lg.connect(o.frequency);
+  lfo.start(t); lfo.stop(t + T + .05);
+  const F = lp.frequency;
+  F.setValueAtTime(260 * k, t); F.linearRampToValueAtTime(980 * k, t + T * .35);
+  F.linearRampToValueAtTime(620 * k, t + T * .8); F.linearRampToValueAtTime(280 * k, t + T);
+  const G = out.gain, gv = COW.mooG * dk;
+  G.setValueAtTime(0, t); G.linearRampToValueAtTime(gv, t + .14);
+  G.setValueAtTime(gv, t + T * .7); G.linearRampToValueAtTime(0, t + T);
+  SFX.voices++;
+  os[0].onended = () => { SFX.voices--; try { out.disconnect(); } catch (e) {} };
+  COW.moos++;
+  return 1;
+}
+// AFTER he moves and BEFORE the camera: the herd's brains, its bodies, and its bulk against his
+function cowStep(dt) {
+  if (!COWS.length || !cowK.mesh) return;
+  const p = player, P = p.pos;
+  for (const c of COWS) {
+    const far = Math.hypot(c.x - P.x, c.z - P.z);
+    c.t -= dt;
+    // startled: a man running past close
+    if (c.st !== 'trot' && far < COW.shyR && p.speed > COW.shyV) {
+      const a = Math.atan2(c.x - P.x, c.z - P.z);
+      c.tx = c.x + Math.sin(a) * 5; c.tz = c.z + Math.cos(a) * 5; c.st = 'trot'; c.t = 2.5; COW.startles++;
+      if (c.mooT > .8) c.mooT = .05;
+    }
+    if (c.st === 'graze' || c.st === 'look') {
+      if (c.t <= 0) {
+        if (c.st === 'graze' && Math.random() < .45) { c.st = 'look'; c.t = rnd(COW.look); }
+        else if (cowPick(c)) { c.st = 'walk'; c.t = COW.walkMax; c.sp = rnd(COW.walk); c.stuck = 0; }
+        else { c.st = 'graze'; c.t = rnd(COW.graze); }
+      }
+    } else {
+      const dx = c.tx - c.x, dz = c.tz - c.z, L = Math.hypot(dx, dz);
+      if (L < .6 || c.t <= 0) { c.st = 'graze'; c.t = rnd(COW.graze); }
+      else {
+        const want = Math.atan2(dx, dz), off = wrapAngle(want - c.h);
+        c.h += clamp(off, -COW.turn * dt * (c.st === 'trot' ? 2 : 1), COW.turn * dt * (c.st === 'trot' ? 2 : 1));
+        const sp = (c.st === 'trot' ? COW.trot : c.sp) * clamp(1 - Math.abs(off) / 1.3, .15, 1);
+        const ox = c.x, oz = c.z;
+        c.x += Math.sin(c.h) * sp * dt; c.z += Math.cos(c.h) * sp * dt;
+        const Q = cowK.probe; Q.x = c.x; Q.y = c.y; Q.z = c.z;
+        resolveBoxes(Q, COW.r, 1.4);
+        c.x = Q.x; c.z = Q.z;
+        const g = groundAt(c.x, c.z, c.y + .2, COW.step);
+        if (g > -50 && g > ISLE.sea + .3) c.y = g; else { c.x = ox; c.z = oz; c.st = 'graze'; c.t = 1; }
+        const moved = Math.hypot(c.x - ox, c.z - oz);
+        c.phase += moved / COW.stride * 6.283;
+        c.stuck = moved < sp * dt * .3 ? c.stuck + dt : 0;
+        if (c.stuck > 1.2) { c.st = 'graze'; c.t = 1 + Math.random() * 2; }
+      }
+    }
+    // the herd keeps its own room
+    for (const o of COWS) { if (o === c) continue; const dx = c.x - o.x, dz = c.z - o.z, d = Math.hypot(dx, dz);
+      if (d < 1.7 && d > 1e-3) { const k = (1.7 - d) * .5; c.x += dx / d * k; c.z += dz / d * k; } }
+    // and its bulk against his: two circles along the body
+    if (Math.abs(P.y - c.y) < 1.7) for (const o of [.7, -.7]) {
+      const cx = c.x + Math.sin(c.h) * o, cz = c.z + Math.cos(c.h) * o, dx = P.x - cx, dz = P.z - cz, d = Math.hypot(dx, dz), R = .62 + (p.r || .35);
+      if (d < R) { const ux = d > 1e-4 ? dx / d : Math.cos(c.h), uz = d > 1e-4 ? dz / d : -Math.sin(c.h); P.x = cx + ux * R; P.z = cz + uz * R; }
+    }
+    // the moo
+    if (c.mooing > 0) c.mooing -= dt;
+    if ((c.mooT -= dt) <= 0) {
+      c.mooT = rnd(COW.mooEvery);
+      if (far < COW.mooOut) { const d = rnd(COW.mooDur); if (mooAt(c.x, c.z, c.mooK * (c.st === 'trot' ? 1.15 : 1), d)) c.mooing = d; }
+    }
+    // the head: down to graze, up to look or moo, level to walk
+    const pt = c.mooing > 0 ? -.35 : c.st === 'graze' ? 1.05 + Math.sin(performance.now() * .004 + c.seed) * .05 : c.st === 'look' ? -.12 : .1;
+    c.pitch = damp(c.pitch, pt, .25, dt);
+    c.g = damp(c.g, c.st === 'graze' && c.mooing <= 0 ? 1 : 0, .3, dt);
+    c.yawH = damp(c.yawH, c.st === 'look' ? Math.sin(performance.now() * .0006 + c.seed) * .55 : 0, .4, dt);
+    if (far < 140) cowDraw(c);
+  }
+  cowK.mesh.instanceMatrix.needsUpdate = true;
 }
 
 function stepDummies(dt) {
@@ -30621,6 +30867,7 @@ function frameBody() {
     _pt = pT('rig', _pt);
   }
   gatePush(dt);                 // gates: after he moves, before the lens follows him (m285)
+  cowStep(dt);                  // the herd: brains, bodies, and their bulk against him -- before the lens too (m294)
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)
@@ -30974,6 +31221,8 @@ function frameBody() {
       // LN: the lane and creek's colliders (m290)
       (LANE.n ? ' LN' + LANE.n : '') +
       // BR: the river and bridge's colliders, ramp tris, times the current put you back (m291)
+      // COW: the herd, moos heard, startles (m294) -- COW6 with m0 after a minute nearby is "no audio context yet"
+      (COW.n ? ' COW' + COW.n + 'm' + COW.moos + (COW.startles ? 's' + COW.startles : '') : '') +
       (BRIDGE.n ? ' BR' + BRIDGE.n + '/' + BRIDGE.tris + (BRIDGE.putBacks ? '~' + BRIDGE.putBacks : '') : '') +
       (GATE.n ? ' G' + GATE.n + '/' + GATE.said : '') +
       (quest.cur ? ' Q' + quest.cur.id + '.' + quest.step + (quest.tgt ? '' : '~') : '') +
@@ -31311,6 +31560,7 @@ async function init() {
     try { buildCrash(); } catch (e) { note('CRASH FAIL'); console.warn('[melee] crash', e); }
     try { buildLane(); } catch (e) { note('LANE FAIL'); console.warn('[melee] lane', e); }
     try { buildBridge(); } catch (e) { note('BRIDGE FAIL'); console.warn('[melee] bridge', e); }
+    try { buildCows(); } catch (e) { note('COWS FAIL'); console.warn('[melee] cows', e); }
     player.pos.x = KCITY.spawn[0]; player.pos.z = KCITY.spawn[1];
   } else if (inTC()) {
     // **HIS LEVEL, AND NOTHING ELSE AT ALL.** No collider builder, no street grid, no boxes --
@@ -31494,6 +31744,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // THE CRASH (m289): `mel.crash()` puts you at the wreck
   // THE LANE (m290): `mel.lane()` puts you in the sunken lane, `mel.lane(1)` at the ford
   // THE BRIDGE (m291): `mel.bridge()` puts you on the deck
+  // THE COWS (m294): `mel.COW` live; `mel.moo()` makes the nearest one moo
+  COW, COWS, moo: () => { let b = null, bd = 1e9; for (const c of COWS) { const d = Math.hypot(c.x - player.pos.x, c.z - player.pos.z); if (d < bd) { bd = d; b = c; } } if (!b) return 'no cows'; return mooAt(b.x, b.z, b.mooK, 1.3) ? 'moo (' + bd.toFixed(0) + ' m)' : (SFX.ctx ? 'too far or no voice free' : 'no audio yet -- touch the screen first'); },
   BRIDGE, bridge: () => { const B = BRIDGE.at; if (!B) return 'no bridge in this world'; player.pos.set(B.x, B.y + .3, B.z); player.vel.set(0, 0, 0); return 'the bridge'; },
   LANE, lane: f => { const L = LANE.at; if (!L) return 'no lane in this world'; const x = f ? L.ford[0] : L.x, z = f ? L.ford[1] : L.z; player.pos.set(x, groundAt(x, z, 3, 6) + .2, z); player.vel.set(0, 0, 0); return f ? 'the ford' : 'the lane'; },
   CRASH, crash: () => { const C = CRASH.at; if (!C) return 'no crash site in this world'; const p = player; p.pos.set(C.you[0], C.y + 2, C.you[1]); p.vel.set(0, 0, 0); p.heading = p.faceH = Math.atan2(C.x - C.you[0], C.z - C.you[1]); return 'the wreck'; },
