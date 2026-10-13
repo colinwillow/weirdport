@@ -15,6 +15,29 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
+**From Colin, after seeing the build: placeholders are being dropped in at random and it looks sloppy.**
+Do these in order, before anything else in this file:
+
+1. **Take the demo objects out of the world.** `GATE.demo` and `PORTAL.demo` both put things right
+   by the spawn with no reason to be there. Set both to 0. Keep the systems; add `mel.gateDemo()` /
+   `mel.portalDemo()` console hooks so they can still be tested on purpose. Ship that as one build.
+2. **New rule: nothing appears in the world without an authored reason and an authored place.**
+   Systems ship DORMANT. Things get into the world in exactly two ways:
+   - **named markers in his Blender exports** (empties like `portal_bridge`, `gate_fire_alley`,
+     `npc_farmer_01`), which the game reads and turns into the real thing; or
+   - an **authored placement table** in index.html, each entry with a named spot in a region and a
+     one-line reason it is there.
+   Never "near the spawn", never "somewhere open".
+3. **Write `MARKERS.md`**: the marker vocabulary for his Blender scenes (portals, gates of each type,
+   NPCs by kind and role, quest givers, spawn points, crowd and protest areas, ambient life), with
+   the naming pattern and any custom properties. Then make the loader read those markers from the
+   kit city's GLBs (it already reads `nav_repair` and `fx_hydrant_water_spout` the same way). That
+   is how he authors the game: he places, the game behaves.
+4. **Pause the procedural farm.** Do not add to B1 (m288 to m291) until Colin has looked at it and
+   said whether he wants it. Skip B1e and B2.
+5. **Then go deep in Old Town**, the few blocks he already likes: C0 district health, using the
+   worker, fire and repair systems that are already there. Depth in one small place, not breadth.
+
 ## Standing rules for anything built in the world
 
 Read `GAME_DESIGN.md` → "The world: dense, vertical, organic, alive" before building any place.
