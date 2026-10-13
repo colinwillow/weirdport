@@ -117,6 +117,18 @@ differ" table there, so no region feels like the last one.
 - [ ] **C5 Hidden good aliens.** A network of disguised shopkeepers who give tips and upgrades.
 - [ ] **C6 Chapter 2 greybox (The Pearl)** with its quests and boss — then 3, 4…
 
+## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
+
+- [ ] **D1 Influence model.** Per-block shares for each faction, saved with progress; a map overlay
+  and a chip token showing who holds the block you're in.
+- [ ] **D2 The crowd follows influence.** The NPC mix in a block comes from its shares.
+- [ ] **D3 Faction dressing.** Each faction's set of props, signs, paint and decay on existing
+  buildings, cross-fading as a block changes hands.
+- [ ] **D4 Faction buildings.** Kit-generated building styles per faction, swapped in when a block
+  changes hands for good.
+- [ ] **D5 Pressure.** Factions push at their borders on their own (flashpoint events), and the
+  player's actions move the shares.
+
 ## Ongoing (fill gaps between items, never instead of them)
 
 - Bugs he reports always jump the queue.
