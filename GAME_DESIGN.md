@@ -71,6 +71,11 @@ form wheel for good.
 
 ## Who's out there
 
+**UFO lore, our spin:** `LORE.md` turns real UFO and paranormal folklore into systems: the orbs as the
+aliens' control grid (shoot one down and people fall out of the trance), electromagnetic effects as
+the tell, crop circles, tractor beams, missing time, Men in Black, implants and more.
+
+
 **The culture war (the sub-plot that fills the streets).** Blue-hair activists, protesters with
 signs and performance art on one side; rednecks, hillbillies, bikers and rally-goers on the other.
 They argue, march, and brawl. Neither side is the villain — the aliens are, and both sides are

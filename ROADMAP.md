@@ -153,6 +153,10 @@ differ" table there, so no region feels like the last one.
   a brawl if provoked; cops respond. As an activist you can walk inside the crowd through a barricade.
 - [ ] **C2 Skinsuit incursions.** An enemy ship/agent turns civilians on the street; you fight and
   revert them. Ties to the existing virus system.
+- [ ] **C2b The orbs (`LORE.md`).** Start with the pacifier: an orb floating over a few Old Town
+  blocks, a trance on the people under it (they stare and walk in slow loops), the blaster can shoot
+  it down, and they come out of it dazed. Lights flicker and cars stall near it (the
+  electromagnetic tell). Then the watcher and the amplifier, which feeds the protests and brawls.
 - [ ] **C3 Uplift cyborgs.** A cyborg variant of a worker (placeholder tint/parts until his models
   land) with its own behaviour.
 - [ ] **C4 The glider.** The hang-glider guy at a lookout; his form flies (reuse her wingsuit flight).
