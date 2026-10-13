@@ -7,6 +7,18 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FARM IS PAINTED IN THE SHADER, PER KIND, AND THE GLSL WAS COMPILED BEFORE IT SHIPPED (m296, farm pass 3, `FPAINT`, `farmPaint`).**
+  `farmFrame` calls `farmPaint(MAT[k], k)` on every material it is handed, so the farm, crash, lane and bridge all get
+  it; the cows (one instanced mesh) do not. The patch adds `vFpP`/`vFpN` (world position and normal, from
+  `transformed`/`objectNormal` after `begin_vertex`) and rewrites `diffuseColor.rgb` after `color_fragment`: kind 1
+  boards (seams every 1/4.6 m on the dominant non-top axis, a hash tint per board, wear to grey wood by noise), 2
+  stone (.7 x .34 m courses, offset rows, lighter mortar), 3 roof (seams every .45 m, rust), 4 hay, 5 earth, 6 leaf,
+  7 metal, 0 variation only. `FP_KIND` is a define and `customProgramCacheKey` is `fpaint<kind>`, so one program per
+  kind. **A shader that fails to compile does not blank the page, it makes the farm vanish** -- so the shipped text
+  (lifted from index.html between `const FPAINT` and `farmFrame`) was rendered on a cube per kind in headless Chromium
+  + SwiftShader with fog and shadows on: 10 programs, 0 errors. A string `.replace` that finds no chunk fails SILENTLY
+  (no paint, no error) -- if a three upgrade renames `color_fragment` or `begin_vertex`, this goes flat without a word.
+
 - **THE FARM'S GOLDEN HOUR IS A GRADE BLENDED BY DISTANCE, WITH ONE PER-FRAME WRITER (m295, farm pass 2, `GRADE`, `gradeStep`).**
   REGIONS.md's "late golden hour". `gradeStep` (after `stepSun`) owns `sun.color`, `hemi.color`, `hemi.groundColor`,
   `scene.fog.near/far` per frame, lerping from bases it captured on its first run toward gold by

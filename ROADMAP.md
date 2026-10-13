@@ -270,3 +270,10 @@ differ" table there, so no region feels like the last one.
   moving it re-bakes the sky. `mel.GRADE.on = 0` is the A/B; the colours are live on `mel.GRADE`.
   **The screenshot tool didn't work**: software WebGL can't render one kit-city frame inside
   Playwright's 30 s limit, so per the STEER I dropped it and these passes stay unseen until you look.
+- **m296 (farm pass 3: paint):** the farm's flat greybox colours are now **painted in the shader**
+  (no textures, no extra draw calls): the barn and timber are vertical boards with dark seams, a
+  slightly different tone per board and red paint worn through to grey wood in patches; the stone
+  is coursed blocks with lighter mortar; the roofs have standing seams with rust bleeding down; hay
+  is fibrous, the earth clumpy, the hedges blotchy, the metal streaked. It covers the barn, crash
+  site, lane and bridge. The cows are separate and unchanged. `mel.FPAINT.on = 0` then reload is the
+  flat A/B.

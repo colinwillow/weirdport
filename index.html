@@ -673,10 +673,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m295</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m296</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m295</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m296</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -754,7 +754,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm295';
+const BUILD = 'm296';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28869,6 +28869,89 @@ function farmMerge(parts, mat) {
   mesh.castShadow = mesh.receiveShadow = true;
   return mesh;
 }
+// ============================================================================================
+// THE FARM'S PAINT (m296, farm polish pass 3, `farmPaint`) -- painted, not flat greybox
+// ============================================================================================
+// STEER: *"the materials and colours (painted, not flat greybox; REGIONS.md's farm palette)"*. Every material the
+// farm, the crash, the lane and the bridge build is one flat colour. **No textures were added**: a small shader
+// patch reads the WORLD position and the world normal, picks the dominant plane, and paints in the fragment:
+//   boards  (barn red, wood)   vertical boards with dark seams, a tint per board, paint worn to grey wood in patches
+//   stone   (stone, cap)       coursed blocks, offset rows, lighter mortar, a tint per block
+//   roof                       standing seams down the slope, rust bleeding from them
+//   hay / earth / leaf         fibrous straw, clumpy soil, blotchy leaves
+//   everything                 large-scale variation and a fine grain, so nothing reads as plastic
+// One define per kind (`FP_KIND`) and a cache key per kind, so a handful of programs, and NO new draw calls --
+// it is the same merged meshes. The noise is a cheap 3D value noise; nothing is sampled.
+const FPAINT = { on: 1, kinds: { red: 1, wood: 1, stone: 2, cap: 2, roof: 3, hay: 4, dirt: 5, earth: 5, bank: 5, turf: 5, road: 5,
+  hedge: 6, hedge2: 6, metal: 7, pipe: 7, hull: 7, trim: 0, white: 0, dark: 0 }, n: 0 };
+const FPAINT_GLSL = `
+float fpH(vec3 p) { p = fract(p * .3183099 + .1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
+float fpN(vec3 x) { vec3 i = floor(x), f = fract(x); f = f * f * (3.0 - 2.0 * f);
+  return mix(mix(mix(fpH(i), fpH(i + vec3(1,0,0)), f.x), mix(fpH(i + vec3(0,1,0)), fpH(i + vec3(1,1,0)), f.x), f.y),
+             mix(mix(fpH(i + vec3(0,0,1)), fpH(i + vec3(1,0,1)), f.x), mix(fpH(i + vec3(0,1,1)), fpH(i + vec3(1,1,1)), f.x), f.y), f.z); }
+`;
+function farmPaint(m, key) {
+  const kind = FPAINT.kinds[key];
+  if (!FPAINT.on || kind === undefined || !m || m.onBeforeCompile.__fp) return;
+  m.defines = Object.assign({}, m.defines, { FP_KIND: kind });
+  const f = sh => {
+    sh.vertexShader = sh.vertexShader
+      .replace('#include <common>', '#include <common>\nvarying vec3 vFpP;\nvarying vec3 vFpN;')
+      .replace('#include <begin_vertex>', '#include <begin_vertex>\nvFpP = (modelMatrix * vec4(transformed, 1.0)).xyz;\nvFpN = normalize(mat3(modelMatrix) * objectNormal);');
+    sh.fragmentShader = sh.fragmentShader
+      .replace('#include <common>', '#include <common>\nvarying vec3 vFpP;\nvarying vec3 vFpN;\n' + FPAINT_GLSL)
+      .replace('#include <color_fragment>', `#include <color_fragment>
+{
+  vec3 P = vFpP, A = abs(normalize(vFpN));
+  bool top = A.y > max(A.x, A.z);
+  float h = top ? P.x : (A.x > A.z ? P.z : P.x);           // the across axis on this face
+  float big = fpN(P * .35), mid = fpN(P * 1.9), fine = fpN(P * 9.0);
+  float s = (.86 + .26 * big) * (.94 + .12 * fine);
+  vec3 c = diffuseColor.rgb;
+#if FP_KIND == 1
+  if (!top) {
+    float b = h * 4.6, id = floor(b), fb = fract(b);
+    float seam = smoothstep(0.0, .07, fb) * smoothstep(1.0, .93, fb);
+    s *= mix(.5, 1.0, seam) * (.9 + .2 * fpH(vec3(id, 3.0, 7.0)));
+    float grain = fpN(vec3(P.x * 3.0, P.y * 40.0, P.z * 3.0));
+    s *= .93 + .1 * grain;
+    float wear = smoothstep(.62, .78, mid * .6 + fine * .4);
+    c = mix(c, vec3(.36, .31, .26), wear * .75);
+  }
+#elif FP_KIND == 2
+  float row = floor(P.y / .34), off = mod(row, 2.0) * .35;
+  float bx = (h + off) / .7, bid = floor(bx);
+  float mx = abs(fract(bx) - .5), my = abs(fract(P.y / .34) - .5);
+  float mortar = top ? 1.0 : smoothstep(.5, .45, mx) * smoothstep(.5, .42, my);
+  s *= .88 + .2 * fpH(vec3(bid, row, 1.0));
+  c = mix(c * 1.22, c, mortar);
+#elif FP_KIND == 3
+  float sm = fract(h * 2.2);
+  s *= .82 + .18 * smoothstep(0.0, .12, sm) * smoothstep(1.0, .88, sm);
+  float rust = smoothstep(.55, .85, fpN(vec3(h * 6.0, P.y * .8, 2.0)) * .7 + big * .3);
+  c = mix(c, vec3(.42, .2, .1), rust * .6);
+#elif FP_KIND == 4
+  s *= .8 + .35 * fpN(vec3(P.x * 2.0, P.y * 28.0, P.z * 2.0));
+  c = mix(c, vec3(.95, .82, .48), fine * .25);
+#elif FP_KIND == 5
+  s *= .78 + .35 * mid;
+  c = mix(c, c * vec3(.8, .75, .65), smoothstep(.5, .8, fine));
+#elif FP_KIND == 6
+  s *= .7 + .55 * fpN(P * 4.5);
+  c = mix(c, vec3(.42, .55, .22), smoothstep(.6, .9, big) * .5);
+#elif FP_KIND == 7
+  s *= .95 + .06 * fpN(vec3(P.x * 2.0, P.y * 14.0, P.z * 2.0));
+  c = mix(c, vec3(.4, .26, .16), smoothstep(.72, .92, big * .5 + mid * .5) * .5);
+#endif
+  diffuseColor.rgb = c * s;
+}`);
+  };
+  f.__fp = 1;
+  m.onBeforeCompile = f;
+  m.customProgramCacheKey = () => 'fpaint' + kind;
+  FPAINT.n++;
+}
+
 // A BUILDING FRAME (m289, lifted out of m288's `buildFarm` so the crash site and the rest of the farm share it):
 // local (u along the tangent, v out to sea) turned `th` about (Ox, Oz). `bx` adds a box -- drawn, and an
 // ORIENTED collider unless `col` is false; `geo` adds any geometry; `quad` a walkable floor (both windings,
@@ -28878,7 +28961,7 @@ function farmFrame(Ox, Oz, th, MAT, tag) {
   const C = Math.cos(th), S = Math.sin(th);
   const wx = (u, v) => Ox + u * C + v * S, wz = (u, v) => Oz - u * S + v * C;
   const gnd = (u, v) => { const y = groundAt(wx(u, v), wz(u, v), 3, 6); return y > -50 ? y : ISLE.sea; };
-  const parts = {}; for (const k in MAT) parts[k] = [];
+  const parts = {}; for (const k in MAT) { parts[k] = []; farmPaint(MAT[k], k); }   // painted, not flat (m296)
   const grp = new THREE.Group(); grp.position.set(Ox, 0, Oz); grp.rotation.y = th; scene.add(grp);
   const boxes = [], roofTris = [];
   const _m = new THREE.Matrix4(), _q = new THREE.Quaternion(), _e = new THREE.Euler(), _s = new THREE.Vector3(), _p = new THREE.Vector3();
@@ -31795,6 +31878,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   CRASH, crash: () => { const C = CRASH.at; if (!C) return 'no crash site in this world'; const p = player; p.pos.set(C.you[0], C.y + 2, C.you[1]); p.vel.set(0, 0, 0); p.heading = p.faceH = Math.atan2(C.x - C.you[0], C.z - C.you[1]); return 'the wreck'; },
   // THE GOLDEN HOUR (m295): `mel.GRADE` live -- its colours, `r`, `fogMix`; `mel.GRADE.on = 0` is the A/B
   GRADE,
+  // THE PAINT (m296): `mel.FPAINT` -- `FPAINT.on = 0` before a reload is the flat A/B
+  FPAINT,
   FARM, farm: () => { const F = FARM.at; if (!F) return 'no farm in this world'; const p = player; p.pos.set(F.x - Math.sin(F.th) * 12, 2, F.z - Math.cos(F.th) * 12); p.vel.set(0, 0, 0); p.heading = p.faceH = F.th; return 'farm at ' + F.x.toFixed(0) + ',' + F.z.toFixed(0); },
   PORTAL, PORTALS, portal: () => portalOpen(),
   // THE DEMOS, ON PURPOSE ONLY (m292, STEER 1): round where you stand, for testing the systems
