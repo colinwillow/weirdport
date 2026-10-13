@@ -64,7 +64,7 @@ differ" table there, so no region feels like the last one.
   creek with a footbridge, the road climbing to a bridge into town. Cows as placeholders (boxes or an existing body) that moo and
   wander. The crash site: a wreck, smoke, Clancy inside.
   - [x] m288 **B1a The farmyard** — barn on a plinth, hay-bale stair to the hayloft, loft door over a hay stack, lean-to whose roof you reach off crates, walkable barn roof, silo, split-rail paddock, round bales, trough.
-  - [ ] **B1b The crash site** — the wreck, scorched ground, smoke, Clancy inside; where Chapter 0 starts.
+  - [x] m289 **B1b The crash site** — the wreck, scorched ground, smoke, Clancy inside; where Chapter 0 starts.
   - [ ] **B1c The sunken lane and the creek** — a lane cut below the fields between hedges, a creek with a footbridge.
   - [ ] **B1d The road and the bridge, and the cows** — the road climbing from the farm to a bridge into town; cows that moo and wander.
   - [ ] **B1e From REGIONS.md's Gristle Farm entry, not in m288** — a rope down from the hayloft, the silo ladder made climbable, an orchard terrace, and cows that panic and stampede (its signature system).
@@ -177,3 +177,11 @@ differ" table there, so no region feels like the last one.
 - **m288 note:** `REGIONS.md` landed while m288 was building. Its Gristle Farm entry asks for a
   rope down from the loft, a climbable silo ladder and an orchard terrace that m288 does not have
   (the silo ladder is only drawn), so I split them out as **B1e**.
+- **m289 (B1b):** **a new game now starts at the crash** — beside the burning wreck in the field
+  next to the farmyard, Clancy at the hatch. Once you walk into the city, every later boot starts
+  in town as before (`?spawn=city` / `?spawn=crash` overrule it for one load; `mel.progReset()`
+  makes you a new game again). The crowd stays in town, so the farm is quiet until B1d's cows and
+  B2's farmer. The wreck is a greybox saucer: tipped nose-down, a real fire that never goes out,
+  dark smoke, a purple scorch down the furrow, and you can climb onto it off the berm. The demo
+  gates and portals from m285/m286 are placed round wherever you spawn, so on a new game they're
+  at the farm.

@@ -7,6 +7,20 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A NEW GAME WAKES AT THE WRECK, AND THE MOVE HAPPENS AFTER `kitPopulate` (m289, ROADMAP B1b, `CRASH`, `buildCrash`, `crashSpawn`, `farmFrame`).**
+  `kitPopulate` drops the crowd round `player.pos` and puts Clancy beside it, so moving the player first would have moved
+  Old Town's people onto the farm. `crashSpawn` runs right after it (crowd stays in town), overwrites `CLANCY.at` with
+  the wreck's hatch, and comes before the spawn's height is taken. It fires while `SAVE.ch === 0 && !flags.inTown`;
+  `crashStep` sets `inTown` the first time he is 4 m inside `ISLE.rect`. `?spawn=city|crash` overrules it.
+  **`farmFrame` is m288's helpers lifted out** (turned boxes, merged meshes, floor quads, one commit); the farm and the
+  crash both use it. **Three sign/order traps, all caught by hand before shipping:** (1) yaw for "local x along the
+  furrow" is `+fpsi` with `fpsi = atan2(-dv, du)` (the fence rule), not `-fpsi`; (2) three's default Euler order is XYZ,
+  so the matrix is Rx*Ry*Rz and Rz (the tip) is applied FIRST -- right for tip-then-yaw, wrong for a torus that must be
+  laid flat first, so the rim's lay-flat is baked into its geometry (`rotateX`); (3) a world-space flat ellipse turned
+  `g` about z then laid flat by Rx(-pi/2) has its long axis at `(-sin g, -cos g)`. The fire is a real `fireStart`
+  ground fire with `life: Infinity`, re-lit every 4 s if the pool's eviction (oldest non-room fire at `FIRE.max`) took
+  it. Smoke is `smokeAt` k 6, dark, ~3/s. Chip: `CR<boxes>` and `*` when this boot woke there.
+
 - **THE FARM IS BUILT IN A TURNED FRAME, AND THE OBB CONVENTION IS `cs = cos t, sn = -sin t` FOR A MESH TURNED `t` (m288, ROADMAP B1a, `buildFarm`, `farmMerge`).**
   `boxNear`/`resolveBoxes` read an oriented box's local x as `(cs, sn)` in the world; a THREE mesh turned `t` about +Y
   has its local x at `(cos t, -sin t)` -- so `sn = -sin t`, which is the toon city's `yaw = -t` written out. **m287's
