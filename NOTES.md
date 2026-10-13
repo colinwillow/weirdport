@@ -7,6 +7,18 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FARM'S PLANTS BEND IN WORLD UNITS, AFTER THE INSTANCE MATRIX (m297, farm pass 4, `FLORA`, `buildFlora`, `floraMat`).**
+  One `InstancedMesh` of a 7-blade fan (height 1, vertex colour dark root -> light tip), scaled per instance into corn,
+  wheat or a tuft, coloured per instance. `project_vertex` is re-written so the wind and his wake are added AFTER
+  `instanceMatrix`: displacement in world xz, times `position.y^2` (root planted) and the instance's own height
+  (`length(instanceMatrix[1].xyz)`), so a stalk bows further than a tuft. Bending in LOCAL space would have been divided
+  by each instance's non-uniform scale and turned by its random yaw. `worldpos_vertex` (shadow receiving) does not see
+  the bend -- received shadows are a few cm off on a bowing stalk, accepted. No shadows CAST. Placement: the fields are
+  `FLORA.FIELDS` (named patch in the farm frame + `why`), rejected per stalk off the beach and out of boxes; tufts are
+  the RULE "within `tuftR[1]` of a box, not within `tuftR[0]`" via two `resolveBoxes` probes. Built last in the farm
+  sequence so every wall exists. The shader was compiled on instanced test geometry with shadows and fog before
+  shipping (2 programs, 0 errors). Chip `FL<plants>`.
+
 - **THE FARM IS PAINTED IN THE SHADER, PER KIND, AND THE GLSL WAS COMPILED BEFORE IT SHIPPED (m296, farm pass 3, `FPAINT`, `farmPaint`).**
   `farmFrame` calls `farmPaint(MAT[k], k)` on every material it is handed, so the farm, crash, lane and bridge all get
   it; the cows (one instanced mesh) do not. The patch adds `vFpP`/`vFpN` (world position and normal, from

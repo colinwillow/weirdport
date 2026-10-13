@@ -277,3 +277,10 @@ differ" table there, so no region feels like the last one.
   is fibrous, the earth clumpy, the hedges blotchy, the metal streaked. It covers the barn, crash
   site, lane and bridge. The cows are separate and unchanged. `mel.FPAINT.on = 0` then reload is the
   flat A/B.
+- **m297 (farm pass 4: growth):** the bare fields now grow things, all from an authored table with
+  a reason each: a **corn patch** (2.2 m, cover to slip through) between the yard and the crash
+  field, a **golden wheat field** behind the paddock running down to the shore, and **~500 grass
+  tufts** that grow only where a mower can't reach (against walls, posts, banks and bales). It all
+  sways in the wind and **parts round you** as you walk through. The corn hides you visually but
+  doesn't block sight for the fear/cop systems yet. One draw call for all of it; tune with
+  `mel.FLORA.wind`, `push`, `pushK`.
