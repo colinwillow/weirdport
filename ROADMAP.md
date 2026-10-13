@@ -15,28 +15,27 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
-**From Colin, after seeing the build: placeholders are being dropped in at random and it looks sloppy.**
-Do these in order, before anything else in this file:
+**From Colin (updated, replaces the earlier STEER): keep going, never wait.**
 
-1. **Take the demo objects out of the world.** `GATE.demo` and `PORTAL.demo` both put things right
-   by the spawn with no reason to be there. Set both to 0. Keep the systems; add `mel.gateDemo()` /
-   `mel.portalDemo()` console hooks so they can still be tested on purpose. Ship that as one build. **— done m292.**
-2. **New rule: nothing appears in the world without an authored reason and an authored place.**
-   Systems ship DORMANT. Things get into the world in exactly two ways:
-   - **named markers in his Blender exports** (empties like `portal_bridge`, `gate_fire_alley`,
-     `npc_farmer_01`), which the game reads and turns into the real thing; or
-   - an **authored placement table** in index.html, each entry with a named spot in a region and a
-     one-line reason it is there.
-   Never "near the spawn", never "somewhere open".
-3. **Write `MARKERS.md`**: the marker vocabulary for his Blender scenes (portals, gates of each type,
-   NPCs by kind and role, quest givers, spawn points, crowd and protest areas, ambient life), with
-   the naming pattern and any custom properties. Then make the loader read those markers from the
-   kit city's GLBs (it already reads `nav_repair` and `fx_hydrant_water_spout` the same way). That
-   is how he authors the game: he places, the game behaves.
-4. **Pause the procedural farm.** Do not add to B1 (m288 to m291) until Colin has looked at it and
-   said whether he wants it. Skip B1e and B2.
-5. **Then go deep in Old Town**, the few blocks he already likes: C0 district health, using the
-   worker, fire and repair systems that are already there. Depth in one small place, not breadth.
+- **Never stop or wait for Colin.** If something seems to need him, make the call, log it under
+  "Decisions for Colin", and carry on. (The earlier STEER said to pause until he had looked at the
+  farm; that was wrong and is withdrawn.)
+- **There is no Blender work for about a week.** Places are built in code until then. `MARKERS.md`
+  can wait; do not build anything that depends on his markers.
+- **The placement rule stays:** nothing goes in the world as a "demo", "near the spawn" or
+  "somewhere open". Everything placed comes from an authored placement table: a named spot in a
+  named place, and a one-line reason it is there. (Done: m292 took the demo gates and portals out.)
+- **Now: polish passes on the farm until it is beautiful.** One pass per build, as many passes as it
+  takes; ten is fine. Each pass, pick the weakest-looking thing about the farm and make it better:
+  the light and atmosphere (golden hour, haze, long shadows), the materials and colours (painted, not
+  flat greybox; `REGIONS.md`'s farm palette), detail density (crops, grass tufts, fences, clutter,
+  tools, hay), silhouettes and rooflines, layering and foreground, the wreck as a hero moment. Keep
+  the draw-call budget in mind (merge what does not move).
+- **You may build a screenshot tool for these passes** (`tools/shot.mjs`, headless Chromium from
+  `/opt/pw-browsers`, the player's camera at a named spot) so you can see the farm before and after
+  each pass, instead of polishing blind. If a shot takes more than about two minutes or will not
+  render, drop it and carry on without it.
+- **After the farm looks right:** B1e, then B2, then on down the list.
 
 ## Standing rules for anything built in the world
 
