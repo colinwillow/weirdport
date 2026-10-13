@@ -263,3 +263,10 @@ differ" table there, so no region feels like the last one.
   shy away at a trot if you run past close. **The moo is synthesized** (no cow sound in the repo):
   if it sounds wrong, a recording in `audio/` would replace it in one line. `mel.moo()` makes the
   nearest one moo. They're white dots on the minimap. Panic/stampede is B1e.
+- **m295 (farm pass 2: light):** the farm now has its own **golden hour**: warm amber sun, a warm sky
+  fill and earth bounce, and a gold haze that pulls in closer, so from the fields the city sinks into
+  a far golden distance. It blends in as you approach the farm and fades out over the first 14 m into
+  town, never a hard switch. Colours only. The sun's **angle** (long shadows) is unchanged, because
+  moving it re-bakes the sky. `mel.GRADE.on = 0` is the A/B; the colours are live on `mel.GRADE`.
+  **The screenshot tool didn't work**: software WebGL can't render one kit-city frame inside
+  Playwright's 30 s limit, so per the STEER I dropped it and these passes stay unseen until you look.

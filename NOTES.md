@@ -7,6 +7,17 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FARM'S GOLDEN HOUR IS A GRADE BLENDED BY DISTANCE, WITH ONE PER-FRAME WRITER (m295, farm pass 2, `GRADE`, `gradeStep`).**
+  REGIONS.md's "late golden hour". `gradeStep` (after `stepSun`) owns `sun.color`, `hemi.color`, `hemi.groundColor`,
+  `scene.fog.near/far` per frame, lerping from bases it captured on its first run toward gold by
+  `k = damp(1 - smooth(50, 90, dist to FARM.at), .9 s)`, fading over the first 14 m inside `ISLE.rect`. Nothing else
+  writes those colours after construction (grepped); `flatSet` writes INTENSITIES, which the grade leaves alone. The
+  fog colour's base is the sky bake's (`skyApply` stores `GRADE.fog0` when it writes), so a re-bake moves the base.
+  **`GRADE` is declared above `SKY`** because `skyApply` runs at module scope (`skyBake()` at load) and touches it.
+  When k settles to 0 it writes the bases once (`k0`) and then stops writing. The sun DIRECTION is not graded:
+  `sunSet` re-bakes the sky. **A screenshot tool was tried and dropped**: headless Chromium + SwiftShader boots the kit
+  city in ~20 s but `page.screenshot` times out (30 s) waiting for one frame -- the city is too heavy for software GL.
+
 - **HIS MARKERS ARE READ IN `side()`, BEFORE THE BUILDER, AND MY FIRST TWO NAMES WERE TAKEN (m293, STEER 3, `MKR`, `MARKS`, `mkrRead`, `mkrApply`).**
   `buildTCity` merges and prunes 19,814 nodes, and an empty pruned is a marker lost, so `mkrRead(g.scene)` runs inside
   `side()` before `tag.build(g)` for KCITYVIS / KCITYCOL / KCITYBLD / TOONBRK. The kit-city GLBs sit at identity, so
