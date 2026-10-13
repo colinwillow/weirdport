@@ -673,10 +673,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m292</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m293</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m292</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m293</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -754,7 +754,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm292';
+const BUILD = 'm293';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -27485,6 +27485,7 @@ function bodySeat() {
 // undisguised alien yet either; that is A4's fear, and it will gate `talk.near`.
 const TALK = {
   on: 1,
+  seed: 0,          // m293: 0 -- no more one-random-speaker-per-kind; `npc_*` markers with `talk`/`lines` place them
   reach: 2.6,       // m, flat, his root to theirs -- a conversation distance, not a shout
   leave: 4.5,       // walk further than this and the bubble closes
   markH: .32,       // the `!` floats this far over the drawn head
@@ -27536,6 +27537,7 @@ function talkMat() {
   return talk.mat;
 }
 function talkSeed() {
+  if (!TALK.seed) return;          // DORMANT (m293, STEER 2): speakers come from `npc_*` markers now
   for (const d of DUMMIES) {
     if (d.talkSeen) continue;
     d.talkSeen = 1;
@@ -27660,7 +27662,8 @@ const QUEST = {
   n: 0,                     // chip: quests completed this session
 };
 const QUESTS = [
-  { id: 'q0', title: 'WEIRDPORT 101', steps: [
+  // DORMANT (m293, STEER 2): a stand-in with no authored place. `mel.questOn('q0')` runs it.
+  { id: 'q0', title: 'WEIRDPORT 101', dormant: 1, steps: [
     { type: 'talk',   text: 'Talk to someone with a !' },
     { type: 'defeat', n: 1, text: 'Knock somebody down' },
     { type: 'reach',  y: 3, text: 'Get up high: a roof, a ladder, a stack of anything' },
@@ -27684,6 +27687,7 @@ function questPick() {
   for (const q of QUESTS) {
     if (SAVE.flags['qdone:' + q.id]) continue;
     if (q.world && q.world !== WORLD.now) continue;
+    if (q.dormant && !SAVE.flags['qon:' + q.id]) continue;     // m293: a stand-in waits to be switched on
     return q;
   }
   return null;
@@ -27710,7 +27714,8 @@ function questTest(s) {
     }
     case 'goto': {
       let x = s.x, z = s.z;
-      if (s.who) { const b = questNear(d => mphName(d.K) === s.who); if (!b) return false; x = b.root.position.x; z = b.root.position.z; quest.tgt = b.root.position; }
+      if (s.mark) { const M = mkrFind('goal', s.mark); if (!M) return false; x = M.x; z = M.z; quest.tgt = M; }
+      else if (s.who) { const b = questNear(d => mphName(d.K) === s.who); if (!b) return false; x = b.root.position.x; z = b.root.position.z; quest.tgt = b.root.position; }
       else quest.tgt = { x, y: 0, z };
       return Math.hypot(P.x - x, P.z - z) < (s.r || 3);
     }
@@ -29368,6 +29373,116 @@ function riverStep(dt) {
   if (!inC && p.grounded && !p.knock && (river.safeT -= dt) <= 0) { river.safeT = .3; (river.safe || (river.safe = new THREE.Vector3())).copy(p.pos); }
 }
 
+// ============================================================================================
+// MARKERS (m293, STEER 3) -- he places, the game behaves. The vocabulary is MARKERS.md.
+// ============================================================================================
+// **NOTHING APPEARS IN THE WORLD WITHOUT AN AUTHORED PLACE** (STEER 2). A thing gets in from a named
+// empty in his Blender export, read HERE, or from an authored table with a named spot and a reason.
+// `mkrRead` runs inside `side()` on every kit-city GLB BEFORE its builder (the visual's builder
+// merges and prunes nodes, and an empty pruned is a marker lost) and collects:
+//   portal  gate  npc  spawn  region  goal         turned into the real thing (`mkrApply`, `mkrNpcPlace`)
+//   crowd  protest  ambient                        read and counted; nothing acts on them yet (C1 will)
+// A marker is an EMPTY whose name starts `<type>_` (`portal_bridge`, `gate_fire_alley`,
+// `npc_hobo_camp_01`) or ANY node whose custom property `marker` names the type. Its custom
+// properties ride in `userData` (Blender exports them as glTF extras). Facing is the empty's own:
+// glTF +Z, which is Blender's -Y (toward you in Front view); `yaw_deg` overrides it.
+// The existing markers -- room, fire_truck_park, fire_hose_stand, repair, ladder_top, the truck depot,
+// fx_* -- are read where they always were and are listed in MARKERS.md beside these.
+const MKR = { on: 1, n: 0, applied: 0, by: {}, npcs: 0, npcAt: 0,
+  types: ['portal', 'gate', 'npc', 'spawn', 'region', 'goal', 'crowd', 'protest', 'ambient'],
+  // a body kind by the word he is likely to type -- a file stem always works as well
+  alias: { farmer: 'hick_skinny', hick: 'hick_skinny', cop: 'dummy_officer', officer: 'dummy_officer', police: 'dummy_officer',
+    hobo: 'hobo_01', worker: 'contruction_worker', builder: 'contruction_worker', firefighter: 'firefighter', fireman: 'firefighter',
+    activist: 'fat_activist_01', biker: 'fat_biker_01', hippie: 'fat_hippie', hipster: 'fat_hipster', warrior: 'alien_warrior' },
+};
+const MARKS = [];
+const _mkP = new THREE.Vector3(), _mkQ = new THREE.Quaternion(), _mkS = new THREE.Vector3(), _mkD = new THREE.Vector3();
+const MARK_RE = /^(portal|gate|npc|spawn|region|goal|crowd|protest|ambient)_(.+)$/i;
+function mkrRead(root, src) {
+  if (!MKR.on || !root) return 0;
+  root.updateMatrixWorld(true);
+  let n = 0;
+  root.traverse(o => {
+    const e = o.userData || {};
+    let type = typeof e.marker === 'string' ? e.marker.toLowerCase() : '', id = '';
+    const m = MARK_RE.exec(o.name || '');
+    if (MKR.types.includes(type)) id = e.id || (m && m[1].toLowerCase() === type ? m[2] : o.name);
+    else if (m && !o.isMesh && !type) { type = m[1].toLowerCase(); id = m[2]; }
+    else return;
+    o.matrixWorld.decompose(_mkP, _mkQ, _mkS);
+    _mkD.set(0, 0, 1).applyQuaternion(_mkQ);
+    const yaw = e.yaw_deg != null ? e.yaw_deg * Math.PI / 180 : Math.atan2(_mkD.x, _mkD.z);
+    MARKS.push({ type, id: String(id).toLowerCase(), name: o.name, src, x: _mkP.x, y: _mkP.y, z: _mkP.z, yaw,
+      sx: Math.abs(_mkS.x), sz: Math.abs(_mkS.z), p: e, used: 0 });
+    MKR.by[type] = (MKR.by[type] || 0) + 1; n++;
+  });
+  MKR.n += n;
+  return n;
+}
+const mkrFind = (type, id) => MARKS.find(M => M.type === type && M.id === id);
+const mkrLabel = M => String(M.p.name || M.id.replace(/_\d+$/, '').replace(/_/g, ' ')).toUpperCase();
+function mkrKind(word) {
+  const w = String(word || '').toLowerCase(), stem = MKR.alias[w] || w;
+  const all = [FOE, HICK, HOBO, SKATER, BIKER, DUMMY, ...CIVILS];
+  return all.find(K => mphName(K) === stem) || all.find(K => mphName(K).startsWith(stem)) || null;
+}
+// after the world's builders: portals, gates, regions
+function mkrApply() {
+  if (MKR.applied) return; MKR.applied = 1;
+  const w = WORLD.now, regs = [];
+  for (const M of MARKS) {
+    const P = M.p;
+    if (M.type === 'portal') M.used = !!portalAdd(w + '_' + M.id, mkrLabel(M), M.x, M.z, M.y, !!P.hub || M.id === 'ship' || M.id === 'hub');
+    else if (M.type === 'gate') {
+      const t = String(P.gate || P.type || M.id.split('_')[0]).toLowerCase();
+      const G = GATE_TYPES[t] ? gateAdd(t, M.x, M.z, M.yaw, +P.width || (M.sx > .05 ? M.sx * 2 : 4.5), 'mk_' + M.id) : null;
+      M.used = !!G; if (!G) note('MKR GATE ' + M.id + ' ' + t + '?');
+    } else if (M.type === 'region') {
+      const hx = Math.max(1, M.sx), hz = Math.max(1, M.sz);
+      regs.push({ id: M.id, name: mkrLabel(M), x0: M.x - hx, x1: M.x + hx, z0: M.z - hz, z1: M.z + hz }); M.used = 1;
+    } else if (M.type === 'goal') M.used = 1;      // read by quest steps `{ type: 'goto', mark: '<id>' }`
+  }
+  if (regs.length) { MAPREG[w] = regs; if (map.ext) mapBuild(); }
+}
+// after the crowd is dealt (it resets every kind's `at`): each npc marker becomes one more spawn of its kind
+function mkrNpcPlace() {
+  for (const M of MARKS) {
+    if (M.type !== 'npc') continue;
+    const K = mkrKind(M.p.kind || M.id.replace(/_\d+$/, '').split('_')[0]);
+    if (!K) { note('MKR NPC ' + M.id + ' kind?'); continue; }
+    (K.at || (K.at = [])).push([M.x, M.z, M.y]);
+    M.K = K; MKR.npcs++;
+  }
+}
+// a new game starts on `spawn_start` (or any spawn with `start`), when he has placed one
+function mkrSpawn() {
+  const M = MARKS.find(q => q.type === 'spawn' && (q.id === 'start' || q.p.start));
+  if (!M || !(SAVE.ch === 0 && !SAVE.flags.inTown) || /[?&]spawn=city/.test(location.search)) return 0;
+  const p = player; p.pos.x = M.x; p.pos.z = M.z;
+  cam.az = p.faceH = p.heading = M.yaw;
+  M.used = 1;
+  return 1;
+}
+// once each marker's body exists, give it its role: who it is, what it says, where it stays
+function mkrStep() {
+  if (MKR.npcAt >= MKR.npcs) return;
+  for (const M of MARKS) {
+    if (M.type !== 'npc' || !M.K || M.d) continue;
+    let b = null, bd = 2.5;
+    for (const d of DUMMIES) { if (d.K !== M.K || d.markId) continue; const q = Math.hypot(d.root.position.x - M.x, d.root.position.z - M.z); if (q < bd) { bd = q; b = d; } }
+    if (!b) continue;
+    M.d = b; b.markId = M.id; MKR.npcAt++; M.used = 1;
+    b.hx = M.x; b.hz = M.z; b.rx = M.x; b.rz = M.z; b.h = M.yaw;
+    const P = M.p, S = P.talk && TALKS[P.talk];
+    const lines = S ? S.lines : (typeof P.lines === 'string' ? P.lines.split('|').map(t => t.trim()).filter(Boolean) : null);
+    if (lines && lines.length) {
+      const id = 'mk_' + M.id;
+      b.talk = { id, name: P.name || (S && S.name) || mkrLabel(M), lines, done: !!SAVE.flags['talk:' + id] };
+      b.talkSeen = 1; TALK.n++;
+    }
+  }
+}
+
 function stepDummies(dt) {
   bodySep(dt);
   bodySeat();
@@ -30508,6 +30623,7 @@ function frameBody() {
   gatePush(dt);                 // gates: after he moves, before the lens follows him (m285)
   kitCamStep();
   stepCam(dt);
+  mkrStep();                    // his npc markers get their roles once their bodies exist (m293)
   talkStep(dt);                 // after the camera: the bubble is projected through it (m277)
   questStep(dt);                // after talk: a talk step reads what this frame finished (m278)
   sampleStep(dt);               // after the camera too: its ring is projected (m282)
@@ -30834,6 +30950,8 @@ function frameBody() {
       // CH: the saved chapter (m276); NEW = this boot was `?fresh`, BADSAVE = a save was there and would not parse
       ' · CH' + SAVE.ch + (SAVE.fresh ? ' NEW' : '') + (SAVE.bad ? ' BADSAVE' : '') +
       // T: speakers seeded / scripts heard (m277); `*` = one is in reach right now
+      // MK: markers read from his files (m293), and npc markers given their bodies
+      (MKR.n ? ' MK' + MKR.n + (MKR.npcs ? ' n' + MKR.npcAt + '/' + MKR.npcs : '') : '') +
       (TALK.n ? ' T' + TALK.n + '/' + TALK.said + (talk.near ? '*' : '') : '') +
       // Q: the active quest and step (m278) -- `Qq0.1` is quest q0 on its second step; no token = none active
       // FR: frights / calls phoned in / heat (m279) -- frights with no calls is the dice, no frights at all is sight
@@ -31093,7 +31211,8 @@ async function init() {
   // the network and the fault was in this file. `side()` splits them and PRINTS THE EXCEPTION,
   // because a `catch` that swallows `e` throws away the only thing that would have said which.
   const side = (fn, label, tag) => loadGLB(fn, label).then(
-    g => { try { tag.build(g); } catch (e) { console.error('[melee] ' + tag.name + ' build failed', e); note(tag.name + ' FAILED'); } },
+    g => { if (kitWorld() && /^(KCITY(VIS|COL|BLD)|TOONBRK)$/.test(tag.name)) { try { mkrRead(g.scene, tag.name); } catch (e) { note('MARK READ FAIL'); } }  // his markers, before the builder prunes (m293)
+           try { tag.build(g); } catch (e) { console.error('[melee] ' + tag.name + ' build failed', e); note(tag.name + ' FAILED'); } },
     e => { PROG.done++; console.warn('[melee] ' + tag.name + ' did not load', e); note('NO ' + tag.name + ' GLB'); });
   if (inWP()) {
     // THE RANGE IS WEIRDPORT'S AND THE COLOUR IS THE SKY'S (m129). A 280 m city needs its own
@@ -31187,6 +31306,8 @@ async function init() {
     try { buildIsle(); } catch (e) { ISLE.live = 0; note('ISLE FAIL'); console.warn('[melee] island', e); }
     // THE FARM (m288): on the island's ring, so after the island -- and in a try, a yard is not worth a boot
     try { buildFarm(); } catch (e) { note('FARM FAIL'); console.warn('[melee] farm', e); }
+    // HIS MARKERS (m293): portals, gates, regions -- after every builder, so the ground under them exists
+    try { mkrApply(); } catch (e) { note('MARK FAIL'); console.warn('[melee] markers', e); }
     try { buildCrash(); } catch (e) { note('CRASH FAIL'); console.warn('[melee] crash', e); }
     try { buildLane(); } catch (e) { note('LANE FAIL'); console.warn('[melee] lane', e); }
     try { buildBridge(); } catch (e) { note('BRIDGE FAIL'); console.warn('[melee] bridge', e); }
@@ -31255,7 +31376,10 @@ async function init() {
   if (kitWorld() && crowdOn) kitPopulate();
   // A NEW GAME WAKES AT THE WRECK (m289) -- AFTER the crowd, which stays round the city's spawn, and
   // before Clancy is built (he reads `CLANCY.at`) and before the spawn's height is taken below
-  if (inTK()) { try { crashSpawn(); } catch (e) { console.warn('[melee] crash spawn', e); } }
+  // HIS NPC MARKERS after the crowd's deal (it resets `K.at`), and HIS START before the crash's (m293)
+  if (kitWorld()) { try { mkrNpcPlace(); } catch (e) { console.warn('[melee] npc markers', e); } }
+  const mkStart = inTK() && (() => { try { return mkrSpawn(); } catch (e) { return 0; } })();
+  if (inTK() && !mkStart) { try { crashSpawn(); } catch (e) { console.warn('[melee] crash spawn', e); } }
   if (kitWorld()) {
     // **THE CROWD (m196, EVERYBODY at m197).** *"I meant everybody, like the warrior aliens and
     // stuff."* The kit worlds now load exactly what the other worlds load, placed by
@@ -31351,6 +31475,9 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   TALK, TALKS, talk,
   // QUESTS (m278): `mel.QUEST` live; `mel.QUESTS` the data; `mel.quest` the state
   QUEST, QUESTS, quest,
+  // MARKERS (m293): `mel.MARKS` everything read; `mel.marks()` a summary; `mel.questOn('q0')` runs a dormant quest
+  MKR, MARKS, marks: () => MARKS.map(M => M.type + ':' + M.id + (M.used ? '' : '(unused)')).join(' ') || 'no markers in these files',
+  questOn: id => { progFlag('qon:' + id); quest.cur = null; return id + ' on'; },
   // FEAR (m279): `mel.FEAR` live, `mel.HEAT` the stub A5 builds on
   FEAR, HEAT, heatAdd,
   // POLICE (m280): `mel.COPS` live; `mel.heat(n)` sets the heat to look at a star level

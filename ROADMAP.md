@@ -32,7 +32,7 @@ Do these in order, before anything else in this file:
    NPCs by kind and role, quest givers, spawn points, crowd and protest areas, ambient life), with
    the naming pattern and any custom properties. Then make the loader read those markers from the
    kit city's GLBs (it already reads `nav_repair` and `fx_hydrant_water_spout` the same way). That
-   is how he authors the game: he places, the game behaves.
+   is how he authors the game: he places, the game behaves. **— done m293** (`MARKERS.md`).
 4. **Pause the procedural farm.** Do not add to B1 (m288 to m291) until Colin has looked at it and
    said whether he wants it. Skip B1e and B2.
 5. **Then go deep in Old Town**, the few blocks he already likes: C0 district health, using the
@@ -231,3 +231,12 @@ differ" table there, so no region feels like the last one.
   you want the farm to continue. Still placed without an authored marker, and next in line under
   point 2/3: the `!` talk speakers (one random body per kind), the WEIRDPORT 101 stand-in quest, and
   the crash-site spawn on a new game. The marker loader (point 3) is where those get proper places.
+- **m293 (STEER 2/3):** `MARKERS.md` is the vocabulary. **Live now**: `portal_*`, `gate_<type>_*`,
+  `npc_<kind>_*` (with `name`, `talk` or `lines`), `spawn_start`, `region_*` (Cube empties, they
+  replace the placeholder map quadrants), `goal_*` for quests. **Read but not acted on yet**:
+  `crowd_*`, `protest_*`, `ambient_*` (C1). Your buildings file already has markers the game never
+  read: `police_stand` ×60, `police_spawn`, `police_car_park`, `firemen_spawn`, `fire_truck_home`,
+  `door_in/out`, `ladder_bottom`. They're listed as unread in MARKERS.md. Per STEER 2 the random `!`
+  speakers and the WEIRDPORT 101 stand-in quest are now **dormant**: speakers come from `npc_*`
+  markers, and `mel.questOn('q0')` runs the stand-in. Your files have none of the new marker types
+  yet, so until you place some, nothing new appears: that's the point.

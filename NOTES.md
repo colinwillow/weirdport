@@ -7,6 +7,21 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **HIS MARKERS ARE READ IN `side()`, BEFORE THE BUILDER, AND MY FIRST TWO NAMES WERE TAKEN (m293, STEER 3, `MKR`, `MARKS`, `mkrRead`, `mkrApply`).**
+  `buildTCity` merges and prunes 19,814 nodes, and an empty pruned is a marker lost, so `mkrRead(g.scene)` runs inside
+  `side()` before `tag.build(g)` for KCITYVIS / KCITYCOL / KCITYBLD / TOONBRK. The kit-city GLBs sit at identity, so
+  `matrixWorld` after `updateMatrixWorld(true)` on the unparented scene IS the world. **`MARK` (the melee target ring,
+  m51) and `markStep` already existed** -- the syntax gate caught both as redeclarations, which in the shipped file
+  would each have been a BLANK PAGE. Mine are `MKR` / `mkr*`. Grep a name before declaring it; this file has 31,000
+  lines and every short word is taken.
+  Order: `mkrApply` (portals, gates, regions) after the world's builders; `mkrNpcPlace` AFTER `kitPopulate`, because
+  `crowdDeal` resets every kind's `K.at` -- an npc marker is one more entry in its kind's `at`, spawned by the kind's
+  own builder; `mkrStep` then finds that body (nearest of the kind within 2.5 m, not yet claimed) and gives it the role
+  (home = the marker, facing, talk). `mkrSpawn` runs before `crashSpawn` and replaces it when a `spawn_start` exists.
+  Facing: glTF +Z = Blender -Y; `yaw_deg` overrides. Measured his three files: none of the new types yet; the buildings
+  file holds `police_stand` x60, `police_spawn`, `police_car_park`, `firemen_spawn`, `fire_truck_home`, `door_in/out`
+  x118, `ladder_bottom` x120 that no code reads. STEER 2's dormancy: `TALK.seed` 0, q0 `dormant` (`qon:<id>` flag).
+
 - **SYSTEMS SHIP DORMANT; NOTHING IS PLACED "NEAR THE SPAWN" (m292, STEER 1, `GATE.demo`, `PORTAL.demo`).** *"Placeholders are
   being dropped in at random and it looks sloppy."* m285/m286 put two demo gates and three demo portal pads round
   wherever he spawned, on open ground found by `spawnBeside`, with no reason to be there -- and from m289 that meant
