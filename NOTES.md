@@ -7,6 +7,71 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE HEADLAND WAS HALF LAWN, AND FARMLAND IS NOT LAWN (m303, farm pass 8, `HROW`, `buildHedgerows`, `ISLE.head.out`).**
+  The first pass after the farm existed, so the first one that could MEASURE instead of read: a 2.5 m grid over the
+  real island (the `npm run places` harness) said **56% of the headland's land was more than 8 m from anything the farm
+  built and in no field** -- the band from the paddock and the crash to the beach, and the whole north end past the
+  creek. Two halves to the fix:
+  **(1) the headland was too big for the farm** (`out` 34 -> 24): the shore sat at v ~55 off the yard against a layout
+  drawn to ~31, so "the wheat down to the shore" stopped 24 m short. At 24 the farm's ray has 65.6 m (`need` 60).
+  **(2) what is left is fields**: four hedgerow RUNS (bank .5 + hedge 1.45, over a man; leaf clumps on a collider; a
+  piece on beach ground is skipped, so every hedge stops at the shore by itself), a tree standing IN each run every
+  ~13 m, a gate in each (two posts and a five-bar gate swung open), a copse of nine oaks at the headland's tip, three
+  willows on the river bank, the PLOUGHED field as one ribbon of ridges down the slope (20 cm, drawn not collided --
+  under a step), round bales in the hay meadow and a stack of three to climb. Crops are rows in `FLORA.FIELDS` (hay,
+  stubble, potatoes on the ridge tops via `jit`/`lift`, rough grass, ferns) -- no new draw call. After: **15% of the
+  GRASS is bare** (grass only, not beach; the 56% counted beach too, so the two are not the same measure).
+  **The creek and the wheat now reach the beach** (the creek was a fixed 40 m polyline that stopped mid-field; it
+  meanders on until the beach filter takes it).
+  **THE FLORA MESH IS FRUSTUM-CULLED NOW**: ~2,000 clumps became ~7,900 (68k -> 55k tris after thinning stubble,
+  ferns and rough grass), and m297 drew it from everywhere, every frame. `InstancedMesh.computeBoundingSphere` covers
+  every instance; +3 m for the sway.
+  **Handedness, checked by hand**: a limb leans to (cos a, sin a) with Euler (0, -a, -.75) (Rz first, then Ry); a gate
+  swung by psi - 1.22 opens toward the run's left; the bale stack's axes are perpendicular to its offset (dot 0); the
+  plough's four triangle kinds all have +y normals (1.2 h > 0).
+  GOD: `meadow` (the bale stack), `plough`, `copse`. Chip `HR<boxes>t<trees>g<gates>`.
+  `npm run places`, after the bump:
+  ```
+  ok   buildFarm
+  ok   buildFarmProps
+  ok   buildCrash
+  ok   crashHero
+  ok   buildLane
+  ok   buildBridge
+  ok   buildHedgerows
+  ok   buildCows
+  ok   buildGroundPaint
+  ok   buildFlora
+  widest grass 78.5 at -13deg | headland ray 7deg grass 65.6 need 60 | rays 520 rect [-93.5,90.5,-90.3,93.5]
+  FARM.at {"x":119,"z":16.2,"th":1.66} | CRASH.at yes | LANE.at yes | BRIDGE.gate yes (side 1) | ISLE.live 1
+  HROW 140 boxes 23 trees 4 gates | FLORA {"corn_by_the_crash":274,"wheat_to_the_shore":1777,"hay_meadow":1209,"crash_stubble":993,"potato_rows":1135,"river_meadow":627,"copse_ferns":1014,"tufts":900}
+  notes ["TC NO OBB JSON","ISLE 0/3 TEX"]
+  ok  oldtown    -> player 0.0,0.1,0.0 ground 0.00 
+  ok  farmyard   -> player 107.1,-0.1,23.3 ground -0.28 
+  ok  hayloft    -> player 121.3,3.0,22.0 ground 7.24 
+  ok  crash      -> player 114.1,-0.3,-16.6 ground -0.42 
+  ok  corn       -> player 108.8,-0.1,3.1 ground -0.27 
+  ok  wheat      -> player 138.6,-1.1,21.5 ground -1.25 
+  ok  meadow     -> player 150.4,-1.0,4.1 ground -1.15 
+  ok  plough     -> player 117.2,-0.5,52.5 ground -0.61 
+  ok  copse      -> player 123.7,-0.8,68.0 ground -0.90 
+  ok  windmill   -> player 127.3,-0.8,16.9 ground -0.90 
+  ok  scarecrow  -> player 113.3,-0.2,2.4 ground -0.36 
+  ok  tractor    -> player 108.9,-0.1,8.7 ground -0.29 
+  ok  paddock    -> player 127.9,-0.8,19.7 ground -0.93 
+  ok  lane       -> player 103.0,-0.0,11.6 ground -0.19 
+  ok  ford       -> player 105.5,-0.1,39.5 ground -0.25 
+  ok  bridge     -> player 113.7,3.5,-54.4 ground 3.22 
+  every tkit GOD place is somewhere
+  ok  farmPropsStep  30 frames
+  ok  floraStep      30 frames
+  ok  cowStep        30 frames
+  ok  crashStep      30 frames
+  ok  crashHeroStep  30 frames
+  ok  riverStep      30 frames
+  ok  gradeStep      30 frames
+  ```
+
 - **THE FARM NEVER BUILT, AND THE MEASUREMENT THAT SAID WHY WAS ITSELF WRONG (m302, `ISLE_J0`, `ISLE.head`, `FARM.need`, `GODCHAP`, `godAlarm`).**
   STEER: *"THE FARM DOES NOT EXIST IN THE REAL GAME. Colin opened every GOD place and none of them work."* `npm run
   places` (the planning session's new tool: the REAL kit collider and island, every farm builder, then the shipped

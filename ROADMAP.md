@@ -369,3 +369,12 @@ differ" table there, so no region feels like the last one.
   crash** (a chapter-0 save that has never been to town), as a new game should. The CHAPTER buttons
   now take you somewhere: 0 to the crash, 1 to Old Town; 2–6 say "not built" on the button. In
   GOD, a builder that gives up shows a **red bar** at the top; tap it away.
+- **m303 (farm pass 8: the headland's fields):** with the farm finally on the island, I measured
+  it: half the headland was empty lawn. I made the headland a little smaller (so the wheat really
+  runs down to the shore) and turned the rest into **small fields walled by hedgerows**, with
+  trees standing in them and a five-bar gate in each: a **hay meadow** with bales (three stacked to
+  climb), the **crash field** cut to stubble, a **ploughed potato field** with real furrows, a
+  **river meadow** with willows, and a **copse of oaks** at the headland's tip. The creek now runs
+  all the way to the beach. All in GOD's places (meadow, plough, copse). If the hedges feel like
+  too many walls, `mel.HROW` holds them.
+

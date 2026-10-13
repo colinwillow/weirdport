@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m302</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m303</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m302</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m303</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm302';
+const BUILD = 'm303';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -7011,7 +7011,7 @@ const ISLE = {
   // the way the rays are (0 = +x, pi/2 = +z): **the +x side, under the low sun** (it comes from about 40 deg), so the
   // barn and the wreck throw their long shadows back across the yard toward town, and the sea behind the fields is the
   // glittering side. Only in the kit city (`tkit`), where the farm is; `buildFarm` stands on the ray nearest `th`.
-  head: { on: 1, th: .12, half: .75, flat: .5, out: 34, calm: .65 },
+  head: { on: 1, th: .12, half: .75, flat: .5, out: 24, calm: .65 },
   // ---- state
   rect: null, land: null, water: null, rockM: null, lmat: null, wmat: null,
   safe: null, safeTk: 0, splashes: 0, t: 0, tris: 0, texN: 0, rays: null,
@@ -28966,7 +28966,7 @@ function farmMerge(parts, mat) {
 // One define per kind (`FP_KIND`) and a cache key per kind, so a handful of programs, and NO new draw calls --
 // it is the same merged meshes. The noise is a cheap 3D value noise; nothing is sampled.
 const FPAINT = { on: 1, kinds: { red: 1, wood: 1, stone: 2, cap: 2, roof: 3, hay: 4, dirt: 5, earth: 5, bank: 5, turf: 5, road: 5,
-  hedge: 6, hedge2: 6, metal: 7, pipe: 7, hull: 7, trim: 0, white: 0, dark: 0, steel: 7, tractor: 7, straw: 4, cloth: 0, tyre: 0 }, n: 0 };
+  hedge: 6, hedge2: 6, metal: 7, pipe: 7, hull: 7, trim: 0, white: 0, dark: 0, steel: 7, tractor: 7, straw: 4, cloth: 0, tyre: 0, bark: 7, leaf: 6, leaf2: 6 }, n: 0 };
 const FPAINT_GLSL = `
 float fpH(vec3 p) { p = fract(p * .3183099 + .1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
 float fpN(vec3 x) { vec3 i = floor(x), f = fract(x); f = f * f * (3.0 - 2.0 * f);
@@ -29363,7 +29363,9 @@ function buildLane() {
   }
   // the creek: out of the city's edge, down to the beach. Its crossing of the lane is the ford.
   const fordU = -22, fordV = lane.reduce((b, p) => Math.abs(p[0] - fordU) < Math.abs(b[0] - fordU) ? p : b)[1];
-  let creek = [[fordU - 1, fordV - 7], [fordU, fordV], [fordU + 2.5, fordV + 8], [fordU - 1.5, fordV + 15], [fordU + 1, fordV + 23], [fordU - 2, fordV + 31], [fordU, fordV + 40]];
+  // m303: it meanders on until the beach takes it (the filter below) -- it stopped 40 m out, mid-field, on the real headland
+  let creek = [[fordU - 1, fordV - 7], [fordU, fordV], [fordU + 2.5, fordV + 8], [fordU - 1.5, fordV + 15], [fordU + 1, fordV + 23], [fordU - 2, fordV + 31], [fordU, fordV + 40],
+               [fordU + 2.2, fordV + 48], [fordU - .8, fordV + 56], [fordU + 1.5, fordV + 64], [fordU - 1, fordV + 72]];
   creek = creek.filter(([u, v], i) => i < 2 || gnd(u, v) > ISLE.sea + .35);
   // its source walked out of the city's edge, as the lane was
   { let k = 0; while (inCity(creek[0][0], creek[0][1] - 2.8) && creek[0][1] < fordV - 3.5 && k++ < 30) creek[0][1] += .5; }
@@ -29966,13 +29968,29 @@ const FLORA = {
   FIELDS: [
     { id: 'corn_by_the_crash', kind: 'corn', u: [8, 20], v: [-7, 2], row: .85, step: .5,
       why: "the farmer's corn between the yard and the crash field -- the saucer came down beside it, and it is cover to slip through" },
-    { id: 'wheat_to_the_shore', kind: 'wheat', u: [-16, 2], v: [21, 31], row: .5, step: .42,
-      why: 'wheat down the slope behind the paddock to the shore -- the golden-hour field' },
+    { id: 'wheat_to_the_shore', kind: 'wheat', u: [-16, 2], v: [21, 46], row: .5, step: .42,
+      why: 'wheat down the slope behind the paddock to the shore -- the golden-hour field (m303: it stopped 14 m short; the beach trims it now)' },
+    // m303, the headland's fields (`HROW`): each between its hedgerows
+    { id: 'hay_meadow', kind: 'hay', u: [5.5, 20], v: [18.5, 48], row: .62, step: .52,
+      why: 'long grass for hay between the wheat and the crash field, the bales lying in it' },
+    { id: 'crash_stubble', kind: 'stubble', u: [23.5, 43.5], v: [9.5, 52], row: 1.0, step: .8,
+      why: 'the crash field, cut to stubble: the saucer came down at its head, and nothing hides it' },
+    { id: 'potato_rows', kind: 'potato', u: [-43, -29], v: [-7, 40], row: .62, step: .85, jit: .12, lift: .2,
+      why: "on the ploughed field's ridges (`HROW.PLOUGH`, same spacing and start), between the creek and the copse" },
+    { id: 'river_meadow', kind: 'rough', u: [47.5, 59], v: [8, 52], row: 1.0, step: .85,
+      why: 'rough grass along the river levee, under the willows' },
+    { id: 'copse_ferns', kind: 'fern', u: [-82, -48], v: [-30, 30], row: 1.5, step: 1.3,
+      why: "bracken through the copse at the headland's tip and the rough ground before it" },
   ],
-  tufts: 520, tuftR: [.2, 1.1],
+  tufts: 900, tuftR: [.2, 1.1],
   K: { corn: { h: [1.9, 2.5], w: [.75, .95], col: [0x6a8a2a, 0xa2b44a] },
        wheat: { h: [.8, 1.15], w: [.45, .62], col: [0xc99e3c, 0xead07a] },
-       tuft: { h: [.22, .5], w: [.35, .62], col: [0x4c7428, 0x86a23e] } },
+       tuft: { h: [.22, .5], w: [.35, .62], col: [0x4c7428, 0x86a23e] },
+       hay: { h: [.55, .85], w: [.5, .7], col: [0x8f9c48, 0xc9bf6c] },
+       stubble: { h: [.13, .24], w: [.32, .45], col: [0xb39350, 0xe2c88a] },
+       potato: { h: [.32, .48], w: [.6, .8], col: [0x2f5a22, 0x4f7a30] },
+       rough: { h: [.4, .8], w: [.45, .7], col: [0x587a2c, 0x9aa64a] },
+       fern: { h: [.45, .8], w: [.7, 1.0], col: [0x3c6224, 0x7c8a36] } },
   U: { uFlT: { value: 0 }, uFlP: { value: new THREE.Vector3(0, -999, 0) }, uFlR: { value: 1.15 }, uFlW: { value: .07 }, uFlK: { value: .38 } },
   mesh: null, counts: {},
 };
@@ -30029,18 +30047,19 @@ function buildFlora() {
   // the fields, from the table
   for (const F of FLORA.FIELDS) {
     let n = 0;
+    const jit = F.jit != null ? F.jit : .6;          // m303: a field on ridges keeps its plants on the ridge tops
     for (let v = F.v[0]; v <= F.v[1]; v += F.row) for (let u = F.u[0]; u <= F.u[1]; u += F.step) {
-      const uu = u + (Math.random() - .5) * F.step * .6, vv = v + (Math.random() - .5) * F.row * .3, [x, z] = W(uu, vv);
+      const uu = u + (Math.random() - .5) * F.step * jit, vv = v + (Math.random() - .5) * F.row * .3, [x, z] = W(uu, vv);
       const g = groundAt(x, z, 3, 6);
       if (!okGround(g) || !free(x, z, g, .25)) continue;
-      list.push([F.kind, x, g, z]); n++;
+      list.push([F.kind, x, g + (F.lift || 0), z]); n++;
     }
     FLORA.counts[F.id] = n;
   }
   // the tufts, by the rule: against something, never in it, never on the beach
   let t = 0;
   for (let k = 0; k < FLORA.tufts * 12 && t < FLORA.tufts; k++) {
-    const [x, z] = W(-34 + Math.random() * 82, -22 + Math.random() * 56), g = groundAt(x, z, 3, 6);
+    const [x, z] = W(-84 + Math.random() * 146, -30 + Math.random() * 82), g = groundAt(x, z, 3, 6);   // m303: the whole headland
     if (!okGround(g) || !free(x, z, g, FLORA.tuftR[0]) || free(x, z, g, FLORA.tuftR[1])) continue;
     list.push(['tuft', x, g, z]); t++;
   }
@@ -30056,7 +30075,10 @@ function buildFlora() {
     mesh.setColorAt(i, c);
   });
   mesh.instanceMatrix.needsUpdate = true; mesh.instanceColor.needsUpdate = true;
-  mesh.castShadow = false; mesh.receiveShadow = true; mesh.frustumCulled = false;
+  mesh.castShadow = false; mesh.receiveShadow = true;
+  // m303: CULLED, with bounds over every instance plus the sway -- m297 drew it from everywhere, and the headland's
+  // fields took it from ~2,000 clumps to ~7,500: from the city, looking away, that was every one of them every frame
+  mesh.computeBoundingSphere(); mesh.boundingSphere.radius += 3;
   scene.add(mesh);
   FLORA.mesh = mesh; FLORA.n = list.length;
   return FLORA.n;
@@ -30065,6 +30087,172 @@ function floraStep(dt) {
   if (!FLORA.mesh) return;
   const U = FLORA.U;
   U.uFlT.value += dt; U.uFlP.value.copy(player.pos); U.uFlR.value = FLORA.push; U.uFlW.value = FLORA.wind; U.uFlK.value = FLORA.pushK;
+}
+
+// ============================================================================================
+// THE HEADLAND'S FIELDS (m303, farm polish pass 8, `HROW`, `buildHedgerows`) -- hedgerows, trees, the plough
+// ============================================================================================
+// **MEASURED FIRST: 56% OF THE HEADLAND WAS LAWN** more than 8 m from anything the farm built (a 2.5 m grid over the
+// real island, `npm run places`' harness) -- the strip from the paddock and the crash out to the beach, and the whole
+// north end past the creek. m302 also shrank the headland (`ISLE.head.out` 34 -> 24) so the wheat really does run down
+// to the shore. What is left is FARMLAND, and farmland is not lawn: it is small fields, each a different crop, walled by
+// HEDGEROWS on low earth banks with a tree standing in them every dozen metres, and a gate in each. That is the layering
+// GAME_DESIGN asks for at field scale -- a hedge is a wall you cannot see over, a gate is a doorway, a tree is the
+// silhouette you steer by -- and every piece is in the tables below with the reason it is where it is.
+// **IN THE FARM'S FRAME (u along the coast, v out to sea), like everything else here.** A hedge piece is a bank box and
+// a hedge collider drawn as leaf clumps (the lane's recipe at field height: `bankH` + `hedgeH` = 1.95 m, over a man);
+// a piece whose ground is beach is skipped, so every hedge stops at the top of the shore by itself.
+// **THE PLOUGHED FIELD IS ONE RIBBON MESH** -- ridges `row` apart down the slope, each a triangular prism sampled every
+// 1.2 m on the ground -- drawn, not collided (20 cm is under a step), and the potatoes are FLORA's on its ridge tops.
+// The crops (hay, stubble, potatoes, rough grass, ferns) are rows in `FLORA.FIELDS`: no new draw call, the same sway.
+// One mesh per material, painted (`farmPaint`): about nine calls for the whole headland.
+const HROW = {
+  on: 1, n: 0, trees: 0, gates: 0,
+  bankH: .5, bankW: 1.7, hedgeH: 1.45, piece: 2.6,
+  treeEvery: 13,      // m between hedgerow trees along a run, give or take 3
+  gateW: 3.6,         // m: the gap a gate leaves
+  RUNS: [
+    { id: 'wheat_meadow', pts: [[6.5, 17.2], [4.6, 25], [3.7, 33], [2.6, 46]], gates: [[4.2, 29]],
+      why: 'between the wheat and the hay meadow, from the paddock corner down to the shore' },
+    { id: 'meadow_crash', pts: [[21, 8.5], [22.2, 17], [21.4, 27], [22.6, 36], [21, 47]], gates: [[22, 19.5]],
+      why: "the yard's east side and the hay meadow's: the crash field is over it, and the gate is how you get there from the yard" },
+    { id: 'crash_river', pts: [[44.5, 8], [45.8, 18], [44.6, 29], [46, 40], [45, 52]], gates: [[45.2, 31]],
+      why: 'the crash field from the river meadow, so the levee and its willows are a field of their own' },
+    { id: 'plough_west', pts: [[-45.5, -15], [-46.6, -4], [-45, 8], [-46.4, 20], [-44.8, 34]], gates: [[-46, -1.5]],
+      why: "the ploughed field's far side: past it the rough ground runs out to the copse at the headland's tip" },
+  ],
+  // the trees that are not in a hedge, each with its spot
+  TREES: [
+    { u: -63, v: -17, s: 1.15, why: "the copse at the headland's tip: the farm's backdrop from the yard" },
+    { u: -68, v: -9, s: .95, why: 'the copse' }, { u: -58.5, v: -5, s: 1.05, why: 'the copse, its edge toward the plough' },
+    { u: -71, v: 1, s: 1.25, why: 'the copse: the big one in the middle' }, { u: -63.5, v: 5, s: .85, why: 'the copse' },
+    { u: -75.5, v: 11, s: 1.0, why: 'the copse, toward the shore' }, { u: -66.5, v: 15, s: .9, why: 'the copse' },
+    { u: -57, v: 12.5, s: .8, why: 'the copse, a young one at its edge' }, { u: -79, v: -5, s: 1.1, why: 'the copse, its far side' },
+    { u: 57.5, v: 12, s: 1.0, k: 'willow', why: 'willows on the river bank, drinking off the levee' },
+    { u: 57, v: 27, s: 1.15, k: 'willow', why: 'the river bank' }, { u: 58, v: 41, s: .9, k: 'willow', why: 'the river bank, down to the beach' },
+  ],
+  PLOUGH: { u: [-43, -29], v: [-8, 40], row: .85, h: .22,
+    why: 'the ploughed field between the creek and the copse: potatoes, the furrows running down to the sea' },
+  // round bales in the hay meadow: a windrow, and three stacked to climb
+  BALES: [[8.5, 24, 1.3], [12, 24.6, 1.5], [15.6, 23.8, 1.7], [18.4, 25.2, 1.4], [9.5, 37, .2], [16.5, 38, -.3]],
+  STACK: { u: 12.4, v: 31.5, psi: .25, why: 'three bales stacked in the meadow: up on top you see over the hedges to the wreck' },
+};
+function buildHedgerows() {
+  const A = FARM.at; if (!HROW.on || !A) return 0;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .9, metalness: 0 }), o || {});
+  const MAT = { bank: M(0x5c6a32), hedge: M(0x2f5a24), hedge2: M(0x40712c), bark: M(0x4f3d2c), leaf: M(0x3c6a2a),
+    leaf2: M(0x6f9440), earth: M(0x6b4a32), wood: M(0x8a6a48), hay: M(0xd9b25a) };
+  const F = farmFrame(A.x, A.z, A.th, MAT, 'hedge'), { bx, geo, gnd, parts } = F;
+  const dry = (u, v) => gnd(u, v) > ISLE.sea + .6;
+  let seed = 303;
+  const rr = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const ico0 = new THREE.IcosahedronGeometry(1, 0), ico1 = new THREE.IcosahedronGeometry(1, 1);
+  // ---- a tree: an oak (a broad crown on a short trunk) or a willow (a leaning trunk, a crown that droops)
+  function tree(u, v, s, k) {
+    if (!dry(u, v)) return 0;
+    const g = gnd(u, v), wil = k === 'willow', th = (wil ? 2.6 : 3.4) * s;
+    geo(new THREE.CylinderGeometry(.24 * s, .4 * s, th + .6, 9), 'bark', u, g + th / 2 - .3, v, rr() * 6, wil ? .12 : 0, wil ? -.1 : 0);
+    bx(u, v, g - .2, g + th, .75 * s, .75 * s, 'bark'); parts.bark.pop();             // the trunk is a post you walk round
+    // two limbs out of the fork, so the crown sits ON something
+    // Euler XYZ applies Rz first: z = -.75 leans the limb's top toward local +x, then y = -a turns that onto (cos a, sin a)
+    for (let b = 0; b < 2; b++) { const a = rr() * 6.28;
+      geo(new THREE.CylinderGeometry(.09 * s, .17 * s, 1.9 * s, 6), 'bark', u + Math.cos(a) * .62 * s, g + th + .65 * s, v + Math.sin(a) * .62 * s, -a, 0, -.75); }
+    const cy = g + th + (wil ? 1.0 : 1.9) * s, n = wil ? 7 : 6;
+    for (let c = 0; c < n; c++) {
+      const a = c / n * 6.28 + rr() * .6, d = (c === 0 ? 0 : (wil ? 1.7 : 1.5)) * s, r = (c === 0 ? 2.3 : 1.45 + rr() * .5) * s;
+      const y = cy + (c === 0 ? .4 * s : (wil ? -.5 - rr() * .8 : rr() * .9 - .2) * s);
+      geo(ico1, (c + (wil ? 1 : 0)) % 3 ? 'leaf' : 'leaf2', u + Math.cos(a) * d, y, v + Math.sin(a) * d, rr() * 3, rr() * 3, 0, r, r * (wil ? 1.05 : .8), r);
+    }
+    HROW.trees++;
+    return 1;
+  }
+  // ---- a gate: two posts either side of the gap and a five-bar gate swung open into the field
+  function gate(u, v, tu, tv) {
+    const psi = Math.atan2(-tv, tu), hw = HROW.gateW / 2;
+    for (const sd of [-1, 1]) { const pu = u + tu * hw * sd, pv = v + tv * hw * sd, g = gnd(pu, pv); bx(pu, pv, g - .2, g + 1.45, .22, .22, 'wood', psi); }
+    // hung on the -side post, swung 70 deg off the line toward its left (+90 deg from the run's direction)
+    const hu = u - tu * hw, hv = v - tv * hw, sw = psi - 1.22, L = HROW.gateW - .3, cu = hu + Math.cos(sw) * L / 2, cv = hv - Math.sin(sw) * L / 2, g = gnd(cu, cv);
+    for (let k = 0; k < 5; k++) bx(cu, cv, g + .25 + k * .22, g + .33 + k * .22, L, .06, 'wood', sw, false);
+    bx(cu, cv, g + .69, g + .77, Math.hypot(L, .9), .06, 'wood', sw, false, Math.atan2(.9, L));   // the brace, corner to corner
+    HROW.gates++;
+  }
+  // ---- the runs: bank, hedge, its trees, its gates
+  for (const R of HROW.RUNS) {
+    let along = 0, nextTree = 5 + rr() * 5;
+    for (let i = 0; i < R.pts.length - 1; i++) {
+      const [u0, v0] = R.pts[i], [u1, v1] = R.pts[i + 1], L = Math.hypot(u1 - u0, v1 - v0), n = Math.max(1, Math.round(L / HROW.piece));
+      const tu = (u1 - u0) / L, tv = (v1 - v0) / L, psi = Math.atan2(-tv, tu), nu = -tv, nv = tu;
+      for (let k = 0; k < n; k++) {
+        const a = (k + .5) / n, cu = u0 + (u1 - u0) * a, cv = v0 + (v1 - v0) * a, seg = L / n + .35;
+        const atGate = R.gates.some(([gu, gv]) => Math.hypot(cu - gu, cv - gv) < HROW.gateW / 2 + seg / 2 - .2);
+        if (atGate || !dry(cu, cv)) continue;
+        const g = gnd(cu, cv);
+        bx(cu, cv, g - .4, g + HROW.bankH, seg, HROW.bankW, 'bank', psi);
+        bx(cu, cv, g + HROW.bankH - .05, g + HROW.bankH + HROW.hedgeH, seg, HROW.bankW * .7, 'hedge', psi); parts.hedge.pop();
+        for (let c = 0; c < 3; c++) {
+          const b = (c + .5) / 3 - .5, r = .62 + rr() * .3, side = (rr() - .5) * .35;
+          geo(ico0, rr() < .5 ? 'hedge' : 'hedge2', cu + tu * b * seg + nu * side, g + HROW.bankH + .55 + r * .45, cv + tv * b * seg + nv * side, rr() * 3, rr() * 2, 0, r * 1.25, r, r * 1.1);
+        }
+      }
+      // trees stand IN the hedge, every `treeEvery` give or take, never in a gateway
+      for (let d = nextTree - along; d < L; d += HROW.treeEvery + (rr() - .5) * 6) {
+        const u = u0 + tu * d, v = v0 + tv * d;
+        if (!R.gates.some(([gu, gv]) => Math.hypot(u - gu, v - gv) < HROW.gateW + 1.5)) tree(u + nu * .2, v + nv * .2, .85 + rr() * .35, 'oak');
+        nextTree = along + d + HROW.treeEvery;
+      }
+      along += L;
+    }
+    for (const [gu, gv] of R.gates) {
+      let best = 0, bd = 1e9;
+      for (let i = 0; i < R.pts.length - 1; i++) { const d = Math.hypot((R.pts[i][0] + R.pts[i + 1][0]) / 2 - gu, (R.pts[i][1] + R.pts[i + 1][1]) / 2 - gv); if (d < bd) { bd = d; best = i; } }
+      const [u0, v0] = R.pts[best], [u1, v1] = R.pts[best + 1], L = Math.hypot(u1 - u0, v1 - v0);
+      if (dry(gu, gv)) gate(gu, gv, (u1 - u0) / L, (v1 - v0) / L);
+    }
+  }
+  for (const T of HROW.TREES) tree(T.u, T.v, T.s, T.k || 'oak');
+  // ---- the plough: a ribbon of ridges down the slope, sampled on the ground
+  {
+    const P = HROW.PLOUGH, pos = [], idx = [], hr = P.row / 2;
+    for (let u = P.u[0]; u <= P.u[1] + 1e-6; u += P.row) {
+      let o = -1;
+      for (let v = P.v[0]; v <= P.v[1] + 1e-6; v += 1.2) {
+        if (!dry(u, v)) { o = -1; continue; }
+        const g = gnd(u, v), b = pos.length / 3;
+        pos.push(u - hr, g + .02, v, u, g + P.h, v, u + hr, g + .02, v);
+        if (o >= 0) idx.push(o, b, o + 1, o + 1, b, b + 1, o + 1, b + 1, o + 2, o + 2, b + 1, b + 2);
+        o = b;
+      }
+    }
+    const pg = new THREE.BufferGeometry();
+    pg.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); pg.setIndex(idx);
+    // wound so the faces look UP -- checked off the first triangle, not trusted
+    if (idx.length) { const a = idx[0] * 3, b = idx[1] * 3, c = idx[2] * 3;
+      const ux = pos[b] - pos[a], uz = pos[b + 2] - pos[a + 2], vx = pos[c] - pos[a], vz = pos[c + 2] - pos[a + 2];
+      // the frame's (u, v) is turned by `th` but not mirrored, so local winding is world winding
+      if (uz * vx - ux * vz < 0) for (let k = 0; k < idx.length; k += 3) { const t = idx[k + 1]; idx[k + 1] = idx[k + 2]; idx[k + 2] = t; }
+      pg.setIndex(idx); }
+    pg.computeVertexNormals();
+    geo(pg, 'earth', 0, 0, 0);
+  }
+  // ---- the hay meadow's bales, and the stack
+  for (const [u, v, r] of HROW.BALES) {
+    if (!dry(u, v)) continue;
+    const g0 = gnd(u, v);
+    geo(new THREE.CylinderGeometry(.75, .75, 1.2, 14), 'hay', u, g0 + .72, v, r, 0, Math.PI / 2);
+    bx(u, v, g0 - .1, g0 + 1.45, 1.2, 1.4, 'hay', r, true); parts.hay.pop();
+  }
+  { const S = HROW.STACK, c = Math.cos(S.psi), sn = Math.sin(S.psi), g0 = gnd(S.u, S.v);
+    // two lying side by side (their axes along v), one in the saddle between them
+    for (const [du, y] of [[-.76, g0 + .72], [.76, g0 + .72], [0, g0 + 2.0]]) {
+      const u = S.u + du * c, v = S.v - du * sn;
+      geo(new THREE.CylinderGeometry(.75, .75, 1.2, 14), 'hay', u, y, v, S.psi + Math.PI / 2, 0, Math.PI / 2);
+      bx(u, v, y - .82, y + .73, 1.4, 1.2, 'hay', S.psi, true); parts.hay.pop();
+    }
+    HROW.stackAt = [F.wx(S.u - 3.2 * c, S.v + 3.2 * sn), F.wz(S.u - 3.2 * c, S.v + 3.2 * sn)];
+  }
+  const r = F.commit();
+  HROW.n = r.boxes;
+  return HROW.n;
 }
 
 // ============================================================================================
@@ -30136,6 +30324,9 @@ const GODPLACES = [
   { id: 'crash',    world: 'tkit', name: 'GRISTLE FARM · the crash site', at: () => CRASH.at && [CRASH.at.you[0], null, CRASH.at.you[1], Math.atan2(CRASH.at.x - CRASH.at.you[0], CRASH.at.z - CRASH.at.you[1])] },
   { id: 'corn',     world: 'tkit', name: 'GRISTLE FARM · the corn', at: () => godMid(FLORA.FIELDS[0]) },
   { id: 'wheat',    world: 'tkit', name: 'GRISTLE FARM · the wheat down to the shore', at: () => godMid(FLORA.FIELDS[1]) },
+  { id: 'meadow',   world: 'tkit', name: 'GRISTLE FARM · the hay meadow and the bale stack', at: () => HROW.stackAt && [HROW.stackAt[0], null, HROW.stackAt[1], null] },
+  { id: 'plough',   world: 'tkit', name: 'GRISTLE FARM · the ploughed field', at: () => godFarm(-36, -5, 0) },
+  { id: 'copse',    world: 'tkit', name: "GRISTLE FARM · the copse at the headland's tip", at: () => godFarm(-52, 0, -Math.PI / 2) },
   { id: 'windmill', world: 'tkit', name: 'GRISTLE FARM · the windmill pump', at: () => FPROPS.at.windmill && [FPROPS.at.windmill[0], null, FPROPS.at.windmill[1], null] },
   { id: 'scarecrow', world: 'tkit', name: 'GRISTLE FARM · the scarecrow in the corn', at: () => FPROPS.at.scarecrow && [FPROPS.at.scarecrow[0], null, FPROPS.at.scarecrow[1], null] },
   { id: 'tractor', world: 'tkit', name: 'GRISTLE FARM · the tractor in the yard', at: () => FPROPS.at.tractor && [FPROPS.at.tractor[0], null, FPROPS.at.tractor[1], FPROPS.at.tractor[2]] },
@@ -32096,6 +32287,7 @@ function frameBody() {
       (PORTAL.n ? ' PT' + PORTALS.filter(q => q.on).length + '/' + PORTAL.n + (PORTAL.trips ? '>' + PORTAL.trips : '') : '') +
       // FARM: boxes / roof triangles kept (m288) -- no token is no room on the ring or not the kit city
       (FARM.n ? ' FARM' + FARM.n + '/' + FARM.tris + (GRADE.k > .01 ? ' gold' + GRADE.k.toFixed(2) : '') : '') +
+      (HROW.n ? ' HR' + HROW.n + 't' + HROW.trees + 'g' + HROW.gates : '') +
       // CR: the crash site's colliders, and `*` when this boot woke at it (m289)
       (CRASH.n ? ' CR' + CRASH.n + (CRASH.spawned ? '*' : '') + (CHERO.arcs ? 'a' + CHERO.arcs : '') + (CHERO.hum ? 'h' : '') : '') +
       // LN: the lane and creek's colliders (m290)
@@ -32445,6 +32637,8 @@ async function init() {
     try { crashHero(); } catch (e) { note('WRECK FX FAIL'); console.warn('[melee] crash hero', e); }   // m300
     try { buildLane(); } catch (e) { note('LANE FAIL'); console.warn('[melee] lane', e); }
     try { buildBridge(); } catch (e) { note('BRIDGE FAIL'); console.warn('[melee] bridge', e); }
+    // THE HEADLAND'S FIELDS (m303): hedgerows, trees, the plough -- before the cows and the plants, which both see them
+    try { buildHedgerows(); } catch (e) { note('HEDGE FAIL'); console.warn('[melee] hedgerows', e); }
     try { buildCows(); } catch (e) { note('COWS FAIL'); console.warn('[melee] cows', e); }
     // THE GROUND (m301): dirt, mud and the lane's track, under everything
     try { buildGroundPaint(); } catch (e) { note('GROUND FAIL'); console.warn('[melee] ground paint', e); }
@@ -32651,7 +32845,7 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // THE FARM'S PROPS (m299): `mel.FPROPS` -- `wind` (shared direction), `spin`
   FPROPS,
   // THE GROUND PAINT (m301): `mel.GPAINT` -- the patch table and the lane track
-  GPAINT,
+  GPAINT, HROW,
   FARM, farm: () => { const F = FARM.at; if (!F) return 'no farm in this world'; const p = player; p.pos.set(F.x - Math.sin(F.th) * 12, 2, F.z - Math.cos(F.th) * 12); p.vel.set(0, 0, 0); p.heading = p.faceH = F.th; return 'farm at ' + F.x.toFixed(0) + ',' + F.z.toFixed(0); },
   PORTAL, PORTALS, portal: () => portalOpen(),
   // THE DEMOS, ON PURPOSE ONLY (m292, STEER 1): round where you stand, for testing the systems
