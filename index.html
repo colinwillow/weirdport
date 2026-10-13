@@ -467,6 +467,14 @@ body.dyn.desk .zone { display: none; }
   background: rgba(11,13,18,.82); border: 2px solid var(--sun); border-radius: 8px; padding: 5px 12px;
   font-family: var(--ui); font-size: 15px; font-weight: 600; color: #fff; line-height: 1.2; }
 #toast.on { opacity: 1; }
+/* PORTALS (m286): violet on the pad, and the travel picker is the form picker's shape in violet */
+#padR.port::after { opacity: 1; border-color: #b86dff; }
+#portPick { position: fixed; inset: 0; z-index: 9; display: none; background: rgba(11,13,18,.42); }
+#portPick.on { display: block; }
+#portPick b { position: absolute; width: 92px; height: 92px; margin: -46px 0 0 -46px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; text-align: center; padding: 6px; box-sizing: border-box;
+  font-family: var(--disp); font-weight: 400; font-size: 11px; line-height: 1.1;
+  color: #d2a8ff; background: rgba(11,13,18,.85); border: 3px solid #b86dff; cursor: pointer; }
 #formPick { position: fixed; inset: 0; z-index: 9; display: none; background: rgba(11,13,18,.42); }
 #formPick.on { display: block; }
 #formPick b { position: absolute; width: 78px; height: 78px; margin: -39px 0 0 -39px; border-radius: 50%;
@@ -656,10 +664,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m285</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m286</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m285</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m286</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -675,6 +683,7 @@ body.desk.free #deskHint { display: block; }
 <div id="formRow" aria-hidden="true"></div>
 <div id="formPick" aria-hidden="true"></div>
 <div id="toast" aria-hidden="true"></div>
+<div id="portPick" aria-hidden="true"></div>
 <div id="qdone" aria-hidden="true"><small>QUEST COMPLETE</small><b></b></div>
 
 <!-- THE BLASTER'S TWO MODES (m52). Above the right pad, because that is the thumb they are
@@ -734,7 +743,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm285';
+const BUILD = 'm286';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -13365,7 +13374,7 @@ PADS.L = bindStick(padL, stick.L,
 PADS.R = bindStick(padR, stick.R,
   // tap: jump -- and as her, a quick SECOND tap opens / folds the wings (m266)
   // ...unless someone in reach has something to say: then it is TALK (m277), and the left tap still jumps
-  () => { if (talkTap()) return; if (wingTapR()) return; player.jump = 1; },
+  () => { if (talkTap()) return; if (portalTap()) return; if (wingTapR()) return; player.jump = 1; },
   // flick: a SLAM if he is in the air and it went down, otherwise a strike in that direction
   (dx, dy) => { if (player.wing) return; if (boardFlick(dx, dy, 0)) return; if (!slamGo(dx, dy)) meleeGo(flickH(dx, dy)); },
   null,
@@ -13700,7 +13709,7 @@ addEventListener('keydown', e => {
   if ('wasd'.includes(k) || k.startsWith('arrow')) deskMode(1);
   if (!DESK.on || e.repeat) return;
   if (k === ' ') { player.jump = 1; e.preventDefault(); }
-  if (k === 'e') talkTap();                  // talk / next line (m277)
+  if (k === 'e') { if (!talkTap()) portalTap(); }   // talk / next line (m277), or travel (m286)
   if (k === 'f' && SAVE.forms.length > 1) { if (form.open) formClose(); else formOpen(); }   // the form wheel (m283)
   if (k === 'v') wingSet(!player.wing);      // her wings (m266)
   // THE ROLL HAS NO GESTURE LEFT ON A MOUSE, and it is the one thing that saves you (its
@@ -28446,6 +28455,122 @@ function gateStep(dt) {
   }
 }
 
+// ============================================================================================
+// PORTALS (m286, ROADMAP A8b) -- no one-way trips
+// ============================================================================================
+// **STEP ON A PAD AND IT IS YOURS FOR GOOD** (`progPortal(id)`, saved). Standing on an ACTIVE pad,
+// the right pad lights violet and reads `tap = travel`; the tap opens a picker of every other
+// active pad in this world, and choosing one puts you there -- in whatever body you are in, because
+// the network is the alien's and it never asks. The ship is the hub (`hub: 1`) and is active from
+// the start, so the first pad you find already has somewhere to go.
+// **THE TAP ORDER IS TALK, THEN PORTAL, THEN THE JUMP** -- someone with something to say on a pad
+// is the rarer and more specific thing. The left tap is still the jump.
+// **A TRAVEL MOVES THE CAMERA BY THE SAME DELTA**, so the lens arrives framed exactly as it left
+// rather than swooping thirty metres across the city behind you.
+// **NO LEVEL HAS A PAD IN IT YET** and there is no ship model. Per world, `portalDemo` places the
+// HUB a few metres from the spawn and two more pads ~30 m out in different directions, through
+// `spawnBeside` (open ground, never inside a building). Phase B puts real ones where forms reach.
+// Travel is within one world: the worlds are separate loads.
+const PORTAL = {
+  on: 1,
+  r: 1.3,           // m: the pad's radius, and how near counts as standing on it
+  demo: 1,
+  n: 0, trips: 0,   // chip: pads placed / trips taken
+};
+const PORTALS = [];  // { id, name, hub, x, y, z, g, ring, beam, on }
+const portal = { at: null, lit: 0, pick: null, waitT: 0, done: 0, mats: null };
+function portalMats() {
+  if (portal.mats) return portal.mats;
+  const add = (c, o) => new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: o, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, fog: false });
+  return (portal.mats = { off: add(0x6a6a88, .35), on: add(0xb86dff, .85), beam: add(0xb86dff, .22), disc: add(0x7a3dff, .25) });
+}
+function portalAdd(id, name, x, z, y, hub) {
+  const M = portalMats(), g = new THREE.Group();
+  const ring = new THREE.Mesh(new THREE.RingGeometry(PORTAL.r * .78, PORTAL.r, 40), M.off);
+  ring.rotation.x = -Math.PI / 2; ring.position.y = .04; g.add(ring);
+  const disc = new THREE.Mesh(new THREE.CircleGeometry(PORTAL.r * .74, 32), M.disc);
+  disc.rotation.x = -Math.PI / 2; disc.position.y = .03; g.add(disc);
+  const beamG = new THREE.CylinderGeometry(PORTAL.r * .7, PORTAL.r * .85, 3.2, 24, 1, true); beamG.translate(0, 1.6, 0);
+  const beam = new THREE.Mesh(beamG, M.beam); g.add(beam);
+  if (y == null || !(y > -1e3)) y = groundAt(x, z, player.pos.y + 2, MOVE.step);
+  g.position.set(x, y > -1e3 ? y : player.pos.y, z);
+  scene.add(g);
+  const P = { id, name, hub: !!hub, x, y: g.position.y, z, g, ring, beam, on: !!hub || SAVE.portals.includes(id) };
+  if (hub) progPortal(id);
+  portalPaint(P);
+  PORTALS.push(P); PORTAL.n++;
+  return P;
+}
+function portalPaint(P) { const M = portalMats(); P.ring.material = P.on ? M.on : M.off; P.beam.visible = P.on; }
+function portalDemo() {
+  portal.done = 1;
+  if (!PORTAL.demo) return;
+  const w = WORLD.now;
+  const stand = kitWorld() ? kitStand : (x, z) => { const y = groundAt(x, z, player.pos.y + 2, MOVE.step); if (!(y > -1e3) || Math.abs(y - player.pos.y) > 1.5) return null;
+    _wpP.x = x; _wpP.y = y; _wpP.z = z; return resolveBoxes(_wpP, PORTAL.r + .3, 1.6) ? null : y; };
+  const px = player.pos.x, pz = player.pos.z, taken = GATES.map(G => [G.x, G.z]);
+  const a = spawnBeside(stand, px, pz, 5, taken); taken.push(a);
+  portalAdd(w + '_hub', 'THE SHIP', a[0], a[1], a[2], 1);
+  const b = spawnBeside(stand, px + 30, pz, 0, taken); taken.push(b);
+  portalAdd(w + '_east', 'EAST PAD', b[0], b[1], b[2]);
+  const c = spawnBeside(stand, px - 22, pz - 22, 0, taken);
+  portalAdd(w + '_west', 'WEST PAD', c[0], c[1], c[2]);
+}
+function portalGo(P) {
+  portalClose();
+  const p = player, dx = P.x - p.pos.x, dz = P.z - p.pos.z, dy = P.y + .05 - p.pos.y;
+  p.pos.x += dx; p.pos.y += dy; p.pos.z += dz; p.vel.set(0, 0, 0);
+  cam.pos.x += dx; cam.pos.y += dy; cam.pos.z += dz; cam.tgt.x += dx; cam.tgt.y += dy; cam.tgt.z += dz;
+  PORTAL.trips++;
+  snd('ready', { g: .5, r: 1.4 });
+  toast(P.name, 1.4);
+  portal.at = P;
+}
+function portalClose() { if (portal.pick) portal.pick.classList.remove('on'); }
+function portalOpen() {
+  const el = portal.pick || (portal.pick = document.getElementById('portPick')); if (!el) return false;
+  const list = PORTALS.filter(P => P.on && P !== portal.at);
+  if (!list.length) { toast('No other portals yet. Find more pads.', 2); return true; }
+  while (el.firstChild) el.removeChild(el.firstChild);
+  const R = Math.min(innerWidth, innerHeight) * .28, cx = innerWidth * .5, cy = innerHeight * .45, n = list.length;
+  list.forEach((P, i) => {
+    const a = -Math.PI / 2 + i * Math.PI * 2 / Math.max(n, 2);
+    const b = document.createElement('b'); b.textContent = P.name;
+    b.style.left = (cx + Math.cos(a) * (n > 1 ? R : 0)).toFixed(0) + 'px';
+    b.style.top = (cy + Math.sin(a) * (n > 1 ? R : 0)).toFixed(0) + 'px';
+    b.addEventListener('pointerdown', e => { e.preventDefault(); e.stopPropagation(); portalGo(P); });
+    el.appendChild(b);
+  });
+  if (!el._wired) { el._wired = 1; el.addEventListener('pointerdown', e => { e.preventDefault(); e.stopPropagation(); portalClose(); }); }
+  el.classList.add('on');
+  return true;
+}
+// the right pad's tap, after TALK: on an active pad, open the picker
+function portalTap() {
+  if (!PORTAL.on || !portal.at || !portal.at.on) return false;
+  return portalOpen();
+}
+function portalStep(dt) {
+  if (!PORTAL.on) return;
+  if (!portal.done && rig.ready && (portal.waitT += dt) > 1.6 && player.grounded) portalDemo();
+  const p = player, P0 = p.pos, now = performance.now() * .001;
+  let at = null;
+  for (const P of PORTALS) {
+    P.ring.rotation.z = now * (P.on ? .8 : .2);
+    if (P.on) P.beam.material.opacity = .16 + .08 * Math.sin(now * 3);
+    if (Math.hypot(P0.x - P.x, P0.z - P.z) < PORTAL.r && Math.abs(P0.y - P.y) < 1.2) at = P;
+  }
+  if (at && !at.on) { at.on = 1; portalPaint(at); progPortal(at.id); toast('PORTAL ACTIVATED: ' + at.name, 2.2); snd('ready', { g: .55, r: 1.2 }); }
+  if (at !== portal.at) { portal.at = at; if (!at) portalClose(); }
+  // the pad: violet ring, `tap = travel` -- unless TALK has it this frame
+  const lit = at && at.on && !talk.lit ? 1 : 0;
+  if (lit !== portal.lit) {
+    portal.lit = lit;
+    padR.classList.toggle('port', !!lit);
+    if (talk.hint && !talk.lit && !samp.lit) talk.hint.textContent = lit ? 'tap = travel' : talk.hint0;
+  }
+}
+
 function stepDummies(dt) {
   bodySep(dt);
   bodySeat();
@@ -29592,6 +29717,7 @@ function frameBody() {
   formStep();                   // the FORMS button appears with the second form (m283)
   juiceStep(dt);                // the tank: drain while worn, snap back at zero (m284)
   gateStep(dt);                 // gates: flicker, mending, the toast (m285)
+  portalStep(dt);               // portals: activate on contact, light the pad (m286)
   cellStep();
   kitXrayStep();
   // AFTER the camera, because the rim is placed off the bearing the lens was actually drawn at
@@ -29919,6 +30045,8 @@ function frameBody() {
       ' J' + Math.floor(SAVE.juice) + (JUICE.n ? '!' + JUICE.n : '') +
       (SAMPLE.n || SAVE.forms.length > 1 ? ' S' + SAMPLE.n + '/' + SAVE.forms.length : '') +
       // G: gates placed / times one stopped you (m285)
+      // PT: portals active / placed, trips (m286)
+      (PORTAL.n ? ' PT' + PORTALS.filter(q => q.on).length + '/' + PORTAL.n + (PORTAL.trips ? '>' + PORTAL.trips : '') : '') +
       (GATE.n ? ' G' + GATE.n + '/' + GATE.said : '') +
       (quest.cur ? ' Q' + quest.cur.id + '.' + quest.step + (quest.tgt ? '' : '~') : '') +
       (MISSING.length ? ' · ' + MISSING.join(' · ') : '');
@@ -30414,6 +30542,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   FORMS, formPick, formNow, formOpen,
   // JUICE (m284): `mel.JUICE` live; `mel.juice(n)` fills the tank to n
   // GATES (m285): `mel.GATES` live; `mel.gate('fire')` drops one 4 m in front of you
+  // PORTALS (m286): `mel.PORTALS` live; `mel.portal()` opens the travel picker from anywhere
+  PORTAL, PORTALS, portal: () => portalOpen(),
   GATE, GATES, GATE_TYPES, gate: t => { const p = player, h = p.faceH; const g = gateAdd(t || 'cordon', p.pos.x + Math.sin(h) * 4, p.pos.z + Math.cos(h) * 4, h + Math.PI); return g ? g.id : 'types: ' + Object.keys(GATE_TYPES).join(' '); },
   JUICE, juice: n => { SAVE.juice = n == null ? JUICE.cap : +n; progSave(); return SAVE.juice; },
   COPS, heat: n => (HEAT.v = +n || 0),

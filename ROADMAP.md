@@ -49,7 +49,7 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
 - [x] m285 **A8 Gates.** Data-driven obstacles that check the current form: police cordon (cop),
   fire wall (firefighter), broken bridge (worker repairs it), barricade (activist inside a protest
   crowd), gap (glider). Each says what it needs when you bump into it.
-- [ ] **A8b Portals.** Activatable portal points (a glowing pad). Stepping on one activates it for
+- [x] m286 **A8b Portals.** Activatable portal points (a glowing pad). Stepping on one activates it for
   good; from any active portal you can travel to any other as yourself. The ship is the hub. Every
   place a form can reach gets one, so a disguise running out never strands you.
 - [ ] **A9 Map & fog.** A full-screen map (tap the minimap) showing regions; unvisited regions are
@@ -150,3 +150,8 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   around them, they're tests, not level design. The gap can't be crossed until the glider form
   exists (C4). Gates only stop **you**; NPCs walk through. `mel.gate('bridge')` drops one in front
   of you.
+- **m286 (A8b):** pads are violet rings on the ground; step on one to activate it for good. Standing
+  on an active pad, the right pad lights violet (`tap = travel`) and opens a picker of the other
+  active pads in this world. You can travel in any form. There's no ship model yet, so "THE SHIP"
+  hub is a pad a few metres from the spawn (always active), plus two demo pads ~30 m out; Phase B
+  places the real ones. Travel stays within one world (worlds are separate loads).

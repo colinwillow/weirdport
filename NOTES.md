@@ -7,6 +7,14 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A PORTAL TRIP MOVES THE CAMERA BY THE SAME DELTA AS HIM (m286, ROADMAP A8b, `PORTALS`, `portalGo`, `portalTap`).**
+  `mel.brk()` teleports by setting `p.pos` alone and the lens swoops after him; `portalGo` adds the same delta to
+  `cam.pos` and `cam.tgt`, so it arrives framed as it left. Activation is contact (`r` flat, 1.2 m in y) ->
+  `progPortal(id)`; ids are `<world>_<name>` so pads in different worlds never share a save key. The right tap order
+  is `talkTap` -> `portalTap` -> wings -> jump; `E` on desktop does talk-or-travel. The hub (`hub: 1`) is active from
+  the start (and written to the save) so the first pad found already has a destination. Demo pads go down 1.6 s
+  after `rig.ready` through `spawnBeside`, avoiding the gates. Chip: `PT<active>/<placed>>trips`.
+
 - **A GATE IS ITS OWN PUSH, NOT A BOX IN `BOXES` (m285, ROADMAP A8, `GATE_TYPES`, `gatePush`, `gateAdd`).**
   A box in `BOXES` blocks everyone always and that list is a spatial index built at load; a gate blocks one body
   sometimes. `gatePush` runs after the player moves and before `kitCamStep`/`stepCam`, in the gate's frame (normal is
