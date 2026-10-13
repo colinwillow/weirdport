@@ -7,6 +7,17 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE MAP IS THE COLLIDER DRAWN FLAT, AND ITS ROTATION COMES FROM THE CAMERA'S OWN DIRECTION (m287, ROADMAP A9, `MAP`, `mapBuild`, `mapMini`).**
+  No minimap existed though the roadmap said "tap the minimap". A top-down render into a target was the obvious
+  picture and it would have fought `cellStep` (far cells hidden), the x-ray dither, the fog and the sky -- so the base
+  is every `BOXES` footprint (oriented ones turned by `cs/sn/hx/hz`) onto a 1024 2D canvas, sorted by `maxy`, shaded by
+  height; slabs over 300 m are skipped as ground. **Screen right is -X** (+X is his left): `mapU = -(x-cx)*s`,
+  `mapV = -(z-cz)*s`. The minimap's turn is `-pi/2 - atan2(-fz, -fx)` off `camera.getWorldDirection` -- derived from
+  the lens itself so `cam.az`'s convention never enters it; his arrow is `-h` (checked: forward `(sin h, cos h)` lands at
+  canvas `(-sin h, -cos h)`). Rebuilt when the box count drifts (checked every 8 s) and on opening. Regions default to
+  extent quadrants keyed `<world>:<id>` in `SAVE.regions`; `MAPREG[world]` overrides. Fog is a second canvas, redrawn
+  only on a reveal. Minimap 15 Hz, full map 5 Hz while open. Chip: `RG<seen>/<regions>b<builds>`.
+
 - **A PORTAL TRIP MOVES THE CAMERA BY THE SAME DELTA AS HIM (m286, ROADMAP A8b, `PORTALS`, `portalGo`, `portalTap`).**
   `mel.brk()` teleports by setting `p.pos` alone and the lens swoops after him; `portalGo` adds the same delta to
   `cam.pos` and `cam.tgt`, so it arrives framed as it left. Activation is contact (`r` flat, 1.2 m in y) ->

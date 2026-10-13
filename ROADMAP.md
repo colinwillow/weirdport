@@ -52,7 +52,7 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
 - [x] m286 **A8b Portals.** Activatable portal points (a glowing pad). Stepping on one activates it for
   good; from any active portal you can travel to any other as yourself. The ship is the hub. Every
   place a form can reach gets one, so a disguise running out never strands you.
-- [ ] **A9 Map & fog.** A full-screen map (tap the minimap) showing regions; unvisited regions are
+- [x] m287 **A9 Map & fog.** A full-screen map (tap the minimap) showing regions; unvisited regions are
   fogged and reveal when entered; the objective and quest givers are marked.
 
 ## Phase B — Chapter 0 and Chapter 1, playable start to finish
@@ -155,3 +155,9 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   active pads in this world. You can travel in any form. There's no ship model yet, so "THE SHIP"
   hub is a pad a few metres from the spawn (always active), plus two demo pads ~30 m out; Phase B
   places the real ones. Travel stays within one world (worlds are separate loads).
+- **m287 (A9):** there was no minimap, so I built one: round, top-right under the stars, turns
+  with the camera. Tap it for the full map (north-up), tap again to close; `M` on desktop. The map
+  is drawn from the collision boxes (building footprints shaded by height), not a rendered photo,
+  so it's cheap and always matches what you can walk into. **Regions are placeholder quadrants**
+  (NORTH-WEST etc.) until Phase B defines real districts (`MAPREG`); the one you spawn in starts
+  revealed. Markers: you, the objective (gold), `!` quest givers, portals, gates.

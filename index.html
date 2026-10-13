@@ -475,6 +475,15 @@ body.dyn.desk .zone { display: none; }
   display: flex; align-items: center; justify-content: center; text-align: center; padding: 6px; box-sizing: border-box;
   font-family: var(--disp); font-weight: 400; font-size: 11px; line-height: 1.1;
   color: #d2a8ff; background: rgba(11,13,18,.85); border: 3px solid #b86dff; cursor: pointer; }
+/* THE MAP (m287): a round heading-up minimap under the stars, and a full north-up map over everything */
+#mini { position: fixed; top: calc(92px + env(safe-area-inset-top)); right: calc(12px + env(safe-area-inset-right));
+  width: 92px; height: 92px; z-index: 5; display: none; border-radius: 50%; cursor: pointer; }
+#mini.on { display: block; }
+#mapFull { position: fixed; inset: 0; z-index: 9; display: none; background: rgba(11,13,18,.92);
+  align-items: center; justify-content: center; flex-direction: column; gap: 8px; }
+#mapFull.on { display: flex; }
+#mapFull canvas { border: 2px solid rgba(70,224,255,.5); border-radius: 8px; }
+#mapFull small { font-family: var(--ui); font-size: 11px; letter-spacing: .2em; color: rgba(255,255,255,.5); }
 #formPick { position: fixed; inset: 0; z-index: 9; display: none; background: rgba(11,13,18,.42); }
 #formPick.on { display: block; }
 #formPick b { position: absolute; width: 78px; height: 78px; margin: -39px 0 0 -39px; border-radius: 50%;
@@ -664,10 +673,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m286</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m287</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m286</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m287</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -684,6 +693,8 @@ body.desk.free #deskHint { display: block; }
 <div id="formPick" aria-hidden="true"></div>
 <div id="toast" aria-hidden="true"></div>
 <div id="portPick" aria-hidden="true"></div>
+<canvas id="mini" aria-hidden="true"></canvas>
+<div id="mapFull" aria-hidden="true"><canvas></canvas><small>TAP TO CLOSE</small></div>
 <div id="qdone" aria-hidden="true"><small>QUEST COMPLETE</small><b></b></div>
 
 <!-- THE BLASTER'S TWO MODES (m52). Above the right pad, because that is the thumb they are
@@ -743,7 +754,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm286';
+const BUILD = 'm287';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -13649,7 +13660,7 @@ const DESK = {
   down: 0, t0: 0,     // the left button, and when it went down
   hint: 'CLICK TO PLAY &nbsp; <b>WASD</b> move &nbsp; <b>MOUSE</b> look &nbsp; '
       + '<b>LMB</b> tap melee / hold fire &nbsp; <b>RMB</b> weapon &nbsp; '
-      + '<b>ALT</b> mode &nbsp; <b>SPACE</b> jump &nbsp; <b>SHIFT</b> roll &nbsp; <b>E</b> talk &nbsp; <b>F</b> forms',
+      + '<b>ALT</b> mode &nbsp; <b>SPACE</b> jump &nbsp; <b>SHIFT</b> roll &nbsp; <b>E</b> talk &nbsp; <b>F</b> forms &nbsp; <b>M</b> map',
 };
 const deskHint = document.getElementById('deskHint');
 deskHint.innerHTML = DESK.hint;
@@ -13710,6 +13721,7 @@ addEventListener('keydown', e => {
   if (!DESK.on || e.repeat) return;
   if (k === ' ') { player.jump = 1; e.preventDefault(); }
   if (k === 'e') { if (!talkTap()) portalTap(); }   // talk / next line (m277), or travel (m286)
+  if (k === 'm') mapOpen(!map.open);                       // the full map (m287)
   if (k === 'f' && SAVE.forms.length > 1) { if (form.open) formClose(); else formOpen(); }   // the form wheel (m283)
   if (k === 'v') wingSet(!player.wing);      // her wings (m266)
   // THE ROLL HAS NO GESTURE LEFT ON A MOUSE, and it is the one thing that saves you (its
@@ -28571,6 +28583,210 @@ function portalStep(dt) {
   }
 }
 
+// ============================================================================================
+// MAP & FOG (m287, ROADMAP A9) -- a minimap, a full map, and regions you have not been to yet
+// ============================================================================================
+// **THE PICTURE IS THE COLLIDER, DRAWN ONCE.** Every box in `BOXES` is a footprint -- buildings,
+// kerbs, props, kit wall chunks -- so one pass over them onto a 1024 canvas, shaded by height,
+// is a floor plan of whatever world this is, with no render target, no readback and nothing for
+// the cell culling or the x-ray to hide. Oriented boxes (`cs/sn/hx/hz`) draw turned. It is
+// rebuilt when the map is opened and the box count has moved (kit chunks die and come back).
+// **SCREEN RIGHT IS -X.** +X is his left (CLAUDE.md): looking down with +Z up the screen, the
+// right-hand side is -X. So the canvas maps x -> -(x - cx), z -> -(z - cz) with canvas y down.
+// That is derived, not argued -- and the minimap's rotation is derived from the CAMERA's own
+// world direction (`getWorldDirection`), not from `cam.az`'s convention, so it cannot be wrong
+// by a sign the way reasoning about `az` would be.
+// **REGIONS ARE QUADRANTS UNTIL PHASE B NAMES REAL ONES** (`MAPREG[world]` overrides): the
+// extents split 2x2 and named by where they sit on the full map. Walking into one reveals it
+// (`progRegion('<world>:<id>')`, saved) and the spawn's own is revealed on the first frame.
+// Unrevealed regions are dark on both maps.
+// **MARKERS**: you (an arrow), the objective (`quest.tgt`, gold), anyone with something to say
+// (`!`), portals (violet ring, filled when active), gates (red bar). The minimap clamps the
+// objective to its rim so it is a direction even when it is far away.
+// Tap the minimap for the full map; tap anywhere to close it. Desktop: `M`.
+const MAP = {
+  on: 1,
+  px: 1024,         // the base canvas
+  mini: 92,         // css px, the minimap
+  span: 70,         // m across the minimap
+  hz: 15,           // minimap redraws a second
+  revealEvery: .5,  // s between region checks
+  n: 0,             // chip: base builds
+};
+const MAPREG = {};  // per-world custom regions: [{ id, name, x0, x1, z0, z1 }]
+const map = { base: null, fog: null, boxN: -1, ext: null, regs: [], miniEl: null, miniCtx: null,
+  full: null, fullCv: null, open: 0, t: 0, regT: 0, fullT: 0, fogDirty: 1, cam: new THREE.Vector3() };
+function mapExtents() {
+  let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9;
+  for (const b of BOXES) {
+    if (b.maxx - b.minx > 300 || b.maxz - b.minz > 300) continue;   // a ground slab is not a place
+    if (b.minx < x0) x0 = b.minx; if (b.maxx > x1) x1 = b.maxx;
+    if (b.minz < z0) z0 = b.minz; if (b.maxz > z1) z1 = b.maxz;
+  }
+  if (!(x1 > x0)) { x0 = -60; x1 = 60; z0 = -60; z1 = 60; }
+  const P = player.pos;
+  x0 = Math.min(x0, P.x - 20) - 10; x1 = Math.max(x1, P.x + 20) + 10;
+  z0 = Math.min(z0, P.z - 20) - 10; z1 = Math.max(z1, P.z + 20) + 10;
+  const cx = (x0 + x1) / 2, cz = (z0 + z1) / 2, half = Math.max(x1 - x0, z1 - z0) / 2;
+  return { cx, cz, half, s: MAP.px / (2 * half) };
+}
+// world -> base canvas px
+const mapU = (E, x) => (-(x - E.cx) * E.s) + MAP.px / 2;
+const mapV = (E, z) => (-(z - E.cz) * E.s) + MAP.px / 2;
+function mapBuild() {
+  const E = map.ext = mapExtents();
+  map.boxN = BOXES.length; MAP.n++;
+  const cv = map.base || (map.base = document.createElement('canvas'));
+  cv.width = cv.height = MAP.px;
+  const g = cv.getContext('2d');
+  g.fillStyle = '#1b2130'; g.fillRect(0, 0, MAP.px, MAP.px);
+  const list = BOXES.filter(b => !(b.maxx - b.minx > 300 || b.maxz - b.minz > 300)).sort((a, b) => a.maxy - b.maxy);
+  for (const b of list) {
+    const h = b.maxy - b.miny;
+    if (h < .6) g.fillStyle = '#353d50';
+    else { const k = Math.min(1, h / 30), c = Math.round(88 + k * 120); g.fillStyle = 'rgb(' + c + ',' + (c + 8) + ',' + (c + 26) + ')'; }
+    if (b.hx !== undefined && b.cs !== undefined) {
+      // an oriented box: its own corners, turned by its yaw
+      const ax = b.hx * b.cs, az = -b.hx * b.sn, bx = b.hz * b.sn, bz = b.hz * b.cs;
+      g.beginPath();
+      g.moveTo(mapU(E, b.cx + ax + bx), mapV(E, b.cz + az + bz));
+      g.lineTo(mapU(E, b.cx - ax + bx), mapV(E, b.cz - az + bz));
+      g.lineTo(mapU(E, b.cx - ax - bx), mapV(E, b.cz - az - bz));
+      g.lineTo(mapU(E, b.cx + ax - bx), mapV(E, b.cz + az - bz));
+      g.closePath(); g.fill();
+    } else {
+      const u0 = mapU(E, b.maxx), v0 = mapV(E, b.maxz);
+      g.fillRect(u0, v0, Math.max(1, (b.maxx - b.minx) * E.s), Math.max(1, (b.maxz - b.minz) * E.s));
+    }
+  }
+  // regions: his, or the quadrants
+  const R = MAPREG[WORLD.now];
+  if (R) map.regs = R.map(r => Object.assign({}, r));
+  else {
+    const { cx, cz, half } = E;
+    // named by where they sit on the full map: +Z is up, +X is LEFT
+    map.regs = [
+      { id: 'nw', name: 'NORTH-WEST', x0: cx, x1: cx + half, z0: cz, z1: cz + half },
+      { id: 'ne', name: 'NORTH-EAST', x0: cx - half, x1: cx, z0: cz, z1: cz + half },
+      { id: 'sw', name: 'SOUTH-WEST', x0: cx, x1: cx + half, z0: cz - half, z1: cz },
+      { id: 'se', name: 'SOUTH-EAST', x0: cx - half, x1: cx, z0: cz - half, z1: cz },
+    ];
+  }
+  map.fogDirty = 1;
+}
+const mapRegKey = r => WORLD.now + ':' + r.id;
+const mapSeen = r => SAVE.regions.includes(mapRegKey(r));
+function mapFog() {
+  map.fogDirty = 0;
+  const E = map.ext, cv = map.fog || (map.fog = document.createElement('canvas'));
+  cv.width = cv.height = MAP.px;
+  const g = cv.getContext('2d');
+  g.drawImage(map.base, 0, 0);
+  g.textAlign = 'center'; g.textBaseline = 'middle';
+  for (const r of map.regs) {
+    const u0 = mapU(E, r.x1), v0 = mapV(E, r.z1), w = (r.x1 - r.x0) * E.s, h = (r.z1 - r.z0) * E.s;
+    if (!mapSeen(r)) {
+      g.fillStyle = 'rgba(11,13,18,.86)'; g.fillRect(u0, v0, w, h);
+      g.fillStyle = 'rgba(255,255,255,.22)'; g.font = '700 ' + Math.round(w * .18) + 'px Bungee, sans-serif'; g.fillText('?', u0 + w / 2, v0 + h / 2);
+    }
+    g.strokeStyle = 'rgba(70,224,255,.25)'; g.lineWidth = 2; g.strokeRect(u0, v0, w, h);
+  }
+}
+function mapReveal() {
+  const P = player.pos;
+  for (const r of map.regs) {
+    if (P.x < r.x0 || P.x > r.x1 || P.z < r.z0 || P.z > r.z1) continue;
+    if (progRegion(mapRegKey(r))) { map.fogDirty = 1; if (map.t > 4) toast('Entered ' + r.name, 2); }
+  }
+}
+// the markers, in base-canvas px, drawn by whichever map is showing
+function mapMarks(g, E, k) {
+  const dot = (x, z, r, fill, stroke) => { g.beginPath(); g.arc(mapU(E, x), mapV(E, z), r * k, 0, 6.2832); if (fill) { g.fillStyle = fill; g.fill(); } if (stroke) { g.strokeStyle = stroke; g.lineWidth = 2 * k; g.stroke(); } };
+  for (const G of GATES) {
+    const s = Math.sin(G.h), c = Math.cos(G.h), hw = G.w / 2;
+    g.strokeStyle = G.open ? '#6dff8a' : '#ff4d6d'; g.lineWidth = 4 * k; g.beginPath();
+    g.moveTo(mapU(E, G.x + c * hw), mapV(E, G.z - s * hw)); g.lineTo(mapU(E, G.x - c * hw), mapV(E, G.z + s * hw)); g.stroke();
+  }
+  for (const P of PORTALS) dot(P.x, P.z, 7, P.on ? '#b86dff' : null, '#b86dff');
+  g.font = '700 ' + Math.round(18 * k) + 'px Bungee, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  for (const d of DUMMIES) if (d.talk && !d.talk.done && !d.wasK) { const R = d.root.position; g.fillStyle = '#ffc247'; g.fillText('!', mapU(E, R.x), mapV(E, R.z)); }
+  if (quest.cur && quest.tgt) { dot(quest.tgt.x, quest.tgt.z, 9, '#ffc247', '#0b0d12'); }
+}
+function mapArrow(g, u, v, ang, r) {
+  g.save(); g.translate(u, v); g.rotate(ang);
+  g.beginPath(); g.moveTo(0, -r); g.lineTo(r * .7, r * .8); g.lineTo(0, r * .4); g.lineTo(-r * .7, r * .8); g.closePath();
+  g.fillStyle = '#46e0ff'; g.fill(); g.strokeStyle = '#0b0d12'; g.lineWidth = 2; g.stroke(); g.restore();
+}
+// his facing on the base canvas: forward (sin h, cos h) lands at (-sin h, -cos h) in canvas px
+const mapFace = h => Math.atan2(-Math.cos(h), -Math.sin(h)) + Math.PI / 2;
+function mapMini() {
+  const el = map.miniEl, g = map.miniCtx, E = map.ext; if (!el || !g || !E) return;
+  const dpr = Math.min(2, devicePixelRatio || 1), W = Math.round(MAP.mini * dpr);
+  if (el.width !== W) { el.width = el.height = W; }
+  const P = player.pos, u = mapU(E, P.x), v = mapV(E, P.z);
+  // the camera's own forward, on the canvas, turned to point UP the minimap
+  camera.getWorldDirection(map.cam);
+  const fa = Math.atan2(-map.cam.z, -map.cam.x);              // its angle in canvas px (y down)
+  const rot = -Math.PI / 2 - fa;
+  const k = W / (MAP.span * E.s);
+  g.setTransform(1, 0, 0, 1, 0, 0);
+  g.clearRect(0, 0, W, W);
+  g.save();
+  g.beginPath(); g.arc(W / 2, W / 2, W / 2 - 1, 0, 6.2832); g.clip();
+  g.fillStyle = '#0b0d12'; g.fillRect(0, 0, W, W);
+  g.translate(W / 2, W / 2); g.rotate(rot); g.scale(k, k); g.translate(-u, -v);
+  g.drawImage(map.fog, 0, 0);
+  mapMarks(g, E, 1 / k * dpr * .9);
+  g.restore();
+  // the objective, clamped to the rim when it is off the edge
+  if (quest.cur && quest.tgt) {
+    const du = (mapU(E, quest.tgt.x) - u) * k, dv = (mapV(E, quest.tgt.z) - v) * k;
+    const c = Math.cos(rot), s = Math.sin(rot);
+    let x = du * c - dv * s, y = du * s + dv * c; const L = Math.hypot(x, y), Rm = W / 2 - 6 * dpr;
+    if (L > Rm) { x *= Rm / L; y *= Rm / L; g.beginPath(); g.arc(W / 2 + x, W / 2 + y, 5 * dpr, 0, 6.2832); g.fillStyle = '#ffc247'; g.fill(); }
+  }
+  mapArrow(g, W / 2, W / 2, mapFace(player.faceH) + rot, 7 * dpr);
+  g.beginPath(); g.arc(W / 2, W / 2, W / 2 - 1, 0, 6.2832); g.strokeStyle = 'rgba(70,224,255,.7)'; g.lineWidth = 2 * dpr; g.stroke();
+}
+function mapFull() {
+  const cv = map.fullCv, E = map.ext; if (!cv || !E) return;
+  const dpr = Math.min(2, devicePixelRatio || 1), css = Math.floor(Math.min(innerWidth, innerHeight) * .92), W = Math.round(css * dpr);
+  if (cv.width !== W) { cv.width = cv.height = W; cv.style.width = cv.style.height = css + 'px'; }
+  const g = cv.getContext('2d'), k = W / MAP.px;
+  g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, W, W);
+  g.setTransform(k, 0, 0, k, 0, 0);
+  g.drawImage(map.fog, 0, 0);
+  g.font = '400 ' + 26 + 'px Bungee, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  for (const r of map.regs) if (mapSeen(r)) { g.fillStyle = 'rgba(70,224,255,.55)'; g.fillText(r.name, mapU(E, (r.x0 + r.x1) / 2), mapV(E, r.z1) + 30); }
+  mapMarks(g, E, 1.6);
+  mapArrow(g, mapU(E, player.pos.x), mapV(E, player.pos.z), mapFace(player.faceH), 16);
+}
+function mapOpen(on) {
+  map.open = on ? 1 : 0;
+  if (!map.full) return;
+  if (on) { if (BOXES.length !== map.boxN) mapBuild(); if (map.fogDirty) mapFog(); mapFull(); }
+  map.full.classList.toggle('on', !!on);
+}
+function mapStep(dt) {
+  if (!MAP.on) return;
+  map.t += dt;
+  if (!map.miniEl) {
+    map.miniEl = document.getElementById('mini'); map.full = document.getElementById('mapFull');
+    map.fullCv = map.full && map.full.querySelector('canvas');
+    if (!map.miniEl || !map.full) return;
+    map.miniCtx = map.miniEl.getContext('2d');
+    map.miniEl.addEventListener('pointerdown', e => { e.preventDefault(); e.stopPropagation(); mapOpen(1); });
+    map.full.addEventListener('pointerdown', e => { e.preventDefault(); e.stopPropagation(); mapOpen(0); });
+  }
+  if (!map.ext) { if (!rig.ready || map.t < 2) return; mapBuild(); map.miniEl.classList.add('on'); }
+  if ((map.regT -= dt) <= 0) { map.regT = MAP.revealEvery; mapReveal(); }
+  // the city keeps arriving after the first build (kit chunks, late GLBs): redraw when the count drifts
+  if ((map.chkT = (map.chkT || 0) - dt) <= 0) { map.chkT = 8; if (Math.abs(BOXES.length - map.boxN) > map.boxN * .02 + 4) mapBuild(); }
+  if (map.fogDirty) mapFog();
+  if ((map.miniT = (map.miniT || 0) - dt) <= 0) { map.miniT = 1 / MAP.hz; mapMini(); }
+  if (map.open && (map.fullT -= dt) <= 0) { map.fullT = .2; mapFull(); }
+}
+
 function stepDummies(dt) {
   bodySep(dt);
   bodySeat();
@@ -29718,6 +29934,7 @@ function frameBody() {
   juiceStep(dt);                // the tank: drain while worn, snap back at zero (m284)
   gateStep(dt);                 // gates: flicker, mending, the toast (m285)
   portalStep(dt);               // portals: activate on contact, light the pad (m286)
+  mapStep(dt);                  // the minimap, the full map, region fog (m287)
   cellStep();
   kitXrayStep();
   // AFTER the camera, because the rim is placed off the bearing the lens was actually drawn at
@@ -30046,6 +30263,8 @@ function frameBody() {
       (SAMPLE.n || SAVE.forms.length > 1 ? ' S' + SAMPLE.n + '/' + SAVE.forms.length : '') +
       // G: gates placed / times one stopped you (m285)
       // PT: portals active / placed, trips (m286)
+      // RG: regions revealed in this world / regions, base builds (m287)
+      (map.regs.length ? ' RG' + map.regs.filter(mapSeen).length + '/' + map.regs.length + 'b' + MAP.n : '') +
       (PORTAL.n ? ' PT' + PORTALS.filter(q => q.on).length + '/' + PORTAL.n + (PORTAL.trips ? '>' + PORTAL.trips : '') : '') +
       (GATE.n ? ' G' + GATE.n + '/' + GATE.said : '') +
       (quest.cur ? ' Q' + quest.cur.id + '.' + quest.step + (quest.tgt ? '' : '~') : '') +
@@ -30543,6 +30762,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // JUICE (m284): `mel.JUICE` live; `mel.juice(n)` fills the tank to n
   // GATES (m285): `mel.GATES` live; `mel.gate('fire')` drops one 4 m in front of you
   // PORTALS (m286): `mel.PORTALS` live; `mel.portal()` opens the travel picker from anywhere
+  // MAP (m287): `mel.MAP` live; `mel.MAPREG.tkit = [...]` names real regions (then `mel.mapBuild()`)
+  MAP, MAPREG, mapBuild, mapOpen,
   PORTAL, PORTALS, portal: () => portalOpen(),
   GATE, GATES, GATE_TYPES, gate: t => { const p = player, h = p.faceH; const g = gateAdd(t || 'cordon', p.pos.x + Math.sin(h) * 4, p.pos.z + Math.cos(h) * 4, h + Math.PI); return g ? g.id : 'types: ' + Object.keys(GATE_TYPES).join(' '); },
   JUICE, juice: n => { SAVE.juice = n == null ? JUICE.cap : +n; progSave(); return SAVE.juice; },
