@@ -29,9 +29,9 @@ on a server.**
 
 ## Loop mode (`/loop`)
 
-When running on a loop: **read `ROADMAP.md` first, every pass** — its `STEER` section outranks
+When running on a loop: **`git pull origin main` and then read `ROADMAP.md` first, every pass** (a planning session edits it from elsewhere, so a local copy goes stale) — its `STEER` section outranks
 everything, including this file. Take the first unchecked item, ship it as ONE build (bump, check,
-push to `main`), tick it with the build number, and end the turn — short passes are what let his
+push to `main`; if the push is rejected, pull and retry), tick it with the build number, and end the turn — short passes are what let his
 messages land between them. Design context is `GAME_DESIGN.md`. If an item is too big for one build,
 split it in `ROADMAP.md` and ship the first half. Never ship a blank page; NOTES.md entry per build
 as usual.
