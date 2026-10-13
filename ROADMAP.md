@@ -66,7 +66,8 @@ differ" table there, so no region feels like the last one.
   - [x] m288 **B1a The farmyard** — barn on a plinth, hay-bale stair to the hayloft, loft door over a hay stack, lean-to whose roof you reach off crates, walkable barn roof, silo, split-rail paddock, round bales, trough.
   - [x] m289 **B1b The crash site** — the wreck, scorched ground, smoke, Clancy inside; where Chapter 0 starts.
   - [x] m290 **B1c The sunken lane and the creek** — a lane cut below the fields between hedges, a creek with a footbridge.
-  - [ ] **B1d The road and the bridge, and the cows** — the road climbing from the farm to a bridge into town; cows that moo and wander.
+  - [x] m291 **B1d The road and the bridge** — the road climbing from the farm to a bridge into town (split: the cows are B1d2).
+  - [ ] **B1d2 The cows** — cows that moo and wander the farm.
   - [ ] **B1e From REGIONS.md's Gristle Farm entry, not in m288** — a rope down from the hayloft, the silo ladder made climbable, an orchard terrace, and cows that panic and stampede (its signature system).
 - [ ] **B2 Chapter 0 script.** Crash → find Clancy → the farmer sees you and panics → knock him
   down → take his sample → walk to the bridge as him → the cop checkpoint lets the farmer through
@@ -192,3 +193,11 @@ differ" table there, so no region feels like the last one.
   path over the ford. Openings in the bank at the barn doors and toward the crash field.
   `mel.lane()` / `mel.lane(1)` (the ford). The water is a plain glossy strip for now, not the
   island's sea shader.
+- **m291 (B1d):** the island had no river, so the bridge brings one: an 8 m river between 3 m
+  stone levees runs from an outfall under the city edge down to the beach, past the crash field.
+  **You can't wade it** — drop into the channel and the current puts you back on the bank. The
+  road climbs a two-ramp hairpin to the bridge deck and a ramp brings you down the town side. A
+  guard booth and barrier arm sit at the town end (B2 turns it into the real checkpoint gate). If
+  the side past the crash field doesn't have 30 m of grass, the whole thing mirrors to the far side
+  of the farm. **The farm isn't sealed yet**: you can still walk round the island ring into town the
+  long way; B2 decides whether to close that off. `mel.bridge()` puts you on the deck.

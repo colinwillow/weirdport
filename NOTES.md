@@ -7,6 +7,22 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE BRIDGE BROUGHT ITS OWN RIVER, AND THE RAMPS ARE UNTURNED BOXES (m291, ROADMAP B1d, `BRIDGE`, `buildBridge`, `riverStep`).**
+  The island has no river, so the farm gets one: two stone levees (3 m) from an outfall headwall at the city's edge to the
+  beach, water ribbon between, and `riverStep` -- inverse farm frame (`u = dx C - dz S`, `v = dx S + dz C`, times the
+  mirror `BRIDGE.side`) -- puts him back on the last grounded spot outside the channel when he is in it below the levee
+  top - 1.2. Its own safe spot, not `ISLE.safe`, because the island would happily save one in the river bed.
+  **Placement is measured**: at the river's u, `ve` walks v out of `ISLE.rect` and `vb` walks on to the beach top; under
+  30 m of grass and the whole layout mirrors (`U(u) = sg * u`). **The fence rule (`psi = atan2(-dv, du)`, local x along
+  the travel) is for things whose FIRST dimension is their length**; a ramp's first dimension is its width, so the first
+  version would have laid every ramp sideways. All ramps run along v, so their boxes are unturned (w across u, step
+  length along v) and the road plank tilts by `rx = -atan2(rise per +v, L)` (Rx maps local z to `(0, -sin a, cos a)`).
+  **Never post-multiply a composed TRS matrix by a rotation** -- it rotates before the scale and shears the box; the first
+  plank did. The hairpin: A (field -> landing, toward town), the landing, B (landing -> abutment, seaward), the deck on
+  the levees, C (far abutment -> down toward town). Ramps are `quad` floors over stepped earth boxes (top just under the
+  floor) with parapets, so there is no way underneath. Checkpoint: booth on the east levee cap, barrier arm across the
+  deck, `BRIDGE.gate = { x, z, y, h, w }` for B2's cordon. Chip `BR<boxes>/<tris>` and `~<put-backs>`.
+
 - **THE HOLLOWAY IS SUNK BY ITS BANKS, NOT DUG (m290, ROADMAP B1c, `LANE`, `buildLane`, `banks()`).**
   The island's ground is one ray-grown mesh whose floors live in `TRI`/`SURF`; a trench would be a rebuild of the coast.
   So the lane stays at field level between 1.9 m earth banks (inner half a walkable path, outer half a hedge collider
