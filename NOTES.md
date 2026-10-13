@@ -7,6 +7,14 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FORM WHEEL IS ONE BUTTON AND A PICKER, NOT A RING OF FORMS (m283, ROADMAP A7, `FORMS`, `formKind`, `formNow`).**
+  A third left ring with one segment per form is 30 px a segment past four forms, so `#formRow` is a single `FORMS`
+  segment at r 148-178, span 30 about straight up (left tip 48 px in on a 390 px phone, pad centre 94 px in), built by
+  the same `buildArcRow`, and it opens `#formPick` -- round buttons on a circle, z-index 9 over the zones, tap outside
+  to close, no pause. A saved form is a NAME; `formKind` resolves it per world from `FORMK`, then any `DUMMIES` body of
+  that kind, then `she`, and caches into `FORMK`. `undefined` = not loaded here (greyed), `null` = zap. `formNow()` is
+  the current form's name, for A8's gates. Row painting writes `sel` only on open/close and on/off changes.
+
 - **THE DNA ROW IS FILTERED BEFORE `buildArcRow`, NOT BESIDE THE SAMPLER (m282, ROADMAP A6, `SAMPLE`, `sampleStep`, `cardShow`).**
   My first version filtered `WEAP.modes` inside the sampler block, ~15,000 lines below `buildArcRow(modeRow,
   WEAP.modes, ...)`, which runs at module scope -- the segment would have been drawn from the old list for a mode that

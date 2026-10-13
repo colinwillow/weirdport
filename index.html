@@ -447,6 +447,28 @@ body.dyn.desk .zone { display: none; }
   width: calc(var(--mr) * 2); height: calc(var(--mr) * 2);
 }
 #wepRow.on { display: block; }
+/* THE FORMS BUTTON (m283): a third ring on the left stick, one segment, DNA green */
+#formRow {
+  position: fixed; z-index: 6; display: none; --mr: 178px; --rc: #6dff8a; pointer-events: none;
+  left: calc(20px + var(--padr) - var(--mr) + env(safe-area-inset-left));
+  bottom: calc(26px + var(--padr) - var(--mr) + env(safe-area-inset-bottom));
+  width: calc(var(--mr) * 2); height: calc(var(--mr) * 2);
+}
+#formRow.on { display: block; }
+#formRow path { fill: rgba(11,13,18,.35); stroke: var(--rc); stroke-width: 2; pointer-events: all; cursor: pointer; }
+#formRow path.sel { fill: var(--rc); }
+#formRow text { font-family: var(--ui); font-size: 11px; font-weight: 600; letter-spacing: .12em;
+  fill: var(--rc); text-anchor: middle; dominant-baseline: central; pointer-events: none; user-select: none; }
+#formRow text.sel { fill: var(--ink); }
+/* and the picker it opens: round buttons on a circle over the middle of the screen */
+#formPick { position: fixed; inset: 0; z-index: 9; display: none; background: rgba(11,13,18,.42); }
+#formPick.on { display: block; }
+#formPick b { position: absolute; width: 78px; height: 78px; margin: -39px 0 0 -39px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  font-family: var(--disp); font-weight: 400; font-size: 11px; letter-spacing: .04em; line-height: 1.1;
+  color: #6dff8a; background: rgba(11,13,18,.85); border: 3px solid #6dff8a; cursor: pointer; }
+#formPick b.sel { background: #6dff8a; color: var(--ink); }
+#formPick b.off { opacity: .32; }
 /* ---- DESKTOP (m79) -------------------------------------------------------------------
    THE PADS ARE THE ONE THING A MOUSE REPLACES, and everything else on screen stays: the
    chip, the mode row and the reticle are all still the right pictures. `body.desk` is set
@@ -615,10 +637,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m282</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m283</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m282</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m283</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -631,6 +653,8 @@ body.desk.free #deskHint { display: block; }
 <div id="obj" aria-hidden="true"><b></b><i></i></div>
 <div id="stars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 <div id="samp" aria-hidden="true"><b>DNA</b></div>
+<div id="formRow" aria-hidden="true"></div>
+<div id="formPick" aria-hidden="true"></div>
 <div id="qdone" aria-hidden="true"><small>QUEST COMPLETE</small><b></b></div>
 
 <!-- THE BLASTER'S TWO MODES (m52). Above the right pad, because that is the thumb they are
@@ -689,7 +713,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm282';
+const BUILD = 'm283';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -13595,7 +13619,7 @@ const DESK = {
   down: 0, t0: 0,     // the left button, and when it went down
   hint: 'CLICK TO PLAY &nbsp; <b>WASD</b> move &nbsp; <b>MOUSE</b> look &nbsp; '
       + '<b>LMB</b> tap melee / hold fire &nbsp; <b>RMB</b> weapon &nbsp; '
-      + '<b>ALT</b> mode &nbsp; <b>SPACE</b> jump &nbsp; <b>SHIFT</b> roll &nbsp; <b>E</b> talk',
+      + '<b>ALT</b> mode &nbsp; <b>SPACE</b> jump &nbsp; <b>SHIFT</b> roll &nbsp; <b>E</b> talk &nbsp; <b>F</b> forms',
 };
 const deskHint = document.getElementById('deskHint');
 deskHint.innerHTML = DESK.hint;
@@ -13656,6 +13680,7 @@ addEventListener('keydown', e => {
   if (!DESK.on || e.repeat) return;
   if (k === ' ') { player.jump = 1; e.preventDefault(); }
   if (k === 'e') talkTap();                  // talk / next line (m277)
+  if (k === 'f' && SAVE.forms.length > 1) { if (form.open) formClose(); else formOpen(); }   // the form wheel (m283)
   if (k === 'v') wingSet(!player.wing);      // her wings (m266)
   // THE ROLL HAS NO GESTURE LEFT ON A MOUSE, and it is the one thing that saves you (its
   // i-frames are what `p.roll` was always for), so it gets a key of its own rather than being
@@ -28111,6 +28136,78 @@ function sampleStep(dt) {
   }
 }
 
+// ============================================================================================
+// THE FORM WHEEL (m283, ROADMAP A7) -- every form you have sampled, one tap away
+// ============================================================================================
+// **ONE BUTTON ON THE LEFT STICK, ONE WHEEL OVER THE SCREEN.** The left pad already wears two
+// rings (weapons inside, Clancy / REVERT outside), and a third ring of N forms at 30 px a segment
+// is unreadable past four. So the third ring is ONE segment, `FORMS`, straight up where a 390 px
+// phone has room for it (its left tip at r 178, 105 deg, lands 48 px in), and tapping it opens
+// a radial picker over the middle of the screen: big round buttons, your own form always first,
+// the one you are wearing filled. Tap one to become it, tap anywhere else to close. The game does
+// not pause -- choosing a body is a thing you do in the middle of a street.
+// **A FORM IS A NAME** (`mphName`), because that is what the save holds; `formKind` turns it back
+// into a kind table from whatever is loaded in THIS world -- the session's samples (`FORMK`), any
+// body walking about, or her. A form whose kind is not loaded here is drawn but greyed: it is
+// still yours, this world just has nobody to borrow the skeleton from.
+// `formNow()` is what A8's gates will ask.
+const FORMS = { on: 1, n: 0 };
+const formNow = () => player.mphK ? mphName(player.mphK) : 'zap';
+function formKind(nm) {
+  if (nm === 'zap') return null;
+  if (FORMK[nm] && dnaOK(FORMK[nm])) return FORMK[nm];
+  for (const d of DUMMIES) if (mphName(d.K) === nm && dnaOK(d.K)) return (FORMK[nm] = d.K);
+  if (she && she.K && mphName(she.K) === nm && dnaOK(she.K)) return she.K;
+  return undefined;
+}
+function formLabel(nm) {
+  if (nm === 'zap') return 'ZAP';
+  const fix = { dummy_officer: 'COP', contruction_worker: 'WORKER', firefighter: 'FIRE', hick_skinny: 'FARMER' };
+  if (fix[nm]) return fix[nm];
+  return nm.replace(/^(fat|beautiful|dummy)_/, '').replace(/_\d+$/, '').replace(/_/g, ' ').toUpperCase().slice(0, 9);
+}
+function formPick(nm) {
+  formClose();
+  if (nm === formNow()) return;
+  FORMS.n++;
+  if (nm === 'zap') { morphOff(); return; }
+  const K = formKind(nm);
+  if (K) morphGo(K);
+}
+const form = { row: null, pick: null, rowOn: -1, open: 0 };
+function formClose() { form.open = 0; if (form.pick) form.pick.classList.remove('on'); if (form.row) paintArcRow(form.row, form.rowOn > 0, -1); }
+function formOpen() {
+  const el = form.pick; if (!el) return;
+  while (el.firstChild) el.removeChild(el.firstChild);
+  const list = SAVE.forms, n = list.length, cur = formNow();
+  const R = Math.min(innerWidth, innerHeight) * .3, cx = innerWidth * .5, cy = innerHeight * .45;
+  list.forEach((nm, i) => {
+    const a = -Math.PI / 2 + i * Math.PI * 2 / n;
+    const b = document.createElement('b');
+    b.textContent = formLabel(nm);
+    b.style.left = (cx + Math.cos(a) * R).toFixed(0) + 'px';
+    b.style.top = (cy + Math.sin(a) * R).toFixed(0) + 'px';
+    if (nm === cur) b.classList.add('sel');
+    if (nm !== 'zap' && formKind(nm) === undefined) b.classList.add('off');
+    b.addEventListener('pointerdown', e => { e.preventDefault(); e.stopPropagation(); if (!b.classList.contains('off')) formPick(nm); });
+    el.appendChild(b);
+  });
+  el.classList.add('on'); form.open = 1;
+  paintArcRow(form.row, 1, 0);
+}
+function formStep() {
+  if (!form.row) {
+    form.row = document.getElementById('formRow'); form.pick = document.getElementById('formPick');
+    if (!form.row || !form.pick) return;
+    buildArcRow(form.row, [{ label: 'FORMS' }], FORMROW.mid, () => form.open ? formClose() : formOpen(), FORMROW);
+    form.pick.addEventListener('pointerdown', e => { e.preventDefault(); e.stopPropagation(); formClose(); });
+  }
+  const on = FORMS.on && SAVE.forms.length > 1 && !player.wing ? 1 : 0;
+  if (on !== form.rowOn) { form.rowOn = on; paintArcRow(form.row, on, form.open ? 0 : -1); if (!on) formClose(); }
+}
+// a third ring, one segment, straight up -- see the block above for the geometry
+const FORMROW = { mid: 90, r0: 148, r1: 178, span: 30 };
+
 function stepDummies(dt) {
   bodySep(dt);
   bodySeat();
@@ -29246,6 +29343,7 @@ function frameBody() {
   talkStep(dt);                 // after the camera: the bubble is projected through it (m277)
   questStep(dt);                // after talk: a talk step reads what this frame finished (m278)
   sampleStep(dt);               // after the camera too: its ring is projected (m282)
+  formStep();                   // the FORMS button appears with the second form (m283)
   cellStep();
   kitXrayStep();
   // AFTER the camera, because the rim is placed off the bearing the lens was actually drawn at
@@ -30060,6 +30158,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // POLICE (m280): `mel.COPS` live; `mel.heat(n)` sets the heat to look at a star level
   // SAMPLER (m282): `mel.SAMPLE` live, `mel.FORMK` the sampled kinds
   SAMPLE, FORMK,
+  // FORMS (m283): `mel.formPick('hobo_01')` wears a sampled form; `mel.formNow()` is what you are
+  FORMS, formPick, formNow, formOpen,
   COPS, heat: n => (HEAT.v = +n || 0),
   SAVE, progSave, progForm, progRegion, progPortal, progFlag, progChapter, progJuice, progReset,
   // THE SURGE (m248): `mel.SURGE` is live; `mel.surge(n)` throws n cubes off you once

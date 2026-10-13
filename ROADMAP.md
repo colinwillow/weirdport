@@ -41,7 +41,7 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
 - [x] m282 **A6 The sampler.** Stand over a downed human and hold to take a sample → that form is
   unlocked into the form wheel (the existing disguise pipeline). DNA gun becomes debug-only
   (`mel.dna()` or a debug toggle).
-- [ ] **A7 Form wheel.** Pick any unlocked form from a wheel (or cycle). Your own form is always
+- [x] m283 **A7 Form wheel.** Pick any unlocked form from a wheel (or cycle). Your own form is always
   there. The current form's abilities are what the gates check.
 - [ ] **A7b Juice.** The DNA tool's juice meter on the HUD. Transforming costs juice, wearing a form
   drains it, and at zero you snap back to the alien. Juice comes from small tasks, helping people and
@@ -134,3 +134,7 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   on at once** (until A7's wheel exists there's no other way to wear it). Officers can be sampled.
   The DNA gun mode is gone from the blaster unless you open the game with `?dna`; `mel.dna('hick')`
   still works in the console.
+- **m283 (A7):** a single green **FORMS** button on a third ring above the left stick (appears
+  once you have a second form) opens a round picker over the screen; tap a form to become it, tap
+  outside to close. The game does not pause while it's open. A form whose character isn't loaded
+  in the current world shows greyed out. Desktop: `F`. The old REVERT button is still there too.
