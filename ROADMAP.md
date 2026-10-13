@@ -15,6 +15,29 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
+**TOP PRIORITY, BEFORE THE NEXT FARM PASS — GOD MODE (Colin can't see anything you've built).**
+He can't find the farm, any new place, or Rollergirl: the world key only cycles the old worlds, the
+form wheel only offers sampled forms, and new things are only reachable through play. Build a
+**PLAY / GOD** switch: a key in the top-left gutter with the world key, remembered in storage, plus
+`?god` in the URL. In GOD mode:
+- **Places menu:** every authored place in every world, by name (the farmyard, the crash site, the
+  creek, the bridge checkpoint, Old Town, each portal, each quest giver…). Tapping one takes him
+  there, switching world if needed. It's a list, so a place added later is one line.
+- **Every form unlocked** in the form wheel, including Rollergirl and every character on the
+  roster; infinite juice.
+- **Every weapon and mode**, including the DNA gun.
+- **Fly:** a free-flight toggle (stick moves, a second control rises and sinks, nothing collides)
+  to explore and look at things.
+- **No heat, no damage.**
+- **The whole map revealed**; tap anywhere on the full map to teleport there.
+- **Chapter controls:** start a new game at the crash, jump to any chapter, reset the save.
+- The chip says **GOD** while it's on.
+PLAY mode is the game as it plays now. Ship this as the next build, then carry on with the farm.
+
+**Standing rule from now on:** anything you build must be reachable from GOD mode in the same build
+(a new place goes in the Places menu, a new form in the wheel, a new system gets a toggle). If he
+can't get to it, it isn't done.
+
 **From Colin (updated, replaces the earlier STEER): keep going, never wait.**
 
 - **Never stop or wait for Colin.** If something seems to need him, make the call, log it under
