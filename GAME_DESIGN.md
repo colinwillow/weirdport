@@ -71,6 +71,10 @@ form wheel for good.
 
 ## Who's out there
 
+**The alien races** (Reptilians at the top, Greys as the drone workforce behind Uplift Corp,
+Nordics as the hidden good aliens, Tall Whites as neutral traders, Ethereals as wild tricksters)
+are in `LORE.md`; they refine the enemy list below.
+
 **UFO lore, our spin:** `LORE.md` turns real UFO and paranormal folklore into systems: the orbs as the
 aliens' control grid (shoot one down and people fall out of the trance), electromagnetic effects as
 the tell, crop circles, tractor beams, missing time, Men in Black, implants and more.

@@ -4,6 +4,28 @@ Real UFO and paranormal folklore, reinterpreted as game systems. We don't follow
 we take what people already half-believe and give it a job in the game. Each entry: the lore, our
 spin, and what it does in play.
 
+## The alien races
+
+UFO lore has a whole cast: reptilians, greys, tall whites, Nordics, energy beings. Here each one has
+a place in the story, a way it changes the city, and a kind of enemy or ally it gives the game. This
+is a draft to play with; nothing is fixed.
+
+| Race | Lore | Our spin | In the game |
+|---|---|---|---|
+| **Reptilians** | shapeshifting lizard people who secretly rule the world | **the ultimate bad guys, at the top of everything.** They wear people (the Skinsuits are their work), climb to power and feed on division. | the bosses and the final enemy; their seat is the top of Dump Tower; every infiltrated leader is one of them |
+| **Greys** | small grey beings; abductions, implants; some say biological drones | **their workforce: drones, half machine.** They run abductions and turn people into mechanical, cyborg versions of themselves. **Uplift Corp is the Greys' human front company.** | the cyborg conversions, the orb grid and the tractor beams; most of the enemies you fight day to day |
+| **Nordics** | tall, human-looking, benevolent visitors | **the good aliens, hiding among people Men-in-Black style** (the food-cart chef, the shopkeeper) | allies: tips, upgrades, safe houses (portals) in the Underneath; the people who point you at the next lead |
+| **Tall Whites** | pale, aloof beings said to keep to themselves | **neutral observers and traders.** They won't take sides, but they'll deal. | merchants for upgrades and juice; ambiguous, and maybe a late twist about whose side they are on (this is the "third race" question) |
+| **Ethereals** | energy beings, lights, poltergeists, ball lightning | **wild, wandering tricksters made of light and lightning** — not part of the grid, and not on anyone's side | chaotic events: weather, lightning, haunted buildings, wild orbs that aren't the Greys'. Win one over and it might lend you an ability (blink, phase through a wall, call lightning) |
+
+**How they fit together:** the Reptilians want the city; the Greys do the work; the Skinsuits are
+how the Reptilians hide; the Nordics are why you have friends here; the Tall Whites are the wild
+card; and the Ethereals are the weather nobody controls. The culture-war theme sits on top: the
+Reptilians stoke both sides, and the Greys' orbs amplify it.
+
+**A word on "Skinwalkers":** that name comes from Navajo tradition, where it is a real and serious
+belief, so the game uses its own name for shapeshifters (the Skinsuits) rather than borrowing it.
+
 ## The orbs (the big one)
 
 **The lore:** glowing spheres seen floating, hovering and darting, from WWII "foo fighters" to modern
