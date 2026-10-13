@@ -6,6 +6,31 @@ problem — not the last region with new paint. Each is SMALL and DENSE: a few b
 by heart, not a county. The world rules in `GAME_DESIGN.md` ("dense, vertical, organic, alive")
 apply to every one.
 
+## The world map: a metropolis at the centre, regions around it
+
+**The metropolis is the hub and the gold standard.** A big, tall city in the middle of the map (New
+York / LA energy): skyscrapers, Dump Tower, amazing workers keeping it running, and heavy alien
+influence creeping through it. It is the biggest map in the game and the one most worth the polish.
+
+The **outer regions** sit around it, not in a perfect circle but each in its own direction, each a
+different world: the farm and rural towns, the island city, the water world, the urban jungle,
+floating sky cities. **You cure them one by one.** Each region you free weakens the alien grip on
+the metropolis and opens more of it: a district comes back to life, a bridge reopens, a tower
+becomes reachable. The metropolis's core, the skyline the aliens control from the top of Dump Tower,
+is the last region before the Mothership. (Zelda's shape: Hyrule Castle in the middle, the
+provinces around it.)
+
+**How the regions below fit that map:**
+
+| Place | Where it sits |
+|---|---|
+| Old Town, The Pearl, The Underneath, The Waterfront, Dump Tower | **districts of the metropolis** (Old Town first, the core last) |
+| Gristle Farm, Hollow Creek | **rural ring**: farmland and the rough outskirts |
+| The River Islands | **the island city** |
+| The Gorge | **the water world** |
+| The Hothouse | **the urban jungle** (the aliens' terraformed zone, spreading inward toward the hub) |
+| Sky City | **floating sky cities** — not yet written up; to come |
+
 ## What has to differ between any two regions
 
 Check a new region against every other on all of these. If two regions match on more than two, one

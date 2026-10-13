@@ -107,6 +107,10 @@ lead. Rollergirl is an **Easter egg** for now (one of these, maybe), not a story
 
 Regions are fogged on the map until you get there; arriving clears the fog.
 
+**The map is a central metropolis hub with the regions around it** (see the top of `REGIONS.md`):
+you cure the outer regions one by one, each opens more of the metropolis, and its core is the last
+stop before the Mothership.
+
 **The full region bible is `REGIONS.md`**: each region's shape, light, people, problem, tech, signature
 system and the journey into it, plus the checklist that keeps any two regions from feeling alike.
 It supersedes the short list above where they differ.
