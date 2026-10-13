@@ -43,7 +43,7 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   (`mel.dna()` or a debug toggle).
 - [x] m283 **A7 Form wheel.** Pick any unlocked form from a wheel (or cycle). Your own form is always
   there. The current form's abilities are what the gates check.
-- [ ] **A7b Juice.** The DNA tool's juice meter on the HUD. Transforming costs juice, wearing a form
+- [x] m284 **A7b Juice.** The DNA tool's juice meter on the HUD. Transforming costs juice, wearing a form
   drains it, and at zero you snap back to the alien. Juice comes from small tasks, helping people and
   beating Skinsuits. All rates are tunables on the settings panel, so he can feel them out.
 - [ ] **A8 Gates.** Data-driven obstacles that check the current form: police cordon (cop),
@@ -138,3 +138,8 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   once you have a second form) opens a round picker over the screen; tap a form to become it, tap
   outside to close. The game does not pause while it's open. A form whose character isn't loaded
   in the current world shows greyed out. Desktop: `F`. The old REVERT button is still there too.
+- **m284 (A7b):** tank 100, a transform costs 20, wearing a form drains 0.4/s (about 3.5 minutes
+  from full), going back to Zap is free. A new game starts **full** so the first sample is
+  wearable. Earned: quest step +15, quest done +30, first time hearing someone out +6, knocking
+  down a Skinsuit +20. The meter is a thin green bar above the health bar. All six numbers are on
+  the tune panel under **JUICE**. "Helping people" means talking for now; real favours come later.

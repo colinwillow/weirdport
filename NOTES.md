@@ -7,6 +7,15 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE TRANSFORM IS PAID FOR INSIDE `morphGo`, SO NO PATH TO A FORM SKIPS IT (m284, ROADMAP A7b, `JUICE`, `juicePay`, `juiceStep`).**
+  The sampler, the form wheel, the DNA gun and `mel.dna` all end in `morphGo(K)`; `juicePay()` sits after its own
+  refusals (busy, not wearable, already that) and before the state is touched, and refuses with a `NO JUICE` card.
+  `morphOff` (K null) is free. Drain runs in `juiceStep` only while `p.mphK && !p.mphSt` and calls `morphOff()` at zero.
+  **`SAVE.juice` changes every frame while worn, so it is saved on a `saveT` clock**, plus on every gain/cost -- a
+  per-frame `localStorage.setItem` is a stall on a phone. New game: `juiceInit` flag fills the tank once (progReset
+  clears flags, so a reset refills). Skinsuit reward is the edge into `down` on a `wasK` body (`d.jDn`), the same
+  edge trick as the quest's `d.qDn`. Rates on the tune panel, top section JUICE. Chip: `J<juice>` and `!<snap-backs>`.
+
 - **THE FORM WHEEL IS ONE BUTTON AND A PICKER, NOT A RING OF FORMS (m283, ROADMAP A7, `FORMS`, `formKind`, `formNow`).**
   A third left ring with one segment per form is 30 px a segment past four forms, so `#formRow` is a single `FORMS`
   segment at r 148-178, span 30 about straight up (left tip 48 px in on a 390 px phone, pad centre 94 px in), built by

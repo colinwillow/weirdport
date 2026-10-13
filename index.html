@@ -590,6 +590,19 @@ body.desk.free #deskHint { display: block; }
   opacity: 0; transition: opacity .25s ease;
 }
 #hp.on { opacity: 1; }
+/* JUICE (m284): the DNA tank, a green bar just above health. Brighter while a form is worn
+   (that is when it moves), red when low, a flash when you earn some. */
+#juice { position: fixed; z-index: 5; left: 50%; bottom: calc(26px + env(safe-area-inset-bottom));
+  width: 168px; height: 5px; margin-left: -84px; pointer-events: none; border-radius: 3px;
+  background: rgba(10,13,18,.62); box-shadow: 0 0 0 1px rgba(255,255,255,.14); opacity: 0; transition: opacity .25s ease; }
+#juice.on { opacity: .7; }
+#juice.on.worn { opacity: 1; }
+#juice i { display: block; height: 100%; width: 100%; border-radius: 3px; background: #6dff8a;
+  transform-origin: left center; transition: transform .25s ease, background .25s ease; }
+#juice.low i { background: var(--hot); }
+#juice.gain { box-shadow: 0 0 0 2px #6dff8a, 0 0 12px #6dff8a; }
+#juice b { position: absolute; right: 100%; top: 50%; transform: translateY(-50%); margin-right: 6px;
+  font-family: var(--ui); font-size: 9px; font-weight: 600; letter-spacing: .12em; color: #6dff8a; }
 #hp i { display: block; height: 100%; width: 100%; border-radius: 4px; background: #46e0ff;
         transform-origin: left center; transition: transform .18s ease, background .25s ease; }
 #mmark {
@@ -637,10 +650,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m283</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m284</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m283</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m284</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -693,6 +706,7 @@ body.desk.free #deskHint { display: block; }
      swing winds up, no spin, no layers -- and it only exists while the wind-up is held. -->
 <div id="hurt" aria-hidden="true"></div>
 <div id="hp" aria-hidden="true"><i id="hpFill"></i></div>
+<div id="juice" aria-hidden="true"><i></i><b>DNA</b></div>
 <div id="mmark" aria-hidden="true"><i class="dia"></i><i class="dot"></i></div>
 
 <canvas id="gl"></canvas>
@@ -713,7 +727,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm283';
+const BUILD = 'm284';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -22849,6 +22863,8 @@ function morphGo(K) {
   if ((p.mphK || null) === (K || null)) return 0;
   const to = K ? mphSkin(K) : rig.base;
   if (K && !to) return 0;
+  // JUICE (m284): becoming somebody costs; going back to yourself is free
+  if (K && !juicePay()) return 0;
   p.mphNext = K || null; p.mphSt = 'out'; p.mphT = 0; p.mphU = 0;
   // THE TWO SILHOUETTES ARE TAKEN NOW, both of them, because the blob has to be the OLD shape
   // before the swap and the new one after it -- and the incoming skin already exists by here,
@@ -27522,7 +27538,7 @@ function talkTap() {
     const d = talk.cur;
     if (++talk.line >= d.talk.lines.length) {
       d.talk.done = 1; talk.heard++;          // every finish, for A3's "talk to anyone" (m278)
-      if (progFlag('talk:' + d.talk.id)) TALK.said++;
+      if (progFlag('talk:' + d.talk.id)) { TALK.said++; juiceGain(JUICE.help, 'help'); }
       talkClose();
     } else talkShow();
     return true;
@@ -27703,9 +27719,9 @@ function questStep(dt) {
   }
   const q = quest.cur, s = q.steps[quest.step];
   if (questTest(s)) {
-    if (quest.step + 1 < q.steps.length) { questEnter(q, quest.step + 1); quest.pulse = QUEST.stepT; }
+    if (quest.step + 1 < q.steps.length) { questEnter(q, quest.step + 1); quest.pulse = QUEST.stepT; juiceGain(JUICE.task, 'task'); }
     else {
-      progFlag('qdone:' + q.id); QUEST.n++;
+      progFlag('qdone:' + q.id); QUEST.n++; juiceGain(JUICE.task * 2, 'quest');
       cardShow('QUEST COMPLETE', q.title);
       quest.cur = null; beam.visible = false;
       return;
@@ -28207,6 +28223,69 @@ function formStep() {
 }
 // a third ring, one segment, straight up -- see the block above for the geometry
 const FORMROW = { mid: 90, r0: 148, r1: 178, span: 30 };
+
+// ============================================================================================
+// JUICE (m284, ROADMAP A7b) -- a disguise is a resource, not a costume
+// ============================================================================================
+// **ONE TANK, IN THE SAVE** (`SAVE.juice`). Becoming somebody costs `cost` (paid in `morphGo`,
+// the one function every transform goes through, so no path to a form skips it); wearing them
+// drains `drain` a second; at zero you snap back to the alien wherever you are. Going back to
+// yourself is free. A new game starts with a full tank (`juiceInit` flag) -- the first sample
+// has to be wearable or the tutorial dead-ends.
+// **EARNED BY DOING THINGS**: a quest step (`task`), a quest finished (2x), hearing someone out
+// for the first time (`help`), and knocking down a Skinsuit (`skin`, the edge into `down` on a
+// body the virus turned). Every rate is on the tune panel under JUICE.
+// **SAVED ON A CLOCK, NOT PER FRAME** -- the drain changes it every frame and `localStorage` is
+// not a per-frame thing; `progSave` every `saveT` while it is moving, and on every gain or cost.
+// Defaults: 100 in the tank, 20 a transform, 0.4/s worn -- about three and a half minutes in a
+// form from a full tank, which is GAME_DESIGN's "minutes, not seconds".
+const JUICE = {
+  on: 1,
+  cap: 100,         // the tank
+  cost: 20,         // to become somebody
+  drain: .4,        // a second, while worn
+  task: 15,         // a quest step
+  help: 6,          // hearing someone out (first time)
+  skin: 20,         // knocking down a Skinsuit
+  saveT: 3,         // s between saves while draining
+  n: 0, got: 0,     // chip: snap-backs, earned this session
+};
+const juice = { el: null, fill: null, saveT: 0, flashT: 0, last: -1 };
+function juiceGain(n, why) {
+  if (!JUICE.on || !(n > 0)) return;
+  SAVE.juice = Math.min(JUICE.cap, SAVE.juice + n); JUICE.got += n; progSave();
+  juice.flashT = .6;
+}
+// `morphGo` asks this before any transform INTO a form; false refuses it
+function juicePay() {
+  if (!JUICE.on) return true;
+  if (SAVE.juice < JUICE.cost) { cardShow('NO JUICE', Math.floor(SAVE.juice) + ' / ' + JUICE.cost, 1.6); return false; }
+  SAVE.juice -= JUICE.cost; progSave();
+  return true;
+}
+function juiceStep(dt) {
+  if (!juice.el) {
+    juice.el = document.getElementById('juice'); juice.fill = juice.el && juice.el.querySelector('i');
+    if (!SAVE.flags.juiceInit) { SAVE.juice = JUICE.cap; progFlag('juiceInit'); }
+  }
+  const p = player;
+  if (JUICE.on && p.mphK && !p.mphSt) {
+    SAVE.juice = Math.max(0, SAVE.juice - JUICE.drain * dt);
+    if ((juice.saveT -= dt) <= 0) { juice.saveT = JUICE.saveT; progSave(); }
+    if (SAVE.juice <= 0) { JUICE.n++; progSave(); cardShow('OUT OF JUICE', 'BACK TO ZAP', 1.6); morphOff(); }
+  }
+  // a Skinsuit going down is juice
+  for (const d of DUMMIES) { const dn = d.st === 'down'; if (dn && !d.jDn && d.wasK) juiceGain(JUICE.skin, 'skin'); d.jDn = dn; }
+  if (SAVE.juice > JUICE.cap) SAVE.juice = JUICE.cap;
+  // the meter, only rewritten when the visible width moves
+  if (juice.fill) {
+    const u = JUICE.cap > 0 ? SAVE.juice / JUICE.cap : 0, w = Math.round(u * 200);
+    if (w !== juice.last) { juice.last = w; juice.fill.style.transform = 'scaleX(' + (w / 200).toFixed(3) + ')'; juice.el.classList.toggle('low', u < .2); }
+    if (juice.flashT > 0) { juice.flashT -= dt; juice.el.classList.toggle('gain', juice.flashT > 0); }
+    juice.el.classList.toggle('on', !!JUICE.on);
+    juice.el.classList.toggle('worn', !!p.mphK);
+  }
+}
 
 function stepDummies(dt) {
   bodySep(dt);
@@ -28993,6 +29072,13 @@ function stepShafts(dt) {
 // back what the file ships -- captured before anything stored is applied.
 // A NEW ROW IS ONE LINE HERE and nothing else.
 const TUNE = [
+  ['JUICE'],
+  ['tank',            JUICE, 'cap',   20, 400, 5],
+  ['transform costs', JUICE, 'cost',   0, 100, 1],
+  ['drain a second',  JUICE, 'drain',  0, 5, .05],
+  ['quest step gives',JUICE, 'task',   0, 100, 1],
+  ['helping gives',   JUICE, 'help',   0, 100, 1],
+  ['skinsuit gives',  JUICE, 'skin',   0, 100, 1],
   ['TRANSFORM'],
   ['style 0 blob 1 stream 2 flubber', SURGE, 'mode', 0, 2, 1],
   ['flubber length', FLUB, 'dur',   .6, 5, .05],
@@ -29344,6 +29430,7 @@ function frameBody() {
   questStep(dt);                // after talk: a talk step reads what this frame finished (m278)
   sampleStep(dt);               // after the camera too: its ring is projected (m282)
   formStep();                   // the FORMS button appears with the second form (m283)
+  juiceStep(dt);                // the tank: drain while worn, snap back at zero (m284)
   cellStep();
   kitXrayStep();
   // AFTER the camera, because the rim is placed off the bearing the lens was actually drawn at
@@ -29667,6 +29754,8 @@ function frameBody() {
       // H: heat, stars, cop spots/grabs (m280) -- stars with no spots is all phone calls
       (HEAT.v > 0 || COPS.n ? ' H' + HEAT.v.toFixed(1) + '*' + HEAT.lvl + ' cs' + COPS.n + '/' + COPS.grabs + (COPS.shots ? ' sh' + COPS.hits + '/' + COPS.shots : '') + (COPS.extras ? ' +' + COPS.extras : '') : '') +
       // S: samples taken / forms unlocked (m282)
+      // J: juice in the tank (m284)
+      ' J' + Math.floor(SAVE.juice) + (JUICE.n ? '!' + JUICE.n : '') +
       (SAMPLE.n || SAVE.forms.length > 1 ? ' S' + SAMPLE.n + '/' + SAVE.forms.length : '') +
       (quest.cur ? ' Q' + quest.cur.id + '.' + quest.step + (quest.tgt ? '' : '~') : '') +
       (MISSING.length ? ' · ' + MISSING.join(' · ') : '');
@@ -30160,6 +30249,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   SAMPLE, FORMK,
   // FORMS (m283): `mel.formPick('hobo_01')` wears a sampled form; `mel.formNow()` is what you are
   FORMS, formPick, formNow, formOpen,
+  // JUICE (m284): `mel.JUICE` live; `mel.juice(n)` fills the tank to n
+  JUICE, juice: n => { SAVE.juice = n == null ? JUICE.cap : +n; progSave(); return SAVE.juice; },
   COPS, heat: n => (HEAT.v = +n || 0),
   SAVE, progSave, progForm, progRegion, progPortal, progFlag, progChapter, progJuice, progReset,
   // THE SURGE (m248): `mel.SURGE` is live; `mel.surge(n)` throws n cubes off you once
