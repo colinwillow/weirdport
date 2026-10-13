@@ -182,6 +182,14 @@ differ" table there, so no region feels like the last one.
 - [ ] **D5 Pressure.** Factions push at their borders on their own (flashpoint events), and the
   player's actions move the shares.
 
+## Phase E — side quests (see "Side quests from UFO pop culture" in LORE.md)
+
+- [ ] **E1 Element 115.** The jittery ex-lab tech (stand-in body), hidden somewhere in Old Town; earn his
+  trust, learn where the 115 is, fetch it; it upgrades the juice tank. The first side quest, and the
+  template for the rest.
+- [ ] **E2 The late-night radio host.** A voice on car radios that reacts to what you've done and
+  points at sightings; a side-quest hub.
+
 ## Ongoing (fill gaps between items, never instead of them)
 
 - Bugs he reports always jump the queue.

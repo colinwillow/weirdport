@@ -128,6 +128,28 @@ and dogs bark. Clancy's ears go up when something is near.
 **Our spin:** an ambient audio layer that gets louder where the grid is strong and drops when you
 free a district. You can hear a district get better.
 
+## Side quests from UFO pop culture
+
+Spins on famous UFO stories and characters, with our own names (parodies, never the real people).
+Each is a small side quest that pays out something useful.
+
+| Spin on | Our version | The side quest | Reward |
+|---|---|---|---|
+| **Bob Lazar & Element 115** | a jittery ex-lab technician who swears he worked on alien craft | find him (he's hiding, and paranoid), earn his trust, and he tells you where a stash of **Element 115** is hidden | 115 powers your ship, upgrades the DNA tool's juice tank, or charges a new weapon |
+| **Area 51 / S-4** | **"Area 15"**, the military base out past the outskirts | sneak in (disguise as military or a contractor) to steal 115 or rescue a captured Grey who wants out | the base itself: a late, high-heat region |
+| **Roswell** | a roadside UFO museum and diner whose "replica" saucer is real | fix the saucer with parts from around the city | a vehicle, or a portal |
+| **Majestic 12** | **"The Majestic Dozen"**, a secret society inside Dump Tower | collect their twelve dossiers hidden across the city | lore, and the way into the boardroom |
+| **Late-night UFO radio** | a conspiracy radio host broadcasting all night | call in tips; his show reports your exploits and points at strange sightings | a quest hub; his voice on every car radio |
+| **The tinfoil-hat bunker** | a prepper ufologist with walls of string and maps | bring him evidence; he maps the orb grid for you | the grid on your map |
+| **Betty & Barney Hill** | an elderly couple with two hours they can't account for | retrace their missing time | an implant to study; Clancy learns to sniff them out |
+| **Travis Walton** | a logger at the Hollow Creek mill who vanished for five days | find him (a Grey ship has him) | the logger form |
+| **The Phoenix Lights** | a huge silent V of lights over the city one night | a timed event: follow it to where it lands | a Tall White trader shows up |
+| **Mothman** | a winged silhouette on the Hollow Creek bridge | it appears before disasters; follow it to stop one | warnings on your map |
+| **The haunted ranch** (Skinwalker Ranch, renamed) | a ranch near the farm full of high strangeness | survive a night there with the Ethereals | an Ethereal ability |
+| **Tic-tac pilots** | a retired navy pilot telling his story at a bar | prove him right: catch a tic-tac on camera | the pilot form (flight) |
+| **Bigfoot** (Pacific Northwest) | a shy giant in the Gorge's forest, maybe an alien's lost pet | find him, then keep him safe from hunters | a friend; the funniest form in the game |
+| **D.B. Cooper** (PNW legend) | the hijacker who jumped with the money and was never found | the trail says he was abducted mid-fall | the money, and a parachute |
+
 ## Further ideas (not yet placed)
 
 - Ley lines as the grid's power lines, running along streets and under the Underneath.
