@@ -32,7 +32,7 @@ form wheel only offers sampled forms, and new things are only reachable through 
 - **The whole map revealed**; tap anywhere on the full map to teleport there.
 - **Chapter controls:** start a new game at the crash, jump to any chapter, reset the save.
 - The chip says **GOD** while it's on.
-PLAY mode is the game as it plays now. Ship this as the next build, then carry on with the farm.
+PLAY mode is the game as it plays now. Ship this as the next build, then carry on with the farm. **— done m298.**
 
 **Standing rule from now on:** anything you build must be reachable from GOD mode in the same build
 (a new place goes in the Places menu, a new form in the wheel, a new system gets a toggle). If he
@@ -307,3 +307,14 @@ differ" table there, so no region feels like the last one.
   sways in the wind and **parts round you** as you walk through. The corn hides you visually but
   doesn't block sight for the fear/cop systems yet. One draw call for all of it; tune with
   `mel.FLORA.wind`, `push`, `pushK`.
+- **m298 (GOD mode):** the **PLAY/GOD key** sits top-left under the build number and stays visible
+  even when the chip is folded (the world key hides then). Tap it for GOD; `MENU` opens the places
+  list (this world first, other worlds reload into the place), the chapter controls (new game at the
+  crash, chapters 0–6, wipe the save) and switches (fly, the stand-in quest, the demo gates and
+  portals). `FLY`: left stick moves, the two yellow buttons over the right stick rise and sink,
+  nothing collides. In GOD: every character in the form wheel (Rollergirl included, if she's loaded
+  in this world), infinite juice, the DNA gun back on the blaster, no heat, no damage, the whole map
+  revealed, and **tapping the full map teleports you there** (onto the highest surface: a roof if
+  it's a building). `?god` / `?god=0` in the URL set it too. The menu scrolls by dragging, and a
+  button acts on release so a scroll never fires one. **Every farm place from m288–m297 is in the
+  list.**

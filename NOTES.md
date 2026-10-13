@@ -7,6 +7,23 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **GOD MODE IS ONE KEY THAT NEVER FOLDS, AND FLY REPLACES `stepPlayer` (m298, STEER, `GOD`, `GODPLACES`, `godTo`, `godFlyStep`).**
+  *"Colin can't see anything you've built."* The world/collider/fx keys are `display: none` under `body.chipmin`, and
+  the chip folds BY DEFAULT (m148) -- so a key added "with the world key" would have been invisible on every cold start.
+  `#godKey` is excluded from that rule and moves to `--gut` when folded, `--gut4` (new, `hudGutter`) when open.
+  **Fly is `if (GOD.fly) godFlyStep(dt); else stepPlayer(dt);`** -- not a velocity fight with the physics -- moving
+  through `stickWorld()` (the walk's own bearing) at `flyV`, rising/sinking by the two `.godfb` keys or space/C. The sea
+  and river rules skip while flying. **`godTo` moves the camera by the same delta** (`portalGo`'s rule) and clears
+  `river.safe`. A place in another world sets `sessionStorage` world + `mel.godGo` and reloads; `godBoot` (first
+  `godStep` after `rig.ready`) jumps there -- after `crashSpawn`, so a fresh save still lands on the place. Safety is
+  early returns at the TOP of `playerHurt`, `heatAdd`, `juicePay`, plus `HEAT.v = 0` per step. The DNA mode comes back
+  by rebuilding the mode row from `WEAP.modesAll` (saved before the m282 filter). The form wheel lists `godForms()`
+  and `formKind` now also resolves any LOADED roster kind. Map tap: the inverse of `mapU`/`mapV`, onto
+  `groundAt(x, z, 300, 400)` (the highest surface). **The page is `touch-action: none` from the root**, so the menu
+  drags its own `scrollTop` and its buttons fire on pointerUP only when the finger did not move 7 px.
+  **Standing rule (STEER): everything built must be reachable from GOD in the same build** -- a place is one line in
+  `GODPLACES`.
+
 - **THE FARM'S PLANTS BEND IN WORLD UNITS, AFTER THE INSTANCE MATRIX (m297, farm pass 4, `FLORA`, `buildFlora`, `floraMat`).**
   One `InstancedMesh` of a 7-blade fan (height 1, vertex colour dark root -> light tip), scaled per instance into corn,
   wheat or a tuft, coloured per instance. `project_vertex` is re-written so the wind and his wake are added AFTER

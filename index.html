@@ -238,6 +238,37 @@ body.chipmin #build i, body.chipmin #worldKey, body.chipmin #dbgKey, body.chipmi
 #fxKey i.on { border-color: #39ff8899; color: #b6ffd8; }
 #fxKey i:active { background: #16202ecc; }
 #fxKey i.hide { display: none; }
+/* GOD MODE (m298): ONE key in the gutter that is NOT hidden when the chip folds -- the point of it is to be found.
+   Under the fx row when the chip is open, straight under the chip when it is folded. */
+#godKey { position: fixed; z-index: 7; top: calc(var(--gut4, 152px) + env(safe-area-inset-top)); left: calc(12px + env(safe-area-inset-left));
+  font-family: var(--ui); font-size: 11px; font-weight: 600; letter-spacing: .1em; color: #cfe8ff;
+  background: #0b0d12cc; border: 1px solid #ffffff33; padding: 3px 5px 4px 5px; border-radius: 3px;
+  -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+body.chipmin #godKey { top: calc(var(--gut, 56px) + env(safe-area-inset-top)); }
+#godKey i { font-style: normal; display: inline-block; margin: 0 2px; padding: 2px 7px 3px; border: 1px solid #ffffff2b;
+  border-radius: 3px; cursor: pointer; }
+#godKey i.hide { display: none; }
+#godKey.on { border-color: #ffc24799; }
+#godKey.on [data-g=mode] { background: var(--sun); color: var(--ink); border-color: var(--sun); }
+#godKey i.on { border-color: #39ff8899; color: #b6ffd8; }
+#godMenu { position: fixed; inset: 0; z-index: 10; display: none; background: rgba(11,13,18,.55); }
+#godMenu.on { display: block; }
+#godMenu .gp { touch-action: none; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(92vw, 520px); max-height: 86vh;
+  overflow-y: auto; -webkit-overflow-scrolling: touch; background: #0f131bf2; border: 2px solid var(--sun); border-radius: 10px; padding: 10px 12px 14px; }
+#godMenu h3 { margin: 2px 0 6px; font-family: var(--disp); font-weight: 400; font-size: 16px; color: var(--sun); }
+#godMenu h4 { margin: 10px 0 4px; font-family: var(--ui); font-size: 11px; letter-spacing: .16em; color: #ffffff88; }
+#godMenu .gl b { display: block; margin: 4px 0; padding: 9px 10px; border-radius: 6px; background: #1b2230; color: #fff;
+  font-family: var(--ui); font-weight: 600; font-size: 14px; cursor: pointer; }
+#godMenu .gl b:active { background: #2a3550; }
+#godMenu .gl b.far { color: #cfe8ffaa; }
+#godMenu .gl b.warn { color: var(--hot); }
+#godMenu .gx { position: absolute; right: 10px; top: 6px; font-size: 18px; color: #fff; cursor: pointer; padding: 4px 8px; }
+.godfb { position: fixed; z-index: 6; display: none; width: 56px; height: 56px; border-radius: 50%; line-height: 56px; text-align: center;
+  font-size: 22px; color: var(--ink); background: var(--sun); opacity: .85; -webkit-user-select: none; user-select: none; touch-action: none;
+  right: calc(20px + var(--padr) - 28px + env(safe-area-inset-right)); }
+#godUp { bottom: calc(26px + var(--pad) + 86px + env(safe-area-inset-bottom)); }
+#godDn { bottom: calc(26px + var(--pad) + 22px + env(safe-area-inset-bottom)); }
+body.godfly .godfb { display: block; }
 /* THE TUNE PANEL (m202). Sliders for the look numbers, on the phone, because there is no console
    there. Its own sliders rather than <input type=range>: the page is touch-action:none from the
    root down and a native range under that is a gamble on iOS, while a div that reads pointer x
@@ -673,12 +704,15 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m297</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m298</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m297</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m298</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
+<div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
+<div id="godMenu" aria-hidden="true"><div class="gp"><b class="gx">✕</b><h3>GOD MODE</h3><div class="gl"></div></div></div>
+<div id="godUp" class="godfb">▲</div><div id="godDn" class="godfb">▼</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
 <div id="fxKey"><b>FX</b><i data-fx="sun">SUN</i><i data-fx="sky">HDRI</i><i data-fx="shafts">RAYS</i><i data-fx="ibl">IBL</i><i data-fx="dust">DUST</i><i data-fx="tint">TINT</i><i data-fx="flat">FLAT</i><i data-fx="rim">RIM</i><i data-fx="toon">TOON</i><i data-fx="paint">PAINT</i><i data-fx="doors">DOORS</i><i data-fx="inside">INSIDE</i><i data-fx="run">RUN</i><i data-fx="res">RES</i><i data-fx="tune">TUNE</i></div>
 
@@ -754,7 +788,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm297';
+const BUILD = 'm298';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -12179,6 +12213,7 @@ function paintArcRow(el, on, sel) {
 }
 // THE DNA GUN IS DEBUG-ONLY (m282, A6): its row is gone unless the URL says `?dna` -- HERE, before
 // the row is built from the list, or the segment would be drawn for a mode that no longer exists
+WEAP.modesAll = WEAP.modes.slice();      // every mode, for GOD (m298)
 if (!/[?&]dna\b/.test(location.search)) WEAP.modes = WEAP.modes.filter(m => !m.dna);
 buildArcRow(modeRow, WEAP.modes, MODES.mid, setMode);
 buildArcRow(wepRow, WEAP.slots.map(w => ({ label: w.short || w.label })), WEPROW.mid, i => kitPick(i), WEPROW);
@@ -13440,6 +13475,7 @@ function hudGutter() {
   document.documentElement.style.setProperty('--gut', g + 'px');
   document.documentElement.style.setProperty('--gut2', (g + 32) + 'px');
   document.documentElement.style.setProperty('--gut3', (g + 64) + 'px');
+  document.documentElement.style.setProperty('--gut4', (g + 96) + 'px');     // the GOD key (m298)
 }
 // **IT IS REMEMBERED, because he reloads for every single build** -- a fold he has to re-tap
 // on every one is a fold that does not work. It is the world key's own `localStorage` idiom,
@@ -21041,7 +21077,7 @@ function isleStep(dt) {
   I.t += dt;
   const p = player;
   // ---- the sea's rule
-  if (p.pos.y < I.sea - I.deep && !p.climb) { islePutBack(); }
+  if (p.pos.y < I.sea - I.deep && !p.climb && !GOD.fly) { islePutBack(); }
   else if (p.grounded && p.pos.y > I.sea + .3 && !p.knock) {
     I.safeTk -= dt;
     if (I.safeTk <= 0) {
@@ -27056,6 +27092,7 @@ function blockFx(dirH, hard) {
 // blow IS here is a knockback, a moment of no steering and a flash -- which is the part that
 // reads, and the part `MOVE.landHard` already has the shape of.
 function playerHurt(dmg, dirH, push, up, stun, knock) {
+  if (GOD.on) return;                 // GOD: no damage (m298)
   const p = player;
   // **A GUARD IS WORTH SOMETHING OR IT IS AN ANIMATION** -- the same sentence the warrior's own
   // block is written under, pointed at the player. It costs him most of the damage and most of
@@ -27833,7 +27870,7 @@ const FEAR = {
 };
 // A5 builds the stars out of this; until then it is a number that only goes up and down
 const HEAT = { v: 0, calls: 0 };
-function heatAdd(n, why) { HEAT.v = Math.max(0, HEAT.v + n); if (why === 'call') HEAT.calls++; return HEAT.v; }
+function heatAdd(n, why) { if (GOD.on) return 0; HEAT.v = Math.max(0, HEAT.v + n); if (why === 'call') HEAT.calls++; return HEAT.v; }
 const fearLooks = () => { const k = player.mphK; return !k || /alien/i.test(mphName(k)); };
 const fearHuman = d => { const K = d.K; return K.ai && K.pacifist && !K.pal && !K.repair && !d.wasK && !/alien|officer|clancy/i.test(mphName(K)); };
 const fear = { mats: {} };
@@ -28225,6 +28262,7 @@ function formKind(nm) {
   if (FORMK[nm] && dnaOK(FORMK[nm])) return FORMK[nm];
   for (const d of DUMMIES) if (mphName(d.K) === nm && dnaOK(d.K)) return (FORMK[nm] = d.K);
   if (she && she.K && mphName(she.K) === nm && dnaOK(she.K)) return she.K;
+  for (const K of godRoster()) if (mphName(K) === nm && dnaOK(K)) return (FORMK[nm] = K);   // any loaded kind (m298)
   return undefined;
 }
 function formLabel(nm) {
@@ -28246,7 +28284,7 @@ function formClose() { form.open = 0; if (form.pick) form.pick.classList.remove(
 function formOpen() {
   const el = form.pick; if (!el) return;
   while (el.firstChild) el.removeChild(el.firstChild);
-  const list = SAVE.forms, n = list.length, cur = formNow();
+  const list = GOD.on ? godForms() : SAVE.forms, n = list.length, cur = formNow();   // GOD: the whole roster (m298)
   const R = Math.min(innerWidth, innerHeight) * .3, cx = innerWidth * .5, cy = innerHeight * .45;
   list.forEach((nm, i) => {
     const a = -Math.PI / 2 + i * Math.PI * 2 / n;
@@ -28269,7 +28307,7 @@ function formStep() {
     buildArcRow(form.row, [{ label: 'FORMS' }], FORMROW.mid, () => form.open ? formClose() : formOpen(), FORMROW);
     form.pick.addEventListener('pointerdown', e => { e.preventDefault(); e.stopPropagation(); formClose(); });
   }
-  const on = FORMS.on && SAVE.forms.length > 1 && !player.wing ? 1 : 0;
+  const on = FORMS.on && (SAVE.forms.length > 1 || GOD.on) && !player.wing ? 1 : 0;
   if (on !== form.rowOn) { form.rowOn = on; paintArcRow(form.row, on, form.open ? 0 : -1); if (!on) formClose(); }
 }
 // a third ring, one segment, straight up -- see the block above for the geometry
@@ -28309,7 +28347,7 @@ function juiceGain(n, why) {
 }
 // `morphGo` asks this before any transform INTO a form; false refuses it
 function juicePay() {
-  if (!JUICE.on) return true;
+  if (!JUICE.on || GOD.on) return true;     // GOD: infinite juice (m298)
   if (SAVE.juice < JUICE.cost) { cardShow('NO JUICE', Math.floor(SAVE.juice) + ' / ' + JUICE.cost, 1.6); return false; }
   SAVE.juice -= JUICE.cost; progSave();
   return true;
@@ -28320,7 +28358,7 @@ function juiceStep(dt) {
     if (!SAVE.flags.juiceInit) { SAVE.juice = JUICE.cap; progFlag('juiceInit'); }
   }
   const p = player;
-  if (JUICE.on && p.mphK && !p.mphSt) {
+  if (JUICE.on && !GOD.on && p.mphK && !p.mphSt) {
     SAVE.juice = Math.max(0, SAVE.juice - JUICE.drain * dt);
     if ((juice.saveT -= dt) <= 0) { juice.saveT = JUICE.saveT; progSave(); }
     if (SAVE.juice <= 0) { JUICE.n++; progSave(); cardShow('OUT OF JUICE', 'BACK TO ZAP', 1.6); morphOff(); }
@@ -28704,7 +28742,7 @@ function mapBuild() {
   map.fogDirty = 1;
 }
 const mapRegKey = r => WORLD.now + ':' + r.id;
-const mapSeen = r => SAVE.regions.includes(mapRegKey(r));
+const mapSeen = r => GOD.on || SAVE.regions.includes(mapRegKey(r));   // GOD: all revealed (m298)
 function mapFog() {
   map.fogDirty = 0;
   const E = map.ext, cv = map.fog || (map.fog = document.createElement('canvas'));
@@ -28806,7 +28844,18 @@ function mapStep(dt) {
     if (!map.miniEl || !map.full) return;
     map.miniCtx = map.miniEl.getContext('2d');
     map.miniEl.addEventListener('pointerdown', e => { e.preventDefault(); e.stopPropagation(); mapOpen(1); });
-    map.full.addEventListener('pointerdown', e => { e.preventDefault(); e.stopPropagation(); mapOpen(0); });
+    map.full.addEventListener('pointerdown', e => {
+      e.preventDefault(); e.stopPropagation();
+      // GOD: a tap on the map itself is a place to go (m298) -- the inverse of `mapU`/`mapV`
+      if (GOD.on && e.target === map.fullCv && map.ext) {
+        const r = map.fullCv.getBoundingClientRect(), E = map.ext;
+        const u = (e.clientX - r.left) / r.width * MAP.px, v = (e.clientY - r.top) / r.height * MAP.px;
+        const x = E.cx - (u - MAP.px / 2) / E.s, z = E.cz - (v - MAP.px / 2) / E.s;
+        mapOpen(0); godTo(x, groundAt(x, z, 300, 400), z, null); toast('GOD: ' + x.toFixed(0) + ', ' + z.toFixed(0), 1.4);
+        return;
+      }
+      mapOpen(0);
+    });
   }
   if (!map.ext) { if (!rig.ready || map.t < 2) return; mapBuild(); map.miniEl.classList.add('on'); }
   if ((map.regT -= dt) <= 0) { map.regT = MAP.revealEvery; mapReveal(); }
@@ -29044,6 +29093,7 @@ function buildFarm() {
   bx(bu, (loftF + bv + D2 + .25) / 2, y0 + 2.8, y0 + 3.0, BW - .6, bv + D2 + .25 - loftF, 'wood');
   // six bales, .45 a step, the top one ending exactly at the loft's edge (2.7 -> 3.0)
   for (let i = 0; i < 6; i++) bx(bu - W2 + .9, loftF - (5 - i) * .85 - .425, y0, y0 + .45 * (i + 1), 1.2, .85, 'hay');
+  FARM.loft = [F.wx(bu, loftF + 3), y0 + 3.05, F.wz(bu, loftF + 3)];     // for GOD's places (m298)
   // bales up in the loft, the middle kept clear to the loft door
   for (const [u, v, h] of [[-3.6, 5.6, 1], [-3.6, 4.4, .5], [3.4, 5.8, 1.5], [3.4, 4.6, 1], [2.2, 5.8, .5]]) bx(bu + u, bv + v, y0 + 3, y0 + 3 + h, 1.1, 1.1, 'hay');
   // and a stack under the loft door outside, to drop onto and to climb back by
@@ -29462,7 +29512,7 @@ function riverStep(dt) {
   const p = player, dx = p.pos.x - FARM.at.x, dz = p.pos.z - FARM.at.z;
   const u = (dx * F.C - dz * F.S) * BRIDGE.side, v = dx * F.S + dz * F.C;
   const inC = u > river.u0 && u < river.u1 && v > river.v0 && v < river.v1;
-  if (inC && p.pos.y < river.y - 1.2 && !p.wing && !p.climb) {
+  if (inC && p.pos.y < river.y - 1.2 && !p.wing && !p.climb && !GOD.fly) {
     BRIDGE.putBacks++;
     for (let i = 0; i < 40; i++) { const a = Math.random() * 6.283, o = .8 + Math.random() * 2;
       watAt(p.pos.x, p.pos.y + .3, p.pos.z, Math.cos(a) * o, 3 + Math.random() * 3, Math.sin(a) * o, .12, .3, 1 + Math.random() * .4, SPOUT.alpha * .8, p.pos.y); }
@@ -29976,6 +30026,193 @@ function floraStep(dt) {
   if (!FLORA.mesh) return;
   const U = FLORA.U;
   U.uFlT.value += dt; U.uFlP.value.copy(player.pos); U.uFlR.value = FLORA.push; U.uFlW.value = FLORA.wind; U.uFlK.value = FLORA.pushK;
+}
+
+// ============================================================================================
+// GOD MODE (m298, STEER top priority) -- so he can SEE what has been built
+// ============================================================================================
+// *"Colin can't see anything you've built."* The world key cycles the old worlds, the form wheel offers only what
+// he has sampled, and the new places are reachable only by playing to them. **PLAY / GOD is one key** in the top-left
+// gutter -- `GOD` when on, with `MENU` and `FLY` beside it -- remembered in `mel.god`, and `?god` / `?god=0` in the
+// URL. **It stays visible when the chip is folded**, which the world key does not: the whole point is that it can be
+// found. In GOD:
+//   PLACES   every authored place in every world (`GODPLACES`, plus every portal and quest giver in this world);
+//            tap one and he is there, the world switched (a reload) when it has to be
+//   FORMS    the whole roster in the form wheel, Rollergirl included; infinite juice
+//   WEAPONS  every mode, the DNA gun back on the blaster's row
+//   FLY      free flight: the left stick moves (through `stickWorld`, so its bearing is the walk's own), the two
+//            round keys rise and sink (space / C on a keyboard), nothing collides -- `stepPlayer` does not run
+//   SAFE     no heat, no damage (`playerHurt` and `heatAdd` return at once)
+//   MAP      the whole map revealed, and a tap on the full map takes him to that spot
+//   CHAPTER  a new game at the crash, any chapter, or the save wiped
+// **THE STANDING RULE (STEER):** anything built must be reachable from here in the same build -- a new place is one
+// line in `GODPLACES`, a new system a toggle in the menu.
+const GOD = { on: 0, fly: 0, vy: 0, flyV: 14, flyUp: 8, store: 'mel.god', goKey: 'mel.godGo', n: 0, el: null, menu: null };
+{
+  let v = null;
+  try { v = localStorage.getItem(GOD.store); } catch (e) {}
+  const q = /[?&]god(=(\w+))?\b/.exec(location.search);
+  if (q) v = q[2] === '0' ? '0' : '1';
+  GOD.on = v === '1' ? 1 : 0;
+  try { localStorage.setItem(GOD.store, GOD.on ? '1' : '0'); } catch (e) {}
+}
+// a spot in the farm's own frame, in the world
+const godFarm = (u, v, h) => { const A = FARM.at; if (!A) return null; const C = Math.cos(A.th), S = Math.sin(A.th);
+  return [A.x + u * C + v * S, null, A.z - u * S + v * C, h == null ? null : A.th + h]; };
+const godMid = F => godFarm((F.u[0] + F.u[1]) / 2, F.v[0] - 2, 0);
+// THE PLACES. One line each: where it is, what world, and a function that answers [x, y|null, z, heading|null].
+const GODPLACES = [
+  { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
+  { id: 'farmyard', world: 'tkit', name: 'GRISTLE FARM · the farmyard, at the barn doors', at: () => godFarm(-6, -12.5, 0) },
+  { id: 'hayloft',  world: 'tkit', name: 'GRISTLE FARM · up in the hayloft', at: () => FARM.loft && [FARM.loft[0], FARM.loft[1], FARM.loft[2], null] },
+  { id: 'crash',    world: 'tkit', name: 'GRISTLE FARM · the crash site', at: () => CRASH.at && [CRASH.at.you[0], null, CRASH.at.you[1], Math.atan2(CRASH.at.x - CRASH.at.you[0], CRASH.at.z - CRASH.at.you[1])] },
+  { id: 'corn',     world: 'tkit', name: 'GRISTLE FARM · the corn', at: () => godMid(FLORA.FIELDS[0]) },
+  { id: 'wheat',    world: 'tkit', name: 'GRISTLE FARM · the wheat down to the shore', at: () => godMid(FLORA.FIELDS[1]) },
+  { id: 'paddock',  world: 'tkit', name: 'GRISTLE FARM · the cows in the paddock', at: () => godFarm(-4.3, 8.5, 0) },
+  { id: 'lane',     world: 'tkit', name: 'GRISTLE FARM · the sunken lane', at: () => LANE.at && [LANE.at.x, null, LANE.at.z, null] },
+  { id: 'ford',     world: 'tkit', name: 'GRISTLE FARM · the ford and the footbridge', at: () => LANE.at && [LANE.at.ford[0], null, LANE.at.ford[1], null] },
+  { id: 'bridge',   world: 'tkit', name: 'GRISTLE FARM · the bridge checkpoint', at: () => BRIDGE.gate && [BRIDGE.gate.x, BRIDGE.gate.y + .1, BRIDGE.gate.z, null] },
+  { id: 'test',     world: 'test', name: 'TEST SITE', at: () => [0, null, 4, null] },
+  { id: 'weirdport', world: 'weirdport', name: 'WEIRDPORT · the downtown slice', at: () => [WP.spawn[0], null, WP.spawn[1], null] },
+  { id: 'toon',     world: 'toon', name: 'TOON CITY · the old set', at: () => [TCITY.spawn[0], null, TCITY.spawn[1], null] },
+  { id: 'kit',      world: 'kit', name: 'BUILDING KIT · the test house', at: () => [KIT.spawn[0], null, KIT.spawn[1], KIT.spawnAz] },
+];
+// the live ones in THIS world: every portal and everybody with something to say
+function godLive() {
+  const out = [];
+  for (const P of PORTALS) out.push({ id: 'pt_' + P.id, world: WORLD.now, name: 'PORTAL · ' + P.name, at: () => [P.x, P.y + .1, P.z, null] });
+  for (const d of DUMMIES) if (d.talk) { const R = d.root.position; out.push({ id: 'tk_' + d.talk.id, world: WORLD.now, name: 'TALK · ' + d.talk.name, at: () => [R.x + 1.6, null, R.z + 1.6, null] }); }
+  return out;
+}
+function godTo(x, y, z, h) {
+  const p = player;
+  let gy = y != null ? y : groundAt(x, z, 4, 8);
+  if (!(gy > -500)) gy = 4;
+  const dx = x - p.pos.x, dy = gy + .15 - p.pos.y, dz = z - p.pos.z;
+  p.pos.x += dx; p.pos.y += dy; p.pos.z += dz; p.vel.set(0, 0, 0); p.speed = 0;
+  cam.pos.x += dx; cam.pos.y += dy; cam.pos.z += dz; cam.tgt.x += dx; cam.tgt.y += dy; cam.tgt.z += dz;
+  if (h != null) cam.az = p.faceH = p.heading = h;
+  river.safe = null; GOD.n++;
+}
+function godPlace(P) {
+  if (P.world !== WORLD.now) {
+    try { sessionStorage.setItem(WORLD.store, P.world); sessionStorage.setItem(GOD.goKey, P.id); } catch (e) {}
+    location.replace(location.pathname);
+    return;
+  }
+  const a = P.at && P.at();
+  if (!a) { toast(P.name + ': not in this world', 2); return; }
+  godMenuOpen(0);
+  godTo(a[0], a[1], a[2], a[3]);
+  toast(P.name, 1.6);
+}
+// the roster the form wheel offers in GOD: everybody whose kind is loaded here
+function godRoster() {
+  const all = [FOE, HICK, HOBO, SKATER, BIKER, DUMMY, WORKER, ...CIVILS];
+  if (she && she.K) all.push(she.K);
+  return all;
+}
+const godForms = () => ['zap', ...new Set(godRoster().map(mphName))];
+// the blaster's modes: all of them in GOD, the DNA gun back on the row
+function godModes() {
+  if (!WEAP.modesAll) return;
+  const want = GOD.on || /[?&]dna\b/.test(location.search) ? WEAP.modesAll : WEAP.modesAll.filter(m => !m.dna);
+  if (WEAP.modes.length === want.length) return;
+  const cur = WEAP.modes[WEAP.mode];
+  WEAP.modes = want.slice();
+  WEAP.mode = Math.max(0, WEAP.modes.indexOf(cur));
+  buildArcRow(modeRow, WEAP.modes, MODES.mid, setMode);
+  paintKit();
+}
+function godSet(on) {
+  GOD.on = on ? 1 : 0;
+  try { localStorage.setItem(GOD.store, GOD.on ? '1' : '0'); } catch (e) {}
+  if (!GOD.on) { GOD.fly = 0; GOD.vy = 0; godMenuOpen(0); }
+  godModes();
+  map.fogDirty = 1;
+  if (GOD.on) { HEAT.v = 0; }
+  godPaint();
+}
+function godPaint() {
+  const k = GOD.el; if (!k) return;
+  k.querySelector('[data-g=mode]').textContent = GOD.on ? 'GOD' : 'PLAY';
+  k.classList.toggle('on', !!GOD.on);
+  k.querySelector('[data-g=menu]').classList.toggle('hide', !GOD.on);
+  const f = k.querySelector('[data-g=fly]'); f.classList.toggle('hide', !GOD.on); f.classList.toggle('on', !!GOD.fly);
+  document.body.classList.toggle('godfly', !!(GOD.on && GOD.fly));
+}
+function godMenuOpen(on) {
+  const M = GOD.menu; if (!M) return;
+  if (!on) { M.classList.remove('on'); return; }
+  const list = M.querySelector('.gl'); while (list.firstChild) list.removeChild(list.firstChild);
+  const sec = t => { const h = document.createElement('h4'); h.textContent = t; list.appendChild(h); };
+  // a button acts on RELEASE, and only if the finger did not drag -- the panel scrolls by drag (see `godStep`)
+  const btn = (t, f, cls) => { const b = document.createElement('b'); b.textContent = t; if (cls) b.className = cls; b._f = f; list.appendChild(b); return b; };
+  sec('PLACES · here');
+  const here = GODPLACES.filter(P => P.world === WORLD.now).concat(godLive());
+  for (const P of here) btn(P.name, () => godPlace(P));
+  sec('PLACES · other worlds (reloads)');
+  for (const P of GODPLACES.filter(P => P.world !== WORLD.now)) btn(P.name, () => godPlace(P), 'far');
+  sec('CHAPTER  ·  now ' + SAVE.ch);
+  btn('NEW GAME AT THE CRASH', () => { progReset(); try { sessionStorage.setItem(WORLD.store, 'tkit'); } catch (e) {} location.replace(location.pathname + '?spawn=crash'); });
+  for (let c = 0; c <= 6; c++) btn('CHAPTER ' + c, () => { progChapter(c); if (c >= 1) progFlag('inTown'); toast('Chapter ' + c, 1.4); godMenuOpen(1); });
+  btn('WIPE THE SAVE', () => { progReset(); location.replace(location.pathname); }, 'warn');
+  sec('SWITCHES');
+  btn('FLY ' + (GOD.fly ? 'ON' : 'OFF'), () => { godFly(!GOD.fly); godMenuOpen(1); });
+  btn('THE STAND-IN QUEST (WEIRDPORT 101)', () => { progFlag('qon:q0'); quest.cur = null; toast('Quest on', 1.4); });
+  btn('DEMO GATES HERE', () => { gateDemo(1); toast(GATES.length + ' gates', 1.4); });
+  btn('DEMO PORTALS HERE', () => { portalDemo(1); toast(PORTALS.length + ' portals', 1.4); });
+  btn('PLAY MODE', () => godSet(0), 'warn');
+  M.classList.add('on');
+}
+function godFly(on) {
+  GOD.fly = on && GOD.on ? 1 : 0; GOD.vy = 0;
+  const p = player;
+  if (GOD.fly) { p.vel.set(0, 0, 0); p.roll = 0; p.knock = 0; }
+  godPaint();
+}
+// free flight, INSTEAD of `stepPlayer`: nothing collides, nothing falls
+function godFlyStep(dt) {
+  const p = player, w = stickWorld();
+  const k = keys || {};
+  const up = GOD.vy || ((k[' '] ? 1 : 0) - (k.c ? 1 : 0));
+  p.pos.x += w.x * GOD.flyV * dt; p.pos.z += w.z * GOD.flyV * dt; p.pos.y += up * GOD.flyUp * dt;
+  if (w.mag > .05) p.heading = p.faceH = Math.atan2(w.x, w.z);
+  p.vel.set(0, 0, 0); p.speed = 0; p.grounded = true; p.airT = 0;
+}
+function godBoot() {
+  // a place picked in another world: we reloaded into it, now go there
+  let id = null;
+  try { id = sessionStorage.getItem(GOD.goKey); sessionStorage.removeItem(GOD.goKey); } catch (e) {}
+  if (!id) return;
+  const P = GODPLACES.find(q => q.id === id);
+  if (P && P.world === WORLD.now) { const a = P.at && P.at(); if (a) { godTo(a[0], a[1], a[2], a[3]); toast(P.name, 1.6); } }
+}
+function godStep(dt) {
+  if (!GOD.el) {
+    GOD.el = document.getElementById('godKey'); GOD.menu = document.getElementById('godMenu');
+    if (!GOD.el) return;
+    GOD.el.querySelector('[data-g=mode]').addEventListener('pointerdown', e => { e.preventDefault(); e.stopPropagation(); godSet(!GOD.on); });
+    GOD.el.querySelector('[data-g=menu]').addEventListener('pointerdown', e => { e.preventDefault(); e.stopPropagation(); godMenuOpen(!GOD.menu.classList.contains('on')); });
+    GOD.el.querySelector('[data-g=fly]').addEventListener('pointerdown', e => { e.preventDefault(); e.stopPropagation(); godFly(!GOD.fly); });
+    if (GOD.menu) {
+      GOD.menu.addEventListener('pointerdown', e => { e.stopPropagation(); if (e.target === GOD.menu || e.target.classList.contains('gx')) { e.preventDefault(); godMenuOpen(0); } });
+      // **THE PAGE IS `touch-action: none` FROM THE ROOT DOWN**, so nothing scrolls natively: the panel drags itself
+      const gp = GOD.menu.querySelector('.gp'); let drag = null;
+      gp.addEventListener('pointerdown', e => { if (e.target.classList.contains('gx')) return; e.preventDefault(); drag = { y: e.clientY, top: gp.scrollTop, moved: 0, t: e.target }; try { gp.setPointerCapture(e.pointerId); } catch (er) {} });
+      gp.addEventListener('pointermove', e => { if (!drag) return; const dy = e.clientY - drag.y; if (Math.abs(dy) > 7) drag.moved = 1; if (drag.moved) gp.scrollTop = drag.top - dy; });
+      const up = e => { const d = drag; drag = null; if (d && !d.moved && d.t && d.t._f) d.t._f(); };
+      gp.addEventListener('pointerup', up); gp.addEventListener('pointercancel', () => { drag = null; });
+    }
+    for (const [id, v] of [['godUp', 1], ['godDn', -1]]) {
+      const b = document.getElementById(id); if (!b) continue;
+      const on = e => { e.preventDefault(); e.stopPropagation(); GOD.vy = v; }, off = e => { if (GOD.vy === v) GOD.vy = 0; };
+      b.addEventListener('pointerdown', on); for (const t of ['pointerup', 'pointercancel', 'pointerleave']) b.addEventListener(t, off);
+    }
+    godModes(); godPaint();
+    godBoot();
+  }
+  if (GOD.on) { HEAT.v = 0; if (SAVE.juice < JUICE.cap) SAVE.juice = JUICE.cap; }
 }
 
 function stepDummies(dt) {
@@ -31046,7 +31283,7 @@ function frameBody() {
   if (rig.ready) {
     stepAim(dt);          // one eased answer, before anything reads it
     stepKit(dt);
-    stepPlayer(dt);
+    if (GOD.fly) godFlyStep(dt); else stepPlayer(dt);     // GOD's free flight replaces the step (m298)
     isleStep(dt);         // the sea's rule, right after he moved (m264)
     _pt = pT('plyr', _pt);
     // AFTER HIM, because the deck is drawn where he ENDED UP -- read before `stepPlayer` it is
@@ -31129,6 +31366,7 @@ function frameBody() {
   gateStep(dt);                 // gates: flicker, mending, the toast (m285)
   portalStep(dt);               // portals: activate on contact, light the pad (m286)
   mapStep(dt);                  // the minimap, the full map, region fog (m287)
+  godStep(dt);                  // GOD mode: the key, the menu, the boot jump (m298)
   crashStep(dt);                // the wreck burns and smokes; reaching town once moves the start (m289)
   riverStep(dt);                // the farm's river: no wading, the current puts you back (m291)
   cellStep();
@@ -31446,6 +31684,7 @@ function frameBody() {
       p.speed.toFixed(1) + ' m/s · ' + st + lk + hue + bx + cv + brkC + kitC + inf + shp + cl + sk + sk8 + vs + mo + fl + wp + tc + mp +
       bk + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
       // CH: the saved chapter (m276); NEW = this boot was `?fresh`, BADSAVE = a save was there and would not parse
+      (GOD.on ? ' · GOD' + (GOD.fly ? ' FLY' : '') : '') +
       ' · CH' + SAVE.ch + (SAVE.fresh ? ' NEW' : '') + (SAVE.bad ? ' BADSAVE' : '') +
       // T: speakers seeded / scripts heard (m277); `*` = one is in reach right now
       // MK: markers read from his files (m293), and npc markers given their bodies
@@ -32006,6 +32245,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   CRASH, crash: () => { const C = CRASH.at; if (!C) return 'no crash site in this world'; const p = player; p.pos.set(C.you[0], C.y + 2, C.you[1]); p.vel.set(0, 0, 0); p.heading = p.faceH = Math.atan2(C.x - C.you[0], C.z - C.you[1]); return 'the wreck'; },
   // THE GOLDEN HOUR (m295): `mel.GRADE` live -- its colours, `r`, `fogMix`; `mel.GRADE.on = 0` is the A/B
   GRADE,
+  // GOD MODE (m298): `mel.god(1|0)`, `mel.go('crash')` -- the ids are `GODPLACES`'
+  GOD, GODPLACES, god: v => { godSet(v == null ? !GOD.on : v); return GOD.on ? 'GOD' : 'PLAY'; }, go: id => { const P = GODPLACES.find(q => q.id === id); if (!P) return GODPLACES.map(q => q.id).join(' '); godPlace(P); return P.name; },
   // THE PAINT (m296): `mel.FPAINT` -- `FPAINT.on = 0` before a reload is the flat A/B
   FPAINT,
   // THE GROWTH (m297): `mel.FLORA` live -- `wind`, `push`, `pushK`; `FLORA.counts` per field
