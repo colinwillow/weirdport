@@ -18,7 +18,7 @@ between them. Design context lives in `GAME_DESIGN.md`.
 ## Phase A — the game skeleton (no new art needed)
 
 - [ ] **A1 Progress & save.** A new `localStorage` key `mel.prog`: chapter, forms unlocked, regions
-  revealed, quest flags. `?fresh` already clears keys — make it clear this one too. Chip shows `CH<n>`.
+  revealed, quest flags, portals activated, juice. `?fresh` already clears keys — make it clear this one too. Chip shows `CH<n>`.
 - [ ] **A2 Talk.** NPCs can carry a `talk` script: walk up, the right pad lights (the existing
   interact pattern), tap → speech bubble with name + lines, tap to advance. A `!` marker over the
   head of anyone with something to say.
@@ -35,9 +35,15 @@ between them. Design context lives in `GAME_DESIGN.md`.
   (`mel.dna()` or a debug toggle).
 - [ ] **A7 Form wheel.** Pick any unlocked form from a wheel (or cycle). Your own form is always
   there. The current form's abilities are what the gates check.
+- [ ] **A7b Juice.** The DNA tool's juice meter on the HUD. Transforming costs juice, wearing a form
+  drains it, and at zero you snap back to the alien. Juice comes from small tasks, helping people and
+  beating Skinsuits. All rates are tunables on the settings panel, so he can feel them out.
 - [ ] **A8 Gates.** Data-driven obstacles that check the current form: police cordon (cop),
   fire wall (firefighter), broken bridge (worker repairs it), barricade (activist inside a protest
   crowd), gap (glider). Each says what it needs when you bump into it.
+- [ ] **A8b Portals.** Activatable portal points (a glowing pad). Stepping on one activates it for
+  good; from any active portal you can travel to any other as yourself. The ship is the hub. Every
+  place a form can reach gets one, so a disguise running out never strands you.
 - [ ] **A9 Map & fog.** A full-screen map (tap the minimap) showing regions; unvisited regions are
   fogged and reveal when entered; the objective and quest givers are marked.
 

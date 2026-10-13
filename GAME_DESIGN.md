@@ -36,6 +36,35 @@ them while they are down and take the sample. The DNA gun stays as a debug short
 | **Hang-glider guy** (human) | the glider / wingsuit: gaps, islands, rooftops | BASE jumpers |
 | **Clancy** (always with you) | sniffs out hidden things, fits through small gaps | — |
 
+**The glider is one example of a whole family.** Every region has a technology its people own,
+and the form that carries it is the key. The list is open-ended — these are the shape of it:
+
+| Tech | Form | Opens |
+|---|---|---|
+| flight | hang-glider guy, a pilot | islands, rooftops, canyons |
+| underwater | scuba diver | flooded areas, behind the waterfall |
+| underground | cave miner (sees in the dark, digs) | caves, mines, the sewers |
+| the farm | farmer | rural areas, machinery, animals |
+| business | a CEO | the corporate tower — "Dump Tower" — boardrooms, executive lifts |
+| machines | an engineer / hacker | controls robots and AI, turrets, doors |
+| the law | cop, then military | cordons, the precinct, the base |
+| the trades | construction worker, firefighter | rebuilding the way on, clearing fires |
+| the street | hobo, activist, biker | stealth, crowds, gang turf |
+
+**Juice: a disguise is a resource, not a costume.** Your DNA tool runs on juice. Transforming costs
+it and holding a form drains it (roughly minutes, not seconds — tunable). When it runs out you
+snap back to the alien wherever you are. Juice is earned by doing things in the world (small tasks,
+helping people, beating Skinsuits) and the tank's size grows as you progress. Taking a sample
+unlocks a form permanently; *wearing* it costs juice.
+
+**The rule that comes with juice: no one-way trips.** If you can glide to an island, the juice can
+run out on the island. So every place a form can take you must have a way back for the alien.
+**Portals** are the general answer: reaching certain spots (a checkpoint, a hidden-alien safe house,
+the top of a climb) activates a portal there, and from then on you can travel between any activated
+portals as yourself — back to the mainland, or back to your ship. A place a form opened once is a
+place the alien can return to. Some portals are one-way out (an escape hatch); the important ones
+are two-way. The ship is the hub portal.
+
 Each region's lock is a kind of obstacle (a fire wall, a police cordon, a broken bridge, a
 barricade, a gap) and each needs a particular form. Forms stack: once you have one, it is in your
 form wheel for good.
@@ -104,3 +133,5 @@ Existing characters stand in for all of these until they arrive.
 - Does Rollergirl stay an Easter egg, become a hidden good alien, or go?
 - Death / failure: what happens at zero health? (Right now nothing.)
 - Can you also turn **Skinsuits** back with the sampler, or is that a separate tool?
+- Juice: how long a form lasts, and does each form drain at its own rate (flight costs more)?
+- Do sampling methods differ per character (some need a stun, some a task, some a disguise first)?
