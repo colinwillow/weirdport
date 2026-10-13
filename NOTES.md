@@ -7,6 +7,18 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE WRECK'S GLOW IS FAKED ON THE GROUND, NOT LIT (m300, farm pass 6, `CHERO`, `crashHero`, `crashHeroStep`).**
+  A `PointLight` would light the field for real and would cost every lit fragment in the city a light loop (and
+  recompile every material when it is added). The pool is an additive radial-gradient texture on a 16x16 grid whose
+  vertices sit at `groundAt + .07`, so it hugs the slope instead of cutting into it; it pulses with the core. The beam is
+  an open cone with vertex colours fading to black at the top (additive black is invisible), `fog: false` because a
+  fogged ADDITIVE surface adds the fog colour and glows white in the haze. The core's own emissive is the crash
+  material `MAT.glow`, kept on `CRASH.glowMat`; the heartbeat is `sin^6`, with a 2% stutter. Arcs are `spkBurst` + the
+  `zap` sample, only within 90 m. The hum is ONE held voice (two saws at 55 Hz +- cents and a 110 Hz saw, lowpass 240,
+  6.5 Hz tremolo on a gain node) created inside `humOut` and stopped outside it, counted in `SFX.voices` once.
+  The ten scorch discs went through `farmMerge` (10 draws -> 1). Debris is its own `farmFrame` ('wreckbits'), painted.
+  `CRASH.frame` hands the crash's own frame numbers to the hero pass. Chip `CR..a<arcs>h` (h while the hum plays).
+
 - **A TILTED STRUT IS ITS OWN GEOMETRY UNDER AN EULER, NOT A ROTATION MULTIPLIED ONTO A TRS (m299, farm pass 5, `FPROPS`, `buildFarmProps`).**
   I wrote the windmill's legs the m291 way first -- `bx()` then `matrix.multiply(makeRotationZ(...))` -- which rotates
   BEFORE the non-uniform scale and shears the box; caught on re-reading. A leg is `BoxGeometry(.12, L, .12)` at the

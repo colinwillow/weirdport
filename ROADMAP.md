@@ -324,3 +324,11 @@ differ" table there, so no region feels like the last one.
   (the vane agrees); a **scarecrow** in the corn; a red **tractor** parked in the yard by the lane
   gate; barrels against the lean-to; a wheelbarrow of hay by the stack. All from an authored table
   with a reason each. GOD's places list gained the windmill, the scarecrow and the tractor.
+- **m300 (farm pass 6: the wreck):** the crash is now a hero moment: the saucer's **core pulses
+  violet** like a heartbeat, a **pool of violet light** lies on the field round it pulsing in step
+  (faked with a ground-hugging glow, not a real light, so the city pays nothing for it), a faint
+  **violet beam** climbs into the sky as a landmark you can see from anywhere on the farm, the hull
+  **spits arcs of electric sparks** with a crack (now and then a big discharge), **hull fragments**
+  (some still glowing) and violet crystals lie down the furrow, and it **hums**, a low electrical
+  drone that swells as you get close. The ten scorch marks were merged into one draw call.
+  Tune on `mel.CHERO` (pulse, arcEvery, beamA, poolA, humG).

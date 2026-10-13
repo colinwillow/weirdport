@@ -704,10 +704,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m299</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m300</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m299</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m300</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -788,7 +788,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm299';
+const BUILD = 'm300';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -29196,14 +29196,16 @@ function buildCrash() {
   // the scorch: purple, widening to the wreck -- discs laid on the ground under it, drawn not collided
   const scorch = new THREE.MeshBasicMaterial({ color: 0x3a1450, transparent: true, opacity: .72, depthWrite: false,
     polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
+  // m300: the ten discs are ONE mesh now (merged through `farmMerge`), not ten draw calls
+  const scParts = [], scO = new THREE.Object3D();
   for (let k = 0; k <= 9; k++) {
     const a = k / 9, u = su + (cu - su) * a, v = sv + (cv - sv) * a, r = .8 + a * 2.6;
-    const m = new THREE.Mesh(new THREE.CircleGeometry(r, 18), scorch);
     // laid flat (Rx), its long axis turned first (Rz) onto the furrow's WORLD direction: local y ends at (-sin g, -cos g)
-    m.rotation.x = -Math.PI / 2; m.scale.set(1, 1.6, 1); m.rotation.z = Math.atan2(-fwx, -fwz);
-    m.position.set(wx(u, v), gnd(u, v) + .05, wz(u, v)); m.renderOrder = 1;
-    scene.add(m);
+    scO.rotation.set(-Math.PI / 2, 0, Math.atan2(-fwx, -fwz)); scO.scale.set(1, 1.6, 1);
+    scO.position.set(wx(u, v), gnd(u, v) + .05, wz(u, v)); scO.updateMatrix();
+    scParts.push([new THREE.CircleGeometry(r, 18), scO.matrix.clone()]);
   }
+  { const m = farmMerge(scParts, scorch); m.castShadow = m.receiveShadow = false; m.renderOrder = 1; scene.add(m); }
   // the wreck: tipped nose-down along the furrow, half buried
   // yaw `fpsi` puts the hull's local x along the furrow (the fence rule); then a NEGATIVE turn about z
   // puts its +x end (the nose, the way it was travelling) down into the ground. XYZ order applies Rz first.
@@ -29225,6 +29227,7 @@ function buildCrash() {
   CRASH.n = r.boxes;
   // where things go: the fire on the split, smoke off the top, Clancy at the hatch, you upwind of it
   const X = wx(cu, cv), Z = wz(cu, cv);
+  CRASH.glowMat = MAT.glow; CRASH.hullY = hullY; CRASH.frame = { cu, cv, fu, fv, nu, nv, su, sv, F };   // for the hero pass (m300)
   CRASH.at = { x: X, y: g0, z: Z,
     fire: [wx(cu + fu * 1.7, cv + fv * 1.7), hullY + .1, wz(cu + fu * 1.7, cv + fv * 1.7)],
     fire2: [wx(cu - nu * 2.2, cv - nv * 2.2), gnd(cu - nu * 2.2, cv - nv * 2.2), wz(cu - nu * 2.2, cv - nv * 2.2)],
@@ -30333,6 +30336,121 @@ function farmPropsStep(dt) {
   FPROPS.head.rotation.y = down + Math.PI + Math.sin(t * .37) * .12;
   FPROPS.wheel.rotation.z -= dt * FPROPS.spin * (.8 + .3 * Math.sin(t * .5));
   FPROPS.vane.rotation.y = down + Math.PI + Math.sin(t * .9) * .18;   // the arrowhead points INTO the wind, the fin down it
+}
+
+// ============================================================================================
+// THE WRECK AS A HERO MOMENT (m300, farm polish pass 6, `CHERO`, `crashHero`, `crashHeroStep`)
+// ============================================================================================
+// STEER: *"the wreck as a hero moment"*. It was a dug-in saucer with a fire on it; nothing about it said ALIEN
+// SHIP, and at dusk nothing about it glowed. Now, all of it on the crash's own numbers (`CRASH.frame`):
+//   the CORE pulses violet (the glow material's own emissive, a heartbeat that sometimes stutters), and a POOL of
+//   violet light lies on the field round the wreck, pulsing with it -- an additive disc whose grid FOLLOWS THE GROUND
+//   (`groundAt` per vertex), which is how it fakes the light the core casts without a real light (a point light is
+//   a cost every lit fragment in the city would pay);
+//   a faint BEAM climbs out of the core into the sky -- a landmark across the whole farm through the gold haze;
+//   the hull ARCS: violet-white sparks spat off it (`spkBurst`) with the electric crack (`snd('zap')`), now and then a
+//   big discharge;
+//   FRAGMENTS of hull lie down the furrow, some still glowing, and a few violet crystals;
+//   and it HUMS -- a low two-saw drone that swells as you come near (REGIONS.md: "crackling wreckage").
+// Cost: the pool, the beam and the debris merge to four draws; the hum is one voice, held only within `humOut`.
+const CHERO = {
+  on: 1,
+  pulse: 1.1,        // heartbeats a second
+  arcEvery: [.5, 2.2], bigP: .12,
+  beamH: 46, beamA: .16, poolR: 9, poolA: .5,
+  humOut: 42, humFull: 10, humG: .09,
+  arcs: 0, hum: null, t: 0, arcT: 1, pool: null, beam: null,
+};
+function crashHero() {
+  const C = CRASH.at, Q = CRASH.frame; if (!CHERO.on || !C || !Q) return 0;
+  const { cu, cv, fu, fv, nu, nv, su, sv, F } = Q, { wx, wz, gnd } = F, core = [wx(cu + fu * 1.6, cv + fv * 1.6), CRASH.hullY + .25, wz(cu + fu * 1.6, cv + fv * 1.6)];
+  CHERO.core = core;
+  // ---- the pool of light, a ground-following disc
+  { const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d');
+    const gr = g.createRadialGradient(64, 64, 0, 64, 64, 64); gr.addColorStop(0, 'rgba(200,120,255,1)'); gr.addColorStop(.35, 'rgba(150,70,240,.55)'); gr.addColorStop(1, 'rgba(90,30,200,0)');
+    g.fillStyle = gr; g.fillRect(0, 0, 128, 128);
+    const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+    const N = 16, R = CHERO.poolR, pos = [], uv = [], idx = [];
+    for (let j = 0; j <= N; j++) for (let i = 0; i <= N; i++) {
+      const x = core[0] + (i / N * 2 - 1) * R, z = core[2] + (j / N * 2 - 1) * R;
+      const y = groundAt(x, z, core[1] + 2, 4);
+      pos.push(x, (y > -50 ? y : C.y) + .07, z); uv.push(i / N, j / N);
+      if (i < N && j < N) { const o = j * (N + 1) + i; idx.push(o, o + N + 1, o + 1, o + 1, o + N + 1, o + N + 2); }
+    }
+    const geo = new THREE.BufferGeometry(); geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); geo.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); geo.setIndex(idx);
+    const m = new THREE.MeshBasicMaterial({ map: tex, transparent: true, opacity: CHERO.poolA, blending: THREE.AdditiveBlending, depthWrite: false, fog: false,
+      polygonOffset: true, polygonOffsetFactor: -3, polygonOffsetUnits: -3 });
+    CHERO.pool = new THREE.Mesh(geo, m); CHERO.pool.renderOrder = 2; scene.add(CHERO.pool); }
+  // ---- the beam: a tall open cone, bright at the foot, fading to nothing at the top (vertex colour, additive)
+  { const g = new THREE.CylinderGeometry(.5, 1.4, CHERO.beamH, 18, 6, true); g.translate(0, CHERO.beamH / 2, 0);
+    const P = g.attributes.position, col = [];
+    for (let i = 0; i < P.count; i++) { const k = 1 - P.getY(i) / CHERO.beamH, f = k * k; col.push(.72 * f, .42 * f, 1 * f); }
+    g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+    const m = new THREE.MeshBasicMaterial({ vertexColors: true, transparent: true, opacity: CHERO.beamA, blending: THREE.AdditiveBlending, depthWrite: false, fog: false, side: THREE.DoubleSide });
+    CHERO.beam = new THREE.Mesh(g, m); CHERO.beam.position.set(core[0], core[1] - .2, core[2]); CHERO.beam.frustumCulled = false; scene.add(CHERO.beam); }
+  // ---- the fragments down the furrow, some still glowing; a few crystals
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .4, metalness: .6 }), o || {});
+  const MAT = { hull: M(0x8f98ab), glow: M(0x2a0d3a, { emissive: new THREE.Color(0xb86dff), emissiveIntensity: 1.8, metalness: 0 }),
+    xtal: M(0x6a2fb0, { emissive: new THREE.Color(0x9b4dff), emissiveIntensity: 1.2, roughness: .15, metalness: .1 }) };
+  const D = farmFrame(FARM.at.x, FARM.at.z, FARM.at.th, MAT, 'wreckbits');
+  const L = Math.hypot(su - cu, sv - cv);
+  for (let k = 0; k < 9; k++) {
+    const a = .15 + k / 9 * .8, side = (k % 2 ? 1 : -1) * (.6 + (k * 7 % 5) * .35);
+    const u = su + (cu - su) * a + nu * side, v = sv + (cv - sv) * a + nv * side, g = gnd(u, v), w = .5 + (k % 3) * .35;
+    D.bx(u, v, g - .05, g + .06 + (k % 2) * .05, w, w * .7, 'hull', k * 1.7, false, (k % 3 - 1) * .3);
+    if (k % 3 === 0) D.bx(u, v, g + .06, g + .1, w * .9, .05, 'glow', k * 1.7, false);
+  }
+  for (let k = 0; k < 6; k++) {
+    const a = k / 6 * 6.283 + .4, r = 3.6 + (k % 3) * .8, u = cu + Math.cos(a) * r, v = cv + Math.sin(a) * r, g = gnd(u, v);
+    D.geo(new THREE.OctahedronGeometry(.18 + (k % 2) * .12, 0), 'xtal', u, g + .15, v, k, .4, k * .3, 1, 1.8, 1);
+  }
+  D.commit();
+  CHERO.mats = MAT;
+  return 1;
+}
+// the hum: one held voice, swelling with nearness; started and stopped as he comes and goes
+function crashHumSet(k) {
+  if (!SFX.ctx || !SFX.on) return;
+  const c = SFX.ctx, t = c.currentTime;
+  if (k > .01 && !CHERO.hum) {
+    const g = c.createGain(); g.gain.value = 0;
+    const f = c.createBiquadFilter(); f.type = 'lowpass'; f.frequency.value = 240; f.Q.value = 3;
+    const trem = c.createGain(); trem.gain.value = 1; f.connect(trem); trem.connect(g); g.connect(SFX.bus);
+    const os = [];
+    for (const [fr, d] of [[55, -6], [55, 7], [110.5, 0]]) { const o = c.createOscillator(); o.type = 'sawtooth'; o.frequency.value = fr; o.detune.value = d; o.connect(f); o.start(); os.push(o); }
+    const lfo = c.createOscillator(), lg = c.createGain(); lfo.frequency.value = 6.5; lg.gain.value = .35; lfo.connect(lg); lg.connect(trem.gain); lfo.start(); os.push(lfo);
+    CHERO.hum = { g, os }; SFX.voices++;
+  }
+  if (!CHERO.hum) return;
+  CHERO.hum.g.gain.setTargetAtTime(CHERO.humG * k, t, .25);
+  if (k <= .01) {
+    const H = CHERO.hum; CHERO.hum = null;
+    H.g.gain.setTargetAtTime(0, t, .1);
+    setTimeout(() => { for (const o of H.os) { try { o.stop(); } catch (e) {} } try { H.g.disconnect(); } catch (e) {} SFX.voices--; }, 600);
+  }
+}
+function crashHeroStep(dt) {
+  const core = CHERO.core; if (!core) return;
+  CHERO.t += dt;
+  const t = CHERO.t, beat = Math.pow(Math.max(0, Math.sin(t * Math.PI * 2 * CHERO.pulse)), 6), stutter = Math.random() < .02 ? Math.random() : 0;
+  const k = Math.min(1.4, .55 + beat * .7 + stutter * .4);
+  if (CRASH.glowMat) CRASH.glowMat.emissiveIntensity = 1.4 + k * 1.6;
+  if (CHERO.mats) CHERO.mats.glow.emissiveIntensity = 1.0 + k * 1.2;
+  if (CHERO.pool) CHERO.pool.material.opacity = CHERO.poolA * (.55 + k * .55);
+  if (CHERO.beam) CHERO.beam.material.opacity = CHERO.beamA * (.7 + k * .4);
+  const P = player.pos, d = Math.hypot(P.x - core[0], P.z - core[2]);
+  // the arcs, and the crack each one makes
+  if ((CHERO.arcT -= dt) <= 0) {
+    CHERO.arcT = rnd(CHERO.arcEvery);
+    if (d < 90) {
+      const big = Math.random() < CHERO.bigP, a = Math.random() * 6.283, r = 1.5 + Math.random() * 1.8;
+      const x = core[0] + Math.cos(a) * r, z = core[2] + Math.sin(a) * r, y = CRASH.hullY + .3 + Math.random() * .8;
+      spkBurst(x, y, z, big ? 46 : 14, { col: Math.random() < .5 ? [.78, .5, 1] : [.6, .9, 1], spread: big ? 7 : 4, up: big ? 4 : 2, size: big ? .2 : .14, life: big ? .7 : .4 });
+      snd('zap', { g: big ? .5 : .22, r: 1.1 + Math.random() * .5, x, z });
+      CHERO.arcs++;
+    }
+  }
+  crashHumSet(d < CHERO.humOut ? 1 - smooth(CHERO.humFull, CHERO.humOut, d) : 0);
 }
 
 function stepDummies(dt) {
@@ -31489,6 +31607,7 @@ function frameBody() {
   mapStep(dt);                  // the minimap, the full map, region fog (m287)
   godStep(dt);                  // GOD mode: the key, the menu, the boot jump (m298)
   crashStep(dt);                // the wreck burns and smokes; reaching town once moves the start (m289)
+  crashHeroStep(dt);            // ...and pulses, arcs, hums, and stands a beam over the farm (m300)
   riverStep(dt);                // the farm's river: no wading, the current puts you back (m291)
   cellStep();
   kitXrayStep();
@@ -31828,7 +31947,7 @@ function frameBody() {
       // FARM: boxes / roof triangles kept (m288) -- no token is no room on the ring or not the kit city
       (FARM.n ? ' FARM' + FARM.n + '/' + FARM.tris + (GRADE.k > .01 ? ' gold' + GRADE.k.toFixed(2) : '') : '') +
       // CR: the crash site's colliders, and `*` when this boot woke at it (m289)
-      (CRASH.n ? ' CR' + CRASH.n + (CRASH.spawned ? '*' : '') : '') +
+      (CRASH.n ? ' CR' + CRASH.n + (CRASH.spawned ? '*' : '') + (CHERO.arcs ? 'a' + CHERO.arcs : '') + (CHERO.hum ? 'h' : '') : '') +
       // LN: the lane and creek's colliders (m290)
       (LANE.n ? ' LN' + LANE.n : '') +
       // BR: the river and bridge's colliders, ramp tris, times the current put you back (m291)
@@ -32173,6 +32292,7 @@ async function init() {
     // HIS MARKERS (m293): portals, gates, regions -- after every builder, so the ground under them exists
     try { mkrApply(); } catch (e) { note('MARK FAIL'); console.warn('[melee] markers', e); }
     try { buildCrash(); } catch (e) { note('CRASH FAIL'); console.warn('[melee] crash', e); }
+    try { crashHero(); } catch (e) { note('WRECK FX FAIL'); console.warn('[melee] crash hero', e); }   // m300
     try { buildLane(); } catch (e) { note('LANE FAIL'); console.warn('[melee] lane', e); }
     try { buildBridge(); } catch (e) { note('BRIDGE FAIL'); console.warn('[melee] bridge', e); }
     try { buildCows(); } catch (e) { note('COWS FAIL'); console.warn('[melee] cows', e); }
@@ -32365,6 +32485,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   COW, COWS, moo: () => { let b = null, bd = 1e9; for (const c of COWS) { const d = Math.hypot(c.x - player.pos.x, c.z - player.pos.z); if (d < bd) { bd = d; b = c; } } if (!b) return 'no cows'; return mooAt(b.x, b.z, b.mooK, 1.3) ? 'moo (' + bd.toFixed(0) + ' m)' : (SFX.ctx ? 'too far or no voice free' : 'no audio yet -- touch the screen first'); },
   BRIDGE, bridge: () => { const B = BRIDGE.at; if (!B) return 'no bridge in this world'; player.pos.set(B.x, B.y + .3, B.z); player.vel.set(0, 0, 0); return 'the bridge'; },
   LANE, lane: f => { const L = LANE.at; if (!L) return 'no lane in this world'; const x = f ? L.ford[0] : L.x, z = f ? L.ford[1] : L.z; player.pos.set(x, groundAt(x, z, 3, 6) + .2, z); player.vel.set(0, 0, 0); return f ? 'the ford' : 'the lane'; },
+  // THE WRECK'S HERO PASS (m300): `mel.CHERO` -- pulse, arcEvery, beamA, poolA, humG
+  CHERO,
   CRASH, crash: () => { const C = CRASH.at; if (!C) return 'no crash site in this world'; const p = player; p.pos.set(C.you[0], C.y + 2, C.you[1]); p.vel.set(0, 0, 0); p.heading = p.faceH = Math.atan2(C.x - C.you[0], C.z - C.you[1]); return 'the wreck'; },
   // THE GOLDEN HOUR (m295): `mel.GRADE` live -- its colours, `r`, `fogMix`; `mel.GRADE.on = 0` is the A/B
   GRADE,
