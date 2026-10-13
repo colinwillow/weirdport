@@ -36,6 +36,8 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
 - [ ] **A5 Heat & police.** Wanted stars. 1 = cops come look, 2 = cops chase and arrest-attempt,
   3 = cops shoot, 4 = more cops (military later). Lose heat by breaking line of sight and changing
   form. Chip shows the stars.
+  - [x] m280 **A5a** stars, heat rules (calls, spotting, blows; cools out of sight, faster in a human form), cops come look (1) and chase + arrest-grab (2).
+  - [ ] **A5b** cops draw and shoot at 3 stars (`draw_weapon`, `shoot_pistol` are in his file), more cops arrive at 4.
 - [ ] **A6 The sampler.** Stand over a downed human and hold to take a sample → that form is
   unlocked into the form wheel (the existing disguise pipeline). DNA gun becomes debug-only
   (`mel.dna()` or a debug toggle).
@@ -116,3 +118,9 @@ with spaced-out rectangles on it, never a grid of separate areas. Build small an
   warrior, her) still counts as alien. Cops and the construction worker don't panic. About 45% of
   witnesses phone it in (`FEAR.callP`). There is no scream sound in the repo, so those with a
   voice grunt high and the rest are silent: a scream recording would slot straight in.
+- **m280 (A5a):** A5 split in two. Heat is one number and the stars are thresholds on it
+  (1 / 2.5 / 4.5 / 7). A cop who **sees** the alien jumps it straight to 2 stars (chase). Phone
+  calls add 1, hitting a cop 1.2, hitting a civilian 0.3. It cools only after 6 s with no cop
+  seeing you, and 4x faster while you're in a human form. "Arrest" is a grab that hurts and
+  staggers (there's no arrest animation); there's no jail/busted screen. The officer walk/run
+  speeds are guesses. Side effect: the officer now has walk/run clips, so he may become a DNA form.

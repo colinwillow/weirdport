@@ -7,6 +7,19 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE OFFICER HAD WALK AND RUN CLIPS ALL ALONG AND NOBODY NAMED THEM (m280, ROADMAP A5a, `COPS`, `copAI`, `heatStep`).**
+  `dummy_officer.glb` carries `walk_01 run_01 run_02 draw_weapon shoot_pistol hit_while_shooting` besides the idle,
+  hits, falls and get-ups `DUMMY.clips` used -- read straight out of the JSON chunk, the m67 lesson again: read the
+  export before deciding what is missing. m280 names walk/run and gives `DUMMY` `cop: 1`; `copAI` sits in
+  `stepDummies`' free branch ABOVE `K.ai`, so every hit, fall and get-up still outranks the chase. Gait refs are
+  GUESSED (1.35 / 3.8) -- `npm run gait` would settle them.
+  **HEAT IS ONE NUMBER, STARS ARE THRESHOLDS** (`COPS.star`). Writers: `heatAdd` (calls, `heatHit` from
+  `dummyBlow`) and a cop's sight setting a floor of `spotV`; the only reducer is `heatStep` (cools after `lose` s
+  unseen, `coolDisg`x while `!fearLooks()`). `HEAT.lx/lz` is the last reported position: a witness's own `sawX/Z`
+  when his call lands, your live position while a cop sees you. `fearSees` now takes see/cone/feel so a cop's sight
+  is the same LOS march as a civilian's with bigger numbers. Arrest is `playerHurt` with stun and a .25 knock --
+  there is no arrest clip. Chip: `H<heat>*<stars> cs<spots>/<grabs>`. `mel.heat(n)` sets the heat.
+
 - **FEAR IS THE OLD FLEE BRANCH WITH A NEW REASON, NOT A SECOND WAY TO RUN (m279, ROADMAP A4, `FEAR`, `fearSees`, `fearCall`).**
   `fearStep` runs in `stepDummies` before the AI and only SETS `d.fleeT` -- the same clock a blow sets in `dummyHit`
   since m38 -- so the run is `foeWander`'s own flee branch. Who can be frightened is exactly who `foeWander` drives:

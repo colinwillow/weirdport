@@ -368,6 +368,15 @@ body.dyn.desk .zone { display: none; }
 #obj.pulse { border-color: var(--sun); transform: translateX(-50%) scale(1.08); }
 #obj b { display: block; font-family: var(--disp); font-size: 9px; letter-spacing: .1em; color: var(--sky); font-weight: 400; }
 #obj i { font-style: normal; font-size: 14px; font-weight: 600; }
+/* THE STARS (m280): under the weapon chip, top-right. Hidden at none; a level gained flashes. */
+#stars { position: fixed; top: calc(62px + env(safe-area-inset-top)); right: calc(12px + env(safe-area-inset-right));
+  z-index: 5; pointer-events: none; opacity: 0; transition: opacity .3s ease; font-family: var(--disp); font-size: 20px; letter-spacing: 2px; }
+#stars.on { opacity: 1; }
+#stars i { font-style: normal; color: rgba(255,255,255,.22); text-shadow: 0 2px 0 var(--ink); }
+#stars i::before { content: '\2605'; }
+#stars i.on { color: var(--sun); }
+#stars.flash { animation: stars .6s ease 3; }
+@keyframes stars { 50% { transform: scale(1.25); filter: brightness(1.6); } }
 #qdone {
   position: fixed; left: 50%; top: 30%; transform: translate(-50%, -50%); z-index: 7; pointer-events: none;
   display: none; text-align: center; font-family: var(--disp); color: var(--sun);
@@ -598,10 +607,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m279</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m280</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m279</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m280</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="dbgKey"><b>COLLIDERS</b> <span id="dbgState">off</span></div>
@@ -612,6 +621,7 @@ body.desk.free #deskHint { display: block; }
 <div class="pad" id="padR"><div class="knob"></div><div class="hint">look &middot; tap = jump</div></div>
 <div id="talk"><span class="nm"></span><span class="tx"></span><span class="go"></span></div>
 <div id="obj" aria-hidden="true"><b></b><i></i></div>
+<div id="stars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 <div id="qdone" aria-hidden="true"><small>QUEST COMPLETE</small><b></b></div>
 
 <!-- THE BLASTER'S TWO MODES (m52). Above the right pad, because that is the thumb they are
@@ -670,7 +680,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm279';
+const BUILD = 'm280';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -2596,7 +2606,12 @@ const DUMMY = {
     hits: ['hit_head', 'hit_body', 'hit_ribs', 'hit_stomach'],
     downF: 'knock_down_front', downB: 'knock_down_back',
     upF: 'get_up_front', upB: 'get_up_back',
+    // m280: he walks and runs now -- these were in his file all along (A5b names draw/shoot)
+    walk: 'walk_01', run: 'run_01',
   },
+  // HE IS A COP (m280): `copAI` drives him off his post when there is heat. The refs are GUESSED,
+  // not measured -- `npm run gait` on walk_01/run_01 would settle them.
+  cop: 1, turn: 6, walk: 1.35, run: 4.2, walkRef: 1.35, runRef: 3.8, tsLo: .7, tsHi: 1.4,
   // THE OFFICER GETS THE KICKBACK TOO -- it is a property of being hit, not of being a warrior
   knock: 3.2, knockUp: .4, knockDrag: 5.5, shoveDrag: 2.2,
   hitBeat: .5,        // the reactions run 1.0-1.5 s at 1x, which is a long time to watch
@@ -25895,6 +25910,7 @@ function dummyBlow(d, dirH, power, dmg, pal) {
   // a target for ever and never come back; the mark is YOUR interest and he follows it, so he
   // gives up when you do.
   if (!pal) d.mark = PALMARK;
+  if (!pal) heatHit(d);           // a blow you land is heat (m280)
   // AND HOW A MAN WHO DOES NOT FIGHT DECIDES TO LEAVE. Capped, so standing over him and
   // punching is not a man who runs for a minute.
   if (K.flee0) { d.fleeT = Math.min(K.fleeMax, (d.fleeT || 0) + (d.fleeT ? K.fleeAdd : K.flee0)); d.roamT = 0; }
@@ -27723,6 +27739,8 @@ function fearMat(kind) {
   const c = document.createElement('canvas'); c.width = 128; c.height = 128;
   const g = c.getContext('2d'); g.textAlign = 'center'; g.textBaseline = 'middle';
   if (kind === 'call') { g.font = '96px system-ui, "Apple Color Emoji", sans-serif'; g.fillText('\u{1F4DE}', 64, 68); }
+  else if (kind === 'cop') { g.font = '900 112px Bungee, system-ui, sans-serif'; g.lineWidth = 14; g.lineJoin = 'round';
+    g.strokeStyle = '#0b0d12'; g.strokeText('!', 64, 70); g.fillStyle = '#46e0ff'; g.fillText('!', 64, 70); }
   else { g.font = '900 104px Bungee, system-ui, sans-serif'; g.lineWidth = 14; g.lineJoin = 'round';
     g.strokeStyle = '#0b0d12'; g.strokeText('!!', 64, 70); g.fillStyle = '#ff4d6d'; g.fillText('!!', 64, 70); }
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
@@ -27739,11 +27757,11 @@ function fearMark(d, kind) {
   m.position.set(0, (h + .45) / s, 0);
   m.visible = true;
 }
-function fearSees(d) {
+function fearSees(d, see = FEAR.see, cone = FEAR.cone, feel = FEAR.feel) {
   const P = player.pos, R = d.root.position;
   const dx = P.x - R.x, dz = P.z - R.z, q = Math.hypot(dx, dz);
-  if (q > FEAR.see || Math.abs(P.y - R.y) > 8) return false;
-  if (q > FEAR.feel && Math.abs(wrapAngle(Math.atan2(dx, dz) - d.h)) > FEAR.cone) return false;
+  if (q > see || Math.abs(P.y - R.y) > 8) return false;
+  if (q > feel && Math.abs(wrapAngle(Math.atan2(dx, dz) - d.h)) > cone) return false;
   const y0 = R.y + FEAR.eye, y1 = P.y + FEAR.eye, n = Math.max(1, Math.floor(q / FEAR.losStep));
   for (let i = 1; i < n; i++) {
     const u = i / n;
@@ -27758,7 +27776,7 @@ function fearStep(dt) {
     // the mark: `!!` while the panic is fresh, the phone while he is on it
     if (d.fearMk || d.callT > 0 || d.fearS > 0) {
       if (d.fearS > 0) d.fearS -= dt;
-      fearMark(d, d.callT > 0 && !(d.fleeT > 0) ? 'call' : d.fearS > 0 ? 'scream' : null);
+      fearMark(d, d.callT > 0 && !(d.fleeT > 0) ? 'call' : d.fearS > 0 ? (d.fearKind || 'scream') : null);
     }
     if (!looks || !fearHuman(d)) continue;
     if (d.fleeT > 0 || d.callT > 0 || d.fearAg > 0 || d.aggro) continue;
@@ -27772,6 +27790,7 @@ function fearStep(dt) {
     d.fleeT = FEAR.flee * (.8 + Math.random() * .4); d.roamT = 0;
     d.fearAg = FEAR.again; d.fearS = 1.6;
     d.caller = Math.random() < FEAR.callP ? 1 : 0;
+    d.sawX = player.pos.x; d.sawZ = player.pos.z;     // what he will report (m280)
     if (d.K.voice) snd(d.K.voice, { g: .9, r: 1.3 + Math.random() * .2, x: d.root.position.x, z: d.root.position.z });
   }
 }
@@ -27782,13 +27801,117 @@ function fearCall(d, dt, t, toP) {
   d.callT -= dt;
   faceTo(d, toP + Math.PI, dt);              // back to you, phone to his ear
   t[d.rest || d.K.clips.idle] = 1;
-  if (d.callT <= 0) { FEAR.calls++; heatAdd(1, 'call'); }
+  if (d.callT <= 0) { FEAR.calls++; heatAdd(1, 'call'); if (d.sawX !== undefined) { HEAT.lx = d.sawX; HEAT.lz = d.sawZ; } }
   return true;
+}
+
+// ============================================================================================
+// HEAT & POLICE (m280, ROADMAP A5a) -- stars, and the officers finally get up off their spot
+// ============================================================================================
+// **HEAT IS ONE NUMBER AND THE STARS ARE THRESHOLDS ON IT** (`COPS.star`), so every source --
+// a witness's call, a cop who sees you, a blow on a cop or a civilian -- adds to the same
+// value and nothing decides a star level of its own. It cools only while NO cop has seen you
+// for `lose` seconds, and it cools `coolDisg` times faster while you look human: breaking line
+// of sight and changing form are the two ways out, exactly as the roadmap says.
+//   1 star  the officers walk to where you were last reported (`HEAT.lx/lz`)
+//   2 stars they run at you on sight and try to ARREST: in `reach`, a grab every `grabEvery`
+//           that hurts and staggers (no arrest clip in his file, so it is `playerHurt`'s stun)
+//   3, 4    not yet -- A5b is the pistol and the reinforcements
+// **THE OFFICER WAS A PUNCHING BAG WITH WALK AND RUN CLIPS NOBODY NAMED.** `dummy_officer.glb`
+// carries `walk_01`, `run_01`, `run_02`, `draw_weapon` and `shoot_pistol`; m280 names the first
+// two, and the rest is A5b. `copAI` lives in `stepDummies`' free branch, so every hit reaction,
+// knock-down and get-up he already had still outranks the chase.
+// **A COP DOES NOT SEE THROUGH A DISGUISE** (`fearLooks`): a human form walking past him is a
+// pedestrian, and heat cools fast while you wear one.
+// The gait refs are GUESSES (not measured): `npm run gait` on `walk_01`/`run_01` would settle them.
+const COPS = {
+  on: 1,
+  star: [1, 2.5, 4.5, 7],    // heat at which each star lights
+  max: 8,
+  see: 22, cone: 1.4, feel: 4,   // m, rad, m -- a cop is LOOKING, so he sees further and wider
+  spotV: 2.5,                // a cop who sees the alien puts heat at least here (2 stars: chase)
+  lose: 6,                   // s unseen by any cop before heat starts to cool
+  cool: .22,                 // heat per second while unseen
+  coolDisg: 4,               // x that while you look human
+  hitCop: 1.2, hitCiv: .3,   // heat per blow you land
+  reach: 1.35,               // m he grabs from
+  grabEvery: 1.4,            // s between grabs
+  grabDmg: 5,
+  n: 0, grabs: 0,            // chip: spots, grabs
+};
+Object.assign(HEAT, { lvl: 0, seenT: 99, lx: undefined, lz: undefined, flash: 0 });
+const heatLvl = v => { let n = 0; for (const s of COPS.star) if (v >= s) n++; return n; };
+function heatStep(dt) {
+  HEAT.seenT += dt;
+  HEAT.v = Math.min(COPS.max, HEAT.v);
+  const human = !fearLooks();
+  if (HEAT.seenT > COPS.lose || human) HEAT.v = Math.max(0, HEAT.v - COPS.cool * (human ? COPS.coolDisg : 1) * dt);
+  const l = heatLvl(HEAT.v);
+  if (l !== HEAT.lvl) {
+    const el = document.getElementById('stars');
+    if (el) {
+      el.classList.toggle('on', l > 0);
+      el.querySelectorAll('i').forEach((s, i) => s.classList.toggle('on', i < l));
+      if (l > HEAT.lvl) { el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash'); }
+    }
+    HEAT.lvl = l;
+  }
+}
+// a blow you land -- from `dummyBlow`, which every fist, bolt and blast reaches
+function heatHit(d) {
+  if (!COPS.on) return;
+  if (d.K.cop) { heatAdd(COPS.hitCop, 'cop'); HEAT.lx = player.pos.x; HEAT.lz = player.pos.z; }
+  else if (!d.K.pal && !d.wasK && !/alien/i.test(mphName(d.K))) heatAdd(COPS.hitCiv, 'civ');
+}
+function copAI(d, dt, t) {
+  const K = d.K, P = d.root.position, pp = player.pos;
+  if (d.cx === undefined) { d.cx = P.x; d.cz = P.z; d.ch = d.h; }
+  const dx = pp.x - P.x, dz = pp.z - P.z, dd = Math.hypot(dx, dz), toP = Math.atan2(dx, dz);
+  d.grabT = (d.grabT || 0) - dt;
+  if ((d.copChk = (d.copChk === undefined ? Math.random() * .3 : d.copChk) - dt) <= 0) {
+    d.copChk = .25;
+    const was = d.copSee;
+    d.copSee = fearLooks() && fearSees(d, COPS.see, COPS.cone, COPS.feel);
+    if (d.copSee && !was) { COPS.n++; d.fearS = 1.4; d.fearKind = 'cop'; }
+  }
+  if (d.copSee) {
+    HEAT.seenT = 0; HEAT.lx = pp.x; HEAT.lz = pp.z;
+    if (HEAT.v < COPS.spotV) HEAT.v = COPS.spotV;
+  }
+  const lvl = HEAT.lvl;
+  let sp = 0, clip = K.clips.idle;
+  if (lvl >= 2 && d.copSee) {
+    faceTo(d, toP, dt);
+    if (dd > COPS.reach) { sp = K.run; clip = K.clips.run; }
+    else if (d.grabT <= 0) {
+      d.grabT = COPS.grabEvery; COPS.grabs++;
+      playerHurt(COPS.grabDmg, toP, FOE.push * .6, FOE.pushUp * .5, FOE.stun, .25);
+    }
+  } else if (lvl >= 1 && HEAT.lx !== undefined) {
+    const gx = HEAT.lx - P.x, gz = HEAT.lz - P.z;
+    if (Math.hypot(gx, gz) > 1.6) {
+      faceTo(d, Math.atan2(gx, gz), dt);
+      const run = lvl >= 2;
+      sp = run ? K.run : K.walk; clip = run ? K.clips.run : K.clips.walk;
+    } else faceTo(d, d.h + dt * .8, dt);   // there: turning slowly, looking for you
+  } else {
+    const gx = d.cx - P.x, gz = d.cz - P.z;
+    if (Math.hypot(gx, gz) > 1) { faceTo(d, Math.atan2(gx, gz), dt); sp = K.walk; clip = K.clips.walk; }
+    else faceTo(d, d.ch, dt);
+  }
+  if (sp > 0 && clip) {
+    // only walk once roughly facing the way, or he moonwalks round corners
+    const fwd = Math.cos(wrapAngle((lvl >= 2 && d.copSee ? toP : d.h) - d.h));
+    foeMove(d, d.h, sp * ((d.v && d.v.pace) || 1) * Math.max(0, fwd), dt);
+    setSkinScale(d, clip, clamp(sp / (clip === K.clips.run ? K.runRef : K.walkRef), K.tsLo, K.tsHi));
+  }
+  t[clip || K.clips.idle] = 1;
 }
 
 function stepDummies(dt) {
   bodySep(dt);
   bodySeat();
+  heatStep(dt);                 // the stars, before anyone reads them this frame (m280)
   fearStep(dt);                 // before the AI, so a fright this frame runs this frame (m279)
   bodyCull();
   for (const d of DUMMIES) {
@@ -27886,6 +28009,8 @@ function stepDummies(dt) {
       }
     } else if (K.repair) {
       workerAI(d, dt, t);
+    } else if (K.cop && COPS.on) {
+      copAI(d, dt, t);            // heat & police (m280)
     } else if (K.ai) {
       foeAI(d, dt, t);
     } else {
@@ -29236,7 +29361,9 @@ function frameBody() {
       (TALK.n ? ' T' + TALK.n + '/' + TALK.said + (talk.near ? '*' : '') : '') +
       // Q: the active quest and step (m278) -- `Qq0.1` is quest q0 on its second step; no token = none active
       // FR: frights / calls phoned in / heat (m279) -- frights with no calls is the dice, no frights at all is sight
-      (FEAR.n ? ' FR' + FEAR.n + '/' + FEAR.calls + ' H' + HEAT.v.toFixed(0) : '') +
+      (FEAR.n ? ' FR' + FEAR.n + '/' + FEAR.calls : '') +
+      // H: heat, stars, cop spots/grabs (m280) -- stars with no spots is all phone calls
+      (HEAT.v > 0 || COPS.n ? ' H' + HEAT.v.toFixed(1) + '*' + HEAT.lvl + ' cs' + COPS.n + '/' + COPS.grabs : '') +
       (quest.cur ? ' Q' + quest.cur.id + '.' + quest.step + (quest.tgt ? '' : '~') : '') +
       (MISSING.length ? ' · ' + MISSING.join(' · ') : '');
     // **THE KEYS SIT UNDER THE CHIP, AND THE CHIP IS THE ONE HUD ELEMENT THAT GROWS (m128).**
@@ -29724,6 +29851,8 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   QUEST, QUESTS, quest,
   // FEAR (m279): `mel.FEAR` live, `mel.HEAT` the stub A5 builds on
   FEAR, HEAT, heatAdd,
+  // POLICE (m280): `mel.COPS` live; `mel.heat(n)` sets the heat to look at a star level
+  COPS, heat: n => (HEAT.v = +n || 0),
   SAVE, progSave, progForm, progRegion, progPortal, progFlag, progChapter, progJuice, progReset,
   // THE SURGE (m248): `mel.SURGE` is live; `mel.surge(n)` throws n cubes off you once
   SURGE, surge: n => surgeEmit(rig.model, n || 300), WARM,
