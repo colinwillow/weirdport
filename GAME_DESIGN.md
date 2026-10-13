@@ -107,10 +107,48 @@ lead. Rollergirl is an **Easter egg** for now (one of these, maybe), not a story
 
 Regions are fogged on the map until you get there; arriving clears the fog.
 
+## The world: dense, vertical, organic, alive
+
+**The visual identity is the selling point**: beautifully painted scenes, weirdness, an organic
+mess that is compelling to look at. What it must NOT be is what the skate game's auto-built worlds
+turned into: flat, spaced out, rectangular areas sat next to each other on a grid, with no height
+and nothing between them.
+
+**Rules for every place built, by the loop or in Blender:**
+- **Intimate, not spaced out.** Streets are narrow, things are close to the camera, you are always
+  within a few metres of something to look at or touch. Empty ground between "areas" is a failure.
+- **Vertical, always.** Every place has layers: street, stoops and kerbs, balconies, fire escapes,
+  rooftops, bridges and walkways over the street, stairs down to cellars, canals, sewers below.
+  Places stack and overlap; you can go over and under the same spot.
+- **Organic, not a grid.** Streets bend, buildings lean and crowd each other, nothing is
+  axis-aligned for its own sake, and districts bleed into each other rather than sitting side by side
+  with a border between them.
+- **Everything is interactive.** Things break, get used, get fixed. If it is on screen, ask what
+  happens when you hit it, climb it, or burn it.
+- **One place at a time, finished.** Build one block, one plaza, one alley properly — the look, the
+  height, the people, the systems in it — before starting the next. A small finished corner beats a
+  big empty scaffold every time.
+
+**The city is a living system, and disturbing one part ripples into others.** The people each do a
+job, and the jobs depend on each other:
+- buildings break (fights, fires, aliens, you); **construction crews** walk out and rebuild them;
+- **firefighters** put out fires before they spread to the next building;
+- **cops** respond to violence; protests and brawls pull them off their beats;
+- a **strike or a protest** takes the workers off the job, so damage stops getting fixed and the
+  district slides toward broken and abandoned: boarded windows, rubble, the homeless move in, the
+  Skinsuits move in after them;
+- end the strike (persuade the organiser, expose the infiltrator) and the crews pour back out and
+  the district rebuilds in front of you.
+
+Each district has a **health** that these systems push up and down, and the look follows it —
+healthy, worn, broken, abandoned. Unforeseen outcomes are the point: the player pulls one thread
+and watches what else moves.
+
 ## World building split
 
 **Blender is for the real worlds** (textures, breakable buildings). The loop builds **greybox
-regions** out of the kit pieces and procedural geometry so every mechanic can be played now, and
+regions** — but a greybox is still dense, layered and vertical by the rules above, never a flat
+plane with boxes on it — out of the kit pieces and procedural geometry so every mechanic can be played now, and
 each greybox is meant to be swapped for a Blender region later. A greybox region has: its bounds
 (for the fog), its gates, its quest NPCs, and its spawn points — all data, so the swap is a file
 change.

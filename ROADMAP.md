@@ -15,6 +15,12 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
+## Standing rules for anything built in the world
+
+Read `GAME_DESIGN.md` → "The world: dense, vertical, organic, alive" before building any place.
+**Intimate, vertical, organic, interactive, and one place finished at a time.** Never a flat plane
+with spaced-out rectangles on it, never a grid of separate areas. Build small and finish it.
+
 ## Phase A — the game skeleton (no new art needed)
 
 - [ ] **A1 Progress & save.** A new `localStorage` key `mel.prog`: chapter, forms unlocked, regions
@@ -49,8 +55,9 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 ## Phase B — Chapter 0 and Chapter 1, playable start to finish
 
-- [ ] **B1 The farm.** Greybox farmland on the island ring around the kit city: field, fences,
-  barn, a road to a bridge into town. Cows as placeholders (boxes or an existing body) that moo and
+- [ ] **B1 The farm.** Farmland on the island ring around the kit city — small, close and layered,
+  not a flat field: a sunken lane between hedges, the barn with a hayloft you can climb, a silo, a
+  creek with a footbridge, the road climbing to a bridge into town. Cows as placeholders (boxes or an existing body) that moo and
   wander. The crash site: a wreck, smoke, Clancy inside.
 - [ ] **B2 Chapter 0 script.** Crash → find Clancy → the farmer sees you and panics → knock him
   down → take his sample → walk to the bridge as him → the cop checkpoint lets the farmer through
@@ -64,6 +71,10 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 ## Phase C — systems the later chapters need
 
+- [ ] **C0 District health.** Each district has a health the city's systems push up and down:
+  damage, fires and Skinsuits lower it; crews and firefighters raise it. A strike stops the crews and
+  the district decays (boarded windows, rubble, squatters); ending it sends them back out. The look
+  follows the health. Start with Old Town and the existing worker/repair and fire systems.
 - [ ] **C1 Protest events.** Activists gather with signs and chant; rednecks show up; it turns into
   a brawl if provoked; cops respond. As an activist you can walk inside the crowd through a barricade.
 - [ ] **C2 Skinsuit incursions.** An enemy ship/agent turns civilians on the street; you fight and
