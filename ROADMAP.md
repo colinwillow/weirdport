@@ -20,7 +20,7 @@ Do these in order, before anything else in this file:
 
 1. **Take the demo objects out of the world.** `GATE.demo` and `PORTAL.demo` both put things right
    by the spawn with no reason to be there. Set both to 0. Keep the systems; add `mel.gateDemo()` /
-   `mel.portalDemo()` console hooks so they can still be tested on purpose. Ship that as one build.
+   `mel.portalDemo()` console hooks so they can still be tested on purpose. Ship that as one build. **— done m292.**
 2. **New rule: nothing appears in the world without an authored reason and an authored place.**
    Systems ship DORMANT. Things get into the world in exactly two ways:
    - **named markers in his Blender exports** (empties like `portal_bridge`, `gate_fire_alley`,
@@ -224,3 +224,10 @@ differ" table there, so no region feels like the last one.
   the side past the crash field doesn't have 30 m of grass, the whole thing mirrors to the far side
   of the farm. **The farm isn't sealed yet**: you can still walk round the island ring into town the
   long way; B2 decides whether to close that off. `mel.bridge()` puts you on the deck.
+- **m292 (STEER 1):** `GATE.demo` and `PORTAL.demo` are 0; nothing is placed by the spawn any more.
+  `mel.gateDemo()` / `mel.portalDemo()` place them round you on purpose. **The cows** (B1d2) were
+  built just before your STEER landed; per point 4 they are **not on main**. They're parked on the
+  branch `paused/cows-m292` (six greybox cows, one draw call, a synthesized moo), ready to merge if
+  you want the farm to continue. Still placed without an authored marker, and next in line under
+  point 2/3: the `!` talk speakers (one random body per kind), the WEIRDPORT 101 stand-in quest, and
+  the crash-site spawn on a new game. The marker loader (point 3) is where those get proper places.

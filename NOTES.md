@@ -7,6 +7,15 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **SYSTEMS SHIP DORMANT; NOTHING IS PLACED "NEAR THE SPAWN" (m292, STEER 1, `GATE.demo`, `PORTAL.demo`).** *"Placeholders are
+  being dropped in at random and it looks sloppy."* m285/m286 put two demo gates and three demo portal pads round
+  wherever he spawned, on open ground found by `spawnBeside`, with no reason to be there -- and from m289 that meant
+  round the farm. Both flags are 0; `gateDemo(force)` / `portalDemo(force)` keep the placement for `mel.gateDemo()` /
+  `mel.portalDemo()`. **The rule now**: a thing enters the world from a named Blender marker or an authored placement
+  table entry with a named spot and a reason -- never from a search for somewhere open. **The m292 cows were built before
+  the STEER arrived and were NOT shipped** (STEER 4 pauses the farm): they live on `paused/cows-m292`. Main's m292 is
+  this build; the branch's m292 never deployed.
+
 - **THE BRIDGE BROUGHT ITS OWN RIVER, AND THE RAMPS ARE UNTURNED BOXES (m291, ROADMAP B1d, `BRIDGE`, `buildBridge`, `riverStep`).**
   The island has no river, so the farm gets one: two stone levees (3 m) from an outfall headwall at the city's edge to the
   beach, water ribbon between, and `riverStep` -- inverse farm frame (`u = dx C - dz S`, `v = dx S + dz C`, times the
