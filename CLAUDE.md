@@ -27,6 +27,15 @@ CI cannot turn Pages on by itself either: `enablement: true` on `configure-pages
 may deploy to a Pages site but may not create one.) **The gates run here, before the push, not
 on a server.**
 
+## Loop mode (`/loop`)
+
+When running on a loop: **read `ROADMAP.md` first, every pass** — its `STEER` section outranks
+everything, including this file. Take the first unchecked item, ship it as ONE build (bump, check,
+push to `main`), tick it with the build number, and end the turn — short passes are what let his
+messages land between them. Design context is `GAME_DESIGN.md`. If an item is too big for one build,
+split it in `ROADMAP.md` and ship the first half. Never ship a blank page; NOTES.md entry per build
+as usual.
+
 ## Verification budget
 
 **HE TESTS THE GAME. YOU DO NOT.** He asks for a change, you make it, you `npm run bump`, you
