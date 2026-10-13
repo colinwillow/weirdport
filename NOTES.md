@@ -7,6 +7,17 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE HOLLOWAY IS SUNK BY ITS BANKS, NOT DUG (m290, ROADMAP B1c, `LANE`, `buildLane`, `banks()`).**
+  The island's ground is one ray-grown mesh whose floors live in `TRI`/`SURF`; a trench would be a rebuild of the coast.
+  So the lane stays at field level between 1.9 m earth banks (inner half a walkable path, outer half a hedge collider
+  with icosahedron clumps drawn over it), and the creek runs between 1.25 m stone-faced banks with a water ribbon at
+  ground + .1. **Bank side is by NORMAL, not by v**: the lane runs toward -u, so `sd = +1` is the town side; the first
+  version opened gaps by an absolute v, which would have opened both banks the moment `laneOut` pushed the lane outward.
+  `laneOut` walks every lane point out (+v) until its town bank is 3 m clear of `ISLE.rect` -- the farm frame is skewed
+  off its ray, so the city edge is not at one v. The creek's source is walked out the same way. The ford is where the
+  creek meets the lane (both bank pairs skipped by distance from it); the footbridge is a deck at bank-top height on the
+  town-side bank line, spanning the ford, with railing colliders. One `farmFrame` commit (tag `lane`). Chip `LN<boxes>`.
+
 - **A NEW GAME WAKES AT THE WRECK, AND THE MOVE HAPPENS AFTER `kitPopulate` (m289, ROADMAP B1b, `CRASH`, `buildCrash`, `crashSpawn`, `farmFrame`).**
   `kitPopulate` drops the crowd round `player.pos` and puts Clancy beside it, so moving the player first would have moved
   Old Town's people onto the farm. `crashSpawn` runs right after it (crowd stays in town), overwrites `CLANCY.at` with

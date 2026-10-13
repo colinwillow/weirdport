@@ -65,7 +65,7 @@ differ" table there, so no region feels like the last one.
   wander. The crash site: a wreck, smoke, Clancy inside.
   - [x] m288 **B1a The farmyard** — barn on a plinth, hay-bale stair to the hayloft, loft door over a hay stack, lean-to whose roof you reach off crates, walkable barn roof, silo, split-rail paddock, round bales, trough.
   - [x] m289 **B1b The crash site** — the wreck, scorched ground, smoke, Clancy inside; where Chapter 0 starts.
-  - [ ] **B1c The sunken lane and the creek** — a lane cut below the fields between hedges, a creek with a footbridge.
+  - [x] m290 **B1c The sunken lane and the creek** — a lane cut below the fields between hedges, a creek with a footbridge.
   - [ ] **B1d The road and the bridge, and the cows** — the road climbing from the farm to a bridge into town; cows that moo and wander.
   - [ ] **B1e From REGIONS.md's Gristle Farm entry, not in m288** — a rope down from the hayloft, the silo ladder made climbable, an orchard terrace, and cows that panic and stampede (its signature system).
 - [ ] **B2 Chapter 0 script.** Crash → find Clancy → the farmer sees you and panics → knock him
@@ -185,3 +185,10 @@ differ" table there, so no region feels like the last one.
   dark smoke, a purple scorch down the furrow, and you can climb onto it off the berm. The demo
   gates and portals from m285/m286 are placed round wherever you spawn, so on a new game they're
   at the farm.
+- **m290 (B1c):** the lane is "sunken" by its **banks** (1.9 m earth banks with hedges on top)
+  rather than by digging into the island's ground, which would mean rebuilding the coastline. You
+  can walk along the bank tops above the lane. The creek runs out of a culvert at the city edge down
+  to the beach in a stone-sided gully; it **fords** the lane, and a footbridge carries the bank-top
+  path over the ford. Openings in the bank at the barn doors and toward the crash field.
+  `mel.lane()` / `mel.lane(1)` (the ford). The water is a plain glossy strip for now, not the
+  island's sea shader.
