@@ -67,7 +67,7 @@ differ" table there, so no region feels like the last one.
   - [x] m289 **B1b The crash site** — the wreck, scorched ground, smoke, Clancy inside; where Chapter 0 starts.
   - [x] m290 **B1c The sunken lane and the creek** — a lane cut below the fields between hedges, a creek with a footbridge.
   - [x] m291 **B1d The road and the bridge** — the road climbing from the farm to a bridge into town (split: the cows are B1d2).
-  - [ ] **B1d2 The cows** — cows that moo and wander the farm.
+  - [x] m292 **B1d2 The cows** — cows that moo and wander the farm.
   - [ ] **B1e From REGIONS.md's Gristle Farm entry, not in m288** — a rope down from the hayloft, the silo ladder made climbable, an orchard terrace, and cows that panic and stampede (its signature system).
 - [ ] **B2 Chapter 0 script.** Crash → find Clancy → the farmer sees you and panics → knock him
   down → take his sample → walk to the bridge as him → the cop checkpoint lets the farmer through
@@ -201,3 +201,9 @@ differ" table there, so no region feels like the last one.
   the side past the crash field doesn't have 30 m of grass, the whole thing mirrors to the far side
   of the farm. **The farm isn't sealed yet**: you can still walk round the island ring into town the
   long way; B2 decides whether to close that off. `mel.bridge()` puts you on the deck.
+- **m292 (B1d2):** six greybox **box cows** (Holstein, Hereford, Angus, Jersey coats) until you
+  make real ones: three in the paddock behind the barn, three in the field by the crash. They graze
+  head-down, look about, wander, come into the sunken lane through its openings, block you, and
+  shy away at a trot if you run past close. **The moo is synthesized** (no cow sound in the repo):
+  if it sounds wrong, a recording in `audio/` would replace it in one line. `mel.moo()` makes the
+  nearest one moo. They're white dots on the minimap. Panic/stampede is B1e.

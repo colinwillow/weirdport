@@ -7,6 +7,23 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE HERD IS ONE `InstancedMesh` OF ONE UNIT BOX, AND THE MOO IS A SYNTH (m292, ROADMAP B1d2, `COW`, `COWS`, `cowStep`, `cowDraw`, `mooAt`).**
+  Sixteen instances a cow (body, udder, three coat bands, four legs, tail, head, muzzle, two ears, two horns), each matrix
+  `root * T(pivot) * Ry * Rx * Rz * T(centre) * S(size)` composed per frame in `cowPut`; colours set once with
+  `setColorAt`. One draw call for six cows; `frustumCulled = false` because an InstancedMesh's bounding sphere is its
+  geometry's, not its instances'. A patchless coat draws its bands at scale 0 (degenerate, no fragments).
+  The head pivot is the neck: positive `Rx` tips the forward end DOWN (Rx maps z to `(0, -sin a, cos a)`), and grazing
+  also lowers the neck .35 m -- worked through by hand, the muzzle lands .1-.3 m over the grass at pitch 1.05.
+  Brains: graze / look / walk / trot. A spot is clear by `cowClear` (grass above sea + .5, outside `ISLE.rect` + 2,
+  outside the river channel via the bridge's inverse frame, and a 1.1 m `resolveBoxes` probe touching nothing) -- so every
+  wall, fence, hedgebank and levee is already a fence for them. Walking pushes through `resolveBoxes` at r .75 and climbs
+  only `COW.step` .32, so the bale stair and the banks stop them; boxes under `MOVE.step` (furrow berms) are walked
+  through, a known clip. **`cowStep` runs after `gatePush`, before the camera**, because it shoves the player (two circles
+  along the body). The moo (`mooAt`): two saws +-7 cents and a square sub an octave down, lowpass 260 -> 980 -> 620 ->
+  280 Hz x k, a +7 dB peak at 520 x k, pitch .82 -> 1.06 -> .98 -> .72 of `f0` 112 x k, 5.2 Hz vibrato; faded with
+  `smooth(mooFull, mooOut, d)` like `snd`, panned by the camera's world-matrix right vector; counts one `SFX.voices`.
+  Chip `COW6m<moos>s<startles>`; `m0` for a minute next to them means no audio context yet (nothing has been touched).
+
 - **THE BRIDGE BROUGHT ITS OWN RIVER, AND THE RAMPS ARE UNTURNED BOXES (m291, ROADMAP B1d, `BRIDGE`, `buildBridge`, `riverStep`).**
   The island has no river, so the farm gets one: two stone levees (3 m) from an outfall headwall at the city's edge to the
   beach, water ribbon between, and `riverStep` -- inverse farm frame (`u = dx C - dz S`, `v = dx S + dz C`, times the
