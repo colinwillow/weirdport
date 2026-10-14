@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m356</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m357</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m356</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m357</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm356';
+const BUILD = 'm357';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28002,6 +28002,11 @@ const QUESTS = [
   { id: 'qorb', title: 'SOMETHING HUMMING', dormant: 1, world: 'tkit', steps: [
     { type: 'flag', flag: 'orb:pacifier', text: 'Shoot down the orb over the south side', tip: 'Point the camera at it: the shot finds it. Three hits.' },
   ] },
+  // m357 (C4-2): Skye's, once he has told you how
+  { id: 'qglide', title: 'THE LOOKOUT', world: 'tkit', from: 'mk_lookout_skye', steps: [
+    { type: 'sample', kind: 'jack', text: "Take Skye's sample -- he is lying down for you", tip: 'Stand over him while he is down and HOLD the right pad.' },
+    { type: 'flag', flag: 'glided', text: 'Off the ramp: run, jump, and double tap the right pad. Stay up five seconds.', tip: 'The wing opens on the second tap. Push the left pad to climb, pull to dive.' },
+  ] },
   // m352 (C2b-3): the first time you come near the amplifier
   { id: 'qamp', title: 'STIRRING IT UP', dormant: 1, world: 'tkit', steps: [
     { type: 'flag', flag: 'orb:amp', text: 'Shoot down the red orb over the square', tip: 'It rides out over the march. Point the camera at it to shoot it.' },
@@ -30064,6 +30069,88 @@ function cyborgStep(dt) {
     else { heatAdd(1, 'uplift'); cardShow('UPLIFT HAS LOGGED YOU', 'THEY CALLED IT IN', 2.6); }
     snd('zap', { g: .3, r: .55, dur: .5, x: d.root.position.x, z: d.root.position.z });
   }
+}
+// ============================================================================================
+// THE LOOKOUT (m357, ROADMAP C4-2, `OLOOK`, `buildLookout`, `lookoutStep`)
+// ============================================================================================
+// REGIONS: "the hang-glider guy's lookout". On Old Town's ring by the water (+z side, between two of the ring's houses),
+// a timber tower 16 m up: four posts, three platforms, a ladder up through a hatch in each (they alternate sides so the
+// climb winds), railings, a canopy and a windsock on top, and a LAUNCH RAMP running out over the beach toward the sea.
+// SKYE, the hang-glider guy (the roster's `glider` role: Jack with an orange helmet), lives on the top platform with his
+// glider parked against the rail. Talk to him and he lies down for you ("go on, take a sample, it doesn't hurt"); THE
+// LOOKOUT is the task: his sample, then off the ramp and five seconds in the air as him.
+const OLOOK = {
+  on: 1, deg: 112, sf: .62, n: 0, L: [5.5, 11, 16], hw: 1.9,
+  why: "Old Town's ring on the +z side, between two of its houses, looking out to sea: room to run and jump",
+  lines: "Up here's the only place in Old Town nobody tells you what to do.|You wanna fly? You gotta be me. Long story. Don't ask.|Go on, take a sample. I'll lie down. It doesn't hurt. Much.|Then off the ramp, jump, and tap twice. Trust the sail.",
+  glideT: 0, offerT: 0,
+};
+function buildLookout() {
+  const O = OLOOK, I = ISLE, R = I.rect; if (!O.on || !inTK() || !I.rays || !R) return 0;
+  const th = O.deg * Math.PI / 180, ray = isleRayAt(th), cx = (R[0] + R[1]) / 2, cz = (R[2] + R[3]) / 2;
+  const d0 = ray.rb + Math.max(4, ray.gw * O.sf), Ox = cx + ray.dx * d0, Oz = cz + ray.dz * d0, thf = Math.atan2(ray.dx, ray.dz);   // +v out to sea
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .85 }), o || {});
+  const MAT = { wood: M(0x7a5232), deck: M(0x8c6a48), dark: M(0x3a2c22), rope: M(0xc8b48a), tarp: M(0xc8662c), orange: M(0xff7a1a), steel: Object.assign(M(0x9aa3a8), { metalness: .5, roughness: .4 }) };
+  const F = farmFrame(Ox, Oz, thf, MAT, 'lookout'), { bx, geo, gnd, wx, wz } = F;
+  const g0 = Math.max(...[[-1, -1], [1, -1], [-1, 1], [1, 1]].map(([a, b]) => gnd(a * O.hw, b * O.hw))), hw = O.hw;
+  const Ls = O.L.map(h => g0 + h), top = Ls[2];
+  // the posts (each down to its own ground) and the cross braces on every face
+  for (const [a, b] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) bx(a * hw, b * hw, gnd(a * hw, b * hw) - .4, top + 2.6, .26, .26, 'wood');
+  for (let k = 0; k < 3; k++) { const y0 = k ? Ls[k - 1] : g0, y1 = Ls[k], L = Math.hypot(2 * hw, y1 - y0), a = Math.atan2(2 * hw, y1 - y0);
+    for (const s of [-1, 1]) { geo(new THREE.BoxGeometry(.1, L, .1), 'wood', s * hw, (y0 + y1) / 2, 0, Math.PI / 2, (k % 2 ? 1 : -1) * a, 0); geo(new THREE.BoxGeometry(.1, L, .1), 'wood', 0, (y0 + y1) / 2, s * hw, 0, 0, (k % 2 ? 1 : -1) * a); } }
+  // the platforms, each with a hatch over the ladder that comes up to it; the ladders alternate sides (u -1.1, +1.1, -1.1)
+  const lu = k => (k % 2 ? 1.1 : -1.1), lv = -hw + .35;
+  Ls.forEach((y, k) => {
+    const hu = lu(k), hv0 = -hw, hv1 = -hw + 1.05;                            // the hatch: u hu +-.55, v -hw .. -hw+1.05
+    bx(0, (hv1 + hw) / 2, y - .22, y, 2 * hw + .1, hw - hv1 + .05, 'deck');                                   // the main deck
+    bx((hu - .55 - hw) / 2, (hv0 + hv1) / 2, y - .22, y, hu - .55 + hw, hv1 - hv0, 'deck');                  // either side of the hatch
+    bx((hu + .55 + hw) / 2, (hv0 + hv1) / 2, y - .22, y, hw - hu - .55, hv1 - hv0, 'deck');
+    // railings (a collider each, picture popped, then the rails you see) -- on top, the sea side is the ramp
+    const sides = [[0, -hw - .05, 2 * hw, .08], [-hw - .05, 0, .08, 2 * hw], [hw + .05, 0, .08, 2 * hw]];
+    if (k < 2) sides.push([0, hw + .05, 2 * hw, .08]); else { sides.push([-hw + .45, hw + .05, .9, .08]); sides.push([hw - .45, hw + .05, .9, .08]); }
+    for (const [u, v, w, d] of sides) { bx(u, v, y, y + 1.05, w, d, 'wood'); F.parts.wood.pop(); bx(u, v, y + .98, y + 1.06, w, d, 'wood', 0, false); bx(u, v, y + .5, y + .55, w, d, 'rope', 0, false); }
+    // the ladder up to this deck: rails and rungs, and the climb, the top setting him down beside the hatch
+    const yb = k ? Ls[k - 1] : g0, u = lu(k);
+    for (const s of [-1, 1]) bx(u + s * .25, lv - .05, yb, y + 1.0, .06, .06, 'dark', 0, false);
+    for (let r = 0, n = Math.floor((y - yb) / .32); r < n; r++) bx(u, lv - .05, yb + .3 + r * .32, yb + .34 + r * .32, .5, .05, 'dark', 0, false);
+    farmClimb(F, u, lv + .05, .3, .25, yb, y, [u, y + .02, -hw + 1.6], 'lookout_ladder_' + k, 1);
+  });
+  // the canopy and the windsock on top
+  for (const [a, b] of [[-1, -1], [1, -1]]) bx(a * hw * .9, b * hw * .9, top, top + 2.5, .1, .1, 'wood', 0, false);
+  geo(new THREE.BoxGeometry(2 * hw + .4, .06, 2.4), 'tarp', 0, top + 2.45, -hw + 1.0, 0, -.18, 0);
+  bx(hw, hw, top, top + 4.2, .07, .07, 'steel', 0, false);
+  geo(new THREE.ConeGeometry(.22, 1.2, 10, 1, true).rotateZ(Math.PI / 2), 'orange', hw + .6, top + 4.0, hw);
+  // THE RAMP: out over the edge to sea, falling .5 m over 4.4 m, no rails (a rail is what trips a run-up)
+  for (let i = 0; i < 4; i++) { const v0 = hw + i * 1.1, yy = top - i * .13; bx(0, v0 + .55, yy - .2, yy, 1.8, 1.12, 'deck'); }
+  for (let i = 0; i < 3; i++) bx(0, hw + 1 + i * 1.3, gnd(0, hw + 1 + i * 1.3) - .3, top - .2 - i * .15, .14, .14, 'wood', 0, false);   // its legs
+  // his glider, parked nose-up against the land-side rail
+  { const pos = [0, 1.8, 0, 4.6, -1.0, .15, 0, -1.4, -.05, 0, 1.8, 0, 0, -1.4, -.05, -4.6, -1.0, .15];
+    const sg = new THREE.BufferGeometry(); sg.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); sg.computeVertexNormals();
+    const sail = new THREE.Mesh(sg, new THREE.MeshStandardMaterial({ color: 0xffa13a, roughness: .6, side: THREE.DoubleSide }));
+    sail.scale.setScalar(.55); sail.position.set(wx(.3, -hw + .5), top + 1.2, wz(.3, -hw + .5)); sail.rotation.set(-.35, thf, 0, 'YXZ'); scene.add(sail); O.sail = sail; }
+  O.n = F.commit().boxes;
+  O.topAt = [wx(0, .3), top + .1, wz(0, .3), thf];
+  O.footAt = [wx(-1.1, -hw - 2.5), g0 + .1, wz(-1.1, -hw - 2.5), thf];
+  O.ramp = [wx(0, hw + 4.4), wz(0, hw + 4.4)];
+  O.top = top; O.g0 = g0;
+  // SKYE, on top, pacing the deck
+  const sx = wx(.6, .9), sz = wz(.6, .9);
+  peopleMark('lookout_skye', sx, sz, thf, { role: 'glider', name: 'Skye', group: 'folk', talks: ['*'], alien: 'talk', lines: O.lines,
+    beat: [[sx, sz], [wx(-.7, .5), wz(-.7, .5)]] }, top, 'LOOKOUT', 'folk');
+  return O.n;
+}
+// he lies down for you, once you have heard him out, while you have not got his form; your five seconds in the air
+function lookoutStep(dt) {
+  const O = OLOOK; if (!O.topAt || !inTK()) return;
+  const P = player.pos;
+  if (SAVE.flags['talk:mk_lookout_skye'] && !SAVE.forms.includes(mphFold(rosterOf('glider').stem)) && (O.offerT -= dt) <= 0) {
+    O.offerT = 1;
+    const d = DUMMIES.find(q => q.markId === 'lookout_skye' && !q.gone);
+    if (d && d.st !== 'down' && d.st !== 'up' && Math.hypot(d.root.position.x - P.x, d.root.position.z - P.z) < 4) {
+      bodyLaunch(d, (d.h || 0) + Math.PI, .4, .6); O.offerT = 18; toast('Skye lies down. "Go on, then."', 1.8); }
+  }
+  if (gliderOn() && player.wing) { if ((O.glideT += dt) > 5 && progFlag('glided')) cardShow('YOU FLEW', 'AS SKYE, OFF THE LOOKOUT', 3); }
+  else O.glideT = 0;
 }
 // ============================================================================================
 // PORTALS (m286, ROADMAP A8b) -- no one-way trips
@@ -32279,6 +32366,7 @@ function buildCityRing() {
     if (Math.abs(((deg - FARMLAND.bearing * 180 / Math.PI + 540) % 360) - 180) < 5) continue;
     if (Math.abs(((deg - FTRES.landDeg + 540) % 360) - 180) < 5) continue;       // nor on the old trestle's (m319)
     if (FOOT.deg !== null && Math.abs(((deg - FOOT.deg + 540) % 360) - 180) < 6) continue;   // nor the footbridge's (m341)
+    if (OLOOK.topAt && Math.abs(((deg - OLOOK.deg + 540) % 360) - 180) < 5) continue;         // nor the lookout's (m357)
     const P = at(deg, .06 + rr() * .1);
     if (farmTree(F, rr, ico0, P.x, P.z, .75 + rr() * .5, rr() < .2 ? 'willow' : 'oak')) FR.trees++;
   }
@@ -34969,6 +35057,8 @@ const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
   { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
+  { id: 'lookout', world: 'tkit', name: "OLD TOWN · the lookout, on top (Skye and his glider)", at: () => OLOOK.topAt },
+  { id: 'lookfoot', world: 'tkit', name: 'OLD TOWN · the foot of the lookout (the first ladder)', at: () => OLOOK.footAt },
   { id: 'uplift', world: 'tkit', name: "OLD TOWN · Uplift's survey crew (the cyborgs' first stop)", at: () => { const M = MARKS.find(m => m.id === 'uplift_1'); return M && [M.x, M.y + .1, M.z, null]; } },
   { id: 'amp', world: 'tkit', name: 'OLD TOWN · under the amplifier (over the square)', at: () => OAMP.godAt },
   { id: 'watcher', world: 'tkit', name: 'OLD TOWN · under the watcher (the east side)', at: () => OWATCH.godAt },
@@ -36708,6 +36798,7 @@ function frameBody() {
   orbStep(dt);                  // the pacifier orb: its trance, its crackle, its fall (m350)
   smartStep(dt);                // smart objects: people use the furniture (m354)
   cyborgStep(dt);               // Uplift's cyborgs: fearless, scanning, logging you (m355)
+  lookoutStep(dt);              // Skye lies down for you; your five seconds in the air (m357)
   watchStep(dt);                // the watcher: its searchlight, the aliens' alert, its call (m351)
   ampStep(dt);                  // the amplifier: over the crowd, feeding it (m352)                // the wreck burns and smokes; reaching town once moves the start (m289)
   crashHeroStep(dt);            // ...and pulses, arcs, hums, and stands a beam over the farm (m300)
@@ -37446,6 +37537,8 @@ async function init() {
     try { buildAmp(); } catch (e) { note('AMP FAIL'); console.warn('[melee] amplifier', e); }
     // UPLIFT'S SURVEY CREW (m355): two cyborgs on a loop of the east and south streets
     try { buildUplift(); } catch (e) { note('UPLIFT FAIL'); console.warn('[melee] uplift', e); }
+    // THE LOOKOUT (m357): on the ring, before the city ring's trees (which keep off its bearing)
+    try { buildLookout(); } catch (e) { note('LOOKOUT FAIL'); console.warn('[melee] lookout', e); }
     // THE FOOTBRIDGE TO THE PEARL (m341): before the city ring, which keeps its trees off the bridge's bearing
     try { buildFootbridge(); } catch (e) { note('FOOTBRIDGE FAIL'); console.warn('[melee] footbridge', e); }
     // THE LOOK FOLLOWS OLD TOWN'S HEALTH (m344): boards, rubble, litter -- after every Old Town builder, over the street
@@ -37626,7 +37719,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

@@ -7,6 +7,20 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE LOOKOUT: A TOWER WHOSE LADDERS COME UP THROUGH HATCHES, AND SKYE ON TOP (m357, C4-2, `OLOOK`, `buildLookout`,
+  `lookoutStep`, quest `qglide`).** On Old Town's ring at bearing 112 deg (+z side, between two ring houses; the ring's trees
+  keep 5 deg off it), a timber tower: four posts, cross braces, decks at 5.5 / 11 / 16 m, a canopy, a windsock, his parked
+  glider, and a LAUNCH RAMP running 4.4 m out toward the sea, falling .5 m, no rails. **A ladder outside a platform cannot
+  be latched from the platform below** (the climb wants you IN FRONT of it, which out there is thin air), so each ladder
+  stands INSIDE the footprint, front to the tower's middle, and comes up through a hatch in the deck above, its top
+  setting you down beside the hatch; they alternate sides (u -1.1, +1.1, -1.1) so the climb winds. SKYE (the roster's
+  `glider` role) paces the top deck; heard out, he lies down beside you (`bodyLaunch`, soft) every 18 s while you lack
+  his form, and THE LOOKOUT asks for his sample, then five seconds in the air as him (`glided`). `places`: `ok  LOOKOUT 30
+  boxes | top deck 15.54 over ground -0.46 | ladders 3 tops (floor - mark) [-0.02,-0.02,-0.02] | Skye glider -> jack.glb at y
+  15.5`, `ok  lookout -> player -44.7,15.8,107.7`, exit 0 -- and the QUESTS row now accepts a mark that names a ROLE of a
+  step's kind (it said "NOBODY OF KIND jack" about Skye). `npm run shot lookdown` (from above: the city's tall edge
+  buildings loom beside it; the ramp points out over the beach).
+
 - **THE GLIDER'S FORM FLIES HER FLIGHT UNDER A HANG GLIDER (m356, C4-1, `gliderOn`, `wingOk`, `wingGlider`).** `wingOk`
   was `WING.on && bladeOn()` -- Rollergirl only. It is `bladeOn() || gliderOn()` now, `gliderOn` being the form you wear,
   settled (`!mphSt`), named as the ROSTER's `glider` stem (Jack, standing in -- his model is one roster line). Nothing else

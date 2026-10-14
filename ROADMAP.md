@@ -267,9 +267,9 @@ differ" table there, so no region feels like the last one.
   with no code change. Start in Old Town.
 - [x] m355 **C3 Uplift cyborgs.** A cyborg variant of a worker (placeholder tint/parts until his models
   land) with its own behaviour.
-- [ ] **C4 The glider.** The hang-glider guy at a lookout; his form flies (reuse her wingsuit flight).
+- [x] m357 **C4 The glider.** The hang-glider guy at a lookout; his form flies (reuse her wingsuit flight).
   - [x] m356 **C4-1** his form flies: her wingsuit flight (double tap the right pad) under a hang glider instead of her wings; the gap gate wants his form.
-  - [ ] **C4-2** the lookout: a tower on Old Town's ring over the water, the glider guy on top with his glider, and a task to take his form and fly.
+  - [x] m357 **C4-2** the lookout: a tower on Old Town's ring over the water, the glider guy on top with his glider, and a task to take his form and fly.
 - [ ] **C5 Hidden good aliens.** A network of disguised shopkeepers who give tips and upgrades.
 - [ ] **C6 Chapter 2 greybox (The Pearl)** with its quests and boss — then 3, 4…
 
@@ -860,3 +860,10 @@ differ" table there, so no region feels like the last one.
   panels he hangs under an orange and yellow hang glider. The "gap" gate needed a form called
   "glider" that doesn't exist, so nothing could ever cross a gap; it now needs his form. The lookout
   and the glider guy himself come next.
+
+- **m357 (C4-2):** the lookout is a 16 m timber tower on Old Town's grassy ring, facing the sea. It
+  has three platforms with ladders that zigzag up through hatches, a canopy, a windsock and a launch
+  ramp. Skye, the hang-glider guy, lives on top. Talk to him and he lies down so you can take his
+  sample. The task THE LOOKOUT is: take his form, run off the ramp, double tap, and stay up five
+  seconds. REGIONS puts his real lookout in the River Islands; this one is in Old Town so his form can
+  be had now.
