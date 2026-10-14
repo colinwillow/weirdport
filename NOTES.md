@@ -7,6 +7,43 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FOG CULL FOR EVERYTHING, AND F0a CLOSED WITH ITS OVERS STATED (m428, F0a-2i, `perfRegFog`, `perfFogged`,
+  `PERF.fogCull`, `TDRESS`'s sphere, `cellOf` in `buildWP`).** The pass opened by counting draws AND triangles per family
+  (a scratch hook on `renderBufferDirect`, `gr.count / 3` per group, x `count` for an instanced set), which `--who` does not:
+      toon spawn     346 DC: 82 are the 31 bodies (37 of those SHADOW depth draws -- all 31 stand within `shadowFar` of the
+                     spawn, at test-site coordinates); the city alone is 264. Nothing there is past the fog.
+      weirdport      1,393 kT: the instanced trees 435 kT (`wpinst_inst_tree_a` 258), the cars 269, the 42 bodies ~600, the
+                     `vis_*` merges ~150. An InstancedMesh draws EVERY instance whenever its sphere is in view.
+      oldtown        590 DC / 1,758 kT: 74 bodies drawn = 102 draws and ~800 kT; `?Mesh` 76 draws / 214 kT; `far:farm` 2 draws
+                     for 140 kT (a far copy is the same triangles); `field_crops` 10 / 121; `farm_batch` 46 / 91 (m423: stays).
+  **THE 76 UNNAMED DRAWS AT OLD TOWN, LISTED WITH POSITIONS**: 13 turf-dressing instanced sets (x240, 12 tris, `frustumCulled
+  = false` because their instances start at scale 0 and a computed sphere would be a point); 20 boxes of a stilt house at
+  (-205, 15, 355), **415 m from the lens**, and a x4 set at 432 m; the beacons' rings and cones (`MeshBasicMaterial`, 216 and
+  448 tris, in pairs) at 312-431 m; the rest instanced sets at identity, two merges, the particle pools. **THE LENS DRAWS TO
+  400 m (470 WITH THE FARMLAND'S LONG VIEW, `camera.far = fog.far + 150`) AND THE FOG ENDS AT 320**: `cellStep` culls past
+  the fog, but only what a builder registered, so everything else in that band is drawn in pure fog colour.
+  `perfRegFog()` runs after `perfRegSmall` in `init`: every plain Mesh (not instanced, batched, skinned, a sprite, a body, the
+  rig, a collider, or already on `CELL.list`) **that opted INTO frustum culling** goes on the list by layer with no `ownFar`,
+  so the fog's own far (+`CELL.pad`) is its distance. The sphere it is culled by is the one three already uses to draw it,
+  so it is right by construction; a thing with `frustumCulled = false` (41 sites: bone-ridden parts, world-space buffers,
+  shader-moved water, the instanced fleets) has told us its sphere means nothing and is left alone. 198 things in the kit
+  city (`c` in the chip: 2,282 -> 2,480).
+  **AND A MATERIAL WHOSE FOG IS OFF IS A STATEMENT.** `fog: false` is how the beacons' rings, cones and beams (30398-30864),
+  the Mothership's hull and glow (35192) and the clouds (35188) say they are meant to be seen ACROSS the map -- the first
+  cut would have hidden every beacon past 330 m. `perfFogged(o)` guards BOTH culls now; **m418's small cull had been
+  taking the beacons' 1 m rings past 220 m since it shipped**, which is the same bug one size down.
+  **THE DRESSING'S SPHERE IS ITS PLACEMENTS'**: the base matrices never move (only `_tdK`'s scale animates), so the centre
+  is their mean and the radius their spread plus the piece's own, computed once; `frustumCulled` is back on and the set is
+  registered. 13 draws from everywhere -> 0 wherever the island is out of the frustum or past the fog.
+  **WEIRDPORT'S INSTANCED SETS BY 48 m CELL** (`cellOf(o)` in the key, `cellReg(im)`), the toon city's own m157 key: the
+  half of a tree pack behind the lens is culled. 20 instanced draws -> 60ish, 1,474 kT -> **992**, inside.
+  `npm run worlds` (five worlds): tkit oldtown **589 DC / 1,565 kT** (was 641 noisy / 1,740), islanding 318 (350), camp
+  221 / 1,007, hctrail 246 / 1,260, wfstacks 261 / 1,375, isneedle 267 / 1,482, spawn 55; textures 170 MB, geometry 170 MB;
+  toon 351 DC at the spawn (unchanged, nothing there is past the fog); kit inside; **weirdport 215 DC / 992 kT, inside**;
+  test inside. Exit 1 (tkit, toon). **F0a IS CLOSED WITH THOSE OVERS STATED** (ROADMAP Decision m428): the crowd is about
+  half the triangles in town and there is no low-poly rig; the far copies are full copies; the toon spawn's 351 is its
+  clumped crowd. The budget stays and the tool still exits 1 on it -- the record stays honest -- and the phone's frame time
+  decides what comes next. **DO NOT re-register a `frustumCulled = false` thing, and DO NOT cull a `fog: false` material.**
 - **THE SKY ON KTX2, AND THE HUE READ OFF THE GPU (m427 -- the bump ran twice this pass, the commit says m426; F0a-2d-3, `skyLoad`, `hueReadGPU`, `measureHue`).** `scene.background`
   is the equirect itself (three draws it through its own sampler every frame), so the 8 MB PNG was resident for the sky,
   not only for the PMREM. The twin (`images/hdri_game.ktx2`, UASTC with mips, 1774 x 887) is the GPU texture;
