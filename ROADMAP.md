@@ -36,7 +36,7 @@ What to build (several builds; ship each step, never wait):
 3. **Fields that follow the land**: irregular patches of wheat, corn, ploughed earth, hay meadow and
    pasture, divided by hedgerows, fences, tree lines and dirt tracks. Nothing square to the world grid.
    **— m308: the plan (20 named fields), the patchwork on the ground, hedges/fences/tree lines, four
-   tracks.** Split: **3b** the crops standing on the new fields (instanced, chunked, faded) is next.
+   tracks.** Split: **3b** the crops standing on the new fields (instanced, chunked, faded) **— done m309.**
 4. **Spread the existing pieces out into clusters** (reuse m288-m304, do not throw them away): the
    farmhouse and yard, the barn and silo, sheds and coop, a neighbour's farm on another ridge, a lone hay
    barn. **The crash site far out in a field**, a long gouge through the wheat, the crop circle near it.
@@ -484,4 +484,8 @@ differ" table there, so no region feels like the last one.
   the creek ford to the big wheat, and round the pond up the west hill. The crops themselves don't
   stand on the new fields yet; that's next (3b). Each field is one row in `FPLAN.FIELDS` if you want
   a different crop somewhere.
+- **m309 (farm rebuild, step 3b):** the crops now stand in the new fields (wheat, corn, hay, stubble,
+  pasture grass), about 38,000 clumps. They shrink away past 110 to 160 m and whole patches stop
+  drawing beyond that, so only the fields near you cost anything; the coloured ground carries the
+  patchwork in the distance. If the fade is too close or too far, it's `mel.FCROP.fade`.
 

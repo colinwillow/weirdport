@@ -7,6 +7,79 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE CROPS STAND ON THE FIELDS, AND DISTANCE FADES THEM (m309, step 3b, `FCROP`, `buildFieldCrops`, the flora shader's `uFlC`/`uFlFd`).**
+  38,282 clumps in 21 chunks (100 m squares in (a, b), one instanced draw each), from `FPLAN`'s owner lattice: per crop
+  a jittered grid at `gap` (wheat 1.0, corn 1.15, hay 1.25, stubble 1.6, pasture 2.4 -- WIDER clumps, sparser, over a
+  ground already tinted its colour), each kept 2 m off its field's edge by checking the lattice four ways (the hedges,
+  fences and trees stand on the edge -- no `resolveBoxes` per plant), heights off `flHeightAt` (the land's own
+  function, not a collider query). Ploughed fields and reserves grow nothing.
+  **DISTANCE FADES THE SMALL STUFF (STEER step 7)**: the flora vertex shader shrinks a clump into its root between
+  `fade[0]` 110 and `fade[1]` 160 m from the LENS (`uFlC`), and `floraStep` hides a chunk whose sphere is past
+  `fade[1]` -- a clump shrunk to nothing still costs its vertices, a hidden chunk costs nothing. The yard's m297 flora
+  shares the material, so it fades the same way. `mvPosition` is now declared inside both `USE_INSTANCING` branches
+  (the fade needs the instance's position before the matrix multiplies it).
+  Chip: `c<k clumps><chunks shown>/<chunks>` on the `FL` token.
+  `npm run places`, after the bump:
+  ```
+  ok   buildFarmland
+  ok   buildFarmWaters
+  ok   buildFieldBounds
+  ok   buildFieldCrops
+  ok   buildFarm
+  ok   buildFarmProps
+  ok   buildCrash
+  ok   crashHero
+  ok   buildLane
+  ok   buildBridge
+  ok   buildHedgerows
+  ok   buildFarmhouse
+  ok   buildRoadside
+  ok   buildCows
+  ok   buildGroundPaint
+  ok   buildFlora
+  widest grass 66.5 at 172deg | headland ray 7deg grass 38.2 need 60 | rays 520 rect [-93.5,90.5,-90.3,93.5]
+  FARM.at {"x":333.8,"z":150.5,"th":1.281} | CRASH.at yes | LANE.at yes | BRIDGE.gate yes (side 0) | ISLE.live 1
+  FARMLAND live [ 354, 196 ] chunks 9 floor tris 12344 water tris 8346 | BRIDGE len 166 piers 5 gate [112,64]
+  FWATER 7 boxes, reeds 31 | pond level 0.1 | creek bed [ 5.19, -8.5 ] len 255
+  FPLAN 1367 boxes: hedge 333 fence 303 hedge oaks 86 tree line 9 | m2: margins 68.2k yard 14.7k town_edge 2.7k, south_wheat 6.1k, south_plough 4.7k, pond_pasture 2.4k, west_corn 4.6k, west_hay 4.3k, west_hill 7.1k, lone_barn_hay 5.9k, north_plough 4.1k, far_hill 4.6k, north_wheat 3.2k, ridge_corn 2.7k, neighbour 6.6k, ridge_pasture 5.7k, creek_meadow 4.9k, crash_wheat 6.3k, east_corn 2.2k, far_east_hay 2.5k, east_pasture 5.2k, knoll 5.6k
+  FCROP 38282 clumps in 21 chunks {"south_wheat":5263,"pond_pasture":335,"west_corn":3110,"west_hay":2350,"west_hill":4144,"lone_barn_hay":3444,"far_hill":722,"north_wheat":2510,"ridge_corn":1621,"ridge_pasture":898,"creek_meadow":2775,"crash_wheat":5545,"east_corn":1421,"far_east_hay":1370,"east_pasture":814,"knoll":1960}
+  FROAD 3 road pts NONE foot null | FHOUSE 24 chimney [350.6,11.4,135.7] | HROW 143 boxes 22 trees 4 gates | FLORA {"corn_by_the_crash":275,"wheat_to_the_shore":2188,"hay_meadow":1290,"crash_stubble":1114,"potato_rows":1292,"river_meadow":629,"copse_ferns":1101,"tufts":900}
+  notes ["TC NO OBB JSON","ISLE 0/3 TEX"]
+  ok  oldtown    -> player 0.0,0.1,0.0 ground 0.00 
+  ok  overlook   -> player 464.3,9.1,68.0 ground 8.99 
+  ok  swell      -> player 294.5,0.7,343.3 ground 0.50 
+  ok  fplough    -> player 429.9,2.2,166.6 ground 2.05 
+  ok  creek      -> player 306.6,1.5,245.6 ground 1.35 
+  ok  pond       -> player 363.6,1.5,63.8 ground 1.36 
+  ok  channel    -> player 241.6,0.5,134.3 ground 0.34 
+  ok  farmyard   -> player 320.1,1.5,152.7 ground 1.32 
+  ok  hayloft    -> player 333.7,4.7,156.8 ground 9.00 
+  ok  crash      -> player 341.3,1.5,118.3 ground 1.38 
+  ok  corn       -> player 329.2,1.5,134.5 ground 1.34 
+  ok  wheat      -> player 350.0,1.6,162.7 ground 1.46 
+  ok  farmhouse  -> player 340.8,1.6,136.8 ground 1.41 
+  ok  meadow     -> player 367.4,1.6,150.9 ground 1.46 
+  ok  plough     -> player 318.7,1.5,183.6 ground 1.30 
+  ok  copse      -> player 318.9,1.7,200.4 ground 1.57 
+  ok  windmill   -> player 341.2,1.6,154.2 ground 1.42 
+  ok  scarecrow  -> player 333.6,1.5,135.5 ground 1.37 
+  ok  tractor    -> player 327.2,1.5,139.8 ground 1.33 
+  ok  paddock    -> player 340.7,1.6,157.1 ground 1.42 
+  ok  lane       -> player 320.6,1.5,140.3 ground 1.31 
+  ok  ford       -> player 312.6,1.4,167.2 ground 1.22 
+  ok  road       -> player 336.6,1.5,118.1 ground 1.36 
+  ok  bridge     -> player 112.1,3.0,63.6 ground 2.80 
+  every tkit GOD place is somewhere
+  ok  farmPropsStep  30 frames
+  ok  farmhouseStep  30 frames
+  ok  floraStep      30 frames
+  ok  cowStep        30 frames
+  ok  crashStep      30 frames
+  ok  crashHeroStep  30 frames
+  ok  riverStep      30 frames
+  ok  gradeStep      30 frames
+  ```
+
 - **THE FIELDS ARE AN AUTHORED PLAN, AND ONE RULE DRAWS THEM THREE TIMES (m308, step 3, `FPLAN`, `fpOwner`, `fpTint`, `buildFieldBounds`).**
   20 named SEEDS (crop + reason) and a superellipse PARCEL round m288-m305's cluster. A point of land belongs to the
   nearest seed, with the distance bent by per-seed value noise (`noise` 9 m) so borders wander instead of running as
