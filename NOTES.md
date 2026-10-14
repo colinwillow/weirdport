@@ -7,6 +7,25 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **m421 HID EVERY BODY PAST 45 m, AND THE MEASURE COULD NOT SEE IT (m422, F0a-2g, `perfRegBodyParts`, `PERF.partFrac`).**
+  The parts cull registered any mesh of a body whose `geometry.boundingSphere.radius x matrixWorld scale` was under .45 m.
+  For a skinned Mixamo rig that product is ~0.01 m for the WHOLE MAN: the geometry is the authored metre-scale mesh (a
+  hick's sphere 0.67), the matrixWorld carries the armature's 0.01 x the rig scale (0.0206), and the bones undo the 0.01
+  at x100 -- the size is in the skinning, not in either matrix. The skinned sphere (`skeleton.update();
+  computeBoundingSphere()`) is no better at spawn (no pose yet: the same 0.01) and 60 after a frame. **So every body's main
+  mesh went into the cull and was moved to layer 1 past 45 m.** The tool's `bodies <drawn>/<near>` reads `root.visible`
+  and said 74/74 while 50 of them were invisible; its `who` showed the crowd as `construction_worker 44` one run and
+  `construction_worker 20` the next, which I read as the cull working. **A COUNT THAT DOES NOT MEASURE THE THING IT NAMES**
+  -- the fourth time this repo has been caught by one, and the first I shipped.
+  The size is RELATIVE now: the biggest geometry sphere in the body is the body; a part is anything under `partFrac` (.25) of
+  it. Measured (`scratchpad/sph.mjs`, kept as `tools/bodies.mjs`? no -- the composition is in this note): the officer's
+  eyes are 6% of him, Colin's trainers 21%, headphones 24%, teeth 13%, his head 43% and Moussa's head 28% -- heads stay. Most
+  kinds are ONE mesh (hick, hobo, activist, hippie, hipster, biker, suit, Trump, the two women, the worker, Clancy); the
+  officer is 2 (eyes), the warrior 2 (the mace), Moussa 2, Jack 2, Colin 6. A one-mesh body still measures ~2 draws in
+  town (F0a-2h asks why). The shadow pass costs nothing here (560 draws with and without it: shadows are not rendering in
+  the kit city).
+  Honest after the fix: oldtown 610 (74 bodies drawn, 74 near), camp 251, islanding 350.
+
 - **THE MEASURE'S BODY CULL CALLED THE WRONG FUNCTION, AND EVERY IN-TOWN NUMBER FROM m417 TO m420 WAS WRONG (m421, F0a-2f).**
   m417 put the body cull in `bodyCull()` (the function `frameBody` calls once a frame); m418 made the measure's settle call
   `perfStep` "so the cull runs" -- `perfStep` is the resolution governor and never touches a body. So bodies kept whatever
