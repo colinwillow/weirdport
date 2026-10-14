@@ -292,6 +292,10 @@ differ" table there, so no region feels like the last one.
       - [x] m371 **C6-5d-2** the second way: the highway shoulder (a road bridge in, watched by the gang).
     - [x] m372 **C6-5e** the rally, the region's living system: it builds, the leader speaks, it boils over.
     - [ ] **C6-5f** Chapter 3's quests: the biker form, the gang's respect, the infiltrated rally leader (the boss).
+      - [x] m373 **C6-5f-1** Chapter 3 opens: over the water, Pap, a biker's sample, Spud's challenge.
+      - [ ] **C6-5f-2** the motorcycle: the biker form rides (the skateboard's riding, a bike under him, faster, no deck tricks).
+      - [ ] **C6-5f-3** the gang's respect: race Big Rae round the dirt track; win, and the gang knows your name.
+      - [ ] **C6-5f-4** the rally man: on the stage at the rally, in front of everyone; he bursts (the boss); Chapter 3 complete.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
 
@@ -988,3 +992,10 @@ differ" table there, so no region feels like the last one.
   camp by the road. It boils over into a brawl, on its own or when you throw the first punch, and
   then everyone limps home and the trucks drive off. The rally man is the Chapter 3 boss in C6-5f;
   for now he just stands on the stage.
+
+
+- **m373 (C6-5f-1) Chapter 3 opens.** I split C6-5f into four builds: the opening quests, the
+  motorcycle, the race for the gang's respect, and the rally man boss. The opening takes you across
+  to Hollow Creek, to Pap at the trailer park (wear the farmer, since locals only talk to their own),
+  to a biker's sample, and to Spud in the pits, who challenges you to race Big Rae. GOD's Chapter 3
+  button now drops you at the freight pier.

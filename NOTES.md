@@ -7,6 +7,14 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CHAPTER 3 OPENS: OVER THE WATER, PAP, A BIKER'S LOOK, SPUD'S CHALLENGE (m373, C6-5f-1, `QUESTS` `ch3`, `creek:in`).**
+  The quest (chapter 3): over the water to Hollow Creek (`creek:in` -- set on its land a few metres in from its coast, on
+  the ground, however he got there, with a card: the freight, or past the gang as one of them) -> Pap at the trailer park
+  (`mk_hc_trail_pap`: he talks to his own -- the farmer's look from Chapter 0 does it) -> a biker's sample -> Spud in the
+  pits (`ch3_spud`, `talks: ['biker']`): beat Big Rae round the track and the whole creek knows your name, "then maybe you
+  get near the rally man". C6-5f-3 (the race) hangs `from` that script; the bike itself is C6-5f-2. GOD's CHAPTER 3 is
+  HOLLOW CREEK now and lands on the freight pier.
+  `npm run places` (exit 0): `ok  QUESTS ... | ch3.0 flag | ch3.1 talk | ch3.2 sample | ch3.3 talk | ...`.
 - **THE RALLY: TRUCKS UP THE ROAD, THE CROWD, THE SPEECH, THE BRAWL (m372, C6-5e, `HCRALLY`, `buildRally`, `rallyStep`,
   `rallyStart`, `rallyBrawl`, `rallyRoad`).** Hollow Creek's living system, an event on its own clock at the fairground
   (quiet 110-170 s, the first 40-70 s in): BUILD (34 s) -- four pickups come up the highway road (`HCROAD.roadPts`) one
