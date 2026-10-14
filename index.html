@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m317</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m318</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m317</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m318</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm317';
+const BUILD = 'm318';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -30165,6 +30165,7 @@ function farmMerge(parts, mat) {
   out.computeBoundingSphere();
   const mesh = new THREE.Mesh(out, mat);
   mesh.castShadow = mesh.receiveShadow = true;
+  mesh.userData.fbatch = 1;                // static, merged: the batcher may take it (m318)
   return mesh;
 }
 // ============================================================================================
@@ -30189,8 +30190,8 @@ float fpN(vec3 x) { vec3 i = floor(x), f = fract(x); f = f * f * (3.0 - 2.0 * f)
   return mix(mix(mix(fpH(i), fpH(i + vec3(1,0,0)), f.x), mix(fpH(i + vec3(0,1,0)), fpH(i + vec3(1,1,0)), f.x), f.y),
              mix(mix(fpH(i + vec3(0,0,1)), fpH(i + vec3(1,0,1)), f.x), mix(fpH(i + vec3(0,1,1)), fpH(i + vec3(1,1,1)), f.x), f.y), f.z); }
 `;
-function farmPaint(m, key) {
-  const kind = FPAINT.kinds[key];
+function farmPaint(m, key) { const kind = FPAINT.kinds[key]; if (kind !== undefined) farmPaintKind(m, kind); }
+function farmPaintKind(m, kind) {
   if (!FPAINT.on || kind === undefined || !m || m.onBeforeCompile.__fp) return;
   m.defines = Object.assign({}, m.defines, { FP_KIND: kind });
   const f = sh => {
@@ -30251,6 +30252,81 @@ function farmPaint(m, key) {
   FPAINT.n++;
 }
 
+// ============================================================================================
+// THE FARM'S STATIC BATCH (m318, STEER step 7 "phone cost", `FBATCH`, `farmBatch`)
+// ============================================================================================
+// Every builder since m288 works in its own `farmFrame` with its own materials, and `commit` merges per material WITHIN
+// that frame -- so the farm, the town edge and the ring were 150-odd static meshes, a draw call each, most of them in
+// view at once from a hill with the fog at 950. **The batch, after every builder**: each static mesh a frame committed
+// (`userData.fbatch`, set by `farmMerge` and nothing else -- the windmill's moving head, the washing, the cows, the
+// vehicles, the crops are not) has its colour BAKED into a vertex colour and is re-merged, triangle by triangle, into
+// ONE mesh per (paint kind, metal, emissive) per `cell` m square -- about ten materials for everything, and the camera
+// culls by cell. Left out: anything with a map (the signs), transparent (glass, wire, water), not front-sided (the hay
+// barn's roof), already vertex-coloured, and the CRASH's and its debris's frames (`skip`: their glow is animated through
+// its material). The paint shader reads world position and normal, so baked geometry paints exactly as before.
+// `?batch=0` (or the GOD switch) builds the farm unbatched, for the A/B.
+const FBATCH = { on: 1, cell: 200, skip: ['crash', 'wreckbits'], frames: [], before: 0, after: 0, kept: 0, tris: 0 };
+try { if (/[?&]batch=0\b/.test(location.search) || sessionStorage.getItem('mel.batch') === '0') FBATCH.on = 0; } catch (e) {}
+function fbKey(m) {
+  if (!m || !m.isMeshStandardMaterial || m.map || m.transparent || m.side !== THREE.FrontSide || m.vertexColors) return null;
+  const kind = m.defines && m.defines.FP_KIND !== undefined ? m.defines.FP_KIND : 'n';
+  const em = m.emissive && (m.emissive.r + m.emissive.g + m.emissive.b) > 0 ? m.emissive.getHexString() : '';   // a glow by its colour (1.2 vs 1.25 is not two looks)
+  return kind + ':' + (m.metalness > .2 ? 'm' : '') + ':' + em;
+}
+function farmBatch() {
+  const B = FBATCH; if (!B.on) return 0;
+  const buckets = new Map(), mats = new Map(), nm = new THREE.Matrix3(), v = new THREE.Vector3(), n = new THREE.Vector3();
+  const take = [];
+  for (const Fr of B.frames) {
+    if (B.skip.includes(Fr.tag)) continue;
+    Fr.grp.updateMatrixWorld(true);
+    for (const m of Fr.grp.children) {
+      if (!m.isMesh || m.isInstancedMesh || !m.userData.fbatch) continue;
+      const key = fbKey(m.material); if (!key) { B.kept++; continue; }
+      if (!mats.has(key)) mats.set(key, m.material);
+      take.push([m, key]);
+    }
+  }
+  for (const [m, key] of take) {
+    const g = m.geometry, P = g.attributes.position, N = g.attributes.normal, I = g.index, W = m.matrixWorld, c = m.material.color;
+    nm.getNormalMatrix(W);
+    const tri = I ? I.count / 3 : P.count / 3;
+    for (let t = 0; t < tri; t++) {
+      const ia = I ? I.getX(t * 3) : t * 3, ib = I ? I.getX(t * 3 + 1) : t * 3 + 1, ic = I ? I.getX(t * 3 + 2) : t * 3 + 2;
+      // the cell by the triangle's centre, in the world
+      v.set((P.getX(ia) + P.getX(ib) + P.getX(ic)) / 3, (P.getY(ia) + P.getY(ib) + P.getY(ic)) / 3, (P.getZ(ia) + P.getZ(ib) + P.getZ(ic)) / 3).applyMatrix4(W);
+      const bk = key + '|' + Math.floor(v.x / B.cell) + ',' + Math.floor(v.z / B.cell);
+      let q = buckets.get(bk); if (!q) buckets.set(bk, q = { key, p: [], n: [], c: [] });
+      for (const i of [ia, ib, ic]) {
+        v.set(P.getX(i), P.getY(i), P.getZ(i)).applyMatrix4(W); q.p.push(v.x, v.y, v.z);
+        n.set(N.getX(i), N.getY(i), N.getZ(i)).applyMatrix3(nm).normalize(); q.n.push(n.x, n.y, n.z);
+        q.c.push(c.r, c.g, c.b);
+      }
+    }
+    B.tris += tri;
+    m.parent.remove(m); g.dispose(); B.before++;
+  }
+  // one material per key: white, the colour in the vertices, the same paint kind, metal and glow
+  const shared = new Map();
+  for (const [key, src] of mats) {
+    const [kind, met, em] = key.split(':');
+    const mt = new THREE.MeshStandardMaterial({ color: 0xffffff, vertexColors: true, roughness: met ? .5 : .85, metalness: met ? .35 : 0 });
+    if (em) { mt.emissive.copy(src.emissive); mt.emissiveIntensity = src.emissiveIntensity; }
+    if (kind !== 'n') farmPaintKind(mt, +kind);
+    mt.name = 'farm_batch_' + key;
+    shared.set(key, mt);
+  }
+  for (const q of buckets.values()) {
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.Float32BufferAttribute(q.p, 3)); g.setAttribute('normal', new THREE.Float32BufferAttribute(q.n, 3));
+    g.setAttribute('color', new THREE.Float32BufferAttribute(q.c, 3)); g.computeBoundingSphere();
+    const m = new THREE.Mesh(g, shared.get(q.key)); m.castShadow = m.receiveShadow = true; m.name = 'farm_batch';
+    scene.add(m); B.after++;
+  }
+  console.log('[melee] farm batch: ' + B.before + ' meshes -> ' + B.after + ' (' + shared.size + ' materials, ' + B.kept + ' left out, ' + B.tris + ' tris)');
+  return B.after;
+}
+
 // A BUILDING FRAME (m289, lifted out of m288's `buildFarm` so the crash site and the rest of the farm share it):
 // local (u along the tangent, v out to sea) turned `th` about (Ox, Oz). `bx` adds a box -- drawn, and an
 // ORIENTED collider unless `col` is false; `geo` adds any geometry; `quad` a walkable floor (both windings,
@@ -30262,6 +30338,7 @@ function farmFrame(Ox, Oz, th, MAT, tag) {
   const gnd = (u, v) => { const y = groundAt(wx(u, v), wz(u, v), 3, 6); return y > -50 ? y : ISLE.sea; };
   const parts = {}; for (const k in MAT) { parts[k] = []; farmPaint(MAT[k], k); }   // painted, not flat (m296)
   const grp = new THREE.Group(); grp.position.set(Ox, 0, Oz); grp.rotation.y = th; scene.add(grp);
+  FBATCH.frames.push({ grp, tag: tag || 'farm' });
   const boxes = [], roofTris = [];
   const _m = new THREE.Matrix4(), _q = new THREE.Quaternion(), _e = new THREE.Euler(), _s = new THREE.Vector3(), _p = new THREE.Vector3();
   const geoBox = new THREE.BoxGeometry(1, 1, 1);
@@ -32154,6 +32231,7 @@ function godMenuOpen(on) {
   btn('WIPE THE SAVE', () => { progReset(); location.replace(location.pathname); }, 'warn');
   sec('SWITCHES');
   btn('FLY ' + (GOD.fly ? 'ON' : 'OFF'), () => { godFly(!GOD.fly); godMenuOpen(1); });
+  btn('FARM BATCHING ' + (FBATCH.on ? 'ON' : 'OFF') + ' (reloads)', () => { try { sessionStorage.setItem('mel.batch', FBATCH.on ? '0' : '1'); } catch (e) {} location.replace(location.pathname); });
   btn('THE STAND-IN QUEST (WEIRDPORT 101)', () => { progFlag('qon:q0'); quest.cur = null; toast('Quest on', 1.4); });
   btn('DEMO GATES HERE', () => { gateDemo(1); toast(GATES.length + ' gates', 1.4); });
   btn('DEMO PORTALS HERE', () => { portalDemo(1); toast(PORTALS.length + ' portals', 1.4); });
@@ -34041,6 +34119,7 @@ function frameBody() {
       (map.regs.length ? ' RG' + map.regs.filter(mapSeen).length + '/' + map.regs.length + 'b' + MAP.n : '') +
       (PORTAL.n ? ' PT' + PORTALS.filter(q => q.on).length + '/' + PORTAL.n + (PORTAL.trips ? '>' + PORTAL.trips : '') : '') +
       // FARM: boxes / roof triangles kept (m288) -- no token is no room on the ring or not the kit city
+      (FBATCH.after ? ' B' + FBATCH.before + '>' + FBATCH.after : '') +
       (FARMLAND.live ? ' FL' + FARMLAND.chunks + '/' + FARMLAND.tris + (FPLAN.pieces ? 'h' + FPLAN.pieces + 'f' + FPLAN.fences + 't' + (FPLAN.trees + FPLAN.lines) : '') + (FCROP.n ? 'c' + (FCROP.n / 1000).toFixed(0) + 'k' + FCROP.shown + '/' + FCROP.chunks.length : '') : '') +
       (FARM.n ? ' FARM' + FARM.n + '/' + FARM.tris + (GRADE.k > .01 ? ' gold' + GRADE.k.toFixed(2) : '') : '') +
       (HROW.n ? ' HR' + HROW.n + 't' + HROW.trees + 'g' + HROW.gates : '') + (FHOUSE.n ? ' FH' + FHOUSE.n : '') +
@@ -34418,6 +34497,8 @@ async function init() {
     try { buildTownEdge(); } catch (e) { note('TOWN EDGE FAIL'); console.warn('[melee] town edge', e); }
     // THE CITY STARTS THIN (m317): the island's ring by the bridge and all the way round
     try { buildCityRing(); } catch (e) { note('CITY RING FAIL'); console.warn('[melee] city ring', e); }
+    // THE STATIC BATCH (m318): after every frame-based builder -- ~150 static meshes into ~10 materials x 200 m cells
+    try { farmBatch(); } catch (e) { note('BATCH FAIL'); console.warn('[melee] farm batch', e); }
     // THE GROUND (m301): dirt, mud and the lane's track, under everything
     try { buildGroundPaint(); } catch (e) { note('GROUND FAIL'); console.warn('[melee] ground paint', e); }
     // THE GROWTH (m297): last, so the tufts can hug every wall, post and bank the farm built
@@ -34623,7 +34704,7 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // THE FARM'S PROPS (m299): `mel.FPROPS` -- `wind` (shared direction), `spin`
   FPROPS,
   // THE GROUND PAINT (m301): `mel.GPAINT` -- the patch table and the lane track
-  GPAINT, HROW, FHOUSE, FROAD, FARMLAND, FWATER, FPLAN, FCROP, FNEIGH, FVEH, FHANDS, FTOWN, FRING,
+  GPAINT, HROW, FHOUSE, FROAD, FARMLAND, FWATER, FPLAN, FCROP, FNEIGH, FVEH, FHANDS, FTOWN, FRING, FBATCH,
   FARM, farm: () => { const F = FARM.at; if (!F) return 'no farm in this world'; const p = player; p.pos.set(F.x - Math.sin(F.th) * 12, 2, F.z - Math.cos(F.th) * 12); p.vel.set(0, 0, 0); p.heading = p.faceH = F.th; return 'farm at ' + F.x.toFixed(0) + ',' + F.z.toFixed(0); },
   PORTAL, PORTALS, portal: () => portalOpen(),
   // THE DEMOS, ON PURPOSE ONLY (m292, STEER 1): round where you stand, for testing the systems

@@ -57,6 +57,8 @@ What to build (several builds; ship each step, never wait):
    past the bridge, and the city island's own edge softened — done m317.**
 7. **Phone cost**: instance everything repeated (trees, fence posts, bales, cows, crop stalks), merge
    per material, chunk the terrain, and keep draw calls in the tens. Distance fades the small stuff.
+   **— done m318** (the static batch: 108 farm meshes into 71 across 13 materials in 200 m cells) with
+   m309 (crops chunked and faded), m306 (terrain chunks), m294 (cows instanced).
 7b. **More than one way from the farm to town** (the new "connective tissue" rules in `REGIONS.md`): the
    bridge checkpoint is the main route the tutorial teaches, but also build a creek culvert under the
    road, an old rail trestle over the river, a shallow ford downstream with cows drinking, and a way
@@ -535,4 +537,8 @@ differ" table there, so no region feels like the last one.
   there's a big warehouse (climb its outside stair to the roof) and a fenced lot of parked cars. Ten
   low houses with fenced yards sit round the city island's grass ring, and about 40 trees are planted
   right against the city's edge, so it no longer ends at a ruler line. That finishes step 6.
+- **m318 (farm rebuild, step 7):** phone cost. Everything static on the farm, the town edge and the
+  city ring is now merged by paint type into 200 m patches: 108 separate draws became 71, and the
+  ones behind you aren't drawn at all. It should look exactly the same. If anything looks different
+  (wrong colour, missing paint), GOD has a FARM BATCHING switch to compare with it off.
 
