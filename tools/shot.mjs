@@ -54,6 +54,11 @@ const SHOTS = {
   terrace: { place: 'orchard', settle: 3, why: 'the orchard terrace from the foot of its steps',
     cam: `(() => { const p = mel.player.pos, A = mel.FTERR.at, dx = A[0] - p.x, dz = A[2] - p.z, L = Math.hypot(dx, dz);
       return [p.x - dx / L * 10 - dz / L * 8, p.y + 6, p.z - dz / L * 10 + dx / L * 8, A[0], A[1] - 3, A[2]]; })()` },
+  topcity: { place: 'oldtown', settle: 4, why: 'Old Town from straight above: streets, lots and buildings, for placing things',
+    cam: `(() => { const I = mel.ISLE.rect, cx = (I[0] + I[1]) / 2, cz = (I[2] + I[3]) / 2; return [cx, 240, cz + .01, cx, 0, cz]; })()` },
+  camp: { place: 'camp', settle: 4, why: 'the camp at the west edge of Old Town',
+    cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
+      return [p.x - fx * 6 + fz * 3, p.y + 4.5, p.z - fz * 6 - fx * 3, p.x + fx * 7, p.y, p.z + fz * 7]; })()` },
   wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
       return [C.x + sx * 16 - dx / L * 6, p.y + 7, C.z + sz * 16 - dz / L * 6, C.x, p.y + .5, C.z]; })()` },
@@ -96,7 +101,7 @@ try {
     await page.waitForTimeout(S.settle * 1000);
     const url = await page.evaluate(cam => {
       const { renderer, scene, camera } = window.__shot, c = eval(cam);
-      camera.position.set(c[0], c[1], c[2]); camera.lookAt(c[3], c[4], c[5]); camera.updateMatrixWorld(true);
+      camera.position.set(c[0], c[1], c[2]); camera.lookAt(c[3], c[4], c[5]); camera.far = Math.max(camera.far, 600); camera.updateProjectionMatrix(); camera.updateMatrixWorld(true);
       renderer.render(scene, camera);
       return renderer.domElement.toDataURL('image/jpeg', .85);
     }, S.cam);

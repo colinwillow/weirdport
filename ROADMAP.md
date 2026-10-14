@@ -223,6 +223,10 @@ differ" table there, so no region feels like the last one.
   (and stops the alien) → Old Town, fog lifts. Tutorial prompts along the way.
 - [ ] **B3 Old Town setup.** Region bounds, a homeless camp, a food cart with the hidden good
   alien (the tell under the hat), a building site. Ambient life placed by role.
+  - [x] m335 **B3-1** the map's real regions (Old Town, Gristle Farm) and the homeless camp.
+  - [ ] **B3-2** the food-cart pod in a lot, with the hidden good alien at one cart (the antenna under the hat).
+  - [ ] **B3-3** a building site wrapped in scaffolding, with its crew.
+  - [ ] **B3-4** ambient life placed by role (cops on the beat, people on the pavements, the crews' comings and goings).
 - [ ] **B4 Chapter 1 quests.** The good alien points you at the building site; workers are being
   turned into Skinsuits; get the worker form; repair the broken bridge (gate) to the next district.
 - [ ] **B5 Chapter 1 boss.** The infiltrated foreman bursts out of his skin; beat him; revert the
@@ -681,3 +685,13 @@ differ" table there, so no region feels like the last one.
   Another bug fix of the m332 kind: the gates (cordon, fire, barricade, broken bridge) never let
   ANY form through since m285. They do now.
   To play it: GOD → NEW GAME AT THE CRASH.
+
+- **m335 (B3-1):** B3 is split in four: regions and the camp, the food-cart pod, the building
+  site, then ambient life. This build:
+  - The map now has real regions, OLD TOWN and GRISTLE FARM, in place of quadrants. Your own region
+    markers will still replace them.
+  - The homeless camp is on the biggest open lot in Old Town, at the west edge by the water. No
+    overpass exists in your city, so I measured for the lot instead. It has tarp tents round a burn
+    barrel that stays lit, a lean-to, sofa, carts, a washing line and string lights.
+  - Dusty, Pockets and Mother Agnes live there. They talk to street folk and brush off the alien
+    rather than run.

@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m334</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m335</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m334</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m335</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm334';
+const BUILD = 'm335';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -30010,14 +30010,17 @@ function fpCentroid(fid) {
   for (let j = 0; j <= L.NB; j++) for (let i = 0; i <= L.NA; i++) if (own[j * (L.NA + 1) + i] === fi) { sa += L.A0 + i * L.G; sb += L.B0 + j * L.G; n++; }
   return n ? [sa / n, sb / n] : null;
 }
+// ONE PERSON, PLACED (m335): an npc mark from a code table row, exactly as his Blender `npc_*` marker would be -- so
+// `mkrNpcPlace` spawns the body through its kind's own builder and `mkrStep` gives it the talk, the group, the rumour
+function peopleMark(id, x, z, yaw, R, y, src, grp) {
+  MARKS.push({ type: 'npc', id, name: R.name, src, x, y: y != null ? y : groundAt(x, z, 30, 0), z, yaw, sx: 0, sz: 0,
+    p: { kind: R.kind, name: R.name, lines: R.lines, talk: R.talk, rumour: R.rumour, group: R.group || grp, talks: R.talks || [grp], alien: R.alien || 'flee',
+         brushAlien: R.brushAlien, town: R.town || 0 }, used: 0 });
+  MKR.by.npc = (MKR.by.npc || 0) + 1;
+}
 function buildFarmhands() {
   const H = FHANDS; if (!H.on || !FARMLAND.live || !FPLAN.owners) return 0;
-  const add = (id, x, z, yaw, R, y) => {
-    MARKS.push({ type: 'npc', id, name: R.name, src: 'FARMHANDS', x, y: y != null ? y : groundAt(x, z, 30, 0), z, yaw, sx: 0, sz: 0,
-      p: { kind: R.kind, name: R.name, lines: R.lines, rumour: R.rumour, group: R.group || 'country', talks: R.talks || ['country', 'street'], alien: R.alien || 'flee',
-           brushAlien: R.brushAlien, town: R.town || 0 }, used: 0 });
-    MKR.by.npc = (MKR.by.npc || 0) + 1; H.n++;
-  };
+  const add = (id, x, z, yaw, R, y) => { peopleMark(id, x, z, yaw, Object.assign({ talks: ['country', 'street'] }, R), y, 'FARMHANDS', 'country'); H.n++; };
   for (const R of H.ROWS) {
     const c = fpCentroid(R.field); if (!c) { note('FARMHAND ' + R.name + ' NO FIELD'); continue; }
     const a = c[0] + R.off[0], b = c[1] + R.off[1];
@@ -30039,6 +30042,111 @@ function buildFarmhands() {
   // m334 (B2): THE CHECKPOINT itself, across the deck at the barrier: any human walks through, the alien is held back
   if (BRIDGE.gate) { const B = BRIDGE.gate; H.gate = gateAdd('checkpoint', B.x, B.z, B.h, B.w || 7, 'bridge_checkpoint', B.y); }
   return H.n;
+}
+
+// ============================================================================================
+// OLD TOWN, SET UP (m335, ROADMAP B3-1, `MAPREG.tkit`, `OTCAMP`, `buildCamp`) -- the regions, and the camp
+// ============================================================================================
+// **THE MAP'S REGIONS ARE REAL ONES NOW** in the kit city: OLD TOWN (the island's city square and its ring) and GRISTLE
+// FARM (the farm's landmass, the edge of town on it included), each fogged until he walks in -- unless his own
+// `region_*` markers have already named them (`mkrApply` runs first and wins).
+function mapRegionsTkit() {
+  if (MAPREG.tkit || !ISLE.rect) return 0;
+  const R = ISLE.rect, regs = [{ id: 'oldtown', name: 'OLD TOWN', x0: R[0] - 14, x1: R[1] + 14, z0: R[2] - 14, z1: R[3] + 14 }];
+  if (FARMLAND.live) {
+    let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9;
+    for (const [a, b] of [[-1, -1], [1, -1], [1, 1], [-1, 1]]) { const [x, z] = flWorld(a * FARMLAND.A, b * FARMLAND.B); x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); }
+    regs.push({ id: 'farm', name: 'GRISTLE FARM', x0, x1, z0, z1 });
+  }
+  MAPREG.tkit = regs; if (map.ext) mapBuild();
+  return regs.length;
+}
+// **THE CAMP** -- REGIONS' Old Town: "an overpass with a homeless camp under it ... tarp blue in the camp". There is no
+// overpass in his city, so it is on the biggest open lot there is, MEASURED (a sweep of the island for lot ground --
+// y .17-.243, not the road's 0 or the pavement's .25 -- scored by the clear radius to the nearest collider): (-84.5,
+// 60.7), 12 m clear, at the west edge between the last houses and the water, where nobody is building anything.
+// Layered and lived-in: tents of tarp round a burn barrel that never goes out, a pallet wall with a tarp lean-to and a
+// mattress under it, a sofa that has seen things, carts, cardboard, crates, and a string of lights between two poles.
+// Three people live here; they talk to their own (`street`) and are too tired to run from the alien.
+const OTCAMP = {
+  on: 1, n: 0, at: [-84.5, 60.7], face: [-1.5, 1.6], why: "the biggest open lot in Old Town, at its west edge by the water: nobody's building here",
+  fire: null, fireT: 0,
+  PEOPLE: [
+    { id: 'camp_dusty', off: [-2.6, 1.8], kind: 'hobo_01', name: 'Dusty', talk: 'hobo_01', alien: 'brush', why: 'by the barrel, the one who has seen it all',
+      brushAlien: "Seen worse. Not much worse. Move along." },
+    { id: 'camp_pockets', off: [3.4, -1.0], kind: 'hobo_01', name: 'Pockets', alien: 'brush', why: 'on the sofa, holding court',
+      lines: "Welcome to Shanty Row. Population: us. Rent: free. Roof: optional.|The crews used to bring us their lunch. Now they don't eat lunch at all. Weird, right?|If you're looking for work, the building site's always looking. They keep losing people.",
+      brushAlien: "Nope. I'm off duty. I'm always off duty." },
+    { id: 'camp_agnes', off: [-4.8, -4.6], kind: 'hobo_01', name: 'Mother Agnes', alien: 'brush', why: 'at the lean-to, keeping the camp in order',
+      lines: "Wipe your feet. Yes, here. Standards, dear.|The cart man by the lot gives us the burnt ones. Lovely man. Never takes his hat off.|Mind the fire. It's older than you.",
+      brushAlien: "Lord preserve us. Another one from the newspapers." },
+  ],
+};
+function buildCamp() {
+  const C = OTCAMP; if (!C.on || !ISLE.live || !inTK()) return 0;
+  const [cx, cz] = C.at, dx = C.face[0] - cx, dz = C.face[1] - cz, th = Math.atan2(dx, dz);
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .9, metalness: 0 }), o || {});
+  const MAT = { tarp: M(0x2f6fb0), tarp2: M(0x3f8fc9), tarpo: M(0xc8662c), wood: M(0x7a5a3a), rust: M(0x6a3a26, { roughness: .7 }),
+    steel: M(0x9aa3a8, { metalness: .5, roughness: .45 }), card: M(0xb08a5a), sofa: M(0x8a3b3b), mat: M(0x6b6f7a), dark: M(0x262420),
+    bulb: M(0xffd27a, { emissive: new THREE.Color(0xffb84a), emissiveIntensity: 1.6 }) };
+  const F = farmFrame(cx, cz, th, MAT, 'camp'), { bx, geo, gnd } = F;
+  let seed = 335; const rr = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  // a tent: an A-frame of tarp (a triangle prism along u), its ridge pole, and its collider
+  const tent = (u, v, rot, L, W, H, mat) => {
+    const g0 = gnd(u, v), sh = new THREE.Shape([new THREE.Vector2(-W / 2, 0), new THREE.Vector2(W / 2, 0), new THREE.Vector2(0, H)]);
+    const pr = new THREE.ExtrudeGeometry(sh, { depth: L, bevelEnabled: false }); pr.translate(0, 0, -L / 2); pr.rotateY(Math.PI / 2);
+    geo(pr, mat, u, g0 - .02, v, rot);
+    bx(u, v, g0 + H - .05, g0 + H + .03, L + .3, .06, 'wood', rot, false);
+    bx(u, v, g0 - .1, g0 + H * .8, L, W * .8, mat, rot); F.parts[mat].pop();
+  };
+  tent(-5.2, -2.6, .35, 2.8, 2.3, 1.5, 'tarp'); tent(4.6, -4.2, -.5, 2.6, 2.1, 1.35, 'tarpo'); tent(-.6, -6.4, .1, 3.0, 2.4, 1.55, 'tarp2');
+  // the burn barrel, its fire (`campStep` keeps it lit), and crates round it to sit on
+  { const g0 = gnd(0, 0); geo(new THREE.CylinderGeometry(.33, .3, .9, 12), 'rust', 0, g0 + .45, 0); bx(0, 0, g0 - .1, g0 + .9, .66, .66, 'rust'); F.parts.rust.pop();
+    C.fireAt = [F.wx(0, 0), g0 + .92, F.wz(0, 0)];
+    for (const [u, v, r] of [[1.4, .6, .3], [-1.3, 1.1, -.4], [.4, -1.5, .9]]) { const g = gnd(u, v); bx(u, v, g - .05, g + .45, .55, .45, 'wood', r); } }
+  // the pallet wall behind it all, toward the water, and a tarp lean-to off it over a mattress
+  for (let i = 0; i < 6; i++) { const u = -6 + i * 1.25, v = -9.2 + Math.sin(i * 1.7) * .25, g = gnd(u, v); bx(u, v, g - .1, g + 1.25, 1.2, .14, 'wood', Math.sin(i * 2.3) * .08, true, Math.sin(i) * .04); }
+  { const g = gnd(-4.6, -7.6); bx(-4.6, -7.9, g + 1.15, g + 1.21, 3.2, 2.2, 'tarp', 0, false, 0); geo(new THREE.BoxGeometry(3.2, .06, 2.4), 'tarp', -4.6, g + .95, -7.7, 0, -.32, 0);
+    for (const u of [-6.1, -3.1]) bx(u, -6.6, g - .1, g + .75, .1, .1, 'wood', 0, false);
+    bx(-4.6, -7.7, g, g + .2, 2.0, 1.0, 'mat'); }
+  // the sofa, facing the barrel
+  { const u = 3.6, v = -1.4, g = gnd(u, v), r = -1.9;
+    bx(u, v, g, g + .45, 2.0, .9, 'sofa', r); bx(u + Math.sin(r) * .0, v, g + .45, g + .95, 2.0, .22, 'sofa', r, false);
+    for (const s of [-1, 1]) bx(u + Math.cos(r) * s * .95, v - Math.sin(r) * s * .95, g + .4, g + .7, .22, .9, 'sofa', r, false); }
+  // two shopping carts, cardboard on the ground, crates and a mattress, a couple of bottles
+  for (const [u, v, r] of [[6.3, 1.8, .7], [-7.2, 2.2, -.3]]) { const g = gnd(u, v);
+    bx(u, v, g + .35, g + .95, .55, .85, 'steel', r, true); for (const [a, b] of [[-.22, -.36], [.22, -.36], [-.22, .36], [.22, .36]]) bx(u + a, v + b, g, g + .35, .04, .04, 'steel', r, false); }
+  for (const [u, v, r, w, d] of [[-2.2, 3.4, .2, 1.4, 1.0], [2.4, 3.8, -.4, 1.2, .9], [-6.6, -4.6, .5, 1.0, 1.6]]) { const g = gnd(u, v); bx(u, v, g, g + .03, w, d, 'card', r, false); }
+  for (const [u, v, h] of [[7.2, -2.6, .6], [7.4, -1.8, .3], [-8.4, -1.0, .9], [-8.6, .0, .45]]) { const g = gnd(u, v); bx(u, v, g - .05, g + h, .6, .6, 'wood', rr()); }
+  for (let i = 0; i < 6; i++) { const u = (rr() - .5) * 9, v = (rr() - .5) * 7, g = gnd(u, v); geo(new THREE.CylinderGeometry(.04, .045, .26, 6), 'dark', u, g + .13, v, 0, rr() < .4 ? 1.5 : 0, 0); }
+  // the back of the camp goes UP: rusted corrugated sheets behind the pallets, leaning, patched; and a washing line between
+  // the tents with what passes for laundry -- the place is lived in, not laid out
+  for (let i = 0; i < 7; i++) { const u = -6.6 + i * 1.15, v = -10.0 + Math.sin(i * 1.3) * .2, g = gnd(u, v), h = 2.1 + rr() * .7;
+    bx(u, v, g - .1, g + h, 1.2, .06, i % 3 === 1 ? 'tarp2' : 'rust', Math.sin(i * 2.1) * .06, true, (rr() - .5) * .07); }
+  { const a0 = [-4.2, -2.0], a1 = [3.6, -3.4], g = Math.max(gnd(...a0), gnd(...a1)) + 1.6, L = Math.hypot(a1[0] - a0[0], a1[1] - a0[1]), r = Math.atan2(-(a1[1] - a0[1]), a1[0] - a0[0]);
+    bx((a0[0] + a1[0]) / 2, (a0[1] + a1[1]) / 2, g, g + .02, L, .02, 'dark', r, false);
+    const cols = ['tarpo', 'sofa', 'tarp2', 'card', 'mat'];
+    for (let i = 0; i < 5; i++) { const t = (i + 1) / 6, u = a0[0] + (a1[0] - a0[0]) * t, v = a0[1] + (a1[1] - a0[1]) * t, h = .45 + rr() * .3;
+      bx(u, v, g - h, g, .45 + rr() * .2, .03, cols[i], r + (rr() - .5) * .1, false); } }
+  // a string of lights between two poles over the barrel
+  { const p0 = [-6.5, 3.0], p1 = [6.5, 2.4], g0 = gnd(...p0), g1 = gnd(...p1), H = 2.9;
+    bx(p0[0], p0[1], g0 - .2, g0 + H, .12, .12, 'wood'); bx(p1[0], p1[1], g1 - .2, g1 + H, .12, .12, 'wood');
+    for (let i = 1; i < 16; i++) { const t = i / 16, u = p0[0] + (p1[0] - p0[0]) * t, v = p0[1] + (p1[1] - p0[1]) * t, y = (g0 + H) * (1 - t) + (g1 + H) * t - Math.sin(t * Math.PI) * .7;
+      geo(new THREE.SphereGeometry(.07, 6, 4), 'bulb', u, y - .08, v); } }
+  F.commit(); C.n = 1;
+  // the people, round the barrel, facing it
+  for (const R of C.PEOPLE) {
+    const [u, v] = R.off, x = F.wx(u, v), z = F.wz(u, v), g = gnd(u, v);
+    peopleMark(R.id, x, z, Math.atan2(F.wx(0, 0) - x, F.wz(0, 0) - z), R, g, 'CAMP', 'street');
+  }
+  C.godAt = [F.wx(0, 6.5), F.wz(0, 6.5), th + Math.PI];
+  return C.n;
+}
+// the barrel never goes out: lit once, and lit again if the fire pool ever evicts it (the crash's rule)
+function campStep(dt) {
+  const C = OTCAMP; if (!C.fireAt || (C.fireT -= dt) > 0) return;
+  C.fireT = 4;
+  if (!C.fire || !FIRES.includes(C.fire)) C.fire = fireStart(C.fireAt[0], C.fireAt[1], C.fireAt[2], { k: .45, r: .32, life: Infinity });
 }
 
 // ============================================================================================
@@ -33011,6 +33119,7 @@ const godFL = H => { const [x, z] = flWorld(H.a, H.b); return [x, null, z, Math.
 // THE PLACES. One line each: where it is, what world, and a function that answers [x, y|null, z, heading|null].
 const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
+  { id: 'camp',     world: 'tkit', name: 'OLD TOWN · the camp at the west edge (Dusty, Pockets, Mother Agnes)', at: () => OTCAMP.godAt && [OTCAMP.godAt[0], null, OTCAMP.godAt[1], OTCAMP.godAt[2]] },
   { id: 'overlook', world: 'tkit', name: 'GRISTLE FARM · the west hill: fields, and the city on the horizon', at: () => FARMLAND.live && godFL(FARMLAND.HILLS[0]) },
   { id: 'ploughing', world: 'tkit', name: 'GRISTLE FARM · the tractor ploughing', at: () => { const c = FVEH.list.find(q => q.id === 'tractor'); return c && [c.x + Math.cos(c.h) * 7, null, c.z - Math.sin(c.h) * 7, c.h - Math.PI / 2]; } },
   { id: 'pickup',   world: 'tkit', name: 'GRISTLE FARM · the pickup on the bridge road', at: () => { const c = FVEH.list.find(q => q.id === 'pickup'); return c && [c.x + Math.cos(c.h) * 5, null, c.z - Math.sin(c.h) * 5, c.h - Math.PI / 2]; } },
@@ -34696,7 +34805,8 @@ function frameBody() {
   portalStep(dt);               // portals: activate on contact, light the pad (m286)
   mapStep(dt);                  // the minimap, the full map, region fog (m287)
   godStep(dt);                  // GOD mode: the key, the menu, the boot jump (m298)
-  crashStep(dt);                // the wreck burns and smokes; reaching town once moves the start (m289)
+  crashStep(dt);
+  campStep(dt);                 // the camp's barrel stays lit (m335)                // the wreck burns and smokes; reaching town once moves the start (m289)
   crashHeroStep(dt);            // ...and pulses, arcs, hums, and stands a beam over the farm (m300)
   riverStep(dt);                // the farm's river: no wading, the current puts you back (m291)
   cellStep();
@@ -35414,6 +35524,9 @@ async function init() {
     try { buildVehicles(); } catch (e) { note('VEHICLES FAIL'); console.warn('[melee] vehicles', e); }
     // THE FARMHANDS AND THE FARMER (m315): authored NPC markers, before the crowd's deal and `mkrNpcPlace`
     try { buildFarmhands(); } catch (e) { note('FARMHANDS FAIL'); console.warn('[melee] farmhands', e); }
+    // OLD TOWN (m335): the map's regions, and the camp at the west edge
+    try { mapRegionsTkit(); } catch (e) { note('REGIONS FAIL'); console.warn('[melee] regions', e); }
+    try { buildCamp(); } catch (e) { note('CAMP FAIL'); console.warn('[melee] camp', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)
     try { buildTownEdge(); } catch (e) { note('TOWN EDGE FAIL'); console.warn('[melee] town edge', e); }
     // THE CITY STARTS THIN (m317): the island's ring by the bridge and all the way round
@@ -35588,7 +35701,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { fireSheet, BURN, burnStart, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { fireSheet, BURN, burnStart, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

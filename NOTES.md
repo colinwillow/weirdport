@@ -7,6 +7,35 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **OLD TOWN, SET UP 1: REAL MAP REGIONS AND THE CAMP, ON THE BIGGEST LOT THERE IS -- MEASURED (m335, B3-1, `mapRegionsTkit`,
+  `OTCAMP`, `buildCamp`, `campStep`, `peopleMark`).**
+  - **Regions**: the kit city's map had placeholder quadrants. Now OLD TOWN (`ISLE.rect` + 14 m: the city square and its
+    ring) and GRISTLE FARM (the AABB of the farmland's four corners: its whole landmass, the edge of town on it). Fogged
+    until he walks in; **his own `region_*` markers still win** (`mkrApply` runs first; this only fills `MAPREG.tkit` if
+    it is empty).
+  - **Where the camp goes, measured**: a throwaway probe swept the island on a 2 m grid, classified the ground by HEIGHT
+    (his collision file: road 0.00, pavement .25, lot grass .23, the visual's lot/dirt fill .17-.20) and scored each lot
+    point by its clear radius to the nearest collider and the share of lot ground in that disc. Best: (-84.5, 60.7),
+    12 m clear, the west edge between the last houses and the water. Others for the next builds: (-62.5, 78.7) 12 m,
+    (65.5, 78.7) 10.5, (-54.5, -67.3) 9, (-12.5, -61.3) 8, (-58.5, 30.7) 7.5, (-6.5, 34.7) 7, (67.5, -19.3) 6.5.
+  - **The camp** (REGIONS: "an overpass with a homeless camp under it ... tarp blue in the camp"; there is no overpass in
+    his city): three tarp A-frame tents round a burn barrel that never goes out (`campStep` re-lights it, the crash's
+    rule), a pallet wall with a tarp lean-to over a mattress, rusted corrugated sheets going UP behind it, a washing line
+    between the tents, a sofa facing the fire, two carts, cardboard, crates, bottles, a string of lights on two poles.
+    Its own frame facing the city; batched like the farm's.
+  - **Its people**: Dusty (the m277 `TALKS.hobo_01` script), Pockets and Mother Agnes -- `street`, and `alien: 'brush'`:
+    too tired to run from anything. Their lines point at Chapter 1 (the crews who stopped eating lunch, the building
+    site that keeps losing people, the cart man who never takes his hat off).
+  - **`peopleMark`** is the one way a code table puts a person in the world now (the farm's `add` calls it): an npc mark
+    exactly like his Blender `npc_*`, so the kind's own builder spawns the body.
+  - `places` builds both, checks the camp's people have a kind and stand in Old Town, and lets `camp` be IN the city.
+      ok   mapRegionsTkit
+      ok   buildCamp
+      ok  CAMP Dusty (hobo_01.glb) -82,62 | Pockets (hobo_01.glb) -87,59 | Mother Agnes (hobo_01.glb) -85,67 | fire at [-84.5,1.2,60.7] | regions ["oldtown -107,105,-104,107","farm 95,614,-87,479"]
+      ok  camp       -> player -79.2,0.4,56.9 ground 0.23
+      every tkit GOD place is somewhere
+      ok  campStep       30 frames
+
 - **NO GATE EVER LET ANY FORM THROUGH: `need` WAS A FILE STEM, `formNow()` THE DISPLAY FORM (m334, `mphFold`, `gateLets`).** The same
   bug as m332's `mkrKind`, one system over: `GATE_TYPES.cordon.need` is 'dummy_officer', `formNow()` is 'DUMMY OFFICER', and
   `me === T.need` never held -- from m285, every gate held everyone back (and no `fix` gate could ever be mended). **One
