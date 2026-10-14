@@ -7,6 +7,23 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **WHAT YOU DO MOVES THE TURF (m412, D5a, `TPUSH`, `turfMove`, `turfKnock`, `turfVirus`, `turfBodyF`; hooks in `dummyBlow`,
+  `virusGo`, `cyborgRevert`, `protestStep`, `protestBrawl`, `strikeSet`).** **"YOURS" IS `pal === undefined` IN `dummyBlow`, NOT
+  `!pal`**: every other caller names the thrower (a pal's pounce, the protest's brawlers, the strike's punches pass the body),
+  and the Uplift bot's shot passes an explicit `null` -- which `!pal` would have counted as yours (the existing `heatHit`
+  still does; that is m280's call and was left alone). FLYHIT (a body you sent flying hitting another) passes nothing and
+  counts as yours, which is right. The knock hook sits only on the knock-DOWN path (just before `bodyLaunch`), not on a hit
+  reaction. `turfVirus` runs at `virusGo`'s start, after the kind check, so the blob path (which returns nothing) still
+  counts. `turfBodyF`: an alien is the Skinsuits', a cyborg Uplift's, else the first faction whose `TURFKINDS` hold its kind
+  (the hipster is in two lists and counts as an activist). **`turfPush` takes `nosave` now**: a knock-down does not write
+  the store (the 15 s save in `kswapStep` covers it); the big events save. `turfPush`'s clamp means a loss can only take a
+  share to zero -- a boss exposed in a block where the Skinsuits hold .10 takes .10, not .12, and the row's pass mark is
+  derived from that rather than from the constant.
+  `places`:
+      ok  TPUSH the camp's block F5: a hobo you knock down -0.012 HOME, by a pal or a bot 0.000, shares sum 1.0000, off Old Town nothing | 10 more and it goes to SHOP (1 said so) | a body turned +0.030 SKIN, a Skinsuit boss exposed -0.104 | the strike at E1: out +0.050 ACT, ended +0.079 BIG | hooks not called: none
+  Teeth: `turfKnock` without its `pal` test -> `by a pal or a bot -0.024 ... SOMEBODY ELSE'S KNOCK-DOWN COUNTS AS YOURS`; the
+  call taken out of `dummyBlow` -> `hooks not called: dummyBlow`.
+
 - **A BLOCK HELD FOR GOOD IS REBUILT (m411, D4b, `KSWAP`, `kswapStep`, `kswapSettle`, `kswapPick`, `kswapApply`, `kswapScaffold`,
   `kitBldRec`, `SAVE.tgood`, `SAVE.tswap`).** For good = `turfHold` lead >= `KSWAP.lead` (.12) for `KSWAP.hold` (240) s,
   counted twice a second for all 36 blocks and saved every 15 s. **Settles only when the holder is not the OWNER** (whoever's

@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m411</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m412</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m411</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m412</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm411';
+const BUILD = 'm412';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -26011,6 +26011,7 @@ function virusGo(d, to) {
   const toK = to || (isAlien(d.K) ? (d.wasK && d.wasK.P ? d.wasK : pick(civKinds()))
                                    : pick(alienKinds()));
   if (!toK || !toK.P) return null;
+  turfVirus(d);                   // m412: a turn is the Skinsuits' ground, a cure is theirs lost
   const P = toK.P;
   const x = d.root.position.x, y = d.root.position.y, z = d.root.position.z;
   const h = d.h || 0, mark = d.mark, aggro = d.aggro;
@@ -26513,6 +26514,7 @@ function dummyBlow(d, dirH, power, dmg, pal) {
   // tumble, the whoosh, the fall clip, the per-body beat and the two get-up rolls are what a body
   // leaving the ground IS, and they belong in one place rather than in every caller.
   const fk = k * rnd(K.flyVary || FLAIL.flyVary);
+  turfKnock(d, pal);              // m412: a body you put down costs its faction ground in that block
   bodyLaunch(d, dirH, K.flyV * fk, K.flyUp * fk);
 }
 
@@ -29787,6 +29789,9 @@ function buildStrike() {
 // call it, or call it off
 function strikeSet(on) {
   if (!progFlag('strike:oldtown', on ? 1 : 0)) return false;
+  // m412: the crews out is the activists' ground at the site; the strike ended is big business's
+  { const P = GODPLACES.find(q => q.id === 'site'); let a = null; try { a = P && P.at && P.at(); } catch (e) {}
+    if (a) turfMove(a[0], a[2], on ? 'act' : 'big', on ? TPUSH.strike * .5 : TPUSH.strike, on ? 'the strike' : 'the strike ended', 1); }
   OSTRIKE.n++; cardShow(on ? 'OLD TOWN' : 'OLD TOWN', on ? 'THE CREWS ARE ON STRIKE' : 'THE CREWS ARE BACK', 3.6);
   OSTRIKE.st = 0;
   return true;
@@ -29994,7 +29999,7 @@ function protestStep(dt) {
     if (!O.provoked && counter.length && Math.random() < O.boil * ampBoil() * step) O.provoked = 'a sandwich';   // m352: the amplifier
     if (O.provokeAt !== undefined && (O.provokeAt -= step) <= 0) { O.provokeAt = undefined; O.provoked = O.provoked || 'GOD'; }
     if (O.provoked) protestBrawl(O.provoked);
-    else if (O.t <= 0) { O.st = 'home'; O.t = 3; }
+    else if (O.t <= 0) { O.st = 'home'; O.t = 3; const L = protestAt(O.len); turfMove(L.x, L.z, 'act', TPUSH.rally, 'the rally', 1); }     // m412: a rally that ends in peace
   } else if (O.st === 'brawl') {
     O.bT = (O.bT || 0) + step;
     // everybody at the nearest one of the other lot still standing; a punch is `dummyBlow` from HIM (not you: no heat)
@@ -30054,6 +30059,7 @@ function protestStep(dt) {
 function protestBrawl(why) {
   const O = OPROTEST; if (!O.path || O.st === 'brawl') return false;
   const L = protestAt(O.len); O.st = 'brawl'; O.bT = 0; O.copIn = 0; O.provoked = why || 'GOD';
+  turfMove(L.x, L.z, 'act', -TPUSH.brawl, 'a brawl', 1);     // m412
   O.bAt = [L.x + Math.sin(O.endH || 0) * 3.2, L.z + Math.cos(O.endH || 0) * 3.2];
   cardShow('A BRAWL', why === 'you' ? 'YOU STARTED IT' : 'SOMEBODY THREW A SANDWICH', 2.6);
   dhPush('oldtown', -2);
@@ -30561,6 +30567,7 @@ function cyborgParts(d) {
 }
 function cyborgRevert(d) {
   const C = d.cy; if (!C) return;
+  turfMove(d.root.position.x, d.root.position.z, 'upl', -TPUSH.cyborg, 'a worker freed', 1);    // m412
   d.root.remove(C.g); d.cy = null; d.cyDone = 1;
   if (d.matCol0) d.mats.forEach((m, i) => { if (m.color && d.matCol0[i]) m.color.copy(d.matCol0[i]); });
   if (d.roleProp && d.roleProp.parent) d.roleProp.parent.remove(d.roleProp);
@@ -35383,17 +35390,55 @@ function turfAt(x, z) { const T = TURF, R = T.rect; if (!R || !T.blocks.length |
 // who holds it: [faction index, its share, its lead over the next]
 function turfHold(B) { let a = 0, b = -1; B.sh.forEach((v, k) => { if (v > B.sh[a]) { b = a; a = k; } else if (k !== a && (b < 0 || v > B.sh[b])) b = k; }); return [a, B.sh[a], B.sh[a] - (b >= 0 ? B.sh[b] : 0)]; }
 // move a block's shares: `amt` to faction `f` (an id), taken from the others in proportion; saved
-function turfPush(x, z, f, amt) {
+function turfPush(x, z, f, amt, nosave) {
   const B = turfAt(x, z), fi = turfF(f); if (!B || fi < 0) return null;
   const sh = B.sh, add = clamp(amt, -sh[fi], 1 - sh[fi]), rest = 1 - sh[fi];
   for (let k = 0; k < sh.length; k++) if (k !== fi) sh[k] = rest > 1e-9 ? sh[k] * (1 - add / rest) : 0;
-  sh[fi] += add; SAVE.turf[B.id] = sh; TURF.pushes++; progSave();
+  sh[fi] += add; SAVE.turf[B.id] = sh; TURF.pushes++; if (!nosave) progSave();
   return turfHold(B);
 }
 // the chip's reading, twice a second
 function turfStep(dt) {
   const T = TURF; if (!T.blocks.length) { T.k = ''; return; } if ((T.t -= dt) > 0) return; T.t = .5;
   const B = turfAt(player.pos.x, player.pos.z); if (!B) { T.k = ''; return; } const [fi, s] = turfHold(B); T.k = B.name + ' ' + T.FACTIONS[fi].short + Math.round(s * 100) + '%';
+}
+// ============================================================================================
+// WHAT YOU DO MOVES THE TURF (m412, ROADMAP D5a, `TPUSH`, `turfMove`, `turfKnock`, `turfVirus`, `turfBodyF`)
+// ============================================================================================
+// GAME_DESIGN "Turf": *"What moves influence: protests and rallies, Skinsuit conversions and Uplift conversions, crews
+// rebuilding or not, and you -- who you help, who you knock down, whose strike you end, whose leader you expose."* Each is a
+// `turfMove` where it happens, in the block it happens in (nothing outside Old Town's grid moves):
+//   a body YOU knock down       its faction -`knock` (the activist, the hobo, the suit... `turfBodyF`; a pal's or a
+//                               brawler's punch is not yours and moves nothing)
+//   a body turned (the virus)   the Skinsuits +`turn`;  one cured, -`cure` (a boss, a leader exposed, -`boss`)
+//   a worker freed of Uplift    Uplift -`cyborg`
+//   a rally that ends in peace  the activists +`rally`;  one that ends in a brawl, -`brawl`
+//   the crews out / back        the activists +`strike`/2 / big business +`strike`, at the building site
+// What the others lose is spread over the rest by their shares (`turfPush`'s rule). A change of HOLDER says so.
+const TPUSH = { on: 1, knock: .012, turn: .03, cure: .03, boss: .12, cyborg: .04, rally: .08, brawl: .04, strike: .1, n: 0, flips: 0, last: '' };
+function turfBodyF(d) {
+  if (!d || !d.K) return null;
+  if (isAlien(d.K)) return 'skin';
+  if (d.cy || d.role === 'cyborg') return 'upl';
+  const KS = turfCrowdKinds(); for (const F of TURF.FACTIONS) if ((KS[F.id] || []).includes(d.K)) return F.id;
+  return null;
+}
+function turfMove(x, z, f, amt, why, save) {
+  if (!TPUSH.on || !TURF.blocks.length || !inTK()) return null;
+  const B = turfAt(x, z); if (!B) return null;
+  const [h0] = turfHold(B), r = turfPush(x, z, f, amt, !save); if (!r) return null;
+  TPUSH.n++; TPUSH.last = B.name + (amt > 0 ? ' +' : ' -') + TURF.FACTIONS[turfF(f)].short + ' ' + why;
+  if (r[0] !== h0) { TPUSH.flips++; try { toast(B.name + ' GOES TO ' + TURF.FACTIONS[r[0]].name + ' (' + why + ')', 2.6); } catch (e) {} }
+  return r;
+}
+function turfKnock(d, pal) {
+  if (pal !== undefined || !d || !d.root) return null;      // yours only: every other blow names who threw it
+  const f = turfBodyF(d); return f ? turfMove(d.root.position.x, d.root.position.z, f, -TPUSH.knock, 'knocked down') : null;
+}
+function turfVirus(d) {
+  if (!d || !d.root) return null;
+  const al = isAlien(d.K), P = d.root.position;
+  return turfMove(P.x, P.z, 'skin', al ? -(d.qTag ? TPUSH.boss : TPUSH.cure) : TPUSH.turn, al ? (d.qTag ? 'a Skinsuit exposed' : 'a body cured') : 'a body turned', al && d.qTag);
 }
 // the full map's overlay: each block in its holder's colour, stronger the clearer its lead; its holder's name across it
 function turfMap(g, E) {
@@ -40434,6 +40479,7 @@ function godMenuOpen(on) {
     btn('THE MOTHERSHIP OVER THE ISLANDS ' + (ITHERM.ship ? 'ON' : 'OFF'), () => { ITHERM.ship = ITHERM.ship ? 0 : 1; godMenuOpen(1); });   // m395
     btn('A GUST NOW (THE ISLANDS)', () => { windGust(); toast('Gust: +' + IWIND.gustAdd.toFixed(0) + ' m/s', 1.4); godMenuOpen(0); }); }
   if (TURF.blocks.length) btn('TURF ON THE MAP ' + (TURF.map ? 'ON' : 'OFF'), () => { TURF.map = TURF.map ? 0 : 1; godMenuOpen(1); });   // m407
+  if (TURF.blocks.length) btn('YOUR ACTIONS MOVE THE TURF ' + (TPUSH.on ? 'ON' : 'OFF'), () => { TPUSH.on = TPUSH.on ? 0 : 1; godMenuOpen(1); });   // m412
   if (TDRESS.built) { btn('FACTION DRESSING ' + (TDRESS.on ? 'ON' : 'OFF'), () => { TDRESS.on = TDRESS.on ? 0 : 1; for (const Mm of TDRESS.meshes) Mm.mesh.visible = !!TDRESS.on; godMenuOpen(1); });   // m409
     btn('HAND THIS BLOCK TO THE NEXT FACTION', () => { const R = turfAt(player.pos.x, player.pos.z); if (!R) { toast('Not in Old Town', 1.4); return; }
       const [fi] = turfHold(R), F = TURF.FACTIONS[(fi + 1) % TURF.FACTIONS.length]; turfPush(player.pos.x, player.pos.z, F.id, .95); toast(R.name + ' to ' + F.short, 1.6); godMenuOpen(0); }); }
@@ -42351,7 +42397,7 @@ function frameBody() {
                         (rig.borrowed ? '+' + rig.borrowed : ' NOBORROW') + (wn || '') : '';
     const line = fps.toFixed(0) + ' FPS · ' + renderer.info.render.calls + ' DC ' + Math.round(renderer.info.render.triangles / 1000) + 'kT' + (CELL.list.length ? ' c' + CELL.shown + '/' + CELL.list.length : '') + (STEPUP.n ? ' ke' + STEPUP.n : '') + PROF.sum + ' · pr' + PERF.pr.toFixed(2) + (PERF.holdT > 0 ? 'h' : '') + ' B' + PERF.seen + '/' + DUMMIES.length + ' · ' +
       p.speed.toFixed(1) + ' m/s · ' + st + lk + hue + bx + cv + brkC + kitC + inf + shp + cl + sk + sk8 + vs + mo + fl + wp + tc + mp +
-      bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + (ITHERM.k > 0 ? ' TH' + Math.round(ITHERM.k * 100) : '') + (TURF.k ? ' TURF ' + TURF.k : '') + (KSWAP.made || KSWAP.gone.size || KSWAP.settles ? ' RB' + KSWAP.made + '/' + KSWAP.gone.size + (KSWAP.settles ? 's' + KSWAP.settles : '') : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
+      bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + (ITHERM.k > 0 ? ' TH' + Math.round(ITHERM.k * 100) : '') + (TURF.k ? ' TURF ' + TURF.k + (TPUSH.n ? ' m' + TPUSH.n : '') : '') + (KSWAP.made || KSWAP.gone.size || KSWAP.settles ? ' RB' + KSWAP.made + '/' + KSWAP.gone.size + (KSWAP.settles ? 's' + KSWAP.settles : '') : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
       // CH: the saved chapter (m276); NEW = this boot was `?fresh`, BADSAVE = a save was there and would not parse
       (GOD.on ? ' · GOD' + (GOD.fly ? ' FLY' : '') : '') +
       ' · CH' + SAVE.ch + (SAVE.fresh ? ' NEW' : '') + (SAVE.bad ? ' BADSAVE' : '') +
@@ -43005,7 +43051,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { KSWAP, kswapGod, kswapSettle, KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { TPUSH, turfMove, KSWAP, kswapGod, kswapSettle, KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
