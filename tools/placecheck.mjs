@@ -193,6 +193,7 @@ quiet('LIFE', M.OTLIFE.n, 'routes:', M.OTLIFE.routes.map(r => r.id + ' ' + r.bea
       if (i === 0 && q.needQ && !M.QUESTS.find(o => o.id === q.needQ)) why = 'NEEDS A QUEST THAT IS NOT THERE: ' + q.needQ;
       if (st.kind && !M.MARKS.some(m => m.type === 'npc' && m.K && (m.p.kind === st.kind || (m.p.role && (M.ROSTER.find(r => r.id === m.p.role) || {}).stem === st.kind)) && m.id !== st.not)) why = 'NOBODY OF KIND ' + st.kind;   // m340; m357 or a role of it
       for (const k of st.kinds || []) if (!M.MARKS.some(m => m.type === 'npc' && m.K && m.p.kind === k)) why = 'NOBODY OF KIND ' + k;   // m362
+      if (st.form && Object.values(M.ROLEFORM).some(r => r.name === st.form) && !M.MARKS.some(m => m.type === 'npc' && m.K && m.p.role && M.ROLEFORM[m.p.role] && M.ROLEFORM[m.p.role].name === st.form)) why = 'NOBODY TO SAMPLE AS ' + st.form;   // m386: a role's form
       if (why) nb++;
       out.push(q.id + '.' + i + ' ' + st.type + (why ? ' BAD ' + why : ''));
     });
@@ -543,6 +544,16 @@ const walkUp = (pts, y0) => { let y = y0; for (let i = 0; i < pts.length - 1; i+
   } else why = 'NOT BUILT';
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + 'ROBOTS', r, why); }
+// ---- CHAPTER 4 OPENS (m386): arriving on the Waterfront's land sets `wf:in` (the shipped `wfSecStep`), and the chapter's
+// first task is the one picked in chapter 4
+{ const F = M.SAVE.flags, p = M.player, W = M.WFRONT, keep = { pos: p.pos.clone(), g: p.grounded, ch: M.SAVE.ch }, was = F['wf:in']; let r = '', why = '';
+  delete F['wf:in']; const [x, , z] = W.quayAt; p.pos.set(x, W.Y, z); p.grounded = true; M.wfSecStep(.016); const set = !!F['wf:in'];
+  if (was) F['wf:in'] = was; else delete F['wf:in']; p.pos.copy(keep.pos); p.grounded = keep.g;
+  const q = M.QUESTS.find(q => q.id === 'ch4');
+  r = 'on the quay: wf:in ' + (set ? 'set' : 'NOT SET') + ' | ch4 ' + (q ? q.steps.map(s => s.type).join(' > ') : 'MISSING');
+  why = !set ? 'ARRIVING IS NOT NOTICED' : !q ? 'NO CHAPTER 4' : '';
+  if (why) bad++;
+  quiet((why ? 'BAD ' : 'ok  ') + 'CH4', r, why); }
 // ---- HOLLOW CREEK'S LAND (m365): built, clear of every other land (its coast sampled against the farm's, the island's
 // rectangle and The Pearl's), the gorge cut at least 5 m under its rims down its length and running out to the sea, the
 // two flats level, and a forest standing on it

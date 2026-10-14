@@ -7,6 +7,22 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CHAPTER 4 OPENS: OVER THE RIVER, ROSA, DEX ON THE SHED ROOF, AN ENGINEER'S FACE, THROUGH THE GATE (m386, C6-6f-1,
+  `QUESTS` `ch4`, `wf:in`).** The chapter's own quest (`ch: 4`, picked once Chapter 3's boss is done): **flag `wf:in`**
+  (the beam on Old Town's ferry landing; set by `wfSecStep` the first time his feet are on the Waterfront's land 6 m in,
+  with a THE WATERFRONT card) -> **talk to Rosa on pier 1** (a `say` script: Uplift took the docks, then the dockers;
+  only an engineer gets in; Dex on the transit shed's roof) -> **talk to Dex** up the shed's ladder (the line, ONE red
+  lever in the control room, Ivy's face, turn the turrets) -> **sample `form: 'ENGINEER'`** (the role's form, m383) ->
+  **through `wf_gate`** as the engineer. Both scripts talk to `worker`: the worker form from Chapter 1 is the way to
+  start. GODCHAP 4 is still the ferry landing. C6-6f-2 (the lever, the line stopped, the cyborgs turning back) hangs off
+  this one with `needQ`.
+  The `QUESTS` row now checks a `form` sample step has a body wearing that role to sample (`NOBODY TO SAMPLE AS`). A
+  `CH4` row stands him on the quay through the shipped `wfSecStep` and reads the flag -- and its first run said NOT SET
+  because the ROW took `[x, z]` out of an `[x, y, z, h]` place: the harness standing him at the wrong spot, not the game.
+  `npm run places` (exit 0):
+      ok  CH4 on the quay: wf:in set | ch4 flag > talk > talk > sample > gate
+      ok  QUESTS ... ch4.0 flag | ch4.1 talk | ch4.2 talk | ch4.3 sample | ch4.4 gate ...
+
 - **UPLIFT'S SECURITY ROBOTS: A BEAT EACH, A CHASE AND A SHOVE, AND THEY STAND DOWN FOR THE ENGINEER (m385, C6-6e-3,
   `WBOT`, `wfBotBuild`, `wfBotParts`, `wfBotSees`, `wfBot`, `wfBotStep`).** Three (`role: 'robot'`: the cop's body standing
   in, steel-grey, cyan eye, plus an aerial, shoulder plates and a chest light that is its MOOD -- cyan on patrol, red in a

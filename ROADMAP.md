@@ -310,6 +310,9 @@ differ" table there, so no region feels like the last one.
       - [x] m384 **C6-6e-2** the turrets on Uplift's lot: they fire on strangers; the engineer turns them.
       - [x] m385 **C6-6e-3** the security robots in the yard: they chase strangers off; for the engineer they stand down.
     - [ ] **C6-6f** Chapter 4's quests and its boss; shut the line down and the cyborgs turn back; Chapter 4 complete.
+      - [x] m386 **C6-6f-1** Chapter 4 opens: over the river, Rosa on pier 1, Dex on the shed roof, an engineer's face, through Uplift's gate.
+      - [ ] **C6-6f-2** shut the line: the control room's red lever, the line stops for good, the cyborgs start turning back.
+      - [ ] **C6-6f-3** the boss: the line's supervisor bursts out (Uplift's own, nearly twice your height); after him Chapter 4 is complete.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
 
@@ -1084,3 +1087,6 @@ differ" table there, so no region feels like the last one.
   - Turned turrets now shoot robots. A robot knocked down gets back up.
   - The robots use the cop's body as a stand-in, with an aerial, shoulder plates and a chest light.
   - GOD has an on/off switch.
+- **m386 (C6-6f-1) Chapter 4 opens.** I split C6-6f into three: this opening; the lever that shuts the line so the cyborgs turn back; then the boss.
+  - The opening goes: cross the river, talk to Rosa on pier 1, climb to Dex on the transit shed roof, take an engineer's face (sample Ivy), then walk through Uplift's gate.
+  - Rosa and Dex talk to workers, so the worker form from Chapter 1 is how you start the conversation.
