@@ -244,11 +244,11 @@ differ" table there, so no region feels like the last one.
   - [x] m343 **C0-1** the number: Old Town's health, pushed by chunks, breakables, fires, Skinsuits, repairs and the crews; saved; on the chip, the map and in GOD.
   - [x] m344 **C0-2** the look follows it: boarded windows, rubble, litter, dead streetlights and squatters as Old Town slips; cleaned up as it recovers.
   - [x] m345 **C0-3** the strike: the crews down tools (pickets at the site, no repairs, the district slides); ending it sends them back out.
-- [ ] **C1 Protest events.** Activists gather with signs and chant; rednecks show up; it turns into
+- [x] m348 **C1 Protest events.** Activists gather with signs and chant; rednecks show up; it turns into
   a brawl if provoked; cops respond. As an activist you can walk inside the crowd through a barricade.
   - [x] m346 **C1-1** the protest: activists with signs gather at the square, march up the street chanting, rally, and go home, on their own clock.
   - [x] m347 **C1-2** the counter-protest: rednecks and bikers show up at the rally, the two sides shout; it turns into a brawl if provoked (a blow, a shot, the alien); cops respond.
-  - [ ] **C1-3** the barricade: as an activist inside the crowd you march through a barricade nobody else gets past.
+  - [x] m348 **C1-3** the barricade: as an activist inside the crowd you march through a barricade nobody else gets past.
 - [ ] **C2 Skinsuit incursions.** An enemy ship/agent turns civilians on the street; you fight and
   revert them. Ties to the existing virus system.
 - [ ] **C2b The orbs (`LORE.md`).** Start with the pacifier: an orb floating over a few Old Town
@@ -796,3 +796,9 @@ differ" table there, so no region feels like the last one.
   animation, so it looks like people charging and knocking each other over. I also fixed a bug from
   m338: a cop or walker who got hit lost their route for good, and a protester hit mid-march would
   have been stuck in the hit pose forever.
+
+- **m348 (C1-3):** a police line now stands across the march's street, with two officers at its ends.
+  It only opens for someone who looks like part of the march: any activist, hippie or hipster form, not
+  only the activist the original gate list named. And only while you're walking in the middle of the
+  marching crowd. Sage gives the task MARCH WITH THEM. In Old Town there are other streets round the
+  line; in The Pearl's plaza, barricades will close every street.

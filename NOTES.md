@@ -7,6 +7,18 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A GATE CAN ASK FOR A CROWD AS WELL AS A FORM (m348, C1-3, `GATE_TYPES.barricade.crowd`, `protestCrowd`, quest
+  `qmarch`).** The police line across the march route (55% of the way, as wide as the street -- probed out to the first
+  collider either side, 7 m most each way -- with Officers Bright and Ng at its ends) is a `barricade` gate whose
+  `gateLets` is `socialMe() === 'city' && protestCrowd()`: an activist, a hippie or a hipster (A8 named the activist; the
+  group is the honest test of "looks like part of it"), and only while within 4.5 m of the middle of the march as it is
+  out. The march itself walks through, because a gate only ever stops YOU. Sage now says so and gives the task
+  MARCH WITH THEM (`from: 'mk_protest_0'`, one `gate` step: crossing it in the right body, inside the crowd).
+  GOD: the place "the police line across the march". `places`: `police line 14.0 m wide at 13.4,0.2,46.7`, `GATES ...
+  protest_barricade barricade w14.0`, `ok  QUESTS ... qmarch.0 gate`, exit 0. `npm run shot barricade` (from above; it
+  stands across the street at a junction, so there are other ways round -- this is the line the MARCH takes, which is
+  what the task is about, and The Pearl's plaza is where barricades seal every street).
+
 - **`d.beat` WAS TWO THINGS FROM m338 TO m346: THE HIT REACTION'S LENGTH AND MY ROUTE (m347).** `dummyBlow` writes
   `d.beat = K.hitBeat` (a number) and the `hit` state ends on `d.t >= d.beat`; m338 put each role's ROUTE (an array) in
   the same field. So a struck cop or walker lost his route for good (it became a number, and the picker wants a

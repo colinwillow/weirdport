@@ -165,7 +165,8 @@ try { M.mkrNpcPlace(); } catch (e) { quiet('mkrNpcPlace throw', e.message); }
   if (why) globalThis.__cowBad = (globalThis.__cowBad || 0) + 1;
   quiet((why ? 'BAD ' : 'ok  ') + 'PROTEST', O.n, 'people | square', JSON.stringify(O.a && O.a.map(v => +v.toFixed(1))), '-> corner', JSON.stringify(O.b && O.b.map(v => +v.toFixed(1))),
     '| path', O.path ? O.path.length : 0, 'pts', O.len && +O.len.toFixed(1), 'm (straight', O.a && O.b ? +Math.hypot(O.b[0] - O.a[0], O.b[2] - O.a[2]).toFixed(1) : '-', ')',
-    '| counter line', JSON.stringify(O.COUNTER.map(c => c.line && c.line.map(v => +v.toFixed(1)))), 'suit at', JSON.stringify(O.SUIT.at && O.SUIT.at.map(v => +v.toFixed(1))), why); }
+    '| counter line', JSON.stringify(O.COUNTER.map(c => c.line && c.line.map(v => +v.toFixed(1)))), 'suit at', JSON.stringify(O.SUIT.at && O.SUIT.at.map(v => +v.toFixed(1))),
+    '| police line', O.line ? O.lineW.toFixed(1) + ' m wide at ' + O.lineAt.slice(0, 3).map(v => +v.toFixed(1)).join(',') : 'NONE', why); }
 // m347: the brawl, run from the shipped `protestBrawl`, ends (no bodies here: the cops are "in" at once or it times out)
 { const O = M.OPROTEST; let r = 'NOT RUN';
   try { O.st = 'rally'; O.s = O.len; const ok = M.protestBrawl('GOD'); for (let f = 0; f < 120 && O.st === 'brawl'; f++) M.protestStep(.5); r = ok ? 'brawl -> ' + O.st + ' after ' + (O.bT || 0).toFixed(1) + ' s, cops ' + (O.cops || []).length : 'DID NOT START'; }
@@ -228,8 +229,8 @@ for (const P of M.GODPLACES.filter(p => p.world === 'tkit')) {
   const city = p.x > R[0] && p.x < R[1] && p.z > R[2] && p.z < R[3];
   // sensible: it moved him, he is not under the sea, and a farm place is OUT on the island, not in the city
   // m306: a farm place is ON THE FARMLAND (its own landmass), except the bridge's checkpoint, which is on the deck
-  const CITYP = ['oldtown', 'camp', 'carts', 'site', 'sitetop', 'beat', 'footbridge', 'pearldock', 'protest'];                         // m335: places that are IN Old Town on purpose
-  const offLand = M.FARMLAND.live && !['oldtown', 'camp', 'carts', 'site', 'sitetop', 'beat', 'footbridge', 'pearldock', 'protest', 'bridge', 'warehouse', 'backyards', 'stones'].includes(P.id) && !(M.flEdgeAt(p.x, p.z) > 0);
+  const CITYP = ['oldtown', 'camp', 'carts', 'site', 'sitetop', 'beat', 'footbridge', 'pearldock', 'protest', 'barricade'];                         // m335: places that are IN Old Town on purpose
+  const offLand = M.FARMLAND.live && !['oldtown', 'camp', 'carts', 'site', 'sitetop', 'beat', 'footbridge', 'pearldock', 'protest', 'barricade', 'bridge', 'warehouse', 'backyards', 'stones'].includes(P.id) && !(M.flEdgeAt(p.x, p.z) > 0);
   const why = !a ? 'NO PLACE' : (p.x === 0 && p.z === 0 && P.id !== 'oldtown') ? 'UNMOVED' : p.y < M.ISLE.sea + .3 ? 'IN THE SEA'
             : (!CITYP.includes(P.id) && city) ? 'IN THE CITY' : offLand ? 'OFF THE FARMLAND'
             : (g > -500 && p.y - g > 2.5) ? 'IN THE AIR' : '';          // m346: a GOD place stood him 36 m up and every row said ok
