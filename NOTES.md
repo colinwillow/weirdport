@@ -7,6 +7,22 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE WAY TO THE CORE: THE TEAR, THE LOCK, THE SHAFT (m402, C6-8d-1, `ISGAUNT`, `buildShipGauntlet`, `shipGauntStep`,
+  `shipLiftAt`, GATE_TYPES `shiptear` / `shiplock`).** All of it is the GATE system's own. Each gate type is `bare`, so the
+  builder draws it. **`shiptear`** is a `fix` gate: `gateStep` mends it when the worker leans on it, and `gateOpen` shows
+  `G.planks`, which is set AFTER `gateAdd` (it calls `gateOpen` before a bare gate has anything to show), so the patch is
+  created already visible when the save has it fixed. **`shiplock`** needs `ENGINEER` (a ROLE's form, m383) and its
+  membrane parts by `damp` when `gateLets` and he is near. **THE SHAFT** is the needle's thermal again: `shipLiftAt` sits
+  beside `thermAt` in `wingWind`'s y and `thermStep`'s float, and counts as a thermal for the ceiling, which otherwise
+  holds every climb in the ship (it is all above 90 m).
+  **THE CHAMBER LOST THREE PODS** (outer 83 and 102 deg, inner 90 deg) to open its north door. 14 pods remain, 12 people
+  in them.
+  **THE SAME SPLICE MISTAKE A THIRD TIME** (m391, m395, now): a `// comment` appended to a replacement string that ended
+  mid-line commented out the rest of the line (the pod ring's `u = ..., v = ...; pod(u, v); ...`). `npm run check` read SYNTAX
+  FAIL. **Never append a comment to a partial-line replacement; put it on the line above.**
+  **`npm run places`, exit 0** (teeth: `liftUp: 0` reads `BAD ... to the core in NEVER ... THE SHAFT DOES NOT LIFT A FLIGHT`):
+      ok  GAUNTLET 91 boxes | walked from the chamber to the tear 0 | the tear: the alien stopped, the worker stopped, leans and mends it, then through | the lock: the worker stopped, the engineer through | the shaft: a level flight from its floor to the core in 1.4 s, a climb outside it held to 0 m/s | the core 350 m over the sea, its floor 0, over the shaft open | GOD yes 
+
 - **THE MOTHERSHIP'S PEOPLE, AND A WARRIOR NOW NOTICES ONLY AT ITS OWN HEIGHT (m401, C6-8c, `ISFOLK`, `buildShipFolk`,
   `shipFolkStep`, `shipPod`, `foeAI`'s `noticeY`).** **THE GRUNTS** are marks with ROSTER `grunt` (the warrior, FOE) and a
   `beat`, which `mkrStep` turns into `d.route`, which `foeWander`'s roam walks. Nothing new drives them. In tkit the
