@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m348</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m349</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m348</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m349</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm348';
+const BUILD = 'm349';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -27967,6 +27967,11 @@ const QUESTS = [
     { type: 'unskin', tag: 'ch1crew', npcs: ['crew_run_1', 'crew_run_2'], r: 12, text: 'Free the rest of the crew', tip: 'The two who never stopped to eat turned with him. The beam finds them.' },
     { type: 'talk',   who: 'ch1_briggs_after', text: 'See if Briggs is himself again' },
   ] },
+  // m349 (C2): an incursion's task, switched on fresh by `incurStart` each time (`qon`, its old flags cleared) and followed.
+  // `lost: 'pass'`: nobody carries the tag any more (a reload) and it is over, rather than turning somebody new.
+  { id: 'qinc', title: 'SKINSUITS ON THE STREET', dormant: 1, world: 'tkit', steps: [
+    { type: 'unskin', tag: 'inc', lost: 'pass', busy: () => OINCUR.st === 'in' || OINCUR.st === 'hover', text: 'Beat the Skinsuits back into people', tip: 'Knock one down three times and it lets go of whoever it is wearing.' },
+  ] },
   // m348 (C1-3): Sage, at the protest, to anyone who listens -- walk the march through the police line as one of them
   { id: 'qmarch', title: 'MARCH WITH THEM', world: 'tkit', from: 'mk_protest_0', steps: [
     { type: 'gate', id: 'protest_barricade', text: 'Through the police line, inside the march, as one of them',
@@ -28190,9 +28195,10 @@ function questTest(s) {
         quest.tgt = aim.root.position;
         if (s.type === 'skin') return al.length > 0;
         quest.cnt = T.length - al.length; quest.cntN = T.length;
-        return !al.length && !fly;
+        return !al.length && !fly && !(s.busy && s.busy());          // m349: not while whatever is turning them still is
       }
       if (fly) return false;                                         // mid-turn
+      if (s.lost === 'pass') return s.type === 'unskin' && !(s.busy && s.busy());   // m349: nobody left wearing the tag -- it is over
       // nobody carries the tag -- the step has just begun, or a reload took the Skinsuit away: turn her when he is close
       const ids = s.npcs || [s.npc];
       const d = questNear(q => ids.includes(q.markId) && !q.wasK) || (!s.big && s.npc && questNear(q => CIVILS.includes(q.K) && !q.wasK));
@@ -29477,6 +29483,101 @@ function protestBrawl(why) {
   for (const c of O.cops) if (!c.copOff) c.copOff = { route: c.route || null };
   const s = DUMMIES.find(d => d.markId === 'protest_suit'); if (s) { s.pT = null; s.route = null; s.rx = s.hx; s.rz = s.hz; s.roamT = 0; }
   return true;
+}
+// ============================================================================================
+// SKINSUIT INCURSIONS (m349, ROADMAP C2, `OINCUR`, `incurStart`, `incurStep`)
+// ============================================================================================
+// GAME_DESIGN's first enemy: "Skinsuits -- evil aliens wearing people. Hit someone with their ray and they burst out of
+// their skin as an alien version of themselves." An EVENT over Old Town, once you are past the crash (chapter >= 1),
+// every few minutes and never on top of a quest's own turn: an enemy SHIP drops out of the sky over a street near you
+// (20-70 m, somebody on it), hovers, and rays the people under it one at a time -- a green beam for a beat, then the
+// virus system's own turn (`virusGo`, the blob, the chest thump), each tagged `inc`. Four at most, or until there is
+// nobody left under it, drifting over to the next one it can see; then it climbs away. The task SKINSUITS ON THE
+// STREET (`qinc`, switched on fresh each time and followed) counts them back (`unskin`, `lost: 'pass'`: a reload that
+// took them away ends it). They come at you, and every second one walks Old Town is health off it (C0).
+// Only nameless street people are taken: nobody with a mark (the people the story needs), nobody already alien.
+const OINCUR = {
+  on: 1, live: 0, n: 0, turned: 0, g: null, beam: null, st: 'off', t: 0, every: [240, 420], next: 200,
+  max: 4, reach: 18, drift: 4.5, beamT: 1.2, gap: 2.2, hover: 9, life: 40,
+  x: 0, y: 0, z: 0, tx: 0, tz: 0, tgt: null,
+};
+function incurMesh() {
+  const O = OINCUR; if (O.g) return O.g;
+  const g = new THREE.Group(), metal = new THREE.MeshStandardMaterial({ color: 0x3a4048, metalness: .7, roughness: .35 });
+  const glow = new THREE.MeshStandardMaterial({ color: 0x103a14, emissive: new THREE.Color(0x6dff8a), emissiveIntensity: 2.2 });
+  const hull = new THREE.Mesh(new THREE.SphereGeometry(3.4, 24, 10), metal); hull.scale.set(1, .26, 1); g.add(hull);
+  const rim = new THREE.Mesh(new THREE.TorusGeometry(3.3, .22, 8, 32), metal); rim.rotation.x = Math.PI / 2; g.add(rim);
+  const dome = new THREE.Mesh(new THREE.SphereGeometry(1.3, 18, 10, 0, Math.PI * 2, 0, Math.PI / 2), glow); dome.position.y = .55; g.add(dome);
+  O.lights = new THREE.Group(); g.add(O.lights);
+  for (let i = 0; i < 10; i++) { const l = new THREE.Mesh(new THREE.SphereGeometry(.18, 8, 6), glow); const a = i / 10 * 6.283; l.position.set(Math.cos(a) * 3.1, -.25, Math.sin(a) * 3.1); O.lights.add(l); }
+  const bg = new THREE.CylinderGeometry(.35, 1.4, 1, 18, 1, true); bg.translate(0, -.5, 0);
+  O.beam = new THREE.Mesh(bg, new THREE.MeshBasicMaterial({ color: 0x6dff8a, transparent: true, opacity: .5, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, fog: false }));
+  O.beam.visible = false; g.add(O.beam);
+  g.visible = false; scene.add(g); O.g = g; return g;
+}
+// who it can take: a nameless person on the street, turnable, in Old Town
+const incurOk = d => !d.gone && !d.markId && !d.qTag && !isAlien(d.K) && virusOK(d) && d.st !== 'down' && !!dhAt(d.root.position.x, d.root.position.z);
+function incurStart(force) {
+  const O = OINCUR; if (!O.on || !inTK() || O.st !== 'off') return false;
+  const P = player.pos, C = DUMMIES.filter(d => incurOk(d) && (q => q > 20 && q < 70)(Math.hypot(d.root.position.x - P.x, d.root.position.z - P.z)));
+  if (!C.length) { if (force) toast('Nobody on the street to take', 1.6); return false; }
+  const d0 = C[(Math.random() * C.length) | 0], a = Math.random() * 6.283;
+  incurMesh();
+  O.tx = d0.root.position.x; O.tz = d0.root.position.z; O.y0 = d0.root.position.y;
+  O.x = O.tx + Math.cos(a) * 70; O.z = O.tz + Math.sin(a) * 70; O.y = O.y0 + 45;
+  O.st = 'in'; O.t = 0; O.turned = 0; O.tgt = null; O.n++; O.g.visible = true;
+  cardShow('INCURSION', 'A SHIP OVER OLD TOWN', 3.2);
+  for (const d of DUMMIES) if (d.qTag === 'inc' && !isAlien(d.K)) d.qTag = null;     // last time's, back to themselves
+  return true;
+}
+function incurStep(dt) {
+  const O = OINCUR; if (!O.on || !inTK()) return;
+  if (O.st === 'off') {
+    // the clock: only once he is past the crash, and never while a quest is turning somebody of its own
+    if (SAVE.ch >= 1 && SAVE.flags.inTown && (O.next -= dt) <= 0) {
+      const busy = quest.cur && quest.cur.steps[quest.step] && /skin/.test(quest.cur.steps[quest.step].type) && quest.cur.id !== 'qinc';
+      O.next = busy || !incurStart() ? 30 : rnd(O.every);
+    }
+    return;
+  }
+  O.t += dt;
+  const g = O.g, now = performance.now() * .001;
+  O.lights.rotation.y += dt * 1.6;
+  const ease = (a, b, k) => a + (b - a) * Math.min(1, k);
+  if (O.st === 'in') {                                             // down out of the sky over the street
+    O.x = ease(O.x, O.tx, dt * .9); O.z = ease(O.z, O.tz, dt * .9); O.y = ease(O.y, O.y0 + O.hover, dt * .9);
+    if (Math.hypot(O.x - O.tx, O.z - O.tz) < 1.5 && O.y - O.y0 < O.hover + 1) { O.st = 'hover'; O.t = 0; O.next2 = .8; }
+  } else if (O.st === 'hover') {
+    // the nearest one under it it can still take; drift over to him if he is not right under it
+    if (!O.tgt || !incurOk(O.tgt)) {
+      O.tgt = null; let bd = 50;
+      for (const d of DUMMIES) { if (!incurOk(d)) continue; const q = Math.hypot(d.root.position.x - O.x, d.root.position.z - O.z); if (q < bd) { bd = q; O.tgt = d; } }
+      O.bT = 0;
+    }
+    const T = O.tgt;
+    if (!T || O.turned >= O.max || O.t > O.life) { O.st = 'out'; O.t = 0; O.beam.visible = false; }
+    else {
+      const tx = T.root.position.x, tz = T.root.position.z, q = Math.hypot(tx - O.x, tz - O.z);
+      if (q > 2) { const k = Math.min(1, O.drift * dt / q); O.x += (tx - O.x) * k; O.z += (tz - O.z) * k; O.y = ease(O.y, T.root.position.y + O.hover, dt * 2); O.bT = 0; O.beam.visible = false; }
+      else if ((O.next2 -= dt) <= 0) {
+        // the ray: a beat of green on him, then he bursts out of his skin
+        O.bT += dt; O.beam.visible = true;
+        const h = O.y - T.root.position.y; O.beam.scale.set(1 + .15 * Math.sin(now * 20), h, 1 + .15 * Math.sin(now * 20)); O.beam.position.set(0, 0, 0);
+        T.fleeT = 0; T.roamT = 1;                                    // held in it
+        if (O.bT >= O.beamT) {
+          T.qTag = 'inc'; virusGo(T); O.turned++; O.tgt = null; O.bT = 0; O.next2 = O.gap; O.beam.visible = false;
+          // the task, fresh, and followed -- switched on at the FIRST turn, never before: with nobody wearing the tag
+          // yet, `lost: 'pass'` would have passed it the moment the ship showed up
+          if (O.turned === 1) { for (const k of ['qdone:qinc', 'q:qinc', 'qseen:qinc']) progFlag(k, 0); progFlag('qon:qinc', 1); questTrack('qinc'); }
+          snd('zap', { g: .5, r: .7, dur: .6 });
+        }
+      }
+    }
+  } else if (O.st === 'out') {                                     // and away, up and off the way it came
+    O.y += dt * (6 + O.t * 8); O.x += dt * 14; O.z += dt * 6;
+    if (O.t > 5) { O.st = 'off'; g.visible = false; O.next = rnd(O.every); }
+  }
+  g.position.set(O.x, O.y + Math.sin(now * 1.7) * .25, O.z); g.rotation.z = Math.sin(now * .9) * .06;
 }
 // ============================================================================================
 // PORTALS (m286, ROADMAP A8b) -- no one-way trips
@@ -34403,6 +34504,7 @@ function godMenuOpen(on) {
     });
   }
   btn('WIPE THE SAVE', () => { progReset(); location.replace(location.pathname); }, 'warn');
+  if (inTK()) btn('A SKINSUIT INCURSION NOW (' + OINCUR.st.toUpperCase() + ')', () => { godMenuOpen(0); incurStart(1); });
   if (OPROTEST.path) btn('START THE PROTEST NOW (' + OPROTEST.st.toUpperCase() + ')', () => { protestStart(); godMenuOpen(0); toast('The protest is gathering at the square', 2); });
   // both sides to the rally first (they live 43 m apart), then it goes off 12 s later
   if (OPROTEST.path) btn('SKIP TO THE RALLY, THEN THE BRAWL', () => { const O = OPROTEST; godMenuOpen(0); protestStart(); O.st = 'rally'; O.s = O.len; O.t = O.rally; O.provoked = null; O.provokeAt = 12; toast('Rally at the corner lot; it goes off in 12 s', 2.4); });
@@ -35988,7 +36090,8 @@ function frameBody() {
   dhStep(dt);                   // district health: what is burning, who is walking, whether the crews are working (m343)
   decayStep(dt);                // ...and the look following it: boards, rubble, litter, squatters (m344)
   strikeStep(dt);               // the crews on the picket line, or back at work (m345)
-  protestStep(dt);              // the protest: gather, march, rally, home (m346)                // the wreck burns and smokes; reaching town once moves the start (m289)
+  protestStep(dt);              // the protest: gather, march, rally, home (m346)
+  incurStep(dt);                // a Skinsuit ship over Old Town now and then (m349)                // the wreck burns and smokes; reaching town once moves the start (m289)
   crashHeroStep(dt);            // ...and pulses, arcs, hums, and stands a beam over the farm (m300)
   riverStep(dt);                // the farm's river: no wading, the current puts you back (m291)
   cellStep();
@@ -36896,7 +36999,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

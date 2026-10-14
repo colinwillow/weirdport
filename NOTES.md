@@ -7,6 +7,21 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **SKINSUIT INCURSIONS: A SHIP, A RAY, THE VIRUS'S OWN TURN, AND A TASK THAT REARMS ITSELF (m349, C2, `OINCUR`,
+  `incurStart`, `incurStep`, quest `qinc`).** From chapter 1, in town, every 4-7 minutes (and never while a quest is on
+  a `skin` step of its own): a saucer (hull, rim, a green dome, a ring of lights turning) drops out of the sky over a
+  nameless person 20-70 m from you, hovers 9 m up, and rays the nearest one under it for 1.2 s -- a green beam -- then
+  `virusGo` with `qTag = 'inc'`; four at most, drifting over to the next it can see, 40 s at most; then it climbs off.
+  Only people with no mark and no tag are taken. The task SKINSUITS ON THE STREET counts them back (`unskin`, tag `inc`).
+  **TWO WAYS IT COMPLETED ITSELF, BOTH CAUGHT BEFORE SHIPPING**: switched on with the ship, `lost: 'pass'` (nobody wears
+  the tag -> over) passed it before anybody had been turned -- it is switched on at the FIRST turn now; and reverting the
+  first Skinsuit before the ship turned the second passed it too -- a step may say `busy` (here: the ship is still in or
+  hovering) and does not pass while it does. Last time's reverted people lose the tag when a new one starts.
+  GOD: A SKINSUIT INCURSION NOW. `places` flies the shipped step by hand (nobody is turnable in the harness):
+  `ok  INCURSION states in>hover>out>off | started on its own: false | ends off`, `ok  incurStep 30 frames`, exit 0.
+  **Not built:** the ship cannot be shot down (the bolt has no hook for a flying target), and the Skinsuits do not go
+  after civilians -- only you.
+
 - **A GATE CAN ASK FOR A CROWD AS WELL AS A FORM (m348, C1-3, `GATE_TYPES.barricade.crowd`, `protestCrowd`, quest
   `qmarch`).** The police line across the march route (55% of the way, as wide as the street -- probed out to the first
   collider either side, 7 m most each way -- with Officers Bright and Ng at its ends) is a `barricade` gate whose

@@ -249,7 +249,7 @@ differ" table there, so no region feels like the last one.
   - [x] m346 **C1-1** the protest: activists with signs gather at the square, march up the street chanting, rally, and go home, on their own clock.
   - [x] m347 **C1-2** the counter-protest: rednecks and bikers show up at the rally, the two sides shout; it turns into a brawl if provoked (a blow, a shot, the alien); cops respond.
   - [x] m348 **C1-3** the barricade: as an activist inside the crowd you march through a barricade nobody else gets past.
-- [ ] **C2 Skinsuit incursions.** An enemy ship/agent turns civilians on the street; you fight and
+- [x] m349 **C2 Skinsuit incursions.** An enemy ship/agent turns civilians on the street; you fight and
   revert them. Ties to the existing virus system.
 - [ ] **C2b The orbs (`LORE.md`).** Start with the pacifier: an orb floating over a few Old Town
   blocks, a trance on the people under it (they stare and walk in slow loops), the blaster can shoot
@@ -802,3 +802,9 @@ differ" table there, so no region feels like the last one.
   only the activist the original gate list named. And only while you're walking in the middle of the
   marching crowd. Sage gives the task MARCH WITH THEM. In Old Town there are other streets round the
   line; in The Pearl's plaza, barricades will close every street.
+
+- **m349 (C2):** the enemy is a ship, not a person on foot. From Chapter 1 on, every 4-7 minutes in
+  Old Town, a saucer drops over a street near you. It rays up to four ordinary people into Skinsuits,
+  one at a time, then flies off, and a task tracks you beating them back into people. It never takes
+  anyone the story needs, and never fires while a quest is turning someone of its own. You can't shoot
+  the ship down yet. GOD has "A SKINSUIT INCURSION NOW".
