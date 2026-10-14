@@ -200,6 +200,9 @@ differ" table there, so no region feels like the last one.
   - [x] m291 **B1d The road and the bridge** — the road climbing from the farm to a bridge into town (split: the cows are B1d2).
   - [x] m294 **B1d2 The cows** — cows that moo and wander the farm.
   - [ ] **B1e From REGIONS.md's Gristle Farm entry, not in m288** — a rope down from the hayloft, the silo ladder made climbable, an orchard terrace, and cows that panic and stampede (its signature system).
+    - [x] m327 **B1e-1** the rope down from the hayloft and the silo ladder, climbable, with a landing on top.
+    - [ ] **B1e-2** an orchard terrace.
+    - [ ] **B1e-3** cows that panic and stampede (the farm's signature system).
 - [ ] **B1f Direction and discovery** (see the new section in `GAME_DESIGN.md`). Build on m278's quests:
   - a **"New task" card** when a task unlocks, and a **task list** you can open;
   - the waypoint in the world shows the **distance** in metres, and the map marker matches it;
@@ -595,3 +598,11 @@ differ" table there, so no region feels like the last one.
   toy cows, and a herd grazes together, each cow mostly picking a spot near a herd-mate. The bigger
   pastures have 7 cows. `mel.COW.round` (0 is the old boxes; needs a reload) and `mel.COW.herdP`
   (how herd-bound they are, 0.7 now) are the dials.
+
+
+- **m327 (B1e-1):** I stopped the farm polish after five passes (fields, skyline, hedge banks, the
+  wreck, the cows). The new shots read right, and the STEER says B1e comes next. Say if you want
+  more polish passes. B1e is split in three: the rope and the silo ladder now, then the orchard
+  terrace, then the stampede. The rope hangs from the hook beam over the loft door; walk into it
+  facing the barn and push up to land in the loft. The silo ladder climbs to a railed landing at
+  11 m.

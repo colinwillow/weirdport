@@ -163,7 +163,7 @@ for (const P of M.GODPLACES.filter(p => p.world === 'tkit')) {
   M.player.pos.set(0, 0, 0);
   let a = null; try { a = P.at && P.at(); } catch (e) { a = 'THROW ' + e.message; }
   try { M.godPlace(P); } catch (e) { quiet('godPlace throw', P.id, e.message); }
-  const p = M.player.pos, g = M.groundAt(p.x, p.z, 4, 8), R = M.ISLE.rect;
+  const p = M.player.pos, g = M.groundAt(p.x, p.z, p.y + .3, .6), R = M.ISLE.rect;   // m327: the floor UNDER him, from his own height
   const city = p.x > R[0] && p.x < R[1] && p.z > R[2] && p.z < R[3];
   // sensible: it moved him, he is not under the sea, and a farm place is OUT on the island, not in the city
   // m306: a farm place is ON THE FARMLAND (its own landmass), except the bridge's checkpoint, which is on the deck

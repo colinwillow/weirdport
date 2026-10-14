@@ -7,6 +7,33 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE HAYLOFT ROPE AND THE SILO LADDER ARE CLIMBS IN `KCLIMB`, WITH THEIR FRONT GIVEN, NOT PROBED (m327, B1e-1,
+  `farmClimb`, `FARM.rope`, `FARM.siloLad`).** REGIONS' Gristle Farm: "a rope down from the hayloft, the silo ladder".
+  **No new climbing system**: `farmClimb(F, u, v, ha, hn, y0, top, mark, nm, out)` hands an oriented box (the frame's u
+  axis in the world is (C, -S)) to his `kitClimbAdd`, so the latch in the move code, `stepClimb`, the climb clip and the
+  top-out are the kit city's, unchanged. Two things it sets that a kit ladder gets from his file:
+  1. **`L.mark`**, where the top sets him down (his `nav_ladder_top` marker's job): inside the loft for the rope, on the
+     silo's landing for the ladder.
+  2. **`L.fg`, the FRONT** (`ladderFront`'s cached answer): `ladderFront` probes for a wall behind the rungs, and a rope
+     hangs in the air with nothing behind it -- so the front is given as the frame's +v (rope) / -v (ladder) and the
+     probe never runs. Latch only from the front, as everywhere.
+  **The rope** hangs from m299's hook beam .75 m off the back wall, under the loft door, to a knot .35 m off the ground;
+  climbing past y0 + 3.15 sets him on the loft floor 1.3 m inside the door. **The hay stack moved to the -u side** of the
+  door (it stood where the rope hangs) and still steps .45 / .9 / 1.35.
+  **The silo ladder** (the picture rungs since m288) gained stiles and comes up through a HOLE in a railed timber landing
+  (two decks either side of it, a strip across its outer end, rails at 0.5 and 1.0 with colliders); the top sets him
+  down beside the hole. **The silo's collider now runs up into the dome** (+1.8 m) -- from the landing at 11 m the dome
+  is a wall, not a surface to walk into.
+  **`places` now measures the floor UNDER him from his own height** (`groundAt(x, z, y + .3, .6)`): it probed from a
+  fixed 4 m, which read the barn's ROOF (9.0) for the hayloft and the ground for the silo top -- a column that says
+  nothing about a raised place. GOD `loftrope`, `silo`, `silotop`.
+      ok  hayloft    -> player 333.7,4.7,156.8 ground 4.52
+      ok  loftrope   -> player 339.1,1.6,158.4 ground 1.41
+      ok  silo       -> player 336.6,1.5,148.9 ground 1.39
+      ok  silotop    -> player 338.2,12.6,148.4 ground 12.42
+      ok  NEW GAME  -> player 288.2,337.8 ground 0.29 | 15.2 m from the wreck
+      every tkit GOD place is somewhere
+
 - **THE COWS ARE ROUNDED AND THE HERDS GRAZE TOGETHER (m326, farm polish 5, `COW.round`, `COW.herdP` / `herdR`, `cowPick`,
   `FHERDS`).** The herd shot: two brick cows a long way apart on an empty hill. Two causes, two fixes:
   1. **every part was a unit BOX** (m294: one `InstancedMesh`, 16 instances a cow). It is now a ROUNDED box -- a unit box
