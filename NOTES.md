@@ -7,6 +7,30 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A BLOCK HELD FOR GOOD IS REBUILT (m411, D4b, `KSWAP`, `kswapStep`, `kswapSettle`, `kswapPick`, `kswapApply`, `kswapScaffold`,
+  `kitBldRec`, `SAVE.tgood`, `SAVE.tswap`).** For good = `turfHold` lead >= `KSWAP.lead` (.12) for `KSWAP.hold` (240) s,
+  counted twice a second for all 36 blocks and saved every 15 s. **Settles only when the holder is not the OWNER** (whoever's
+  building stands there per `SAVE.tswap`, else `B.native`, the seeds' holder, which `turfBuild` now computes for every block
+  whether or not the save has shares) -- without that every block would "settle" for its own faction four minutes in.
+  **HIS BUILDINGS ARE SWAPPED ONLY AT LOAD, AND THE CUT IS AT THE ROOT**: `buildKCityCol` skips every `kitRe` collider whose
+  building (`k[2]`) is in `KSWAP.gone` (decks too, so no invisible floor is left in `TRI`), and `buildKit` (city) takes the
+  root out of the GLTF scene BEFORE its traverse -- after reading its record (`kitBldRec`, split out of `kitBldAdd`) and its
+  material names -- so the walls, parts, ladders, markers, ivy, batch, worker and fires never know it existed. A live
+  swap of one of his would have to undo all of those. `kswapApply` runs after `turfBuild`, BEFORE `turfDressBuild`, so the
+  dressing sees the new building's record in `KBLD` (`kswapRec`, `kgen` set). A generated building is swapped live
+  (`kgenDrop`, `kswapBuild`, the KBLD slot replaced, the dressing rebuilt). His building marked mid-play gets scaffolding.
+  **`KSWAP.gone` IS FILLED AT MODULE SCOPE** from `SAVE.tswap` (WORLD.now is resolved there too), because the collider is
+  built before anything in init could fill it. `blk:<id>` entries mark a block that settled with no building to swap.
+  GOD's reload keeps his place through `sessionStorage['mel.at']`, read once after `crashSpawn`.
+  `places`:
+      ok  REBUILD the camp's block F5 (native home) | held by its own 245 s: 0 marked | big business 239 s: 0, past 240: big on kit_901, scaffolding up | next load: 1 up, the glass tower 8 storeys, 180 pieces, 406 boxes, cells his, off his footprint 0/20896, in KBLD true | the activists for good: replaced on the spot (the co-op), the tower's colliders left 0 of 406 | the homeless back: F5 IS THE HOMELESS'S FOR GOOD: THE OLD BUILDING COMES BACK (NEXT LOAD)
+  Teeth: `kswapOwner` returning '' (the native never owns) -> `held by its own 245 s: 8 marked` ... `THE NATIVE HOLDER
+  SETTLED ITS OWN BLOCK`; the live swap without `kgenDrop` -> `the tower's colliders left 406 of 406 ... A GENERATED
+  BUILDING IS NOT REPLACED ON THE SPOT`.
+  **NOT TESTED HERE**: the two load-time cuts (`buildKCityCol`'s skip, `buildKit`'s root removal) -- the harness builds
+  neither the kit buildings nor a second collider. The row plays the load out with the same calls (`kitBldRec`, the KBLD
+  removal, `kswapApply`) on fabricated roots.
+
 - **THE FACTIONS' OWN BUILDINGS: THE GENERATOR (m410, D4a, `KPIECE`, `kitPieceIndex`, `KGEN`, `KGSTYLE`, `kgBay`, `kgenMake`,
   `kgenDrop`, `kgenGod`, `tools/twins.mjs`).** His note on the piece library: *"The game can use it to assemble its own
   buildings."* **The twins file now carries the intact pieces too** (`npm run twins`: 96 twins + 144 generator pieces, 9

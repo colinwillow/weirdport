@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m410</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m411</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m410</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m411</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm410';
+const BUILD = 'm411';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -2203,6 +2203,8 @@ const SAVE = {
   regions: [],          // revealed region keys
   flags: {},            // quest flags, free-form
   turf: {},             // m407: each block's faction shares (`TURF`)
+  tgood: {},            // m411: how long each block's holder has held it, [faction index, seconds] (`KSWAP`)
+  tswap: {},            // m411: his buildings replaced for good, name -> { f, blk } (rebuilt at load, `kswapApply`)
   portals: [],          // activated portal keys
   juice: 0,             // the DNA tool's tank (A7b decides the size and the rates)
   fresh: 0,             // 1 when this boot wiped the store (`?fresh`) -- the chip says so
@@ -2228,11 +2230,13 @@ const SAVE = {
     if (Array.isArray(o.portals)) SAVE.portals = o.portals.filter(f => typeof f === 'string');
     if (Number.isFinite(o.juice)) SAVE.juice = o.juice;
     if (o.turf && typeof o.turf === 'object') SAVE.turf = o.turf;
+    if (o.tgood && typeof o.tgood === 'object') SAVE.tgood = o.tgood;
+    if (o.tswap && typeof o.tswap === 'object') SAVE.tswap = o.tswap;
   }
 }
 const progSave = () => {
-  const { ch, forms, regions, flags, portals, juice, turf, v } = SAVE;
-  try { localStorage.setItem(SAVE.key, JSON.stringify({ v, ch, forms, regions, flags, portals, juice, turf })); } catch (e) {}
+  const { ch, forms, regions, flags, portals, juice, turf, tgood, tswap, v } = SAVE;
+  try { localStorage.setItem(SAVE.key, JSON.stringify({ v, ch, forms, regions, flags, portals, juice, turf, tgood, tswap })); } catch (e) {}
 };
 // each returns true when it CHANGED something, so a caller can fire its moment exactly once
 const progAdd = (list, k) => { if (SAVE[list].includes(k)) return false; SAVE[list].push(k); progSave(); return true; };
@@ -2244,7 +2248,7 @@ const progChapter = n => { n |= 0; if (SAVE.ch === n) return false; SAVE.ch = n;
 const progJuice = n => { SAVE.juice = Math.max(0, n); progSave(); return SAVE.juice; };
 // new game without the URL: wipes this key only, leaves tuning and settings alone
 const progReset = () => {
-  Object.assign(SAVE, { ch: 0, forms: ['zap'], regions: [], flags: {}, portals: [], juice: 0, turf: {} });
+  Object.assign(SAVE, { ch: 0, forms: ['zap'], regions: [], flags: {}, portals: [], juice: 0, turf: {}, tgood: {}, tswap: {} });
   progSave();
 };
 const inWP = () => WORLD.now === 'weirdport';
@@ -18686,8 +18690,14 @@ const KBLD = [];
 // is exactly m179's arithmetic. The world AABB of the turned footprint is the broad phase only.
 const _kbq = new THREE.Quaternion(), _kbe = new THREE.Euler();
 function kitBldAdd(o) {
+  const B = kitBldRec(o); if (!B) return 0;
+  KBLD.push(B);
+  return 1;
+}
+// a building root's record (m411: also read off a root that is about to be taken away, so its footprint can be rebuilt)
+function kitBldRec(o) {
   const e = o.userData || {};
-  if (!e.bay_m && !e.footprint_bays) return 0;
+  if (!e.bay_m && !e.footprint_bays) return null;
   o.updateWorldMatrix(true, false);
   const T = new THREE.Vector3().setFromMatrixPosition(o.matrixWorld);
   o.matrixWorld.decompose(_kv, _kbq, _ks);
@@ -18696,7 +18706,7 @@ function kitBldAdd(o) {
   let list = null, H = null;
   try { list = e.cells ? JSON.parse(e.cells) : null; H = e.heights ? JSON.parse(e.heights) : null; } catch (err) { list = null; }
   if (!list) { list = []; const fb = e.footprint_bays || [0, 0]; for (let x = 0; x < fb[0]; x++) for (let y = 0; y < fb[1]; y++) list.push([x, y]); }
-  const B = { name: o.name, x0: T.x, y0: T.y, z0: T.z, c, s: sn, bay, fl, cells: new Map(),
+  const B = { name: o.name, x0: T.x, y0: T.y, z0: T.z, c, s: sn, bay, fl, cells: new Map(), station: e.station || '',
               lx0: 1e9, lx1: -1e9, lz0: 1e9, lz1: -1e9,
               minx: 1e9, maxx: -1e9, minz: 1e9, maxz: -1e9, top: 0 };
   for (const [x, y] of list) {
@@ -18711,8 +18721,7 @@ function kitBldAdd(o) {
     B.minx = Math.min(B.minx, wx); B.maxx = Math.max(B.maxx, wx);
     B.minz = Math.min(B.minz, wz); B.maxz = Math.max(B.maxz, wz);
   }
-  KBLD.push(B);
-  return 1;
+  return B;
 }
 function kitCell(x, z) {
   for (const B of KBLD) {
@@ -19105,6 +19114,8 @@ function buildKCityCol(g) {
     const k = KCITY.kitRe.exec(nm);
     if (k) {
       const fam = k[1], pid = k[2] + '/' + k[3];
+      // a building replaced for good (m411): none of its colliders, its floors' triangles included
+      if (KSWAP.gone.has(k[2])) { KSWAP.colCut++; return; }
       if (fam === 'climb') { kitClimbAdd(kitObb(o), nm, null); nC++; return; }
       if (fam === 'deck' || fam === 'ramp') { tris(o, 1); nD++; return; }
       // **A KIT SOLID IS ITS OWN TURNED BOX AND IS *NOT* IN `SURF`.** A wall is taken away when it
@@ -19270,6 +19281,16 @@ function buildKit(g) {
   const city = inTK(), cast = kit.cast = city ? !!KCITY.cast : true;
   let nW = 0, nG = 0, nDoor = 0, nMark = 0, nAC = 0, nIntact = 0;
   const hangs = [], acs = [], parts0 = KPARTS.length;
+  // **A BUILDING REPLACED FOR GOOD (m411, `KSWAP`) NEVER REACHES ANY SYSTEM BELOW**: its root is read for its footprint (the
+  // faction's building goes up on it in `kswapApply`), its materials are named for the generator, and it is taken out of
+  // the graph before the walls, parts, ladders, markers, ivy and the batch ever see it. Its colliders were never added.
+  if (city && KSWAP.gone.size) for (const o of [...root.children]) {
+    if (!KSWAP.gone.has(o.name)) continue;
+    o.updateWorldMatrix(true, false);
+    const B = kitBldRec(o); if (B) KSWAP.rec.set(o.name, B);
+    o.traverse(c => { if (c.isMesh) for (const m of [].concat(c.material)) if (m && m.name && !kit.matBy.has(m.name)) kit.matBy.set(m.name, m); });
+    root.remove(o); KSWAP.cut++;
+  }
   root.traverse(o => {
     if (o.isMesh) {
       o.castShadow = cast; o.receiveShadow = true;
@@ -35344,14 +35365,15 @@ function turfBuild() {
   let fresh = 0;
   for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
     const id = 'ot:' + i + ':' + j, x0 = R[1] - (i + 1) * w, x1 = R[1] - i * w, z0 = R[2] + j * d, z1 = R[2] + (j + 1) * d, cx = (x0 + x1) / 2, cz = (z0 + z1) / 2;
+    // the seeded shares: what is there before anybody moves anything, and so who the block NATIVELY belongs to (m411)
+    let h = (i * 73 + j * 151 + 7) % 997; const rnd = () => (h = (h * 9301 + 49297) % 233280) / 233280;
+    let seed = T.base.map(b => b + rnd() * T.noise);
+    for (const S of seedAt) { const dd = Math.hypot(cx - S.x, cz - S.z); if (dd < S.r) seed[S.fi] += S.k * (1 - dd / S.r); }
+    const sum = seed.reduce((a, b) => a + b, 0); seed = seed.map(v => v / sum);
     let sh = SAVE.turf[id];
-    if (!Array.isArray(sh) || sh.length !== T.FACTIONS.length) {
-      let h = (i * 73 + j * 151 + 7) % 997; const rnd = () => (h = (h * 9301 + 49297) % 233280) / 233280;
-      sh = T.base.map(b => b + rnd() * T.noise);
-      for (const S of seedAt) { const dd = Math.hypot(cx - S.x, cz - S.z); if (dd < S.r) sh[S.fi] += S.k * (1 - dd / S.r); }
-      const sum = sh.reduce((a, b) => a + b, 0); sh = sh.map(v => v / sum); SAVE.turf[id] = sh; fresh++;
-    }
-    T.blocks.push({ id, i, j, name: 'ABCDEF'[i] + (j + 1), x0, x1, z0, z1, cx, cz, sh });
+    if (!Array.isArray(sh) || sh.length !== T.FACTIONS.length) { sh = seed.slice(); SAVE.turf[id] = sh; fresh++; }
+    const B = { id, i, j, name: 'ABCDEF'[i] + (j + 1), x0, x1, z0, z1, cx, cz, sh }; B.native = turfHold({ sh: seed })[0];
+    T.blocks.push(B);
   }
   if (fresh) progSave();
   return T.blocks.length;
@@ -35648,6 +35670,128 @@ function kgenGod() {
   KGEN.god = kgenMake({ f, x0, y0: y0 + .02, z0, th, seed: KGEN.godNext });
   return KGEN.god ? S.name + ' (' + f + ')' : 'NO PIECES';
 }
+// ============================================================================================
+// A BLOCK HELD FOR GOOD IS REBUILT IN ITS HOLDER'S STYLE (m411, ROADMAP D4b, `KSWAP`, `kswapStep`, `kswapSettle`, `kswapApply`)
+// ============================================================================================
+// GAME_DESIGN "Turf" 3: the buildings themselves, *"swapped in as a block changes hands."* A block is held FOR GOOD when one
+// faction has led it by `lead` for `hold` seconds of play (the clock is saved, `SAVE.tgood`); if that faction is not the
+// block's owner already -- the one its seeds give it (`B.native`) or the one whose building already stands there -- it
+// SETTLES: the block's biggest building (never a station) is marked for its holder's building (`SAVE.tswap`). Then:
+//   * a building that is already a generated one comes down and the new one goes up ON THE SPOT;
+//   * one of his is wrapped in SCAFFOLDING with the new owner's sheeting, and is rebuilt the next time the city loads --
+//     `buildKCityCol` never adds its colliders, `buildKit` takes its root out before any system sees it, and `kswapApply`
+//     puts the faction's building on its exact footprint (its cells, its turn, its foot), into `KBLD` like his own;
+//   * the block's native faction retaking it for good gives him his building back, the same way.
+const KSWAP = { on: 1, lead: .12, hold: 240, gone: new Set(), rec: new Map(), live: new Map(), scaf: new Map(), cut: 0, colCut: 0, made: 0, settles: 0, t: 0, saveT: 0, last: '' };
+if (inTK()) for (const n of Object.keys(SAVE.tswap || {})) if (!n.startsWith('blk:')) KSWAP.gone.add(n);
+// the KBLD record of a generated building, as `kitBldRec` reads one of his
+function kswapRec(R, name) {
+  const B = { name, kgen: R, x0: R.x0, y0: R.y0, z0: R.z0, c: Math.cos(R.th), s: Math.sin(R.th), bay: 3, fl: 3, cells: new Map(), station: '',
+    lx0: 1e9, lx1: -1e9, lz0: 1e9, lz1: -1e9, minx: 1e9, maxx: -1e9, minz: 1e9, maxz: -1e9, top: 0 };
+  for (const [k, f] of R.cells) { const [x, y] = k.split(',').map(Number); B.cells.set(k, f);
+    B.lx0 = Math.min(B.lx0, x * 3); B.lx1 = Math.max(B.lx1, x * 3 + 3); B.lz0 = Math.min(B.lz0, -(y + 1) * 3); B.lz1 = Math.max(B.lz1, -y * 3); B.top = Math.max(B.top, f * 3); }
+  for (const lx of [B.lx0, B.lx1]) for (const lz of [B.lz0, B.lz1]) { const wx = B.x0 + lx * B.c + lz * B.s, wz = B.z0 - lx * B.s + lz * B.c;
+    B.minx = Math.min(B.minx, wx); B.maxx = Math.max(B.maxx, wx); B.minz = Math.min(B.minz, wz); B.maxz = Math.max(B.maxz, wz); }
+  return B;
+}
+const kswapCenter = B => [B.x0 + ((B.lx0 + B.lx1) / 2) * B.c + ((B.lz0 + B.lz1) / 2) * B.s, B.z0 - ((B.lx0 + B.lx1) / 2) * B.s + ((B.lz0 + B.lz1) / 2) * B.c];
+// the faction's building on a footprint: its cells at the faction's height (a tower on a big plot stops at six)
+function kswapBuild(name, B, f) {
+  const S = KGSTYLE[f]; if (!S) return null;
+  const fl = S.fl > 6 && B.cells.size > 6 ? 6 : S.fl, cells = new Map(); for (const k of B.cells.keys()) cells.set(k, fl);
+  let h = 7; for (const ch of name) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  const R = kgenMake({ f, x0: B.x0, y0: B.y0, z0: B.z0, th: Math.atan2(B.s, B.c), cells, seed: h % 9973 + 1 });
+  if (R) { R.home = name; KSWAP.made++; }
+  return R;
+}
+// at load, after the twins are dressed and the turf is cut: every building replaced for good goes up
+function kswapApply() {
+  if (!KSWAP.on || !inTK()) return 0;
+  let n = 0;
+  for (const [name, B] of KSWAP.rec) { const e = SAVE.tswap[name]; if (!e) continue;
+    const R = kswapBuild(name, B, e.f); if (!R) continue;
+    const K = kswapRec(R, 'kgen:' + name); KBLD.push(K); KSWAP.live.set(name, { R, K, f: e.f, blk: e.blk }); n++; }
+  if (KSWAP.gone.size && !n) note('RB NONE BUILT ' + KSWAP.gone.size);
+  return n;
+}
+// who owns a block's buildings now: whoever's building stands (or is marked) there, else its native faction
+function kswapOwner(B) {
+  for (const n in SAVE.tswap) if (SAVE.tswap[n].blk === B.id) return SAVE.tswap[n].f;
+  return TURF.FACTIONS[B.native].id;
+}
+// the block's building to rebuild: a generated one already there, else his biggest, never a station
+function kswapPick(B) {
+  let best = null, bs = -1;
+  for (const K of KBLD) { if (K.station) continue; const [cx, cz] = kswapCenter(K); if (turfAt(cx, cz) !== B) continue;
+    const sc = (K.kgen ? 1e4 : 0) + K.cells.size * 10 - Math.hypot(cx - B.cx, cz - B.cz) * .01; if (sc > bs) { bs = sc; best = K; } }
+  return best;
+}
+function kswapSettle(B, fi) {
+  const T = TURF, F = T.FACTIONS[fi], own = kswapOwner(B); if (F.id === own) return '';
+  KSWAP.settles++;
+  const K = kswapPick(B), home = K ? (K.kgen ? K.name.slice(5) : K.name) : null;
+  let msg = B.name + ' IS ' + F.name + "'S FOR GOOD";
+  if (!K) { SAVE.tswap['blk:' + B.id] = { f: F.id, blk: B.id, none: 1 }; progSave(); return KSWAP.last = msg; }
+  if (F.id === T.FACTIONS[B.native].id) { delete SAVE.tswap[home]; for (const n in SAVE.tswap) if (SAVE.tswap[n].blk === B.id) delete SAVE.tswap[n]; }
+  else { for (const n in SAVE.tswap) if (SAVE.tswap[n].blk === B.id && n !== home) delete SAVE.tswap[n]; SAVE.tswap[home] = { f: F.id, blk: B.id }; }
+  progSave();
+  const L = KSWAP.live.get(home);
+  const back = F.id === T.FACTIONS[B.native].id;
+  if (back && !L) {
+    // his building was only marked: the scaffolding comes down and it stays
+    const sc = KSWAP.scaf.get(K.name); if (sc) { scene.remove(sc); KSWAP.scaf.delete(K.name); }
+    msg += ': THE OLD BUILDING STAYS';
+  } else if (L && !back) {
+    // a generated building: down, and the new one up, on the spot
+    kgenDrop(L.R); const R = kswapBuild(home, KSWAP.rec.get(home), F.id), sc = KSWAP.scaf.get(L.K.name); if (sc) { scene.remove(sc); KSWAP.scaf.delete(L.K.name); }
+    if (R) { const K2 = kswapRec(R, 'kgen:' + home), i = KBLD.indexOf(L.K); if (i >= 0) KBLD[i] = K2; else KBLD.push(K2); KSWAP.live.set(home, { R, K: K2, f: F.id, blk: B.id }); }
+    try { turfDressBuild(); } catch (e) {}
+    msg += ': ' + KGSTYLE[F.id].name.toUpperCase() + ' GOES UP';
+  } else {
+    // one of his (or a generated one going back to his): scaffolding now, rebuilt the next time the city loads
+    kswapScaffold(K, F.id);
+    msg += back ? ': THE OLD BUILDING COMES BACK (NEXT LOAD)' : ': ' + KGSTYLE[F.id].name.toUpperCase() + ' NEXT LOAD';
+  }
+  try { snd('ready', { g: .3, r: .8 }); } catch (e) {}
+  return KSWAP.last = msg;
+}
+// scaffolding round a building that is coming down: poles, a plank at every storey, the new owner's sheeting on the front
+function kswapScaffold(K, f) {
+  const old = KSWAP.scaf.get(K.name); if (old) { scene.remove(old); old.traverse(o => { if (o.isMesh) o.geometry.dispose(); }); }
+  const col = new THREE.Color(TURF.FACTIONS[turfF(f)].col), M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .8 }), o || {});
+  const pole = [], plank = [], net = [], m4 = (x, y, z, sx, sy, sz) => new THREE.Matrix4().compose(new THREE.Vector3(x, y, z), new THREE.Quaternion(), new THREE.Vector3(sx, sy, sz));
+  const g = new THREE.BoxGeometry(1, 1, 1), o = .7, u0 = K.lx0 - o, u1 = K.lx1 + o, v0 = K.lz0 - o, v1 = K.lz1 + o, H = K.top + 1.2;
+  for (const [ua, va, ub, vb] of [[u0, v1, u1, v1], [u1, v1, u1, v0], [u1, v0, u0, v0], [u0, v0, u0, v1]]) {
+    const L = Math.hypot(ub - ua, vb - va), n = Math.max(1, Math.round(L / 3));
+    for (let k = 0; k <= n; k++) { const t = k / n; pole.push([g, m4(ua + (ub - ua) * t, H / 2, va + (vb - va) * t, .08, H, .08)]); }
+    for (let y = 3; y <= H; y += 3) plank.push([g, m4((ua + ub) / 2, y - .1, (va + vb) / 2, Math.abs(ub - ua) + .3 || .5, .06, Math.abs(vb - va) + .3 || .5)]);
+  }
+  net.push([g, m4((u0 + u1) / 2, H * .55, v1 + .05, u1 - u0, H * .8, .02)]);
+  const grp = new THREE.Group(); grp.position.set(K.x0, K.y0, K.z0); grp.rotation.y = Math.atan2(K.s, K.c); grp.name = 'kswap_scaffold';
+  grp.add(farmMerge(pole, M(0x9aa3a8, { metalness: .5, roughness: .4 })), farmMerge(plank, M(0x8a6a3a)), farmMerge(net, M(col, { transparent: true, opacity: .55, side: THREE.DoubleSide, emissive: col, emissiveIntensity: .15 })));
+  scene.add(grp); KSWAP.scaf.set(K.name, grp);
+  return grp;
+}
+// twice a second: every block's clock; a settle the moment one runs out; the clocks saved every 15 s
+function kswapStep(dt) {
+  const T = TURF; if (!KSWAP.on || !T.blocks.length || !inTK()) return;
+  if ((KSWAP.t -= dt) > 0) return; KSWAP.t = .5;
+  for (const B of T.blocks) { const [fi, , lead] = turfHold(B);
+    let g = SAVE.tgood[B.id]; if (!Array.isArray(g)) g = SAVE.tgood[B.id] = [fi, 0];
+    if (g[0] !== fi) { g[0] = fi; g[1] = 0; }
+    if (lead >= KSWAP.lead) g[1] = Math.min(KSWAP.hold, g[1] + .5);
+    if (g[1] >= KSWAP.hold && T.FACTIONS[fi].id !== kswapOwner(B)) { const m = kswapSettle(B, fi); if (m) toast(m, 3); } }
+  if ((KSWAP.saveT += .5) >= 15) { KSWAP.saveT = 0; progSave(); }
+}
+// GOD: the block he stands in, pushed to the next faction and held for good at once
+function kswapGod() {
+  const B = turfAt(player.pos.x, player.pos.z); if (!B) return 'Not in Old Town';
+  const [fi] = turfHold(B), nf = (fi + 1) % TURF.FACTIONS.length;
+  turfPush(player.pos.x, player.pos.z, TURF.FACTIONS[nf].id, .95);
+  SAVE.tgood[B.id] = [nf, KSWAP.hold];
+  return kswapSettle(B, nf) || (B.name + ' already ' + TURF.FACTIONS[nf].short + "'s");
+}
+const kswapPending = () => Object.keys(SAVE.tswap).filter(n => !n.startsWith('blk:') && (!KSWAP.live.has(n) || KSWAP.live.get(n).f !== SAVE.tswap[n].f)).length + [...KSWAP.live.keys()].filter(n => !SAVE.tswap[n]).length;
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
 // ============================================================================================
@@ -40296,6 +40440,8 @@ function godMenuOpen(on) {
   if (KGEN.lib) { const nf = Object.keys(KGSTYLE)[KGEN.godNext % 7];
     btn('BUILD A FACTION BUILDING HERE: ' + KGSTYLE[nf].name.toUpperCase() + ' (' + nf.toUpperCase() + ')', () => { toast(kgenGod(), 1.8); godMenuOpen(0); });   // m410
     if (KGEN.god) btn('TAKE THAT BUILDING AWAY', () => { kgenDrop(KGEN.god); KGEN.god = null; godMenuOpen(1); }); }
+  if (KGEN.lib && TURF.blocks.length) { btn('REBUILD THIS BLOCK FOR THE NEXT FACTION (HELD FOR GOOD)', () => { toast(kswapGod(), 3); godMenuOpen(0); });   // m411
+    if (kswapPending()) btn('RELOAD TO SEE THE REBUILDS (' + kswapPending() + '), KEEPING MY PLACE', () => { try { sessionStorage.setItem('mel.at', JSON.stringify([player.pos.x, player.pos.y, player.pos.z, player.heading || 0])); } catch (e) {} location.reload(); }); }
   if (SKYLINE.g) btn('METROPOLIS ON THE HORIZON ' + (SKYLINE.g.visible ? 'ON' : 'OFF'), () => { SKYLINE.g.visible = !SKYLINE.g.visible; godMenuOpen(1); });
   btn('THE STAND-IN QUEST (WEIRDPORT 101)', () => { progFlag('qon:q0'); quest.cur = null; toast('Quest on', 1.4); });
   btn('THE STAND-IN TASKS (TWO, FOR THE TASK LIST)', () => { progFlag('qon:q0'); progFlag('qon:qtour'); quest.cur = null; toast('Two tasks on', 1.4); godMenuOpen(0); });
@@ -41856,7 +42002,7 @@ function frameBody() {
   islXingStep(dt);              // a flight down on the islands' landing field (m394)
   keeperStep(dt);               // the lighthouse's beam, and the keeper's storm while the thing wearing him stands (m398)
   turfStep(dt);                 // which block he is in and who holds it, for the chip (m407)
-  turfDressStep(dt);            // the buildings wear their block's holder, cross-fading when it changes hands (m409)
+  turfDressStep(dt); kswapStep(dt);            // the buildings wear their block's holder, cross-fading when it changes hands (m409)
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)
@@ -42205,7 +42351,7 @@ function frameBody() {
                         (rig.borrowed ? '+' + rig.borrowed : ' NOBORROW') + (wn || '') : '';
     const line = fps.toFixed(0) + ' FPS · ' + renderer.info.render.calls + ' DC ' + Math.round(renderer.info.render.triangles / 1000) + 'kT' + (CELL.list.length ? ' c' + CELL.shown + '/' + CELL.list.length : '') + (STEPUP.n ? ' ke' + STEPUP.n : '') + PROF.sum + ' · pr' + PERF.pr.toFixed(2) + (PERF.holdT > 0 ? 'h' : '') + ' B' + PERF.seen + '/' + DUMMIES.length + ' · ' +
       p.speed.toFixed(1) + ' m/s · ' + st + lk + hue + bx + cv + brkC + kitC + inf + shp + cl + sk + sk8 + vs + mo + fl + wp + tc + mp +
-      bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + (ITHERM.k > 0 ? ' TH' + Math.round(ITHERM.k * 100) : '') + (TURF.k ? ' TURF ' + TURF.k : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
+      bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + (ITHERM.k > 0 ? ' TH' + Math.round(ITHERM.k * 100) : '') + (TURF.k ? ' TURF ' + TURF.k : '') + (KSWAP.made || KSWAP.gone.size || KSWAP.settles ? ' RB' + KSWAP.made + '/' + KSWAP.gone.size + (KSWAP.settles ? 's' + KSWAP.settles : '') : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
       // CH: the saved chapter (m276); NEW = this boot was `?fresh`, BADSAVE = a save was there and would not parse
       (GOD.on ? ' · GOD' + (GOD.fly ? ' FLY' : '') : '') +
       ' · CH' + SAVE.ch + (SAVE.fresh ? ' NEW' : '') + (SAVE.bad ? ' BADSAVE' : '') +
@@ -42658,6 +42804,7 @@ async function init() {
     try { buildDecay(); } catch (e) { note('DECAY FAIL'); console.warn('[melee] decay', e); }
     // TURF (m407): Old Town's blocks and who holds them -- after every Old Town builder, whose places seed the shares
     try { turfBuild(); } catch (e) { note('TURF FAIL'); console.warn('[melee] turf', e); }
+    try { kswapApply(); } catch (e) { note('RB FAIL'); console.warn('[melee] turf rebuilds', e); }
     try { turfDressBuild(); } catch (e) { note('DRESS FAIL'); console.warn('[melee] turf dressing', e); }
     // THE PEARL (m359): past dock 1, through its door
     try { buildPearl(); } catch (e) { note('PEARL FAIL'); console.warn('[melee] pearl', e); }
@@ -42766,6 +42913,9 @@ async function init() {
   if (kitWorld()) { try { mkrNpcPlace(); } catch (e) { console.warn('[melee] npc markers', e); } }
   const mkStart = inTK() && (() => { try { return mkrSpawn(); } catch (e) { return 0; } })();
   if (inTK() && !mkStart) { try { crashSpawn(); } catch (e) { console.warn('[melee] crash spawn', e); } }
+  // GOD's reload (m411, `kswapGod`): back where he was, once
+  if (inTK()) { try { const at = sessionStorage.getItem('mel.at'); if (at) { sessionStorage.removeItem('mel.at'); const a = JSON.parse(at);
+    if (Array.isArray(a) && a.every(Number.isFinite)) { player.pos.set(a[0], a[1] + .3, a[2]); cam.az = player.faceH = player.heading = a[3]; } } } catch (e) {} }
   if (kitWorld()) {
     // **THE CROWD (m196, EVERYBODY at m197).** *"I meant everybody, like the warrior aliens and
     // stuff."* The kit worlds now load exactly what the other worlds load, placed by
@@ -42855,7 +43005,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { KSWAP, kswapGod, kswapSettle, KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
