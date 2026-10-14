@@ -7,6 +7,25 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **INTO THE MOTHERSHIP: THE TETHER'S POD AND THE BELLY (m399, C6-8a, `ISHIP`, `buildMothership`, `shipPodStep`).** The
+  first unchecked item was C6's parent ("then 3, 4..."), and GAME_DESIGN's chapter list ends at 6, the Mothership, so it
+  became C6-8. **THE POD IS A `BDYN` BOX** (the crane's carry: on its top at the frame's start, he gets its delta, and so do
+  the lens and its target). It waits at the tether's end (`ITHERM.tetherY` + .3); stood on for `wait` s it climbs at up to
+  `v` with `acc` easing to the belly's floor and docks flush in a hole that is exactly its size + .1. **AT THE TOP IT WANTS
+  HIM TO STEP OFF FIRST** (`left`): a re-board then sends it down with him, and left empty `hold` s it goes down alone. The
+  first draft counted his time OFF toward the re-board and would have dropped the moment he stepped back on.
+  **NEVER THE SEA'S SAFE SPOT**: `isleStep` records where he stood last on something with ground all round, and the pod
+  qualified. A pod that then left would have put a falling man back into empty air 160 m up, over and over. While he is on
+  it, `ISLE.safeTk` is held, so a fall puts him back on the needle or the belly's floor.
+  **THE BELLY**: a round room of 12.5 m in the hull's bottom (`ITHERM.shipY` - 9), frame tag 'ship'. Four floor colliders
+  round the hole (pictures popped), a glass RING over them out to 7.5 m, and a steel collar for the square-hole-round-glass
+  corners. Twenty wall colliders with the +u one left out (the doorway), and a BackSide cylinder wall (seen from inside,
+  culled from outside, as the hull itself is). The rings' gap is turned onto the doorway by `rz` BEFORE the `rx` that lays
+  them flat (Euler XYZ applies Z first). An alcove with a shut membrane is C6-8b's door. **THE CLOUD'S MIDDLE DISC IS A RING
+  NOW** and the tether runs up through it to the hull, so the glass looks straight down at the islands.
+  **`npm run places`, exit 0** (teeth: `v: 0` reads `BAD SHIP ... up in NEVER ... THE POD DOES NOT CARRY HIM UP`):
+      ok  SHIP the belly 332 m over the sea | its floor (off the shaft, on the glass, out to the walls) 0/0/0/0, over the shaft with the pod away open | the pod from the tether's end (160 m): up > top > back > down, up in 18.2 s, him carried to 0, walked off at 0, back down alone in 25.0 s | walls yes, the membrane shut, the card shown 
+
 - **THE LIGHTHOUSE KEEPER, CHAPTER 5's BOSS (m398, C6-7e-3, quest `ch5c`, `IKEEP`, `buildIslandKeeper`, `keeperStep`,
   `IWIND.storm`).** The keeper stands at his door on lighthouse rock (ROSTER `fisher`, so a hick body), on the far side from
   the ladder. **THE BEAM** is an additive open cone from the lamp. While he is theirs it is aimed at `ITHERM.ring` every frame,
