@@ -284,9 +284,9 @@ differ" table there, so no region feels like the last one.
     - [x] m367 **C6-5b** the trailer park on stilts over the creek, and the logging mill with its flume and conveyors.
       - [x] m366 **C6-5b-1** the trailer park on stilts: a boardwalk down the creek, seven trailers off it, ramps from the rims, a ladder to the water, four residents.
       - [x] m367 **C6-5b-2** the logging mill on its flat by the gorge: the shed, the log deck, conveyors, a flume dropping into the creek.
-    - [ ] **C6-5c** the fairground and the dirt-bike track; the people (rednecks, bikers, rally-goers).
+    - [x] m369 **C6-5c** the fairground and the dirt-bike track; the people (rednecks, bikers, rally-goers).
       - [x] m368 **C6-5c-1** the fairground: the stage and its truss, the field, the grandstand, the midway, the Ferris wheel, the barn, the gate; rally-goers.
-      - [ ] **C6-5c-2** the dirt-bike track over the ridges: jumps, berms, a start gate, the pits; the bikers.
+      - [x] m369 **C6-5c-2** the dirt-bike track over the ridges: jumps, berms, a start gate, the pits; the bikers.
     - [ ] **C6-5d** the way in: the freight line out of Old Town over the water, and a second way (the highway shoulder).
     - [ ] **C6-5e** the rally, the region's living system: it builds, the leader speaks, it boils over.
     - [ ] **C6-5f** Chapter 3's quests: the biker form, the gang's respect, the infiltrated rally leader (the boss).
@@ -961,3 +961,8 @@ differ" table there, so no region feels like the last one.
   **While building it I found the player can only step up 0.36 m**, which made two shipped stairs
   into walls: the Pearl warehouses' platform steps (m359) and the mill's stair (m367). I rebuilt
   both with lower steps, and `places` now walks every stair at the real step height.
+
+- **m369 (C6-5c-2) The dirt-bike track.** The loop runs over the three ridges already in Hollow
+  Creek's land, so the ridges are the big jumps. On top I built tabletop jumps, banked turns, a
+  start hill with a gate, the pits and an announcer's tower. The bikes are only props until the
+  biker form arrives in C6-5f. I cleared the pines off the track and out of the pits.

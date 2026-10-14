@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m368</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m369</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m368</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m369</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm368';
+const BUILD = 'm369';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -31551,6 +31551,7 @@ function buildHollowLand() {
   const meshH = (a, b) => { const fi = (a - a0) / C, fj = (b - b0) / C, i = Math.floor(fi), j = Math.floor(fj), x = fi - i, y = fj - j;
     const hA = hAt(i, j), hB = hAt(i + 1, j), hC = hAt(i + 1, j + 1), hD = hAt(i, j + 1);
     return x >= y ? hA + (hB - hA) * x + (hC - hB) * y : hA + (hC - hD) * x + (hD - hA) * y; };
+  F.meshH = meshH;                                                       // m369: the bike track's ribbon lies on it too
   // THE STREAM: a ribbon down the gorge's bed
   { const G = F.GORGE, Cb = F.gbed, wp = [], wi = []; let n = 0;
     for (let s0 = 0; s0 <= Cb.len; s0 += 3) {
@@ -31565,6 +31566,8 @@ function buildHollowLand() {
     m.name = 'hollow_creek'; m.renderOrder = 1; scene.add(m); }
   // THE FOREST: a jittered lattice kept where the noise says forest and nothing else claims the ground
   { const T = F.forest, pts = [], nz2 = isleNoise(F.seed + 7); let s0 = F.seed * 131 + 7; const rr = () => (s0 = (s0 * 9301 + 49297) % 233280) / 233280;
+    // m369: and off the dirt-bike track (its loop, built after this), out of its pits and its tower
+    const bl = HCBIKE.on ? bikeLoop().pts : [], bw = HCBIKE.w / 2 + 6, clr = HCBIKE.on ? [[HCBIKE.PITS.a, HCBIKE.PITS.b, 24], [HCBIKE.TOWER.a, HCBIKE.TOWER.b, 8]] : [];
     for (let a = -F.A; a <= F.A; a += T.step) for (let b = -F.B; b <= F.B; b += T.step) {
       const ja = a + (rr() - .5) * T.step * .9, jb = b + (rr() - .5) * T.step * .9, e = hcEdge(ja, jb);
       if (e < F.beach + T.beach) continue;
@@ -31572,6 +31575,7 @@ function buildHollowLand() {
       if (patch < 1 - T.keep - rr() * .25) continue;
       if (hcGorgeAt(ja, jb)[0] < F.GORGE.hb + T.gorge) continue;
       if (F.FLATS.some(Fl => Math.hypot(ja - Fl.a, jb - Fl.b) < Fl.r * T.flat)) continue;
+      if (clr.some(([a, b, r]) => Math.hypot(ja - a, jb - b) < r) || bl.some(p => Math.abs(ja - p[0]) < bw && Math.abs(jb - p[1]) < bw && Math.hypot(ja - p[0], jb - p[1]) < bw)) continue;
       const y = hcHeight(ja, jb), sl = Math.hypot(hcHeight(ja + 1, jb) - y, hcHeight(ja, jb + 1) - y); if (sl > T.slope) continue;
       const [x, z] = hcWorld(ja, jb); pts.push([x, y, z, .75 + rr() * .6, rr() * 6.28]);
     }
@@ -31935,6 +31939,136 @@ function fairStep(dt) {
   const O = HCFAIR; if (!O.wheel) return;
   O.wheel.rotation.z += O.WHEEL.rate * dt;
   for (const c of O.cars) c.rotation.z = -O.wheel.rotation.z;             // the cars hang level
+}
+// ============================================================================================
+// THE DIRT-BIKE TRACK (m369, ROADMAP C6-5c-2, `HCBIKE`, `buildBikeTrack`)
+// ============================================================================================
+// REGIONS: "a dirt-bike track over ridges". A loop of packed dirt laid OVER the land's three bike ridges -- up the middle
+// it crosses them one after another, down the west side again -- so the ridges are the big jumps and nothing had to be
+// built for them. Built on it: TABLETOPS on the straights (an up-ramp, a flat top, a down-ramp, all walkable triangles),
+// BERMS round the outside of its four turns (banked dirt you can run up), a START HILL with its gate across the lanes, a
+// line of tyres and hay round the turns; beside the start straight THE PITS (canopies, bikes on stands, a trailer, tool
+// chests, fuel, a generator), and an ANNOUNCER'S TOWER with a ladder. Four bikers, who talk to their own. The bikes are
+// props: riding is the biker form's (C6-5f).
+const HCBIKE = {
+  on: 1, n: 0, w: 7, step: 2,
+  // the loop, in Hollow Creek's own (a, b): the start straight, up the middle over the ridges, the north straight, down the west
+  PATH: [[52, -112], [80, -113], [104, -111], [114, -103], [110, -86], [106, -62], [104, -36], [102, -16], [94, -7], [76, -8], [62, -9], [54, -17], [56, -38], [58, -62], [60, -86], [57, -104]],
+  TABLES: [ { s: .13, why: 'the start straight: the first one, to settle you' }, { s: .58, why: 'the north straight, between the two sets of ridges' } ],
+  START: { s: .02, h: 1.3 }, PITS: { a: 78, b: -126 }, TOWER: { a: 98, b: -124, h: 6 },
+  PEOPLE: [
+    { id: 'hc_bike_cutter', kind: 'fat_biker_01', name: 'Spud', pit: 0, lines: "Gang rides Saturdays, before the rally. Then the rally man talks.|No bike, no respect. No respect, no rally. No rally -- well. You get it.|That ridge on the far side's the widow-maker. Hit it flat." },
+    { id: 'hc_bike_rae', kind: 'fat_biker_01', name: 'Big Rae', pit: 1, lines: "Pits are for riders. You ride?|The rally man bought the whole gang new bikes. Shiny. Nobody asked where from.|He don't ride, mind. Never seen him on a bike. Never seen him eat, either." },
+    { id: 'hc_bike_dale', role: 'redneck', name: 'Dale', pit: 2, lines: "I flag the start. Green, go. Red, stop. Yellow, I forgot.|Track's been here longer than the trailers. The ridges did all the work.|You wanna race, you need a bike and a name. Name's free." },
+    { id: 'hc_bike_kid', kind: 'hick_skinny', name: 'Junior', tower: 1, lines: "I call the races up here. Best seat on the track.|You can see the whole creek from the tower. And the lights over the hill.|One day I'm gonna ride. Pa says when I'm older. Pa says that about everything." },
+  ],
+  brush: "Pits are for riders. Beat it.",
+};
+// the loop smoothed (Catmull-Rom, closed) and sampled every `step` m of arc: [a, b, tangent a, tangent b, s 0..1]
+function bikeLoop() {
+  const P = HCBIKE.PATH, n = P.length, raw = [];
+  for (let i = 0; i < n; i++) { const p0 = P[(i - 1 + n) % n], p1 = P[i], p2 = P[(i + 1) % n], p3 = P[(i + 2) % n];
+    for (let k = 0; k < 8; k++) { const t = k / 8, t2 = t * t, t3 = t2 * t, f = (a, b, c, d) => .5 * (2 * b + (-a + c) * t + (2 * a - 5 * b + 4 * c - d) * t2 + (-a + 3 * b - 3 * c + d) * t3); raw.push([f(p0[0], p1[0], p2[0], p3[0]), f(p0[1], p1[1], p2[1], p3[1])]); } }
+  const out = [], L = [0]; for (let i = 1; i <= raw.length; i++) L.push(L[i - 1] + Math.hypot(raw[i % raw.length][0] - raw[i - 1][0], raw[i % raw.length][1] - raw[i - 1][1]));
+  const tot = L[L.length - 1], st = HCBIKE.step; let j = 0;
+  for (let s = 0; s < tot; s += st) { while (L[j + 1] < s) j++; const A = raw[j], B = raw[(j + 1) % raw.length], k = (s - L[j]) / (L[j + 1] - L[j]); const dx = B[0] - A[0], dz = B[1] - A[1], dl = Math.hypot(dx, dz) || 1;
+    out.push([A[0] + dx * k, A[1] + dz * k, dx / dl, dz / dl, s / tot]); }
+  return { pts: out, len: tot };
+}
+function buildBikeTrack() {
+  const O = HCBIKE, H = HCREEK; if (!O.on || !H.live) return 0;
+  const LP = bikeLoop(), pts = LP.pts; O.len = LP.len;
+  // a frame on Hollow Creek's own axes, at the loop's middle: u = -a, v = b (so +v points away from the city, as b does)
+  let ma = 0, mb = 0; for (const p of pts) { ma += p[0]; mb += p[1]; } ma /= pts.length; mb /= pts.length;
+  const [Ox, Oz] = hcWorld(ma, mb), th = Math.atan2(H.ub[0], H.ub[1]);
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .9 }), o || {});
+  const MAT = { dirt: M(0x6a4a30), dirt2: M(0x7d5a3a), plank: M(0x7a5a3a), steel: Object.assign(M(0x6a7680), { metalness: .45, roughness: .45 }), dark: M(0x24262b),
+    tyre: M(0x1c1c1e), hay: M(0xd8b860), red: M(0xb83a2e), yel: M(0xe0b02a), blue: M(0x2e4a8a), white: M(0xeee8da), canvas: M(0xd8d0b8, { side: THREE.DoubleSide }), drum: M(0x6a3a22), trailer: M(0xc8c0a8) };
+  const F = farmFrame(Ox, Oz, th, MAT, 'creek'), { bx, geo, quad, wx, wz } = F;
+  const fr = (a, b) => [-(a - ma), b - mb], gAB = (a, b) => hcHeight(a, b);
+  const hw = O.w / 2;
+  // THE TRACK: a dirt ribbon on the land, lifted a hair, its edges kicked up a little (a rut line); a second, lighter racing line
+  { const pos = [], idx = []; const nx = p => [-p[3], p[2]];       // the left normal in (a, b)
+    pts.forEach((p, i) => { const [la, lb] = nx(p);
+      for (const s of [-1, -.5, 0, .5, 1]) { const a = p[0] + la * s * hw, b = p[1] + lb * s * hw, [x, z] = hcWorld(a, b); pos.push(x, (H.meshH ? H.meshH(a, b) : gAB(a, b)) + .08 + Math.abs(s) * .04, z); }   // on the MESH
+      const N = pts.length, q = i * 5, r = ((i + 1) % N) * 5; for (let k = 0; k < 4; k++) idx.push(q + k, r + k, q + k + 1, q + k + 1, r + k, r + k + 1); });
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals();
+    if (g.attributes.normal.array[1] < 0) { for (let k = 0; k < idx.length; k += 3) { const t = idx[k + 1]; idx[k + 1] = idx[k + 2]; idx[k + 2] = t; } g.setIndex(idx); g.computeVertexNormals(); }
+    const m = new THREE.Mesh(g, MAT.dirt); m.receiveShadow = true; m.name = 'biketrack'; scene.add(m); }
+  // THE TABLETOPS: up, across, down -- each face walkable triangles and a picture, on the track's own line
+  O.tables = [];
+  for (const T of O.TABLES) {
+    const i = Math.round(T.s * pts.length), p = pts[i], [da, db] = [p[2], p[3]], [la, lb] = [-db, da], ht = 1.4, up = 4.5, top = 5, g0 = gAB(p[0], p[1]);
+    const at = (s, w) => { const a = p[0] + da * s + la * w, b = p[1] + db * s + lb * w, [u, v] = fr(a, b); return [u, v, a, b]; };
+    const prof = [[-up - top / 2, 0], [-top / 2, ht], [top / 2, ht], [top / 2 + up, 0]];
+    for (let k = 0; k < 3; k++) { const [s0, h0] = prof[k], [s1, h1] = prof[k + 1], A = at(s0, -hw + .5), B = at(s1, -hw + .5), C = at(s1, hw - .5), D = at(s0, hw - .5);
+      quad([A[0], gAB(A[2], A[3]) + h0, A[1]], [B[0], gAB(B[2], B[3]) + h1, B[1]], [C[0], gAB(C[2], C[3]) + h1, C[1]], [D[0], gAB(D[2], D[3]) + h0, D[1]]);
+      const m0 = at(s0, 0), m1 = at(s1, 0); pearlSeg(geo, 'dirt2', [m0[0], gAB(m0[2], m0[3]) + h0 - .1, m0[1]], [m1[0], gAB(m1[2], m1[3]) + h1 - .1, m1[1]], O.w - 1, .2, 0); }
+    for (const s of [-1, 1]) { const A = at(-top / 2, s * (hw - .5)), B = at(top / 2, s * (hw - .5)); pearlSeg(geo, 'dirt2', [A[0], g0 + ht / 2, A[1]], [B[0], g0 + ht / 2, B[1]], .3, ht, 0); }
+    const c = at(0, 0); O.tables.push({ at: [wx(c[0], c[1]), g0 + ht, wz(c[0], c[1])], from: at(-up - top / 2 - 3, 0), to: at(0, 0), ht, g0 }); }
+  // THE BERMS: banked dirt round the outside of each turn -- where the track bends hardest
+  { let nB = 0;
+    for (let i = 0; i < pts.length; i += 2) { const p = pts[i], q = pts[(i + 2) % pts.length], turn = p[2] * q[3] - p[3] * q[2]; if (Math.abs(turn) < .12) continue;
+      const out = -Math.sign(turn), [la, lb] = [-p[3] * out, p[2] * out], [la2, lb2] = [-q[3] * out, q[2] * out];
+      const A = [p[0] + la * hw, p[1] + lb * hw], B = [q[0] + la2 * hw, q[1] + lb2 * hw], A2 = [p[0] + la * (hw + 2.6), p[1] + lb * (hw + 2.6)], B2 = [q[0] + la2 * (hw + 2.6), q[1] + lb2 * (hw + 2.6)];
+      const P3 = ([a, b], h) => { const [u, v] = fr(a, b); return [u, gAB(a, b) + h, v]; };
+      quad(P3(A, .05), P3(B, .05), P3(B2, 1.5), P3(A2, 1.5));
+      const g = new THREE.BufferGeometry(), W3 = v => { const [u, h, vv] = v; return [u, h, vv]; }, vs = [P3(A, .05), P3(B, .05), P3(B2, 1.5), P3(A2, 1.5)].map(W3);
+      g.setAttribute('position', new THREE.Float32BufferAttribute([...vs[0], ...vs[1], ...vs[2], ...vs[0], ...vs[2], ...vs[3]], 3)); g.computeVertexNormals();
+      if (g.attributes.normal.array[1] < 0) g.setAttribute('position', new THREE.Float32BufferAttribute([...vs[0], ...vs[2], ...vs[1], ...vs[0], ...vs[3], ...vs[2]], 3)), g.computeVertexNormals();
+      geo(g, 'dirt2', 0, 0, 0);
+      if (nB % 2 === 0) { const T = [p[0] + la * (hw + 3.4), p[1] + lb * (hw + 3.4)], [tu, tv] = fr(...T), tg = gAB(...T); for (let k = 0; k < 3; k++) geo(new THREE.CylinderGeometry(.42, .42, .3, 10), 'tyre', tu, tg + .15 + k * .3, tv); bx(tu, tv, tg, tg + .9, .9, .9, 'tyre', 0); F.parts.tyre.pop(); }
+      nB++; }
+    O.berms = nB; }
+  // THE START HILL and its gate: a platform you walk up behind, the gate across the lanes at its front edge
+  { const p = pts[Math.round(O.START.s * pts.length)], [da, db] = [p[2], p[3]], [la, lb] = [-db, da], h = O.START.h;
+    const gm = (a, b) => H.meshH ? H.meshH(a, b) : gAB(a, b);
+    const at = (s, w) => fr(p[0] + da * s + la * w, p[1] + db * s + lb * w), g0 = gm(p[0] - da * 4, p[1] - db * 4), psi = Math.atan2(-da, db);
+    const [cu, cv] = at(-4, 0); bx(cu, cv, g0 - .5, g0 + h, 3.2, O.w, 'plank', psi + Math.PI / 2);
+    // the steps down from it to the ground AT THEIR FOOT (the land falls away behind a start hill as often as not), risers <= .3
+    { let k = 0, top = g0 + h; const n = () => Math.ceil((g0 + h - gm(p[0] - da * (5.825 + k * .45), p[1] - db * (5.825 + k * .45))) / .3);
+      const N = Math.max(2, Math.min(14, n())), rise = (g0 + h - gm(p[0] - da * (5.825 + (N - 1) * .45), p[1] - db * (5.825 + (N - 1) * .45))) / (N + .5);
+      for (k = 0; k < N; k++) { top -= rise; const sk = 5.825 + k * .45, gk = gm(p[0] - da * sk, p[1] - db * sk); if (top < gk + .05) break;
+        const [su, sv] = at(-sk, 0); bx(su, sv, gk - .5, top, .45, O.w, 'plank', psi + Math.PI / 2); }
+      O.startSteps = k; }
+    const ramp = [at(-2.4, 0), at(3.5, 0)]; quad([at(-2.4, -hw + .3)[0], g0 + h, at(-2.4, -hw + .3)[1]], [at(3.5, -hw + .3)[0], gAB(p[0] + da * 3.5, p[1] + db * 3.5) + .1, at(3.5, -hw + .3)[1]],
+      [at(3.5, hw - .3)[0], gAB(p[0] + da * 3.5, p[1] + db * 3.5) + .1, at(3.5, hw - .3)[1]], [at(-2.4, hw - .3)[0], g0 + h, at(-2.4, hw - .3)[1]]);
+    pearlSeg(geo, 'plank', [ramp[0][0], g0 + h - .08, ramp[0][1]], [ramp[1][0], gAB(p[0] + da * 3.5, p[1] + db * 3.5) + .02, ramp[1][1]], O.w - .6, .15, 0);
+    for (let k = 0; k <= 6; k++) { const [gu, gv] = at(-2.3, -hw + .5 + k * (O.w - 1) / 6); bx(gu, gv, g0 + h, g0 + h + .7, .08, .08, 'steel', 0, false); }
+    { const A = at(-2.3, -hw + .5), B = at(-2.3, hw - .5); pearlSeg(geo, 'yel', [A[0], g0 + h + .55, A[1]], [B[0], g0 + h + .55, B[1]], .1, .1, 0); }
+    O.startAt = [wx(cu, cv), g0 + h, wz(cu, cv)]; O.startWalk = [at(-5.6 - (O.startSteps + 1) * .45, 0), at(-3, 0)].map(([u, v]) => [wx(u, v), wz(u, v)]); O.startY = [g0, g0 + h]; }
+  // THE PITS: canopies, bikes on stands, a trailer, chests, fuel, a generator
+  const bike = (u, v, g, r, col) => { const c = Math.cos(r), s = Math.sin(r), q = (a, b) => [u + a * c + b * s, v - a * s + b * c];
+    for (const b of [-.62, .62]) { const [wu, wv] = q(0, b); geo(new THREE.TorusGeometry(.33, .09, 6, 14), 'tyre', wu, g + .42, wv, r + Math.PI / 2); }
+    const A = q(0, -.55), B = q(0, .5), [fu, fv] = q(0, 0); pearlSeg(geo, col, [A[0], g + .65, A[1]], [B[0], g + .95, B[1]], .12, .14, 0);
+    bx(fu, fv, g + .8, g + 1.0, .25, .7, col, r, false); bx(fu, fv, g + .3, g + .55, .15, .3, 'dark', r, false);
+    const [hu, hv] = q(0, .55); bx(hu, hv, g + 1.15, g + 1.2, .7, .05, 'steel', r, false);
+    bx(fu, fv, g, g + 1.1, .5, 1.6, col, r); F.parts[col].pop(); };
+  { const [pu, pv] = fr(O.PITS.a, O.PITS.b), g = gAB(O.PITS.a, O.PITS.b), pit = [];
+    for (let k = 0; k < 3; k++) { const u = pu - 9 + k * 9, v = pv, gg = gAB(O.PITS.a + 9 - k * 9, O.PITS.b);
+      for (const [a, b] of [[-1.6, -1.6], [1.6, -1.6], [-1.6, 1.6], [1.6, 1.6]]) bx(u + a, v + b, gg, gg + 2.6, .06, .06, 'steel', 0, false);
+      bx(u, v, gg + 2.6, gg + 2.7, 3.6, 3.6, ['red', 'blue', 'yel'][k], 0, false);
+      bike(u - .6, v + .3, gg, .3 + k * .4, ['red', 'blue', 'yel'][k]); bx(u + 1.1, v - 1, gg, gg + .9, .7, .5, 'red', 0); bx(u + 1.2, v + 1.1, gg, gg + .85, .55, .55, 'drum', 0);
+      pit.push([wx(u + .2, v - 1.6), gg, wz(u + .2, v - 1.6)]); }
+    bx(pu + 14, pv + 1, g, g + 2.8, 2.4, 7, 'trailer', .1); bx(pu + 14, pv + 1, g + 2.8, g + 2.9, 2.5, 7.1, 'steel', .1, false);
+    bx(pu - 15, pv, g, g + .9, 1.2, .8, 'yel', 0); for (let k = 0; k < 4; k++) bike(pu - 4 + k * 2.2, pv - 4.5, gAB(O.PITS.a + 4 - k * 2.2, O.PITS.b - 4.5), Math.PI / 2, ['blue', 'red', 'yel', 'red'][k]);
+    O.pitAt = pit; }
+  // THE TOWER: four legs, a booth on top, a ladder
+  { const T = O.TOWER, [tu, tv] = fr(T.a, T.b), g = gAB(T.a, T.b), top = g + T.h;
+    for (const [a, b] of [[-1.2, -1.2], [1.2, -1.2], [-1.2, 1.2], [1.2, 1.2]]) bx(tu + a, tv + b, g, top, .16, .16, 'plank', 0);
+    bx(tu, tv, top - .2, top, 3, 3, 'plank', 0); for (const [a, b, w, d] of [[0, 1.45, 3, .1], [-1.45, 0, .1, 3], [1.45, 0, .1, 3]]) bx(tu + a, tv + b, top, top + 1.1, w, d, 'plank', 0);
+    bx(tu, tv, top + 2.3, top + 2.4, 3.4, 3.4, 'red', 0, false); for (const [a, b] of [[-1.4, -1.4], [1.4, -1.4], [-1.4, 1.4], [1.4, 1.4]]) bx(tu + a, tv + b, top, top + 2.3, .08, .08, 'plank', 0, false);
+    O.lad = pearlLadder(F, tu, tv - 1.65, Math.PI, g, top, [tu, top + .02, tv], 'hc_ladder_bikes'); O.towerAt = [wx(tu, tv), top, wz(tu, tv)]; }
+  // hay round the inside of the turns
+  for (let i = 0; i < pts.length; i += 6) { const p = pts[i], q = pts[(i + 2) % pts.length], turn = p[2] * q[3] - p[3] * q[2]; if (Math.abs(turn) < .1) continue;
+    const inn = Math.sign(turn), a = p[0] - p[3] * inn * (hw + 1.2), b = p[1] + p[2] * inn * (hw + 1.2), [u, v] = fr(a, b), g = gAB(a, b); bx(u, v, g, g + .85, 1.5, .9, 'hay', Math.atan2(-p[2], p[3])); }
+  O.n = F.commit().boxes;
+  // THE BIKERS
+  for (const P of O.PEOPLE) { const at = P.tower ? O.towerAt : O.pitAt[P.pit], x = at[0] + (P.tower ? .6 : 0), z = at[2];
+    peopleMark(P.id, x, z, th, Object.assign({ group: 'country', talks: ['country'], alien: 'flee', brushAlien: O.brush, beat: [[x, z]] }, P), at[1], 'HCBIKE', 'country'); }
+  { const p = pts[Math.round(.3 * pts.length)], [x, z] = hcWorld(p[0] - p[3] * (hw + 4), p[1] + p[2] * (hw + 4)); O.at = [x, gAB(p[0] - p[3] * (hw + 4), p[1] + p[2] * (hw + 4)) + .1, z, Math.atan2(-p[3], p[2])]; }
+  O.frame = { Ox, Oz, th, fr };
+  return O.n;
 }
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
@@ -36318,6 +36452,7 @@ const GODPLACES = [
   { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
   { id: 'pearl', world: 'tkit', name: 'THE PEARL · the plaza (Chapter 2)', at: () => OPEARL.plazaAt },
+  { id: 'hcbikes', world: 'tkit', name: 'HOLLOW CREEK · the dirt-bike track', at: () => HCBIKE.at },   // m369
   { id: 'hcfair', world: 'tkit', name: 'HOLLOW CREEK · the fairground (the rally)', at: () => HCFAIR.at },   // m368
   { id: 'hcmill', world: 'tkit', name: 'HOLLOW CREEK · the logging mill', at: () => HCMILL.at },   // m367
   { id: 'hctrail', world: 'tkit', name: 'HOLLOW CREEK · the trailer park on stilts', at: () => HCTRAIL.walkAt },   // m366
@@ -38836,6 +38971,8 @@ async function init() {
     try { buildMill(); } catch (e) { note('MILL FAIL'); console.warn('[melee] mill', e); }
     // HOLLOW CREEK'S FAIRGROUND (m368)
     try { buildFairground(); } catch (e) { note('FAIR FAIL'); console.warn('[melee] fair', e); }
+    // HOLLOW CREEK'S DIRT-BIKE TRACK (m369)
+    try { buildBikeTrack(); } catch (e) { note('BIKES FAIL'); console.warn('[melee] bikes', e); }
     // THE STRIKE'S PICKET (m345): hidden until the crews walk out
     try { buildStrike(); } catch (e) { note('STRIKE FAIL'); console.warn('[melee] strike', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)

@@ -7,6 +7,24 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE DIRT-BIKE TRACK RUNS OVER THE LAND'S OWN RIDGES (m369, C6-5c-2, `HCBIKE`, `bikeLoop`, `buildBikeTrack`).** A 309 m
+  loop in Hollow Creek's own (a, b), smoothed (closed Catmull-Rom) and resampled every 2 m: up the middle it crosses the
+  three bike ridges one after another and down the west side again, so the ridges ARE the jumps. A dirt ribbon 7 m wide
+  laid on the terrain MESH (`HCREEK.meshH`, exported for it -- the function and the 4 m mesh differ by enough to bury a
+  ribbon). TABLETOPS on two straights (up-ramp 4.5, a 5 m top, down-ramp; every face walkable triangles), BERMS round the
+  outside of every bend that turns hard enough (banked quads, 22 pieces), tyres and hay at the bends, a START HILL with its
+  gate, THE PITS (three canopies, bikes on stands and in a row, a trailer, chests, fuel, a generator), an ANNOUNCER'S TOWER
+  with a ladder. Four bikers ("no bike, no respect"; the rally man bought the gang new bikes, never rides, never eats).
+  **The pines were planted first**, so the forest now keeps `HCBIKE.w / 2 + 6` off the loop and out of the pits and the
+  tower (`bikeLoop` is pure, so the land's builder can ask it).
+  **THE START HILL'S STEPS ARE BUILT DOWN TO THE GROUND AT THEIR OWN FOOT**: measured off the ground under the platform,
+  the land behind it fell away and the first riser was a wall -- `walkUp` read `start hill 0.04 (of 1.3)`. Now each step
+  is laid back from the platform at a riser of at most .3 until it meets the ground under it.
+  **And two probes were wrong before the build was**: the ribbon check counted the tabletops sitting on the track as "off
+  the floor" (it skips what is built on it now), and the walks started at the platform's ground instead of their own
+  start's (`walkUp` starts from the floor where the walk starts, always).
+  `npm run places` (exit 0): `ok  hcbikes -> player -298.0,8.5,182.3 ground 8.10`;
+  `ok  BIKES 47 boxes | loop 309 m, 22 berm pieces | ribbon off the floor at 0 of 52 | trees on it 0 | tabletops walked up 1.43/1.4, 1.46/1.4 | start hill 1.3 (of 1.3) | tower ladder 6.0 m | Spud, Big Rae, Dale, Junior`.
 - **HIS STEP IS .357, AND TWO SHIPPED STAIRS WERE WALLS (m368, C6-5c-1, `MOVE.step`, `walkUp` in `places`).** `MOVE.step`
   is `.5 * SZ` and `SZ` is 1.25 / 1.75 = .714, so a riser over .357 is a WALL to him -- `resolveBoxes` reads any box top
   more than a step over his feet as a side, `groundAt` will not stand him on it. Found while building the fairground's stage:
