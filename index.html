@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m377</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m378</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m377</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m378</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm377';
+const BUILD = 'm378';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -32759,6 +32759,7 @@ function buildWaterfront() {
     dark: M(0x24262b), block: M(0x6a5a48), anti: M(0x8a2e24), hull: met(0x2a2d33, .6), house: M(0xd8d6ce), funnel: M(0x3f8a5a), glass: M(0x1a2a30, { metalness: .3, roughness: .2 }),
     plank: M(0x8a6a48), rope: M(0xc9b48a), mesh: M(0x4a5058, { transparent: true, opacity: .4, side: THREE.DoubleSide }), tin: met(0x8a9298, .5), roof: met(0x6a7076, .55), panel: M(0x6f7a74), screen: M(0x0a1a10, { emissive: new THREE.Color(0x3aff6a), emissiveIntensity: .55 }),
     lamp: M(0x3a2a14, { emissive: new THREE.Color(0xffa040), emissiveIntensity: 2.2 }), red: M(0xb83a2e), white: M(0xe8e6e0), wood: M(0x6a4a30),
+    grate: met(0x5a6068, .55), redglow: M(0x400a0a, { emissive: new THREE.Color(0xff3a3a), emissiveIntensity: 2 }), glow: M(0x0a1a10, { emissive: new THREE.Color(0x6dff8a), emissiveIntensity: 1.2 }),   // m378: the factory's
     c0: met(0x9a4a2a, .7), c1: met(0x2a5a8a, .7), c2: met(0x3a6a4a, .7), c3: met(0xc8a02a, .7), c4: met(0xd8d8d0, .7), c5: met(0xa83232, .7), c6: met(0x2a7a7a, .7), c7: met(0x7a7a80, .7), c8: met(0xc8642a, .7) };
   const F = farmFrame(Ox, Oz, th, MAT, 'wfront'), { bx, geo, wx, wz } = F;
   const hd = (du, dv) => Math.atan2(du * W.C + dv * W.S, -du * W.S + dv * W.C);       // a frame direction as a world heading
@@ -32902,11 +32903,12 @@ function buildWaterfront() {
     pearlLadder(F, Sh.u + Sh.w / 2 + .25, Sh.v + 8, Math.PI / 2, Y, Y + Sh.h, [Sh.u + Sh.w / 2 - 1.5, Y + Sh.h, Sh.v + 8], 'wf_shed'); W.ladders++;
     for (let k = 0; k < 6; k++) { const u = Sh.u - 20 + k * 7, v = v0 - 3.5 - (k % 2); bx(u, v, Y, Y + .15 + .15 * (k % 3), 1.2, 1, 'wood', 0, false); }
     for (let k = 0; k < 5; k++) geo(new THREE.CylinderGeometry(.3, .3, .9, 10), k % 2 ? 'c1' : 'c5', Sh.u + 16 + (k % 3) * .7, Y + .45, v0 - 3 - Math.floor(k / 3) * .7); }
-  // ---- UPLIFT'S FACTORY, behind its fence: shut tight (C6-6b opens it). Green screens in its windows, two stacks, its name
+  // ---- UPLIFT'S FACTORY, behind its fence. Green screens in its windows, two stacks, its name -- m378: OPENED UP, the line
+  // inside on three levels and its gallery out over the fence to the outfeed tower (`wfFactory`); the fence's gate stays locked
   { const Fc = W.FACTORY, v0 = Fc.v - Fc.d / 2, [lu0, lu1, lv0, lv1] = Fc.lot;
-    bx(Fc.u, Fc.v, Y, Y + Fc.h, Fc.w, Fc.d, 'panel'); bx(Fc.u, Fc.v, Y + Fc.h, Y + Fc.h + .9, Fc.w + .3, Fc.d + .3, 'panel', 0, false);
-    for (const [u, v, w, d] of [[Fc.u, v0 - .04, Fc.w - 4, .08], [Fc.u - Fc.w / 2 - .04, Fc.v, .08, Fc.d - 6], [Fc.u + Fc.w / 2 + .04, Fc.v, .08, Fc.d - 6]]) bx(u, v, Y + 10, Y + 11.4, w, d, 'screen', 0, false);
-    bx(Fc.u, v0 - .05, Y, Y + 8, 10, .1, 'dark', 0, false);
+    wfFactory(F, W, Y);
+    for (const [u, v, w, d] of [[Fc.u, v0 + .15, Fc.w + .3, .3], [Fc.u, v0 + Fc.d - .15, Fc.w + .3, .3], [Fc.u - Fc.w / 2 + .15, Fc.v, .3, Fc.d], [Fc.u + Fc.w / 2 - .15, Fc.v, .3, Fc.d]]) bx(u, v, Y + Fc.h, Y + Fc.h + 1.2, w, d, 'panel');   // the parapet
+    for (const [u, v, w, d] of [[Fc.u, v0 - .04, Fc.w - 4, .08], [Fc.u - Fc.w / 2 - .04, Fc.v, .08, Fc.d - 6], [Fc.u + Fc.w / 2 + .04, 86.5, .08, 39]]) bx(u, v, Y + 10, Y + 11.4, w, d, 'screen', 0, false);
     for (let k = 0; k < 9; k++) { const t = -5.25 + k * 1.3125; bx(Fc.u + t, v0 - .09, Y + 8, Y + 8.5, .66, .08, k % 2 ? 'dark' : 'yel', 0, false); }
     for (const s of [-1, 1]) for (let k = 0; k < 6; k++) bx(Fc.u + s * 5.25, v0 - .09, Y + k * 1.4, Y + k * 1.4 + .7, .5, .08, k % 2 ? 'dark' : 'yel', 0, false);
     for (const [a, b] of [[-6, -14], [10, -12], [-2, 8], [4, 20]]) bx(Fc.u + a, Fc.v + b, Y + Fc.h, Y + Fc.h + 2.4, 6, 4, 'steel');
@@ -32934,6 +32936,7 @@ function buildWaterfront() {
     for (let k = 0; k < 6; k++) { const [fu, fv] = at(P.w / 2 + 2.9 + (k % 2 ? 2.55 : -2.55), -6 + Math.floor(k / 2) * 5); geo(new THREE.TorusGeometry(.35, .14, 6, 12), 'rubber', fu, ty - .2, fv, yw + Math.PI / 2); }
     const [lu, lv] = at(P.w / 2 + .25, -8); pearlLadder(F, lu, lv, yw + Math.PI / 2, ty, Y, (([a, b]) => [a, Y, b])(at(P.w / 2 - 1.2, -8)), 'wf_tug'); W.ladders++; }
   W.n = F.commit().boxes;
+  wfLineParts(F, W, Y);                                                          // m378: the line's moving parts
   // the light from the masts: one instanced draw, additive, faint -- it reads because the fog is there
   { const g = new THREE.ConeGeometry(9, 26, 20, 1, true); g.translate(0, -13, 0);
     const m = new THREE.MeshBasicMaterial({ color: 0xffa040, transparent: true, opacity: .055, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide });
@@ -32961,12 +32964,194 @@ function buildWaterfront() {
   W.dockAt = [wx(D.u, 104), Y + .1, wz(D.u, 104), hd(0, -1)];
   { const Bk = W.BLOCKS[1], [u, v] = blockAt(Bk)(colA(Bk, 1), 0); W.stacksAt = [wx(u, v), Y + Bk.h[1] * CH + .1, wz(u, v), hd(0, -1)]; }
   W.deckAt = [wx(D.u - 2, 51), deck + .1, wz(D.u - 2, 51), hd(0, -1)];
+  W.lineAt = [wx(-92, 68), Y + .1, wz(-92, 68), hd(0, 1)]; W.controlAt = [wx(-106, 115), Y + WFLINE.L2 + .1, wz(-106, 115), hd(1, 0)];   // m378
+  W.towerAt = [wx(-30, 108), Y + .1, wz(-30, 108), hd(-1, 0)];
   { let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9;
     for (const [u, v] of [[W.U[0], W.V[0]], [W.U[1], W.V[0]], [W.U[1], W.V[1]], [W.U[0], W.V[1]]]) { const x = wx(u, v), z = wz(u, v); x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); }
     W.bbox = { x0, x1, z0, z1 }; }
   W.live = 1;
   console.log('[melee] waterfront: ' + W.n + ' boxes, ' + W.cont + ' containers, ' + W.ladders + ' ladders, centre ' + [Ox, Oz].map(v => v.toFixed(0)).join(','));
   return W.n;
+}
+// ============================================================================================
+// UPLIFT'S FACTORY, INSIDE: THE LINE ON THREE LEVELS (m378, ROADMAP C6-6b-1, `WFLINE`, `wfFactory`, `wfLineStep`)
+// ============================================================================================
+// REGIONS 5: "conveyor lines through the factory ... the conversion line: workers go in human and come out cyborg." The hall
+// is opened up (walls round three openings, a roof you can stand on) and the LINE runs through it as a spiral that climbs:
+// in at the intake door on the floor (A), past the SCANNER arch and the STRIP-DOWN cage, up an incline (AB) to the second
+// level (Y + 5.5), west along the back past the ARMS (C), down the west side through the CHROME BOOTH (D), up the LIFT to
+// the third level (Y + 10), east across the front over the floor line (F), north past the VISOR arch (G), and out through the
+// east wall (H) along an enclosed GALLERY over the fence to the OUTFEED TOWER on the quay behind the dry dock, whose stair
+// comes down to the quay. So the hall is three lines stacked over each other, and the climber's way in is the way the
+// converts come out: up the tower, along the gallery. Every belt CARRIES what stands on it (`wfLineStep`: him, for now;
+// C6-6b-2 puts workers on it). Walkways beside the second and third levels, one long stair up the west wall with a landing
+// between, the CONTROL ROOM in glass at the back-west corner of the second level (the line's off switch is C6-6f's).
+const WFLINE = {
+  on: 1, speed: 1.3, scroll: -1,  // m/s along every belt; `scroll` flips the belts' texture if it reads as running backwards
+  L2: 5.5, L3: 10,                // the second and third levels over the floor
+  // the belts: frame [u, v] start and end, top heights over the floor at each end, why
+  BELTS: [
+    { id: 'A', a: [-87, 64.6], b: [-87, 92], ya: .9, yb: .9, why: 'the floor line, in from the intake door: the scanner, the strip-down' },
+    { id: 'AB', a: [-87, 92], b: [-87, 106], ya: .9, yb: 5.5, ramp: 1, why: 'up to the second level' },
+    { id: 'C', a: [-85.9, 107], b: [-102.1, 107], ya: 5.5, yb: 5.5, why: 'west along the back, past the arms' },
+    { id: 'D', a: [-101, 108.1], b: [-101, 78], ya: 5.5, yb: 5.5, why: 'south down the west side, through the chrome booth' },
+    { id: 'F', a: [-102.1, 76], b: [-73.9, 76], ya: 10, yb: 10, why: 'off the lift, east across the front over the floor line' },
+    { id: 'G', a: [-75, 74.9], b: [-75, 111.1], ya: 10, yb: 10, why: 'north up the east side, through the visor arch' },
+    { id: 'H', a: [-73.9, 110], b: [-45, 110], ya: 10, yb: 10, why: 'out through the east wall, along the gallery, to the outfeed tower' },
+  ],
+  ARMS: [[-91, 105.1], [-94.5, 105.1], [-98, 105.1]],
+  belts: [], tex: null, arms: null, armN: 0, bar: null, lift: null, t: 0, carried: 0, near: 0,
+};
+// the hall and everything in it, in the waterfront's frame `F` -- the factory's walls, roof, line, walkways, stairs, the
+// control room, the gallery and the tower. Returns nothing; the moving parts are made after the frame commits
+function wfFactory(F, W, Y) {
+  const { bx, geo, quad } = F, Fc = W.FACTORY, L = WFLINE, L2 = Y + L.L2, L3 = Y + L.L3;
+  const u0 = Fc.u - Fc.w / 2, u1 = Fc.u + Fc.w / 2, v0 = Fc.v - Fc.d / 2, v1 = Fc.v + Fc.d / 2, H = Y + Fc.h, T = .4;
+  // ---- THE WALLS round three openings: the intake (front, 10 x 8), the gallery (east, 4.2 x 3 at the third level)
+  bx(u0 + T / 2, Fc.v, Y, H, T, Fc.d, 'panel'); bx(Fc.u, v1 - T / 2, Y, H, Fc.w, T, 'panel');
+  bx((u0 + Fc.u - 5) / 2, v0 + T / 2, Y, H, Fc.u - 5 - u0, T, 'panel'); bx((u1 + Fc.u + 5) / 2, v0 + T / 2, Y, H, u1 - Fc.u - 5, T, 'panel'); bx(Fc.u, v0 + T / 2, Y + 8, H, 10, T, 'panel');
+  const gv0 = 107.4, gv1 = 111.6;
+  bx(u1 - T / 2, (v0 + gv0) / 2, Y, H, T, gv0 - v0, 'panel'); bx(u1 - T / 2, (gv1 + v1) / 2, Y, H, T, v1 - gv1, 'panel');
+  bx(u1 - T / 2, (gv0 + gv1) / 2, Y, L3, T, gv1 - gv0, 'panel'); bx(u1 - T / 2, (gv0 + gv1) / 2, L3 + 3, H, T, gv1 - gv0, 'panel');
+  bx(Fc.u, Fc.v, H, H + .3, Fc.w, Fc.d, 'roof');                              // the roof: stand on it
+  bx(Fc.u, v0 - .3, Y + 7.6, Y + 8.4, 10.4, .6, 'dark', 0, false);            // the intake's door, rolled up
+  for (let v = v0 + 6; v < v1 - 2; v += 7) { bx(Fc.u, v, H - .9, H - .6, Fc.w - 1, .3, 'steel', 0, false); for (let u = u0 + 6; u < u1 - 2; u += 8) bx(u, v, H - 1.6, H - 1.35, .9, .5, 'lamp', 0, false); }
+  // ---- THE LINE: decks under the belts (the floor line solid, the upper ones on legs), the incline as a catwalk
+  for (const B of L.BELTS) {
+    const ya = Y + B.ya, yb = Y + B.yb, du = B.b[0] - B.a[0], dv = B.b[1] - B.a[1], len = Math.hypot(du, dv), psi = Math.atan2(du, dv);
+    const cu = (B.a[0] + B.b[0]) / 2, cv = (B.a[1] + B.b[1]) / 2;
+    if (B.ramp) { pearlSpan(F, { A: [B.a[0], ya, B.a[1]], B: [B.b[0], yb, B.b[1]], L: len, hw: 1.1, kind: 'cat' }, 0); continue; }
+    if (B.ya < 2) bx(cu, cv, Y, ya, 2.2, len, 'dark', psi);
+    else { bx(cu, cv, ya - .35, ya, 2.2, len, 'dark', psi); const n = Math.max(1, Math.round(len / 6));
+      for (let k = 0; k <= n; k++) { const t = k / n, pu = B.a[0] + du * t, pv = B.a[1] + dv * t; if (pu > u1) continue; for (const s of [-1, 1]) bx(pu + s * Math.cos(psi) * .9, pv - s * Math.sin(psi) * .9, Y, ya - .35, .14, .14, 'steel', 0, false); } }
+    for (let s = .6; s < len; s += 1.2) { const pu = B.a[0] + du * s / len, pv = B.a[1] + dv * s / len; bx(pu, pv, ya - .3, ya - .22, 2.3, .14, 'steel', psi, false); }    // rollers
+  }
+  // ---- WALKWAYS, LANDINGS, THE STAIR UP THE WEST WALL (18 risers to the second level, a landing, 15 to the third)
+  const deckB = (u, v, w, d, y) => bx(u, v, y - .3, y, w, d, 'grate');
+  deckB(-94, 108.8, 16.2, 1.4, L2); deckB(-102.8, 93.75, 1.4, 31.5, L2); deckB(-105.75, 81.9, 7.3, 2, L2); deckB(-101.7, 76.25, 3.6, 3.5, L2);
+  deckB(-90.95, 74.2, 36.9, 1.4, L3); deckB(-73.2, 91.2, 1.4, 35.4, L3); deckB(-68.45, 108.25, 8.1, 1.3, L3);
+  for (let k = 0; k < 18; k++) bx(-108.6, 82.9 + (17 - k) * .4 + .2, Y, Y + (k + 1) * L.L2 / 18, 1.6, .4, 'grate');
+  for (let k = 0; k < 15; k++) bx(-108.6, 74.9 + (14 - k) * .4 + .2, L2, L2 + (k + 1) * (L.L3 - L.L2) / 15, 1.6, .4, 'grate');
+  // legs under the walkways
+  for (const [u, v, y] of [[-94, 109.4, L2], [-86.5, 109.4, L2], [-103.4, 88, L2], [-103.4, 100, L2], [-103.4, 108, L2], [-109.3, 81, L2], [-80, 73.6, L3], [-90, 73.6, L3], [-100, 73.6, L3], [-72.6, 85, L3], [-72.6, 97, L3], [-72.6, 107, L3]])
+    bx(u, v, Y, y - .3, .14, .14, 'steel', 0, false);
+  // rails: a collider 1.05 high on every open edge, the top bar drawn
+  const rail = (ua, va, ub, vb) => { const cu = (ua + ub) / 2, cv = (va + vb) / 2, l = Math.hypot(ub - ua, vb - va), ps = Math.atan2(ub - ua, vb - va), y = rail.y;
+    bx(cu, cv, y, y + 1.05, .06, l, 'yel', ps); F.parts.yel.pop(); bx(cu, cv, y + .98, y + 1.06, .06, l, 'yel', ps, false); bx(cu, cv, y + .5, y + .55, .04, l, 'yel', ps, false);
+    for (let t = 0; t <= l; t += 2) bx(ua + (ub - ua) * t / l, va + (vb - va) * t / l, y, y + 1.05, .05, .05, 'yel', 0, false); };
+  rail.y = L3; rail(-109.4, 73.5, -72.5, 73.5); rail(-72.5, 73.5, -72.5, 107.6); rail(-72.5, 107.6, -64.4, 107.6); rail(-102.1, 77.1, -73.9, 77.1); rail(-76.1, 77.1, -76.1, 111.1); rail(-73.9, 111.1, -64.4, 111.1);
+  rail.y = L2; rail(-102.1, 109.5, -85.9, 109.5); rail(-103.5, 78, -103.5, 80.9); rail(-103.5, 82.9, -103.5, 109.5); rail(-107.8, 82.9, -103.5, 82.9); rail(-107.8, 80.9, -103.5, 80.9);
+  rail(-102.1, 105.9, -100, 105.9); rail(-88.1, 105.9, -85.9, 105.9); rail(-99.9, 78, -99.9, 105.9); rail(-85.9, 105.9, -85.9, 109.5);
+  for (const [vA, vB, y0, y1] of [[82.9, 90.1, Y, L2], [74.9, 80.9, L2, L3]]) { bx(-107.75, (vA + vB) / 2, y0, y1 + 1.05, .06, vB - vA, 'yel'); F.parts.yel.pop(); }
+  // ---- THE STATIONS: the scanner arch (its bar sweeps), the strip-down cage, the arms' pedestals, the chrome booth, the visor arch
+  const arch = (u, v, y, ps, w, h, mat) => { const cs = Math.cos(ps), sn = Math.sin(ps);
+    for (const s of [-1, 1]) bx(u + s * cs * w / 2, v - s * sn * w / 2, y, y + h, .3, .3, mat, ps, false);
+    bx(u, v, y + h, y + h + .35, w + .3, .35, mat, ps, false); bx(u, v, y + h - .05, y + h, w - .2, .25, 'screen', ps, false); };
+  arch(-87, 74, Y, 0, 3.4, 4.2, 'steel'); arch(-75, 92, L3, 0, 3.4, 3.4, 'steel');
+  geo(new THREE.TorusGeometry(1.25, .07, 6, 28), 'redglow', -75, L3 + 1.9, 92, 0);
+  { for (const [a, b] of [[-1.6, -2], [1.6, -2], [-1.6, 2], [1.6, 2]]) bx(-87 + a, 86 + b, Y, Y + 4, .2, .2, 'steel');
+    for (const s of [-1, 1]) bx(-87 + s * 1.6, 86, Y + .9, Y + 4, .03, 4, 'mesh', 0, false);
+    bx(-87, 86, Y + 4, Y + 4.2, 3.6, 4.4, 'steel', 0, false);
+    for (let k = 0; k < 7; k++) geo(new THREE.CylinderGeometry(.18, .2, .5, 8), k % 2 ? 'yel' : 'white', -89.6 - (k % 3) * .45, Y + .25 + Math.floor(k / 3) * .5, 84.6 + (k % 2) * .5);   // hard hats, taken off them
+    for (let k = 0; k < 6; k++) bx(-90.2 - (k % 2) * .4, 88.2 + Math.floor(k / 2) * .35, Y, Y + .35, .3, .5, 'wood', 0, false); }        // boots, in pairs
+  for (const [u, v] of L.ARMS) { bx(u, v, Y, L2 - .1, .3, .3, 'steel', 0, false); bx(u, v, L2 - .1, L2 + .5, .9, .9, 'yel'); }
+  { for (const [a, b] of [[-1.6, -2.5], [1.6, -2.5], [-1.6, 2.5], [1.6, 2.5]]) bx(-101 + a, 92 + b, L2, L2 + 3.4, .2, .2, 'steel', 0, false);
+    bx(-101, 92, L2 + 3.4, L2 + 3.6, 3.6, 5.4, 'steel', 0, false); bx(-101, 92, L2 + 3.3, L2 + 3.4, 3, 4.8, 'glow', 0, false);
+    for (const e of [-2.5, 2.5]) for (let k = -5; k <= 5; k++) bx(-101 + k * .28, 92 + e, L2 + 1.2, L2 + 3.3, .2, .03, 'dark', 0, false); }
+  // the lift's shaft at the corner, its platform moves (made after the commit)
+  for (const [a, b] of [[-1.5, -1.5], [1.5, -1.5], [-1.5, 1.5], [1.5, 1.5]]) bx(-101 + a, 76 + b, Y, L3 + 3, .2, .2, 'steel', 0, false);
+  // ---- THE CONTROL ROOM, glass, at the second level's back-west corner: consoles with the line on them, a big red lever
+  { deckB(-105.75, 114.45, 7.3, 9.9, L2);
+    bx(-102.15, 114.45, L2, L2 + 2.8, .08, 9.9, 'glass'); bx(-106.45, 109.55, L2, L2 + 2.8, 5.9, .08, 'glass');
+     bx(-105.75, 114.45, L2 + 2.8, L2 + 3, 7.3, 9.9, 'steel', 0, false);
+    for (const [u, v] of [[-109.2, 109.7], [-102.3, 109.7], [-102.3, 119.2]]) bx(u, v, Y, L2 - .3, .2, .2, 'steel', 0, false);
+    for (const [u, v, ry] of [[-104, 117.5, 0], [-107.5, 117.5, 0], [-108.4, 113, Math.PI / 2]]) { bx(u, v, L2, L2 + 1, 1.8, .8, 'dark', ry); bx(u, v, L2 + 1, L2 + 1.06, 1.7, .7, 'screen', ry, false); }
+    bx(-104.6, 112.5, L2, L2 + .9, .5, .5, 'dark'); geo(new THREE.CylinderGeometry(.05, .05, .8, 8), 'steel', -104.6, L2 + 1.3, 112.5, 0, .4); geo(new THREE.SphereGeometry(.14, 10, 8), 'red', -104.6, L2 + 1.7, 112.35);
+    L.leverAt = [F.wx(-104.6, 111.6), L2, F.wz(-104.6, 111.6)]; }
+  // a stock of parts along the east wall: crates of arms, a rack of visors
+  for (let k = 0; k < 8; k++) bx(-66.5 - (k % 2) * 1.3, 80 + Math.floor(k / 2) * 3.2, Y, Y + 1.1 + (k % 3) * .4, 1.2, 1.2, k % 3 ? 'wood' : 'c7');
+  // ---- OUTSIDE: THE GALLERY over the fence and THE OUTFEED TOWER on the quay, its stair down (32 risers of .3125)
+  { const gu0 = u1, gu1 = -51, gc = (gu0 + gu1) / 2, gl = gu0 - gu1 < 0 ? gu1 - gu0 : gu0 - gu1;
+    bx(gc, (gv0 + gv1) / 2, L3 - .4, L3, gl, gv1 - gv0, 'grate');
+    for (const v of [gv0 + .05, gv1 - .05]) bx(gc, v, L3, L3 + 2.8, gl, .1, 'tin');
+    bx(gc, (gv0 + gv1) / 2, L3 + 2.8, L3 + 3, gl + .2, gv1 - gv0 + .2, 'roof', 0, false);
+    for (const u of [-60, -54]) for (const v of [gv0 + .3, gv1 - .3]) bx(u, v, Y, L3 - .4, .25, .25, 'steel', 0, false);
+    bx(-48, 109.5, L3 - .4, L3, 6, 7, 'grate'); for (const [a, b] of [[-2.8, -3.3], [2.8, -3.3], [-2.8, 3.3], [2.8, 3.3]]) bx(-48 + a, 109.5 + b, Y, L3 - .4, .25, .25, 'steel', 0, false);
+    rail.y = L3; rail(-51, 106, -45, 106); rail(-51, 113, -45, 113); rail(-45, 106, -45, 106.9); rail(-45, 109.1, -45, 113); rail(-51, 106, -51, 107.4); rail(-51, 111.6, -51, 113);
+    for (let j = 0; j < 32; j++) bx(-45 + (31 - j) * .4 + .2, 108, Y, Y + (j + 1) * .3125, .4, 2, 'grate');
+    for (const s of [-1, 1]) pearlSeg(geo, 'yel', [-32.4, Y, 108], [-44.8, L3, 108], .06, .06, 1, s * 1.05);
+    W.towerWalk = [[-30, 108], [-32.4, 108], [-44.8, 108], [-48, 108.2], [-60, 108.2], [-73.2, 108.2], [-73.2, 100]].map(([u, v]) => [F.wx(u, v), F.wz(u, v)]);
+    W.ctrlWalk = [[-108.6, 81.8], [-102.8, 81.9], [-102.8, 109], [-104, 113]].map(([u, v]) => [F.wx(u, v), F.wz(u, v)]);
+    W.hallWalk = [[-108.6, 93], [-108.6, 90.2], [-108.6, 83], [-108.6, 81.8], [-108.6, 80.8], [-108.6, 74.4], [-95, 74.2]].map(([u, v]) => [F.wx(u, v), F.wz(u, v)]); }
+  L.frame = { u0, u1, v0, v1 };
+}
+// the moving parts, once the frame is down: the belts' surface (one draw, its texture scrolls), the arms (one instanced
+// draw), the scanner's bar, the lift's platform; and every belt in the world's terms for the carry
+function wfLineParts(F, W, Y) {
+  const L = WFLINE, grp = new THREE.Group(); grp.position.set(W.O[0], 0, W.O[1]); grp.rotation.y = W.th; scene.add(grp); L.grp = grp;
+  { const c = document.createElement('canvas'); c.width = 64; c.height = 64; const g = c.getContext('2d');
+    g.fillStyle = '#26282c'; g.fillRect(0, 0, 64, 64); g.fillStyle = '#3c3f45'; g.fillRect(0, 0, 64, 14); g.fillStyle = '#e0b02a'; g.fillRect(0, 0, 6, 64); g.fillRect(58, 0, 6, 64);
+    const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.colorSpace = THREE.SRGBColorSpace; L.tex = t; }
+  const pos = [], nor = [], uv = [], idx = []; let base = 0;
+  for (const B of L.BELTS) {
+    const ya = Y + B.ya, yb = Y + B.yb, du = B.b[0] - B.a[0], dv = B.b[1] - B.a[1], len = Math.hypot(du, dv), psi = Math.atan2(du, dv);
+    const g = new THREE.BoxGeometry(2, .06, Math.hypot(len, yb - ya)); g.rotateX(-Math.atan2(yb - ya, len)); g.rotateY(psi);
+    g.translate((B.a[0] + B.b[0]) / 2, (ya + yb) / 2 + (B.ramp ? .05 : .03), (B.a[1] + B.b[1]) / 2);
+    const P = g.attributes.position, N = g.attributes.normal, U = g.attributes.uv;
+    for (let i = 0; i < P.count; i++) { pos.push(P.getX(i), P.getY(i), P.getZ(i)); nor.push(N.getX(i), N.getY(i), N.getZ(i)); uv.push(U.getX(i), U.getY(i) * len); }
+    for (let i = 0; i < g.index.count; i++) idx.push(g.index.getX(i) + base); base += P.count; g.dispose();
+    // the carry, in the world
+    const ax = F.wx(B.a[0], B.a[1]), az = F.wz(B.a[0], B.a[1]), bxw = F.wx(B.b[0], B.b[1]), bzw = F.wz(B.b[0], B.b[1]);
+    L.belts.push({ id: B.id, ax, az, dx: (bxw - ax) / len, dz: (bzw - az) / len, len, hw: 1.15, ya, yb });
+  }
+  { const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('normal', new THREE.Float32BufferAttribute(nor, 3));
+    g.setAttribute('uv', new THREE.Float32BufferAttribute(uv, 2)); g.setIndex(idx); g.computeBoundingSphere();
+    const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ map: L.tex, roughness: .75 })); m.receiveShadow = true; m.name = 'wf_belts'; grp.add(m); }
+  // the arms: base, boom, forearm, head -- four boxes an arm, one instanced draw
+  { L.armN = L.ARMS.length * 3; const g = new THREE.BoxGeometry(1, 1, 1);
+    const m = new THREE.InstancedMesh(g, new THREE.MeshStandardMaterial({ color: 0xe0b02a, metalness: .4, roughness: .45 }), L.armN);
+    m.instanceMatrix.setUsage(THREE.DynamicDrawUsage); m.frustumCulled = false; m.name = 'wf_arms'; grp.add(m); L.arms = m; }
+  { const m = new THREE.Mesh(new THREE.BoxGeometry(3, .07, .3), new THREE.MeshStandardMaterial({ color: 0x0a1a10, emissive: new THREE.Color(0x3aff6a), emissiveIntensity: 2.4 }));
+    m.position.set(-87, Y + 2, 74); m.name = 'wf_scan'; grp.add(m); L.bar = m; }
+  { const m = new THREE.Mesh(new THREE.BoxGeometry(2.8, .2, 2.8), new THREE.MeshStandardMaterial({ color: 0x6a7480, metalness: .5, roughness: .5 }));
+    m.position.set(-101, Y + L.L2, 76); m.name = 'wf_lift'; grp.add(m); L.lift = m; }
+  L.Y = Y; L.c = [F.wx(-87, 92), F.wz(-87, 92)];
+  wfArms(0);
+}
+const _wfM = new THREE.Matrix4(), _wfQ = new THREE.Quaternion(), _wfE = new THREE.Euler(), _wfS = new THREE.Vector3(), _wfP = new THREE.Vector3();
+function wfArms(t) {
+  const L = WFLINE, A = L.arms; if (!A) return; const y0 = L.Y + L.L2 + .5;
+  L.ARMS.forEach(([u, v], i) => {
+    const ph = t * 1.7 + i * 2.1, yaw = Math.sin(ph) * .5, lift = .55 + .35 * Math.sin(ph * 1.3 + 1), reach = .9 + .4 * Math.sin(ph * .9);
+    const fu = Math.sin(yaw), fv = Math.cos(yaw);                                  // the arm leans out over the belt (+v)
+    const set = (k, cu, cy, cv, sx, sy, sz, rx) => { _wfE.set(rx, yaw, 0, 'YXZ'); _wfQ.setFromEuler(_wfE); _wfS.set(sx, sy, sz); _wfP.set(cu, cy, cv); A.setMatrixAt(i * 3 + k, _wfM.compose(_wfP, _wfQ, _wfS)); };
+    const ex = u + fu * reach, ez = v + fv * reach, ey = y0 + 1.2 + lift;
+    set(0, u, y0 + .6, v, .35, 1.2, .35, 0);                                     // the upright
+    set(1, (u + ex) / 2, (y0 + 1.2 + ey) / 2, (v + ez) / 2, .25, .25, Math.hypot(reach, lift) + .2, -Math.atan2(lift, reach));   // the boom
+    set(2, ex, ey - .55, ez, .2, 1.1, .2, 0);                                     // the tool, down at the belt
+  });
+  A.instanceMatrix.needsUpdate = true;
+}
+// every frame: the belts carry what stands on them; near the factory, the line's parts move
+function wfLineStep(dt) {
+  const L = WFLINE; if (!L.on || !L.belts.length || !inTK()) return;
+  const p = player, P = p.pos;
+  L.near = Math.hypot(P.x - L.c[0], P.z - L.c[1]) < 140;
+  if (!L.near) return;
+  L.t += dt; L.tex.offset.y = (L.tex.offset.y + L.scroll * L.speed * dt) % 1;
+  wfArms(L.t);
+  if (L.bar) L.bar.position.y = L.Y + 1.1 + 1.4 * (1 + Math.sin(L.t * 2.2));
+  if (L.lift) L.lift.position.y = L.Y + L.L2 + (L.L3 - L.L2) * (.5 + .5 * Math.sin(L.t * .6));
+  // THE CARRY: grounded on a belt's top -> moved along it (and the lens with him)
+  if (!(p.grounded || p.vel.y === 0)) return;
+  for (const B of L.belts) {
+    const rx = P.x - B.ax, rz = P.z - B.az, t = rx * B.dx + rz * B.dz; if (t < 0 || t > B.len) continue;
+    if (Math.abs(rx * B.dz - rz * B.dx) > B.hw) continue;
+    if (Math.abs(P.y - (B.ya + (B.yb - B.ya) * t / B.len)) > .3) continue;
+    const s = L.speed * dt, dx = B.dx * s, dz = B.dz * s; P.x += dx; P.z += dz;
+    if (typeof cam !== 'undefined' && cam.pos) { cam.pos.x += dx; cam.pos.z += dz; if (cam.tgt) { cam.tgt.x += dx; cam.tgt.z += dz; } }
+    L.carried += dt; return B.id;
+  }
 }
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
@@ -37369,6 +37554,9 @@ const GODPLACES = [
   { id: 'wfdeck', world: 'tkit', name: 'THE WATERFRONT · on the ship in the dry dock', at: () => WFRONT.deckAt },
   { id: 'wfstacks', world: 'tkit', name: 'THE WATERFRONT · up on the container cliff', at: () => WFRONT.stacksAt },
   { id: 'wfgate', world: 'tkit', name: "THE WATERFRONT · Uplift's factory gate", at: () => WFRONT.gateAt },
+  { id: 'wfline', world: 'tkit', name: "THE WATERFRONT · inside the factory, at the line's intake", at: () => WFRONT.lineAt },   // m378
+  { id: 'wfcontrol', world: 'tkit', name: "THE WATERFRONT · the line's control room", at: () => WFRONT.controlAt },
+  { id: 'wftower', world: 'tkit', name: 'THE WATERFRONT · the outfeed tower (the way in over the fence)', at: () => WFRONT.towerAt },
   { id: 'gangbridge', world: 'tkit', name: "HOLLOW CREEK · the gang on the bridge (Old Town's side of them)", at: () => HCROAD.gangAt },
   { id: 'otfreight', world: 'tkit', name: 'OLD TOWN · the freight pier (the train to Hollow Creek)', at: () => HCTRAIN.otAt },   // m370
   { id: 'hchalt', world: 'tkit', name: 'HOLLOW CREEK · the halt (the freight line)', at: () => HCTRAIN.hcAt },
@@ -39112,6 +39300,7 @@ function frameBody() {
   cowStep(dt);                  // the herd: brains, bodies, and their bulk against him -- before the lens too (m294)
   vehStep(dt);                  // the tractor at work and the pickup on its errands, and their bulk against him (m314)
   trainStep(dt);                // the freight to Hollow Creek, and him on it if he is (m370) -- before the lens, which it moves
+  wfLineStep(dt);               // Uplift's line: its belts carry him (m378) -- before the lens, which it moves
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)

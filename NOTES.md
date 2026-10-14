@@ -7,6 +7,37 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **UPLIFT'S FACTORY, OPENED: THE LINE CLIMBS THROUGH THE HALL ON THREE LEVELS, AND EVERY BELT CARRIES (m378, C6-6b-1,
+  `WFLINE`, `wfFactory`, `wfLineParts`, `wfLineStep`, `wfArms`).** m377's solid shell is now walls round three openings (the
+  intake, 10 x 8, open; the gallery's slot in the east wall at the third level) and a roof you can stand on, behind a
+  parapet. The LINE is a spiral that climbs (`WFLINE.BELTS`, each with a why): in at the intake on the floor (A: the scanner
+  arch, its green bar sweeping; the strip-down cage, hard hats and boots piled beside it), up an incline (AB, `pearlSpan`
+  reused) to the second level (C: three robot arms, ONE instanced draw, `wfArms`; D: the chrome booth), up the lift, across
+  the front at the third level OVER the floor line (F), up the east side through the visor arch (G), and out through the
+  wall (H) along an enclosed gallery over the fence to the OUTFEED TOWER on the quay behind the dry dock (32 risers of
+  .3125 down to it). **The climber's way in is the converts' way out** -- the fence's gate stays locked (the engineer's,
+  C6-6e). Walkways beside the upper belts, railed on every open edge; one long stair up the west wall (18 risers to the
+  second level, a landing, 15 to the third); the CONTROL ROOM in glass at the second level's back-west corner (consoles,
+  green screens, a red lever: C6-6f's off switch, `WFLINE.leverAt`).
+  **THE CARRY IS `trainStep`'s SHAPE**: grounded on a belt's top (within .3 of its height at that point, inside its
+  half-width), he is moved along it at `WFLINE.speed` and the lens with him; called right after `trainStep`, before the
+  lens. The belts' surface is ONE mesh with its own UVs (one repeat a metre along each belt) and ONE scrolling texture;
+  `farmMerge` drops UVs, which is why the belts are not in the frame's parts. **`WFLINE.scroll` is a dial**: which way the
+  stripes read as moving cannot be settled offline -- `-1` -> `1` if they run backwards. Everything that moves only moves
+  within 140 m of the hall. GOD: inside at the intake, the control room, the outfeed tower. Not yet: the workers on the
+  line, the conversion (C6-6b-2).
+  **The `FACTORY` row WALKS it** (floor -> west stair -> third level; landing -> control room; quay -> tower -> gallery ->
+  hall) and runs the shipped `wfLineStep` with him on belt A (carried .65 m in .5 s, the speed's own) and off the line
+  (nothing). Its first run said `THE TOWER WAY IN IS BROKEN` and it was the WALK, not the building: the last leg cut the
+  corner from the gallery's walkway to the east one through the air. Teeth: the carry's `P.x += dx` taken out reads
+  `THE BELT DOES NOT CARRY`, exit 1.
+  `npm run places` (exit 0):
+      ok  wfline     -> player 209.6,3.5,-244.8 ground 3.20
+      ok  wfcontrol  -> player 241.5,8.9,-282.0 ground 8.70
+      ok  wftower    -> player 169.3,3.5,-306.6 ground 3.20
+      ok  WATERFRONT 520 boxes, 322 containers | centre 98,-220 | clear of the farm, the island, the pearl, hollow creek | quay level at 3.2 | dock floor -1.75 (5.0 m down), 2.20 m under the hull | head stair floor -> 3.20 (quay 3.2) | stair tower -> 9.45 (deck 9.45) | crate stairs up 2.6, 2.6 | high road 0, 0, 0.01, 0 | ladders 7 (7 climbs) | people Rosa, Benny, Marge, Unit 7 (formerly Doug), Unit 12
+      ok  FACTORY 7 belts (A 27.4m, AB 14.0m, C 16.2m, D 30.1m, F 28.2m, G 36.2m, H 28.9m) | west stair floor -> 13.20 (third level 13.20) | landing -> control room 8.70 (8.70) | quay -> tower -> gallery -> hall 13.20 | intake doorway open | on belt A carried 0.65 m along it in .5 s (0.65 wanted), off the line: nothing
+
 - **THE WATERFRONT'S LAND: A PORT IS BUILT, SO ITS GROUND IS QUAY, AND ITS HEIGHT IS WHAT STANDS ON IT AND WHAT IS CUT INTO
   IT (m377, C6-6a, `WFRONT`, `wfEdge`, `buildWaterfront`, `GRADE.wf`).** Chapter 4's district, across the river from Old
   Town's south-east shore at bearing -1.15 (the one side of the island nothing was on: the farm is +x+z, Hollow Creek -x+z,

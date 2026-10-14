@@ -299,6 +299,8 @@ differ" table there, so no region feels like the last one.
   - [ ] **C6-6** Chapter 4 greybox (The Waterfront, REGIONS 5), split:
     - [x] m377 **C6-6a** the land: quays across the river from Old Town, two piers, the dry dock with a ship in it, the container yard as cliffs with a high road over it, the transit shed, the factory shut behind its fence, floodlights; the sodium night; GOD places.
     - [ ] **C6-6b** the cyborg factory: the hall opened up, conveyor lines through it at several levels, catwalks; the conversion line (workers go in human, come out cyborg), the signature system.
+      - [x] m378 **C6-6b-1** the hall opened up: the line climbing through it on three levels (belts that carry), walkways, the west stair, the control room, the gallery and the outfeed tower.
+      - [ ] **C6-6b-2** the conversion line: workers ride it in human and come out cyborg; the line's own clock and noise.
     - [ ] **C6-6c** the gantry cranes on the quay's rails: climb one, ride the trolley along the boom, swing a container.
     - [ ] **C6-6d** the way in: the ferry from Old Town's docks to pier 1; a second way (the swing bridge, or the drainage outfall).
     - [ ] **C6-6e** the engineer / hacker form: locked doors, turrets, security robots; as the engineer they open, turn and stand down.
@@ -1032,3 +1034,10 @@ differ" table there, so no region feels like the last one.
   - The factory stays shut behind its fence until the next build.
   - Walking onto its land turns the light to a sodium-orange night with fog. Tell me if that's too dark on the phone.
   - Nothing gets you there except GOD until the ferry build.
+- **m378 (C6-6b-1) Inside Uplift's factory.** I split C6-6b into the hall (this build) and the conversion itself (the next).
+  - The conveyor line spirals up through the hall on three levels: the floor, 5.5 m, then 10 m. One level crosses over another.
+  - Every belt carries whatever stands on it, including you, at 1.3 m/s.
+  - The front door stands open because it's the line's intake. The fence gate stays locked until the engineer build.
+  - Without the engineer, you get in the way the finished cyborgs come out: up the outfeed tower behind the dry dock, then along the enclosed gallery over the fence.
+  - The control room's red lever does nothing yet. Shutting the line down comes in the boss build.
+  - If the belt stripes look like they're running backwards, that's one switch: `WFLINE.scroll`.
