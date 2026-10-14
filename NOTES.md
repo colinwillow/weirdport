@@ -7,6 +7,18 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE CROWD FOLLOWS THE TURF (m408, D2, `crowdDeal`'s turf branch, `TURFKINDS`, `turfCrowdKinds`, `turfCrowdPick`).**
+  `kitPopulate` asks for `crowdWant` spots and `crowdDeal` deals them. In tkit, with the turf built (`turfBuild` runs before
+  `kitPopulate` in init), every spot inside a block goes to `turfCrowdPick`: a draw on that block's shares (a faction with
+  no body gets weight 0, the rest renormalise), then a body of that faction (`TURFKINDS`, by file stem through `mkrKind`,
+  never a `beside` kind). The spot is hashed into the seed, so a reload deals the same people to the same street. Only the
+  spots outside the grid go round the crowd table, so the body count is exactly what it was. Every turf kind's `at` is
+  cleared first, as the table's kinds always were. **NOTHING RE-DEALS DURING PLAY**: bodies are built from `K.at` once, at
+  load.
+  **`npm run places`, exit 0** (teeth: the draw made blind to the shares, weight 1 each, reads `BAD CROWD ... red 44/18,
+  small 46/73 ... A FACTION'S COUNT IS NOT ITS SHARE`):
+      ok  CROWD 288 spots in 36 blocks: 288 dealt by the turf | each faction dealt / expected: act 34/36, red 23/18, big 52/54, small 80/73, home 50/52, upl 24/26, skin 25/28 | the camp's block (F5): 5 of 8 homeless | the spot off Old Town dealt round the table 
+
 - **TURF: THE INFLUENCE MODEL (m407, D1, `TURF`, `turfBuild`, `turfAt`, `turfHold`, `turfPush`, `turfStep`, `turfMap`,
   `SAVE.turf`).** The city has no street or block data, so Old Town's blocks are a 6 x 6 grid over `ISLE.rect`, named A..F
   from its +x side (the map draws +x on the LEFT, so A is the left column) and 1..6 from -z. A block's first shares are
