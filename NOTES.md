@@ -7,6 +7,22 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE SKY ON KTX2, AND THE HUE READ OFF THE GPU (m426, F0a-2d-3, `skyLoad`, `hueReadGPU`, `measureHue`).** `scene.background`
+  is the equirect itself (three draws it through its own sampler every frame), so the 8 MB PNG was resident for the sky,
+  not only for the PMREM. The twin (`images/hdri_game.ktx2`, UASTC with mips, 1774 x 887) is the GPU texture;
+  `skyBandLin` still needs pixels for the fog colour, so the PNG is fetched as an `Image` (never a THREE texture), read
+  once, and dropped. **`skyLoad()` RUNS AT MODULE SCOPE** (line ~6042, before `kl` at 7820 and `texTwin` after it): the
+  first cut read `texTwin` there -- `Cannot access 'texTwin' before initialization`, the eleventh TDZ blank page, caught
+  by `check:boot`. The twin is looked up off `ASSETS` (declared at 834) and the loader used inside `setTimeout(0)`.
+  **`HUE READ FAILED alien` IN EVERY WORLD SINCE m425.** `measureHue(tex)` draws `tex.image` onto a 2D canvas to histogram
+  the alien's chroma for his glow ramp (m-something: "the texture is asked rather than guessed at"); a KTX2's `image` is a
+  size, `drawImage` throws, the note fires and the glow hue falls back. The measure's `NOTE:` column is what showed it
+  (every world, after the zap bake). `hueReadGPU` draws the texture onto a 128 x 128 `WebGLRenderTarget` with a
+  `MeshBasicMaterial` and `readRenderTargetPixels` -- linear bytes, the hue the same, the saturation weights a little
+  different. Used for any texture that is compressed or not drawable; the canvas path stays for an Image.
+  `npm run worlds` (five worlds, m426): tkit 147 tex 170 MB / geometry 170 MB / oldtown 641 DC (noisy) / spawn 70; toon
+  115 MB, 351 DC at the spawn (OVER dc); kit 95 MB, inside; weirdport 122 MB, kT 1474 (OVER kT); test 72 MB, inside.
+
 - **THE LOOSE SHEETS TO KTX2 (m425, F0a-2d-2, `tools/ktxpng.mjs`, `texTwin`, `texLoad`, `texLoadAsync`, `KTX2SWAP` +4).** A PNG
   through `TextureLoader` is sampled with `flipY = true`; a KTX2 through `KTX2Loader` with `flipY = false` -- so the twin is
   encoded `isYFlip: true` (the flip baked into the pixels) and the sheets' `grid`/`cut` maths reads the same frame. The fire,
