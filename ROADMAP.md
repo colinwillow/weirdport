@@ -221,12 +221,12 @@ differ" table there, so no region feels like the last one.
 - [x] m334 **B2 Chapter 0 script.** Crash → find Clancy → the farmer sees you and panics → knock him
   down → take his sample → walk to the bridge as him → the cop checkpoint lets the farmer through
   (and stops the alien) → Old Town, fog lifts. Tutorial prompts along the way.
-- [ ] **B3 Old Town setup.** Region bounds, a homeless camp, a food cart with the hidden good
+- [x] m338 **B3 Old Town setup.** Region bounds, a homeless camp, a food cart with the hidden good
   alien (the tell under the hat), a building site. Ambient life placed by role.
   - [x] m335 **B3-1** the map's real regions (Old Town, Gristle Farm) and the homeless camp.
   - [x] m336 **B3-2** the food-cart pod in a lot, with the hidden good alien at one cart (the antenna under the hat).
   - [x] m337 **B3-3** a building site wrapped in scaffolding, with its crew.
-  - [ ] **B3-4** ambient life placed by role (cops on the beat, people on the pavements, the crews' comings and goings).
+  - [x] m338 **B3-4** ambient life placed by role (cops on the beat, people on the pavements, the crews' comings and goings).
 - [ ] **B4 Chapter 1 quests.** The good alien points you at the building site; workers are being
   turned into Skinsuits; get the worker form; repair the broken bridge (gate) to the next district.
 - [ ] **B5 Chapter 1 boss.** The infiltrated foreman bursts out of his skin; beat him; revert the
@@ -713,3 +713,10 @@ differ" table there, so no region feels like the last one.
   boxes, so my lot measurement missed it. I fixed the measurement and moved the site. The
   construction workers there use a new plain-civilian copy of the worker model, so they stay put
   rather than going off to repair walls.
+
+- **m338 (B3-4):** Old Town has eight people moving through it with a purpose: two cops each walk a
+  loop round the middle of town (one tight, one wide), four pedestrians walk between the carts, the
+  camp, the building site and the town end of the bridge, and two of the site crew go to the carts and
+  back. Each stops briefly at every point and moves on, instead of wandering at random. They're all
+  ordinary people otherwise: they talk, brush you off by group, and run if you scare them. I left out
+  cars in town and any day/night schedule.

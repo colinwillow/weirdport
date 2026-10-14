@@ -7,6 +7,23 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A ROUTE IS A LIST OF NAMED PLACES, SNAPPED ONCE AT BUILD, AND A BODY WALKS IT IN ORDER (m338, `OTLIFE`, `buildLife`, `d.beat`).**
+  B3-4, ambient life by role. Eight bodies, each a row in `OTLIFE.ROLES` with a reason: two cops walking a ring round
+  Old Town's middle (Kowalski r34 x8 points, Haines r66 x10), four pedestrians between the named places (`carts`, `mid`,
+  `site`, `camp`, `bridge`), and two of the site's crew going to the carts and back the opposite ways round so they pass.
+  Every point is pushed through `lifeSpot` (the nearest spot within 12 m where `kitStand` says street level, y <= .5, and
+  no floor more than .8 m over it -- the m337 roof rule), and `via` routes ping-pong. **The roam picker takes the next
+  point of `d.beat` instead of a random one**, and the wait at each point is .4-2 s instead of `K.roamWait`, so they read
+  as going somewhere. Nothing else about the body changes: `mkrStep` claims it as a `LIFE` npc mark like any other, it
+  talks/brushes by its group, and it still panics and flees.
+  **THE CHECKPOINT IS OUTSIDE THE ISLAND.** `BRIDGE.gate` is ~(112, 64) and `ISLE.rect` stops at x 90.5. The first
+  `bridge` point stepped 14 m along `-h`, which went further out onto the deck, and `places` caught a commuter at (125, 75)
+  "outside Old Town". The town's end of the bridge is now the gate CLAMPED 6 m inside the rect, which is right whichever
+  side the gate is on. `npm run places`:
+  `LIFE 8 routes: cop_beat_near 8pts 184m | cop_beat_far 10pts 370m | walker_1 4pts 255m | walker_2 4pts 287m | walker_3 4pts 312m | walker_4 6pts 327m | crew_run_1 2pts 135m | crew_run_2 2pts 135m`
+  `ok  beat       -> player 34.0,0.4,11.6 ground 0.23` (the GOD place "a cop's beat"); every body inside ISLE.rect, exit 0.
+  **Not built:** no car traffic in Old Town, no time-of-day schedule, and the walkers do not stop to talk to each other.
+
 - **A LOT SWEEP MUST LOOK FOR A ROOF OVERHEAD: THE FIRST SITE WENT UP ON TOP OF HIS GAS STATION (m337).** m335's sweep scored lots by
   ground HEIGHT and the clear radius to the nearest BOX. His "COSMIC FUEL" station on (65.5, 78.7) has no boxes there --
   its walls are triangles (which `triAdd` throws away as "not a floor", m166) and its canopy and roof are floors -- so the

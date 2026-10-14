@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m337</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m338</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m337</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m338</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm337';
+const BUILD = 'm338';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -26842,7 +26842,9 @@ function foeWander(d, dt, t, dd, toP) {
       // whatever it reads, so the worst case is exactly the old behaviour and the slide and the
       // give-up are still underneath it.
       let a = 0;
-      for (let i = 0, n = K.roamTry || 1; i < n; i++) {
+      // m338: A BEAT -- a body placed by role (`OTLIFE`) walks its route's next waypoint instead of a random spot
+      if (d.beat && d.beat.length) { d.beatI = ((d.beatI === undefined ? -1 : d.beatI) + 1) % d.beat.length; d.rx = d.beat[d.beatI][0]; d.rz = d.beat[d.beatI][1]; }
+      else for (let i = 0, n = K.roamTry || 1; i < n; i++) {
         a = Math.random() * Math.PI * 2;
         // **THE RING HAS A HOLE IN IT WHERE YOU ARE POINTING (m74, `K.palArc`).** *"He goes in
         // front of me a lot and then I just end up shooting him... stand off the side of me."*
@@ -26864,7 +26866,7 @@ function foeWander(d, dt, t, dd, toP) {
   const gx = d.rx - d.root.position.x, gz = d.rz - d.root.position.z;
   const gd = Math.hypot(gx, gz);
   if (gd < K.roamAt) {
-    d.roamT = rnd(K.roamWait);
+    d.roamT = d.beat ? .4 + Math.random() * 1.6 : rnd(K.roamWait);          // m338: a beat pauses, it does not linger
     // **WHICH IDLE HE HOLDS IS PICKED FRESH ON EACH STOP.** *"clancy_idle_01 and clancy_idle_02
     // are the main ones."* Two clips and one `idle` field is one clip; a pool read HERE, where
     // he actually comes to rest, is the whole of it -- and `K.clips.idle` stays a single string
@@ -30026,7 +30028,7 @@ function fpCentroid(fid) {
 function peopleMark(id, x, z, yaw, R, y, src, grp) {
   MARKS.push({ type: 'npc', id, name: R.name, src, x, y: y != null ? y : groundAt(x, z, 30, 0), z, yaw, sx: 0, sz: 0,
     p: { kind: R.kind, name: R.name, lines: R.lines, talk: R.talk, rumour: R.rumour, group: R.group || grp, talks: R.talks || [grp], alien: R.alien || 'flee',
-         brushAlien: R.brushAlien, alienLines: R.alienLines, hat: R.hat || 0, town: R.town || 0 }, used: 0 });
+         brushAlien: R.brushAlien, alienLines: R.alienLines, hat: R.hat || 0, town: R.town || 0, beat: R.beat || null }, used: 0 });
   MKR.by.npc = (MKR.by.npc || 0) + 1;
 }
 function buildFarmhands() {
@@ -30359,6 +30361,62 @@ function buildSite() {
   for (const P of S.PEOPLE) { const [u, v] = P.off, x = F.wx(u, v), z = F.wz(u, v); peopleMark(P.id, x, z, th + Math.PI + (rr() - .5), P, gnd(u, v), 'SITE', 'worker'); }
   S.topAt = [F.wx(.9, -sv), g0 + L * S.lifts + .05, F.wz(.9, -sv)];       // between two standards, on the planks
   return S.n;
+}
+// ============================================================================================
+// OLD TOWN'S LIFE, BY ROLE (m338, ROADMAP B3-4, `OTLIFE`, `buildLife`, `lifeSpot`, the roam picker's `d.beat`)
+// ============================================================================================
+// The crowd (`kitPopulate`) is dealt round the spawn and ambles round where it landed. This is the other kind of
+// people: each has a ROLE and a ROUTE, and walks it -- the roam picker takes `d.beat`'s next waypoint instead of a
+// random spot, pausing a moment at each. Two COPS walk loops round Old Town (a near beat and a far one); four people
+// go about their day between the places that exist (the camp, the carts, the site, the middle, the bridge's town end);
+// two of the CREW go back and forth between the site and the carts -- and walk straight past the food. Every waypoint
+// is FOUND, never typed: `lifeSpot` searches outward from where the route wants to be for street-level ground a body
+// can stand on with nothing overhead (the m337 lesson). Ambient: no lines, no `!`.
+const OTLIFE = {
+  on: 1, n: 0, routes: [],
+  ROLES: [
+    { id: 'cop_beat_near', kind: 'cop', name: 'Officer Kowalski', group: 'law', loop: { r: 34, n: 8, a0: .3 }, why: 'a cop on the beat round the middle of Old Town' },
+    { id: 'cop_beat_far', kind: 'cop', name: 'Officer Haines', group: 'law', loop: { r: 66, n: 10, a0: 2.1 }, why: "a cop on the outer beat, past the camp, the carts and the site" },
+    { id: 'walker_1', kind: 'beautiful_blonde', name: 'a shopper', via: ['carts', 'mid', 'site'], why: 'between the carts and the site, through the middle' },
+    { id: 'walker_2', kind: 'fat_hipster', name: 'a commuter', via: ['bridge', 'mid', 'carts'], why: 'off the bridge to the carts' },
+    { id: 'walker_3', kind: 'fat_activist_01', name: 'a canvasser', via: ['camp', 'mid', 'bridge'], why: 'from the camp to the bridge with a clipboard nobody signs' },
+    { id: 'walker_4', kind: 'beautiful_asian', name: 'a jogger', via: ['site', 'mid', 'camp', 'carts'], why: 'a long loop of the west side' },
+    { id: 'crew_run_1', kind: 'contruction_worker', name: 'a worker', group: 'worker', via: ['site', 'carts'], why: "the crew's comings and goings: to the carts and back, never stopping to eat" },
+    { id: 'crew_run_2', kind: 'contruction_worker', name: 'a worker', group: 'worker', via: ['carts', 'site'], why: 'the other way round, so they pass each other' },
+  ],
+};
+// the nearest point to (x, z), searched outward to `rmax`, where a body can stand at street level with nothing over it
+function lifeSpot(x, z, rmax) {
+  for (let r = 0; r <= (rmax || 10); r += 1.5) {
+    const n = r ? Math.max(6, Math.round(r * 3)) : 1;
+    for (let i = 0; i < n; i++) {
+      const a = i / n * Math.PI * 2, px = x + Math.cos(a) * r, pz = z + Math.sin(a) * r, y = kitStand(px, pz);
+      if (y === null || y > .5) continue;
+      if (groundAt(px, pz, 60, 60) - y > .8) continue;                     // a roof or a canopy over it
+      return [px, pz, y];
+    }
+  }
+  return null;
+}
+function buildLife() {
+  const L = OTLIFE; if (!L.on || !ISLE.live || !ISLE.rect || !inTK()) return 0;
+  const R = ISLE.rect, mid = [(R[0] + R[1]) / 2, (R[2] + R[3]) / 2];
+  const at = { mid, camp: OTCAMP.godAt, carts: OTCARTS.godAt, site: OTSITE.gateAt && [OTSITE.gateAt[0], OTSITE.gateAt[2]],
+    // the checkpoint stands OUTSIDE the island (m338: a heading-based step went the wrong way, onto the deck), so the
+    // town's end of the bridge is the gate clamped 6 m inside the rect -- the nearest street to it, whichever side it is on
+    bridge: BRIDGE.gate && [Math.min(R[1] - 6, Math.max(R[0] + 6, BRIDGE.gate.x)), Math.min(R[3] - 6, Math.max(R[2] + 6, BRIDGE.gate.z))] };
+  for (const Ro of L.ROLES) {
+    let pts = [];
+    if (Ro.loop) { const { r, n, a0 } = Ro.loop; for (let i = 0; i < n; i++) { const a = a0 + i / n * Math.PI * 2; pts.push([mid[0] + Math.cos(a) * r, mid[1] + Math.sin(a) * r]); } }
+    else pts = Ro.via.map(k => at[k]).filter(Boolean).map(q => [q[0], q[1]]);
+    const beat = pts.map(q => lifeSpot(q[0], q[1], 12)).filter(Boolean);
+    if (Ro.via) for (let i = beat.length - 2; i > 0; i--) beat.push(beat[i]);           // there and back
+    if (beat.length < 2) { note('LIFE ' + Ro.id + ' NO ROUTE'); continue; }
+    L.routes.push({ id: Ro.id, beat });
+    peopleMark(Ro.id, beat[0][0], beat[0][1], 0, Object.assign({}, Ro, { beat: beat.map(q => [q[0], q[1]]) }), beat[0][2], 'LIFE', Ro.group || 'folk');
+    L.n++;
+  }
+  return L.n;
 }
 // THE TELL: a hat on his head bone, an antenna through its crown. Sized in METRES and divided by the bone's world scale
 // (the armature is .01 and the body is scaled again), placed in the bone's own frame (a Mixamo bone's +Y runs along it,
@@ -32260,6 +32318,7 @@ function mkrStep() {
       b.talkSeen = 1; TALK.n++;
     }
     if (P.hat) peopleHat(b, P.hat);                                   // m336: the hidden good alien's tell
+    if (P.beat) { b.beat = P.beat; b.roamT = .2 + Math.random(); }    // m338: a route to walk (`OTLIFE`)
   }
 }
 
@@ -33369,6 +33428,7 @@ const godFL = H => { const [x, z] = flWorld(H.a, H.b); return [x, null, z, Math.
 // THE PLACES. One line each: where it is, what world, and a function that answers [x, y|null, z, heading|null].
 const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
+  { id: 'beat',     world: 'tkit', name: "OLD TOWN · a cop's beat (Officer Kowalski's first corner)", at: () => { const r = OTLIFE.routes.find(q => q.id === 'cop_beat_near'); return r && [r.beat[0][0], r.beat[0][2], r.beat[0][1], null]; } },
   { id: 'site',     world: 'tkit', name: 'OLD TOWN · the building site (Sal, Dee, Foreman Briggs)', at: () => OTSITE.gateAt && [OTSITE.gateAt[0], OTSITE.gateAt[1], OTSITE.gateAt[2], OTSITE.gateAt[3]] },
   { id: 'sitetop',  world: 'tkit', name: 'OLD TOWN · the top lift of the scaffold', at: () => OTSITE.topAt && [OTSITE.topAt[0], OTSITE.topAt[1], OTSITE.topAt[2], null] },
   { id: 'carts',    world: 'tkit', name: 'OLD TOWN · the food-cart pod (Chef Norrie: the antenna under the hat)', at: () => OTCARTS.godAt && [OTCARTS.godAt[0], null, OTCARTS.godAt[1], OTCARTS.godAt[2]] },
@@ -35783,6 +35843,7 @@ async function init() {
     try { buildCamp(); } catch (e) { note('CAMP FAIL'); console.warn('[melee] camp', e); }
     try { buildCarts(); } catch (e) { note('CARTS FAIL'); console.warn('[melee] carts', e); }
     try { buildSite(); } catch (e) { note('SITE FAIL'); console.warn('[melee] site', e); }
+    try { buildLife(); } catch (e) { note('LIFE FAIL'); console.warn('[melee] life', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)
     try { buildTownEdge(); } catch (e) { note('TOWN EDGE FAIL'); console.warn('[melee] town edge', e); }
     // THE CITY STARTS THIN (m317): the island's ring by the bridge and all the way round
@@ -35957,7 +36018,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { fireSheet, BURN, burnStart, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
