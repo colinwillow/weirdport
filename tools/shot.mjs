@@ -71,6 +71,15 @@ const SHOTS = {
   pearldock: { place: 'pearldock', settle: 3, why: "The Pearl's dock, looking at its wall",
     cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
       return [p.x - fx * 8 + fz * 4, p.y + 4, p.z - fz * 8 - fx * 4, p.x + fx * 12, p.y + 3, p.z + fz * 12]; })()` },
+  decay: { place: 'beat', settle: 4, pre: "mel.dhPush('oldtown', -50); mel.decayApply(mel.dhGet('oldtown'))", why: "Old Town pushed down to ABANDONED: boards, rubble, litter, squatters (C0-2)",
+    cam: `(() => { const p = mel.player.pos, h = (mel.player.heading || 0) + .6, fx = Math.sin(h), fz = Math.cos(h);
+      return [p.x - fx * 6, p.y + 4, p.z - fz * 6, p.x + fx * 14, p.y + 2.5, p.z + fz * 14]; })()` },
+  boards: { place: 'beat', settle: 3, pre: "mel.dhPush('oldtown', -50); mel.decayApply(mel.dhGet('oldtown'))", why: 'the nearest boarded-up window, square on (C0-2)',
+    cam: `(() => { const p = mel.player.pos, D = mel.ODECAY, h = mel.dhGet('oldtown');
+      const it = D.items.B.filter(q => h < q.t && q.m.elements[13] < 3).sort((a, b) => Math.hypot(a.m.elements[12] - p.x, a.m.elements[14] - p.z) - Math.hypot(b.m.elements[12] - p.x, b.m.elements[14] - p.z))[0];
+      const e = it.m.elements, L = Math.hypot(e[8], e[10]), nx = e[8] / L, nz = e[10] / L, x = e[12], y = e[13], z = e[14];
+      const s = mel.groundAt(x + nx * 7, z + nz * 7, y + 3, 9) > y - 3 ? 1 : -1;
+      return [x + nx * 7 * s, y + 1.2, z + nz * 7 * s, x, y, z]; })()` },
   wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
       return [C.x + sx * 16 - dx / L * 6, p.y + 7, C.z + sz * 16 - dz / L * 6, C.x, p.y + .5, C.z]; })()` },
@@ -110,6 +119,7 @@ try {
   for (const id of want) {
     const S = SHOTS[id]; if (!S) { console.log('no shot', id, '--', Object.keys(SHOTS).join(' ')); code = 1; continue; }
     const went = await page.evaluate(pl => mel.go(pl), S.place);
+    if (S.pre) await page.evaluate(S.pre);
     await page.waitForTimeout(S.settle * 1000);
     const url = await page.evaluate(cam => {
       const { renderer, scene, camera } = window.__shot, c = eval(cam);

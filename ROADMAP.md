@@ -242,7 +242,7 @@ differ" table there, so no region feels like the last one.
   the district decays (boarded windows, rubble, squatters); ending it sends them back out. The look
   follows the health. Start with Old Town and the existing worker/repair and fire systems.
   - [x] m343 **C0-1** the number: Old Town's health, pushed by chunks, breakables, fires, Skinsuits, repairs and the crews; saved; on the chip, the map and in GOD.
-  - [ ] **C0-2** the look follows it: boarded windows, rubble, litter, dead streetlights and squatters as Old Town slips; cleaned up as it recovers.
+  - [x] m344 **C0-2** the look follows it: boarded windows, rubble, litter, dead streetlights and squatters as Old Town slips; cleaned up as it recovers.
   - [ ] **C0-3** the strike: the crews down tools (pickets at the site, no repairs, the district slides); ending it sends them back out.
 - [ ] **C1 Protest events.** Activists gather with signs and chant; rednecks show up; it turns into
   a brawl if provoked; cops respond. As an activist you can walk inside the crowd through a barricade.
@@ -763,3 +763,9 @@ differ" table there, so no region feels like the last one.
   are reverted, plus +15 for beating Briggs. It also creeps up slowly while the crews work and nothing
   is burning. The camp's burn barrel doesn't count as a fire. The numbers are first guesses; they're
   all in `mel.DHEALTH`. GOD has +20 / -20 and a strike switch to try it out.
+
+- **m344 (C0-2):** as Old Town's health falls, litter appears first, then rubble heaps by the walls
+  and planks nailed over the real windows of your kit buildings, mostly the lower floors. Below 45 the
+  homeless start moving in (up to 5). Every piece has its own point where it shows up, so it gets worse
+  gradually and cleans up in reverse as the health recovers. There are no dead streetlights, because
+  the city's lamps aren't lights the game controls. Use GOD's OLD TOWN -20 to see it.

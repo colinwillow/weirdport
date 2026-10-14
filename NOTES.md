@@ -7,6 +7,25 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE LOOK FOLLOWS OLD TOWN'S HEALTH: FOUR LAYERS, EACH PIECE WITH ITS OWN THRESHOLD (m344, C0-2, `ODECAY`,
+  `buildDecay`, `decayApply`, `decayStep`).** A piece is there while the health is UNDER its threshold, so the slide is
+  gradual and a recovery takes it away piece by piece. BOARDS: planks (three a face, both faces) over his kit buildings'
+  own window panes -- `KPARTS` glass, read off each pane's oriented box (`box.cs/sn/hx/hz`, the thin axis is the normal),
+  45% of the panes under 8 m and 12% above, thresholds 12..62; 2,172 boards in the game. RUBBLE: heaps of 5-8 flat-shaded
+  chunks where a PAVEMENT (y .25) is within 1.6 m of a collider, 46 heaps, thresholds 8..50. LITTER: paper, cans and bin
+  bags on any street ground, 260, thresholds 20..78 (the first thing to go). SQUATTERS: hobos spawned at the rubble under
+  45, one more each 8 points (max 5), removed with `bodyGone` as it climbs back; they talk to the street. Three
+  `InstancedMesh` draws; a hidden piece is a zero matrix; nothing is rewritten unless the WHOLE number changes.
+  **THE PROBE SAID THE BOARDS WERE NOT THERE AND THEY WERE**: under SwiftShader a frame takes seconds, so the once-a-second
+  `decayStep` had not come round between `dhPush` and the picture -- `last` still read 55 at a health of 5. The shot rows
+  call `decayApply` in their new `pre` hook. And the board shot shows panes floating on a lawn: that is the X-RAY (his
+  building's walls between the GAME camera and him are dithered away, and the shot camera is somewhere else), not a hole
+  in the city; and the bodies T-posed in it are off the game camera's screen, so their mixers are not ticked.
+  `places` (no kit buildings in that harness, so no boards there): `ok  DECAY boards 0 ... rubble heaps 46 pieces 308
+  litter 260 | shown at 100: 0 at 0: 568 at 55: 99 | squatters 0`; `ok  decayStep 30 frames`. `npm run shot decay boards`.
+  **Not built:** dead streetlights (nothing in his city is a light this code owns), graffiti, and the decay is not
+  per-block -- the whole district shares one number.
+
 - **DISTRICT HEALTH IS ONE NUMBER PER DISTRICT, PUSHED BY EVENTS AND RATES, SAVED (m343, C0-1, `DHEALTH`, `dhPush`,
   `dhStep`, `dhChunk`).** Old Town only (the kit city's rect, in `tkit`). Down: a wall chunk killed (`kitKill`, -.25,
   capped at 2 a second so one rocket into a facade is not a ruin), a breakable smashed (`brkBreak`, -.4), every second

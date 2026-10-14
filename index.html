@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m343</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m344</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m343</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m344</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm343';
+const BUILD = 'm344';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -29014,6 +29014,132 @@ function dhStep(dt) {
   if ((D.t += step) >= D.saveT) { D.t = 0; const h = Math.round(dhGet('oldtown') * 10) / 10; if (D.saved.oldtown !== h) { D.saved.oldtown = h; progFlag('dh:oldtown', h); } }
 }
 // ============================================================================================
+// THE LOOK FOLLOWS THE HEALTH (m344, ROADMAP C0-2, `ODECAY`, `buildDecay`, `decayStep`)
+// ============================================================================================
+// GAME_DESIGN: "the district slides toward broken and abandoned: boarded windows, rubble, the homeless move in". Four
+// layers over Old Town, each piece with its own THRESHOLD -- it is there while the district's health is under it -- so
+// the slide is gradual and a recovery takes it away again piece by piece, in the reverse order:
+//   BOARDS   planks nailed over his kit buildings' own window panes (`KPARTS` glass: the pane's oriented box, both faces),
+//            mostly on the two lowest floors; thresholds 12..62, so a WORN town has a few and an ABANDONED one has most
+//   RUBBLE   heaps of broken masonry where a pavement meets a wall (a sweep of the street for pavement within 1.6 m of
+//            a collider), thresholds 8..50
+//   LITTER   paper, cans and bin bags on every kind of street ground, thresholds 20..78 -- the first thing to go wrong
+//   SQUATTERS the homeless move in: hobos spawned at the rubble as it falls under 45, one more each 8 points, and gone
+//            again as it climbs back (`bodyGone`)
+// THREE DRAW CALLS: each layer is one `InstancedMesh` and a hidden piece is a zero matrix; nothing is rewritten unless the
+// whole number of the health changes. Placement is a rule over the street (seeded, so the same town every load), never a
+// hand-typed spot: these are dressing, like the farm's tufts, not places.
+const ODECAY = {
+  on: 1, built: 0, boards: 0, rubble: 0, litter: 0, squat: [], seed: 344, last: -1,
+  boardP: [.45, .12],     // the chance a pane is boarded: on the two lowest floors (under 8 m), above them
+  rubbleN: 46, rubbleGap: 7, litterN: 260, litterGap: 1.6, step: 3,
+  squatAt: 45, squatPer: 8, squatMax: 5,
+  B: null, R: null, L: null, items: { B: [], R: [], L: [] },
+};
+function buildDecay() {
+  const D = ODECAY, R = ISLE.rect; if (!D.on || !inTK() || !R) return 0;
+  let seed = D.seed; const rr = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler(), sv = new THREE.Vector3(), pv = new THREE.Vector3();
+  const box = new THREE.BoxGeometry(1, 1, 1), col = new THREE.Color();
+  // ---- BOARDS over his window panes
+  const boards = D.items.B, W = new THREE.Vector3(), N = new THREE.Vector3(), U = new THREE.Vector3(0, 1, 0), C = new THREE.Vector3();
+  for (const P of KPARTS) {
+    const b = P.box; if (P.kind !== 'glass' || !b || b.cs === undefined) continue;
+    const xC = (b.minx + b.maxx) / 2, zC = (b.minz + b.maxz) / 2;
+    if (!(xC > R[0] && xC < R[1] && zC > R[2] && zC < R[3])) continue;
+    if (rr() > (b.miny < 8 ? D.boardP[0] : D.boardP[1])) continue;
+    const t = 12 + rr() * 50, thinX = b.hx < b.hz, wid = 2 * (thinX ? b.hz : b.hx), thin = thinX ? b.hx : b.hz, h = b.maxy - b.miny;
+    if (wid < .3 || h < .3) continue;
+    if (thinX) { N.set(b.cs, 0, b.sn); W.set(-b.sn, 0, b.cs); } else { N.set(-b.sn, 0, b.cs); W.set(b.cs, 0, b.sn); }
+    for (const sd of [-1, 1]) for (const f of [.22, .55, .86]) {
+      const tilt = (rr() - .5) * .35, cw = Math.cos(tilt), sw = Math.sin(tilt);
+      const L = wid * (1.08 + rr() * .1);
+      const Wt = new THREE.Vector3().copy(W).multiplyScalar(cw).addScaledVector(U, sw).multiplyScalar(L);
+      const Ut = new THREE.Vector3().copy(U).multiplyScalar(cw).addScaledVector(W, -sw).multiplyScalar(Math.min(.24, h * .2));
+      const Nt = new THREE.Vector3().copy(N).multiplyScalar(.045);
+      C.set(b.cx, b.miny + h * f, b.cz).addScaledVector(N, sd * (thin + .05));
+      m4.makeBasis(Wt, Ut, Nt).setPosition(C);
+      boards.push({ t, m: m4.clone(), c: [.42 + rr() * .2, .3 + rr() * .12, .2 + rr() * .08] });
+    }
+  }
+  // ---- the street sweep: pavement by a wall (rubble), any street ground (litter)
+  const nearWall = [], street = [];
+  for (let x = R[0] + 2; x < R[1] - 2; x += D.step) for (let z = R[2] + 2; z < R[3] - 2; z += D.step) {
+    const px = x + (rr() - .5) * D.step * .8, pz = z + (rr() - .5) * D.step * .8, y = kitStand(px, pz);
+    if (y === null || y > .5) continue;
+    if (groundAt(px, pz, 60, 60) - y > .8) continue;                 // a roof or a canopy over it
+    street.push([px, y, pz]);
+    _wpP.x = px; _wpP.y = y; _wpP.z = pz;
+    if (Math.abs(y - .25) < .04 && resolveBoxes(_wpP, 1.6, 3)) nearWall.push([px, y, pz]);
+  }
+  const pickSpread = (L, n, gap) => { const out = [];
+    for (let i = L.length - 1; i > 0; i--) { const j = (rr() * (i + 1)) | 0; const tmp = L[i]; L[i] = L[j]; L[j] = tmp; }
+    for (const p of L) { if (out.length >= n) break; if (out.every(o => Math.hypot(o[0] - p[0], o[2] - p[2]) > gap)) out.push(p); }
+    return out; };
+  D.rubbleAt = pickSpread(nearWall, D.rubbleN, D.rubbleGap);
+  for (const [x, y, z] of D.rubbleAt) {
+    const t = 8 + rr() * 42, n = 5 + ((rr() * 4) | 0), grey = rr() < .5;
+    for (let k = 0; k < n; k++) {
+      const s = .18 + rr() * (k ? .32 : .5), a = rr() * 6.28, r = rr() * .9;
+      e.set(rr() * 3, rr() * 3, rr() * 3); q.setFromEuler(e); sv.set(s * (1 + rr() * .6), s * (.6 + rr() * .5), s); pv.set(x + Math.cos(a) * r, y + s * .25, z + Math.sin(a) * r);
+      const g = grey ? .45 + rr() * .2 : 0;
+      D.items.R.push({ t, m: m4.compose(pv, q, sv).clone(), c: grey ? [g, g, g * .96] : [.55 + rr() * .15, .3 + rr() * .1, .24 + rr() * .08] });
+    }
+  }
+  for (const [x, y, z] of pickSpread(street, D.litterN, D.litterGap)) {
+    const t = 20 + rr() * 58, k = rr(), a = rr() * 6.28;
+    e.set(0, a, 0); q.setFromEuler(e);
+    let c, h;
+    if (k < .6) { sv.set(.28, .01, .38); h = .006; c = rr() < .5 ? [.92, .9, .84] : [.95, .86, .45]; }          // paper
+    else if (k < .85) { sv.set(.07, .12, .07); h = .06; c = rr() < .5 ? [.75, .12, .1] : [.7, .72, .75]; }      // a can
+    else { sv.set(.42, .3, .36); h = .15; c = [.08, .08, .09]; }                                                // a bin bag
+    pv.set(x, y + h, z);
+    D.items.L.push({ t, m: m4.compose(pv, q, sv).clone(), c });
+  }
+  // ---- the three instanced meshes
+  const mk = (geo, list, mat) => {
+    if (!list.length) return null;
+    const I = new THREE.InstancedMesh(geo, mat, list.length);
+    list.forEach((it, i) => { I.setMatrixAt(i, it.m); I.setColorAt(i, col.setRGB(it.c[0], it.c[1], it.c[2])); });
+    I.instanceMatrix.needsUpdate = true; if (I.instanceColor) I.instanceColor.needsUpdate = true;
+    I.frustumCulled = false; scene.add(I); return I;
+  };
+  D.B = mk(box, boards, new THREE.MeshStandardMaterial({ roughness: .9 }));
+  D.R = mk(new THREE.IcosahedronGeometry(1, 0), D.items.R, new THREE.MeshStandardMaterial({ roughness: 1, flatShading: true }));
+  D.L = mk(box, D.items.L, new THREE.MeshStandardMaterial({ roughness: .95 }));
+  D.boards = boards.length; D.rubble = D.rubbleAt.length; D.litter = D.items.L.length; D.built = 1; D.last = -1;
+  decayApply(dhGet('oldtown'));
+  return D.boards + D.items.R.length + D.litter;
+}
+const _dz = new THREE.Matrix4().makeScale(0, 0, 0);
+// each piece shown while the health is under its threshold
+function decayApply(h) {
+  const D = ODECAY; if (!D.built) return;
+  D.shown = 0;
+  for (const [I, list] of [[D.B, D.items.B], [D.R, D.items.R], [D.L, D.items.L]]) {
+    if (!I) continue;
+    list.forEach((it, i) => { const on = h < it.t; if (on) D.shown++; I.setMatrixAt(i, on ? it.m : _dz); });
+    I.instanceMatrix.needsUpdate = true;
+  }
+}
+const SQUAT_LINES = ["Nobody's fixing nothing round here any more. So. I live here now.",
+  "Rent's gone up everywhere but this street. This street's free.", "When the crews come back, I'll move. Not before."];
+function decayStep(dt) {
+  const D = ODECAY; if (!D.built || !inTK()) return;
+  if ((D.st = (D.st || 0) - dt) > 0) return; D.st = 1;
+  const h = dhGet('oldtown'), hr = Math.round(h);
+  if (hr !== D.last) { D.last = hr; decayApply(h); }
+  // the squatters: one at 45, one more each 8 points under it
+  const want = h >= D.squatAt ? 0 : Math.min(D.squatMax, 1 + Math.floor((D.squatAt - h) / D.squatPer));
+  D.squat = D.squat.filter(d => !d.gone && DUMMIES.includes(d));
+  while (D.squat.length > want) bodyGone(D.squat.pop());
+  if (D.squat.length < want && HOBO.P && D.rubbleAt && D.rubbleAt.length) {
+    const p = D.rubbleAt[D.squat.length % D.rubbleAt.length], d = bodySpawn(HOBO.P, HOBO, p[0] + .8, p[2] + .8, p[1]);
+    if (d) { foeBar(d); d.squatter = 1; D.squat.push(d);
+      d.talk = { id: 'squatter', name: 'a squatter', lines: SQUAT_LINES.slice(), done: 0, group: 'street', talks: ['street', 'worker'], alien: 'brush', brushAlien: ['Seen worse. Not much worse.'] }; d.talkSeen = 1; }
+  }
+}
+// ============================================================================================
 // PORTALS (m286, ROADMAP A8b) -- no one-way trips
 // ============================================================================================
 // **STEP ON A PAD AND IT IS YOURS FOR GOOD** (`progPortal(id)`, saved). Standing on an ACTIVE pad,
@@ -35515,7 +35641,8 @@ function frameBody() {
   campStep(dt);                 // the camp's barrel stays lit (m335)
   cartStep(dt);                 // the good alien's antenna wobbles (m336)
   footStep();                   // the footbridge to The Pearl, mended the frame its gate is fixed (m341)
-  dhStep(dt);                   // district health: what is burning, who is walking, whether the crews are working (m343)                // the wreck burns and smokes; reaching town once moves the start (m289)
+  dhStep(dt);                   // district health: what is burning, who is walking, whether the crews are working (m343)
+  decayStep(dt);                // ...and the look following it: boards, rubble, litter, squatters (m344)                // the wreck burns and smokes; reaching town once moves the start (m289)
   crashHeroStep(dt);            // ...and pulses, arcs, hums, and stands a beam over the farm (m300)
   riverStep(dt);                // the farm's river: no wading, the current puts you back (m291)
   cellStep();
@@ -36243,6 +36370,8 @@ async function init() {
     try { buildLife(); } catch (e) { note('LIFE FAIL'); console.warn('[melee] life', e); }
     // THE FOOTBRIDGE TO THE PEARL (m341): before the city ring, which keeps its trees off the bridge's bearing
     try { buildFootbridge(); } catch (e) { note('FOOTBRIDGE FAIL'); console.warn('[melee] footbridge', e); }
+    // THE LOOK FOLLOWS OLD TOWN'S HEALTH (m344): boards, rubble, litter -- after every Old Town builder, over the street
+    try { buildDecay(); } catch (e) { note('DECAY FAIL'); console.warn('[melee] decay', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)
     try { buildTownEdge(); } catch (e) { note('TOWN EDGE FAIL'); console.warn('[melee] town edge', e); }
     // THE CITY STARTS THIN (m317): the island's ring by the bridge and all the way round
@@ -36417,7 +36546,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
