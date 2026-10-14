@@ -7,6 +7,15 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CHAPTER 6 OPENS (m404, C6-8e-1, quest `ch6`).** The story is a Decision: the man in the nice suit (Chapter 4's boss
+  named him, and his office at the top of Dump Tower) is the Mothership's master and its final boss. **BENNY IS POD 5**
+  (`ISFOLK.KINDS[5]`, the construction worker; his `say` override makes him Benny and lets him talk to the bare alien).
+  If the pods' kinds are ever reordered, that step points at someone else, and the CH6 row only checks a body is THERE.
+  The first step's `at` is the pod at the tether's end (`ISHIP.P.y0`), the reach steps are the GOD places' own spots
+  (`ISDECK.godConv` / `godBridge`), and `ms:in` is set by `shipPodStep` on arrival (the SHIP row runs it).
+  **`npm run places`, exit 0** (teeth: Benny's `npc` pointed at `ms_pod_99` reads `BAD CH6 ... A STEP POINTS AT NOBODY`):
+      ok  CH6 ch6 flag > reach > talk > reach | places ok, ok, ok | people ms_pod_5 (contruction_worker.glb) | the first step at the pod yes 
+
 - **EVERY FORM ONE LAST TIME: SIX GATES IN THE CHAPTERS' ORDER (m403, C6-8d-2, GATE_TYPES `shippen` / `shipmarch` /
   `shiprumble`, `gateLets`'s `ride`, the gauntlet re-laid).** The pen and the file are the gang gate's `groups` rule
   (`socialMe`: the farmer is 'country', the activist / hippie / hipster 'city'). The rumble door is one new rule, `ride`,

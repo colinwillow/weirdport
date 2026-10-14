@@ -963,6 +963,18 @@ const walkUp = (pts, y0) => { let y = y0; for (let i = 0; i < pts.length - 1; i+
   } else why = 'NOT BUILT';
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + 'GAUNTLET', r, why); }
+// ---- CHAPTER 6 OPENS (m404): the quest's every step points at a place that exists or a body that does (Benny in his pod),
+// and the places are where the ship's own are (the pod at the tether's end, the chamber, the bridge)
+{ const q = M.QUESTS.find(q => q.id === 'ch6'); let r = '', why = '';
+  if (q) {
+    const pts = q.steps.filter(s => s.at).map(s => { const a = s.at(); return a && a.length >= 3 && isFinite(a[0] + a[1] + a[2]) ? 'ok' : 'NO PLACE'; });
+    const npcs = q.steps.filter(s => s.npc).map(s => { const m = M.MARKS.find(m => m.id === s.npc); return s.npc + (m && m.K ? ' (' + m.K.file.split('/').pop() + ')' : ' MISSING'); });
+    const pod = q.steps[0].at(), podOk = pod && Math.abs(pod[1] - M.ISHIP.P.y0) < .01;
+    r = 'ch6 ' + q.steps.map(s => s.type).join(' > ') + ' | places ' + pts.join(', ') + ' | people ' + npcs.join(', ') + ' | the first step at the pod ' + (podOk ? 'yes' : 'NO');
+    why = pts.some(x => x !== 'ok') ? 'A STEP POINTS NOWHERE' : npcs.some(n => /MISSING/.test(n)) ? 'A STEP POINTS AT NOBODY' : !podOk ? 'THE FIRST STEP IS NOT AT THE POD' : '';
+  } else why = 'NO CHAPTER 6';
+  if (why) bad++;
+  quiet((why ? 'BAD ' : 'ok  ') + 'CH6', r, why); }
 // ---- HOLLOW CREEK'S LAND (m365): built, clear of every other land (its coast sampled against the farm's, the island's
 // rectangle and The Pearl's), the gorge cut at least 5 m under its rims down its length and running out to the sea, the
 // two flats level, and a forest standing on it
