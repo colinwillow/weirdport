@@ -44,7 +44,8 @@ What to build (several builds; ship each step, never wait):
    farmhouse+yard, barn+silo, sheds+coop — done m311.** **4c the neighbour's farm on the ridge and the lone hay barn
    — done m312.**
 5. **Life**: herds of cows in the pastures, a tractor working a field and one parked, farmhands in the
-   fields, a pickup on the track.
+   fields, a pickup on the track. Split: **5a herds in the pastures — done m313.** 5b a tractor working a
+   field (the parked one is the barnyard's) and a pickup on the tracks. 5c farmhands in the fields.
 6. **The transition into town, never a line**: dirt track -> country road -> past the neighbour's farm
    -> an edge-of-town strip on the farm's side of the river (gas station, trailer park, a few houses with
    yards, billboards, power poles, a fruit stand) -> the bridge checkpoint -> across it the city starts
@@ -510,4 +511,7 @@ differ" table there, so no region feels like the last one.
   farm shop by the track with an awning and crates of apples and pumpkins (where the neighbour in
   B1f will give you the bridge task). Out in a far hay field stands a lone open-sided hay barn with
   a curved roof; its bales are stacked in steps you can climb. That finishes step 4.
+- **m313 (farm rebuild, step 5a):** herds of cows now graze six pastures across the land: the far
+  hill, the neighbour's ridge, the slope above the creek mouth, by the pond, the home pasture and
+  down by the creek. That's 30 cows with the paddock's three, each keeping to its own field.
 

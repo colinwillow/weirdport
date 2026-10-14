@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m312</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m313</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m312</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m313</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm312';
+const BUILD = 'm313';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -30555,25 +30555,58 @@ function cowPick(c) {
   for (let k = 0; k < 10; k++) {
     const a = Math.random() * 6.283, r = Math.sqrt(Math.random()) * c.home.r;
     const x = c.home.x + Math.sin(a) * r, z = c.home.z + Math.cos(a) * r;
+    if (c.field != null && fpOwnAt(...flLocal(x, z)) !== c.field) continue;      // a herd keeps to its own pasture (m313)
     if (cowClear(x, z) != null) { c.tx = x; c.tz = z; return true; }
   }
   return false;
 }
+// which field owns (a, b), off `FPLAN`'s owner lattice -- -1 off it or in a margin, -2 a yard (m313)
+function fpOwnAt(a, b) {
+  const L = FPLAN.lat, own = FPLAN.owners; if (!L || !own) return -1;
+  const i = Math.round((a - L.A0) / L.G), j = Math.round((b - L.B0) / L.G);
+  return i < 0 || j < 0 || i > L.NA || j > L.NB ? -1 : own[j * (L.NA + 1) + i];
+}
+// THE HERDS (m313, STEER step 5a): cows in the land's pastures, not only the paddock -- a row per herd, the field it
+// grazes and how many. Each cow's home is its field's CENTROID off the owner lattice (a seed is not the middle of its
+// cell), its range the field's own size, and it only ever picks a spot its field owns -- the pasture's fences (`FPLAN`)
+// already stop it, this stops it walking into them.
+const FHERDS = [
+  { field: 'far_hill', n: 5, why: 'cows on the far hill, against the sky from the yard' },
+  { field: 'ridge_pasture', n: 6, why: "the neighbour's herd along the ridge" },
+  { field: 'east_pasture', n: 5, why: 'on the slope above the creek mouth, the first cows you see off the bridge' },
+  { field: 'pond_pasture', n: 4, why: "by the pond, where they come down to drink" },
+  { field: 'home_pasture', n: 4, why: 'between the barn and the house: the ones let out of the paddock' },
+  { field: 'creek_pasture', n: 3, why: 'down by the creek below the orchard' },
+];
 function buildCows() {
   const A = FARM.at; if (!COW.on || !A) return 0;
   const C = Math.cos(A.th), S = Math.sin(A.th), W = (u, v) => [A.x + u * C + v * S, A.z - u * S + v * C];
   // homes, in the farm's frame: the paddock behind the barn, and the field toward the crash
-  const homes = [[-4.3, 13.2, 4.2], [-4.3, 13.2, 4.2], [-4.3, 13.2, 4.2], [11, 11, 7], [11, 11, 7], [13, 4, 6]];
-  const N = homes.length;
+  let homes = [[-4.3, 13.2, 4.2], [-4.3, 13.2, 4.2], [-4.3, 13.2, 4.2], [11, 11, 7], [11, 11, 7], [13, 4, 6]];
+  // m313: on the farm's own land, the paddock's three and then the HERDS, each in its pasture (world x, z, r, field)
+  const herd = [];
+  if (FARMLAND.live && FPLAN.owners) {
+    homes = homes.slice(0, 3);
+    const L = FPLAN.lat, own = FPLAN.owners, sum = new Map();
+    for (let j = 0; j <= L.NB; j++) for (let i = 0; i <= L.NA; i++) { const o = own[j * (L.NA + 1) + i]; if (o < 0) continue;
+      const q = sum.get(o) || sum.set(o, [0, 0, 0]).get(o); q[0] += L.A0 + i * L.G; q[1] += L.B0 + j * L.G; q[2]++; }
+    for (const Hd of FHERDS) {
+      const fi = FPLAN.FIELDS.findIndex(f => f.id === Hd.field), q = sum.get(fi); if (!q) continue;
+      const ca = q[0] / q[2], cb = q[1] / q[2], r = Math.sqrt(q[2] * L.G * L.G / Math.PI) * .8, [x, z] = flWorld(ca, cb);
+      for (let k = 0; k < Hd.n; k++) herd.push([x, z, r, fi]);
+    }
+  }
+  const N = homes.length + herd.length;
   const mesh = new THREE.InstancedMesh(new THREE.BoxGeometry(1, 1, 1), new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: .86 }), N * COW_PARTS);
   mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
   mesh.castShadow = true; mesh.receiveShadow = true; mesh.frustumCulled = false;
   scene.add(mesh); cowK.mesh = mesh;
   for (let i = 0; i < N; i++) {
-    const [hu, hv, hr] = homes[i], [hx, hz] = W(hu, hv), pal = COWPAL[i % COWPAL.length];
+    const H = i < homes.length ? homes[i] : null, Hh = H ? null : herd[i - homes.length];
+    const [hx, hz] = H ? W(H[0], H[1]) : [Hh[0], Hh[1]], hr = H ? H[2] : Hh[2], pal = COWPAL[(i * 7 + (Hh ? Hh[3] : 0)) % COWPAL.length];
     const c = { i, home: { x: hx, z: hz, r: hr }, x: hx, z: hz, y: 0, h: Math.random() * 6.283, st: 'graze', t: rnd(COW.graze),
       sp: rnd(COW.walk), phase: Math.random() * 6.283, pitch: 1, yawH: 0, g: 1, mooT: 2 + Math.random() * 12, mooing: 0,
-      mooK: .85 + Math.random() * .3, stuck: 0, tx: hx, tz: hz, seed: Math.random() * 100, pal,
+      mooK: .85 + Math.random() * .3, stuck: 0, tx: hx, tz: hz, seed: Math.random() * 100, pal, field: Hh ? Hh[3] : null,
       pat: [[.5 + Math.random() * .2, .5, 1.2, .7], [-.3 - Math.random() * .2, .42, 1.12, .62], [-.82, .3, 1.24 - Math.random() * .1, .5]] };
     // a clear spot to start on
     for (let k = 0; k < 20; k++) { if (cowPick(c)) { c.x = c.tx; c.z = c.tz; break; } }
@@ -31505,6 +31538,7 @@ const godFL = H => { const [x, z] = flWorld(H.a, H.b); return [x, null, z, Math.
 const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
   { id: 'overlook', world: 'tkit', name: 'GRISTLE FARM · the west hill: fields, and the city on the horizon', at: () => FARMLAND.live && godFL(FARMLAND.HILLS[0]) },
+  { id: 'herd',     world: 'tkit', name: 'GRISTLE FARM · the herd on the far hill', at: () => { const c = COWS.find(q => q.field != null && FPLAN.FIELDS[q.field].id === 'far_hill'); return c && [c.x + 6, null, c.z + 6, Math.atan2(-6, -6)]; } },
   { id: 'neighbour', world: 'tkit', name: "GRISTLE FARM · the neighbour's farm shop on the ridge", at: () => FNEIGH.shopAt && [FNEIGH.shopAt[0], null, FNEIGH.shopAt[1], FNEIGH.shopAt[2]] },
   { id: 'haybarn',  world: 'tkit', name: 'GRISTLE FARM · the lone hay barn', at: () => FNEIGH.barnAt && [FNEIGH.barnAt[0], null, FNEIGH.barnAt[1], FNEIGH.barnAt[2]] },
   { id: 'circle',   world: 'tkit', name: 'GRISTLE FARM · the crop circle by the wreck', at: () => FARMLAND.live && FPLAN.crash && godFL({ a: FPLAN.crash.circle.a - 13, b: FPLAN.crash.circle.b - 4 }) },
