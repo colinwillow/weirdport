@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m303</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m304</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m303</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m304</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm303';
+const BUILD = 'm304';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28966,7 +28966,7 @@ function farmMerge(parts, mat) {
 // One define per kind (`FP_KIND`) and a cache key per kind, so a handful of programs, and NO new draw calls --
 // it is the same merged meshes. The noise is a cheap 3D value noise; nothing is sampled.
 const FPAINT = { on: 1, kinds: { red: 1, wood: 1, stone: 2, cap: 2, roof: 3, hay: 4, dirt: 5, earth: 5, bank: 5, turf: 5, road: 5,
-  hedge: 6, hedge2: 6, metal: 7, pipe: 7, hull: 7, trim: 0, white: 0, dark: 0, steel: 7, tractor: 7, straw: 4, cloth: 0, tyre: 0, bark: 7, leaf: 6, leaf2: 6 }, n: 0 };
+  hedge: 6, hedge2: 6, metal: 7, pipe: 7, hull: 7, trim: 0, white: 0, dark: 0, steel: 7, tractor: 7, straw: 4, cloth: 0, tyre: 0, bark: 7, leaf: 6, leaf2: 6, cream: 1, shut: 0 }, n: 0 };
 const FPAINT_GLSL = `
 float fpH(vec3 p) { p = fract(p * .3183099 + .1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
 float fpN(vec3 x) { vec3 i = floor(x), f = fract(x); f = f * f * (3.0 - 2.0 * f);
@@ -30090,6 +30090,151 @@ function floraStep(dt) {
 }
 
 // ============================================================================================
+// THE FARMHOUSE (m304, farm polish pass 9, `FHOUSE`, `buildFarmhouse`, `farmhouseStep`) -- where the farmer lives
+// ============================================================================================
+// REGIONS.md: *"People: the farmer and his family"* -- and the farm had a barn, a silo and a lean-to, and nowhere anybody
+// lived. A farmhouse is the biggest silhouette that was missing and the one warm thing on the yard at dusk: two storeys
+// of cream board-and-batten on a stone plinth, an oxide-red roof with its ridge along the porch, a stone chimney on the
+// +u gable with SMOKE coming out of it, every window LIT, green shutters, and a deep PORCH across the front facing the
+// corn and the lane -- chairs on it, steps down the middle. **Vertical**: a rain barrel and a log pile at the porch's
+// east end are the way up onto the PORCH ROOF (walkable), and from up there you see over the corn to the wreck.
+// **Alive**: the chimney smokes and a washing line behind the house flaps in the same wind the crops lean in.
+// WHERE (the placement rule): u 9.5..18.5, v 7.5..14.5 in the farm's frame -- the one empty plot in the yard, between the
+// corn (v <= 2), the hay meadow (v >= 18.5), the paddock fence (u <= 6) and the yard's east hedge (`HROW` meadow_crash,
+// u ~21), measured off the frame map in m303. One mesh per material, painted (`farmPaint`); the cloth is one instanced
+// draw. `mel.FHOUSE`; GOD `farmhouse`.
+const FHOUSE = {
+  on: 1, n: 0,
+  u: 14, v: 11, W: 9, D: 7,              // centre and size (W along u, D along v); the porch is on the -v side
+  E1: 3.0, E2: 5.8, RIDGE: 8.1,          // the floors' heights over the house floor, and the ridge
+  porch: 2.3,                            // m deep
+  smokeEvery: .55,                       // s between puffs
+  cloth: [0xf2efe6, 0x6f8fc0, 0xc9483c, 0xe6c35a],
+  at: null, chim: null, line: null, clothM: null, t: 0, smT: 0,
+};
+function buildFarmhouse() {
+  const A = FARM.at, H = FHOUSE; if (!H.on || !A) return 0;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .85, metalness: 0 }), o || {});
+  const MAT = { cream: M(0xe4dcc6), stone: M(0x8d8a82), roof: M(0x7a3d2e), trim: M(0xf3efe4), shut: M(0x2f4f3c),
+    wood: M(0x7a5232), dark: M(0x2a2420),
+    glow: M(0x3a2a14, { emissive: new THREE.Color(0xffc56a), emissiveIntensity: 1.25, roughness: .4 }) };
+  const F = farmFrame(A.x, A.z, A.th, MAT, 'house'), { bx, geo, quad, gnd, wx, wz } = F;
+  const { u: hu, v: hv, W, D, E1, E2, RIDGE } = H, W2 = W / 2, D2 = D / 2, T = .25;
+  let lo = 1e9, hi = -1e9;
+  for (const [a, b] of [[-1, -1], [1, -1], [-1, 1], [1, 1], [0, 0], [0, -1.6]]) { const y = gnd(hu + a * W2, hv + b * D2); lo = Math.min(lo, y); hi = Math.max(hi, y); }
+  const y0 = hi + .5;                                          // the floor, on a plinth
+  const vf = hv - D2, vb = hv + D2, uL = hu - W2, uR = hu + W2;  // front (porch side), back, the two ends
+  // ---- the plinth, the walls
+  bx(hu, hv, lo - .4, y0, W + .3, D + .3, 'stone');
+  bx(hu, vf, y0, y0 + E2, W, T, 'cream'); bx(hu, vb, y0, y0 + E2, W, T, 'cream');
+  bx(uL, hv, y0, y0 + E2, T, D, 'cream'); bx(uR, hv, y0, y0 + E2, T, D, 'cream');
+  // a white band between the floors, and the corner boards
+  for (const v of [vf - .02, vb + .02]) bx(hu, v, y0 + E1 - .08, y0 + E1 + .08, W + .1, T + .06, 'trim', 0, false);
+  for (const a of [-1, 1]) for (const b of [-1, 1]) bx(hu + a * (W2 + .02), hv + b * (D2 + .02), y0, y0 + E2 + .05, .26, .26, 'trim', 0, false);
+  // ---- the gables at the two u ends: the shape spans v; Ry(pi/2) puts its extrusion along +u
+  const gab = new THREE.ExtrudeGeometry(new THREE.Shape([new THREE.Vector2(-D2 - .12, 0), new THREE.Vector2(D2 + .12, 0), new THREE.Vector2(0, RIDGE - E2)]), { depth: T, bevelEnabled: false });
+  geo(gab, 'cream', uL - T / 2, y0 + E2, hv, Math.PI / 2); geo(gab, 'cream', uR - T / 2, y0 + E2, hv, Math.PI / 2);
+  // ---- the roof: two slabs sloping in v, the ridge along u. With psi = pi/2 a box's local x points -v, so a slab
+  // on the +v side (s = +1) rises toward local +x with tilt +ang -- the barn's is -s ang because its local x is +u
+  const run = D2 + .55, ang = Math.atan2(RIDGE - E2, D2), rise = run * Math.tan(ang), sl = Math.hypot(run, rise);
+  for (const s of [-1, 1]) bx(hu, hv + s * run / 2, y0 + RIDGE - rise / 2 - .09, y0 + RIDGE - rise / 2 + .09, sl, W + 1.1, 'roof', Math.PI / 2, false, s * ang);
+  bx(hu, hv, y0 + RIDGE - .05, y0 + RIDGE + .12, .3, W + 1.15, 'roof', Math.PI / 2, false);         // the ridge cap
+  // ---- the chimney on the +u gable, outside the wall
+  const cu = uR + .55, ch = y0 + RIDGE + 1.1;
+  bx(cu, hv + .9, lo - .3, ch, 1.1, 1.1, 'stone'); bx(cu, hv + .9, ch, ch + .15, 1.3, 1.3, 'stone', 0, false);
+  H.chim = [wx(cu, hv + .9), ch + .25, wz(cu, hv + .9)];
+  // ---- windows: a lit pane proud of the wall, a sill and a head, a shutter either side
+  function win(u, v, y, w, h, face) {           // face: 'f' front (-v), 'b' back, 'l' -u end, 'r' +u end
+    const along = face === 'f' || face === 'b', o = (face === 'f' || face === 'l') ? -1 : 1, d = T / 2 + .04;
+    const pu = along ? u : u + o * d, pv = along ? v + o * d : v;
+    if (along) {
+      bx(pu, pv, y, y + h, w, .05, 'glow', 0, false);
+      bx(pu, pv + o * .03, y - .1, y, w + .3, .12, 'trim', 0, false); bx(pu, pv + o * .03, y + h, y + h + .1, w + .2, .1, 'trim', 0, false);
+      for (const sd of [-1, 1]) bx(pu + sd * (w / 2 + .3), pv + o * .02, y, y + h, .45, .06, 'shut', 0, false);
+    } else {
+      bx(pu, pv, y, y + h, .05, w, 'glow', 0, false);
+      bx(pu + o * .03, pv, y - .1, y, .12, w + .3, 'trim', 0, false); bx(pu + o * .03, pv, y + h, y + h + .1, .1, w + .2, 'trim', 0, false);
+      for (const sd of [-1, 1]) bx(pu + o * .02, pv + sd * (w / 2 + .3), y, y + h, .06, .45, 'shut', 0, false);
+    }
+  }
+  for (const du of [-3, 3]) win(hu + du, vf, y0 + .9, 1.0, 1.3, 'f');
+  for (const du of [-2.9, 0, 2.9]) win(hu + du, vf, y0 + E1 + .55, .9, 1.1, 'f');
+  for (const du of [-2.6, 2.6]) win(hu + du, vb, y0 + .9, 1.0, 1.3, 'b');
+  for (const du of [-2.9, 0, 2.9]) win(hu + du, vb, y0 + E1 + .55, .9, 1.1, 'b');
+  win(uL, hv, y0 + .9, 1.0, 1.3, 'l'); win(uL, hv, y0 + E1 + .55, .9, 1.1, 'l');
+  win(uR, hv - 1.6, y0 + .9, .8, 1.2, 'r');
+  // ---- the front door, and its fanlight
+  bx(hu, vf - T / 2 - .03, y0, y0 + 2.2, 1.1, .06, 'dark', 0, false);
+  bx(hu, vf - T / 2 - .03, y0 + 2.25, y0 + 2.55, 1.1, .05, 'glow', 0, false);
+  bx(hu, vf - T / 2 - .06, y0 + 2.2, y0 + 2.28, 1.4, .1, 'trim', 0, false);
+  // ---- the porch: floor, posts, a rail at each end, steps down the middle, its roof (walkable)
+  const P = H.porch, pv0 = vf - P, pvm = vf - P / 2, pr0 = y0 + 2.75, pr1 = y0 + 2.4;
+  bx(hu, pvm, lo - .3, y0, W - .2, P, 'wood');
+  for (const du of [-W2 + .25, -1.3, 1.3, W2 - .25]) bx(hu + du, pv0 + .15, y0, pr1, .2, .2, 'trim');
+  for (const sd of [-1, 1]) {
+    bx(hu + sd * (W2 - .25), pvm, y0 + .85, y0 + .95, .1, P - .2, 'trim');                           // the end rails
+    bx(hu + sd * 2.75, pv0 + .15, y0 + .85, y0 + .95, 3.0, .1, 'trim');                                // the front rails, post to post
+    for (let k = 0; k < 6; k++) bx(hu + sd * (1.5 + k * .5), pv0 + .15, y0, y0 + .85, .05, .05, 'trim', 0, false);
+  }
+  { const gp = gnd(hu, pv0 - 1), dy = (y0 - gp) / 4;               // three steps down to the path, a quarter each
+    for (let k = 0; k < 3; k++) bx(hu, pv0 - .17 - k * .34, gp - .2, y0 - (k + 1) * dy, 2.3, .34, 'wood'); }
+  // its roof: a lean-to slab from the wall down to the posts, and the floor triangles that make it walkable
+  { const L = Math.hypot(P + .3, pr0 - pr1), tl = Math.atan2(pr0 - pr1, P + .3);
+    // psi pi/2: local x is -v, so the slab rises toward the wall (+v) with tilt -tl
+    bx(hu, pvm - .15, (pr0 + pr1) / 2 - .06, (pr0 + pr1) / 2 + .06, L, W + .3, 'roof', Math.PI / 2, false, -tl);
+    quad([uL - .15, pr0 + .07, vf], [uR + .15, pr0 + .07, vf], [uR + .15, pr1 + .03, pv0 - .3], [uL - .15, pr1 + .03, pv0 - .3]); }
+  // two chairs and a little table on the porch
+  for (const [du, r] of [[-2.6, .3], [2.4, -.25]]) { bx(hu + du, pvm + .2, y0, y0 + .45, .55, .55, 'wood', r, false); bx(hu + du, pvm + .45, y0 + .45, y0 + 1.05, .55, .08, 'wood', r, false); }
+  bx(hu - 1.9, pvm + .5, y0, y0 + .55, .5, .5, 'wood', 0, false);
+  // the way up: a rain barrel under the gutter at the east end, a log pile beside it
+  { const u = uR + .7, v = pv0 + .3, g = gnd(u, v);
+    geo(new THREE.CylinderGeometry(.42, .38, 1.05, 12), 'wood', u, g + .52, v); bx(u, v, g - .1, g + 1.05, .8, .8, 'wood'); F.parts.wood.pop();
+    for (let r = 0; r < 4; r++) for (let k = 0; k < 4 - r; k++)
+      geo(new THREE.CylinderGeometry(.17, .17, 1.4, 7), 'wood', u + .95 + k * .36 + r * .18, g + .17 + r * .3, v + .9, 0, Math.PI / 2);
+    bx(u + 1.5, v + .9, g - .1, g + 1.25, 1.6, 1.45, 'wood'); F.parts.wood.pop(); }               // as high as the logs are
+  // ---- the washing line behind the house: two T-posts and the line; the cloth is its own instanced mesh
+  { const a = [hu - 3.6, vb + 2.6], b = [hu + 3.4, vb + 3.1];
+    for (const [u, v] of [a, b]) { const g = gnd(u, v); bx(u, v, g - .2, g + 2.1, .12, .12, 'wood'); bx(u, v, g + 2.0, g + 2.1, .9, .08, 'wood', Math.atan2(-(b[1] - a[1]), b[0] - a[0]) + Math.PI / 2, false); }
+    const ga = gnd(...a), gb = gnd(...b), L = Math.hypot(b[0] - a[0], b[1] - a[1]), psi = Math.atan2(-(b[1] - a[1]), b[0] - a[0]);
+    bx((a[0] + b[0]) / 2, (a[1] + b[1]) / 2, (ga + gb) / 2 + 1.95, (ga + gb) / 2 + 1.97, L, .02, 'dark', psi, false);
+    H.line = { a, b, ya: ga + 1.96, yb: gb + 1.96, psi };
+  }
+  const r = F.commit();
+  // the cloth: four sheets pegged on the line, swinging in `farmhouseStep`
+  { const g = new THREE.PlaneGeometry(.8, 1.05); g.translate(0, -.525, 0);
+    const m = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: .9, side: THREE.DoubleSide });
+    const im = new THREE.InstancedMesh(g, m, H.cloth.length), c = new THREE.Color();
+    H.cloth.forEach((hex, i) => im.setColorAt(i, c.setHex(hex)));
+    im.instanceColor.needsUpdate = true; im.castShadow = true; im.receiveShadow = true; im.frustumCulled = false;
+    F.grp.add(im); H.clothM = im; }
+  H.at = [wx(hu + 1.2, pv0 - 2.4), wz(hu + 1.2, pv0 - 2.4), A.th];      // GOD's spot: on the path, facing the porch
+  H.n = r.boxes + r.tris;
+  return H.n;
+}
+const _fhM = new THREE.Matrix4(), _fhQ = new THREE.Quaternion(), _fhE = new THREE.Euler(), _fhP = new THREE.Vector3(), _fhS = new THREE.Vector3(1, 1, 1);
+function farmhouseStep(dt) {
+  const H = FHOUSE; if (!H.chim) return;
+  H.t += dt;
+  const p = player.pos, near = Math.hypot(p.x - H.chim[0], p.z - H.chim[2]) < 160;
+  if (near && (H.smT -= dt) <= 0) {
+    H.smT = H.smokeEvery * (.7 + Math.random() * .6);
+    smokeAt(H.chim[0] + (Math.random() - .5) * .3, H.chim[1], H.chim[2] + (Math.random() - .5) * .3, 1.4, 1.6, [.62, .6, .58]);
+  }
+  // the cloth: hung along the line (in the frame's own local space), swinging about it, gusting
+  if (H.clothM && H.line) {
+    const L = H.line, n = H.cloth.length, t = H.t;
+    for (let i = 0; i < n; i++) {
+      const a = (i + .7) / (n + .4), u = L.a[0] + (L.b[0] - L.a[0]) * a, v = L.a[1] + (L.b[1] - L.a[1]) * a, y = L.ya + (L.yb - L.ya) * a - .02;
+      const sw = .22 + .16 * Math.sin(t * .31 + i);
+      _fhE.set(Math.sin(t * 2.1 + i * 1.7) * sw + .18, L.psi, Math.sin(t * 1.3 + i) * .05, 'YXZ');
+      _fhQ.setFromEuler(_fhE); _fhP.set(u, y, v);
+      H.clothM.setMatrixAt(i, _fhM.compose(_fhP, _fhQ, _fhS));
+    }
+    H.clothM.instanceMatrix.needsUpdate = true;
+  }
+}
+
+// ============================================================================================
 // THE HEADLAND'S FIELDS (m303, farm polish pass 8, `HROW`, `buildHedgerows`) -- hedgerows, trees, the plough
 // ============================================================================================
 // **MEASURED FIRST: 56% OF THE HEADLAND WAS LAWN** more than 8 m from anything the farm built (a 2.5 m grid over the
@@ -30324,6 +30469,7 @@ const GODPLACES = [
   { id: 'crash',    world: 'tkit', name: 'GRISTLE FARM · the crash site', at: () => CRASH.at && [CRASH.at.you[0], null, CRASH.at.you[1], Math.atan2(CRASH.at.x - CRASH.at.you[0], CRASH.at.z - CRASH.at.you[1])] },
   { id: 'corn',     world: 'tkit', name: 'GRISTLE FARM · the corn', at: () => godMid(FLORA.FIELDS[0]) },
   { id: 'wheat',    world: 'tkit', name: 'GRISTLE FARM · the wheat down to the shore', at: () => godMid(FLORA.FIELDS[1]) },
+  { id: 'farmhouse', world: 'tkit', name: 'GRISTLE FARM · the farmhouse porch', at: () => FHOUSE.at && [FHOUSE.at[0], null, FHOUSE.at[1], FHOUSE.at[2]] },
   { id: 'meadow',   world: 'tkit', name: 'GRISTLE FARM · the hay meadow and the bale stack', at: () => HROW.stackAt && [HROW.stackAt[0], null, HROW.stackAt[1], null] },
   { id: 'plough',   world: 'tkit', name: 'GRISTLE FARM · the ploughed field', at: () => godFarm(-36, -5, 0) },
   { id: 'copse',    world: 'tkit', name: "GRISTLE FARM · the copse at the headland's tip", at: () => godFarm(-52, 0, -Math.PI / 2) },
@@ -30734,6 +30880,7 @@ const GPAINT = {
     { id: 'trough',  u: -3,  v: 11.6,  ru: 3.4, rv: 2.8, col: 0x3d2f22, a: .9, rough: .35, why: 'mud round the trough and the windmill pump: the cows drink here' },
     { id: 'paddock', u: -4.3, v: 13.6, ru: 6.5, rv: 5.0, col: 0x79684a, a: .55, why: 'the paddock trodden pale by the herd' },
     { id: 'gate',    u: -13.6, v: 12,  ru: 2.2, rv: 2.0, col: 0x4a3a2a, a: .8, why: 'the paddock gate, churned' },
+    { id: 'porch',   u: 14,  v: 3.4,   ru: 1.4, rv: 2.0, col: 0x6a5640, a: .7, why: 'the path off the farmhouse steps, worn to the corn and the lane (m304)' },
   ],
   lane: { col: 0x6a5640, rut: 0x3e3226, w: 1.65, a: .85, why: 'the sunken lane: a worn track down its floor, two ruts from carts' },
 };
@@ -31933,6 +32080,7 @@ function frameBody() {
   }
   gatePush(dt);                 // gates: after he moves, before the lens follows him (m285)
   farmPropsStep(dt);            // the windmill and the weathervane turn with the wind (m299)
+  farmhouseStep(dt);            // the chimney smokes and the washing flaps (m304)
   floraStep(dt);                // the corn, wheat and tufts sway and part round him (m297)
   cowStep(dt);                  // the herd: brains, bodies, and their bulk against him -- before the lens too (m294)
   kitCamStep();
@@ -32287,7 +32435,7 @@ function frameBody() {
       (PORTAL.n ? ' PT' + PORTALS.filter(q => q.on).length + '/' + PORTAL.n + (PORTAL.trips ? '>' + PORTAL.trips : '') : '') +
       // FARM: boxes / roof triangles kept (m288) -- no token is no room on the ring or not the kit city
       (FARM.n ? ' FARM' + FARM.n + '/' + FARM.tris + (GRADE.k > .01 ? ' gold' + GRADE.k.toFixed(2) : '') : '') +
-      (HROW.n ? ' HR' + HROW.n + 't' + HROW.trees + 'g' + HROW.gates : '') +
+      (HROW.n ? ' HR' + HROW.n + 't' + HROW.trees + 'g' + HROW.gates : '') + (FHOUSE.n ? ' FH' + FHOUSE.n : '') +
       // CR: the crash site's colliders, and `*` when this boot woke at it (m289)
       (CRASH.n ? ' CR' + CRASH.n + (CRASH.spawned ? '*' : '') + (CHERO.arcs ? 'a' + CHERO.arcs : '') + (CHERO.hum ? 'h' : '') : '') +
       // LN: the lane and creek's colliders (m290)
@@ -32639,6 +32787,8 @@ async function init() {
     try { buildBridge(); } catch (e) { note('BRIDGE FAIL'); console.warn('[melee] bridge', e); }
     // THE HEADLAND'S FIELDS (m303): hedgerows, trees, the plough -- before the cows and the plants, which both see them
     try { buildHedgerows(); } catch (e) { note('HEDGE FAIL'); console.warn('[melee] hedgerows', e); }
+    // THE FARMHOUSE (m304): before the cows, the ground paint and the plants, which all see it
+    try { buildFarmhouse(); } catch (e) { note('HOUSE FAIL'); console.warn('[melee] farmhouse', e); }
     try { buildCows(); } catch (e) { note('COWS FAIL'); console.warn('[melee] cows', e); }
     // THE GROUND (m301): dirt, mud and the lane's track, under everything
     try { buildGroundPaint(); } catch (e) { note('GROUND FAIL'); console.warn('[melee] ground paint', e); }
@@ -32845,7 +32995,7 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // THE FARM'S PROPS (m299): `mel.FPROPS` -- `wind` (shared direction), `spin`
   FPROPS,
   // THE GROUND PAINT (m301): `mel.GPAINT` -- the patch table and the lane track
-  GPAINT, HROW,
+  GPAINT, HROW, FHOUSE,
   FARM, farm: () => { const F = FARM.at; if (!F) return 'no farm in this world'; const p = player; p.pos.set(F.x - Math.sin(F.th) * 12, 2, F.z - Math.cos(F.th) * 12); p.vel.set(0, 0, 0); p.heading = p.faceH = F.th; return 'farm at ' + F.x.toFixed(0) + ',' + F.z.toFixed(0); },
   PORTAL, PORTALS, portal: () => portalOpen(),
   // THE DEMOS, ON PURPOSE ONLY (m292, STEER 1): round where you stand, for testing the systems

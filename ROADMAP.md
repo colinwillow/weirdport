@@ -392,4 +392,9 @@ differ" table there, so no region feels like the last one.
   **river meadow** with willows, and a **copse of oaks** at the headland's tip. The creek now runs
   all the way to the beach. All in GOD's places (meadow, plough, copse). If the hedges feel like
   too many walls, `mel.HROW` holds them.
+- **m304 (farm pass 9: the farmhouse):** the farm had no house, so nowhere the farmer and his family
+  could live. Now a two-storey cream farmhouse stands in the empty plot between the corn and the hay
+  meadow, with lit windows, green shutters, a red roof, a smoking chimney, a porch with chairs facing
+  the corn and the lane, and washing flapping on a line behind it. Climb the rain barrel onto the
+  porch roof to see over the corn to the wreck. It's the natural home for the farmer in B2.
 
