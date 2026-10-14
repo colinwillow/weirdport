@@ -313,6 +313,12 @@ differ" table there, so no region feels like the last one.
       - [x] m386 **C6-6f-1** Chapter 4 opens: over the river, Rosa on pier 1, Dex on the shed roof, an engineer's face, through Uplift's gate.
       - [x] m387 **C6-6f-2** shut the line: the control room's red lever, the line stops for good, the cyborgs start turning back.
       - [x] m388 **C6-6f-3** the boss: the line's supervisor bursts out (Uplift's own, nearly twice your height); after him Chapter 4 is complete.
+  - [ ] **C6-7** Chapter 5 greybox (the River Islands -- GAME_DESIGN's "Skate Islands", REGIONS 8), split:
+    - [x] m389 **C6-7a** the land: six islands at six heights off Old Town's +z shore, water in every gap, ladders up the cliffs, the lighthouse; GOD places.
+    - [ ] **C6-7b** what is on them: the skate park on the old pier, the BASE jumpers' platform on the mesa, kite surfers, a launch ramp on the humps, its people (Rollergirl's easter egg).
+    - [ ] **C6-7c** the wind: gusts that change direction and strength and push every flight (the signature system).
+    - [ ] **C6-7d** the ways in and out: the glide from the lookout and a second way over, and the thermal up off the needle to the Mothership's tether.
+    - [ ] **C6-7e** Chapter 5's quests and its boss.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
 
@@ -1101,3 +1107,8 @@ differ" table there, so no region feels like the last one.
   - Afterwards he says the man in the nice suit has an office at the top of Dump Tower.
   - The robots and turrets power down for good, and you get the Chapter 4 complete card.
   - Next comes Chapter 5, the Skate Islands.
+- **m389 (C6-7a) The River Islands' land.** Chapter 5 is the "Skate Islands", which REGIONS calls the River Islands. I split it into five builds: the land, what's on the islands, the wind, the ways in and out, then the quests and boss.
+  - The chain is six islands due +z off Old Town, in front of the glider guy's lookout: a low landing rock, a sheer mesa, a 34 m sea stack (the needle), a long low pier island, twin hills, and a lighthouse rock.
+  - There's water between every pair, because the gaps are the region's problem.
+  - Ladders climb the cliffs.
+  - For now only flight (the glider form) or GOD gets you there.

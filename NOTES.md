@@ -7,6 +7,31 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE RIVER ISLANDS' LAND: SIX ISLANDS AT SIX HEIGHTS, WATER IN EVERY GAP (m389, C6-7a, `ISLES`, `islOne`, `islHeight`,
+  `islWorld` / `islLocal` / `islEdge`, `buildIslands`).** Chapter 5's chain (GAME_DESIGN's "Skate Islands", REGIONS 8),
+  due +z off Old Town (bearing pi/2: between the farm and Hollow Creek, in front of the lookout at 112 deg, so the glider's
+  lookout looks at it), 70 m of water to the first. ONE height function, the UNION of six island profiles each with its
+  radius wobbled by the angle: the LANDING ROCK (`low`, 6 m, walkable from its beach: the first glide's end), the MESA
+  (sheer, 18 m, a flat top), the NEEDLE (a sea stack, 34 m), the PIER ISLAND (`low`, 3 m: the skate park, C6-7b), TWIN
+  HUMPS (two hills on a low base), LIGHTHOUSE ROCK (8 m, a lighthouse on it). The island's own material and splat (grass
+  tops, sand beaches, rock cliffs), a 2 m grid in 8 chunks, its floor into `TRI` (cliffs are rejected as floor, so a cliff
+  IS a wall); low scrub on the grass. **A CLIFF IS ONE 2 M CELL**, near-vertical, so a ladder stands at its foot: two up
+  the mesa, one up the needle (33 m), one up lighthouse rock, each found by walking out from the middle along its angle to
+  the edge and on to the beach, with a little platform at its foot -- and **its top sets him down 3.5 m in, a whole cell
+  clear of the edge**: at 1.8 m in the mark sat in the cell whose triangles are the DROP, not the top, and `places` read
+  no floor under it (`-1016`). GOD: the landing rock (GODCHAP 5), the mesa's top, the needle's top. The map's region
+  `islands`, revealed when Chapter 4 ends. Nothing gets you here but flight (the glider, C4) and GOD; the people, the
+  wind, the way in and out and the chapter are C6-7b to e.
+  **The `ISLANDS` row**: clear of the farm, Hollow Creek, the Waterfront, the island and The Pearl (24 samples round every
+  island at 1.2 r); each top at its height (sampled .3 r in, off the lighthouse); THE SEA under the middle of every gap
+  between neighbours; every ladder a climb with its foot on the beach and its top on the top; the landing rock walked
+  from its beach to its top.
+  `npm run places` (exit 0):
+      ok  islanding  -> player -1.5,3.9,229.4 ground 3.65
+      ok  ismesa     -> player -31.5,16.1,288.4 ground 15.82
+      ok  isneedle   -> player 23.5,32.1,305.4 ground 31.80
+      ok  ISLANDS 8 chunks, 7292 floor tris | centre -1,233 | clear of the farm, hollow creek, the waterfront, the island, the pearl | tops landing 6.3, mesa 18, needle 34, pier 3.3, humps 7.6, light 8 | the gaps (lowest, over the sea) landing-mesa sea, mesa-needle sea, needle-pier sea, landing-pier sea, mesa-humps sea, needle-light sea, humps-light sea | ladders 4 (4 climbs: 0.05/-0.01 h16.9, 0.05/0.00 h16.7, 0.05/0.01 h32.8, 0.05/-0.00 h6.8) | landing rock walked to 6.0
+
 - **CHAPTER 4's BOSS IS THE LINE SUPERVISOR, AND THE YARD DEFENDS HIM WHILE HE STANDS (m388, C6-6f-3, `QUESTS` `ch4c`,
   `wf_super`, `WBOT.alarm`).** A man in a suit (fat_secret_service; "hi-vis over a nice suit") on the hall floor by the
   floor line, `wf_super`, there from the start ("THE LINE IS GOOD. THE LINE IS EFFICIENT."). The quest (`needQ: 'ch4b'`):

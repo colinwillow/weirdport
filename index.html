@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m388</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m389</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m388</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m389</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm388';
+const BUILD = 'm389';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28316,7 +28316,7 @@ const QUESTS = [
   // agency, Delaware, a man in a nice suit, an office at the top of Dump Tower); the robots and turrets power down for good;
   // Chapter 4 is done.
   { id: 'ch4c', title: 'THE SUPERVISOR', world: 'tkit', ch: 4, needQ: 'ch4b',
-    onDone: () => { progChapter(5); setTimeout(() => cardShow('CHAPTER 4 COMPLETE', 'THE WATERFRONT IS FREE: THE LINE IS DOWN', 4.5), 3600); }, steps: [
+    onDone: () => { progChapter(5); progRegion('tkit:islands'); setTimeout(() => cardShow('CHAPTER 4 COMPLETE', 'THE WATERFRONT IS FREE: THE LINE IS DOWN', 4.5), 3600); }, steps: [
     { type: 'goto', npc: 'wf_super', r: 9, text: 'Find the line supervisor', tip: 'On the hall floor, by the line he never stops watching.' },
     { type: 'skin', tag: 'ch4boss', npc: 'wf_super', r: 7, big: 1.85, downs: 5, text: 'Uplift\'s own', tip: 'That was never a supervisor. Knock it down five times. The robots are on its side; the turrets you turned are on yours.',
       after: { id: 'ch4_super_after', name: 'the line supervisor', group: 'worker', talks: ['*'], alien: 'talk',
@@ -33992,6 +33992,137 @@ function wfBotStep(dt) {
   }
 }
 // ============================================================================================
+// THE RIVER ISLANDS: THE LAND (m389, ROADMAP C6-7a, `ISLES`, `islHeight`, `islEdge`, `buildIslands`)
+// ============================================================================================
+// REGIONS 8 (the Skate Islands, Chapter 5): "a chain of small river islands. Free, playful, airborne. Islands at different
+// heights, connected by gliding, cliff jumps ... Problem: the gaps between islands. Tech: flight." Off Old Town's +z shore,
+// due +z (bearing pi/2: between the farm at 0.5 and Hollow Creek at 2.3, in front of the lookout at 112 deg, so the first
+// thing the glider guy's lookout looks at is the first island). SIX islands at six heights, each its own shape, with water
+// between every one of them: the LANDING ROCK (low, its beach to the lookout: the first glide), the MESA (sheer all round, a
+// flat top 18 m up), the NEEDLE (a sea stack 34 m high: the highest point there is), the PIER ISLAND (long and low: the old
+// pier and the skate park, C6-7b), TWIN HUMPS (two grassy hills and a saddle), LIGHTHOUSE ROCK (the far end, a lighthouse on
+// it). ONE height function, the union of the six profiles (`islHeight`), on the island's own material and splat (grass on
+// the tops, sand on the beaches, rock on the cliffs), its floor triangles into `TRI`. Cliffs are near-vertical (one 2 m
+// cell), so a ladder stands against one: ladders up the mesa (two), the needle and lighthouse rock; the others you walk up.
+// Nothing gets you here yet but flight (the glider, C4) and GOD; its people and its wind are C6-7b and C6-7c.
+const ISLES = {
+  on: 1, live: 0, bearing: Math.PI / 2, gap: 70, cell: 2, chunk: 40, seed: 89,
+  U: [-75, 95], V: [-40, 160],
+  ISLANDS: [
+    { id: 'landing', u: 0, v: 0, r: 22, h: 6, kind: 'low', why: "the landing rock: low, its beach toward Old Town's lookout -- the first glide" },
+    { id: 'mesa', u: -30, v: 55, r: 30, h: 18, kind: 'mesa', ladders: [-1.2, .9], why: "the mesa: sheer all round, a flat top -- the BASE jumpers' (C6-7b)" },
+    { id: 'needle', u: 25, v: 72, r: 12, h: 34, kind: 'needle', ladders: [-1.9], why: 'the needle: a sea stack, the highest point there is -- the thermal starts here (C6-7d)' },
+    { id: 'pier', u: 55, v: 25, r: 26, h: 3, kind: 'low', why: 'the pier island: long and low, the old pier and its skate park (C6-7b)' },
+    { id: 'humps', u: -10, v: 122, r: 28, h: 4.5, kind: 'humps', why: 'twin humps: two grassy hills and a saddle, a launch ramp on the high one (C6-7b)' },
+    { id: 'light', u: 48, v: 132, r: 10, h: 8, kind: 'mesa', ladders: [-1.95], why: 'lighthouse rock: a little rock at the far end of the chain, with a lighthouse' },
+  ],
+  O: null, C: 1, S: 0, th: 0, noise: null, tris: 0, chunks: 0, bbox: null, ladders: 0,
+};
+const islWorld = (u, v) => { const I = ISLES; return [I.O[0] + u * I.C + v * I.S, I.O[1] - u * I.S + v * I.C]; };
+const islLocal = (x, z) => { const I = ISLES, dx = x - I.O[0], dz = z - I.O[1]; return [dx * I.C - dz * I.S, dx * I.S + dz * I.C]; };
+function islEdge(x, z) { const I = ISLES; if (!I.O) return -1e9; const [u, v] = islLocal(x, z); return Math.min(u - I.U[0], I.U[1] - u, v - I.V[0], I.V[1] - v); }
+// one island's height at frame (u, v): its radius wobbles with the angle (no circle is a coastline), its profile is its kind's
+function islOne(K, u, v) {
+  const sea = ISLE.sea, du = u - K.u, dv = v - K.v, d = Math.hypot(du, dv), a = Math.atan2(dv, du);
+  const R = K.r * (1 + .14 * (2 * ISLES.noise(a + K.u * .1) - 1)), t = d / R;
+  if (t > 1) return sea - .4 - Math.min(7.6, (t - 1) * R * .45);                      // the seabed falling away
+  const beach = sea - .4 + 1.7 * ss01(1, .64, t);
+  if (K.kind === 'mesa' || K.kind === 'needle') { const c0 = K.kind === 'needle' ? .5 : .58, top = sea + K.h + .3 * Math.sin(du * .3) * Math.sin(dv * .27);
+    return t < c0 ? top : t < c0 + .06 ? lerp(top, sea + 1.3, (t - c0) / .06) : beach; }
+  if (K.kind === 'low') return sea + 1.3 + (K.h - 1.3) * (1 - ss01(.45, .95, t)) + .3 * Math.sin(du * .2 + dv * .13) - 1.7 * ss01(.86, 1, t);
+  // humps: a low base, two hills on it
+  let h = sea + 1.3 + (K.h - 1.3) * (1 - ss01(.6, .95, t)) - 1.7 * ss01(.86, 1, t);
+  for (const [hu, hv, hr, hh] of [[-8, -6, 10, 9.5], [9, 7, 9, 7]]) { const q = ((du - hu) ** 2 + (dv - hv) ** 2) / (hr * hr); h += hh * Math.exp(-q * 1.4) * (1 - ss01(.75, .95, t)); }
+  return h;
+}
+const islHeight = (u, v) => { let h = -1e9; for (const K of ISLES.ISLANDS) h = Math.max(h, islOne(K, u, v)); return h; };
+function buildIslands() {
+  const I = ISLES, IS = ISLE; I.live = 0;
+  if (!I.on || !inTK() || !IS.live || !IS.rays || !IS.lmat) return 0;
+  const R = IS.rect, cx = (R[0] + R[1]) / 2, cz = (R[2] + R[3]) / 2, sea = IS.sea;
+  I.noise = isleNoise(I.seed);
+  const ub = [Math.cos(I.bearing), Math.sin(I.bearing)], ray = isleRayAt(I.bearing), d = ray.rb + ray.L + I.gap + 22;
+  I.O = [cx + ub[0] * d, cz + ub[1] * d]; I.th = Math.atan2(ub[0], ub[1]); I.C = Math.cos(I.th); I.S = Math.sin(I.th);
+  // the grid, in the frame, and the chunks
+  const C = I.cell, u0 = I.U[0], v0 = I.V[0], NU = Math.ceil((I.U[1] - u0) / C), NV = Math.ceil((I.V[1] - v0) / C);
+  const H = new Float32Array((NU + 1) * (NV + 1));
+  for (let j = 0; j <= NV; j++) for (let i = 0; i <= NU; i++) H[j * (NU + 1) + i] = islHeight(u0 + i * C, v0 + j * C);
+  const hAt = (i, j) => H[clamp(j, 0, NV) * (NU + 1) + clamp(i, 0, NU)];
+  const CH = I.chunk, tris = []; let nCh = 0, flip = null, x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9;
+  for (let cj = 0; cj < NV; cj += CH) for (let ci = 0; ci < NU; ci += CH) {
+    const ni = Math.min(CH, NU - ci), nj = Math.min(CH, NV - cj), Wd = ni + 1;
+    const pos = new Float32Array(Wd * (nj + 1) * 3), nor = new Float32Array(Wd * (nj + 1) * 3), spl = new Float32Array(Wd * (nj + 1) * 3);
+    let deep = 1;
+    for (let jj = 0; jj <= nj; jj++) for (let ii = 0; ii <= ni; ii++) {
+      const i = ci + ii, j = cj + jj, y = hAt(i, j), [x, z] = islWorld(u0 + i * C, v0 + j * C), o = (jj * Wd + ii) * 3;
+      if (y > sea - 6) deep = 0;
+      if (y > sea) { x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); }
+      pos[o] = x; pos[o + 1] = y; pos[o + 2] = z;
+      const ga = (hAt(i + 1, j) - hAt(i - 1, j)) / (2 * C), gb = (hAt(i, j + 1) - hAt(i, j - 1)) / (2 * C);
+      // the frame's u is the world's (C, -S), its v (S, C): the gradient into the world, then the normal
+      let nx = -(ga * I.C + gb * I.S), ny = 1, nz = -(-ga * I.S + gb * I.C);
+      const nl = Math.hypot(nx, ny, nz); nor[o] = nx / nl; nor[o + 1] = ny / nl; nor[o + 2] = nz / nl;
+      const slope = Math.hypot(ga, gb), rock = ss01(.55, 1.1, slope);
+      if (y < sea - .2) { const k = ss01(sea - .2, sea - 6, y); spl[o] = 0; spl[o + 1] = 1 - k; spl[o + 2] = .15 + k; }
+      else if (y < sea + 1.6) { spl[o] = .1 * (1 - rock); spl[o + 1] = .9 * (1 - rock); spl[o + 2] = rock; }
+      else { spl[o] = 1 - rock; spl[o + 1] = .05 * (1 - rock); spl[o + 2] = rock; }
+    }
+    if (deep) continue;
+    const idx = [];
+    for (let jj = 0; jj < nj; jj++) for (let ii = 0; ii < ni; ii++) {
+      const A0 = jj * Wd + ii, B0 = A0 + 1, C0 = A0 + Wd + 1, D0 = A0 + Wd;
+      const top = Math.max(pos[A0 * 3 + 1], pos[B0 * 3 + 1], pos[C0 * 3 + 1], pos[D0 * 3 + 1]);
+      if (top < sea - 6) continue;
+      if (flip === null) { const ux = pos[B0 * 3] - pos[A0 * 3], uz = pos[B0 * 3 + 2] - pos[A0 * 3 + 2], vx = pos[C0 * 3] - pos[A0 * 3], vz = pos[C0 * 3 + 2] - pos[A0 * 3 + 2]; flip = uz * vx - ux * vz < 0; }
+      const t1 = flip ? [A0, C0, B0] : [A0, B0, C0], t2 = flip ? [A0, D0, C0] : [A0, C0, D0];
+      idx.push(...t1, ...t2);
+      if (top > sea - 2.5) for (const t of [t1, t2]) for (const v of t) tris.push(pos[v * 3], pos[v * 3 + 1], pos[v * 3 + 2]);
+    }
+    if (!idx.length) continue;
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(pos, 3)); g.setAttribute('normal', new THREE.BufferAttribute(nor, 3)); g.setAttribute('aSplat', new THREE.BufferAttribute(spl, 3));
+    g.setIndex(idx); g.computeBoundingSphere();
+    const m = new THREE.Mesh(g, IS.lmat); m.name = 'islands'; m.receiveShadow = true; m.userData.noHole = 1; scene.add(m); nCh++;
+  }
+  I.chunks = nCh; I.tris = isleAppend(tris); I.bbox = { x0, x1, z0, z1 };
+  // the ladders up the cliffs, and the lighthouse
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .82 }), o || {});
+  const MAT = { dark: M(0x3a2a20), white: M(0xf2efe6), red: M(0xc0392b), glass: M(0x1a2a30, { metalness: .3, roughness: .2 }), lamp: M(0x3a2a14, { emissive: new THREE.Color(0xfff0b0), emissiveIntensity: 2.4 }), wood: M(0xc9b48a), bush: M(0x5f8a4a) };
+  const F = farmFrame(I.O[0], I.O[1], I.th, MAT, 'isles'), { bx, geo } = F;
+  I.ladders = 0; I.ladderAt = [];
+  for (const K of I.ISLANDS) for (const a of K.ladders || []) {
+    // walk out from the middle along the angle to the cliff's foot (the first point down on the beach), stand the ladder there
+    let dFoot = K.r; for (let dd = 0; dd < K.r * 1.2; dd += .25) { if (islHeight(K.u + Math.cos(a) * dd, K.v + Math.sin(a) * dd) < sea + K.h - 1) { dFoot = dd; break; } }
+    let dBase = dFoot; for (let dd = dFoot; dd < dFoot + 6; dd += .25) { dBase = dd; if (islHeight(K.u + Math.cos(a) * dd, K.v + Math.sin(a) * dd) < sea + 1.5) break; }
+    // its top sets him down 3.5 m in from the edge: a whole 2 m cell clear of the cliff, where the mesh is the top and not the drop
+    const mu = K.u + Math.cos(a) * (dFoot - 3.5), mv = K.v + Math.sin(a) * (dFoot - 3.5), psi = Math.atan2(Math.cos(a), Math.sin(a));
+    const lu = K.u + Math.cos(a) * (dBase + .3), lv = K.v + Math.sin(a) * (dBase + .3), y0 = islHeight(lu, lv), top = islHeight(mu, mv);
+    // the ladder stands off the cliff's foot: a stringer at each side and rungs, the climb; a little platform at its foot
+    pearlLadder(F, lu, lv, psi, y0, top, [mu, top, mv], 'is_' + K.id + '_' + I.ladders);
+    bx(lu + Math.cos(a) * .8, lv + Math.sin(a) * .8, y0 - .6, y0 + .05, 1.6, 1.6, 'wood', psi);
+    I.ladderAt.push([lu, lv, y0, top, mu, mv]); I.ladders++;
+  }
+  { const K = I.ISLANDS.find(q => q.id === 'light'), top = sea + K.h;
+    geo(new THREE.CylinderGeometry(1.4, 1.8, 11, 16), 'white', K.u, top + 5.5, K.v); bx(K.u, K.v, top, top + 11, 2.8, 2.8, 'white'); F.parts.white.pop();
+    for (const y of [2.5, 6.5]) geo(new THREE.CylinderGeometry(1.62, 1.72, 1, 16), 'red', K.u, top + y, K.v);
+    geo(new THREE.CylinderGeometry(2.4, 2.4, .2, 16), 'dark', K.u, top + 11.1, K.v); geo(new THREE.CylinderGeometry(1.1, 1.1, 1.6, 12), 'glass', K.u, top + 12, K.v);
+    geo(new THREE.SphereGeometry(.55, 12, 8), 'lamp', K.u, top + 12, K.v); geo(new THREE.ConeGeometry(1.4, 1.2, 12), 'red', K.u, top + 13.4, K.v); }
+  // scrub on the grass: low bushes, the island's own, no colliders
+  { let s0 = I.seed * 31 + 7; const rr = () => (s0 = (s0 * 9301 + 49297) % 233280) / 233280;
+    for (let u = I.U[0]; u < I.U[1]; u += 5) for (let v = I.V[0]; v < I.V[1]; v += 5) { const ju = u + rr() * 4, jv = v + rr() * 4, y = islHeight(ju, jv);
+      if (y < sea + 1.9 || rr() < .55) continue; const sl = Math.abs(islHeight(ju + 1, jv) - y) + Math.abs(islHeight(ju, jv + 1) - y); if (sl > .6) continue;
+      if (I.ladderAt.some(q => Math.hypot(q[4] - ju, q[5] - jv) < 3)) continue;
+      geo(new THREE.IcosahedronGeometry(.5 + rr() * .5, 0), 'bush', ju, y + .25, jv, rr() * 6, 0, 0, 1, .7, 1); } }
+  F.commit();
+  // the places GOD names
+  const at = (K, du, dv, look) => { const u = K.u + du, v = K.v + dv, [x, z] = islWorld(u, v); return [x, islHeight(u, v) + .1, z, look]; };
+  const Kn = id => I.ISLANDS.find(q => q.id === id);
+  I.landAt = at(Kn('landing'), 0, -4, I.th + Math.PI); I.mesaAt = at(Kn('mesa'), 0, 0, I.th); I.needleAt = at(Kn('needle'), 0, 0, I.th + Math.PI);
+  I.live = 1;
+  console.log('[melee] river islands: ' + nCh + ' chunks, ' + I.tris + ' floor tris, ' + I.ladders + ' ladders, centre ' + I.O.map(v => v.toFixed(0)).join(','));
+  return nCh;
+}
+// ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
 // ============================================================================================
 // Irregular patches of wheat, corn, ploughed earth, hay meadow and pasture, divided by hedgerows, fences, tree lines and
@@ -34627,6 +34758,7 @@ function mapRegionsTkit() {
   }
   if (HCREEK.live && HCREEK.bbox) { const B = HCREEK.bbox; regs.push({ id: 'creek', name: 'HOLLOW CREEK', x0: B.x0, x1: B.x1, z0: B.z0, z1: B.z1 }); }   // m365
   if (WFRONT.live && WFRONT.bbox) { const B = WFRONT.bbox; regs.push({ id: 'waterfront', name: 'THE WATERFRONT', x0: B.x0, x1: B.x1, z0: B.z0, z1: B.z1 }); }   // m377
+  if (ISLES.live && ISLES.bbox) { const B = ISLES.bbox; regs.push({ id: 'islands', name: 'THE RIVER ISLANDS', x0: B.x0, x1: B.x1, z0: B.z0, z1: B.z1 }); }   // m389
   MAPREG.tkit = regs; if (map.ext) mapBuild();
   return regs.length;
 }
@@ -38348,7 +38480,7 @@ const GODCHAP = [
   { n: 2, name: 'THE PEARL',         place: 'pearldock' },   // m359: the plaza; m362: dock 1, where Chapter 2's first step is
   { n: 3, name: 'HOLLOW CREEK',      place: 'otfreight' },   // m373: the freight pier, where Chapter 3's way over is
   { n: 4, name: 'THE WATERFRONT',    place: 'otferry' },   // m386: Chapter 4's first step is the crossing   // m381: Old Town's ferry landing, the way over
-  { n: 5, name: 'THE SKATE ISLANDS', place: null },
+  { n: 5, name: 'THE SKATE ISLANDS', place: 'islanding' },   // m389: the landing rock, the first glide's end
   { n: 6, name: 'THE MOTHERSHIP',    place: null },
 ];
 // A BUILDER THAT BAILED OUT SAYS SO, IN RED (m302). The farm sat behind `FARM NO ROOM 15` -- a token in the chip --
@@ -38389,6 +38521,9 @@ const GODPLACES = [
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
   { id: 'pearl', world: 'tkit', name: 'THE PEARL · the plaza (Chapter 2)', at: () => OPEARL.plazaAt },
   { id: 'otroad', world: 'tkit', name: 'OLD TOWN · the highway bridge to Hollow Creek', at: () => HCROAD.otAt },   // m371
+  { id: 'islanding', world: 'tkit', name: 'THE RIVER ISLANDS · the landing rock (Chapter 5)', at: () => ISLES.landAt },   // m389
+  { id: 'ismesa', world: 'tkit', name: 'THE RIVER ISLANDS · on top of the mesa', at: () => ISLES.mesaAt },
+  { id: 'isneedle', world: 'tkit', name: 'THE RIVER ISLANDS · on top of the needle, the highest point', at: () => ISLES.needleAt },
   { id: 'otferry', world: 'tkit', name: "OLD TOWN · the ferry landing to the Waterfront (Chapter 4's way in)", at: () => OFERRY.otAt },   // m381
   { id: 'wfferry', world: 'tkit', name: "THE WATERFRONT · the ferry's pontoon off pier 1", at: () => OFERRY.wfAt },
   { id: 'otswing', world: 'tkit', name: "OLD TOWN · the swing bridge's foot (the second way to the Waterfront)", at: () => OSWING.otAt },   // m382
@@ -40897,6 +41032,8 @@ async function init() {
     try { buildWaterfront(); } catch (e) { WFRONT.live = 0; note('WATERFRONT FAIL'); console.warn('[melee] waterfront', e); }
     // THE FERRY OVER TO IT (m381): Old Town's landing on the shore facing pier 1, before the city ring keeps its trees off it
     try { buildFerry(); } catch (e) { note('FERRY FAIL'); console.warn('[melee] ferry', e); }
+    // THE RIVER ISLANDS (m389): Chapter 5's chain, off Old Town's +z shore, after the island it measures its place off
+    try { buildIslands(); } catch (e) { ISLES.live = 0; note('ISLANDS FAIL'); console.warn('[melee] islands', e); }
     // AND THE SWING BRIDGE (m382): the second way over, before the city ring keeps its trees off its landing
     try { buildSwing(); } catch (e) { note('SWING FAIL'); console.warn('[melee] swing bridge', e); }
     // ITS CREEK AND POND (m307): what stands in and over the valley and the bowl the land is carved with
