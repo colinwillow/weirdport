@@ -127,6 +127,10 @@ can't get to it, it isn't done.
 
 ## Standing rules for anything built in the world
 
+- **Exaggerated scale and contrast:** vary heights a lot and push them past realistic — tall and thin
+  beside short and squat (a tall windmill over a low shed, a skinny tower beside a squat diner). Never a
+  row of same-height boxes. Bosses are oversized. See "Exaggerated scale and contrast" in `GAME_DESIGN.md`.
+
 - **Connective tissue:** between any two regions, build several irregular routes of different kinds
   (water, crossings, over and under, open ground), never a single road and never a straight border.
   Read "The connective tissue" in `REGIONS.md`.

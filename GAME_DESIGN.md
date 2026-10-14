@@ -128,6 +128,11 @@ homeless, mail carriers, chefs, mechanics.
 2. **Uplift Corp** — turns working people into cyborg versions of themselves.
 3. **A third race, maybe neutral** — undecided. Could sell things.
 
+**Exaggeration applies to people too.** Bosses and special enemies are oversized: a Skinsuit boss
+can be twice your height, a hulking brute next to the skinny farmer, a tiny hyper henchman beside a
+giant one. Size tells you at a glance who's dangerous. (Scaling an existing model up is a cheap way
+to get a placeholder boss until his own model exists.)
+
 **The hidden good aliens.** Men-in-Black style: they live among people in disguise — a food-cart
 owner, a shopkeeper — with a tell (an antenna under a hat). They give tips, upgrades, and the next
 lead. Rollergirl is an **Easter egg** for now (one of these, maybe), not a story pillar.
@@ -177,6 +182,12 @@ and nothing between them.
   creeks and channels, culverts, bridges, underpasses and overpasses, fields, tree lines, yards,
   hillside paths. Every neighbouring pair has several routes of different kinds (see "The connective
   tissue" in `REGIONS.md`), so the world feels connected and every region still feels distinct.
+- **Exaggerated scale and contrast.** Cartoon proportions, not real ones. Next to each other put a
+  very tall thin thing and a short squat one: a windmill or water tower towering over a low shed, a
+  skinny skyscraper beside a fat little diner, a giant billboard over a tiny house, a huge tree beside
+  a hedge. Push sizes past what's realistic in both directions and vary them a lot within a place, so
+  every skyline and every view has big shapes and small shapes against each other. Never a row of
+  same-height boxes.
 - **Vertical, always.** Every place has layers: street, stoops and kerbs, balconies, fire escapes,
   rooftops, bridges and walkways over the street, stairs down to cellars, canals, sewers below.
   Places stack and overlap; you can go over and under the same spot.
