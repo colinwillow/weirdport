@@ -567,5 +567,5 @@ differ" table there, so no region feels like the last one.
 - **m322 (farm polish 1 of the three from m321's shots):** the fields read from the ridge now. Wheat
   is gold, hay meadows are straw, ploughed fields are brown with furrows, and pasture and corn stay
   green (corn darker). The farm's grass overall is a little warmer and less lime. The before and
-  after shots are in the chat. `mel.FPLAN.dye.value` turns the dye up or down live; 0 is the old look.
+  after shots are in the chat. `mel.FPLAN.dye.value` makes the dyed fields brighter or darker live (1.05 now).
   Next: the skyline in the haze, then the hedge banks.
