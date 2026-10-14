@@ -7,6 +7,15 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE SIX LOCKS AS A QUEST (m405, C6-8e-2, quest `ch6b`).** Five `gate` steps (the quest engine points at
+  `GATES.find(id)` and completes on `gate:<id>`, which `gatePush` sets on a crossing in the right body, or `gateStep` on a
+  mend) and a `reach` at `ISGAUNT.godAt`. **THE ROW CHECKS THE ORDER AGAINST THE WAY ITSELF**: each gate's distance along
+  the route from the chamber's north door (north up the tube, then west from the file's hall) must grow step by step, so a
+  re-laid route or a reordered list is caught.
+  **`npm run places`, exit 0** (teeth: the file's and the rumble door's steps swapped reads `BAD CH6B ... THE STEPS ARE NOT
+  IN THE WAY'S ORDER`):
+      ok  CH6B ch6b gate:pen > gate:tear > gate:march > gate:rumble > gate:lock > reach after ch6 | along the way 4, 9.5, 15, 37.5, 57 m | the last at the core yes 
+
 - **CHAPTER 6 OPENS (m404, C6-8e-1, quest `ch6`).** The story is a Decision: the man in the nice suit (Chapter 4's boss
   named him, and his office at the top of Dump Tower) is the Mothership's master and its final boss. **BENNY IS POD 5**
   (`ISFOLK.KINDS[5]`, the construction worker; his `say` override makes him Benny and lets him talk to the bare alien).

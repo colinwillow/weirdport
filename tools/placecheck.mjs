@@ -975,6 +975,21 @@ const walkUp = (pts, y0) => { let y = y0; for (let i = 0; i < pts.length - 1; i+
   } else why = 'NO CHAPTER 6';
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + 'CH6', r, why); }
+// ---- THE SIX LOCKS (m405): every gate step names a gate that is there, in the order the way runs from the chamber (each one
+// further along it than the last), and the last step is the core
+{ const q = M.QUESTS.find(q => q.id === 'ch6b'), G = M.ISGAUNT; let r = '', why = '';
+  if (q && G.built) {
+    const gs = q.steps.filter(s => s.type === 'gate'), found = gs.map(s => M.GATES.find(g => g.id === s.id)), miss = gs.filter((s, i) => !found[i]).map(s => s.id);
+    // along the way: the north tube's v, then the west tube's -u -- so the distance walked from the chamber's door
+    const P0 = [M.ISHIP.axis[0] + M.ISDECK.CH.u, M.ISHIP.axis[1] + G.plan.v0], H = [M.ISHIP.axis[0] + G.plan.hall[0], M.ISHIP.axis[1] + G.plan.hall[1]];
+    const along = g => g.x < H[0] - 1 ? (H[1] - P0[1]) + (H[0] - g.x) : g.z - P0[1];
+    const d = found.map(g => g ? +along(g).toFixed(1) : null), inOrder = d.every((x, i) => x != null && (i === 0 || x > d[i - 1]));
+    const last = q.steps[q.steps.length - 1], core = last.type === 'reach' && last.at() === G.godAt;
+    r = 'ch6b ' + q.steps.map(s => s.type + (s.id ? ':' + s.id.replace('ms_', '') : '')).join(' > ') + (q.needQ ? ' after ' + q.needQ : '') + ' | along the way ' + d.join(', ') + ' m | the last at the core ' + (core ? 'yes' : 'NO');
+    why = miss.length ? 'A STEP NAMES NO GATE: ' + miss.join(', ') : !inOrder ? 'THE STEPS ARE NOT IN THE WAY\'S ORDER' : gs.length !== G.gates.length ? 'A GATE HAS NO STEP' : !core ? 'THE LAST STEP IS NOT THE CORE' : '';
+  } else why = q ? 'NOT BUILT' : 'NO SIX LOCKS';
+  if (why) bad++;
+  quiet((why ? 'BAD ' : 'ok  ') + 'CH6B', r, why); }
 // ---- HOLLOW CREEK'S LAND (m365): built, clear of every other land (its coast sampled against the farm's, the island's
 // rectangle and The Pearl's), the gorge cut at least 5 m under its rims down its length and running out to the sea, the
 // two flats level, and a forest standing on it
