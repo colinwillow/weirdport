@@ -307,7 +307,7 @@ differ" table there, so no region feels like the last one.
       - [x] m382 **C6-6d-2** a second way: the swing bridge (or the drainage outfall), its own kind of crossing.
     - [ ] **C6-6e** the engineer / hacker form: locked doors, turrets, security robots; as the engineer they open, turn and stand down.
       - [x] m383 **C6-6e-1** the engineer form (a ROLE's form: sample Ivy or Dex) and the doors: Uplift's gate and the swing bridge's control box answer to the engineer.
-      - [ ] **C6-6e-2** the turrets on Uplift's lot: they fire on strangers; the engineer turns them.
+      - [x] m384 **C6-6e-2** the turrets on Uplift's lot: they fire on strangers; the engineer turns them.
       - [ ] **C6-6e-3** the security robots in the yard: they chase strangers off; for the engineer they stand down.
     - [ ] **C6-6f** Chapter 4's quests and its boss; shut the line down and the cyborgs turn back; Chapter 4 complete.
 
@@ -1072,3 +1072,9 @@ differ" table there, so no region feels like the last one.
   - As the engineer, Uplift's gate slides open for you, and the swing bridge's control box swings the bridge on the spot.
   - The factory fence is now 3.4 m and wired, because at 2.6 m you could just hop it.
   - Not done: the engineer looks exactly like the hipster body (no tint, no visor). Say if that needs fixing before the boss.
+- **m384 (C6-6e-2) The turrets.** Uplift's lot has four sentry guns: the two front fence corners, the factory roof's corner, and the outfeed tower.
+  - Any stranger in sight gets a red laser, a beep, about a second of lock-on, then a three-round burst. Each hit does 7 damage, and moving makes you harder to hit.
+  - Strangers means anyone who isn't the engineer, dock workers included.
+  - The engineer turns a turret by standing at its control panel. It goes green and stays that way (saved).
+  - In GOD they still shoot so you can see them, but they do no damage.
+  - If they're too fierce, the numbers to change are the range (30 m), the lock time, the damage and the hit chance.

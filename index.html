@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m383</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m384</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m383</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m384</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm383';
+const BUILD = 'm384';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -32803,6 +32803,7 @@ function buildWaterfront() {
   // the cranes' rails along the container quay (their cranes are C6-6c)
   for (const v of [6, 24]) bx(21, v, Y, Y + .05, 78, .18, 'steel', 0, false);
   wfCranes(F, W, Y);                                                             // m380: and the two cranes on them
+  wfTurrets(F, W, Y);                                                            // m384: Uplift's sentry guns, their posts and panels
   // ---- THE DRY DOCK: floor, altars stepping up both walls and the head, the caisson across its mouth
   bx(D.u, (D.v0 + D.v1) / 2, B0, floor, 2 * D.half, D.v1 - D.v0, 'block');
   for (const s of [-1, 1]) for (let k = 0; k < 2; k++) bx(D.u + s * (D.half + D.alt * (k + .5)), (D.v0 + D.v1) / 2, B0, floor + (k ? 3.35 : 1.7), D.alt, D.v1 - D.v0, 'quay');
@@ -32963,6 +32964,7 @@ function buildWaterfront() {
   wfLineParts(F, W, Y);                                                          // m378: the line's moving parts
   wfConvBuild(W);                                                                // m379: and the workers who ride it
   wfCraneParts(F, W, Y);                                                         // m380: the cranes' trolleys and boxes
+  wfTurretParts(W, Y);                                                           // m384: the guns themselves
   { const K = WCRANE.cranes[0]; W.craneAt = [K.walkAt[0], K.walkAt[1] + .1, K.walkAt[2], hd(0, -1)]; W.bargeAt = [wx(WCRANE.BARGE.u + 8, WCRANE.BARGE.v - 2.5), ISLE.sea + 1.1, wz(WCRANE.BARGE.u + 8, WCRANE.BARGE.v - 2.5), hd(0, 1)];
     W.padAt = [wx(-11, 27), Y + .1, wz(-11, 27), hd(1, 0)]; }
   // the light from the masts: one instanced draw, additive, faint -- it reads because the fog is there
@@ -32995,6 +32997,7 @@ function buildWaterfront() {
   W.lineAt = [wx(-92, 68), Y + .1, wz(-92, 68), hd(0, 1)]; W.controlAt = [wx(-106, 115), Y + WFLINE.L2 + .1, wz(-106, 115), hd(1, 0)];   // m378
   W.towerAt = [wx(-30, 108), Y + .1, wz(-30, 108), hd(-1, 0)];
   W.ivyAt = [wx(-16, 22.5), Y + .1, wz(-16, 22.5), hd(1, .8)];      // m383: by Ivy, at crane 1
+  W.lotAt = [wx(-78, 59), Y + .1, wz(-78, 59), hd(1, 0)];          // m384: in the lot, in the turrets' sights
   { let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9;
     for (const [u, v] of [[W.U[0], W.V[0]], [W.U[1], W.V[0]], [W.U[1], W.V[1]], [W.U[0], W.V[1]]]) { const x = wx(u, v), z = wz(u, v); x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); }
     W.bbox = { x0, x1, z0, z1 }; }
@@ -33700,6 +33703,106 @@ function wfSecStep(dt) {
   if (!engineerOn()) { if (S.sayT <= 0) { S.sayT = 3; toast('BRIDGE CONTROL: AUTHORISED ENGINEERS ONLY.', 2.4); } return; }
   if (O.st === 'shut') { O.t = 0; S.ctlT = 6; S.overrides++; toast('BRIDGE CONTROL: OVERRIDE. OPENING.', 2.4); }
   else if (O.st === 'open') { O.t = 0; S.ctlT = 6; S.overrides++; toast('BRIDGE CONTROL: OVERRIDE. CLOSING.', 2.4); }
+}
+// ============================================================================================
+// UPLIFT'S TURRETS (m384, ROADMAP C6-6e-2, `WTUR`, `wfTurrets`, `wfTurretParts`, `wfTurretStep`)
+// ============================================================================================
+// REGIONS 5's problem: "everything is automated and locked: turrets, doors, cranes." Four sentry guns on Uplift's lot: one
+// on each front corner of the fence (the quay outside and the gate), one on a mast at the factory roof's front corner (the
+// whole lot from above), one on the outfeed tower's platform (the climber's way in). Each sweeps; SEES him (in range, a
+// clear line from its head to his chest through the boxes -- `boxRay`), turns onto him with a red laser, beeps, LOCKS for
+// `lock` seconds, and fires a burst: tracers, a flash, a crack, and each round that lands is `playerHurt` (GOD takes none).
+// **STRANGERS ARE EVERYBODY BUT AN ENGINEER** -- a docker has no business in Uplift's lot either; the engineer walks under
+// them. **THE ENGINEER TURNS THEM**: at a turret's panel (its foot, the factory's east wall for the roof one, the tower's
+// platform for its own) it is his for good (`wf:turret:<i>`, saved): green lens, gun down, it fires on nobody. Uplift's
+// robots (C6-6e-3) are what a turned turret will shoot at.
+const WTUR = {
+  on: 1, range: 30, lock: 1.1, burst: 3, gap: .22, cool: 1.6, dmg: 7, push: 2.2, stun: .12, turn: 2.6, hit: .82, panelR: 1.7,
+  TURRETS: [
+    { u: -116, v: 55, y: 4, panel: [-114.6, 56.6, 0], rest: [1, .5], why: "the lot's front-left corner: the quay outside and the lot's west side" },
+    { u: -58, v: 55, y: 4, panel: [-59.4, 56.6, 0], rest: [-1, .5], why: "the front-right corner: the gate's approach and the dry dock's edge" },
+    { u: -64.15, v: 64.15, y: 17.2, panel: [-63.3, 70, 0], rest: [-.3, -1], why: "a mast on the parapet at the factory roof's front corner, out over the walls so it sees down them: the whole lot from above (its panel on the east wall below)" },
+    { u: -48, v: 112.6, y: 11, panel: [-46.2, 112.4, 10], rest: [1, 0], why: "the outfeed tower's platform: the climber's way in has a gun on it" },
+  ],
+  list: [], shots: 0, hits: 0, turned: 0, sayT: 0,
+};
+// the frame half: posts and masts (colliders), the panels
+function wfTurrets(F, W, Y) {
+  const { bx, geo } = F;
+  WTUR.TURRETS.forEach((T, i) => {
+    const top = Y + T.y - .5;
+    if (i < 2) { bx(T.u, T.v, Y, top, .5, .5, 'steel'); bx(T.u, T.v, Y, Y + .4, 1.2, 1.2, 'quay', 0, false); }
+    else if (i === 2) bx(T.u, T.v, Y + W.FACTORY.h + 1.2, top, .3, .3, 'steel');
+    else bx(T.u, T.v, Y + 10, top, .35, .35, 'steel');
+    const [pu, pv, ph] = T.panel; bx(pu, pv, Y + ph, Y + ph + 1.3, .6, .4, 'dark'); bx(pu, pv, Y + ph + 1.3, Y + ph + 1.36, .7, .5, 'yel', 0, false);
+  });
+}
+// the moving half: a base, a yoke that turns, a gun that pitches, a lens, and the laser, flash and tracer it fires with
+function wfTurretParts(W, Y) {
+  const at = (u, v) => [W.O[0] + u * W.C + v * W.S, W.O[1] - u * W.S + v * W.C], mk = (g, col, o) => new THREE.Mesh(g, new THREE.MeshStandardMaterial(Object.assign({ color: col, roughness: .5, metalness: .5 }, o || {})));
+  const add = (o, g, col, x, y, z, op) => { const m = mk(g, col, op); m.position.set(x, y, z); o.add(m); return m; };
+  WTUR.list = WTUR.TURRETS.map((T, i) => {
+    const [x, z] = at(T.u, T.v), y = Y + T.y, grp = new THREE.Group(); grp.position.set(x, y, z); scene.add(grp);
+    add(grp, new THREE.CylinderGeometry(.45, .55, .5, 12), 0x3a3c40, 0, -.25, 0);
+    const yoke = new THREE.Group(); grp.add(yoke); add(yoke, new THREE.BoxGeometry(.7, .5, .5), 0xe0b02a, 0, .2, 0);
+    const gun = new THREE.Group(); gun.position.y = .45; yoke.add(gun); add(gun, new THREE.BoxGeometry(.5, .4, .9), 0x5a6068, 0, 0, .15);
+    for (const s of [-1, 1]) { const b = add(gun, new THREE.CylinderGeometry(.05, .05, .8, 8), 0x24262b, s * .12, 0, .95); b.rotation.x = Math.PI / 2; }
+    const lensM = new THREE.MeshStandardMaterial({ color: 0x300808, emissive: new THREE.Color(0xff3a3a), emissiveIntensity: 2.2 });
+    const lens = new THREE.Mesh(new THREE.SphereGeometry(.09, 10, 8), lensM); lens.position.set(0, .12, .62); gun.add(lens);
+    const beamM = new THREE.MeshBasicMaterial({ color: 0xff3030, transparent: true, opacity: .55, blending: THREE.AdditiveBlending, depthWrite: false });
+    const laser = new THREE.Mesh(new THREE.BoxGeometry(.02, .02, 1), beamM); laser.visible = false; scene.add(laser);
+    const tracer = new THREE.Mesh(new THREE.BoxGeometry(.05, .05, 1), new THREE.MeshBasicMaterial({ color: 0xffd28a, transparent: true, opacity: .9, blending: THREE.AdditiveBlending, depthWrite: false })); tracer.visible = false; scene.add(tracer);
+    const flash = new THREE.Mesh(new THREE.SphereGeometry(.22, 8, 6), new THREE.MeshBasicMaterial({ color: 0xffd28a, transparent: true, opacity: .9, blending: THREE.AdditiveBlending, depthWrite: false })); flash.position.set(0, 0, 1.4); flash.visible = false; gun.add(flash);
+    const [rx, rz] = at(T.u + T.rest[0], T.v + T.rest[1]), rest = Math.atan2(rx - x, rz - z);
+    const [px, pz] = at(T.panel[0], T.panel[1]);
+    return { T, i, x, y, z, grp, yoke, gun, lens, lensM, laser, tracer, flash, rest, yaw: rest, pitch: 0, st: 'sweep', t: 0, n: 0, fx: 0, ours: !!SAVE.flags['wf:turret:' + i], panel: [px, Y + T.panel[2], pz], shots: 0 };
+  });
+  for (const R of WTUR.list) wfTurretLook(R);
+}
+function wfTurretLook(R) {
+  R.yoke.rotation.y = R.yaw; R.gun.rotation.x = R.pitch;
+  R.lensM.emissive.setHex(R.ours ? 0x3aff6a : 0xff3a3a);
+}
+const _wtR = {};
+// can it see him: in range, and nothing in the boxes between its head and his chest
+function wfTurretSees(R, P) {
+  const dx = P.x - R.x, dz = P.z - R.z, dy = P.y + 1 - R.y, d = Math.hypot(dx, dz, dy); if (d > WTUR.range) return 0;
+  const ox = R.x + dx / d * .8, oy = R.y + dy / d * .8, oz = R.z + dz / d * .8;           // from just off its own head
+  return boxRay(ox, oy, oz, P.x, P.y + 1, P.z, _wtR) ? 0 : d;
+}
+function wfTurretStep(dt) {
+  const U = WTUR; if (!U.on || !U.list.length || !inTK()) return;
+  const p = player, P = p.pos, stranger = !engineerOn(), now = performance.now() * .001;      // GOD too: they fire, `playerHurt` takes nothing
+  if (U.sayT > 0) U.sayT -= dt;
+  for (const R of U.list) {
+    // its panel: the engineer makes it his
+    if (!R.ours && Math.hypot(P.x - R.panel[0], P.z - R.panel[2]) < U.panelR && Math.abs(P.y - R.panel[1]) < 1.5) {
+      if (engineerOn()) { R.ours = 1; U.turned++; progFlag('wf:turret:' + R.i); toast('TURRET ' + (R.i + 1) + ': OVERRIDE. IT IS YOURS.', 2.6); snd('zap', { x: R.x, z: R.z, g: .4 }); R.st = 'sweep'; R.laser.visible = false; }
+      else if (U.sayT <= 0) { U.sayT = 3; toast('TURRET CONTROL: AUTHORISED ENGINEERS ONLY.', 2.4); }
+    }
+    R.flash.visible = R.fx > 0; if (R.fx > 0) R.fx -= dt; R.tracer.visible = R.tx > 0; if (R.tx > 0) { R.tx -= dt; R.tracer.material.opacity = Math.max(0, R.tx / .09) * .9; }
+    if (R.ours) { R.yaw = damp(R.yaw, R.rest, .8, dt); R.pitch = damp(R.pitch, .6, .8, dt); R.laser.visible = false; wfTurretLook(R); continue; }
+    const d = stranger ? wfTurretSees(R, P) : 0, want = d ? Math.atan2(P.x - R.x, P.z - R.z) : R.rest + Math.sin(now * .5 + R.i * 1.7) * .8;
+    const err = Math.atan2(Math.sin(want - R.yaw), Math.cos(want - R.yaw));
+    R.yaw += clamp(err, -U.turn * dt, U.turn * dt);
+    R.pitch = damp(R.pitch, d ? -Math.atan2(P.y + 1 - R.y, Math.hypot(P.x - R.x, P.z - R.z)) : .15, .25, dt);
+    if (!d) { R.st = 'sweep'; R.t = 0; R.laser.visible = false; wfTurretLook(R); continue; }
+    // the laser on him while it has him
+    { const mx = R.x + Math.sin(R.yaw) * .9, mz = R.z + Math.cos(R.yaw) * .9, ex = P.x, ey = P.y + 1, ez = P.z, L = Math.hypot(ex - mx, ey - R.y, ez - mz);
+      R.laser.visible = true; R.laser.position.set((mx + ex) / 2, (R.y + ey) / 2, (mz + ez) / 2); R.laser.scale.z = L; R.laser.lookAt(ex, ey, ez); }
+    if (R.st === 'sweep') { R.st = 'lock'; R.t = U.lock; snd('lock', { x: R.x, z: R.z, g: .35, r: 1.3 }); }
+    else if (R.st === 'lock') { if ((R.t -= dt) <= 0 && Math.abs(err) < .15) { R.st = 'fire'; R.n = U.burst; R.t = 0; } }
+    else if (R.st === 'fire') { if ((R.t -= dt) <= 0) {
+        R.t = U.gap; R.n--; R.fx = .06; R.tx = .09; R.shots++; U.shots++;
+        const sp = Math.hypot(p.vel.x, p.vel.z), hit = Math.random() < clamp(U.hit - sp * .05, .25, U.hit);
+        const ex = P.x + (hit ? 0 : (Math.random() - .5) * 2.4), ey = P.y + (hit ? 1 : .2 + Math.random() * 2), ez = P.z + (hit ? 0 : (Math.random() - .5) * 2.4), mx = R.x + Math.sin(R.yaw) * 1.3, mz = R.z + Math.cos(R.yaw) * 1.3;
+        const L = Math.hypot(ex - mx, ey - R.y, ez - mz); R.tracer.position.set((mx + ex) / 2, (R.y + ey) / 2, (mz + ez) / 2); R.tracer.scale.z = L; R.tracer.lookAt(ex, ey, ez);
+        snd('shot', { x: R.x, z: R.z, g: .45, r: 1.4 });
+        if (hit) { U.hits++; playerHurt(U.dmg, Math.atan2(P.x - R.x, P.z - R.z), U.push, 0, U.stun, 0); }
+        if (R.n <= 0) { R.st = 'cool'; R.t = U.cool; } } }
+    else if (R.st === 'cool') { if ((R.t -= dt) <= 0) { R.st = 'lock'; R.t = U.lock * .5; } }
+    wfTurretLook(R);
+  }
 }
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
@@ -38103,6 +38206,7 @@ const GODPLACES = [
   { id: 'wfferry', world: 'tkit', name: "THE WATERFRONT · the ferry's pontoon off pier 1", at: () => OFERRY.wfAt },
   { id: 'otswing', world: 'tkit', name: "OLD TOWN · the swing bridge's foot (the second way to the Waterfront)", at: () => OSWING.otAt },   // m382
   { id: 'wfswing', world: 'tkit', name: "THE WATERFRONT · the swing bridge's quay end", at: () => OSWING.wfAt },
+  { id: 'wfturret', world: 'tkit', name: "THE WATERFRONT · inside Uplift's lot, under its turrets", at: () => WFRONT.lotAt },   // m384
   { id: 'wfivy', world: 'tkit', name: 'THE WATERFRONT · Ivy, an Uplift engineer (sample her: the ENGINEER form)', at: () => WFRONT.ivyAt },   // m383
   { id: 'wfquay', world: 'tkit', name: 'THE WATERFRONT · the container quay (Chapter 4)', at: () => WFRONT.quayAt },   // m377
   { id: 'wfdock', world: 'tkit', name: 'THE WATERFRONT · the head of the dry dock', at: () => WFRONT.dockAt },
@@ -38288,6 +38392,7 @@ function godMenuOpen(on) {
   // m372: Hollow Creek's rally
   // m375: the race, without lining up
   if (HCBIKE.startAt) btn('RACE BIG RAE NOW (' + HCRACE.st.toUpperCase() + ')', () => { godMenuOpen(0); const S = HCBIKE.startAt; player.pos.set(S[0], S[1] + .1, S[2]); player.vel.set(0, 0, 0); toast('Wear the biker and stop at the gate', 2.2); });
+  if (WTUR.list.length) btn('UPLIFT\'S TURRETS: ' + (WTUR.on ? 'OFF' : 'ON') + ' (' + WTUR.list.filter(R => R.ours).length + ' turned, ' + WTUR.hits + ' hits)', () => { godMenuOpen(0); WTUR.on = WTUR.on ? 0 : 1; toast(WTUR.on ? 'The turrets are live' : 'The turrets are off', 2); });   // m384
   if (OSWING.grp) btn('THE SWING BRIDGE: SWING IT NOW (' + OSWING.st.toUpperCase() + ')', () => { godMenuOpen(0); if (OSWING.st === 'shut') OSWING.t = 0; toast('The barriers come down', 2); });   // m382
   if (OFERRY.frame) btn('THE FERRY: SEND IT NOW (' + OFERRY.st.toUpperCase() + ')', () => { godMenuOpen(0); if (OFERRY.st === 'dock') OFERRY.t = 0; toast('The ferry sounds its horn', 2); });   // m381
   if (WCRANE.cranes.length) btn('THE CRANES: ' + (WCRANE.on ? 'STOP THEM' : 'RUN THEM') + ' (' + WCRANE.cranes.map(c => c.st).join(', ') + ')', () => { godMenuOpen(0); WCRANE.on = WCRANE.on ? 0 : 1; toast(WCRANE.on ? 'The cranes work' : 'The cranes stop where they are', 2); });   // m380
@@ -39868,6 +39973,7 @@ function frameBody() {
   ferryStep(dt);                // the ferry to the Waterfront, and him on it (m381) -- before the lens, which it moves
   swingStep(dt);                // the swing bridge, and him round with it (m382) -- before the lens, which it moves
   wfSecStep(dt);                // Uplift's gate and the bridge's control box, for an engineer (m383)
+  wfTurretStep(dt);             // Uplift's turrets: they fire on strangers; an engineer turns them (m384)
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)

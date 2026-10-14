@@ -7,6 +7,25 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **UPLIFT'S TURRETS: THEY FIRE ON EVERY STRANGER, AND THE ENGINEER TURNS THEM (m384, C6-6e-2, `WTUR`, `wfTurrets`,
+  `wfTurretParts`, `wfTurretSees`, `wfTurretStep`).** Four sentry guns: the lot's two front fence corners on posts (over
+  the 3.4 m fence), a mast on the factory's front-right PARAPET corner (out over the walls -- first placed 2 m in on the
+  roof, where every downward line crossed the front wall), and the outfeed tower's platform (the climber's way in is
+  covered now). Each sweeps its rest bearing; SEES him when he is in `range` (30) with a clear `boxRay` from just off its
+  head to his chest; turns onto him with a red laser, beeps, locks for `lock` (1.1 s), fires a burst of 3 (`gap` .22):
+  tracer, flash, crack, `playerHurt(7)` for each round that lands (`hit` .82, less the faster he moves), `cool` 1.6, again.
+  **A STRANGER IS ANYBODY BUT AN ENGINEER** (a docker too). GOD: they still fire (you see them work), `playerHurt` takes
+  nothing. **THE ENGINEER TURNS ONE** at its panel (its foot; the factory's east wall for the roof one; the tower's
+  platform for its own): `wf:turret:<i>` saved, the lens goes green, the gun drops, it fires on nobody. Robots (C6-6e-3)
+  are what turned ones will shoot at. GOD: in the lot under them; a TURRETS on/off button that also says how many hits.
+  **The `TURRETS` row's first "inside the hall" spot was out of every turret's range**, so it passed with the line of
+  sight taken out: a check that passes vacuously. It stands him at (-70, 70) now, in range of two and behind the front
+  wall and the roof, and with `boxRay` removed it reads `inside the hall 0/6/6/0 ... A TURRET FIRES THROUGH THE WALLS`,
+  exit 1. **Ask what a check would still pass with.**
+  `npm run places` (exit 0):
+      ok  wfturret   -> player 193.1,3.5,-242.3 ground 3.20
+      ok  TURRETS 4 turrets | panels on their floors 0, 0, 0, 0 | in 6 s the alien out in the lot drew 0/6/6/0 rounds, inside the hall 0/0/0/0, the engineer 0/0/0/0 | the engineer turned 4, then the alien drew 0/0/0/0
+
 - **A FORM CAN BE A ROLE: THE ENGINEER, AND THE DOORS THAT ANSWER TO ONE (m383, C6-6e-1, `ROLEFORM`, `roleFormOf`,
   `engineerOn`, `player.mphRole`, `GATE_TYPES.uplift`, `WFSEC`, `wfSecStep`).** Uplift's engineers stand in on the hipster's
   body (`ROSTER` hacker: fat_hipster, tint, green visor), so BY KIND "the engineer" and "a barista" were one form. A role in
