@@ -7,6 +7,30 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE MESA'S EXIT POINT AND THE HUMPS' GAP RAMP (m391, C6-7b-2, `IBASE`, `buildIslandBase`, ROSTER `basejumper`).**
+  REGIONS 8: *"connected by gliding, cliff jumps ... BASE jumpers ... Problem: the gaps between islands."* Two ways OFF an
+  island. **THE EXIT POINT**: where the mesa's top meets its cliff along `IBASE.ang` (-.3 rad in the islands' frame). The
+  edge `dE` is **MEASURED off the real floor** (`groundAt`, the nearest of three laterals) and never typed. A deck 9 m long
+  runs 5 m past the edge on steel braces, railed both sides and open at both ends, with a hazard stripe at the exit and steps
+  at the back sized to the measured rise. A sign arches over the way on, a windsock stands on the edge, and the jumpers'
+  shack has rigs under its awning. **`IBASE.sock` IS ITS OWN SCENE OBJECT, NOT FRAME GEOMETRY**, because the frame is
+  merged and batched and C6-7c's wind has to turn it. The deck points at the skate park (85 m over open water).
+  **THE GAP RAMP**: from the high hump's top (hump offset [-8, -6]) down its -v flank. The in-run is the HIGHER of a straight
+  chord and the ground + .25, so it is laid on the hill and never under it. It ends in a circular kicker whose arc runs
+  **a half-step past `lip`**, so the LAST quad, the one the board leaves from, is at 25 deg. The first build ended at the
+  arc's last chord and measured 21.3 deg. The lip is raised until no point is under the ground + .2.
+  **THE ROW'S FIRST VERSION HAD NO TEETH**: it sampled the ramp at its vertices, which every pair of quads shares, so a
+  missing quad passed (and the ride-down passed too, since near the hill a missing quad is only a .25 m dip onto the
+  ground). It samples each quad at its MIDDLE now; deleting quad 10 reads `BAD ... 1 pts off the floor`.
+  **`basejumper` IS A NEW ROSTER ROW** (stand-in: `colin`, navy tint, blue helmet). CHARACTERS.md has no row for BASE
+  jumpers; it lists `colin` among the islands' skaters.
+  GOD -> *the BASE jumpers' exit point on the mesa* / *the gap ramp on the high hump*.
+  **`npm run places`, exit 0**:
+      ok  BASE+RAMP exit point: 9 boxes, 54 tris | deck 18.4 over the sea, 5.0 m past the edge, walked out from the mesa's middle 0, the ground under its end 1.2, past its end open | ramp: 28 pts, a 9.6 m drop over 17.8 m, ridden top to lip -0.02, lip 25 deg and 2.9 m over the ground, the gap 20.0 m of water to the mesa's beach, 0 pts off the floor | Sasha (colin.glb) 18.4, Teo (colin.glb) 18.0, Dmitri (moussa.glb) 12.8, Lou (moussa.glb) 0.5 | basejumper -> colin.glb 
+  **WHAT IS NOT HERE YET**: nobody jumps (C6-7b-3: a jumper who goes off the exit point under a canopy, and the kite
+  surfers). Nothing measures whether a board CLEARS the 20 m gap; the sea's put-back makes that a retry, not a trap. The
+  windsock points along the deck +.4 rad until C6-7c gives it a wind.
+
 - **THE OLD PIER'S SKATE PARK (m390, C6-7b-1, `ISKATE`, `buildIslandSkate`).** REGIONS 8: *"a skate park on an old pier
   ... skaters ... sun-bleached wood, bright kites. (Rollergirl is the Easter egg here.)"* A timber deck on piles off the pier
   island's east side, u 63..105 / v 15..33 in the islands' frame, **3.1 m over the sea** (`ISLE.sea + deckH`), open at the

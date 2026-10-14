@@ -317,7 +317,8 @@ differ" table there, so no region feels like the last one.
     - [x] m389 **C6-7a** the land: six islands at six heights off Old Town's +z shore, water in every gap, ladders up the cliffs, the lighthouse; GOD places.
     - [ ] **C6-7b** what is on them, split:
       - [x] m390 **C6-7b-1** the skate park on the old pier and its people (three locals and Rollergirl, the easter egg).
-      - [ ] **C6-7b-2** the BASE jumpers' platform on the mesa, the kite surfers, the launch ramp on the humps, and their people.
+      - [x] m391 **C6-7b-2** the BASE jumpers' exit point on the mesa and the gap ramp on the high hump, with their people.
+      - [ ] **C6-7b-3** the people who move: a BASE jumper who really jumps (off the exit point, canopy, down to the water) and the kite surfers on the water between the islands.
     - [ ] **C6-7c** the wind: gusts that change direction and strength and push every flight (the signature system).
     - [ ] **C6-7d** the ways in and out: the glide from the lookout and a second way over, and the thermal up off the needle to the Mothership's tether.
     - [ ] **C6-7e** Chapter 5's quests and its boss.
@@ -1115,3 +1116,4 @@ differ" table there, so no region feels like the last one.
   - Ladders climb the cliffs.
   - For now only flight (the glider form) or GOD gets you there.
 - **m390 (C6-7b-1) The skate park on the old pier.** I split C6-7b in two: the pier first, then the mesa, the kites and the humps. The pier is a timber deck on piles, 42 x 18 m, 3.1 m over the water, running east off the pier island. On it: a quarter pipe at the far end (4 m radius, up to 55 degrees, a steel coping, a platform to drop in from), a funbox in the middle, two kickers, a ledge up three steps, a manual pad, a flat rail on posts, railings on three sides (open to the island) and a graffiti wall. Every surface is something the board already rides or grinds. Three locals (Kai, Nova, Ruben, all `skater`) and **Rollergirl** on her own skates: she knows what you are and doesn't mind. Overrule any of it.
+- **m391 (C6-7b-2) The exit point and the gap ramp.** I split C6-7b-2 again, putting the places first and the people who move (a jumping BASE jumper, the kite surfers) in C6-7b-3. **The exit point** is a deck on the mesa's cliff edge, running 5 m out over the 18 m drop. It points at the skate park, 85 m away over open water, so a glide off it has somewhere to go. It has a windsock (the wind in C6-7c will turn it) and the jumpers' shack. **The gap ramp** runs down the high hump's flank toward the mesa: a 9.6 m drop into a 25-degree kicker, with **20 m of water** to the mesa's beach. Whether a board clears it is a guess; a miss is the sea, which puts you back on the ramp. The BASE jumpers are a new ROSTER role, `basejumper`, standing in on Colin's body with a blue helmet, because CHARACTERS.md had no row for them. Overrule any of it.
