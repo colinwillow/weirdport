@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m309</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m310</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m309</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m310</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm309';
+const BUILD = 'm310';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -29097,7 +29097,7 @@ function buildFarmland() {
       if (y < sea - .2) { const k = ss01(sea - .2, sea - 6, y); spl[o] = 0; spl[o + 1] = 1 - k; spl[o + 2] = .15 + k; }
       else if (e < F.beach + 2) { const g = ss01(F.beach - 3, F.beach + 2, e); spl[o] = g; spl[o + 1] = 1 - g; spl[o + 2] = .05; }
       else { spl[o] = 1 - rock; spl[o + 1] = 0; spl[o + 2] = rock; }
-      const ft = FPLAN.on && e > F.beach ? fpTint(fpOwner(a, b)) : [1, 1, 1, 0], o4 = (jj * W + ii) * 4;     // the patchwork (m308)
+      const ft = FPLAN.on && e > F.beach ? fpTintAt(a, b) : [1, 1, 1, 0], o4 = (jj * W + ii) * 4;     // the patchwork (m308)
       fld[o4] = ft[0]; fld[o4 + 1] = ft[1]; fld[o4 + 2] = ft[2]; fld[o4 + 3] = ft[3];
     }
     if (deep) continue;                                      // all of it under 12 m of sea: never seen
@@ -29210,8 +29210,25 @@ const FPLAN = {
     { id: 'east_track', pts: [[-6, 46], [28, 26], [60, 18], [80, 13], [110, 12], [142, 19]], why: 'across the creek by the ford to the big wheat on the swell' },
     { id: 'west_track', pts: [[-40, -72], [-80, -96], [-117, -96], [-153, -48], [-166, 0], [-170, 34]], why: 'round the pond and up the west hill' },
   ],
+  // m310 (step 4a): THE CRASH, far out in the big wheat on the swell -- a long gouge from the field's north-east corner
+  // (`from`) to the wreck (a, b), and a crop circle in the same wheat, 21 m off the gouge's line. The gouge and the wreck
+  // are MARGINS (no crop grows in them) and their ground is torn earth; the circle flattens the wheat it covers.
+  crash: { a: 150, b: -4, from: [196, 46], gouge: 3.4, wreck: 8,
+    why: "far out in the wheat, where the farmer will see the smoke from his porch and the city is only a skyline",
+    circle: { a: 186, b: 4, rot: .4, why: 'in the same wheat, a field away from the gouge: they came down where they had already been' } },
   pieces: 0, fences: 0, trees: 0, lines: 0, owners: null,
 };
+// is (a, b) in the crop circle? central disc, a ring, three satellites
+function fpCircle(a, b) {
+  const C = FPLAN.crash && FPLAN.crash.circle; if (!C) return 0;
+  const d = Math.hypot(a - C.a, b - C.b);
+  if (d < 4 || (d > 7.5 && d < 9.5)) return 1;
+  for (let k = 0; k < 3; k++) { const t = C.rot + k * 2.094; if (Math.hypot(a - C.a - Math.cos(t) * 14, b - C.b - Math.sin(t) * 14) < 2.2) return 1;
+    // and the straight path from each satellite in to the ring
+    const ux = Math.cos(t), uz = Math.sin(t), along = (a - C.a) * ux + (b - C.b) * uz, off = Math.abs(-(a - C.a) * uz + (b - C.b) * ux);
+    if (along > 9.5 && along < 11.8 && off < .6) return 1; }
+  return 0;
+}
 // the sunken lane's mouth, in (a, b): the yard frame's (30, -9) put through the farm's own placement (`buildFarm`)
 function fpLaneMouth() {
   const Y = FARMLAND.yard, th = Math.atan2(FARMLAND.ub[0], FARMLAND.ub[1]) + FARM.skew, C = Math.cos(th), S = Math.sin(th);
@@ -29234,6 +29251,8 @@ function fpOwner(a, b) {
   if (fpSegDist(a, b, FL.CREEK.pts) < M.creek) return -1;
   if (Math.hypot(a - FL.POND.a, b - FL.POND.b) < FL.POND.r + M.pond) return -1;
   for (const T of F.trackPts || []) if (fpSegDist(a, b, T) < M.track) return -1;
+  const K = F.crash;
+  if (K && (Math.hypot(a - K.a, b - K.b) < K.wreck || fpSegDist(a, b, [K.from, [K.a, K.b]]) < K.gouge)) return -1;
   const Y = F.yard;
   if (Math.pow(Math.abs(a - Y.a) / Y.ra, Y.p) + Math.pow(Math.abs(b - Y.b) / Y.rb, Y.p) < 1) return -2;
   let best = -1, bd = 1e9;
@@ -29242,6 +29261,16 @@ function fpOwner(a, b) {
     if (d < bd) { bd = d; best = i; }
   });
   return best;
+}
+// the ground's tint at (a, b): torn earth down the gouge, scorched round the wreck, flattened straw in the circle (m310)
+function fpTintAt(a, b) {
+  const K = FPLAN.crash;
+  if (K) { const dw = Math.hypot(a - K.a, b - K.b);
+    if (dw < K.wreck + 2) return [.55, .38, .48, 0];
+    if (fpSegDist(a, b, [K.from, [K.a, K.b]]) < K.gouge + 1.5) return [.62, .46, .32, 0]; }
+  const o = fpOwner(a, b), t = fpTint(o);
+  if (o >= 0 && FPLAN.FIELDS[o].k === 'wheat' && fpCircle(a, b)) return [2.1, 1.75, 1.0, 0];
+  return t;
 }
 // the ground's tint for a field owner (`aFld`)
 function fpTint(o) {
@@ -29758,18 +29787,28 @@ function buildCrash() {
     dark: M(0x1d2028, { metalness: .4, roughness: .6 }),
     glow: M(0x2a0d3a, { emissive: new THREE.Color(0xb86dff), emissiveIntensity: 2.2 }),
     glass: M(0x7fe0ff, { transparent: true, opacity: .38, roughness: .1, metalness: .2, depthWrite: false }) };
-  const F = farmFrame(A.x, A.z, A.th, MAT, 'crash'), { bx, geo, gnd, wx, wz } = F;
-  const cu = CRASH.u, cv = CRASH.v, g0 = gnd(cu, cv);
-  // the furrow runs from (cu + 17, cv - 4) in to the wreck; `fd` is its direction in (u, v)
-  const su = cu + 17, sv = cv - 4, L = Math.hypot(su - cu, sv - cv), fu = (cu - su) / L, fv = (cv - sv) / L;
+  // m310: ON THE FARM'S LAND the wreck is far out in the big wheat (`FPLAN.crash`), in its OWN frame -- origin at the
+  // wreck, +u back up the gouge (th from the gouge's world direction: farmFrame's u axis is (cos th, -sin th)) -- and
+  // the gouge is the whole 68 m of it. Otherwise the m289 spot beside the yard.
+  let Ox = A.x, Oz = A.z, th = A.th, cu = CRASH.u, cv = CRASH.v, su = cu + 17, sv = cv - 4;
+  if (FARMLAND.live && FPLAN.crash) {
+    const K = FPLAN.crash, [x0, z0] = flWorld(K.a, K.b), [x1, z1] = flWorld(K.from[0], K.from[1]), dx = x1 - x0, dz = z1 - z0, Lg = Math.hypot(dx, dz);
+    Ox = x0; Oz = z0; th = Math.atan2(-dz / Lg, dx / Lg); cu = 0; cv = 0; su = Lg; sv = 0;
+  }
+  CRASH.origin = { x: Ox, z: Oz, th };
+  const F = farmFrame(Ox, Oz, th, MAT, 'crash'), { bx, geo, gnd, wx, wz } = F;
+  const g0 = gnd(cu, cv);
+  // the furrow runs from (su, sv) in to the wreck; `fd` is its direction in (u, v)
+  const L = Math.hypot(su - cu, sv - cv), fu = (cu - su) / L, fv = (cv - sv) / L;
+  const NF = Math.max(7, Math.round(L / 2.4)), NS = Math.max(9, Math.round(L / 3.5));   // its pieces and scorch discs, by length
   const fpsi = Math.atan2(-fv, fu);                  // a box's local x along the furrow (the m288 fence rule)
   const nu = -fv, nv = fu;                           // across it
   const fwx = fu * F.C + fv * F.S, fwz = -fu * F.S + fv * F.C;   // the furrow in the WORLD
-  for (let k = 0; k < 7; k++) {
-    const a = (k + .5) / 7, u = su + (cu - su) * a, v = sv + (cv - sv) * a, w = .7 + a * 2.2, h = .2 + a * .25;
+  for (let k = 0; k < NF; k++) {
+    const a = (k + .5) / NF, u = su + (cu - su) * a, v = sv + (cv - sv) * a, w = .7 + a * 2.2, h = .2 + a * .25;
     for (const sd of [-1, 1]) {
       const bu = u + nu * sd * w, bvv = v + nv * sd * w, gg = gnd(bu, bvv);
-      bx(bu, bvv, gg - .25, gg + h, L / 7 + .5, .8 + a * .5, 'dirt', fpsi + sd * (.05 + Math.sin(k * 3.1) * .06), true, sd * .12);
+      bx(bu, bvv, gg - .25, gg + h, L / NF + .5, .8 + a * .5, 'dirt', fpsi + sd * (.05 + Math.sin(k * 3.1) * .06), true, sd * .12);
     }
     // clods thrown out
     for (let c = 0; c < 3; c++) { const r = 2 + Math.random() * 3, s2 = Math.random() < .5 ? -1 : 1, cu2 = u + nu * s2 * r, cv2 = v + nv * s2 * r, gc = gnd(cu2, cv2), sz = .25 + Math.random() * .3;
@@ -29780,8 +29819,8 @@ function buildCrash() {
     polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 });
   // m300: the ten discs are ONE mesh now (merged through `farmMerge`), not ten draw calls
   const scParts = [], scO = new THREE.Object3D();
-  for (let k = 0; k <= 9; k++) {
-    const a = k / 9, u = su + (cu - su) * a, v = sv + (cv - sv) * a, r = .8 + a * 2.6;
+  for (let k = 0; k <= NS; k++) {
+    const a = k / NS, u = su + (cu - su) * a, v = sv + (cv - sv) * a, r = .8 + a * 2.6;
     // laid flat (Rx), its long axis turned first (Rz) onto the furrow's WORLD direction: local y ends at (-sin g, -cos g)
     scO.rotation.set(-Math.PI / 2, 0, Math.atan2(-fwx, -fwz)); scO.scale.set(1, 1.6, 1);
     scO.position.set(wx(u, v), gnd(u, v) + .05, wz(u, v)); scO.updateMatrix();
@@ -30776,7 +30815,7 @@ function buildFieldCrops() {
       const [x, z] = flWorld(aa, bb), y = flHeightAt(x, z);
       if (!(y > ISLE.sea + .6)) continue;
       const key = Math.floor(aa / FC.chunk) + ',' + Math.floor(bb / FC.chunk);
-      (bins.get(key) || bins.set(key, []).get(key)).push([K, x, y, z]); n++;
+      (bins.get(key) || bins.set(key, []).get(key)).push([K, x, y, z, Fd.k === 'wheat' && fpCircle(aa, bb)]); n++;
     }
     FC.per[Fd.id] = n;
   });
@@ -30784,11 +30823,11 @@ function buildFieldCrops() {
   const Mx = new THREE.Matrix4(), Q = new THREE.Quaternion(), P = new THREE.Vector3(), Sc = new THREE.Vector3(), up = new THREE.Vector3(0, 1, 0), c = new THREE.Color(), c2 = new THREE.Color();
   for (const list of bins.values()) {
     const m = new THREE.InstancedMesh(geo, mat, list.length);
-    list.forEach(([K, x, y, z], i) => {
-      const h = rnd(K.h), w = rnd(K.w);
+    list.forEach(([K, x, y, z, flat], i) => {
+      const h = rnd(K.h) * (flat ? .14 : 1), w = rnd(K.w) * (flat ? 1.35 : 1);      // the circle: laid flat, swirled (m310)
       Q.setFromAxisAngle(up, rr() * 6.283); P.set(x, y - .03, z); Sc.set(w, h, w);
       m.setMatrixAt(i, Mx.compose(P, Q, Sc));
-      m.setColorAt(i, c.setHex(K.col[0]).lerp(c2.setHex(K.col[1]), rr()));
+      m.setColorAt(i, c.setHex(K.col[0]).lerp(c2.setHex(K.col[1]), flat ? 1 : rr()));
     });
     m.instanceMatrix.needsUpdate = true; m.instanceColor.needsUpdate = true;
     m.castShadow = false; m.receiveShadow = true;
@@ -31277,6 +31316,7 @@ const godFL = H => { const [x, z] = flWorld(H.a, H.b); return [x, null, z, Math.
 const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
   { id: 'overlook', world: 'tkit', name: 'GRISTLE FARM · the west hill: fields, and the city on the horizon', at: () => FARMLAND.live && godFL(FARMLAND.HILLS[0]) },
+  { id: 'circle',   world: 'tkit', name: 'GRISTLE FARM · the crop circle by the wreck', at: () => FARMLAND.live && FPLAN.crash && godFL({ a: FPLAN.crash.circle.a - 13, b: FPLAN.crash.circle.b - 4 }) },
   { id: 'swell',    world: 'tkit', name: 'GRISTLE FARM · the big wheat on the swell', at: () => FARMLAND.live && godFL(FPLAN.FIELDS.find(f => f.id === 'crash_wheat')) },
   { id: 'fplough',  world: 'tkit', name: 'GRISTLE FARM · the ploughed field under the far hill', at: () => FARMLAND.live && godFL(FPLAN.FIELDS.find(f => f.id === 'north_plough')) },
   { id: 'creek',    world: 'tkit', name: 'GRISTLE FARM · the creek footbridge', at: () => FWATER.bridgeAt && [FWATER.bridgeAt[0], null, FWATER.bridgeAt[1], FWATER.bridgeAt[2]] },
@@ -31620,10 +31660,11 @@ function crashHero() {
   const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .4, metalness: .6 }), o || {});
   const MAT = { hull: M(0x8f98ab), glow: M(0x2a0d3a, { emissive: new THREE.Color(0xb86dff), emissiveIntensity: 1.8, metalness: 0 }),
     xtal: M(0x6a2fb0, { emissive: new THREE.Color(0x9b4dff), emissiveIntensity: 1.2, roughness: .15, metalness: .1 }) };
-  const D = farmFrame(FARM.at.x, FARM.at.z, FARM.at.th, MAT, 'wreckbits');
-  const L = Math.hypot(su - cu, sv - cv);
-  for (let k = 0; k < 9; k++) {
-    const a = .15 + k / 9 * .8, side = (k % 2 ? 1 : -1) * (.6 + (k * 7 % 5) * .35);
+  const O = CRASH.origin || { x: FARM.at.x, z: FARM.at.z, th: FARM.at.th };     // m310: the crash's own frame
+  const D = farmFrame(O.x, O.z, O.th, MAT, 'wreckbits');
+  const L = Math.hypot(su - cu, sv - cv), ND = Math.max(9, Math.round(L / 4));
+  for (let k = 0; k < ND; k++) {
+    const a = .15 + k / ND * .8, side = (k % 2 ? 1 : -1) * (.6 + (k * 7 % 5) * .35);
     const u = su + (cu - su) * a + nu * side, v = sv + (cv - sv) * a + nv * side, g = gnd(u, v), w = .5 + (k % 3) * .35;
     D.bx(u, v, g - .05, g + .06 + (k % 2) * .05, w, w * .7, 'hull', k * 1.7, false, (k % 3 - 1) * .3);
     if (k % 3 === 0) D.bx(u, v, g + .06, g + .1, w * .9, .05, 'glow', k * 1.7, false);
