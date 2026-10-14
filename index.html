@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m344</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m345</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m344</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m345</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm344';
+const BUILD = 'm345';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -25331,7 +25331,7 @@ function workerAI(d, dt, t) {
   if (!KREP.on) { t[K.clips.idle] = 1; return; }
   if (d.rst === 'idle') {
     t[K.clips.idle] = 1;
-    if (d.rT > KREP.scan) {
+    if (d.rT > KREP.scan && !(inTK() && SAVE.flags['strike:oldtown'])) {     // m345: on strike he takes no new job
       d.rT = 0;
       const W = workerJob(d);
       if (W) {
@@ -29137,6 +29137,92 @@ function decayStep(dt) {
     const p = D.rubbleAt[D.squat.length % D.rubbleAt.length], d = bodySpawn(HOBO.P, HOBO, p[0] + .8, p[2] + .8, p[1]);
     if (d) { foeBar(d); d.squatter = 1; D.squat.push(d);
       d.talk = { id: 'squatter', name: 'a squatter', lines: SQUAT_LINES.slice(), done: 0, group: 'street', talks: ['street', 'worker'], alien: 'brush', brushAlien: ['Seen worse. Not much worse.'] }; d.talkSeen = 1; }
+  }
+}
+// ============================================================================================
+// THE STRIKE (m345, ROADMAP C0-3, `OSTRIKE`, `strikeSet`, `strikeStep`)
+// ============================================================================================
+// GAME_DESIGN: "a strike or a protest takes the workers off the job, so damage stops getting fixed and the district slides
+// ... end the strike and the crews pour back out and the district rebuilds in front of you". One flag in the save
+// (`strike:oldtown`). While it stands: a PICKET outside the building site's gate -- placards planted along the hoarding,
+// a banner across the gate, a burn barrel (a `tame` fire, so it is not damage) -- and every one of the crew walks it,
+// pacing a short beat along the line (their own route and lines put by, `d.strikeOff`, and given back after); they talk
+// about it; the repair worker takes no new jobs; and `dhStep` lets the district only slide. Ending it puts everything
+// back and the crews go out again. WHO CALLS IT is Chapter 2's (The Pearl's organiser, REGIONS); until then it is
+// `strikeSet(1)`, GOD's switch, or `mel.strike(1)`.
+const OSTRIKE = {
+  on: 1, g: null, fire: null, line: null, applied: -1, st: 0, n: 0,
+  crew: ['site_sal', 'site_dee', 'foreman_briggs', 'crew_run_1', 'crew_run_2'],
+  lines: ["We're out. Nobody fixes a thing round here till this is settled.",
+          "The lot over in The Pearl called it. We came out. Solidarity. Also, it's warm by the barrel.",
+          "Want your walls back up? Go and talk to whoever's running that protest."],
+  signs: [['ON STRIKE', '#c8332b', '#fff3e0'], ['FAIR PAY', '#f2efe6', '#1d2a55'], ['NO MORE SAFETY BRIEFINGS', '#ffc247', '#2a2140'], ['LOCAL 451', '#1d2a55', '#ffd23a']],
+};
+function strikeSign(t, bg, fg) {
+  const c = document.createElement('canvas'); c.width = 256; c.height = 160;
+  const g = c.getContext('2d'); g.fillStyle = bg; g.fillRect(0, 0, 256, 160);
+  g.fillStyle = fg; g.textAlign = 'center'; g.textBaseline = 'middle';
+  const words = t.split(' '), half = Math.ceil(words.length / 2), rows = t.length > 12 ? [words.slice(0, half).join(' '), words.slice(half).join(' ')] : [t];
+  g.font = '800 ' + (rows.length > 1 ? 44 : 58) + 'px "Barlow Condensed", system-ui, sans-serif';
+  rows.forEach((r, i) => g.fillText(r, 128, 80 + (i - (rows.length - 1) / 2) * 52));
+  const tx = new THREE.CanvasTexture(c); tx.colorSpace = THREE.SRGBColorSpace; return tx;
+}
+function buildStrike() {
+  const S = OSTRIKE, G = OTSITE.gateAt; if (!S.on || !inTK() || !G) return 0;
+  // `gateAt`'s heading faces INTO the site (it is where GOD stands you, looking at the frame) -- the street is behind it
+  const h = G[3] + Math.PI, fx = Math.sin(h), fz = Math.cos(h), lx = -fz, lz = fx, y = G[1];
+  const at = (l, f) => [G[0] + lx * l + fx * f, G[2] + lz * l + fz * f];
+  const g = new THREE.Group(); scene.add(g); g.visible = false; S.g = g;
+  const wood = new THREE.MeshStandardMaterial({ color: 0x7a5232, roughness: .9 }), rust = new THREE.MeshStandardMaterial({ color: 0x6b3a22, roughness: .8, metalness: .3 });
+  const put = (m, l, f, yy, ry) => { const [x, z] = at(l, f); m.position.set(x, yy, z); m.rotation.y = ry; g.add(m); return m; };
+  // the placards, planted along the hoarding either side of the gate, facing the street
+  S.signs.forEach(([t, bg, fg], i) => {
+    const l = [-4.6, -3.2, 3.2, 4.6][i], f = 2.1, lean = (i % 2 ? .12 : -.1);
+    put(new THREE.Mesh(new THREE.BoxGeometry(.06, 1.7, .06), wood), l, f, y + .85, h).rotation.z = lean;
+    const b = put(new THREE.Mesh(new THREE.PlaneGeometry(.9, .56), new THREE.MeshStandardMaterial({ map: strikeSign(t, bg, fg), roughness: .8, side: THREE.DoubleSide })), l, f + .04, y + 1.55, h);
+    b.rotation.z = lean;
+  });
+  // the banner across the gate, on two poles
+  for (const s of [-1, 1]) put(new THREE.Mesh(new THREE.BoxGeometry(.08, 3.3, .08), wood), s * 2.5, 1.9, y + 1.65, h);
+  put(new THREE.Mesh(new THREE.PlaneGeometry(4.8, .8), new THREE.MeshStandardMaterial({ map: strikeSign('OFFICIAL STRIKE', '#c8332b', '#ffffff'), roughness: .8, side: THREE.DoubleSide })), 0, 1.95, y + 2.9, h);
+  // the burn barrel, at the end of the line
+  put(new THREE.Mesh(new THREE.CylinderGeometry(.3, .3, .85, 14), rust), 5.6, 3.2, y + .43, 0);
+  S.fireAt = (() => { const [x, z] = at(5.6, 3.2); return [x, y + .9, z]; })();
+  // the line they walk: two short beats out on the pavement, either side of the gate
+  const A = lifeSpot(...at(-3.4, 3.6), 3), B = lifeSpot(...at(-.6, 3.6), 3), C = lifeSpot(...at(.6, 3.6), 3), D = lifeSpot(...at(3.4, 3.6), 3);
+  S.line = [A, B, C, D].filter(Boolean).map(q => [q[0], q[1]]);
+  S.applied = -1;
+  return S.line.length;
+}
+// call it, or call it off
+function strikeSet(on) {
+  if (!progFlag('strike:oldtown', on ? 1 : 0)) return false;
+  OSTRIKE.n++; cardShow(on ? 'OLD TOWN' : 'OLD TOWN', on ? 'THE CREWS ARE ON STRIKE' : 'THE CREWS ARE BACK', 3.6);
+  OSTRIKE.st = 0;
+  return true;
+}
+function strikeStep(dt) {
+  const S = OSTRIKE; if (!S.g || !inTK()) return;
+  if ((S.st -= dt) > 0) return; S.st = 1;
+  const on = SAVE.flags['strike:oldtown'] ? 1 : 0;
+  if (on !== S.applied) {
+    S.applied = on; S.g.visible = !!on;
+    if (on && S.fireAt && !(S.fire && FIRES.includes(S.fire))) S.fire = fireStart(S.fireAt[0], S.fireAt[1], S.fireAt[2], { k: .5, r: .3, life: Infinity, tame: 1 });
+    if (!on && S.fire) { fireEnd(S.fire); S.fire = null; }
+  }
+  if (on && S.fire && !FIRES.includes(S.fire)) S.fire = null;          // doused: it stays out until the next strike
+  // the crew, every second, so a body that respawns (a reload, a Skinsuit come back) is put on the line too
+  for (const d of DUMMIES) {
+    if (d.gone || !d.markId || !S.crew.includes(d.markId) || isAlien(d.K)) continue;
+    if (on && !d.strikeOff && S.line && S.line.length >= 2) {
+      d.strikeOff = { beat: d.beat || null, talk: d.talk || null, hx: d.hx, hz: d.hz };
+      const i = S.crew.indexOf(d.markId), a = S.line[i % 2 ? S.line.length - 1 : 0], b = S.line[i % 2 ? S.line.length - 2 : 1];
+      d.beat = [a, b]; d.beatI = undefined; d.roamT = .2 + Math.random() * 1.5;
+      if (d.talk) d.talk = Object.assign({}, d.talk, { id: 'strike_' + d.markId, lines: S.lines.slice(), done: 0, talks: ['*'], alien: 'brush' });
+    } else if (!on && d.strikeOff) {
+      const o = d.strikeOff; d.strikeOff = null;
+      d.beat = o.beat; d.beatI = undefined; d.talk = o.talk; d.hx = o.hx; d.hz = o.hz; d.rx = o.hx; d.rz = o.hz; d.roamT = .2;
+    }
   }
 }
 // ============================================================================================
@@ -34067,7 +34153,7 @@ function godMenuOpen(on) {
     sec('OLD TOWN HEALTH  ·  ' + Math.round(dhGet('oldtown')) + ' ' + dhBand(dhGet('oldtown')) + (SAVE.flags['strike:oldtown'] ? '  ·  ON STRIKE' : ''));
     btn('OLD TOWN +20', () => { dhPush('oldtown', 20); godMenuOpen(1); });
     btn('OLD TOWN -20', () => { dhPush('oldtown', -20); godMenuOpen(1); });
-    btn(SAVE.flags['strike:oldtown'] ? 'END THE STRIKE' : 'THE CREWS STRIKE', () => { progFlag('strike:oldtown', SAVE.flags['strike:oldtown'] ? 0 : 1); godMenuOpen(1); });
+    btn(SAVE.flags['strike:oldtown'] ? 'END THE STRIKE' : 'THE CREWS STRIKE', () => { strikeSet(!SAVE.flags['strike:oldtown']); godMenuOpen(1); });
   }
   // m340: any quest in this world from its first step -- its chapter, whoever gives it having told you, its own talk flags
   // cleared so its steps do not pass on an old conversation
@@ -35642,7 +35728,8 @@ function frameBody() {
   cartStep(dt);                 // the good alien's antenna wobbles (m336)
   footStep();                   // the footbridge to The Pearl, mended the frame its gate is fixed (m341)
   dhStep(dt);                   // district health: what is burning, who is walking, whether the crews are working (m343)
-  decayStep(dt);                // ...and the look following it: boards, rubble, litter, squatters (m344)                // the wreck burns and smokes; reaching town once moves the start (m289)
+  decayStep(dt);                // ...and the look following it: boards, rubble, litter, squatters (m344)
+  strikeStep(dt);               // the crews on the picket line, or back at work (m345)                // the wreck burns and smokes; reaching town once moves the start (m289)
   crashHeroStep(dt);            // ...and pulses, arcs, hums, and stands a beam over the farm (m300)
   riverStep(dt);                // the farm's river: no wading, the current puts you back (m291)
   cellStep();
@@ -36372,6 +36459,8 @@ async function init() {
     try { buildFootbridge(); } catch (e) { note('FOOTBRIDGE FAIL'); console.warn('[melee] footbridge', e); }
     // THE LOOK FOLLOWS OLD TOWN'S HEALTH (m344): boards, rubble, litter -- after every Old Town builder, over the street
     try { buildDecay(); } catch (e) { note('DECAY FAIL'); console.warn('[melee] decay', e); }
+    // THE STRIKE'S PICKET (m345): hidden until the crews walk out
+    try { buildStrike(); } catch (e) { note('STRIKE FAIL'); console.warn('[melee] strike', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)
     try { buildTownEdge(); } catch (e) { note('TOWN EDGE FAIL'); console.warn('[melee] town edge', e); }
     // THE CITY STARTS THIN (m317): the island's ring by the bridge and all the way round
@@ -36546,7 +36635,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

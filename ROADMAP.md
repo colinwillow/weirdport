@@ -237,13 +237,13 @@ differ" table there, so no region feels like the last one.
 
 ## Phase C — systems the later chapters need
 
-- [ ] **C0 District health.** Each district has a health the city's systems push up and down:
+- [x] m345 **C0 District health.** Each district has a health the city's systems push up and down:
   damage, fires and Skinsuits lower it; crews and firefighters raise it. A strike stops the crews and
   the district decays (boarded windows, rubble, squatters); ending it sends them back out. The look
   follows the health. Start with Old Town and the existing worker/repair and fire systems.
   - [x] m343 **C0-1** the number: Old Town's health, pushed by chunks, breakables, fires, Skinsuits, repairs and the crews; saved; on the chip, the map and in GOD.
   - [x] m344 **C0-2** the look follows it: boarded windows, rubble, litter, dead streetlights and squatters as Old Town slips; cleaned up as it recovers.
-  - [ ] **C0-3** the strike: the crews down tools (pickets at the site, no repairs, the district slides); ending it sends them back out.
+  - [x] m345 **C0-3** the strike: the crews down tools (pickets at the site, no repairs, the district slides); ending it sends them back out.
 - [ ] **C1 Protest events.** Activists gather with signs and chant; rednecks show up; it turns into
   a brawl if provoked; cops respond. As an activist you can walk inside the crowd through a barricade.
 - [ ] **C2 Skinsuit incursions.** An enemy ship/agent turns civilians on the street; you fight and
@@ -769,3 +769,10 @@ differ" table there, so no region feels like the last one.
   homeless start moving in (up to 5). Every piece has its own point where it shows up, so it gets worse
   gradually and cleans up in reverse as the health recovers. There are no dead streetlights, because
   the city's lamps aren't lights the game controls. Use GOD's OLD TOWN -20 to see it.
+
+- **m345 (C0-3):** the strike is now a real state. The crew walk the picket line outside the site
+  gate under an OFFICIAL STRIKE banner, with placards and a burn barrel, and they talk about it. The
+  repair worker takes no new jobs, and Old Town's health only slides. Calling it off puts everyone back
+  on their routes and the crews go back to fixing things. Nothing in the story starts a strike yet,
+  because The Pearl's organiser (Chapter 2) is meant to call it, so until then it's GOD's switch or
+  `mel.strike(1)`.

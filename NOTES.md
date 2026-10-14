@@ -7,6 +7,21 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE STRIKE IS ONE SAVED FLAG AND A STEP THAT RECONCILES THE CREW TO IT EVERY SECOND (m345, C0-3, `OSTRIKE`,
+  `buildStrike`, `strikeSet`, `strikeStep`; `mel.strike(1)`).** While `strike:oldtown` stands: the picket outside the
+  site gate shows (four placards along the hoarding, OFFICIAL STRIKE on two poles across the gate, a burn barrel lit as
+  a `tame` fire so it is not damage), each of the crew (`OSTRIKE.crew`, by mark) has its route, home and lines put by in
+  `d.strikeOff` and paces a two-point beat on the line, talking about it to anyone; `workerAI` takes no new job; and
+  `dhStep` only lets the district slide. Called off, all of it is given back. **Reconciling every second rather than
+  acting once** is what makes a body that respawns -- a reload, Dee or Briggs coming back out of a Skinsuit -- end up
+  on the line too. WHO CALLS IT is Chapter 2's (The Pearl's organiser); until then GOD's switch (it goes through
+  `strikeSet` now, so it gets the card) or `mel.strike(1)`.
+  **`OTSITE.gateAt`'S HEADING FACES INTO THE SITE**, because it is where GOD stands you looking at the frame -- the first
+  build laid the whole picket line inside the hoarding, and the new `places` row caught it by distance from the site's
+  middle (2.1-3.6 m against the gate's 3.8). Turned by pi:
+  `ok  STRIKE line [[-48.1,-62.8],[-50.3,-61],[-51.2,-60.2],[-53.3,-58.4]] | from the site middle 8.2,7.5,7.5,8.2 vs the gate 3.8 | on: picket true barrel true | off: picket false barrel false`.
+  `npm run shot strike` is the picture.
+
 - **THE LOOK FOLLOWS OLD TOWN'S HEALTH: FOUR LAYERS, EACH PIECE WITH ITS OWN THRESHOLD (m344, C0-2, `ODECAY`,
   `buildDecay`, `decayApply`, `decayStep`).** A piece is there while the health is UNDER its threshold, so the slide is
   gradual and a recovery takes it away piece by piece. BOARDS: planks (three a face, both faces) over his kit buildings'

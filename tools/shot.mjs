@@ -80,6 +80,9 @@ const SHOTS = {
       const e = it.m.elements, L = Math.hypot(e[8], e[10]), nx = e[8] / L, nz = e[10] / L, x = e[12], y = e[13], z = e[14];
       const s = mel.groundAt(x + nx * 7, z + nz * 7, y + 3, 9) > y - 3 ? 1 : -1;
       return [x + nx * 7 * s, y + 1.2, z + nz * 7 * s, x, y, z]; })()` },
+  strike: { place: 'site', settle: 3, pre: "mel.strike(1); mel.OSTRIKE.g.visible = true", why: 'the picket line outside the site gate (C0-3)',
+    cam: `(() => { const G = mel.OTSITE.gateAt, fx = -Math.sin(G[3]), fz = -Math.cos(G[3]);
+      return [G[0] + fx * 11 + fz * 4, G[1] + 3.2, G[2] + fz * 11 - fx * 4, G[0] + fx * 2, G[1] + 1.4, G[2] + fz * 2]; })()` },
   wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
       return [C.x + sx * 16 - dx / L * 6, p.y + 7, C.z + sz * 16 - dz / L * 6, C.x, p.y + .5, C.z]; })()` },
