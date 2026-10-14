@@ -15,6 +15,42 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
+**NEXT, BEFORE ANY OTHER FARM PASS — THE FARM IS THE WRONG SIZE AND IN THE WRONG PLACE. REBUILD IT AS
+OPEN COUNTRYSIDE ACROSS THE RIVER.** Colin finally walked it (m302-m304) and said: *"it's like 12 feet
+away from the border of the city... a very small city block tacked onto the edge of the city... the
+border between the city and the farm is just a line, it's not organic at all. I want it to be farmland:
+fields, meadows, cows, tractors, farmers, trees, buildings, ridges... exactly not what I meant."* This is
+our fault, not the loop's: the docs said "intimate, empty ground is a failure" and "SMALL and DENSE: a few
+blocks". Both are rewritten now. **Read the new "Scale follows the place" and "No borders that are lines"
+rules in `GAME_DESIGN.md` and the new Gristle Farm entry in `REGIONS.md` before starting.**
+
+What to build (several builds; ship each step, never wait):
+1. **A separate farm landmass across a river from the city island**, not a lobe on the city's coast.
+   Roughly 400 x 300 m or more, at an authored bearing, far enough that the city is a SKYLINE on the
+   horizon from the crash site. One river/channel between them, crossed by the checkpoint bridge (move
+   `BRIDGE` there). Fog `far` and the sky must let the skyline read from the farm.
+2. **Rolling terrain**: a heightfield with low ridges and hills, a creek valley with a footbridge, a pond.
+   Walkable through the real collider (`groundAt`), chunked so the camera culls what is behind it.
+3. **Fields that follow the land**: irregular patches of wheat, corn, ploughed earth, hay meadow and
+   pasture, divided by hedgerows, fences, tree lines and dirt tracks. Nothing square to the world grid.
+4. **Spread the existing pieces out into clusters** (reuse m288-m304, do not throw them away): the
+   farmhouse and yard, the barn and silo, sheds and coop, a neighbour's farm on another ridge, a lone hay
+   barn. **The crash site far out in a field**, a long gouge through the wheat, the crop circle near it.
+5. **Life**: herds of cows in the pastures, a tractor working a field and one parked, farmhands in the
+   fields, a pickup on the track.
+6. **The transition into town, never a line**: dirt track -> country road -> past the neighbour's farm
+   -> an edge-of-town strip on the farm's side of the river (gas station, trailer park, a few houses with
+   yards, billboards, power poles, a fruit stand) -> the bridge checkpoint -> across it the city starts
+   thin (low houses, lots, a warehouse) and thickens. Also soften the city island's own edge the same way
+   (scattered houses, yards, fences, trees on the ring) so the kit city doesn't end at a ruler line.
+7. **Phone cost**: instance everything repeated (trees, fence posts, bales, cows, crop stalks), merge
+   per material, chunk the terrain, and keep draw calls in the tens. Distance fades the small stuff.
+8. **Prove it**: `npm run places` passes with every GOD farm place moving him onto the new land, and the
+   crash spawn landing at the wreck. **Screenshots allowed and wanted** for this work: a wide shot from a
+   ridge showing fields, buildings and the distant skyline, and one of the road through the transition.
+   Paste the `places` output in NOTES.
+
+
 **URGENT, NEXT BUILD — THE FARM DOES NOT EXIST IN THE REAL GAME.** Colin opened every GOD place and
 none of them work. Measured with `npm run places` (new; builds the REAL kit city collider and island,
 runs every farm builder, then the shipped `godPlace`): the widest grass on the island ring is

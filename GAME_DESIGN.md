@@ -132,8 +132,15 @@ turned into: flat, spaced out, rectangular areas sat next to each other on a gri
 and nothing between them.
 
 **Rules for every place built, by the loop or in Blender:**
-- **Intimate, not spaced out.** Streets are narrow, things are close to the camera, you are always
-  within a few metres of something to look at or touch. Empty ground between "areas" is a failure.
+- **Scale follows the place.** A CITY is dense: narrow streets, things close to the camera, always
+  something within a few metres to look at or touch. The COUNTRYSIDE is the opposite: wide open
+  fields and meadows, rolling ground, ridges, long views, the city skyline far off on the horizon.
+  "Intimate" means rich detail where you are standing — a fence post, a gate, a cow, a tractor in
+  the next field — never cramming a place into a small footprint. **A farm squeezed into a city
+  block is a failure, and so is a city stretched thin.**
+- **No borders that are lines.** Where two places meet there is a transition zone you travel
+  through: the city thins into suburbs, then a gas station, a trailer park, scattered houses and
+  billboards, then fences and fields. Never a straight edge with one place on each side of it.
 - **Vertical, always.** Every place has layers: street, stoops and kerbs, balconies, fire escapes,
   rooftops, bridges and walkways over the street, stairs down to cellars, canals, sewers below.
   Places stack and overlap; you can go over and under the same spot.

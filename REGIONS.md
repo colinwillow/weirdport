@@ -2,9 +2,12 @@
 
 One entry per region. **Read the entry before building anything in it.** Every region must feel
 like a different place to be — a different shape, a different light, different people, a different
-problem — not the last region with new paint. Each is SMALL and DENSE: a few blocks you come to know
-by heart, not a county. The world rules in `GAME_DESIGN.md` ("dense, vertical, organic, alive")
-apply to every one.
+problem — not the last region with new paint. **Each is a place you come to know by heart, at the
+scale that place really is:** an urban region is a few dense blocks; a rural region is open
+countryside you can see across, hundreds of metres of fields and ridges. Regions never meet at a
+line: there is always a transition zone between them (see "No borders that are lines" in
+`GAME_DESIGN.md`). The world rules in `GAME_DESIGN.md` ("dense, vertical, organic, alive") apply to
+every one.
 
 ## The world map: a metropolis at the centre, regions around it
 
@@ -51,17 +54,34 @@ of them is not done yet.
 
 ## 0. Gristle Farm — the crash
 
-**Identity:** where you land. Small, warm, and the first place anyone screams at you.
-- **Shape:** a valley floor that climbs. Sunken lanes between hedges, a creek in a gully with a
-  footbridge, the barn with a hayloft and a rope down, a silo with a ladder, an orchard terrace, the
-  road switchbacking up to the river bridge.
+**Identity:** where you land. Wide, open, golden countryside — and the first place anyone screams
+at you. **It is NOT next to the city.** It is its own landmass across the river, hundreds of metres
+of farmland, with the city a skyline on the horizon you are trying to reach.
+- **Scale:** roughly 400 × 300 m of land or more. You should be able to stand on a ridge and see
+  field after field, the farm buildings small in the distance, the river, and the city far off.
+- **Shape:** rolling ground, not flat: low ridges and hills, a valley with a creek in a gully and a
+  footbridge, a pond with willows. Fields in irregular patches (wheat, corn, ploughed earth, hay
+  meadow, pasture) divided by hedgerows, fences, tree lines and dirt tracks. A copse and an orchard.
+  Fields follow the land; nothing is square to the world grid.
+- **Buildings, spread out in clusters, never in a row:** the farmhouse with its yard; the big red
+  barn with a hayloft and a rope down; a silo with a ladder; sheds, a chicken coop, a windmill /
+  water tower; a neighbour's farm on the next ridge; a hay barn alone in a far field.
+- **The crash site:** far out in a field, a long gouge through the wheat ending at the burning
+  wreck, a crop circle nearby. From here the city is only a skyline.
 - **Light:** late golden hour turning to dusk. Long shadows, dust in the air, the wreck burning.
 - **Palette:** straw, red barn paint, green hedges, a purple alien scorch on the field.
-- **People:** the farmer and his family, farmhands, cows. Rural, wary, armed.
+- **People and animals:** the farmer and his family, farmhands working the fields, cows grazing in
+  pastures (herds, not one or two), tractors working (one ploughing, one parked), a pickup on the
+  track.
 - **Problem:** you are an alien; the only way out is the bridge, and the bridge has a police checkpoint.
 - **Tech:** the farm (tractor, animals). This is where you take your **first sample**.
 - **Signature system:** livestock. Cows wander, panic and stampede when frightened, and block lanes.
-- **Sound:** crickets, cows, crackling wreckage.
+- **Sound:** crickets, cows, crackling wreckage, a distant tractor.
+- **The road to town (the transition, never a line):** a dirt track becomes a country road; the
+  road passes the neighbour's farm, then the edge of town on the farm's side of the river — a gas
+  station, a trailer park, a few houses with yards and pickups, billboards, power poles, a
+  roadside fruit stand — then the river bridge with its checkpoint. Across the bridge the city
+  starts thin (low houses, lots, a warehouse) and gets denser as you go in.
 - **Way out:** the river bridge checkpoint — walked across as the farmer. The bridge becomes your
   first portal.
 - **Secret:** Clancy's crash pod, something buried in the field the aliens wanted.
