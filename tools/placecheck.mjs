@@ -58,7 +58,7 @@ const html = fs.readFileSync('index.html', 'utf8');
 let src = html.match(/<script type="module">([\s\S]*?)<\/script>/)[1];
 src = src.replace(/(from\s*)['"]three['"]/g, `$1'${pathToFileURL(path.join(TMP, 'three-shim.mjs')).href}'`)
          .replace(/(from\s*)['"]\.\/vendor\//g, `$1'${ROOT}vendor/`);
-src += '\nglobalThis.__M = { FOOT, buildFootbridge, footStep, footFix, BOXES, PORTALS, QUESTS, buildLife, OTLIFE, buildSite, OTSITE, buildCarts, OTCARTS, cartStep, mapRegionsTkit, buildCamp, OTCAMP, MAPREG, campStep, FARMLAND, buildFarmland, buildFarmWaters, FWATER, buildFieldBounds, FPLAN, buildFieldCrops, FCROP, buildNeighbours, FNEIGH, COW, COWS, cowSpook, fpOwnAt, flLocal, buildVehicles, FVEH, vehStep, buildFarmhands, FHANDS, MARKS, mkrNpcPlace, HOBO, HICK, buildTownEdge, FTOWN, buildCityRing, FRING, farmBatch, FBATCH, scene, buildTrestle, FTRES, buildFord, FFORD, GATES, buildOrchardTerrace, FTERR, buildSkyline, SKYLINE, skylineStep, flEdgeAt, isleBedAt, KCITY, buildKCityCol, buildIsle, ISLE, TRI, triBuild, groundAt, WORLD, MOVE, player, kitPopulate, KCROWD, FOE, HICK, HOBO, SKATER, BIKER, DUMMY, CIVILS, CLANCY, kitStand, bodySeat, SEAT, DUMMIES, THREE, buildFarm, buildFarmProps, buildCrash, buildLane, buildBridge, buildCows, buildHedgerows, HROW, buildFarmhouse, FHOUSE, farmhouseStep, buildRoadside, FROAD, GPAINT, buildGroundPaint, buildFlora, crashHero, FARM, MISSING, FLORA, FPROPS, farmPropsStep, floraStep, cowStep, crashStep, crashHeroStep, riverStep, gradeStep, CRASH, GODPLACES, godPlace, GOD, LANE, BRIDGE, crashSpawn, SAVE };\n';
+src += '\nglobalThis.__M = { DHEALTH, dhStep, dhGet, dhPush, FIRES, FOOT, buildFootbridge, footStep, footFix, BOXES, PORTALS, QUESTS, buildLife, OTLIFE, buildSite, OTSITE, buildCarts, OTCARTS, cartStep, mapRegionsTkit, buildCamp, OTCAMP, MAPREG, campStep, FARMLAND, buildFarmland, buildFarmWaters, FWATER, buildFieldBounds, FPLAN, buildFieldCrops, FCROP, buildNeighbours, FNEIGH, COW, COWS, cowSpook, fpOwnAt, flLocal, buildVehicles, FVEH, vehStep, buildFarmhands, FHANDS, MARKS, mkrNpcPlace, HOBO, HICK, buildTownEdge, FTOWN, buildCityRing, FRING, farmBatch, FBATCH, scene, buildTrestle, FTRES, buildFord, FFORD, GATES, buildOrchardTerrace, FTERR, buildSkyline, SKYLINE, skylineStep, flEdgeAt, isleBedAt, KCITY, buildKCityCol, buildIsle, ISLE, TRI, triBuild, groundAt, WORLD, MOVE, player, kitPopulate, KCROWD, FOE, HICK, HOBO, SKATER, BIKER, DUMMY, CIVILS, CLANCY, kitStand, bodySeat, SEAT, DUMMIES, THREE, buildFarm, buildFarmProps, buildCrash, buildLane, buildBridge, buildCows, buildHedgerows, HROW, buildFarmhouse, FHOUSE, farmhouseStep, buildRoadside, FROAD, GPAINT, buildGroundPaint, buildFlora, crashHero, FARM, MISSING, FLORA, FPROPS, farmPropsStep, floraStep, cowStep, crashStep, crashHeroStep, riverStep, gradeStep, CRASH, GODPLACES, godPlace, GOD, LANE, BRIDGE, crashSpawn, SAVE };\n';
 const f2 = path.join(TMP, 'placecheck.mjs'); fs.writeFileSync(f2, src);
 const quiet = console.error, qw = console.warn, ql = console.log;
 console.error = () => {}; console.warn = () => {};
@@ -236,7 +236,7 @@ quiet(bad ? bad + ' GOD place(s) BAD' : 'every tkit GOD place is somewhere');
 // on: a frozen picture with a crash card. A second at 30 fps, standing at the crash, each step on its own.
 { const crash = M.GODPLACES.find(q => q.id === 'crash'); if (crash) M.godPlace(crash);
   quiet('cowSpook', M.cowSpook(), '(m329: so the 30 frames below run the stampede branch too)');
-  for (const n of ['vehStep', 'farmPropsStep', 'farmhouseStep', 'floraStep', 'cowStep', 'crashStep', 'crashHeroStep', 'riverStep', 'gradeStep', 'skylineStep', 'campStep', 'cartStep', 'footStep']) {
+  for (const n of ['vehStep', 'farmPropsStep', 'farmhouseStep', 'floraStep', 'cowStep', 'crashStep', 'crashHeroStep', 'riverStep', 'gradeStep', 'skylineStep', 'campStep', 'cartStep', 'footStep', 'dhStep']) {
     let err = null;
     console.log = () => {};
     for (let f = 0; f < 30 && !err; f++) { try { M[n](1 / 30); } catch (e) { err = e; } }
@@ -244,4 +244,9 @@ quiet(bad ? bad + ' GOD place(s) BAD' : 'every tkit GOD place is somewhere');
     if (err) bad++;
     quiet((err ? 'BAD ' : 'ok  ') + n.padEnd(14), err ? (err.stack || String(err)).split('\n').slice(0, 3).join(' | ') : '30 frames');
   } }
+// ---- DISTRICT HEALTH (m343): what it read after the second of steps above, and that a push moves it and a band
+{ const D = M.DHEALTH, h0 = M.dhGet('oldtown'); M.dhPush('oldtown', -30); const h1 = M.dhGet('oldtown'); M.dhPush('oldtown', 30);
+  const why = !(h0 > 0) ? 'NO HEALTH' : Math.abs(h1 - Math.max(0, h0 - 30)) > .01 ? 'A PUSH DID NOT MOVE IT' : '';
+  if (why) bad++;
+  quiet((why ? 'BAD ' : 'ok  ') + 'DHEALTH oldtown', +h0.toFixed(2), '| fires', D.fires, 'skinsuits', D.skins, 'born warriors', D.aliens, '| -30 ->', +h1.toFixed(2), '| band changes', D.n, why); }
 process.exit(bad ? 1 : 0);

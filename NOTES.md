@@ -7,6 +7,22 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **DISTRICT HEALTH IS ONE NUMBER PER DISTRICT, PUSHED BY EVENTS AND RATES, SAVED (m343, C0-1, `DHEALTH`, `dhPush`,
+  `dhStep`, `dhChunk`).** Old Town only (the kit city's rect, in `tkit`). Down: a wall chunk killed (`kitKill`, -.25,
+  capped at 2 a second so one rocket into a facade is not a ruin), a breakable smashed (`brkBreak`, -.4), every second
+  each fire burning in it (-.35), each Skinsuit (-.12) and each born warrior (-.03) walking it. Up: a chunk restored
+  (`kitRestore`, the crew, +.35), a fire doused (`fireDouse`, +1.5), a Skinsuit reverted (`virusGo` going back, +3),
+  Briggs beaten (`ch1d`'s `onDone`, +15), and every second the crews at work while nothing burns (+.12) -- or, on strike
+  (`strike:oldtown`, GOD only until C0-3), -.06. A new save starts at 55 (WORN). Bands 75/50/25: HEALTHY, WORN, BROKEN,
+  ABANDONED; crossing one is a card. Read it in the chip (`OT55w`, `s` on strike), on the full map (a bar and the band
+  along the district's top edge, redrawn when the whole number changes), and in GOD (+20, -20, the strike).
+  **THE CAMP'S BARREL WAS A FIRE IN OLD TOWN FOR EVER** (`campStep` relights it every 4 s with `life: Infinity`), so the
+  first version drained the district by .35 a second and stopped the crews' recovery on every frame of the game -- the
+  `places` row printed `fires 1` on a quiet city. A fire can be `tame` now (`fireStart`'s option) and the count skips it.
+  **And `cardShow` took the harness down** (its fake page has the card but not its children); it returns when either is
+  missing now. `places`: `ok  DHEALTH oldtown 55.13 | fires 0 skinsuits 0 born warriors 0 | -30 -> 25.13 | band changes 2`,
+  and `dhStep` ticks 30 frames. Exit 0.
+
 - **CHAPTER 1'S BOSS IS A QUEST STEP, NOT A SECOND FIGHTING SYSTEM (m342, B5, quest `ch1d` "THE FOREMAN", `skinDef` /
   `skinArm`, `keep.big` / `keep.downs`).** Briggs's invitation (`from: 'ch1_briggs'`, and `needQ: 'ch1c'` -- new: a
   task can wait for another to be DONE). At the office, within 7 m, he bursts out of his skin through the same `virusGo`

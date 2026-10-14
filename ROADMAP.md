@@ -241,6 +241,9 @@ differ" table there, so no region feels like the last one.
   damage, fires and Skinsuits lower it; crews and firefighters raise it. A strike stops the crews and
   the district decays (boarded windows, rubble, squatters); ending it sends them back out. The look
   follows the health. Start with Old Town and the existing worker/repair and fire systems.
+  - [x] m343 **C0-1** the number: Old Town's health, pushed by chunks, breakables, fires, Skinsuits, repairs and the crews; saved; on the chip, the map and in GOD.
+  - [ ] **C0-2** the look follows it: boarded windows, rubble, litter, dead streetlights and squatters as Old Town slips; cleaned up as it recovers.
+  - [ ] **C0-3** the strike: the crews down tools (pickets at the site, no repairs, the district slides); ending it sends them back out.
 - [ ] **C1 Protest events.** Activists gather with signs and chant; rednecks show up; it turns into
   a brawl if provoked; cops respond. As an activist you can walk inside the crowd through a barricade.
 - [ ] **C2 Skinsuit incursions.** An enemy ship/agent turns civilians on the street; you fight and
@@ -753,3 +756,10 @@ differ" table there, so no region feels like the last one.
   suit" (a lead for later), Chapter 1 completes, and The Pearl is revealed on the map. The boss is
   only bigger to look at: his reach and hits are a normal warrior's, until your model for him exists.
   GOD's Chapter 2 button now takes you to The Pearl's dock.
+
+- **m343 (C0-1):** Old Town's health is one number, 0-100, that's saved and starts at 55 (WORN), because
+  "nothing is being rebuilt". It goes down when walls are broken, things are smashed, fires burn and
+  Skinsuits walk the streets. It goes up when the crew repairs walls, fires are put out and Skinsuits
+  are reverted, plus +15 for beating Briggs. It also creeps up slowly while the crews work and nothing
+  is burning. The camp's burn barrel doesn't count as a fire. The numbers are first guesses; they're
+  all in `mel.DHEALTH`. GOD has +20 / -20 and a strike switch to try it out.
