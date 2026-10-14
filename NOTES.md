@@ -7,6 +7,33 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE ISLANDS' PEOPLE WHO MOVE: SASHA JUMPS, PIA AND OKON KITE (m392, C6-7b-3, `IJUMP` / `isJump` / `isJumpBeach`,
+  `IKITE` / `isKite`, `isWing`, `buildIslandMovers`, `islMoversStep`).** Both are PASSENGERS in `stepDummies`' brainless line
+  (after `wfBot`): they drive the body only while it is idle (`d.st` 'jump' / 'kite'), so a blow knocks them out in the
+  ordinary way, and the line takes them back when they get up. A knocked jumper re-plans from where she landed: on the
+  mesa's top she walks to the deck, on dry ground she walks the beach to a ladder, in the water she swims.
+  **HER LOOP HAS NO TELEPORT IN IT**: wait on the deck (`wait` 9-16 s, only while he is within `near`), run, leap, freefall
+  `free` s, canopy. The canopy steers at the water off the NEARER mesa ladder's side, so the swim is short. Then splash, swim
+  to .8 of the beach radius at her angle, walk the beach arc at .76 R to the ladder's foot, climb, and walk back over the top
+  to the deck. **AFTER THE CLIMB SHE WALKS LEVEL (`R.flatY`) UNTIL THE MARK**: the ladder stands at the cliff's FOOT, so
+  topping out leaves her in the air outside the edge, and `groundAt` there is the beach 18 m down.
+  **EVERY POSE IS A CLIP ALREADY IN THE FILES, NOT IN ANY TABLE**: `flying_forwards` (the fall and, at the surface, the swim),
+  `bar_hang_idle` (hanging from the canopy), `climb_ladder`, `skate_idol_crouch` / `skate_ollie_air` (the kite stance and
+  jump). Colin and Moussa both carry them (read from the GLB's JSON). `bodyLoops` only loops the table's gaits, so `isLoop`
+  sets `LoopRepeat` on THAT body's action the first time it is asked for. Without it each clamps on its last frame.
+  **THE CANOPY AND THE KITES ARE SCENE OBJECTS (`isWing`)**: a cylinder arc in five two-tone panels with four lines. A kite's
+  basis is built explicitly (y along the line, x = D x up so the span stays level). `setFromUnitVectors` would have rolled
+  the span into the tilt plane.
+  **THE KITE LOOPS ARE ELLIPSES CHECKED AGAINST THE LAND**: the first pair (10 x 6 and 13 x 7 at 7.5 m/s) lapped every 7 s,
+  which is a man spinning in a bath. They were widened to 9 x 15 and 16 x 10 at 6.5, each clearance measured against the
+  islands' wobbled radii. The row counts a frame "dry" if `islHeight` under him is above sea - .3.
+  **`npm run places`, exit 0** (teeth: `climbV: 0` reads `BAD ... THE CLIMB DOES NOT TOP OUT`; Pia's loop moved onto the
+  landing rock counts 508 dry frames):
+      ok  MOVERS Sasha: run > free > canopy > swim > walk > climb > walk > wait in 68 s (wait 3, run 1, free 1, canopy 4, swim 6, walk 31, climb 21) | splash in the water, topped out 18.2 over the sea, lowest walk -0.30, home on the deck | kites: Pia 3.4 laps, 4 jumps to 2.7 m, 0 frames dry; Okon 3.2 laps, 3 jumps to 2.7 m, 0 frames dry | Pia (moussa.glb), Okon (moussa.glb) 
+  **WHAT IS NOT HERE**: the wind (C6-7c drives `IKITE.wind` and `IBASE.sock`); no sound of wind or spray; nobody rides the
+  skate park or the gap ramp yet. Which way `skate_idol_crouch` stands on the board is not measurable here: the board is
+  along the heading, as Shredworld's clips are authored.
+
 - **THE MESA'S EXIT POINT AND THE HUMPS' GAP RAMP (m391, C6-7b-2, `IBASE`, `buildIslandBase`, ROSTER `basejumper`).**
   REGIONS 8: *"connected by gliding, cliff jumps ... BASE jumpers ... Problem: the gaps between islands."* Two ways OFF an
   island. **THE EXIT POINT**: where the mesa's top meets its cliff along `IBASE.ang` (-.3 rad in the islands' frame). The

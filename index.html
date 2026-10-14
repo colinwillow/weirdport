@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m391</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m392</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m391</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m392</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm391';
+const BUILD = 'm392';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -34314,6 +34314,191 @@ function buildIslandBase() {
   return B.n;
 }
 // ============================================================================================
+// THE ISLANDS' PEOPLE WHO MOVE (m392, ROADMAP C6-7b-3, `IJUMP` / `isJump`, `IKITE` / `isKite`, `islMoversStep`)
+// ============================================================================================
+// REGIONS 8's people are "skaters, BASE jumpers, kite surfers". m391 stood them about; these two never stand still.
+// **SASHA JUMPS.** Off the exit point on a loop with no teleport in it: she waits on the deck, runs the last few metres,
+// leaps, falls (`flying_forwards`), opens a canopy and hangs under it (`bar_hang_idle`), turning back toward the mesa as she
+// sinks, splashes down, SWIMS to the mesa's beach (`flying_forwards` again, at the surface), walks the beach round to the
+// nearer of the mesa's ladders, CLIMBS it (`climb_ladder`), and walks back over the top to the deck. Every clip is Colin's
+// own (the `basejumper` stand-in); none of them is in his kind's table, so each is looped here on HER body only.
+// **THE KITE SURFERS** ride loops on the open water between the islands: a board under their feet, a kite downwind of
+// them on two lines sweeping side to side, spray off the board, and every 8-14 s the kite lifts them into a jump
+// (`skate_ollie_air` up, `skate_idol_crouch` on the water). The wind is `IKITE.wind` until C6-7c gives the islands one.
+// **BOTH ARE PASSENGERS** (`stepDummies`' brainless line, the conveyor riders' slot): only while the body is idle, so a
+// blow knocks them out of it in the ordinary way, and the line takes them back when they get up.
+const IJUMP = {
+  on: 1, id: 'is_sasha', wait: [9, 16], near: 110, runV: 3.4, leapV: 4.5, leapUp: 3.2, g: 9.8, free: 1.5, openT: .6,
+  sink: 2.1, glide: 5.2, turn: .55, swimV: 1.3, swimDip: 1.2, walkV: 1.4, climbV: .8,
+  R: null, canopy: null, jumps: 0, splashes: 0, climbs: 0,
+};
+const IKITE = {
+  on: 1, v: 6.5, pop: 6.2, g: 7, gap: [8, 14], line: 16, el: .72, wind: [1, .35],
+  RIDERS: [
+    { id: 'is_pia', role: 'skater', name: 'Pia', c: [15, 42], r: [9, 15], dir: 1, cols: [0x3aff8a, 0xffd23a], why: "the lagoon between the landing rock, the mesa, the needle and the pier",
+      lines: "Can't stop! Well, I can. I just don't want to.|The wind comes round the needle in the afternoon. Best hour of the day.|Kite's older than me. Holds together on spite." },
+    { id: 'is_okon', role: 'skater', name: 'Okon', c: [36, 102], r: [16, 10], dir: -1, cols: [0xff4a8a, 0x2a9ad8], why: "the open water between the needle, the humps and the lighthouse rock",
+      lines: "Out past the lighthouse it gets serious.|Watch the guy jump off the mesa. Every day. Same splash.|If the wind dies I'm swimming home. Again." },
+  ],
+  list: [], jumps: 0,
+};
+// a ram-air wing: an arc of a cylinder, its span across x, curved away from the lines, its crown `top` up local y; two
+// tones; four lines from just either side of `anchor` to its edge
+function isWing(r, arc, chord, c1, c2, top, anchor) {
+  const g = new THREE.Group(), m = [c1, c2].map(c => new THREE.MeshStandardMaterial({ color: c, roughness: .6, side: THREE.DoubleSide }));
+  for (let k = 0; k < 5; k++) { const a0 = Math.PI - arc / 2 + arc * k / 5, s = new THREE.Mesh(new THREE.CylinderGeometry(r, r, chord, 3, 1, true, a0, arc / 5), m[k % 2]); s.rotation.x = Math.PI / 2; s.position.y = top - r; g.add(s); }
+  const pts = []; for (const th of [Math.PI - arc / 2, Math.PI - arc / 6, Math.PI + arc / 6, Math.PI + arc / 2]) { const x = r * Math.sin(th); pts.push(Math.sign(x) * .18, anchor, 0, x, top - r - r * Math.cos(th), 0); }
+  const lg = new THREE.BufferGeometry(); lg.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
+  g.add(new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ color: 0x222222 })));
+  g.visible = false; scene.add(g); return g;
+}
+const isLoop = (d, nm) => { const a = d.actions && d.actions[nm]; if (a && a.loop !== THREE.LoopRepeat) { a.setLoop(THREE.LoopRepeat, Infinity); a.clampWhenFinished = false; } return nm; };
+// her way back: the beach round from where she swam ashore to the nearer mesa ladder's foot, in frame (u, v)
+function isJumpBeach(R, a0) {
+  const I = ISLES, K = I.ISLANDS.find(q => q.id === 'mesa'), sea = ISLE.sea, Ra = a => K.r * (1 + .14 * (2 * I.noise(a + K.u * .1) - 1));
+  const lad = I.ladderAt.map(L => ({ L, a: Math.atan2(L[1] - K.v, L[0] - K.u) })).filter(q => Math.hypot(q.L[0] - K.u, q.L[1] - K.v) < K.r * 1.3 && Math.abs(q.L[3] - sea - K.h) < 1.5);
+  const dA = (a, b) => Math.atan2(Math.sin(b - a), Math.cos(b - a));
+  lad.sort((p, q) => Math.abs(dA(a0, p.a)) - Math.abs(dA(a0, q.a)));
+  const Q = lad[0]; if (!Q) return null;
+  const span = dA(a0, Q.a), n = Math.max(1, Math.ceil(Math.abs(span) / .15)), wp = [];
+  for (let k = 1; k <= n; k++) { const a = a0 + span * k / n; wp.push([K.u + Math.cos(a) * Ra(a) * .76, K.v + Math.sin(a) * Ra(a) * .76]); }
+  const [lu, lv, y0, top, mu, mv] = Q.L, ca = Math.cos(Q.a), sa = Math.sin(Q.a);
+  wp.push([lu + ca * .45, lv + sa * .45]);
+  return { wp, lad: { u: lu + ca * .45, v: lv + sa * .45, y0, top, mu, mv } };
+}
+// IN `stepDummies`, ABOVE THE BRAIN, while she is idle
+function isJump(d, dt, t) {
+  const R = d.ijR; if (!R) return 0;
+  const J = IJUMP, D = IBASE.deck, sea = ISLE.sea, p = d.root.position, I = ISLES;
+  if (!J.on || !D || (d.st !== 'idle' && d.st !== 'jump')) { if (J.canopy) J.canopy.visible = false; if (R.st !== 'wait' && R.st !== 'walk') R.st = 'lost'; if (d.st === 'jump') d.st = 'idle'; return 0; }
+  d.st = 'jump';
+  const W = (u, v) => islWorld(u, v), hdF = (du, dv) => Math.atan2(du * I.C + dv * I.S, -du * I.S + dv * I.C);
+  const eu = Math.cos(IBASE.ang), ev = Math.sin(IBASE.ang), K = I.ISLANDS.find(q => q.id === 'mesa');
+  const walkTo = (x, z, v, clip) => { const dx = x - p.x, dz = z - p.z, L = Math.hypot(dx, dz); if (L < .12) return 1;
+    const s = Math.min(L, v * dt); p.x += dx / L * s; p.z += dz / L * s; d.h = Math.atan2(dx, dz); t[clip] = 1; return 0; };
+  const gWalk = () => { const g = groundAt(p.x, p.z, p.y + .5, .6); p.y = g > sea - .3 ? g : sea - .3; };
+  if (R.st === 'lost') {            // knocked out of it: back over the top to the deck if on the mesa, else swim
+    const [u, v] = islLocal(p.x, p.z), onTop = p.y > sea + K.h - 2 && Math.hypot(u - K.u, v - K.v) < K.r * .6, g = groundAt(p.x, p.z, p.y + .5, 1.5);
+    R.flatY = null;
+    if (onTop) { R.wp = [D.P(D.s0 - 1.5, 0), D.P(D.s0 + 4.5, 0)].map(q => W(...q)); R.st = 'walk'; R.then = 'wait'; }
+    else if (g > sea - .3) { const b = isJumpBeach(R, Math.atan2(v - K.v, u - K.u)); if (b) { R.lad = b.lad; R.wp = b.wp.map(q => W(...q)); R.st = 'walk'; R.then = 'climb'; } else R.st = 'swim'; }
+    else { R.st = 'swim'; R.tgt = null; }
+  }
+  if (R.st === 'wait') {
+    const [x, z] = W(...D.P(D.s0 + 4.5, 0));
+    if (!walkTo(x, z, J.walkV, d.K.clips.walk)) return 1;
+    p.y = D.y; d.h = hdF(eu, ev); t[d.K.clips.idle] = 1;
+    R.t -= dt; if (R.t <= 0 && Math.hypot(player.pos.x - p.x, player.pos.z - p.z) < J.near) R.st = 'run';
+    return 1;
+  }
+  if (R.st === 'run') {
+    const [x, z] = W(...D.P(D.s1 - .25, 0)); p.y = D.y;
+    if (!walkTo(x, z, J.runV, d.K.clips.run)) return 1;
+    const [wx, wz] = [eu * I.C + ev * I.S, -eu * I.S + ev * I.C];
+    R.vx = wx * J.leapV; R.vz = wz * J.leapV; R.vy = J.leapUp; R.st = 'free'; R.t = 0; J.jumps++;
+    snd('swoosh', { x: p.x, z: p.z, g: .35, r: .8 });
+  }
+  if (R.st === 'free' || R.st === 'canopy') {
+    R.t += dt;
+    if (R.st === 'free') { R.vy -= J.g * dt; t[isLoop(d, 'flying_forwards')] = 1; d.h = Math.atan2(R.vx, R.vz);
+      if (R.t > J.free) { R.st = 'canopy'; R.t = 0; R.open = 0; snd('swoosh', { x: p.x, z: p.z, g: .4, r: .55 });
+        // back toward the mesa: the water off the nearer ladder's side, so the swim in is short
+        const [u, v] = islLocal(p.x, p.z), a = Math.atan2(v - K.v, u - K.u), b = isJumpBeach(R, a), la = b ? Math.atan2(b.lad.v - K.v, b.lad.u - K.u) : a, ta = a + Math.atan2(Math.sin(la - a), Math.cos(la - a)) * .5;
+        R.tgt = W(K.u + Math.cos(ta) * K.r * 1.25, K.v + Math.sin(ta) * K.r * 1.25); } }
+    else {
+      R.open = Math.min(1, R.open + dt / J.openT);
+      const want = Math.atan2(R.tgt[0] - p.x, R.tgt[1] - p.z), h0 = Math.atan2(R.vx, R.vz), dh = Math.atan2(Math.sin(want - h0), Math.cos(want - h0)), h = h0 + clamp(dh, -J.turn * dt, J.turn * dt);
+      const sp = lerp(Math.hypot(R.vx, R.vz), J.glide, Math.min(1, dt * 1.5)); R.vx = Math.sin(h) * sp; R.vz = Math.cos(h) * sp;
+      R.vy = lerp(R.vy, -J.sink, Math.min(1, dt * 2.5)); d.h = h; t[isLoop(d, 'bar_hang_idle')] = 1;
+    }
+    p.x += R.vx * dt; p.y += R.vy * dt; p.z += R.vz * dt;
+    const C = J.canopy; if (C) { C.visible = R.st === 'canopy'; C.position.copy(p); C.rotation.set(0, d.h, 0); C.scale.set(.2 + .8 * (R.open || 0), 1, 1); }
+    // into the water (or, steered badly, onto something)
+    const g = groundAt(p.x, p.z, p.y + .3, .3);
+    if (p.y <= sea + .05 || (g > sea && p.y <= g + .05)) {
+      if (g > sea && p.y <= g + .05) { p.y = g; R.st = 'lost'; }
+      else { p.y = sea - J.swimDip; R.st = 'swim'; R.tgt = null; J.splashes++; try { isleSplash(p.x, p.z, .7); } catch (e) {} snd('thud', { x: p.x, z: p.z, g: .35, r: .6 }); }
+      if (C) R.floatT = 1.2;           // the canopy comes down onto the water over her, then it is gone
+    }
+    return 1;
+  }
+  if (J.canopy && R.floatT > 0) { R.floatT -= dt; const C = J.canopy; C.position.set(p.x, sea, p.z); C.scale.y = Math.max(.02, R.floatT / 1.2); if (R.floatT <= 0) { C.visible = false; C.scale.y = 1; } }
+  if (R.st === 'swim') {
+    const [u, v] = islLocal(p.x, p.z), a = Math.atan2(v - K.v, u - K.u), Ra = K.r * (1 + .14 * (2 * I.noise(a + K.u * .1) - 1));
+    if (!R.tgt) R.tgt = W(K.u + Math.cos(a) * Ra * .8, K.v + Math.sin(a) * Ra * .8);
+    p.y = sea - J.swimDip + Math.sin(d.t * 3) * .05;
+    walkTo(R.tgt[0], R.tgt[1], J.swimV, isLoop(d, 'flying_forwards'));
+    if (Math.random() < dt * 4) try { spkBurst(p.x, sea + .1, p.z, 2, { col: [.85, .95, 1], spread: .8, up: 1, r: .3, size: .06, life: .4 }); } catch (e) {}
+    if (groundAt(p.x, p.z, sea + 1.5, 2) > sea - .45) { const b = isJumpBeach(R, a); if (!b) { R.st = 'lost'; return 1; }
+      R.lad = b.lad; R.wp = b.wp.map(q => W(...q)); R.st = 'walk'; R.then = 'climb'; gWalk(); }
+    return 1;
+  }
+  if (R.st === 'walk') {
+    if (!R.wp || !R.wp.length) { R.st = R.then || 'wait'; if (R.st === 'wait') R.t = J.wait[0] + Math.random() * (J.wait[1] - J.wait[0]); return 1; }
+    const [x, z] = R.wp[0]; if (R.flatY != null) p.y = R.flatY; else gWalk();     // off the ladder's top: level until she is over the top
+    if (walkTo(x, z, J.walkV, d.K.clips.walk)) { R.wp.shift(); R.flatY = null; }
+    return 1;
+  }
+  if (R.st === 'climb') {
+    const L = R.lad, [x, z] = W(L.u, L.v), [ix, iz] = W(K.u, K.v); p.x = x; p.z = z; d.h = Math.atan2(ix - x, iz - z);     // facing the rock
+    if (p.y < L.y0) p.y = L.y0;
+    p.y += J.climbV * dt; t[isLoop(d, 'climb_ladder')] = 1;
+    if (p.y >= L.top) { p.y = L.top; J.climbs++; R.wp = [[L.mu, L.mv], D.P(D.s0 - 1.5, 0), D.P(D.s0 + 4.5, 0)].map(q => W(...q)); R.flatY = L.top; R.st = 'walk'; R.then = 'wait'; }
+    return 1;
+  }
+  return 0;
+}
+// the kite surfers: their loop, their board, their kite; the jump the kite gives them
+function isKite(d, dt, t) {
+  const R = d.ikR; if (!R) return 0;
+  const U = IKITE, B = R.B, I = ISLES, sea = ISLE.sea, p = d.root.position;
+  if (!U.on || (d.st !== 'idle' && d.st !== 'kite')) { if (R.kite) R.kite.visible = false; d.root.rotation.z = 0; if (d.st === 'kite') d.st = 'idle'; return 0; }
+  d.st = 'kite';
+  const [ra, rb] = B.r, du = -ra * Math.sin(R.th), dv = rb * Math.cos(R.th), L = Math.hypot(du, dv);
+  R.th += B.dir * U.v / L * dt;
+  const [x, z] = islWorld(B.c[0] + ra * Math.cos(R.th), B.c[1] + rb * Math.sin(R.th)), h = Math.atan2((du * I.C + dv * I.S) * B.dir, (-du * I.S + dv * I.C) * B.dir);
+  const turn = Math.atan2(Math.sin(h - d.h), Math.cos(h - d.h)) / Math.max(dt, 1e-4);
+  p.x = x; p.z = z; d.h = h;
+  R.jt -= dt;
+  if (!R.air && R.jt <= 0) { R.air = 1; R.vy = U.pop; U.jumps++; R.jt = U.gap[0] + Math.random() * (U.gap[1] - U.gap[0]); }
+  if (R.air) { R.vy -= U.g * dt; R.y += R.vy * dt; if (R.y <= sea + .05) { R.y = sea + .05; R.air = 0; try { isleSplash(x, z, .3); } catch (e) {} } }
+  else { R.y = sea + .05 + Math.sin(d.t * 2.3 + B.dir) * .05;
+    R.spT -= dt; if (R.spT <= 0) { R.spT = .09; try { spkBurst(x - Math.sin(h) * .7, sea + .1, z - Math.cos(h) * .7, 2, { col: [.88, .96, 1], spread: 1.4, up: 1.6, r: .25, size: .07, life: .45 }); } catch (e) {} } }
+  p.y = R.y;
+  d.root.rotation.z = damp(d.root.rotation.z, clamp(-turn * .25, -.3, .3), .2, dt);
+  t[isLoop(d, R.air ? 'skate_ollie_air' : 'skate_idol_crouch')] = 1;
+  // the kite: downwind, high, sweeping; higher while it is lifting them
+  const [wu, wv] = U.wind, wl = Math.hypot(wu, wv), wx = (wu * I.C + wv * I.S) / wl, wz = (-wu * I.S + wv * I.C) / wl, sw = Math.sin(d.t * .7 + B.dir * 2) * .7;
+  const hx = wx * Math.cos(sw) - wz * Math.sin(sw), hz = wx * Math.sin(sw) + wz * Math.cos(sw), el = U.el + (R.air ? .35 : 0);
+  _ikD.set(hx * Math.cos(el), Math.sin(el), hz * Math.cos(el)); _ikX.set(-_ikD.z, 0, _ikD.x).normalize(); _ikZ.crossVectors(_ikX, _ikD);
+  _ikM.makeBasis(_ikX, _ikD, _ikZ); R.kite.quaternion.setFromRotationMatrix(_ikM); R.kite.position.set(x, p.y, z); R.kite.visible = true;
+  return 1;
+}
+const _ikD = new THREE.Vector3(), _ikX = new THREE.Vector3(), _ikZ = new THREE.Vector3(), _ikM = new THREE.Matrix4();
+// the moving people's marks (built with the islands) and their binding to bodies every frame
+function buildIslandMovers() {
+  const U = IKITE, I = ISLES; if (!U.on || !I.live) return 0;
+  const sea = ISLE.sea; U.list = [];
+  for (const B of U.RIDERS) { const [x, z] = islWorld(B.c[0] + B.r[0], B.c[1]);
+    peopleMark(B.id, x, z, 0, Object.assign({ group: 'city', talks: ['city', 'street', 'worker'], alien: 'flee' }, B), sea + .05, 'IKITE', 'city');
+    U.list.push({ B, d: null, th: 0, y: sea + .05, vy: 0, air: 0, jt: 3 + Math.random() * 6, spT: 0, kite: null }); }
+  return U.list.length;
+}
+function islMoversStep(dt) {
+  if (!inTK() || !ISLES.live) return;
+  const J = IJUMP;
+  if (J.on && IBASE.deck) {
+    if (J.R && J.R.d && J.R.d.gone) J.R = null;
+    if (!J.R) { const d = DUMMIES.find(q => q.markId === J.id && !q.gone); if (d) { J.R = { d, st: 'wait', t: 4 + Math.random() * 6 }; d.ijR = J.R; if (!J.canopy) J.canopy = isWing(4, 1.5, 2.2, 0xff4a3a, 0xffd23a, 6.6, 1.95); } }
+  }
+  for (const R of IKITE.list) {
+    if (R.d && R.d.gone) R.d = null;
+    if (!R.d) { const d = DUMMIES.find(q => q.markId === R.B.id && !q.gone); if (!d) continue; R.d = d; d.ikR = R;
+      if (!R.kite) R.kite = isWing(3, 1.8, 1.6, R.B.cols[0], R.B.cols[1], IKITE.line, 1.0);
+      const board = new THREE.Mesh(new THREE.BoxGeometry(.42, .05, 1.35), new THREE.MeshStandardMaterial({ color: R.B.cols[1], roughness: .5 })); board.position.y = .03; d.root.add(board); }
+  }
+}
+// ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
 // ============================================================================================
 // Irregular patches of wheat, corn, ploughed earth, hay meadow and pasture, divided by hedgerows, fences, tree lines and
@@ -39372,7 +39557,7 @@ function stepDummies(dt) {
     // without a gate in each of them.
     // AND THE MOTORCYCLE'S RIDER IS THE SAME SHAPE ONE VEHICLE OVER (m107) -- above the brain,
     // for the same reason: a man on a bike has no gait, no roam and nothing to be separated from.
-    if ((K.pal && stepPack(d, dt, t)) || stepRide(d, dt, t) || motoSeek(d, dt, t) || wfRide(d, dt, t) || wfBot(d, dt, t)) {      // m379: a rider of Uplift's line
+    if ((K.pal && stepPack(d, dt, t)) || stepRide(d, dt, t) || motoSeek(d, dt, t) || wfRide(d, dt, t) || wfBot(d, dt, t) || isJump(d, dt, t) || isKite(d, dt, t)) {      // m379: a rider of Uplift's line; m392 the islands' jumper and kite surfers
       skinWeights(d, t, dt, .06, K.clips.idle);
       bodyMix(d, dt);
       d.root.rotation.y = d.h + d.faceOff + (d.spin || 0);
@@ -40496,6 +40681,7 @@ function frameBody() {
   wfSecStep(dt);                // Uplift's gate and the bridge's control box, for an engineer (m383)
   wfTurretStep(dt);             // Uplift's turrets: they fire on strangers; an engineer turns them (m384)
   wfBotStep(dt);                // Uplift's robots, bound to their bodies (m385); `wfBot` drives them in `stepDummies`
+  islMoversStep(dt);            // the islands' BASE jumper and kite surfers, bound to their bodies (m392); `isJump` / `isKite` drive them
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)
@@ -41231,6 +41417,7 @@ async function init() {
     try { buildIslands(); } catch (e) { ISLES.live = 0; note('ISLANDS FAIL'); console.warn('[melee] islands', e); }
     try { buildIslandSkate(); } catch (e) { note('SKATE FAIL'); console.warn('[melee] island skate park', e); }
     try { buildIslandBase(); } catch (e) { note('BASE FAIL'); console.warn('[melee] island exit point and ramp', e); }
+    try { buildIslandMovers(); } catch (e) { note('MOVERS FAIL'); console.warn('[melee] island kite surfers', e); }
     // AND THE SWING BRIDGE (m382): the second way over, before the city ring keeps its trees off its landing
     try { buildSwing(); } catch (e) { note('SWING FAIL'); console.warn('[melee] swing bridge', e); }
     // ITS CREEK AND POND (m307): what stands in and over the valley and the bowl the land is carved with
@@ -41482,7 +41669,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
