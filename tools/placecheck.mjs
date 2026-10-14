@@ -810,6 +810,30 @@ const walkUp = (pts, y0) => { let y = y0; for (let i = 0; i < pts.length - 1; i+
   why = onBeach ? 'OLD TOWN COUNTS AS THE ISLANDS' : !onRock ? 'ARRIVING IS NOT NOTICED' : !q ? 'NO CHAPTER 5' : npcs.some(n => /MISSING/.test(n)) ? 'A STEP POINTS AT NOBODY' : ats.some(a => a !== 'ok') ? 'A STEP POINTS NOWHERE' : '';
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + 'CH5', r, why); }
+// ---- THE GAPS (m397): off the lip at 15 / 17 / 19 m/s (its own angle, the game's g): where each comes down, the landing ramp
+// or the mesa's beach being dry, the sea wet -- the board's top speed has to make it; the shipped gap detector (`islXingStep`)
+// counts a flight off the lip that comes down on the landing and does not count one that comes down back on the humps
+{ const B = M.IBASE, Rp = B.ramp, X = M.IXING, sea = M.ISLE.sea; let r = 'NOT BUILT', why = '';
+  if (Rp && Rp.land) {
+    const W = (u, v) => M.islWorld(u, v), PL = Rp.pts[Rp.pts.length - 1], P1 = Rp.pts[Rp.pts.length - 2], th = Math.atan2(PL[1] - P1[1], PL[0] - P1[0]);
+    const fly = v => { let s = PL[0], y = PL[1], vs = v * Math.cos(th), vy = v * Math.sin(th); for (let k = 0; k < 2000; k++) { const h = .005; s += vs * h; y += vy * h; vy -= M.MOVE.g * h; const [x, z] = W(...Rp.R(s, 0)), g = M.groundAt(x, z, y + .3, .3);
+        if (vy < 0 && y <= g) return { s: s - PL[0], dry: g > sea + .05 }; if (y <= sea) return { s: s - PL[0], dry: false }; } return { s: 0, dry: false }; };
+    const shots = [15, 17, 19].map(v => [v, fly(v)]);
+    // the detector
+    const p = M.player, F = M.SAVE.flags, keep = { pos: p.pos.clone(), g: p.grounded, w: p.wing }, was = F['isl:gap'], at = (s, dy) => { const [x, z] = W(...Rp.R(s, 0)); return [x, (dy == null ? M.groundAt(x, z, 60, 80) : dy), z]; };
+    delete F['isl:gap']; p.wing = 0; X.wasWing = 0; X.gapArm = 0;
+    p.pos.set(...at(PL[0], PL[1] + .6)); p.grounded = false; M.islXingStep(1 / 30); p.pos.set(...at(PL[0] - 5)); p.grounded = true; M.islXingStep(1 / 30); const back = !!F['isl:gap'];
+    p.pos.set(...at(PL[0], PL[1] + .6)); p.grounded = false; M.islXingStep(1 / 30); const sm = (Rp.land.sA + Rp.land.sB) / 2, [lx, lz] = W(...Rp.R(sm, 0)); p.pos.set(lx, M.groundAt(lx, lz, Rp.land.yA + 1, 3), lz); p.grounded = true; M.islXingStep(1 / 30); const over = !!F['isl:gap'];
+    if (was) F['isl:gap'] = was; else delete F['isl:gap']; p.pos.copy(keep.pos); p.grounded = keep.g; p.wing = keep.w; X.gapArm = 0;
+    const q = M.QUESTS.find(q => q.id === 'ch5b'), nd = M.ISLES.needleAt;
+    r = 'the landing ' + (Rp.land.sA - PL[0]).toFixed(0) + '-' + (Rp.land.sB - PL[0]).toFixed(0) + ' m past the lip, ' + (Rp.land.yA - sea).toFixed(1) + ' > ' + (Rp.land.yB - sea).toFixed(1) + ' over the sea | off the lip (' + (th * 180 / Math.PI).toFixed(0) + ' deg): ' +
+      shots.map(([v, o]) => v + ' m/s comes down ' + o.s.toFixed(1) + ' m out ' + (o.dry ? 'dry' : 'in the sea')).join(', ') + ' | the detector: back on the humps ' + (back ? 'COUNTED' : 'not counted') + ', down on the landing ' + (over ? 'counted' : 'NOT COUNTED') +
+      ' | ch5b ' + (q ? q.steps.map(s => s.type).join(' > ') + (q.needQ ? ' after ' + q.needQ : '') : 'MISSING') + ' | the needle\'s top ' + (nd ? (nd[1] - sea).toFixed(1) : '-');
+    // the landing is what makes it a jump rather than a coin toss: without it only the very top speed scrapes the beach (20.1 m)
+    why = !shots[1][1].dry ? 'THE GAP CANNOT BE CLEARED SHORT OF THE BOARD\'S TOP SPEED' : back ? 'COMING DOWN SHORT COUNTS' : !over ? 'CLEARING IT DOES NOT COUNT' : !q ? 'NO GAPS QUEST' : !nd || nd[1] - sea < 30 ? 'THE NEEDLE\'S TOP IS NOT ITS TOP' : '';
+  } else why = 'NOT BUILT';
+  if (why) bad++;
+  quiet((why ? 'BAD ' : 'ok  ') + 'GAPS', r, why); }
 // ---- HOLLOW CREEK'S LAND (m365): built, clear of every other land (its coast sampled against the farm's, the island's
 // rectangle and The Pearl's), the gorge cut at least 5 m under its rims down its length and running out to the sea, the
 // two flats level, and a forest standing on it

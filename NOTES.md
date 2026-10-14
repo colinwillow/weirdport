@@ -7,6 +7,20 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE GAPS: THE LANDING RAMP AND THE GAP DETECTOR (m397, C6-7e-2, quest `ch5b`, `IBASE.landAt/landDrop/landW`,
+  `IBASE.ramp.land`, `isl:gap` in `islXingStep`).** **THE GAP WAS A COIN TOSS AND THE ROW MEASURED IT**: off m391's lip at
+  25 deg, the game's g (20, not 9.8), from 2.9 m over the beach, a board at its top speed (19 m/s) comes down 19.8 m out, and
+  the water is 20 m wide. So the gap side got **a landing**: a straight timber ramp on piles out of the water, from 13 m past
+  the lip and 1.6 m under it down to the mesa's beach, with a yellow top edge as the target. 17 m/s and up lands dry on it;
+  15 hits its front face (TRI has no walls, so it falls through to the sea, which is the right answer for the wrong reason).
+  **THE TEETH NEEDED THE RIGHT SPEED**: with the landing pushed out of reach, 19 m/s STILL scrapes the beach at 20.1 m, so a
+  gate on top speed passed with and without the landing. The gate is 17 m/s, which is what the landing is for.
+  **THE DETECTOR** projects him onto the ramp's own axis (`IBASE.ramp.dir`). In the air within 3 m of the lip and over its
+  height arms it; coming down dry 12 m or more past it (and within 8 m of the line) is a clear; coming down anywhere else,
+  or after 6 s, disarms it. The sea's put-back sets him down on the humps, which is short, so it never counts.
+  **`npm run places`, exit 0**:
+      ok  GAPS the landing 13-22 m past the lip, 2.9 > 0.8 over the sea | off the lip (25 deg): 15 m/s comes down 14.5 m out in the sea, 17 m/s comes down 14.3 m out dry, 19 m/s comes down 18.6 m out dry | the detector: back on the humps not counted, down on the landing counted | ch5b flag > flag > reach after ch5 | the needle's top 34.1 
+
 - **CHAPTER 5 OPENS (m396, C6-7e-1, quest `ch5`, `isl:in` in `islXingStep`, `IXING.beachAt`).** REGIONS 8 gives the islands
   no villain, so the story is a Decision: **the lighthouse keeper is a Skinsuit** guiding the Mothership in, with his lamp
   pointing up the tether at night. **Rollergirl says it first**: she is one of GAME_DESIGN's hidden good aliens ("an Easter
