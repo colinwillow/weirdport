@@ -214,6 +214,10 @@ differ" table there, so no region feels like the last one.
   - Chapter 0 uses it: the farmer's family brush off the alien; as the farmer, a neighbour at the
     farm shop gives you the bridge task (marker + waypoint) and a rumour about the man at the top of
     the hill (no marker).
+  - [x] m330 **B1f-1** the "New task" card, the task list (tap the objective), several tasks with one followed, the waypoint's distance in the world, and the same metres on the map.
+  - [ ] **B1f-2** rumours: a separate list, no marker (or a rough circle), resolved when you find the thing.
+  - [ ] **B1f-3** who talks to whom: forms a speaker talks to, forms it brushes off (a short line), the alien makes it flee; a task can need a form to start.
+  - [ ] **B1f-4** Chapter 0 uses it: the farmer's family brush off the alien; as the farmer, the neighbour at the farm shop gives the bridge task and the hill rumour.
 - [ ] **B2 Chapter 0 script.** Crash → find Clancy → the farmer sees you and panics → knock him
   down → take his sample → walk to the bridge as him → the cop checkpoint lets the farmer through
   (and stops the alien) → Old Town, fog lifts. Tutorial prompts along the way.
@@ -621,3 +625,13 @@ differ" table there, so no region feels like the last one.
 
   The 6 m alien range means walking up to cows as yourself always sets them off. That's on purpose:
   being a farmhand is how you get close. `mel.COW.alienR` is the dial.
+
+
+- **m330 (B1f-1):** B1f is split in four: tasks, rumours, who talks to whom, then Chapter 0 using
+  them. The tasks part:
+  - A "NEW TASK" card when a task arrives.
+  - Tap the objective at the top to open the task list; tap a task to follow it.
+  - The followed task's waypoint has a gold distance label over it, pinned to the screen edge with
+    an arrow when it's off screen. The full map shows the same metres by its gold dot.
+  - No real tasks exist until Chapter 0 (B2). To try it: GOD → THE STAND-IN TASKS, then tap the
+    objective.

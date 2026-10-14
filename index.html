@@ -391,7 +391,7 @@ body.dyn.desk .zone { display: none; }
    top-left and the weapon top-right. Dark pill so it reads on the white floor and the sky. */
 #obj {
   position: fixed; left: 50%; top: calc(12px + env(safe-area-inset-top)); transform: translateX(-50%);
-  z-index: 5; display: none; pointer-events: none; max-width: 48vw; text-align: center;
+  z-index: 5; display: none; pointer-events: auto; cursor: pointer; max-width: 48vw; text-align: center;
   background: rgba(11,13,18,.78); border: 2px solid var(--sky); border-radius: 8px; padding: 3px 10px 4px;
   font-family: var(--ui); color: #fff; line-height: 1.15; transition: transform .2s ease, border-color .2s ease;
 }
@@ -399,6 +399,25 @@ body.dyn.desk .zone { display: none; }
 #obj.pulse { border-color: var(--sun); transform: translateX(-50%) scale(1.08); }
 #obj b { display: block; font-family: var(--disp); font-size: 9px; letter-spacing: .1em; color: var(--sky); font-weight: 400; }
 #obj i { font-style: normal; font-size: 14px; font-weight: 600; }
+/* THE TASK LIST (m330, B1f-1): tap the objective. Same panel as GOD's, sky-bordered: tap a task to follow it. */
+#tasks { position: fixed; inset: 0; z-index: 10; display: none; background: rgba(11,13,18,.55); }
+#tasks.on { display: block; }
+#tasks .gp { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(92vw, 460px); max-height: 80vh;
+  overflow-y: auto; -webkit-overflow-scrolling: touch; background: #0f131bf2; border: 2px solid var(--sky); border-radius: 10px; padding: 10px 12px 14px; }
+#tasks h3 { margin: 2px 0 6px; font-family: var(--disp); font-weight: 400; font-size: 16px; color: var(--sky); }
+#tasks h4 { margin: 10px 0 4px; font-family: var(--ui); font-size: 11px; letter-spacing: .16em; color: #ffffff88; }
+#tasks .gl b { display: block; margin: 4px 0; padding: 8px 10px; border-radius: 6px; background: #1b2230; color: #fff; border-left: 4px solid transparent;
+  font-family: var(--disp); font-weight: 400; font-size: 13px; cursor: pointer; }
+#tasks .gl b small { display: block; margin-top: 2px; font-family: var(--ui); font-weight: 600; font-size: 13px; color: #cfe8ffcc; }
+#tasks .gl b.trk { border-left-color: var(--sun); }
+#tasks .gl b.done { opacity: .45; }
+#tasks .gl p { margin: 6px 2px; font-family: var(--ui); font-size: 13px; color: #ffffffaa; }
+#tasks .gx { position: absolute; right: 10px; top: 6px; font-size: 18px; color: #fff; cursor: pointer; padding: 4px 8px; }
+/* THE WAYPOINT'S DISTANCE (m330): over the beam, or pinned to the side the target is on when it is off screen */
+#wpt { position: fixed; left: 0; top: 0; z-index: 4; display: none; pointer-events: none; white-space: nowrap;
+  font-family: var(--disp); font-size: 13px; color: var(--ink); background: var(--sun); border: 2px solid var(--ink); border-radius: 7px; padding: 1px 6px 2px; }
+#wpt.on { display: block; }
+#wpt i { font-style: normal; display: inline-block; margin-right: 4px; }
 /* THE STARS (m280): under the weapon chip, top-right. Hidden at none; a level gained flashes. */
 #stars { position: fixed; top: calc(62px + env(safe-area-inset-top)); right: calc(12px + env(safe-area-inset-right));
   z-index: 5; pointer-events: none; opacity: 0; transition: opacity .3s ease; font-family: var(--disp); font-size: 20px; letter-spacing: 2px; }
@@ -710,10 +729,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m329</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m330</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m329</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m330</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -727,6 +746,8 @@ body.desk.free #deskHint { display: block; }
 <div class="pad" id="padR"><div class="knob"></div><div class="hint">look &middot; tap = jump</div></div>
 <div id="talk"><span class="nm"></span><span class="tx"></span><span class="go"></span></div>
 <div id="obj" aria-hidden="true"><b></b><i></i></div>
+<div id="wpt" aria-hidden="true"><i>&#9660;</i><span></span></div>
+<div id="tasks" aria-hidden="true"><div class="gp"><b class="gx">&#10005;</b><h3>TASKS</h3><div class="gl"></div></div></div>
 <div id="stars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 <div id="samp" aria-hidden="true"><b>DNA</b></div>
 <div id="formRow" aria-hidden="true"></div>
@@ -795,7 +816,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm329';
+const BUILD = 'm330';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -27787,9 +27808,16 @@ const QUESTS = [
     { type: 'defeat', n: 1, text: 'Knock somebody down' },
     { type: 'reach',  y: 3, text: 'Get up high: a roof, a ladder, a stack of anything' },
   ] },
+  // DORMANT (m330): a second stand-in, so the task list has two to choose between. Its steps point at places that exist
+  // (the silo's landing, the terrace's top, the bridge's checkpoint) through `at`, read live. GOD: THE STAND-IN TASKS.
+  { id: 'qtour', title: 'THE LAY OF THE LAND', dormant: 1, world: 'tkit', steps: [
+    { type: 'reach', at: () => FARM.siloTop, r: 3, text: 'Climb the silo' },
+    { type: 'reach', at: () => FTERR.at, r: 7, text: 'Up to the top of the orchard terrace' },
+    { type: 'goto',  at: () => BRIDGE.gate && [BRIDGE.gate.x, BRIDGE.gate.z], r: 8, text: 'Down to the bridge checkpoint' },
+  ] },
 ];
 const quest = { cur: null, step: -1, base: 0, cnt: 0, beam: null, line: null, card: null,
-  last: '', pulse: 0, tgt: null, d: 0 };
+  last: '', pulse: 0, tgt: null, d: 0, newT: 0, wpt: null, wptOn: 0, wptTxt: '' };
 function questBeam() {
   if (quest.beam) return quest.beam;
   const g = new THREE.CylinderGeometry(QUEST.beamR, QUEST.beamR, QUEST.beamH, 12, 1, true);
@@ -27802,14 +27830,60 @@ function questBeam() {
   return quest.beam;
 }
 const questOf = id => QUESTS.find(q => q.id === id);
+// THE TASKS YOU HAVE (m330, B1f-1): every quest unlocked and not done, in table order. Several at once now, so the
+// one the objective line, the beam, the waypoint and the map all follow is the TRACKED one (`qtrack` in the save,
+// picked in the task list), else the first.
+const questAvail = () => QUESTS.filter(q => !SAVE.flags['qdone:' + q.id] && (!q.world || q.world === WORLD.now) &&
+  (!q.dormant || SAVE.flags['qon:' + q.id]));                // m293: a stand-in waits to be switched on
 function questPick() {
-  for (const q of QUESTS) {
-    if (SAVE.flags['qdone:' + q.id]) continue;
-    if (q.world && q.world !== WORLD.now) continue;
-    if (q.dormant && !SAVE.flags['qon:' + q.id]) continue;     // m293: a stand-in waits to be switched on
-    return q;
+  const A = questAvail();
+  return A.find(q => q.id === SAVE.flags.qtrack) || A[0] || null;
+}
+function questTrack(id) { progFlag('qtrack', id); quest.cur = null; }
+// the task list: what you have (tap one to follow it), then what you have done
+function tasksOpen(on) {
+  const M = document.getElementById('tasks'); if (!M) return;
+  if (!M._wired) {
+    M._wired = 1;
+    M.addEventListener('pointerdown', e => { e.stopPropagation(); if (e.target === M || e.target.classList.contains('gx')) { e.preventDefault(); tasksOpen(0); } });
+    M.addEventListener('pointerup', e => { e.stopPropagation(); const b = e.target.closest('b'); if (b && b._f) b._f(); });
   }
-  return null;
+  if (!on) { M.classList.remove('on'); return; }
+  const L = M.querySelector('.gl'); while (L.firstChild) L.removeChild(L.firstChild);
+  const h = t => { const e = document.createElement('h4'); e.textContent = t; L.appendChild(e); };
+  const A = questAvail();
+  h('ON THE GO');
+  if (!A.length) { const p = document.createElement('p'); p.textContent = 'Nothing yet. Somebody will have something for you.'; L.appendChild(p); }
+  for (const q of A) {
+    const i = q === quest.cur ? quest.step : (SAVE.flags['q:' + q.id] | 0), st = q.steps[Math.min(i, q.steps.length - 1)];
+    const b = document.createElement('b'); b.textContent = q.title + (q === quest.cur ? '  ·  FOLLOWING' : '');
+    const sm = document.createElement('small'); sm.textContent = st.text + (q === quest.cur && quest.tgt ? ' · ' + Math.round(quest.d) + ' m' : ''); b.appendChild(sm);
+    if (q === quest.cur) b.className = 'trk';
+    b._f = () => { questTrack(q.id); tasksOpen(0); toast('Following: ' + q.title, 1.4); };
+    L.appendChild(b);
+  }
+  const D = QUESTS.filter(q => SAVE.flags['qdone:' + q.id]);
+  if (D.length) { h('DONE'); for (const q of D) { const b = document.createElement('b'); b.textContent = q.title; b.className = 'done'; L.appendChild(b); } }
+  M.classList.add('on');
+}
+// THE WAYPOINT'S DISTANCE IN THE WORLD (m330): a label over the beam, the same `quest.d` the objective line and the map
+// print; off screen it is pinned to the side the target is on, with an arrow. AFTER the camera (`frame`), or it trails.
+const _wpV = new THREE.Vector3();
+function questWpt() {
+  const el = quest.wpt || (quest.wpt = document.getElementById('wpt')); if (!el) return;
+  const T = QUEST.on && quest.cur && quest.tgt;
+  if (!T || quest.d < 6) { if (quest.wptOn) { el.classList.remove('on'); quest.wptOn = 0; } return; }
+  _wpV.set(T.x, (T.y || 0) + 2.4, T.z).applyMatrix4(camera.matrixWorldInverse);    // camera space: x right, -z ahead
+  const W = innerWidth, H = innerHeight, m = 34, ahead = -_wpV.z, side = _wpV.x >= 0 ? 1 : -1;
+  let x, y, arr = '\u25BC';
+  if (ahead > .5) { _wpV.applyMatrix4(camera.projectionMatrix); x = (_wpV.x * .5 + .5) * W; y = (-_wpV.y * .5 + .5) * H; }
+  if (!(ahead > .5) || x < m || x > W - m || y < m + 50 || y > H - m) {
+    x = side > 0 ? W - m : m; y = clamp(y === undefined ? H * .42 : y, m + 50, H * .62); arr = side > 0 ? '\u25B6' : '\u25C0';
+  }
+  const txt = arr + Math.round(quest.d) + ' m';
+  if (txt !== quest.wptTxt) { quest.wptTxt = txt; el.querySelector('i').textContent = arr; el.querySelector('span').textContent = Math.round(quest.d) + ' m'; }
+  el.style.transform = 'translate(' + x.toFixed(0) + 'px,' + y.toFixed(0) + 'px) translate(-50%, -100%)';
+  if (!quest.wptOn) { el.classList.add('on'); quest.wptOn = 1; }
 }
 function questEnter(q, i) {
   quest.cur = q; quest.step = i; quest.cnt = 0; quest.base = talk.heard || 0;
@@ -27833,15 +27907,18 @@ function questTest(s) {
     }
     case 'goto': {
       let x = s.x, z = s.z;
-      if (s.mark) { const M = mkrFind('goal', s.mark); if (!M) return false; x = M.x; z = M.z; quest.tgt = M; }
+      if (s.at) { const a = s.at(); if (!a) return false; x = a[0]; z = a[1]; quest.tgt = { x, y: 0, z }; }
+      else if (s.mark) { const M = mkrFind('goal', s.mark); if (!M) return false; x = M.x; z = M.z; quest.tgt = M; }
       else if (s.who) { const b = questNear(d => mphName(d.K) === s.who); if (!b) return false; x = b.root.position.x; z = b.root.position.z; quest.tgt = b.root.position; }
       else quest.tgt = { x, y: 0, z };
       return Math.hypot(P.x - x, P.z - z) < (s.r || 3);
     }
     case 'reach': {
-      if (s.x !== undefined) quest.tgt = { x: s.x, y: s.y, z: s.z };
-      const inR = s.x === undefined || Math.hypot(P.x - s.x, P.z - s.z) < (s.r || 4);
-      return inR && p.grounded && P.y >= s.y;
+      let x = s.x, y = s.y, z = s.z;
+      if (s.at) { const a = s.at(); if (!a) return false; x = a[0]; y = a[1] - .3; z = a[2]; }      // m330: a place read live
+      if (x !== undefined) quest.tgt = { x, y, z };
+      const inR = x === undefined || Math.hypot(P.x - x, P.z - z) < (s.r || 4);
+      return inR && p.grounded && P.y >= y;
     }
     case 'defeat': {
       const want = d => !d.wasK && (!s.who || mphName(d.K) === s.who);
@@ -27863,6 +27940,12 @@ function questStep(dt) {
   if (!quest.line) { quest.line = document.getElementById('obj'); quest.card = document.getElementById('qdone'); }
   const beam = questBeam();
   if (!QUEST.on) { beam.visible = false; if (quest.line) quest.line.classList.remove('on'); return; }
+  // m330: A NEW TASK GETS A CARD, once (`qseen:` in the save), one card at a time
+  if ((quest.newT -= dt) <= 0) for (const q of questAvail()) if (!SAVE.flags['qseen:' + q.id]) {
+    progFlag('qseen:' + q.id); cardShow('NEW TASK', q.title); quest.newT = QUEST.doneT + .4; break; }
+  if (quest.line && !quest.line._wired) { quest.line._wired = 1;
+    quest.line.addEventListener('pointerdown', e => e.stopPropagation());
+    quest.line.addEventListener('pointerup', e => { e.stopPropagation(); tasksOpen(1); }); }
   if (!quest.cur) {
     const q = questPick();
     if (!q) { beam.visible = false; if (quest.line) quest.line.classList.remove('on'); return; }
@@ -28831,7 +28914,7 @@ function mapReveal() {
   }
 }
 // the markers, in base-canvas px, drawn by whichever map is showing
-function mapMarks(g, E, k) {
+function mapMarks(g, E, k, full) {
   const dot = (x, z, r, fill, stroke) => { g.beginPath(); g.arc(mapU(E, x), mapV(E, z), r * k, 0, 6.2832); if (fill) { g.fillStyle = fill; g.fill(); } if (stroke) { g.strokeStyle = stroke; g.lineWidth = 2 * k; g.stroke(); } };
   for (const G of GATES) {
     const s = Math.sin(G.h), c = Math.cos(G.h), hw = G.w / 2;
@@ -28842,7 +28925,10 @@ function mapMarks(g, E, k) {
   for (const c of COWS) dot(c.x, c.z, 3.5, '#f2efe8', '#0b0d12');      // the herd (m294)
   g.font = '700 ' + Math.round(18 * k) + 'px Bungee, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
   for (const d of DUMMIES) if (d.talk && !d.talk.done && !d.wasK) { const R = d.root.position; g.fillStyle = '#ffc247'; g.fillText('!', mapU(E, R.x), mapV(E, R.z)); }
-  if (quest.cur && quest.tgt) { dot(quest.tgt.x, quest.tgt.z, 9, '#ffc247', '#0b0d12'); }
+  if (quest.cur && quest.tgt) { dot(quest.tgt.x, quest.tgt.z, 9, '#ffc247', '#0b0d12');
+    // m330: the same metres the waypoint and the objective line print, beside it (the full map only: the minimap turns)
+    if (full) { const t = Math.round(quest.d) + ' m', u = mapU(E, quest.tgt.x), v = mapV(E, quest.tgt.z) - 20 * k;
+      g.lineWidth = 4 * k; g.strokeStyle = '#0b0d12'; g.strokeText(t, u, v); g.fillStyle = '#ffc247'; g.fillText(t, u, v); } }
 }
 function mapArrow(g, u, v, ang, r) {
   g.save(); g.translate(u, v); g.rotate(ang);
@@ -28890,7 +28976,7 @@ function mapFull() {
   g.drawImage(map.fog, 0, 0);
   g.font = '400 ' + 26 + 'px Bungee, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
   for (const r of map.regs) if (mapSeen(r)) { g.fillStyle = 'rgba(70,224,255,.55)'; g.fillText(r.name, mapU(E, (r.x0 + r.x1) / 2), mapV(E, r.z1) + 30); }
-  mapMarks(g, E, 1.6);
+  mapMarks(g, E, 1.6, 1);
   mapArrow(g, mapU(E, player.pos.x), mapV(E, player.pos.z), mapFace(player.faceH), 16);
 }
 function mapOpen(on) {
@@ -32858,6 +32944,8 @@ function godMenuOpen(on) {
   if (COWS.length) btn('SPOOK THE NEAREST HERD (STAMPEDE)', () => { toast(cowSpook(), 1.6); godMenuOpen(0); });
   if (SKYLINE.g) btn('METROPOLIS ON THE HORIZON ' + (SKYLINE.g.visible ? 'ON' : 'OFF'), () => { SKYLINE.g.visible = !SKYLINE.g.visible; godMenuOpen(1); });
   btn('THE STAND-IN QUEST (WEIRDPORT 101)', () => { progFlag('qon:q0'); quest.cur = null; toast('Quest on', 1.4); });
+  btn('THE STAND-IN TASKS (TWO, FOR THE TASK LIST)', () => { progFlag('qon:q0'); progFlag('qon:qtour'); quest.cur = null; toast('Two tasks on', 1.4); godMenuOpen(0); });
+  btn('THE TASK LIST', () => { godMenuOpen(0); tasksOpen(1); });
   btn('DEMO GATES HERE', () => { gateDemo(1); toast(GATES.length + ' gates', 1.4); });
   btn('DEMO PORTALS HERE', () => { portalDemo(1); toast(PORTALS.length + ' portals', 1.4); });
   btn('PLAY MODE', () => godSet(0), 'warn');
@@ -34417,6 +34505,7 @@ function frameBody() {
   stepSun();
   gradeStep(dt);                // the farm's golden hour, blended by where he stands (m295)
   skylineStep(dt);              // after the lens and the grade: the metropolis, pulled in and scaled about the camera (m323)
+  questWpt();                   // after the lens: the waypoint's distance, over the beam (m330)
   // AFTER the camera, because the reticle is PROJECTED through it -- drawn from last frame's
   // matrix it would trail the shot by a frame every time the lens moved, which is exactly the
   // thing a mark on a target must not do.
@@ -35295,7 +35384,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { fireSheet, BURN, burnStart, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { fireSheet, BURN, burnStart, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

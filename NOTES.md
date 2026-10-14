@@ -7,6 +7,29 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **TASKS: SEVERAL AT ONCE, ONE FOLLOWED, A CARD WHEN ONE ARRIVES, AND THE SAME METRES IN THREE PLACES (m330, B1f-1,
+  `questAvail`, `questTrack`, `tasksOpen`, `questWpt`, `#tasks`, `#wpt`).** GAME_DESIGN "Direction and discovery": a task
+  comes from someone, a card pops up ("New task: ..."), it goes in your list, and you get a map marker and a waypoint
+  in the world that shows the distance.
+  - **More than one task**: `questAvail()` is every quest unlocked and not done (m293's dormant switch still applies);
+    the one everything follows is `SAVE.flags.qtrack`, else the first. m278 ran "the first one not done" only.
+  - **The card**: the first frame a task is available and not `qseen:` in the save, `cardShow('NEW TASK', title)` --
+    once ever, one card at a time (`newT` = the card's own life + .4 s).
+  - **The list**: tap the objective pill (it takes pointer events now, `stopPropagation` so a tap is never a pad touch)
+    or GOD -> THE TASK LIST. ON THE GO, each with its current step and, on the followed one, the metres; tap one to
+    follow it. DONE below, greyed.
+  - **The waypoint's distance in the world** (`questWpt`, after the camera, beside `skylineStep`): a gold label 2.4 m
+    over the beam's target; off screen or behind, pinned to the side the target is on (camera-space x) with an arrow.
+    **`quest.d` is the one number** the label, the objective line and the full map's gold dot all print -- "the map
+    marker matches it" by construction (the minimap only keeps its rim dot: it turns, and text on it would too).
+  - Steps can name a place READ LIVE: `at: () => [x, y, z]` on `reach`, `() => [x, z]` on `goto` -- so a task can point
+    at the silo's landing or the bridge's checkpoint without a typed coordinate.
+  - A dormant second stand-in, `qtour` THE LAY OF THE LAND (climb the silo, the terrace top, the bridge checkpoint),
+    so the list has two to choose between. GOD -> THE STAND-IN TASKS.
+  **Checked headless** (a throwaway probe on the shot tool -- a throw in `questStep` would freeze every frame, and no gate
+  ticks it): both on, the card read NEW TASK / WEIRDPORT 101, the list showed both, tracking `qtour` turned the line
+  to "Climb the silo · 19m" and the waypoint to "◀19 m", pinned left.
+
 - **THE STAMPEDE: A PANIC SPREADS THROUGH THE HERD, A RUNNING COW IGNORES ITS FIELD AND RUNS HIM DOWN (m329, B1e-3,
   `cowPanic`, `cowFright`, `cowSpook`, `COW.stampede` ...).** REGIONS' signature system for the farm: "cows wander, panic
   and stampede when frightened, and block lanes". On the m294 brain (graze / look / walk / trot) a fourth state, `run`:
