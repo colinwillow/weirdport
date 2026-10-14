@@ -7,6 +7,26 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE WAYS ONTO THE ISLANDS: STACKS, ROPE BRIDGES, THE LANDING FIELD (m394, C6-7d-1, `IXING`, `buildIslandXing`,
+  `islXingStep`, `windSock`, `IWIND.socks`).** Before this the islands could only be reached by flying: the sea puts a
+  swimmer back on the shore he left (`islePutBack`). **THE STRAIT IS 70 M**: Old Town's beach ends at v -95 in the islands'
+  frame (which is the world offset by `ISLES.O`, because `th` is 0 at bearing pi/2) and the landing rock's at about -24.
+  Probed, not guessed.
+  **THE STACKS ARE ISLANDS** (`stack1..3` in `ISLES.ISLANDS`, kind 'mesa', r 6-6.5, h 5.5-6.5), so the land builder, the
+  ISLANDS row's tops check and every islands rule cover them for free. `ISLES.V[0]` went -40 -> -85 to take them.
+  **EACH HAS A TIMBER DECK AND THE BRIDGES HANG DECK TO DECK**: a stack's top is two or three cells of the land's 2 m grid,
+  so a bridge anchored on the interpolated rock would have started on the cliff's slope. The deck (a 4.4 m collider at the
+  top + .35) is a height the bridge can trust. Each span is `pearlSpan` with `kind: 'rope'`, The Pearl's own.
+  **THE LANDING FIELD**: cones in a 6.5 m ring, a cross, and a windsock built by `windSock`, which pushes into `IWIND.socks`
+  (the exit point's sock went in too). A flight that ends (`p.wing` off, grounded) inside the ring is a touchdown, inside
+  1.6 m a bullseye; `isl:landed` is saved.
+  **`npm run places`, exit 0** (teeth: dropping the middle bridge, the walk falls to -22.0 and reads `BAD STRAIT ... far end
+  -25.17`):
+      ok  STRAIT 4 rope bridges (22 m, 16 m, 16 m, 22 m), 174 boxes | walked from Old Town's beach (1.5) to the landing rock (5.6), each far end 0/0/0/0 | under each span -3.7/-1.7/-1.6/-1.6, its lowest 1.6/5.4/5.7/3.9 over the sea | windsocks 2 | a flight down on the cross: 1 touchdown, 1 bullseye | Rue (jack.glb) 
+      ok  ISLANDS 9 chunks, 7814 floor tris | centre -1,233 | clear of the farm, hollow creek, the waterfront, the island, the pearl | tops landing 6.3, mesa 18, needle 34, pier 3.3, humps 7.6, light 8, stack1 6.3, stack2 6.8, stack3 5.8 | the gaps (lowest, over the sea) landing-mesa -2, mesa-needle sea, needle-pier sea, landing-pier -2.9, mesa-humps -1.9, needle-light sea, humps-light sea | ladders 4 (4 climbs: 0.05/-0.01 ...
+  **NOT HERE**: the thermal and the tether (C6-7d-2); the glide's own help (nothing points the glider from Skye's ramp at
+  the field: it is 128 m away and 44 deg right of the ramp's heading).
+
 - **THE ISLANDS' WIND (m393, C6-7c, `IWIND`, `windStep`, `windK`, `windGust`, `wingWind`).** REGIONS 8's signature
   system: *"Gusts change direction and strength and affect every flight."* ONE wind over the chain: a base (`base` from
   `from` in the islands' frame, veering `veer` over `veerT`) and gusts on top, one at a time. Each gust is a sine swell over

@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m393</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m394</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m393</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m394</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm393';
+const BUILD = 'm394';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -34008,7 +34008,7 @@ function wfBotStep(dt) {
 // Nothing gets you here yet but flight (the glider, C4) and GOD; its people and its wind are C6-7b and C6-7c.
 const ISLES = {
   on: 1, live: 0, bearing: Math.PI / 2, gap: 70, cell: 2, chunk: 40, seed: 89,
-  U: [-75, 110], V: [-40, 160],                                                           // m390: U to 110, the old pier runs out to u 105
+  U: [-75, 110], V: [-85, 160],                                                            // m394: V to -85, the strait's stacks                                                           // m390: U to 110, the old pier runs out to u 105
   ISLANDS: [
     { id: 'landing', u: 0, v: 0, r: 22, h: 6, kind: 'low', why: "the landing rock: low, its beach toward Old Town's lookout -- the first glide" },
     { id: 'mesa', u: -30, v: 55, r: 30, h: 18, kind: 'mesa', ladders: [-1.2, .9], why: "the mesa: sheer all round, a flat top -- the BASE jumpers' (C6-7b)" },
@@ -34016,6 +34016,10 @@ const ISLES = {
     { id: 'pier', u: 55, v: 25, r: 26, h: 3, kind: 'low', why: 'the pier island: long and low, the old pier and its skate park (C6-7b)' },
     { id: 'humps', u: -10, v: 122, r: 28, h: 4.5, kind: 'humps', why: 'twin humps: two grassy hills and a saddle, a launch ramp on the high one (C6-7b)' },
     { id: 'light', u: 48, v: 132, r: 10, h: 8, kind: 'mesa', ladders: [-1.95], why: 'lighthouse rock: a little rock at the far end of the chain, with a lighthouse' },
+    // m394: the strait's sea stacks, Old Town's shore to the landing rock -- rope bridges between them (`IXING`)
+    { id: 'stack1', u: 1, v: -39, r: 6.5, h: 6, kind: 'mesa', why: "the strait's last stack: a rope bridge on to the landing rock" },
+    { id: 'stack2', u: -3, v: -58, r: 6.5, h: 6.5, kind: 'mesa', why: "the strait's middle stack, the highest of the three" },
+    { id: 'stack3', u: 2, v: -77, r: 6, h: 5.5, kind: 'mesa', why: "the strait's first stack: a rope bridge up to it from Old Town's beach" },
   ],
   O: null, C: 1, S: 0, th: 0, noise: null, tris: 0, chunks: 0, bbox: null, ladders: 0,
 };
@@ -34259,7 +34263,7 @@ function buildIslandBase() {
     const sock = new THREE.Group(); sock.position.set(x, g + 4.5, z); scene.add(sock);
     const mo = new THREE.MeshStandardMaterial({ color: 0xff6a1a, roughness: .7, side: THREE.DoubleSide }), mw = new THREE.MeshStandardMaterial({ color: 0xf2efe6, roughness: .7, side: THREE.DoubleSide });
     for (let k = 0; k < 4; k++) { const r0 = .3 - k * .055, c = new THREE.Mesh(new THREE.CylinderGeometry(r0 - .055, r0, .48, 10, 1, true), k % 2 ? mw : mo); c.rotation.x = Math.PI / 2; c.position.z = .26 + k * .47; sock.add(c); }
-    sock.rotation.set(.22, hd(eu, ev) + .4, 0, 'YXZ'); B.sock = sock;
+    sock.rotation.set(.22, hd(eu, ev) + .4, 0, 'YXZ'); B.sock = sock; IWIND.socks.push(sock);
     for (const [du, dv, r, h] of [[-.9, .6, .55, .3], [-1.3, .1, .45, .3], [-1.1, .4, .35, .75]]) geo(new THREE.IcosahedronGeometry(r, 0), 'rock', su + du * eu - dv * nu, g + h, sv + du * ev - dv * nv); }
   // the BASE jumpers' shack behind it: a hut, an awning toward the deck with the packed rigs hanging under it, a bench
   const shk = P(dE - 7.6, B.w / 2 + 4.2);
@@ -34516,7 +34520,7 @@ function islMoversStep(dt) {
 // stands out as it rises, and a gust arriving is a whoosh. The chip says `WIND<m/s>`, with a `G` while a gust blows.
 const IWIND = {
   on: 1, base: 6, from: [1, .3], veer: .35, veerT: 140, fade: 30,
-  every: [5, 12], last: [2.2, 4.8], add: [5, 11], swing: .75,
+  every: [5, 12], last: [2.2, 4.8], add: [5, 11], swing: .75, socks: [],
   airK: .16, wingK: .45, wingUp: 1.2, canopyK: .4, dustK: .5,
   t: 0, dir: 0, spd: 0, vx: 0, vz: 0, k: 0, e: 0, gustT: 0, gustL: 1, gustN: 6, gustDir: 0, gustAdd: 0, gusts: 0, baseH: null, drift: 0,
 };
@@ -34550,7 +34554,81 @@ function windStep(dt) {
     const f = W.airK * W.k * dt; p.pos.x += W.vx * f; p.pos.z += W.vz * f; W.drift += W.spd * f; }
   // seen before it is felt: the dust streams with it, the windsock turns into it and stands out as it rises
   DUST.wx = W.vx * W.dustK * W.k; DUST.wz = W.vz * W.dustK * W.k;
-  const S = IBASE.sock; if (S) S.rotation.set(lerp(1.25, .06, clamp(W.spd / 15, 0, 1)) + Math.sin(W.t * 11) * .04 * W.spd / 10, W.dir + Math.sin(W.t * 7.3) * .05, 0, 'YXZ');
+  for (const S of W.socks) S.rotation.set(lerp(1.25, .06, clamp(W.spd / 15, 0, 1)) + Math.sin(W.t * 11) * .04 * W.spd / 10, W.dir + Math.sin(W.t * 7.3) * .05, 0, 'YXZ');   // every windsock (m394)
+}
+// ============================================================================================
+// THE WAYS ONTO THE ISLANDS (m394, ROADMAP C6-7d-1, `IXING`, `buildIslandXing`, `islXingStep`, `windSock`)
+// ============================================================================================
+// REGIONS' connective tissue: "The Gorge -> River Islands: the glider off the lookout | swimming the channel; a rope bridge
+// between islands." Until now the only way onto the chain was to fly (the sea puts a swimmer back on the shore he left).
+// **THE WAY OVER ON FOOT**: three sea stacks in the strait (they are islands in `ISLES.ISLANDS`, `stack1..3`, so the land
+// builder makes them like the rest), and a ROPE BRIDGE between each pair (`pearlSpan`, The Pearl's own: the walk in
+// `TRI`, planks, rope rails, a collider down each side) -- from a post and a sign on Old Town's beach, stack to stack, up
+// onto the landing rock. **THE GLIDE'S END**: a landing field on the landing rock's top -- a ring of cones, a cross at its
+// middle, a windsock the wind turns, and Rue waiting; landing a flight inside the ring is a touchdown, near the cross a
+// bullseye (`isl:landed`, saved).
+const IXING = {
+  on: 1, hw: .7, deck: 4.4, fieldR: 6.5, field: null,
+  // the chain from Old Town's beach, in the islands' frame: the beach end, then each stack, then the landing rock
+  CHAIN: [[1, -101], 'stack3', 'stack2', 'stack1', [0, -15]],
+  FIELD: [0, 3], SOCK: [7.5, 1.5],
+  PEOPLE: [
+    { id: 'is_rue', role: 'glider', name: 'Rue', at: [-4.5, 7], face: [0, -1], lines: "Skye sends them off the lookout, I catch them here. Mostly.|Aim for the cross. Land on the cross and I'll buy you a drink. Nobody ever lands on the cross.|Watch the sock. If it's straight out, come in long." },
+  ],
+  spans: [], landings: 0, bulls: 0, wasWing: 0, godAt: null, n: 0, tris: 0,
+};
+// a windsock on a pole: its own object (the wind turns every one in `IWIND.socks`)
+function windSock(x, y, z) {
+  const sock = new THREE.Group(); sock.position.set(x, y, z); scene.add(sock);
+  const mo = new THREE.MeshStandardMaterial({ color: 0xff6a1a, roughness: .7, side: THREE.DoubleSide }), mw = new THREE.MeshStandardMaterial({ color: 0xf2efe6, roughness: .7, side: THREE.DoubleSide });
+  for (let k = 0; k < 4; k++) { const r0 = .3 - k * .055, c = new THREE.Mesh(new THREE.CylinderGeometry(r0 - .055, r0, .48, 10, 1, true), k % 2 ? mw : mo); c.rotation.x = Math.PI / 2; c.position.z = .26 + k * .47; sock.add(c); }
+  sock.rotation.set(1.2, 0, 0, 'YXZ'); IWIND.socks.push(sock); return sock;
+}
+function buildIslandXing() {
+  const X = IXING, I = ISLES; if (!X.on || !I.live) return 0;
+  const sea = ISLE.sea, Kn = id => I.ISLANDS.find(q => q.id === id);
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .85 }), o || {});
+  const MAT = { plank: M(0xa88e62), rope: M(0xc8b48a), wood: M(0x7a5232), steel: Object.assign(M(0x8a96a0), { metalness: .5, roughness: .4 }), orange: M(0xff7a1a), white: M(0xf2efe6) };
+  const F = farmFrame(I.O[0], I.O[1], I.th, MAT, 'isles'), { bx, geo } = F;
+  const gT = (u, v) => groundAt(F.wx(u, v), F.wz(u, v), 60, 80);
+  // each stack gets a timber deck on its top (a collider: a top a few metres across is two or three cells of the land's 2 m grid,
+  // and a bridge anchored on the interpolated rock would start on the cliff's slope); the bridges hang deck to deck
+  const pts = X.CHAIN.map(c => typeof c === 'string' ? { K: Kn(c), u: Kn(c).u, v: Kn(c).v, st: 1 } : { u: c[0], v: c[1], st: 0 });
+  pts.forEach((P, i) => { if (!P.st) return; const A = pts[i - 1], B = pts[i + 1], ps = Math.atan2(B.u - A.u, B.v - A.v);
+    P.y = sea + P.K.h + .35; bx(P.u, P.v, P.y - 1.2, P.y, X.deck, X.deck, 'plank', ps);
+    for (const [a, b] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) bx(P.u + (a * Math.cos(ps) + b * Math.sin(ps)) * (X.deck / 2 - .15), P.v + (-a * Math.sin(ps) + b * Math.cos(ps)) * (X.deck / 2 - .15), P.y, P.y + .9, .16, .16, 'wood', 0, false); });
+  X.spans = [];
+  for (let i = 0; i < pts.length - 1; i++) {
+    const P = pts[i], Q = pts[i + 1], du = Q.u - P.u, dv = Q.v - P.v, L0 = Math.hypot(du, dv), eu = du / L0, ev = dv / L0, o = X.deck / 2 - .3;
+    const a = P.st ? [P.u + eu * o, P.v + ev * o] : [P.u, P.v], b = Q.st ? [Q.u - eu * o, Q.v - ev * o] : [Q.u, Q.v];
+    const ya = P.st ? P.y : gT(...a), yb = Q.st ? Q.y : gT(...b), L = Math.hypot(b[0] - a[0], b[1] - a[1]);
+    const pt = pearlSpan(F, { A: [a[0], ya, a[1]], B: [b[0], yb, b[1]], L, hw: X.hw, kind: 'rope' }, 0);
+    X.spans.push({ a: [a[0], ya, a[1]], b: [b[0], yb, b[1]], L, pt, low: Math.min(...[.25, .5, .75].map(t => pt(t)[1])) });
+  }
+  // Old Town's end: the sign, read from the beach
+  { const [u, y, v] = X.spans[0].a, [x, z] = islWorld(u, v - 1.2), m = new THREE.MeshStandardMaterial({ map: footSign('THE ISLANDS', 'ROPE BRIDGES  ·  ONE AT A TIME  ·  NO RUNNING', '#2a9ad8', '#ffffff'), roughness: .7 });
+    for (const s of [-1, 1]) bx(u + s * 1.3, v - 1.2, y - .4, y + 2.6, .14, .14, 'wood', 0, false);
+    for (const k of [0, Math.PI]) { const pl = new THREE.Mesh(new THREE.PlaneGeometry(2.6, .8), m); pl.position.set(x, y + 2.15, z); pl.rotation.y = I.th + Math.PI + k; scene.add(pl); } }
+  // the landing field: a ring of cones, a cross, the windsock
+  { const [fu, fv] = X.FIELD;
+    for (let k = 0; k < 14; k++) { const a = k / 14 * Math.PI * 2, u = fu + Math.cos(a) * X.fieldR, v = fv + Math.sin(a) * X.fieldR; geo(new THREE.ConeGeometry(.22, .6, 8), k % 2 ? 'white' : 'orange', u, gT(u, v) + .28, v); }
+    for (const ps of [Math.PI / 4, -Math.PI / 4]) for (let s = -1.5; s <= 1.5; s += .5) { const u = fu + Math.sin(ps) * s, v = fv + Math.cos(ps) * s; bx(u, v, gT(u, v) - .05, gT(u, v) + .03, .45, .55, 'white', ps, false); }
+    const [su, sv] = X.SOCK, g = gT(su, sv), [x, z] = islWorld(su, sv); bx(su, sv, g - .2, g + 4.7, .1, .1, 'steel'); X.sock = windSock(x, g + 4.5, z);
+    X.field = [fu, fv]; }
+  const r = F.commit(); X.n = r.boxes; X.tris = r.tris;
+  const hd = (du, dv) => Math.atan2(du * I.C + dv * I.S, -du * I.S + dv * I.C);
+  for (const Q of X.PEOPLE) { const [x, z] = islWorld(Q.at[0], Q.at[1]); peopleMark(Q.id, x, z, hd(Q.face[0], Q.face[1]), Object.assign({ group: 'city', talks: ['city', 'street', 'worker'], alien: 'flee' }, Q), gT(Q.at[0], Q.at[1]), 'IXING', 'city'); }
+  { const P = pts.find(q => q.st && q.K.id === 'stack3'), [x, z] = islWorld(P.u, P.v); X.godAt = [x, P.y + .1, z, hd(0, 1)]; }
+  X.pts = pts;
+  return X.spans.length;
+}
+// a flight that comes down inside the ring is a touchdown, near the cross a bullseye
+function islXingStep(dt) {
+  const X = IXING, p = player; if (!X.on || !X.field || !inTK()) return;
+  const w = !!p.wing;
+  if (X.wasWing && !w && p.grounded) { const [u, v] = islLocal(p.pos.x, p.pos.z), d = Math.hypot(u - X.field[0], v - X.field[1]);
+    if (d < X.fieldR) { X.landings++; const bull = d < 1.6; if (bull) X.bulls++; progFlag('isl:landed'); toast(bull ? 'BULLSEYE. Rue owes you a drink.' : 'Touchdown on the landing field, ' + d.toFixed(1) + ' m from the cross.', 2.4); } }
+  X.wasWing = w;
 }
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
@@ -38958,6 +39036,7 @@ const GODPLACES = [
   { id: 'isskate', world: 'tkit', name: 'THE RIVER ISLANDS · the skate park on the old pier', at: () => ISKATE.godAt },   // m390
   { id: 'isbase', world: 'tkit', name: 'THE RIVER ISLANDS · the BASE jumpers\' exit point on the mesa', at: () => IBASE.godBase },   // m391
   { id: 'isramp', world: 'tkit', name: 'THE RIVER ISLANDS · the gap ramp on the high hump', at: () => IBASE.godRamp },   // m391
+  { id: 'isstrait', world: 'tkit', name: 'THE RIVER ISLANDS · the sea stacks and rope bridges, the way over on foot', at: () => IXING.godAt },   // m394
   { id: 'otferry', world: 'tkit', name: "OLD TOWN · the ferry landing to the Waterfront (Chapter 4's way in)", at: () => OFERRY.otAt },   // m381
   { id: 'wfferry', world: 'tkit', name: "THE WATERFRONT · the ferry's pontoon off pier 1", at: () => OFERRY.wfAt },
   { id: 'otswing', world: 'tkit', name: "OLD TOWN · the swing bridge's foot (the second way to the Waterfront)", at: () => OSWING.otAt },   // m382
@@ -40739,6 +40818,7 @@ function frameBody() {
   wfTurretStep(dt);             // Uplift's turrets: they fire on strangers; an engineer turns them (m384)
   wfBotStep(dt);                // Uplift's robots, bound to their bodies (m385); `wfBot` drives them in `stepDummies`
   islMoversStep(dt);            // the islands' BASE jumper and kite surfers, bound to their bodies (m392); `isJump` / `isKite` drive them
+  islXingStep(dt);              // a flight down on the islands' landing field (m394)
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)
@@ -41475,6 +41555,7 @@ async function init() {
     try { buildIslandSkate(); } catch (e) { note('SKATE FAIL'); console.warn('[melee] island skate park', e); }
     try { buildIslandBase(); } catch (e) { note('BASE FAIL'); console.warn('[melee] island exit point and ramp', e); }
     try { buildIslandMovers(); } catch (e) { note('MOVERS FAIL'); console.warn('[melee] island kite surfers', e); }
+    try { buildIslandXing(); } catch (e) { note('XING FAIL'); console.warn('[melee] island rope bridges', e); }
     // AND THE SWING BRIDGE (m382): the second way over, before the city ring keeps its trees off its landing
     try { buildSwing(); } catch (e) { note('SWING FAIL'); console.warn('[melee] swing bridge', e); }
     // ITS CREEK AND POND (m307): what stands in and over the valley and the bowl the land is carved with
@@ -41726,7 +41807,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
