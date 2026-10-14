@@ -7,6 +7,27 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE SWING BRIDGE: A CROSSING ONLY WHILE IT IS SHUT (m382, C6-6d-2, `OSWING`, `buildSwing`, `swingPlace`, `swingStep`).**
+  The second way between Old Town and the Waterfront: off the container quay between the two cranes (frame u 20, the lane
+  of water crane 1's barge and pier 2 leave), a fixed span on piers to v -26, a 43 m SWING SPAN on a round pivot pier at
+  v -48 (through-trusses, the operator's house up on a portal over the road), a fixed span to the waterline, and a ramp
+  (`pearlSpan`, 7 m wide, 1 in 7.7) down onto the island's grass, its foot found where that slope meets `isleBedAt`. Its
+  clock: shut 45 s -> warn 4 (lights flash, barrier arms drop, the barriers' `BDYN` boxes on) -> a quarter turn open over
+  14 s (smoothstep) -> open 20 -> back -> settle 2 -> shut. While shut, two NOSE PLATES (`BDYN`, on only then) bridge the
+  .4 m gaps at the span's ends. The span is `BDYN` boxes TURNED with it (`cs`/`sn` = the frame's turn plus its angle);
+  **the carry ROTATES him about the pivot** -- his position only, not his heading (`p.heading` has one writer). Unit 3
+  (a cyborg, BRIDGE CONTROL) at its control box on the quay, Walt fishing off the island span. GOD: its Old Town foot,
+  its quay end, "THE SWING BRIDGE: SWING IT NOW". Nobody works it from the house yet: the engineer's, C6-6e.
+  **The ring's house at 287 deg stood on the ramp** (`foreign on its ramp: ring, ring, ring`) and moved to 274 -- an
+  authored table entry with its reason, not a ramp bent round it. The city ring keeps its trees off the landing
+  (`OSWING.deg`, 284). The quay's bollard in its mouth is skipped. The `SWING` row walks grass -> ramp -> both spans ->
+  quay shut (3.20) and open (into the river), counts foreign boxes on the ramp, and rides a whole opening on the span
+  through the shipped `swingStep` (90.0 deg round, radius kept, still on the deck).
+  `npm run places` (exit 0):
+      ok  otswing    -> player 23.8,-0.1,-103.9 ground -0.25
+      ok  wfswing    -> player 81.2,3.5,-232.1 ground 3.20
+      ok  SWING landing at 284 deg, ramp 27.0 m down to -0.32 | grass -> quay shut 3.20 (quay 3.2), open -24.19 | foreign on its ramp: none | shut > warn > opening > open: carried 90.0 deg round the pivot (radius kept to 0.000 m), still on the deck | people Unit 3 (BRIDGE CONTROL), Walt
+
 - **THE FERRY: OLD TOWN'S LANDING, A DOUBLE-ENDED BOAT, PIER 1'S PONTOON (m381, C6-6d-1, `OFERRY`, `buildFerry`,
   `ferryPlace`, `ferryStep`).** Chapter 4's way in (GODCHAP 4 now starts at the landing). Far end first: a stair of 14 treads
   (15 risers of .293, the pontoon the last) off pier 1's tip in the pier's own frame, and a 10 x 10 pontoon square to the

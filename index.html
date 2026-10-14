@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m381</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m382</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m381</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m382</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm381';
+const BUILD = 'm382';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -32776,7 +32776,8 @@ function buildWaterfront() {
   const edges = [[-118, -98, 0], [-82, -53, 0], [-23, 27, 0], [41, 62, 0], [62, 118, 12]];
   for (const [u0, u1, v] of edges) {
     bx((u0 + u1) / 2, v + .6, Y, Y + .02, u1 - u0, .14, 'yel', 0, false);
-    for (let u = u0 + 4; u < u1 - 2; u += 10) { bx(u, v + 1.2, Y, Y + .7, .5, .5, 'iron'); F.parts.iron.pop(); geo(new THREE.CylinderGeometry(.24, .3, .7, 10), 'iron', u, Y + .35, v + 1.2); geo(new THREE.CylinderGeometry(.34, .34, .1, 10), 'iron', u, Y + .72, v + 1.2); }
+    for (let u = u0 + 4; u < u1 - 2; u += 10) { if (v === 0 && Math.abs(u - OSWING.u) < 5) continue;       // m382: none in the swing bridge's mouth
+      bx(u, v + 1.2, Y, Y + .7, .5, .5, 'iron'); F.parts.iron.pop(); geo(new THREE.CylinderGeometry(.24, .3, .7, 10), 'iron', u, Y + .35, v + 1.2); geo(new THREE.CylinderGeometry(.34, .34, .1, 10), 'iron', u, Y + .72, v + 1.2); }
     for (let u = u0 + 2; u < u1 - 1; u += 8) bx(u, v - .18, Y - 2.4, Y - .7, 1.3, .36, 'rubber', 0, false);
   }
   for (const P of W.PIERS) { const at = pierAt(P);
@@ -33530,6 +33531,127 @@ function ferryStep(dt) {
   let on = null; if (p.grounded || p.vel.y === 0) for (const B of O.boxes) { if (Math.abs(P.y - B.maxy) > .08) continue; const l = boxLocal(B, P.x, P.z, _blT); if (Math.abs(l.x) <= B.hx + .05 && Math.abs(l.z) <= B.hz + .05) { on = B; break; } }
   ferryPlace();
   if (on) { const Fr = O.frame, dx = ds * Fr.S, dz = ds * Fr.C; P.x += dx; P.z += dz;
+    if (typeof cam !== 'undefined' && cam.pos) { cam.pos.x += dx; cam.pos.z += dz; if (cam.tgt) { cam.tgt.x += dx; cam.tgt.z += dz; } } O.carried += dt; }
+}
+// ============================================================================================
+// THE SWING BRIDGE (m382, ROADMAP C6-6d-2, `OSWING`, `buildSwing`, `swingPlace`, `swingStep`)
+// ============================================================================================
+// REGIONS' second way: "Old Town -> Waterfront: ... a swing bridge". It leaves the container quay between the two cranes
+// (frame u 20, where crane 1's barge and pier 2 leave a lane of water) and crosses to Old Town's south-east shore: a fixed
+// approach span on piers, a 43 m SWING SPAN on a round pivot pier in mid-river -- through-trusses down both sides, the
+// operator's house up on a portal over the road -- a second fixed span, and a ramp down onto the island's grass (`pearlSpan`,
+// 7 m wide, at no more than 1 in 7.5). **Its own kind of crossing: it is only a crossing when it is shut.** On its clock it
+// warns (lights, barriers down at both ends), swings a quarter turn open for the river, stands open, swings back, and the
+// barriers lift. Caught on the span when it goes, you go round with it and stand in mid-river until it comes back. The
+// span is `BDYN` boxes turned with it; the carry ROTATES him about the pivot (his position, not his heading -- one writer);
+// two nose plates bridge the gaps at its ends only while it is shut. Nobody works it from the house yet: that is the
+// engineer's (C6-6e) -- for now Uplift runs it, and a cyborg stands at its control box on the quay.
+const OSWING = {
+  on: 1, u: 20, pivot: -48, half: 21.6, ends: [-26, -70], w: 7, slope: .13, shut: 45, warn: 4, turn: 14, open: 20, settle: 2,
+  PEOPLE: [
+    { id: 'wf_swing_unit3', role: 'cyborg', name: 'Unit 3 (BRIDGE CONTROL)', at: [-5, 3], face: 1, lines: "THE BRIDGE OPENS ON SCHEDULE. THE SCHEDULE IS CONFIDENTIAL.|PLEASE DO NOT STAND ON THE MOVING PART. THE MOVING PART IS THE INTERESTING PART.|ONLY AN AUTHORISED ENGINEER MAY OPERATE THE BRIDGE." },
+    { id: 'wf_swing_walt', kind: 'hobo_01', name: 'Walt', at: [2.6, 'island', 6], face: 1, lines: "Best fishing in the river, right here. The bridge swings, the fish come up to see.|Used to be a man in that little house. Waved at every boat. Now it's a computer. It doesn't wave.|Walk over when it's shut. Don't be on it when it goes. Or do. It's a nice ride." },
+  ],
+  deg: null, st: 'shut', t: 20, a: 0, boxes: [], nose: [], bars: [], grp: null, lights: [], arms: [], swings: 0, carried: 0,
+};
+function buildSwing() {
+  const O = OSWING, W = WFRONT, I = ISLE; if (!O.on || !W.live || !I.rect || !inTK()) return 0;
+  const sea = I.sea, Y = W.Y, U = O.u, hw = O.w / 2, R = I.rect, cx = (R[0] + R[1]) / 2, cz = (R[2] + R[3]) / 2;
+  const wx = (u, v) => W.O[0] + u * W.C + v * W.S, wz = (u, v) => W.O[1] - u * W.S + v * W.C;
+  // the island end: the waterline down the line, and the ramp's foot where the slope meets the island's own ground
+  let vW = null; for (let v = O.ends[1]; v > -400; v -= .5) if (isleBedAt(wx(U, v), wz(U, v)) > sea) { vW = v; break; }
+  if (vW === null) { note('SWING NO SHORE'); return 0; }
+  let vF = null; for (let t = 0; t < 80; t += .25) { const v = vW - t; if (isleBedAt(wx(U, v), wz(U, v)) >= Y - O.slope * t - .02) { vF = v; break; } }
+  if (vF === null) { note('SWING NO FOOT'); return 0; }
+  const gF = isleBedAt(wx(U, vF), wz(U, vF));
+  O.deg = ((Math.atan2(wz(U, vF) - cz, wx(U, vF) - cx) * 180 / Math.PI) + 360) % 360;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .82 }), o || {});
+  const MAT = { conc: M(0x9a968e), steel: Object.assign(M(0x5a6a74), { metalness: .45, roughness: .45 }), road: M(0x3a3c40), yel: M(0xe0b02a), red: M(0xb83a2e), white: M(0xe8e6e0),
+    plank: M(0x8a6a48), rope: M(0xc9b48a), dark: M(0x24262b), lamp: M(0x3a2a14, { emissive: new THREE.Color(0xffa040), emissiveIntensity: 2 }) };
+  const F = farmFrame(W.O[0], W.O[1], W.th, MAT, 'swing'), { bx, geo } = F;
+  const rail = (v0, v1, s) => { bx(U + s * (hw - .05), (v0 + v1) / 2, Y, Y + 1.1, .1, Math.abs(v1 - v0), 'steel'); F.parts.steel.pop(); bx(U + s * (hw - .05), (v0 + v1) / 2, Y + 1.02, Y + 1.12, .12, Math.abs(v1 - v0), 'yel', 0, false);
+    for (let v = Math.min(v0, v1); v <= Math.max(v0, v1); v += 2) bx(U + s * (hw - .05), v, Y, Y + 1.1, .08, .08, 'steel', 0, false); };
+  // the fixed spans: the quay to the first gap, the second gap to the waterline; their piers
+  const span = (v0, v1) => { bx(U, (v0 + v1) / 2, Y - .6, Y, O.w, Math.abs(v1 - v0), 'road'); bx(U, (v0 + v1) / 2, Y - 1.4, Y - .6, O.w - .6, Math.abs(v1 - v0), 'steel', 0, false);
+    for (const s of [-1, 1]) rail(v0, v1, s); bx(U, (v0 + v1) / 2, Y + .005, Y + .02, .15, Math.abs(v1 - v0), 'yel', 0, false); };
+  span(0, O.ends[0]); span(O.ends[1], vW);
+  for (const v of [-13, O.ends[0] + 1.2, O.ends[1] - 1.2, ...Array.from({ length: Math.max(0, Math.floor((O.ends[1] - vW) / 14)) }, (_, k) => O.ends[1] - 14 * (k + 1))]) {
+    if (v < vW + 1) continue; bx(U, v, sea - 4, Y - 1.4, O.w - 1, 1.6, 'conc'); }
+  // the pivot pier, its drum and fenders
+  geo(new THREE.CylinderGeometry(5.5, 6, Y - .9 - (sea - 4), 24), 'conc', U, (Y - .9 + sea - 4) / 2, O.pivot); bx(U, O.pivot, sea - 4, Y - 1.4, 7.6, 7.6, 'conc'); F.parts.conc.pop();
+  geo(new THREE.CylinderGeometry(3.4, 3.4, .5, 20), 'steel', U, Y - 1.15, O.pivot);
+  for (const s of [-1, 1]) bx(U + s * 2.5, O.pivot, sea - 1, Y - 1.6, 1.2, 46, 'conc', 0, false);     // its fender piers, under the span's line
+  // the ramp down onto the island, and two lamps at each end of the fixed spans
+  pearlSpan(F, { A: [U, Y, vW], B: [U, gF, vF], L: vW - vF, hw, kind: 'cat' }, 0);
+  for (const v of [0, O.ends[0], O.ends[1], vW]) for (const s of [-1, 1]) { bx(U + s * (hw + .3), v, Y, Y + 4.6, .14, .14, 'steel', 0, false); bx(U + s * (hw + .3), v, Y + 4.6, Y + 4.9, .4, .4, 'lamp', 0, false); }
+  // the gate posts at each end of the swing span (the barriers and lights are made below and move)
+  for (const v of [O.ends[0] + .9, O.ends[1] - .9]) for (const s of [-1, 1]) { bx(U + s * (hw + .2), v, Y, Y + 1.4, .3, .3, 'red'); }
+  O.n = F.commit().boxes;
+  // THE SWING SPAN, turned with it: deck, rails, trusses, the house on its portal
+  const grp = new THREE.Group(); scene.add(grp); O.grp = grp;
+  const mk = (g, col, o) => new THREE.Mesh(g, new THREE.MeshStandardMaterial(Object.assign({ color: col, roughness: .6, metalness: .3 }, o || {})));
+  const add = (g, col, x, y, z, o) => { const m = mk(g, col, o); m.position.set(x, y, z); grp.add(m); return m; };
+  const L = O.half * 2;
+  add(new THREE.BoxGeometry(O.w, .6, L), 0x3a3c40, 0, -.3, 0); add(new THREE.BoxGeometry(O.w - .6, .8, L), 0x5a6a74, 0, -1, 0);
+  add(new THREE.BoxGeometry(.15, .015, L), 0xe0b02a, 0, .01, 0);
+  for (const s of [-1, 1]) { add(new THREE.BoxGeometry(.12, .12, L), 0xe0b02a, s * (hw - .05), 1.07, 0);
+    // the truss: top chord rising to the middle, verticals, diagonals
+    for (let k = -4; k <= 4; k++) { const z = k * O.half / 4, h = 3.2 + 2.6 * (1 - Math.abs(k) / 4); add(new THREE.BoxGeometry(.3, h, .3), 0x5a6a74, s * (hw + .2), h / 2, z);
+      if (k < 4) { const z1 = (k + 1) * O.half / 4, h1 = 3.2 + 2.6 * (1 - Math.abs(k + 1) / 4), m = add(new THREE.BoxGeometry(.25, .25, Math.hypot(z1 - z, h1 - h)), 0x5a6a74, s * (hw + .2), (h + h1) / 2, (z + z1) / 2); m.rotation.x = -Math.atan2(h1 - h, z1 - z);
+        const d = add(new THREE.BoxGeometry(.18, .18, Math.hypot(z1 - z, Math.min(h, h1))), 0x5a6a74, s * (hw + .2), Math.min(h, h1) / 2, (z + z1) / 2); d.rotation.x = (k % 2 ? 1 : -1) * Math.atan2(Math.min(h, h1), z1 - z); } } }
+  for (const s of [-1, 1]) add(new THREE.BoxGeometry(.4, 4.6, .4), 0x5a6a74, s * (hw + .2), 2.3, 0);
+  add(new THREE.BoxGeometry(O.w + 1.2, .5, 2), 0x5a6a74, 0, 4.8, 0); add(new THREE.BoxGeometry(4, 2.6, 3.4), 0xe8e6e0, 0, 6.35, 0); add(new THREE.BoxGeometry(4.06, .9, 2.6), 0x1a2a30, 0, 6.6, 0, { metalness: .3, roughness: .2 });
+  add(new THREE.BoxGeometry(4.4, .2, 3.8), 0x24262b, 0, 7.75, 0);
+  const cs0 = Math.cos(W.th), sn0 = -Math.sin(W.th);
+  const dyn = (lu, lv, hx, hz, y0, y1, spin) => { const b = { dyn: 1, swing: 1, lu, lv, hx, hz, y0, y1, spin, cs: cs0, sn: sn0, cx: 0, cz: 0, minx: 0, maxx: 0, minz: 0, maxz: 0, miny: 0, maxy: 0 }; BDYN.push(b); return b; };
+  O.boxes = [dyn(0, 0, hw, O.half, Y - .6, Y, 1), dyn(-(hw - .05), 0, .05, O.half, Y, Y + 1.1, 1), dyn(hw - .05, 0, .05, O.half, Y, Y + 1.1, 1), dyn(0, 0, 2, 1.7, Y + 5.05, Y + 7.85, 1),
+    dyn(-(hw + .2), 0, .2, .2, Y, Y + 4.8, 1), dyn(hw + .2, 0, .2, .2, Y, Y + 4.8, 1)];
+  // the nose plates over the gaps and the barriers across the road, at the fixed spans' ends (on while shut / while not)
+  for (const v of [O.ends[0] + .1, O.ends[1] - .1]) { const b = dyn(0, 0, hw - .1, .35, Y - .3, Y, 0); b.fu = U; b.fv = v + (v > O.pivot ? -.25 : .25); O.nose.push(b); }
+  for (const v of [O.ends[0] + .9, O.ends[1] - .9]) { const b = dyn(0, 0, hw, .12, Y, Y + 1.15, 0); b.fu = U; b.fv = v; O.bars.push(b);
+    const arm = new THREE.Group(); arm.position.set(wx(U - hw - .2, v), Y + 1.15, wz(U - hw - .2, v)); arm.rotation.y = W.th + Math.PI / 2; scene.add(arm);
+    for (let k = 0; k < 7; k++) { const m = mk(new THREE.BoxGeometry(.14, .14, 1), k % 2 ? 0xe8e6e0 : 0xb83a2e); m.position.set(0, 0, -(k + .5)); arm.add(m); } O.arms.push(arm);
+    for (const s of [-1, 1]) { const l = mk(new THREE.SphereGeometry(.16, 10, 8), 0x400a0a, { emissive: new THREE.Color(0xff3a3a), emissiveIntensity: 0 }); l.position.set(wx(U + s * (hw + .2), v), Y + 1.6, wz(U + s * (hw + .2), v)); scene.add(l); O.lights.push(l); } }
+  for (const b of [...O.nose, ...O.bars]) { b.cx = wx(b.fu, b.fv); b.cz = wz(b.fu, b.fv); }
+  swingPlace();
+  O.otAt = [wx(U, vF - 3), gF + .1, wz(U, vF - 3), Math.atan2(W.S, W.C)]; O.wfAt = [wx(U, 4), Y + .1, wz(U, 4), Math.atan2(-W.S, -W.C)];
+  O.walk = [[U, vF - 4], [U, vF], [U, vW], [U, O.ends[1] - 1], [U, O.pivot], [U, O.ends[0] + 1], [U, -1], [U, 6]].map(([u, v]) => [wx(u, v), wz(u, v)]);
+  O.frame = { vW, vF, gF };
+  for (const Pp of O.PEOPLE) { const v = Pp.at[1] === 'island' ? vW + Pp.at[2] : Pp.at[1], u = U + Pp.at[0];
+    peopleMark(Pp.id, wx(u, v), wz(u, v), Math.atan2((Pp.face || -1) * W.C, (Pp.face || -1) * -W.S), Object.assign(Pp.role === 'cyborg' ? { group: 'worker', talks: ['*'], alien: 'brush', brushAlien: WFRONT.brush } : { group: 'street', talks: ['*'], alien: 'flee' }, Pp), Y, 'SWING', 'street'); }
+  return O.n;
+}
+// the span where its angle says, and every box of it; the plates and barriers on or off
+function swingPlace() {
+  const O = OSWING, W = WFRONT; if (!O.grp) return;
+  const a = O.a, pu = O.u, pv = O.pivot, x0 = W.O[0] + pu * W.C + pv * W.S, z0 = W.O[1] - pu * W.S + pv * W.C, rot = W.th + a, C = Math.cos(rot), S = Math.sin(rot);
+  O.grp.position.set(x0, W.Y, z0); O.grp.rotation.y = rot;
+  const box = (B, cx, cz) => { B.cx = cx; B.cz = cz; const ex = B.hx * Math.abs(B.cs) + B.hz * Math.abs(B.sn), ez = B.hx * Math.abs(B.sn) + B.hz * Math.abs(B.cs);
+    B.minx = cx - ex; B.maxx = cx + ex; B.minz = cz - ez; B.maxz = cz + ez; B.miny = B.y0; B.maxy = B.y1; };
+  for (const B of O.boxes) { B.cs = C; B.sn = -S; box(B, x0 + B.lu * C + B.lv * S, z0 - B.lu * S + B.lv * C); }
+  const shut = O.st === 'shut';
+  for (const B of O.nose) { B._off = shut ? 0 : 1; box(B, B.cx, B.cz); }
+  for (const B of O.bars) { B._off = shut ? 1 : 0; box(B, B.cx, B.cz); }
+}
+function swingStep(dt) {
+  const O = OSWING; if (!O.on || !O.grp || !inTK()) return;
+  const p = player, P = p.pos, a0 = O.a;
+  if ((O.t -= dt) <= 0) {
+    const nx = { shut: 'warn', warn: 'opening', opening: 'open', open: 'closing', closing: 'settle', settle: 'shut' }[O.st];
+    O.st = nx; O.t = O[{ warn: 'warn', opening: 'turn', open: 'open', closing: 'turn', settle: 'settle', shut: 'shut' }[nx]];
+    if (nx === 'opening') O.swings++;
+  }
+  const k = O.st === 'opening' ? 1 - O.t / O.turn : O.st === 'closing' ? O.t / O.turn : O.st === 'open' ? 1 : 0;
+  O.a = Math.PI / 2 * (k * k * (3 - 2 * k));
+  // the barriers come down and the lights flash whenever it is not shut
+  const down = O.st === 'shut' ? 0 : 1, blink = down && Math.sin(performance.now() * .009) > 0;
+  for (const A of O.arms) A.rotation.z = damp(A.rotation.z, down ? 0 : -1.4, .3, dt);
+  O.lights.forEach((l, i) => { l.material.emissiveIntensity = blink === !!(i % 2) ? 2.6 : 0; });
+  const da = O.a - a0;
+  let on = null; if (da && (p.grounded || p.vel.y === 0)) for (const B of O.boxes) { if (Math.abs(P.y - B.maxy) > .08) continue; const l = boxLocal(B, P.x, P.z, _blT); if (Math.abs(l.x) <= B.hx + .05 && Math.abs(l.z) <= B.hz + .05) { on = B; break; } }
+  swingPlace();
+  if (on) { const W = WFRONT, x0 = W.O[0] + O.u * W.C + O.pivot * W.S, z0 = W.O[1] - O.u * W.S + O.pivot * W.C, rx = P.x - x0, rz = P.z - z0, c = Math.cos(da), s = Math.sin(da);
+    const nxp = x0 + rx * c + rz * s, nzp = z0 - rx * s + rz * c, dx = nxp - P.x, dz = nzp - P.z; P.x = nxp; P.z = nzp;
     if (typeof cam !== 'undefined' && cam.pos) { cam.pos.x += dx; cam.pos.z += dz; if (cam.tgt) { cam.tgt.x += dx; cam.tgt.z += dz; } } O.carried += dt; }
 }
 // ============================================================================================
@@ -35127,7 +35249,7 @@ const FRING = {
     { deg: 162, s: .5, k: 'house', col: 'pink', why: 'the -x side' },
     { deg: 205, s: .45, k: 'house', col: 'cream', why: 'the -x side, past the middle' },
     { deg: 246, s: .5, k: 'house', col: 'blue', why: 'the -z side' },
-    { deg: 287, s: .55, k: 'house', col: 'mint', why: 'the -z side, farther round' },
+    { deg: 274, s: .55, k: 'house', col: 'mint', why: 'the -z side, farther round (m382: 287 -> 274, off the swing bridge\'s landing at 284)' },
     { deg: 326, s: .5, k: 'house', col: 'pink', why: 'back toward the bridge on the +x side' },
     { deg: 346, s: .52, k: 'house', col: 'blue', gap: 1, why: 'where the old trestle comes down: its back fence is broken, the way through the backyards into town (m319)' },
   ],
@@ -35225,6 +35347,7 @@ function buildCityRing() {
     if (HCROAD.deg != null && Math.abs(((deg - HCROAD.deg + 540) % 360) - 180) < 6) continue;    // nor the highway's (m371)
     if (OLOOK.topAt && Math.abs(((deg - OLOOK.deg + 540) % 360) - 180) < 5) continue;         // nor the lookout's (m357)
     if (OFERRY.deg != null && Math.abs(((deg - OFERRY.deg + 540) % 360) - 180) < 6) continue;   // nor the ferry landing's (m381)
+    if (OSWING.deg != null && Math.abs(((deg - OSWING.deg + 540) % 360) - 180) < 6) continue;   // nor the swing bridge's (m382)
     const P = at(deg, .06 + rr() * .1);
     if (farmTree(F, rr, ico0, P.x, P.z, .75 + rr() * .5, rr() < .2 ? 'willow' : 'oak')) FR.trees++;
   }
@@ -37931,6 +38054,8 @@ const GODPLACES = [
   { id: 'otroad', world: 'tkit', name: 'OLD TOWN · the highway bridge to Hollow Creek', at: () => HCROAD.otAt },   // m371
   { id: 'otferry', world: 'tkit', name: "OLD TOWN · the ferry landing to the Waterfront (Chapter 4's way in)", at: () => OFERRY.otAt },   // m381
   { id: 'wfferry', world: 'tkit', name: "THE WATERFRONT · the ferry's pontoon off pier 1", at: () => OFERRY.wfAt },
+  { id: 'otswing', world: 'tkit', name: "OLD TOWN · the swing bridge's foot (the second way to the Waterfront)", at: () => OSWING.otAt },   // m382
+  { id: 'wfswing', world: 'tkit', name: "THE WATERFRONT · the swing bridge's quay end", at: () => OSWING.wfAt },
   { id: 'wfquay', world: 'tkit', name: 'THE WATERFRONT · the container quay (Chapter 4)', at: () => WFRONT.quayAt },   // m377
   { id: 'wfdock', world: 'tkit', name: 'THE WATERFRONT · the head of the dry dock', at: () => WFRONT.dockAt },
   { id: 'wfdeck', world: 'tkit', name: 'THE WATERFRONT · on the ship in the dry dock', at: () => WFRONT.deckAt },
@@ -38115,6 +38240,7 @@ function godMenuOpen(on) {
   // m372: Hollow Creek's rally
   // m375: the race, without lining up
   if (HCBIKE.startAt) btn('RACE BIG RAE NOW (' + HCRACE.st.toUpperCase() + ')', () => { godMenuOpen(0); const S = HCBIKE.startAt; player.pos.set(S[0], S[1] + .1, S[2]); player.vel.set(0, 0, 0); toast('Wear the biker and stop at the gate', 2.2); });
+  if (OSWING.grp) btn('THE SWING BRIDGE: SWING IT NOW (' + OSWING.st.toUpperCase() + ')', () => { godMenuOpen(0); if (OSWING.st === 'shut') OSWING.t = 0; toast('The barriers come down', 2); });   // m382
   if (OFERRY.frame) btn('THE FERRY: SEND IT NOW (' + OFERRY.st.toUpperCase() + ')', () => { godMenuOpen(0); if (OFERRY.st === 'dock') OFERRY.t = 0; toast('The ferry sounds its horn', 2); });   // m381
   if (WCRANE.cranes.length) btn('THE CRANES: ' + (WCRANE.on ? 'STOP THEM' : 'RUN THEM') + ' (' + WCRANE.cranes.map(c => c.st).join(', ') + ')', () => { godMenuOpen(0); WCRANE.on = WCRANE.on ? 0 : 1; toast(WCRANE.on ? 'The cranes work' : 'The cranes stop where they are', 2); });   // m380
   if (WFCONV.route) btn("UPLIFT'S LINE: " + (WFCONV.running ? 'STOP IT' : 'START IT') + ' (' + WFCONV.converted + ' converted)', () => { godMenuOpen(0); WFCONV.running = WFCONV.running ? 0 : 1; WFCONV.clk = WFCONV.running ? 0 : -1e9; toast(WFCONV.running ? 'The line runs' : 'The line stops (until you start it)', 2); });   // m379
@@ -39692,6 +39818,7 @@ function frameBody() {
   wfConvStep(dt);               // and its workers, going in human and coming out cyborg (m379)
   wfCraneStep(dt);              // the gantry cranes, and him on a trolley or a box (m380) -- before the lens, which it moves
   ferryStep(dt);                // the ferry to the Waterfront, and him on it (m381) -- before the lens, which it moves
+  swingStep(dt);                // the swing bridge, and him round with it (m382) -- before the lens, which it moves
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)
@@ -40423,6 +40550,8 @@ async function init() {
     try { buildWaterfront(); } catch (e) { WFRONT.live = 0; note('WATERFRONT FAIL'); console.warn('[melee] waterfront', e); }
     // THE FERRY OVER TO IT (m381): Old Town's landing on the shore facing pier 1, before the city ring keeps its trees off it
     try { buildFerry(); } catch (e) { note('FERRY FAIL'); console.warn('[melee] ferry', e); }
+    // AND THE SWING BRIDGE (m382): the second way over, before the city ring keeps its trees off its landing
+    try { buildSwing(); } catch (e) { note('SWING FAIL'); console.warn('[melee] swing bridge', e); }
     // ITS CREEK AND POND (m307): what stands in and over the valley and the bowl the land is carved with
     try { buildFarmWaters(); } catch (e) { note('WATERS FAIL'); console.warn('[melee] farm waters', e); }
     // THE ORCHARD TERRACE (m328): its tops go into TRI before the field bounds, so the orchard's rows stand on them

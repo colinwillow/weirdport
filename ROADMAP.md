@@ -302,9 +302,9 @@ differ" table there, so no region feels like the last one.
       - [x] m378 **C6-6b-1** the hall opened up: the line climbing through it on three levels (belts that carry), walkways, the west stair, the control room, the gallery and the outfeed tower.
       - [x] m379 **C6-6b-2** the conversion line: workers ride it in human and come out cyborg; the line's own clock and noise.
     - [x] m380 **C6-6c** the gantry cranes on the quay's rails: climb one, ride the trolley along the boom, swing a container.
-    - [ ] **C6-6d** the way in: the ferry from Old Town's docks to pier 1; a second way (the swing bridge, or the drainage outfall).
+    - [x] m382 **C6-6d** the way in: the ferry from Old Town's docks to pier 1; a second way (the swing bridge, or the drainage outfall).
       - [x] m381 **C6-6d-1** the ferry: Old Town's landing on the south-east shore, a double-ended boat on its own clock, pier 1's pontoon.
-      - [ ] **C6-6d-2** a second way: the swing bridge (or the drainage outfall), its own kind of crossing.
+      - [x] m382 **C6-6d-2** a second way: the swing bridge (or the drainage outfall), its own kind of crossing.
     - [ ] **C6-6e** the engineer / hacker form: locked doors, turrets, security robots; as the engineer they open, turn and stand down.
     - [ ] **C6-6f** Chapter 4's quests and its boss; shut the line down and the cyborgs turn back; Chapter 4 complete.
 
@@ -1058,3 +1058,8 @@ differ" table there, so no region feels like the last one.
   - They run on their own. Driving one yourself waits for the engineer form.
   - GOD has a stop/run switch.
 - **m381 (C6-6d-1) The ferry.** I split C6-6d into the ferry (this build) and a second way over (next). Old Town's ferry landing is on the south-east shore: a ticket kiosk, a shelter, a timetable and three people waiting. A jetty runs out to a pontoon. A double-ended ferry (it never turns round) crosses about 40 m to a pontoon at the foot of a stair down from pier 1's tip, every ~50 s, with a horn. It carries you, and the fog and the night come in as you cross. The Chapter 4 button in GOD now starts at the landing. I put the landing on the Waterfront's own bearing rather than the nearest bit of shore, because the nearest shore made an 11 m crossing.
+- **m382 (C6-6d-2) The swing bridge.** The second way over is a swing bridge. It leaves the container quay between the two cranes and lands on Old Town's grass down a ramp.
+  - It is only a way across while it's shut. On its own clock it flashes and drops its barriers, swings a quarter turn open, waits about 20 s, then swings back.
+  - If you're standing on the swinging part, you go round with it and wait mid-river until it closes.
+  - I moved one Old Town ring house (287° to 274°) because it stood where the ramp lands.
+  - A cyborg runs it from a control box on the quay. Operating it yourself comes with the engineer form.
