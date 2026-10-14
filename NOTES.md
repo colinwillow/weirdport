@@ -7,6 +7,82 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE YARD IS TWO YARDS, THE HOUSE HAS ITS OWN, AND THE HEADLAND'S FIELDS STAND DOWN (m311, step 4b, `FPLAN.yards`, `FHOUSE.origin`, shed, coop, orchard).**
+  The m306 parcel (one superellipse round everything m288-m305 built) is TWO small yards in `FPLAN.yards`: the
+  BARNYARD where the barn, lean-to, silo, paddock and sunken lane always stood, and the HOUSEYARD 72 m north across the
+  home pasture. **The farmhouse has its own frame** (`FHOUSE.origin`, th from `ub` - .12): its porch faces south to the
+  barn, with a TOOL SHED (pent roof, a doorway, tools leaning, a drum) on one side and a CHICKEN COOP (a hut on legs,
+  its ramp, a wire run) on the other. The ground the old parcel held is fields now (`home_corn` with the scarecrow
+  moved into it, `home_pasture`, an `orchard` of small trees in rows, `creek_pasture`); a `home_track` runs barnyard
+  to porch and the ridge and east tracks start from the house.
+  **What stands down on the farm's own land**: `HROW` (the headland's hedgerow fields, plough, copse, bale stack --
+  `FPLAN` does that job now), `FLORA.FIELDS` (the headland's crop rectangles -- `FCROP` plants `FPLAN`'s; the tufts
+  stay), and the sunken lane's little BROOK with its culvert, ford and footbridge (the land has its creek valley).
+  All three are gated on `FARMLAND.live`, not deleted. GOD lost `meadow`, `plough`, `copse` and `ford`; `corn`,
+  `wheat` point at `FPLAN`'s fields, `orchard` is new.
+  **Two caught before shipping**: the shed's pent roof was a rotation POST-MULTIPLIED onto a composed TRS (NOTES says
+  that shears under a non-uniform scale; it is psi pi/2 with tilt -pt now, the porch roof's own trick); and GOD's
+  `corn` landed exactly on its field's seed -- which is where the scarecrow now stands -- so on top of its post
+  (ground 3.5): it is 6 m off the seed. The porch's worn path (`GPAINT` porch) is drawn in the house's frame.
+  `npm run places`, after the bump:
+  ```
+  ok   buildFarmland
+  ok   buildFarmWaters
+  ok   buildFieldBounds
+  ok   buildFieldCrops
+  ok   buildFarm
+  ok   buildFarmProps
+  ok   buildCrash
+  ok   crashHero
+  ok   buildLane
+  ok   buildBridge
+  ok   buildHedgerows
+  ok   buildFarmhouse
+  ok   buildRoadside
+  ok   buildCows
+  ok   buildGroundPaint
+  ok   buildFlora
+  widest grass 66.5 at 172deg | headland ray 7deg grass 38.2 need 60 | rays 520 rect [-93.5,90.5,-90.3,93.5]
+  FARM.at {"x":333.8,"z":150.5,"th":1.281} | CRASH.at yes | LANE.at yes | BRIDGE.gate yes (side 0) | ISLE.live 1
+  FARMLAND live [ 354, 196 ] chunks 9 floor tris 12344 water tris 8346 | BRIDGE len 166 piers 5 gate [112,64]
+  FWATER 7 boxes, reeds 31 | pond level 0.1 | creek bed [ 5.19, -8.5 ] len 255
+  FPLAN 1623 boxes: hedge 361 fence 378 hedge oaks 94 tree line 9 | m2: margins 68.8k yard 5.3k town_edge 2.7k, south_wheat 5.5k, south_plough 4.3k, pond_pasture 2.3k, west_corn 4.6k, west_hay 3.8k, west_hill 7.1k, lone_barn_hay 5.9k, north_plough 3.8k, far_hill 4.6k, north_wheat 2.6k, ridge_corn 2.9k, neighbour 6.6k, ridge_pasture 5.7k, creek_meadow 4.8k, crash_wheat 5.8k, east_corn 2.1k, far_east_hay 2.5k, east_pasture 5.2k, knoll 5.6k, home_corn 4.4k, home_pasture 2.7k, orchard 2.2k, creek_pasture 2.5k
+  FCROP 40275 clumps in 21 chunks {"south_wheat":4715,"pond_pasture":320,"west_corn":3115,"west_hay":2078,"west_hill":4159,"lone_barn_hay":3437,"far_hill":717,"north_wheat":2175,"ridge_corn":1738,"ridge_pasture":906,"creek_meadow":2724,"crash_wheat":4866,"east_corn":1290,"far_east_hay":1360,"east_pasture":813,"knoll":1955,"home_corn":2899,"home_pasture":387,"orchard":268,"creek_pasture":353}
+  FROAD 3 road pts NONE foot null | FHOUSE 34 chimney [376.8,11.8,208.3] | HROW 0 boxes 0 trees 0 gates | FLORA {"tufts":900}
+  notes ["TC NO OBB JSON","ISLE 0/3 TEX"]
+  ok  oldtown    -> player 0.0,0.1,0.0 ground 0.00 
+  ok  overlook   -> player 464.3,9.1,68.0 ground 8.99 
+  ok  circle     -> player 271.6,0.6,347.9 ground 0.48 
+  ok  swell      -> player 294.5,0.7,343.3 ground 0.50 
+  ok  fplough    -> player 429.9,2.2,166.6 ground 2.05 
+  ok  creek      -> player 306.6,1.5,245.6 ground 1.35 
+  ok  pond       -> player 363.6,1.5,63.8 ground 1.36 
+  ok  channel    -> player 241.6,0.5,134.3 ground 0.34 
+  ok  farmyard   -> player 320.1,1.5,152.7 ground 1.32 
+  ok  hayloft    -> player 333.7,4.7,156.8 ground 9.00 
+  ok  crash      -> player 284.8,0.8,333.3 ground 0.69 
+  ok  corn       -> player 367.8,1.4,113.3 ground 1.28 
+  ok  wheat      -> player 291.5,0.3,56.8 ground 0.15 
+  ok  orchard    -> player 331.2,2.8,222.0 ground 2.62 
+  ok  farmhouse  -> player 367.2,1.8,206.2 ground 1.64 
+  ok  windmill   -> player 341.2,1.6,154.2 ground 1.42 
+  ok  scarecrow  -> player 368.8,1.4,107.4 ground 1.20 
+  ok  tractor    -> player 327.2,1.5,139.8 ground 1.33 
+  ok  paddock    -> player 340.7,1.6,157.1 ground 1.42 
+  ok  lane       -> player 320.6,1.5,140.3 ground 1.31 
+  ok  road       -> player 336.6,1.5,118.1 ground 1.36 
+  ok  bridge     -> player 112.1,3.0,63.6 ground 2.80 
+  every tkit GOD place is somewhere
+  ok  farmPropsStep  30 frames
+  ok  farmhouseStep  30 frames
+  ok  floraStep      30 frames
+  ok  cowStep        30 frames
+  ok  crashStep      30 frames
+  ok  crashHeroStep  30 frames
+  ok  riverStep      30 frames
+  ok  gradeStep      30 frames
+  ```
+
 - **THE CRASH IS FAR OUT IN THE WHEAT, AT THE END OF A 68 M GOUGE, WITH A CROP CIRCLE A FIELD AWAY (m310, step 4a, `FPLAN.crash`, `fpCircle`, `fpTintAt`, `CRASH.origin`).**
   Placed off a MAP of the big wheat on the owner lattice (a 100..215, b -26..62, the east track ending at (142, 19)):
   the gouge runs from the field's north-east corner (196, 46) to the wreck at (150, -4), passing east of the track's

@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m310</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m311</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m310</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m311</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm310';
+const BUILD = 'm311';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -29178,9 +29178,14 @@ function buildFarmland() {
 const FPLAN = {
   on: 1, grid: 2, noise: 9, piece: 2.7, treeGap: 24, lineGap: 10,
   margin: { creek: 9.5, pond: 11, track: 2.6, beach: 5 },
-  yard: { a: -21, b: -21, ra: 86, rb: 47, p: 4, why: "m288-m305's farmyard cluster, as it stands: step 4 spreads it out" },
+  // m311 (step 4b): the one big parcel round m288-m305's cluster is TWO small yards now -- the barn's (barn, lean-to,
+  // silo, paddock, the sunken lane) where it always stood, and the farmhouse's own, 70 m north across the home fields
+  yards: [
+    { id: 'barnyard', a: -27, b: -37, ra: 38, rb: 27, p: 4, why: 'the barn, the lean-to, the silo, the paddock and the sunken lane' },
+    { id: 'houseyard', a: 5, b: 24, ra: 26, rb: 20, p: 4, why: 'the farmhouse, its porch and washing line, the tool shed and the chicken coop' },
+  ],
   TINT: { wheat: [1.8, 1.38, .55], corn: [.82, 1.08, .55], hay: [1.32, 1.22, .8], pasture: [.95, 1.14, .86],
-    plough: [1.15, .78, .5], stubble: [1.6, 1.34, .78], reserve: [1.05, 1.03, .95] },
+    plough: [1.15, .78, .5], stubble: [1.6, 1.34, .78], reserve: [1.05, 1.03, .95], orchard: [.92, 1.12, .8] },
   FIELDS: [
     { id: 'town_edge', a: 0, b: -142, k: 'reserve', why: 'the strip by the bridge where the edge of town will stand (step 6)' },
     { id: 'south_wheat', a: -92, b: -122, k: 'wheat', why: 'wheat down to the shore west of the bridge road: the first gold you see off the bridge' },
@@ -29202,12 +29207,18 @@ const FPLAN = {
     { id: 'far_east_hay', a: 168, b: 118, k: 'hay', why: 'hay at the far north-east corner' },
     { id: 'east_pasture', a: 118, b: -118, k: 'pasture', why: 'cows on the slope above the creek mouth' },
     { id: 'knoll', a: 182, b: -62, k: 'stubble', why: 'the knoll, cut to stubble' },
+    // m311: the ground the old parcel held, between and round the two yards
+    { id: 'home_corn', a: -85, b: -28, k: 'corn', why: 'corn west of the barnyard: the scarecrow stands in it' },
+    { id: 'home_pasture', a: -42, b: 8, k: 'pasture', why: 'the home pasture between the barn and the house, where the herd is let out' },
+    { id: 'orchard', a: 34, b: -8, k: 'orchard', dir: .3, why: 'apples between the house and the creek, in rows' },
+    { id: 'creek_pasture', a: 40, b: -50, k: 'pasture', why: 'grazing down to the creek below the orchard' },
   ],
   // the dirt tracks, in (a, b). `bridge_road`'s last point is the sunken lane's mouth, measured at build time
   TRACKS: [
     { id: 'bridge_road', pts: [[0, -124], [-5, -104], [-20, -87], [-40, -72]], to: 'lane', why: "off the bridge, up past the plough, to the farmyard's lane" },
-    { id: 'ridge_track', pts: [[-16, 26], [-6, 46], [14, 68], [34, 86], [44, 94]], why: "from the yard's north side up to the neighbour's farm on the ridge" },
-    { id: 'east_track', pts: [[-6, 46], [28, 26], [60, 18], [80, 13], [110, 12], [142, 19]], why: 'across the creek by the ford to the big wheat on the swell' },
+    { id: 'home_track', pts: [[-10, -12], [-4, 2], [3, 14]], why: "from the barnyard up across the home pasture to the farmhouse porch (m311)" },
+    { id: 'ridge_track', pts: [[6, 34], [10, 52], [24, 70], [36, 86], [44, 94]], why: "from behind the farmhouse up to the neighbour's farm on the ridge" },
+    { id: 'east_track', pts: [[16, 22], [36, 20], [60, 18], [80, 13], [110, 12], [142, 19]], why: 'from the farmhouse, across the creek by the ford to the big wheat on the swell' },
     { id: 'west_track', pts: [[-40, -72], [-80, -96], [-117, -96], [-153, -48], [-166, 0], [-170, 34]], why: 'round the pond and up the west hill' },
   ],
   // m310 (step 4a): THE CRASH, far out in the big wheat on the swell -- a long gouge from the field's north-east corner
@@ -29253,8 +29264,7 @@ function fpOwner(a, b) {
   for (const T of F.trackPts || []) if (fpSegDist(a, b, T) < M.track) return -1;
   const K = F.crash;
   if (K && (Math.hypot(a - K.a, b - K.b) < K.wreck || fpSegDist(a, b, [K.from, [K.a, K.b]]) < K.gouge)) return -1;
-  const Y = F.yard;
-  if (Math.pow(Math.abs(a - Y.a) / Y.ra, Y.p) + Math.pow(Math.abs(b - Y.b) / Y.rb, Y.p) < 1) return -2;
+  for (const Y of F.yards) if (Math.pow(Math.abs(a - Y.a) / Y.ra, Y.p) + Math.pow(Math.abs(b - Y.b) / Y.rb, Y.p) < 1) return -2;
   let best = -1, bd = 1e9;
   F.FIELDS.forEach((Fd, i) => {
     const d = Math.hypot(a - Fd.a, b - Fd.b) * (Fd.w || 1) + (gpNoise(a * .03 + i * 7.3, b * .03 - i * 3.1) - .5) * 2 * F.noise;
@@ -29355,6 +29365,18 @@ function buildFieldBounds() {
       if (!near(p.a, p.b, F.lineGap, q => q.tree)) { if (farmTree(Fr, rr, ico0, u, v, .75 + rr() * .45, rr() < .3 ? 'willow' : 'oak')) { p.tree = 1; F.lines++; } }
     }
   }
+  // ---- an ORCHARD (m311): small trees in rows along its `dir`, 6 m apart in a row and 7 m between rows, kept 3 m off
+  // its edges by the owner lattice -- the same tree, smaller, a paler crown
+  F.FIELDS.forEach((Fd, idx) => {
+    if (Fd.k !== 'orchard') return;
+    const ca = Math.cos(Fd.dir || 0), sb = Math.sin(Fd.dir || 0);
+    const ownAt = (a, b) => { const i = Math.round((a - A0) / G), j = Math.round((b - B0) / G); return i < 0 || j < 0 || i > NA || j > NB ? -1 : own[j * (NA + 1) + i]; };
+    for (let r2 = -60; r2 <= 60; r2 += 7) for (let t = -60; t <= 60; t += 6) {
+      const a = Fd.a + ca * t - sb * r2, b = Fd.b + sb * t + ca * r2;
+      if ([[0, 0], [3, 0], [-3, 0], [0, 3], [0, -3]].some(([da, db]) => ownAt(a + da, b + db) !== idx)) continue;
+      if (farmTree(Fr, rr, ico0, a, -b, .55 + rr() * .15, 'oak')) F.orch = (F.orch || 0) + 1;
+    }
+  });
   const r = Fr.commit();
   // ---- the tracks: worn ground, two ruts, edges fading (the lane's ribbon, on the land's own axes)
   { const pos = [], col = [], idx = [], cA = new THREE.Color(0x77624a), cR = new THREE.Color(0x46392b), across = [-1, -.6, -.38, -.22, 0, .22, .38, .6, 1], w = 1.8;
@@ -29536,7 +29558,7 @@ function farmMerge(parts, mat) {
 // One define per kind (`FP_KIND`) and a cache key per kind, so a handful of programs, and NO new draw calls --
 // it is the same merged meshes. The noise is a cheap 3D value noise; nothing is sampled.
 const FPAINT = { on: 1, kinds: { red: 1, wood: 1, stone: 2, cap: 2, roof: 3, hay: 4, dirt: 5, earth: 5, bank: 5, turf: 5, road: 5,
-  hedge: 6, hedge2: 6, metal: 7, pipe: 7, hull: 7, trim: 0, white: 0, dark: 0, steel: 7, tractor: 7, straw: 4, cloth: 0, tyre: 0, bark: 7, leaf: 6, leaf2: 6, cream: 1, shut: 0 }, n: 0 };
+  hedge: 6, hedge2: 6, metal: 7, pipe: 7, hull: 7, trim: 0, white: 0, dark: 0, steel: 7, tractor: 7, straw: 4, cloth: 0, tyre: 0, bark: 7, leaf: 6, leaf2: 6, cream: 1, shut: 0, shed: 3, coop: 1 }, n: 0 };
 const FPAINT_GLSL = `
 float fpH(vec3 p) { p = fract(p * .3183099 + .1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
 float fpN(vec3 x) { vec3 i = floor(x), f = fract(x); f = f * f * (3.0 - 2.0 * f);
@@ -29956,18 +29978,21 @@ function buildLane() {
   creek = creek.filter(([u, v], i) => i < 2 || gnd(u, v) > ISLE.sea + .35);
   // its source walked out of the city's edge, as the lane was
   { let k = 0; while (inCity(creek[0][0], creek[0][1] - 2.8) && creek[0][1] < fordV - 3.5 && k++ < 30) creek[0][1] += .5; }
-  const nearFord = (u, v, r) => Math.hypot(u - fordU, v - fordV) < r;
+  // m311: on the farm's own land the creek is the valley's (`FARMLAND.CREEK`); the lane's little brook, its culvert, its
+  // ford and its footbridge are the headland's, and stand down
+  const brook = !FARMLAND.live;
+  const nearFord = (u, v, r) => brook && Math.hypot(u - fordU, v - fordV) < r;
   banks(lane, LANE.half, LANE.bankW, LANE.bankH, 'bank', 1,
     // the ford; the yard-side bank opens at the barn's doors and toward the crash field
     (u, v, sd) => nearFord(u, v, LANE.creekHalf + LANE.creekBankW + 2.2) || (sd < 0 && u > -9.5 && u < -2.5) || (sd < 0 && u > 19 && u < 26));
-  banks(creek, LANE.creekHalf, LANE.creekBankW, LANE.creekBankH, 'stone', 0,
+  if (brook) banks(creek, LANE.creekHalf, LANE.creekBankW, LANE.creekBankH, 'stone', 0,
     (u, v) => nearFord(u, v, LANE.half + LANE.bankW + .4) || inCity(u, v));
   // the culvert it comes out of, at the town end
-  { const [u, v] = creek[0], g = gnd(u, v);
+  if (brook) { const [u, v] = creek[0], g = gnd(u, v);
     geo(new THREE.CylinderGeometry(.9, .9, 2.4, 14, 1, true).rotateX(Math.PI / 2), 'pipe', u, g + .7, v - 1);
     bx(u, v - 2.2, g - .3, g + 2.2, 4.2, 1.2, 'stone'); }
   // the footbridge: along the TOWN-side bank line, over the ford -- the bank-top walk carried across
-  { const dv = -(LANE.half + LANE.bankW / 2), u0 = fordU - 4.6, u1 = fordU + 4.6, v = fordV + dv, g = Math.max(gnd(u0, v), gnd(u1, v));
+  if (brook) { const dv = -(LANE.half + LANE.bankW / 2), u0 = fordU - 4.6, u1 = fordU + 4.6, v = fordV + dv, g = Math.max(gnd(u0, v), gnd(u1, v));
     const top = g + LANE.bankH;
     bx(fordU, v, top - .18, top + .02, u1 - u0 + 1, 1.5, 'wood');                      // the deck, walkable
     for (const s of [-1, 1]) {
@@ -29977,7 +30002,7 @@ function buildLane() {
     for (const uu of [u0 + 1, u1 - 1]) bx(uu, v, gnd(uu, v) - .2, top - .18, .3, 1.3, 'wood', 0, false);   // its trestles
   }
   // the water: a ribbon down the creek's bed, a hand's depth over the ground
-  {
+  if (brook) {
     const pts = [];
     for (let i = 0; i < creek.length - 1; i++) for (let k = 0; k < 6; k++) { const a = k / 6; pts.push([creek[i][0] + (creek[i + 1][0] - creek[i][0]) * a, creek[i][1] + (creek[i + 1][1] - creek[i][1]) * a]); }
     pts.push(creek[creek.length - 1]);
@@ -29996,7 +30021,7 @@ function buildLane() {
   const r = F.commit();
   LANE.n = r.boxes;
   const m = lane[2];
-  LANE.at = { x: wx(m[0], m[1]), z: wz(m[0], m[1]), ford: [wx(fordU, fordV), wz(fordU, fordV)] };
+  LANE.at = { x: wx(m[0], m[1]), z: wz(m[0], m[1]), ford: brook ? [wx(fordU, fordV), wz(fordU, fordV)] : null };
   LANE.pts = lane;                                   // the centreline, for the ground paint (m301)
   return LANE.n;
 }
@@ -30720,8 +30745,8 @@ function buildFlora() {
   const probe = { x: 0, y: 0, z: 0 };
   const free = (x, z, g, r) => { probe.x = x; probe.y = g; probe.z = z; return !resolveBoxes(probe, r, 1.5); };
   const okGround = g => g > ISLE.sea + .55;
-  // the fields, from the table
-  for (const F of FLORA.FIELDS) {
+  // the fields, from the table -- the headland's; on the farm's own land `FCROP` plants `FPLAN`'s (m311)
+  for (const F of FARMLAND.live ? [] : FLORA.FIELDS) {
     let n = 0;
     const jit = F.jit != null ? F.jit : .6;          // m303: a field on ridges keeps its plants on the ridge tops
     for (let v = F.v[0]; v <= F.v[1]; v += F.row) for (let u = F.u[0]; u <= F.u[1]; u += F.step) {
@@ -30793,6 +30818,7 @@ const FCROP = {
     hay:     { gap: 1.25, h: [.5, .8],    w: [.6, .85],  col: [0x8f9c48, 0xc9bf6c] },
     stubble: { gap: 1.6,  h: [.12, .22],  w: [.4, .55],  col: [0xb39350, 0xe2c88a] },
     pasture: { gap: 2.4,  h: [.2, .45],   w: [.4, .7],   col: [0x4c7428, 0x86a23e] },
+    orchard: { gap: 2.6,  h: [.2, .4],    w: [.4, .65],  col: [0x557a2c, 0x8aa444] },
   },
   chunks: [], per: {},
 };
@@ -30962,10 +30988,16 @@ function buildFarmhouse() {
   const A = FARM.at, H = FHOUSE; if (!H.on || !A) return 0;
   const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .85, metalness: 0 }), o || {});
   const MAT = { cream: M(0xe4dcc6), stone: M(0x8d8a82), roof: M(0x7a3d2e), trim: M(0xf3efe4), shut: M(0x2f4f3c),
-    wood: M(0x7a5232), dark: M(0x2a2420),
+    wood: M(0x7a5232), dark: M(0x2a2420), shed: M(0x6f7a72), coop: M(0xb0a27a),
+    wire: M(0x9aa3a8, { transparent: true, opacity: .32, depthWrite: false }),
     glow: M(0x3a2a14, { emissive: new THREE.Color(0xffc56a), emissiveIntensity: 1.25, roughness: .4 }) };
-  const F = farmFrame(A.x, A.z, A.th, MAT, 'house'), { bx, geo, quad, gnd, wx, wz } = F;
-  const { u: hu, v: hv, W, D, E1, E2, RIDGE } = H, W2 = W / 2, D2 = D / 2, T = .25;
+  // m311: ON THE FARM'S LAND the house has its own yard (`FPLAN.yards` houseyard), 70 m north of the barn, in its own
+  // frame: the porch (-v) faces south across the home pasture to the barn, so +v points away from the city (th from ub)
+  let Ox = A.x, Oz = A.z, th = A.th, hu = H.u, hv = H.v;
+  if (FARMLAND.live) { const Y = FPLAN.yards.find(y => y.id === 'houseyard'); [Ox, Oz] = flWorld(Y.a, Y.b); th = Math.atan2(FARMLAND.ub[0], FARMLAND.ub[1]) - .12; hu = 0; hv = 0; }
+  H.origin = { x: Ox, z: Oz, th };
+  const F = farmFrame(Ox, Oz, th, MAT, 'house'), { bx, geo, quad, gnd, wx, wz } = F;
+  const { W, D, E1, E2, RIDGE } = H, W2 = W / 2, D2 = D / 2, T = .25;
   let lo = 1e9, hi = -1e9;
   for (const [a, b] of [[-1, -1], [1, -1], [-1, 1], [1, 1], [0, 0], [0, -1.6]]) { const y = gnd(hu + a * W2, hv + b * D2); lo = Math.min(lo, y); hi = Math.max(hi, y); }
   const y0 = hi + .5;                                          // the floor, on a plinth
@@ -31038,6 +31070,33 @@ function buildFarmhouse() {
     for (let r = 0; r < 4; r++) for (let k = 0; k < 4 - r; k++)
       geo(new THREE.CylinderGeometry(.17, .17, 1.4, 7), 'wood', u + .95 + k * .36 + r * .18, g + .17 + r * .3, v + .9, 0, Math.PI / 2);
     bx(u + 1.5, v + .9, g - .1, g + 1.25, 1.6, 1.45, 'wood'); F.parts.wood.pop(); }               // as high as the logs are
+  // ---- m311: THE TOOL SHED (to its +u side) and THE CHICKEN COOP (to its -u side), the house's own outbuildings
+  { const su = hu + W2 + 6.5, sv = hv + 1.2, g = gnd(su, sv), sh = 2.6, sl = 2.1;
+    bx(su, sv, g - .2, g + .25, 4.6, 3.6, 'stone');                                                   // its slab
+    bx(su, sv + 1.7, g + .25, g + sh, 4.4, .16, 'shed'); bx(su - 2.15, sv, g + .25, g + (sh + sl) / 2, .16, 3.4, 'shed'); bx(su + 2.15, sv, g + .25, g + (sh + sl) / 2, .16, 3.4, 'shed');
+    bx(su - 1.3, sv - 1.7, g + .25, g + sl, 1.8, .16, 'shed'); bx(su + 1.5, sv - 1.7, g + .25, g + sl, 1.4, .16, 'shed');   // the front, a doorway left in it
+    bx(su + .15, sv - 1.75, g + .25, g + 2.0, .9, .06, 'dark', 0, false);                              // the dark inside the door
+    const pt = Math.atan2(sh - sl, 3.6);
+    // a pent roof, high at the back (+v): psi pi/2 puts the box's local x along -v, so rising toward +v is tilt -pt
+    // (never a rotation post-multiplied onto a composed TRS -- under a non-uniform scale it shears)
+    bx(su, sv, g + (sh + sl) / 2 - .05, g + (sh + sl) / 2 + .05, Math.hypot(3.6, sh - sl) + .4, 5.0, 'roof', Math.PI / 2, false, -pt);
+    // tools leaning on it, and a drum
+    for (let k = 0; k < 3; k++) bx(su - 1.2 + k * .35, sv - 1.95, g, g + 1.5, .05, .05, 'wood', 0, false, .25);
+    geo(new THREE.CylinderGeometry(.3, .3, .9, 10), 'shed', su + 2.6, g + .45, sv - 1.0);
+    H.shed = [wx(su, sv), wz(su, sv)]; }
+  { const cu = hu - W2 - 7.5, cv = hv + .5, g = gnd(cu, cv);
+    // the coop: a hut on legs, its ramp, a pitched roof; and the run, posts and wire
+    for (const [du, dv] of [[-1, -.7], [1, -.7], [-1, .7], [1, .7]]) bx(cu + du, cv + dv, g - .1, g + .7, .12, .12, 'wood', 0, false);
+    bx(cu, cv, g + .6, g + 1.85, 2.3, 1.7, 'coop', 0, false);
+    for (const s of [-1, 1]) bx(cu + s * .6, cv, g + 1.85 + .32, g + 1.85 + .42, 1.35, 2.0, 'roof', 0, false, -s * .5);
+    bx(cu - 1.6, cv - .2, g + .2, g + .3, 1.2, .5, 'wood', 0, false, .48);                            // the ramp
+    bx(cu, cv, g - .1, g + 1.85, 2.3, 1.7, 'coop'); F.parts.coop.pop();
+    const ru = cu, rv = cv - 3.2, RW = 5, RD = 3.6;
+    for (const [du, dv] of [[-RW / 2, -RD / 2], [RW / 2, -RD / 2], [-RW / 2, RD / 2], [RW / 2, RD / 2], [0, -RD / 2], [-RW / 2, 0], [RW / 2, 0]])
+      bx(ru + du, rv + dv, gnd(ru + du, rv + dv) - .1, gnd(ru + du, rv + dv) + 1.3, .09, .09, 'wood', 0, false);
+    for (const [du, dv, w, d] of [[0, -RD / 2, RW, .04], [-RW / 2, 0, .04, RD], [RW / 2, 0, .04, RD]])
+      bx(ru + du, rv + dv, g, g + 1.25, w, d, 'wire', 0, true);
+    H.coop = [wx(cu, cv - 6), wz(cu, cv - 6)]; }
   // ---- the washing line behind the house: two T-posts and the line; the cloth is its own instanced mesh
   { const a = [hu - 3.6, vb + 2.6], b = [hu + 3.4, vb + 3.1];
     for (const [u, v] of [a, b]) { const g = gnd(u, v); bx(u, v, g - .2, g + 2.1, .12, .12, 'wood'); bx(u, v, g + 2.0, g + 2.1, .9, .08, 'wood', Math.atan2(-(b[1] - a[1]), b[0] - a[0]) + Math.PI / 2, false); }
@@ -31149,7 +31208,8 @@ function farmTree(F, rr, ico1, u, v, s, k) {
   return 1;
 }
 function buildHedgerows() {
-  const A = FARM.at; if (!HROW.on || !A) return 0;
+  // m311: the headland's field system -- on the farm's own land `FPLAN` lays the fields, hedges and trees instead
+  const A = FARM.at; if (!HROW.on || !A || FARMLAND.live) return 0;
   const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .9, metalness: 0 }), o || {});
   const MAT = { bank: M(0x5c6a32), hedge: M(0x2f5a24), hedge2: M(0x40712c), bark: M(0x4f3d2c), leaf: M(0x3c6a2a),
     leaf2: M(0x6f9440), earth: M(0x6b4a32), wood: M(0x8a6a48), hay: M(0xd9b25a) };
@@ -31325,18 +31385,15 @@ const GODPLACES = [
   { id: 'farmyard', world: 'tkit', name: 'GRISTLE FARM · the farmyard, at the barn doors', at: () => godFarm(-6, -12.5, 0) },
   { id: 'hayloft',  world: 'tkit', name: 'GRISTLE FARM · up in the hayloft', at: () => FARM.loft && [FARM.loft[0], FARM.loft[1], FARM.loft[2], null] },
   { id: 'crash',    world: 'tkit', name: 'GRISTLE FARM · the crash site', at: () => CRASH.at && [CRASH.at.you[0], null, CRASH.at.you[1], Math.atan2(CRASH.at.x - CRASH.at.you[0], CRASH.at.z - CRASH.at.you[1])] },
-  { id: 'corn',     world: 'tkit', name: 'GRISTLE FARM · the corn', at: () => godMid(FLORA.FIELDS[0]) },
-  { id: 'wheat',    world: 'tkit', name: 'GRISTLE FARM · the wheat down to the shore', at: () => godMid(FLORA.FIELDS[1]) },
+  { id: 'corn',     world: 'tkit', name: 'GRISTLE FARM · the corn west of the barn', at: () => FARMLAND.live ? godFL({ a: FPLAN.FIELDS.find(f => f.id === 'home_corn').a + 6, b: FPLAN.FIELDS.find(f => f.id === 'home_corn').b }) : godMid(FLORA.FIELDS[0]) },   // 6 m off the seed: the scarecrow stands on it
+  { id: 'wheat',    world: 'tkit', name: 'GRISTLE FARM · the south wheat off the bridge', at: () => FARMLAND.live ? godFL(FPLAN.FIELDS.find(f => f.id === 'south_wheat')) : godMid(FLORA.FIELDS[1]) },
+  { id: 'orchard',  world: 'tkit', name: 'GRISTLE FARM · the orchard', at: () => FARMLAND.live && godFL(FPLAN.FIELDS.find(f => f.id === 'orchard')) },
   { id: 'farmhouse', world: 'tkit', name: 'GRISTLE FARM · the farmhouse porch', at: () => FHOUSE.at && [FHOUSE.at[0], null, FHOUSE.at[1], FHOUSE.at[2]] },
-  { id: 'meadow',   world: 'tkit', name: 'GRISTLE FARM · the hay meadow and the bale stack', at: () => HROW.stackAt && [HROW.stackAt[0], null, HROW.stackAt[1], null] },
-  { id: 'plough',   world: 'tkit', name: 'GRISTLE FARM · the ploughed field', at: () => godFarm(-36, -5, 0) },
-  { id: 'copse',    world: 'tkit', name: "GRISTLE FARM · the copse at the headland's tip", at: () => godFarm(-52, 0, -Math.PI / 2) },
   { id: 'windmill', world: 'tkit', name: 'GRISTLE FARM · the windmill pump', at: () => FPROPS.at.windmill && [FPROPS.at.windmill[0], null, FPROPS.at.windmill[1], null] },
   { id: 'scarecrow', world: 'tkit', name: 'GRISTLE FARM · the scarecrow in the corn', at: () => FPROPS.at.scarecrow && [FPROPS.at.scarecrow[0], null, FPROPS.at.scarecrow[1], null] },
   { id: 'tractor', world: 'tkit', name: 'GRISTLE FARM · the tractor in the yard', at: () => FPROPS.at.tractor && [FPROPS.at.tractor[0], null, FPROPS.at.tractor[1], FPROPS.at.tractor[2]] },
   { id: 'paddock',  world: 'tkit', name: 'GRISTLE FARM · the cows in the paddock', at: () => godFarm(-4.3, 8.5, 0) },
   { id: 'lane',     world: 'tkit', name: 'GRISTLE FARM · the sunken lane', at: () => LANE.at && [LANE.at.x, null, LANE.at.z, null] },
-  { id: 'ford',     world: 'tkit', name: 'GRISTLE FARM · the ford and the footbridge', at: () => LANE.at && [LANE.at.ford[0], null, LANE.at.ford[1], null] },
   { id: 'road',     world: 'tkit', name: 'GRISTLE FARM · the fingerpost and the road to the bridge', at: () => FROAD.at && [FROAD.at[0], null, FROAD.at[1], FROAD.at[2]] },
   { id: 'bridge',   world: 'tkit', name: 'GRISTLE FARM · the bridge checkpoint', at: () => BRIDGE.gate && [BRIDGE.gate.x, BRIDGE.gate.y + .1, BRIDGE.gate.z, null] },
   { id: 'test',     world: 'test', name: 'TEST SITE', at: () => [0, null, 4, null] },
@@ -31544,7 +31601,12 @@ function buildFarmProps() {
   bx(wu, wv, wg + H - .1, wg + H + .05, 1.0, 1.0, 'wood', 0, false);
   bx(wu, wv, wg - .2, wg + 1.4, 2.4, 2.4, 'steel'); F.parts.steel.pop();                   // a collider round its feet
   // ---- the scarecrow in the corn
-  { const F0 = FLORA.FIELDS[0], su = (F0.u[0] + F0.u[1]) / 2 + .3, sv = (F0.v[0] + F0.v[1]) / 2, g = gnd(su, sv);
+  // m311: on the farm's own land, in `FPLAN`'s home corn -- its (a, b) put into this frame (the inverse of the mapping)
+  { const F0 = FLORA.FIELDS[0];
+    let su = (F0.u[0] + F0.u[1]) / 2 + .3, sv = (F0.v[0] + F0.v[1]) / 2;
+    const hc = FARMLAND.live && FPLAN.FIELDS.find(f => f.id === 'home_corn');
+    if (hc) { const [x, z] = flWorld(hc.a, hc.b), dx = x - A.x, dz = z - A.z, C = Math.cos(A.th), S = Math.sin(A.th); su = dx * C - dz * S; sv = dx * S + dz * C; }
+    const g = gnd(su, sv);
     bx(su, sv, g - .3, g + 2.3, .1, .1, 'wood'); bx(su, sv, g + 1.75, g + 1.85, 1.6, .08, 'wood', 0, false);
     bx(su, sv, g + 1.15, g + 1.95, .55, .32, 'cloth', 0, false);
     for (const s of [-1, 1]) bx(su + s * .55, sv, g + 1.6, g + 1.95, .55, .26, 'cloth', 0, false, s * .15);
@@ -31740,7 +31802,8 @@ const GPAINT = {
     { id: 'trough',  u: -3,  v: 11.6,  ru: 3.4, rv: 2.8, col: 0x3d2f22, a: .9, rough: .35, why: 'mud round the trough and the windmill pump: the cows drink here' },
     { id: 'paddock', u: -4.3, v: 13.6, ru: 6.5, rv: 5.0, col: 0x79684a, a: .55, why: 'the paddock trodden pale by the herd' },
     { id: 'gate',    u: -13.6, v: 12,  ru: 2.2, rv: 2.0, col: 0x4a3a2a, a: .8, why: 'the paddock gate, churned' },
-    { id: 'porch',   u: 14,  v: 3.4,   ru: 1.4, rv: 2.0, col: 0x6a5640, a: .7, why: 'the path off the farmhouse steps, worn to the corn and the lane (m304)' },
+    { id: 'porch',   u: 14,  v: 3.4,   ru: 1.4, rv: 2.0, col: 0x6a5640, a: .7, why: 'the path off the farmhouse steps, worn to the corn and the lane (m304)',
+      house: [0, -7.6] },                // m311: in the house's own frame (`FHOUSE.origin`) when it has one
   ],
   lane: { col: 0x6a5640, rut: 0x3e3226, w: 1.65, a: .85, why: 'the sunken lane: a worn track down its floor, two ruts from carts' },
   // m305: THE ROAD TO THE BRIDGE -- from the lane's east mouth, round the head of the crash furrow, to the foot of the
@@ -31772,7 +31835,13 @@ function buildGroundPaint() {
       if (i < nu && j < nv) { const o = base + j * (nu + 1) + i; idx.push(o, o + nu + 1, o + 1, o + 1, o + nu + 1, o + nu + 2); }
     }
   };
-  for (const P of GPAINT.TABLE) grid(P.u, P.v, P.ru, P.rv, P.col, P.a, .55);
+  for (const P of GPAINT.TABLE) {
+    if (P.house && FHOUSE.origin && FARMLAND.live) {
+      // the house's frame, put into this one: its point to the world, then back through the farm's frame
+      const O = FHOUSE.origin, c = Math.cos(O.th), s2 = Math.sin(O.th), [hu, hv] = P.house, x = O.x + hu * c + hv * s2, z = O.z - hu * s2 + hv * c;
+      const dx = x - A.x, dz = z - A.z; grid(dx * C - dz * S, dx * S + dz * C, P.ru, P.rv, P.col, P.a, .55);
+    } else grid(P.u, P.v, P.ru, P.rv, P.col, P.a, .55);
+  }
   // a track: a ribbon down a centreline, ruts darker, edges fading -- the lane's floor, and the road on from it (m305)
   const ribbon = (L, G) => {
     const cA = new THREE.Color(G.col), cR = new THREE.Color(G.rut), across = [-1, -.6, -.38, -.22, 0, .22, .38, .6, 1];

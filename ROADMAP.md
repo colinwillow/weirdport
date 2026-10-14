@@ -40,8 +40,8 @@ What to build (several builds; ship each step, never wait):
 4. **Spread the existing pieces out into clusters** (reuse m288-m304, do not throw them away): the
    farmhouse and yard, the barn and silo, sheds and coop, a neighbour's farm on another ridge, a lone hay
    barn. **The crash site far out in a field**, a long gouge through the wheat, the crop circle near it.
-   Split: **4a the crash far out, the gouge, the crop circle — done m310.** 4b the yard cluster spread into
-   farmhouse+yard, barn+silo, sheds+coop. 4c the neighbour's farm on the ridge and the lone hay barn.
+   Split: **4a the crash far out, the gouge, the crop circle — done m310.** **4b the yard cluster spread into
+   farmhouse+yard, barn+silo, sheds+coop — done m311.** 4c the neighbour's farm on the ridge and the lone hay barn.
 5. **Life**: herds of cows in the pastures, a tractor working a field and one parked, farmhands in the
    fields, a pickup on the track.
 6. **The transition into town, never a line**: dirt track -> country road -> past the neighbour's farm
@@ -498,4 +498,10 @@ differ" table there, so no region feels like the last one.
   185 m from the farmyard. It sits at the end of a 68 m gouge torn through the wheat, with a crop
   circle (a ring, a disc and three satellites of flattened wheat) a field away. A new game starts
   there, with the city just a skyline.
+- **m311 (farm rebuild, step 4b):** the farmhouse now has its own yard, 70 m north of the barn
+  across a home pasture, with a tool shed and a chicken coop beside it and a track between the two
+  yards. The ground between is fields: corn with the scarecrow in it, the home pasture, an orchard
+  in rows, and a pasture down to the creek. The old headland's hedge-and-crop layout and the little
+  brook through the lane are switched off on the new land (not deleted), since the field plan and
+  the creek valley do their jobs now.
 
