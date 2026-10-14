@@ -7,6 +7,93 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE EDGE OF TOWN ON THE FARM'S SIDE OF THE RIVER (m316, step 6a, `FTOWN`, `buildTownEdge`, the `townedge` yard, per-yard owner codes).**
+  "Never a line": between the fields and the bridge, a parcel (`FPLAN.yards` townedge, a superellipse 156 x 38 m
+  either side of the landing, FENCED) holds a GAS STATION (canopy on four posts, two pump islands with lit screens,
+  a shop with a lit window, an 11 m price sign -- exaggerated over a 3.5 m shop), a TRAILER PARK (four on blocks, a
+  stripe, a deck, chairs, a dish), three small HOUSES with porches, picket-fenced yards, gates and mailboxes, two
+  BILLBOARDS on 8 m legs (canvas boards, one facing traffic off the bridge, one onto it), a FRUIT STAND, POWER POLES
+  every 30 m along the bridge road 5 m off it with wires sagging in three pieces, and the bridge road PAVED for its
+  last stretch (a dark ribbon with a dashed centre line over the dirt track, fading into it).
+  **Each yard is its own owner now** (`-2 - index`), so a yard chooses its border (`edge: 'fence'` for the town;
+  the barn's and the house's stay hedged). The old `town_edge` reserve seed is gone -- the parcel replaced it, and
+  the south wheat and plough shrank round it on their own. Everything else that reads owners only asks `< 0`.
+  GOD `gas`, `trailers`. 6b (the city side starting thin, and the city island's own edge softened) follows.
+  `npm run places`, after the bump:
+  ```
+  ok   buildFarmland
+  ok   buildFarmWaters
+  ok   buildFieldBounds
+  ok   buildFieldCrops
+  ok   buildNeighbours
+  ok   buildFarm
+  ok   buildFarmProps
+  ok   buildCrash
+  ok   crashHero
+  ok   buildLane
+  ok   buildBridge
+  ok   buildHedgerows
+  ok   buildFarmhouse
+  ok   buildRoadside
+  ok   buildCows
+  ok   buildVehicles
+  ok   buildFarmhands
+  ok   buildTownEdge
+  ok   buildGroundPaint
+  ok   buildFlora
+  widest grass 66.5 at 172deg | headland ray 7deg grass 38.2 need 60 | rays 520 rect [-93.5,90.5,-90.3,93.5]
+  FARM.at {"x":333.8,"z":150.5,"th":1.281} | CRASH.at yes | LANE.at yes | BRIDGE.gate yes (side 0) | ISLE.live 1
+  FARMLAND live [ 354, 196 ] chunks 9 floor tris 12344 water tris 8346 | BRIDGE len 166 piers 5 gate [112,64]
+  FWATER 7 boxes, reeds 31 | pond level 0.1 | creek bed [ 5.19, -8.5 ] len 255
+  FPLAN 1681 boxes: hedge 380 fence 383 hedge oaks 97 tree line 10 | m2: margins 69.5k barnyard 3.7k, houseyard 1.7k, townedge 4.1k south_wheat 4.9k, south_plough 3.4k, pond_pasture 2.2k, west_corn 4.4k, west_hay 4.0k, west_hill 6.7k, lone_barn_hay 4.9k, north_plough 4.7k, far_hill 4.7k, north_wheat 2.9k, ridge_corn 3.0k, neighbour 6.4k, ridge_pasture 4.9k, creek_meadow 4.3k, crash_wheat 5.9k, east_corn 2.8k, far_east_hay 2.7k, east_pasture 5.2k, knoll 5.7k, home_corn 4.2k, home_pasture 2.2k, orchard 2.6k, creek_pasture 2.9k
+  FCROP 39028 clumps in 21 chunks {"south_wheat":3994,"pond_pasture":286,"west_corn":2982,"west_hay":2168,"west_hill":3836,"lone_barn_hay":2687,"far_hill":728,"north_wheat":2408,"ridge_corn":1884,"ridge_pasture":747,"creek_meadow":2409,"crash_wheat":5000,"east_corn":1767,"far_east_hay":1484,"east_pasture":819,"knoll":2032,"home_corn":2756,"home_pasture":320,"orchard":316,"creek_pasture":405}
+  ok  COWS 30 {"paddock":3,"far_hill":5,"ridge_pasture":6,"east_pasture":5,"pond_pasture":4,"home_pasture":4,"creek_pasture":3} all in their pastures
+  FVEH tractor 28 pts, pickup 7 pts
+  ok  FARMHANDS Dale (hobo) 298,74 | Wendell (hobo) 483,59 | Mags (hobo) 337,222 | Earl (hobo) 418,153 | Farmer Gristle (farmer) 322,149 
+  FTOWN 71 boxes, poles 4
+  FROAD 3 road pts NONE foot null | FHOUSE 34 chimney [376.8,11.8,208.3] | HROW 0 boxes 0 trees 0 gates | FLORA {"tufts":900}
+  notes ["TC NO OBB JSON","ISLE 0/3 TEX"]
+  ok  oldtown    -> player 0.0,0.1,0.0 ground 0.00 
+  ok  overlook   -> player 464.3,9.1,68.0 ground 8.99 
+  ok  ploughing  -> player 409.0,2.2,172.2 ground 2.03 
+  ok  pickup     -> player 316.3,1.4,137.8 ground 1.29 
+  ok  gas        -> player 262.7,0.7,111.7 ground 0.52 
+  ok  trailers   -> player 227.8,1.8,161.0 ground 1.64 
+  ok  herd       -> player 472.4,6.7,221.5 ground 6.52 
+  ok  neighbour  -> player 397.4,6.0,284.6 ground 5.88 
+  ok  haybarn    -> player 477.7,5.9,142.2 ground 5.72 
+  ok  circle     -> player 271.6,0.6,347.9 ground 0.48 
+  ok  swell      -> player 294.5,0.7,343.3 ground 0.50 
+  ok  fplough    -> player 429.9,2.2,166.6 ground 2.05 
+  ok  creek      -> player 306.6,1.5,245.6 ground 1.35 
+  ok  pond       -> player 363.6,1.5,63.8 ground 1.36 
+  ok  channel    -> player 241.6,0.5,134.3 ground 0.34 
+  ok  farmyard   -> player 320.1,1.5,152.7 ground 1.32 
+  ok  hayloft    -> player 333.7,4.7,156.8 ground 9.00 
+  ok  crash      -> player 284.8,0.8,333.3 ground 0.69 
+  ok  corn       -> player 367.8,1.4,113.3 ground 1.28 
+  ok  wheat      -> player 291.5,0.3,56.8 ground 0.15 
+  ok  orchard    -> player 331.2,2.8,222.0 ground 2.62 
+  ok  farmhouse  -> player 367.2,1.8,206.2 ground 1.64 
+  ok  windmill   -> player 341.2,1.6,154.2 ground 1.42 
+  ok  scarecrow  -> player 368.8,1.4,107.4 ground 1.20 
+  ok  tractor    -> player 327.2,1.5,139.8 ground 1.33 
+  ok  paddock    -> player 340.7,1.6,157.1 ground 1.42 
+  ok  lane       -> player 320.6,1.5,140.3 ground 1.31 
+  ok  road       -> player 336.6,1.5,118.1 ground 1.36 
+  ok  bridge     -> player 112.1,3.0,63.6 ground 2.80 
+  every tkit GOD place is somewhere
+  ok  vehStep        30 frames
+  ok  farmPropsStep  30 frames
+  ok  farmhouseStep  30 frames
+  ok  floraStep      30 frames
+  ok  cowStep        30 frames
+  ok  crashStep      30 frames
+  ok  crashHeroStep  30 frames
+  ok  riverStep      30 frames
+  ok  gradeStep      30 frames
+  ```
+
 - **THE FARMHANDS AND THE FARMER ARE AUTHORED NPC MARKERS, SO THE SHIPPED MARKER PATH SPAWNS THEM (m315, step 5c, `FHANDS`, `buildFarmhands`, `fpCentroid`).**
   Five people on the land: Dale in the wheat by the bridge road, Wendell on the west hill's hay, Mags in the orchard,
   Earl at the foot of the ploughed field watching the tractor, and Farmer Gristle at his barn doors (B2's farmer).

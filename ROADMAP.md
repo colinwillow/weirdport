@@ -52,6 +52,9 @@ What to build (several builds; ship each step, never wait):
    yards, billboards, power poles, a fruit stand) -> the bridge checkpoint -> across it the city starts
    thin (low houses, lots, a warehouse) and thickens. Also soften the city island's own edge the same way
    (scattered houses, yards, fences, trees on the ring) so the kit city doesn't end at a ruler line.
+   Split: **6a the edge of town on the farm's side (gas station, trailer park, houses with yards,
+   billboards, power poles, fruit stand, the road paved) — done m316.** 6b the city side starting thin
+   past the bridge, and the city island's own edge softened.
 7. **Phone cost**: instance everything repeated (trees, fence posts, bales, cows, crop stalks), merge
    per material, chunk the terrain, and keep draw calls in the tens. Distance fades the small stuff.
 7b. **More than one way from the farm to town** (the new "connective tissue" rules in `REGIONS.md`): the
@@ -524,4 +527,8 @@ differ" table there, so no region feels like the last one.
   Farmer Gristle at his barn doors. Each has a name and a few lines. They're stand-in bodies
   (hobo for the hands, the skinny hick for the farmer, as CHARACTERS.md says) until your models
   land. That finishes step 5.
+- **m316 (farm rebuild, step 6a):** the edge of town now stands on the farm's side of the bridge: a gas
+  station under an 11 m price sign, a trailer park, three little houses with picket-fenced yards, two
+  tall billboards ("VISIT WEIRDPORT · IT'S PERFECTLY NORMAL HERE"), a fruit stand, power poles along
+  the road, and the bridge road paved for its last stretch. Next is the city side of the bridge.
 
