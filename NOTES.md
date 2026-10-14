@@ -7,6 +7,31 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE WRECK IS THE HERO: x1.6, A BOW WAVE OF EARTH, MOUNDS FOR BERMS, A PATCHY SCORCH (m325, farm polish 4, `CRASH.S`,
+  `buildCrash`, `crashHero`, `FPLAN.crash`).** m324's shots: a 3.3 m saucer sitting in the wheat like a dropped plate,
+  at the end of what read as a purple canal between brown plank walls. STEER: "the wreck as a hero moment".
+  1. **`CRASH.S` 1.6 scales the wreck and everything placed off it** -- hull, rim, canopy, core, panels, the two
+     colliders, the fires, the smoke, Clancy's hatch, the spawn (`you`, now 15.2 m out), and in `crashHero` the core,
+     the light pool, the crystals and the arc radius. **One number, read everywhere** -- a scale applied to the hull
+     alone would have put the hatch and the fires INSIDE it.
+  2. **The berms are mounds** (the m324 rule: `bx` then `parts.dirt.pop()` keeps the collider): an ellipsoid each, size,
+     height and offset all jittered so they are not a row of sausage links (the first pass was), rising toward the
+     wreck by a*a to ~1.1 m (colliders match). Clods are icosahedron lumps, not bricks. **A seeded `cr()` replaces
+     `Math.random()`** here, so the furrow is the same furrow every load.
+  3. **The bow wave**: the earth the nose ploughed up, an ellipsoid ahead of it 7.8 m across (+ collider), turf clods
+     on its crest -- the biggest thing the crash did to the field, and it says which way it was going.
+  4. **The scorch is charred and patchy**: darker (0x241030), opacity .72 -> .42, each disc's radius x .6-1.1 and
+     jittered across the furrow -- the torn earth shows through and round it. It read as liquid before.
+  5. `FPLAN.crash` margins grew (gouge 3.4 -> 4.8, wreck 8 -> 11) so no wheat grows through the bigger hull or the bow
+     wave: crash_wheat 5000 -> 4689 clumps.
+  **A `const` read above its own declaration, again** -- `const j = ... * a, a = k / NS` in the scorch loop; boot does not
+  run `buildCrash` (no island in node), so the gate would not have caught it and the crash would have been a silent
+  `CRASH FAIL`. The headless shot is what found it, by showing no crash. Re-ordered.
+  Judged with `npm run shot wreck crash` (new `wreck` row: above and to the side). `npm run places`:
+      ok  crash      -> player 288.2,0.4,337.8 ground 0.29
+      ok  NEW GAME  -> player 288.2,337.8 ground 0.29 | 15.2 m from the wreck
+      every tkit GOD place is somewhere
+
 - **THE HEDGE BANKS ARE MOUNDS, NOT BOXES; THE BOX IS ONLY THE COLLIDER NOW (m324, farm polish 3, `buildFieldBounds`,
   `buildLane` `banks` / `bankProf` / `bankEnd`).** m321's road shot: every bank a hard earth slab with vertical sides.
   Two builders, two fixes, one rule -- **`bx(...)` then `parts[mat].pop()` keeps the collider and drops the slab**, and

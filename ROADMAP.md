@@ -581,3 +581,11 @@ differ" table there, so no region feels like the last one.
   mounds, and the farm lane's tall banks have sloped sides with rounded ends where they stop. Walking
   on them is unchanged (same colliders). That's the three things m321's shots showed. Next pass:
   take new shots and polish whatever looks weakest, or move to B1e if it all reads right.
+
+- **m325 (farm polish 4):** the crash site is the weakest thing in the new shots, so this pass
+  makes it the hero:
+  - the saucer is 1.6x bigger, nose down in a bow wave of earth it ploughed up;
+  - the furrow's sides are mounds of thrown earth, not brown planks;
+  - the purple scorch is charred and patchy, not a canal;
+  - a new game now starts 15 m back so the whole wreck is in view.
+  `mel.CRASH.S` is the scale, which takes a reload.

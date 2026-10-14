@@ -39,6 +39,15 @@ const SHOTS = {
   overcity: { place: 'overlook', settle: 3, why: 'the city from the west hill, square on',
     cam: `(() => { const p = mel.player.pos, I = mel.ISLE.rect, cx = (I[0] + I[1]) / 2, cz = (I[2] + I[3]) / 2, dx = cx - p.x, dz = cz - p.z, L = Math.hypot(dx, dz);
       return [p.x - dx / L * 3, p.y + 3, p.z - dz / L * 3, cx, p.y - 4, cz]; })()` },
+  yard: { place: 'farmyard', settle: 3, why: 'the farmyard from behind him: barn, silo, house',
+    cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
+      return [p.x - fx * 9, p.y + 4.5, p.z - fz * 9, p.x + fx * 20, p.y + 1, p.z + fz * 20]; })()` },
+  gas: { place: 'gas', settle: 3, why: 'the edge of town: the gas station, the trailers, the bridge beyond',
+    cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
+      return [p.x - fx * 10, p.y + 5, p.z - fz * 10, p.x + fx * 25, p.y + 1, p.z + fz * 25]; })()` },
+  wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
+    cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
+      return [C.x + sx * 16 - dx / L * 6, p.y + 7, C.z + sz * 16 - dz / L * 6, C.x, p.y + .5, C.z]; })()` },
   crash: { place: 'crash', settle: 3, why: 'the wreck from where the new game starts',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz);
       return [p.x - dx / L * 8, p.y + 4, p.z - dz / L * 8, C.x, p.y + 1, C.z]; })()` },
