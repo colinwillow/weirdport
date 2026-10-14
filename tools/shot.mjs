@@ -44,7 +44,13 @@ const SHOTS = {
       return [p.x - fx * 9, p.y + 4.5, p.z - fz * 9, p.x + fx * 20, p.y + 1, p.z + fz * 20]; })()` },
   gas: { place: 'gas', settle: 3, why: 'the edge of town: the gas station, the trailers, the bridge beyond',
     cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
-      return [p.x - fx * 10, p.y + 5, p.z - fz * 10, p.x + fx * 25, p.y + 1, p.z + fz * 25]; })()` },
+      return [p.x - fx * 22, p.y + 14, p.z - fz * 22, p.x + fx * 25, p.y, p.z + fz * 25]; })()` },
+  house: { place: 'farmhouse', settle: 3, why: 'the farmhouse and its yard',
+    cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
+      return [p.x - fx * 12 + fz * 6, p.y + 6, p.z - fz * 12 - fx * 6, p.x + fx * 15, p.y + 2, p.z + fz * 15]; })()` },
+  herd: { place: 'herd', settle: 3, why: 'a herd in its pasture',
+    cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
+      return [p.x - fx * 8, p.y + 3.5, p.z - fz * 8, p.x + fx * 25, p.y, p.z + fz * 25]; })()` },
   wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
       return [C.x + sx * 16 - dx / L * 6, p.y + 7, C.z + sz * 16 - dz / L * 6, C.x, p.y + .5, C.z]; })()` },

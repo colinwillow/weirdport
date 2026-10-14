@@ -589,3 +589,9 @@ differ" table there, so no region feels like the last one.
   - the purple scorch is charred and patchy, not a canal;
   - a new game now starts 15 m back so the whole wreck is in view.
   `mel.CRASH.S` is the scale, which takes a reload.
+
+- **m326 (farm polish 5):** the cows. They were sixteen boxes each, and a herd was five cows
+  wandering separately over a whole field. Now every part is a rounded box, so they read as chunky
+  toy cows, and a herd grazes together, each cow mostly picking a spot near a herd-mate. The bigger
+  pastures have 7 cows. `mel.COW.round` (0 is the old boxes; needs a reload) and `mel.COW.herdP`
+  (how herd-bound they are, 0.7 now) are the dials.

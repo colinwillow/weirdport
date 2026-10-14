@@ -7,6 +7,19 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE COWS ARE ROUNDED AND THE HERDS GRAZE TOGETHER (m326, farm polish 5, `COW.round`, `COW.herdP` / `herdR`, `cowPick`,
+  `FHERDS`).** The herd shot: two brick cows a long way apart on an empty hill. Two causes, two fixes:
+  1. **every part was a unit BOX** (m294: one `InstancedMesh`, 16 instances a cow). It is now a ROUNDED box -- a unit box
+     cut 2 x 2 x 2 with each vertex pulled `round` .5 of the way to the sphere through the face centres
+     (`v * (1 - k + k * .5 / |v|)`: a face centre is exactly on both, so the part still fills its unit cube and every size
+     in `cowDraw` means what it meant), `toNonIndexed` + flat normals. 48 triangles a part instead of 12: 39 + 3 cows x 16
+     parts x 48 = ~32k, one draw call still. `COW.round = 0` is the old boxes (wants a reload).
+  2. **a herd was five independent random walks over a whole field** (`cowPick` picked anywhere in its home radius, which
+     is the field's). Now 70% of picks (`herdP`) are within `herdR` 7 m of a random herd-mate, and at build each cow after
+     the first starts near an earlier one -- so a herd is a herd. The field test still applies to every pick (places:
+     `COWS 39 ... all in their pastures`). Herds grew a little: far hill, ridge, east 7; pond 5.
+  Judged with the new `npm run shot herd` (and `house`, whose camera lands in a tree -- a shot row, not a game bug).
+
 - **THE WRECK IS THE HERO: x1.6, A BOW WAVE OF EARTH, MOUNDS FOR BERMS, A PATCHY SCORCH (m325, farm polish 4, `CRASH.S`,
   `buildCrash`, `crashHero`, `FPLAN.crash`).** m324's shots: a 3.3 m saucer sitting in the wheat like a dropped plate,
   at the end of what read as a purple canal between brown plank walls. STEER: "the wreck as a hero moment".
