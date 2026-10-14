@@ -258,7 +258,7 @@ differ" table there, so no region feels like the last one.
   - [x] m350 **C2b-1** the pacifier over the south side: the trance, the crackle, the shot that finds it, the dazed release.
   - [x] m351 **C2b-2** the watcher: a searchlight orb; caught in its beam you raise the alert (heat), and it calls the others; shot down, the alert drops.
   - [x] m352 **C2b-3** the amplifier: over the square, it makes the protest louder and the brawl likelier; shot down, the crowd calms.
-- [ ] **C2c Placeholder roster (`CHARACTERS.md`).** Build against ROLES, not models: a roster table of
+- [x] m353 **C2c Placeholder roster (`CHARACTERS.md`).** Build against ROLES, not models: a roster table of
   every role the regions need, each mapped to a stand-in (existing body + tint + prop + name tag).
   When his model for a role lands it is one line. GOD mode lists every role and spawns one.
 - [ ] **C2d Smart objects.** Benches, café tables, bus stops, food carts and counters carry use spots
@@ -830,3 +830,10 @@ differ" table there, so no region feels like the last one.
   four times as likely to turn into a brawl by itself. Shoot it down and a brawl that's already
   happening stops; after that, brawls almost never start unless you start one. That makes three of the
   six orbs in LORE.md; the projector, poltergeist and relay are for later.
+
+- **m353 (C2c):** the roster has 30 roles, each a stand-in built from an existing body plus a tint, a
+  simple prop (cap, beanie, chef's hat, helmet, glowing visor) and a name tag. A real model for a role
+  will be a one-line change. Two roles had nothing in CHARACTERS.md: I stood in the security robot as
+  a silver cop with a cyan visor and the scuba diver as a navy-tinted woman with goggles. Their tags
+  say "nothing close yet". Bosses are drawn bigger. In GOD, tap any role to spawn one in front of you.
+  None of the people already placed in the world have been switched over to roles yet.

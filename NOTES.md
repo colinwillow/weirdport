@@ -7,6 +7,19 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE ROSTER: ROLES, NOT MODELS (m353, C2c, `ROSTER`, `rosterApply`, `rosterSpawn`, `rosterTag`).** CHARACTERS.md's
+  table in code: 30 roles, each a stand-in -- a body (`stem`, resolved by `mkrKind`), a `tint` lerped 45% into the
+  body's OWN cloned materials, a `prop` on the head bone sized in metres over the bone's world scale (`peopleHat`'s way:
+  cap, beanie, chef's hat, helmet with an optional lamp, a glowing visor band -- a band because a head bone's FRONT is not
+  known, and a ring is right from every side), a mail `bag` at the hip on the root (his right is -x there), and `big` for
+  the bosses (the root's scale: the look, not the reach). His model for a role is ONE line: the stem changes, the tint and
+  the prop go. An npc mark can now name a `role` instead of a `kind` (`peopleMark` keeps it, `mkrNpcPlace` resolves it,
+  `mkrStep` applies it). GOD has a ROSTER section: every role with where it lives and what stands in, tap to spawn one
+  3 m in front of you with a tag over its head (green his model, amber a stand-in, orange nothing close), and a CLEAR;
+  the incursion, protest and orb buttons moved under an EVENTS header. `places`: `ok  ROSTER 30 roles | 13 his, 15
+  stand-ins, 2 nothing close` (every stem resolves to a kind), exit 0. **Not done:** no existing placement was moved onto
+  a role yet -- each table still names its kind, which is the next easy pass when a model lands.
+
 - **THE AMPLIFIER FEEDS THE PROTEST THROUGH THREE NUMBERS THE PROTEST ALREADY HAD (m352, C2b-3, `OAMP`, `buildAmp`,
   `ampStep`, `ampUp`, `ampBoil`).** A red orb over THE SQUARE (the protest's own lot) that rides out over the crowd while
   it is out (the middle of the two chants, or the one) and drifts back over the square when it is not, with a thin red
