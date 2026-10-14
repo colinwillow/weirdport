@@ -7,6 +7,27 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **TURF ON THE BUILDINGS (m409, D3, `TDRESS`, `TDPROPS`, `tdFaces`, `tdPlace`, `turfDressBuild`, `turfDressStep`).**
+  Every `KBLD` building in the turf rect gets its block (`turfAt` at its centre) and up to `TDRESS.faces` (4) outside walls,
+  shuffled per building. **The walls are found CELL BY CELL** (`tdFaces`: a cell side with no neighbouring cell), so an L
+  is dressed on its real outer walls rather than on its bounding box's, and nothing lands inside the building. Every
+  faction's two pieces (`TDPROPS`) are placed on every chosen wall up front, one InstancedMesh per faction per piece (14
+  draws for the town), and the faction a building is NOT wearing sits at scale 1e-4. `turfDressStep` re-reads the holder
+  every .5 s and walks per-faction weights toward 1/0 at `dt / fade`; the scale is the smoothstep of the weight, applied
+  as `base x scale` per instance (`userData.base` keeps the unscaled matrices -- **never scale the stored matrix in place**,
+  or a fade compounds). The first step snaps (`D.first`), so a load does not fade the whole town in.
+  **`turfDressBuild` runs AFTER `turfBuild`** (which runs after `buildDecay`), for the same reason `turfBuild` had to move
+  in m407: the blocks are cut over the rect the Old Town builders leave behind.
+  GOD → SWITCHES: FACTION DRESSING ON/OFF (mesh visibility) and HAND THIS BLOCK TO THE NEXT FACTION (`turfPush` .95).
+  `places` (two fabricated buildings, an L at the camp and a turned square at the site):
+      ok  DRESS the L: 8 outside walls | wearing: HOME, BIG (their blocks now: ACT, BIG) | pieces inside a wall 0 | the camp's
+          block handed to the activists: half way through the fade the banners at 0.52, after it the L wears ACT, the old
+          holder's pieces at 0.000, changes 1
+  Teeth: `if (fi !== R.want && R.want < 0)` (the dressing never changes hands after the first read) -> `BAD DRESS ...
+  banners at 0.00, after it the L wears HOME, the old holder's pieces at 1.000, changes 0 IT DOES NOT CROSS-FADE`.
+  **The mid-fade sample is taken at half the fade counted from the push**, not from the step after it: counted the other way
+  it read 0.88 against a 0.9 limit, which is a pass mark sitting on the edge of its own measurement.
+
 - **THE CROWD FOLLOWS THE TURF (m408, D2, `crowdDeal`'s turf branch, `TURFKINDS`, `turfCrowdKinds`, `turfCrowdPick`).**
   `kitPopulate` asks for `crowdWant` spots and `crowdDeal` deals them. In tkit, with the turf built (`turfBuild` runs before
   `kitPopulate` in init), every spot inside a block goes to `turfCrowdPick`: a draw on that block's shares (a faction with

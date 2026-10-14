@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m408</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m409</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m408</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m409</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm408';
+const BUILD = 'm409';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -35357,6 +35357,97 @@ function turfMap(g, E) {
   g.restore();
 }
 // ============================================================================================
+// TURF ON THE BUILDINGS (m409, ROADMAP D3, `TDRESS`, `TDPROPS`, `turfDressBuild`, `turfDressStep`)
+// ============================================================================================
+// GAME_DESIGN: "Dressing on the buildings that are already there. Flags, banners and graffiti; boarded windows; neon, gold
+// trim and corporate signs; solar panels and gardens; scrap and chain-link; alien growth crawling up the walls." Every kit
+// building in Old Town (`KBLD`) wears its BLOCK'S HOLDER: a few of its outside walls (found cell by cell -- a cell side with
+// no cell beyond it is a wall, as tall as that cell's floors) carry that faction's pieces. **EACH FACTION'S EACH PIECE IS
+// ONE `InstancedMesh`** (14 draws for the whole town), every building holding a slot in every faction's meshes; a building
+// that changes hands **cross-fades** -- the old holder's pieces shrink away and the new one's grow in (`fade` s), instance
+// by instance, with no new mesh and no new draw.
+const TDRESS = { on: 1, faces: 4, fade: 2.2, built: 0, B: [], meshes: [], n: 0, t: 0, changes: 0 };
+const TDPROPS = {
+  act:   [{ g: () => new THREE.BoxGeometry(1.0, 2.6, .04), col: 0xff6aa8, place: 'banner' }, { g: () => new THREE.BoxGeometry(1.7, .9, .02), col: 0x3ad0ff, ei: .25, place: 'tag' }],
+  red:   [{ g: () => new THREE.BoxGeometry(2.2, 1.3, .05), col: 0x8a4e32, place: 'win1' }, { g: () => new THREE.BoxGeometry(.9, .6, .04), col: 0xff7a1a, place: 'door' }],
+  big:   [{ g: () => new THREE.BoxGeometry(3.0, .2, .14), col: 0xffd23a, ei: .5, place: 'roof' }, { g: () => new THREE.BoxGeometry(1.8, .7, .08), col: 0x16161e, em: 0xffd23a, ei: .35, place: 'win2' }],
+  small: [{ g: () => new THREE.BoxGeometry(2.4, .06, 1.1), col: 0x3ad08a, place: 'awning' }, { g: () => new THREE.BoxGeometry(.9, .5, .05), col: 0xffe8b0, place: 'sign' }],
+  home:  [{ g: () => new THREE.BoxGeometry(1.3, 1.1, .05), col: 0xc8a878, place: 'win1' }, { g: () => new THREE.BoxGeometry(2.6, 1.6, .03), col: 0x2a6ab0, place: 'ground' }],
+  upl:   [{ g: () => new THREE.BoxGeometry(1.4, .8, .06), col: 0x08202a, em: 0x46e0ff, ei: 1.2, place: 'win2' }, { g: () => new THREE.BoxGeometry(.25, .2, .45), col: 0x2a2a30, place: 'cam' }],
+  skin:  [{ g: () => new THREE.CylinderGeometry(.1, .2, 4, 6), col: 0x6a1a7a, ei: .4, place: 'creep' }, { g: () => new THREE.SphereGeometry(.35, 10, 8), col: 0x3a0a4a, em: 0xff3ad0, ei: .8, place: 'pod' }],
+};
+// where on a wall each kind of piece goes: along it (u, -1.5..1.5), up it (h), out from it, and a tilt
+function tdPlace(place, f, fl, r) {
+  const top = f * fl, w2 = f >= 2 ? fl : 0;
+  switch (place) {
+    case 'banner': return { u: (r() - .5) * 1.4, h: top - 1.5, out: .06 };
+    case 'tag': return { u: (r() - .5) * 1.2, h: 1.1, out: .03 };
+    case 'win1': return { u: (r() - .5) * .8, h: 1.6, out: .05 };
+    case 'win2': return { u: (r() - .5) * .8, h: w2 + 1.6, out: .06 };
+    case 'door': return { u: .95, h: 1.3, out: .04 };
+    case 'roof': return { u: 0, h: top - .12, out: .08 };
+    case 'awning': return { u: 0, h: 2.65, out: .55, tilt: .28 };
+    case 'sign': return { u: -.9, h: 3.1, out: .05 };
+    case 'ground': return { u: (r() - .5) * .3, h: .8, out: .04 };
+    case 'cam': return { u: 1.2, h: w2 + 2.5, out: .25 };
+    case 'creep': return { u: (r() - .5) * 2.2, h: 2.0, out: .12 };
+    case 'pod': return { u: (r() - .5) * 2.2, h: .5 + r() * 2.2, out: .25 };
+  }
+  return { u: 0, h: 1.5, out: .05 };
+}
+// a building's outside walls, cell side by cell side: [lx, lz, nx, nz, floors] in its own frame
+function tdFaces(B) {
+  const out = [], bay = B.bay, has = (x, y) => B.cells.has(x + ',' + y);
+  for (const [k, f] of B.cells) { const [x, y] = k.split(',').map(Number);
+    if (!has(x + 1, y)) out.push([(x + 1) * bay, -(y + .5) * bay, 1, 0, f]);
+    if (!has(x - 1, y)) out.push([x * bay, -(y + .5) * bay, -1, 0, f]);
+    if (!has(x, y - 1)) out.push([(x + .5) * bay, -y * bay, 0, 1, f]);
+    if (!has(x, y + 1)) out.push([(x + .5) * bay, -(y + 1) * bay, 0, -1, f]); }
+  return out;
+}
+const _tdM = new THREE.Matrix4(), _tdK = new THREE.Matrix4(), _tdQ = new THREE.Quaternion(), _tdE = new THREE.Euler(), _tdP = new THREE.Vector3(), _tdS = new THREE.Vector3();
+function turfDressBuild(list) {
+  const D = TDRESS, T = TURF; D.built = 0; for (const m of D.meshes) { scene.remove(m.mesh); m.mesh.geometry.dispose(); } D.meshes = []; D.B = [];
+  if (!D.on || !T.blocks.length) return 0;
+  const FA = T.FACTIONS.map(F => F.id), slots = FA.map(f => TDPROPS[f].map(() => []));     // per faction, per piece: [building, matrix]
+  (list || KBLD).forEach((B, bi) => {
+    const cx = B.x0 + ((B.lx0 + B.lx1) / 2) * B.c + ((B.lz0 + B.lz1) / 2) * B.s, cz = B.z0 - ((B.lx0 + B.lx1) / 2) * B.s + ((B.lz0 + B.lz1) / 2) * B.c, blk = turfAt(cx, cz);
+    if (!blk) return;
+    let h = (Math.floor(B.x0 * 13.7) * 73856093 ^ Math.floor(B.z0 * 7.3) * 19349663) >>> 0; const r = () => ((h = (h * 1664525 + 1013904223) >>> 0) / 4294967296);
+    const all = tdFaces(B); for (let i = all.length - 1; i > 0; i--) { const j = Math.floor(r() * (i + 1)); [all[i], all[j]] = [all[j], all[i]]; }
+    const faces = all.slice(0, D.faces), rec = { B, blk, cx, cz, w: FA.map(() => 0), want: -1, slots: FA.map(() => []) };
+    for (const [lx, lz, nx, nz, f] of faces) {
+      const wnx = nx * B.c + nz * B.s, wnz = -nx * B.s + nz * B.c, yaw = Math.atan2(wnx, wnz), tx = -nz, tz = nx;    // the wall's outward normal, and along it
+      FA.forEach((fid, fi) => TDPROPS[fid].forEach((P, pi) => { const pl = tdPlace(P.place, f, B.fl, r);
+        const llx = lx + nx * pl.out + tx * pl.u, llz = lz + nz * pl.out + tz * pl.u;
+        _tdP.set(B.x0 + llx * B.c + llz * B.s, B.y0 + pl.h, B.z0 - llx * B.s + llz * B.c); _tdQ.setFromEuler(_tdE.set(pl.tilt || 0, yaw, 0, 'YXZ'));
+        const m = new THREE.Matrix4().compose(_tdP, _tdQ, _tdS.set(1, 1, 1)); rec.slots[fi].push([pi, slots[fi][pi].length]); slots[fi][pi].push([D.B.length, m]); })); }
+    D.B.push(rec);
+  });
+  // the meshes: one per faction per piece, every instance starting at nothing (the first step grows the holders in at once)
+  FA.forEach((fid, fi) => TDPROPS[fid].forEach((P, pi) => { const L = slots[fi][pi]; if (!L.length) return;
+    const mat = new THREE.MeshStandardMaterial({ color: P.col, roughness: .7, emissive: new THREE.Color(P.em || P.col), emissiveIntensity: P.ei || 0 });
+    const mesh = new THREE.InstancedMesh(P.g(), mat, L.length); mesh.frustumCulled = false; mesh.userData.base = L.map(q => q[1]);
+    _tdM.makeScale(0, 0, 0); for (let i = 0; i < L.length; i++) mesh.setMatrixAt(i, _tdM); mesh.instanceMatrix.needsUpdate = true; scene.add(mesh);
+    D.meshes.push({ fi, pi, mesh }); }));
+  D.byFP = {}; for (const M of D.meshes) D.byFP[M.fi + ':' + M.pi] = M;
+  D.n = D.B.length; D.built = 1; D.first = 1;
+  return D.n;
+}
+// who holds each building's block, twice a second; every frame, the fades
+function turfDressStep(dt) {
+  const D = TDRESS, T = TURF; if (!D.built || !inTK()) return;
+  if ((D.t -= dt) <= 0) { D.t = .5; for (const R of D.B) { const [fi] = turfHold(R.blk); if (fi !== R.want) { if (R.want >= 0) D.changes++; R.want = fi; R.moving = 1; } } }
+  const k = D.first ? 1 : Math.min(1, dt / D.fade);
+  for (const R of D.B) { if (!R.moving) continue; let still = 0;
+    R.w.forEach((w, fi) => { const tgt = fi === R.want ? 1 : 0, nw = Math.abs(tgt - w) < .002 ? tgt : w + clamp(tgt - w, -k, k); if (nw !== tgt) still = 1;
+      if (nw === w && !D.first) return; R.w[fi] = nw; const s = nw * nw * (3 - 2 * nw);
+      const ss = Math.max(s, 1e-4); _tdK.makeScale(ss, ss, ss);
+      for (const [pi, ii] of R.slots[fi]) { const M = D.byFP[fi + ':' + pi]; if (!M) continue; _tdM.multiplyMatrices(M.mesh.userData.base[ii], _tdK); M.mesh.setMatrixAt(ii, _tdM); M.mesh.instanceMatrix.needsUpdate = true; } });
+    R.moving = still; }
+  D.first = 0;
+}
+// ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
 // ============================================================================================
 // Irregular patches of wheat, corn, ploughed earth, hay meadow and pasture, divided by hedgerows, fences, tree lines and
@@ -39998,6 +40089,9 @@ function godMenuOpen(on) {
     btn('THE MOTHERSHIP OVER THE ISLANDS ' + (ITHERM.ship ? 'ON' : 'OFF'), () => { ITHERM.ship = ITHERM.ship ? 0 : 1; godMenuOpen(1); });   // m395
     btn('A GUST NOW (THE ISLANDS)', () => { windGust(); toast('Gust: +' + IWIND.gustAdd.toFixed(0) + ' m/s', 1.4); godMenuOpen(0); }); }
   if (TURF.blocks.length) btn('TURF ON THE MAP ' + (TURF.map ? 'ON' : 'OFF'), () => { TURF.map = TURF.map ? 0 : 1; godMenuOpen(1); });   // m407
+  if (TDRESS.built) { btn('FACTION DRESSING ' + (TDRESS.on ? 'ON' : 'OFF'), () => { TDRESS.on = TDRESS.on ? 0 : 1; for (const Mm of TDRESS.meshes) Mm.mesh.visible = !!TDRESS.on; godMenuOpen(1); });   // m409
+    btn('HAND THIS BLOCK TO THE NEXT FACTION', () => { const R = turfAt(player.pos.x, player.pos.z); if (!R) { toast('Not in Old Town', 1.4); return; }
+      const [fi] = turfHold(R), F = TURF.FACTIONS[(fi + 1) % TURF.FACTIONS.length]; turfPush(player.pos.x, player.pos.z, F.id, .95); toast(R.name + ' to ' + F.short, 1.6); godMenuOpen(0); }); }
   if (SKYLINE.g) btn('METROPOLIS ON THE HORIZON ' + (SKYLINE.g.visible ? 'ON' : 'OFF'), () => { SKYLINE.g.visible = !SKYLINE.g.visible; godMenuOpen(1); });
   btn('THE STAND-IN QUEST (WEIRDPORT 101)', () => { progFlag('qon:q0'); quest.cur = null; toast('Quest on', 1.4); });
   btn('THE STAND-IN TASKS (TWO, FOR THE TASK LIST)', () => { progFlag('qon:q0'); progFlag('qon:qtour'); quest.cur = null; toast('Two tasks on', 1.4); godMenuOpen(0); });
@@ -41558,6 +41652,7 @@ function frameBody() {
   islXingStep(dt);              // a flight down on the islands' landing field (m394)
   keeperStep(dt);               // the lighthouse's beam, and the keeper's storm while the thing wearing him stands (m398)
   turfStep(dt);                 // which block he is in and who holds it, for the chip (m407)
+  turfDressStep(dt);            // the buildings wear their block's holder, cross-fading when it changes hands (m409)
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)
@@ -42359,6 +42454,7 @@ async function init() {
     try { buildDecay(); } catch (e) { note('DECAY FAIL'); console.warn('[melee] decay', e); }
     // TURF (m407): Old Town's blocks and who holds them -- after every Old Town builder, whose places seed the shares
     try { turfBuild(); } catch (e) { note('TURF FAIL'); console.warn('[melee] turf', e); }
+    try { turfDressBuild(); } catch (e) { note('DRESS FAIL'); console.warn('[melee] turf dressing', e); }
     // THE PEARL (m359): past dock 1, through its door
     try { buildPearl(); } catch (e) { note('PEARL FAIL'); console.warn('[melee] pearl', e); }
     // THE PLAZA'S PROTEST AND ITS BARRICADES (m360)
@@ -42555,7 +42651,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
