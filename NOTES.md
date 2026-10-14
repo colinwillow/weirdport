@@ -7,6 +7,26 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE PROTEST IS AN EVENT ON ITS OWN CLOCK, AND A CROWD IS BODIES CHASING THEIR PLACES ROUND ONE MOVING POINT (m346,
+  C1-1, `OPROTEST`, `buildProtest`, `protestStep`, `protestStart`).** Eight activists (Sage, Moonbeam, Jasper, Rowan,
+  Tamsin, River, Kai, Ezra -- npc marks, `src: 'PROTEST'`, living round THE SQUARE at (-7.5, 35.7), a clear lot from m337's
+  sweep) go quiet -> GATHER (14 s) -> MARCH -> RALLY (40 s at THE CORNER LOT, (30.5, 55.7)) -> HOME, then quiet for 90-150 s.
+  The march follows `navPath` through the real collider (42.9 m, straight here). Each member has a fixed place in a loose
+  block (`off`: across and behind) round a leader point that only moves on while the crowd's mean lag is under 4.5 m; the
+  place is fed to the ordinary roam as a one-point beat (`d.beat`, `d.rx/rz`, `roamT = 0` when it is 1.4 m away), so the
+  walk, the gait and the collisions are the ones every body already has. Signs go on the body's ROOT (a pole and a
+  two-faced board over the head) so they ride the body and leave with it; the chant is one sprite over the crowd's centre,
+  repainted in call and response every 1.7 s. The alien still scatters them (`fearLooks`). GOD: the place "the square" and
+  START THE PROTEST NOW.
+  **`lifeSpot` RETURNS [x, z, y] AND THIS BUILD READ IT AS [x, y, z]** -- the square's GOD place stood him at y 36 and
+  `places` said ok, because nothing checked a place against the ground under it. Converted once at the top of
+  `buildProtest`, and `places` now fails any GOD place more than 2.5 m over the floor under it (`IN THE AIR`), tested by
+  putting the bug back: `BAD protest -> player -7.5,36.0,35.7 ground 0.20 IN THE AIR`. Then, fixed:
+  `ok  PROTEST 8 people | square [-7.5,0.2,35.7] -> corner [30.5,0.2,55.7] | path 2 pts 42.9 m (straight 42.9 )`,
+  `ok  protest -> player -7.5,0.5,35.7 ground 0.20`, `ok  protestStep 30 frames`, exit 0.
+  **Not built:** the counter-protest, the brawl and the cops (C1-2), the barricade (C1-3), and any sound -- there is no
+  crowd recording and one is not faked.
+
 - **THE STRIKE IS ONE SAVED FLAG AND A STEP THAT RECONCILES THE CREW TO IT EVERY SECOND (m345, C0-3, `OSTRIKE`,
   `buildStrike`, `strikeSet`, `strikeStep`; `mel.strike(1)`).** While `strike:oldtown` stands: the picket outside the
   site gate shows (four placards along the hoarding, OFFICIAL STRIKE on two poles across the gate, a burn barrel lit as

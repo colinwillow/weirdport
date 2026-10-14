@@ -246,6 +246,9 @@ differ" table there, so no region feels like the last one.
   - [x] m345 **C0-3** the strike: the crews down tools (pickets at the site, no repairs, the district slides); ending it sends them back out.
 - [ ] **C1 Protest events.** Activists gather with signs and chant; rednecks show up; it turns into
   a brawl if provoked; cops respond. As an activist you can walk inside the crowd through a barricade.
+  - [x] m346 **C1-1** the protest: activists with signs gather at the square, march up the street chanting, rally, and go home, on their own clock.
+  - [ ] **C1-2** the counter-protest: rednecks and bikers show up at the rally, the two sides shout; it turns into a brawl if provoked (a blow, a shot, the alien); cops respond.
+  - [ ] **C1-3** the barricade: as an activist inside the crowd you march through a barricade nobody else gets past.
 - [ ] **C2 Skinsuit incursions.** An enemy ship/agent turns civilians on the street; you fight and
   revert them. Ties to the existing virus system.
 - [ ] **C2b The orbs (`LORE.md`).** Start with the pacifier: an orb floating over a few Old Town
@@ -776,3 +779,10 @@ differ" table there, so no region feels like the last one.
   on their routes and the crews go back to fixing things. Nothing in the story starts a strike yet,
   because The Pearl's organiser (Chapter 2) is meant to call it, so until then it's GOD's switch or
   `mel.strike(1)`.
+
+- **m346 (C1-1):** the protest happens in Old Town for now, because The Pearl, its home in the design,
+  doesn't have its land yet. Eight activists gather at a square near the middle of town, march about
+  43 m up the street to a corner lot, rally there, then go home; it comes round again every few
+  minutes. Their signs and chants make fun of everyone ("NO TO THE THING", "TRUST NO HAT", "WHAT DO WE
+  WANT? SOMETHING!"), and a man in a suit paid for the placards. The alien still scatters them. When
+  The Pearl gets its land, the same event moves to its plaza.
