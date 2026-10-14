@@ -7,6 +7,47 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FAR CULLS (m417, F0a-2a, `PERF.bodyFar`, `KIT.partFar`, `cellReg(m, ownFar)`, `npm run worlds --who`).** The measure
+  grew a WHO: `renderBufferDirect` wrapped for the one frame, every draw counted by the object's name (digits out), else its
+  material's name, else the nearest named ancestor's. The first `--who` of the kit city said the same thing at every place:
+  `kitInst 98` (every instanced door/lid/AC set, `frustumCulled = false` since m180 and never culled by distance either) and
+  ~400 draws of bodies (`hick_MIX 46, construction_worker 44, fat_hipster 38 ...`) -- from the farm, the mill and the
+  Mothership's core alike. **THE KIT CITY'S FOG IS 950 m** (`KCITY.fog`, so the skyline reads from the farm), so the fog
+  cull (`cellStep`) hides nothing inside Weirdport; everything that is small needs a distance of its own.
+  Bodies: in `perfStep`'s loop, `d.root.visible` off beyond `bodyFar` from `camera.position` (the root, so sprites and props
+  go with it), and `d.seen` cleared so a hidden body animates at `animHz`. Nothing else toggles `d.root.visible` (the virus
+  and the morphs toggle `model.visible`, a child). Parts: `kitInst` computes each set's sphere, pads it 3 m for a door's
+  swing, turns `frustumCulled` on, and registers it with `cellReg(im, KIT.partFar)` -- `cellStep` now honours a per-mesh
+  `userData.ownFar` under the fog's. Every `farmFrame` merge is named `tag:material` so `--who` can name the rest.
+  **`partFar` LANDED IN `TCITY` FIRST**: a `fog:` line matched in two objects and the replace took the first; `KIT.partFar`
+  read undefined and the cull was silently off. Checked by printing the owning `const` of the inserted line.
+  `npm run worlds tkit` before -> after (SwiftShader):
+      == tkit  boot 22.8 s (swiftshader)  147 textures 270 MB (gl 84)  1855 geometries 109 MB (gl 552)  118 programs  60s
+         spawn        314 DC   876 kT  cells 0/790     OVER dc
+         oldtown      651 DC  1581 kT  cells 790/790   OVER dc  OVER kT
+         camp         287 DC  1062 kT  cells 790/790   OVER kT
+         pearl        100 DC   509 kT  cells 307/790 
+         overlook     270 DC   917 kT  cells 0/790   
+         farmyard     130 DC   652 kT  cells 2/790   
+         hcmill        77 DC   397 kT  cells 0/790   
+         hctrail      416 DC   914 kT  cells 0/790     OVER dc
+         wfquay       104 DC   424 kT  cells 297/790 
+         wfstacks     686 DC  1074 kT  cells 149/790   OVER dc  OVER kT
+         islanding    886 DC  1195 kT  cells 359/790   OVER dc  OVER kT
+         isneedle     523 DC   938 kT  cells 75/790    OVER dc
+         isship       133 DC   568 kT  cells 0/790   
+         iscore       148 DC   699 kT  cells 0/790   
+         textures: moussa_toon_body 21.3M, moussa_toon_head 21.3M, hdri_game.png 8.0M, impact_marks_atlas.png 8.0M, fire_sprites_01.png 6.0M, colin_head_1080 5.9M
+         geometry: ground_wr_sidewalk 7.0M, ground_wr_curbs 4.2M, farm_batch 3.6M, farm_batch 2.1M, farm_batch 1.9M, farm_batch 1.7M
+         OVER: dc 886 > 300 at islanding | kT 1195 > 1000 | textures 270 MB > 160
+      budget: 300 DC, 1000 kT, 160 MB textures, 128 MB geometry | tkit OVER | 60s
+      exit 1
+  Before: spawn 715, oldtown 823, camp 595, pearl 407, overlook 735, farmyard 449, hcmill 381, hctrail 882, wfquay 391,
+  wfstacks 1359, islanding 1568, isneedle 1171, isship 427, iscore 340 DC. **GL textures at boot 324 -> 84**: a body hidden
+  from the start never uploads its maps, so the crash site no longer pays for the crowd's textures.
+  What is left is NAMED now: `Mesh 150-250` (unnamed, no material name) at the trailer park, the container cliff and the
+  islands, and in Old Town the cell batch (`mat:WK_M_*`, 790 meshes) and the doors (`mat:WK_M_doors 54`). F0a-2b/c.
+
 - **THE MEASURE (m416, F0a-1, `perfMem`, `PERF.mem`, `PERF.bootMs`, `mel.mem()`, `npm run worlds`, `tools/worlds.mjs`).**
   `perfMem` walks the scene's materials (every map slot, shader uniforms, `scene.environment`/`background`), counts each
   texture once at its RESIDENT size -- a KTX2 `CompressedTexture` at the byte size of its mip chain, anything else at

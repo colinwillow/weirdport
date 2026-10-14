@@ -46,7 +46,8 @@ const server = http.createServer((q, r) => {
 });
 await new Promise(ok => server.listen(0, ok));
 const port = server.address().port;
-const want = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(WORLDS);
+const WHO = process.argv.includes('--who');     // print who draws at every place
+const want = process.argv.slice(2).filter(a => !a.startsWith('--')).length ? process.argv.slice(2).filter(a => !a.startsWith('--')) : Object.keys(WORLDS);
 const t0 = Date.now(), el = () => ((Date.now() - t0) / 1000).toFixed(0) + 's';
 const browser = await pw.chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
 const rows = [];
@@ -68,14 +69,20 @@ for (const w of want) {
       // moves `cam.pos`, but only `stepCam` copies that into the camera. So the move is settled by hand -- `stepCam` ten times
       // (the camera arrives at `cam.pos`), then `cellStep` (the fog culling), then the one frame we read.
       await page.waitForTimeout(300);
-      const m = await page.evaluate(() => { const S = window.__shot; for (let k = 0; k < 10; k++) S.stepCam(1 / 30); S.cellStep(); S.renderer.render(S.scene, S.camera); const i = S.renderer.info.render, M = mel.perfMem(6);
-        return { dc: i.calls, kT: i.triangles / 1000, tex: M.tex, texMB: M.texMB, geo: M.geo, geoMB: M.geoMB, top: M.top, topG: M.topG, glTex: M.glTex, glGeo: M.glGeo, programs: M.programs, cells: (S.CELL && S.CELL.list.length ? S.CELL.shown + '/' + S.CELL.list.length : '-') }; });
+      const m = await page.evaluate(() => { const S = window.__shot; for (let k = 0; k < 10; k++) S.stepCam(1 / 30); S.cellStep();
+        // WHO is drawing: every draw call of this frame counted by the object's family -- its name with the digits taken out, or
+        // the nearest named ancestor's -- so an OVER has a name to cut rather than a number to stare at
+        const who = {}, R = S.renderer, orig = R.renderBufferDirect, fam = o => { for (let a = o; a; a = a.parent) { const n = a.name || (a === o && a.material && a.material.name ? 'mat:' + a.material.name : '') || (a.userData && a.userData.fbatch !== undefined ? 'fbatch' : ''); if (n) return n.replace(/[0-9]+/g, '#').replace(/_i_#$/, '').slice(0, 26); } return o.type; };
+        R.renderBufferDirect = function (cam, sc, geo, mat, obj, grp) { const k = fam(obj); who[k] = (who[k] || 0) + 1; return orig.call(this, cam, sc, geo, mat, obj, grp); };
+        S.renderer.render(S.scene, S.camera); R.renderBufferDirect = orig; const top = Object.entries(who).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([k, v]) => k + ' ' + v); const i = S.renderer.info.render, M = mel.perfMem(6);
+        return { dc: i.calls, kT: i.triangles / 1000, tex: M.tex, texMB: M.texMB, geo: M.geo, geoMB: M.geoMB, top: M.top, topG: M.topG, glTex: M.glTex, glGeo: M.glGeo, programs: M.programs, cells: (S.CELL && S.CELL.list.length ? S.CELL.shown + '/' + S.CELL.list.length : '-'), who: top }; });
       R.at.push({ pl: pl || 'spawn', went, ...m });
     }
     rows.push(R);
     const worst = R.at.reduce((a, b) => (b.dc > a.dc ? b : a), R.at[0]), m0 = R.at[0];
     console.log(`\n== ${w}  boot ${R.bootS.toFixed(1)} s (swiftshader)  ${m0.tex} textures ${m0.texMB.toFixed(0)} MB (gl ${m0.glTex})  ${m0.geo} geometries ${m0.geoMB.toFixed(0)} MB (gl ${m0.glGeo})  ${m0.programs} programs  ${el()}` + (R.notes ? `  NOTE: ${R.notes}` : '') + (errs.length ? `  PAGEERROR: ${errs[0]}` : ''));
-    for (const a of R.at) console.log(`   ${a.pl.padEnd(10)} ${String(a.dc).padStart(5)} DC ${a.kT.toFixed(0).padStart(5)} kT  cells ${a.cells.padEnd(8)}` + (a.dc > BUDGET.dc ? '  OVER dc' : '') + (a.kT > BUDGET.kT ? '  OVER kT' : ''));
+    for (const a of R.at) { console.log(`   ${a.pl.padEnd(10)} ${String(a.dc).padStart(5)} DC ${a.kT.toFixed(0).padStart(5)} kT  cells ${a.cells.padEnd(8)}` + (a.dc > BUDGET.dc ? '  OVER dc' : '') + (a.kT > BUDGET.kT ? '  OVER kT' : ''));
+      if (WHO) console.log(`              who: ${a.who.join(', ')}`); }
     console.log(`   textures: ${m0.top.join(', ')}`); console.log(`   geometry: ${m0.topG.join(', ')}`);
     const over = []; if (worst.dc > BUDGET.dc) over.push(`dc ${worst.dc} > ${BUDGET.dc} at ${worst.pl}`); if (worst.kT > BUDGET.kT) over.push(`kT ${worst.kT.toFixed(0)} > ${BUDGET.kT}`);
     if (m0.texMB > BUDGET.texMB) over.push(`textures ${m0.texMB.toFixed(0)} MB > ${BUDGET.texMB}`); if (m0.geoMB > BUDGET.geoMB) over.push(`geometry ${m0.geoMB.toFixed(0)} MB > ${BUDGET.geoMB}`);
