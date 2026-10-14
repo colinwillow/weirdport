@@ -7,6 +7,17 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE SECOND DRAW PER BODY WAS THE SHADOW MAP (m423, F0a-2h, `PERF.shadowFar`, `d.casters`, `bodyCull`).** Counting the frame's
+  draws BY MATERIAL TYPE (a `MeshDepthMaterial` draw is the shadow pass) at Old Town: `MeshStandardMaterial 383 | (unnamed) 110
+  | MeshDepthMaterial skinned 79 | MeshPhysicalMaterial skinned 70 | Sprite 22 | MeshDepthMaterial 16 | ...` -- so the per-body
+  attribution's "2 draws each" was the mesh and its depth pass; the shadow light is the fourth DirectionalLight (2048 map).
+  **MY m422 "SHADOWS COST NOTHING" TEST WAS WRONG**: it set `shadowMap.autoUpdate = false; needsUpdate = false` and read the
+  same count, which it should not have -- the by-type count is the measurement, the toggle was an inference. Bodies now
+  cast only within `shadowFar` (30 m): `d.casters` (the body's meshes with `castShadow`, collected in `perfRegBodyParts`;
+  only `bodySpawn` ever set it, lines 22291/22481) and `d.shadowOn`, toggled in `bodyCull`. 79 -> 14 depth draws.
+  **IN-TOWN TOTALS ARE NOISY BY ~30**: the crowd walks during the boot and the talk marks come and go (Sprite 22 one run, 1 the
+  next; MeshStandard 383 then 415), so a 60-draw cut can read as 7 on the total. Read the per-type or per-family count.
+
 - **m421 HID EVERY BODY PAST 45 m, AND THE MEASURE COULD NOT SEE IT (m422, F0a-2g, `perfRegBodyParts`, `PERF.partFrac`).**
   The parts cull registered any mesh of a body whose `geometry.boundingSphere.radius x matrixWorld scale` was under .45 m.
   For a skinned Mixamo rig that product is ~0.01 m for the WHOLE MAN: the geometry is the authored metre-scale mesh (a
