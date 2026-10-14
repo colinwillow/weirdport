@@ -7,6 +7,29 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **ELEMENT 115: LAZLO'S ROOF (m414, E1, `E115`, `buildE115`, `e115Step`, `e115Done`, quest `e115`, rumour `tinfoil`, `UPGRADES.e115`).**
+  The roof is his `kit_030`'s (6 x 9 m, parapets at x -85.7/-79.9 and z -21.7/-12.9, the hatch in cell F0_1, roof at 12.25 --
+  read off the collision file's `deck_`/`bld_` names, and `buildE115` refuses to build if `groundAt` there is not that). The
+  shack (10 boxes) sits in the far corner from the hatch and the exterior ladder (`climb_kit_030_ladder_x4__X4_0`, 13.4).
+  **THREE LANDMINES IN ONE BUILD, ALL CAUGHT BY THE GATES:**
+  1. **`lines: E115.after` IN `QUESTS`** -- a `const` read above its own declaration (QUESTS is at ~28400, E115 at ~35900):
+     `BOOT FAIL ... Cannot access 'E115' before initialization`. The tenth time. Quest text goes IN the quest. (`at: () =>
+     E115.stashAt` is fine: a function body is read when it runs.)
+  2. **A `//` COMMENT APPENDED MID-LINE** in `kswapPick` swallowed `const [cx, cz] = kswapCenter(K); ...` -- `cx is not
+     defined`, thrown out of the REBUILD row (`kswapStep`). The fourth time. Put a comment on its own line.
+  3. **THE BOSS5 ROW'S GUST COUNT WAS A COIN TOSS.** Its pass mark was .7 x the MEAN gusts in 20 s (needs 4); adding a
+     builder to `farmSteps` moved the seeded stream and it rolled 3, a legal roll. The mark is now the FEWEST any roll of
+     the storm table allows: `floor(20 / (stormEvery[1] + stormLast[1]))` = 3. Derive a pass mark from the table, not
+     from what usually happens.
+  The quest's talk-back step uses `say` on `npc: 'e115_tech'` (m340's own-script path), so Lazlo's trusting lines need no
+  second body. The reward is `up:e115` through `upApply` (x1.5 on the cap, stacking with `tank`) and `progJuice(cap)`;
+  the stash hides on done and stays hidden on reload (`qdone:e115`). `kswapPick` skips `E115.bld`.
+  GOD's `e115` place had to join both `CITYP` lists in placecheck (in Old Town on purpose).
+  `places`:
+      ok  E115 his roof 12.25 m (kit_030) | 10 boxes, off the roof 0 | the door open, the wall beside it solid | Lazlo at -83.2,-14.4 standing on 12.25 | the ladder climb_kit_030_ladder_x4__X4_0 to 13.4 | the suit at -74.5,-17.5 on 0.23 | the stash 0.9 m from the scaffold top | quest 5 steps from e115_tech, npcs missing none, rumour on the roof via tinfoil | GOD -81.3,12.3,-17.1 | the tank 100 > 150 
+      ok  e115       -> player -81.3,12.5,-17.1 ground 12.25
+  Teeth: the shack's door width 0 -> `the door SHUT ... THE DOOR IS WRONG`.
+
 - **FLASHPOINTS (m413, D5b, `TFLASH`, `FLASHSAY`, `flashFree`, `flashPick`, `flashStart`, `flashEnd`, `flashStep`).** **`FLASH` WAS
   TAKEN** (the muzzle-flash pool, m94, line ~11135): the first insert was a `SyntaxError: Identifier 'FLASH' has already been
   declared` that `npm run check` caught before anything else did -- a blank page. Grep the name before declaring a const.

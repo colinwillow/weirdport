@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m413</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m414</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m413</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m414</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm413';
+const BUILD = 'm414';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28455,6 +28455,23 @@ const QUESTS = [
     { type: 'unskin', tag: 'ch5boss', npc: 'is_keeper', r: 10, text: 'Beat the thing wearing the keeper: five times down' },
     { type: 'talk', who: 'ch5_keeper_after', text: 'See who he really is' },
   ] },
+  // ELEMENT 115 (m414, E1): the first side quest, any chapter -- from Lazlo himself, once he will talk to you (come up as somebody)
+  { id: 'e115', title: 'ELEMENT 115', world: 'tkit', side: 1, from: 'e115_tech', onDone: () => e115Done(), steps: [
+    { type: 'goto', npc: 'e115_agent', r: 9, text: 'The man in the suit, on the corner below', tip: "Across the street from Lazlo's building, east side. Nine days, he says. Get close." },
+    { type: 'skin', tag: 'e115agent', npc: 'e115_agent', r: 7, big: 1.25, downs: 3, text: 'The thing in the suit', tip: 'Knock it down three times.',
+      after: { id: 'e115_agent_after', name: 'a man in a cheap suit', group: 'street', talks: ['*'], alien: 'talk',
+        lines: ["Where -- why am I on a corner? I sell insurance. I was going to lunch.",
+                "There was a man on the roof up there. Every day. I had to watch him. I didn't want to. I just HAD to.",
+                "He kept waving at me. With a colander on his head."] } },
+    { type: 'unskin', tag: 'e115agent', npc: 'e115_agent', r: 10, text: 'Beat the thing in the suit: three times down' },
+    { type: 'talk', who: 'e115_trust', npc: 'e115_tech', say: { name: 'Rob Lazlo', group: 'street', talks: ['*'], alien: 'talk',
+        lines: ["You did it. He's -- he was one of them, wasn't he. I KNEW it. Nine days.",
+                "OK. OK. Trust. The 115. I walked out of the lab with a sample in my lunchbox. Lead-lined. Never told a soul.",
+                "It's in the cable drum on the top lift of the scaffold at the building site. Nobody looks up on a building site.",
+                "Put it in your -- whatever that thing on your back is. You'll go further on less. Don't tell them where you got it."] },
+      text: 'Back up to Lazlo: he saw the whole thing', tip: "His building's ladder is on its east face." },
+    { type: 'reach', at: () => E115.stashAt, r: 2.2, text: 'The lead box: top lift of the building-site scaffold', tip: "Up the scaffold's ladders at the building site. It's in the cable drum on the top lift." },
+  ] },
   // CHAPTER 6 OPENS (m404, C6-8e-1): the Mothership. Up the tether in its pod, into the conversion chamber, and one of the
   // turned in its pods knows you: Benny, off the docks (his cousin was third from the left in Chapter 4's line-up). He names
   // the man in the nice suit -- every boss so far pointed at him -- and where he is: the core, on the ship's back, behind six
@@ -28559,6 +28576,10 @@ const RUMOURS = [
   { id: 'good_ines', world: 'tkit', title: 'THE TAILOR', gist: 'A tailor out on the south-east, where the streets thin out. Alterations, while you wait.',
     say: "And Ines does alterations, out on the south-east where it thins out. She'll tell you why none of them fit.",
     at: () => { const M = MARKS.find(m => m.id === 'good_ines'); return M && [M.x, M.z]; }, r: 8, circle: 40 },
+  // m414: Lazlo, from Pockets at the camp
+  { id: 'tinfoil', world: 'tkit', title: 'THE MAN ON THE ROOF', gist: 'A man lives on a roof by the water, south of the camp. Tinfoil on everything. Talks to the sky at night.',
+    say: "And there's a fella lives on a roof down the water, south of here. Tinfoil on everything. Says he worked on a flying saucer. Climb up if you want. Bring a hat.",
+    at: () => E115.godAt && [E115.godAt[0], E115.godAt[2]], r: 7, circle: 30 },
   { id: 'hillman', world: 'tkit', title: 'THE MAN ON THE HILL', gist: 'The man at the top of the hill knows a thing or two.',
     say: "If you want to know anything, ask the man at the top of the hill. He knows a thing or two.",
     at: () => FARMLAND.live && FARMLAND.HILLS && flWorld(FARMLAND.HILLS[0].a, FARMLAND.HILLS[0].b), r: 16 },   // B1f-4 gives it out
@@ -35847,7 +35868,8 @@ function kswapOwner(B) {
 // the block's building to rebuild: a generated one already there, else his biggest, never a station
 function kswapPick(B) {
   let best = null, bs = -1;
-  for (const K of KBLD) { if (K.station) continue; const [cx, cz] = kswapCenter(K); if (turfAt(cx, cz) !== B) continue;
+  // m414: never Lazlo's building -- he lives on that roof
+  for (const K of KBLD) { if (K.station || K.name === E115.bld) continue; const [cx, cz] = kswapCenter(K); if (turfAt(cx, cz) !== B) continue;
     const sc = (K.kgen ? 1e4 : 0) + K.cells.size * 10 - Math.hypot(cx - B.cx, cz - B.cz) * .01; if (sc > bs) { bs = sc; best = K; } }
   return best;
 }
@@ -35917,6 +35939,102 @@ function kswapGod() {
   return kswapSettle(B, nf) || (B.name + ' already ' + TURF.FACTIONS[nf].short + "'s");
 }
 const kswapPending = () => Object.keys(SAVE.tswap).filter(n => !n.startsWith('blk:') && (!KSWAP.live.has(n) || KSWAP.live.get(n).f !== SAVE.tswap[n].f)).length + [...KSWAP.live.keys()].filter(n => !SAVE.tswap[n]).length;
+// ============================================================================================
+// ELEMENT 115: LAZLO'S ROOF (m414, ROADMAP E1, `E115`, `buildE115`, `e115Step`, `e115Done`, quest `e115`)
+// ============================================================================================
+// LORE.md's side quests: *"a jittery ex-lab technician who swears he worked on alien craft -- find him (he's hiding, and
+// paranoid), earn his trust, and he tells you where a stash of Element 115 is hidden."* **Rob Lazlo** lives on the roof of
+// a four-storey walk-up on Old Town's west edge by the water (his `kit_030`: its own ladder up the east face to 12.3 m, a
+// hatch in one cell, a 6 x 6 m clear corner -- all measured off his collision file). Up there: a shack of pallets and
+// corrugated sheet LINED WITH TINFOIL, a wall of maps and red string inside, an antenna mast with a dish on it, a telescope
+// on a tripod at the sky, crates, a camp stove, tin cans on a line. He will not talk to what you are (`brush`): come up as
+// somebody, and he tells you about **the man in the suit** on the corner below, who has stood there nine days without
+// blinking (a Skinsuit: three times down). Then he trusts you: the 115 is in a lead box in the cable drum on the top lift
+// of the building-site scaffold ("nobody looks up on a building site"). Reach it and the tank holds half again as much
+// (`UPGRADES.e115`). Pockets at the camp has the rumour. GOD: `e115` (his roof), `sitetop` (the stash).
+const E115 = {
+  on: 1, bld: 'kit_030', roof: [-85.55, -21.55, -80.05, -13.05], y: 12.3, built: 0, n: 0,
+  shack: [-85.4, -15.7, -82.45, -13.2], agent: [[-74.5, -17.5], [-73.5, -12.5], [-75, -22], [-72, -18]],
+  godAt: null, techAt: null, agentAt: null, stashAt: null, stash: null,
+  lines: "Who sent you? Did THEY send you? ...No. No, you've got a face. They don't do faces right.|I was at the lab. Area 15. Propulsion. I put my hand on it. It was WARM.|There's a man in a suit on the corner down there. Nine days. He doesn't blink. He doesn't eat. Make him go away and maybe we talk.",
+  brushAlien: "NOPE. No. I know what you are. I've SEEN the schematics. Off my roof.",
+};
+function buildE115() {
+  const E = E115; if (!E.on || !inTK() || !ISLE.live) return 0;
+  const [x0, z0, x1, z1] = E.roof, gy = groundAt((x0 + x1) / 2, (z0 + z1) / 2, E.y + 2, 4);
+  if (!(Math.abs(gy - E.y) < .6)) { note('E115 NO ROOF ' + gy.toFixed(1)); return 0; }
+  const y = gy;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .8 }), o || {});
+  const MAT = { wood: M(0x9a7a4e), dark: M(0x3a2e24), tin: Object.assign(M(0x9aa3a8), { metalness: .6, roughness: .45 }), roof: M(0x8a9298), foil: Object.assign(M(0xdfe4ea), { metalness: 1, roughness: .22 }),
+    card: M(0xb08a5a), tarp: M(0x2a6ab0, { side: THREE.DoubleSide }), steel: Object.assign(M(0x6a6e74), { metalness: .5, roughness: .4 }), red: M(0xb03a2a), green: M(0x3a6a3a),
+    lead: Object.assign(M(0x55595e), { metalness: .7, roughness: .5 }), glow: M(0x103a10, { emissive: new THREE.Color(0x6dff8a), emissiveIntensity: 2.2 }), board: M(0xb98a52) };
+  const F = farmFrame(0, 0, 0, MAT, 'e115'), { bx, geo } = F;
+  // ---- THE SHACK: pallet walls (the door in the east wall), a corrugated roof, tinfoil inside, cardboard on the floor
+  const [sx0, sz0, sx1, sz1] = E.shack, H = 2.15, t = .12, cz = (sz0 + sz1) / 2, door = .95;
+  bx(sx0 + t / 2, cz, y, y + H, t, sz1 - sz0, 'wood');                                   // west
+  bx((sx0 + sx1) / 2, sz0 + t / 2, y, y + H, sx1 - sx0, t, 'wood');                      // south
+  bx((sx0 + sx1) / 2, sz1 - t / 2, y, y + H, sx1 - sx0, t, 'wood');                      // north
+  for (const s of [-1, 1]) { const a = cz + s * door / 2, b = s < 0 ? sz0 : sz1; bx(sx1 - t / 2, (a + b) / 2, y, y + H, t, Math.abs(b - a), 'wood'); }   // east, either side of the door
+  bx(sx1 - t / 2, cz, y + 1.95, y + H, t, door, 'wood', 0, false);                         // the lintel
+  geo(new THREE.BoxGeometry(sx1 - sx0 + .5, .05, sz1 - sz0 + .5), 'roof', (sx0 + sx1) / 2, y + H + .12, cz, 0, 0, .12);   // the corrugated roof, a fall to the west
+  bx((sx0 + sx1) / 2, cz, y + H + .02, y + H + .2, sx1 - sx0, sz1 - sz0, 'tin', 0, true); F.parts.tin.pop();             // and walkable, as a roof
+  for (const [u, v, w, d] of [[sx0 + t + .01, cz, .02, sz1 - sz0 - 2 * t], [(sx0 + sx1) / 2, sz0 + t + .01, sx1 - sx0 - 2 * t, .02], [(sx0 + sx1) / 2, sz1 - t - .01, sx1 - sx0 - 2 * t, .02]])
+    geo(new THREE.BoxGeometry(w, H - .3, d), 'foil', u, y + H / 2, v);                                                  // the foil, every inside wall
+  geo(new THREE.BoxGeometry(sx1 - sx0 - .3, .02, sz1 - sz0 - .3), 'card', (sx0 + sx1) / 2, y + .02, cz);
+  geo(new THREE.BoxGeometry(.9, .35, 1.9), 'tarp', sx0 + .6, y + .2, cz, 0);                                            // the bed: a tarp over a pallet
+  // the wall of maps and red string, on the inside of the west wall, facing the door
+  try { const c = document.createElement('canvas'); c.width = 256; c.height = 192; const g = c.getContext('2d');
+    g.fillStyle = '#b98a52'; g.fillRect(0, 0, 256, 192); const pins = [];
+    for (let k = 0; k < 11; k++) { const px = 12 + (k * 53) % 220, py = 10 + (k * 37) % 150, w = 34 + (k % 3) * 10, h = 26 + (k % 2) * 12;
+      g.fillStyle = k % 4 === 0 ? '#2a2a30' : '#f4efe2'; g.fillRect(px, py, w, h); g.fillStyle = '#8a8478'; for (let l = 0; l < 3; l++) g.fillRect(px + 4, py + 6 + l * 6, w - 8, 1.5); pins.push([px + w / 2, py + 4]); }
+    g.strokeStyle = '#d0201a'; g.lineWidth = 2; g.beginPath(); for (let k = 0; k < 14; k++) { const a = pins[k % pins.length], b = pins[(k * 5 + 3) % pins.length]; g.moveTo(a[0], a[1]); g.lineTo(b[0], b[1]); } g.stroke();
+    for (const [px, py] of pins) { g.fillStyle = '#ff2a20'; g.beginPath(); g.arc(px, py, 3, 0, Math.PI * 2); g.fill(); }
+    const tx = new THREE.CanvasTexture(c); tx.colorSpace = THREE.SRGBColorSpace;
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(1.9, 1.3), new THREE.MeshStandardMaterial({ map: tx, roughness: .9 })); m.position.set(sx0 + t + .04, y + 1.25, cz); m.rotation.y = Math.PI / 2; scene.add(m); E.board = m; } catch (e) {}
+  // ---- THE ROOF ROUND IT: the mast and its dish, the telescope at the sky, crates, the stove, the chair, tin cans on a line
+  const mx = sx0 + .5, mz = sz0 - 1.6;
+  bx(mx, mz, y, y + 4.6, .12, .12, 'steel');
+  for (const h of [1.8, 3, 4.2]) bx(mx, mz, y + h, y + h + .05, 1.1 - h * .12, .05, 'steel', .4, false);
+  geo(new THREE.SphereGeometry(.75, 14, 7, 0, Math.PI * 2, 0, Math.PI / 3.2), 'tin', mx + .3, y + 3.6, mz, 0, -.9, .5);
+  for (const [a, b, h] of [[sx0 + .45, sz0 - .55, .55], [sx0 + 1.05, sz0 - .5, .45], [sx0 + .5, sz0 - .6, 1.0]]) bx(a, b, y + h - .45, y + h, .5, .45, 'card');
+  const tx0 = sx1 + 1.4, tz0 = sz0 + .4;
+  for (let k = 0; k < 3; k++) { const a = k / 3 * Math.PI * 2; geo(new THREE.CylinderGeometry(.02, .02, 1.3, 4), 'dark', tx0 + Math.cos(a) * .25, y + .6, tz0 + Math.sin(a) * .25, 0, Math.cos(a) * .2, -Math.sin(a) * .2); }
+  geo(new THREE.CylinderGeometry(.07, .09, 1.1, 10), 'steel', tx0, y + 1.45, tz0, .6, 0, -.8);
+  geo(new THREE.BoxGeometry(.45, .45, .45), 'red', sx1 + .6, y + .23, sz1 - .6, .3); geo(new THREE.CylinderGeometry(.14, .14, .18, 10), 'steel', sx1 + .6, y + .55, sz1 - .6);
+  geo(new THREE.BoxGeometry(.45, .05, .45), 'green', sx1 + 1.3, y + .45, sz1 - 1.4); for (const [a, b] of [[-.2, -.2], [.2, -.2], [-.2, .2], [.2, .2]]) geo(new THREE.CylinderGeometry(.015, .015, .45, 4), 'steel', sx1 + 1.3 + a, y + .22, sz1 - 1.4 + b);
+  for (let k = 0; k < 6; k++) { const f = (k + .5) / 6, u = sx1 + (mx - sx1) * f, v = sz1 - .2 + (mz - sz1 + .2) * f, hy = y + 2.3 + (4.2 - 2.3) * f - Math.sin(f * Math.PI) * .35;
+    geo(new THREE.CylinderGeometry(.05, .05, .1, 8), 'tin', u, hy - .12, v); }
+  E.n = F.commit().boxes;
+  // ---- HIM, and the man in the suit on the corner below
+  E.techAt = [sx1 - .7, y, cz];
+  peopleMark('e115_tech', E.techAt[0], E.techAt[2], Math.PI / 2, { kind: 'hick_skinny', name: 'Rob Lazlo', group: 'street', talks: ['*'], alien: 'brush', lines: E.lines, brushAlien: E.brushAlien }, y, 'E115', 'street');
+  for (const [ax, az] of E.agent) { const g = groundAt(ax, az, 2, .6); let ok = g < 1.5 && g > -1; if (ok && typeof kitStand === 'function') { const s = kitStand(ax, az); ok = s !== null; }
+    if (!ok) continue; E.agentAt = [ax, g, az];
+    peopleMark('e115_agent', ax, az, Math.atan2(sx1 - ax, cz - az), { kind: 'fat_secret_service', name: 'a man in a suit', group: 'street', talks: ['*'], alien: 'brush',
+      lines: "...|I'm waiting for a bus.|There is no bus. I am aware.", brushAlien: '...' }, g, 'E115', 'street'); break; }
+  if (!E.agentAt) note('E115 NO CORNER');
+  // ---- THE STASH: a lead box in the cable drum on the scaffold's top lift, a green line of light under its lid
+  if (OTSITE.topAt) { const [a, h, b] = OTSITE.topAt, g = new THREE.Group();
+    const drum = new THREE.Mesh(new THREE.CylinderGeometry(.42, .42, .5, 14), MAT.wood); drum.rotation.z = Math.PI / 2; drum.position.y = .45; g.add(drum);
+    const box = new THREE.Mesh(new THREE.BoxGeometry(.34, .22, .26), MAT.lead); box.position.set(0, .82, 0); g.add(box);
+    const lid = new THREE.Mesh(new THREE.BoxGeometry(.3, .02, .22), MAT.glow); lid.position.set(0, .94, 0); g.add(lid);
+    g.position.set(a + .9, h - .05, b); scene.add(g); E.stash = g; E.stashAt = [a + .9, h, b];
+    if (SAVE.flags['qdone:e115']) g.visible = false; }
+  E.godAt = [sx1 + 1.2, y + .1, sz0 - 1.4, -Math.PI / 2];
+  E.built = 1;
+  return 1;
+}
+// the box glows while it waits
+function e115Step(dt) {
+  const E = E115; if (!E.stash || !E.stash.visible) return;
+  const k = .5 + .5 * Math.sin(performance.now() * .005); E.stash.children[2].material.emissiveIntensity = 1.2 + 1.6 * k;
+}
+function e115Done() {
+  progFlag('up:e115'); upApply(); try { progJuice(JUICE.cap); } catch (e) {}
+  if (E115.stash) E115.stash.visible = false;
+  try { snd('ready', { g: .4, r: .9 }); } catch (e) {}
+  setTimeout(() => { try { cardShow('ELEMENT 115', 'YOUR TANK HOLDS HALF AGAIN AS MUCH'); } catch (e) {} }, 2800);
+}
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
 // ============================================================================================
@@ -36570,7 +36688,7 @@ const OTCAMP = {
   PEOPLE: [
     { id: 'camp_dusty', off: [-2.6, 1.8], kind: 'hobo_01', name: 'Dusty', talk: 'hobo_01', alien: 'brush', why: 'by the barrel, the one who has seen it all',
       brushAlien: "Seen worse. Not much worse. Move along." },
-    { id: 'camp_pockets', off: [3.4, -1.0], kind: 'hobo_01', name: 'Pockets', alien: 'brush', why: 'on the sofa, holding court',
+    { id: 'camp_pockets', off: [3.4, -1.0], kind: 'hobo_01', name: 'Pockets', alien: 'brush', why: 'on the sofa, holding court', rumour: 'tinfoil',
       lines: "Welcome to Shanty Row. Population: us. Rent: free. Roof: optional.|The crews used to bring us their lunch. Now they don't eat lunch at all. Weird, right?|If you're looking for work, the building site's always looking. They keep losing people.",
       brushAlien: "Nope. I'm off duty. I'm always off duty." },
     { id: 'camp_agnes', off: [-4.8, -4.6], kind: 'hobo_01', name: 'Mother Agnes', alien: 'brush', why: 'at the lean-to, keeping the camp in order',
@@ -37223,10 +37341,11 @@ const UPGRADES = {
   seal:  { name: 'A BETTER SEAL',      say: 'A form wears your juice down a third slower.' },
   quick: { name: 'QUICK HANDS',        say: 'Taking a sample is a third quicker.' },
   cheap: { name: 'A CHEAPER CHANGE',   say: 'Becoming somebody costs a quarter less juice.' },
+  e115:  { name: 'ELEMENT 115',        say: 'Your juice tank holds half again as much.', quest: 1 },    // m414: Lazlo's, not a gift
 };
 function upApply() {
   const B = JUICE.base || (JUICE.base = { cap: JUICE.cap, drain: JUICE.drain, cost: JUICE.cost, hold: SAMPLE.hold }), has = k => !!SAVE.flags['up:' + k];
-  JUICE.cap = B.cap * (has('tank') ? 1.25 : 1); JUICE.drain = B.drain * (has('seal') ? .67 : 1);
+  JUICE.cap = B.cap * (has('tank') ? 1.25 : 1) * (has('e115') ? 1.5 : 1); JUICE.drain = B.drain * (has('seal') ? .67 : 1);
   JUICE.cost = B.cost * (has('cheap') ? .75 : 1); SAMPLE.hold = B.hold * (has('quick') ? .67 : 1);
 }
 function goodGift(id) {
@@ -40374,6 +40493,7 @@ const GODPLACES = [
   { id: 'protest', world: 'tkit', name: 'OLD TOWN · the square, where the protest gathers', at: () => OPROTEST.a && [OPROTEST.a[0], OPROTEST.a[1] + .1, OPROTEST.a[2], null] },
   { id: 'beat',     world: 'tkit', name: "OLD TOWN · a cop's beat (Officer Kowalski's first corner)", at: () => { const r = OTLIFE.routes.find(q => q.id === 'cop_beat_near'); return r && [r.beat[0][0], r.beat[0][2], r.beat[0][1], null]; } },
   { id: 'site',     world: 'tkit', name: 'OLD TOWN · the building site (Sal, Dee, Foreman Briggs)', at: () => OTSITE.gateAt && [OTSITE.gateAt[0], OTSITE.gateAt[1], OTSITE.gateAt[2], OTSITE.gateAt[3]] },
+  { id: 'e115',     world: 'tkit', name: "OLD TOWN · Lazlo's roof (the tinfoil man, Element 115)", at: () => E115.godAt },
   { id: 'sitetop',  world: 'tkit', name: 'OLD TOWN · the top lift of the scaffold', at: () => OTSITE.topAt && [OTSITE.topAt[0], OTSITE.topAt[1], OTSITE.topAt[2], null] },
   { id: 'carts',    world: 'tkit', name: 'OLD TOWN · the food-cart pod (Chef Norrie: the antenna under the hat)', at: () => OTCARTS.godAt && [OTCARTS.godAt[0], null, OTCARTS.godAt[1], OTCARTS.godAt[2]] },
   { id: 'camp',     world: 'tkit', name: 'OLD TOWN · the camp at the west edge (Dusty, Pockets, Mother Agnes)', at: () => OTCAMP.godAt && [OTCAMP.godAt[0], null, OTCAMP.godAt[1], OTCAMP.godAt[2]] },
@@ -42130,7 +42250,7 @@ function frameBody() {
   islXingStep(dt);              // a flight down on the islands' landing field (m394)
   keeperStep(dt);               // the lighthouse's beam, and the keeper's storm while the thing wearing him stands (m398)
   turfStep(dt);                 // which block he is in and who holds it, for the chip (m407)
-  turfDressStep(dt); kswapStep(dt); flashStep(dt);            // the buildings wear their block's holder, cross-fading when it changes hands (m409)
+  turfDressStep(dt); kswapStep(dt); flashStep(dt); e115Step(dt);            // the buildings wear their block's holder, cross-fading when it changes hands (m409)
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)
@@ -42913,6 +43033,8 @@ async function init() {
     try { buildCamp(); } catch (e) { note('CAMP FAIL'); console.warn('[melee] camp', e); }
     try { buildCarts(); } catch (e) { note('CARTS FAIL'); console.warn('[melee] carts', e); }
     try { buildSite(); } catch (e) { note('SITE FAIL'); console.warn('[melee] site', e); }
+    // ELEMENT 115 (m414): Lazlo's roof, the man in the suit, the stash on the site's scaffold (after the site, which it reads)
+    try { buildE115(); } catch (e) { note('E115 FAIL'); console.warn('[melee] element 115', e); }
     try { buildLife(); } catch (e) { note('LIFE FAIL'); console.warn('[melee] life', e); }
     // THE PROTEST (m346): its people live round the square; it gathers, marches and rallies on its own clock
     try { buildProtest(); } catch (e) { note('PROTEST FAIL'); console.warn('[melee] protest', e); }
@@ -43133,7 +43255,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { TFLASH, flashStart, flashEnd, TPUSH, turfMove, KSWAP, kswapGod, kswapSettle, KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { E115, e115Done, TFLASH, flashStart, flashEnd, TPUSH, turfMove, KSWAP, kswapGod, kswapSettle, KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
