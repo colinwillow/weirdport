@@ -7,6 +7,28 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE THERMAL, THE CEILING AND THE TETHER (m395, C6-7d-2, `ITHERM`, `thermAt`, `buildIslandThermal`, `thermStep`, and
+  `wingWind`'s y).** REGIONS 8's way on: *"a thermal column up to the Mothership's tether."* **THE WINGS CLIMB ON THEIR OWN**
+  (`wingFly`: thrust holds `cruise`, so at full pitch the steady climb is about 9 m/s), and without a cap the thermal would
+  be scenery. So **above `ITHERM.ceil` (90 m over the sea), outside a thermal, a climb dies away to level** over 12 m. It is
+  done in `wingWind` by subtracting the positive part of `wingFly`'s own `vel.y`, so `vel` keeps its one writer. **ONLY
+  WHERE `ISLES.live`** (the islands' world): Weirdport's towers are not its business. Altitude is not capped, only climbing,
+  so a flight that rode the thermal high can glide out of it.
+  **THE COLUMN**: `thermAt` is 1 on the axis over the needle and falls to 0 at `r`, from the needle's top to 20 m past the
+  ring. A flight in it gets `wingUp` (14 m/s, `stepWing`'s substeps); a body merely in the air floats (`airUp`, a carry in
+  `thermStep`); the dust rises round the lens (`DUST.wy`, the third axis of m393's dust wind).
+  **SEEN FROM OFF**: an additive open cylinder shading from its foot, six gulls circling at their own heights, and the
+  tether: one `LatheGeometry` of a ribbed cable (one draw), swaying with the wind about its top, out of a cloud bank (sky
+  objects, `fog: false`). The ring at its end is IN the column, so riding the column level gets you there (7.8 s from 10 m
+  over the needle). Reaching it shows a card and saves `isl:tether`; Chapter 6 does not exist yet and the card says so.
+  **THE SHIP ABOVE THE CLOUD** is my call, a tease; `ITHERM.ship` and a GOD switch hide it.
+  **THE PLACECHECK EDIT THAT BROKE THE FILE AGAIN**: a `// comment` added to the middle of a one-line `if (...) { ...; }`
+  comments out its close. It is the second time this session (m391's row did the same). `npm run check` would have
+  caught it, so it would not have been a blank page that shipped, but **put a comment on its own line, always.**
+  **`npm run places`, exit 0** (teeth: `wingUp: 0` reads `BAD ... NEVER REACHED IT (top 45 m) ... THE THERMAL DOES NOT
+  CARRY A FLIGHT TO THE TETHER`):
+      ok  THERMAL column 35-180 m, strength on its axis 1, 12 m out 0, above it 0 | the ring 159.6 m up, 0.0 m off the axis, the column there 1 | a level flight from 45 m: at the ring in 7.8 s, the way on saved | a full climb under the ceiling: 9 m/s at 50 m, 0 at 100 | no wings, a second in it: +5 m | gulls 6, the ship 340 m 
+
 - **THE WAYS ONTO THE ISLANDS: STACKS, ROPE BRIDGES, THE LANDING FIELD (m394, C6-7d-1, `IXING`, `buildIslandXing`,
   `islXingStep`, `windSock`, `IWIND.socks`).** Before this the islands could only be reached by flying: the sea puts a
   swimmer back on the shore he left (`islePutBack`). **THE STRAIT IS 70 M**: Old Town's beach ends at v -95 in the islands'

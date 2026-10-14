@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m394</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m395</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m394</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m395</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm394';
+const BUILD = 'm395';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -34534,9 +34534,13 @@ function windGust() {
 // the glider's share, for `stepWing`'s substeps: the drift, and a bump up or down while a gust blows
 const _wWind = { x: 0, y: 0, z: 0 };
 function wingWind() {
-  const W = IWIND, p = player; if (!W.on || !ISLES.live) { _wWind.x = _wWind.y = _wWind.z = 0; return _wWind; }
-  const k = windK(p.pos.x, p.pos.z), f = W.wingK * k;
-  _wWind.x = W.vx * f; _wWind.z = W.vz * f; _wWind.y = W.wingUp * W.e * Math.sin(W.t * 2.3) * k; return _wWind;
+  const W = IWIND, p = player; _wWind.x = _wWind.y = _wWind.z = 0;
+  if (W.on && ISLES.live) { const k = windK(p.pos.x, p.pos.z), f = W.wingK * k; _wWind.x = W.vx * f; _wWind.z = W.vz * f; _wWind.y = W.wingUp * W.e * Math.sin(W.t * 2.3) * k; }
+  // m395: a thermal lifts the flight; outside one, above `ITHERM.ceil` over the sea, a climb dies away to level
+  const th = thermAt(p.pos.x, p.pos.y, p.pos.z); _wWind.y += ITHERM.wingUp * th;
+  // (the islands' world only: Weirdport's towers are not this ceiling's business)
+  if (ITHERM.on && ISLES.live && th < .05) { const over = p.pos.y - seaY() - ITHERM.ceil; if (over > -12) _wWind.y -= Math.max(0, p.vel.y) * clamp((over + 12) / 12, 0, 1); }
+  return _wWind;
 }
 function windStep(dt) {
   const W = IWIND, I = ISLES;
@@ -34630,6 +34634,80 @@ function islXingStep(dt) {
     if (d < X.fieldR) { X.landings++; const bull = d < 1.6; if (bull) X.bulls++; progFlag('isl:landed'); toast(bull ? 'BULLSEYE. Rue owes you a drink.' : 'Touchdown on the landing field, ' + d.toFixed(1) + ' m from the cross.', 2.4); } }
   X.wasWing = w;
 }
+// ============================================================================================
+// THE THERMAL AND THE TETHER (m395, ROADMAP C6-7d-2, `ITHERM`, `thermAt`, `buildIslandThermal`, `thermStep`)
+// ============================================================================================
+// REGIONS 8: "Way on: a thermal column up to the Mothership's tether." A column of rising air off the needle's top (the
+// highest rock there is), `r` m across, from the needle up to well past the tether's end. **A FLIGHT IN IT IS LIFTED**
+// (`wingUp` m/s, through `wingWind`'s y in `stepWing`'s substeps); a body merely in the air in it floats (`airUp`, a carry,
+// `windStep`'s way). **AND OUTSIDE ONE A FLIGHT HAS A CEILING**: the wings climb on their own (about 9 m/s at full pitch),
+// so without one the thermal would be scenery -- above `ceil` m over the sea a climb dies away to level, and only a thermal
+// takes you higher. The tether hangs out of a cloud bank over the needle, ribbed and dark, swaying a little, its end a
+// glowing ring `tetherY` m up, in the column: reach it and that is the way on (`isl:tether`, saved). Above the cloud the
+// Mothership's underside (`ship`: off is one switch in GOD). Seen from far off: the gulls circling in the column, the
+// column's own faint shimmer, the tether. Felt from inside: the dust streams UP (`DUST.wy`).
+const ITHERM = {
+  on: 1, r: 10, wingUp: 14, airUp: 5, ceil: 90, tetherY: 160, cloudY: 300, shipY: 340, ship: 1, reach: 6, sway: .012,
+  gulls: 6, built: 0, axis: null, y0: 0, y1: 0, tether: null, ring: null, column: null, birds: [], cloud: null, mship: null, reached: 0, t: 0,
+};
+// how much of the thermal is here, 0..1: full near its axis, gone at its edge; from the needle's top to above the tether
+function thermAt(x, y, z) {
+  const T = ITHERM; if (!T.on || !T.built) return 0;
+  const d = Math.hypot(x - T.axis[0], z - T.axis[1]); if (d >= T.r || y < T.y0 - 2 || y > T.y1 + 15) return 0;
+  return (1 - smooth(T.r * .55, T.r, d)) * (1 - smooth(T.y1, T.y1 + 15, y)) * smooth(T.y0 - 2, T.y0 + 4, y);
+}
+function buildIslandThermal() {
+  const T = ITHERM, I = ISLES; if (!T.on || !I.live) return 0;
+  const sea = ISLE.sea, K = I.ISLANDS.find(q => q.id === 'needle'), [ax, az] = islWorld(K.u, K.v);
+  T.axis = [ax, az]; T.y0 = sea + K.h + .5; T.y1 = sea + T.tetherY + 20;
+  // the column's shimmer: an open cylinder, additive, bright at its foot and fading up
+  { const H = T.y1 - T.y0, g = new THREE.CylinderGeometry(T.r * .8, T.r * .55, H, 28, 8, true), pos = g.attributes.position, col = [];
+    for (let i = 0; i < pos.count; i++) { const f = (pos.getY(i) + H / 2) / H, c = .5 * (1 - f) * (1 - f) + .04; col.push(c * .9, c * .95, c); }
+    g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+    const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ vertexColors: true, transparent: true, opacity: .16, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide }));
+    m.position.set(ax, T.y0 + H / 2, az); scene.add(m); T.column = m; }
+  // the tether: a lathe of a ribbed cable hanging from the cloud, its end a pod and a glowing ring; it sways about its top
+  { const L = T.cloudY - T.tetherY + 8, prof = [new THREE.Vector2(0, -L - 1.6), new THREE.Vector2(1.3, -L - 1.2), new THREE.Vector2(1.5, -L)];
+    for (let y = -L; y <= 0; y += .5) { const k = Math.pow(Math.max(0, Math.cos(2 * Math.PI * y / 6)), 10); prof.push(new THREE.Vector2(.75 + .4 * k, y)); }
+    const grp = new THREE.Group(); grp.position.set(ax, sea + T.cloudY + 8, az); scene.add(grp);
+    const cable = new THREE.Mesh(new THREE.LatheGeometry(prof, 14), new THREE.MeshStandardMaterial({ color: 0x2a1a36, roughness: .55, metalness: .2, emissive: new THREE.Color(0x5a1a6a), emissiveIntensity: .35 }));
+    grp.add(cable);
+    const ringM = new THREE.MeshStandardMaterial({ color: 0x0a2a30, emissive: new THREE.Color(0x46e0ff), emissiveIntensity: 2.2 });
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(2.8, .22, 10, 40), ringM); ring.rotation.x = Math.PI / 2; ring.position.y = -L - .4; grp.add(ring);
+    T.tether = grp; T.ring = ring; T.ringM = ringM; T.L = L; }
+  // the cloud it hangs out of, and the ship above it (sky objects: no fog, so they read through it from far off)
+  { const cg = new THREE.Group(), cm = new THREE.MeshStandardMaterial({ color: 0xf4f6fa, roughness: 1, transparent: true, opacity: .92, fog: false, side: THREE.DoubleSide, depthWrite: false });
+    for (const [dx, dz, r, dy] of [[0, 0, 58, 0], [40, 18, 42, 4], [-38, 10, 46, 2], [12, -40, 40, 5], [-20, 36, 36, 7], [30, -22, 30, 9]]) { const c = new THREE.Mesh(new THREE.CircleGeometry(r, 28), cm); c.rotation.x = Math.PI / 2; c.position.set(ax + dx, sea + T.cloudY + dy, az + dz); cg.add(c); }
+    scene.add(cg); T.cloud = cg;
+    const sg = new THREE.Group(), hull = new THREE.Mesh(new THREE.CylinderGeometry(70, 110, 18, 48), new THREE.MeshStandardMaterial({ color: 0x1a1424, roughness: .6, metalness: .4, fog: false }));
+    sg.add(hull); const glow = new THREE.Mesh(new THREE.TorusGeometry(64, 1.6, 8, 64), new THREE.MeshBasicMaterial({ color: 0xff3ad0, fog: false })); glow.rotation.x = Math.PI / 2; glow.position.y = -9.2; sg.add(glow);
+    sg.position.set(ax + 10, sea + T.shipY, az - 6); sg.visible = !!T.ship; scene.add(sg); T.mship = sg; }
+  // the gulls: little Vs circling in the column at their own heights and speeds
+  { const gm = new THREE.MeshStandardMaterial({ color: 0xf2f2ee, roughness: .8, side: THREE.DoubleSide }), gg = new THREE.BufferGeometry();
+    gg.setAttribute('position', new THREE.Float32BufferAttribute([0, 0, .25, -.9, .18, -.15, 0, 0, -.2, 0, 0, .25, .9, .18, -.15, 0, 0, -.2], 3)); gg.computeVertexNormals();
+    T.birds = []; for (let k = 0; k < T.gulls; k++) { const b = new THREE.Mesh(gg, gm); scene.add(b); T.birds.push({ b, rr: 3 + k * 1.1, y: T.y0 + 12 + k * 22, w: (k % 2 ? 1 : -1) * (.35 + k * .04), a: k * 1.7 }); } }
+  T.built = 1;
+  return 1;
+}
+function thermStep(dt) {
+  const T = ITHERM; if (!T.built || !inTK()) { DUST.wy = 0; return; }
+  T.t += dt;
+  const p = player, P = p.pos, th = T.on ? thermAt(P.x, P.y, P.z) : 0; T.k = th;
+  // a body in the air in it floats (the flight takes its lift in `stepWing`)
+  if (th > 0 && !GOD.fly && !p.grounded && !p.wing && !p.climb && !p.ledge && !p.wall) P.y += T.airUp * th * dt;
+  // the dust streams up round the lens while it is in the column
+  DUST.wy = T.on ? 6 * thermAt(camera.position.x, camera.position.y, camera.position.z) : 0;
+  // the tether sways with the wind (a little), the ring pulses, the gulls circle
+  const wv = IWIND.on ? IWIND.spd / 10 : .5;
+  if (T.tether) { T.tether.rotation.set(Math.sin(T.t * .31) * T.sway * wv, 0, Math.cos(T.t * .23) * T.sway * wv); T.ringM.emissiveIntensity = 1.8 + Math.sin(T.t * 3) * .7; }
+  for (const B of T.birds) { B.a += B.w * dt; B.b.position.set(T.axis[0] + Math.cos(B.a) * B.rr, B.y + Math.sin(T.t * .5 + B.rr) * 2, T.axis[1] + Math.sin(B.a) * B.rr); B.b.rotation.set(0, -B.a + (B.w > 0 ? 0 : Math.PI), (B.w > 0 ? -1 : 1) * .35 + Math.sin(T.t * 6 + B.rr) * .15); }
+  if (T.mship) T.mship.visible = !!T.ship;
+  // the ring reached: the way on
+  if (T.ring && T.on) { T.ring.getWorldPosition(_thR); if (_thR.distanceTo(P) < T.reach) { if (!T.reached) { T.reached = 1; progFlag('isl:tether');
+        try { cardShow('THE MOTHERSHIP’S TETHER', 'THE WAY ON  ·  CHAPTER 6 IS NOT BUILT YET', 4.5); } catch (e) {} snd('ready', { g: .45 }); } }
+    else if (T.reached && _thR.distanceTo(P) > T.reach * 3) T.reached = 0; }
+}
+const _thR = new THREE.Vector3();
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
 // ============================================================================================
@@ -39032,7 +39110,7 @@ const GODPLACES = [
   { id: 'otroad', world: 'tkit', name: 'OLD TOWN · the highway bridge to Hollow Creek', at: () => HCROAD.otAt },   // m371
   { id: 'islanding', world: 'tkit', name: 'THE RIVER ISLANDS · the landing rock (Chapter 5)', at: () => ISLES.landAt },   // m389
   { id: 'ismesa', world: 'tkit', name: 'THE RIVER ISLANDS · on top of the mesa', at: () => ISLES.mesaAt },
-  { id: 'isneedle', world: 'tkit', name: 'THE RIVER ISLANDS · on top of the needle, the highest point', at: () => ISLES.needleAt },
+  { id: 'isneedle', world: 'tkit', name: 'THE RIVER ISLANDS · on top of the needle, the thermal\'s foot (fly up it to the tether)', at: () => ISLES.needleAt },
   { id: 'isskate', world: 'tkit', name: 'THE RIVER ISLANDS · the skate park on the old pier', at: () => ISKATE.godAt },   // m390
   { id: 'isbase', world: 'tkit', name: 'THE RIVER ISLANDS · the BASE jumpers\' exit point on the mesa', at: () => IBASE.godBase },   // m391
   { id: 'isramp', world: 'tkit', name: 'THE RIVER ISLANDS · the gap ramp on the high hump', at: () => IBASE.godRamp },   // m391
@@ -39264,6 +39342,7 @@ function godMenuOpen(on) {
   btn('FARM BATCHING ' + (FBATCH.on ? 'ON' : 'OFF') + ' (reloads)', () => { try { sessionStorage.setItem('mel.batch', FBATCH.on ? '0' : '1'); } catch (e) {} location.replace(location.pathname); });
   if (COWS.length) btn('SPOOK THE NEAREST HERD (STAMPEDE)', () => { toast(cowSpook(), 1.6); godMenuOpen(0); });
   if (ISLES.live) { btn('THE ISLANDS\' WIND ' + (IWIND.on ? 'ON' : 'OFF'), () => { IWIND.on = IWIND.on ? 0 : 1; godMenuOpen(1); });   // m393
+    btn('THE MOTHERSHIP OVER THE ISLANDS ' + (ITHERM.ship ? 'ON' : 'OFF'), () => { ITHERM.ship = ITHERM.ship ? 0 : 1; godMenuOpen(1); });   // m395
     btn('A GUST NOW (THE ISLANDS)', () => { windGust(); toast('Gust: +' + IWIND.gustAdd.toFixed(0) + ' m/s', 1.4); godMenuOpen(0); }); }
   if (SKYLINE.g) btn('METROPOLIS ON THE HORIZON ' + (SKYLINE.g.visible ? 'ON' : 'OFF'), () => { SKYLINE.g.visible = !SKYLINE.g.visible; godMenuOpen(1); });
   btn('THE STAND-IN QUEST (WEIRDPORT 101)', () => { progFlag('qon:q0'); quest.cur = null; toast('Quest on', 1.4); });
@@ -40265,7 +40344,7 @@ function stepDust(dt) {
   if (!DUST.on) { if (dust.P) dust.P.pts.visible = false; return; }
   if (!dust.P) dustBuild();
   dustT += dt;
-  const P = dust.P, n = DUST.n, R = DUST.r, W = R * 2, wdx = DUST.wx || 0, wdz = DUST.wz || 0;   // m393: the islands' wind streams it
+  const P = dust.P, n = DUST.n, R = DUST.r, W = R * 2, wdx = DUST.wx || 0, wdz = DUST.wz || 0, wdy = DUST.wy || 0;   // m393: the islands' wind streams it; m395 a thermal lifts it
   // ROUND THE LENS, NOT ROUND HIM. What you see is what is near the CAMERA, and on a boom
   // several metres behind him those are different boxes.
   const cx = camera.position.x, cy = camera.position.y, cz = camera.position.z;
@@ -40275,7 +40354,7 @@ function stepDust(dt) {
   const snx = _sunOff.x / sl, sny = _sunOff.y / sl, snz = _sunOff.z / sl;
   for (let i = 0; i < n; i++) {
     const o = i * 3;
-    P.pos[o] += (dust.vx[i] + wdx) * dt; P.pos[o + 1] += dust.vy[i] * dt; P.pos[o + 2] += (dust.vz[i] + wdz) * dt;
+    P.pos[o] += (dust.vx[i] + wdx) * dt; P.pos[o + 1] += (dust.vy[i] + wdy) * dt; P.pos[o + 2] += (dust.vz[i] + wdz) * dt;
     // **WRAPPED, WHICH IS WHY THE FIELD IS INFINITE AND COSTS NOTHING.** A mote that leaves the
     // box comes back in the far side, so walking never runs out of dust and nothing is spawned.
     let dx = P.pos[o] - cx, dy = P.pos[o + 1] - cy, dz = P.pos[o + 2] - cz;
@@ -40732,6 +40811,7 @@ function frameBody() {
     stepKit(dt);
     if (GOD.fly) godFlyStep(dt); else stepPlayer(dt);     // GOD's free flight replaces the step (m298)
     windStep(dt);         // the islands' wind: him in the air, the dust, the windsock (m393) -- after he moved, before the sea's rule
+    thermStep(dt);        // the needle's thermal: him floating in it, the dust rising, the tether, the gulls (m395)
     isleStep(dt);         // the sea's rule, right after he moved (m264)
     _pt = pT('plyr', _pt);
     // AFTER HIM, because the deck is drawn where he ENDED UP -- read before `stepPlayer` it is
@@ -41167,7 +41247,7 @@ function frameBody() {
                         (rig.borrowed ? '+' + rig.borrowed : ' NOBORROW') + (wn || '') : '';
     const line = fps.toFixed(0) + ' FPS · ' + renderer.info.render.calls + ' DC ' + Math.round(renderer.info.render.triangles / 1000) + 'kT' + (CELL.list.length ? ' c' + CELL.shown + '/' + CELL.list.length : '') + (STEPUP.n ? ' ke' + STEPUP.n : '') + PROF.sum + ' · pr' + PERF.pr.toFixed(2) + (PERF.holdT > 0 ? 'h' : '') + ' B' + PERF.seen + '/' + DUMMIES.length + ' · ' +
       p.speed.toFixed(1) + ' m/s · ' + st + lk + hue + bx + cv + brkC + kitC + inf + shp + cl + sk + sk8 + vs + mo + fl + wp + tc + mp +
-      bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
+      bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + (ITHERM.k > 0 ? ' TH' + Math.round(ITHERM.k * 100) : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
       // CH: the saved chapter (m276); NEW = this boot was `?fresh`, BADSAVE = a save was there and would not parse
       (GOD.on ? ' · GOD' + (GOD.fly ? ' FLY' : '') : '') +
       ' · CH' + SAVE.ch + (SAVE.fresh ? ' NEW' : '') + (SAVE.bad ? ' BADSAVE' : '') +
@@ -41556,6 +41636,7 @@ async function init() {
     try { buildIslandBase(); } catch (e) { note('BASE FAIL'); console.warn('[melee] island exit point and ramp', e); }
     try { buildIslandMovers(); } catch (e) { note('MOVERS FAIL'); console.warn('[melee] island kite surfers', e); }
     try { buildIslandXing(); } catch (e) { note('XING FAIL'); console.warn('[melee] island rope bridges', e); }
+    try { buildIslandThermal(); } catch (e) { note('THERMAL FAIL'); console.warn('[melee] island thermal and tether', e); }
     // AND THE SWING BRIDGE (m382): the second way over, before the city ring keeps its trees off its landing
     try { buildSwing(); } catch (e) { note('SWING FAIL'); console.warn('[melee] swing bridge', e); }
     // ITS CREEK AND POND (m307): what stands in and over the valley and the bowl the land is carved with
@@ -41807,7 +41888,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
