@@ -7,6 +7,17 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE AMPLIFIER FEEDS THE PROTEST THROUGH THREE NUMBERS THE PROTEST ALREADY HAD (m352, C2b-3, `OAMP`, `buildAmp`,
+  `ampStep`, `ampUp`, `ampBoil`).** A red orb over THE SQUARE (the protest's own lot) that rides out over the crowd while
+  it is out (the middle of the two chants, or the one) and drifts back over the square when it is not, with a thin red
+  line down to each chant. While it is up: the quiet between protests is halved, both chants paint bigger and red, and the
+  rally's boil-over is x4 (`O.boil * ampBoil()`). Shot down (three hits, `AIRT`, the shot finds it): a brawl on at that
+  moment stops where it stands, the boil from then is x0.3, saved `orb:amp`, Old Town +3; the task STIRRING IT UP
+  appears within 60 m. GOD: the place "under the amplifier", THE AMPLIFIER ORB: RAISE IT AGAIN.
+  `places`: `ok  AMP over the square [-7.5,0.2,35.7] | boil x4 while up, x0.3 after 3 hits (down)`, exit 0.
+  **That is three of LORE's six orbs** (pacifier, watcher, amplifier); the projector, the poltergeist and the relay,
+  and the faint beams linking a district's grid, are not built.
+
 - **THE WATCHER AND THE ALIENS' ALERT, WHICH IS NOT THE POLICE'S HEAT (m351, C2b-2, `OWATCH`, `buildWatcher`,
   `watchStep`, `orbBody`).** A gold orb 12 m over a clear lot on Old Town's east side (66.5, -20.3) with a searchlight: an
   open cone down to a pool (3.4 m) on the street that wanders a slow figure 5-15 m round the lot. The pool on the

@@ -251,13 +251,13 @@ differ" table there, so no region feels like the last one.
   - [x] m348 **C1-3** the barricade: as an activist inside the crowd you march through a barricade nobody else gets past.
 - [x] m349 **C2 Skinsuit incursions.** An enemy ship/agent turns civilians on the street; you fight and
   revert them. Ties to the existing virus system.
-- [ ] **C2b The orbs (`LORE.md`).** Start with the pacifier: an orb floating over a few Old Town
+- [x] m352 **C2b The orbs (`LORE.md`).** Start with the pacifier: an orb floating over a few Old Town
   blocks, a trance on the people under it (they stare and walk in slow loops), the blaster can shoot
   it down, and they come out of it dazed. Lights flicker and cars stall near it (the
   electromagnetic tell). Then the watcher and the amplifier, which feeds the protests and brawls.
   - [x] m350 **C2b-1** the pacifier over the south side: the trance, the crackle, the shot that finds it, the dazed release.
   - [x] m351 **C2b-2** the watcher: a searchlight orb; caught in its beam you raise the alert (heat), and it calls the others; shot down, the alert drops.
-  - [ ] **C2b-3** the amplifier: over the square, it makes the protest louder and the brawl likelier; shot down, the crowd calms.
+  - [x] m352 **C2b-3** the amplifier: over the square, it makes the protest louder and the brawl likelier; shot down, the crowd calms.
 - [ ] **C2c Placeholder roster (`CHARACTERS.md`).** Build against ROLES, not models: a roster table of
   every role the regions need, each mapped to a stand-in (existing body + tint + prop + name tag).
   When his model for a role lands it is one line. GOD mode lists every role and spawns one.
@@ -824,3 +824,9 @@ differ" table there, so no region feels like the last one.
   follows you and an alert climbs (`AL` in the chip). At full alert it calls a Skinsuit ship down on
   you, then can't call again for 90 seconds. Shooting it down clears the alert for good. The alert is
   separate from police heat and stays on in GOD mode, so you can watch it work.
+
+- **m352 (C2b-3):** the amplifier is a red orb over the square that rides out above the march. While
+  it's up, the protest comes round twice as often, the chants are bigger and red, and the rally is
+  four times as likely to turn into a brawl by itself. Shoot it down and a brawl that's already
+  happening stops; after that, brawls almost never start unless you start one. That makes three of the
+  six orbs in LORE.md; the projector, poltergeist and relay are for later.
