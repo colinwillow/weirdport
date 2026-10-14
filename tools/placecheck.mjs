@@ -58,7 +58,7 @@ const html = fs.readFileSync('index.html', 'utf8');
 let src = html.match(/<script type="module">([\s\S]*?)<\/script>/)[1];
 src = src.replace(/(from\s*)['"]three['"]/g, `$1'${pathToFileURL(path.join(TMP, 'three-shim.mjs')).href}'`)
          .replace(/(from\s*)['"]\.\/vendor\//g, `$1'${ROOT}vendor/`);
-src += '\nglobalThis.__M = { QUESTS, buildLife, OTLIFE, buildSite, OTSITE, buildCarts, OTCARTS, cartStep, mapRegionsTkit, buildCamp, OTCAMP, MAPREG, campStep, FARMLAND, buildFarmland, buildFarmWaters, FWATER, buildFieldBounds, FPLAN, buildFieldCrops, FCROP, buildNeighbours, FNEIGH, COW, COWS, cowSpook, fpOwnAt, flLocal, buildVehicles, FVEH, vehStep, buildFarmhands, FHANDS, MARKS, mkrNpcPlace, HOBO, HICK, buildTownEdge, FTOWN, buildCityRing, FRING, farmBatch, FBATCH, scene, buildTrestle, FTRES, buildFord, FFORD, GATES, buildOrchardTerrace, FTERR, buildSkyline, SKYLINE, skylineStep, flEdgeAt, isleBedAt, KCITY, buildKCityCol, buildIsle, ISLE, TRI, triBuild, groundAt, WORLD, MOVE, player, kitPopulate, KCROWD, FOE, HICK, HOBO, SKATER, BIKER, DUMMY, CIVILS, CLANCY, kitStand, bodySeat, SEAT, DUMMIES, THREE, buildFarm, buildFarmProps, buildCrash, buildLane, buildBridge, buildCows, buildHedgerows, HROW, buildFarmhouse, FHOUSE, farmhouseStep, buildRoadside, FROAD, GPAINT, buildGroundPaint, buildFlora, crashHero, FARM, MISSING, FLORA, FPROPS, farmPropsStep, floraStep, cowStep, crashStep, crashHeroStep, riverStep, gradeStep, CRASH, GODPLACES, godPlace, GOD, LANE, BRIDGE, crashSpawn, SAVE };\n';
+src += '\nglobalThis.__M = { FOOT, buildFootbridge, footStep, footFix, BOXES, PORTALS, QUESTS, buildLife, OTLIFE, buildSite, OTSITE, buildCarts, OTCARTS, cartStep, mapRegionsTkit, buildCamp, OTCAMP, MAPREG, campStep, FARMLAND, buildFarmland, buildFarmWaters, FWATER, buildFieldBounds, FPLAN, buildFieldCrops, FCROP, buildNeighbours, FNEIGH, COW, COWS, cowSpook, fpOwnAt, flLocal, buildVehicles, FVEH, vehStep, buildFarmhands, FHANDS, MARKS, mkrNpcPlace, HOBO, HICK, buildTownEdge, FTOWN, buildCityRing, FRING, farmBatch, FBATCH, scene, buildTrestle, FTRES, buildFord, FFORD, GATES, buildOrchardTerrace, FTERR, buildSkyline, SKYLINE, skylineStep, flEdgeAt, isleBedAt, KCITY, buildKCityCol, buildIsle, ISLE, TRI, triBuild, groundAt, WORLD, MOVE, player, kitPopulate, KCROWD, FOE, HICK, HOBO, SKATER, BIKER, DUMMY, CIVILS, CLANCY, kitStand, bodySeat, SEAT, DUMMIES, THREE, buildFarm, buildFarmProps, buildCrash, buildLane, buildBridge, buildCows, buildHedgerows, HROW, buildFarmhouse, FHOUSE, farmhouseStep, buildRoadside, FROAD, GPAINT, buildGroundPaint, buildFlora, crashHero, FARM, MISSING, FLORA, FPROPS, farmPropsStep, floraStep, cowStep, crashStep, crashHeroStep, riverStep, gradeStep, CRASH, GODPLACES, godPlace, GOD, LANE, BRIDGE, crashSpawn, SAVE };\n';
 const f2 = path.join(TMP, 'placecheck.mjs'); fs.writeFileSync(f2, src);
 const quiet = console.error, qw = console.warn, ql = console.log;
 console.error = () => {}; console.warn = () => {};
@@ -121,7 +121,7 @@ M.buildKCityCol({ scene });
 try { M.buildIsle(); } catch (e) { quiet('isle', e.message); }
 console.log = ql;
 
-const farmSteps = ['buildFarmland','buildFarmWaters','buildOrchardTerrace','buildFieldBounds','buildFieldCrops','buildNeighbours','buildFarm','buildFarmProps','buildCrash','crashHero','buildLane','buildBridge','buildHedgerows','buildFarmhouse','buildRoadside','buildCows','buildVehicles','buildFarmhands','mapRegionsTkit','buildCamp','buildCarts','buildSite','buildLife','buildTownEdge','buildCityRing','buildTrestle','buildFord','buildSkyline','farmBatch','buildGroundPaint','buildFlora'];
+const farmSteps = ['buildFarmland','buildFarmWaters','buildOrchardTerrace','buildFieldBounds','buildFieldCrops','buildNeighbours','buildFarm','buildFarmProps','buildCrash','crashHero','buildLane','buildBridge','buildHedgerows','buildFarmhouse','buildRoadside','buildCows','buildVehicles','buildFarmhands','mapRegionsTkit','buildCamp','buildCarts','buildSite','buildLife','buildFootbridge','buildTownEdge','buildCityRing','buildTrestle','buildFord','buildSkyline','farmBatch','buildGroundPaint','buildFlora'];
 console.log = () => {};
 for (const n of farmSteps) { try { M[n](); quiet('ok  ', n); } catch (e) { quiet('FAIL', n, e && e.stack ? e.stack.split('\n').slice(0,3).join(' | ') : e); } }
 console.log = ql;
@@ -182,6 +182,19 @@ quiet('LIFE', M.OTLIFE.n, 'routes:', M.OTLIFE.routes.map(r => r.id + ' ' + r.bea
   }
   if (nb) globalThis.__cowBad = (globalThis.__cowBad || 0) + nb;
   quiet((nb ? 'BAD ' : 'ok  ') + 'QUESTS', out.join(' | ')); }
+// ---- THE FOOTBRIDGE (m341): where it went, how long, and that fixing it really lays a floor over the gap
+{ const F = M.FOOT, G = F.G, R = M.ISLE.rect;
+  let why = !F.n ? 'NOT BUILT' : !G ? 'NO GATE' : '';
+  const out = F.footAt && !(F.footAt[0] > R[0] && F.footAt[0] < R[1] && F.footAt[2] > R[2] && F.footAt[2] < R[3]);
+  if (!why && !out) why = 'FOOT INSIDE THE CITY';
+  let gapY = null, fixedY = null;
+  if (!why) { const x = G.x + Math.sin(G.h) * 3, z = G.z + Math.cos(G.h) * 3;          // 3 m into the gap
+    gapY = M.groundAt(x, z, F.yD + .5, 1); const nb = M.BOXES.length; M.footFix(1); fixedY = M.groundAt(x, z, F.yD + .5, 1);
+    if (!(gapY < F.yD - 1)) why = 'A FLOOR IN THE GAP BEFORE IT IS FIXED'; else if (!(Math.abs(fixedY - F.yD) < .05)) why = 'NO FLOOR AFTER FIXING';
+    M.BOXES.length = nb; F.fixed = 0; }
+  if (why) globalThis.__cowBad = (globalThis.__cowBad || 0) + 1;
+  quiet((why ? 'BAD ' : 'ok  ') + 'FOOTBRIDGE', F.n, 'boxes, bearing', F.deg && +F.deg.toFixed(1), 'deg, waterline', F.vW, 'm out, deck y', F.yD && +F.yD.toFixed(2), 'span', F.span && +F.span.toFixed(1),
+    'm | gap floor', gapY && +gapY.toFixed(2), '-> fixed', fixedY && +fixedY.toFixed(2), '| pads', M.PORTALS.filter(q => /footbridge|pearl/.test(q.id)).length, why); }
 quiet('FFORD', M.FFORD.n, 'stones over', M.FFORD.at && M.FFORD.cityAt && +Math.hypot(M.FFORD.cityAt[0] - M.FFORD.at[0], M.FFORD.cityAt[1] - M.FFORD.at[1]).toFixed(1), 'm, washed gap', M.FFORD.gapM && +M.FFORD.gapM.toFixed(1), 'm | culvert', JSON.stringify(M.FWATER.culvertAt && M.FWATER.culvertAt.map(v => +v.toFixed(1))), 'bed', M.FWATER.culvertY && +M.FWATER.culvertY.toFixed(2));
 quiet('GATES', M.GATES.map(g => g.id + ' ' + g.type + ' w' + g.w.toFixed(1) + ' y' + g.y.toFixed(2) + ' @' + g.x.toFixed(0) + ',' + g.z.toFixed(0)).join(' | ') || 'NONE');
 quiet('FTERR', M.FTERR.n, 'wall pieces,', M.FTERR.trees, 'apple trees, tiers', JSON.stringify(M.FTERR.top.map(v => +v.toFixed(2))), 'steps', M.FTERR.steps.length, 'base R', M.FTERR.R ? [+Math.min(...M.FTERR.R).toFixed(1), +Math.max(...M.FTERR.R).toFixed(1)] : 'NONE');
@@ -200,8 +213,8 @@ for (const P of M.GODPLACES.filter(p => p.world === 'tkit')) {
   const city = p.x > R[0] && p.x < R[1] && p.z > R[2] && p.z < R[3];
   // sensible: it moved him, he is not under the sea, and a farm place is OUT on the island, not in the city
   // m306: a farm place is ON THE FARMLAND (its own landmass), except the bridge's checkpoint, which is on the deck
-  const CITYP = ['oldtown', 'camp', 'carts', 'site', 'sitetop', 'beat'];                         // m335: places that are IN Old Town on purpose
-  const offLand = M.FARMLAND.live && !['oldtown', 'camp', 'carts', 'site', 'sitetop', 'beat', 'bridge', 'warehouse', 'backyards', 'stones'].includes(P.id) && !(M.flEdgeAt(p.x, p.z) > 0);
+  const CITYP = ['oldtown', 'camp', 'carts', 'site', 'sitetop', 'beat', 'footbridge', 'pearldock'];                         // m335: places that are IN Old Town on purpose
+  const offLand = M.FARMLAND.live && !['oldtown', 'camp', 'carts', 'site', 'sitetop', 'beat', 'footbridge', 'pearldock', 'bridge', 'warehouse', 'backyards', 'stones'].includes(P.id) && !(M.flEdgeAt(p.x, p.z) > 0);
   const why = !a ? 'NO PLACE' : (p.x === 0 && p.z === 0 && P.id !== 'oldtown') ? 'UNMOVED' : p.y < M.ISLE.sea + .3 ? 'IN THE SEA'
             : (!CITYP.includes(P.id) && city) ? 'IN THE CITY' : offLand ? 'OFF THE FARMLAND' : '';
   if (why) bad++;
@@ -221,7 +234,7 @@ quiet(bad ? bad + ' GOD place(s) BAD' : 'every tkit GOD place is somewhere');
 // on: a frozen picture with a crash card. A second at 30 fps, standing at the crash, each step on its own.
 { const crash = M.GODPLACES.find(q => q.id === 'crash'); if (crash) M.godPlace(crash);
   quiet('cowSpook', M.cowSpook(), '(m329: so the 30 frames below run the stampede branch too)');
-  for (const n of ['vehStep', 'farmPropsStep', 'farmhouseStep', 'floraStep', 'cowStep', 'crashStep', 'crashHeroStep', 'riverStep', 'gradeStep', 'skylineStep', 'campStep', 'cartStep']) {
+  for (const n of ['vehStep', 'farmPropsStep', 'farmhouseStep', 'floraStep', 'cowStep', 'crashStep', 'crashHeroStep', 'riverStep', 'gradeStep', 'skylineStep', 'campStep', 'cartStep', 'footStep']) {
     let err = null;
     console.log = () => {};
     for (let f = 0; f < 30 && !err; f++) { try { M[n](1 / 30); } catch (e) { err = e; } }

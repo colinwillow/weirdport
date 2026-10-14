@@ -227,11 +227,11 @@ differ" table there, so no region feels like the last one.
   - [x] m336 **B3-2** the food-cart pod in a lot, with the hidden good alien at one cart (the antenna under the hat).
   - [x] m337 **B3-3** a building site wrapped in scaffolding, with its crew.
   - [x] m338 **B3-4** ambient life placed by role (cops on the beat, people on the pavements, the crews' comings and goings).
-- [ ] **B4 Chapter 1 quests.** The good alien points you at the building site; workers are being
+- [x] m341 **B4 Chapter 1 quests.** The good alien points you at the building site; workers are being
   turned into Skinsuits; get the worker form; repair the broken bridge (gate) to the next district.
   - [x] m339 **B4-1** the good alien points you at the building site; you watch a worker turned into a Skinsuit and beat it back; she tells you about the foreman.
   - [x] m340 **B4-2** get the worker form: knock a worker down and take the sample; as a worker the crew talk to you, and the foreman gives you a job.
-  - [ ] **B4-3** the collapsed footbridge to The Pearl (REGIONS: over the rail cut), rebuilt as the worker: the bridge gate, the quest step, and the far side as a portal.
+  - [x] m341 **B4-3** the collapsed footbridge to The Pearl (REGIONS: over the rail cut), rebuilt as the worker: the bridge gate, the quest step, and the far side as a portal.
 - [ ] **B5 Chapter 1 boss.** The infiltrated foreman bursts out of his skin; beat him; revert the
   crew; chapter complete → Chapter 2 region unlocks on the map.
 
@@ -737,3 +737,11 @@ differ" table there, so no region feels like the last one.
   "alone"; to the alien he says the site is closed. I let you sample any crew member rather than one
   named person, so you can choose who to jump. GOD now has a QUESTS list that starts any quest from
   the top.
+
+- **m341 (B4-3):** your city has no rail cut, so the footbridge to The Pearl crosses the water off Old
+  Town's west shore instead, on the bearing where the skyline puts The Pearl. On the far side is The
+  Pearl's first loading dock on piles, with a mural wall, which is where Chapter 2's land will grow
+  from. The middle span has fallen in, and nobody can cross until you lean on the barrier as the
+  worker for two seconds. That also applies to any future "broken bridge" gate: before, the right form
+  could walk straight into the gap. There's a portal pad at each end. If you'd rather have the rail
+  cut, it can become a trench inside The Pearl's land when Chapter 2 builds it.

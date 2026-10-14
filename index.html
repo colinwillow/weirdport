@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m340</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m341</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m340</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m341</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm340';
+const BUILD = 'm341';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -27931,6 +27931,14 @@ const QUESTS = [
                 "Planks and bolts are at the bridge. You know how. Go.",
                 "...And after your shift, come and see me in the office. Alone. Safety briefing."] } },
   ] },
+  // CHAPTER 1 (m341, B4-3): Briggs's job, `from` his script -- the footbridge to The Pearl, mended as the worker, crossed,
+  // and the pad on the far side stood on, so the way back is yours in any form
+  { id: 'ch1c', title: 'THE FOOTBRIDGE', world: 'tkit', ch: 1, from: 'ch1_briggs', steps: [
+    { type: 'goto', at: () => FOOT.footAt && [FOOT.footAt[0], FOOT.footAt[2]], r: 7, text: 'Go to the broken footbridge on the west shore', tip: 'Keep the hard hat on. Nobody else can fix it.' },
+    { type: 'gate', id: 'pearl_footbridge', text: 'Fix the gap: stand at the barrier as the worker', tip: 'Walk up to the barrier as the worker and stay there.' },
+    { type: 'goto', at: () => FOOT.dockAt && [FOOT.dockAt[0], FOOT.dockAt[2]], r: 6, text: "Cross to The Pearl's dock" },
+    { type: 'goto', at: () => FOOT.padAt && [FOOT.padAt[0], FOOT.padAt[2]], r: 1.2, text: 'Step on the pad: a way back as yourself', tip: 'A pad you have stood on takes you to any other one, in any form.' },
+  ] },
   // CHAPTER 0 (m333, B1f-4): Nell at the farm shop gives it, and only to one of her own -- `from` her script, which she only
   // finishes for country folk. The first real task in the game: a marker, a waypoint and the distance, to the checkpoint.
   { id: 'qroad', title: 'THE ROAD TO TOWN', world: 'tkit', from: 'mk_nell', steps: [
@@ -28865,7 +28873,8 @@ function gatePush(dt) {
     const v = dx * s + dz * c, u = dx * c - dz * s;     // v along the normal, u along the gate
     const sideNow = v >= 0 ? 1 : -1;
     const inSpan = Math.abs(u) < G.w * .5 + r && P.y > G.y - .5 && P.y < G.y + GATE.hi;
-    const ok = G.open || gateLets(T) || GOD.fly;                 // GOD's fly: nothing collides
+    // m341: a `fix` gate is a gap -- nobody walks it until it is mended, the right body included (he leans on it to fix it)
+    const ok = G.open || (T.pass !== 'fix' && gateLets(T)) || GOD.fly;      // GOD's fly: nothing collides
     if (!inSpan) { G.side = sideNow; G.fixT = 0; continue; }
     const half = GATE.t * .5 + r;
     if (ok) {
@@ -28882,7 +28891,7 @@ function gatePush(dt) {
     const vn = p.vel.x * s + p.vel.z * c;
     if (vn * sd < 0) { p.vel.x -= vn * s; p.vel.z -= vn * c; }
     G.side = sd;
-    if ((G.sayT -= dt) <= 0) { G.sayT = GATE.sayAgain; GATE.said++; toast(T.say, 2.6); if (T.heat) heatAdd(T.heat, 'gate'); }   // m334: a checkpoint NOTICES
+    if ((G.sayT -= dt) <= 0 && !(T.pass === 'fix' && gateLets(T))) { G.sayT = GATE.sayAgain; GATE.said++; toast(T.say, 2.6); if (T.heat) heatAdd(T.heat, 'gate'); }   // m334: a checkpoint NOTICES
   }
 }
 // a `fix` gate is mended by leaning on it as the right body; flames flicker; the toast fades
@@ -30483,6 +30492,193 @@ function buildLife() {
   }
   return L.n;
 }
+// ============================================================================================
+// THE FOOTBRIDGE TO THE PEARL (m341, ROADMAP B4-3, `FOOT`, `buildFootbridge`, `footStep`)
+// ============================================================================================
+// REGIONS' Old Town: "Way on: the collapsed footbridge ... to The Pearl. Rebuild it as the worker." His kit city has no
+// rail cut, so the bridge crosses the WATER off Old Town's west shore, on the bearing of The Pearl as the skyline draws
+// it (`SKYLINE`'s pearl district: left of the core, from the farm), to the first of The Pearl's loading docks out on
+// piles -- the threshold of Chapter 2, which grows its land from there. A steel truss footbridge on concrete piers, stairs
+// up off the grass; its middle span has dropped into the water, a barrier and a BRIDGE OUT sign on the near edge. The
+// gap is a `bridge` gate (`pearl_footbridge`): it stops EVERY form until a worker leans on it (`gateStep`, 2 s), then the
+// mended span (new timber) appears with its colliders and the drowned one goes. The dock: a raised loading platform, a
+// warehouse wall with The Pearl's mural, a container you can climb by its crates with a roof garden on it, pastel pots,
+// bollards, lamps, and a portal pad at each end so the crossing is a way back as yourself (GAME_DESIGN).
+const FOOT = {
+  on: 1, n: 0, deg: null, footAt: null, dockAt: null, padAt: null, G: null, fixed: 0, broke: null, mend: null, spanBoxes: null,
+  w: 2.6,           // m: the deck between the railings
+  gap: 6,           // m of span in the water
+  out: 26,          // m past the waterline where the dock starts
+  why: "The Pearl's bearing on the skyline, off Old Town's west shore: Briggs's job, and the way on to Chapter 2",
+};
+// the bearing (radians, the island's rays' convention: dx = cos, dz = sin) toward The Pearl as `buildSkyline` places it
+function footBearing() {
+  const R = ISLE.rect; if (!R) return null;
+  const ic = [(R[0] + R[1]) / 2, (R[2] + R[3]) / 2];
+  let dx = 1, dz = 0;
+  if (FARMLAND.live) { dx = ic[0] - FARMLAND.O[0]; dz = ic[1] - FARMLAND.O[1]; const L = Math.hypot(dx, dz); dx /= L; dz /= L; }
+  const P = SKYLINE.DISTRICTS.find(d => d.id === 'pearl') || { along: 0, deep: 0 }, D = SKYLINE.dist + P.deep;
+  const x = dx * D - dz * P.along, z = dz * D + dx * P.along;        // right of the farm's view is (-dz, dx)
+  return Math.atan2(z, x);
+}
+function footSign(top, sub, bg, fg) {
+  const c = document.createElement('canvas'); c.width = 512; c.height = 160;
+  const g = c.getContext('2d');
+  g.fillStyle = bg; g.fillRect(0, 0, 512, 160);
+  g.fillStyle = fg; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.font = '800 70px "Barlow Condensed", system-ui, sans-serif'; g.fillText(top, 256, 62);
+  g.font = '700 30px "Barlow Condensed", system-ui, sans-serif'; g.fillText(sub, 256, 126);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+// The Pearl's mural: pastel discs and bands and its name, painted on the dock's warehouse wall
+function footMural() {
+  const c = document.createElement('canvas'); c.width = 1024; c.height = 400;
+  const g = c.getContext('2d');
+  g.fillStyle = '#f6d9e4'; g.fillRect(0, 0, 1024, 400);
+  const P = ['#9fe3d2', '#ffc9a8', '#c9b8ff', '#fff1a8', '#ff9fc0', '#a8d8ff'];
+  for (let i = 0; i < 9; i++) { g.fillStyle = P[i % P.length]; g.fillRect(i * 118 - 20, 0, 70, 400); }
+  for (let i = 0; i < 14; i++) { g.fillStyle = P[(i * 5) % P.length]; g.beginPath(); g.arc(60 + i * 72, 90 + (i % 3) * 110, 40 + (i % 4) * 14, 0, Math.PI * 2); g.fill(); }
+  g.fillStyle = '#2a2140'; g.fillRect(140, 150, 744, 120);
+  g.fillStyle = '#ffffff'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.font = '900 104px "Barlow Condensed", system-ui, sans-serif'; g.fillText('THE PEARL', 512, 214);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+function buildFootbridge() {
+  const I = ISLE, R = I.rect, FT = FOOT; if (!FT.on || !inTK() || !I.live || !I.rays || !R) return 0;
+  const th = footBearing(); if (th === null) return 0;
+  FT.deg = ((th * 180 / Math.PI) % 360 + 360) % 360;
+  const ray = isleRayAt(th), cx = (R[0] + R[1]) / 2, cz = (R[2] + R[3]) / 2;
+  const dx = Math.cos(th), dz = Math.sin(th), Ox = cx + dx * ray.rb, Oz = cz + dz * ray.rb, thf = Math.atan2(dx, dz);   // +v points out
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .8, metalness: 0 }), o || {});
+  const MAT = { steel: Object.assign(M(0x5d7a86), { metalness: .45, roughness: .5 }), deck: M(0x6f5a44), concrete: M(0x9a968c), rust: M(0x8a4a2a),
+    boards: M(0x8c7258), pile: M(0x4a3d30), brick: M(0xb5735e), dark: M(0x24262b), cont: M(0x7fc7b5), cont2: M(0xf0a6b8),
+    pot1: M(0xffc9a8), pot2: M(0xc9b8ff), pot3: M(0xfff1a8), leaf: M(0x4f8a3a), leaf2: M(0x7db35a), soil: M(0x3a2c22),
+    plank: M(0xc89a5c), orange: M(0xff7a1a), white: M(0xf2efe6), glow: M(0x3a2a14, { emissive: new THREE.Color(0xffd28a), emissiveIntensity: 1.6 }) };
+  const F = farmFrame(Ox, Oz, thf, MAT, 'pearl'), { bx, geo, wx, wz } = F;
+  const sea = I.sea, ground = v => { const y = groundAt(wx(0, v), wz(0, v), 3, 6); return y > -50 ? y : sea; };
+  // the waterline along the ray: the first point past the grass where the ground is under the surface
+  let vW = 4; while (vW < 140 && ground(vW) > sea + .25) vW += .5;
+  if (vW >= 140) { note('FOOTBRIDGE NO WATER'); return 0; }
+  // its foot on the beach, 12 m short of the water: the grass between it and the street is the walk out to it
+  const vA = Math.max(5, vW - 12), g0 = ground(vA), yD = Math.max(g0 + 2.2, sea + 4.6), nS = Math.max(6, Math.ceil((yD - g0) / .32)), vS = vA + nS * .45;
+  const vG0 = Math.max(vS + 4, vW + 9), vG1 = vG0 + FT.gap, vL0 = Math.max(vG1 + 8, vW + FT.out), hw = FT.w / 2;
+  // ---- the stair up off the beach, never more than .32 a step
+  for (let k = 0; k < nS; k++) bx(0, vA + .225 + k * .45, g0 - .4, g0 + (k + 1) * (yD - g0) / nS, FT.w, .46, 'concrete');
+  for (const s of [-1, 1]) for (let k = 0; k <= nS; k += 2) bx(s * (hw + .1), vA + k * .45, g0 + k * (yD - g0) / nS, g0 + k * (yD - g0) / nS + 1, .1, .1, 'steel', 0, false);
+  // ---- the deck, its railings (colliders: a long thin box, picture popped) and the truss you see
+  const deck = (a, b) => {
+    const m = (a + b) / 2, L = b - a;
+    bx(0, m, yD - .3, yD, FT.w + .1, L, 'deck');
+    for (const s of [-1, 1]) {
+      bx(s * (hw + .12), m, yD, yD + 1.15, .14, L, 'steel'); F.parts.steel.pop();
+      bx(s * (hw + .12), m, yD - .6, yD - .05, .22, L, 'steel', 0, false);                    // bottom chord
+      bx(s * (hw + .12), m, yD + 1.05, yD + 1.2, .16, L, 'steel', 0, false);                  // top chord
+      const n = Math.max(1, Math.round(L / 2));
+      for (let k = 0; k <= n; k++) bx(s * (hw + .12), a + k * L / n, yD, yD + 1.1, .12, .12, 'steel', 0, false);
+      for (let k = 0; k < n; k++) geo(new THREE.BoxGeometry(.07, Math.hypot(L / n, 1.1), .07), 'steel', s * (hw + .12), yD + .55, a + (k + .5) * L / n, 0, (k % 2 ? 1 : -1) * Math.atan2(L / n, 1.1));
+    }
+  };
+  deck(vS, vG0); deck(vG1, vL0);
+  // the piers, down to under the seabed, every ~10 m over the water (and one at each end of the gap)
+  for (const v of [vW - 1, vG0 - .6, vG1 + .6, ...Array.from({ length: Math.max(0, Math.floor((vG0 - vW - 4) / 10)) }, (_, i) => vW + 6 + i * 10)])
+    if (v > vS && v < vL0) bx(0, v, sea - 5, yD - .6, FT.w + .9, .9, 'concrete', 0, false);
+  // two lamps on the deck
+  for (const [s, v] of [[1, (vS + vG0) / 2], [-1, (vG1 + vL0) / 2]]) {
+    bx(s * (hw + .12), v, yD + 1.1, yD + 3.4, .1, .1, 'steel', 0, false);
+    bx(s * (hw - .15), v, yD + 3.3, yD + 3.42, .7, .25, 'steel', 0, false); bx(s * (hw - .4), v, yD + 3.18, yD + 3.3, .3, .2, 'glow', 0, false);
+  }
+  // ---- at the foot: the worker's materials (Briggs: "planks and bolts are at the bridge") and a cone line
+  for (let k = 0; k < 6; k++) bx(-hw - 2.2, vA - 1 + (k % 2) * .1, g0 + k * .12, g0 + (k + 1) * .12, 1.1, 3.6, 'plank', (k % 2 - .5) * .08);
+  for (const [u, v, h] of [[hw + 1.8, vA - 1.2, .7], [hw + 1.6, vA + .1, .5], [hw + 2.7, vA - .4, .6]]) bx(u, v, g0, g0 + h, .8, .8, 'rust', .3 * u);
+  for (let k = 0; k < 4; k++) geo(new THREE.ConeGeometry(.2, .6, 8), 'orange', -hw - .6 + k * .1, g0 + .3, vA - 3 + k * 1.1);
+  // ---- THE DOCK: The Pearl's first loading dock, out on piles
+  const dL = 14, dW = 9, yP = yD, vB = vL0 + dL;
+  bx(0, vL0 + dL / 2, yP - .4, yP, 2 * dW, dL, 'boards');
+  for (const u of [-dW + 1, -3, 3, dW - 1]) for (const v of [vL0 + 1, vL0 + dL / 2, vB - 1]) bx(u, v, sea - 4, yP - .4, .5, .5, 'pile', 0, false);
+  // its railings on the water sides (colliders), open where the bridge comes in
+  for (const s of [-1, 1]) { bx(s * (dW + .05), vL0 + dL / 2, yP, yP + 1.1, .14, dL, 'steel'); bx(s * (dW + .05), vL0 + dL / 2, yP + 1.0, yP + 1.12, .14, dL, 'steel', 0, false); }
+  for (const s of [-1, 1]) { const a = hw + .3, m = s * (a + dW) / 2; bx(m, vL0, yP, yP + 1.1, dW - a, .14, 'steel'); }
+  // the warehouse wall at the back, and the raised loading platform along it, with a step at one end
+  bx(0, vB + .4, yP - .4, yP + 9, 2 * dW + .6, .8, 'brick');
+  bx(0, vB + .4, yP + 9, yP + 9.3, 2 * dW + 1, 1.2, 'concrete', 0, false);
+  bx(0, vB - 2, yP, yP + 1.1, 2 * dW, 4, 'concrete');
+  bx(dW - 1.6, vB - 4.4, yP, yP + .55, 2.4, .8, 'concrete');
+  bx(-4.5, vB - .02, yP + 1.1, yP + 5, 4.2, .1, 'dark', 0, false);                               // the roll-up door
+  for (let k = 0; k < 6; k++) bx(-4.5, vB - .09, yP + 1.4 + k * .6, yP + 1.47 + k * .6, 4.2, .05, 'steel', 0, false);
+  // a container on the dock, climbable by its crates, with a roof garden on it (The Pearl: "plants everywhere")
+  const cu = 4.5, cv = vL0 + 6;
+  bx(cu, cv, yP, yP + 2.6, 6, 2.4, 'cont');
+  for (let k = 0; k < 11; k++) bx(cu - 2.7 + k * .54, cv, yP + .1, yP + 2.5, .08, 2.46, 'cont', 0, false);
+  for (let k = 0; k < 4; k++) bx(cu - 3 - (3.5 - k), cv, yP, yP + .52 * (k + 1), 1, 1.1, 'boards');      // a crate stair, .52 a step, to its roof
+  bx(cu - 1.8, cv, yP + 2.6, yP + 3.0, 1.6, 1.8, 'pot2'); bx(cu + 1.6, cv, yP + 2.6, yP + 3.0, 1.8, 1.8, 'pot1');
+  for (const [u, s] of [[cu - 1.8, .7], [cu + 1.6, .85], [cu + .1, .55]]) geo(new THREE.IcosahedronGeometry(s, 0), 'leaf', u, yP + 3.4, cv);
+  // pastel pots along the dock, bollards at its edge, a second container half-unloaded
+  [[-dW + 1, vL0 + 2, 'pot1'], [-dW + 1, vL0 + 5, 'pot3'], [-dW + 1, vL0 + 8, 'pot2'], [dW - 1, vL0 + 2.5, 'pot3'], [dW - 1, vL0 + 9.5, 'pot1']].forEach(([u, v, m], k) => {
+    bx(u, v, yP, yP + .7, .9, .9, m); geo(new THREE.IcosahedronGeometry(.65 + (k % 2) * .2, 0), k % 2 ? 'leaf' : 'leaf2', u, yP + 1.25, v); });
+  for (const u of [-dW + .5, dW - .5]) for (const v of [vL0 + 4, vL0 + 11]) bx(u, v, yP, yP + .55, .35, .35, 'dark');
+  bx(-4.5, vL0 + 10, yP, yP + 2.6, 2.4, 6, 'cont2', Math.PI / 2 + .12);
+  // the lamps on the dock
+  for (const u of [-dW + .4, dW - .4]) { bx(u, vL0 + .6, yP, yP + 3.6, .12, .12, 'steel', 0, false); bx(u, vL0 + .6, yP + 3.5, yP + 3.7, .45, .45, 'glow', 0, false); }
+  FT.n = F.commit().boxes;
+  // ---- the pictures that are not batched: the mural, THE PEARL's sign over the way in, the drowned span, the mended one
+  const local = () => { const g = new THREE.Group(); g.position.set(Ox, 0, Oz); g.rotation.y = thf; scene.add(g); return g; };
+  const mk = (g, geom, mat, u, y, v, rx = 0, ry = 0, rz = 0) => { const m = new THREE.Mesh(geom, mat); m.position.set(u, y, v); m.rotation.set(rx, ry, rz); g.add(m); return m; };
+  const pics = local();
+  mk(pics, new THREE.PlaneGeometry(2 * dW - 1, 6.6), new THREE.MeshStandardMaterial({ map: footMural(), roughness: .9 }), 0, yP + 1.1 + 4.2, vB - .03, 0, Math.PI);
+  { const sm = new THREE.MeshStandardMaterial({ map: footSign('THE PEARL', 'DOCK 1  ·  MIND THE GAP', '#2a2140', '#ffd9ea'), roughness: .7 });
+    for (const s of [-1, 1]) mk(pics, new THREE.BoxGeometry(.18, 4.2, .18), MAT.steel, s * (hw + .5), yP + 2.1, vL0 - .3);
+    mk(pics, new THREE.PlaneGeometry(4, 1.25), sm, 0, yP + 3.7, vL0 - .4, 0, Math.PI);           // read from the bridge
+    mk(pics, new THREE.PlaneGeometry(4, 1.25), sm, 0, yP + 3.7, vL0 - .2); }
+  // the drowned span: its far end still on the pier, the near end in the water; the barrier and the sign on the edge
+  const broke = local(), dv = vG1 - vG0 - .6, dy = yD - sea + .25, Ls = Math.hypot(dv, dy), a = -Math.atan2(dy, dv);
+  mk(broke, new THREE.BoxGeometry(FT.w, .3, Ls), MAT.deck, 0, (yD - .15 + sea - .4) / 2, (vG1 + vG0 + .6) / 2, a);
+  for (const s of [-1, 1]) mk(broke, new THREE.BoxGeometry(.14, .14, Ls), MAT.steel, s * (hw + .12), (yD + .9 + sea + .2) / 2, (vG1 + vG0 + .6) / 2, a, 0, s * .12);
+  for (let k = 0; k < 5; k++) mk(broke, new THREE.BoxGeometry(.3, .08, 2.2), MAT.deck, (k - 2) * 1.6, sea + .02, vG0 + .5 + k * 1.1, 0, k * 1.3);
+  for (let k = 0; k < 5; k++) mk(broke, new THREE.BoxGeometry(FT.w / 5 - .04, .9, .12), k % 2 ? MAT.white : MAT.orange, -hw + (k + .5) * FT.w / 5, yD + .45, vG0 - .7);
+  { const sm = new THREE.MeshStandardMaterial({ map: footSign('BRIDGE OUT', 'CREW ONLY  ·  BRIGGS & CO.', '#ff7a1a', '#ffffff'), roughness: .7 });
+    mk(broke, new THREE.PlaneGeometry(1.9, .6), sm, 0, yD + 1.3, vG0 - .78, 0, Math.PI); }
+  // the mended span, new timber on the old steel -- hidden until a worker fixes it
+  const mend = local();
+  for (let k = 0; k < 12; k++) mk(mend, new THREE.BoxGeometry(FT.w + .1, .12, .46), MAT.plank, 0, yD - .06, vG0 + .25 + k * (vG1 - vG0) / 12);
+  for (const s of [-1, 1]) {
+    mk(mend, new THREE.BoxGeometry(.22, .55, vG1 - vG0 + .2), MAT.steel, s * (hw + .12), yD - .33, (vG0 + vG1) / 2);
+    mk(mend, new THREE.BoxGeometry(.16, .15, vG1 - vG0 + .2), MAT.plank, s * (hw + .12), yD + 1.12, (vG0 + vG1) / 2);
+    for (let k = 0; k <= 3; k++) mk(mend, new THREE.BoxGeometry(.12, 1.1, .12), MAT.plank, s * (hw + .12), yD + .55, vG0 + k * (vG1 - vG0) / 3);
+  }
+  mend.visible = false;
+  FT.broke = broke; FT.mend = mend;
+  // its colliders, in the frame's own format, pushed into BOXES when it is fixed
+  const obb = (u, v, y0, y1, w, d) => { const cs = Math.cos(thf), sn = -Math.sin(thf), hx = w / 2, hz = d / 2, X = wx(u, v), Z = wz(u, v);
+    const ex = hx * Math.abs(cs) + hz * Math.abs(sn), ez = hx * Math.abs(sn) + hz * Math.abs(cs);
+    return { minx: X - ex, maxx: X + ex, minz: Z - ez, maxz: Z + ez, miny: y0, maxy: y1, cx: X, cz: Z, hx, hz, cs, sn, farm: 'pearl' }; };
+  const vm = (vG0 + vG1) / 2, L = vG1 - vG0 + .4;
+  FT.spanBoxes = [obb(0, vm, yD - .3, yD, FT.w + .1, L), obb(-(hw + .12), vm, yD, yD + 1.15, .14, L), obb(hw + .12, vm, yD, yD + 1.15, .14, L)];
+  // the gap is a `bridge` gate: nobody crosses it until a worker has fixed it (its own picture is the span above)
+  FT.G = gateAdd('bridge', wx(0, vG0 - .35), wz(0, vG0 - .35), thf, FT.w + .4, 'pearl_footbridge', yD);
+  if (FT.G) FT.G.g.visible = false;
+  // the places: the foot, the dock, and a pad at each end
+  FT.footAt = [wx(0, vA - 2.5), g0 + .1, wz(0, vA - 2.5), thf];
+  FT.dockAt = [wx(-2, vL0 + 3), yP + .1, wz(-2, vL0 + 3), thf];
+  FT.padAt = [wx(-5.5, vL0 + 3), yP, wz(-5.5, vL0 + 3)];
+  portalAdd('tkit_footbridge', 'OLD TOWN · the footbridge', wx(hw + 3.2, vA - 3), wz(hw + 3.2, vA - 3), g0, false);
+  portalAdd('tkit_pearl_dock', 'THE PEARL · dock 1', FT.padAt[0], FT.padAt[2], yP, false);
+  // the map: The Pearl begins here (Chapter 2 grows its land past the wall)
+  if (MAPREG.tkit) { let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9;
+    for (const [u, v] of [[-dW - 4, vL0 - 4], [dW + 4, vL0 - 4], [-dW - 4, vB + 6], [dW + 4, vB + 6]]) { const x = wx(u, v), z = wz(u, v); x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); }
+    MAPREG.tkit.push({ id: 'pearl', name: 'THE PEARL', x0, x1, z0, z1 }); if (map.ext) mapBuild(); }
+  FT.vW = vW; FT.yD = yD; FT.span = vL0 - vS;
+  if (FT.G && FT.G.open) footFix(1);
+  return FT.n;
+}
+// mended: the new span in, the drowned one gone, its colliders live
+function footFix(quiet) {
+  const FT = FOOT; if (FT.fixed) return; FT.fixed = 1;
+  if (FT.broke) FT.broke.visible = false;
+  if (FT.mend) FT.mend.visible = true;
+  if (FT.spanBoxes) { for (const b of FT.spanBoxes) BOXES.push(b); boxGrid(); }
+  if (!quiet && FT.G) snd('clang', { g: .5, r: .9, x: FT.G.x, z: FT.G.z });
+}
+function footStep() { if (!FOOT.fixed && FOOT.G && FOOT.G.open) footFix(); }
 // THE TELL: a hat on his head bone, an antenna through its crown. Sized in METRES and divided by the bone's world scale
 // (the armature is .01 and the body is scaled again), placed in the bone's own frame (a Mixamo bone's +Y runs along it,
 // so up the head). `cartStep` wobbles the antenna and pulses its tip.
@@ -30806,6 +31002,7 @@ function buildCityRing() {
   for (let deg = 0; deg < 360; deg += FR.treeEvery * (.7 + rr() * .6)) {
     if (Math.abs(((deg - FARMLAND.bearing * 180 / Math.PI + 540) % 360) - 180) < 5) continue;
     if (Math.abs(((deg - FTRES.landDeg + 540) % 360) - 180) < 5) continue;       // nor on the old trestle's (m319)
+    if (FOOT.deg !== null && Math.abs(((deg - FOOT.deg + 540) % 360) - 180) < 6) continue;   // nor the footbridge's (m341)
     const P = at(deg, .06 + rr() * .1);
     if (farmTree(F, rr, ico0, P.x, P.z, .75 + rr() * .5, rr() < .2 ? 'willow' : 'oak')) FR.trees++;
   }
@@ -33493,6 +33690,8 @@ const godFL = H => { const [x, z] = flWorld(H.a, H.b); return [x, null, z, Math.
 // THE PLACES. One line each: where it is, what world, and a function that answers [x, y|null, z, heading|null].
 const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
+  { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
+  { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
   { id: 'beat',     world: 'tkit', name: "OLD TOWN · a cop's beat (Officer Kowalski's first corner)", at: () => { const r = OTLIFE.routes.find(q => q.id === 'cop_beat_near'); return r && [r.beat[0][0], r.beat[0][2], r.beat[0][1], null]; } },
   { id: 'site',     world: 'tkit', name: 'OLD TOWN · the building site (Sal, Dee, Foreman Briggs)', at: () => OTSITE.gateAt && [OTSITE.gateAt[0], OTSITE.gateAt[1], OTSITE.gateAt[2], OTSITE.gateAt[3]] },
   { id: 'sitetop',  world: 'tkit', name: 'OLD TOWN · the top lift of the scaffold', at: () => OTSITE.topAt && [OTSITE.topAt[0], OTSITE.topAt[1], OTSITE.topAt[2], null] },
@@ -35195,7 +35394,8 @@ function frameBody() {
   godStep(dt);                  // GOD mode: the key, the menu, the boot jump (m298)
   crashStep(dt);
   campStep(dt);                 // the camp's barrel stays lit (m335)
-  cartStep(dt);                 // the good alien's antenna wobbles (m336)                // the wreck burns and smokes; reaching town once moves the start (m289)
+  cartStep(dt);                 // the good alien's antenna wobbles (m336)
+  footStep();                   // the footbridge to The Pearl, mended the frame its gate is fixed (m341)                // the wreck burns and smokes; reaching town once moves the start (m289)
   crashHeroStep(dt);            // ...and pulses, arcs, hums, and stands a beam over the farm (m300)
   riverStep(dt);                // the farm's river: no wading, the current puts you back (m291)
   cellStep();
@@ -35919,6 +36119,8 @@ async function init() {
     try { buildCarts(); } catch (e) { note('CARTS FAIL'); console.warn('[melee] carts', e); }
     try { buildSite(); } catch (e) { note('SITE FAIL'); console.warn('[melee] site', e); }
     try { buildLife(); } catch (e) { note('LIFE FAIL'); console.warn('[melee] life', e); }
+    // THE FOOTBRIDGE TO THE PEARL (m341): before the city ring, which keeps its trees off the bridge's bearing
+    try { buildFootbridge(); } catch (e) { note('FOOTBRIDGE FAIL'); console.warn('[melee] footbridge', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)
     try { buildTownEdge(); } catch (e) { note('TOWN EDGE FAIL'); console.warn('[melee] town edge', e); }
     // THE CITY STARTS THIN (m317): the island's ring by the bridge and all the way round
@@ -36093,7 +36295,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

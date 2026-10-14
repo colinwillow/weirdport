@@ -65,6 +65,12 @@ const SHOTS = {
   site: { place: 'site', settle: 5, why: 'the building site: the frame, the scaffold, the crane',
     cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
       return [p.x - fx * 12, p.y + 6, p.z - fz * 12, p.x + fx * 6, p.y + 5, p.z + fz * 6]; })()` },
+  footbridge: { place: 'footbridge', settle: 4, why: 'the broken footbridge to The Pearl, from beside its foot',
+    cam: `(() => { const p = mel.player.pos, D = mel.FOOT.dockAt, dx = D[0] - p.x, dz = D[2] - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
+      return [p.x - dx / L * 8 + sx * 12, p.y + 7, p.z - dz / L * 8 + sz * 12, p.x + dx / L * 24, p.y + 1.5, p.z + dz / L * 24]; })()` },
+  pearldock: { place: 'pearldock', settle: 3, why: "The Pearl's dock, looking at its wall",
+    cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
+      return [p.x - fx * 8 + fz * 4, p.y + 4, p.z - fz * 8 - fx * 4, p.x + fx * 12, p.y + 3, p.z + fz * 12]; })()` },
   wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
       return [C.x + sx * 16 - dx / L * 6, p.y + 7, C.z + sz * 16 - dz / L * 6, C.x, p.y + .5, C.z]; })()` },

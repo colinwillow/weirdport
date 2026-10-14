@@ -7,6 +7,29 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FOOTBRIDGE TO THE PEARL, AND A `fix` GATE NOW STOPS EVERY FORM UNTIL IT IS FIXED (m341, B4-3, `FOOT`,
+  `buildFootbridge`, `footFix`, quest `ch1c` "THE FOOTBRIDGE").** REGIONS puts it "over the rail cut"; his kit city has no
+  rail cut, so it crosses the WATER off Old Town's west shore, on The Pearl's bearing as `SKYLINE` draws it (its `pearl`
+  district, `footBearing`: 196.7 deg) -- the decision is logged for him. A concrete stair up off the beach (never more than
+  .32 a step), a steel truss deck on piers, the middle 6 m in the water with a barrier and BRIDGE OUT on the edge, and
+  The Pearl's DOCK 1 on piles: a raised loading platform, a warehouse wall with a canvas mural, a container climbed by a
+  .52-a-step crate stair with a roof garden on it, pastel pots, bollards, lamps, and a THE PEARL sign over the way in.
+  The map has a `pearl` region round the dock, a portal pad at each end, and the city ring keeps its trees 6 deg off the
+  bearing (it is built AFTER this, for that).
+  **THE GAP IS A `bridge` GATE AND `gatePush` USED TO LET THE RIGHT FORM WALK STRAIGHT THROUGH IT** -- `ok = G.open ||
+  gateLets(T)`, so a worker walked into a 6 m hole before `gateStep` had mended anything. A `fix` gate is a gap: `ok` is now
+  `G.open || (T.pass !== 'fix' && gateLets(T))`, the right body is held at the barrier, which is exactly where `gateStep`
+  counts the 2 s lean, and the "Broken. A construction worker could fix it." line is not said to the worker who is fixing
+  it. The mended span's colliders go into `BOXES` (and `boxGrid()`) on the frame the gate opens -- the frame's own oriented
+  format, built at load and held in `FOOT.spanBoxes` -- and on a reload with the gate fixed, at build.
+  **`places` PROVES BOTH HALVES**: 3 m into the gap, `groundAt` from the deck's height before and after `footFix`:
+  `ok  FOOTBRIDGE 53 boxes, bearing 196.7 deg, waterline 55 m out, deck y 2.4 span 32.1 m | gap floor -3.38 -> fixed 2.4 | pads 2`
+  `ok  footbridge -> player -132.2,-1.2,-37.7 ground -1.40` / `ok  pearldock  -> player -173.3,2.6,-52.1 ground 2.40`
+  `ok  QUESTS ... ch1c.0 goto | ch1c.1 gate | ch1c.2 goto | ch1c.3 goto`, exit 0. **The first build put the stair 55 m back
+  from the water** (the ring is that wide on this bearing) and ran the deck over the grass and the beach; it now starts 12 m
+  short of the waterline. `npm run shot footbridge pearldock` are new rows.
+  **Not built:** The Pearl's land past the wall (Chapter 2), and the dock has nobody on it yet.
+
 - **A QUEST STEP CAN NAME A KIND BY ITS FILE STEM, AND CAN HAND A SPEAKER A SCRIPT FOR ITSELF (m340, B4-2, `ch1b` "A HARD
   HAT").** Dee's advice (`from: 'ch1_dee'`): knock down one of the crew, take the sample (it puts the form on), talk to
   Sal as a worker, report to Briggs. Three small step features, all generic:
