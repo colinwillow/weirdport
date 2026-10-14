@@ -926,33 +926,40 @@ const walkUp = (pts, y0) => { let y = y0; for (let i = 0; i < pts.length - 1; i+
   } else why = 'NOT BUILT';
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + 'SHIPFOLK', r, why); }
-// ---- THE WAY TO THE CORE (m402): walked from the chamber to the torn walkway; the shipped gates -- the tear stops the bare
-// alien, and the worker leans on it and mends it (`gateStep`), then walks it; the lock stops the worker and lets the engineer
-// through (`gatePush`); a level flight in the shaft rides the shipped `wingWind` up to the core; out of the shaft a climb is
-// held under the ceiling; the core's floor round the shaft's mouth
+// ---- THE WAY TO THE CORE (m402-m403): walked from the chamber to the shaft's floor; every gate (the shipped `gatePush`,
+// `gateStep`, `gateLets`) tried by every form -- the one it wants through, the others stopped: the pen (the farmer), the tear
+// (nobody until the worker leans on it and mends it, then the worker), the file (an activist), the rumble door (the biker
+// RIDING; on foot he is stopped), the lock (the engineer); a level flight up the shaft; the core round the shaft's mouth
 { const G = M.ISGAUNT, S = M.ISHIP, D = M.ISDECK; let r = 'NOT BUILT', why = '';
-  if (G.built && G.gates.length === 2) {
-    const [ax, az] = S.axis, C = D.CH, yC = S.floorY + C.y, cu = C.u, sea = M.ISLE.sea, F = M.SAVE.flags, p = M.player, dt = 1 / 30;
-    const keep = { pos: p.pos.clone(), vel: p.vel.clone(), K: p.mphK, R: p.mphRole, St: p.mphSt, w: p.wing, g: p.grounded }, kf = { t: F['gate:ms_tear'], l: F['gate:ms_lock'] };
-    const walked = +(walkUp([[cu - 8, 0], [cu - 2.5, 2.5], [cu, 8], [cu, C.v + C.R], [cu, C.v + C.R + 4]].map(([u, v]) => [ax + u, az + v]), yC) - yC).toFixed(2);
-    const [T, L] = G.gates; delete F['gate:ms_tear']; delete F['gate:ms_lock']; T.open = 0; T.planks.forEach(m => m.visible = false);
-    const cross = Gt => { p.pos.set(Gt.x, Gt.y, Gt.z - 1.5); M.gatePush(dt); p.pos.set(Gt.x, Gt.y, Gt.z + .1); M.gatePush(dt); return p.pos.z > Gt.z; };
-    const Kw = M.mkrKind('contruction_worker'), Ke = (M.MARKS.find(m => m.id === 'wf_ivy') || {}).K;
-    Object.assign(p, { mphK: null, mphRole: null, mphSt: 0 }); const alienTear = cross(T);
-    Object.assign(p, { mphK: Kw, mphRole: null, mphSt: 0 }); const workerTear0 = cross(T); p.pos.set(T.x, T.y, T.z - .6); for (let k = 0; k < 30 * 3; k++) M.gateStep(dt); const mended = !!T.open && T.planks.every(m => m.visible); const workerTear1 = cross(T);
-    const workerLock = cross(L); Object.assign(p, { mphK: Ke, mphRole: 'hacker', mphSt: 0 }); const engLock = cross(L);
+  if (G.built && G.gates.length === 5) {
+    const [ax, az] = S.axis, C = D.CH, yC = S.floorY + C.y, cu = C.u, sea = M.ISLE.sea, F = M.SAVE.flags, p = M.player, dt = 1 / 30, Pl = G.plan;
+    const keep = { pos: p.pos.clone(), vel: p.vel.clone(), K: p.mphK, R: p.mphRole, St: p.mphSt, w: p.wing, g: p.grounded, b: p.bike }, kf = {}; for (const g of G.gates) kf[g.id] = F['gate:' + g.id];
+    const walked = +(walkUp([[cu - 8, 0], [cu - 2.5, 2.5], [cu, 8], [cu, Pl.v0], [cu, Pl.vC], [Pl.hall[0], Pl.hall[1]], [Pl.uD, Pl.hall[1]], [Pl.uL, Pl.hall[1]], [Pl.shaft[0], Pl.shaft[1]]].map(([u, v]) => [ax + u, az + v]), yC) - yC).toFixed(2);
+    for (const g of G.gates) delete F['gate:' + g.id]; const T = G.gates.find(g => g.type === 'shiptear'); T.open = 0; T.planks.forEach(m => m.visible = false);
+    const cross = Gt => { const nx = Math.sin(Gt.h), nz = Math.cos(Gt.h); p.pos.set(Gt.x - nx * 1.5, Gt.y, Gt.z - nz * 1.5); M.gatePush(dt); p.pos.set(Gt.x + nx * .1, Gt.y, Gt.z + nz * .1); M.gatePush(dt); return (p.pos.x - Gt.x) * nx + (p.pos.z - Gt.z) * nz > 0; };
+    const Ke = (M.MARKS.find(m => m.id === 'wf_ivy') || {}).K;
+    const FORMS = { alien: [null, null, 0], farmer: [M.mkrKind('hick_skinny'), null, 0], worker: [M.mkrKind('contruction_worker'), null, 0], activist: [M.mkrKind('fat_activist_01'), null, 0], 'biker on foot': [M.mkrKind('fat_biker_02'), null, 0], 'biker riding': [M.mkrKind('fat_biker_02'), null, 1], engineer: [Ke, 'hacker', 0] };
+    const as = nm => { const [K, R, b] = FORMS[nm]; Object.assign(p, { mphK: K, mphRole: R, mphSt: 0, bike: b }); };
+    const WANT = { shippen: 'farmer', shipmarch: 'activist', shiprumble: 'biker riding', shiplock: 'engineer' }, res = [], wrong = [];
+    for (const g of G.gates) { if (g.type === 'shiptear') continue; const want = WANT[g.type], got = [];
+      for (const nm of Object.keys(FORMS)) { as(nm); const thru = cross(g); if (thru) got.push(nm); if (thru !== (nm === want)) wrong.push(g.id + ':' + nm); }
+      res.push(g.id.replace('ms_', '') + ' lets ' + (got.join('/') || 'NOBODY')); }
+    // the tear: nobody until mended; the worker mends it leaning on it; then he walks it
+    const tearBefore = Object.keys(FORMS).filter(nm => { as(nm); return cross(T); });
+    as('worker'); p.pos.set(T.x, T.y, T.z - .6); for (let k = 0; k < 30 * 3; k++) M.gateStep(dt); const mended = !!T.open && T.planks.every(m => m.visible); const tearAfter = cross(T);
+    res.push('tear lets ' + (tearBefore.join('/') || 'nobody') + ' unmended, ' + (mended ? 'the worker mends it' : 'NOT MENDED') + (tearAfter ? ' and walks it' : ' and is STILL STOPPED'));
     // the shaft
     const Lf = G.lift; p.wing = 1; p.grounded = false; p.vel.set(0, 0, 0); p.pos.set(Lf.x + .5, yC + 1.5, Lf.z); let tUp = null;
     for (let k = 0; k < 30 * 20; k++) { const wd = M.wingWind(); p.pos.y += (p.vel.y + wd.y) * dt; if (p.pos.y > G.core.y + 1) { tUp = k * dt; break; } }
-    p.vel.set(0, 9, 0); p.pos.set(ax + cu, yC + 3, az + C.v + C.R + 20); const capped = +(p.vel.y + M.wingWind().y).toFixed(1);
+    p.vel.set(0, 9, 0); p.pos.set(ax + cu, yC + 3, az + Pl.hall[1]); const capped = +(p.vel.y + M.wingWind().y).toFixed(1);
     const g = (x, z, y) => +(M.groundAt(x, z, y + .5, .6) - y).toFixed(2), coreFloor = g(G.core.x + 6.5, G.core.z, G.core.y), coreHole = g(G.core.x, G.core.z, G.core.y);
-    T.open = 0; T.planks.forEach(m => m.visible = false); if (kf.t) { F['gate:ms_tear'] = kf.t; T.open = 1; T.planks.forEach(m => m.visible = true); } else delete F['gate:ms_tear']; if (kf.l) F['gate:ms_lock'] = kf.l; else delete F['gate:ms_lock'];
-    Object.assign(p, { mphK: keep.K, mphRole: keep.R, mphSt: keep.St, wing: keep.w, grounded: keep.g }); p.pos.copy(keep.pos); p.vel.copy(keep.vel);
-    r = G.n + ' boxes | walked from the chamber to the tear ' + walked + ' | the tear: the alien ' + (alienTear ? 'THROUGH' : 'stopped') + ', the worker ' + (workerTear0 ? 'THROUGH UNMENDED' : 'stopped') + ', leans and ' + (mended ? 'mends it' : 'DOES NOT MEND IT') + ', then ' + (workerTear1 ? 'through' : 'STOPPED') +
-      ' | the lock: the worker ' + (workerLock ? 'THROUGH' : 'stopped') + ', the engineer ' + (engLock ? 'through' : 'STOPPED') + ' | the shaft: a level flight from its floor to the core in ' + (tUp != null ? tUp.toFixed(1) + ' s' : 'NEVER') + ', a climb outside it held to ' + capped + ' m/s' +
-      ' | the core ' + (G.core.y - sea).toFixed(0) + ' m over the sea, its floor ' + coreFloor + ', over the shaft ' + (coreHole < -3 ? 'open' : 'FLOORED') + ' | GOD ' + (G.godAt ? 'yes' : 'NO');
-    why = Math.abs(walked) > .05 ? 'THE WAY TO THE TEAR IS NOT FLOOR' : alienTear || workerTear0 ? 'THE TEAR LETS SOMEBODY THROUGH UNMENDED' : !mended || !workerTear1 ? 'THE WORKER CANNOT MEND THE TEAR' : workerLock ? 'THE LOCK OPENS TO ANYBODY' : !engLock ? 'THE LOCK DOES NOT OPEN TO THE ENGINEER'
-      : tUp == null ? 'THE SHAFT DOES NOT LIFT A FLIGHT' : capped > 1 ? 'A FLIGHT CLIMBS OUT OF THE SHAFT' : Math.abs(coreFloor) > .05 || !(coreHole < -3) ? 'THE CORE HAS NO FLOOR (OR NO MOUTH)' : !G.godAt ? 'NO GOD PLACE' : '';
+    const hullR = Math.hypot(G.core.x - (ax + 10), G.core.z - (az - 6));
+    T.open = 0; T.planks.forEach(m => m.visible = false); for (const gg of G.gates) { if (kf[gg.id]) F['gate:' + gg.id] = kf[gg.id]; else delete F['gate:' + gg.id]; } if (kf.ms_tear) { T.open = 1; T.planks.forEach(m => m.visible = true); }
+    Object.assign(p, { mphK: keep.K, mphRole: keep.R, mphSt: keep.St, wing: keep.w, grounded: keep.g, bike: keep.b }); p.pos.copy(keep.pos); p.vel.copy(keep.vel);
+    r = G.n + ' boxes | walked from the chamber to the shaft ' + walked + ' | ' + res.join(' | ') + ' | the shaft: a level flight to the core in ' + (tUp != null ? tUp.toFixed(1) + ' s' : 'NEVER') + ', a climb outside it held to ' + capped + ' m/s' +
+      ' | the core ' + (G.core.y - sea).toFixed(0) + ' m over the sea, ' + hullR.toFixed(0) + ' m from the hull\'s middle, its floor ' + coreFloor + ', over the shaft ' + (coreHole < -3 ? 'open' : 'FLOORED');
+    why = Math.abs(walked) > .05 ? 'THE WAY IS NOT FLOOR' : wrong.length ? 'A GATE LETS THE WRONG ONE THROUGH: ' + wrong.join(', ') : tearBefore.length ? 'THE TEAR LETS SOMEBODY THROUGH UNMENDED' : !mended || !tearAfter ? 'THE WORKER CANNOT MEND THE TEAR'
+      : tUp == null ? 'THE SHAFT DOES NOT LIFT A FLIGHT' : capped > 1 ? 'A FLIGHT CLIMBS OUT OF THE SHAFT' : Math.abs(coreFloor) > .05 || !(coreHole < -3) ? 'THE CORE HAS NO FLOOR (OR NO MOUTH)' : hullR > 62 ? 'THE CORE IS OFF THE HULL\'S BACK' : !G.godAt ? 'NO GOD PLACE' : '';
   } else why = 'NOT BUILT';
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + 'GAUNTLET', r, why); }

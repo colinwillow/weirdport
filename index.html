@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m402</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m403</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m402</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m403</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm402';
+const BUILD = 'm403';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -29296,7 +29296,7 @@ const GATE_TYPES = {
 // **A GATE'S `need` IS A FILE STEM AND `formNow()` IS THE DISPLAY FORM** (m334): compared raw, 'dummy_officer' never equalled
 // 'DUMMY OFFICER', so from m285 no gate let ANY form through -- the same fold `mkrKind` lacked (m332). 'human' is any
 // form that is not the alien (`fearLooks`, the same test the fear and the talk use).
-const gateLets = T => T.groups ? T.groups.includes(socialMe()) : T.crowd ? socialMe() === 'city' && (T.crowd === 'pearl' ? pearlCrowd() : protestCrowd()) : T.need === 'human' ? !fearLooks() : formNow() === mphFold(T.need);
+const gateLets = T => T.ride ? !!player.bike : T.groups ? T.groups.includes(socialMe()) : T.crowd ? socialMe() === 'city' && (T.crowd === 'pearl' ? pearlCrowd() : protestCrowd()) : T.need === 'human' ? !fearLooks() : formNow() === mphFold(T.need);
 const GATE = {
   on: 1,
   t: .5,            // m: the slab's thickness
@@ -35074,22 +35074,29 @@ function shipFolkStep(dt) {
   }
 }
 // ============================================================================================
-// THE WAY TO THE CORE: EVERY FORM ONE LAST TIME (m402, ROADMAP C6-8d-1, `ISGAUNT`, `buildShipGauntlet`, `shipLiftAt`)
+// THE WAY TO THE CORE: EVERY FORM ONE LAST TIME (m402-m403, ROADMAP C6-8d, `ISGAUNT`, `buildShipGauntlet`, `shipLiftAt`)
 // ============================================================================================
 // REGIONS 10: "Every form and every tech is needed one last time." From the conversion chamber's north door a way runs to
-// the ship's CORE (a dome on its back, C6-8e's arena), and it asks for what each chapter gave you, one thing at a time:
-//   **THE TORN WALKWAY** (Chapter 1's worker): the tube's deck torn through -- lean on it as the construction worker and it
-//     is patched (`shiptear`, a `fix` gate: the gate system's own mending, its patch pieces in `G.planks`);
+// the ship's CORE (a dome on its back, C6-8e's arena), and it asks for what each chapter gave you, in the chapters' order:
+//   **THE PEN** (Chapter 0's farmer): a pen gate with a farmer's latch -- it swings for somebody from the country (`shippen`);
+//   **THE TORN WALKWAY** (Chapter 1's worker): the deck torn through -- lean on it as the construction worker and it is
+//     patched (`shiptear`, a `fix` gate: the gate system's own mending, its patch pieces in `G.planks`);
+//   **THE FILE OF THE TURNED** (Chapter 2's activist): the turned shuffle through a curtain in a line; one of the city's own
+//     shuffles through with them (`shipmarch`, the gang gate's `groups` rule);
+//   **THE RUMBLE DOOR** (Chapter 3's biker): an iris that opens only to an engine -- ride up to it (`shiprumble`, `ride`);
 //   **THE NEURAL LOCK** (Chapter 4's engineer): a membrane door that reads minds and opens to an engineer's (`shiplock`);
 //   **THE SHAFT** (Chapter 5's flight): 11.5 m straight up to the core's floor, no ladder -- a column of rising air
 //     (`shipLiftAt`, the needle's thermal's twin, through `wingWind`) carries a glider or a wingsuit up it.
-// The other forms (the activist's march, the biker's jump, the farmer) are C6-8d-2.
+// m403: the way TURNS WEST after the file's hall, toward the hull's middle -- run on north it took the core off the hull's
+// back (104 m out, where the top is 70 across).
 const ISGAUNT = {
-  on: 1, tearAt: 6, lockR: 6.5, shaftR: 5.5, liftR: 4.2, liftUp: 8, coreR: 10, coreUp: 11.5, coreHole: 4,
-  built: 0, gates: [], lift: null, core: null, godAt: null, n: 0,
+  on: 1, hallR: 6.5, lockR: 6.5, shaftR: 5.5, liftR: 4.2, liftUp: 8, coreR: 10, coreUp: 11.5, coreHole: 4,
+  built: 0, gates: [], lift: null, core: null, godAt: null, n: 0, file: [],
 };
-// GATE_TYPES for the ship (drawn by the builder)
+GATE_TYPES.shippen = { need: 'hick_skinny', groups: ['country'], pass: 'walk', label: 'THE PEN', say: "A pen gate with a farmer's latch. Somebody from the country would know how it opens.", bare: 1 };
 GATE_TYPES.shiptear = { need: 'contruction_worker', pass: 'fix', label: 'TORN WALKWAY', say: 'The walkway is torn through. A construction worker could patch it.', bare: 1 };
+GATE_TYPES.shipmarch = { need: 'fat_activist_01', groups: ['city'], pass: 'walk', label: 'THE FILE OF THE TURNED', say: "The turned shuffle through here in a line. Look like one of the city's own and you could shuffle through with them.", bare: 1 };
+GATE_TYPES.shiprumble = { need: 'fat_biker_02', ride: 1, pass: 'walk', label: 'THE RUMBLE DOOR', say: 'It only opens to an engine. Something with a motor under it.', bare: 1 };
 GATE_TYPES.shiplock = { need: 'ENGINEER', pass: 'walk', label: 'NEURAL LOCK', say: "A lock that reads minds. It wants an engineer's.", bare: 1 };
 // how much of the shaft's lift is here, 0..1
 function shipLiftAt(x, y, z) {
@@ -35104,28 +35111,31 @@ function buildShipGauntlet() {
   const MAT = { floor: M(0x2a1e30), wall: M(0x3a2246, { side: THREE.BackSide }), skin: M(0x4a2a56, { side: THREE.DoubleSide }), ceil: M(0x2e1a3a),
     rib: M(0x5a2a6a, { emissive: new THREE.Color(0x6a1a7a), emissiveIntensity: .3 }), glow: M(0x200818, { emissive: new THREE.Color(0xff3ad0), emissiveIntensity: 1.8 }),
     dome: M(0x3a2246, { side: THREE.DoubleSide }), hole: M(0x050308), strand: M(0x7a3a8a, { emissive: new THREE.Color(0x5a1a6a), emissiveIntensity: .4 }) };
-  const F = farmFrame(ax, az, 0, MAT, 'ship'), { bx, geo } = F;
-  const cu = C.u, v0 = C.v + C.R, vT = v0 + 12, lockC = vT + G.lockR, vL = lockC + G.lockR, shaftC = vL + 5 + G.shaftR, w = D.w;
-  // the north tube, level, with the torn stretch in it
-  shipTube(F, [cu, yC, v0], [cu, yC, vT], w, D.tubeH);
-  const vTear = v0 + G.tearAt;
-  geo(new THREE.PlaneGeometry(w - .2, 2.2), 'hole', cu, yC + .02, vTear, 0, -Math.PI / 2);          // the tear: dark through the deck
-  for (let k = 0; k < 7; k++) { const u = cu - w / 2 + .3 + k * (w - .6) / 6; for (const s of [-1, 1]) geo(new THREE.ConeGeometry(.06, .5 + (k % 3) * .2, 4), 'strand', u, yC - .1, vTear + s * 1.1, 0, s * .6, 0); }
-  // the lock hall, and the short tube on to the shaft
-  shipRoom(F, [cu, lockC], G.lockR, yC, 5.5, [-Math.PI / 2, Math.PI / 2], 'floor', 'wall');
-  for (let k = 0; k < 6; k++) { const a = (k / 6) * Math.PI * 2 + .3; geo(new THREE.BoxGeometry(.08, 2.2, .5), 'glow', cu + Math.cos(a) * (G.lockR - .25), yC + 2.6, lockC + Math.sin(a) * (G.lockR - .25), -a); }
-  shipTube(F, [cu, yC, vL], [cu, yC, vL + 5], w, D.tubeH);
-  // THE SHAFT: a round room with no ceiling, walls up to the core's floor; the lift in it
-  { const R = G.shaftR, c = [cu, shaftC], H = G.coreUp, nW = 20, gap = Math.PI * 2 / nW;
+  const F = farmFrame(ax, az, 0, MAT, 'ship'), { bx, geo } = F, w = D.w, cu = C.u;
+  // the plan, in the frame: north from the chamber's door to the file's hall, then west to the shaft
+  const v0 = C.v + C.R, vC = v0 + 18, hall = [cu, vC + G.hallR], uD = hall[0] - G.hallR, lock = [uD - 13 - G.lockR, hall[1]], uL = lock[0] - G.lockR, shaft = [uL - 5 - G.shaftR, hall[1]];
+  const P = { pen: [cu, v0 + 4], tear: [cu, v0 + 9.5], march: [cu, v0 + 15], rumble: [uD - 6.5, hall[1]], lock: [uL, hall[1]] };
+  // the north tube: the pen, the tear, the file
+  shipTube(F, [cu, yC, v0], [cu, yC, vC], w, D.tubeH);
+  geo(new THREE.PlaneGeometry(w - .2, 2.2), 'hole', P.tear[0], yC + .02, P.tear[1], 0, -Math.PI / 2);
+  for (let k = 0; k < 7; k++) { const u = cu - w / 2 + .3 + k * (w - .6) / 6; for (const s of [-1, 1]) geo(new THREE.ConeGeometry(.06, .5 + (k % 3) * .2, 4), 'strand', u, yC - .1, P.tear[1] + s * 1.1, 0, s * .6, 0); }
+  // the file's hall (north door in from the tube, west door out), the west tube with the rumble door, the lock hall
+  shipRoom(F, hall, G.hallR, yC, 5.5, [-Math.PI / 2, Math.PI], 'floor', 'wall');
+  shipTube(F, [uD, yC, hall[1]], [lock[0] + G.lockR, yC, hall[1]], w, D.tubeH);
+  shipRoom(F, lock, G.lockR, yC, 5.5, [0, Math.PI], 'floor', 'wall');
+  for (let k = 0; k < 6; k++) { const a = (k / 6) * Math.PI * 2 + .3; geo(new THREE.BoxGeometry(.08, 2.2, .5), 'glow', lock[0] + Math.cos(a) * (G.lockR - .25), yC + 2.6, lock[1] + Math.sin(a) * (G.lockR - .25), -a); }
+  shipTube(F, [uL, yC, hall[1]], [shaft[0] + G.shaftR, yC, hall[1]], w, D.tubeH);
+  // THE SHAFT: a round room with no ceiling, walls up to the core's floor, its door east; the lift in it
+  { const R = G.shaftR, c = shaft, H = G.coreUp, nW = 20, gap = Math.PI * 2 / nW;
     bx(c[0], c[1], yC - .4, yC, 2 * R, 2 * R, 'floor'); F.parts.floor.pop(); geo(new THREE.CircleGeometry(R + .3, 40), 'floor', c[0], yC + .01, c[1], 0, -Math.PI / 2);
-    for (let k = 0; k < nW; k++) { const a = k / nW * Math.PI * 2; if (Math.abs(Math.atan2(Math.sin(a + Math.PI / 2), Math.cos(a + Math.PI / 2))) < gap * .6) continue;
+    for (let k = 0; k < nW; k++) { const a = k / nW * Math.PI * 2; if (Math.abs(Math.atan2(Math.sin(a), Math.cos(a))) < gap * .6) continue;
       bx(c[0] + R * Math.cos(a), c[1] + R * Math.sin(a), yC, yC + H, .5, 2 * Math.PI * R / nW + .12, 'rib', -a); F.parts.rib.pop();
       geo(new THREE.CylinderGeometry(R + .05, R + .05, H, 3, 1, true, Math.PI / 2 - a - gap / 2, gap), 'wall', c[0], yC + H / 2, c[1]); }
-    bx(c[0], c[1] - R, yC + D.tubeH, yC + H, 2 * Math.PI * R / nW + .3, .5, 'rib', 0, false);     // the lintel over its door, up to the core
+    bx(c[0] + R, c[1], yC + D.tubeH, yC + H, .5, 2 * Math.PI * R / nW + .3, 'rib', 0, false);     // the lintel over its door, up to the core
     for (let hy = 1.5; hy < H; hy += 2.5) geo(new THREE.TorusGeometry(R - .12, .1, 6, 40), 'rib', c[0], yC + hy, c[1], 0, Math.PI / 2, 0);
     G.lift = { x: ax + c[0], z: az + c[1], r: G.liftR, y0: yC, y1: yC + H + 2.5 }; }
   // THE CORE: on the hull's back, its floor round the shaft's mouth, a dome over it (C6-8e's arena)
-  { const R = G.coreR, c = [cu, shaftC], y = yC + G.coreUp, h = G.coreHole;
+  { const R = G.coreR, c = shaft, y = yC + G.coreUp, h = G.coreHole;
     for (const [u, v, ww, dd] of [[0, (h + R) / 2, 2 * R, R - h], [0, -(h + R) / 2, 2 * R, R - h], [(h + R) / 2, 0, R - h, 2 * h], [-(h + R) / 2, 0, R - h, 2 * h]]) { bx(c[0] + u, c[1] + v, y - .5, y, ww, dd, 'floor'); F.parts.floor.pop(); }
     geo(new THREE.RingGeometry(h * 1.42, R + .3, 48), 'floor', c[0], y + .01, c[1], 0, -Math.PI / 2);
     const cw = h * .42 + .05;     // the collar: from the square hole's edge out to the round floor's inner edge (h x 1.42)
@@ -35136,23 +35146,43 @@ function buildShipGauntlet() {
     geo(new THREE.TorusGeometry(R - .4, .1, 6, 48), 'glow', c[0], y + .05, c[1], 0, Math.PI / 2, 0);
     G.core = { x: ax + c[0], z: az + c[1], y, R }; G.godAt = [ax + c[0] + 6.5, y + .1, az + c[1], -Math.PI / 2]; }
   const r = F.commit(); G.n = r.boxes;
-  // the gates: the tear across the north tube, the lock in the hall's far door
-  G.gates = [];
-  { const T = gateAdd('shiptear', ax + cu, az + vTear, 0, w + .2, 'ms_tear', yC);
-    if (T) { const pm = new THREE.MeshStandardMaterial({ color: 0x8a5a9a, roughness: .6, emissive: new THREE.Color(0x3a1a4a), emissiveIntensity: .3 }); T.planks = [];
-      for (let k = 0; k < 6; k++) { const m = new THREE.Mesh(new THREE.BoxGeometry((w - .3) / 6 - .05, .08, 2.3), pm); m.position.set(-(w - .3) / 2 + (k + .5) * (w - .3) / 6, .04, 0); m.visible = T.open; T.g.add(m); T.planks.push(m); }
-      G.gates.push(T); } }
-  { const L = gateAdd('shiplock', ax + cu, az + vL, 0, w + .2, 'ms_lock', yC);
-    if (L) { const mm = new THREE.MeshStandardMaterial({ color: 0x5a0a20, emissive: new THREE.Color(0xff2a4a), emissiveIntensity: .9, transparent: true, opacity: .8, side: THREE.DoubleSide });
-      const m = new THREE.Mesh(new THREE.CircleGeometry(1.9, 24), mm); m.scale.set(1, 1.15, 1); m.position.y = 2.05; L.g.add(m); L.mem = m; L.memM = mm; G.gates.push(L); } }
+  // THE GATES, in the chapters' order
+  G.gates = []; const add = (type, at, h, id) => { const g = gateAdd(type, ax + at[0], az + at[1], h, w + .2, id, yC); if (g) G.gates.push(g); return g; };
+  const mm = (c, e, o) => new THREE.MeshStandardMaterial(Object.assign({ color: c, roughness: .6, emissive: new THREE.Color(e), emissiveIntensity: .5 }, o || {}));
+  // the pen: bars on a hinge at its west end
+  { const g = add('shippen', P.pen, 0, 'ms_pen'); if (g) { const leaf = new THREE.Group(); leaf.position.x = -w / 2; g.g.add(leaf); const bm = mm(0x6a4a3a, 0x2a1408);
+      for (let k = 0; k <= 6; k++) { const b = new THREE.Mesh(new THREE.BoxGeometry(.1, 1.3, .1), bm); b.position.set(.15 + k * (w - .3) / 6, .65, 0); leaf.add(b); }
+      for (const y of [.35, 1.15]) { const b = new THREE.Mesh(new THREE.BoxGeometry(w, .1, .12), bm); b.position.set(w / 2, y, 0); leaf.add(b); }
+      const latch = new THREE.Mesh(new THREE.BoxGeometry(.25, .18, .18), mm(0xc8a03a, 0x3a2a08)); latch.position.set(w - .15, .9, 0); leaf.add(latch); g.leaf = leaf; } }
+  // the tear: its patch, shown once mended
+  { const T = add('shiptear', P.tear, 0, 'ms_tear'); if (T) { const pm = mm(0x8a5a9a, 0x3a1a4a, { emissiveIntensity: .3 }); T.planks = [];
+      for (let k = 0; k < 6; k++) { const m = new THREE.Mesh(new THREE.BoxGeometry((w - .3) / 6 - .05, .08, 2.3), pm); m.position.set(-(w - .3) / 2 + (k + .5) * (w - .3) / 6, .04, 0); m.visible = T.open; T.g.add(m); T.planks.push(m); } } }
+  // the file: a green curtain across the tube, and the turned shuffling through it, in a line
+  { const g = add('shipmarch', P.march, 0, 'ms_march'); if (g) { const cm = mm(0x1a6a3a, 0x1aff8a, { transparent: true, opacity: .45, side: THREE.DoubleSide, emissiveIntensity: .35, depthWrite: false });
+      const c = new THREE.Mesh(new THREE.PlaneGeometry(w, 3.2), cm); c.position.y = 1.6; g.g.add(c); g.mem = c; g.memM = cm; g.okHex = 0x3aff8a; g.noHex = 0x1aff8a;
+      const sm = mm(0x0c0a10, 0x1a3a22, { emissiveIntensity: .3 });
+      for (let k = 0; k < 5; k++) { const f = new THREE.Mesh(new THREE.CapsuleGeometry(.26, 1.0, 4, 8), sm); scene.add(f); G.file.push({ m: f, s: k * 2.6 }); }
+      G.fileLine = { x: ax + cu - .9, z0: az + P.march[1] - 4.2, z1: az + P.march[1] + 6, y: yC + .78 }; } }
+  // the rumble door: an iris of plates across the west tube
+  { const g = add('shiprumble', P.rumble, Math.PI / 2, 'ms_rumble'); if (g) { const pm = mm(0x3a3440, 0x5a1a1a, { metalness: .5 }); g.iris = [];
+      for (let k = 0; k < 8; k++) { const a = k / 8 * Math.PI * 2, pl = new THREE.Mesh(new THREE.CircleGeometry(1.9, 3, a - .45, .9), pm); pl.position.y = 1.9; pl.userData.a = a; g.g.add(pl); g.iris.push(pl); } } }
+  // the lock: a membrane in the hall's west door
+  { const L = add('shiplock', P.lock, Math.PI / 2, 'ms_lock'); if (L) { const lm = mm(0x5a0a20, 0xff2a4a, { emissiveIntensity: .9, transparent: true, opacity: .8, side: THREE.DoubleSide });
+      const m = new THREE.Mesh(new THREE.CircleGeometry(1.9, 24), lm); m.scale.set(1, 1.15, 1); m.position.y = 2.05; L.g.add(m); L.mem = m; L.memM = lm; L.okHex = 0x3aff8a; L.noHex = 0xff2a4a; } }
+  G.P = P; G.plan = { v0, vC, hall, uD, lock, uL, shaft };
   G.built = 1;
   return G.n;
 }
-// the lock's membrane: red and whole to anybody, parting green to an engineer near it
+// every gate's picture answers whether it would let you through, and you near it; the file shuffles on
 function shipGauntStep(dt) {
   const G = ISGAUNT; if (!G.built || !inTK()) return;
-  for (const L of G.gates) if (L.mem) { const near = Math.hypot(player.pos.x - L.x, player.pos.z - L.z) < 6, ok = gateLets(GATE_TYPES[L.type]) && near;
-    L.memK = damp(L.memK || 0, ok ? 1 : 0, .15, dt); L.mem.scale.set(1 - .85 * L.memK, 1.15 * (1 - .85 * L.memK), 1); L.memM.emissive.setHex(ok ? 0x3aff8a : 0xff2a4a); }
+  for (const g of G.gates) { const near = Math.hypot(player.pos.x - g.x, player.pos.z - g.z) < 6, ok = (g.open || gateLets(GATE_TYPES[g.type])) && near;
+    g.okK = damp(g.okK || 0, ok ? 1 : 0, .15, dt);
+    if (g.mem) { g.mem.scale.set(1 - .85 * g.okK, (g.type === 'shiplock' ? 1.15 : 1) * (1 - .85 * g.okK), 1); g.memM.emissive.setHex(ok ? g.okHex : g.noHex); }
+    if (g.leaf) g.leaf.rotation.y = -1.35 * g.okK;
+    if (g.iris) for (const pl of g.iris) { const a = pl.userData.a; pl.position.set(Math.cos(a) * 1.7 * g.okK, 1.9 + Math.sin(a) * 1.7 * g.okK, 0); pl.scale.setScalar(1 - .6 * g.okK); } }
+  // the file: the turned shuffle along the tube's west side and through the curtain, round and round
+  const L = G.fileLine; if (L) for (const f of G.file) { f.s = (f.s + dt * .55) % (L.z1 - L.z0); f.m.position.set(L.x + Math.sin(f.s * 2.1) * .06, L.y + Math.abs(Math.sin(f.s * 4.2)) * .05, L.z0 + f.s); }
 }
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)

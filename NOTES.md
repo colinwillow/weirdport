@@ -7,6 +7,22 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **EVERY FORM ONE LAST TIME: SIX GATES IN THE CHAPTERS' ORDER (m403, C6-8d-2, GATE_TYPES `shippen` / `shipmarch` /
+  `shiprumble`, `gateLets`'s `ride`, the gauntlet re-laid).** The pen and the file are the gang gate's `groups` rule
+  (`socialMe`: the farmer is 'country', the activist / hippie / hipster 'city'). The rumble door is one new rule, `ride`,
+  which wants `player.bike` (the biker form ON the bike, `bikeOn`). It sits first in `gateLets`. Every gate's picture
+  answers `gateLets` and nearness the same way in `shipGauntStep`: the pen's leaf swings on its hinge, the curtain and the
+  membrane shrink and go green, the iris's eight wedges slide out and shrink. The file of the turned is five capsules
+  shuffling along the tube's west side through the curtain, scenery without colliders.
+  **THE WAY TURNS WEST** after the file's hall: carried on north, three more stretches put the core 104 m from the hull's
+  middle, and the top of the hull is 70 across. The row checks the core is within 62 m.
+  **THE ROW TRIES EVERY GATE WITH EVERY FORM** (alien, farmer, worker, activist, the biker on foot and riding, the
+  engineer), and each must let exactly its own through. The tear is tried unmended (nobody), then the worker leans on it,
+  then walks it.
+  **`npm run places`, exit 0** (teeth: `ride` taken out of `gateLets` reads `BAD ... rumble lets biker on foot/biker riding
+  ... A GATE LETS THE WRONG ONE THROUGH: ms_rumble:biker on foot`):
+      ok  GAUNTLET 136 boxes | walked from the chamber to the shaft 0 | pen lets farmer | march lets activist | rumble lets biker riding | lock lets engineer | tear lets nobody unmended, the worker mends it and walks it | the shaft: a level flight to the core in 1.5 s, a climb outside it held to -0.8 m/s | the core 350 m over the sea, 44 m from the hull's middle, its floor 0, over the shaft open 
+
 - **THE WAY TO THE CORE: THE TEAR, THE LOCK, THE SHAFT (m402, C6-8d-1, `ISGAUNT`, `buildShipGauntlet`, `shipGauntStep`,
   `shipLiftAt`, GATE_TYPES `shiptear` / `shiplock`).** All of it is the GATE system's own. Each gate type is `bare`, so the
   builder draws it. **`shiptear`** is a `fix` gate: `gateStep` mends it when the worker leans on it, and `gateOpen` shows
