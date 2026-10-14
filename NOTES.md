@@ -7,6 +7,44 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE WATERFRONT'S LAND: A PORT IS BUILT, SO ITS GROUND IS QUAY, AND ITS HEIGHT IS WHAT STANDS ON IT AND WHAT IS CUT INTO
+  IT (m377, C6-6a, `WFRONT`, `wfEdge`, `buildWaterfront`, `GRADE.wf`).** Chapter 4's district, across the river from Old
+  Town's south-east shore at bearing -1.15 (the one side of the island nothing was on: the farm is +x+z, Hollow Creek -x+z,
+  The Pearl -x), 100 m of river from the island's waterline. **Not a heightfield**: concrete slabs on the river (each its own
+  box, `Y` 3.2 -- 5.4 m over the water, a deep-water berth), an irregular back edge, two finger piers out toward the city.
+  **THE DRY DOCK'S FLOOR IS OVER THE SEA (sea + .45) ON PURPOSE.** The island's water is one plane everywhere, so a pit cut
+  below it reads flooded (and `ISLE.deep` puts him back); the quay is high so the dock can still be 5 m deep. Altars step
+  down both walls and the head, a caisson across the mouth you walk over (railed), a ship on keel and bilge blocks with
+  **2.2 m under her hull** (you walk beneath her between the blocks), her deck reached by a stair tower (20 risers of .3125)
+  and a gangway through a gap in the bulwark, a scaffold up her west side (one ladder floor -> top lift, gap in the bulwark
+  there too), a ladder up the wheelhouse's front, the forecastle up five .28 steps. Down into the dock: a stair of 16 risers
+  of .309 against the west wall at the head, a landing over the altars to the quay. **THE CONTAINER YARD IS AN AUTHORED
+  SKYLINE** (`BLOCKS`, 21 blocks, each `h` containers high per column): canyons between them, terraces on top, two crate
+  stairs (risers .289) and three face ladders up, and **a high road** (`LINKS`, `pearlSpan` reused: two catwalks, two rope
+  bridges) 13 m over the lanes from the cliff by the quay to the tallest wall at the back. A collider per COLUMN, a visual per
+  container (jittered, nine colours, a door frame at one end). Transit shed (locked, ladder to the roof), Uplift's factory
+  shell behind a locked fence with green screens in its windows and two stacks (C6-6b opens it), eight floodlight masts with
+  their light coming down as ONE instanced draw of faint additive cones, bollards, fenders, the cranes' rails (C6-6c), a tug
+  at pier 2 with a ladder up to the pier, three forklifts, three strays. Five people: three dockers (`role: 'docker'`, talk
+  to workers) and two Uplift cyborgs (`role: 'cyborg'`, so `cyborgStep` gives them their parts; Unit 12 walks a beat round
+  the yard). **THE LIGHT IS ITS OWN**: `gradeStep` blends a second grade over the farm's by `wfEdge` -- a dim blue sun, an
+  orange bounce, sodium-lit fog closing to 240 m, the sky dimmed -- in the SAME writer (one writer per value), the base
+  values written back once when he leaves. Map region `waterfront`, revealed when Chapter 3 ends (`ch3c`'s `onDone`).
+  GOD: the quay, the dock head, the ship's deck, up on the container cliff, Uplift's gate; GODCHAP 4 -> the quay. `places`
+  holds `wf*` places to `wfEdge > 0`. **Nothing gets you here but GOD yet** (the ferry is C6-6d).
+  **The `WATERFRONT` row WALKS it**: the quay at its height at seven points, the dock floor and its depth, the room under the
+  hull, the head stair floor -> quay, the stair tower and gangway quay -> deck, the crate stairs onto the stacks, every
+  high-road link's middle (the rope's sag measured off `pearlSpan`'s own `pt(.5)`, not guessed), every ladder a climb, every
+  person a kind, and no overlap with the farm, the island, The Pearl or Hollow Creek. Teeth: the dock stair at 13 risers
+  (.38) reads `head stair floor -> -1.75 ... THE DOCK STAIR DOES NOT REACH`, exit 1.
+  `npm run places` (exit 0):
+      ok  wfquay     -> player 93.6,3.5,-235.3 ground 3.20
+      ok  wfdock     -> player 175.0,3.5,-299.7 ground 3.20
+      ok  wfdeck     -> player 155.1,9.7,-250.5 ground 9.45
+      ok  wfstacks   -> player 95.5,16.4,-270.1 ground 16.20
+      ok  wfgate     -> player 196.4,3.5,-227.6 ground 3.20
+      ok  WATERFRONT 366 boxes, 322 containers | centre 98,-220 | clear of the farm, the island, the pearl, hollow creek | quay level at 3.2 | dock floor -1.75 (5.0 m down), 2.20 m under the hull | head stair floor -> 3.20 (quay 3.2) | stair tower -> 9.45 (deck 9.45) | crate stairs up 2.6, 2.6 | high road 0, 0, 0.01, 0 | ladders 7 (7 climbs) | people Rosa, Benny, Marge, Unit 7 (formerly Doug), Unit 12
+
 - **THE RALLY MAN, CHAPTER 3's BOSS (m376, C6-5f-4, `QUESTS` `ch3c`, `rally:stage`, `HCRALLY.over`).** Rae's last line
   points you at the rally. The quest's first step is a FLAG with a beam on the podium: while he SPEAKS (`O.st === 'speech'`),
   stand within 5 m of `LEADER.at` at the stage's own height (`O.y + HCFAIR.STAGE.h`, ±.7) and `rally:stage` is set with an

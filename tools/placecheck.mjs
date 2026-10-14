@@ -58,7 +58,7 @@ const html = fs.readFileSync('index.html', 'utf8');
 let src = html.match(/<script type="module">([\s\S]*?)<\/script>/)[1];
 src = src.replace(/(from\s*)['"]three['"]/g, `$1'${pathToFileURL(path.join(TMP, 'three-shim.mjs')).href}'`)
          .replace(/(from\s*)['"]\.\/vendor\//g, `$1'${ROOT}vendor/`);
-src += '\nglobalThis.__M = { HCRACE, raceStep, raceAt, BIKE, PBIKE, bikeOn, BIKER, SK8, HCRALLY, buildRally, rallyStep, rallyStart, HCROAD, buildHighway, gatePush, HCTRAIN, buildFreight, trainStep, trainUnder, BDYN, HCBIKE, buildBikeTrack, bikeLoop, HCFAIR, buildFairground, fairStep, HCMILL, buildMill, HCTRAIL, buildTrailerPark, HCREEK, buildHollowLand, hcHeight, hcLocal, hcWorld, hcEdge, hcGorgeAt, buildPearlRoofs, pearlFace, KCLIMB, OPLAZA, buildPearlPlaza, plazaStep, plazaStart, pearlCrowd, OPEARL, buildPearl, OGOOD, buildGoodKiosks, RUMOURS, upApply, UPGRADES, JUICE, SAMPLE, OLOOK, buildLookout, lookoutStep, KCLIMB, UPLIFT, buildUplift, cyborgStep, resolveBoxes, SMART, smartStep, ROSTER, rosterKind, OAMP, buildAmp, ampStep, ampBoil, OWATCH, buildWatcher, watchStep, OORB, AIRT, buildOrbs, orbStep, OINCUR, incurStart, incurStep, protestBrawl, OPROTEST, buildProtest, protestStep, protestStart, OSTRIKE, buildStrike, strikeSet, strikeStep, OTSITE, ODECAY, buildDecay, decayApply, decayStep, DHEALTH, dhStep, dhGet, dhPush, FIRES, FOOT, buildFootbridge, footStep, footFix, BOXES, PORTALS, QUESTS, buildLife, OTLIFE, buildSite, OTSITE, buildCarts, OTCARTS, cartStep, mapRegionsTkit, buildCamp, OTCAMP, MAPREG, campStep, FARMLAND, buildFarmland, buildFarmWaters, FWATER, buildFieldBounds, FPLAN, buildFieldCrops, FCROP, buildNeighbours, FNEIGH, COW, COWS, cowSpook, fpOwnAt, flLocal, buildVehicles, FVEH, vehStep, buildFarmhands, FHANDS, MARKS, mkrNpcPlace, HOBO, HICK, buildTownEdge, FTOWN, buildCityRing, FRING, farmBatch, FBATCH, scene, buildTrestle, FTRES, buildFord, FFORD, GATES, buildOrchardTerrace, FTERR, buildSkyline, SKYLINE, skylineStep, flEdgeAt, isleBedAt, KCITY, buildKCityCol, buildIsle, ISLE, TRI, triBuild, groundAt, WORLD, MOVE, player, kitPopulate, KCROWD, FOE, HICK, HOBO, SKATER, BIKER, DUMMY, CIVILS, CLANCY, kitStand, bodySeat, SEAT, DUMMIES, THREE, buildFarm, buildFarmProps, buildCrash, buildLane, buildBridge, buildCows, buildHedgerows, HROW, buildFarmhouse, FHOUSE, farmhouseStep, buildRoadside, FROAD, GPAINT, buildGroundPaint, buildFlora, crashHero, FARM, MISSING, FLORA, FPROPS, farmPropsStep, floraStep, cowStep, crashStep, crashHeroStep, riverStep, gradeStep, CRASH, GODPLACES, godPlace, GOD, LANE, BRIDGE, crashSpawn, SAVE };\n';
+src += '\nglobalThis.__M = { WFRONT, buildWaterfront, wfEdge, HCRACE, raceStep, raceAt, BIKE, PBIKE, bikeOn, BIKER, SK8, HCRALLY, buildRally, rallyStep, rallyStart, HCROAD, buildHighway, gatePush, HCTRAIN, buildFreight, trainStep, trainUnder, BDYN, HCBIKE, buildBikeTrack, bikeLoop, HCFAIR, buildFairground, fairStep, HCMILL, buildMill, HCTRAIL, buildTrailerPark, HCREEK, buildHollowLand, hcHeight, hcLocal, hcWorld, hcEdge, hcGorgeAt, buildPearlRoofs, pearlFace, KCLIMB, OPLAZA, buildPearlPlaza, plazaStep, plazaStart, pearlCrowd, OPEARL, buildPearl, OGOOD, buildGoodKiosks, RUMOURS, upApply, UPGRADES, JUICE, SAMPLE, OLOOK, buildLookout, lookoutStep, KCLIMB, UPLIFT, buildUplift, cyborgStep, resolveBoxes, SMART, smartStep, ROSTER, rosterKind, OAMP, buildAmp, ampStep, ampBoil, OWATCH, buildWatcher, watchStep, OORB, AIRT, buildOrbs, orbStep, OINCUR, incurStart, incurStep, protestBrawl, OPROTEST, buildProtest, protestStep, protestStart, OSTRIKE, buildStrike, strikeSet, strikeStep, OTSITE, ODECAY, buildDecay, decayApply, decayStep, DHEALTH, dhStep, dhGet, dhPush, FIRES, FOOT, buildFootbridge, footStep, footFix, BOXES, PORTALS, QUESTS, buildLife, OTLIFE, buildSite, OTSITE, buildCarts, OTCARTS, cartStep, mapRegionsTkit, buildCamp, OTCAMP, MAPREG, campStep, FARMLAND, buildFarmland, buildFarmWaters, FWATER, buildFieldBounds, FPLAN, buildFieldCrops, FCROP, buildNeighbours, FNEIGH, COW, COWS, cowSpook, fpOwnAt, flLocal, buildVehicles, FVEH, vehStep, buildFarmhands, FHANDS, MARKS, mkrNpcPlace, HOBO, HICK, buildTownEdge, FTOWN, buildCityRing, FRING, farmBatch, FBATCH, scene, buildTrestle, FTRES, buildFord, FFORD, GATES, buildOrchardTerrace, FTERR, buildSkyline, SKYLINE, skylineStep, flEdgeAt, isleBedAt, KCITY, buildKCityCol, buildIsle, ISLE, TRI, triBuild, groundAt, WORLD, MOVE, player, kitPopulate, KCROWD, FOE, HICK, HOBO, SKATER, BIKER, DUMMY, CIVILS, CLANCY, kitStand, bodySeat, SEAT, DUMMIES, THREE, buildFarm, buildFarmProps, buildCrash, buildLane, buildBridge, buildCows, buildHedgerows, HROW, buildFarmhouse, FHOUSE, farmhouseStep, buildRoadside, FROAD, GPAINT, buildGroundPaint, buildFlora, crashHero, FARM, MISSING, FLORA, FPROPS, farmPropsStep, floraStep, cowStep, crashStep, crashHeroStep, riverStep, gradeStep, CRASH, GODPLACES, godPlace, GOD, LANE, BRIDGE, crashSpawn, SAVE };\n';
 const f2 = path.join(TMP, 'placecheck.mjs'); fs.writeFileSync(f2, src);
 const quiet = console.error, qw = console.warn, ql = console.log;
 console.error = () => {}; console.warn = () => {};
@@ -121,7 +121,7 @@ M.buildKCityCol({ scene });
 try { M.buildIsle(); } catch (e) { quiet('isle', e.message); }
 console.log = ql;
 
-const farmSteps = ['buildFarmland','buildHollowLand','buildFarmWaters','buildOrchardTerrace','buildFieldBounds','buildFieldCrops','buildNeighbours','buildFarm','buildFarmProps','buildCrash','crashHero','buildLane','buildBridge','buildHedgerows','buildFarmhouse','buildRoadside','buildCows','buildVehicles','buildFarmhands','mapRegionsTkit','buildCamp','buildCarts','buildSite','buildLife','buildProtest','buildOrbs','buildWatcher','buildAmp','buildUplift','buildLookout','buildGoodKiosks','buildFootbridge','buildDecay','buildPearl','buildPearlPlaza','buildPearlRoofs','buildTrailerPark','buildMill','buildFairground','buildBikeTrack','buildFreight','buildHighway','buildRally','buildStrike','buildTownEdge','buildCityRing','buildTrestle','buildFord','buildSkyline','farmBatch','buildGroundPaint','buildFlora'];
+const farmSteps = ['buildFarmland','buildHollowLand','buildWaterfront','buildFarmWaters','buildOrchardTerrace','buildFieldBounds','buildFieldCrops','buildNeighbours','buildFarm','buildFarmProps','buildCrash','crashHero','buildLane','buildBridge','buildHedgerows','buildFarmhouse','buildRoadside','buildCows','buildVehicles','buildFarmhands','mapRegionsTkit','buildCamp','buildCarts','buildSite','buildLife','buildProtest','buildOrbs','buildWatcher','buildAmp','buildUplift','buildLookout','buildGoodKiosks','buildFootbridge','buildDecay','buildPearl','buildPearlPlaza','buildPearlRoofs','buildTrailerPark','buildMill','buildFairground','buildBikeTrack','buildFreight','buildHighway','buildRally','buildStrike','buildTownEdge','buildCityRing','buildTrestle','buildFord','buildSkyline','farmBatch','buildGroundPaint','buildFlora'];
 console.log = () => {};
 for (const n of farmSteps) { try { M[n](); quiet('ok  ', n); } catch (e) { quiet('FAIL', n, e && e.stack ? e.stack.split('\n').slice(0,3).join(' | ') : e); } }
 console.log = ql;
@@ -231,11 +231,12 @@ for (const P of M.GODPLACES.filter(p => p.world === 'tkit')) {
   // sensible: it moved him, he is not under the sea, and a farm place is OUT on the island, not in the city
   // m306: a farm place is ON THE FARMLAND (its own landmass), except the bridge's checkpoint, which is on the deck
   const CITYP = ['oldtown', 'camp', 'carts', 'site', 'sitetop', 'beat', 'footbridge', 'pearldock', 'protest', 'barricade', 'orb', 'watcher', 'amp', 'uplift', 'lookout', 'lookfoot', 'mags', 'pruitt', 'ines', 'pearl', 'pearlbar', 'pearlroof', 'pearlhq', 'otfreight', 'otroad', 'gangbridge'];                         // m335: places that are IN Old Town on purpose
-  const offLand = M.FARMLAND.live && !['oldtown', 'camp', 'carts', 'site', 'sitetop', 'beat', 'footbridge', 'pearldock', 'protest', 'barricade', 'orb', 'watcher', 'amp', 'uplift', 'lookout', 'lookfoot', 'mags', 'pruitt', 'ines', 'pearl', 'pearlbar', 'pearlroof', 'pearlhq', 'otfreight', 'otroad', 'gangbridge', 'bridge', 'warehouse', 'backyards', 'stones'].includes(P.id) && !/^hc/.test(P.id) && !(M.flEdgeAt(p.x, p.z) > 0);
+  const offLand = M.FARMLAND.live && !['oldtown', 'camp', 'carts', 'site', 'sitetop', 'beat', 'footbridge', 'pearldock', 'protest', 'barricade', 'orb', 'watcher', 'amp', 'uplift', 'lookout', 'lookfoot', 'mags', 'pruitt', 'ines', 'pearl', 'pearlbar', 'pearlroof', 'pearlhq', 'otfreight', 'otroad', 'gangbridge', 'bridge', 'warehouse', 'backyards', 'stones'].includes(P.id) && !/^hc/.test(P.id) && !/^wf/.test(P.id) && !(M.flEdgeAt(p.x, p.z) > 0);
   // m365: a Hollow Creek place (`hc...`) is on ITS land
   const offHC = /^hc/.test(P.id) && !(M.HCREEK.live && (([a, b]) => M.hcEdge(a, b))(M.hcLocal(p.x, p.z)) > 0);
+  const offWF = /^wf/.test(P.id) && !(M.WFRONT.live && M.wfEdge(p.x, p.z) > 0);          // m377: a Waterfront place is on ITS land
   const why = !a ? 'NO PLACE' : (p.x === 0 && p.z === 0 && P.id !== 'oldtown') ? 'UNMOVED' : p.y < M.ISLE.sea + .3 ? 'IN THE SEA'
-            : (!CITYP.includes(P.id) && city) ? 'IN THE CITY' : offLand ? 'OFF THE FARMLAND' : offHC ? 'OFF HOLLOW CREEK'
+            : (!CITYP.includes(P.id) && city) ? 'IN THE CITY' : offLand ? 'OFF THE FARMLAND' : offHC ? 'OFF HOLLOW CREEK' : offWF ? 'OFF THE WATERFRONT'
             : (g > -500 && p.y - g > 2.5) ? 'IN THE AIR' : '';          // m346: a GOD place stood him 36 m up and every row said ok
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + P.id.padEnd(10), '-> player', p.toArray().map(v => v.toFixed(1)).join(','), 'ground', (g > -500 ? g.toFixed(2) : 'none'), why);
@@ -299,6 +300,39 @@ const walkUp = (pts, y0) => { let y = y0; for (let i = 0; i < pts.length - 1; i+
     if (ups.some(h => Math.abs(h - 1.1) > .05)) why = 'STEPS YOU CANNOT WALK UP'; } else why = 'NOT BUILT';
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + 'PEARL', r, why); }
+// ---- THE WATERFRONT (m377): built, clear of every other land; its quay at the height it should be; the dry dock WALKED --
+// down its head stair from the quay to the floor and back up, room under the ship, up the stair tower and over the gangway
+// onto her deck; up the crate stairs onto the stacks; the high road's links walkable; every ladder in; its people have kinds
+{ const W = M.WFRONT; let r = 'NOT BUILT', why = '';
+  if (W.live) {
+    const at = (u, v) => [W.O[0] + u * W.C + v * W.S, W.O[1] - u * W.S + v * W.C], R = M.ISLE.rect, pr = (M.MAPREG.tkit || []).find(q => q.id === 'pearl'), hb = M.HCREEK.bbox;
+    let clash = [];
+    for (let u = W.U[0]; u <= W.U[1]; u += 10) for (const v of [W.V[0], 0, 70, W.V[1]]) { const [x, z] = at(u, v);
+      if (M.FARMLAND.live && M.flEdgeAt(x, z) > -15) clash.push('the farm');
+      if (x > R[0] - 40 && x < R[1] + 40 && z > R[2] - 40 && z < R[3] + 40) clash.push('the island');
+      if (pr && x > pr.x0 - 30 && x < pr.x1 + 30 && z > pr.z0 - 30 && z < pr.z1 + 30) clash.push('the pearl');
+      if (hb && x > hb.x0 - 30 && x < hb.x1 + 30 && z > hb.z0 - 30 && z < hb.z1 + 30) clash.push('hollow creek'); }
+    clash = [...new Set(clash)];
+    const want = [[10, 12, 'the container quay'], [-90, -30, 'pier 1'], [34, -26, 'pier 2'], [-14, 80, 'the dock lane'], [-38, 120, 'behind the dock head'], [-70, 46, 'the factory yard'], [100, 25, 'the far quay']];
+    const off = want.map(([u, v, nm]) => { const [x, z] = at(u, v), g = M.groundAt(x, z, W.Y + .5, 1); return [nm, +(g - W.Y).toFixed(2)]; }).filter(([, d]) => Math.abs(d) > .1);
+    const D = W.DOCK, [fx, fz] = at(D.u + 2.5, 50), fl = M.groundAt(fx, fz, W.floor + .5, .6), depth = W.Y - fl;
+    const head = (() => { let lo = 1e9; for (const b of M.BOXES) { if (fx < b.minx || fx > b.maxx || fz < b.minz || fz > b.maxz || b.miny < fl + .1) continue; lo = Math.min(lo, b.miny); } return lo - fl; })();
+    const s0 = W.dockStair[0], down = walkUp(W.dockStair, M.groundAt(s0[0], s0[1], W.floor + .5, .6));
+    const t0 = W.shipWalk[0], deck = walkUp(W.shipWalk, M.groundAt(t0[0], t0[1], W.Y + .5, .6));
+    const crates = W.BLOCKS.filter(B => B.climb).map(B => +(walkUp(B.climb, W.Y) - W.Y).toFixed(2));
+    const links = W.links.map(([x, y, z]) => +(M.groundAt(x, z, y + .8, 1.6) - y).toFixed(2));
+    const ladders = M.KCLIMB.filter(L => /^wf_/.test(L.nm || L.name || '')).length;
+    const ppl = M.MARKS.filter(m => m.src === 'WFRONT'), nok = ppl.filter(m => !m.K && !(m.p && m.p.kind) && !(m.p && m.p.role && M.rosterKind(M.ROSTER.find(q => q.id === m.p.role))));
+    r = W.n + ' boxes, ' + W.cont + ' containers | centre ' + W.O.map(v => v.toFixed(0)).join(',') + ' | clear of ' + (clash.length ? 'NOT ' + clash.join(', ') : 'the farm, the island, the pearl, hollow creek') +
+      ' | quay ' + (off.length ? 'OFF: ' + off.map(o => o.join(' ')).join(', ') : 'level at ' + W.Y) + ' | dock floor ' + fl.toFixed(2) + ' (' + depth.toFixed(1) + ' m down), ' + head.toFixed(2) + ' m under the hull' +
+      ' | head stair floor -> ' + down.toFixed(2) + ' (quay ' + W.Y + ') | stair tower -> ' + deck.toFixed(2) + ' (deck ' + W.deck.toFixed(2) + ') | crate stairs up ' + crates.join(', ') + ' | high road ' + links.join(', ') +
+      ' | ladders ' + W.ladders + ' (' + ladders + ' climbs) | people ' + ppl.map(m => m.name).join(', ');
+    why = clash.length ? 'IT OVERLAPS ANOTHER LAND' : off.length ? 'THE QUAY IS NOT LEVEL' : !(depth > 4.5) || fl < M.ISLE.sea ? 'THE DRY DOCK IS NOT A DOCK' : head < 1.9 ? 'NO ROOM UNDER THE SHIP'
+      : Math.abs(down - W.Y) > .1 ? 'THE DOCK STAIR DOES NOT REACH' : Math.abs(deck - W.deck) > .1 ? 'THE SHIP CANNOT BE BOARDED' : crates.some(c => Math.abs(c - 2.6) > .1) ? 'A CRATE STAIR FALLS SHORT'
+      : links.some(l => Math.abs(l) > .1) ? 'A HIGH ROAD LINK HAS NO FLOOR' : ladders < W.ladders ? 'A LADDER IS NOT A CLIMB' : nok.length ? 'SOMEBODY WITH NO KIND' : ppl.length < W.PEOPLE.length ? 'SOMEBODY MISSING' : '';
+  } else why = 'NOT BUILT';
+  if (why) bad++;
+  quiet((why ? 'BAD ' : 'ok  ') + 'WATERFRONT', r, why); }
 // ---- HOLLOW CREEK'S LAND (m365): built, clear of every other land (its coast sampled against the farm's, the island's
 // rectangle and The Pearl's), the gorge cut at least 5 m under its rims down its length and running out to the sea, the
 // two flats level, and a forest standing on it

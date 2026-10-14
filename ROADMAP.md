@@ -190,7 +190,7 @@ differ" table there, so no region feels like the last one.
 
 ## Phase B — Chapter 0 and Chapter 1, playable start to finish
 
-- [ ] **B1 The farm.** Farmland on the island ring around the kit city — small, close and layered,
+- [x] m329 **B1 The farm.** Farmland on the island ring around the kit city — small, close and layered,
   not a flat field: a sunken lane between hedges, the barn with a hayloft you can climb, a silo, a
   creek with a footbridge, the road climbing to a bridge into town. Cows as placeholders (boxes or an existing body) that moo and
   wander. The crash site: a wreck, smoke, Clancy inside.
@@ -296,6 +296,13 @@ differ" table there, so no region feels like the last one.
       - [x] m374 **C6-5f-2** the motorcycle: the biker form rides (the skateboard's riding, a bike under him, faster, no deck tricks).
       - [x] m375 **C6-5f-3** the gang's respect: race Big Rae round the dirt track; win, and the gang knows your name.
       - [x] m376 **C6-5f-4** the rally man: on the stage at the rally, in front of everyone; he bursts (the boss); Chapter 3 complete.
+  - [ ] **C6-6** Chapter 4 greybox (The Waterfront, REGIONS 5), split:
+    - [x] m377 **C6-6a** the land: quays across the river from Old Town, two piers, the dry dock with a ship in it, the container yard as cliffs with a high road over it, the transit shed, the factory shut behind its fence, floodlights; the sodium night; GOD places.
+    - [ ] **C6-6b** the cyborg factory: the hall opened up, conveyor lines through it at several levels, catwalks; the conversion line (workers go in human, come out cyborg), the signature system.
+    - [ ] **C6-6c** the gantry cranes on the quay's rails: climb one, ride the trolley along the boom, swing a container.
+    - [ ] **C6-6d** the way in: the ferry from Old Town's docks to pier 1; a second way (the swing bridge, or the drainage outfall).
+    - [ ] **C6-6e** the engineer / hacker form: locked doors, turrets, security robots; as the engineer they open, turn and stand down.
+    - [ ] **C6-6f** Chapter 4's quests and its boss; shut the line down and the cyborgs turn back; Chapter 4 complete.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
 
@@ -1018,3 +1025,10 @@ differ" table there, so no region feels like the last one.
   the trucks leave, so the fight isn't happening in the middle of a speech. Once he comes round,
   the rallies stop for good and the gang's road opens to anybody. Then the Chapter 3 complete card
   shows. Next up: Chapter 4 (The Waterfront).
+- **m377 (C6-6a) The Waterfront's land.** Chapter 4 is split into six builds (the land, the factory, the cranes, the way in, the engineer form, the quests and boss). I also ticked B1 (the farm) as m329, its last part. All its sub-items were done; only the parent box had been left open. The Waterfront sits across the river south-east of Old Town, on the one side of the island nothing else was using.
+  - It's a built port, not hills: concrete quays 5 m above the river, two piers, and an irregular back edge.
+  - Its height comes from a dry dock you can go down into and from container stacks one to five high, laid out as cliffs with canyons between them. A "high road" of catwalks and rope bridges runs 13 m up across the stack tops.
+  - The ship in the dry dock has room to walk under it. You can board it up a stair tower, or climb the scaffold on its side.
+  - The factory stays shut behind its fence until the next build.
+  - Walking onto its land turns the light to a sodium-orange night with fog. Tell me if that's too dark on the phone.
+  - Nothing gets you there except GOD until the ferry build.

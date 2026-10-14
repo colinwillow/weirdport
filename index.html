@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m376</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m377</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m376</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m377</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm376';
+const BUILD = 'm377';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -6579,6 +6579,9 @@ function sunElev() {
 // NOT DONE: the sun's DIRECTION (long shadows) -- moving it re-bakes the sky, which is not a per-step thing.
 const GRADE = { on: 1, k: 0, k0: -1, r: [50, 90],
   sun: 0xffb070, sky: 0xffd6a8, gnd: 0x8a6a48, fog: 0xf0b48c, fogMix: .55, nearK: .55, farK: .8,
+  // m377: THE WATERFRONT'S NIGHT -- on its land the day goes down to sodium light and fog off the water (REGIONS 5): a dim
+  // blue sun, orange bounce, the fog closing to `far`, the sky dimmed by `bg`. Blended in over whatever the farm's grade is
+  wk: 0, wk0: 0, wf: { sun: 0x56607a, sky: 0xc08850, gnd: 0x3a2c22, fog: 0x7a6656, near: 18, far: 240, bg: .55 }, bg0: null,
   sun0: null, sky0: null, gnd0: null, fog0: null, near0: null, far0: null };
 const _grC = new THREE.Color();
 const SKY = {
@@ -28253,7 +28256,7 @@ const QUESTS = [
   // five knock-downs; two of the front row turn with it. After: he comes round (insurance, Ohio, a man in a nice suit); the
   // rallies stop for good and the gang's road opens to anybody; Chapter 3 is done.
   { id: 'ch3c', title: 'THE RALLY MAN', world: 'tkit', ch: 3, from: 'ch3_rae',
-    onDone: () => { progChapter(4); setTimeout(() => cardShow('CHAPTER 3 COMPLETE', 'HOLLOW CREEK IS FREE: THE ROAD IS OPEN', 4.5), 3600); }, steps: [
+    onDone: () => { progChapter(4); progRegion('tkit:waterfront'); setTimeout(() => cardShow('CHAPTER 3 COMPLETE', 'HOLLOW CREEK IS FREE: THE ROAD IS OPEN', 4.5), 3600); }, steps: [
     { type: 'flag', flag: 'rally:stage', at: () => HCRALLY.at && HCRALLY.W && (([x, z]) => [x, HCRALLY.y + HCFAIR.STAGE.h, z])(HCRALLY.W(...HCRALLY.LEADER.at)), text: 'At the rally, get up on the stage while he speaks',
       tip: 'The rally comes round every few minutes. Ride up front with the gang, then up the steps at the stage corners.' },
     { type: 'skin',   tag: 'ch3boss', npc: 'hc_rally_boss', r: 6, big: 1.85, downs: 5, text: 'In front of everybody', tip: 'That was never a man. Knock it down. Again. And again.',
@@ -32663,6 +32666,309 @@ function rallyBrawl(why) {
   return true;
 }
 // ============================================================================================
+// THE WATERFRONT: THE LAND (m377, ROADMAP C6-6a, `WFRONT`, `wfEdge`, `buildWaterfront`)
+// ============================================================================================
+// REGIONS 5: "industrial docks and the cyborg factory. Cold, efficient, inhuman. Container stacks as cliffs, gantry cranes
+// you can climb and ride, conveyor lines through the factory, a dry dock, the river. Sodium orange floodlights at night, fog
+// off the water. Rust, safety yellow, chrome, sick green screens." Chapter 4's district, across the river from Old Town's
+// south-east shore (bearing -1.15: the one side of the island nothing else is on -- the farm is +x+z, Hollow Creek -x+z,
+// The Pearl -x). Not a heightfield: a port is BUILT, so its ground is quay -- concrete slabs on the river 5.4 m over the
+// water (`Y`), each its own box, with an irregular back edge and two finger piers out toward the city.
+// **What makes it vertical is what stands on it and what is cut into it.** THE DRY DOCK goes DOWN: a pit 5 m deep, stepped
+// walls (the altars), a caisson gate on the river you can walk across, and a ship on its keel blocks with room to walk under
+// it -- up its scaffold, up a stair tower and over a gangway onto its deck, up a ladder onto its wheelhouse. THE CONTAINER
+// YARD goes UP: twenty-one blocks stacked one to five high in an AUTHORED skyline (`BLOCKS`), so the lanes between them are
+// canyons and the tops are terraces -- crate stairs and ladders up, and a HIGH ROAD of catwalks and rope bridges from stack to
+// stack thirteen metres over the lanes. The transit shed (a ladder to its roof), Uplift's factory behind its fence (shut:
+// C6-6b opens it), floodlight masts with their light coming down through the fog, bollards, fenders, a tug at the pier.
+// THE LIGHT IS ITS OWN: on this land `gradeStep` takes the day down to a sodium night (`GRADE.wf`), fog closing in.
+// Nothing gets you here yet but GOD -- the ferry is C6-6d. Its own frame: +v inland (away from Old Town), +u along the river.
+const WFRONT = {
+  on: 1, live: 0,
+  bearing: -1.15, gap: 100,      // rad (the rays' convention) and the river's width, from the island's waterline to the quay
+  Y: 3.2,                        // the quay's top: a deep-water berth, 5.4 m over the river -- so the dry dock's floor is OVER the sea
+  U: [-120, 120], V: [-42, 142], // the land's extent in its frame (piers included), for `wfEdge`
+  DOCK: { u: -38, half: 11, alt: 2, v0: 4, v1: 96, rise: 2.2, why: 'the dry dock: in from the river beside the transit shed, its gate on the quay front' },
+  SHIP: { v0: 14, v1: 85.5, beam: 14, depth: 9, why: 'a coaster in for repair, bow to the head, stern to the gate: six years in, never wet' },
+  // the yard's skyline, row by row (v the row's middle), each block `h` containers high per column, 2.5 m a column
+  BLOCKS: [
+    { u: 2, v: 44, h: [1, 2, 3, 4, 4, 3], crates: 0, why: 'the first cliff off the dock lane: stepped, the way onto the stacks (a crate stair)' },
+    { u: 25, v: 44.5, h: [5, 5, 4, 5, 5], ladder: 0, why: 'a sheer wall five high off the quay: the cliff (a ladder up its face)' },
+    { u: 46, v: 43, h: [2, 1, 2, 3], why: 'a low one, a step down between two high ones' },
+    { u: 70, v: 44, h: [3, 3, 4, 5, 4, 2], why: 'where the two quays meet' },
+    { u: 96, v: 45, h: [1, 1, 2, 1, 2], why: 'the far quay: half-unloaded' },
+    { u: 0, v: 64, h: [4, 5, 5, 5, 4], why: 'the second row, its high wall on the dock lane' },
+    { u: 23, v: 64.5, h: [1, 2, 3, 4, 5, 5], crates: 0, why: 'a staircase of containers up to the high road' },
+    { u: 47, v: 63, h: [5, 4, 4, 4, 5], ladder: 4, why: 'the middle of the yard: a ladder, the high road crosses it' },
+    { u: 72, v: 64, h: [2, 2, 3, 2, 1], why: 'a low block: the lanes open out round it' },
+    { u: 97, v: 65, h: [3, 4, 3, 3], why: 'the far quay again' },
+    { u: 3, v: 84, h: [3, 2, 1, 1, 2, 3], why: 'a valley in the stacks: down in the middle, high either side (drop in off the sides)' },
+    { u: 27, v: 85, h: [5, 5, 5, 4, 3], why: 'a wall over the valley' },
+    { u: 50, v: 84, h: [4, 5, 5, 4, 2, 1], why: 'the high road comes down off it' },
+    { u: 79, v: 83.5, h: [3, 3, 3, 3, 3], why: 'one flat terrace three high' },
+    { u: 104, v: 85, h: [2, 1, 1], why: 'the corner of the far quay' },
+    { u: 4, v: 104, h: [2, 2, 3, 3, 4, 4], why: 'the back rows rise toward the fence' },
+    { u: 29, v: 104.5, h: [1, 2, 1, 2, 1], why: 'a broken row: nobody came for them' },
+    { u: 53, v: 103, h: [5, 5, 5, 5, 5], ladder: 4, why: 'the tallest wall in the yard, the high road\'s end (a ladder up its face)' },
+    { u: 82, v: 104, h: [2, 3, 2, 1], why: 'the far quay\'s last' },
+    { u: 6, v: 124, h: [3, 4, 4, 3, 2], why: 'the back row, against the land\'s end' },
+    { u: 34, v: 123.5, h: [2, 1, 1, 2], why: 'the last of them' },
+  ],
+  // the high road: [block, column, face 'n' (+v) / 's' / 'e' (+u) / 'w'] each end
+  LINKS: [
+    { a: [1, 4, 'n'], b: [6, 5, 's'], kind: 'cat', why: 'off the cliff to the staircase block: the high road starts' },
+    { a: [6, 5, 'e'], b: [7, 0, 'w'], kind: 'rope', why: 'over the lane to the middle block' },
+    { a: [7, 4, 'n'], b: [12, 2, 's'], kind: 'rope', why: 'on north, over the next lane' },
+    { a: [12, 1, 'n'], b: [17, 0, 's'], kind: 'cat', why: 'to the tallest wall in the yard' },
+  ],
+  MASTS: [ [14, 54, 'over the first lanes'], [36, 74, 'the middle of the yard'], [57, 94, 'the back lanes'], [86, 54, 'the far quay'],
+           [-12, 30, 'the dock lane by the cranes\' rails'], [-66, 46, 'between the shed and the factory fence'], [-38, 128, 'over the dry dock\'s head'], [110, 72, 'the far quay\'s end'] ],
+  SHED: { u: -88, v: 22, w: 52, d: 24, h: 9.5, why: 'the transit shed on the quay behind pier 1: locked, a ladder to its roof' },
+  FACTORY: { u: -87, v: 92, w: 46, d: 56, h: 15, lot: [-117, -57, 54, 128], gate: [-90, -84], why: 'Uplift Corp\'s conversion facility, behind its fence: shut (C6-6b opens it)' },
+  PIERS: [ { u: -90, v: -20, w: 16, d: 40, psi: .04, why: 'pier 1, off the transit shed: where the ferry will come in (C6-6d)' },
+           { u: 34, v: -16, w: 14, d: 32, psi: -.05, why: 'pier 2, off the container quay: a tug tied up' } ],
+  STRAYS: [ { u: 40, v: 94, yaw: 1.35, col: 3, why: 'dropped across the back lane, half blocking it' }, { u: 84, v: 30, yaw: .4, col: 6, why: 'set down crooked by the far quay\'s edge' },
+            { u: -17, v: 116, yaw: -.2, col: 1, why: 'behind the dock head, on its own' } ],
+  FORKS: [ [8, 54, .3], [66, 74, 1.4], [-16, 92, -.2] ],
+  PEOPLE: [
+    { id: 'wf_rosa', role: 'docker', name: 'Rosa', at: [-90, -6], face: [0, -1], lines: "Forty years on this dock. Now the cranes run themselves and I mostly watch them.|Night shift's the only shift now. The floodlights never go off.|Uplift bought the whole waterfront. Then I think they bought the fog." },
+    { id: 'wf_benny', role: 'docker', name: 'Benny', at: [-56.5, 58], face: [1, 0], lines: "That ship's been in the dry dock six years. They keep repairing it. It's never once been wet.|You hear the line at night? Thunk, hiss, thunk. Folks go into that factory one way and come out... tidier.|Don't climb the stacks. I mean it. I'm the one who does the paperwork." },
+    { id: 'wf_marge', role: 'docker', name: 'Marge', at: [-76, 6], face: [0, -1], lines: "Shed's locked. Everything's locked. Even the lockers are locked.|My cousin signed an Uplift contract. Now he answers the phone 'how may I optimise you'.|Ferry's the only way in from Old Town. Unless you swim. Don't swim." },
+    { id: 'wf_unit7', role: 'cyborg', name: 'Unit 7 (formerly Doug)', at: [-84.5, 48], face: [0, -1], lines: "GOOD EVENING. YOU ARE OUTSIDE YOUR AUTHORISED ZONE.|I USED TO LIKE FISHING. NOW I LIKE THROUGHPUT.|THE CONVERSION IS PAINLESS. THE PAPERWORK IS NOT." },
+    { id: 'wf_unit12', role: 'cyborg', name: 'Unit 12', at: [14, 74], beat: [[14, 74], [14, 112], [-12, 112], [-12, 74]], face: [0, 1], lines: "CONTAINER 4471 IS IN THE WRONG PLACE. I HAVE BEEN LOOKING AT IT SINCE TUESDAY.|SMILE. YOU ARE ON A CAMERA. ALL OF YOU IS ON A CAMERA.|PLEASE DO NOT CLIMB THE INVENTORY." },
+  ],
+  brush: 'INTRUDER NOTED. A FORM HAS BEEN FILED.',
+  O: null, C: 1, S: 0, th: 0, n: 0, boxes: 0, cont: 0, ladders: 0, bbox: null,
+};
+// metres inside the waterfront's frame rectangle (negative outside) -- the grade and the GOD rule ask it
+function wfEdge(x, z) {
+  const W = WFRONT; if (!W.O) return -1e9;
+  const dx = x - W.O[0], dz = z - W.O[1], u = dx * W.C - dz * W.S, v = dx * W.S + dz * W.C;
+  return Math.min(u - W.U[0], W.U[1] - u, v - W.V[0], W.V[1] - v);
+}
+function buildWaterfront() {
+  const W = WFRONT, I = ISLE; W.live = 0;
+  if (!W.on || !inTK() || !I.live || !I.rays || !I.rect) return 0;
+  const R = I.rect, cx = (R[0] + R[1]) / 2, cz = (R[2] + R[3]) / 2, sea = I.sea, Y = W.Y, B0 = sea - 4;
+  const ub = [Math.cos(W.bearing), Math.sin(W.bearing)], ray = isleRayAt(W.bearing), d = ray.rb + ray.L + W.gap;
+  const Ox = cx + ub[0] * d, Oz = cz + ub[1] * d, th = Math.atan2(ub[0], ub[1]);
+  W.O = [Ox, Oz]; W.th = th; W.C = Math.cos(th); W.S = Math.sin(th);
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .82 }), o || {});
+  const met = (c, r = .45) => M(c, { metalness: .5, roughness: r });
+  const MAT = { quay: M(0x8f8c86), cap: M(0xb3aea4), yel: M(0xe0b02a), rubber: M(0x1d1e22), iron: met(0x3a3c40, .6), steel: met(0x7a8690),
+    dark: M(0x24262b), block: M(0x6a5a48), anti: M(0x8a2e24), hull: met(0x2a2d33, .6), house: M(0xd8d6ce), funnel: M(0x3f8a5a), glass: M(0x1a2a30, { metalness: .3, roughness: .2 }),
+    plank: M(0x8a6a48), rope: M(0xc9b48a), mesh: M(0x4a5058, { transparent: true, opacity: .4, side: THREE.DoubleSide }), tin: met(0x8a9298, .5), roof: met(0x6a7076, .55), panel: M(0x6f7a74), screen: M(0x0a1a10, { emissive: new THREE.Color(0x3aff6a), emissiveIntensity: .55 }),
+    lamp: M(0x3a2a14, { emissive: new THREE.Color(0xffa040), emissiveIntensity: 2.2 }), red: M(0xb83a2e), white: M(0xe8e6e0), wood: M(0x6a4a30),
+    c0: met(0x9a4a2a, .7), c1: met(0x2a5a8a, .7), c2: met(0x3a6a4a, .7), c3: met(0xc8a02a, .7), c4: met(0xd8d8d0, .7), c5: met(0xa83232, .7), c6: met(0x2a7a7a, .7), c7: met(0x7a7a80, .7), c8: met(0xc8642a, .7) };
+  const F = farmFrame(Ox, Oz, th, MAT, 'wfront'), { bx, geo, wx, wz } = F;
+  const hd = (du, dv) => Math.atan2(du * W.C + dv * W.S, -du * W.S + dv * W.C);       // a frame direction as a world heading
+  let s0 = 377; const rr = () => (s0 = (s0 * 9301 + 49297) % 233280) / 233280;
+  // ---- THE GROUND: the quay slabs round the dry dock's hole, and the two piers
+  const D = W.DOCK, dIn = D.half + 2 * D.alt, floor = sea + .45, dv1 = D.v1 + 2 * D.alt;
+  bx(-85.5, 65, B0, Y, 65, 130, 'quay');                                    // west: the transit shed, the factory's lot
+  bx(19.5, 70, B0, Y, 85, 140, 'quay');                                     // east: the container yard
+  bx(90, 64, B0, Y, 56, 104, 'quay');                                       // the far quay, set back from the river
+  bx(D.u, (dv1 + 136) / 2, B0, Y, 2 * dIn, 136 - dv1, 'quay');              // behind the dock's head
+  const pierAt = P => { const cs = Math.cos(P.psi), sn = Math.sin(P.psi); return (a, b) => [P.u + a * cs + b * sn, P.v - a * sn + b * cs]; };
+  for (const P of W.PIERS) bx(P.u, P.v, B0, Y, P.w, P.d, 'quay', P.psi);
+  // the river's edge: fenders on the face, bollards along it, a yellow line in from it
+  const edges = [[-118, -98, 0], [-82, -53, 0], [-23, 27, 0], [41, 62, 0], [62, 118, 12]];
+  for (const [u0, u1, v] of edges) {
+    bx((u0 + u1) / 2, v + .6, Y, Y + .02, u1 - u0, .14, 'yel', 0, false);
+    for (let u = u0 + 4; u < u1 - 2; u += 10) { bx(u, v + 1.2, Y, Y + .7, .5, .5, 'iron'); F.parts.iron.pop(); geo(new THREE.CylinderGeometry(.24, .3, .7, 10), 'iron', u, Y + .35, v + 1.2); geo(new THREE.CylinderGeometry(.34, .34, .1, 10), 'iron', u, Y + .72, v + 1.2); }
+    for (let u = u0 + 2; u < u1 - 1; u += 8) bx(u, v - .18, Y - 2.4, Y - .7, 1.3, .36, 'rubber', 0, false);
+  }
+  for (const P of W.PIERS) { const at = pierAt(P);
+    for (const s of [-1, 1]) { for (let b = -P.d / 2 + 3; b < P.d / 2 - 2; b += 9) { const [u, v] = at(s * (P.w / 2 - 1), b); bx(u, v, Y, Y + .7, .5, .5, 'iron', P.psi); F.parts.iron.pop(); geo(new THREE.CylinderGeometry(.24, .3, .7, 10), 'iron', u, Y + .35, v); }
+      for (let b = -P.d / 2 + 2; b < P.d / 2; b += 7) { const [u, v] = at(s * (P.w / 2 + .18), b); bx(u, v, Y - 2.4, Y - .7, .36, 1.3, 'rubber', P.psi, false); }
+      const [u, v] = at(s * (P.w / 2 - .6), 0); bx(u, v, Y, Y + .02, .14, P.d - 1, 'yel', P.psi, false); }
+    for (let a = -P.w / 2 + 2; a < P.w / 2; a += 4) { const [u, v] = at(a, -P.d / 2 - .18); bx(u, v, Y - 2.4, Y - .7, 1.3, .36, 'rubber', P.psi, false); }
+  }
+  // the cranes' rails along the container quay (their cranes are C6-6c)
+  for (const v of [6, 24]) bx(21, v, Y, Y + .05, 78, .18, 'steel', 0, false);
+  // ---- THE DRY DOCK: floor, altars stepping up both walls and the head, the caisson across its mouth
+  bx(D.u, (D.v0 + D.v1) / 2, B0, floor, 2 * D.half, D.v1 - D.v0, 'block');
+  for (const s of [-1, 1]) for (let k = 0; k < 2; k++) bx(D.u + s * (D.half + D.alt * (k + .5)), (D.v0 + D.v1) / 2, B0, floor + (k ? 3.35 : 1.7), D.alt, D.v1 - D.v0, 'quay');
+  for (let k = 0; k < 2; k++) bx(D.u, D.v1 + D.alt * (k + .5), B0, floor + (k ? 3.35 : 1.7), 2 * (D.half + D.alt * (k + 1)), D.alt, 'quay');
+  bx(D.u, D.v0 / 2, B0, Y, 2 * dIn, D.v0, 'steel');                                          // the caisson: walk across the dock's mouth
+  for (const s of [-1, 1]) { bx(D.u, D.v0 / 2 + s * 1.85, Y, Y + 1.05, 2 * dIn, .08, 'yel'); F.parts.yel.pop(); bx(D.u, D.v0 / 2 + s * 1.85, Y + .98, Y + 1.06, 2 * dIn, .08, 'yel', 0, false);
+    for (let a = -dIn + .5; a <= dIn; a += 3) bx(D.u + a, D.v0 / 2 + s * 1.85, Y, Y + 1.05, .06, .06, 'yel', 0, false); }
+  for (let a = -dIn + 1; a < dIn; a += 6) bx(D.u + a, -.2, sea - 1, Y - .4, .5, .4, 'iron', 0, false);
+  // the keel and bilge blocks, the ship on them -- 2.2 m of room under her, so you can walk beneath the hull
+  const S = W.SHIP, hb = floor + D.rise, deck = hb + S.depth; W.deck = deck; W.floor = floor;
+  for (let v = S.v0 + 2; v <= S.v1 - 4; v += 4) bx(D.u, v, floor, hb, 1.4, 1, 'block');
+  for (let v = S.v0 + 6; v <= S.v1 - 10; v += 8) for (const s of [-1, 1]) bx(D.u + s * 4.5, v, floor, hb, 1.4, 1, 'block');
+  const SECT = [[S.v0, 22, 12, 0], [22, 76, S.beam, 0], [76, 80, 12, 1.4], [80, 83, 9, 1.4], [83, S.v1, 5, 1.4]];
+  for (const [v0, v1, b, up] of SECT) {
+    bx(D.u, (v0 + v1) / 2, hb, deck + up, b, v1 - v0, 'hull'); F.parts.hull.pop();
+    bx(D.u, (v0 + v1) / 2, hb, hb + 3.4, b + .04, v1 - v0 + .04, 'anti', 0, false); bx(D.u, (v0 + v1) / 2, hb + 3.4, deck + up, b, v1 - v0, 'hull', 0, false);
+    bx(D.u, (v0 + v1) / 2, hb + 3.3, hb + 3.5, b + .08, v1 - v0 + .08, 'white', 0, false); }
+  bx(D.u, 73, deck, deck + 1.4, S.beam, 6, 'hull');                                          // the forecastle
+  for (let k = 0; k < 5; k++) bx(D.u + 3, 70 - (4 - k) * .55 - .275, deck, deck + (k + 1) * .28, 2.4, .55, 'steel');   // its steps
+  for (const [v0, v1] of [[30, 38], [40, 48], [54, 62]]) bx(D.u, (v0 + v1) / 2, deck, deck + .9, 9, v1 - v0, 'c2');   // the hatch covers
+  // the bulwarks: gaps for the gangway (east, v 49-51) and the scaffold (west, v 40-44)
+  const bul = (u, v0, v1) => { if (v1 - v0 < .2) return; bx(u, (v0 + v1) / 2, deck, deck + 1, .2, v1 - v0, 'hull'); };
+  bul(D.u + S.beam / 2 - .1, 22, 49.2); bul(D.u + S.beam / 2 - .1, 50.8, 70); bul(D.u - S.beam / 2 + .1, 22, 40); bul(D.u - S.beam / 2 + .1, 44, 70);
+  for (const s of [-1, 1]) bul(D.u + s * 5.9, S.v0, 22);
+  bx(D.u, S.v0 + .1, deck, deck + 1, 12, .2, 'hull');
+  // the wheelhouse aft, its window band, the funnel, a ladder to its roof
+  bx(D.u, 19, deck, deck + 7, 10, 8, 'house'); bx(D.u, 23.03, deck + 4.8, deck + 6.2, 9.4, .08, 'glass', 0, false); for (const s of [-1, 1]) bx(D.u + s * 5.03, 19, deck + 4.8, deck + 6.2, .08, 7, 'glass', 0, false);
+  geo(new THREE.CylinderGeometry(1.3, 1.5, 6, 14), 'funnel', D.u, deck + 10, 17.5); geo(new THREE.CylinderGeometry(1.32, 1.32, .8, 14), 'dark', D.u, deck + 12.6, 17.5);
+  for (const s of [-1, 1]) bx(D.u + s * .8, 21, deck + 7, deck + 13, .12, .12, 'steel', 0, false);
+  W.ladders = 0;
+  pearlLadder(F, D.u + 3, 23.25, 0, deck, deck + 7, [D.u + 3, deck + 7, 21.6], 'wf_wheelhouse'); W.ladders++;
+  // the repair: plates off her west side, and the scaffold up it -- a ladder from the dock floor to its top lift, beside her deck
+  for (const [v, h] of [[34, 2.4], [46, 3], [58, 2]]) bx(D.u - S.beam / 2 - .03, v, hb + 2.2, hb + 2.2 + h, .08, 5, 'dark', 0, false);
+  { const su = D.u - S.beam / 2 - 1.9, top = deck - .25;
+    for (let v = 30; v <= 60; v += 3) for (const o of [-1.4, 1.4]) bx(su + o, v, floor, top + 1.1, .1, .1, 'steel', 0, false);
+    for (const y of [floor + 3.8, floor + 7.6]) bx(su, 45.1, y - .1, y, 3.3, 29.8, 'plank', 0, false);
+    bx(su, 45.6, top - .2, top, 3.3, 29.2, 'plank');
+    bx(su - 1.6, 45.6, top, top + 1.05, .06, 29.2, 'steel'); F.parts.steel.pop(); bx(su - 1.6, 45.6, top + .98, top + 1.06, .06, 29.2, 'steel', 0, false);
+    pearlLadder(F, su, 30.6, Math.PI, floor, top, [su, top, 31.6], 'wf_scaffold'); W.ladders++; }
+  // the stair tower and the gangway, east of the dock: 20 risers of .3125 up to her deck
+  { const lu = D.u + dIn + 3.5, n = 20, rise = (deck - Y) / n;
+    bx(lu, 50, deck - .3, deck, 5, 2.8, 'steel'); for (const [a, b] of [[-2.3, -1.2], [2.3, -1.2], [-2.3, 1.2], [2.3, 1.2]]) bx(lu + a, 50 + b, Y, deck - .3, .14, .14, 'steel', 0, false);
+    for (let k = 0; k < n; k++) bx(lu + .25, 51.4 + (n - 1 - k) * .4 + .2, Y, Y + (k + 1) * rise, 2.5, .4, 'steel');
+    for (const s of [-1, 1]) bx(lu + .25 + s * 1.3, 51.4 + n * .2, (Y + deck) / 2 + .5, (Y + deck) / 2 + .58, .06, n * .4, 'yel', 0, false);
+    const gu0 = D.u + S.beam / 2 - .85, gu1 = lu - 2.5;
+    bx((gu0 + gu1) / 2, 50, deck - .15, deck, gu1 - gu0, 1.4, 'steel');
+    for (const s of [-1, 1]) { bx((gu0 + gu1) / 2, 50 + s * .75, deck, deck + 1.05, gu1 - gu0, .06, 'yel'); F.parts.yel.pop(); bx((gu0 + gu1) / 2, 50 + s * .75, deck + .98, deck + 1.06, gu1 - gu0, .06, 'yel', 0, false); }
+    W.shipWalk = [[lu + .25, 51.4 + n * .4 + .6], [lu + .25, 51.5], [lu, 50], [D.u + 4, 50], [D.u, 50]].map(([u, v]) => [wx(u, v), wz(u, v)]); }
+  // the stair down into the dock at its head, west wall: 16 risers up from the floor, a landing over the altars to the quay
+  { const su = D.u - D.half + 1.4, n = 16, rise = (Y - floor) / n, v0 = 70;
+    for (let k = 0; k < n; k++) bx(su, v0 + k * .4 + .2, floor, floor + (k + 1) * rise, 2.2, .4, 'quay');
+    const top = v0 + n * .4, lw = su + 1.1 - (D.u - dIn - .3);
+    bx(D.u - dIn - .3 + lw / 2, top + 1.2, Y - .3, Y, lw, 2.4, 'steel');
+    bx(D.u - dIn - .3 + lw / 2, top + 2.4, Y, Y + 1.05, lw, .06, 'yel'); F.parts.yel.pop(); bx(D.u - dIn - .3 + lw / 2, top + 2.4, Y + .98, Y + 1.06, lw, .06, 'yel', 0, false);
+    bx(su + 1.15, v0 + n * .2, floor, Y + 1.05, .06, n * .4, 'yel'); F.parts.yel.pop();
+    W.dockStair = [[su, v0 - 4], [su, v0 + .1], [su, top + 1.1], [su - 3, top + 1.2], [D.u - dIn - 3, top + 1.2]].map(([u, v]) => [wx(u, v), wz(u, v)]); }
+  // ---- THE CONTAINER YARD: the authored skyline, a container at a time (a collider a column)
+  const cols = ['c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8'], CH = 2.6, CW = 2.44, CL = 12.2;
+  W.cont = 0;
+  const blockAt = Bk => { const cs = Math.cos(Bk.yaw), sn = Math.sin(Bk.yaw); return (a, b) => [Bk.u + a * cs + b * sn, Bk.v - a * sn + b * cs]; };
+  const colA = (Bk, i) => (i - (Bk.h.length - 1) / 2) * 2.5;
+  for (const Bk of W.BLOCKS) {
+    Bk.yaw = (rr() - .5) * .05; const at = blockAt(Bk);
+    Bk.h.forEach((h, i) => {
+      const a = colA(Bk, i), [u, v] = at(a, 0);
+      bx(u, v, Y, Y + h * CH, CW, CL, 'c0', Bk.yaw); F.parts.c0.pop();
+      for (let l = 0; l < h; l++) {
+        const j = (rr() - .5) * .3, yj = (rr() - .5) * .02, [cu, cv] = at(a, j), c = cols[Math.floor(rr() * cols.length)];
+        bx(cu, cv, Y + l * CH + .01, Y + (l + 1) * CH, CW, CL, c, Bk.yaw + yj, false); W.cont++;
+        const e = rr() < .5 ? 1 : -1, [du, dv] = at(a, j + e * (CL / 2 + .03));
+        for (const o of [-1.08, 1.08]) { const [pu, pv] = [du + o * Math.cos(Bk.yaw), dv - o * Math.sin(Bk.yaw)]; bx(pu, pv, Y + l * CH + .05, Y + (l + 1) * CH - .05, .14, .06, 'dark', Bk.yaw, false); }
+        for (const o of [-.4, .4]) { const [pu, pv] = [du + o * Math.cos(Bk.yaw), dv - o * Math.sin(Bk.yaw)]; bx(pu, pv, Y + l * CH + .15, Y + (l + 1) * CH - .15, .05, .06, 'steel', Bk.yaw, false); }
+      }
+    });
+    // a crate stair (risers of .289) up to column `crates`, coming at it from the -u side
+    if (Bk.crates != null) { const i = Bk.crates, a0 = colA(Bk, i) - 1.25, hh = Bk.h[i] * CH, n = Math.ceil(hh / .3), r = hh / n;
+      for (let k = 0; k < n; k++) { const [u, v] = at(a0 - (n - 1 - k) * .4 - .2, -3); bx(u, v, Y, Y + (k + 1) * r, .4, 1.6, k % 3 ? 'wood' : 'plank', Bk.yaw); }
+      Bk.climb = [at(a0 - n * .4 - 1.5, -3), at(a0 + 1.25, -3)].map(([u, v]) => [wx(u, v), wz(u, v)]); }
+    // a ladder up the -v face of column `ladder`
+    if (Bk.ladder != null) { const i = Bk.ladder, a = colA(Bk, i), [u, v] = at(a, -CL / 2 - .25), [mu, mv] = at(a, -CL / 2 + 1.2);
+      pearlLadder(F, u, v, Bk.yaw + Math.PI, Y, Y + Bk.h[i] * CH, [mu, Y + Bk.h[i] * CH, mv], 'wf_stack_' + W.BLOCKS.indexOf(Bk)); W.ladders++; }
+  }
+  // the high road: a link from a column's face to another's, at the lower of the two tops
+  W.links = [];
+  for (const K of W.LINKS) {
+    const end = ([bi, ci, f]) => { const Bk = W.BLOCKS[bi], at = blockAt(Bk), a = colA(Bk, ci), y = Y + Bk.h[ci] * CH;
+      const [p, q] = f === 'n' ? [a, CL / 2] : f === 's' ? [a, -CL / 2] : f === 'e' ? [a + 1.22, 0] : [a - 1.22, 0]; const [u, v] = at(p, q); return [u, y, v]; };
+    const A = end(K.a), B2 = end(K.b);
+    const L = { A, B: B2, L: Math.hypot(B2[0] - A[0], B2[2] - A[2]), hw: K.kind === 'rope' ? .65 : .75, kind: K.kind };
+    const m = pearlSpan(F, L, 0)(.5); W.links.push([wx(m[0], m[2]), m[1], wz(m[0], m[2]), K.kind]);          // its middle, the rope's sag and all
+  }
+  // strays and forklifts in the lanes
+  for (const St of W.STRAYS) { bx(St.u, St.v, Y, Y + CH, CW, CL, cols[St.col], St.yaw); W.cont++; }
+  for (const [u, v, yw] of W.FORKS) { const cs = Math.cos(yw), sn = Math.sin(yw), at = (a, b) => [u + a * cs + b * sn, v - a * sn + b * cs];
+    bx(u, v, Y + .25, Y + 1.4, 1.2, 2.2, 'yel', yw);
+    for (const [a, b] of [[-.65, -.6], [.65, -.6], [-.65, .7], [.65, .7]]) { const [wu, wv] = at(a, b); geo(new THREE.CylinderGeometry(.3, .3, .25, 10), 'rubber', wu, Y + .3, wv, yw, 0, Math.PI / 2); }
+    for (const s of [-1, 1]) { const [pu, pv] = at(s * .5, -1.2); bx(pu, pv, Y, Y + 2.6, .1, .1, 'dark', yw, false); const [fu, fv] = at(s * .3, -1.9); bx(fu, fv, Y + .1, Y + .16, .12, 1.2, 'dark', yw, false); }
+    for (const [a, b] of [[-.55, -.2], [.55, -.2], [-.55, .9], [.55, .9]]) { const [pu, pv] = at(a, b); bx(pu, pv, Y + 1.4, Y + 2.3, .06, .06, 'dark', yw, false); }
+    const [ru, rv] = at(0, .35); bx(ru, rv, Y + 2.3, Y + 2.38, 1.2, 1.3, 'dark', yw, false); }
+  // ---- FLOODLIGHT MASTS: the sodium light, coming down through the fog
+  const cones = [];
+  for (const [u, v] of W.MASTS) { const top = Y + 26;
+    bx(u, v, Y, top, .6, .6, 'steel'); bx(u, v, Y, Y + .5, 1.4, 1.4, 'quay', 0, false);
+    bx(u, v, top - .4, top + .3, 3.4, 1.4, 'steel', 0, false);
+    for (const [a, b] of [[-1.1, -.4], [1.1, -.4], [-1.1, .4], [1.1, .4]]) bx(u + a, v + b, top - .7, top - .35, .8, .55, 'lamp', 0, false);
+    for (let y = Y + 2; y < top - 1; y += .45) bx(u, v - .42, y, y + .04, .44, .04, 'dark', 0, false);
+    cones.push([[wx(u, v), wz(u, v)], top - .7]); }
+  // ---- THE TRANSIT SHED: locked; four roll-up doors on the quay; a ladder up its east end to the roof
+  { const Sh = W.SHED, v0 = Sh.v - Sh.d / 2;
+    bx(Sh.u, Sh.v, Y, Y + Sh.h, Sh.w, Sh.d, 'tin'); bx(Sh.u, Sh.v, Y + Sh.h, Y + Sh.h + .2, Sh.w + .6, Sh.d + .6, 'roof', 0, false);
+    for (let k = 0; k < 4; k++) { const u = Sh.u - Sh.w / 2 + 6.5 + k * 13; bx(u, v0 - .04, Y, Y + 5.6, 6.4, .08, 'dark', 0, false); for (const s of [-1, 1]) bx(u + s * 3.35, v0 - .08, Y, Y + 5.8, .3, .16, 'yel', 0, false);
+      for (let y = Y + .5; y < Y + 5.6; y += .5) bx(u, v0 - .09, y, y + .04, 6.3, .02, 'steel', 0, false); }
+    for (const [a, b] of [[-14, 3], [6, -4], [18, 5]]) { bx(Sh.u + a, Sh.v + b, Y + Sh.h, Y + Sh.h + 1.4, 2.2, 2.2, 'steel'); }
+    pearlLadder(F, Sh.u + Sh.w / 2 + .25, Sh.v + 8, Math.PI / 2, Y, Y + Sh.h, [Sh.u + Sh.w / 2 - 1.5, Y + Sh.h, Sh.v + 8], 'wf_shed'); W.ladders++;
+    for (let k = 0; k < 6; k++) { const u = Sh.u - 20 + k * 7, v = v0 - 3.5 - (k % 2); bx(u, v, Y, Y + .15 + .15 * (k % 3), 1.2, 1, 'wood', 0, false); }
+    for (let k = 0; k < 5; k++) geo(new THREE.CylinderGeometry(.3, .3, .9, 10), k % 2 ? 'c1' : 'c5', Sh.u + 16 + (k % 3) * .7, Y + .45, v0 - 3 - Math.floor(k / 3) * .7); }
+  // ---- UPLIFT'S FACTORY, behind its fence: shut tight (C6-6b opens it). Green screens in its windows, two stacks, its name
+  { const Fc = W.FACTORY, v0 = Fc.v - Fc.d / 2, [lu0, lu1, lv0, lv1] = Fc.lot;
+    bx(Fc.u, Fc.v, Y, Y + Fc.h, Fc.w, Fc.d, 'panel'); bx(Fc.u, Fc.v, Y + Fc.h, Y + Fc.h + .9, Fc.w + .3, Fc.d + .3, 'panel', 0, false);
+    for (const [u, v, w, d] of [[Fc.u, v0 - .04, Fc.w - 4, .08], [Fc.u - Fc.w / 2 - .04, Fc.v, .08, Fc.d - 6], [Fc.u + Fc.w / 2 + .04, Fc.v, .08, Fc.d - 6]]) bx(u, v, Y + 10, Y + 11.4, w, d, 'screen', 0, false);
+    bx(Fc.u, v0 - .05, Y, Y + 8, 10, .1, 'dark', 0, false);
+    for (let k = 0; k < 9; k++) { const t = -5.25 + k * 1.3125; bx(Fc.u + t, v0 - .09, Y + 8, Y + 8.5, .66, .08, k % 2 ? 'dark' : 'yel', 0, false); }
+    for (const s of [-1, 1]) for (let k = 0; k < 6; k++) bx(Fc.u + s * 5.25, v0 - .09, Y + k * 1.4, Y + k * 1.4 + .7, .5, .08, k % 2 ? 'dark' : 'yel', 0, false);
+    for (const [a, b] of [[-6, -14], [10, -12], [-2, 8], [4, 20]]) bx(Fc.u + a, Fc.v + b, Y + Fc.h, Y + Fc.h + 2.4, 6, 4, 'steel');
+    for (const a of [-13, 13]) { geo(new THREE.CylinderGeometry(1.4, 1.6, 22, 16), 'panel', Fc.u + a, Y + Fc.h + 11, Fc.v + 16); geo(new THREE.CylinderGeometry(1.45, 1.45, 1, 16), 'red', Fc.u + a, Y + Fc.h + 20.5, Fc.v + 16);
+      bx(Fc.u + a, Fc.v + 16, Y + Fc.h, Y + Fc.h + 22, 2.4, 2.4, 'panel'); F.parts.panel.pop(); }
+    // the fence round the lot, a gate in its front (locked), a booth and a barrier outside it
+    const run = (u0, v0f, u1, v1f, gap) => { const L = Math.hypot(u1 - u0, v1f - v0f), ps = Math.atan2(u1 - u0, v1f - v0f), n = Math.ceil(L / 3);
+      for (let k = 0; k <= n; k++) { const t = k / n; bx(u0 + (u1 - u0) * t, v0f + (v1f - v0f) * t, Y, Y + 2.7, .09, .09, 'steel', 0, false); }
+      const segs = gap ? [[0, gap[0]], [gap[1], 1]] : [[0, 1]];
+      for (const [a, b] of segs) { const cu = u0 + (u1 - u0) * (a + b) / 2, cv = v0f + (v1f - v0f) * (a + b) / 2, l = L * (b - a);
+        bx(cu, cv, Y, Y + 2.6, .06, l, 'iron', ps); F.parts.iron.pop(); bx(cu, cv, Y + .1, Y + 2.5, .03, l, 'mesh', ps, false); bx(cu, cv, Y + 2.6, Y + 2.68, .06, l, 'steel', ps, false); } };
+    const g0 = (Fc.gate[0] - lu0) / (lu1 - lu0), g1 = (Fc.gate[1] - lu0) / (lu1 - lu0);
+    run(lu0, lv0, lu1, lv0, [g0, g1]); run(lu1, lv0, lu1, lv1); run(lu1, lv1, lu0, lv1); run(lu0, lv1, lu0, lv0);
+    const gm = (Fc.gate[0] + Fc.gate[1]) / 2, gw = Fc.gate[1] - Fc.gate[0];
+    bx(gm, lv0, Y, Y + 2.8, gw, .12, 'yel'); for (let k = 0; k < 7; k++) bx(gm - gw / 2 + .4 + k * (gw - .8) / 6, lv0 - .08, Y + .2, Y + 2.6, .05, .05, 'dark', 0, false);
+    bx(gm + 6, lv0 - 4, Y, Y + 2.8, 2.4, 2.4, 'white'); bx(gm + 6, lv0 - 4, Y + 2.8, Y + 3, 2.8, 2.8, 'dark', 0, false); bx(gm + 6, lv0 - 5.23, Y + 1.3, Y + 2.3, 1.8, .06, 'glass', 0, false);
+    bx(gm, lv0 - 4, Y + 1, Y + 1.12, gw + 1, .12, 'red', 0, false); bx(gm + gw / 2 + .7, lv0 - 4, Y, Y + 1.2, .4, .4, 'dark');
+    for (let k = 0; k < 4; k++) bx(gm - gw / 2 + .5 + k * 1.8, lv0 - 4, Y + 1.004, Y + 1.124, .9, .124, 'white', 0, false);
+    W.gateAt = [wx(gm, lv0 - 7), Y + .1, wz(gm, lv0 - 7), hd(0, 1)]; }
+  // ---- A TUG tied up at pier 2's east side, a ladder up the pier to it
+  { const P = W.PIERS[1], at = pierAt(P), [u, v] = at(P.w / 2 + 2.9, -2), ty = sea + .9, yw = P.psi;
+    bx(u, v, sea - 1.2, ty, 5, 15, 'red', yw); const [bu, bv] = at(P.w / 2 + 2.9, 4); bx(bu, bv, ty, ty + .6, 3.6, 4, 'red', yw);
+    const [hu, hv] = at(P.w / 2 + 2.9, -3); bx(hu, hv, ty, ty + 3, 3.4, 4.2, 'white', yw); bx(hu, hv, ty + 3, ty + 3.15, 3.6, 4.4, 'dark', yw, false);
+    for (const s of [-1, 1]) { const [gu, gv] = at(P.w / 2 + 2.9 + s * 1.72, -3); bx(gu, gv, ty + 1.9, ty + 2.7, .06, 3.6, 'glass', yw, false); }
+    for (let k = 0; k < 6; k++) { const [fu, fv] = at(P.w / 2 + 2.9 + (k % 2 ? 2.55 : -2.55), -6 + Math.floor(k / 2) * 5); geo(new THREE.TorusGeometry(.35, .14, 6, 12), 'rubber', fu, ty - .2, fv, yw + Math.PI / 2); }
+    const [lu, lv] = at(P.w / 2 + .25, -8); pearlLadder(F, lu, lv, yw + Math.PI / 2, ty, Y, (([a, b]) => [a, Y, b])(at(P.w / 2 - 1.2, -8)), 'wf_tug'); W.ladders++; }
+  W.n = F.commit().boxes;
+  // the light from the masts: one instanced draw, additive, faint -- it reads because the fog is there
+  { const g = new THREE.ConeGeometry(9, 26, 20, 1, true); g.translate(0, -13, 0);
+    const m = new THREE.MeshBasicMaterial({ color: 0xffa040, transparent: true, opacity: .055, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide });
+    const Ic = new THREE.InstancedMesh(g, m, cones.length), m4 = new THREE.Matrix4();
+    cones.forEach(([[x, z], y], i) => Ic.setMatrixAt(i, m4.makeTranslation(x, y, z))); Ic.instanceMatrix.needsUpdate = true; Ic.computeBoundingSphere(); Ic.name = 'wf_cones'; Ic.renderOrder = 2; scene.add(Ic); }
+  // its name over the factory's door, and the shed's
+  { const sign = (txt, sub, w, h, u, y, v, ry, bg, fg) => { const c = document.createElement('canvas'); c.width = 1024; c.height = 256; const g = c.getContext('2d');
+      g.fillStyle = bg; g.fillRect(0, 0, 1024, 256); g.fillStyle = fg; g.textAlign = 'center'; g.textBaseline = 'middle';
+      g.font = '900 120px "Barlow Condensed", system-ui, sans-serif'; g.fillText(txt, 512, sub ? 100 : 128);
+      if (sub) { g.font = '700 46px "Barlow Condensed", system-ui, sans-serif'; g.fillText(sub, 512, 200); }
+      const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+      const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshStandardMaterial({ map: t, roughness: .6, emissive: new THREE.Color(0xffffff), emissiveMap: t, emissiveIntensity: .35 }));
+      m.position.set(wx(u, v), y, wz(u, v)); m.rotation.y = th + ry; scene.add(m); };
+    const Fc = W.FACTORY, Sh = W.SHED;
+    sign('UPLIFT CORP', 'CONVERSION FACILITY 3 · BETTER PEOPLE. BETTER PROFIT.', 20, 5, Fc.u, Y + 12.7, Fc.v - Fc.d / 2 - .1, Math.PI, '#0d1a14', '#6dff8a');
+    sign('TRANSIT SHED 2', '', 12, 3, Sh.u, Y + 7.4, Sh.v - Sh.d / 2 - .1, Math.PI, '#e0b02a', '#1d1e22'); }
+  // the people: dockers on the quay, Uplift's own at its gate and walking the yard
+  for (const P of W.PEOPLE) {
+    const [x, z] = [wx(P.at[0], P.at[1]), wz(P.at[0], P.at[1])], cy = P.role === 'cyborg';
+    peopleMark(P.id, x, z, hd(P.face[0], P.face[1]), Object.assign(cy ? { group: 'worker', talks: ['*'], alien: 'brush', brushAlien: W.brush } : { group: 'worker', talks: ['worker'], alien: 'flee' },
+      P, P.beat ? { beat: P.beat.map(([u, v]) => [wx(u, v), wz(u, v)]) } : {}), Y, 'WFRONT', 'worker');
+  }
+  // the places GOD names, and the map's region
+  W.quayAt = [wx(10, 12), Y + .1, wz(10, 12), hd(0, 1)];
+  W.dockAt = [wx(D.u, 104), Y + .1, wz(D.u, 104), hd(0, -1)];
+  { const Bk = W.BLOCKS[1], [u, v] = blockAt(Bk)(colA(Bk, 1), 0); W.stacksAt = [wx(u, v), Y + Bk.h[1] * CH + .1, wz(u, v), hd(0, -1)]; }
+  W.deckAt = [wx(D.u - 2, 51), deck + .1, wz(D.u - 2, 51), hd(0, -1)];
+  { let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9;
+    for (const [u, v] of [[W.U[0], W.V[0]], [W.U[1], W.V[0]], [W.U[1], W.V[1]], [W.U[0], W.V[1]]]) { const x = wx(u, v), z = wz(u, v); x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); }
+    W.bbox = { x0, x1, z0, z1 }; }
+  W.live = 1;
+  console.log('[melee] waterfront: ' + W.n + ' boxes, ' + W.cont + ' containers, ' + W.ladders + ' ladders, centre ' + [Ox, Oz].map(v => v.toFixed(0)).join(','));
+  return W.n;
+}
+// ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
 // ============================================================================================
 // Irregular patches of wheat, corn, ploughed earth, hay meadow and pasture, divided by hedgerows, fences, tree lines and
@@ -33297,6 +33603,7 @@ function mapRegionsTkit() {
     regs.push({ id: 'farm', name: 'GRISTLE FARM', x0, x1, z0, z1 });
   }
   if (HCREEK.live && HCREEK.bbox) { const B = HCREEK.bbox; regs.push({ id: 'creek', name: 'HOLLOW CREEK', x0: B.x0, x1: B.x1, z0: B.z0, z1: B.z1 }); }   // m365
+  if (WFRONT.live && WFRONT.bbox) { const B = WFRONT.bbox; regs.push({ id: 'waterfront', name: 'THE WATERFRONT', x0: B.x0, x1: B.x1, z0: B.z0, z1: B.z1 }); }   // m377
   MAPREG.tkit = regs; if (map.ext) mapBuild();
   return regs.length;
 }
@@ -36294,23 +36601,33 @@ function gradeStep(dt) {
     if (R && P.x > R[0] && P.x < R[1] && P.z > R[2] && P.z < R[3]) want *= 1 - smooth(0, 14, Math.min(P.x - R[0], R[1] - P.x, P.z - R[2], R[3] - P.z));
   }
   GRADE.k = damp(GRADE.k, want, .9, dt);
-  const k = GRADE.k < .002 ? 0 : GRADE.k;
-  if (k === 0 && GRADE.k0 === 0) return;          // at rest in the city: the bases stand, nothing to write
+  // m377: and the waterfront's night, by how far onto its land he is
+  const WG = GRADE.wf, wwant = GRADE.on && WFRONT.live ? smooth(-70, 8, wfEdge(player.pos.x, player.pos.z)) : 0;
+  GRADE.wk = damp(GRADE.wk, wwant, .9, dt);
+  const k = GRADE.k < .002 ? 0 : GRADE.k, wk = GRADE.wk < .002 ? 0 : GRADE.wk;
+  if (k === 0 && GRADE.k0 === 0 && wk === 0 && GRADE.wk0 === 0) return;          // at rest in the city: the bases stand, nothing to write
   sun.color.copy(GRADE.sun0).lerp(_grC.setHex(GRADE.sun), k);
   hemi.color.copy(GRADE.sky0).lerp(_grC.setHex(GRADE.sky), k);
   hemi.groundColor.copy(GRADE.gnd0).lerp(_grC.setHex(GRADE.gnd), k);
   scene.fog.color.copy(GRADE.fog0).lerp(_grC.setHex(GRADE.fog), k * GRADE.fogMix);
+  if (wk || GRADE.wk0) {
+    sun.color.lerp(_grC.setHex(WG.sun), wk); hemi.color.lerp(_grC.setHex(WG.sky), wk); hemi.groundColor.lerp(_grC.setHex(WG.gnd), wk);
+    scene.fog.color.lerp(_grC.setHex(WG.fog), wk);
+    if (GRADE.bg0 == null) GRADE.bg0 = scene.backgroundIntensity;
+    scene.backgroundIntensity = GRADE.bg0 * (1 - (1 - WG.bg) * wk);
+  }
+  let near, far;
   if (FL.live) {
     // m306: THE LONG VIEW -- the fog opens to the farmland's and the lens's far plane follows it out, so the city is a
     // skyline from the fields (and `cellStep`, which culls past the fog, draws its far cells)
-    scene.fog.near = lerp(GRADE.near0, FL.fog.near, k); scene.fog.far = lerp(GRADE.far0, FL.fog.far, k);
-    const cf = Math.max(400, scene.fog.far + 150);
-    if (Math.abs(camera.far - cf) > 5) { camera.far = cf; camera.updateProjectionMatrix(); }
+    near = lerp(GRADE.near0, FL.fog.near, k); far = lerp(GRADE.far0, FL.fog.far, k);
   } else {
-    scene.fog.near = GRADE.near0 * (1 - (1 - GRADE.nearK) * k);
-    scene.fog.far = GRADE.far0 * (1 - (1 - GRADE.farK) * k);
+    near = GRADE.near0 * (1 - (1 - GRADE.nearK) * k);
+    far = GRADE.far0 * (1 - (1 - GRADE.farK) * k);
   }
-  GRADE.k0 = k;
+  scene.fog.near = lerp(near, WG.near, wk); scene.fog.far = lerp(far, WG.far, wk);
+  if (FL.live) { const cf = Math.max(400, scene.fog.far + 150); if (Math.abs(camera.far - cf) > 5) { camera.far = cf; camera.updateProjectionMatrix(); } }
+  GRADE.k0 = k; GRADE.wk0 = wk;
 }
 // ============================================================================================
 // THE FARM'S GROWTH (m297, farm polish pass 4, `FLORA`, `buildFlora`) -- crops and grass, swaying, parting round him
@@ -37005,7 +37322,7 @@ const GODCHAP = [
   { n: 1, name: 'OLD TOWN',          place: 'carts' },     // m339: the food carts, where its first step (Chef Norrie) is
   { n: 2, name: 'THE PEARL',         place: 'pearldock' },   // m359: the plaza; m362: dock 1, where Chapter 2's first step is
   { n: 3, name: 'HOLLOW CREEK',      place: 'otfreight' },   // m373: the freight pier, where Chapter 3's way over is
-  { n: 4, name: 'THE WATERFRONT',    place: null },
+  { n: 4, name: 'THE WATERFRONT',    place: 'wfquay' },   // m377: the quay (the ferry in, C6-6d, will move it)
   { n: 5, name: 'THE SKATE ISLANDS', place: null },
   { n: 6, name: 'THE MOTHERSHIP',    place: null },
 ];
@@ -37047,6 +37364,11 @@ const GODPLACES = [
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
   { id: 'pearl', world: 'tkit', name: 'THE PEARL · the plaza (Chapter 2)', at: () => OPEARL.plazaAt },
   { id: 'otroad', world: 'tkit', name: 'OLD TOWN · the highway bridge to Hollow Creek', at: () => HCROAD.otAt },   // m371
+  { id: 'wfquay', world: 'tkit', name: 'THE WATERFRONT · the container quay (Chapter 4)', at: () => WFRONT.quayAt },   // m377
+  { id: 'wfdock', world: 'tkit', name: 'THE WATERFRONT · the head of the dry dock', at: () => WFRONT.dockAt },
+  { id: 'wfdeck', world: 'tkit', name: 'THE WATERFRONT · on the ship in the dry dock', at: () => WFRONT.deckAt },
+  { id: 'wfstacks', world: 'tkit', name: 'THE WATERFRONT · up on the container cliff', at: () => WFRONT.stacksAt },
+  { id: 'wfgate', world: 'tkit', name: "THE WATERFRONT · Uplift's factory gate", at: () => WFRONT.gateAt },
   { id: 'gangbridge', world: 'tkit', name: "HOLLOW CREEK · the gang on the bridge (Old Town's side of them)", at: () => HCROAD.gangAt },
   { id: 'otfreight', world: 'tkit', name: 'OLD TOWN · the freight pier (the train to Hollow Creek)', at: () => HCTRAIN.otAt },   // m370
   { id: 'hchalt', world: 'tkit', name: 'HOLLOW CREEK · the halt (the freight line)', at: () => HCTRAIN.hcAt },
@@ -39517,6 +39839,8 @@ async function init() {
     try { buildFarmland(); } catch (e) { FARMLAND.live = 0; note('FARMLAND FAIL'); console.warn('[melee] farmland', e); }
     // HOLLOW CREEK'S LAND (m365): Chapter 3's, across the water to the south-west, after the island it measures its place off
     try { buildHollowLand(); } catch (e) { HCREEK.live = 0; note('HOLLOW FAIL'); console.warn('[melee] hollow creek', e); }
+    // THE WATERFRONT (m377): Chapter 4's docks, across the river to the south-east, after the island it measures its place off
+    try { buildWaterfront(); } catch (e) { WFRONT.live = 0; note('WATERFRONT FAIL'); console.warn('[melee] waterfront', e); }
     // ITS CREEK AND POND (m307): what stands in and over the valley and the bowl the land is carved with
     try { buildFarmWaters(); } catch (e) { note('WATERS FAIL'); console.warn('[melee] farm waters', e); }
     // THE ORCHARD TERRACE (m328): its tops go into TRI before the field bounds, so the orchard's rows stand on them
