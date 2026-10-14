@@ -7,6 +7,24 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **NIGHT SIGNALS (m415, E2, `RADIO`, `buildRadio`, `radioStep`, `radioNext`, `radioSay`, `radioNear`, `radioDeeds`, `radioSight`).**
+  Art's roof is his `kit_010` (178 deg, so very nearly axis-aligned; interior x -24.0..-16.2, z 57.7..65.6; the hatch in the
+  middle cell, x -21.5..-18.5, z 59.8..62.8; the exterior ladder `climb_kit_010_ladder_x4__X4_0` tops out at the north
+  edge). The booth fills the south strip, its door at the WEST end so it does not open onto the hatch; the GOD spot was on
+  the hatch's cell on the first run and was moved east of the booth. `kswapPick` now skips `RADIO.bld` too.
+  **THERE ARE NO CARS IN THE KIT CITY** (no car node in the visual, the collider or the breakables), so "every car radio" is
+  every RADIO: `radioNear` names the source (the chip's line does not, the bar does not; `mel.RADIO` and `radioNear()`
+  do). **The mast's legs are rods**: `farmFrame`'s `geo` takes an Euler (XYZ), so a cylinder between two points is
+  `setFromUnitVectors(up, dir)` read back into an Euler -- written once as `rod` inside `buildRadio`.
+  The hub reads `talk.cur.markId === 'radio_host'` once per conversation (`tipFor`); the payphone is a disc of
+  `phoneR` and calls in every `rmdone:` without an `rmcall:`. **The ticker is its own element** (`#radio`, made on the first
+  line, bottom 84 px above the toast, max 54 vw so it clears both pads), never the toast or the tip.
+  `places`:
+      ok  RADIO kit_010's roof 12.25 | 10 boxes on it, off the roof 0 | Art standing on 12.25, his door open | the ladder climb_kit_010_ladder_x4__X4_0 to 13.4 | the payphone at -20.5,54.4 on 0.25 | playing: under the mast "the speakers", the camp "the camp's transistor", out on the islands "" | 5 deeds first: 1 Old Town done, 2 the Pearl done, then within three a sighting (1 heard from the radio) | talking to Art: 1 heard from him | the payphone: called in, +12 juice, read on air
+  **The row's first version expected the THIRD line to be a sighting** and got a turf flip left in `TPUSH` by an earlier row --
+  a deed, which correctly comes first. It now drains `radioDeeds().length` lines and wants a sighting within three after.
+  Teeth: the hub without its `rumourHear` -> `talking to Art: 0 heard from him ... ART GIVES NO SIGHTING`.
+
 - **ELEMENT 115: LAZLO'S ROOF (m414, E1, `E115`, `buildE115`, `e115Step`, `e115Done`, quest `e115`, rumour `tinfoil`, `UPGRADES.e115`).**
   The roof is his `kit_030`'s (6 x 9 m, parapets at x -85.7/-79.9 and z -21.7/-12.9, the hatch in cell F0_1, roof at 12.25 --
   read off the collision file's `deck_`/`bld_` names, and `buildE115` refuses to build if `groundAt` there is not that). The

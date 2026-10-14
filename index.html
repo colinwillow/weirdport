@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m414</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m415</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m414</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m415</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm414';
+const BUILD = 'm415';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -35868,8 +35868,8 @@ function kswapOwner(B) {
 // the block's building to rebuild: a generated one already there, else his biggest, never a station
 function kswapPick(B) {
   let best = null, bs = -1;
-  // m414: never Lazlo's building -- he lives on that roof
-  for (const K of KBLD) { if (K.station || K.name === E115.bld) continue; const [cx, cz] = kswapCenter(K); if (turfAt(cx, cz) !== B) continue;
+  // m414: never Lazlo's building -- he lives on that roof (m415: nor Art's, the radio is on that one)
+  for (const K of KBLD) { if (K.station || K.name === E115.bld || K.name === RADIO.bld) continue; const [cx, cz] = kswapCenter(K); if (turfAt(cx, cz) !== B) continue;
     const sc = (K.kgen ? 1e4 : 0) + K.cells.size * 10 - Math.hypot(cx - B.cx, cz - B.cz) * .01; if (sc > bs) { bs = sc; best = K; } }
   return best;
 }
@@ -36034,6 +36034,184 @@ function e115Done() {
   if (E115.stash) E115.stash.visible = false;
   try { snd('ready', { g: .4, r: .9 }); } catch (e) {}
   setTimeout(() => { try { cardShow('ELEMENT 115', 'YOUR TANK HOLDS HALF AGAIN AS MUCH'); } catch (e) {} }, 2800);
+}
+// ============================================================================================
+// NIGHT SIGNALS: THE LATE-NIGHT RADIO (m415, ROADMAP E2, `RADIO`, `buildRadio`, `radioStep`, `radioNext`, `radioSay`)
+// ============================================================================================
+// LORE.md: *"a conspiracy radio host broadcasting all night -- call in tips; his show reports your exploits and points at
+// strange sightings. A quest hub; his voice on every car radio."* **Art Knell** does NIGHT SIGNALS on KWRD 1420 from a
+// plywood booth on the roof of a four-storey block in Old Town's north (his `kit_010`, up its ladder on the north face): a
+// lattice MAST beside it, 14 m, two red lights blinking on it, guy wires, horn speakers on the parapet aimed at the street,
+// an ON AIR sign over the booth door. Old Town has no cars, so the "car radio" is ANY radio: the speakers within reach of his
+// building, Lazlo's shack, the camp's barrel, the carts, the farm's tractor and pickup, the payphone, and your motorcycle.
+// In range, a line comes over every 20-30 s (the bar above the pads, typed out): **YOUR EXPLOITS** first (a chapter done,
+// Lazlo trusted, a block changing hands, a flashpoint won or broken, a rebuild, the strike, the heat), then **A SIGHTING**
+// every third line (the next rumour you have not heard: it is heard, on the map, from the radio), else his own chatter.
+// **THE HUB**: talk to Art and he gives you a sighting outright. **CALL IN TIPS**: the payphone on the street below calls in
+// every sighting you have FOUND and not yet called -- juice for each, and he reads it on air.
+const RADIO = {
+  on: 1, bld: 'kit_010', roof: [-24.0, 57.7, -16.2, 65.6], y: 12.3, every: [20, 30], first: 4, t: 4, everywhere: 0,
+  phone: [[-20.5, 54.4], [-17.5, 54.2], [-23.5, 54.6], [-20.5, 53.0]], speakR: 34, nearR: 7, phoneR: 1.6,
+  live: null, typed: 0, hold: 0, el: null, segs: 0, calls: 0, sightN: 0, fillI: 0, said: {}, queue: [], tipFor: null, onAir: 0, heard: 0,
+  hostAt: null, phoneAt: null, godAt: null, lights: [], sign: null, built: 0, n: 0,
+  FILL: ["You're listening to NIGHT SIGNALS on KWRD 1420. The lines are open. They're always open.",
+    "Fluoride. That's all I'm going to say tonight. Fluoride.",
+    "The tower on Fifth hums in B-flat after midnight. Go and listen. Then call me.",
+    "Tonight's show is brought to you by Lazlo's Premium Foil. Accept no substitutes. Accept no visitors.",
+    "A caller asks why the pigeons in Old Town all face the same way. Good question. Next caller.",
+    "If you're driving tonight, folks, look up. Not too long. Keep one eye on the road. But look up.",
+    "Uplift. You've seen the vans. Have you seen anybody get OUT of one? Think about it.",
+    "Somebody left a ring of salt round the bus stop on Burnside. Whoever you are: thank you.",
+    "The moon's a little to the left tonight. I measured. My ruler doesn't lie.",
+    "Remember: if a man in a suit tells you he's waiting for a bus, there is no bus.",
+    "Somebody asked if I'm one of THEM. Ma'am, I've been on this roof since nineteen-ninety-four.",
+    "Weather now: clear skies, light wind, and one cloud that hasn't moved in eleven days.",
+    "Back after this. Don't touch that dial. They're counting on you touching that dial."],
+};
+// what you have done, once each: [key, has it happened, the line] -- a count's key carries the count
+function radioDeeds() {
+  const F = SAVE.flags, ch = SAVE.ch || 0, L = [];
+  if (ch >= 2) L.push(['ch2', "Something's changed in Old Town, folks. The crews are smiling. Somebody -- some THING -- sorted out that building site."]);
+  if (ch >= 3) L.push(['ch3', "Over in the Pearl the organiser's gone quiet. My sources say a green somebody walked right into the middle of the march."]);
+  if (ch >= 4) L.push(['ch4', "Hollow Creek, listeners. The mill whistle blew at midnight and the rally broke up. Bikers say a stranger rode the gap."]);
+  if (ch >= 5) L.push(['ch5', "Down on the waterfront the line has stopped. Dockers walking out of that shed blinking like newborns."]);
+  if (ch >= 6) L.push(['ch6', "The lighthouse out on the islands is pointing at the water again. Whatever was up that beam isn't calling any more."]);
+  if (ch >= 7) L.push(['ch7', "The thing over the city has gone dark. I said it would. Nobody listened. Folks, I'd like to thank our green friend."]);
+  if (F['qdone:e115']) L.push(['e115', "I'm told a certain somebody on a certain roof finally trusted somebody. Rob, if you're listening: wear the hat."]);
+  if (F['strike:oldtown']) L.push(['strike1', "The crews are out on strike. No hammers in Old Town tonight. Listen to that. That's the sound of nobody building anything."]);
+  else if (RADIO.said.strike1) L.push(['strike0', "Crews are back at the site. Hammers going again. Somebody talked them round. Or knocked them round."]);
+  if (TPUSH.flips) L.push(['flip' + TPUSH.flips, 'Word on the street: ' + (TPUSH.last || 'a block changed hands') + '. Map\'s moving, folks. Map\'s always moving.']);
+  if (TFLASH.won) L.push(['fpw' + TFLASH.won, 'Another push across the line in Old Town tonight -- and they took it. Placards and all.']);
+  if (TFLASH.lost) L.push(['fpl' + TFLASH.lost, 'Somebody stood up to a push tonight. Knocked them flat. The block held. I love this city.']);
+  if (KSWAP.settles) L.push(['rb' + KSWAP.settles, 'Scaffolding going up already. New owners, new building. That is how it goes in Old Town.']);
+  if ((SAVE.forms || []).length >= 4) L.push(['forms', "Callers keep telling me they've seen the same stranger in four different bodies. I believe every one of you."]);
+  if (typeof HEAT !== 'undefined' && HEAT.v >= 60) L.push(['heat' + Math.floor(HEAT.calls / 5), "Police scanners are going crazy. Something green, moving fast. If that's you out there: slow down. Breathe."]);
+  return L;
+}
+// the next unheard sighting (a rumour of this world)
+const radioSight = () => RUMOURS.find(R => (!R.world || R.world === WORLD.now) && !SAVE.flags['rm:' + R.id] && R.at && R.at());
+function radioNext() {
+  const R = RADIO; R.segs++;
+  if (R.queue.length) return R.queue.shift();
+  for (const [k, line] of radioDeeds()) if (!R.said[k]) { R.said[k] = 1; return line; }
+  if (R.segs % 3 === 0) { const S = radioSight(); if (S) { rumourHear(S.id, 'the radio'); R.sightN++; return "Tonight's sighting, folks: " + S.gist + ' Go and look. Then call me.'; } }
+  return R.FILL[R.fillI++ % R.FILL.length];
+}
+function radioSay(text) {
+  const R = RADIO; if (!R.el) { try { const e = document.createElement('div'); e.id = 'radio';
+    e.style.cssText = 'position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);z-index:5;pointer-events:none;max-width:54vw;' +
+      'background:rgba(11,13,18,.84);color:#ffe9a8;border-left:3px solid #ff4d4d;border-radius:7px;padding:4px 9px 5px;font:600 12px/1.25 var(--ui),sans-serif;opacity:0;transition:opacity .35s ease';
+    e.innerHTML = '<b style="display:block;font:400 8px var(--disp),sans-serif;letter-spacing:.12em;color:#ff7a6a">KWRD 1420 · NIGHT SIGNALS · ART KNELL</b><span></span>';
+    document.body.appendChild(e); R.el = e; } catch (err) { return; } }
+  R.live = text; R.typed = 0; R.hold = 0; R.heard++;
+  try { snd('zap', { g: .05, r: 1.8, dur: .18 }); } catch (e) {}
+}
+// is a radio playing where he is?
+function radioNear() {
+  const R = RADIO, P = player.pos; if (R.everywhere) return 'everywhere';
+  if (player.bike) return 'your bike';
+  const near = (a, r) => a && Math.hypot(P.x - a[0], P.z - (a.length > 2 ? a[2] : a[1])) < r;
+  if (R.hostAt && near(R.hostAt, R.speakR)) return 'the speakers';
+  if (near(R.phoneAt, 4)) return 'the payphone';
+  if (E115.techAt && near(E115.techAt, R.nearR)) return "Lazlo's radio";
+  if (OTCAMP.fireAt && near(OTCAMP.fireAt, R.nearR + 2)) return "the camp's transistor";
+  if (OTCARTS.at && near(OTCARTS.at, R.nearR + 4)) return 'the carts';
+  for (const v of FVEH.list) if (Math.hypot(P.x - v.x, P.z - v.z) < 5) return 'the ' + v.id;
+  return '';
+}
+function radioStep(dt) {
+  const R = RADIO; if (!R.built || !inTK()) return;
+  const now = performance.now() * .001;
+  for (const [m, ph] of R.lights) m.emissiveIntensity = (Math.sin(now * 3.1 + ph) > .2) ? 3.2 : .15;
+  // THE HUB: talk to him and he gives you a sighting
+  if (talk.cur && talk.cur.markId === 'radio_host') { if (R.tipFor !== talk.cur) { R.tipFor = talk.cur; const S = radioSight();
+    if (S) { rumourHear(S.id, 'Art Knell'); R.sightN++; R.queue.push('Folks, I have a guest on the roof tonight. I told them about ' + S.title.toLowerCase() + '. Let\'s see what they find.'); }
+    else R.queue.push("I gave my guest every sighting I've got. Now it's up to them."); } } else R.tipFor = null;
+  // CALL IN TIPS: at the payphone, every sighting found and not yet called in
+  if (R.phoneAt && Math.hypot(player.pos.x - R.phoneAt[0], player.pos.z - R.phoneAt[2]) < R.phoneR) {
+    const got = RUMOURS.filter(S => SAVE.flags['rmdone:' + S.id] && !SAVE.flags['rmcall:' + S.id]);
+    if (got.length) { for (const S of got) { progFlag('rmcall:' + S.id); R.calls++; juiceGain(JUICE.help * 2, 'tip');
+      R.queue.push('A caller -- sounded a little green -- says ' + S.title.toLowerCase() + ' is real. Saw it with their own eyes. Folks, I believe them.'); }
+      try { cardShow('CALLED IN', got.length + (got.length > 1 ? ' SIGHTINGS' : ' SIGHTING') + ' TO NIGHT SIGNALS', 3); } catch (e) {} }
+  }
+  const where = radioNear(), el = R.el;
+  if (R.sign) { const on = !!(R.live && where) || (talk.cur && talk.cur.markId === 'radio_host'); R.sign.emissiveIntensity = on ? 2.4 : .2; }
+  if (!where) { if (el) el.style.opacity = '0'; R.live = null; R.t = Math.min(R.t, R.first); return; }
+  if (!SAVE.flags['radio:on']) { progFlag('radio:on'); try { cardShow('KWRD 1420', 'NIGHT SIGNALS WITH ART KNELL', 3.2); } catch (e) {} }
+  if (R.live) {
+    const n = R.live.length; if (R.typed < n) { R.typed = Math.min(n, R.typed + dt * 42); if (el) { el.style.opacity = '1'; el.lastChild.textContent = R.live.slice(0, Math.floor(R.typed)); } }
+    else if ((R.hold += dt) > 4.5) { R.live = null; if (el) el.style.opacity = '0'; }
+    return;
+  }
+  if ((R.t -= dt) <= 0) { R.t = R.every[0] + Math.random() * (R.every[1] - R.every[0]); radioSay(radioNext()); }
+}
+function buildRadio() {
+  const R = RADIO; if (!R.on || !inTK() || !ISLE.live) return 0;
+  const [x0, z0, x1, z1] = R.roof, gy = groundAt((x0 + x1) / 2, (z0 + z1) / 2, R.y + 2, 4);
+  if (!(Math.abs(gy - R.y) < .6)) { note('RADIO NO ROOF ' + gy.toFixed(1)); return 0; }
+  const y = gy;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .8 }), o || {});
+  const MAT = { wood: M(0x8a8a82), dark: M(0x24242a), foam: M(0x3a3640, { roughness: 1 }), steel: Object.assign(M(0xb8bcc2), { metalness: .55, roughness: .4 }), red: M(0x6a1010),
+    desk: M(0x5a4636), glass: M(0x9fd8ff, { transparent: true, opacity: .25, roughness: .05, depthWrite: false }), white: M(0xe8e4dc), horn: Object.assign(M(0x9aa0a6), { metalness: .4, roughness: .5 }) };
+  const F = farmFrame(0, 0, 0, MAT, 'radio'), { bx, geo } = F;
+  // ---- THE BOOTH: plywood, its door at the west end of the north wall, a window east onto the mast; foam inside
+  const bx0 = x0 + .15, bz0 = z0 + .1, bx1 = bx0 + 4.2, bz1 = bz0 + 2.0, H = 2.3, t = .1, dx = bx0 + .9, door = .9;
+  bx(bx0 + t / 2, (bz0 + bz1) / 2, y, y + H, t, bz1 - bz0, 'wood');
+  bx((bx0 + bx1) / 2, bz0 + t / 2, y, y + H, bx1 - bx0, t, 'wood');
+  bx(bx1 - t / 2, (bz0 + bz1) / 2, y, y + .9, t, bz1 - bz0, 'wood'); bx(bx1 - t / 2, (bz0 + bz1) / 2, y + 2, y + H, t, bz1 - bz0, 'wood', 0, false);
+  geo(new THREE.BoxGeometry(.02, 1.1, bz1 - bz0 - .2), 'glass', bx1 - t / 2, y + 1.45, (bz0 + bz1) / 2);                       // the window onto the mast
+  bx((dx - door / 2 + bx0) / 2, bz1 - t / 2, y, y + H, dx - door / 2 - bx0, t, 'wood');
+  bx((dx + door / 2 + bx1) / 2, bz1 - t / 2, y, y + H, bx1 - dx - door / 2, t, 'wood');
+  bx(dx, bz1 - t / 2, y + 2.05, y + H, door, t, 'wood', 0, false);
+  bx((bx0 + bx1) / 2, (bz0 + bz1) / 2, y + H, y + H + .12, bx1 - bx0 + .3, bz1 - bz0 + .3, 'dark');                          // its roof, walkable
+  for (let k = 0; k < 9; k++) geo(new THREE.BoxGeometry(.4, .4, .06), 'foam', bx0 + .7 + (k % 5) * .7, y + .9 + Math.floor(k / 5) * .55, bz0 + t + .04);
+  bx((bx0 + bx1) / 2 + .6, bz0 + .5, y, y + .78, 2.2, .7, 'desk');
+  geo(new THREE.BoxGeometry(.9, .06, .4), 'dark', (bx0 + bx1) / 2 + .9, y + .82, bz0 + .45);                                   // the mixing desk
+  for (let k = 0; k < 6; k++) geo(new THREE.CylinderGeometry(.025, .025, .04, 6), 'red', (bx0 + bx1) / 2 + .55 + k * .14, y + .87, bz0 + .5);
+  geo(new THREE.CylinderGeometry(.015, .02, .4, 6), 'steel', (bx0 + bx1) / 2 + .1, y + 1, bz0 + .55, 0, .3); geo(new THREE.SphereGeometry(.07, 10, 8), 'dark', (bx0 + bx1) / 2 + .06, y + 1.22, bz0 + .62);   // the mic
+  // the ON AIR sign over the door: its own material, so it can light
+  { let mat = null; try { const c = document.createElement('canvas'); c.width = 128; c.height = 40; const g = c.getContext('2d'); g.fillStyle = '#3a0606'; g.fillRect(0, 0, 128, 40);
+      g.fillStyle = '#ff3a2a'; g.font = 'bold 26px sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle'; g.fillText('ON AIR', 64, 21);
+      const tx = new THREE.CanvasTexture(c); tx.colorSpace = THREE.SRGBColorSpace; mat = new THREE.MeshStandardMaterial({ map: tx, emissiveMap: tx, emissive: new THREE.Color(0xffffff), emissiveIntensity: .2 }); } catch (e) {}
+    if (mat) { const s = new THREE.Mesh(new THREE.BoxGeometry(.9, .28, .06), mat); s.position.set(dx, y + 2.45, bz1 + .04); scene.add(s); R.sign = mat; } }
+  // ---- THE MAST: three legs tapering 1.2 -> .3 m over 14 m, braced every 2 m, two red lights, guy wires to the roof
+  const mx = x0 + 1.4, mz = z1 - 1.4, MH = 14;
+  const leg = (k, h) => { const a = k / 3 * Math.PI * 2 + .3, r = .7 - .52 * (h / MH); return [mx + Math.cos(a) * r, mz + Math.sin(a) * r]; };
+  // a rod from A to B: a cylinder turned onto the line between them (geo takes an Euler, read off the quaternion)
+  const _up = new THREE.Vector3(0, 1, 0), _q = new THREE.Quaternion(), _eu = new THREE.Euler();
+  const rod = (A, B, rad, mat) => { const d = new THREE.Vector3(B[0] - A[0], B[1] - A[1], B[2] - A[2]), L = d.length(); _q.setFromUnitVectors(_up, d.normalize()); _eu.setFromQuaternion(_q, 'XYZ');
+    geo(new THREE.CylinderGeometry(rad, rad, L, 6), mat, (A[0] + B[0]) / 2, (A[1] + B[1]) / 2, (A[2] + B[2]) / 2, _eu.y, _eu.x, _eu.z); };
+  for (let k = 0; k < 3; k++) { const [ax, az] = leg(k, 0), [bx2, bz2] = leg(k, MH); rod([ax, y, az], [bx2, y + MH, bz2], .05, 'steel');
+    bx(ax, az, y, y + 2.2, .1, .1, 'steel', 0, true); F.parts.steel.pop(); }
+  for (let h = 1; h < MH; h += 2) for (let k = 0; k < 3; k++) { const [ax, az] = leg(k, h), [bx2, bz2] = leg((k + 1) % 3, h), L = Math.hypot(bx2 - ax, bz2 - az);
+    geo(new THREE.BoxGeometry(L, .03, .03), 'steel', (ax + bx2) / 2, y + h, (az + bz2) / 2, -Math.atan2(bz2 - az, bx2 - ax)); }
+  R.lights = [];
+  for (const [h, ph] of [[7, 0], [MH + .15, 1.7]]) { const m = new THREE.MeshStandardMaterial({ color: 0x3a0000, emissive: new THREE.Color(0xff2020), emissiveIntensity: 2 });
+    const s = new THREE.Mesh(new THREE.SphereGeometry(.14, 10, 8), m); s.position.set(mx, y + h, mz); scene.add(s); R.lights.push([m, ph]); }
+  for (const [gx, gz] of [[x1 - .3, z1 - .3], [x0 + .3, z0 + 3.2], [x1 - .3, z0 + 3.2]]) { const ty = y + 10, L = Math.hypot(gx - mx, ty - y, gz - mz);
+    const g = new THREE.CylinderGeometry(.012, .012, L, 4); g.translate(0, L / 2, 0); const m = new THREE.Mesh(g, MAT.dark);
+    m.position.set(gx, y + .05, gz); m.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), new THREE.Vector3(mx - gx, ty - y, mz - gz).normalize()); scene.add(m); }
+  // ---- THE HORNS on the south parapet, aimed at the street; a cable from the booth to the mast
+  for (const hx of [x0 + 2.5, x1 - 2.5]) { geo(new THREE.ConeGeometry(.28, .6, 12, 1, true), 'horn', hx, y + 1.6, z0 - .05, 0, Math.PI / 2, 0); geo(new THREE.BoxGeometry(.06, .7, .06), 'steel', hx, y + 1.2, z0 + .05); }
+  geo(new THREE.BoxGeometry(.05, .05, Math.abs(mz - bz1)), 'dark', mx, y + .03, (mz + bz1) / 2);
+  R.n = F.commit().boxes;
+  // ---- ART, in his booth's door
+  R.hostAt = [dx, y, bz0 + 1.2];
+  peopleMark('radio_host', R.hostAt[0], R.hostAt[2], 0, { kind: 'fat_hipster', name: 'Art Knell', group: 'street', talks: ['*'], alien: 'talk',
+    lines: "You're on the roof. Nobody comes up on the roof. ...You're not from the station, are you.|NIGHT SIGNALS, KWRD 1420. Every night, all night, since nineteen-ninety-four.|You want a sighting? I've always got a sighting. Ask me again and I'll give you another.",
+    alienLines: "Oh. Oh my. Folks -- folks, stay right there. I have a GUEST.|I knew it. Thirty years, I KNEW it. Can I -- would you say something into the mic?|Here. Take a sighting. Take all of them. Go look, and call it in from the phone downstairs." }, y, 'RADIO', 'street');
+  // ---- THE PAYPHONE on the street below: a steel hood, glass sides, the phone, the show's number on a sticker
+  for (const [px, pz] of R.phone) { const g0 = groundAt(px, pz, 2, .6); if (!(g0 < 1.5 && g0 > -1)) continue; if (typeof kitStand === 'function' && kitStand(px, pz) === null) continue;
+    const P2 = farmFrame(px, pz, 0, { steel: M(0x2a6a9a, { metalness: .4, roughness: .45 }), glass: M(0x9fd8ff, { transparent: true, opacity: .25, roughness: .05, depthWrite: false }), dark: M(0x1a1a1e), white: M(0xf2efe6) }, 'radio');
+    P2.bx(0, -.42, g0, g0 + 2.2, .9, .08, 'steel'); P2.bx(0, 0, g0 + 2.2, g0 + 2.32, .95, .95, 'steel', 0, false);
+    for (const s of [-1, 1]) { P2.bx(s * .44, -.38, g0, g0 + 2.2, .04, .04, 'steel', 0, false); P2.geo(new THREE.BoxGeometry(.02, 1.6, .8), 'glass', s * .45, g0 + 1.2, 0); }
+    P2.geo(new THREE.BoxGeometry(.3, .45, .12), 'dark', 0, g0 + 1.35, -.33); P2.geo(new THREE.BoxGeometry(.06, .22, .07), 'dark', .19, g0 + 1.4, -.27);
+    P2.geo(new THREE.BoxGeometry(.32, .14, .01), 'white', 0, g0 + 1.75, -.37);
+    P2.commit(); R.phoneAt = [px, g0, pz]; break; }
+  if (!R.phoneAt) note('RADIO NO PHONE');
+  R.godAt = [bx1 + 2.6, y + .1, bz0 + .8, -Math.PI / 2];                                   // east of the booth, clear of the hatch's cell
+  R.built = 1;
+  return 1;
 }
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
@@ -40494,6 +40672,8 @@ const GODPLACES = [
   { id: 'beat',     world: 'tkit', name: "OLD TOWN · a cop's beat (Officer Kowalski's first corner)", at: () => { const r = OTLIFE.routes.find(q => q.id === 'cop_beat_near'); return r && [r.beat[0][0], r.beat[0][2], r.beat[0][1], null]; } },
   { id: 'site',     world: 'tkit', name: 'OLD TOWN · the building site (Sal, Dee, Foreman Briggs)', at: () => OTSITE.gateAt && [OTSITE.gateAt[0], OTSITE.gateAt[1], OTSITE.gateAt[2], OTSITE.gateAt[3]] },
   { id: 'e115',     world: 'tkit', name: "OLD TOWN · Lazlo's roof (the tinfoil man, Element 115)", at: () => E115.godAt },
+  { id: 'radio',    world: 'tkit', name: "OLD TOWN · NIGHT SIGNALS: Art Knell's roof (KWRD 1420)", at: () => RADIO.godAt },
+  { id: 'radiophone', world: 'tkit', name: 'OLD TOWN · the payphone under the radio mast (call in sightings)', at: () => RADIO.phoneAt && [RADIO.phoneAt[0] + 1.1, RADIO.phoneAt[1], RADIO.phoneAt[2], -Math.PI / 2] },
   { id: 'sitetop',  world: 'tkit', name: 'OLD TOWN · the top lift of the scaffold', at: () => OTSITE.topAt && [OTSITE.topAt[0], OTSITE.topAt[1], OTSITE.topAt[2], null] },
   { id: 'carts',    world: 'tkit', name: 'OLD TOWN · the food-cart pod (Chef Norrie: the antenna under the hat)', at: () => OTCARTS.godAt && [OTCARTS.godAt[0], null, OTCARTS.godAt[1], OTCARTS.godAt[2]] },
   { id: 'camp',     world: 'tkit', name: 'OLD TOWN · the camp at the west edge (Dusty, Pockets, Mother Agnes)', at: () => OTCAMP.godAt && [OTCAMP.godAt[0], null, OTCAMP.godAt[1], OTCAMP.godAt[2]] },
@@ -40680,6 +40860,8 @@ function godMenuOpen(on) {
     btn('A GUST NOW (THE ISLANDS)', () => { windGust(); toast('Gust: +' + IWIND.gustAdd.toFixed(0) + ' m/s', 1.4); godMenuOpen(0); }); }
   if (TURF.blocks.length) btn('TURF ON THE MAP ' + (TURF.map ? 'ON' : 'OFF'), () => { TURF.map = TURF.map ? 0 : 1; godMenuOpen(1); });   // m407
   if (TURF.blocks.length) btn('YOUR ACTIONS MOVE THE TURF ' + (TPUSH.on ? 'ON' : 'OFF'), () => { TPUSH.on = TPUSH.on ? 0 : 1; godMenuOpen(1); });   // m412
+  if (RADIO.built) { btn('THE RADIO EVERYWHERE ' + (RADIO.everywhere ? 'ON' : 'OFF'), () => { RADIO.everywhere = RADIO.everywhere ? 0 : 1; godMenuOpen(1); });   // m415
+    btn('A RADIO LINE NOW', () => { RADIO.everywhere = 1; RADIO.live = null; RADIO.t = 0; godMenuOpen(0); }); }
   if (TURF.blocks.length) { btn('FLASHPOINTS ' + (TFLASH.on ? 'ON' : 'OFF'), () => { TFLASH.on = TFLASH.on ? 0 : 1; godMenuOpen(1); });   // m413
     btn(TFLASH.cur ? 'END THE FLASHPOINT' : 'A FLASHPOINT NOW (THE NEAREST BORDER)', () => { if (TFLASH.cur) flashEnd('off'); else if (!flashStart(1)) toast('No border with bodies to push across it near here', 2); godMenuOpen(0); }); }
   if (TDRESS.built) { btn('FACTION DRESSING ' + (TDRESS.on ? 'ON' : 'OFF'), () => { TDRESS.on = TDRESS.on ? 0 : 1; for (const Mm of TDRESS.meshes) Mm.mesh.visible = !!TDRESS.on; godMenuOpen(1); });   // m409
@@ -42250,7 +42432,7 @@ function frameBody() {
   islXingStep(dt);              // a flight down on the islands' landing field (m394)
   keeperStep(dt);               // the lighthouse's beam, and the keeper's storm while the thing wearing him stands (m398)
   turfStep(dt);                 // which block he is in and who holds it, for the chip (m407)
-  turfDressStep(dt); kswapStep(dt); flashStep(dt); e115Step(dt);            // the buildings wear their block's holder, cross-fading when it changes hands (m409)
+  turfDressStep(dt); kswapStep(dt); flashStep(dt); e115Step(dt); radioStep(dt);            // the buildings wear their block's holder, cross-fading when it changes hands (m409)
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)
@@ -42599,7 +42781,7 @@ function frameBody() {
                         (rig.borrowed ? '+' + rig.borrowed : ' NOBORROW') + (wn || '') : '';
     const line = fps.toFixed(0) + ' FPS · ' + renderer.info.render.calls + ' DC ' + Math.round(renderer.info.render.triangles / 1000) + 'kT' + (CELL.list.length ? ' c' + CELL.shown + '/' + CELL.list.length : '') + (STEPUP.n ? ' ke' + STEPUP.n : '') + PROF.sum + ' · pr' + PERF.pr.toFixed(2) + (PERF.holdT > 0 ? 'h' : '') + ' B' + PERF.seen + '/' + DUMMIES.length + ' · ' +
       p.speed.toFixed(1) + ' m/s · ' + st + lk + hue + bx + cv + brkC + kitC + inf + shp + cl + sk + sk8 + vs + mo + fl + wp + tc + mp +
-      bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + (ITHERM.k > 0 ? ' TH' + Math.round(ITHERM.k * 100) : '') + (TURF.k ? ' TURF ' + TURF.k + (TPUSH.n ? ' m' + TPUSH.n : '') : '') + (TFLASH.k ? ' FP ' + TFLASH.k : '') + (KSWAP.made || KSWAP.gone.size || KSWAP.settles ? ' RB' + KSWAP.made + '/' + KSWAP.gone.size + (KSWAP.settles ? 's' + KSWAP.settles : '') : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
+      bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + (ITHERM.k > 0 ? ' TH' + Math.round(ITHERM.k * 100) : '') + (TURF.k ? ' TURF ' + TURF.k + (TPUSH.n ? ' m' + TPUSH.n : '') : '') + (TFLASH.k ? ' FP ' + TFLASH.k : '') + (RADIO.heard ? ' R' + RADIO.heard + (RADIO.calls ? 'c' + RADIO.calls : '') : '') + (KSWAP.made || KSWAP.gone.size || KSWAP.settles ? ' RB' + KSWAP.made + '/' + KSWAP.gone.size + (KSWAP.settles ? 's' + KSWAP.settles : '') : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
       // CH: the saved chapter (m276); NEW = this boot was `?fresh`, BADSAVE = a save was there and would not parse
       (GOD.on ? ' · GOD' + (GOD.fly ? ' FLY' : '') : '') +
       ' · CH' + SAVE.ch + (SAVE.fresh ? ' NEW' : '') + (SAVE.bad ? ' BADSAVE' : '') +
@@ -43035,6 +43217,8 @@ async function init() {
     try { buildSite(); } catch (e) { note('SITE FAIL'); console.warn('[melee] site', e); }
     // ELEMENT 115 (m414): Lazlo's roof, the man in the suit, the stash on the site's scaffold (after the site, which it reads)
     try { buildE115(); } catch (e) { note('E115 FAIL'); console.warn('[melee] element 115', e); }
+    // NIGHT SIGNALS (m415): Art Knell's booth and mast on a roof in the north, the payphone below
+    try { buildRadio(); } catch (e) { note('RADIO FAIL'); console.warn('[melee] radio', e); }
     try { buildLife(); } catch (e) { note('LIFE FAIL'); console.warn('[melee] life', e); }
     // THE PROTEST (m346): its people live round the square; it gathers, marches and rallies on its own clock
     try { buildProtest(); } catch (e) { note('PROTEST FAIL'); console.warn('[melee] protest', e); }
@@ -43255,7 +43439,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { E115, e115Done, TFLASH, flashStart, flashEnd, TPUSH, turfMove, KSWAP, kswapGod, kswapSettle, KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { RADIO, radioSay, radioNext, E115, e115Done, TFLASH, flashStart, flashEnd, TPUSH, turfMove, KSWAP, kswapGod, kswapSettle, KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
