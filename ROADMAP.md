@@ -288,6 +288,8 @@ differ" table there, so no region feels like the last one.
       - [x] m368 **C6-5c-1** the fairground: the stage and its truss, the field, the grandstand, the midway, the Ferris wheel, the barn, the gate; rally-goers.
       - [x] m369 **C6-5c-2** the dirt-bike track over the ridges: jumps, berms, a start gate, the pits; the bikers.
     - [ ] **C6-5d** the way in: the freight line out of Old Town over the water, and a second way (the highway shoulder).
+      - [x] m370 **C6-5d-1** the freight line: a trestle from Old Town's south-west beach to a halt at the creek's mouth, and a train you ride.
+      - [ ] **C6-5d-2** the second way: the highway shoulder (a road bridge in, watched by the gang).
     - [ ] **C6-5e** the rally, the region's living system: it builds, the leader speaks, it boils over.
     - [ ] **C6-5f** Chapter 3's quests: the biker form, the gang's respect, the infiltrated rally leader (the boss).
 
@@ -966,3 +968,9 @@ differ" table there, so no region feels like the last one.
   Creek's land, so the ridges are the big jumps. On top I built tabletop jumps, banked turns, a
   start hill with a gate, the pits and an announcer's tower. The bikes are only props until the
   biker form arrives in C6-5f. I cleared the pines off the track and out of the pits.
+
+- **m370 (C6-5d-1) The freight line.** A train now shuttles on a trestle from Old Town's south-west
+  beach to a halt by Hollow Creek's gorge. There's no deck between the rails, so riding the train is
+  the only way across: stand on the flatcar's open deck or the caboose porch and it carries you. The
+  train runs in every chapter. Hollow Creek isn't closed to anyone, and the chapter decides what
+  you do there. I moved one Old Town ring house a few degrees so the landing stairs fit.

@@ -7,6 +7,24 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FREIGHT LINE: A TRAIN YOU RIDE, BECAUSE STANDING ON A MOVING BOX NOW CARRIES YOU (m370, C6-5d-1, `HCTRAIN`,
+  `buildFreight`, `trainStep`, `trainPlace`, `trainUnder`).** Old Town -> Hollow Creek's main route (REGIONS): a line on a
+  trestle straight along Hollow Creek's own bearing, 155 m from a pier on Old Town's south-west beach to a halt on Hollow
+  Creek's near shore by the gorge's mouth, level at the highest ground under it plus a metre (8 m over the sea -- an
+  elevated line, so stairs at both ends: 26 at Old Town, 6 at the creek, risers .28). **No deck between the rails** (ties
+  and rails only): walking it is a swim, the TRAIN is the way over. A locomotive, a flatcar (logs on its back half, its
+  front half open deck) and a caboose (a porch each end) shuttle end to end -- wait 12-16 s, ease out at 1.4 m/s^2 to 9 m/s,
+  ease in. Every car's solid parts are `BDYN` boxes (the truck's dynamic list, m239: `groundAt`, the resolver, the bolts and
+  the lens all see them) refreshed each frame by `trainPlace`. **AND STANDING ON ONE CARRIES HIM**: `trainStep` runs after
+  his own step, and if he is grounded on a car box's top before it moves (`trainUnder`) he and the lens are moved by what
+  the car moved -- which nothing here did before (the truck is a roof you stand on while it drives out from under you).
+  The platforms are level with the decks and flush with the cars' sides, so you walk on and off.
+  **The landing at Old Town had a ring house in it** (deg 128, the line is at 132): moved to 124; the ring's trees skip the
+  line's bearing like the footbridge's and the trestle's; Hollow Creek's pines keep off its corridor and the halt.
+  GOD: "OLD TOWN · the freight pier" and "HOLLOW CREEK · the halt". Runs in every chapter (Hollow Creek is not shut to
+  anyone yet -- the chapter decides what you do there, not whether you can stand in it).
+  `npm run places` (exit 0): `ok  otfreight -> player -114.6,7.3,123.8 ground 7.01`; `ok  hchalt -> player -190.7,7.3,209.0 ground 7.01`;
+  `ok  FREIGHT line 155 m at 8.0 m over the sea, decks at 9.2 | stairs walked up to the deck 0, 0 (steps 26, 6) | floor on the flatcar 0.00 | out: the car 122.8 m, him 122.8 m, still on it true | back home | 2 trips`.
 - **THE DIRT-BIKE TRACK RUNS OVER THE LAND'S OWN RIDGES (m369, C6-5c-2, `HCBIKE`, `bikeLoop`, `buildBikeTrack`).** A 309 m
   loop in Hollow Creek's own (a, b), smoothed (closed Catmull-Rom) and resampled every 2 m: up the middle it crosses the
   three bike ridges one after another and down the west side again, so the ridges ARE the jumps. A dirt ribbon 7 m wide

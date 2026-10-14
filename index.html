@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m369</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m370</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m369</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m370</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm369';
+const BUILD = 'm370';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -31568,6 +31568,7 @@ function buildHollowLand() {
   { const T = F.forest, pts = [], nz2 = isleNoise(F.seed + 7); let s0 = F.seed * 131 + 7; const rr = () => (s0 = (s0 * 9301 + 49297) % 233280) / 233280;
     // m369: and off the dirt-bike track (its loop, built after this), out of its pits and its tower
     const bl = HCBIKE.on ? bikeLoop().pts : [], bw = HCBIKE.w / 2 + 6, clr = HCBIKE.on ? [[HCBIKE.PITS.a, HCBIKE.PITS.b, 24], [HCBIKE.TOWER.a, HCBIKE.TOWER.b, 8]] : [];
+    const rail = (a, b) => HCTRAIN.on && Math.abs(a) < 10 && b < -F.B + HCTRAIN.inland + 14;            // m370: the freight line's corridor and its halt
     for (let a = -F.A; a <= F.A; a += T.step) for (let b = -F.B; b <= F.B; b += T.step) {
       const ja = a + (rr() - .5) * T.step * .9, jb = b + (rr() - .5) * T.step * .9, e = hcEdge(ja, jb);
       if (e < F.beach + T.beach) continue;
@@ -31575,7 +31576,7 @@ function buildHollowLand() {
       if (patch < 1 - T.keep - rr() * .25) continue;
       if (hcGorgeAt(ja, jb)[0] < F.GORGE.hb + T.gorge) continue;
       if (F.FLATS.some(Fl => Math.hypot(ja - Fl.a, jb - Fl.b) < Fl.r * T.flat)) continue;
-      if (clr.some(([a, b, r]) => Math.hypot(ja - a, jb - b) < r) || bl.some(p => Math.abs(ja - p[0]) < bw && Math.abs(jb - p[1]) < bw && Math.hypot(ja - p[0], jb - p[1]) < bw)) continue;
+      if (rail(ja, jb) || clr.some(([a, b, r]) => Math.hypot(ja - a, jb - b) < r) || bl.some(p => Math.abs(ja - p[0]) < bw && Math.abs(jb - p[1]) < bw && Math.hypot(ja - p[0], jb - p[1]) < bw)) continue;
       const y = hcHeight(ja, jb), sl = Math.hypot(hcHeight(ja + 1, jb) - y, hcHeight(ja, jb + 1) - y); if (sl > T.slope) continue;
       const [x, z] = hcWorld(ja, jb); pts.push([x, y, z, .75 + rr() * .6, rr() * 6.28]);
     }
@@ -32069,6 +32070,136 @@ function buildBikeTrack() {
   { const p = pts[Math.round(.3 * pts.length)], [x, z] = hcWorld(p[0] - p[3] * (hw + 4), p[1] + p[2] * (hw + 4)); O.at = [x, gAB(p[0] - p[3] * (hw + 4), p[1] + p[2] * (hw + 4)) + .1, z, Math.atan2(-p[3], p[2])]; }
   O.frame = { Ox, Oz, th, fr };
   return O.n;
+}
+// ============================================================================================
+// THE FREIGHT LINE (m370, ROADMAP C6-5d-1, `HCTRAIN`, `buildFreight`, `trainStep`)
+// ============================================================================================
+// REGIONS: "Old Town -> Hollow Creek: the freight train". A line on a TRESTLE, straight along Hollow Creek's own bearing from
+// a pier on Old Town's south-west beach, over the water, to a HALT on Hollow Creek's near shore by the gorge's mouth, level
+// above the highest ground under it (so it is an elevated line, stairs up at both ends). **There is no deck between the
+// rails** -- ties and rails only -- so walking it is a swim: THE TRAIN is the way over. A short one: a locomotive, a
+// flatcar of logs, a caboose, shuttling end to end and waiting at each (`trainStep`: wait, out, wait, back; it eases in and
+// out). Every car is solid and standable through `BDYN` (the truck's dynamic list, m239: `groundAt`, the resolver, the
+// bolts and the camera all see it), and **standing on a car carries him** -- the car's own displacement added to him (and
+// the lens) each frame he is grounded on its top, which nothing did before (the truck never carried anyone). Its open deck
+// is the flatcar's back half, and the caboose's porch. The platforms stand level with the decks.
+const HCTRAIN = {
+  on: 1, n: 0, st: 'wait', t: 6, s: 0, v: 0, vmax: 9, acc: 1.4, wait: [12, 16], at: 0, carried: 0, trips: 0,
+  shore: 3, inland: 42, plat: 34, deckUp: 1.2, gauge: 1.5,
+  CARS: [ { id: 'loco', len: 11, body: [.6, 3.7], col: 'loco' }, { id: 'flat', len: 10, deck: 1.2, logs: 6, logH: 2.3, col: 'flat' }, { id: 'caboose', len: 8, deck: 1.2, body: [1.2, 3.5], porch: 1.4, col: 'cab' } ],
+  gap: 1.1,
+};
+function buildFreight() {
+  const T = HCTRAIN, H = HCREEK, I = ISLE; if (!T.on || !H.live || !I.rect || !I.rays) return 0;
+  T.deg = H.bearing * 180 / Math.PI;                                   // the city ring keeps its trees off it
+  const R = I.rect, c = [(R[0] + R[1]) / 2, (R[2] + R[3]) / 2], ub = H.ub, ray = isleRayAt(H.bearing), dO = Math.hypot(H.O[0] - c[0], H.O[1] - c[1]);
+  const d0 = ray.rb + ray.L - T.shore, d1 = dO - H.B + T.inland, L = d1 - d0;
+  T.A = [c[0] + ub[0] * d0, c[1] + ub[1] * d0]; T.dir = ub; T.len = L;
+  const at = t => [T.A[0] + ub[0] * t, T.A[1] + ub[1] * t];
+  // the line's height: over the highest floor under it, plus a clearance
+  let hi = -1e9; for (let t = 0; t <= L; t += 1) { const [x, z] = at(t); for (const s of [-2, 0, 2]) hi = Math.max(hi, groundAt(x - ub[1] * s, z + ub[0] * s, 60, 0)); }
+  const yr = T.yr = Math.max(hi, I.sea + 1) + 1.0, deck = T.deck = yr + T.deckUp;
+  // a frame on the line: +v along it (toward the creek), +u across
+  const th = Math.atan2(ub[0], ub[1]);
+  const M = (cc, o) => Object.assign(new THREE.MeshStandardMaterial({ color: cc, roughness: .8 }), o || {});
+  const MAT = { tie: M(0x5a4030), rail: Object.assign(M(0x8a8a90), { metalness: .7, roughness: .35 }), beam: M(0x6a4a30), post: M(0x4a3626), plank: M(0x7a5a3a), steel: Object.assign(M(0x6a7680), { metalness: .45, roughness: .45 }), sign: M(0xeee8da), red: M(0xb83a2e) };
+  const F = farmFrame(T.A[0], T.A[1], th, MAT, 'creek'), { bx, geo, wx, wz } = F;
+  const gnd = (u, v) => Math.max(groundAt(wx(u, v), wz(u, v), yr - .5, 0), I.sea - 5);
+  // THE TRESTLE: deck beams, ties, the two rails; a bent every 6 m down to the ground or the seabed
+  for (let v = 0; v < L; v += 6) bx(0, v + 3, yr - .55, yr - .25, 2.6, 6.05, 'beam', 0, false);
+  for (let v = .4; v < L; v += .8) bx(0, v, yr - .25, yr - .1, 2.6, .25, 'tie', 0, false);
+  for (const s of [-1, 1]) bx(s * T.gauge / 2, L / 2, yr - .1, yr, .1, L, 'rail', 0, false);
+  for (let v = 3; v < L; v += 6) { const g = Math.min(gnd(-1.1, v), gnd(1.1, v)); if (g > yr - .9) continue;
+    for (const s of [-1, 1]) bx(s * 1.1, v, g - .5, yr - .55, .3, .3, 'post', 0);
+    if (yr - g > 3) { const m = (g + yr) / 2; pearlSeg(geo, 'post', [-1.1, g + .5, v], [1.1, yr - .7, v], .12, .12, 0); pearlSeg(geo, 'post', [1.1, g + .5, v], [-1.1, yr - .7, v], .12, .12, 0); } }
+  // THE PLATFORMS at both ends, level with the decks, on the line's left; the stairs down off their outer ends (risers .28)
+  const side = -1, pu = side * (1.3 + 1.6), pw = 3.2;
+  T.plats = [];
+  for (const [v0, v1, dn] of [[0, T.plat, -1], [L - T.plat, L, 1]]) {
+    const vm = (v0 + v1) / 2; bx(pu, vm, deck - .25, deck, pw, v1 - v0, 'plank', 0);
+    for (let v = v0 + 2; v < v1; v += 4) { const g = gnd(pu, v); if (g < deck - .6) for (const s of [-1, 1]) bx(pu + s * (pw / 2 - .2), v, g - .4, deck - .25, .22, .22, 'post', 0); }
+    // a rail along its outer edge, a shelter and a sign
+    bx(pu + side * (pw / 2 - .05), vm, deck, deck + 1.0, .08, v1 - v0, 'steel', 0); F.parts.steel.pop(); bx(pu + side * (pw / 2 - .05), vm, deck + .92, deck + 1.0, .08, v1 - v0, 'steel', 0, false);
+    bx(pu + side * .9, vm, deck + 2.6, deck + 2.75, 1.6, 6, 'red', 0, false); for (const k of [-1, 1]) bx(pu + side * 1.5, vm + k * 2.8, deck, deck + 2.6, .1, .1, 'steel', 0, false);
+    // the stairs: off the end AWAY from the line's middle, down to the ground at their own foot
+    const ve = dn < 0 ? v0 : v1; let y = deck, v = ve, n = 0;
+    while (n < 40) { const g = gnd(pu, v + dn * .45); if (y - .28 <= g + .05) break; y -= .28; v += dn * .45; n++; bx(pu, v - dn * .225, Math.min(g, y) - .5, y, pw - .4, .45, 'plank', 0); }
+    T.plats.push({ v0, v1, foot: [wx(pu, v + dn * 1.2), wz(pu, v + dn * 1.2)], top: [wx(pu, ve - dn * 3), wz(pu, ve - dn * 3)], steps: n });
+  }
+  // the signs
+  for (const [txt, v] of [['OLD TOWN FREIGHT', T.plat / 2], ['HOLLOW CREEK', L - T.plat / 2]]) {
+    const tx = new THREE.CanvasTexture(protestPaint(txt, '#eee8da', '#2a2140', 512, 128)); tx.colorSpace = THREE.SRGBColorSpace;
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(4, 1), new THREE.MeshStandardMaterial({ map: tx, side: THREE.DoubleSide })); m.position.set(wx(pu + side * 1.5, v), deck + 2.1, wz(pu + side * 1.5, v)); m.rotation.y = th + Math.PI / 2; scene.add(m); }
+  T.n = F.commit().boxes;
+  // THE TRAIN: a group per car, a BDYN box per solid part
+  const mats = { loco: new THREE.MeshStandardMaterial({ color: 0x2e4a3a, roughness: .6, metalness: .3 }), flat: new THREE.MeshStandardMaterial({ color: 0x5a4a3a, roughness: .8 }),
+    cab: new THREE.MeshStandardMaterial({ color: 0xb83a2e, roughness: .7 }), dark: new THREE.MeshStandardMaterial({ color: 0x1c1c1e, roughness: .6, metalness: .4 }),
+    log: new THREE.MeshStandardMaterial({ color: 0x6b4a2e, roughness: .9 }), yel: new THREE.MeshStandardMaterial({ color: 0xe0b02a, roughness: .6 }) };
+  const box = (g, w, h, d, m, x, y, z) => { const q = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); q.position.set(x, y, z); g.add(q); return q; };
+  const dyn = (o) => { const b = Object.assign({ dyn: 1, train: 1, minx: 0, maxx: 0, minz: 0, maxz: 0, miny: 0, maxy: 0, cx: 0, cz: 0, cs: 1, sn: 0 }, o); BDYN.push(b); return b; };
+  let off = 0;
+  T.cars = T.CARS.map(Cd => {
+    const g = new THREE.Group(), hl = Cd.len / 2, car = { def: Cd, g, off: off + hl, boxes: [] }; off += Cd.len + T.gap;
+    for (const z of [-hl + 1.4, hl - 1.4]) for (const s of [-1, 1]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(.42, .42, .2, 12), mats.dark); w.rotation.z = Math.PI / 2; w.position.set(s * T.gauge / 2, .42, z); g.add(w); }
+    box(g, 2.4, .5, Cd.len - .2, mats.dark, 0, .75, 0);
+    if (Cd.id === 'loco') { box(g, 2.5, 2.6, Cd.len - 3.5, mats.loco, 0, 2.3, -1.5); box(g, 2.7, 2.9, 3.2, mats.loco, 0, 2.45, hl - 1.8); box(g, 2.9, .15, 3.5, mats.dark, 0, 3.95, hl - 1.8);
+      const st = new THREE.Mesh(new THREE.CylinderGeometry(.3, .4, 1.2, 10), mats.dark); st.position.set(0, 4.2, -hl + 2); g.add(st); box(g, 2.6, .25, .4, mats.yel, 0, 1.3, -hl + .2);
+      car.boxes.push(dyn({ lz: 0, hx: 1.35, hz: hl, y0: .5, y1: Cd.body[1] })); }
+    if (Cd.id === 'flat') { box(g, 2.6, .2, Cd.len, mats.flat, 0, Cd.deck - .1, 0);
+      // the logs on its back half (toward the caboose); its front half (behind the loco) is open deck to ride on
+      const lz = -hl + Cd.logs / 2; for (let k = 0; k < 5; k++) { const lg = new THREE.Mesh(new THREE.CylinderGeometry(.38, .38, Cd.logs - .2, 9), mats.log); lg.rotation.x = Math.PI / 2; lg.position.set((k % 3 - 1) * .8, Cd.deck + .38 + (k > 2) * .7, lz); g.add(lg); }
+      for (const s of [-1, 1]) box(g, .12, 1.6, .12, mats.dark, s * 1.25, Cd.deck + .8, -hl + .3);
+      car.boxes.push(dyn({ lz: 0, hx: 1.3, hz: hl, y0: .5, y1: Cd.deck }), dyn({ lz, hx: 1.25, hz: Cd.logs / 2, y0: Cd.deck, y1: Cd.deck + Cd.logH - .5 })); }
+    if (Cd.id === 'caboose') { box(g, 2.6, .2, Cd.len, mats.flat, 0, Cd.deck - .1, 0); const bl = Cd.len - 2 * Cd.porch; box(g, 2.5, Cd.body[1] - Cd.body[0], bl, mats.cab, 0, (Cd.body[0] + Cd.body[1]) / 2, 0);
+      box(g, 1.2, .9, 1.6, mats.cab, 0, Cd.body[1] + .45, 0); box(g, 2.7, .12, bl + .3, mats.dark, 0, Cd.body[1], 0);
+      for (const z of [-hl + .1, hl - .1]) box(g, 2.5, .06, .06, mats.yel, 0, Cd.deck + 1.0, z);
+      car.boxes.push(dyn({ lz: 0, hx: 1.3, hz: hl, y0: .5, y1: Cd.deck }), dyn({ lz: 0, hx: 1.25, hz: bl / 2, y0: Cd.deck, y1: Cd.body[1] })); }
+    scene.add(g); return car; });
+  T.trainLen = off - T.gap;
+  T.ends = [T.trainLen + .5, L - .5];                         // the FRONT's place at each end: parked along each platform
+  T.s = T.ends[0]; T.at = 0; T.st = 'wait'; T.t = 4;
+  trainPlace();
+  T.otAt = [wx(pu, T.plat * .6), deck + .1, wz(pu, T.plat * .6), th];
+  T.hcAt = [wx(pu, L - T.plat * .6), deck + .1, wz(pu, L - T.plat * .6), th + Math.PI];
+  T.frame = { th, pu };
+  return T.n;
+}
+// every car to its place along the line (`s` is the front's distance from the Old Town end), and its boxes with it
+function trainPlace() {
+  const T = HCTRAIN, ub = T.dir, h = Math.atan2(ub[0], ub[1]), cs = Math.cos(h), sn = -Math.sin(h);
+  for (const C of T.cars) {
+    const d = T.s - C.off, x = T.A[0] + ub[0] * d, z = T.A[1] + ub[1] * d;
+    C.g.position.set(x, T.yr, z); C.g.rotation.y = h;
+    for (const B of C.boxes) { B.cx = x + ub[0] * B.lz; B.cz = z + ub[1] * B.lz; B.cs = cs; B.sn = sn; B.hx = B.hx; B.hz = B.hz;
+      const ex = B.hx * Math.abs(cs) + B.hz * Math.abs(sn), ez = B.hx * Math.abs(sn) + B.hz * Math.abs(cs);
+      B.minx = B.cx - ex; B.maxx = B.cx + ex; B.minz = B.cz - ez; B.maxz = B.cz + ez; B.miny = T.yr + B.y0; B.maxy = T.yr + B.y1; }
+  }
+}
+// is he standing on the train? -- grounded, his feet on a car box's top, inside its footprint
+function trainUnder(P) {
+  const T = HCTRAIN; if (!T.cars) return null;
+  for (const C of T.cars) for (const B of C.boxes) { if (Math.abs(P.y - B.maxy) > .08) continue;
+    const l = boxLocal(B, P.x, P.z, _blT); if (Math.abs(l.x) <= B.hx + .05 && Math.abs(l.z) <= B.hz + .05) return B; }
+  return null;
+}
+const _blT = { x: 0, z: 0 };
+function trainStep(dt) {
+  const T = HCTRAIN; if (!T.cars || !inTK()) return;
+  const p = player, P = p.pos, s0 = T.s;
+  // the state: wait at an end, then run to the other, easing out and in
+  if (T.st === 'wait') { if ((T.t -= dt) <= 0) { T.st = 'run'; T.to = 1 - T.at; } }
+  else {
+    const goal = T.ends[T.to], dist = Math.abs(goal - T.s), dirn = Math.sign(goal - T.s);
+    const want = Math.min(T.vmax, Math.sqrt(2 * T.acc * Math.max(0, dist - .05)));
+    T.v = Math.min(want, T.v + T.acc * dt);
+    T.s += dirn * Math.min(dist, T.v * dt);
+    if (dist < .02 || (T.v < .05 && dist < .3)) { T.s = goal; T.v = 0; T.at = T.to; T.st = 'wait'; T.t = rnd(T.wait); T.trips++; }
+  }
+  const ds = T.s - s0;
+  // HE RIDES: grounded on a car's top before it moved -> carried by what it moved (and the lens with him)
+  const B = ds && (p.grounded || p.vel.y === 0) ? trainUnder(P) : null;
+  trainPlace();
+  if (B) { const dx = T.dir[0] * ds, dz = T.dir[1] * ds; P.x += dx; P.z += dz; if (typeof cam !== 'undefined' && cam.pos) { cam.pos.x += dx; cam.pos.z += dz; if (cam.tgt) { cam.tgt.x += dx; cam.tgt.z += dz; } } T.carried += Math.abs(ds); }
 }
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
@@ -33660,7 +33791,7 @@ const FRING = {
     { deg: 6, s: .55, k: 'house', col: 'pink', why: 'past the warehouse, toward the city\'s +x side' },
     { deg: 64, s: .5, k: 'house', col: 'cream', why: 'the city thinning out round the corner' },
     { deg: 96, s: .45, k: 'house', col: 'blue', why: 'the +z side: a house with its back to the sea' },
-    { deg: 128, s: .55, k: 'house', col: 'mint', why: 'the +z side, farther round' },
+    { deg: 124, s: .55, k: 'house', col: 'mint', why: 'the +z side, farther round (m370: 128 -> 124, off the freight line\'s landing at 132)' },
     { deg: 162, s: .5, k: 'house', col: 'pink', why: 'the -x side' },
     { deg: 205, s: .45, k: 'house', col: 'cream', why: 'the -x side, past the middle' },
     { deg: 246, s: .5, k: 'house', col: 'blue', why: 'the -z side' },
@@ -33758,6 +33889,7 @@ function buildCityRing() {
     if (Math.abs(((deg - FARMLAND.bearing * 180 / Math.PI + 540) % 360) - 180) < 5) continue;
     if (Math.abs(((deg - FTRES.landDeg + 540) % 360) - 180) < 5) continue;       // nor on the old trestle's (m319)
     if (FOOT.deg !== null && Math.abs(((deg - FOOT.deg + 540) % 360) - 180) < 6) continue;   // nor the footbridge's (m341)
+    if (HCTRAIN.deg != null && Math.abs(((deg - HCTRAIN.deg + 540) % 360) - 180) < 5) continue;   // nor the freight line's (m370)
     if (OLOOK.topAt && Math.abs(((deg - OLOOK.deg + 540) % 360) - 180) < 5) continue;         // nor the lookout's (m357)
     const P = at(deg, .06 + rr() * .1);
     if (farmTree(F, rr, ico0, P.x, P.z, .75 + rr() * .5, rr() < .2 ? 'willow' : 'oak')) FR.trees++;
@@ -36452,6 +36584,8 @@ const GODPLACES = [
   { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
   { id: 'pearl', world: 'tkit', name: 'THE PEARL · the plaza (Chapter 2)', at: () => OPEARL.plazaAt },
+  { id: 'otfreight', world: 'tkit', name: 'OLD TOWN · the freight pier (the train to Hollow Creek)', at: () => HCTRAIN.otAt },   // m370
+  { id: 'hchalt', world: 'tkit', name: 'HOLLOW CREEK · the halt (the freight line)', at: () => HCTRAIN.hcAt },
   { id: 'hcbikes', world: 'tkit', name: 'HOLLOW CREEK · the dirt-bike track', at: () => HCBIKE.at },   // m369
   { id: 'hcfair', world: 'tkit', name: 'HOLLOW CREEK · the fairground (the rally)', at: () => HCFAIR.at },   // m368
   { id: 'hcmill', world: 'tkit', name: 'HOLLOW CREEK · the logging mill', at: () => HCMILL.at },   // m367
@@ -38183,6 +38317,7 @@ function frameBody() {
   floraStep(dt);                // the corn, wheat and tufts sway and part round him (m297)
   cowStep(dt);                  // the herd: brains, bodies, and their bulk against him -- before the lens too (m294)
   vehStep(dt);                  // the tractor at work and the pickup on its errands, and their bulk against him (m314)
+  trainStep(dt);                // the freight to Hollow Creek, and him on it if he is (m370) -- before the lens, which it moves
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)
@@ -38973,6 +39108,8 @@ async function init() {
     try { buildFairground(); } catch (e) { note('FAIR FAIL'); console.warn('[melee] fair', e); }
     // HOLLOW CREEK'S DIRT-BIKE TRACK (m369)
     try { buildBikeTrack(); } catch (e) { note('BIKES FAIL'); console.warn('[melee] bikes', e); }
+    // THE FREIGHT LINE TO HOLLOW CREEK (m370): before the city ring, which keeps its trees off its bearing
+    try { buildFreight(); } catch (e) { note('FREIGHT FAIL'); console.warn('[melee] freight', e); }
     // THE STRIKE'S PICKET (m345): hidden until the crews walk out
     try { buildStrike(); } catch (e) { note('STRIKE FAIL'); console.warn('[melee] strike', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)
