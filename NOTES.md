@@ -7,6 +7,24 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE LIGHTHOUSE KEEPER, CHAPTER 5's BOSS (m398, C6-7e-3, quest `ch5c`, `IKEEP`, `buildIslandKeeper`, `keeperStep`,
+  `IWIND.storm`).** The keeper stands at his door on lighthouse rock (ROSTER `fisher`, so a hick body), on the far side from
+  the ladder. **THE BEAM** is an additive open cone from the lamp. While he is theirs it is aimed at `ITHERM.ring` every frame,
+  so it points up the tether; once `qdone:ch5c` is set it drops 6 deg under level and sweeps. The boss is the ordinary
+  `skin` step (big 1.85, five downs), the same machinery as chapters 1-4.
+  **THE STORM IS THE ISLANDS' OWN WIND TURNED ON HIM**, not a second system. `keeperStep` sets `IWIND.storm` while a body
+  tagged `ch5boss` stands as an alien (`isAlien`, m388's test). While it does, `windGust` draws from `stormEvery/stormLast/
+  stormAdd`, a long wait is cut to `stormEvery[1]`, `windStep` points the wind from it at him, and a GROUNDED carry
+  (`stormK` x the gust's swell) shoves him away from it within `stormR`. That is `trainStep`'s carry shape again, so `vel`
+  keeps one writer. The sea splashes over the rock.
+  **THE ROW'S GUST COUNT WAS A GUESS AND IT FAILED THE BUILD**: 6 in 20 s, when the storm's own table gives about 4.6
+  (mean wait + mean length = 4.3 s). It is derived from the table now (.7 of the expected count). *Derive the pass mark,
+  never pick one.*
+  **CHAPTER 5 IS COMPLETE** (`progChapter(6)`); GOD's Chapter 6 button goes to the needle's top, the thermal's foot.
+  **`npm run places`, exit 0** (teeth: `IWIND.storm` never set reads `BAD ... NO STORM WHILE IT STANDS`):
+      ok  BOSS5 the keeper (hick_skinny.glb) | the beam while he is theirs 0.0 deg off the tether's ring, after Chapter 5 down on the water (103 deg off it) | with the thing standing: storm 1, 4 gusts in 20 s, shoved 12.9 m away from it on the ground | with it gone: storm 0, 1 gusts in 10 s, moved 0 m | ch5c goto > skin > unskin > talk after ch5b | GOD on the rock 
+  **AND THAT IS PHASE C's CHAPTER GREYBOXES DONE (C6-7)**. The Mothership itself (Chapter 6) has no roadmap item.
+
 - **THE GAPS: THE LANDING RAMP AND THE GAP DETECTOR (m397, C6-7e-2, quest `ch5b`, `IBASE.landAt/landDrop/landW`,
   `IBASE.ramp.land`, `isl:gap` in `islXingStep`).** **THE GAP WAS A COIN TOSS AND THE ROW MEASURED IT**: off m391's lip at
   25 deg, the game's g (20, not 9.8), from 2.9 m over the beach, a board at its top speed (19 m/s) comes down 19.8 m out, and

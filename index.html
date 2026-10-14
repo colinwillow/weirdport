@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m397</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m398</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m397</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m398</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm397';
+const BUILD = 'm398';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28362,6 +28362,22 @@ const QUESTS = [
     { type: 'flag', flag: 'isl:gap', at: () => IBASE.godRamp, text: 'Clear the gap: off the ramp on the humps', tip: 'On a board, flat out from the top and do not brake. Land on the far ramp or the beach. A tail gust helps -- the windsocks show it.' },
     { type: 'reach', at: () => ISLES.needleAt, r: 5, text: 'Up the needle', tip: 'The sea stack in the middle of the chain. Its ladder starts on the beach.' },
   ] },
+  // CHAPTER 5's BOSS (m398, C6-7e-3): out to the lighthouse at the far end of the chain; the keeper; close to, the thing wearing
+  // him bursts out (nearly twice your height, five knock-downs) and the islands' wind is its while it stands (`IWIND.storm`:
+  // every gust at you, on the ground too, the sea over the rock). After: he comes round, the beam drops to the water, and
+  // Chapter 5 is done -- the tether over the needle is the way on.
+  { id: 'ch5c', title: 'THE KEEPER', world: 'tkit', ch: 5, needQ: 'ch5b',
+    onDone: () => { progChapter(6); setTimeout(() => cardShow('CHAPTER 5 COMPLETE', 'THE ISLANDS ARE FREE: THE TETHER IS THE WAY ON', 4.5), 3600); }, steps: [
+    { type: 'goto', npc: 'is_keeper', r: 9, text: 'Out to the lighthouse', tip: 'Lighthouse rock, at the far end of the chain: fly there (off the needle is nearest). Its ladder starts on the beach.' },
+    { type: 'skin', tag: 'ch5boss', npc: 'is_keeper', r: 7, big: 1.85, downs: 5, text: 'The thing in the keeper\'s coat', tip: 'Knock it down five times. While it stands the wind is its: every gust comes at you. Stay off the edge.',
+      after: { id: 'ch5_keeper_after', name: 'the lighthouse keeper', group: 'city', talks: ['*'], alien: 'talk',
+        lines: ["...The lamp. Is the lamp still on? I can't remember when I last looked at the sea.",
+                "There was a storm in the spring. Something came down in it. Out of the cloud, down the line, onto my rock.",
+                "After that all I wanted was to point the light up. Every night. Up the line. So they could find us.",
+                "It's still up there. The big one, above the cloud. Ride the warm air off the needle and you'll find the end of the line."] } },
+    { type: 'unskin', tag: 'ch5boss', npc: 'is_keeper', r: 10, text: 'Beat the thing wearing the keeper: five times down' },
+    { type: 'talk', who: 'ch5_keeper_after', text: 'See who he really is' },
+  ] },
   // m357 (C4-2): Skye's, once he has told you how
   { id: 'qglide', title: 'THE LOOKOUT', world: 'tkit', from: 'mk_lookout_skye', steps: [
     { type: 'sample', kind: 'jack', text: "Take Skye's sample -- he is lying down for you", tip: 'Stand over him while he is down and HOLD the right pad.' },
@@ -34567,6 +34583,7 @@ function islMoversStep(dt) {
 const IWIND = {
   on: 1, base: 6, from: [1, .3], veer: .35, veerT: 140, fade: 30,
   every: [5, 12], last: [2.2, 4.8], add: [5, 11], swing: .75, socks: [],
+  storm: 0, stormFrom: null, stormEvery: [1.2, 2.8], stormLast: [1.6, 3], stormAdd: [9, 15], stormK: .1, stormR: 45,     // m398: the keeper's
   airK: .16, wingK: .45, wingUp: 1.2, canopyK: .4, dustK: .5,
   t: 0, dir: 0, spd: 0, vx: 0, vz: 0, k: 0, e: 0, gustT: 0, gustL: 1, gustN: 6, gustDir: 0, gustAdd: 0, gusts: 0, baseH: null, drift: 0,
 };
@@ -34574,7 +34591,7 @@ const windRnd = a => a[0] + Math.random() * (a[1] - a[0]);
 // how much of the wind is here: all of it over the islands' frame, fading to none `fade` m outside it
 function windK(x, z) { const e = islEdge(x, z); return e >= 0 ? 1 : e <= -IWIND.fade ? 0 : 1 + e / IWIND.fade; }
 function windGust() {
-  const W = IWIND; W.gustL = W.gustT = windRnd(W.last); W.gustDir = (Math.random() * 2 - 1) * W.swing; W.gustAdd = windRnd(W.add); W.gusts++; W.gustN = 1e9;
+  const W = IWIND; W.gustL = W.gustT = windRnd(W.storm ? W.stormLast : W.last); W.gustDir = (Math.random() * 2 - 1) * W.swing; W.gustAdd = windRnd(W.storm ? W.stormAdd : W.add); W.gusts++; W.gustN = 1e9;
   if (W.k > 0) try { snd('swoosh', { g: .16 + .24 * W.k * W.gustAdd / W.add[1], r: .4 + Math.random() * .1 }); } catch (e) {}
 }
 // the glider's share, for `stepWing`'s substeps: the drift, and a bump up or down while a gust blows
@@ -34593,15 +34610,21 @@ function windStep(dt) {
   if (!W.on || !I.live || !I.O || !inTK()) { W.k = 0; W.e = 0; DUST.wx = DUST.wz = 0; return; }
   if (W.baseH == null) W.baseH = Math.atan2(W.from[0] * I.C + W.from[1] * I.S, -W.from[0] * I.S + W.from[1] * I.C);
   W.t += dt;
-  if (W.gustT > 0) { W.gustT -= dt; W.e = Math.sin(Math.PI * clamp(1 - W.gustT / W.gustL, 0, 1)); if (W.gustT <= 0) { W.e = 0; W.gustN = windRnd(W.every); } }
-  else if ((W.gustN -= dt) <= 0) windGust();
+  if (W.gustT > 0) { W.gustT -= dt; W.e = Math.sin(Math.PI * clamp(1 - W.gustT / W.gustL, 0, 1)); if (W.gustT <= 0) { W.e = 0; W.gustN = windRnd(W.storm ? W.stormEvery : W.every); } }
+  else { if (W.storm) W.gustN = Math.min(W.gustN, W.stormEvery[1]); if ((W.gustN -= dt) <= 0) windGust(); }
   W.dir = W.baseH + W.veer * Math.sin(W.t * 2 * Math.PI / W.veerT) + .08 * Math.sin(W.t * .41) + W.gustDir * W.e;
   W.spd = W.base * (1 + .12 * Math.sin(W.t * .23)) + W.gustAdd * W.e;
+  const p = player;
+  // m398: the keeper's storm -- every gust blows from the thing wearing him straight at you
+  if (W.storm && W.stormFrom) W.dir = Math.atan2(p.pos.x - W.stormFrom[0], p.pos.z - W.stormFrom[1]) + .25 * Math.sin(W.t * .9);
   W.vx = Math.sin(W.dir) * W.spd; W.vz = Math.cos(W.dir) * W.spd;
-  const p = player; W.k = windK(p.pos.x, p.pos.z);
+  W.k = windK(p.pos.x, p.pos.z);
   // him, in the air -- not flying (the flight takes its own share in `stepWing`), not on anything that owns his body
   if (W.k > 0 && !GOD.fly && !p.grounded && !p.wing && !p.climb && !p.ledge && !p.wall) {
     const f = W.airK * W.k * dt; p.pos.x += W.vx * f; p.pos.z += W.vz * f; W.drift += W.spd * f; }
+  // and in it the gusts shove him on the ground too, near it (a carry, the same way)
+  else if (W.storm && W.stormFrom && W.k > 0 && p.grounded && !GOD.fly && Math.hypot(p.pos.x - W.stormFrom[0], p.pos.z - W.stormFrom[1]) < W.stormR) {
+    const f = W.stormK * W.e * dt; p.pos.x += W.vx * f; p.pos.z += W.vz * f; W.shoved = (W.shoved || 0) + W.spd * f; }
   // seen before it is felt: the dust streams with it, the windsock turns into it and stands out as it rises
   DUST.wx = W.vx * W.dustK * W.k; DUST.wz = W.vz * W.dustK * W.k;
   for (const S of W.socks) S.rotation.set(lerp(1.25, .06, clamp(W.spd / 15, 0, 1)) + Math.sin(W.t * 11) * .04 * W.spd / 10, W.dir + Math.sin(W.t * 7.3) * .05, 0, 'YXZ');   // every windsock (m394)
@@ -34766,6 +34789,55 @@ function thermStep(dt) {
     else if (T.reached && _thR.distanceTo(P) > T.reach * 3) T.reached = 0; }
 }
 const _thR = new THREE.Vector3();
+// ============================================================================================
+// THE LIGHTHOUSE KEEPER (m398, ROADMAP C6-7e-3, `IKEEP`, `buildIslandKeeper`, `keeperStep`, `IWIND.storm`)
+// ============================================================================================
+// Chapter 5's boss. The keeper on lighthouse rock, at the far end of the chain, is a Skinsuit: since the spring storm his
+// lamp's BEAM has pointed up the Mothership's tether (`beam`, aimed at `ITHERM.ring` every frame), guiding something in.
+// Close to (`ch5c`'s skin step) the thing wearing him bursts out, nearly twice your height, five knock-downs -- and while it
+// stands **THE ISLANDS' WIND IS ITS**: `IWIND.storm` turns every gust on you (blowing from it at you, harder and closer
+// together), pushes you on the ground as well as in the air, and the sea breaks over the rock. Beaten, he comes round; the
+// beam drops to the water and sweeps it like a lighthouse's; Chapter 5 is done and the tether is the way on.
+const IKEEP = {
+  on: 1, at: [1.19, 2.9], beamL: 70, beamR: 3.2, sweep: .55, waveT: .35,
+  lines: "Off my rock.|The lamp needs tending. The lamp always needs tending.|Storm's coming. Storm's always coming, out here.",
+  beam: null, lamp: null, boss: null, storms: 0, t: 0, waveN: 0,
+};
+function buildIslandKeeper() {
+  const Kp = IKEEP, I = ISLES; if (!Kp.on || !I.live) return 0;
+  const sea = ISLE.sea, K = I.ISLANDS.find(q => q.id === 'light'), top = sea + K.h;
+  Kp.lamp = [...islWorld(K.u, K.v), top + 12];        // [x, z, y]
+  // the beam: a long open cone from the lamp, its narrow end at the lamp, bright there and fading out along it
+  { const L = Kp.beamL, g = new THREE.CylinderGeometry(Kp.beamR, .3, L, 18, 6, true); g.translate(0, L / 2, 0);
+    const pos = g.attributes.position, col = []; for (let i = 0; i < pos.count; i++) { const f = pos.getY(i) / L, c = .9 * (1 - f) * (1 - f) + .02; col.push(c, c * .95, c * .75); }
+    g.setAttribute('color', new THREE.Float32BufferAttribute(col, 3));
+    const m = new THREE.Mesh(g, new THREE.MeshBasicMaterial({ vertexColors: true, transparent: true, opacity: .32, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide }));
+    m.position.set(Kp.lamp[0], Kp.lamp[2], Kp.lamp[1]); scene.add(m); Kp.beam = m; }
+  // the keeper, at his door on the far side from the ladder
+  { const [a, d] = Kp.at, u = K.u + Math.cos(a) * d, v = K.v + Math.sin(a) * d, [x, z] = islWorld(u, v), h = Math.atan2(Math.cos(a), Math.sin(a));
+    peopleMark('is_keeper', x, z, h, { role: 'fisher', name: 'the lighthouse keeper', group: 'city', talks: ['*'], alien: 'brush', brushAlien: 'Nothing comes to this rock that the lamp has not called.', lines: Kp.lines },
+      groundAt(x, z, top + 3, 4), 'IKEEP', 'city');
+    Kp.doorAt = [x, groundAt(x, z, top + 3, 4), z]; }
+  { const L = I.ladderAt.find(q => Math.hypot(q[0] - K.u, q[1] - K.v) < K.r * 1.3); if (L) { const [x, z] = islWorld(L[4], L[5]), [tx, tz] = islWorld(K.u, K.v); Kp.godAt = [x, L[3] + .1, z, Math.atan2(tx - x, tz - z)]; } }
+  return 1;
+}
+const _kpY = new THREE.Vector3(0, 1, 0), _kpD = new THREE.Vector3();
+function keeperStep(dt) {
+  const Kp = IKEEP; if (!Kp.beam || !inTK()) { IWIND.storm = 0; return; }
+  Kp.t += dt;
+  // the thing wearing him, while it stands
+  const B = DUMMIES.find(d => d.qTag === 'ch5boss' && !d.gone && isAlien(d.K)) || null;
+  if (B && !Kp.boss) { Kp.storms++; toast('THE WIND TURNS ON YOU', 2); }
+  Kp.boss = B; IWIND.storm = B ? 1 : 0; if (B) { IWIND.stormFrom = [B.root.position.x, B.root.position.z]; }
+  // the beam: up the tether while he is theirs; down on the water, sweeping, once he is himself again
+  const free = !!SAVE.flags['qdone:ch5c'], T = ITHERM;
+  if (!free && T.ring) { T.ring.getWorldPosition(_kpD); _kpD.x -= Kp.lamp[0]; _kpD.y -= Kp.lamp[2]; _kpD.z -= Kp.lamp[1]; _kpD.normalize(); }
+  else { const a = Kp.t * Kp.sweep; _kpD.set(Math.cos(a), -.06, Math.sin(a)).normalize(); }
+  Kp.beam.quaternion.setFromUnitVectors(_kpY, _kpD); Kp.free = free;
+  // the sea breaking over the rock while it stands
+  if (B && (Kp.waveN -= dt) <= 0) { Kp.waveN = Kp.waveT * (.6 + Math.random() * .8); const K = ISLES.ISLANDS.find(q => q.id === 'light'), a = Math.random() * Math.PI * 2, [x, z] = islWorld(K.u + Math.cos(a) * K.r * .95, K.v + Math.sin(a) * K.r * .95);
+    try { isleSplash(x, z, .55); } catch (e) {} }
+}
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
 // ============================================================================================
@@ -39126,7 +39198,7 @@ const GODCHAP = [
   { n: 3, name: 'HOLLOW CREEK',      place: 'otfreight' },   // m373: the freight pier, where Chapter 3's way over is
   { n: 4, name: 'THE WATERFRONT',    place: 'otferry' },   // m386: Chapter 4's first step is the crossing   // m381: Old Town's ferry landing, the way over
   { n: 5, name: 'THE SKATE ISLANDS', place: 'islanding' },   // m389: the landing rock, the first glide's end
-  { n: 6, name: 'THE MOTHERSHIP',    place: null },
+  { n: 6, name: 'THE MOTHERSHIP',    place: 'isneedle' },   // m398: it starts up the thermal off the needle
 ];
 // A BUILDER THAT BAILED OUT SAYS SO, IN RED (m302). The farm sat behind `FARM NO ROOM 15` -- a token in the chip --
 // for fourteen builds while every farm place in this menu went nowhere. In GOD, any note that a builder gave up
@@ -39173,6 +39245,7 @@ const GODPLACES = [
   { id: 'isbase', world: 'tkit', name: 'THE RIVER ISLANDS · the BASE jumpers\' exit point on the mesa', at: () => IBASE.godBase },   // m391
   { id: 'isramp', world: 'tkit', name: 'THE RIVER ISLANDS · the gap ramp on the high hump', at: () => IBASE.godRamp },   // m391
   { id: 'isstrait', world: 'tkit', name: 'THE RIVER ISLANDS · the sea stacks and rope bridges, the way over on foot', at: () => IXING.godAt },   // m394
+  { id: 'islight', world: 'tkit', name: 'THE RIVER ISLANDS · lighthouse rock (the keeper, Chapter 5\'s boss)', at: () => IKEEP.godAt },   // m398
   { id: 'otferry', world: 'tkit', name: "OLD TOWN · the ferry landing to the Waterfront (Chapter 4's way in)", at: () => OFERRY.otAt },   // m381
   { id: 'wfferry', world: 'tkit', name: "THE WATERFRONT · the ferry's pontoon off pier 1", at: () => OFERRY.wfAt },
   { id: 'otswing', world: 'tkit', name: "OLD TOWN · the swing bridge's foot (the second way to the Waterfront)", at: () => OSWING.otAt },   // m382
@@ -40957,6 +41030,7 @@ function frameBody() {
   wfBotStep(dt);                // Uplift's robots, bound to their bodies (m385); `wfBot` drives them in `stepDummies`
   islMoversStep(dt);            // the islands' BASE jumper and kite surfers, bound to their bodies (m392); `isJump` / `isKite` drive them
   islXingStep(dt);              // a flight down on the islands' landing field (m394)
+  keeperStep(dt);               // the lighthouse's beam, and the keeper's storm while the thing wearing him stands (m398)
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)
@@ -41695,6 +41769,7 @@ async function init() {
     try { buildIslandMovers(); } catch (e) { note('MOVERS FAIL'); console.warn('[melee] island kite surfers', e); }
     try { buildIslandXing(); } catch (e) { note('XING FAIL'); console.warn('[melee] island rope bridges', e); }
     try { buildIslandThermal(); } catch (e) { note('THERMAL FAIL'); console.warn('[melee] island thermal and tether', e); }
+    try { buildIslandKeeper(); } catch (e) { note('KEEPER FAIL'); console.warn('[melee] island keeper', e); }
     // AND THE SWING BRIDGE (m382): the second way over, before the city ring keeps its trees off its landing
     try { buildSwing(); } catch (e) { note('SWING FAIL'); console.warn('[melee] swing bridge', e); }
     // ITS CREEK AND POND (m307): what stands in and over the valley and the bowl the land is carved with
@@ -41946,7 +42021,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
