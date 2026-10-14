@@ -247,7 +247,7 @@ differ" table there, so no region feels like the last one.
 - [ ] **C1 Protest events.** Activists gather with signs and chant; rednecks show up; it turns into
   a brawl if provoked; cops respond. As an activist you can walk inside the crowd through a barricade.
   - [x] m346 **C1-1** the protest: activists with signs gather at the square, march up the street chanting, rally, and go home, on their own clock.
-  - [ ] **C1-2** the counter-protest: rednecks and bikers show up at the rally, the two sides shout; it turns into a brawl if provoked (a blow, a shot, the alien); cops respond.
+  - [x] m347 **C1-2** the counter-protest: rednecks and bikers show up at the rally, the two sides shout; it turns into a brawl if provoked (a blow, a shot, the alien); cops respond.
   - [ ] **C1-3** the barricade: as an activist inside the crowd you march through a barricade nobody else gets past.
 - [ ] **C2 Skinsuit incursions.** An enemy ship/agent turns civilians on the street; you fight and
   revert them. Ties to the existing virus system.
@@ -786,3 +786,13 @@ differ" table there, so no region feels like the last one.
   minutes. Their signs and chants make fun of everyone ("NO TO THE THING", "TRUST NO HAT", "WHAT DO WE
   WANT? SOMETHING!"), and a man in a suit paid for the placards. The alien still scatters them. When
   The Pearl gets its land, the same event moves to its plaza.
+
+- **m347 (C1-2):** four counter-protesters (hicks and bikers, with their own signs and chant) walk out
+  to meet the rally, and a man in a nice suit (who paid for both sides' signs) stands between them. It
+  turns into a brawl if you hit anyone in either crowd, or now and then by itself ("somebody threw a
+  sandwich"). Everyone goes for the nearest person from the other side, the cops in the area run over,
+  and the first cop to arrive breaks it up; it fizzles out after 45 s if they don't get there. The
+  brawlers punch with the same knock-back you do but give you no heat. Civilians have no punch
+  animation, so it looks like people charging and knocking each other over. I also fixed a bug from
+  m338: a cop or walker who got hit lost their route for good, and a protester hit mid-march would
+  have been stuck in the hit pose forever.

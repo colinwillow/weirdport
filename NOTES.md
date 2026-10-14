@@ -7,6 +7,29 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **`d.beat` WAS TWO THINGS FROM m338 TO m346: THE HIT REACTION'S LENGTH AND MY ROUTE (m347).** `dummyBlow` writes
+  `d.beat = K.hitBeat` (a number) and the `hit` state ends on `d.t >= d.beat`; m338 put each role's ROUTE (an array) in
+  the same field. So a struck cop or walker lost his route for good (it became a number, and the picker wants a
+  `.length`), and a protester struck while the protest step was feeding him `d.beat = [[x, z]]` stayed in his hit clip
+  FOR EVER (`d.t >= [[x, z]]` is false for every number). The route is `d.route` / `d.routeI` now -- the picker, the
+  marks, the virus `keep`, the strike and the protest -- and `d.beat` is the hit's again. **Grep a field name before
+  giving a body a new one**: `d` is the most crowded object in this file.
+- **THE COUNTER-PROTEST, THE BRAWL AND THE COPS (m347, C1-2, `OPROTEST.COUNTER` / `SUIT`, `protestBrawl`).** Four
+  of the other lot (Lyle, Tank, Dwayne, Big Rhonda: hicks and bikers, signs KEEP WEIRDPORT NORMAL, I LIKE MY TRUCK, BACK IN
+  MY DAY, LIZARDS OUT) live round the corner lot and walk out to a line 6.5 m on past the end of the march once it is 40%
+  of the way, with their own chant answering (GET A JOB! / WE HAVE THREE!); a man in a nice suit -- who paid for everybody's
+  signs -- stands between the two. In the RALLY it BOILS OVER on a blow from you on either side (`dummyBlow`'s one hook,
+  `provoked = 'you'`) or by itself (5% a second: a sandwich). The BRAWL: everyone goes for the nearest of the other lot
+  still standing and punches through `dummyBlow(target, h, .45-1.05, null, HIM)` -- `pal` set, so no heat on you and no
+  mark -- with their fear held off (`fleeT = 0`, they are angry, not scared); the suit walks off; Old Town loses 2; every
+  cop within 120 m (not the bridge's two) is sent to the middle of it, and the first one within 7 m ends it ("POLICE! Break
+  it up!" -- everybody runs home), else it peters out at 45 s; the cops hold the scene 10 s and go back to their routes.
+  GOD: SKIP TO THE RALLY, THEN THE BRAWL (both sides out, then it goes off 12 s later).
+  `places`: `ok  PROTEST 13 people | ... counter line [[37.6,56.2],[36.7,57.9],[35.8,59.6],[34.9,61.2]] suit at [33,57.9]`,
+  `ok  BRAWL brawl -> home after 45.5 s, cops 0` (no bodies in the harness, so it times out), exit 0.
+  **Not built:** nobody throws anything you can see (the sandwich is a card), the punchers play no swing (civilians
+  have no attack clips -- it reads as people charging and knocking each other over), and cops do not arrest anyone.
+
 - **THE PROTEST IS AN EVENT ON ITS OWN CLOCK, AND A CROWD IS BODIES CHASING THEIR PLACES ROUND ONE MOVING POINT (m346,
   C1-1, `OPROTEST`, `buildProtest`, `protestStep`, `protestStart`).** Eight activists (Sage, Moonbeam, Jasper, Rowan,
   Tamsin, River, Kai, Ezra -- npc marks, `src: 'PROTEST'`, living round THE SQUARE at (-7.5, 35.7), a clear lot from m337's

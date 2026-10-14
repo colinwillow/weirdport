@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m346</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m347</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m346</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m347</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm346';
+const BUILD = 'm347';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -25750,7 +25750,7 @@ function virusGo(d, to) {
   // m339: WHO HE IS rides the turn both ways -- a quest's tag, his lines, his mark, his beat -- so the person who comes back
   // is the person who went. The alien in between holds them and says nothing (`talkOk` refuses a `wasK` body).
   const keep = (d.qTag || d.talk || d.markId || d.keepTalk) ? { tag: d.qTag || null, talk: d.keepTalk || d.talk || null,
-    after: d.qAfter || null, markId: d.keepMark || d.markId || null, beat: d.keepBeat || d.beat || null,
+    after: d.qAfter || null, markId: d.keepMark || d.markId || null, route: d.keepRoute || d.route || null,
     big: d.qBig || 0, downs: d.qDowns || 0 } : null;                // m342: a boss's size and how many downs it takes
   // **BOTH SILHOUETTES ARE TAKEN BEFORE THE OLD BODY GOES**, the DNA morph's own rule: the blob
   // has to BE the old shape at one end and the new one at the other, so a profile taken after
@@ -25788,9 +25788,9 @@ function virusArrive(T, loud) {
   const Kp = T.keep;                                     // m339: see `virusGo`
   if (Kp) {
     n.qTag = Kp.tag;
-    if (T.going) { n.keepTalk = Kp.talk; n.qAfter = Kp.after; n.keepMark = Kp.markId; n.keepBeat = Kp.beat;
+    if (T.going) { n.keepTalk = Kp.talk; n.qAfter = Kp.after; n.keepMark = Kp.markId; n.keepRoute = Kp.route;
       n.qDowns = Kp.downs; if (Kp.big > 1) { n.qBig = Kp.big; n.root.scale.setScalar(Kp.big); n.hpMax = (n.hpMax || 1) * Kp.big; n.hp = n.hpMax; } }
-    else { n.talk = Kp.after || Kp.talk; n.talkSeen = 1; n.markId = Kp.markId; if (Kp.beat) { n.beat = Kp.beat; n.roamT = 1.5; } }
+    else { n.talk = Kp.after || Kp.talk; n.talkSeen = 1; n.markId = Kp.markId; if (Kp.route) { n.route = Kp.route; n.roamT = 1.5; } }
   }
   // **HE COMES OUT ANGRY, AND THAT IS THE WHOLE POINT OF THE MECHANIC.** A civilian who becomes
   // a warrior and then wanders off is a costume change; `mark` and `aggro` are what make him
@@ -26162,6 +26162,7 @@ function dummyBlow(d, dirH, power, dmg, pal) {
   // gives up when you do.
   if (!pal) d.mark = PALMARK;
   if (!pal) heatHit(d);           // a blow you land is heat (m280)
+  if (!pal && d.markId && /^(protest|counter)_/.test(d.markId) && OPROTEST.st === 'rally') OPROTEST.provoked = 'you';   // m347
   // AND HOW A MAN WHO DOES NOT FIGHT DECIDES TO LEAVE. Capped, so standing over him and
   // punching is not a man who runs for a minute.
   if (K.flee0) { d.fleeT = Math.min(K.fleeMax, (d.fleeT || 0) + (d.fleeT ? K.fleeAdd : K.flee0)); d.roamT = 0; }
@@ -26858,7 +26859,9 @@ function foeWander(d, dt, t, dd, toP) {
       // give-up are still underneath it.
       let a = 0;
       // m338: A BEAT -- a body placed by role (`OTLIFE`) walks its route's next waypoint instead of a random spot
-      if (d.beat && d.beat.length) { d.beatI = ((d.beatI === undefined ? -1 : d.beatI) + 1) % d.beat.length; d.rx = d.beat[d.beatI][0]; d.rz = d.beat[d.beatI][1]; }
+      // (m347: `d.route`, NOT `d.beat` -- `d.beat` is the hit reaction's length (`dummyBlow`), and sharing it froze a struck
+      // protester in his hit clip for ever and cost a struck cop his route)
+      if (d.route && d.route.length) { d.routeI = ((d.routeI === undefined ? -1 : d.routeI) + 1) % d.route.length; d.rx = d.route[d.routeI][0]; d.rz = d.route[d.routeI][1]; }
       else for (let i = 0, n = K.roamTry || 1; i < n; i++) {
         a = Math.random() * Math.PI * 2;
         // **THE RING HAS A HOLE IN IT WHERE YOU ARE POINTING (m74, `K.palArc`).** *"He goes in
@@ -26881,7 +26884,7 @@ function foeWander(d, dt, t, dd, toP) {
   const gx = d.rx - d.root.position.x, gz = d.rz - d.root.position.z;
   const gd = Math.hypot(gx, gz);
   if (gd < K.roamAt) {
-    d.roamT = d.beat ? .4 + Math.random() * 1.6 : rnd(K.roamWait);          // m338: a beat pauses, it does not linger
+    d.roamT = d.route ? .4 + Math.random() * 1.6 : rnd(K.roamWait);         // m338: a route pauses, it does not linger
     // **WHICH IDLE HE HOLDS IS PICKED FRESH ON EACH STOP.** *"clancy_idle_01 and clancy_idle_02
     // are the main ones."* Two clips and one `idle` field is one clip; a pool read HERE, where
     // he actually comes to rest, is the whole of it -- and `K.clips.idle` stays a single string
@@ -29215,13 +29218,13 @@ function strikeStep(dt) {
   for (const d of DUMMIES) {
     if (d.gone || !d.markId || !S.crew.includes(d.markId) || isAlien(d.K)) continue;
     if (on && !d.strikeOff && S.line && S.line.length >= 2) {
-      d.strikeOff = { beat: d.beat || null, talk: d.talk || null, hx: d.hx, hz: d.hz };
+      d.strikeOff = { route: d.route || null, talk: d.talk || null, hx: d.hx, hz: d.hz };
       const i = S.crew.indexOf(d.markId), a = S.line[i % 2 ? S.line.length - 1 : 0], b = S.line[i % 2 ? S.line.length - 2 : 1];
-      d.beat = [a, b]; d.beatI = undefined; d.roamT = .2 + Math.random() * 1.5;
+      d.route = [a, b]; d.routeI = undefined; d.roamT = .2 + Math.random() * 1.5;
       if (d.talk) d.talk = Object.assign({}, d.talk, { id: 'strike_' + d.markId, lines: S.lines.slice(), done: 0, talks: ['*'], alien: 'brush' });
     } else if (!on && d.strikeOff) {
       const o = d.strikeOff; d.strikeOff = null;
-      d.beat = o.beat; d.beatI = undefined; d.talk = o.talk; d.hx = o.hx; d.hz = o.hz; d.rx = o.hx; d.rz = o.hz; d.roamT = .2;
+      d.route = o.route; d.routeI = undefined; d.talk = o.talk; d.hx = o.hx; d.hz = o.hz; d.rx = o.hx; d.rz = o.hz; d.roamT = .2;
     }
   }
 }
@@ -29256,6 +29259,18 @@ const OPROTEST = {
           "A nice man in a suit paid for all the placards. Very supportive of the cause. Whichever one it is.",
           "If you're not angry, you're not paying attention. I'm not sure what to, but I'm FURIOUS."],
   CHANT: [['WHAT DO WE WANT?', 'SOMETHING!'], ['WHEN DO WE WANT IT?', 'NOW-ISH!'], ['WHOSE STREETS?', 'ALSO THE CARS\'!'], ['HEY HEY! HO HO!', 'WE FORGOT THE REST!']],
+  // m347 (C1-2): THE COUNTER-PROTEST -- they live round the corner lot and come out to meet the march, a line across the
+  // street from the rally; the man in the suit stands between the two and slips away when it goes off
+  COUNTER: [
+    { kind: 'hick_skinny', name: 'Lyle', sign: 'KEEP WEIRDPORT NORMAL' },
+    { kind: 'fat_biker_01', name: 'Tank', sign: 'I LIKE MY TRUCK' },
+    { kind: 'hick_skinny', name: 'Dwayne', sign: 'BACK IN MY DAY' },
+    { kind: 'fat_biker_01', name: 'Big Rhonda', sign: 'LIZARDS OUT' },
+  ],
+  SUIT: { kind: 'fat_secret_service', name: 'a man in a nice suit', lines: "Just here to observe. Democracy in action. Lovely.|Who paid for the signs? Somebody who cares. About both sides. Equally.|Things do get heated, don't they. Almost as if someone wanted them to." },
+  counterLines: ["We're the counter-protest. We're against whatever they're for.", "A fella in a suit gave us the signs. Said we'd want 'em. He was right.", "Back in my day there weren't any lights in the sky. Or protests. Or this many vowels in coffee."],
+  CHANT2: [['GET A JOB!', 'WE HAVE THREE!'], ['GO HOME!', 'THIS IS HOME!'], ['WHAT DO WE WANT?', 'THE OPPOSITE!']],
+  boil: .05, brawlMax: 45, copAt: 7, copHold: 10, punch: [1.2, 2.4], reach: 1.25,
 };
 function protestPaint(t, bg, fg, w, h) {
   const c = document.createElement('canvas'); c.width = w || 256; c.height = h || 160;
@@ -29287,10 +29302,26 @@ function buildProtest() {
     peopleMark(P.id, s[0], s[1], rr() * 6.28, Object.assign({ group: 'city', talks: ['*'], alien: 'flee', lines: O.lines.join('|') }, P), s[2], 'PROTEST', 'city');
     O.n++;
   });
-  // the chant: one sprite over the crowd, its canvas repainted when the line changes
-  const cv = protestPaint('', 'rgba(0,0,0,0)', '#fff', 512, 128), tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;
-  O.chant = new THREE.Sprite(new THREE.SpriteMaterial({ map: tx, transparent: true, depthWrite: false, fog: false }));
-  O.chant.scale.set(5.2, 1.3, 1); O.chant.visible = false; O.chant.renderOrder = 6; O.chantCv = cv; O.chantTx = tx; scene.add(O.chant);
+  // m347: THE COUNTER-PROTEST'S LINE, across the street from the rally (6.5 m on past the end of the march, facing back),
+  // their homes farther round the corner, and the man in the suit between the two
+  { const P = O.path, a = P[Math.max(0, P.length - 2)], b = P[P.length - 1], hE = Math.atan2(b.x - a.x, b.z - a.z);
+    const fx = Math.sin(hE), fz = Math.cos(hE), rx = -fz, rz = fx, at = (r, f, m) => lifeSpot(B[0] + rx * r + fx * f, B[2] + rz * r + fz * f, m || 3);
+    O.endH = hE;
+    O.COUNTER.forEach((C, i) => {
+      const k = (i - (O.COUNTER.length - 1) / 2) * 1.9, L = at(k, 6.5), H = at(k * 1.4, 11 + rr() * 3, 5) || L;
+      C.id = 'counter_' + i; C.line = L ? [L[0], L[1]] : null;
+      if (!H) return;
+      peopleMark(C.id, H[0], H[1], hE + Math.PI, Object.assign({ group: 'country', talks: ['*'], alien: 'flee', lines: O.counterLines.join('|') }, C), H[2], 'PROTEST', 'country');
+      O.n++;
+    });
+    const Sh = at(4, 13, 5), Sm = at(.8, 3.3);
+    if (Sh) { O.SUIT.id = 'protest_suit'; O.SUIT.at = Sm ? [Sm[0], Sm[1]] : null;
+      peopleMark(O.SUIT.id, Sh[0], Sh[1], hE, Object.assign({ group: 'city', talks: ['*'], alien: 'brush', brushAlien: 'Fascinating. Carry on.' }, O.SUIT), Sh[2], 'PROTEST', 'city'); O.n++; } }
+  // the chants: one sprite over each side, its canvas repainted when the line changes
+  const chant = () => { const cv = protestPaint('', 'rgba(0,0,0,0)', '#fff', 512, 128), tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;
+    const S = new THREE.Sprite(new THREE.SpriteMaterial({ map: tx, transparent: true, depthWrite: false, fog: false }));
+    S.scale.set(5.2, 1.3, 1); S.visible = false; S.renderOrder = 6; S.userData.cv = cv; S.userData.tx = tx; scene.add(S); return S; };
+  O.chant = chant(); O.chantCv = O.chant.userData.cv; O.chantTx = O.chant.userData.tx; O.chant2 = chant();
   O.st = 'quiet'; O.t = 20 + rr() * 20;              // the first one soon after you arrive
   return O.n;
 }
@@ -29312,52 +29343,115 @@ function protestSign(d, t) {
   d.root.add(g); d.pSign = g;
 }
 function protestStart() { const O = OPROTEST; if (!O.path) return false; O.st = 'gather'; O.t = O.gather; O.s = 0; O.runs++; return true; }
+// one chant line painted on a sprite's canvas
+function protestChant(S, t, alt) {
+  const g = S.userData.cv.getContext('2d'); g.clearRect(0, 0, 512, 128); g.fillStyle = 'rgba(42,33,64,.82)'; g.fillRect(16, 20, 480, 88);
+  g.fillStyle = alt ? '#ffc247' : '#ffffff'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.font = '800 56px "Barlow Condensed", system-ui, sans-serif'; g.fillText(t, 256, 66); S.userData.tx.needsUpdate = true;
+}
+const protestSide = d => d.markId && d.markId.startsWith('protest_') && d.markId !== 'protest_suit' ? 'a' : d.markId && d.markId.startsWith('counter_') ? 'c' : null;
+// a body to its spot: as a one-point route, walking now if it is more than 1.4 m off
+function protestTo(d, x, z) { d.pT = [x, z]; d.route = [[x, z]]; if (Math.hypot(d.root.position.x - x, d.root.position.z - z) > 1.4) { d.rx = x; d.rz = z; d.roamT = 0; } }
 function protestStep(dt) {
   const O = OPROTEST; if (!O.path || !inTK()) return;
   O.t -= dt;
-  // the chant, over the crowd while it is out
-  const out = O.st === 'gather' || O.st === 'march' || O.st === 'rally';
+  // the chants, over each side while it is out (the counter-protest only at the rally)
+  const out = O.st === 'gather' || O.st === 'march' || O.st === 'rally', face = O.st === 'rally';
   if (O.chant) {
-    O.chant.visible = out && !!O.lead;
+    O.chant.visible = out && !!O.lead; O.chant2.visible = face && !!O.cLead;
     if (out && (O.cT -= dt) <= 0) {
-      O.cT = 1.7; O.cI = (O.cI + 1) % (O.CHANT.length * 2);
-      const pair = O.CHANT[(O.cI >> 1) % O.CHANT.length], t = pair[O.cI & 1], g = O.chantCv.getContext('2d');
-      g.clearRect(0, 0, 512, 128); g.fillStyle = 'rgba(42,33,64,.82)'; g.fillRect(16, 20, 480, 88);
-      g.fillStyle = O.cI & 1 ? '#ffc247' : '#ffffff'; g.textAlign = 'center'; g.textBaseline = 'middle';
-      g.font = '800 56px "Barlow Condensed", system-ui, sans-serif'; g.fillText(t, 256, 66); O.chantTx.needsUpdate = true;
+      O.cT = 1.7; O.cI = (O.cI + 1) % 24;
+      const p1 = O.CHANT[(O.cI >> 1) % O.CHANT.length], p2 = O.CHANT2[(O.cI >> 1) % O.CHANT2.length];
+      protestChant(O.chant, p1[O.cI & 1], O.cI & 1); if (face) protestChant(O.chant2, p2[(O.cI + 1) & 1], !((O.cI + 1) & 1));
     }
   }
-  if ((O.tick -= dt) > 0) return; O.tick = .5;
-  const bodies = DUMMIES.filter(d => !d.gone && d.markId && d.markId.startsWith('protest_') && !isAlien(d.K));
-  for (const d of bodies) if (!d.pSign) { const P = O.PEOPLE.find(q => q.id === d.markId); if (P) protestSign(d, P.sign); }
+  if ((O.tick -= dt) > 0) return; const step = .5 - O.tick; O.tick = .5;
+  const all = DUMMIES.filter(d => !d.gone && d.markId && /^(protest|counter)_/.test(d.markId) && !isAlien(d.K));
+  const bodies = all.filter(d => protestSide(d) === 'a'), counter = all.filter(d => protestSide(d) === 'c'), suit = all.find(d => d.markId === 'protest_suit');
+  for (const d of all) if (!d.pSign) { const P = O.PEOPLE.find(q => q.id === d.markId) || O.COUNTER.find(q => q.id === d.markId); if (P) protestSign(d, P.sign); }
+  const free = d => !(d.fleeT > 0) && d.st !== 'down' && d.st !== 'up';
+  const homeAll = () => { for (const d of all) if (d.pT) { d.pT = null; d.route = null; d.roamT = .2 + Math.random(); } };
   // the state
   if (O.st === 'quiet') { if (O.t <= 0) protestStart(); }
   else if (O.st === 'gather') { if (O.t <= 0) O.st = 'march'; }
   else if (O.st === 'march') {
     // the leader point moves on only while the crowd keeps up with it
     let lag = 0, n = 0;
-    for (const d of bodies) { if (d.fleeT > 0 || d.st === 'down') continue; const T = d.pT; if (T) { lag += Math.hypot(d.root.position.x - T[0], d.root.position.z - T[1]); n++; } }
-    if (!n || lag / n < O.lag) O.s = Math.min(O.len, O.s + O.speed * .5);
-    if (O.s >= O.len) { O.st = 'rally'; O.t = O.rally; }
-  } else if (O.st === 'rally') { if (O.t <= 0) { O.st = 'home'; O.t = 3; } }
-  else if (O.st === 'home') {
-    for (const d of bodies) if (d.pT) { d.pT = null; d.beat = null; d.roamT = .2 + Math.random(); }
+    for (const d of bodies) { if (!free(d)) continue; const T = d.pT; if (T) { lag += Math.hypot(d.root.position.x - T[0], d.root.position.z - T[1]); n++; } }
+    if (!n || lag / n < O.lag) O.s = Math.min(O.len, O.s + O.speed * step);
+    if (O.s >= O.len) { O.st = 'rally'; O.t = O.rally; O.provoked = null; }
+  } else if (O.st === 'rally') {
+    // m347: IT BOILS OVER -- a blow from you on either side, or by itself now and then (somebody throws a sandwich)
+    if (!O.provoked && counter.length && Math.random() < O.boil * step) O.provoked = 'a sandwich';
+    if (O.provokeAt !== undefined && (O.provokeAt -= step) <= 0) { O.provokeAt = undefined; O.provoked = O.provoked || 'GOD'; }
+    if (O.provoked) protestBrawl(O.provoked);
+    else if (O.t <= 0) { O.st = 'home'; O.t = 3; }
+  } else if (O.st === 'brawl') {
+    O.bT = (O.bT || 0) + step;
+    // everybody at the nearest one of the other lot still standing; a punch is `dummyBlow` from HIM (not you: no heat)
+    for (const d of all) {
+      if (d === suit) continue;
+      d.fleeT = 0;                                                         // angry, not scared
+      if (!free(d)) continue;
+      const side = protestSide(d), foes = side === 'a' ? counter : bodies;
+      let T = null, td = 15;
+      for (const o of foes) { if (!free(o) && o.st !== 'hit') continue; const q = Math.hypot(o.root.position.x - d.root.position.x, o.root.position.z - d.root.position.z); if (q < td) { td = q; T = o; } }
+      if (!T) continue;
+      protestTo(d, T.root.position.x, T.root.position.z);
+      if ((d.punchT = (d.punchT || 0) - step) <= 0 && td < O.reach && d.st !== 'hit') {
+        d.punchT = rnd(O.punch);
+        const h = Math.atan2(T.root.position.x - d.root.position.x, T.root.position.z - d.root.position.z); d.h = h;
+        dummyBlow(T, h, .45 + Math.random() * .6, null, d); O.punches = (O.punches || 0) + 1;
+      }
+    }
+    // the cops arrive: within `copAt` of the middle of it, it is over
+    const cx = O.bAt[0], cz = O.bAt[1];
+    for (const c of O.cops) if (!c.gone) { if (c.st !== 'down') protestTo(c, cx, cz); if (!O.copIn && Math.hypot(c.root.position.x - cx, c.root.position.z - cz) < O.copAt) O.copIn = 1; }
+    if (O.copIn || O.bT > O.brawlMax) {
+      toast(O.copIn ? 'POLICE! Break it up! Go home, all of you.' : 'It peters out. Everybody limps home.', 2.6);
+      for (const d of all) if (d !== suit && free(d)) { d.fleeT = 2 + Math.random() * 2; d.roamT = 0; }
+      O.st = 'home'; O.t = 3; O.copT = O.copHold; O.brawls = (O.brawls || 0) + 1;
+    }
+  } else if (O.st === 'home') {
+    homeAll();
     if (O.t <= 0) { O.st = 'quiet'; O.t = O.quiet[0] + Math.random() * (O.quiet[1] - O.quiet[0]); }
-    O.lead = null; return;
+    O.lead = null; O.cLead = null;
   }
-  if (O.st === 'quiet') { O.lead = null; return; }
+  // the cops stay a while at the scene, then go back to their beats
+  if (O.st !== 'brawl' && O.cops && O.cops.length && (O.copT -= step) <= 0) {
+    for (const c of O.cops) if (c.copOff) { c.route = c.copOff.route; c.routeI = undefined; c.pT = null; c.roamT = .2; c.copOff = null; }
+    O.cops = [];
+  }
+  if (O.st === 'quiet' || O.st === 'home' || O.st === 'brawl') { if (O.st !== 'brawl') { O.lead = null; O.cLead = null; } return; }
   // everyone to their place in the block round the leader point
   const L = O.lead = protestAt(O.s), fx = Math.sin(L.h), fz = Math.cos(L.h), rx = -fz, rz = fx;
   let cx = 0, cz = 0, k = 0;
   for (const d of bodies) {
     const P = O.PEOPLE.find(q => q.id === d.markId); if (!P) continue;
     cx += d.root.position.x; cz += d.root.position.z; k++;
-    if (d.fleeT > 0 || d.st === 'down' || d.st === 'up') continue;
-    const tx = L.x + rx * P.off[0] + fx * P.off[1], tz = L.z + rz * P.off[0] + fz * P.off[1];
-    d.pT = [tx, tz]; d.beat = [[tx, tz]];
-    if (Math.hypot(d.root.position.x - tx, d.root.position.z - tz) > 1.4) { d.rx = tx; d.rz = tz; d.roamT = 0; }
+    if (!free(d)) continue;
+    protestTo(d, L.x + rx * P.off[0] + fx * P.off[1], L.z + rz * P.off[0] + fz * P.off[1]);
   }
   if (O.chant && k) O.chant.position.set(cx / k, (O.a ? O.a[1] : 0) + 3.6, cz / k);
+  // m347: the counter-protest walks out to its line once the march is on its way, and the suit to his spot between
+  if (O.st === 'rally' || (O.st === 'march' && O.s > O.len * .4)) {
+    let x2 = 0, z2 = 0, k2 = 0;
+    for (const d of counter) { const C = O.COUNTER.find(q => q.id === d.markId); if (!C || !C.line) continue; x2 += d.root.position.x; z2 += d.root.position.z; k2++; if (free(d)) protestTo(d, C.line[0], C.line[1]); }
+    O.cLead = k2 ? 1 : null; if (O.chant2 && k2) O.chant2.position.set(x2 / k2, (O.a ? O.a[1] : 0) + 3.6, z2 / k2);
+    if (suit && O.SUIT.at && free(suit)) protestTo(suit, O.SUIT.at[0], O.SUIT.at[1]);
+  }
+}
+// it goes off: the middle of it, the cops called (the beat cops, and any other cop near), the suit slips away
+function protestBrawl(why) {
+  const O = OPROTEST; if (!O.path || O.st === 'brawl') return false;
+  const L = protestAt(O.len); O.st = 'brawl'; O.bT = 0; O.copIn = 0; O.provoked = why || 'GOD';
+  O.bAt = [L.x + Math.sin(O.endH || 0) * 3.2, L.z + Math.cos(O.endH || 0) * 3.2];
+  cardShow('A BRAWL', why === 'you' ? 'YOU STARTED IT' : 'SOMEBODY THREW A SANDWICH', 2.6);
+  dhPush('oldtown', -2);
+  O.cops = DUMMIES.filter(d => !d.gone && /cop|officer/i.test(mphName(d.K)) && !isAlien(d.K) && Math.hypot(d.root.position.x - O.bAt[0], d.root.position.z - O.bAt[1]) < 120 && !(d.markId && /^cop_bridge/.test(d.markId)));
+  for (const c of O.cops) if (!c.copOff) c.copOff = { route: c.route || null };
+  const s = DUMMIES.find(d => d.markId === 'protest_suit'); if (s) { s.pT = null; s.route = null; s.rx = s.hx; s.rz = s.hz; s.roamT = 0; }
+  return true;
 }
 // ============================================================================================
 // PORTALS (m286, ROADMAP A8b) -- no one-way trips
@@ -30894,10 +30988,10 @@ function buildSite() {
   return S.n;
 }
 // ============================================================================================
-// OLD TOWN'S LIFE, BY ROLE (m338, ROADMAP B3-4, `OTLIFE`, `buildLife`, `lifeSpot`, the roam picker's `d.beat`)
+// OLD TOWN'S LIFE, BY ROLE (m338, ROADMAP B3-4, `OTLIFE`, `buildLife`, `lifeSpot`, the roam picker's `d.route`)
 // ============================================================================================
 // The crowd (`kitPopulate`) is dealt round the spawn and ambles round where it landed. This is the other kind of
-// people: each has a ROLE and a ROUTE, and walks it -- the roam picker takes `d.beat`'s next waypoint instead of a
+// people: each has a ROLE and a ROUTE, and walks it -- the roam picker takes `d.route`'s next waypoint instead of a
 // random spot, pausing a moment at each. Two COPS walk loops round Old Town (a near beat and a far one); four people
 // go about their day between the places that exist (the camp, the carts, the site, the middle, the bridge's town end);
 // two of the CREW go back and forth between the site and the carts -- and walk straight past the food. Every waypoint
@@ -33037,7 +33131,7 @@ function mkrStep() {
       b.talkSeen = 1; TALK.n++;
     }
     if (P.hat) peopleHat(b, P.hat);                                   // m336: the hidden good alien's tell
-    if (P.beat) { b.beat = P.beat; b.roamT = .2 + Math.random(); }    // m338: a route to walk (`OTLIFE`)
+    if (P.beat) { b.route = P.beat; b.roamT = .2 + Math.random(); }   // m338: a route to walk (`OTLIFE`); m347 `route`, see the picker
   }
 }
 
@@ -34284,6 +34378,8 @@ function godMenuOpen(on) {
   }
   btn('WIPE THE SAVE', () => { progReset(); location.replace(location.pathname); }, 'warn');
   if (OPROTEST.path) btn('START THE PROTEST NOW (' + OPROTEST.st.toUpperCase() + ')', () => { protestStart(); godMenuOpen(0); toast('The protest is gathering at the square', 2); });
+  // both sides to the rally first (they live 43 m apart), then it goes off 12 s later
+  if (OPROTEST.path) btn('SKIP TO THE RALLY, THEN THE BRAWL', () => { const O = OPROTEST; godMenuOpen(0); protestStart(); O.st = 'rally'; O.s = O.len; O.t = O.rally; O.provoked = null; O.provokeAt = 12; toast('Rally at the corner lot; it goes off in 12 s', 2.4); });
   // m343: district health -- push it by hand to see the bands (and, from C0-2, the look) change; the strike
   if (inTK() && DHEALTH.on) {
     sec('OLD TOWN HEALTH  ·  ' + Math.round(dhGet('oldtown')) + ' ' + dhBand(dhGet('oldtown')) + (SAVE.flags['strike:oldtown'] ? '  ·  ON STRIKE' : ''));
@@ -36774,7 +36870,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { OPROTEST, protestStart, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
