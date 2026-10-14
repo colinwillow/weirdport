@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m322</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m323</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m322</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m323</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm322';
+const BUILD = 'm323';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -30165,6 +30165,136 @@ function buildFord() {
   return D.n;
 }
 
+// ============================================================================================
+// THE METROPOLIS ON THE HORIZON (m323, farm polish 2, `SKYLINE`, `buildSkyline`, `skylineStep`)
+// ============================================================================================
+// m321's shots: from the west hill the island city is a thin low strip, and from the crash site the hedges hide it
+// completely -- its buildings are two and three storeys at ~450 m, so they stand ~3 degrees over the horizon, and a
+// 2 m hedge 30 m away stands 4. REGIONS: the farm is the rural ring, and "the city a skyline on the horizon you are
+// trying to reach" is THE METROPOLIS -- skyscrapers, Dump Tower, "the skyline the aliens control from the top of Dump
+// Tower", the last region before the Mothership. So it stands on the horizon past the island, on the line from the
+// farm through the island's middle, `dist` out: from the fields the island city sits in front of it.
+// **IT IS SCENERY, DRAWN AS A HOMOTHETY ABOUT THE LENS** (`skylineStep`): its true distance (~2 km from the farm) is
+// past every far plane this game uses (400 in the city, ~1,100 on the farm), so each frame the group is pulled in
+// toward the camera to `R` x the far plane and scaled by the same factor -- every point keeps its exact bearing and
+// angle, so it has true parallax and true size, and depth still sorts it behind the island and the hills. One merged
+// mesh, one draw call, no shadows, its own haze (the fog colour, denser at the base) since fog would erase it.
+// **Placed by the table** (the placement rule): each DISTRICT is a named spot along the horizon with its reason;
+// its towers are rolled inside it from a fixed seed.
+const SKYLINE = {
+  on: 1, n: 0, g: null, mat: null, c: null, dir: null,
+  dist: 1500,       // m from the island's middle to the metropolis's middle, on past the island from the farm
+  sea: -60,         // every tower runs down to here, so its foot meets the water or the haze, never floats
+  haze: .55,        // how far into the fog colour a tower's foot sits...
+  clear: .5,        // ...and how much clearer its top is (aerial haze is thickest low)
+  R: .86,           // drawn at this fraction of the lens's far plane
+  DISTRICTS: [      // along = metres across the view (+ = right, seen from the farm), deep = metres beyond `dist`
+    { id: 'core', along: 0, deep: 0, w: 260, d: 200, n: 12, h: [240, 430], why: "the metropolis's core round Dump Tower: the tallest glass, the aliens' grip" },
+    { id: 'pearl', along: -330, deep: 60, w: 280, d: 180, n: 10, h: [140, 270], why: 'The Pearl: painted towers and glass, the district to the left of the core' },
+    { id: 'oldtown', along: 300, deep: -120, w: 300, d: 160, n: 12, h: [60, 150], why: 'Old Town: low and old, the first district, nearest the water' },
+    { id: 'waterfront', along: 40, deep: -260, w: 620, d: 60, n: 9, h: [18, 55], why: 'the waterfront: warehouses and cranes along the shore, under everything' },
+    { id: 'hill', along: -650, deep: 220, w: 160, d: 160, n: 4, h: [60, 110], why: 'the hill on the far left: a few towers and the radio mast the tram climbs to' },
+  ],
+  dump: { along: 30, deep: 30, w: 52, h: 640, why: "DUMP TOWER: the tallest thing in the world, gold, with the aliens' beacon pulsing on top" },
+  mast: { along: -650, deep: 240, h: 230, why: 'the radio mast on the hill, a thin line against the sky' },
+};
+function buildSkyline() {
+  const S = SKYLINE, I = ISLE; if (!S.on || !I.live || !I.rect) return 0;
+  const R = I.rect, ic = [(R[0] + R[1]) / 2, (R[2] + R[3]) / 2];
+  let dx = 1, dz = 0;
+  if (FARMLAND.live) { dx = ic[0] - FARMLAND.O[0]; dz = ic[1] - FARMLAND.O[1]; const L = Math.hypot(dx, dz); dx /= L; dz /= L; }
+  S.dir = [dx, dz]; S.c = [ic[0] + dx * S.dist, ic[1] + dz * S.dist];
+  // seen from the farm looking along (dx, dz), "right" is (-dz, dx) in a right-handed y-up frame: forward x up
+  const rx = -dz, rz = dx, P = (al, de) => [rx * al + dx * de, rz * al + dz * de];
+  const sd = new THREE.Vector3().subVectors(sun.position, sun.target.position).normalize();
+  let seed = 323; const rr = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const col = new THREE.Color(), C = h => col.setHex(h).clone();
+  const PAL = [C(0x5d6f86), C(0x7c8796), C(0x4a5466), C(0x8d8578), C(0x6b7f8f), C(0x9aa3ad)];
+  const parts = [];
+  // a box from y0 to y1 at (x, z) in the skyline's frame, turned `yaw`: per-vertex colour (sunlit side warmer) and
+  // `aWin` = (face x in m, face y in m, kind) -- kind 1 = a wall with windows, 2 = the beacon, 0 = a roof
+  const box = (x, z, w, d, y0, y1, yaw, c, kind) => {
+    const g = new THREE.BoxGeometry(w, y1 - y0, d).toNonIndexed();
+    g.rotateY(yaw); g.translate(x, (y0 + y1) / 2, z);
+    const n = g.attributes.normal, uv = g.attributes.uv, cnt = n.count, cc = new Float32Array(cnt * 3), aw = new Float32Array(cnt * 3);
+    for (let i = 0; i < cnt; i++) {
+      const nx = n.getX(i), ny = n.getY(i), nz = n.getZ(i), lit = Math.max(0, nx * sd.x + ny * sd.y + nz * sd.z);
+      const k = ny > .5 ? 1.05 : .55 + .62 * lit, warm = lit * .12;
+      cc[i * 3] = c.r * k * (1 + warm); cc[i * 3 + 1] = c.g * k; cc[i * 3 + 2] = c.b * k * (1 - warm * .8);
+      const side = Math.abs(ny) < .5, fw = Math.abs(nx) > .5 ? d : w;
+      aw[i * 3] = side ? uv.getX(i) * fw : 0; aw[i * 3 + 1] = side ? y0 + uv.getY(i) * (y1 - y0) : 0; aw[i * 3 + 2] = kind === 2 ? 2 : side ? kind : 0;
+    }
+    g.setAttribute('aCol', new THREE.BufferAttribute(cc, 3)); g.setAttribute('aWin', new THREE.BufferAttribute(aw, 3));
+    g.deleteAttribute('uv'); g.deleteAttribute('normal');
+    parts.push(g); S.n++;
+  };
+  // a tower: a shaft, then up to two setbacks, sometimes a spire
+  const tower = (x, z, w, d, h, c) => {
+    const yaw = (rr() - .5) * .5;
+    let y = S.sea, ww = w, dd = d, top = h * (.55 + rr() * .25);
+    box(x, z, ww, dd, y, top, yaw, c, 1); y = top;
+    for (let s = 0; s < 2 && y < h - 8; s++) {
+      ww *= .62 + rr() * .2; dd *= .62 + rr() * .2;
+      const t2 = s === 1 ? h : y + (h - y) * (.5 + rr() * .3);
+      box(x, z, ww, dd, y, t2, yaw, c, 1); y = t2;
+    }
+    if (h > 150 && rr() < .45) box(x, z, 2.5, 2.5, h, h + h * .14, yaw, c, 0);
+  };
+  for (const D of S.DISTRICTS) for (let i = 0; i < D.n; i++) {
+    const al = D.along + (rr() - .5) * D.w, de = D.deep + (rr() - .5) * D.d, [x, z] = P(al, de);
+    const h = D.h[0] + (D.h[1] - D.h[0]) * Math.pow(rr(), .8), w = 22 + rr() * (D.id === 'waterfront' ? 50 : 28);
+    tower(x, z, w, w * (.7 + rr() * .6), h, PAL[Math.floor(rr() * PAL.length)]);
+  }
+  // the waterfront's cranes: a mast and a jib each
+  for (let i = 0; i < 4; i++) { const [x, z] = P(-220 + i * 150 + rr() * 40, -300); const yaw = Math.atan2(dx, dz) + (rr() - .5);
+    box(x, z, 3, 3, S.sea, 62, yaw, PAL[2], 0);
+    const jx = x + Math.sin(yaw) * 14, jz = z + Math.cos(yaw) * 14; box(jx, jz, 2, 44, 58, 62, yaw, PAL[2], 0); }
+  // DUMP TOWER: gold, the tallest by far, a crown of setbacks and the beacon
+  { const D = S.dump, [x, z] = P(D.along, D.deep), gold = C(0xc9a24a);
+    box(x, z, D.w, D.w, S.sea, D.h * .62, .2, gold, 1);
+    box(x, z, D.w * .76, D.w * .76, D.h * .62, D.h * .84, .2, gold, 1);
+    box(x, z, D.w * .5, D.w * .5, D.h * .84, D.h * .95, .2, gold, 1);
+    box(x, z, 6, 6, D.h * .95, D.h, .2, gold, 2);                              // the beacon
+    box(x, z, 1.6, 1.6, D.h, D.h * 1.08, .2, gold, 0); }                       // its needle
+  { const M = S.mast, [x, z] = P(M.along, M.deep); box(x, z, 3, 3, 40, M.h, 0, PAL[2], 0); box(x, z, 5, 5, M.h - 4, M.h, 0, C(0xd04030), 2); }
+  const geo = mergeGeometries(parts, false); parts.forEach(g => g.dispose());
+  if (!geo) { note('SKYLINE MERGE'); return 0; }
+  const m = new THREE.ShaderMaterial({
+    uniforms: { uFog: { value: new THREE.Color() }, uHaze: { value: S.haze }, uClear: { value: S.clear }, uT: { value: 0 } },
+    vertexShader: `attribute vec3 aCol; attribute vec3 aWin; varying vec3 vC; varying vec3 vW; varying float vH;
+void main() { vC = aCol; vW = aWin; vH = position.y; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+    fragmentShader: `uniform vec3 uFog; uniform float uHaze, uClear, uT; varying vec3 vC; varying vec3 vW; varying float vH;
+float sH(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+void main() {
+  vec3 c = vC;
+  float k = uHaze * (1.0 - uClear * clamp(vH / 400.0, 0.0, 1.0));
+  if (vW.z > 1.5) { c = vec3(.45, 1.0, .6) * (1.3 + .7 * sin(uT * 2.6)); k *= .25; }   // the beacon cuts the haze
+  else if (vW.z > .5) {
+    vec2 cell = floor(vW.xy / vec2(7.0, 9.0));
+    c *= .86 + .14 * step(.5, fract(vW.y / 9.0));                                        // floor bands
+    c = mix(c, vec3(1.0, .8, .45), step(.94, sH(cell)) * .45);                              // a lit window here and there
+  }
+  gl_FragColor = vec4(mix(c, uFog, k), 1.0);
+  #include <tonemapping_fragment>
+  #include <colorspace_fragment>
+}`,
+  });
+  m.name = 'skyline';
+  const mesh = new THREE.Mesh(geo, m); mesh.name = 'skyline'; mesh.castShadow = mesh.receiveShadow = false;
+  const g = new THREE.Group(); g.name = 'skyline_metropolis'; g.add(mesh); scene.add(g);
+  S.g = g; S.mat = m;
+  return S.n;
+}
+// each frame, AFTER the camera and the grade: pulled in to `R` x far and scaled by the same factor about the lens
+function skylineStep(dt) {
+  const S = SKYLINE, g = S.g; if (!g) return;
+  const cp = camera.position, dx = S.c[0] - cp.x, dz = S.c[1] - cp.z, d = Math.hypot(dx, dz);
+  const k = Math.min(1, camera.far * S.R / Math.max(d, 1));
+  g.position.set(cp.x + dx * k, cp.y + (0 - cp.y) * k, cp.z + dz * k);
+  g.scale.setScalar(k);
+  const U = S.mat.uniforms; U.uFog.value.copy(scene.fog.color); U.uHaze.value = S.haze; U.uClear.value = S.clear; U.uT.value += dt;
+}
+
 // ---- THE CREEK AND THE POND, ON THE LAND (m307, step 2, `buildFarmWaters`): the water, a footbridge, willows, reeds.
 // The valley and the bowl are already in the ground (`flHeight`'s carves); this is what sits in and over them. Built in
 // a frame on the land's own axes: `farmFrame` with th = atan2(-ua.z, ua.x) makes its u = a and its v = -b (derived:
@@ -32408,6 +32538,7 @@ function godMenuOpen(on) {
   sec('SWITCHES');
   btn('FLY ' + (GOD.fly ? 'ON' : 'OFF'), () => { godFly(!GOD.fly); godMenuOpen(1); });
   btn('FARM BATCHING ' + (FBATCH.on ? 'ON' : 'OFF') + ' (reloads)', () => { try { sessionStorage.setItem('mel.batch', FBATCH.on ? '0' : '1'); } catch (e) {} location.replace(location.pathname); });
+  if (SKYLINE.g) btn('METROPOLIS ON THE HORIZON ' + (SKYLINE.g.visible ? 'ON' : 'OFF'), () => { SKYLINE.g.visible = !SKYLINE.g.visible; godMenuOpen(1); });
   btn('THE STAND-IN QUEST (WEIRDPORT 101)', () => { progFlag('qon:q0'); quest.cur = null; toast('Quest on', 1.4); });
   btn('DEMO GATES HERE', () => { gateDemo(1); toast(GATES.length + ' gates', 1.4); });
   btn('DEMO PORTALS HERE', () => { portalDemo(1); toast(PORTALS.length + ' portals', 1.4); });
@@ -33967,6 +34098,7 @@ function frameBody() {
   stepLightX();
   stepSun();
   gradeStep(dt);                // the farm's golden hour, blended by where he stands (m295)
+  skylineStep(dt);              // after the lens and the grade: the metropolis, pulled in and scaled about the camera (m323)
   // AFTER the camera, because the reticle is PROJECTED through it -- drawn from last frame's
   // matrix it would trail the shot by a frame every time the lens moved, which is exactly the
   // thing a mark on a target must not do.
@@ -34677,6 +34809,8 @@ async function init() {
     try { buildTrestle(); } catch (e) { note('TRESTLE FAIL'); console.warn('[melee] trestle', e); }
     // THE STEPPING-STONE FORD (m320): the third way over, under the tide for now
     try { buildFord(); } catch (e) { note('FORD FAIL'); console.warn('[melee] ford', e); }
+    // THE METROPOLIS ON THE HORIZON (m323): past the island from the farm, one draw call, scaled in about the lens
+    try { buildSkyline(); } catch (e) { note('SKYLINE FAIL'); console.warn('[melee] skyline', e); }
     // THE STATIC BATCH (m318): after every frame-based builder -- ~150 static meshes into ~10 materials x 200 m cells
     try { farmBatch(); } catch (e) { note('BATCH FAIL'); console.warn('[melee] farm batch', e); }
     // THE GROUND (m301): dirt, mud and the lane's track, under everything
@@ -34841,7 +34975,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { fireSheet, BURN, burnStart,
+window.melee = window.mel = { fireSheet, BURN, burnStart, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

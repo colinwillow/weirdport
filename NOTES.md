@@ -7,6 +7,30 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE METROPOLIS ON THE HORIZON: A SCALED HOMOTHETY ABOUT THE LENS, ONE DRAW CALL (m323, farm polish 2, `SKYLINE`,
+  `buildSkyline`, `skylineStep`).** m321/m322's shots: from the west hill the island city is a thin low strip, and from
+  the crash site the hedges hide it entirely -- its buildings are two and three storeys at ~450 m (~3 deg over the
+  horizon) and a 2 m hedge 30 m off stands 4 deg. Pushing the fog out would not have helped: there is nothing tall to
+  see. **REGIONS says what the skyline IS**: the farm is the rural ring and the horizon is THE METROPOLIS -- skyscrapers,
+  Dump Tower, "the skyline the aliens control from the top of Dump Tower". So it stands `dist` 1500 m past the island's
+  middle on the line from the farm through it (centre (-1318, -718)), and from the fields the island city sits in front.
+  **Placed by the table**: five DISTRICTS (core, The Pearl, Old Town, the waterfront with four cranes, the hill with the
+  radio mast), each a named spot along the horizon with its reason, towers rolled inside it from seed 323; DUMP TOWER
+  640 m, gold, three setbacks, a pulsing green beacon (it cuts the haze: k x .25) and a needle. 153 boxes, merged.
+  **Its true distance (~2 km from the farm) is past every far plane here** (400 in the city, ~1,100 on the farm), so
+  each frame (`skylineStep`, after `gradeStep`) the group is pulled toward the camera to `R` .86 x `camera.far` and
+  scaled by the same k: world = cam + (true - cam) * k. **Every point keeps its exact bearing and angular size**, so it
+  has real parallax as he walks, and depth still sorts it BEHIND the island and the hills (it sits at .86-.92 of far).
+  Its own `ShaderMaterial`: per-vertex colour shaded off the sun's direction at build (sunlit faces warmer), floor
+  bands and a lit window per ~16 cells, and its own haze -- `mix(c, scene.fog.color, haze * (1 - clear * h/400))`,
+  thickest at the foot (`haze` .55, tops at .275) -- because scene fog would erase it. Tone-mapping and colour-space
+  chunks at the end like `isle_water`. Every tower runs down to y -60 so its foot meets the water or the haze.
+  **Tuned with `npm run shot`** (new rows `skyline` -- from the crash toward the city -- and `overcity`): haze .6 washed it
+  into the pink; .46 made it read near and black; .55 sits it in the air. Lit windows at 12% read as night: 6%.
+  GOD SWITCHES has **METROPOLIS ON THE HORIZON ON/OFF** (the A/B); `mel.SKYLINE` is live (`haze`, `clear`, `R`).
+  `places` builds it and ticks `skylineStep`: `SKYLINE 153 boxes, centre [-1318,-718] one mesh`.
+  **Not built: it is not reachable** -- it is the last region; nothing here pretends otherwise.
+
 - **THE PATCHWORK READS FROM THE RIDGE NOW: A WARM FIELD DYES THE GRASS, IT DOES NOT MULTIPLY IT (m322, farm polish 1,
   `isleLandMat` FLD block, `FPLAN.dye`, `FPLAN.TINT`).** m321's ridge shot: every far field the same lime green.
   **Lime times gold is still lime** -- m308's tint MULTIPLIED the grass texture, so wheat [1.8, 1.38, .55] on a

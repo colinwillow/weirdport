@@ -33,6 +33,12 @@ const SHOTS = {
     cam: `(() => { const p = mel.player.pos, B = mel.BRIDGE.gate || mel.BRIDGE.at, bx = B.x != null ? B.x : B[0], bz = B.z != null ? B.z : B[1];
       const dx = bx - p.x, dz = bz - p.z, L = Math.hypot(dx, dz);
       return [p.x - dx / L * 14, p.y + 7, p.z - dz / L * 14, p.x + dx / L * 60, p.y - 2, p.z + dz / L * 60]; })()` },
+  skyline: { place: 'crash', settle: 3, why: 'the city from the crash site: a skyline on the horizon (STEER 1)',
+    cam: `(() => { const p = mel.player.pos, I = mel.ISLE.rect, cx = (I[0] + I[1]) / 2, cz = (I[2] + I[3]) / 2, dx = cx - p.x, dz = cz - p.z, L = Math.hypot(dx, dz);
+      return [p.x - dx / L * 3, p.y + 2.2, p.z - dz / L * 3, cx, p.y + 6, cz]; })()` },
+  overcity: { place: 'overlook', settle: 3, why: 'the city from the west hill, square on',
+    cam: `(() => { const p = mel.player.pos, I = mel.ISLE.rect, cx = (I[0] + I[1]) / 2, cz = (I[2] + I[3]) / 2, dx = cx - p.x, dz = cz - p.z, L = Math.hypot(dx, dz);
+      return [p.x - dx / L * 3, p.y + 3, p.z - dz / L * 3, cx, p.y - 4, cz]; })()` },
   crash: { place: 'crash', settle: 3, why: 'the wreck from where the new game starts',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz);
       return [p.x - dx / L * 8, p.y + 4, p.z - dz / L * 8, C.x, p.y + 1, C.z]; })()` },

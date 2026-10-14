@@ -569,3 +569,10 @@ differ" table there, so no region feels like the last one.
   green (corn darker). The farm's grass overall is a little warmer and less lime. The before and
   after shots are in the chat. `mel.FPLAN.dye.value` makes the dyed fields brighter or darker live (1.05 now).
   Next: the skyline in the haze, then the hedge banks.
+
+- **m323 (farm polish 2):** the skyline. The island city's houses are too low to be seen from the
+  farm, so I put the METROPOLIS on the horizon behind it, since REGIONS.md describes it as the farm's
+  view: skyscrapers in five districts and Dump Tower in gold, the tallest thing in the world, with a
+  green alien beacon pulsing on top. It's scenery: you can't reach it, and from the island city it
+  shows across the water on the far side. It's one draw call. GOD → SWITCHES → METROPOLIS ON THE
+  HORIZON turns it off if you'd rather not have it. Next: the hedge banks.
