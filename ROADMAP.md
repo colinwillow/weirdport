@@ -285,6 +285,8 @@ differ" table there, so no region feels like the last one.
       - [x] m366 **C6-5b-1** the trailer park on stilts: a boardwalk down the creek, seven trailers off it, ramps from the rims, a ladder to the water, four residents.
       - [x] m367 **C6-5b-2** the logging mill on its flat by the gorge: the shed, the log deck, conveyors, a flume dropping into the creek.
     - [ ] **C6-5c** the fairground and the dirt-bike track; the people (rednecks, bikers, rally-goers).
+      - [x] m368 **C6-5c-1** the fairground: the stage and its truss, the field, the grandstand, the midway, the Ferris wheel, the barn, the gate; rally-goers.
+      - [ ] **C6-5c-2** the dirt-bike track over the ridges: jumps, berms, a start gate, the pits; the bikers.
     - [ ] **C6-5d** the way in: the freight line out of Old Town over the water, and a second way (the highway shoulder).
     - [ ] **C6-5e** the rally, the region's living system: it builds, the leader speaks, it boils over.
     - [ ] **C6-5f** Chapter 3's quests: the biker form, the gang's respect, the infiltrated rally leader (the boss).
@@ -953,3 +955,9 @@ differ" table there, so no region feels like the last one.
   gorge, and you can walk it all the way down and drop into the creek. That's my start on the
   "down the log flume" route to the next region. I widened the mill's flat so everything stands
   on level ground.
+
+- **m368 (C6-5c-1) The fairground, plus a step-height fix.** It has a stage with a lighting truss
+  you can climb, a grandstand, midway stalls, a turning Ferris wheel, a livestock barn and the gate.
+  **While building it I found the player can only step up 0.36 m**, which made two shipped stairs
+  into walls: the Pearl warehouses' platform steps (m359) and the mill's stair (m367). I rebuilt
+  both with lower steps, and `places` now walks every stair at the real step height.

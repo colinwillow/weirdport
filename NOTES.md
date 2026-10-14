@@ -7,6 +7,30 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **HIS STEP IS .357, AND TWO SHIPPED STAIRS WERE WALLS (m368, C6-5c-1, `MOVE.step`, `walkUp` in `places`).** `MOVE.step`
+  is `.5 * SZ` and `SZ` is 1.25 / 1.75 = .714, so a riser over .357 is a WALL to him -- `resolveBoxes` reads any box top
+  more than a step over his feet as a side, `groundAt` will not stand him on it. Found while building the fairground's stage:
+  **the Pearl's warehouse platform steps (m359) were .37 and the mill's stair (m367) .375**, and every probe in `places`
+  had passed them, because they asked `groundAt` with a step of .5 or 1 -- a question about the floor, not about him.
+  Fixed: the Pearl's three steps are .275, the mill's stair FOURTEEN risers of .32 (tread .4 so it still fits inside the
+  shed), the fair's stage five of .28, the grandstand's rows .34, conveyor one starts .3 off the ground. **`walkUp`** in
+  `places` walks a polyline in 10 cm steps re-finding the floor the way the player does (`groundAt` from his height, with
+  `MOVE.step`) and reports the height he ends at; the PEARL, MILL and FAIR rows walk their stairs with it. Tested by putting
+  the .37 back: `platforms walked up to 0, 0, 0, 0, 0, 0, 0, 0 STEPS YOU CANNOT WALK UP`, exit 1. (The first `walkUp` sat
+  below its first use in the tool -- `Cannot access 'walkUp' before initialization`, this repo's oldest landmine, in a
+  harness this time.)
+- **THE FAIRGROUND (m368, C6-5c-1, `HCFAIR`, `buildFairground`, `fairStep`).** On its flat (r 62 now: level out to 34 m,
+  past the gate and the trucks), in a frame from the STAGE to the GATE: the stage (steps both front corners, a painted
+  HOLLOW CREEK RALLY backdrop, speaker stacks, a podium, a lighting TRUSS whose back beam carries a railed CATWALK, a ladder
+  up its back post), the FIELD (bunting -- triangles strung pole to pole -- and hay bales), a roofed GRANDSTAND down one side
+  (eight rows a riser apart), the MIDWAY down the other (four striped stalls with painted signs, the shooting gallery's
+  targets), a FERRIS WHEEL on two A-frames that TURNS (`fairStep`: the wheel rotates, its eight cars counter-rotate to hang
+  level -- not merged, one group), a LIVESTOCK BARN with pens, the GATE (arch, sign, ticket booth) and four trucks outside.
+  Six people -- four rally-goers, two at stalls -- talking to their own about Saturday's rally, the man who pays for the
+  beer and the gas and the signs, and the lights over the hill on rally nights. GOD: "HOLLOW CREEK · the fairground".
+  `npm run places` (exit 0): `ok  hcfair -> player -217.4,6.0,370.8 ground 5.72`;
+  `ok  FAIR 62 boxes | stage walked up to 1.4, 1.4 (of 1.4) | grandstand 2.72 (of 2.72) | truss ladder 8.2 m | wheel turns | Wayne, Crystal, Rex, Old Lou, Darlene, Skeeter`;
+  `ok  PEARL ... | platforms walked up to 1.1 x8`; `ok  MILL ... stair ok | belts ok, ok ...`.
 - **THE MILL: A SHED WITH AN UPPER FLOOR, CONVEYORS AND A FLUME YOU CAN RUN DOWN INTO THE GORGE (m367, C6-5b-2, `HCMILL`,
   `buildMill`).** On its flat, in a frame whose +v points at the creek: a tin SHED (24 x 14 x 9, a pitched roof -- the
   slopes are `rotateX(-s * a)`: the first sign had them falling toward the ridge), its walls laid ROUND their openings (the

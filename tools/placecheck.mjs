@@ -58,7 +58,7 @@ const html = fs.readFileSync('index.html', 'utf8');
 let src = html.match(/<script type="module">([\s\S]*?)<\/script>/)[1];
 src = src.replace(/(from\s*)['"]three['"]/g, `$1'${pathToFileURL(path.join(TMP, 'three-shim.mjs')).href}'`)
          .replace(/(from\s*)['"]\.\/vendor\//g, `$1'${ROOT}vendor/`);
-src += '\nglobalThis.__M = { HCMILL, buildMill, HCTRAIL, buildTrailerPark, HCREEK, buildHollowLand, hcHeight, hcLocal, hcWorld, hcEdge, hcGorgeAt, buildPearlRoofs, pearlFace, KCLIMB, OPLAZA, buildPearlPlaza, plazaStep, plazaStart, pearlCrowd, OPEARL, buildPearl, OGOOD, buildGoodKiosks, RUMOURS, upApply, UPGRADES, JUICE, SAMPLE, OLOOK, buildLookout, lookoutStep, KCLIMB, UPLIFT, buildUplift, cyborgStep, resolveBoxes, SMART, smartStep, ROSTER, rosterKind, OAMP, buildAmp, ampStep, ampBoil, OWATCH, buildWatcher, watchStep, OORB, AIRT, buildOrbs, orbStep, OINCUR, incurStart, incurStep, protestBrawl, OPROTEST, buildProtest, protestStep, protestStart, OSTRIKE, buildStrike, strikeSet, strikeStep, OTSITE, ODECAY, buildDecay, decayApply, decayStep, DHEALTH, dhStep, dhGet, dhPush, FIRES, FOOT, buildFootbridge, footStep, footFix, BOXES, PORTALS, QUESTS, buildLife, OTLIFE, buildSite, OTSITE, buildCarts, OTCARTS, cartStep, mapRegionsTkit, buildCamp, OTCAMP, MAPREG, campStep, FARMLAND, buildFarmland, buildFarmWaters, FWATER, buildFieldBounds, FPLAN, buildFieldCrops, FCROP, buildNeighbours, FNEIGH, COW, COWS, cowSpook, fpOwnAt, flLocal, buildVehicles, FVEH, vehStep, buildFarmhands, FHANDS, MARKS, mkrNpcPlace, HOBO, HICK, buildTownEdge, FTOWN, buildCityRing, FRING, farmBatch, FBATCH, scene, buildTrestle, FTRES, buildFord, FFORD, GATES, buildOrchardTerrace, FTERR, buildSkyline, SKYLINE, skylineStep, flEdgeAt, isleBedAt, KCITY, buildKCityCol, buildIsle, ISLE, TRI, triBuild, groundAt, WORLD, MOVE, player, kitPopulate, KCROWD, FOE, HICK, HOBO, SKATER, BIKER, DUMMY, CIVILS, CLANCY, kitStand, bodySeat, SEAT, DUMMIES, THREE, buildFarm, buildFarmProps, buildCrash, buildLane, buildBridge, buildCows, buildHedgerows, HROW, buildFarmhouse, FHOUSE, farmhouseStep, buildRoadside, FROAD, GPAINT, buildGroundPaint, buildFlora, crashHero, FARM, MISSING, FLORA, FPROPS, farmPropsStep, floraStep, cowStep, crashStep, crashHeroStep, riverStep, gradeStep, CRASH, GODPLACES, godPlace, GOD, LANE, BRIDGE, crashSpawn, SAVE };\n';
+src += '\nglobalThis.__M = { HCFAIR, buildFairground, fairStep, HCMILL, buildMill, HCTRAIL, buildTrailerPark, HCREEK, buildHollowLand, hcHeight, hcLocal, hcWorld, hcEdge, hcGorgeAt, buildPearlRoofs, pearlFace, KCLIMB, OPLAZA, buildPearlPlaza, plazaStep, plazaStart, pearlCrowd, OPEARL, buildPearl, OGOOD, buildGoodKiosks, RUMOURS, upApply, UPGRADES, JUICE, SAMPLE, OLOOK, buildLookout, lookoutStep, KCLIMB, UPLIFT, buildUplift, cyborgStep, resolveBoxes, SMART, smartStep, ROSTER, rosterKind, OAMP, buildAmp, ampStep, ampBoil, OWATCH, buildWatcher, watchStep, OORB, AIRT, buildOrbs, orbStep, OINCUR, incurStart, incurStep, protestBrawl, OPROTEST, buildProtest, protestStep, protestStart, OSTRIKE, buildStrike, strikeSet, strikeStep, OTSITE, ODECAY, buildDecay, decayApply, decayStep, DHEALTH, dhStep, dhGet, dhPush, FIRES, FOOT, buildFootbridge, footStep, footFix, BOXES, PORTALS, QUESTS, buildLife, OTLIFE, buildSite, OTSITE, buildCarts, OTCARTS, cartStep, mapRegionsTkit, buildCamp, OTCAMP, MAPREG, campStep, FARMLAND, buildFarmland, buildFarmWaters, FWATER, buildFieldBounds, FPLAN, buildFieldCrops, FCROP, buildNeighbours, FNEIGH, COW, COWS, cowSpook, fpOwnAt, flLocal, buildVehicles, FVEH, vehStep, buildFarmhands, FHANDS, MARKS, mkrNpcPlace, HOBO, HICK, buildTownEdge, FTOWN, buildCityRing, FRING, farmBatch, FBATCH, scene, buildTrestle, FTRES, buildFord, FFORD, GATES, buildOrchardTerrace, FTERR, buildSkyline, SKYLINE, skylineStep, flEdgeAt, isleBedAt, KCITY, buildKCityCol, buildIsle, ISLE, TRI, triBuild, groundAt, WORLD, MOVE, player, kitPopulate, KCROWD, FOE, HICK, HOBO, SKATER, BIKER, DUMMY, CIVILS, CLANCY, kitStand, bodySeat, SEAT, DUMMIES, THREE, buildFarm, buildFarmProps, buildCrash, buildLane, buildBridge, buildCows, buildHedgerows, HROW, buildFarmhouse, FHOUSE, farmhouseStep, buildRoadside, FROAD, GPAINT, buildGroundPaint, buildFlora, crashHero, FARM, MISSING, FLORA, FPROPS, farmPropsStep, floraStep, cowStep, crashStep, crashHeroStep, riverStep, gradeStep, CRASH, GODPLACES, godPlace, GOD, LANE, BRIDGE, crashSpawn, SAVE };\n';
 const f2 = path.join(TMP, 'placecheck.mjs'); fs.writeFileSync(f2, src);
 const quiet = console.error, qw = console.warn, ql = console.log;
 console.error = () => {}; console.warn = () => {};
@@ -121,7 +121,7 @@ M.buildKCityCol({ scene });
 try { M.buildIsle(); } catch (e) { quiet('isle', e.message); }
 console.log = ql;
 
-const farmSteps = ['buildFarmland','buildHollowLand','buildFarmWaters','buildOrchardTerrace','buildFieldBounds','buildFieldCrops','buildNeighbours','buildFarm','buildFarmProps','buildCrash','crashHero','buildLane','buildBridge','buildHedgerows','buildFarmhouse','buildRoadside','buildCows','buildVehicles','buildFarmhands','mapRegionsTkit','buildCamp','buildCarts','buildSite','buildLife','buildProtest','buildOrbs','buildWatcher','buildAmp','buildUplift','buildLookout','buildGoodKiosks','buildFootbridge','buildDecay','buildPearl','buildPearlPlaza','buildPearlRoofs','buildTrailerPark','buildMill','buildStrike','buildTownEdge','buildCityRing','buildTrestle','buildFord','buildSkyline','farmBatch','buildGroundPaint','buildFlora'];
+const farmSteps = ['buildFarmland','buildHollowLand','buildFarmWaters','buildOrchardTerrace','buildFieldBounds','buildFieldCrops','buildNeighbours','buildFarm','buildFarmProps','buildCrash','crashHero','buildLane','buildBridge','buildHedgerows','buildFarmhouse','buildRoadside','buildCows','buildVehicles','buildFarmhands','mapRegionsTkit','buildCamp','buildCarts','buildSite','buildLife','buildProtest','buildOrbs','buildWatcher','buildAmp','buildUplift','buildLookout','buildGoodKiosks','buildFootbridge','buildDecay','buildPearl','buildPearlPlaza','buildPearlRoofs','buildTrailerPark','buildMill','buildFairground','buildStrike','buildTownEdge','buildCityRing','buildTrestle','buildFord','buildSkyline','farmBatch','buildGroundPaint','buildFlora'];
 console.log = () => {};
 for (const n of farmSteps) { try { M[n](); quiet('ok  ', n); } catch (e) { quiet('FAIL', n, e && e.stack ? e.stack.split('\n').slice(0,3).join(' | ') : e); } }
 console.log = ql;
@@ -277,6 +277,11 @@ quiet(bad ? bad + ' GOD place(s) BAD' : 'every tkit GOD place is somewhere');
 { const U = M.UPLIFT, ms = M.MARKS.filter(m => m.src === 'UPLIFT'); const why = U.n < 2 ? 'NO CREW' : ms.some(m => !m.K) ? 'A CYBORG WITH NO KIND' : '';
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + 'UPLIFT', ms.map(m => m.p.name + ' (' + m.p.role + ' -> ' + (m.K ? m.K.file.split('/').pop() : 'NO KIND') + ') ' + (m.p.beat ? m.p.beat.length : 0) + ' stops').join(' | '), why); }
+// m368: WALK IT -- along a polyline of world points in 10 cm steps, the floor re-found each step the way the player's own is
+// (`groundAt` from his height, `MOVE.step` up and no more): the height he ends at. A riser over the step is a wall to this
+// exactly as it is to him -- which no probe here asked until m368 found .37 and .375 risers that were walls.
+const walkUp = (pts, y0) => { let y = y0; for (let i = 0; i < pts.length - 1; i++) { const [ax, az] = pts[i], [bx2, bz] = pts[i + 1], n = Math.max(1, Math.ceil(Math.hypot(bx2 - ax, bz - az) / .1));
+  for (let k = 1; k <= n; k++) { const g = M.groundAt(ax + (bx2 - ax) * k / n, az + (bz - az) * k / n, y, M.MOVE.step); if (g > -500) y = g; } } return y; };
 // ---- THE PEARL (m359): built, and a walk from the dock's door to the plaza is floor all the way at the heights it should be
 // (the dock's loading platform, the Pearl's own behind the door, the pier) -- the CAMP+CARTS row checks its locals
 { const O = M.OPEARL, F = O.frame; let r = 'NOT BUILT', why = '';
@@ -287,7 +292,11 @@ quiet(bad ? bad + ' GOD place(s) BAD' : 'every tkit GOD place is somewhere');
     const ppl = M.MARKS.filter(m => m.src === 'PEARL'), nok = ppl.filter(m => !m.K);
     r = O.n + ' boxes, ' + O.WAREHOUSES.length + ' warehouses | ' + got.map(([nm, g, h]) => nm + ' ' + g).join(', ') + ' | locals ' + ppl.map(m => m.name + (m.K ? '' : ' NO KIND')).join(', ');
     if (nok.length) why = 'A LOCAL WITH NO KIND';
-    if (off.length) why = 'NO FLOOR WHERE ' + off.map(o => o[0]).join(', ').toUpperCase(); } else why = 'NOT BUILT';
+    if (off.length) why = 'NO FLOOR WHERE ' + off.map(o => o[0]).join(', ').toUpperCase();
+    // m368: up every warehouse's steps onto its loading platform, walking
+    const ups = O.WAREHOUSES.map(W => W.climb ? +(walkUp(W.climb, F.y) - F.y).toFixed(2) : -1);
+    r += ' | platforms walked up to ' + ups.join(', ');
+    if (ups.some(h => Math.abs(h - 1.1) > .05)) why = 'STEPS YOU CANNOT WALK UP'; } else why = 'NOT BUILT';
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + 'PEARL', r, why); }
 // ---- HOLLOW CREEK'S LAND (m365): built, clear of every other land (its coast sampled against the farm's, the island's
@@ -334,14 +343,29 @@ quiet(bad ? bad + ' GOD place(s) BAD' : 'every tkit GOD place is somewhere');
   } else why = 'NOT BUILT';
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + 'TRAILERS', r, why); }
+// ---- THE FAIRGROUND (m368): the stage walked up both sets of steps, the grandstand walked up to its top row, the truss's
+// ladder from the ground to its catwalk, the Ferris wheel turning, and the people
+{ const O = M.HCFAIR; let r = 'NOT BUILT', why = '';
+  if (O.frame) { const { cx, cz, th, y } = O.frame, C = Math.cos(th), S = Math.sin(th), W = (u, v) => [cx + u * C + v * S, cz - u * S + v * C], St = O.STAGE;
+    const stage = [-1, 1].map(s => +(walkUp([W(s * (St.w / 2 - 1), St.v + St.d / 2 + 3.2), W(s * (St.w / 2 - 1), St.v)], y) - y).toFixed(2));
+    const T = O.standTop, stand = +(walkUp([W(16, T[2]), W(T[0], T[2])], y) - y).toFixed(2), standWant = +(T[1] - y).toFixed(2);
+    const L = O.lad, foot = L && M.groundAt(L.cx + L.fg.x * .7, L.cz + L.fg.z * .7, L.miny + .3, .5), top = L && M.groundAt(L.mark.x, L.mark.z, L.mark.y + .3, .5);
+    const lad = !L ? 'NONE' : Math.abs(foot - L.miny) > .15 ? 'NO FOOT' : Math.abs(top - (L.mark.y - .02)) > .15 ? 'NO TOP' : (L.top - L.miny).toFixed(1) + ' m';
+    const a0 = O.wheel ? O.wheel.rotation.z : 0; M.fairStep(1); const turns = O.wheel && O.wheel.rotation.z !== a0;
+    const ppl = M.MARKS.filter(m => m.src === 'HCFAIR'), nok = ppl.filter(m => !m.K);
+    r = O.n + ' boxes | stage walked up to ' + stage.join(', ') + ' (of ' + St.h + ') | grandstand ' + stand + ' (of ' + standWant + ') | truss ladder ' + lad + ' | wheel ' + (turns ? 'turns' : 'STILL') + ' | ' + ppl.map(m => m.name + (m.K ? '' : ' NO KIND')).join(', ');
+    why = stage.some(h => Math.abs(h - St.h) > .05) || Math.abs(stand - standWant) > .05 ? 'STEPS YOU CANNOT WALK UP' : /NO/.test(lad) ? 'THE TRUSS LADDER GOES NOWHERE' : !turns ? 'THE WHEEL DOES NOT TURN' : nok.length ? 'SOMEBODY WITH NO KIND' : '';
+  } else why = 'NOT BUILT';
+  if (why) bad++;
+  quiet((why ? 'BAD ' : 'ok  ') + 'FAIR', r, why); }
 // ---- THE MILL (m367): the upper floor and the stair up to it are floor, both conveyors and the flume are floor all along
 // (the flume ends OUT OVER the gorge, the creek well below its end), the piles' tops are floors, the crane's ladder works
 { const O = M.HCMILL; let r = 'NOT BUILT', why = '';
   if (O.frame) { const { cx, cz, th, y, my } = O.frame, C = Math.cos(th), S = Math.sin(th), W = (u, v) => [cx + u * C + v * S, cz - u * S + v * C];
     const fl = (u, v, h) => { const [x, z] = W(u, v); return M.groundAt(x, z, h + .3, .5); };
-    const mez = Math.abs(fl(-4, -12, my) - my) < .1, stairTop = Math.abs(fl(10, -6.8, my) - my) < .12;
+    const mez = Math.abs(fl(-4, -12, my) - my) < .1, stairTop = Math.abs(walkUp([W(10, -1.25), W(10, -7.6)], y) - my) < .05;   // m368: WALKED, at his step
     const span = K => { let off = 0; for (let k = 0; k < 10; k++) { const P = K.pt((k + .37) / 10); if (Math.abs(fl(P[0], P[2], P[1]) - P[1]) > .15) off++; } return off; };
-    const b1 = span(O.belt1), b2 = span(O.belt2);
+    const b1 = span(O.belt1) + (Math.abs(walkUp([W(O.belt1.A[0], O.belt1.A[2] + 2), W(O.belt1.B[0], O.belt1.B[2] - .3)], y) - my) > .05 ? 100 : 0), b2 = span(O.belt2);
     let fOff = 0; const fp = O.flumePts; for (let i = 0; i < fp.length - 1; i++) { const P = fp[i], Q = fp[i + 1], u = (P[0] + Q[0]) / 2, v = P[2] * .63 + Q[2] * .37, h = P[1] * .63 + Q[1] * .37; if (Math.abs(fl(u, v, h) - h) > .15) fOff++; }
     const E = fp[fp.length - 1], [ex, ez] = W(E[0], E[2] + 1), below = E[1] - M.hcHeight(...M.hcLocal(ex, ez));
     const piles = O.PILES.map(P => +(fl(P.u, P.v, P.top) - P.top).toFixed(2));

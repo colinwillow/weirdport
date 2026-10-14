@@ -490,6 +490,8 @@ rule that has to be in front of me *before* I know which system I am in.
   way the loader builds them.
 - **A TASTE DECISION IS HIS.** Put it on a switch he can reach on the phone; do not ship a pick
   and an argument for it.
+- **HIS STEP IS .357 M, NOT .5 (m368).** `MOVE.step` is `.5 * SZ` and the rig is 1.25 m. A riser over .357 is a WALL
+  he has to jump. Build stairs at .32 or less, and prove them with `places`' `walkUp`, never with a lenient `groundAt`.
 
 ## The control map — read this before touching either pad
 
