@@ -7,6 +7,37 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE PEARL'S ROOFS ARE A SECOND PEARL OVER THE FIRST, AND THE CLIMBER'S WAY INTO THE PLAZA (m361, C6-3, `OPEARL.ROOF`,
+  `pearlRoofPlan`, `pearlFace`, `pearlSpan`, `pearlSeg`, `pearlLadder`, `pearlGarden`, `buildPearlRoofs`).** Every warehouse
+  roof is a garden (raised beds with plants and blooms on a loose grid, a tank on legs in the corner farthest from the
+  landings, a pergola over a bench; 99 beds). Six LINKS: a steel STAIR (roastery 10 m -> studios 16 m), three sagging ROPE
+  bridges (over the dock street, print shop -> food hall, over the east gap), two steel CATWALKS (over the west lane;
+  the 40 m one over the north gap, on a leg off the pinch-point container's top with a ladder up it). Ladders: by dock
+  1's door (outside the barricades), the studios' fire escape (from its loading platform INSIDE the plaza), the climbing
+  gym's 21 m wall. Gardeners Hollis, Lark, Moss (beats on their roofs). The organiser's roof (W4) has a shed and a dish:
+  `ROOF.hqAt`, C6-4's HQ.
+  **A LINK IS TWO FACE POINTS** -- `[warehouse, face, metres along it]` through `pearlFace` (n = +v, e = +u in its own frame)
+  -- so it is authored against the building, not the world. Its deck is triangles in `TRI` (`F.quad`, the sag included),
+  a flat .8 m landing onto each roof so a bridge that comes in on the slant leaves no hole, and a thin collider down each
+  side per segment so a bridge keeps him on it. The planks and rails are pitched boxes (`pearlSeg`: `rotateX` on the
+  geometry, then the frame's yaw -- `geo`'s Euler is XYZ, which pitches about the world's X, not the bridge's).
+  **THE PARAPETS ARE BUILT ROUND GAPS NOW**: `pearlRoofPlan` runs at the top of `buildPearl` and writes `W.gaps[face]`; the
+  parapet loop lays each face in runs between them. A slanted landing gets a wider gap (`hw / cos`).
+  **`farmClimb` ASSUMES THE FRAME'S AXES**: its front is +-v. The Pearl's walls are turned and face every way, so
+  `pearlLadder` builds the climb box at the frame's yaw PLUS the face's (`th + psi`, the same turn `bx`'s colliders use) and
+  sets its front to that heading. Ladders here are UP only (`climbFind` latches from the front, and from the roof he is
+  behind it); the way down is the drop, which does not hurt him.
+  **THE ROOFS GET HIM INTO THE PLAZA WITHOUT THE MARCH** -- up outside by the dock, over the stair, off the studios' edge.
+  On purpose: the march is the walker's way, the roofs the climber's (REGIONS' connective tissue: "across rooftops").
+  The PLAZA row's "sealed" is a ground-level claim and stays true.
+  `npm run places` (150 rows, exit 0):
+      ok  pearlroof  -> player -229.9,18.6,-102.0 ground 18.40
+      ok  ROOFS 6 links [1:stair 16m, 2:rope 11m, 3:rope 12m, 4:cat 10m, 5:cat 40m, 6:rope 15m] | ladders [leg 13.5m, 0s 10.0m, 2e 14.9m, 7w 21.0m] | 99 beds | gardeners Hollis, Lark, Moss
+  **Tested by breaking it**: every third segment's triangles left out and the studios' south gaps removed reads `1:stair 16m
+  6 OFF THE DECK (15.10) PARAPET, ... ladders [leg 13.5m NO TOP (-13.48) ...]`, exit 1 -- and the 40 m catwalk read clean
+  because its samples fell exactly on segment joins (a join is shared by two quads, one of which was there). Samples are
+  at (k + .37) / 20 now.
+  **Not built:** a ladder DOWN (they are one-way), anything that swings on a rope bridge, the HQ's door and inside (C6-4).
 - **THE PLAZA IS SEALED BY FOUR BARRICADES THAT ARE GATES ALONG THEIR WHOLE LENGTH, AND ANYBODY MAY LEAVE (m360, C6-2,
   `OPLAZA`, `buildPearlPlaza`, `plazaStep`, `plazaStart`, `pearlCrowd`, `GATE_TYPES.pbarricade`, `G.free`).** Four junk walls
   (pallets, drums, jersey barriers, a sofa, crates) close the four streets between the plaza's four warehouses, each with

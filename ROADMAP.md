@@ -274,7 +274,7 @@ differ" table there, so no region feels like the last one.
 - [ ] **C6 Chapter 2 greybox (The Pearl)** with its quests and boss — then 3, 4…
   - [x] m359 **C6-1** the land: piers past dock 1's door, eight warehouses round a plaza, containers, stalls, string lights, four locals; GOD place.
   - [x] m360 **C6-2** the plaza protest and a barricade on every street into it.
-  - [ ] **C6-3** up top: rooftop gardens, catwalks and rope bridges between the warehouses.
+  - [x] m361 **C6-3** up top: rooftop gardens, catwalks and rope bridges between the warehouses.
   - [ ] **C6-4** Chapter 2's quests: the strike starts, the organiser's rooftop HQ (W5), expose the infiltrator (the boss), the strike ends and the crews go back.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
@@ -893,3 +893,10 @@ differ" table there, so no region feels like the last one.
   between the dock (so you can join them at dock 1 and get carried in) and the far pier. I made
   leaving free so the plaza is never a trap, and moved Juno out to the dock street so the first
   person you meet tells you why it is shut.
+
+- **m361 (C6-3) The Pearl's roofs.** Every roof is a garden. Six links join them: a stair, three
+  sagging rope bridges and two catwalks, the long one propped on a container. Ladders go up by
+  dock 1, inside the plaza, and up the climbing gym. **The roofs are a way into the plaza without
+  the march** (climb up outside, cross, drop off an edge; there is no fall damage). I kept that on
+  purpose: the march is the way in on foot, the roofs the way in for climbers. If you want the march
+  to be the only way in, I can make the drop into the plaza hurt or fence the edges.

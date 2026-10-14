@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m360</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m361</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m360</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m361</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm360';
+const BUILD = 'm361';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -30211,6 +30211,29 @@ const OPEARL = {
     { u: -50, v: 70, yaw: 1.6, lv: 1, why: 'between the studios and the organiser\'s building: a lane' },
   ],
   STALLS: 7, STALLR: 15,
+  // m361 (C6-3): UP TOP -- links ([warehouse, face, metres along it] each end), ladders, the people who garden up here
+  ROOF: {
+    LINKS: [
+      { a: [0, 'n', -6], b: [2, 's', 8], kind: 'stair', why: "the roastery's terrace up to the studios' roof: a steel stair, 10 m to 16" },
+      { a: [0, 'e', 0], b: [1, 'w', 1], kind: 'rope', why: 'over the dock street, roastery to print shop' },
+      { a: [1, 'n', 5], b: [3, 's', -9], kind: 'rope', why: "the print shop over to the food hall's roof" },
+      { a: [2, 'n', 4], b: [4, 's', 2], kind: 'cat', why: "over the west lane, the studios up to the organiser's roof" },
+      { a: [4, 'e', 6], b: [5, 'w', 8], kind: 'cat', mid: [-2, 92], why: 'the long one over the north gap, propped on the pinch-point container (a ladder up its leg)' },
+      { a: [5, 's', 2], b: [3, 'n', 0], kind: 'rope', why: 'over the east gap, the rehearsal space down to the food hall' },
+    ],
+    LADDERS: [
+      { w: 0, f: 's', t: -4, why: "by dock 1's door, outside the barricades: the first way up" },
+      { w: 2, f: 'e', t: 10.5, foot: 1.1, why: "the studios' fire escape, off its loading platform INSIDE the plaza" },
+      { w: 7, f: 'w', t: 0, why: "the climbing gym's wall, to the highest roof in The Pearl" },
+    ],
+    GARDENERS: [
+      { id: 'pearl_roof_hollis', w: 0, at: [3, -2], face: 0, kind: 'fat_hipster', name: 'Hollis', lines: "Best view of the dock in The Pearl. Also the best tomatoes. Don't tell the food hall.|The bridges? We built them. Mostly out of other bridges.|From up here you can see right into the plaza. And right over the barricades. Just saying." },
+      { id: 'pearl_roof_lark', w: 2, at: [-5, -4], face: Math.PI / 2, kind: 'fat_hippie', name: 'Lark', lines: "Shh. I'm painting the sky. It keeps moving.|The lights over the plaza at night? You get used to them. Then you notice they don't blink like planes.|There's a ladder down the side into the plaza. The marchers pretend it isn't there." },
+      { id: 'pearl_roof_moss', w: 5, at: [-2, -3], face: 0, kind: 'beautiful_asian', name: 'Moss', lines: "The bees like it up here. So do the drummers. The bees do not like the drummers.|The organiser's roof has a satellite dish now. For the newsletter, apparently.|Mind the rope bridges. They sag. That's the charm." },
+    ],
+    HQ: { w: 4, at: [-6, 2] },          // the organiser's shed and dish, for C6-4
+    GOD: { w: 2, at: [2, 5] },          // GOD: the studios' roof garden
+  },
   PEOPLE: [
     { id: 'pearl_wren', kind: 'fat_activist_01', name: 'Wren', at: [-8, 56], lines: "Welcome to The Pearl! Everything here is community-run. Even the pigeons have a committee.|The plaza's ours. We're never leaving. That's the protest. It's been three years.|Tuesday is drum circle. So is every other day." },
     { id: 'pearl_juno', kind: 'fat_hipster', name: 'Juno', at: [3, 36], lines: "Oat, soy, hemp, or air? The air latte is very popular.|The plaza? Sealed. Three years now. You get in with the march or not at all -- and you'd want to look like one of them.|Someone keeps buying everybody's signs. Nobody knows who. Very generous. Slightly creepy." },   // m360: out on the dock street, by the barricade
@@ -30231,6 +30254,7 @@ function pearlMural(seed) {
 }
 function buildPearl() {
   const O = OPEARL, F0 = FOOT.frame; if (!O.on || !inTK() || !F0) return 0;
+  pearlRoofPlan();                                                        // m361: where the roofs' links land, for the parapets' gaps
   const { Ox, Oz, thf, vB, yP } = F0, C = Math.cos(thf), S = Math.sin(thf);
   const ox = Ox + (vB + .8) * S, oz = Oz + (vB + .8) * C;                   // the far face of the dock's wall: the Pearl's v = 0
   const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .82 }), o || {});
@@ -30256,7 +30280,13 @@ function buildPearl() {
     bx(W.u, W.v, y - .1, y + W.h, W.w, W.d, W.col, W.yaw);
     bx(W.u, W.v, y + W.h, y + W.h + .15, W.w + .3, W.d + .3, 'roof', W.yaw, false);
     const cs = Math.cos(W.yaw), sn = Math.sin(W.yaw), loc = (a, b) => [W.u + a * cs + b * sn, W.v - a * sn + b * cs];
-    for (const [a, b, w, d] of [[0, -W.d / 2, W.w, .25], [0, W.d / 2, W.w, .25], [-W.w / 2, 0, .25, W.d], [W.w / 2, 0, .25, W.d]]) { const [u, v] = loc(a, b); bx(u, v, y + W.h, y + W.h + .9, w, d, W.col, W.yaw); }
+    // the parapets -- m361: in runs round the gaps the roofs' links and ladders come in through (`pearlRoofPlan`)
+    for (const [f, a0, b0, alongA] of [['s', 0, -W.d / 2, 1], ['n', 0, W.d / 2, 1], ['w', -W.w / 2, 0, 0], ['e', W.w / 2, 0, 0]]) {
+      const len = alongA ? W.w : W.d, G = ((W.gaps && W.gaps[f]) || []).slice().sort((p, q) => p[0] - q[0]); let t = -len / 2;
+      for (const [g0, g1] of [...G, [len / 2, len / 2]]) {
+        const e = Math.min(g0, len / 2); if (e - t > .3) { const m = (t + e) / 2, L = e - t, [u, v] = alongA ? loc(m, b0) : loc(a0, m); bx(u, v, y + W.h, y + W.h + .9, alongA ? L : .25, alongA ? .25 : L, W.col, W.yaw); }
+        t = Math.max(t, g1); }
+    }
     // which face looks at the plaza: in its own frame, the side whose normal is nearest the plaza's direction
     const dx = O.PLAZA[0] - W.u, dz = O.PLAZA[1] - W.v, la = dx * cs - dz * sn, lb = dx * sn + dz * cs;
     const [fa, fb, half, along] = Math.abs(la) / (W.w / 2) > Math.abs(lb) / (W.d / 2) ? [Math.sign(la), 0, W.w / 2, W.d] : [0, Math.sign(lb), W.d / 2, W.w];
@@ -30304,6 +30334,161 @@ function buildPearl() {
     for (const D of O.DECKS) for (const a of D.u) for (const b of D.v) { const x = wx(a, b), z = wz(a, b); x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); }
     if (r) { r.x0 = Math.min(r.x0, x0); r.x1 = Math.max(r.x1, x1); r.z0 = Math.min(r.z0, z0); r.z1 = Math.max(r.z1, z1); } if (map.ext) mapBuild(); }
   return O.n;
+}
+// ============================================================================================
+// UP TOP: THE PEARL'S ROOFS (m361, ROADMAP C6-3, `OPEARL.ROOF`, `pearlRoofPlan`, `buildPearlRoofs`)
+// ============================================================================================
+// REGIONS: "rooftop gardens linked by catwalks and rope bridges". Every warehouse roof is a garden -- raised beds, a tank
+// on legs, a pergola over a bench -- and six LINKS join them into a second Pearl over the first: a steel STAIR from the
+// roastery's terrace up to the studios, ROPE bridges that sag over the dock street and the east gap, steel CATWALKS over
+// the west lane and, the long one, over the north gap propped on the pinch-point container (a ladder up its leg from the
+// container's top). Three LADDERS go up: by dock 1's door (outside the barricades), the studios' fire escape (INSIDE the
+// plaza, from its loading platform) and the climbing gym's wall to the highest roof. So the roofs are the climber's way
+// into the plaza -- up outside, across, and down -- where the march is the walker's; the drop does not hurt him.
+// A link is two face points ([warehouse, face, metres along it]); its deck is walkable triangles in `TRI` (`F.quad`), its
+// sides a thin collider each so a bridge keeps him on it, and the parapets are built with a GAP where each one lands
+// (`pearlRoofPlan` runs before `buildPearl`'s parapets). Three gardeners live up here. The organiser's roof (W4) carries a
+// shed and a dish: C6-4's HQ.
+// the point at metres `t` along face f ('n' +v, 's', 'e' +u, 'w') of warehouse W, `out` off it, and the face's outward heading
+function pearlFace(W, f, t, out = 0) {
+  const cs = Math.cos(W.yaw), sn = Math.sin(W.yaw), loc = (a, b) => [W.u + a * cs + b * sn, W.v - a * sn + b * cs];
+  const [a, b, ps] = f === 'n' ? [t, W.d / 2 + out, 0] : f === 's' ? [t, -W.d / 2 - out, Math.PI] : f === 'e' ? [W.w / 2 + out, t, Math.PI / 2] : [-W.w / 2 - out, t, -Math.PI / 2];
+  return { p: loc(a, b), psi: W.yaw + ps, a, b };
+}
+// before the parapets: where each link lands and each ladder tops out, and the gap that leaves in the parapet
+function pearlRoofPlan() {
+  const O = OPEARL, R = O.ROOF, Ws = O.WAREHOUSES; if (!R) return;
+  for (const W of Ws) W.gaps = { n: [], s: [], e: [], w: [] };
+  for (const K of R.LINKS) {
+    const [ia, fa, ta] = K.a, [ib, fb, tb] = K.b, A = pearlFace(Ws[ia], fa, ta), B = pearlFace(Ws[ib], fb, tb);
+    const du = B.p[0] - A.p[0], dv = B.p[1] - A.p[1], L = Math.hypot(du, dv), hw = K.kind === 'rope' ? .65 : .75;
+    K.A = [A.p[0], Ws[ia].h, A.p[1]]; K.B = [B.p[0], Ws[ib].h, B.p[1]]; K.L = L; K.hw = hw;
+    for (const [W, f, t, F] of [[Ws[ia], fa, ta, A], [Ws[ib], fb, tb, B]]) {
+      const c = Math.abs((du / L) * Math.sin(F.psi) + (dv / L) * Math.cos(F.psi)), g = (hw + .1) / Math.max(.5, c) + .2;   // wider where it comes in on the slant
+      W.gaps[f].push([t - g, t + g]); }
+  }
+  for (const D of R.LADDERS) Ws[D.w].gaps[D.f].push([D.t - .8, D.t + .8]);
+}
+// a box from frame point A [u, y, v] to B: `w` across, `th` thick, lifted `up`, `side` metres off to its right
+function pearlSeg(geo, mat, A, B, w, th, up, side) {
+  const du = B[0] - A[0], dv = B[2] - A[2], L = Math.hypot(du, dv), dy = B[1] - A[1];
+  const g = new THREE.BoxGeometry(w, th, Math.hypot(L, dy)); g.rotateX(-Math.atan2(dy, L));
+  const psi = Math.atan2(du, dv), pu = Math.cos(psi), pv = -Math.sin(psi), s = side || 0;
+  geo(g, mat, (A[0] + B[0]) / 2 + pu * s, (A[1] + B[1]) / 2 + (up || 0), (A[2] + B[2]) / 2 + pv * s, psi);
+}
+// a link: the walk (TRI), the deck you see, its rails or ropes, and a collider down each side
+function pearlSpan(F, K, y) {
+  const { bx, geo, quad } = F, A = [K.A[0], y + K.A[1], K.A[2]], B = [K.B[0], y + K.B[1], K.B[2]], rope = K.kind === 'rope';
+  const du = B[0] - A[0], dv = B[2] - A[2], L = K.L, hw = K.hw, psi = Math.atan2(du, dv), pu = Math.cos(psi), pv = -Math.sin(psi);
+  const sag = rope ? Math.min(1.1, L * .06) : 0, n = Math.max(4, Math.round(L / (rope ? .9 : 2))), deck = rope ? 'plank' : 'steel', eu = du / L, ev = dv / L;
+  const pt = t => [A[0] + du * t, A[1] + (B[1] - A[1]) * t - sag * Math.sin(Math.PI * t), A[2] + dv * t];
+  const edge = (P, s) => [P[0] + pu * s * hw, P[1], P[2] + pv * s * hw];
+  // the landings: flat, .8 m on into each roof, so a bridge that comes in on the slant leaves no hole at the parapet
+  for (const [P, sg] of [[A, -1], [B, 1]]) { const Q = [P[0] + eu * sg * .8, P[1], P[2] + ev * sg * .8];
+    quad(edge(P, 1), edge(Q, 1), edge(Q, -1), edge(P, -1)); pearlSeg(geo, deck, [P[0], P[1] - .04, P[2]], [Q[0], Q[1] - .04, Q[2]], 2 * hw, .07, 0); }
+  for (let k = 0; k < n; k++) {
+    const P = pt(k / n), Q = pt((k + 1) / n), seg = L / n;
+    quad(edge(P, 1), edge(Q, 1), edge(Q, -1), edge(P, -1));
+    if (rope) { const a = (q, r) => P.map((x, i) => x + (Q[i] - x) * r); pearlSeg(geo, 'plank', a(0, .1), a(0, .9), 2 * hw, .07, -.04); }
+    else pearlSeg(geo, 'steel', [P[0], P[1] - .04, P[2]], [Q[0], Q[1] - .04, Q[2]], 2 * hw, .07, 0);
+    for (const s of [-1, 1]) {
+      bx((P[0] + Q[0]) / 2 + pu * s * (hw + .05), (P[2] + Q[2]) / 2 + pv * s * (hw + .05), Math.min(P[1], Q[1]) - .2, Math.max(P[1], Q[1]) + 1.1, .1, seg, deck, psi); F.parts[deck].pop();
+      pearlSeg(geo, rope ? 'rope' : 'steel', P, Q, .05, .05, 1.0, s * hw);
+      if (!rope) pearlSeg(geo, 'steel', P, Q, .04, .04, .5, s * hw);
+      else pearlSeg(geo, 'rope', P, Q, .03, .03, .1, s * hw);
+      if (rope ? k % 3 === 0 : k % 2 === 0) bx(P[0] + pu * s * hw, P[2] + pv * s * hw, P[1], P[1] + 1.02, .06, .06, rope ? 'plank' : 'steel', psi, false);
+    }
+  }
+  for (const s of [-1, 1]) for (const P of [A, B]) bx(P[0] + pu * s * hw, P[2] + pv * s * hw, P[1], P[1] + 1.3, .12, .12, rope ? 'plank' : 'steel', psi, false);   // the end posts
+  return pt;
+}
+// a ladder you see (rails and rungs) and the climb: at frame (u, v) facing out along psi, from y0 up to `top`, setting him
+// down at `mark` [u, y, v]
+function pearlLadder(F, u, v, psi, y0, top, mark, nm) {
+  const { bx } = F, pu = Math.cos(psi), pv = -Math.sin(psi);
+  for (const s of [-1, 1]) bx(u + pu * s * .25, v + pv * s * .25, y0, top + 1.0, .06, .06, 'dark', psi, false);
+  for (let r = 0, n = Math.floor((top - y0 - .3) / .32); r <= n; r++) bx(u, v, y0 + .3 + r * .32, y0 + .34 + r * .32, .5, .05, 'dark', psi, false);
+  const cx = F.wx(u, v), cz = F.wz(u, v), t = F.th + psi, cs = Math.cos(t), sn = -Math.sin(t), ha = .3, hn = .25;
+  const ex = ha * Math.abs(cs) + hn * Math.abs(sn), ez = ha * Math.abs(sn) + hn * Math.abs(cs);
+  const L = kitClimbAdd({ minx: cx - ex, maxx: cx + ex, miny: y0, maxy: top, minz: cz - ez, maxz: cz + ez, cx, cz, hx: ha, hz: hn, cs, sn }, nm, top);
+  L.mark = { x: F.wx(mark[0], mark[2]), y: mark[1], z: F.wz(mark[0], mark[2]) };
+  L.fg = { x: L.nx, z: L.nz };                                           // n = the heading psi: out, where he stands
+  return L;
+}
+// a roof garden: beds on a loose grid, a tank on legs in a corner, a pergola over a bench -- clear of every landing
+function pearlGarden(F, W, y, clear, seed) {
+  const { bx, geo } = F, cs = Math.cos(W.yaw), sn = Math.sin(W.yaw), loc = (a, b) => [W.u + a * cs + b * sn, W.v - a * sn + b * cs];
+  let s0 = seed * 97 + 11; const rr = () => (s0 = (s0 * 9301 + 49297) % 233280) / 233280;
+  const A = W.w / 2 - 1.2, B = W.d / 2 - 1.2, ok = (a, b, r) => Math.abs(a) < A - r * .5 && Math.abs(b) < B - r * .5 && clear.every(([ca, cb]) => Math.hypot(a - ca, b - cb) > r + 2.4);
+  const taken = [];
+  const free2 = (a, b, r) => ok(a, b, r) && taken.every(([ta, tb, tr]) => Math.hypot(a - ta, b - tb) > r + tr);
+  // the tank, in the corner farthest from the landings
+  { let best = null, bd = -1; for (const [sa, sb] of [[1, 1], [1, -1], [-1, 1], [-1, -1]]) { const a = sa * (A - 1.4), b = sb * (B - 1.4); if (!ok(a, b, 1.6)) continue; const d = Math.min(...clear.map(([ca, cb]) => Math.hypot(a - ca, b - cb)), 99); if (d > bd) { bd = d; best = [a, b]; } }
+    if (best) { const [u, v] = loc(...best); bx(u, v, y, y + 3.1, 2.2, 2.2, 'steel', W.yaw); F.parts.steel.pop(); taken.push([...best, 1.6]);
+      for (const [a, b] of [[-.8, -.8], [.8, -.8], [-.8, .8], [.8, .8]]) { const [u2, v2] = loc(best[0] + a, best[1] + b); bx(u2, v2, y, y + 1.2, .12, .12, 'steel', W.yaw, false); }
+      geo(new THREE.CylinderGeometry(1.05, 1.05, 1.8, 14), 'tank', u, y + 2.1, v); } }
+  // the pergola and its bench
+  for (let tries = 0; tries < 6; tries++) { const a = (rr() - .5) * 2 * (A - 2.5), b = (rr() - .5) * 2 * (B - 2.2); if (!free2(a, b, 2)) continue;
+    for (const [pa, pb] of [[-1.4, -1], [1.4, -1], [-1.4, 1], [1.4, 1]]) { const [u, v] = loc(a + pa, b + pb); bx(u, v, y, y + 2.4, .12, .12, 'plank', W.yaw); }
+    for (let k = -3; k <= 3; k++) { const [u, v] = loc(a + k * .45, b); bx(u, v, y + 2.4, y + 2.5, .08, 2.4, 'plank', W.yaw, false); }
+    const [u, v] = loc(a, b + .4); bx(u, v, y, y + .45, 1.8, .5, 'plank', W.yaw); taken.push([a, b, 2]); break; }
+  // the beds
+  let n = 0;
+  for (let a = -A + 1.3; a <= A - 1.3; a += 3.3) for (let b = -B + .9; b <= B - .9; b += 2.5) {
+    if (rr() < .4) continue; const ja = a + (rr() - .5) * .8, jb = b + (rr() - .5) * .5, w2 = 1.6 + rr() * 1.1; if (!free2(ja, jb, 1.3)) continue;
+    const [u, v] = loc(ja, jb); bx(u, v, y, y + .5, w2, .9, 'bed', W.yaw); bx(u, v, y + .5, y + .54, w2 - .15, .75, 'soil', W.yaw, false); taken.push([ja, jb, 1.1]); n++;
+    for (let k = 0, m = 2 + (rr() * 3 | 0); k < m; k++) { const t = (k / Math.max(1, m - 1) - .5) * (w2 - .5), [pu, pv] = loc(ja + t, jb);
+      geo(new THREE.IcosahedronGeometry(.22 + rr() * .25, 0), rr() < .3 ? 'bloom' : 'plant', pu, y + .72 + rr() * .2, pv); }
+  }
+  return n;
+}
+function buildPearlRoofs() {
+  const O = OPEARL, R = O.ROOF, E = O.frame; if (!O.on || !R || !E) return 0;
+  const { ox, oz, thf, y } = E, Ws = O.WAREHOUSES;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .82 }), o || {});
+  const MAT = { steel: Object.assign(M(0x7a8a96), { metalness: .45, roughness: .45 }), plank: M(0x8a6a44), rope: M(0xc9b48a), dark: M(0x24262b),
+    bed: M(0x7a5a3a), soil: M(0x3a2a1c), plant: M(0x5f9a4a), bloom: M(0xff9fc0), tank: Object.assign(M(0xb8d8f2), { metalness: .2, roughness: .5 }), shed: M(0xcfc0ee), dish: M(0xf2efe6) };
+  const F = farmFrame(ox, oz, thf, MAT, 'pearl'), { bx, geo } = F;
+  R.n = { links: 0, ladders: 0, beds: 0 };
+  const clear = Ws.map(() => []);
+  // THE LINKS
+  for (const K of R.LINKS) { if (!K.A) continue; K.pt = pearlSpan(F, K, y); R.n.links++;
+    for (const [end, ix] of [[K.A, K.a[0]], [K.B, K.b[0]]]) { const W = Ws[ix], cs = Math.cos(W.yaw), sn = Math.sin(W.yaw), du = end[0] - W.u, dv = end[2] - W.v; clear[ix].push([du * cs - dv * sn, du * sn + dv * cs]); }
+    if (K.mid) {
+      // the long one's leg, off the container's top, and a ladder up it
+      const [mu, mv] = K.mid, t = clamp(((mu - K.A[0]) * (K.B[0] - K.A[0]) + (mv - K.A[2]) * (K.B[2] - K.A[2])) / (K.L * K.L), 0, 1);
+      const su = K.A[0] + (K.B[0] - K.A[0]) * t, sv = K.A[2] + (K.B[2] - K.A[2]) * t, top = y + K.A[1] + (K.B[1] - K.A[1]) * t, base = y + 2.6;
+      const psi = Math.atan2(K.B[0] - K.A[0], K.B[2] - K.A[2]), pu = Math.cos(psi), pv = -Math.sin(psi);
+      for (const [a, b] of [[-.7, -.6], [.7, -.6], [-.7, .6], [.7, .6]]) bx(su + pu * a + Math.sin(psi) * b, sv + pv * a + Math.cos(psi) * b, base, top - .05, .14, .14, 'steel', psi, false);
+      for (let h = base + 1.5; h < top - .5; h += 2.4) for (const s of [-1, 1]) bx(su + pu * s * .7, sv + pv * s * .7, h, h + .08, .1, 1.3, 'steel', psi, false);
+      // on the side of the leg over the container's top, so he stands on it to climb
+      const s = Math.hypot(su + pu * (K.hw + .35) - mu, sv + pv * (K.hw + .35) - mv) < Math.hypot(su - pu * (K.hw + .35) - mu, sv - pv * (K.hw + .35) - mv) ? 1 : -1;
+      const lu = su + pu * s * (K.hw + .35), lv = sv + pv * s * (K.hw + .35);
+      K.lad = pearlLadder(F, lu, lv, Math.atan2(pu * s, pv * s), base, top, [su, top + .02, sv], 'pearl_ladder_leg'); R.n.ladders++;
+    }
+  }
+  // THE LADDERS
+  for (const D of R.LADDERS) {
+    const W = Ws[D.w], P = pearlFace(W, D.f, D.t, .3), T = pearlFace(W, D.f, D.t, -1.3), y0 = y + (D.foot || 0);
+    D.L = pearlLadder(F, P.p[0], P.p[1], P.psi, y0, y + W.h, [T.p[0], y + W.h + .02, T.p[1]], 'pearl_ladder_' + D.w + D.f); R.n.ladders++;
+    clear[D.w].push([T.a, T.b]);
+  }
+  // THE GARDENERS (their spots kept clear too)
+  for (const G of R.GARDENERS) { const W = Ws[G.w], cs = Math.cos(W.yaw), sn = Math.sin(W.yaw), u = W.u + G.at[0] * cs + G.at[1] * sn, v = W.v - G.at[0] * sn + G.at[1] * cs;
+    clear[G.w].push(G.at); G.x = F.wx(u, v); G.z = F.wz(u, v); G.y = y + W.h; }
+  clear[R.GOD.w].push(R.GOD.at);
+  // THE ORGANISER'S ROOF: a shed and a dish (C6-4's HQ)
+  { const W = Ws[R.HQ.w], cs = Math.cos(W.yaw), sn = Math.sin(W.yaw), [a, b] = R.HQ.at, u = W.u + a * cs + b * sn, v = W.v - a * sn + b * cs, yh = y + W.h;
+    bx(u, v, yh, yh + 2.7, 4.2, 3.2, 'shed', W.yaw); bx(u, v, yh + 2.7, yh + 2.85, 4.6, 3.6, 'dark', W.yaw, false); clear[R.HQ.w].push([a, b], [a, b - 2.4]);
+    const [du, dv] = [u - sn * 1.61, v - cs * 1.61]; bx(du, dv, yh, yh + 2.1, .9, .06, 'dark', W.yaw, false);
+    geo(new THREE.CylinderGeometry(.9, .1, .35, 14, 1, true), 'dish', u + cs * 1.2, yh + 3.6, v - sn * 1.2, 0, -.7, 0); bx(u + cs * 1.2, v - sn * 1.2, yh + 2.85, yh + 3.5, .08, .08, 'steel', W.yaw, false);
+    R.hqAt = [F.wx(u, v), yh, F.wz(u, v)]; }
+  // THE GARDENS
+  Ws.forEach((W, i) => { R.n.beds += pearlGarden(F, W, y + W.h, clear[i], i + 3); });
+  F.commit();
+  for (const G of R.GARDENERS) peopleMark(G.id, G.x, G.z, thf + G.face, Object.assign({ group: 'city', talks: ['*'], alien: 'flee', beat: [[G.x, G.z]] }, G), G.y, 'PEARL', 'city');
+  { const W = Ws[R.GOD.w], cs = Math.cos(W.yaw), sn = Math.sin(W.yaw), [a, b] = R.GOD.at; R.godAt = [F.wx(W.u + a * cs + b * sn, W.v - a * sn + b * cs), y + W.h + .1, F.wz(W.u + a * cs + b * sn, W.v - a * sn + b * cs), thf]; }
+  return R.n.links;
 }
 // ============================================================================================
 // THE PLAZA'S PROTEST AND ITS BARRICADES (m360, ROADMAP C6-2, `OPLAZA`, `buildPearlPlaza`, `plazaStep`, `plazaStart`)
@@ -35486,6 +35671,7 @@ const GODPLACES = [
   { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
   { id: 'pearl', world: 'tkit', name: 'THE PEARL · the plaza (Chapter 2)', at: () => OPEARL.plazaAt },
+  { id: 'pearlroof', world: 'tkit', name: "THE PEARL · up on the studios' roof garden", at: () => OPEARL.ROOF.godAt },   // m361
   { id: 'pearlbar', world: 'tkit', name: 'THE PEARL · the barricade across the dock street (outside it)', at: () => OPLAZA.outAt },   // m360
   { id: 'mags', world: 'tkit', name: "OLD TOWN · Mags's newsstand (a hidden good alien)", at: () => (OGOOD.KIOSKS[0] || {}).godAt },
   { id: 'pruitt', world: 'tkit', name: "OLD TOWN · Pruitt's key-cutting kiosk (a hidden good alien)", at: () => (OGOOD.KIOSKS[1] || {}).godAt },
@@ -37986,6 +38172,8 @@ async function init() {
     try { buildPearl(); } catch (e) { note('PEARL FAIL'); console.warn('[melee] pearl', e); }
     // THE PLAZA'S PROTEST AND ITS BARRICADES (m360)
     try { buildPearlPlaza(); } catch (e) { note('PLAZA FAIL'); console.warn('[melee] plaza', e); }
+    // UP TOP: THE PEARL'S ROOFS (m361)
+    try { buildPearlRoofs(); } catch (e) { note('ROOFS FAIL'); console.warn('[melee] roofs', e); }
     // THE STRIKE'S PICKET (m345): hidden until the crews walk out
     try { buildStrike(); } catch (e) { note('STRIKE FAIL'); console.warn('[melee] strike', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)
