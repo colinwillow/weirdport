@@ -173,8 +173,9 @@ quiet('LIFE', M.OTLIFE.n, 'routes:', M.OTLIFE.routes.map(r => r.id + ' ' + r.bea
       if (st.after) after.add(st.after.id);
       if (st.at) { let a = null; try { a = st.at(); } catch (e) {} if (!a) why = 'AT NOTHING'; }
       if (st.npc) why = !ids.has(st.npc) ? 'NO MARK ' + st.npc : !ids.get(st.npc).K ? 'MARK ' + st.npc + ' HAS NO KIND' : why;
-      if (st.type === 'talk' && st.who && !after.has(st.who) && !(st.who.startsWith('mk_') && ids.has(st.who.slice(3)))) why = 'NOBODY IS ' + st.who;
+      if (st.type === 'talk' && st.who && !after.has(st.who) && !(st.say && st.npc) && !(st.who.startsWith('mk_') && ids.has(st.who.slice(3)))) why = 'NOBODY IS ' + st.who;
       if (st.type === 'gate' && !M.GATES.find(g => g.id === st.id)) why = 'NO GATE ' + st.id;
+      if (st.kind && !M.MARKS.some(m => m.type === 'npc' && m.K && m.p.kind === st.kind && m.id !== st.not)) why = 'NOBODY OF KIND ' + st.kind;   // m340
       if (why) nb++;
       out.push(q.id + '.' + i + ' ' + st.type + (why ? ' BAD ' + why : ''));
     });

@@ -230,7 +230,7 @@ differ" table there, so no region feels like the last one.
 - [ ] **B4 Chapter 1 quests.** The good alien points you at the building site; workers are being
   turned into Skinsuits; get the worker form; repair the broken bridge (gate) to the next district.
   - [x] m339 **B4-1** the good alien points you at the building site; you watch a worker turned into a Skinsuit and beat it back; she tells you about the foreman.
-  - [ ] **B4-2** get the worker form: knock a worker down and take the sample; as a worker the crew talk to you, and the foreman gives you a job.
+  - [x] m340 **B4-2** get the worker form: knock a worker down and take the sample; as a worker the crew talk to you, and the foreman gives you a job.
   - [ ] **B4-3** the collapsed footbridge to The Pearl (REGIONS: over the rail cut), rebuilt as the worker: the bridge gate, the quest step, and the far side as a portal.
 - [ ] **B5 Chapter 1 boss.** The infiltrated foreman bursts out of his skin; beat him; revert the
   crew; chapter complete → Chapter 2 region unlocks on the map.
@@ -730,3 +730,10 @@ differ" table there, so no region feels like the last one.
   "safety briefing". I picked Dee rather than Sal because she already says the crew have stopped
   eating. A person turned by the virus now comes back as the same person, with their name and lines,
   and that applies to every turn, not just this one. GOD's Chapter 1 button now takes you to the carts.
+
+- **m340 (B4-2):** after Dee, the task "A HARD HAT": knock down any of the crew except the foreman
+  (the two workers walking to the carts are the easy ones), take the sample, talk to Sal as a worker,
+  then report to Briggs. As a worker he gives you the footbridge job and invites you to the office
+  "alone"; to the alien he says the site is closed. I let you sample any crew member rather than one
+  named person, so you can choose who to jump. GOD now has a QUESTS list that starts any quest from
+  the top.

@@ -7,6 +7,21 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A QUEST STEP CAN NAME A KIND BY ITS FILE STEM, AND CAN HAND A SPEAKER A SCRIPT FOR ITSELF (m340, B4-2, `ch1b` "A HARD
+  HAT").** Dee's advice (`from: 'ch1_dee'`): knock down one of the crew, take the sample (it puts the form on), talk to
+  Sal as a worker, report to Briggs. Three small step features, all generic:
+  `defeat` / `sample` take `kind: 'contruction_worker'` and FOLD it (`mphFold`) at test time -- never compare a stem with
+  `mphName`, that is the m332/m334 landmine twice over -- and `defeat` takes `not: '<mark id>'` (the foreman does not
+  count). `talk` with `say` + `npc` gives the body on that mark the step's own script under the step's `who` id for as
+  long as it takes (Briggs's job: the footbridge over the cut, B4-3, and "come and see me in the office, alone", B5); he
+  keeps `talks: ['worker']` and `alien: 'brush'`, so only a worker gets the job.
+  **GOD has a QUESTS section now**: every quest in this world, started from the top -- its chapter, its giver's flag set,
+  its own talk flags cleared so a step does not pass on an old conversation, and tracked. That is how to get to B4-2
+  without playing B4-1 first. `places` checks a `kind` has at least one marked body of it (other than `not`):
+  `ok  QUESTS ... ch1b.0 defeat | ch1b.1 sample | ch1b.2 talk | ch1b.3 talk | qroad.0 goto`, exit 0.
+  **Not built:** the knocked-down worker does not report you (Skinsuits in the crew could, later), and Briggs can still be
+  knocked down and sampled like anyone else until B5 makes him the boss.
+
 - **A PERSON SURVIVES BEING A SKINSUIT NOW: THE TURN CARRIES WHO THEY ARE BOTH WAYS (m339, B4-1, `keep` in `virusGo` /
   `vFacts` / `virusArrive`; quest steps `skin` / `unskin`).** Chapter 1's first quest: Chef Norrie (any form -- his last
   line now recognises you; as the alien his own script says the same) sends you to the building site; at the site, within
