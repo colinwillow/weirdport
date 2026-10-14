@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m409</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m410</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m409</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m410</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,9 +822,9 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm409';
+const BUILD = 'm410';
 /* ASSETS:START */
-const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
+const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
 // Every runtime asset URL goes through A(). `npm run bump` writes the sha1 of each file's
 // CONTENTS into ASSETS above, so a file replaced IN PLACE -- same folder, same name, new bytes
@@ -19078,6 +19078,7 @@ function kcGroundCapture(root) {
 }
 const KWCOL = new Map();      // piece_id -> its static collider boxes, taken away by the swap
 const KTWIN = new Map();      // `style|wallB_kind` -> the chunked twin
+const KPIECE = new Map();     // `style|piece` -> an intact piece for the generator (m410, `kitPieceIndex`, `kgenMake`)
 const _kcM = new THREE.Matrix4();
 
 function buildKCityCol(g) {
@@ -19168,9 +19169,30 @@ function kitTwinIndex(g) {
     KTWIN.set((e.style || 'brick') + '|' + e.piece, { recs, meshes, name: o.name });
     n++;
   });
+  kitPieceIndex(g);
   kit.twinLib = g.scene;
   console.log('[melee] kit city: ' + n + ' chunked twins (' + [...KTWIN.keys()].slice(0, 3).join(' ') + ' ...)');
   if (!n) note('KC NO TWINS');
+}
+// **THE GENERATOR'S PIECES (m410, ROADMAP D4a).** `npm run twins` writes the intact pieces of every style beside the twins
+// (walls, corners, floor, roof, parapets, the window's glass): each is a node at the origin carrying `piece`, `style` and
+// `cols` (its own collider boxes, Blender axes). Indexed like a twin -- the meshes under it with their transforms relative
+// to the piece -- and dressed in the buildings' materials by name in `kitTwinTidy`.
+function kitPieceIndex(g) {
+  g.scene.updateMatrixWorld(true);
+  g.scene.traverse(o => {
+    const e = o.userData || {};
+    if (!e.style || e.chunks || !KGEN.pieces.includes(e.piece)) return;
+    let cols = [];
+    try { cols = e.cols ? JSON.parse(e.cols) : []; } catch (err) { cols = []; }
+    _kcM.copy(o.matrixWorld).invert();
+    const meshes = [];
+    o.traverse(c => { if (!c.isMesh || !c.geometry || Array.isArray(c.material)) return;
+      meshes.push({ geo: c.geometry, name: c.material && c.material.name, mat: c.material, local: new THREE.Matrix4().multiplyMatrices(_kcM, c.matrixWorld) }); });
+    if (meshes.length) KPIECE.set(e.style + '|' + e.piece, { meshes, cols, piece: e.piece, style: e.style });
+  });
+  KGEN.lib = KPIECE.size;
+  if (!KPIECE.size) note('KGEN NO PIECES');
 }
 // after the buildings, whose materials the twins wear: resolve each by name, then let the
 // library's own textures go -- all but any a twin could not find a building material for
@@ -19179,6 +19201,11 @@ function kitTwinTidy() {
   for (const T of KTWIN.values()) for (const t of T.meshes) {
     t.use = (kit.matBy && kit.matBy.get(t.name)) || null;
     if (!t.use) { t.use = t.mat; keep.add(t.mat); kit.twinMiss = (kit.twinMiss || 0) + 1; }
+  }
+  // the generator's pieces too (m410): a material no building wears keeps the library's own (a flat colour, no texture)
+  for (const T of KPIECE.values()) for (const t of T.meshes) {
+    t.use = (kit.matBy && kit.matBy.get(t.name)) || null;
+    if (!t.use) { t.use = t.mat; keep.add(t.mat); KGEN.miss++; }
   }
   if (!kit.twinLib) return;
   const seen = new Set();
@@ -35448,6 +35475,180 @@ function turfDressStep(dt) {
   D.first = 0;
 }
 // ============================================================================================
+// THE FACTIONS' OWN BUILDINGS: THE GENERATOR (m410, ROADMAP D4a, `KGEN`, `KGSTYLE`, `kgenMake`, `kgenDrop`, `kgenGod`)
+// ============================================================================================
+// GAME_DESIGN "Turf" 3: *"The buildings themselves. Procedurally generated from the kit pieces in each faction's style:
+// rundown walk-ups, a glass tower, a trailer lot, a co-op with a roof garden, a factory, alien pods."* His note on the piece
+// library: *"The game can use it to assemble its own buildings."* So it does: `kgenMake` lays a footprint of 3 m cells
+// (the kit's own grid, KBLD's cell map) out of HIS pieces in one of his sixteen styles -- a wall piece on every outside
+// bay of every floor (the door, window, shopfront and blank bays chosen by the faction), a corner post on every outside
+// corner, a slab per cell per floor, the roof, the parapet round it -- and every piece brings ITS OWN colliders (`cols`),
+// so a doorway is open, a sill is a sill, a floor is a deck and the roof is walkable. On top of the kit, each faction's
+// own things in primitives: the co-op's roof garden and solar panels, the garage's tyres and drums, the tower's gold crown
+// and mast, the shops' water tank and awnings, the walk-up's tarps and plywood, Uplift's vents and cyan strip, the hive's
+// pods and tendrils. Merged per material: one building is a handful of draw calls. D4b swaps them in on turf.
+const KGEN = {
+  on: 1, lib: 0, miss: 0, made: 0, live: [], god: null, godNext: 0, mats: {},
+  pieces: ['wall_solid', 'wall_window', 'wall_door_C', 'wall_wide', 'wall_parapet', 'corner', 'corner_parapet', 'floor', 'roof'],
+};
+const KGSTYLE = {
+  act:   { name: 'the co-op',        styles: ['sage', 'mint'],         w: 3, d: 2, fl: 3, ground: 'door', up: 'window', extra: 'garden' },
+  red:   { name: 'the garage',       styles: ['tin'],                  w: 3, d: 3, fl: 1, ground: 'wide', up: 'solid',  extra: 'scrap' },
+  big:   { name: 'the glass tower',  styles: ['sky', 'bluecrete'],     w: 2, d: 2, fl: 8, ground: 'door', up: 'window', extra: 'crown' },
+  small: { name: 'the shopfronts',   styles: ['mustard', 'coral'],     w: 3, d: 2, fl: 2, ground: 'shop', up: 'window', extra: 'tank' },
+  home:  { name: 'the walk-up',      styles: ['oldbrick', 'redbrick'], w: 2, d: 2, fl: 4, ground: 'door', up: 'window', extra: 'squat' },
+  upl:   { name: 'the plant',        styles: ['police', 'bluecrete'],  w: 4, d: 3, fl: 2, ground: 'wide', up: 'solid',  extra: 'vents' },
+  skin:  { name: 'the hive',         styles: ['lilac', 'teal'],        w: 2, d: 2, fl: 3, ground: 'door', up: 'window', extra: 'pods' },
+};
+// which piece a bay is: the front's ground floor is the faction's face, the back gets a door, upper floors their pattern
+function kgBay(S, side, L, i, n) {
+  const mid = Math.floor((n - 1) / 2);
+  if (L === 0 && side === 0) {
+    if (S.ground === 'door') return i === mid ? 'wall_door_C' : 'wall_window';
+    if (S.ground === 'shop') return i === mid ? 'wall_door_C' : 'wall_wide';
+    return i === 0 && n > 1 ? 'wall_door_C' : 'wall_wide';
+  }
+  if (L === 0) return side === 2 && i === mid && S.ground !== 'wide' ? 'wall_door_C' : (i % 2 ? 'wall_window' : 'wall_solid');
+  if (S.up === 'window') return 'wall_window';
+  return (i + L) % 3 === 1 ? 'wall_window' : 'wall_solid';
+}
+// the faction's own materials, made once
+function kgMats(f) {
+  if (KGEN.mats[f]) return KGEN.mats[f];
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .75 }), o || {});
+  const E = (c, e, i) => M(c, { emissive: new THREE.Color(e), emissiveIntensity: i });
+  return (KGEN.mats[f] = {
+    act: { soil: M(0x5a3a22), leaf: M(0x4f9a3a), wood: M(0x8a6a3a), solar: Object.assign(M(0x1a2a4a), { metalness: .5, roughness: .3 }) },
+    red: { tyre: M(0x1a1a1a, { roughness: .95 }), drum: M(0x9a3a1a), dish: Object.assign(M(0xc8c8c0), { metalness: .4 }) },
+    big: { gold: Object.assign(E(0xc89a2a, 0xffd23a, .35), { metalness: .7, roughness: .3 }), dark: M(0x16161e), lamp: E(0x3a0000, 0xff2a2a, 2) },
+    small: { tank: M(0x7a5a3a), leg: M(0x3a3a3a), awn: M(0x3ad08a) },
+    home: { tarp: M(0x2a6ab0, { side: THREE.DoubleSide }), ply: M(0xc8a878) },
+    upl: { vent: Object.assign(M(0x8a9098), { metalness: .5, roughness: .4 }), glow: E(0x08202a, 0x46e0ff, 1.4) },
+    skin: { pod: E(0x3a0a4a, 0xff3ad0, .8), creep: E(0x4a1a5a, 0x6a1a7a, .4) },
+  }[f] || {});
+}
+const _kgM = new THREE.Matrix4(), _kgR = new THREE.Matrix4(), _kgV = new THREE.Vector3(), _kgQ = new THREE.Quaternion(), _kgE = new THREE.Euler(), _kgS = new THREE.Vector3();
+// spec: { f, x0, y0, z0, th, cells: Map 'x,y' -> floors (optional: the faction's own w x d x fl), seed, style }
+function kgenMake(spec) {
+  const S = KGSTYLE[spec.f]; if (!S || !KPIECE.size) return null;
+  let hs = (((spec.seed || 1) * 2654435761) >>> 0) || 1; const r = () => ((hs = (hs * 1664525 + 1013904223) >>> 0) / 4294967296), style = spec.style || S.styles[Math.floor(r() * S.styles.length) % S.styles.length];
+  let cells = spec.cells;
+  if (!cells) { cells = new Map(); for (let x = 0; x < S.w; x++) for (let y = 0; y < S.d; y++) cells.set(x + ',' + y, S.fl); }
+  const bay = 3, fl = 3, th = spec.th || 0, y0 = spec.y0;
+  const Bm = new THREE.Matrix4().makeRotationY(th).setPosition(spec.x0, y0, spec.z0);
+  const C = Math.cos(th), Sn = Math.sin(th), wx = (u, v) => spec.x0 + u * C + v * Sn, wz = (u, v) => spec.z0 - u * Sn + v * C;
+  const at = (x, y) => cells.get(x + ',' + y) || 0;
+  let x0 = 1e9, x1 = -1e9, yA = 1e9, yB = -1e9, top = 0;
+  for (const [k, f] of cells) { const [x, y] = k.split(',').map(Number); x0 = Math.min(x0, x); x1 = Math.max(x1, x); yA = Math.min(yA, y); yB = Math.max(yB, y); top = Math.max(top, f); }
+  const byMat = new Map(), boxes = [], extra = new Map(), miss = new Set();
+  let pieces = 0;
+  // one piece at (u, L*fl, v) in the building's frame, turned q quarter-turns about +Y
+  const put = (piece, u, h, v, q) => {
+    const P = KPIECE.get(style + '|' + piece) || KPIECE.get('brick|' + piece); if (!P) { miss.add(piece); return; }
+    _kgR.makeRotationY(q * Math.PI / 2).setPosition(u, h, v);
+    _kgM.multiplyMatrices(Bm, _kgR);
+    for (const t of P.meshes) { const mat = t.use || t.mat; let L = byMat.get(mat); if (!L) byMat.set(mat, L = []);
+      const mw = new THREE.Matrix4().multiplyMatrices(_kgM, t.local); L.push({ geometry: t.geo, matrixWorld: mw, updateWorldMatrix() {} }); }
+    // its own colliders: Blender axes to the piece's, the quarter-turn and the offset to the building's, then a turned box in the world
+    for (const c of P.cols) { if (!c.box || (c.k !== 'bld' && c.k !== 'deck' && c.k !== 'rail')) continue;
+      const o = kitBox(c.box, {}); let u0 = 1e9, u1 = -1e9, v0 = 1e9, v1 = -1e9;
+      for (const px of [o.minx, o.maxx]) for (const pz of [o.minz, o.maxz]) { _kgV.set(px, 0, pz).applyMatrix4(_kgR); u0 = Math.min(u0, _kgV.x); u1 = Math.max(u1, _kgV.x); v0 = Math.min(v0, _kgV.z); v1 = Math.max(v1, _kgV.z); }
+      const uc = (u0 + u1) / 2, vc = (v0 + v1) / 2, hx = (u1 - u0) / 2, hz = (v1 - v0) / 2, cs = C, sn = -Sn;
+      const ex = hx * Math.abs(cs) + hz * Math.abs(sn), ez = hx * Math.abs(sn) + hz * Math.abs(cs), X = wx(uc, vc), Z = wz(uc, vc);
+      boxes.push({ minx: X - ex, maxx: X + ex, minz: Z - ez, maxz: Z + ez, miny: y0 + h + o.miny, maxy: y0 + h + o.maxy, cx: X, cz: Z, hx, hz, cs, sn, kgen: 1, deck: c.k === 'deck' ? 1 : 0 }); }
+    pieces++;
+  };
+  // ---- the walls, side by side: front (+v, side 0), right (+u, 1), back (-v, 2), left (-u, 3)
+  const SIDES = [[0, -1], [1, 0], [0, 1], [-1, 0]];     // the neighbour across each side, (dx, dy)
+  for (const [k, f] of cells) { const [x, y] = k.split(',').map(Number);
+    SIDES.forEach(([dx, dy], side) => { const fn = at(x + dx, y + dy);
+      const i = side === 0 || side === 2 ? x - x0 : y - yA, n = side === 0 || side === 2 ? x1 - x0 + 1 : yB - yA + 1;
+      const su = side === 0 ? x * bay : side === 1 ? (x + 1) * bay : side === 2 ? (x + 1) * bay : x * bay;
+      const sv = side === 0 ? -y * bay : side === 1 ? -y * bay : side === 2 ? -(y + 1) * bay : -(y + 1) * bay;
+      const qq = side === 0 ? 0 : side === 1 ? 1 : side === 2 ? 2 : 3;
+      for (let L = fn; L < f; L++) put(kgBay(S, side, L, side === 2 ? n - 1 - i : side === 3 ? n - 1 - i : i, n), su, L * fl, sv, qq);
+      if (fn < f) put('wall_parapet', su, f * fl, sv, qq); }); }
+  // ---- the corners: a post wherever the outside turns (one cell of the four round a grid point is occupied at that level)
+  for (let gx = x0; gx <= x1 + 1; gx++) for (let gy = yA; gy <= yB + 1; gy++) {
+    const Q = [[gx, gy - 1, 1, 0], [gx - 1, gy - 1, 0, 0], [gx - 1, gy, 0, 1], [gx, gy, 1, 1]];   // cell, which quadrant of the point
+    for (let L = 0; L <= top; L++) { const occ = Q.filter(([cx, cy]) => at(cx, cy) > L), roofs = Q.filter(([cx, cy]) => at(cx, cy) === L && L > 0);
+      // the quarter-turn that points the post's +x and its inside into the one occupied cell
+      const turn = ([cx, cy]) => { const qx = cx >= gx ? 1 : -1, qz = cy >= gy ? -1 : 1; return qx > 0 ? (qz < 0 ? 0 : 3) : (qz < 0 ? 1 : 2); };
+      if (occ.length === 1) put('corner', gx * bay, L * fl, -gy * bay, turn(occ[0]));
+      else if (!occ.length && roofs.length === 1) put('corner_parapet', gx * bay, L * fl, -gy * bay, turn(roofs[0])); } }
+  // ---- the slabs: a floor per cell per storey, the roof on top
+  for (const [k, f] of cells) { const [x, y] = k.split(',').map(Number);
+    for (let L = 0; L < f; L++) put('floor', x * bay, L * fl, -y * bay, 0);
+    put('roof', x * bay, f * fl, -y * bay, 0); }
+  // ---- the faction's own things, in the building's frame (u across, v back from the front at 0, heights from its foot)
+  const W = (x1 + 1) * bay, D = (yB + 1) * bay, H = top * fl, mats = kgMats(spec.f);
+  const add = (g, mat, u, h, v, ry = 0, rx = 0, rz = 0, sx = 1, sy = 1, sz = 1) => { if (!mats[mat]) return;
+    _kgE.set(rx, ry, rz); _kgQ.setFromEuler(_kgE); _kgS.set(sx, sy, sz); _kgV.set(u, h, v);
+    let L = extra.get(mat); if (!L) extra.set(mat, L = []); L.push([g, new THREE.Matrix4().multiplyMatrices(Bm, new THREE.Matrix4().compose(_kgV, _kgQ, _kgS))]); };
+  const box = (w, h, d) => new THREE.BoxGeometry(w, h, d), roofH = H + .02, cu = W / 2, cv = -D / 2;
+  const front = []; for (let x = x0; x <= x1; x++) if (at(x, yA) && !at(x, yA - 1)) front.push(x);
+  if (S.extra === 'garden') {
+    for (let k = 0; k < 4; k++) { const u = 1.4 + (W - 2.8) * (k / 3), v = cv + (k % 2 ? .8 : -.8);
+      add(box(1.1, .45, 2.2), 'wood', u, roofH + .22, v); add(box(1, .1, 2.1), 'soil', u, roofH + .47, v);
+      for (let j = 0; j < 3; j++) add(new THREE.IcosahedronGeometry(.32 + r() * .15, 0), 'leaf', u + (r() - .5) * .4, roofH + .7, v - .7 + j * .7, r() * 3); }
+    for (let k = 0; k < 2; k++) { add(box(1.6, .05, 1), 'solar', cu - .9 + k * 1.8, roofH + .9, -D + 1.1, 0, -.45); add(box(.08, .8, .08), 'wood', cu - .9 + k * 1.8, roofH + .4, -D + 1.4); }
+  } else if (S.extra === 'scrap') {
+    for (let k = 0; k < 4; k++) add(new THREE.TorusGeometry(.38, .14, 6, 14), 'tyre', W - 1.2, roofH + .14 + k * .28, -1.2, 0, Math.PI / 2);
+    add(new THREE.CylinderGeometry(.05, .05, 1.6, 6), 'dish', 1.2, roofH + .8, -D + 1.2); add(new THREE.SphereGeometry(.7, 12, 6, 0, Math.PI * 2, 0, Math.PI / 3), 'dish', 1.2, roofH + 1.2, -D + 1.2, 0, -.9);
+    for (let k = 0; k < 3; k++) add(new THREE.CylinderGeometry(.3, .3, .9, 10), 'drum', W + .5, .45, -.6 - k * .7);
+  } else if (S.extra === 'crown') {
+    for (const [u, v, w, d] of [[cu, .05, W + .3, .12], [cu, -D - .05, W + .3, .12], [-.05, cv, .12, D + .3], [W + .05, cv, .12, D + .3]]) add(box(w, .22, d), 'gold', u, H + 1.05, v);
+    add(box(W * .7, 1.4, .25), 'dark', cu, H + 2, -D + .4); add(box(W * .6, 1.1, .05), 'gold', cu, H + 2, -D + .25);
+    add(new THREE.CylinderGeometry(.06, .12, 6, 6), 'dark', W - 1, H + 3, -1); add(new THREE.SphereGeometry(.18, 8, 6), 'lamp', W - 1, H + 6.1, -1);
+  } else if (S.extra === 'tank') {
+    add(new THREE.CylinderGeometry(1, 1, 1.8, 14), 'tank', W - 1.6, H + 2.4, -D + 1.6); add(new THREE.ConeGeometry(1.05, .6, 14), 'tank', W - 1.6, H + 3.6, -D + 1.6);
+    for (const [a, b] of [[-.7, -.7], [.7, -.7], [-.7, .7], [.7, .7]]) add(box(.1, 1.5, .1), 'leg', W - 1.6 + a, H + .75, -D + 1.6 + b);
+    for (const x of front) add(box(2.6, .06, 1.1), 'awn', x * bay + 1.5, 2.85, -yA * bay + .5, 0, .25);
+  } else if (S.extra === 'squat') {
+    for (let k = 0; k < 2; k++) add(box(2.4, .03, 1.8), 'tarp', 1.4 + k * (W - 2.8), roofH + .5, cv + (k ? .6 : -.6), r(), .3, .15);
+    for (let L = 1; L < top; L++) for (const x of front) if (r() < .45) add(box(1.3, 1.5, .05), 'ply', x * bay + 1.5, L * fl + 1.6, -yA * bay + .06, 0, 0, (r() - .5) * .12);
+  } else if (S.extra === 'vents') {
+    for (let k = 0; k < 3; k++) { add(box(1.2, .9, 1.2), 'vent', 2 + k * (W - 4) / 2, roofH + .45, cv); add(box(1, .06, 1), 'glow', 2 + k * (W - 4) / 2, roofH + .93, cv); }
+    for (const [u, v, w, d] of [[cu, .03, W, .08], [cu, -D - .03, W, .08], [-.03, cv, .08, D], [W + .03, cv, .08, D]]) add(box(w, .12, d), 'glow', u, H + .9, v);
+    add(new THREE.CylinderGeometry(.05, .05, 4, 6), 'vent', 1, H + 2, -1); add(box(1.2, .6, .06), 'vent', 1, H + 4, -1);
+  } else if (S.extra === 'pods') {
+    for (let k = 0; k < 6; k++) { const u = .9 + r() * (W - 1.8), v = -.9 - r() * (D - 1.8), s = .5 + r() * .5; add(new THREE.SphereGeometry(.8, 12, 9), 'pod', u, roofH + .5 * s, v, r() * 3, 0, 0, s, s * 1.35, s); }
+    for (const [u, v] of [[0, 0], [W, 0], [W, -D], [0, -D]]) for (let j = 0; j < 3; j++) { const len = H * (.5 + r() * .5); add(new THREE.CylinderGeometry(.06, .22, len, 5), 'creep', u + (r() - .5) * .6, len / 2 - .05, v + (r() - .5) * .6, 0, (r() - .5) * .16, (r() - .5) * .16); }
+  }
+  // ---- one mesh per material, the pieces and the faction's things
+  const grp = new THREE.Group(); grp.name = 'kgen_' + spec.f;
+  for (const [mat, L] of byMat) { const { geo } = kitMerge(L, false); const m = new THREE.Mesh(geo, mat); m.castShadow = m.receiveShadow = true; grp.add(m); }
+  for (const [mat, L] of extra) { const m = farmMerge(L, mats[mat]); m.userData.fbatch = 0; grp.add(m); for (const [g] of L) g.dispose(); }
+  scene.add(grp);
+  for (const b of boxes) BOXES.push(b);
+  boxGrid();
+  if (miss.size) note('KGEN MISS ' + [...miss].join(','));
+  KGEN.made++;
+  const R = { f: spec.f, style, grp, boxes, cells, x0: spec.x0, y0, z0: spec.z0, th, W, D, H, pieces, draws: grp.children.length, name: S.name };
+  KGEN.live.push(R);
+  return R;
+}
+function kgenDrop(R) {
+  if (!R) return 0;
+  for (const b of R.boxes) boxDel(b);
+  boxGrid();
+  scene.remove(R.grp); R.grp.traverse(o => { if (o.isMesh) o.geometry.dispose(); });
+  const i = KGEN.live.indexOf(R); if (i >= 0) KGEN.live.splice(i, 1);
+  return 1;
+}
+// GOD: the next faction's building three metres in front of him, its front to him (one at a time)
+function kgenGod() {
+  const ids = Object.keys(KGSTYLE), f = ids[KGEN.godNext % ids.length]; KGEN.godNext++;
+  if (KGEN.god) { kgenDrop(KGEN.god); KGEN.god = null; }
+  const S = KGSTYLE[f], P = player.pos, h = player.heading || 0, fx = Math.sin(h), fz = Math.cos(h), th = h + Math.PI;
+  const C = Math.cos(th), Sn = Math.sin(th), W = S.w * 3, D = S.d * 3, X = P.x + fx * 3, Z = P.z + fz * 3;
+  const x0 = X - W / 2 * C, z0 = Z + W / 2 * Sn;
+  let y0 = -1e9; for (const [u, v] of [[0, 0], [W, 0], [0, -D], [W, -D], [W / 2, -D / 2]]) y0 = Math.max(y0, groundAt(x0 + u * C + v * Sn, z0 - u * Sn + v * C, P.y + 3, 8));
+  if (!(y0 > -50)) y0 = P.y;
+  KGEN.god = kgenMake({ f, x0, y0: y0 + .02, z0, th, seed: KGEN.godNext });
+  return KGEN.god ? S.name + ' (' + f + ')' : 'NO PIECES';
+}
+// ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
 // ============================================================================================
 // Irregular patches of wheat, corn, ploughed earth, hay meadow and pasture, divided by hedgerows, fences, tree lines and
@@ -40092,6 +40293,9 @@ function godMenuOpen(on) {
   if (TDRESS.built) { btn('FACTION DRESSING ' + (TDRESS.on ? 'ON' : 'OFF'), () => { TDRESS.on = TDRESS.on ? 0 : 1; for (const Mm of TDRESS.meshes) Mm.mesh.visible = !!TDRESS.on; godMenuOpen(1); });   // m409
     btn('HAND THIS BLOCK TO THE NEXT FACTION', () => { const R = turfAt(player.pos.x, player.pos.z); if (!R) { toast('Not in Old Town', 1.4); return; }
       const [fi] = turfHold(R), F = TURF.FACTIONS[(fi + 1) % TURF.FACTIONS.length]; turfPush(player.pos.x, player.pos.z, F.id, .95); toast(R.name + ' to ' + F.short, 1.6); godMenuOpen(0); }); }
+  if (KGEN.lib) { const nf = Object.keys(KGSTYLE)[KGEN.godNext % 7];
+    btn('BUILD A FACTION BUILDING HERE: ' + KGSTYLE[nf].name.toUpperCase() + ' (' + nf.toUpperCase() + ')', () => { toast(kgenGod(), 1.8); godMenuOpen(0); });   // m410
+    if (KGEN.god) btn('TAKE THAT BUILDING AWAY', () => { kgenDrop(KGEN.god); KGEN.god = null; godMenuOpen(1); }); }
   if (SKYLINE.g) btn('METROPOLIS ON THE HORIZON ' + (SKYLINE.g.visible ? 'ON' : 'OFF'), () => { SKYLINE.g.visible = !SKYLINE.g.visible; godMenuOpen(1); });
   btn('THE STAND-IN QUEST (WEIRDPORT 101)', () => { progFlag('qon:q0'); quest.cur = null; toast('Quest on', 1.4); });
   btn('THE STAND-IN TASKS (TWO, FOR THE TASK LIST)', () => { progFlag('qon:q0'); progFlag('qon:qtour'); quest.cur = null; toast('Two tasks on', 1.4); godMenuOpen(0); });
@@ -42651,7 +42855,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

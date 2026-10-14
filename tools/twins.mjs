@@ -28,6 +28,11 @@ while (o + 8 <= b.length) {
 }
 const keep = g.nodes.map((n, i) => [n, i]).filter(([n]) => n.mesh !== undefined && n.extras && n.extras.chunks && /^wallB_/.test(n.extras.piece || ''));
 if (!keep.length) { console.error('no wallB_* twins in ' + SRC); process.exit(1); }
+// **AND THE GENERATOR'S PIECES (m410, `KPIECE`, `kgenMake`)**: the intact pieces a building is assembled from -- the walls,
+// corners, floor, roof and parapets of every style -- with their `cols` extras (each piece's own collider boxes) and the
+// window's GLASS child. The door and the shutter children are left out: a generated building's doorways stand open.
+const STATIC = new Set(['wall_solid', 'wall_window', 'wall_door_C', 'wall_wide', 'wall_parapet', 'corner', 'corner_parapet', 'floor', 'roof']);
+const keepS = g.nodes.map((n, i) => [n, i]).filter(([n]) => n.mesh !== undefined && n.extras && n.extras.style && STATIC.has(n.extras.piece || ''));
 
 const out = { asset: { version: '2.0', generator: 'melee tools/twins.mjs from ' + SRC.split('/').pop() },
               scene: 0, scenes: [{ nodes: [] }], nodes: [], meshes: [], materials: [], accessors: [], bufferViews: [],
@@ -90,6 +95,14 @@ for (const [n] of keep) {
   if (n.scale) nn.scale = n.scale;
   out.nodes.push(nn); out.scenes[0].nodes.push(out.nodes.length - 1);
 }
+// a static piece keeps its glass (and the glass's own children, the glints), placed as authored under it
+const sub = n => { const nn = { name: n.name }; if (n.mesh !== undefined) nn.mesh = mesh(n.mesh); if (n.extras) nn.extras = n.extras;
+  for (const k of ['translation', 'rotation', 'scale']) if (n[k]) nn[k] = n[k];
+  out.nodes.push(nn); const at = out.nodes.length - 1;
+  const kids = (n.children || []).map(i => g.nodes[i]).filter(c => !(c.extras && (c.extras.door || c.extras.collider)) && (n.extras && n.extras.piece ? c.extras && c.extras.breakable === 'glass' : true));
+  if (kids.length) out.nodes[at].children = kids.map(sub);
+  return at; };
+for (const [n] of keepS) { const nn = { ...n, translation: undefined }; out.scenes[0].nodes.push(sub(nn)); }
 const BIN = Buffer.concat(chunks);
 const pad4 = n => (4 - (n % 4)) % 4;
 const binP = Buffer.concat([BIN, Buffer.alloc(pad4(BIN.length))]);
@@ -111,5 +124,7 @@ const styles = new Set(keep.map(([n]) => n.extras.style)), kinds = new Set(keep.
 console.log(SRC + ' -> ' + OUT);
 console.log('  ' + keep.length + ' twins (' + kinds.size + ' kinds x ' + styles.size + ' styles), ' + out.meshes.length + ' meshes, ' +
   out.materials.length + ' materials (names only), ' + same + '/' + bvMap.size + ' bufferViews byte-identical');
+const sKinds = new Set(keepS.map(([n]) => n.extras.piece)), sStyles = new Set(keepS.map(([n]) => n.extras.style));
+console.log('  + ' + keepS.length + ' generator pieces (' + sKinds.size + ' kinds x ' + sStyles.size + ' styles), with their glass');
 console.log('  ' + (b.length / 1e6).toFixed(2) + ' MB -> ' + (fs.statSync(OUT).size / 1e6).toFixed(2) + ' MB');
 if (same !== bvMap.size) { console.error('  BUFFERVIEWS DIFFER'); process.exit(1); }

@@ -7,6 +7,34 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FACTIONS' OWN BUILDINGS: THE GENERATOR (m410, D4a, `KPIECE`, `kitPieceIndex`, `KGEN`, `KGSTYLE`, `kgBay`, `kgenMake`,
+  `kgenDrop`, `kgenGod`, `tools/twins.mjs`).** His note on the piece library: *"The game can use it to assemble its own
+  buildings."* **The twins file now carries the intact pieces too** (`npm run twins`: 96 twins + 144 generator pieces, 9
+  kinds x 16 styles, each with its `cols` extras and the window's glass child; door and shutter children dropped, so a
+  generated doorway stands open). 2.14 -> 2.82 MB, and it is the file the kit city already loads, so no new request.
+  **RE-RUN `npm run twins` AFTER EVERY RE-EXPORT OF THE PIECE LIBRARY** -- unchanged rule, now covering the generator too.
+  `kitPieceIndex` runs inside `kitTwinIndex` and `kitTwinTidy` dresses the pieces in the buildings' materials by NAME
+  (a name no building wears keeps the library's flat colour and counts into `KGEN.miss`).
+  **THE PIECE FRAME**: a wall runs +X 0..3, its outside is glTF +Z, its inside -Z (Blender +Y), up is +Y. KBLD's cell (x, y)
+  is u [3x, 3x+3], v [-3y-3, -3y], so the front (side 0, the neighbour at y-1) is a wall at quarter-turn 0, right 1, back 2,
+  left 3, each started at the corner its +X runs away from. A corner post goes wherever exactly one of the four cells round a
+  grid point is occupied at that storey, turned so its +X and its inside point into that cell. **Each piece's `cols` go
+  through `kitBox` (Blender to glTF), the piece's quarter-turn, then the building's frame, and land as turned boxes** with
+  `kgen: 1`. Merged with `kitMerge` per material (uv and the tint's vertex colours kept); the faction's own things with
+  `farmMerge`. **9 to 11 draws a building.**
+  **THE HARNESS MUST SHARE ONE MATERIAL PER glTF MATERIAL, as GLTFLoader does**: the first run made a material per
+  primitive and read 19-26 draws, which is a harness artefact, not a fact about the game.
+  `places` (all seven far out of the way, then taken away):
+      ok  KGEN pieces 144 | act sage 3x2x3: 80 pieces, 156 boxes, 11 draws (4 its own) | walled 30/30 | door door_C 1 open |
+          floor 0.00 roof 9.00/9 | off the footprint 0/8264 || red tin 3x3x1: 50 pieces, 65 boxes, 10 draws | walled 12/12 |
+          door door_C 0 open | roof 3.00/3 || big sky 2x2x8: 144 pieces, 328 boxes, 9 draws | walled 64/64 | roof 24.00/24 ||
+          small mustard 3x2x2: walled 20/20, door wide 0 open || home oldbrick 2x2x4: walled 32/32 || upl police 4x3x2:
+          walled 28/28 || skin lilac 2x2x3: walled 24/24, off the footprint 0/7252 | left after taking them away 0
+  Teeth: the right-hand walls turned 3 instead of 1 -> `walled 24/30 ... off the footprint 318/8264` and every faction
+  `A BAY IS NOT WALLED`. **The walled test samples 2.75 m up each storey**, above every opening in the kit (window lintel
+  2.3, door 2.2, wide 2.6), so a window bay is not mistaken for a gap -- and 12 cm INSIDE the footprint line, because the
+  wall's thickness is on the inside (glTF z -.25..0).
+
 - **TURF ON THE BUILDINGS (m409, D3, `TDRESS`, `TDPROPS`, `tdFaces`, `tdPlace`, `turfDressBuild`, `turfDressStep`).**
   Every `KBLD` building in the turf rect gets its block (`turfAt` at its centre) and up to `TDRESS.faces` (4) outside walls,
   shuffled per building. **The walls are found CELL BY CELL** (`tdFaces`: a cell side with no neighbouring cell), so an L
