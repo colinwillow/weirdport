@@ -7,6 +7,27 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FERRY: OLD TOWN'S LANDING, A DOUBLE-ENDED BOAT, PIER 1'S PONTOON (m381, C6-6d-1, `OFERRY`, `buildFerry`,
+  `ferryPlace`, `ferryStep`).** Chapter 4's way in (GODCHAP 4 now starts at the landing). Far end first: a stair of 14 treads
+  (15 risers of .293, the pontoon the last) off pier 1's tip in the pier's own frame, and a 10 x 10 pontoon square to the
+  crossing. Near end: marched from that pontoon toward the city's edge ON THE WATERFRONT'S BEARING over the island's own
+  ground (`isleBedAt` -- `groundAt` would stop at a tree) until it reaches the jetty's height: there, a 10 x 10 LANDING
+  STAGE on piles (ticket kiosk, shelter and bench, the timetable -- FARES PAID BY UPLIFT CORP -- lamps, rope, crates), a
+  jetty to 6 m past the waterline, two .3 steps down to a pontoon. The city ring keeps its trees off its bearing (`OFERRY.deg`,
+  305). The boat is DOUBLE-ENDED so it never turns: hull, deck, rails down both sides (ends open), a cabin and wheelhouse,
+  two benches -- every solid part a `BDYN` box, the carry the train's. Its clock: a horn, an eased crossing (`vmax` 5,
+  `acc` .7), `wait` 18 s at each end. Three people at the landing (Gus the ferryman, Imelda, Pete). GOD: the landing, the
+  far pontoon, "THE FERRY: SEND IT NOW". `WFRONT.V` now reaches -56 so the far pontoon counts as the Waterfront's.
+  **Two numbers the `FERRY` row caught**: the nearest shore to pier 1 is 57 m off, which made an 11 m crossing (8 s) --
+  so the landing is on the Waterfront's own bearing and its jetty runs 6 m out, not 14 (40 m, 15 s); and the boat
+  stopped .3 m short of each pontoon, a gap a WALK falls into (`boarded -9.02`), so its ends now lie .1 over each
+  pontoon's edge. The row walks grass -> jetty -> pontoon and pier 1 -> stair -> pontoon, boards at both ends, rides a
+  whole crossing on the deck through the shipped `ferryStep`, and counts foreign boxes on the stage (0).
+  `npm run places` (exit 0):
+      ok  otferry    -> player 72.7,-0.4,-103.2 ground -0.60
+      ok  wfferry    -> player 161.4,-1.0,-137.3 ground -1.20
+      ok  FERRY the landing at 305 deg, 0 foreign boxes on its stage | grass -> jetty -> pontoon 0.00 | pier 1 -> stair -> pontoon 0.00 (pontoons at -1.20) | boarded 0.00 / 0.00 (deck -0.95) | crossing 40 m in 15 s, rode it 40.4 m | people Gus, the ferryman, Imelda, Pete
+
 - **THE GANTRY CRANES: CLIMB ONE, RIDE ITS TROLLEY, RIDE ITS BOX OUT OVER THE RIVER (m380, C6-6c, `WCRANE`, `wfCranes`,
   `wfCraneParts`, `wfCranePlace`, `wfCraneStep`).** Two ship-to-shore cranes on m377's rails (u 2 and u 34): four legs in a
   portal (X-braced on the SIDES, so the box's way through the middle is clear), a boom of two girders from over the yard to
