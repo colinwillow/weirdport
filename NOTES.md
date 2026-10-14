@@ -7,6 +7,24 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CHAPTER 4's BOSS IS THE LINE SUPERVISOR, AND THE YARD DEFENDS HIM WHILE HE STANDS (m388, C6-6f-3, `QUESTS` `ch4c`,
+  `wf_super`, `WBOT.alarm`).** A man in a suit (fat_secret_service; "hi-vis over a nice suit") on the hall floor by the
+  floor line, `wf_super`, there from the start ("THE LINE IS GOOD. THE LINE IS EFFICIENT."). The quest (`needQ: 'ch4b'`):
+  find him -> `skin` (`big` 1.85, five downs, the m364/m376 shape with no `also`) -> `unskin` -> talk to the man who comes
+  round (a temp agency in Delaware, a man in a nice suit, the line talking to him in a nice voice, AN OFFICE AT THE TOP OF
+  DUMP TOWER -- the suit's thread points at Chapter 6). **WHILE THE THING STANDS**, `WBOT.alarm` (any body tagged
+  `ch4boss` and alien): the robots stop standing down for the engineer and come for whoever is there; the turrets you
+  TURNED are on your side and shoot them. **AFTER HIM** (`qdone:ch4c`) the robots stand dark and still and the turrets drop
+  their guns, lenses dark, for good. `onDone`: `progChapter(5)`, CHAPTER 4 COMPLETE. GOD: by the supervisor. Chapter 5
+  (the Skate Islands) is not built: `GODCHAP` 5 still has no place.
+  **The `BOSS4` row** fabricates the boss (an alien kind tagged `ch4boss`) and a robot: with it standing, unit 2 chases
+  and shoves the engineer; without it, it stands down; with `qdone:ch4c`, the robots stay on their beat with no shove and
+  the turrets fire nothing at the alien in the open -- all through the shipped steps.
+  `npm run places` (exit 0):
+      ok  wfsuper    -> player 211.8,3.5,-244.9 ground 3.20
+      ok  BOSS4 the supervisor (a kind) | with the boss standing, unit 2 and the engineer: chase, 2 shoves | after it: stand, 0 | beaten: robots patrol, 0 shoves, turrets 0 rounds at the alien in the open
+      ok  QUESTS ... ch4c.0 goto | ch4c.1 skin | ch4c.2 unskin | ch4c.3 talk ...
+
 - **THE LEVER: THE LINE STOPS FOR GOOD, AND THE CONVERTED COME BACK TO THEMSELVES ONE AT A TIME (m387, C6-6f-2, `QUESTS`
   `ch4b`, `wfLineOff`, `wfFree`, `line:off`, `line:freed`, `WFSEC.wave`).** The control room's red lever (m378's
   `WFLINE.leverAt`) answers to an ENGINEER ("LINE CONTROL: AUTHORISED ENGINEERS ONLY" otherwise): `wfLineOff` saves

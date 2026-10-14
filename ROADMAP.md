@@ -296,7 +296,7 @@ differ" table there, so no region feels like the last one.
       - [x] m374 **C6-5f-2** the motorcycle: the biker form rides (the skateboard's riding, a bike under him, faster, no deck tricks).
       - [x] m375 **C6-5f-3** the gang's respect: race Big Rae round the dirt track; win, and the gang knows your name.
       - [x] m376 **C6-5f-4** the rally man: on the stage at the rally, in front of everyone; he bursts (the boss); Chapter 3 complete.
-  - [ ] **C6-6** Chapter 4 greybox (The Waterfront, REGIONS 5), split:
+  - [x] m388 **C6-6** Chapter 4 greybox (The Waterfront, REGIONS 5), split:
     - [x] m377 **C6-6a** the land: quays across the river from Old Town, two piers, the dry dock with a ship in it, the container yard as cliffs with a high road over it, the transit shed, the factory shut behind its fence, floodlights; the sodium night; GOD places.
     - [x] m379 **C6-6b** the cyborg factory: the hall opened up, conveyor lines through it at several levels, catwalks; the conversion line (workers go in human, come out cyborg), the signature system.
       - [x] m378 **C6-6b-1** the hall opened up: the line climbing through it on three levels (belts that carry), walkways, the west stair, the control room, the gallery and the outfeed tower.
@@ -309,10 +309,10 @@ differ" table there, so no region feels like the last one.
       - [x] m383 **C6-6e-1** the engineer form (a ROLE's form: sample Ivy or Dex) and the doors: Uplift's gate and the swing bridge's control box answer to the engineer.
       - [x] m384 **C6-6e-2** the turrets on Uplift's lot: they fire on strangers; the engineer turns them.
       - [x] m385 **C6-6e-3** the security robots in the yard: they chase strangers off; for the engineer they stand down.
-    - [ ] **C6-6f** Chapter 4's quests and its boss; shut the line down and the cyborgs turn back; Chapter 4 complete.
+    - [x] m388 **C6-6f** Chapter 4's quests and its boss; shut the line down and the cyborgs turn back; Chapter 4 complete.
       - [x] m386 **C6-6f-1** Chapter 4 opens: over the river, Rosa on pier 1, Dex on the shed roof, an engineer's face, through Uplift's gate.
       - [x] m387 **C6-6f-2** shut the line: the control room's red lever, the line stops for good, the cyborgs start turning back.
-      - [ ] **C6-6f-3** the boss: the line's supervisor bursts out (Uplift's own, nearly twice your height); after him Chapter 4 is complete.
+      - [x] m388 **C6-6f-3** the boss: the line's supervisor bursts out (Uplift's own, nearly twice your height); after him Chapter 4 is complete.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
 
@@ -1095,3 +1095,9 @@ differ" table there, so no region feels like the last one.
   - Every converted worker comes back to himself one at a time, nearest first, with sparks and a dazed line about a man in a nice suit.
   - Then you talk to Benny's cousin in the line-up (third from the left). He points you at the line supervisor: next build's boss.
   - Only the engineer can pull the lever, to match the gate.
+- **m388 (C6-6f-3) The line supervisor, Chapter 4's boss.** He's a man in a suit on the factory floor by the line, there from the start.
+  - Get close after the cousin's warning and the thing wearing him bursts out: nearly twice your height, five knock-downs.
+  - While it stands, the robots come for everyone, even the engineer, and the turrets you turned fight on your side.
+  - Afterwards he says the man in the nice suit has an office at the top of Dump Tower.
+  - The robots and turrets power down for good, and you get the Chapter 4 complete card.
+  - Next comes Chapter 5, the Skate Islands.

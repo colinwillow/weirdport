@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m387</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m388</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m387</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m388</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm387';
+const BUILD = 'm388';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28310,6 +28310,23 @@ const QUESTS = [
                 "There was a man. Hi-vis over a nice suit. The line supervisor. Never went home, never ate, just watched the line.",
                 "He's still in there somewhere. And he's not going to like that you turned his line off."] } },
   ] },
+  // CHAPTER 4's BOSS (m388, C6-6f-3): the cousin's warning, `needQ` the line's task. The supervisor on the hall floor: close to,
+  // the thing wearing him bursts out (nearly twice your height, five knock-downs) and the yard's robots stop standing down
+  // for anybody (`WBOT.alarm`) while it stands -- the turrets you turned are on your side. After: he comes round (a temp
+  // agency, Delaware, a man in a nice suit, an office at the top of Dump Tower); the robots and turrets power down for good;
+  // Chapter 4 is done.
+  { id: 'ch4c', title: 'THE SUPERVISOR', world: 'tkit', ch: 4, needQ: 'ch4b',
+    onDone: () => { progChapter(5); setTimeout(() => cardShow('CHAPTER 4 COMPLETE', 'THE WATERFRONT IS FREE: THE LINE IS DOWN', 4.5), 3600); }, steps: [
+    { type: 'goto', npc: 'wf_super', r: 9, text: 'Find the line supervisor', tip: 'On the hall floor, by the line he never stops watching.' },
+    { type: 'skin', tag: 'ch4boss', npc: 'wf_super', r: 7, big: 1.85, downs: 5, text: 'Uplift\'s own', tip: 'That was never a supervisor. Knock it down five times. The robots are on its side; the turrets you turned are on yours.',
+      after: { id: 'ch4_super_after', name: 'the line supervisor', group: 'worker', talks: ['*'], alien: 'talk',
+        lines: ["...Is it Tuesday? It feels like it's been Tuesday for a very long time.",
+                "A temp agency. In Delaware. A man in a nice suit said I'd be supervising a conveyor belt. Easiest job I'd ever have.",
+                "I never went home. I don't think I slept. The line just... talked to me. In my head. In a nice voice.",
+                "The man in the suit has an office. Top floor. The tallest tower in the city. Dump Tower. I've seen the stationery."] } },
+    { type: 'unskin', tag: 'ch4boss', npc: 'wf_super', r: 10, text: 'Beat the thing wearing the supervisor: five times down' },
+    { type: 'talk', who: 'ch4_super_after', text: 'See who he really is' },
+  ] },
   // m357 (C4-2): Skye's, once he has told you how
   { id: 'qglide', title: 'THE LOOKOUT', world: 'tkit', from: 'mk_lookout_skye', steps: [
     { type: 'sample', kind: 'jack', text: "Take Skye's sample -- he is lying down for you", tip: 'Stand over him while he is down and HOLD the right pad.' },
@@ -32780,6 +32797,7 @@ const WFRONT = {
     { id: 'wf_benny', role: 'docker', name: 'Benny', at: [-56.5, 58], face: [1, 0], lines: "That ship's been in the dry dock six years. They keep repairing it. It's never once been wet.|You hear the line at night? Thunk, hiss, thunk. Folks go into that factory one way and come out... tidier.|Don't climb the stacks. I mean it. I'm the one who does the paperwork." },
     { id: 'wf_marge', role: 'docker', name: 'Marge', at: [-76, 6], face: [0, -1], lines: "Shed's locked. Everything's locked. Even the lockers are locked.|My cousin signed an Uplift contract. Now he answers the phone 'how may I optimise you'.|Ferry's the only way in from Old Town. Unless you swim. Don't swim." },
     { id: 'wf_unit7', role: 'cyborg', name: 'Unit 7 (formerly Doug)', at: [-84.5, 48], face: [0, -1], lines: "GOOD EVENING. YOU ARE OUTSIDE YOUR AUTHORISED ZONE.|I USED TO LIKE FISHING. NOW I LIKE THROUGHPUT.|THE CONVERSION IS PAINLESS. THE PAPERWORK IS NOT." },
+    { id: 'wf_super', kind: 'fat_secret_service', name: 'the line supervisor', at: [-98, 72], face: [1, -.4], alien: 'brush', brushAlien: 'You are not on the roster. Nothing that is not on the roster exists.', talks: ['*'], lines: "THE LINE IS GOOD. THE LINE IS EFFICIENT.|Return to your station. All of your stations.|Do not touch the lever. The lever is for emergencies. There are no emergencies." },   // m388: Chapter 4's boss, on the hall floor by the line
     { id: 'wf_ivy', role: 'hacker', name: 'Ivy, field engineer', at: [-13.5, 25], face: [1, 0], lines: "Field engineer, Uplift. I keep the cranes honest. They lie, you know. About their weight.|Every gate on this dock reads one thing: an engineer's face. Not the badge. The face.|The bridge? Its control box is on the quay by the cranes. It only answers to us. Don't tell Unit 3 I said 'us'." },   // m383
     { id: 'wf_dex', role: 'hacker', name: 'Dex', at: [-96, 18], y: 9.5, face: [0, -1], lines: "Shh. I'm 'maintaining' Uplift's network. From their own roof. On their own cable.|Engineers walk through every door on this dock. I wanted to see what's behind them. Spoiler: more doors.|Look like one of us and it's all yours. The gate. The bridge. Soon the robots." },
     { id: 'wf_unit12', role: 'cyborg', name: 'Unit 12', at: [14, 74], beat: [[14, 74], [14, 112], [-12, 112], [-12, 74]], face: [0, 1], lines: "CONTAINER 4471 IS IN THE WRONG PLACE. I HAVE BEEN LOOKING AT IT SINCE TUESDAY.|SMILE. YOU ARE ON A CAMERA. ALL OF YOU IS ON A CAMERA.|PLEASE DO NOT CLIMB THE INVENTORY." },
@@ -33032,6 +33050,7 @@ function buildWaterfront() {
   W.lineAt = [wx(-92, 68), Y + .1, wz(-92, 68), hd(0, 1)]; W.controlAt = [wx(-106, 115), Y + WFLINE.L2 + .1, wz(-106, 115), hd(1, 0)];   // m378
   W.towerAt = [wx(-30, 108), Y + .1, wz(-30, 108), hd(-1, 0)];
   W.ivyAt = [wx(-16, 22.5), Y + .1, wz(-16, 22.5), hd(1, .8)];      // m383: by Ivy, at crane 1
+  W.superAt = [wx(-94, 69), Y + .1, wz(-94, 69), hd(-1, .4)];      // m388: by the line supervisor, on the hall floor
   W.lotAt = [wx(-78, 59), Y + .1, wz(-78, 59), hd(1, 0)];          // m384: in the lot, in the turrets' sights
   W.botAt = [wx(24, 55.5), Y + .1, wz(24, 55.5), hd(1, 0)];       // m385: in the yard's first lane, on unit 2's beat
   { let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9;
@@ -33845,7 +33864,9 @@ function wfTurretStep(dt) {
   const U = WTUR; if (!U.on || !U.list.length || !inTK()) return;
   const p = player, P = p.pos, stranger = !engineerOn(), now = performance.now() * .001;      // GOD too: they fire, `playerHurt` takes nothing
   if (U.sayT > 0) U.sayT -= dt;
+  const dead = !!SAVE.flags['qdone:ch4c'];                                             // m388: powered down for good
   for (const R of U.list) {
+    if (dead) { R.pitch = damp(R.pitch, .9, .8, dt); R.laser.visible = false; R.tracer.visible = false; R.flash.visible = false; R.lensM.emissive.setHex(0x101010); R.yoke.rotation.y = R.yaw; R.gun.rotation.x = R.pitch; continue; }
     // its panel: the engineer makes it his
     if (!R.ours && Math.hypot(P.x - R.panel[0], P.z - R.panel[2]) < U.panelR && Math.abs(P.y - R.panel[1]) < 1.5) {
       if (engineerOn()) { R.ours = 1; U.turned++; progFlag('wf:turret:' + R.i); toast('TURRET ' + (R.i + 1) + ': OVERRIDE. IT IS YOURS.', 2.6); snd('zap', { x: R.x, z: R.z, g: .4 }); R.st = 'sweep'; R.laser.visible = false; }
@@ -33930,7 +33951,8 @@ const wfBotSees = (d, P) => { const p = d.root.position, dx = P.x - p.x, dz = P.
 function wfBot(d, dt, t) {
   const R = d.wbR; if (!R || !WBOT.on || d.st !== 'idle') return 0;
   const U = WBOT, K = d.K, p = d.root.position, P = player.pos, pl = player;
-  const eng = engineerOn(), seen = !eng ? wfBotSees(d, P) : 0, near = Math.hypot(P.x - p.x, P.z - p.z);
+  if (SAVE.flags['qdone:ch4c']) { t[K.clips.idle] = 1; if (R.parts) R.parts.lm.emissive.setHex(0x101418); return 1; }      // m388: powered down for good
+  const eng = engineerOn() && !U.alarm, seen = !eng ? wfBotSees(d, P) : 0, near = Math.hypot(P.x - p.x, P.z - p.z);      // m388: no standing down in the alarm
   const mood = c => { if (R.parts) R.parts.lm.emissive.setHex(c); };
   if (U.sayT > 0) U.sayT -= dt; if (R.shoveT > 0) R.shoveT -= dt;
   // the engineer: stand down while he is near
@@ -33963,6 +33985,7 @@ function wfBot(d, dt, t) {
 }
 function wfBotStep(dt) {
   const U = WBOT; if (!U.on || !U.list.length || !inTK()) return;
+  U.alarm = DUMMIES.some(d => d.qTag === 'ch4boss' && !d.gone && isAlien(d.K));          // m388: while Uplift's own stands, they defend it
   for (const R of U.list) {
     if (R.d && R.d.gone) R.d = null;
     if (!R.d) { const d = DUMMIES.find(q => q.markId === R.B.id && !q.gone); if (!d) continue; R.d = d; d.wbR = R; d.stuckT = d.stuckT || 0; d.slideT = d.slideT || 0; R.parts = wfBotParts(d); }
@@ -38370,6 +38393,7 @@ const GODPLACES = [
   { id: 'wfferry', world: 'tkit', name: "THE WATERFRONT · the ferry's pontoon off pier 1", at: () => OFERRY.wfAt },
   { id: 'otswing', world: 'tkit', name: "OLD TOWN · the swing bridge's foot (the second way to the Waterfront)", at: () => OSWING.otAt },   // m382
   { id: 'wfswing', world: 'tkit', name: "THE WATERFRONT · the swing bridge's quay end", at: () => OSWING.wfAt },
+  { id: 'wfsuper', world: 'tkit', name: "THE WATERFRONT · the line supervisor, on the factory floor (Chapter 4's boss)", at: () => WFRONT.superAt },   // m388
   { id: 'wfbots', world: 'tkit', name: "THE WATERFRONT · the container yard's lanes, on a robot's beat", at: () => WFRONT.botAt },   // m385
   { id: 'wfturret', world: 'tkit', name: "THE WATERFRONT · inside Uplift's lot, under its turrets", at: () => WFRONT.lotAt },   // m384
   { id: 'wfivy', world: 'tkit', name: 'THE WATERFRONT · Ivy, an Uplift engineer (sample her: the ENGINEER form)', at: () => WFRONT.ivyAt },   // m383
