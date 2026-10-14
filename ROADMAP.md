@@ -255,6 +255,9 @@ differ" table there, so no region feels like the last one.
   blocks, a trance on the people under it (they stare and walk in slow loops), the blaster can shoot
   it down, and they come out of it dazed. Lights flicker and cars stall near it (the
   electromagnetic tell). Then the watcher and the amplifier, which feeds the protests and brawls.
+  - [x] m350 **C2b-1** the pacifier over the south side: the trance, the crackle, the shot that finds it, the dazed release.
+  - [ ] **C2b-2** the watcher: a searchlight orb; caught in its beam you raise the alert (heat), and it calls the others; shot down, the alert drops.
+  - [ ] **C2b-3** the amplifier: over the square, it makes the protest louder and the brawl likelier; shot down, the crowd calms.
 - [ ] **C2c Placeholder roster (`CHARACTERS.md`).** Build against ROLES, not models: a roster table of
   every role the regions need, each mapped to a stand-in (existing body + tint + prop + name tag).
   When his model for a role lands it is one line. GOD mode lists every role and spawns one.
@@ -808,3 +811,10 @@ differ" table there, so no region feels like the last one.
   one at a time, then flies off, and a task tracks you beating them back into people. It never takes
   anyone the story needs, and never fires while a quest is turning someone of its own. You can't shoot
   the ship down yet. GOD has "A SKINSUIT INCURSION NOW".
+
+- **m350 (C2b-1):** the first orb is the pacifier, floating over the south side of Old Town. Everyone
+  under it walks in small loops saying "Everything is fine." You can hear a faint crackle before you see
+  it. When nothing else is targeted, pointing the camera at an orb makes your shots go to it. Three hits
+  bring it down; a full charge counts as two. Everyone comes round dazed, Old Town gains 5 health, and
+  it stays down. No lights flicker or cars stall: the city's lamps aren't lights the game controls, and
+  the kit city has no traffic. GOD can raise it again.

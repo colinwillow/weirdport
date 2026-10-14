@@ -7,6 +7,22 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A FLYING TARGET IS A SPHERE IN `AIRT`, TESTED IN `stepBolts` AFTER THE BODIES, AND THE AIM SWINGS TO IT (m350,
+  C2b-1, `OORB`, `buildOrbs`, `orbStep`, `orbHit`, `airAim`).** THE PACIFIER: an orb (a violet core, a ring turning, a
+  halo, a faint cone of light under it) 10 m over a clear lot on Old Town's south side (4.5, -44.3), drifting a 5 m circle.
+  Everyone human within 24 m of it in plan is TRANCED (`d.trance` keeps their own route and lines): a tight loop of four
+  points round where they stood, no fear, and one line ("Everything is fine."). The tell is a faint irregular crackle
+  inside 45 m. Coming within 60 m switches on the task SOMETHING HUMMING (`qorb`, one `flag` step on `orb:pacifier`).
+  **THE SHOT HAD NO WAY TO GO UP.** The reticle walks along the ground (`aimPoint`) or locks a BODY (`player.lock`), so
+  an orb 10 m up is above every line it can find. `aimRaw` now asks `airAim()` first when nothing is locked: an orb within
+  `aimCone` (.19 rad, about 11 deg) of the camera's heading and 55 m, and the bolt goes at its centre. Three hits (a full
+  charge counts twice), a burst, it falls, `orbRelease` gives everybody back their own route and lines plus a dazed one
+  for a minute ("Was I... walking in a circle?"), Old Town +5, and it stays down (saved). GOD: the place "under the
+  pacifier orb", and THE PACIFIER ORB: RAISE IT AGAIN. `places`: `ok  ORB over [4.5,0.2,-44.3] at y +10, trance r 24 | was
+  up, after 3 hits down, flag 1 | AIRT 1`, `ok  orb -> player -11.3,0.5,-45.3 ground 0.23`, exit 0.
+  **Not built:** the EM tell beyond the crackle (no light in his city is one this code owns, and the kit city has no
+  traffic to stall), and the trance does not slow anybody's walk.
+
 - **SKINSUIT INCURSIONS: A SHIP, A RAY, THE VIRUS'S OWN TURN, AND A TASK THAT REARMS ITSELF (m349, C2, `OINCUR`,
   `incurStart`, `incurStep`, quest `qinc`).** From chapter 1, in town, every 4-7 minutes (and never while a quest is on
   a `skin` step of its own): a saucer (hull, rim, a green dome, a ring of lights turning) drops out of the sky over a
