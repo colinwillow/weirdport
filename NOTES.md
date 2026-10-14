@@ -7,6 +7,34 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CHAPTER 1 IN THE PLAYTHROUGH, THE FIX GATE'S LEAN, A NaN SEEN ONCE (m430, F0b-2a, `tools/play.mjs`, `GATE.lean`,
+  `gatePush`, `gateStep`).** The tool grew: `--seed=N` (mulberry32 over `Math.random`, installed by `addInitScript` before
+  the page boots, so init is seeded too); a chapter is every quest with that `ch`, and THE SHIPPED PICKER drives the order
+  (`questAvail`: `from`, `needQ`, `SAVE.ch`) -- the tool drives whatever `quest.cur` is, prints a row per step as the key
+  changes, and stops when the chapter's quests are all `qdone` and `SAVE.ch` has moved on; the incursion (`qinc`, m349)
+  tracks itself when its ship comes and was driven through on seed 2 (52 s, 294 m, 10 teleports) before the picker went
+  back. Drivers: `skin` approaches to 40% of `r` and WAITS (the shipped test fires `virusGo` itself); `unskin` blows the
+  tagged alien only when `d.st !== 'down'` (41693: the count is at the get-up, `d.downs >= qDowns`; a blow on a downed body
+  punts it); a `fix` gate is walked at straight with no side-step (which left the span and reset the lean); `goTo` takes the
+  target's y -- reached in xz but 1.5 m apart in y is NOT reached (seed 2 sat on a scaffold over Sal tapping at nothing for
+  100 s), and a teleport lands on the target's level (`godTo(x, ty, z)`: with y null it takes the highest floor it finds,
+  which beside a scaffold is the scaffold). A NaN WATCHDOG: the last 8 frames of his state in a ring; any non-finite
+  coordinate fails the step with them. The row for a failed gate carries `v u fixT open lets side`.
+  **THE FIX GATE WAS FRAGILE AND SEED 1 MEASURED IT.** `gatePush` (the slab): `if (Math.abs(v) >= half) { ...; G.fixT = 0;
+  continue; }` with `half = GATE.t*.5 + p.r = 0.493`; `gateStep` (the mend) adds `dt` while `|v| < 1.6`. So the timer only
+  accumulated while he was pressed INSIDE the slab each frame (the stick carrying him 3 mm in before the push-back), and a
+  body resting at |v| = 0.52 had it zeroed every frame -- 'Fixing... 1%' flickering for 120 s, the quest never passing. The
+  probe (`gateprobe.mjs`) at walk speed sat at -0.49 and mended in 2 s; seed 1 sat at -0.52 and never did. **The lean zone is
+  one number now, `GATE.lean` 1.6**: the push-back resets the timer only outside it. The unseeded run had passed this step
+  by luck. **A gate that only works when you are pressed into it is a gate that mostly does not work.**
+  **A NaN IN THE PLAYER, ONCE.** The second (unseeded) run: after the fight for Dee, `at -60.3,NaN,-64.2` -- `talk` cannot
+  pass (`|R.y - P.y| < 1.5` is false), `godTo` cannot fix it (`dy = gy - NaN`). Not reproduced on seeds 1-3. The watchdog is
+  the net: when it recurs the trace names the frame. Candidates not yet ruled out: a knock from the Skinsuit (`playerHurt`
+  with a NaN direction), the ledge/wall writes, `groundAt` on a degenerate triangle.
+  Seeds 1/2/3: ch1 COMPLETE 4/4, 17 steps, 170/183/189 s wall, chapter 2, forms [zap CONTRUCTION WORKER]. The boss fight
+  (ch1d.2) teleports x4-5 per seed -- the thing wearing Briggs throws him 15-50 m; ch1d.3 walks 130-160 m because the two
+  turned crew are on their cart run across town. Both for F1's eye, not the tool's.
+  **DO NOT** write the save, `quest.step` or a body's state from the driver; **DO NOT** side-step inside a fix gate's span.
 - **THE HEADLESS PLAYTHROUGH, AND THE KIT CITY HAD THROWN ON EVERY FRAME SINCE m336 (m429, F0b-1, `npm run play`,
   `tools/play.mjs`, `cartStep`).** The tool: the shipped `index.html` in headless Chromium (SwiftShader) on a FRESH save (a
   new context has no `mel.*` keys, so `SAVE` is chapter 0 and `crashSpawn` puts him at the wreck); `window.__play` spliced in
