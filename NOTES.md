@@ -7,6 +7,31 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE ISLANDS' WIND (m393, C6-7c, `IWIND`, `windStep`, `windK`, `windGust`, `wingWind`).** REGIONS 8's signature
+  system: *"Gusts change direction and strength and affect every flight."* ONE wind over the chain: a base (`base` from
+  `from` in the islands' frame, veering `veer` over `veerT`) and gusts on top, one at a time. Each gust is a sine swell over
+  `last` s that swings the direction by up to `swing` and adds up to `add` m/s. `windK` is 1 over the islands' frame and
+  fades to 0 `fade` m outside it, so the city never feels it.
+  **WHO FEELS IT, AND HOW, WITHOUT A SECOND WRITER**:
+      him in the air   `windStep`, right after `stepPlayer`: a CARRY on his position (`trainStep`'s way), never his
+                       velocity, so the integrator keeps its one writer. Not grounded, not flying, not on a climb, ledge
+                       or wall; `airK` of the wind.
+      the glider       `stepWing`'s substeps integrate `vel + wingWind()`, with `vel` still `wingFly`'s alone. `wingK`
+                       of the wind, plus `wingUp` up or down in a gust.
+      the canopy       `isJump` adds `canopyK` of it; her homing steers against it. In a steady 12 m/s she still gets home
+                       (the MOVERS row now runs her lap in it).
+      the kites        hang downwind of `IWIND.dir` (`IKITE.wind` is the fallback with it off), higher in a gust, and the
+                       riders go quicker.
+  **SEEN BEFORE IT IS FELT**: `stepDust` adds `DUST.wx/wz` (`dustK` of the local wind) to every mote, so a gust streams
+  across the screen at no extra cost. The windsock turns into it and stands out with strength, and a gust's arrival is a
+  low swoosh. Chip `WIND<m/s>` and `G` while a gust blows; GOD SWITCHES has the wind on/off and a gust on demand.
+  **THE SHARES ARE GUESSES** (`mel.IWIND`). Gameplay reads them: a tail gust helps the gap ramp's jump and a head gust
+  costs it.
+  **`npm run places`, exit 0** (teeth: `airK: 0` reads `BAD ... IT DOES NOT CARRY HIM IN THE AIR`):
+      ok  WIND 10 gusts in 120 s, 5.3-17.4 m/s, direction -44..59 deg off its base | here 1, 200 m out 0 | a second in the air carried 1.02 m, on the ground 0 | a glider takes 2.8 m/s | the sock 3 deg off it, a kite 36 deg off downwind 
+      ok  MOVERS Sasha (in 12 m/s): run > free > canopy > swim > walk > climb > walk > wait in 85 s (wait 3, run 1, free 1, canopy 4, swim 17, walk 37, climb 21) | splash in the water, topped out 18.2 over the sea, lowest walk -0.30, home on the deck | kites: Pia 3. ...
+  **NOT HERE**: the thermal (C6-7d), a looping wind sound (the build has no loop sound), and fast-moving clouds.
+
 - **THE ISLANDS' PEOPLE WHO MOVE: SASHA JUMPS, PIA AND OKON KITE (m392, C6-7b-3, `IJUMP` / `isJump` / `isJumpBeach`,
   `IKITE` / `isKite`, `isWing`, `buildIslandMovers`, `islMoversStep`).** Both are PASSENGERS in `stepDummies`' brainless line
   (after `wfBot`): they drive the body only while it is idle (`d.st` 'jump' / 'kite'), so a blow knocks them out in the

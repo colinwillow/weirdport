@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m392</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m393</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m392</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m393</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm392';
+const BUILD = 'm393';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -15748,9 +15748,10 @@ function stepWing(dt) {
   const move = p.vel.length() * dt;
   const sub = Math.min(MOVE.subMax, Math.max(1, Math.ceil(move / MOVE.sub)));
   let landed = 0;
+  const wd = wingWind();                                           // m393: the islands' wind carries the flight (0 elsewhere)
   for (let k = 0, h = dt / sub; k < sub; k++) {
     const y0 = p.pos.y;
-    p.pos.x += p.vel.x * h; p.pos.z += p.vel.z * h; p.pos.y += p.vel.y * h;
+    p.pos.x += (p.vel.x + wd.x) * h; p.pos.z += (p.vel.z + wd.z) * h; p.pos.y += (p.vel.y + wd.y) * h;
     if (p.vel.y > 0 && SURF.on && surfRay(p.pos.x, y0 + p.hh, p.pos.z, p.pos.x, p.pos.y + p.hh + .02, p.pos.z, _ceilH))
       p.pos.y = Math.min(p.pos.y, _ceilH.y - p.hh - .03);
     resolveBoxes(p.pos, p.r, p.hh, 1); pushCars(p.pos, p.r, p.hh);
@@ -34412,6 +34413,7 @@ function isJump(d, dt, t) {
       R.vy = lerp(R.vy, -J.sink, Math.min(1, dt * 2.5)); d.h = h; t[isLoop(d, 'bar_hang_idle')] = 1;
     }
     p.x += R.vx * dt; p.y += R.vy * dt; p.z += R.vz * dt;
+    if (R.st === 'canopy' && IWIND.on) { const k = windK(p.x, p.z) * IWIND.canopyK; p.x += IWIND.vx * k * dt; p.z += IWIND.vz * k * dt; }   // m393: the wind takes the canopy; her homing steers against it
     const C = J.canopy; if (C) { C.visible = R.st === 'canopy'; C.position.copy(p); C.rotation.set(0, d.h, 0); C.scale.set(.2 + .8 * (R.open || 0), 1, 1); }
     // into the water (or, steered badly, onto something)
     const g = groundAt(p.x, p.z, p.y + .3, .3);
@@ -34455,7 +34457,7 @@ function isKite(d, dt, t) {
   if (!U.on || (d.st !== 'idle' && d.st !== 'kite')) { if (R.kite) R.kite.visible = false; d.root.rotation.z = 0; if (d.st === 'kite') d.st = 'idle'; return 0; }
   d.st = 'kite';
   const [ra, rb] = B.r, du = -ra * Math.sin(R.th), dv = rb * Math.cos(R.th), L = Math.hypot(du, dv);
-  R.th += B.dir * U.v / L * dt;
+  R.th += B.dir * U.v * (IWIND.on && IWIND.spd > .1 ? clamp(.8 + .25 * IWIND.spd / IWIND.base, .8, 1.4) : 1) / L * dt;     // quicker in a gust
   const [x, z] = islWorld(B.c[0] + ra * Math.cos(R.th), B.c[1] + rb * Math.sin(R.th)), h = Math.atan2((du * I.C + dv * I.S) * B.dir, (-du * I.S + dv * I.C) * B.dir);
   const turn = Math.atan2(Math.sin(h - d.h), Math.cos(h - d.h)) / Math.max(dt, 1e-4);
   p.x = x; p.z = z; d.h = h;
@@ -34468,8 +34470,10 @@ function isKite(d, dt, t) {
   d.root.rotation.z = damp(d.root.rotation.z, clamp(-turn * .25, -.3, .3), .2, dt);
   t[isLoop(d, R.air ? 'skate_ollie_air' : 'skate_idol_crouch')] = 1;
   // the kite: downwind, high, sweeping; higher while it is lifting them
-  const [wu, wv] = U.wind, wl = Math.hypot(wu, wv), wx = (wu * I.C + wv * I.S) / wl, wz = (-wu * I.S + wv * I.C) / wl, sw = Math.sin(d.t * .7 + B.dir * 2) * .7;
-  const hx = wx * Math.cos(sw) - wz * Math.sin(sw), hz = wx * Math.sin(sw) + wz * Math.cos(sw), el = U.el + (R.air ? .35 : 0);
+  // downwind of THE wind (m393), or of `U.wind` with the wind off; higher in a gust
+  let wx, wz; if (IWIND.on && IWIND.spd > .1) { wx = Math.sin(IWIND.dir); wz = Math.cos(IWIND.dir); } else { const [wu, wv] = U.wind, wl = Math.hypot(wu, wv); wx = (wu * I.C + wv * I.S) / wl; wz = (-wu * I.S + wv * I.C) / wl; }
+  const sw = Math.sin(d.t * .7 + B.dir * 2) * .7;
+  const hx = wx * Math.cos(sw) - wz * Math.sin(sw), hz = wx * Math.sin(sw) + wz * Math.cos(sw), el = U.el + (R.air ? .35 : 0) + (IWIND.on ? .15 * IWIND.e : 0);
   _ikD.set(hx * Math.cos(el), Math.sin(el), hz * Math.cos(el)); _ikX.set(-_ikD.z, 0, _ikD.x).normalize(); _ikZ.crossVectors(_ikX, _ikD);
   _ikM.makeBasis(_ikX, _ikD, _ikZ); R.kite.quaternion.setFromRotationMatrix(_ikM); R.kite.position.set(x, p.y, z); R.kite.visible = true;
   return 1;
@@ -34497,6 +34501,56 @@ function islMoversStep(dt) {
       if (!R.kite) R.kite = isWing(3, 1.8, 1.6, R.B.cols[0], R.B.cols[1], IKITE.line, 1.0);
       const board = new THREE.Mesh(new THREE.BoxGeometry(.42, .05, 1.35), new THREE.MeshStandardMaterial({ color: R.B.cols[1], roughness: .5 })); board.position.y = .03; d.root.add(board); }
   }
+}
+// ============================================================================================
+// THE ISLANDS' WIND (m393, ROADMAP C6-7c, `IWIND`, `windStep`, `windK`, `windGust`, `wingWind`)
+// ============================================================================================
+// REGIONS 8's signature system: "wind. Gusts change direction and strength and affect every flight." One wind over the
+// whole chain: a base (`base` m/s from `from`, the islands' frame, veering slowly by `veer` over `veerT` s) and on top of
+// it GUSTS, one at a time every `every` s, each a swell and a fall over `last` s that swings the direction by up to
+// `swing` and adds up to `add` m/s. It is felt by EVERY flight in the islands' frame (fading to nothing `fade` m outside):
+//   him in the air -- a jump, a fall, a board's air (`airK` of it, as a carry on his position: `trainStep`'s way, so the
+//     integrator keeps its one writer); his glider / wingsuit (`wingK`, and a bump up or down in a gust, in `stepWing`'s
+//     substeps); Sasha's canopy (`canopyK`, steered against by her own homing); the kites (they hang DOWNWIND of it).
+// And it is SEEN before it is felt: the dust streams with it (`dustK`), the windsock on the exit point turns into it and
+// stands out as it rises, and a gust arriving is a whoosh. The chip says `WIND<m/s>`, with a `G` while a gust blows.
+const IWIND = {
+  on: 1, base: 6, from: [1, .3], veer: .35, veerT: 140, fade: 30,
+  every: [5, 12], last: [2.2, 4.8], add: [5, 11], swing: .75,
+  airK: .16, wingK: .45, wingUp: 1.2, canopyK: .4, dustK: .5,
+  t: 0, dir: 0, spd: 0, vx: 0, vz: 0, k: 0, e: 0, gustT: 0, gustL: 1, gustN: 6, gustDir: 0, gustAdd: 0, gusts: 0, baseH: null, drift: 0,
+};
+const windRnd = a => a[0] + Math.random() * (a[1] - a[0]);
+// how much of the wind is here: all of it over the islands' frame, fading to none `fade` m outside it
+function windK(x, z) { const e = islEdge(x, z); return e >= 0 ? 1 : e <= -IWIND.fade ? 0 : 1 + e / IWIND.fade; }
+function windGust() {
+  const W = IWIND; W.gustL = W.gustT = windRnd(W.last); W.gustDir = (Math.random() * 2 - 1) * W.swing; W.gustAdd = windRnd(W.add); W.gusts++; W.gustN = 1e9;
+  if (W.k > 0) try { snd('swoosh', { g: .16 + .24 * W.k * W.gustAdd / W.add[1], r: .4 + Math.random() * .1 }); } catch (e) {}
+}
+// the glider's share, for `stepWing`'s substeps: the drift, and a bump up or down while a gust blows
+const _wWind = { x: 0, y: 0, z: 0 };
+function wingWind() {
+  const W = IWIND, p = player; if (!W.on || !ISLES.live) { _wWind.x = _wWind.y = _wWind.z = 0; return _wWind; }
+  const k = windK(p.pos.x, p.pos.z), f = W.wingK * k;
+  _wWind.x = W.vx * f; _wWind.z = W.vz * f; _wWind.y = W.wingUp * W.e * Math.sin(W.t * 2.3) * k; return _wWind;
+}
+function windStep(dt) {
+  const W = IWIND, I = ISLES;
+  if (!W.on || !I.live || !I.O || !inTK()) { W.k = 0; W.e = 0; DUST.wx = DUST.wz = 0; return; }
+  if (W.baseH == null) W.baseH = Math.atan2(W.from[0] * I.C + W.from[1] * I.S, -W.from[0] * I.S + W.from[1] * I.C);
+  W.t += dt;
+  if (W.gustT > 0) { W.gustT -= dt; W.e = Math.sin(Math.PI * clamp(1 - W.gustT / W.gustL, 0, 1)); if (W.gustT <= 0) { W.e = 0; W.gustN = windRnd(W.every); } }
+  else if ((W.gustN -= dt) <= 0) windGust();
+  W.dir = W.baseH + W.veer * Math.sin(W.t * 2 * Math.PI / W.veerT) + .08 * Math.sin(W.t * .41) + W.gustDir * W.e;
+  W.spd = W.base * (1 + .12 * Math.sin(W.t * .23)) + W.gustAdd * W.e;
+  W.vx = Math.sin(W.dir) * W.spd; W.vz = Math.cos(W.dir) * W.spd;
+  const p = player; W.k = windK(p.pos.x, p.pos.z);
+  // him, in the air -- not flying (the flight takes its own share in `stepWing`), not on anything that owns his body
+  if (W.k > 0 && !GOD.fly && !p.grounded && !p.wing && !p.climb && !p.ledge && !p.wall) {
+    const f = W.airK * W.k * dt; p.pos.x += W.vx * f; p.pos.z += W.vz * f; W.drift += W.spd * f; }
+  // seen before it is felt: the dust streams with it, the windsock turns into it and stands out as it rises
+  DUST.wx = W.vx * W.dustK * W.k; DUST.wz = W.vz * W.dustK * W.k;
+  const S = IBASE.sock; if (S) S.rotation.set(lerp(1.25, .06, clamp(W.spd / 15, 0, 1)) + Math.sin(W.t * 11) * .04 * W.spd / 10, W.dir + Math.sin(W.t * 7.3) * .05, 0, 'YXZ');
 }
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
@@ -39130,6 +39184,8 @@ function godMenuOpen(on) {
   btn('FLY ' + (GOD.fly ? 'ON' : 'OFF'), () => { godFly(!GOD.fly); godMenuOpen(1); });
   btn('FARM BATCHING ' + (FBATCH.on ? 'ON' : 'OFF') + ' (reloads)', () => { try { sessionStorage.setItem('mel.batch', FBATCH.on ? '0' : '1'); } catch (e) {} location.replace(location.pathname); });
   if (COWS.length) btn('SPOOK THE NEAREST HERD (STAMPEDE)', () => { toast(cowSpook(), 1.6); godMenuOpen(0); });
+  if (ISLES.live) { btn('THE ISLANDS\' WIND ' + (IWIND.on ? 'ON' : 'OFF'), () => { IWIND.on = IWIND.on ? 0 : 1; godMenuOpen(1); });   // m393
+    btn('A GUST NOW (THE ISLANDS)', () => { windGust(); toast('Gust: +' + IWIND.gustAdd.toFixed(0) + ' m/s', 1.4); godMenuOpen(0); }); }
   if (SKYLINE.g) btn('METROPOLIS ON THE HORIZON ' + (SKYLINE.g.visible ? 'ON' : 'OFF'), () => { SKYLINE.g.visible = !SKYLINE.g.visible; godMenuOpen(1); });
   btn('THE STAND-IN QUEST (WEIRDPORT 101)', () => { progFlag('qon:q0'); quest.cur = null; toast('Quest on', 1.4); });
   btn('THE STAND-IN TASKS (TWO, FOR THE TASK LIST)', () => { progFlag('qon:q0'); progFlag('qon:qtour'); quest.cur = null; toast('Two tasks on', 1.4); godMenuOpen(0); });
@@ -40130,7 +40186,7 @@ function stepDust(dt) {
   if (!DUST.on) { if (dust.P) dust.P.pts.visible = false; return; }
   if (!dust.P) dustBuild();
   dustT += dt;
-  const P = dust.P, n = DUST.n, R = DUST.r, W = R * 2;
+  const P = dust.P, n = DUST.n, R = DUST.r, W = R * 2, wdx = DUST.wx || 0, wdz = DUST.wz || 0;   // m393: the islands' wind streams it
   // ROUND THE LENS, NOT ROUND HIM. What you see is what is near the CAMERA, and on a boom
   // several metres behind him those are different boxes.
   const cx = camera.position.x, cy = camera.position.y, cz = camera.position.z;
@@ -40140,7 +40196,7 @@ function stepDust(dt) {
   const snx = _sunOff.x / sl, sny = _sunOff.y / sl, snz = _sunOff.z / sl;
   for (let i = 0; i < n; i++) {
     const o = i * 3;
-    P.pos[o] += dust.vx[i] * dt; P.pos[o + 1] += dust.vy[i] * dt; P.pos[o + 2] += dust.vz[i] * dt;
+    P.pos[o] += (dust.vx[i] + wdx) * dt; P.pos[o + 1] += dust.vy[i] * dt; P.pos[o + 2] += (dust.vz[i] + wdz) * dt;
     // **WRAPPED, WHICH IS WHY THE FIELD IS INFINITE AND COSTS NOTHING.** A mote that leaves the
     // box comes back in the far side, so walking never runs out of dust and nothing is spawned.
     let dx = P.pos[o] - cx, dy = P.pos[o + 1] - cy, dz = P.pos[o + 2] - cz;
@@ -40596,6 +40652,7 @@ function frameBody() {
     stepAim(dt);          // one eased answer, before anything reads it
     stepKit(dt);
     if (GOD.fly) godFlyStep(dt); else stepPlayer(dt);     // GOD's free flight replaces the step (m298)
+    windStep(dt);         // the islands' wind: him in the air, the dust, the windsock (m393) -- after he moved, before the sea's rule
     isleStep(dt);         // the sea's rule, right after he moved (m264)
     _pt = pT('plyr', _pt);
     // AFTER HIM, because the deck is drawn where he ENDED UP -- read before `stepPlayer` it is
@@ -41030,7 +41087,7 @@ function frameBody() {
                         (rig.borrowed ? '+' + rig.borrowed : ' NOBORROW') + (wn || '') : '';
     const line = fps.toFixed(0) + ' FPS · ' + renderer.info.render.calls + ' DC ' + Math.round(renderer.info.render.triangles / 1000) + 'kT' + (CELL.list.length ? ' c' + CELL.shown + '/' + CELL.list.length : '') + (STEPUP.n ? ' ke' + STEPUP.n : '') + PROF.sum + ' · pr' + PERF.pr.toFixed(2) + (PERF.holdT > 0 ? 'h' : '') + ' B' + PERF.seen + '/' + DUMMIES.length + ' · ' +
       p.speed.toFixed(1) + ' m/s · ' + st + lk + hue + bx + cv + brkC + kitC + inf + shp + cl + sk + sk8 + vs + mo + fl + wp + tc + mp +
-      bk + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
+      bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
       // CH: the saved chapter (m276); NEW = this boot was `?fresh`, BADSAVE = a save was there and would not parse
       (GOD.on ? ' · GOD' + (GOD.fly ? ' FLY' : '') : '') +
       ' · CH' + SAVE.ch + (SAVE.fresh ? ' NEW' : '') + (SAVE.bad ? ' BADSAVE' : '') +
@@ -41669,7 +41726,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
