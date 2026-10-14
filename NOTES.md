@@ -7,6 +7,30 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **UPLIFT'S SECURITY ROBOTS: A BEAT EACH, A CHASE AND A SHOVE, AND THEY STAND DOWN FOR THE ENGINEER (m385, C6-6e-3,
+  `WBOT`, `wfBotBuild`, `wfBotParts`, `wfBotSees`, `wfBot`, `wfBotStep`).** Three (`role: 'robot'`: the cop's body standing
+  in, steel-grey, cyan eye, plus an aerial, shoulder plates and a chest light that is its MOOD -- cyan on patrol, red in a
+  chase, green standing down): round the factory inside the fence, the container yard's first lanes, the dock lane. Each
+  walks its beat (`walk` 1.4) and looks round at every corner; SEES a stranger in `see` (14) with a clear `boxRay` head to
+  chest, calls it ("INTRUDER. LEAVE THE PREMISES.") and RUNS (`run` 3.6), and at `shoveR` shoves him (`playerHurt` 5, push
+  5.5, lift 1.8, stun .35, every 1.6 s) until he is `lose` (4) seconds out of its sight or `reach` (34) off its beat, then
+  walks back. **For the engineer within 10 m it stands down**, faces him, green. **A turned turret now hunts them**: the
+  nearest standing robot it can see, the ordinary `dummyBlow` for each round that lands (they get up and go on); and
+  hitting one is no police matter (`heatHit` skips `role: 'robot'`).
+  **A ROBOT HAS NO BRAIN OF ITS OWN**: `wfBot` takes the passenger line in `stepDummies` (beside the riders' `wfRide`)
+  but ONLY while the body is `idle`, so a blow plays the ordinary hit / down / up and hands it back; moved by `foeMove`
+  (boxes, ground, the wall-slide) and turned by `faceTo` -- the one writer on `d.h`. GOD: on unit 2's beat; a ROBOTS
+  on/off button with the shove count.
+  **The `ROBOTS` row drives a fabricated robot through the shipped `wfBot`**: 28 m of its beat in 20 s on the floor, the
+  alien 8 m along its lane closed on and shoved twice, the engineer stood down for (green, 8 m, no shove), and a turned
+  turret's rounds at a robot in its sight. Teeth: the engineer test taken out of `wfBot` reads `the engineer: 1.4 m, 2
+  shoves (chase) ... A ROBOT DOES NOT STAND DOWN`, exit 1. (A fabricated body is not every field `dummyBlow` reads, so the
+  turret test counts SHOTS, and says so.)
+  `npm run places` (exit 0):
+      ok  wfbots     -> player 98.6,3.5,-280.7 ground 3.20
+      ok  TURRETS 4 turrets | panels on their floors 0, 0, 0, 0 | in 6 s the alien out in the lot drew 0/6/6/0 rounds, inside the hall 0/0/0/0, the engineer 0/0/0/0 | the engineer turned 4, then the alien drew 0/0/0/0
+      ok  ROBOTS 3 robots (3 with kinds) | beats off the floor 0/0/0 | unit 2 walked 28.0 m of its beat in 20 s | the alien 8 m off: it closed to 1.4 m and shoved 2 (chase) | the engineer: 8 m, 0 shoves (stand) | a turned turret fired 4 rounds at a robot it could see
+
 - **UPLIFT'S TURRETS: THEY FIRE ON EVERY STRANGER, AND THE ENGINEER TURNS THEM (m384, C6-6e-2, `WTUR`, `wfTurrets`,
   `wfTurretParts`, `wfTurretSees`, `wfTurretStep`).** Four sentry guns: the lot's two front fence corners on posts (over
   the 3.4 m fence), a mast on the factory's front-right PARAPET corner (out over the walls -- first placed 2 m in on the

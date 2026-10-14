@@ -305,10 +305,10 @@ differ" table there, so no region feels like the last one.
     - [x] m382 **C6-6d** the way in: the ferry from Old Town's docks to pier 1; a second way (the swing bridge, or the drainage outfall).
       - [x] m381 **C6-6d-1** the ferry: Old Town's landing on the south-east shore, a double-ended boat on its own clock, pier 1's pontoon.
       - [x] m382 **C6-6d-2** a second way: the swing bridge (or the drainage outfall), its own kind of crossing.
-    - [ ] **C6-6e** the engineer / hacker form: locked doors, turrets, security robots; as the engineer they open, turn and stand down.
+    - [x] m385 **C6-6e** the engineer / hacker form: locked doors, turrets, security robots; as the engineer they open, turn and stand down.
       - [x] m383 **C6-6e-1** the engineer form (a ROLE's form: sample Ivy or Dex) and the doors: Uplift's gate and the swing bridge's control box answer to the engineer.
       - [x] m384 **C6-6e-2** the turrets on Uplift's lot: they fire on strangers; the engineer turns them.
-      - [ ] **C6-6e-3** the security robots in the yard: they chase strangers off; for the engineer they stand down.
+      - [x] m385 **C6-6e-3** the security robots in the yard: they chase strangers off; for the engineer they stand down.
     - [ ] **C6-6f** Chapter 4's quests and its boss; shut the line down and the cyborgs turn back; Chapter 4 complete.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
@@ -1078,3 +1078,9 @@ differ" table there, so no region feels like the last one.
   - The engineer turns a turret by standing at its control panel. It goes green and stays that way (saved).
   - In GOD they still shoot so you can see them, but they do no damage.
   - If they're too fierce, the numbers to change are the range (30 m), the lock time, the damage and the hit chance.
+- **m385 (C6-6e-3) The security robots.** Three robots patrol the Waterfront: round the factory inside the fence, the container yard's lanes, and the lane beside the dry dock.
+  - If one sees you it calls you out, runs at you, and shoves you hard (a little damage, a big push) until you're out of its sight or off its patch.
+  - For the engineer they stop, face you and go green.
+  - Turned turrets now shoot robots. A robot knocked down gets back up.
+  - The robots use the cop's body as a stand-in, with an aerial, shoulder plates and a chest light.
+  - GOD has an on/off switch.
