@@ -298,9 +298,9 @@ differ" table there, so no region feels like the last one.
       - [x] m376 **C6-5f-4** the rally man: on the stage at the rally, in front of everyone; he bursts (the boss); Chapter 3 complete.
   - [ ] **C6-6** Chapter 4 greybox (The Waterfront, REGIONS 5), split:
     - [x] m377 **C6-6a** the land: quays across the river from Old Town, two piers, the dry dock with a ship in it, the container yard as cliffs with a high road over it, the transit shed, the factory shut behind its fence, floodlights; the sodium night; GOD places.
-    - [ ] **C6-6b** the cyborg factory: the hall opened up, conveyor lines through it at several levels, catwalks; the conversion line (workers go in human, come out cyborg), the signature system.
+    - [x] m379 **C6-6b** the cyborg factory: the hall opened up, conveyor lines through it at several levels, catwalks; the conversion line (workers go in human, come out cyborg), the signature system.
       - [x] m378 **C6-6b-1** the hall opened up: the line climbing through it on three levels (belts that carry), walkways, the west stair, the control room, the gallery and the outfeed tower.
-      - [ ] **C6-6b-2** the conversion line: workers ride it in human and come out cyborg; the line's own clock and noise.
+      - [x] m379 **C6-6b-2** the conversion line: workers ride it in human and come out cyborg; the line's own clock and noise.
     - [ ] **C6-6c** the gantry cranes on the quay's rails: climb one, ride the trolley along the boom, swing a container.
     - [ ] **C6-6d** the way in: the ferry from Old Town's docks to pier 1; a second way (the swing bridge, or the drainage outfall).
     - [ ] **C6-6e** the engineer / hacker form: locked doors, turrets, security robots; as the engineer they open, turn and stand down.
@@ -1041,3 +1041,11 @@ differ" table there, so no region feels like the last one.
   - Without the engineer, you get in the way the finished cyborgs come out: up the outfeed tower behind the dry dock, then along the enclosed gallery over the fence.
   - The control room's red lever does nothing yet. Shutting the line down comes in the boss build.
   - If the belt stripes look like they're running backwards, that's one switch: `WFLINE.scroll`.
+- **m379 (C6-6b-2) The conversion line.** Five dock workers ride the line round and round:
+  - They walk in, ride all three levels, and at the chrome booth turn into cyborgs (Uplift's tint, cyborg parts, Uplift talk). They pick up the red visor at the arch.
+  - They walk down the outfeed tower and stand in a line-up on the quay facing the dry dock.
+  - After about 45 s, one goes back to the queue as a worker again. This only happens when you're nowhere near either end, so you never see anyone vanish.
+  - The line runs 75 s, then stops 10 s with a horn. The belts stop carrying you while it's stopped.
+  - Knock a rider off and they leave the line for good.
+  - GOD has a stop/start switch.
+  - The line also makes a thunk now and then while it runs.

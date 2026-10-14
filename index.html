@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m378</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m379</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m378</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m379</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm378';
+const BUILD = 'm379';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -32937,6 +32937,7 @@ function buildWaterfront() {
     const [lu, lv] = at(P.w / 2 + .25, -8); pearlLadder(F, lu, lv, yw + Math.PI / 2, ty, Y, (([a, b]) => [a, Y, b])(at(P.w / 2 - 1.2, -8)), 'wf_tug'); W.ladders++; }
   W.n = F.commit().boxes;
   wfLineParts(F, W, Y);                                                          // m378: the line's moving parts
+  wfConvBuild(W);                                                                // m379: and the workers who ride it
   // the light from the masts: one instanced draw, additive, faint -- it reads because the fog is there
   { const g = new THREE.ConeGeometry(9, 26, 20, 1, true); g.translate(0, -13, 0);
     const m = new THREE.MeshBasicMaterial({ color: 0xffa040, transparent: true, opacity: .055, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide });
@@ -33026,6 +33027,7 @@ function wfFactory(F, W, Y) {
       for (let k = 0; k <= n; k++) { const t = k / n, pu = B.a[0] + du * t, pv = B.a[1] + dv * t; if (pu > u1) continue; for (const s of [-1, 1]) bx(pu + s * Math.cos(psi) * .9, pv - s * Math.sin(psi) * .9, Y, ya - .35, .14, .14, 'steel', 0, false); } }
     for (let s = .6; s < len; s += 1.2) { const pu = B.a[0] + du * s / len, pv = B.a[1] + dv * s / len; bx(pu, pv, ya - .3, ya - .22, 2.3, .14, 'steel', psi, false); }    // rollers
   }
+  for (let k = 0; k < 3; k++) bx(-87, 63.4 + k * .4 + .2, Y, Y + (k + 1) * .3, 2.2, .4, 'grate');      // m379: three steps up onto the floor line, in the doorway
   // ---- WALKWAYS, LANDINGS, THE STAIR UP THE WEST WALL (18 risers to the second level, a landing, 15 to the third)
   const deckB = (u, v, w, d, y) => bx(u, v, y - .3, y, w, d, 'grate');
   deckB(-94, 108.8, 16.2, 1.4, L2); deckB(-102.8, 93.75, 1.4, 31.5, L2); deckB(-105.75, 81.9, 7.3, 2, L2); deckB(-101.7, 76.25, 3.6, 3.5, L2);
@@ -33138,9 +33140,10 @@ function wfLineStep(dt) {
   const p = player, P = p.pos;
   L.near = Math.hypot(P.x - L.c[0], P.z - L.c[1]) < 140;
   if (!L.near) return;
-  L.t += dt; L.tex.offset.y = (L.tex.offset.y + L.scroll * L.speed * dt) % 1;
+  const run = L.run !== 0;                                                       // m379: the line's clock (`WFCONV`)
+  if (run) { L.t += dt; L.tex.offset.y = (L.tex.offset.y + L.scroll * L.speed * dt) % 1; }
   wfArms(L.t);
-  if (L.bar) L.bar.position.y = L.Y + 1.1 + 1.4 * (1 + Math.sin(L.t * 2.2));
+  if (L.bar) L.bar.position.y = L.Y + 1.1 + 1.4 * (1 + Math.sin(L.t * 2.2)); if (!run) return;
   if (L.lift) L.lift.position.y = L.Y + L.L2 + (L.L3 - L.L2) * (.5 + .5 * Math.sin(L.t * .6));
   // THE CARRY: grounded on a belt's top -> moved along it (and the lens with him)
   if (!(p.grounded || p.vel.y === 0)) return;
@@ -33151,6 +33154,129 @@ function wfLineStep(dt) {
     const s = L.speed * dt, dx = B.dx * s, dz = B.dz * s; P.x += dx; P.z += dz;
     if (typeof cam !== 'undefined' && cam.pos) { cam.pos.x += dx; cam.pos.z += dz; if (cam.tgt) { cam.tgt.x += dx; cam.tgt.z += dz; } }
     L.carried += dt; return B.id;
+  }
+}
+// ============================================================================================
+// THE CONVERSION LINE (m379, ROADMAP C6-6b-2, `WFCONV`, `wfConvBuild`, `wfRide`, `wfConvStep`)
+// ============================================================================================
+// REGIONS 5's signature system: "workers go in human and come out cyborg." FIVE DOCK WORKERS (`role: 'docker'`, marks
+// `wf_line_0..4`) ride the line in a loop, spaced round it: they queue in the lot in front of the intake, walk in, step up
+// onto the floor belt, and ride -- the SCANNER reads them (green), the STRIP-DOWN takes their hats, the ARMS work on them
+// (sparks, a clang), the CHROME BOOTH converts them (Uplift's tint, the cyborg's parts -- `role: 'cyborg'`, so
+// `cyborgStep` builds them -- a hiss, a burst, and their talk turns to Uplift's), the LIFT takes them up, the VISOR ARCH
+// gives them the red ring, and they ride out along the gallery to the tower, walk down its stair and fall in to a LINE-UP
+// on the quay behind the dry dock, facing the dock, standing. After `stand` seconds, when he is nowhere near either end,
+// one goes back to the queue as a worker again -- the shift that never ends.
+// **A RIDER HAS NO BRAIN (`wfRide`)**, the passenger's and the motorcycle rider's shape (m104, m107), so it sits in the same
+// line of `stepDummies` above every other state: one writer for his position. Knock one off and he is released (`lost`)
+// to his ordinary self -- a docker, or a cyborg that `cyborgStep` will revert after its knock-downs.
+// **THE LINE HAS A CLOCK**: it runs `run` seconds and stops `stop` (a horn when it stops; the belts, the arms, the riders and
+// the carry all hold), and while it runs it makes its noise -- a thunk somewhere on it, the arms' clang, the booth's hiss.
+const WFCONV = {
+  on: 1, n: 5, walk: 1.1, lift: .9, stand: 45, far: 30, run: 75, stop: 10,
+  lines: "Shift starts when the belt starts.|They say it doesn't hurt. They say a lot of things.|Uplift pays double. Double what, nobody says.",
+  // the route, frame [u, v, height over the quay, how he gets there]
+  ROUTE: [[-87, 57.5, 0, 'start'], [-87, 63.2, 0, 'walk'], [-87, 64.8, .9, 'walk'], [-87, 92, .9, 'belt'], [-87, 106, 5.5, 'belt'], [-87, 107, 5.5, 'belt'],
+          [-101, 107, 5.5, 'belt'], [-101, 77, 5.5, 'belt'], [-101, 76, 5.5, 'belt'], [-101, 76, 10, 'lift'], [-75, 76, 10, 'belt'], [-75, 110, 10, 'belt'],
+          [-46, 110, 10, 'belt'], [-46, 108, 10, 'walk'], [-44.8, 108, 10, 'walk'], [-32.4, 108, .3125, 'walk'], [-31, 108, 0, 'walk']],
+  MUSTER: [[-44, 122], [-40.5, 122], [-37, 122], [-33.5, 122], [-30, 122]],
+  STATIONS: [ { id: 'scan', at: [-87, 74], why: 'the scanner arch' }, { id: 'strip', at: [-87, 86], why: 'the strip-down: hats off' },
+              { id: 'arms', at: [-94.5, 107], why: 'the arms' }, { id: 'convert', at: [-101, 92], why: 'the chrome booth: out a cyborg' },
+              { id: 'visor', at: [-75, 92], why: 'the visor arch' } ],
+  route: null, len: 0, riders: [], clk: 0, running: 1, horns: 0, laps: 0, converted: 0, noiseT: 0,
+};
+// the route in the world, cumulative; the stations as distances along it
+function wfConvBuild(W) {
+  const C = WFCONV, at = (u, v) => [W.O[0] + u * W.C + v * W.S, W.O[1] - u * W.S + v * W.C];
+  const pts = C.ROUTE.map(([u, v, h, k]) => { const [x, z] = at(u, v); return { x, y: W.Y + h, z, k, s: 0 }; });
+  for (let i = 1; i < pts.length; i++) pts[i].s = pts[i - 1].s + Math.hypot(pts[i].x - pts[i - 1].x, pts[i].y - pts[i - 1].y, pts[i].z - pts[i - 1].z);
+  C.route = pts; C.len = pts[pts.length - 1].s;
+  for (const St of C.STATIONS) { const [x, z] = at(St.at[0], St.at[1]); let best = 1e9;
+    for (let i = 1; i < pts.length; i++) { const A = pts[i - 1], B = pts[i], dx = B.x - A.x, dz = B.z - A.z, L2 = dx * dx + dz * dz || 1, t = clamp(((x - A.x) * dx + (z - A.z) * dz) / L2, 0, 1), d = Math.hypot(A.x + dx * t - x, A.z + dz * t - z);
+      if (d < best) { best = d; St.s = A.s + (B.s - A.s) * t; } } }
+  C.muster = C.MUSTER.map(([u, v]) => at(u, v)); C.musterH = Math.atan2(-W.S, -W.C);    // facing -v: the dry dock
+  C.riders = [];
+  for (let i = 0; i < C.n; i++) {
+    const [x, z] = at(-87 + (i - 2) * 1.2, 57.5 - (i % 2) * 1.4);
+    peopleMark('wf_line_' + i, x, z, Math.atan2(W.S, W.C), { role: 'docker', name: 'a dock worker', group: 'worker', talks: ['worker'], alien: 'flee', lines: C.lines }, W.Y, 'WFCONV', 'worker');
+    C.riders.push({ id: 'wf_line_' + i, i, s: C.len * i / C.n * .92, st: 'ride', d: null, ev: {}, hl: null, col0: null, standT: 0, lost: 0 });
+  }
+}
+// where a distance along the route is: position, heading, the leg's kind
+function wfAt(s) {
+  const P = WFCONV.route; let i = 1; while (i < P.length - 1 && P[i].s < s) i++;
+  const A = P[i - 1], B = P[i], t = clamp((s - A.s) / ((B.s - A.s) || 1), 0, 1), dx = B.x - A.x, dz = B.z - A.z;
+  return { x: A.x + dx * t, y: A.y + (B.y - A.y) * t, z: A.z + dz * t, h: Math.hypot(dx, dz) > .01 ? Math.atan2(dx, dz) : null, k: B.k };
+}
+// the stations, as he passes each: `fx` false when it is caught up silently (a rider bound mid-line at load)
+function wfStation(R, St, fx) {
+  const d = R.d, p = d.root.position, C = WFCONV;
+  const burst = (n, col, sp) => { if (fx) try { spkBurst(p.x, p.y + 1.4, p.z, n, { col, spread: sp, up: 2, r: .4, size: .1, life: .5 }); } catch (e) {} };
+  if (St.id === 'scan') { burst(10, [.3, 1, .45], 1.5); if (fx) snd('lock', { x: p.x, z: p.z, g: .25 }); }
+  else if (St.id === 'strip') { if (d.roleProp && d.roleProp.parent) d.roleProp.parent.remove(d.roleProp); d.roleProp = null; if (fx) snd('thud', { x: p.x, z: p.z, g: .3 }); }
+  else if (St.id === 'arms') { burst(24, [1, .7, .3], 3); if (fx) snd('clang', { x: p.x, z: p.z, g: .35 }); }
+  else if (St.id === 'convert') {
+    if (d.mats) { R.col0 = d.mats.map(m => m.color ? m.color.clone() : null); const c = new THREE.Color(rosterOf('cyborg').tint); for (const m of d.mats) if (m.color) m.color.lerp(c, .45); }
+    d.matCol0 = R.col0; d.role = 'cyborg'; d.downs = 0; C.converted++;
+    if (d.talk) { R.hl = R.hl || d.talk.lines; d.talk.lines = UPLIFT.lines.slice(); d.talk.name = 'a converted worker'; }
+    burst(40, [.5, 1, .6], 3.5); if (fx) snd('zap', { x: p.x, z: p.z, g: .45, r: .7, dur: .5 });
+  }
+  else if (St.id === 'visor') { if (!d.roleProp) d.roleProp = rosterProp(d, rosterOf('cyborg')); burst(12, [1, .3, .3], 1.5); if (fx) snd('lock', { x: p.x, z: p.z, g: .3, r: .8 }); }
+}
+// a worker again, quietly: his colours back, the parts and the visor off, his hat back on, his own lines
+function wfUnconvert(R) {
+  const d = R.d; if (!d) return;
+  if (R.col0 && d.mats) d.mats.forEach((m, i) => { if (m.color && R.col0[i]) m.color.copy(R.col0[i]); });
+  if (d.cy) { d.root.remove(d.cy.g); d.cy = null; }
+  if (d.roleProp && d.roleProp.parent) d.roleProp.parent.remove(d.roleProp);
+  d.roleProp = rosterProp(d, rosterOf('docker')); d.role = 'docker';
+  if (d.talk && R.hl) { d.talk.lines = R.hl; d.talk.name = 'a dock worker'; }
+  R.ev = {}; R.col0 = null;
+}
+// IN `stepDummies`, ABOVE THE BRAIN: a rider is where the line has him
+function wfRide(d, dt, t) {
+  const R = d.wfR; if (!R) return 0;
+  if (R.lost || (d.st !== 'idle' && d.st !== 'walk' && d.st !== 'line')) { R.lost = 1; d.wfR = null; return 0; }
+  const C = WFCONV, K = d.K; d.st = 'line';
+  if (R.st === 'muster') {
+    const [x, z] = C.muster[R.i % C.muster.length], dx = x - d.root.position.x, dz = z - d.root.position.z, L = Math.hypot(dx, dz);
+    if (L > .08) { const s = Math.min(L, C.walk * dt); d.root.position.x += dx / L * s; d.root.position.z += dz / L * s; d.h = Math.atan2(dx, dz); t[K.clips.walk || K.clips.idle] = 1; }
+    else { d.h = C.musterH; t[K.clips.idle] = 1; R.standT += dt; }
+    d.root.position.y = WFRONT.Y;
+    return 1;
+  }
+  const here = wfAt(R.s), go = here.k === 'walk' ? C.walk : here.k === 'lift' ? C.lift : WFLINE.speed;
+  if (C.running || here.k === 'walk') R.s += go * dt;
+  for (const St of C.STATIONS) if (!R.ev[St.id] && R.s >= St.s) { R.ev[St.id] = 1; wfStation(R, St, true); }
+  if (R.s >= C.len) { R.st = 'muster'; R.standT = 0; C.laps++; }
+  const P = wfAt(Math.min(R.s, C.len));
+  d.root.position.set(P.x, P.y, P.z);
+  if (P.h !== null) d.h = P.h;
+  t[P.k === 'walk' ? (K.clips.walk || K.clips.idle) : K.clips.idle] = 1;
+  return 1;
+}
+// every frame: bind the riders to their bodies, the clock, the noise, the recycling
+function wfConvStep(dt) {
+  const C = WFCONV, L = WFLINE; if (!C.on || !C.route || !inTK()) return;
+  // the clock: run, then stop with a horn, then run again
+  C.clk += dt;
+  if (C.running && C.clk > C.run) { C.running = 0; C.clk = 0; C.horns++; if (L.near) snd('boom', { x: L.c[0], z: L.c[1], g: .45, r: .45, dur: 1.2 }); }
+  else if (!C.running && C.clk > C.stop) { C.running = 1; C.clk = 0; if (L.near) snd('thud', { x: L.c[0], z: L.c[1], g: .4, r: .6 }); }
+  L.run = C.running;
+  // the noise while it runs: a thunk somewhere along it
+  if (C.running && L.near && (C.noiseT -= dt) <= 0) { C.noiseT = 1.4 + Math.random() * 1.4; const P = wfAt(Math.random() * C.len * .7); snd('thud', { x: P.x, z: P.z, g: .2, r: .8 + Math.random() * .3 }); }
+  const p = player.pos;
+  for (const R of C.riders) {
+    if (R.lost) continue;
+    if (!R.d) {
+      const d = DUMMIES.find(q => q.markId === R.id && !q.gone); if (!d) continue;
+      R.d = d; d.wfR = R; d.st = 'line';
+      for (const St of C.STATIONS) if (R.s >= St.s) { R.ev[St.id] = 1; wfStation(R, St, false); }     // caught up quietly
+    }
+    if (R.st === 'muster' && R.standT > C.stand) {
+      const [mx, mz] = C.muster[R.i % C.muster.length], q = C.route[0];
+      if (Math.hypot(p.x - mx, p.z - mz) > C.far && Math.hypot(p.x - q.x, p.z - q.z) > C.far) { wfUnconvert(R); R.st = 'ride'; R.s = 0; R.standT = 0; R.d.root.position.set(q.x, q.y, q.z); }
+    }
   }
 }
 // ============================================================================================
@@ -37730,6 +37856,7 @@ function godMenuOpen(on) {
   // m372: Hollow Creek's rally
   // m375: the race, without lining up
   if (HCBIKE.startAt) btn('RACE BIG RAE NOW (' + HCRACE.st.toUpperCase() + ')', () => { godMenuOpen(0); const S = HCBIKE.startAt; player.pos.set(S[0], S[1] + .1, S[2]); player.vel.set(0, 0, 0); toast('Wear the biker and stop at the gate', 2.2); });
+  if (WFCONV.route) btn("UPLIFT'S LINE: " + (WFCONV.running ? 'STOP IT' : 'START IT') + ' (' + WFCONV.converted + ' converted)', () => { godMenuOpen(0); WFCONV.running = WFCONV.running ? 0 : 1; WFCONV.clk = WFCONV.running ? 0 : -1e9; toast(WFCONV.running ? 'The line runs' : 'The line stops (until you start it)', 2); });   // m379
   if (HCRALLY.trucks) { btn('START THE RALLY (' + HCRALLY.st.toUpperCase() + ')', () => { godMenuOpen(0); rallyStart(); toast('The trucks are on the road', 2); });
     btn('SKIP TO THE RALLY BRAWL', () => { godMenuOpen(0); if (HCRALLY.st === 'quiet') rallyStart(); HCRALLY.st = 'speech'; HCRALLY.t = 6; HCRALLY.provoked = 'GOD'; toast('It goes off in a moment', 2); }); }
   // m360: the Pearl's march, either route
@@ -38184,7 +38311,7 @@ function stepDummies(dt) {
     // without a gate in each of them.
     // AND THE MOTORCYCLE'S RIDER IS THE SAME SHAPE ONE VEHICLE OVER (m107) -- above the brain,
     // for the same reason: a man on a bike has no gait, no roam and nothing to be separated from.
-    if ((K.pal && stepPack(d, dt, t)) || stepRide(d, dt, t) || motoSeek(d, dt, t)) {
+    if ((K.pal && stepPack(d, dt, t)) || stepRide(d, dt, t) || motoSeek(d, dt, t) || wfRide(d, dt, t)) {      // m379: a rider of Uplift's line
       skinWeights(d, t, dt, .06, K.clips.idle);
       bodyMix(d, dt);
       d.root.rotation.y = d.h + d.faceOff + (d.spin || 0);
@@ -39301,6 +39428,7 @@ function frameBody() {
   vehStep(dt);                  // the tractor at work and the pickup on its errands, and their bulk against him (m314)
   trainStep(dt);                // the freight to Hollow Creek, and him on it if he is (m370) -- before the lens, which it moves
   wfLineStep(dt);               // Uplift's line: its belts carry him (m378) -- before the lens, which it moves
+  wfConvStep(dt);               // and its workers, going in human and coming out cyborg (m379)
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)

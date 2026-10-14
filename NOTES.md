@@ -7,6 +7,33 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE CONVERSION LINE: FIVE DOCKERS RIDE IT ROUND FOR EVER, IN HUMAN AND OUT CYBORG (m379, C6-6b-2, `WFCONV`,
+  `wfConvBuild`, `wfRide`, `wfConvStep`, `wfStation`, `wfUnconvert`).** Five marks (`wf_line_0..4`, `role: 'docker'`)
+  spaced round a 209 m ROUTE (`WFCONV.ROUTE`: frame points, heights, `walk`/`belt`/`lift`): queue in the lot, walk in, up
+  three new .3 steps onto the floor belt in the doorway (the player can use them too), ride A, AB, C, D, the lift, F, G, H,
+  walk down the outfeed tower's stair, fall in to a LINE-UP of five on the quay behind the dry dock facing the dock. The
+  STATIONS fire in order as each passes (`wfStation`): the scanner (green sparks), the strip-down (the docker's hat comes
+  off), the arms (sparks, clang), THE CHROME BOOTH (Uplift's tint, `role: 'cyborg'` so `cyborgStep` builds his parts, his
+  talk turns to `UPLIFT.lines`, a hiss), the visor arch (the red ring, `rosterProp`). After `stand` (45 s) in the line-up,
+  with him 30 m from both ends, one goes back to the queue a docker again (`wfUnconvert`: colours, parts, visor, hat, lines).
+  **A RIDER HAS NO BRAIN**: `wfRide` sits in `stepDummies`' passenger line beside `stepPack`/`stepRide`/`motoSeek`, so
+  the line is the ONE writer of his position. A hit (any state but idle/walk/line) releases him for good (`lost`): a docker
+  knocked off is a docker, a cyborg knocked off is a cyborg that `cyborgStep` reverts after its knock-downs. **NOTHING
+  FLEES OFF A BELT**: fear is `fleeT`, not a state, and the line ignores it while it has him.
+  **THE LINE HAS A CLOCK** (`run` 75 s, `stop` 10 s, a low horn when it stops) and `WFLINE.run` is what the belts' carry,
+  their texture and the arms read, so a stopped line stops HIM too. Its noise while it runs: a thunk somewhere along it
+  every 1.4-2.8 s, the stations' own. GOD: "UPLIFT'S LINE: STOP IT / START IT (n converted)" -- stopped from GOD it stays
+  stopped. Bound mid-line at load, a rider catches up on the stations he has passed QUIETLY (no sparks, no sound).
+  **The `CONVERSION` row rides a whole lap through the shipped `wfRide`** with a body fabricated the way the game holds one
+  (root, model, mats, talk, a kind's clip names): every belt sample on the real floor (`groundAt` under him), the tower
+  stair on its steps, the stations in order, out a cyborg talking like one, and back to the queue a docker with the player
+  400 m off. Its first run caught the doorway: the route stepped .9 up onto the belt in a metre and a half with nothing
+  under him -- the three steps are what fixed it, not a looser pass mark. Teeth: the D leg typed at 5.0 instead of 5.5
+  reads `worst 0.50 m ... A RIDER FLOATS OFF THE BELTS`, exit 1.
+  `npm run places` (exit 0):
+      ok  FACTORY 7 belts (A 27.4m, AB 14.0m, C 16.2m, D 30.1m, F 28.2m, G 36.2m, H 28.9m) | west stair floor -> 13.20 (third level 13.20) | landing -> control room 8.70 (8.70) | quay -> tower -> gallery -> hall 13.20 | intake doorway open | on belt A carried 0.65 m along it in .5 s (0.65 wanted), off the line: nothing
+      ok  CONVERSION 5 riders (5 with kinds) | route 209 m over walk/belt/lift, 167 s a lap | stations scan > strip > arms > convert > visor | on the belts 545/545 samples on the floor (worst 0.00 m), the tower stair on its steps | out a cyborg, talking like one | back to the queue a docker: true
+
 - **UPLIFT'S FACTORY, OPENED: THE LINE CLIMBS THROUGH THE HALL ON THREE LEVELS, AND EVERY BELT CARRIES (m378, C6-6b-1,
   `WFLINE`, `wfFactory`, `wfLineParts`, `wfLineStep`, `wfArms`).** m377's solid shell is now walls round three openings (the
   intake, 10 x 8, open; the gallery's slot in the east wall at the third level) and a roof you can stand on, behind a
