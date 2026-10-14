@@ -35,6 +35,8 @@ What to build (several builds; ship each step, never wait):
    m306 (hills, ridges, chunks) + m307 (the creek valley, its footbridge, the pond with willows).**
 3. **Fields that follow the land**: irregular patches of wheat, corn, ploughed earth, hay meadow and
    pasture, divided by hedgerows, fences, tree lines and dirt tracks. Nothing square to the world grid.
+   **— m308: the plan (20 named fields), the patchwork on the ground, hedges/fences/tree lines, four
+   tracks.** Split: **3b** the crops standing on the new fields (instanced, chunked, faded) is next.
 4. **Spread the existing pieces out into clusters** (reuse m288-m304, do not throw them away): the
    farmhouse and yard, the barn and silo, sheds and coop, a neighbour's farm on another ridge, a lone hay
    barn. **The crash site far out in a field**, a long gouge through the wheat, the crop circle near it.
@@ -475,4 +477,11 @@ differ" table there, so no region feels like the last one.
   sea, east of the farmyard, with a wooden footbridge across it. A pond with reeds, lily pads and
   four willows sits in the low ground west of the yard. Both are cut into the land itself, so you
   can walk down into the valley and the pond's banks hold its water.
+- **m308 (farm rebuild, step 3):** the land is now 20 named fields in irregular patches (wheat, corn,
+  hay, pasture, ploughed earth with furrows, stubble), each tinted on the ground so the patchwork
+  reads from the west hill. Hedgerows with oaks in them, post-and-rail fences round the pastures,
+  a few tree lines, and four dirt tracks: bridge to farmyard, yard to the neighbour's ridge, across
+  the creek ford to the big wheat, and round the pond up the west hill. The crops themselves don't
+  stand on the new fields yet; that's next (3b). Each field is one row in `FPLAN.FIELDS` if you want
+  a different crop somewhere.
 

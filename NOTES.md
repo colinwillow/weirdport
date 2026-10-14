@@ -7,6 +7,87 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FIELDS ARE AN AUTHORED PLAN, AND ONE RULE DRAWS THEM THREE TIMES (m308, step 3, `FPLAN`, `fpOwner`, `fpTint`, `buildFieldBounds`).**
+  20 named SEEDS (crop + reason) and a superellipse PARCEL round m288-m305's cluster. A point of land belongs to the
+  nearest seed, with the distance bent by per-seed value noise (`noise` 9 m) so borders wander instead of running as
+  straight bisectors; **margins belong to no field** -- the beach, the creek's valley (9.5), the pond's bank (r + 11)
+  and a 2.6 m strip either side of every TRACK, so a track is always the border it runs along and every boundary
+  has a gap where a track crosses it. Measured: fields 2.2k-7.1k m2, the yard parcel 14.7k.
+  **Use 1, the ground** (`aFld`, baked per land vertex in `buildFarmland`): rgb tints the grass (wheat gold, corn deep
+  green, hay pale, ploughed brown), w = 10 + a furrow angle in the WORLD for a ploughed field, drawn as stripes in the
+  land shader -- so the patchwork reads from the west hill before a single crop stands on it. The farmland got its
+  own material (`isleLandMat({ fields, shareU })`) on the island's uniforms. **`m.defines = { FLD: 1 }` would have
+  wiped MeshStandardMaterial's own `STANDARD` define** -- it is merged.
+  **Use 2, the boundaries**: a 2 m owner lattice, a point wherever two owners meet, thinned to one per `piece` 2.7 m by
+  a spatial hash, and each piece TURNED along its nearest same-pair neighbours either side (measured off the boundary,
+  not assumed from the seeds -- the noise bends it). By the crops either side: hedge (bank, hedge collider, two
+  clumps, an oak every `treeGap` 24), fence (post, two rails, one thin collider) where a pasture or a reserve is
+  involved, a tree line (every `lineGap` 10) on a quarter of the crop pairs. 333 hedge, 303 fence, 95 trees.
+  **(a, b) is a REFLECTION of (x, z)** (det[ua; ub] = -1): every ribbon here derives its winding off its first
+  triangle, and the features frame takes (a, -b).
+  **Use 3, the crops**: step 3b (not yet). **The tracks** are the lane's ribbon on the land's axes; `bridge_road` ends at
+  the sunken lane's mouth, measured by putting the yard frame's (30, -9) through `buildFarm`'s placement
+  (`fpLaneMouth`). The m305 fingerpost's TOWN arm now aims down it (it pointed down the m305 road, away from the bridge).
+  GOD `swell`, `fplough`. Chip adds `h<hedges>f<fences>t<trees>` to `FL`.
+  `npm run places`, after the bump:
+  ```
+  ok   buildFarmland
+  ok   buildFarmWaters
+  ok   buildFieldBounds
+  ok   buildFarm
+  ok   buildFarmProps
+  ok   buildCrash
+  ok   crashHero
+  ok   buildLane
+  ok   buildBridge
+  ok   buildHedgerows
+  ok   buildFarmhouse
+  ok   buildRoadside
+  ok   buildCows
+  ok   buildGroundPaint
+  ok   buildFlora
+  widest grass 66.5 at 172deg | headland ray 7deg grass 38.2 need 60 | rays 520 rect [-93.5,90.5,-90.3,93.5]
+  FARM.at {"x":333.8,"z":150.5,"th":1.281} | CRASH.at yes | LANE.at yes | BRIDGE.gate yes (side 0) | ISLE.live 1
+  FARMLAND live [ 354, 196 ] chunks 9 floor tris 12344 water tris 8346 | BRIDGE len 166 piers 5 gate [112,64]
+  FWATER 7 boxes, reeds 31 | pond level 0.1 | creek bed [ 5.19, -8.5 ] len 255
+  FPLAN 1367 boxes: hedge 333 fence 303 hedge oaks 86 tree line 9 | m2: margins 68.2k yard 14.7k town_edge 2.7k, south_wheat 6.1k, south_plough 4.7k, pond_pasture 2.4k, west_corn 4.6k, west_hay 4.3k, west_hill 7.1k, lone_barn_hay 5.9k, north_plough 4.1k, far_hill 4.6k, north_wheat 3.2k, ridge_corn 2.7k, neighbour 6.6k, ridge_pasture 5.7k, creek_meadow 4.9k, crash_wheat 6.3k, east_corn 2.2k, far_east_hay 2.5k, east_pasture 5.2k, knoll 5.6k
+  FROAD 3 road pts NONE foot null | FHOUSE 24 chimney [350.6,11.4,135.7] | HROW 143 boxes 22 trees 4 gates | FLORA {"corn_by_the_crash":275,"wheat_to_the_shore":2189,"hay_meadow":1296,"crash_stubble":1116,"potato_rows":1292,"river_meadow":629,"copse_ferns":1099,"tufts":900}
+  notes ["TC NO OBB JSON","ISLE 0/3 TEX"]
+  ok  oldtown    -> player 0.0,0.1,0.0 ground 0.00 
+  ok  overlook   -> player 464.3,9.1,68.0 ground 8.99 
+  ok  swell      -> player 294.5,0.7,343.3 ground 0.50 
+  ok  fplough    -> player 429.9,2.2,166.6 ground 2.05 
+  ok  creek      -> player 306.6,1.5,245.6 ground 1.35 
+  ok  pond       -> player 363.6,1.5,63.8 ground 1.36 
+  ok  channel    -> player 241.6,0.5,134.3 ground 0.34 
+  ok  farmyard   -> player 320.1,1.5,152.7 ground 1.32 
+  ok  hayloft    -> player 333.7,4.7,156.8 ground 9.00 
+  ok  crash      -> player 341.3,1.5,118.3 ground 1.38 
+  ok  corn       -> player 329.2,1.5,134.5 ground 1.34 
+  ok  wheat      -> player 350.0,1.6,162.7 ground 1.46 
+  ok  farmhouse  -> player 340.8,1.6,136.8 ground 1.41 
+  ok  meadow     -> player 367.4,1.6,150.9 ground 1.46 
+  ok  plough     -> player 318.7,1.5,183.6 ground 1.30 
+  ok  copse      -> player 318.9,1.7,200.4 ground 1.57 
+  ok  windmill   -> player 341.2,1.6,154.2 ground 1.42 
+  ok  scarecrow  -> player 333.6,1.5,135.5 ground 1.37 
+  ok  tractor    -> player 327.2,1.5,139.8 ground 1.33 
+  ok  paddock    -> player 340.7,1.6,157.1 ground 1.42 
+  ok  lane       -> player 320.6,1.5,140.3 ground 1.31 
+  ok  ford       -> player 312.6,1.4,167.2 ground 1.22 
+  ok  road       -> player 336.6,1.5,118.1 ground 1.36 
+  ok  bridge     -> player 112.1,3.0,63.6 ground 2.80 
+  every tkit GOD place is somewhere
+  ok  farmPropsStep  30 frames
+  ok  farmhouseStep  30 frames
+  ok  floraStep      30 frames
+  ok  cowStep        30 frames
+  ok  crashStep      30 frames
+  ok  crashHeroStep  30 frames
+  ok  riverStep      30 frames
+  ok  gradeStep      30 frames
+  ```
+
 - **THE CREEK VALLEY AND THE POND ARE CARVED INTO THE ONE HEIGHT FUNCTION (m307, step 2, `FARMLAND.CREEK`/`POND`, `flBase`, `buildFarmWaters`, `farmTree`).**
   `flHeight` is now `flBase` (m306's land) then two carves, so the mesh, the collider and the sea's depth all see the
   same valley and bowl. **The creek's bed is a RUNNING MINIMUM downstream** of (`flBase` - `dig`) sampled every 2 m and
