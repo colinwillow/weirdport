@@ -7,6 +7,22 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE MOTHERSHIP'S DECKS: THE CLIMB, THE CONVERSION CHAMBER, THE BRIDGE (m400, C6-8b, `ISDECK`, `shipTube`, `shipRoom`,
+  `buildShipDecks`).** Two helpers do all of it. **`shipTube(F, A, B, w, h)`**: a quad strip in `TRI` to walk (sloped as it
+  likes), a `pearlSeg` floor you see, a collider down each side (pictures popped), arches every 1.8 m (a half torus with its
+  plane across the tube: `ry` = the tube's heading), and a skin (half a cylinder: `thetaStart` pi/2 for pi, then
+  `rotateX(pi/2)` to lay its axis along z with the half on TOP, then pitched like `pearlSeg`). **`shipRoom`**: a floor
+  collider, 24 wall colliders but at the doorways, and the wall you see as one BackSide segment per collider. A cylinder's
+  theta runs x = sin, z = cos, so frame angle a is theta pi/2 - a.
+  **THE PODS ARE ALL ON ONE SIDE** (outer ring -50..140 deg, inner -30..120): the two doors are at 180 and 270 deg, and the
+  straight walk between them passes 9.2 m out at 225 deg, so the row walks that line. **THE BRIDGE HANGS UNDER THE HULL**
+  (its floor 3 m below the belly's, the hull's bottom face 2.5 m above it), so its glass drum and bowl are seen from below and
+  its glass floor looks down at Weirdport; the console faces -v, which is Old Town. Its glass wall leaves a gap at the doorway.
+  **THE ROW'S FIRST LEG ENDED 0.2 M INTO THE CLIMB** and read 0.06 m off the belly's floor. The ship was right; the check
+  stood where the tube had already started rising. A pass mark has to be taken where the thing it measures is.
+  **`npm run places`, exit 0** (teeth: the second tube left out, the walk to the bridge falls to -327.16):
+      ok  DECKS 125 boxes, 44 tris | walked: the doorway 0.00, the chamber 0.00, the bridge 0.00 | the climb's walls 4 | pods 17, the machine turning | the bridge 2.5 m under the hull, its floor over the glass 0.00 | GOD conv, bridge 
+
 - **INTO THE MOTHERSHIP: THE TETHER'S POD AND THE BELLY (m399, C6-8a, `ISHIP`, `buildMothership`, `shipPodStep`).** The
   first unchecked item was C6's parent ("then 3, 4..."), and GAME_DESIGN's chapter list ends at 6, the Mothership, so it
   became C6-8. **THE POD IS A `BDYN` BOX** (the crane's carry: on its top at the frame's start, he gets its delta, and so do
