@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m319</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m320</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m319</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m320</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm319';
+const BUILD = 'm320';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -30111,6 +30111,47 @@ function buildTrestle() {
   return T.n;
 }
 
+// ============================================================================================
+// THE STEPPING-STONE FORD (m320, STEER step 7b-2, `FFORD`, `buildFord`) -- downstream, cows drinking at its foot
+// ============================================================================================
+// The third way over the channel, and the lowest: flat stones a stride apart from the beach below the east pasture,
+// meandering out (a bend `bow` m off the straight line) to the city's shore between two ring houses (`toDeg`). Each
+// stone's top is a collider just over the sea; between them is the sea, and the sea's rule puts you back. **A stretch
+// is under the tide** (`washed`, as fractions of the way) -- too wide to jump -- so the checkpoint still teaches; it
+// opens later. Three cows stand drinking at its foot (`buildCows`, `cows`). Identity frame, batched.
+const FFORD = {
+  on: 1, n: 0, from: [92, -147], toDeg: 79, bow: 14, gap: 1.75, washed: [.44, .6], cows: 3,
+  why: 'downstream of the bridge, off the east pasture: the way the cows go down to the water',
+  at: null, cityAt: null, gapM: 0,
+};
+function buildFord() {
+  const FL = FARMLAND, D = FFORD, I = ISLE, R = I.rect; if (!D.on || !FL.live || !R) return 0;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .95, metalness: 0 }), o || {});
+  const MAT = { rock: M(0x7c7f80), weed: M(0x4f6a3a) };
+  const F = farmFrame(0, 0, 0, MAT, 'ford'), { bx, geo } = F;
+  const cx = (R[0] + R[1]) / 2, cz = (R[2] + R[3]) / 2, th = D.toDeg * Math.PI / 180, ray = isleRayAt(th), sea = I.sea;
+  const A = flWorld(D.from[0], D.from[1]), C = [cx + ray.dx * (ray.rb + ray.L - 2), cz + ray.dz * (ray.rb + ray.L - 2)];
+  const L = Math.hypot(C[0] - A[0], C[1] - A[1]), nx = -(C[1] - A[1]) / L, nz = (C[0] - A[0]) / L;
+  let seed = 320; const rr = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const n = Math.round(L / D.gap), ico = new THREE.IcosahedronGeometry(1, 0);
+  for (let k = 0; k <= n; k++) {
+    const f = k / n; if (f > D.washed[0] && f < D.washed[1]) continue;
+    const bow = Math.sin(Math.PI * f) * D.bow, x = A[0] + (C[0] - A[0]) * f + nx * (bow + (rr() - .5) * .6), z = A[1] + (C[1] - A[1]) * f + nz * (bow + (rr() - .5) * .6);
+    const bedY = Math.max(sea - 12, Math.max(flHeightAt(x, z), isleBedAt(x, z))), top = Math.max(sea + .22 + (rr() - .5) * .12, bedY + .1), r = .55 + rr() * .25;
+    if (bedY > sea + .6) continue;                                         // on dry beach: the shore is the step
+    bx(x, z, Math.max(bedY, sea - 2.2) - .2, top, r * 1.5, r * 1.5, 'rock', rr() * 3); F.parts.rock.pop();
+    geo(ico, 'rock', x, top - r * .35, z, rr() * 6, 0, 0, r * 1.05, r * .45, r);                   // the stone's top, squat
+    geo(new THREE.CylinderGeometry(r * .8, r * 1.05, top - Math.max(bedY, sea - 2.2), 7), 'rock', x, (top + Math.max(bedY, sea - 2.2)) / 2 - .1, z, rr() * 3);
+    if (rr() < .35) geo(ico, 'weed', x + r * .5, sea + .02, z, rr() * 6, 0, 0, r * .5, .06, r * .4);    // weed at the waterline
+    D.n++;
+  }
+  F.commit();
+  D.gapM = L * (D.washed[1] - D.washed[0]);                              // the widest step with no stone: the tide's
+  D.at = [A[0] - (C[0] - A[0]) / L * 6, A[1] - (C[1] - A[1]) / L * 6, Math.atan2(C[0] - A[0], C[1] - A[1])];
+  D.cityAt = [C[0] - ray.dx * 6, C[1] - ray.dz * 6];
+  return D.n;
+}
+
 // ---- THE CREEK AND THE POND, ON THE LAND (m307, step 2, `buildFarmWaters`): the water, a footbridge, willows, reeds.
 // The valley and the bowl are already in the ground (`flHeight`'s carves); this is what sits in and over them. Built in
 // a frame on the land's own axes: `farmFrame` with th = atan2(-ua.z, ua.x) makes its u = a and its v = -b (derived:
@@ -30120,7 +30161,8 @@ function buildFarmWaters() {
   const FL = FARMLAND; if (!FL.live || !FL.cbed) return 0;
   const sea = ISLE.sea, Cr = FL.CREEK, Pd = FL.POND;
   const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .9, metalness: 0 }), o || {});
-  const MAT = { wood: M(0x7a5232), bark: M(0x4f3d2c), leaf: M(0x3c6a2a), leaf2: M(0x7a9a48), reed: M(0x6f7f3a), lily: M(0x3f6e2c) };
+  const MAT = { wood: M(0x7a5232), bark: M(0x4f3d2c), leaf: M(0x3c6a2a), leaf2: M(0x7a9a48), reed: M(0x6f7f3a), lily: M(0x3f6e2c),
+    stone: M(0x9a968c), earth: M(0x5f6d34) };
   const F = farmFrame(FL.O[0], FL.O[1], Math.atan2(-FL.ua[1], FL.ua[0]), MAT, 'water'), { bx, geo, gnd, parts } = F;
   const UV = (a, b) => [a, -b];
   let seed = 307; const rr = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
@@ -30181,6 +30223,43 @@ function buildFarmWaters() {
     FWATER.reeds = nR;
     for (const [t, s2] of [[.4, 1.15], [1.9, .95], [3.3, 1.05], [4.9, .9]]) farmTree(F, rr, ico1, pu + Math.cos(t) * (Pd.r + 4.5), pv + Math.sin(t) * (Pd.r + 4.5), s2, 'willow');
     FWATER.pondAt = [...flWorld(Pd.a + (Pd.r + 6) * .7, Pd.b + (Pd.r + 6) * .7), Math.atan2(-((-.7) * FL.ua[0] + (-.7) * FL.ub[0]), -((-.7) * FL.ua[1] + (-.7) * FL.ub[1]))];
+  }
+  // ---- THE CULVERT (m320, step 7b-2): where the east track crosses the creek, a box culvert carries it OVER on a deck
+  // and the creek runs UNDER it with 2.6 m of head room -- walk the creek bed through it. The crossing is MEASURED
+  // (the track's segment against the creek's), its floors go into TRI here, before `buildFieldBounds` draws the
+  // tracks, so the track's ribbon rides over the deck instead of dipping into the valley under it
+  { const T = FPLAN.trackPts && FPLAN.trackPts[FPLAN.TRACKS.findIndex(t => t.id === 'east_track')], P = Cr.pts;
+    let X = null, td = null;
+    if (T) for (let i = 0; i < T.length - 1 && !X; i++) for (let j = 0; j < P.length - 1 && !X; j++) {
+      const [a1, b1] = T[i], [a2, b2] = T[i + 1], [c1, d1] = P[j], [c2, d2] = P[j + 1];
+      const den = (a2 - a1) * (d2 - d1) - (b2 - b1) * (c2 - c1); if (Math.abs(den) < 1e-9) continue;
+      const t = ((c1 - a1) * (d2 - d1) - (d1 - b1) * (c2 - c1)) / den, u = ((c1 - a1) * (b2 - b1) - (d1 - b1) * (a2 - a1)) / den;
+      if (t >= 0 && t <= 1 && u >= 0 && u <= 1) { X = [a1 + (a2 - a1) * t, b1 + (b2 - b1) * t]; const L = Math.hypot(a2 - a1, b2 - b1); td = [(a2 - a1) / L, (b2 - b1) / L]; }
+    }
+    if (X) {
+      const B = FL.cbed, sAt = (() => { let acc = 0, best = 1e9, sb = 0; for (let i = 0; i < P.length - 1; i++) { const [a0, b0] = P[i], ux = P[i + 1][0] - a0, uz = P[i + 1][1] - b0, L2 = ux * ux + uz * uz, L = Math.sqrt(L2); const t = clamp(((X[0] - a0) * ux + (X[1] - b0) * uz) / L2, 0, 1), d = Math.hypot(X[0] - a0 - ux * t, X[1] - b0 - uz * t); if (d < best) { best = d; sb = acc + t * L; } acc += L; } return sb; })();
+      const q = clamp(sAt / B.step, 0, B.y.length - 1.001), bedY = lerp(B.y[Math.floor(q)], B.y[Math.floor(q) + 1], q - Math.floor(q));
+      const top = bedY + 2.9, psiT = Math.atan2(td[1], td[0]), [xu, xv] = UV(X[0], X[1]), half = 2.6;
+      const along = (d) => UV(X[0] + td[0] * d, X[1] + td[1] * d), nu = -td[1], nb = td[0];
+      bx(xu, xv, top - .35, top, half * 2 + .4, 5.2, 'stone', psiT);                                      // the deck, over the creek
+      for (const sd of [-1, 1]) { const [wu, wv] = along(sd * half); bx(wu, wv, bedY - .4, top - .35, .5, 5.2, 'stone', psiT); }   // its walls, the creek between
+      for (const sd of [-1, 1]) { const [pu, pv] = UV(X[0] + nu * sd * 2.4, X[1] + nb * sd * 2.4); bx(pu, pv, top, top + .5, half * 2 + .4, .3, 'stone', psiT, false); }   // the headwalls' kerbs
+      F.quad([along(-half - .2)[0], top + .04, along(-half - .2)[1] + 0], [along(half + .2)[0], top + .04, along(half + .2)[1]], [along(half + .2)[0] + nu * 2.4, top + .04, along(half + .2)[1] - nb * 2.4], [along(-half - .2)[0] + nu * 2.4, top + .04, along(-half - .2)[1] - nb * 2.4]);
+      F.quad([along(-half - .2)[0], top + .04, along(-half - .2)[1]], [along(half + .2)[0], top + .04, along(half + .2)[1]], [along(half + .2)[0] - nu * 2.4, top + .04, along(half + .2)[1] + nb * 2.4], [along(-half - .2)[0] - nu * 2.4, top + .04, along(-half - .2)[1] + nb * 2.4]);
+      // the embankments: from the deck's ends out to the valley's rims, earth under a floor of triangles
+      for (const sd of [-1, 1]) {
+        const d0 = half + .2, d1 = half + 12, rim = flHeight(X[0] + td[0] * sd * d1, X[1] + td[1] * sd * d1), n = 6;
+        for (let k = 0; k < n; k++) {
+          // the step's top is the LOWER of its two ends' ramp heights, so it never pokes through the floor above it
+          const f0 = k / n, f1 = (k + 1) / n, dm = d0 + (d1 - d0) * (f0 + f1) / 2, [mu, mv] = along(sd * dm), y = Math.min(top + (rim - top) * f0, top + (rim - top) * f1);
+          bx(mu, mv, gnd(mu, mv) - .4, Math.max(gnd(mu, mv) + .02, y - .03), (d1 - d0) / n + .05, 4.8, 'earth', psiT);
+        }
+        const [a0u, a0v] = along(sd * d0), [a1u, a1v] = along(sd * d1);
+        F.quad([a0u + nu * 2.4, top + .04, a0v - nb * 2.4], [a0u - nu * 2.4, top + .04, a0v + nb * 2.4], [a1u - nu * 2.4, rim + .04, a1v + nb * 2.4], [a1u + nu * 2.4, rim + .04, a1v - nb * 2.4]);
+      }
+      FWATER.culvertAt = [...flWorld(X[0] + nu * 6, X[1] + nb * 6), Math.atan2(-(nu * FL.ua[0] + nb * FL.ub[0]), -(nu * FL.ua[1] + nb * FL.ub[1]))];
+      FWATER.culvertY = bedY;
+    } else note('CULVERT NO CROSSING');
   }
   const r = F.commit();
   FWATER.n = r.boxes;
@@ -30261,7 +30340,7 @@ function farmMerge(parts, mat) {
 // it is the same merged meshes. The noise is a cheap 3D value noise; nothing is sampled.
 const FPAINT = { on: 1, kinds: { red: 1, wood: 1, stone: 2, cap: 2, roof: 3, hay: 4, dirt: 5, earth: 5, bank: 5, turf: 5, road: 5,
   hedge: 6, hedge2: 6, metal: 7, pipe: 7, hull: 7, trim: 0, white: 0, dark: 0, steel: 7, tractor: 7, straw: 4, cloth: 0, tyre: 0, bark: 7, leaf: 6, leaf2: 6, cream: 1, shut: 0, shed: 3, coop: 1, blue: 1, tank: 7, droof: 3, apple: 0, pumpkin: 0, greens: 6,
-  mint: 1, pink: 1, trailer: 7, stripe: 0, yellow: 0, car1: 7, car2: 7, car3: 7, glass: 0 }, n: 0 };
+  mint: 1, pink: 1, trailer: 7, stripe: 0, yellow: 0, car1: 7, car2: 7, car3: 7, glass: 0, rock: 0, weed: 6 }, n: 0 };
 const FPAINT_GLSL = `
 float fpH(vec3 p) { p = fract(p * .3183099 + .1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
 float fpN(vec3 x) { vec3 i = floor(x), f = fract(x); f = f * f * (3.0 - 2.0 * f);
@@ -31240,6 +31319,8 @@ function buildCows() {
     const L = FPLAN.lat, own = FPLAN.owners, sum = new Map();
     for (let j = 0; j <= L.NB; j++) for (let i = 0; i <= L.NA; i++) { const o = own[j * (L.NA + 1) + i]; if (o < 0) continue;
       const q = sum.get(o) || sum.set(o, [0, 0, 0]).get(o); q[0] += L.A0 + i * L.G; q[1] += L.B0 + j * L.G; q[2]++; }
+    // m320: three at the ford's foot, drinking -- a small range round the top of the beach, no field
+    if (FFORD.on) { const [x, z] = flWorld(FFORD.from[0], FFORD.from[1] + 8); for (let k = 0; k < FFORD.cows; k++) herd.push([x, z, 6, null]); }
     for (const Hd of FHERDS) {
       const fi = FPLAN.FIELDS.findIndex(f => f.id === Hd.field), q = sum.get(fi); if (!q) continue;
       const ca = q[0] / q[2], cb = q[1] / q[2], r = Math.sqrt(q[2] * L.G * L.G / Math.PI) * .8, [x, z] = flWorld(ca, cb);
@@ -32190,6 +32271,8 @@ const GODPLACES = [
   { id: 'overlook', world: 'tkit', name: 'GRISTLE FARM · the west hill: fields, and the city on the horizon', at: () => FARMLAND.live && godFL(FARMLAND.HILLS[0]) },
   { id: 'ploughing', world: 'tkit', name: 'GRISTLE FARM · the tractor ploughing', at: () => { const c = FVEH.list.find(q => q.id === 'tractor'); return c && [c.x + Math.cos(c.h) * 7, null, c.z - Math.sin(c.h) * 7, c.h - Math.PI / 2]; } },
   { id: 'pickup',   world: 'tkit', name: 'GRISTLE FARM · the pickup on the bridge road', at: () => { const c = FVEH.list.find(q => q.id === 'pickup'); return c && [c.x + Math.cos(c.h) * 5, null, c.z - Math.sin(c.h) * 5, c.h - Math.PI / 2]; } },
+  { id: 'stones',   world: 'tkit', name: 'GRISTLE FARM · the stepping-stone ford, cows drinking', at: () => FFORD.at && [FFORD.at[0], null, FFORD.at[1], FFORD.at[2]] },
+  { id: 'culvert',  world: 'tkit', name: 'GRISTLE FARM · the culvert under the east track', at: () => FWATER.culvertAt && [FWATER.culvertAt[0], FWATER.culvertY + .1, FWATER.culvertAt[1], FWATER.culvertAt[2]] },
   { id: 'trestle',  world: 'tkit', name: 'GRISTLE FARM · the old rail trestle', at: () => FTRES.at && [FTRES.at[0], null, FTRES.at[1], FTRES.at[2]] },
   { id: 'backyards', world: 'tkit', name: 'OLD TOWN · where the trestle comes down behind the houses', at: () => FTRES.cityAt && [FTRES.cityAt[0], null, FTRES.cityAt[1], null] },
   { id: 'warehouse', world: 'tkit', name: 'OLD TOWN · the warehouse where the bridge comes in', at: () => FRING.whAt && [FRING.whAt[0], null, FRING.whAt[1], null] },
@@ -34579,6 +34662,8 @@ async function init() {
     try { buildCityRing(); } catch (e) { note('CITY RING FAIL'); console.warn('[melee] city ring', e); }
     // THE OLD RAIL TRESTLE (m319): a second way over the channel, broken for now
     try { buildTrestle(); } catch (e) { note('TRESTLE FAIL'); console.warn('[melee] trestle', e); }
+    // THE STEPPING-STONE FORD (m320): the third way over, under the tide for now
+    try { buildFord(); } catch (e) { note('FORD FAIL'); console.warn('[melee] ford', e); }
     // THE STATIC BATCH (m318): after every frame-based builder -- ~150 static meshes into ~10 materials x 200 m cells
     try { farmBatch(); } catch (e) { note('BATCH FAIL'); console.warn('[melee] farm batch', e); }
     // THE GROUND (m301): dirt, mud and the lane's track, under everything
@@ -34786,7 +34871,7 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // THE FARM'S PROPS (m299): `mel.FPROPS` -- `wind` (shared direction), `spin`
   FPROPS,
   // THE GROUND PAINT (m301): `mel.GPAINT` -- the patch table and the lane track
-  GPAINT, HROW, FHOUSE, FROAD, FARMLAND, FWATER, FPLAN, FCROP, FNEIGH, FVEH, FHANDS, FTOWN, FRING, FBATCH, FTRES,
+  GPAINT, HROW, FHOUSE, FROAD, FARMLAND, FWATER, FPLAN, FCROP, FNEIGH, FVEH, FHANDS, FTOWN, FRING, FBATCH, FTRES, FFORD,
   FARM, farm: () => { const F = FARM.at; if (!F) return 'no farm in this world'; const p = player; p.pos.set(F.x - Math.sin(F.th) * 12, 2, F.z - Math.cos(F.th) * 12); p.vel.set(0, 0, 0); p.heading = p.faceH = F.th; return 'farm at ' + F.x.toFixed(0) + ',' + F.z.toFixed(0); },
   PORTAL, PORTALS, portal: () => portalOpen(),
   // THE DEMOS, ON PURPOSE ONLY (m292, STEER 1): round where you stand, for testing the systems

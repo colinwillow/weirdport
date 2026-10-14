@@ -66,7 +66,7 @@ What to build (several builds; ship each step, never wait):
    broken planks, a dog in the yard) so the checkpoint still teaches; they open later with forms or
    Clancy. Each route bends, crosses over or under another one, and has something on it.
    Split: **7b-1 the old rail trestle (broken for now) and the backyards it comes down into — done m319.**
-   7b-2 the shallow ford downstream with cows drinking, and the creek culvert.
+   **7b-2 the shallow ford downstream with cows drinking, and the creek culvert — done m320.**
 8. **Prove it**: `npm run places` passes with every GOD farm place moving him onto the new land, and the
    crash spawn landing at the wreck. **Screenshots allowed and wanted** for this work: a wide shot from a
    ridge showing fields, buildings and the distant skyline, and one of the road through the transition.
@@ -549,3 +549,8 @@ differ" table there, so no region feels like the last one.
   19 m stretch of it has fallen in (too far to jump), so the checkpoint still teaches; it opens later
   with a form or Clancy.
 
+- **m320 (farm rebuild, step 7b-2):** a third way over the channel, the lowest: stepping stones from
+  the beach below the east pasture, wandering out to the city's shore between two ring houses, with
+  three cows drinking at the foot. Like the trestle, a 26 m stretch in the middle is under the tide
+  for now, so the checkpoint still teaches; it opens later. Also a stone culvert where the east
+  track crosses the creek, with earth ramps up to it, so the track no longer runs into the water.

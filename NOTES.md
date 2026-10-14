@@ -7,6 +7,101 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE STEPPING-STONE FORD AND THE CREEK CULVERT (m320, step 7b-2, `FFORD`, `buildFord`, `FWATER.culvertAt`).**
+  The third way over the channel and the lowest: flat stones a stride apart (`gap` 1.75 m) from the beach below the
+  east pasture (`from` in the land's own (a, b)) out to the city's shore at bearing `toDeg` 79, the ray's coast
+  point less 2 m, meandering `bow` 14 m off the straight line on a sine so it reads as a path found rather than
+  laid. **Each stone is a box collider with its top just over the sea** (sea + .22, jittered +-.06) standing on the
+  REAL seabed (the higher of `flHeightAt` and `isleBedAt`, floored at sea - 12, the trestle's own rule), drawn as a
+  squat icosahedron top on a seven-sided cylinder, with weed at the waterline on about a third. Between them is the
+  sea, and the sea's rule puts you back. A stone whose bed is over sea + .6 is skipped: on dry beach the shore is
+  the step. **A stretch is under the tide** (`washed` .44-.6 of the way): `FFORD.gapM` measures it at **26.1 m** on
+  a 172 m crossing, which nothing on foot clears (`MOVE.jump` 10.6 / g 20 is ~7.4 m at a run), so the checkpoint
+  still teaches and it opens later. **Three cows stand drinking at its foot** -- `buildCows` puts them at `from` + 8 m
+  in b with no field, so they are not counted against a pasture; `COWS` 33 still all in place.
+  **THE CULVERT IS WHERE THE EAST TRACK CROSSES THE CREEK, AND IT IS FOUND, NOT TYPED**: a segment intersection of
+  `FPLAN`'s `east_track` against the creek's own points, the bed read off `FL.cbed` there (-0.12). A stone box
+  deck 2.9 m over the bed, walls at +-2.6 m along the track, kerbs, walkable quads on top, and earth embankments
+  stepping down to the rims 12 m each side. **Each embankment step takes the LOWER end of its slice** (the first
+  draft took the higher, which would have stood a lip in the way; caught before it shipped). **It is built inside `buildFarmWaters`, BEFORE
+  `buildFieldBounds`**, so its floors are in `TRI` before the track ribbon is laid over it. GOD places `stones` and
+  `culvert`; `mel.FFORD` is live. `npm run places`:
+      ok   buildFarmland
+      ok   buildFarmWaters
+      ok   buildFieldBounds
+      ok   buildFieldCrops
+      ok   buildNeighbours
+      ok   buildFarm
+      ok   buildFarmProps
+      ok   buildCrash
+      ok   crashHero
+      ok   buildLane
+      ok   buildBridge
+      ok   buildHedgerows
+      ok   buildFarmhouse
+      ok   buildRoadside
+      ok   buildCows
+      ok   buildVehicles
+      ok   buildFarmhands
+      ok   buildTownEdge
+      ok   buildCityRing
+      ok   buildTrestle
+      ok   buildFord
+      ok   farmBatch
+      ok   buildGroundPaint
+      ok   buildFlora
+      FARMLAND live [ 354, 196 ] chunks 9 floor tris 12344 water tris 8346 | BRIDGE len 166 piers 5 gate [112,64]
+      FWATER 22 boxes, reeds 31 | pond level 0.1 | creek bed [ 5.19, -8.5 ] len 255
+      ok  COWS 33 {"paddock":6,"far_hill":5,"ridge_pasture":6,"east_pasture":5,"pond_pasture":4,"home_pasture":4,"creek_pasture":3} all in their pastures
+      ok  FARMHANDS Dale (hobo) 299,75 | Wendell (hobo) 483,59 | Mags (hobo) 337,222 | Earl (hobo) 418,153 | Farmer Gristle (farmer) 322,149 
+      FBATCH on 115 static meshes -> 74 batched, 7 left out, 114342 tris | meshes in the scene now 157
+      FFORD 70 stones over 172.3 m, washed gap 26.1 m | culvert [332.1,276.5,-2.1] bed -0.12
+      FTRES 68 boxes+tris, farm end [313.2,65.2,-2.1] city end [98.3,-9.3]
+      ok  oldtown    -> player 0.0,0.1,0.0 ground 0.00 
+      ok  overlook   -> player 464.3,9.1,68.0 ground 8.99 
+      ok  ploughing  -> player 409.0,2.2,172.2 ground 2.03 
+      ok  pickup     -> player 316.3,1.4,137.8 ground 1.29 
+      ok  stones     -> player 187.0,-0.4,208.3 ground -0.50 
+      ok  culvert    -> player 332.1,0.1,276.5 ground 0.21 
+      ok  trestle    -> player 313.2,0.5,65.2 ground 0.39 
+      ok  backyards  -> player 98.3,-0.0,-9.3 ground -0.17 
+      ok  warehouse  -> player 94.3,0.0,28.5 ground -0.12 
+      ok  gas        -> player 262.7,0.7,111.7 ground 0.52 
+      ok  trailers   -> player 227.8,1.8,161.0 ground 1.64 
+      ok  herd       -> player 502.4,-0.8,246.5 ground -0.96 
+      ok  neighbour  -> player 397.4,6.0,284.6 ground 5.88 
+      ok  haybarn    -> player 477.7,5.9,142.2 ground 5.72 
+      ok  circle     -> player 271.6,0.6,347.9 ground 0.48 
+      ok  swell      -> player 294.5,0.7,343.3 ground 0.50 
+      ok  fplough    -> player 429.9,2.2,166.6 ground 2.05 
+      ok  creek      -> player 306.6,1.5,245.6 ground 1.35 
+      ok  pond       -> player 363.6,1.5,63.8 ground 1.36 
+      ok  channel    -> player 241.6,0.5,134.3 ground 0.34 
+      ok  farmyard   -> player 320.1,1.5,152.7 ground 1.32 
+      ok  hayloft    -> player 333.7,4.7,156.8 ground 9.00 
+      ok  crash      -> player 284.8,0.8,333.3 ground 0.69 
+      ok  corn       -> player 367.8,1.4,113.3 ground 1.28 
+      ok  wheat      -> player 291.5,0.3,56.8 ground 0.15 
+      ok  orchard    -> player 331.2,2.8,222.0 ground 2.62 
+      ok  farmhouse  -> player 367.2,1.8,206.2 ground 1.64 
+      ok  windmill   -> player 341.2,1.6,154.2 ground 1.42 
+      ok  scarecrow  -> player 368.8,1.4,107.4 ground 1.20 
+      ok  tractor    -> player 327.2,1.5,139.8 ground 1.33 
+      ok  paddock    -> player 340.7,1.6,157.1 ground 1.42 
+      ok  lane       -> player 320.6,1.5,140.3 ground 1.31 
+      ok  road       -> player 336.6,1.5,118.1 ground 1.36 
+      ok  bridge     -> player 112.1,3.0,63.6 ground 2.80 
+      every tkit GOD place is somewhere
+      ok  vehStep        30 frames
+      ok  farmPropsStep  30 frames
+      ok  farmhouseStep  30 frames
+      ok  floraStep      30 frames
+      ok  cowStep        30 frames
+      ok  crashStep      30 frames
+      ok  crashHeroStep  30 frames
+      ok  riverStep      30 frames
+      ok  gradeStep      30 frames
+
 - **THE OLD RAIL TRESTLE: A SECOND WAY OVER THE CHANNEL, BROKEN FOR NOW (m319, step 7b-1, `FTRES`, `buildTrestle`, `ringHouse` gap).**
   REGIONS' connective tissue (never one road): west of the bridge an earth embankment climbs out of the south wheat
   (`FTRES.cut`, a margin in `fpOwner`: no crop on it, a gap in the hedges) to a timber trestle -- bents of two posts,
