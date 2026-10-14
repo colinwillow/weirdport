@@ -7,6 +7,27 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE PEARL STARTS BEHIND DOCK 1'S DOOR, ON PIERS, AND EVERY DECK CARRIES ITS OWN RAILS (m359, C6-1, `OPEARL`,
+  `buildPearl`, `pearlMural`, `FT.frame`).** Chapter 2's district, greyboxed: three pier decks (A, B, C, each at its own
+  slight angle) on piles over the water past the footbridge's dock, a plaza at [-2, 63] in deck space, eight warehouses
+  (pastel, murals, roof parapets, a loading platform facing the plaza with steps and a door each; W5 at (-34, 84), h18, is
+  the organiser's building for C6-4), five container stacks with crate stairs, seven market stalls in a ring of 15 m,
+  planters, one InstancedMesh of string-light bulbs, and four locals (Wren, Juno, Saffron, Pip, `src 'PEARL'`).
+  **The way in is the dock warehouse's wall**: when `OPEARL.on`, `buildFootbridge` splits that wall round a door
+  (u -6.6..-2.4, yP+1.1..yP+5), draws the roll-up door rolled up and shrinks the mural to beside it. The Pearl's frame is
+  read from `FT.frame` at the wall's far face, so a moved footbridge moves the district with it.
+  **Rails are explicit per deck (`rails: [a, b, w, d]` in deck-local space)**, not "every edge". The first pass railed all
+  four edges and the far rail of deck A cut deck B's pier in half; overlapping decks have no rail where they meet.
+  **And the first shot was the m302 failure again** -- small warehouses spaced out on a big flat floor. They were enlarged,
+  pulled in round the plaza, and the containers and stalls fill the gaps; the screenshot after that reads as a yard.
+  **The CAMP+CARTS row excludes `src 'PEARL'`**: they are not Old Town locals and the PEARL row checks them instead.
+  `npm run places`:
+      ok   buildPearl
+      ok  pearldock  -> player -173.3,2.6,-52.1 ground 2.40
+      ok  pearl      -> player -237.3,2.6,-71.3 ground 2.40
+      ok  PEARL 143 boxes, 8 warehouses | the dock platform 1.1, behind the door 1.1, the pier 0, dock street 0, the plaza 0 | locals Wren, Juno, Saffron, Pip
+  (heights are above the pier deck; 144 rows, 0 BAD.) **Not built yet:** the plaza protest and barricades (C6-2), the
+  rooftop gardens, catwalks and rope bridges (C6-3), and Chapter 2's quests and boss (C6-4).
 - **THE HIDDEN GOOD ALIENS ARE A CHAIN: EACH ONE'S LAST WORD TO THE ALIEN IS THE NEXT ONE'S WHEREABOUTS (m358, C5,
   `OGOOD`, `UPGRADES`, `upApply`, `goodGift`, `buildGoodKiosks`).** Norrie (B3-2) plus three keepers in kiosks of their own
   (a hut with a window, a counter, an awning, a canvas sign, goods out front; each turned toward the most open street,

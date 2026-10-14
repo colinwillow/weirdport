@@ -272,6 +272,10 @@ differ" table there, so no region feels like the last one.
   - [x] m357 **C4-2** the lookout: a tower on Old Town's ring over the water, the glider guy on top with his glider, and a task to take his form and fly.
 - [x] m358 **C5 Hidden good aliens.** A network of disguised shopkeepers who give tips and upgrades.
 - [ ] **C6 Chapter 2 greybox (The Pearl)** with its quests and boss — then 3, 4…
+  - [x] m359 **C6-1** the land: piers past dock 1's door, eight warehouses round a plaza, containers, stalls, string lights, four locals; GOD place.
+  - [ ] **C6-2** the plaza protest and a barricade on every street into it.
+  - [ ] **C6-3** up top: rooftop gardens, catwalks and rope bridges between the warehouses.
+  - [ ] **C6-4** Chapter 2's quests: the strike starts, the organiser's rooftop HQ (W5), expose the infiltrator (the boss), the strike ends and the crews go back.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
 
@@ -874,3 +878,10 @@ differ" table there, so no region feels like the last one.
   The upgrades: Norrie a bigger juice tank, Mags slower juice drain, Pruitt quicker sampling, Ines
   cheaper transforms. Every kiosk keeper wears the antenna hat. I placed the kiosks on three open
   lots well apart: west, south and south-east.
+
+- **m359 (C6-1) The Pearl.** I put it on piers past the footbridge's dock: you walk through a door
+  in the dock warehouse and down onto the decks. Three decks at slight angles, eight pastel
+  warehouses with murals around a plaza, container stacks you can climb, market stalls, string
+  lights and four locals. The fifth warehouse, the tallest, is held for the organiser's rooftop
+  HQ in C6-4. I split C6 into four: the land, the plaza protest and barricades, the rooftops, and
+  the quests and boss.

@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m358</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m359</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m358</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m359</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm358';
+const BUILD = 'm359';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -30166,6 +30166,140 @@ function lookoutStep(dt) {
   else O.glideT = 0;
 }
 // ============================================================================================
+// THE PEARL (m359, ROADMAP C6-1, `OPEARL`, `buildPearl`) -- Chapter 2's district, greybox
+// ============================================================================================
+// REGIONS: "converted warehouses, roof gardens and art. Bright, loud, earnest, and organised ... wide old loading docks
+// with raised platforms, a central plaza where the protest lives, murals that cover whole walls." It grows out past DOCK 1
+// (m341): through the roll-up door in the dock's warehouse wall (open now) and down off a loading platform onto a great
+// PIER -- three concrete decks turned a little to each other, on piles over the water, at the dock's own height -- with
+// eight converted WAREHOUSES set at odd angles round THE PLAZA in the middle, every one in a pastel, a mural on the face
+// it turns to the plaza, a roll-up door, and a raised loading platform along that face with steps down. Railings along
+// the pier's edges. Each warehouse is an authored row: where, how big, which way, and why. Flat roofs you can stand on
+// (the roof gardens and their catwalks are C6-3); the plaza's protest and its barricades are C6-2; the quests and the
+// organiser are C6-4. A few locals so it is not empty. GOD: "THE PEARL · the plaza".
+const OPEARL = {
+  on: 1, n: 0,
+  // each deck's railings are its OWN list (deck-local [a, b, w, d] from its centre): only the edges over water -- a rail on
+  // an edge that another deck overlaps would cut the pier in two
+  DECKS: [ { u: [-24, 24], v: [0, 34], psi: 0, rails: [[-24, 0, .12, 34], [24, 0, .12, 34]] },
+           { u: [-56, 56], v: [30, 96], psi: .04, rails: [[-56, 0, .12, 66], [56, 0, .12, 66], [-40, -33, 32, .12], [40, -33, 32, .12], [-49, 33, 14, .12], [44, 33, 24, .12]] },
+           { u: [-42, 32], v: [92, 120], psi: -.06, rails: [[-37, 0, .12, 28], [37, 0, .12, 28], [0, 14, 74, .12]] } ],
+  PLAZA: [-2, 63],
+  WAREHOUSES: [
+    { u: -14, v: 17, w: 18, d: 16, h: 10, yaw: .05, col: 'pink', mural: 0, why: 'the first one past the dock: a coffee roaster, open at dawn' },
+    { u: 14, v: 15, w: 16, d: 18, h: 13, yaw: -.08, col: 'mint', mural: 1, why: 'across the dock street from it: a print shop' },
+    { u: -36, v: 52, w: 22, d: 28, h: 16, yaw: .1, col: 'lilac', mural: 2, why: 'the long one on the plaza\'s west side: studios' },
+    { u: 32, v: 47, w: 24, d: 22, h: 11, yaw: -.12, col: 'cream', mural: 0, why: 'the plaza\'s east side: a food hall' },
+    { u: -34, v: 84, w: 26, d: 18, h: 18, yaw: -.06, col: 'sky', mural: 1, why: 'the tall one to the north-west: the organiser\'s building (C6-4)' },
+    { u: 30, v: 82, w: 24, d: 18, h: 14, yaw: .08, col: 'pink', mural: 2, why: 'north-east of the plaza: a rehearsal space, always drumming' },
+    { u: -17, v: 106, w: 22, d: 14, h: 12, yaw: .04, col: 'mint', mural: 0, why: 'the far end, by the water: a flea market' },
+    { u: 14, v: 107, w: 14, d: 14, h: 21, yaw: -.1, col: 'cream', mural: 1, why: 'the old grain elevator, now a climbing gym: the tallest thing in The Pearl' },
+  ],
+  // the fill between them, so it is a knot of streets and not buildings on a car park: container stacks you can climb
+  // (`lv` high, a crate stair up the first), market stalls in a ring round the plaza, planted trees down the dock street
+  CONTAINERS: [
+    { u: -48, v: 33, yaw: .3, lv: 2, why: 'the pier\'s front-left corner, stacked off a ship nobody unloaded' },
+    { u: 47, v: 64, yaw: 1.4, lv: 2, why: 'behind the food hall, its back store' },
+    { u: -2, v: 92, yaw: .05, lv: 1, why: 'where the far deck meets the main one: a pinch point' },
+    { u: 40, v: 102, yaw: -.4, lv: 3, why: 'the far corner by the climbing gym: three high, a climb with a view' },
+    { u: -50, v: 70, yaw: 1.6, lv: 1, why: 'between the studios and the organiser\'s building: a lane' },
+  ],
+  STALLS: 7, STALLR: 15,
+  PEOPLE: [
+    { id: 'pearl_wren', kind: 'fat_activist_01', name: 'Wren', at: [-8, 56], lines: "Welcome to The Pearl! Everything here is community-run. Even the pigeons have a committee.|The plaza's ours. We're never leaving. That's the protest. It's been three years.|Tuesday is drum circle. So is every other day." },
+    { id: 'pearl_juno', kind: 'fat_hipster', name: 'Juno', at: [20, 58], lines: "Oat, soy, hemp, or air? The air latte is very popular.|I roast on the second floor. The smell is the whole business model.|Someone keeps buying everybody's signs. Nobody knows who. Very generous. Slightly creepy." },
+    { id: 'pearl_saffron', kind: 'fat_hippie', name: 'Saffron', at: [-24, 66], lines: "Mind the wet paint. All of it. Everything here is wet paint.|That mural's about the sky. Or the sea. It changes depending on how you feel.|The organiser's up in the tall building. Very busy. Never comes down." },
+    { id: 'pearl_pip', kind: 'beautiful_blonde', name: 'Pip', at: [4, 74], lines: "Are you here for the march? There's always a march.|My mum says Old Town's crews are coming out on strike for us. Solidarity!|What are we striking for? ...Good question. Ask the organiser." },
+  ],
+};
+function pearlMural(seed) {
+  const c = document.createElement('canvas'); c.width = 512; c.height = 256;
+  const g = c.getContext('2d'), P = ['#9fe3d2', '#ffc9a8', '#c9b8ff', '#fff1a8', '#ff9fc0', '#a8d8ff', '#2a2140'];
+  let s = seed * 71 + 13; const r = () => (s = (s * 9301 + 49297) % 233280) / 233280;
+  g.fillStyle = P[seed % 6]; g.fillRect(0, 0, 512, 256);
+  for (let i = 0; i < 7; i++) { g.fillStyle = P[(seed + i) % 6]; g.fillRect(r() * 512, 0, 30 + r() * 80, 256); }
+  for (let i = 0; i < 12; i++) { g.fillStyle = P[(i * 3 + seed) % 7]; g.beginPath(); g.arc(r() * 512, r() * 256, 18 + r() * 60, 0, 6.283); g.fill(); }
+  g.fillStyle = '#2a2140'; g.font = '900 64px "Barlow Condensed", system-ui, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.fillText(['LOVE THE PEARL', 'WE ARE THE TIDE', 'NOTHING IS NORMAL'][seed % 3], 256, 128);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+function buildPearl() {
+  const O = OPEARL, F0 = FOOT.frame; if (!O.on || !inTK() || !F0) return 0;
+  const { Ox, Oz, thf, vB, yP } = F0, C = Math.cos(thf), S = Math.sin(thf);
+  const ox = Ox + (vB + .8) * S, oz = Oz + (vB + .8) * C;                   // the far face of the dock's wall: the Pearl's v = 0
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .82 }), o || {});
+  const MAT = { deck: M(0xa8a49a), edge: M(0x8a867c), pile: M(0x4a3d30), steel: Object.assign(M(0x7a8a96), { metalness: .45, roughness: .45 }),
+    pink: M(0xf2b8c6), mint: M(0xb8e6d0), lilac: M(0xcfc0ee), cream: M(0xf2e6c8), sky: M(0xb8d8f2), roof: M(0x6a6460), dark: M(0x24262b), plat: M(0x9a968c), plant: M(0x5f9a4a) };
+  const F = farmFrame(ox, oz, thf, MAT, 'pearl'), { bx, geo, wx, wz } = F, y = yP;
+  // THE PIER: the decks, their piles, and railings round them (a collider each, the rails you see)
+  for (const D of O.DECKS) {
+    const cu = (D.u[0] + D.u[1]) / 2, cv = (D.v[0] + D.v[1]) / 2, W = D.u[1] - D.u[0], L = D.v[1] - D.v[0];
+    bx(cu, cv, y - .6, y, W, L, 'deck', D.psi);
+    const cs = Math.cos(D.psi), sn = Math.sin(D.psi), at = (a, b) => [cu + a * cs + b * sn, cv - a * sn + b * cs];
+    for (let a = -W / 2 + 4; a < W / 2; a += 9) for (let b = -L / 2 + 4; b < L / 2; b += 9) { const [u, v] = at(a, b); bx(u, v, ISLE.sea - 4, y - .6, .6, .6, 'pile', 0, false); }
+    for (const [a, b, w, d] of D.rails) {
+      const [u, v] = at(a, b); bx(u, v, y, y + 1.05, w, d, 'steel', D.psi); F.parts.steel.pop();
+      bx(u, v, y + .98, y + 1.06, w, d, 'steel', D.psi, false); }
+  }
+  // from the dock's door: a loading platform behind it, at the dock platform's height, and steps down onto the pier
+  bx(-4.5, 2, y, y + 1.1, 7, 4, 'plat');
+  for (let k = 0; k < 4; k++) bx(-4.5, 4.3 + k * .45, y, y + 1.1 - (k + 1) * .275, 4.2, .46, 'plat');
+  // THE WAREHOUSES: each faces the plaza with its loading platform, a mural above, a roll-up door; a flat roof and parapet
+  const murals = [0, 1, 2].map(pearlMural), pics = new THREE.Group(); pics.position.set(ox, 0, oz); pics.rotation.y = thf; scene.add(pics);
+  for (const W of O.WAREHOUSES) {
+    bx(W.u, W.v, y - .1, y + W.h, W.w, W.d, W.col, W.yaw);
+    bx(W.u, W.v, y + W.h, y + W.h + .15, W.w + .3, W.d + .3, 'roof', W.yaw, false);
+    const cs = Math.cos(W.yaw), sn = Math.sin(W.yaw), loc = (a, b) => [W.u + a * cs + b * sn, W.v - a * sn + b * cs];
+    for (const [a, b, w, d] of [[0, -W.d / 2, W.w, .25], [0, W.d / 2, W.w, .25], [-W.w / 2, 0, .25, W.d], [W.w / 2, 0, .25, W.d]]) { const [u, v] = loc(a, b); bx(u, v, y + W.h, y + W.h + .9, w, d, W.col, W.yaw); }
+    // which face looks at the plaza: in its own frame, the side whose normal is nearest the plaza's direction
+    const dx = O.PLAZA[0] - W.u, dz = O.PLAZA[1] - W.v, la = dx * cs - dz * sn, lb = dx * sn + dz * cs;
+    const [fa, fb, half, along] = Math.abs(la) / (W.w / 2) > Math.abs(lb) / (W.d / 2) ? [Math.sign(la), 0, W.w / 2, W.d] : [0, Math.sign(lb), W.d / 2, W.w];
+    const out = (r, t) => fa ? loc(fa * (half + r), t) : loc(t, fb * (half + r));   // r out from the face, t along it
+    const fyaw = W.yaw + (fa ? (fa > 0 ? Math.PI / 2 : -Math.PI / 2) : (fb > 0 ? 0 : Math.PI));   // the face's outward heading, in the frame
+    { const [u, v] = out(1.5, 0); bx(u, v, y, y + 1.1, fa ? 3 : along - 1, fa ? along - 1 : 3, 'plat', W.yaw); }
+    for (let k = 0; k < 3; k++) { const [u, v] = out(3.2 + k * .45, along * .3); bx(u, v, y, y + 1.1 - (k + 1) * .37, fa ? .46 : 2.4, fa ? 2.4 : .46, 'plat', W.yaw); }
+    { const [u, v] = out(.06, -along * .2); bx(u, v, y + 1.1, y + 5.2, fa ? .08 : 4.2, fa ? 4.2 : .08, 'dark', W.yaw, false); }
+    { const [u, v] = out(.08, along * .05), mw = Math.min(along - 2, 16), mh = Math.min(W.h - 6.5, mw * .5);
+      if (mh > 2) { const m = new THREE.Mesh(new THREE.PlaneGeometry(mw, mh), new THREE.MeshStandardMaterial({ map: murals[W.mural], roughness: .9 }));
+        m.position.set(u, y + 6 + mh / 2, v); m.rotation.y = fyaw; pics.add(m); } }
+    // plants along the loading platform's edge (The Pearl: "plants everywhere")
+    for (let k = -1; k <= 1; k++) { const [u, v] = out(2.7, k * along * .3); bx(u, v, y + 1.1, y + 1.6, .6, .6, 'plat', W.yaw, false); geo(new THREE.IcosahedronGeometry(.55, 0), 'plant', u, y + 2.1, v); }
+    W.at = out(4.5, 0);
+  }
+  // THE FILL: container stacks (a crate stair up the first one), market stalls round the plaza, trees down the dock street
+  const cc = ['pink', 'mint', 'lilac', 'sky', 'cream'];
+  O.CONTAINERS.forEach((K, i) => {
+    const cs = Math.cos(K.yaw), sn = Math.sin(K.yaw), at = (a, b) => [K.u + a * cs + b * sn, K.v - a * sn + b * cs];
+    for (let l = 0; l < K.lv; l++) for (const b of [-1.3, 1.3]) { if (l === K.lv - 1 && b > 0 && K.lv > 1) continue;
+      const [u, v] = at((l % 2) * .6, b); bx(u, v, y + l * 2.6, y + (l + 1) * 2.6, 6, 2.4, cc[(i + l + (b > 0)) % 5], K.yaw); }
+    for (let k = 0; k < 4; k++) { const [u, v] = at(-4 - k * .02, -1.3 - (3 - k) * 1.0 + 1.5); bx(u, v, y, y + .62 * (k + 1), 1, 1, 'plat', K.yaw); }
+  });
+  for (let i = 0; i < O.STALLS; i++) {
+    const a = i / O.STALLS * 6.283 + .3, u = O.PLAZA[0] + Math.cos(a) * O.STALLR, v = O.PLAZA[1] + Math.sin(a) * O.STALLR, f = -a + Math.PI / 2;
+    bx(u, v, y, y + .95, 2.2, 1, 'plat', f); bx(u, v, y + 2.2, y + 2.3, 2.6, 1.6, cc[i % 5], f, false);
+    for (const s of [-1, 1]) bx(u + Math.cos(f) * s * 1.2, v - Math.sin(f) * s * 1.2, y, y + 2.2, .08, .08, 'steel', f, false);
+    geo(new THREE.IcosahedronGeometry(.3, 0), 'plant', u, y + 1.2, v);
+  }
+  for (let v = 8; v < 34; v += 6) for (const s of [-1, 1]) { const u = -2.5 + s * 3.2; bx(u, v, y, y + .6, 1, 1, 'plat'); bx(u, v, y + .6, y + 2.6, .2, .2, 'pile', 0, false); geo(new THREE.IcosahedronGeometry(1.1, 0), 'plant', u, y + 3.2, v); }
+  O.n = F.commit().boxes;
+  // string lights across the plaza, warehouse corner to warehouse corner
+  { const bulbs = [], bm = new THREE.MeshStandardMaterial({ color: 0x3a2a14, emissive: new THREE.Color(0xffd28a), emissiveIntensity: 1.8 });
+    const tops = O.WAREHOUSES.slice(2, 6).map(W => [W.u, W.v, y + Math.min(W.h, 9)]);
+    for (let i = 0; i < tops.length; i++) for (let j = i + 1; j < tops.length; j++) { if ((i + j) % 2) continue; const A = tops[i], B = tops[j];
+      for (let k = 1; k < 14; k++) { const t = k / 14, u = A[0] + (B[0] - A[0]) * t, v = A[1] + (B[1] - A[1]) * t, h = A[2] + (B[2] - A[2]) * t - Math.sin(t * Math.PI) * 2.5; bulbs.push([wx(u, v), h, wz(u, v)]); } }
+    const I = new THREE.InstancedMesh(new THREE.SphereGeometry(.12, 6, 4), bm, bulbs.length), m4 = new THREE.Matrix4();
+    bulbs.forEach((b, i) => I.setMatrixAt(i, m4.makeTranslation(b[0], b[1], b[2]))); I.instanceMatrix.needsUpdate = true; scene.add(I); }
+  // the locals
+  for (const P of O.PEOPLE) { peopleMark(P.id, wx(P.at[0], P.at[1]), wz(P.at[0], P.at[1]), thf + Math.PI, Object.assign({ group: 'city', talks: ['*'], alien: 'flee' }, P), y, 'PEARL', 'city'); }
+  O.plazaAt = [wx(O.PLAZA[0], O.PLAZA[1] - 8), y + .1, wz(O.PLAZA[0], O.PLAZA[1] - 8), thf];
+  O.frame = { ox, oz, thf, y };
+  // the map: The Pearl's region is the pier now, not only the dock
+  if (MAPREG.tkit) { const r = MAPREG.tkit.find(q => q.id === 'pearl'); let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9;
+    for (const D of O.DECKS) for (const a of D.u) for (const b of D.v) { const x = wx(a, b), z = wz(a, b); x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); }
+    if (r) { r.x0 = Math.min(r.x0, x0); r.x1 = Math.max(r.x1, x1); r.z0 = Math.min(r.z0, z0); r.z1 = Math.max(r.z1, z1); } if (map.ext) mapBuild(); }
+  return O.n;
+}
+// ============================================================================================
 // PORTALS (m286, ROADMAP A8b) -- no one-way trips
 // ============================================================================================
 // **STEP ON A PAD AND IT IS YOURS FOR GOOD** (`progPortal(id)`, saved). Standing on an ACTIVE pad,
@@ -31873,12 +32007,15 @@ function buildFootbridge() {
   for (const s of [-1, 1]) { bx(s * (dW + .05), vL0 + dL / 2, yP, yP + 1.1, .14, dL, 'steel'); bx(s * (dW + .05), vL0 + dL / 2, yP + 1.0, yP + 1.12, .14, dL, 'steel', 0, false); }
   for (const s of [-1, 1]) { const a = hw + .3, m = s * (a + dW) / 2; bx(m, vL0, yP, yP + 1.1, dW - a, .14, 'steel'); }
   // the warehouse wall at the back, and the raised loading platform along it, with a step at one end
-  bx(0, vB + .4, yP - .4, yP + 9, 2 * dW + .6, .8, 'brick');
+  if (OPEARL.on) {                                                       // m359: the roll-up door is OPEN -- The Pearl is through it
+    bx((-dW - .3 - 6.6) / 2, vB + .4, yP - .4, yP + 9, dW + .3 - 6.6, .8, 'brick'); bx((dW + .3 - 2.4) / 2, vB + .4, yP - .4, yP + 9, dW + .3 + 2.4, .8, 'brick');
+    bx(-4.5, vB + .4, yP + 5, yP + 9, 4.2, .8, 'brick'); bx(-4.5, vB + .4, yP - .4, yP + 1.1, 4.2, .8, 'brick');
+  } else bx(0, vB + .4, yP - .4, yP + 9, 2 * dW + .6, .8, 'brick');
   bx(0, vB + .4, yP + 9, yP + 9.3, 2 * dW + 1, 1.2, 'concrete', 0, false);
   bx(0, vB - 2, yP, yP + 1.1, 2 * dW, 4, 'concrete');
   bx(dW - 1.6, vB - 4.4, yP, yP + .55, 2.4, .8, 'concrete');
-  bx(-4.5, vB - .02, yP + 1.1, yP + 5, 4.2, .1, 'dark', 0, false);                               // the roll-up door
-  for (let k = 0; k < 6; k++) bx(-4.5, vB - .09, yP + 1.4 + k * .6, yP + 1.47 + k * .6, 4.2, .05, 'steel', 0, false);
+  if (!OPEARL.on) bx(-4.5, vB - .02, yP + 1.1, yP + 5, 4.2, .1, 'dark', 0, false);              // the roll-up door (rolled up, m359)
+  for (let k = 0; k < (OPEARL.on ? 2 : 6); k++) bx(-4.5, vB - .09, (OPEARL.on ? yP + 4.6 : yP + 1.4) + k * .2, (OPEARL.on ? yP + 4.67 : yP + 1.47) + k * .2, 4.2, .05, 'steel', 0, false);
   // a container on the dock, climbable by its crates, with a roof garden on it (The Pearl: "plants everywhere")
   const cu = 4.5, cv = vL0 + 6;
   bx(cu, cv, yP, yP + 2.6, 6, 2.4, 'cont');
@@ -31898,7 +32035,8 @@ function buildFootbridge() {
   const local = () => { const g = new THREE.Group(); g.position.set(Ox, 0, Oz); g.rotation.y = thf; scene.add(g); return g; };
   const mk = (g, geom, mat, u, y, v, rx = 0, ry = 0, rz = 0) => { const m = new THREE.Mesh(geom, mat); m.position.set(u, y, v); m.rotation.set(rx, ry, rz); g.add(m); return m; };
   const pics = local();
-  mk(pics, new THREE.PlaneGeometry(2 * dW - 1, 6.6), new THREE.MeshStandardMaterial({ map: footMural(), roughness: .9 }), 0, yP + 1.1 + 4.2, vB - .03, 0, Math.PI);
+  if (OPEARL.on) mk(pics, new THREE.PlaneGeometry(dW + 1.6, 6.6), new THREE.MeshStandardMaterial({ map: footMural(), roughness: .9 }), (dW + .3 - 2.4) / 2 + .2, yP + 1.1 + 4.2, vB - .03, 0, Math.PI);   // beside the door now
+  else mk(pics, new THREE.PlaneGeometry(2 * dW - 1, 6.6), new THREE.MeshStandardMaterial({ map: footMural(), roughness: .9 }), 0, yP + 1.1 + 4.2, vB - .03, 0, Math.PI);
   { const sm = new THREE.MeshStandardMaterial({ map: footSign('THE PEARL', 'DOCK 1  ·  MIND THE GAP', '#2a2140', '#ffd9ea'), roughness: .7 });
     for (const s of [-1, 1]) mk(pics, new THREE.BoxGeometry(.18, 4.2, .18), MAT.steel, s * (hw + .5), yP + 2.1, vL0 - .3);
     mk(pics, new THREE.PlaneGeometry(4, 1.25), sm, 0, yP + 3.7, vL0 - .4, 0, Math.PI);           // read from the bridge
@@ -31941,6 +32079,7 @@ function buildFootbridge() {
     for (const [u, v] of [[-dW - 4, vL0 - 4], [dW + 4, vL0 - 4], [-dW - 4, vB + 6], [dW + 4, vB + 6]]) { const x = wx(u, v), z = wz(u, v); x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); }
     MAPREG.tkit.push({ id: 'pearl', name: 'THE PEARL', x0, x1, z0, z1 }); if (map.ext) mapBuild(); }
   FT.vW = vW; FT.yD = yD; FT.span = vL0 - vS;
+  FT.frame = { Ox, Oz, thf, vB, yP, dW };                                // m359: The Pearl grows from here
   if (FT.G && FT.G.open) footFix(1);
   return FT.n;
 }
@@ -35107,7 +35246,7 @@ const GOD = { on: 0, fly: 0, vy: 0, flyV: 14, flyUp: 8, store: 'mel.god', goKey:
 const GODCHAP = [
   { n: 0, name: 'THE CRASH',         place: 'crash' },     // Gristle Farm, beside the wreck: where a new game starts
   { n: 1, name: 'OLD TOWN',          place: 'carts' },     // m339: the food carts, where its first step (Chef Norrie) is
-  { n: 2, name: 'THE PEARL',         place: 'pearldock' },   // m342: only its door so far, dock 1
+  { n: 2, name: 'THE PEARL',         place: 'pearl' },       // m359: the plaza
   { n: 3, name: 'THE OUTSKIRTS',     place: null },
   { n: 4, name: 'THE WATERFRONT',    place: null },
   { n: 5, name: 'THE SKATE ISLANDS', place: null },
@@ -35149,6 +35288,7 @@ const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
   { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
+  { id: 'pearl', world: 'tkit', name: 'THE PEARL · the plaza (Chapter 2)', at: () => OPEARL.plazaAt },
   { id: 'mags', world: 'tkit', name: "OLD TOWN · Mags's newsstand (a hidden good alien)", at: () => (OGOOD.KIOSKS[0] || {}).godAt },
   { id: 'pruitt', world: 'tkit', name: "OLD TOWN · Pruitt's key-cutting kiosk (a hidden good alien)", at: () => (OGOOD.KIOSKS[1] || {}).godAt },
   { id: 'ines', world: 'tkit', name: "OLD TOWN · Ines's alterations (a hidden good alien)", at: () => (OGOOD.KIOSKS[2] || {}).godAt },
@@ -37641,6 +37781,8 @@ async function init() {
     try { buildFootbridge(); } catch (e) { note('FOOTBRIDGE FAIL'); console.warn('[melee] footbridge', e); }
     // THE LOOK FOLLOWS OLD TOWN'S HEALTH (m344): boards, rubble, litter -- after every Old Town builder, over the street
     try { buildDecay(); } catch (e) { note('DECAY FAIL'); console.warn('[melee] decay', e); }
+    // THE PEARL (m359): past dock 1, through its door
+    try { buildPearl(); } catch (e) { note('PEARL FAIL'); console.warn('[melee] pearl', e); }
     // THE STRIKE'S PICKET (m345): hidden until the crews walk out
     try { buildStrike(); } catch (e) { note('STRIKE FAIL'); console.warn('[melee] strike', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)
@@ -37817,7 +37959,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

@@ -94,6 +94,9 @@ const SHOTS = {
       return [T[0] + fx * 22 + rx * 9, T[1] - 4, T[2] + fz * 22 + rz * 9, T[0], T[1] - 7, T[2]]; })()` },   // from out over the sea
   lookdown: { place: 'lookfoot', settle: 3, why: 'the lookout from straight above',
     cam: `(() => { const T = mel.OLOOK.topAt; return [T[0], T[1] + 30, T[2] + .01, T[0], T[1] - 10, T[2]]; })()` },
+  pearl: { place: 'pearl', settle: 3, why: 'The Pearl: the pier, its warehouses round the plaza (C6-1)',
+    cam: `(() => { const F = mel.OPEARL.frame, C = Math.cos(F.thf), S = Math.sin(F.thf), at = (u, v) => [F.ox + u * C + v * S, F.oz - u * S + v * C];
+      const e = at(-6, 2), t = at(-2, 70); return [e[0], F.y + 16, e[1], t[0], F.y + 2, t[1]]; })()` },
   wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
       return [C.x + sx * 16 - dx / L * 6, p.y + 7, C.z + sz * 16 - dz / L * 6, C.x, p.y + .5, C.z]; })()` },
