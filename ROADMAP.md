@@ -275,10 +275,10 @@ differ" table there, so no region feels like the last one.
   - [x] m359 **C6-1** the land: piers past dock 1's door, eight warehouses round a plaza, containers, stalls, string lights, four locals; GOD place.
   - [x] m360 **C6-2** the plaza protest and a barricade on every street into it.
   - [x] m361 **C6-3** up top: rooftop gardens, catwalks and rope bridges between the warehouses.
-  - [ ] **C6-4** Chapter 2's quests: the strike starts, the organiser's rooftop HQ (W5), expose the infiltrator (the boss), the strike ends and the crews go back.
+  - [x] m364 **C6-4** Chapter 2's quests: the strike starts, the organiser's rooftop HQ (W5), expose the infiltrator (the boss), the strike ends and the crews go back.
     - [x] m362 **C6-4a** Chapter 2 opens: the strike is called; to The Pearl, Juno, an activist's look, into the plaza, Marisol.
     - [x] m363 **C6-4b** the organiser's roof: up over the roofs to the HQ shed; the organiser at the transmitter; the receipts for the signs; take them to Marisol.
-    - [ ] **C6-4c** the exposure: the organiser called down to the stage; knocked down in front of the crowd, it bursts (the boss); after, the strike ends and the crews go back; Chapter 2 complete.
+    - [x] m364 **C6-4c** the exposure: the organiser called down to the stage; knocked down in front of the crowd, it bursts (the boss); after, the strike ends and the crews go back; Chapter 2 complete.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
 
@@ -916,3 +916,10 @@ differ" table there, so no region feels like the last one.
   alien**, which is the hint. The receipts are on a table by the shed door, and walking up to them
   reads them: the same "friend" paid for both sides' signs. Marisol reads them and calls the
   organiser down to the stage, which is the next build.
+
+- **m364 (C6-4c) Chapter 2's boss.** When Marisol calls Ash down, Ash stands on the stage and the
+  march stops going out until it's over. Getting near Ash triggers the boss: it bursts out big and
+  takes five knock-downs, and two devoted marchers turn with it. When it's done the strike ends
+  and Old Town's crews go back, Old Town gets the boss bonus, and Chapter 3 starts. **I also opened
+  the barricade doors for good afterwards**, so the cured Pearl is open to everyone. Ash stays
+  down by the stage with new lines. Chapter 3 has no region yet, so nothing new shows on the map.

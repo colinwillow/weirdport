@@ -345,10 +345,20 @@ quiet(bad ? bad + ' GOD place(s) BAD' : 'every tkit GOD place is somewhere');
     let walk = '';
     { M.plazaStart(0); const seenSt = [O.st]; for (let f = 0; f < 4000 && !(O.st === 'sit' && seenSt.length > 1); f++) { M.plazaStep(.1); if (O.st !== seenSt[seenSt.length - 1]) seenSt.push(O.st); }
       walk = seenSt.join(' > '); }
+    // m364: the call -- Marisol has the receipts: the organiser to the stage (on its floor), the march held; then done: the doors open
+    let call = '';
+    { const F = M.SAVE.flags, m = M.MARKS.find(q => q.id === 'pearl_organiser'), y0 = m && m.y;
+      F['talk:ch2_receipts'] = 1; O.st = 'sit'; O.t = 0; for (let f = 0; f < 12; f++) M.plazaStep(.1);
+      const g = m && M.groundAt(m.x, m.z, m.y + .3, .5), onStage = m && Math.abs(g - (y + O.STAGE.h)) < .1 && Math.abs(m.y - (y + O.STAGE.h)) < .1;
+      const held = O.hold && O.st === 'sit';
+      F['qdone:ch2c'] = 1; O.called = 0; for (let f = 0; f < 6; f++) M.plazaStep(.1);
+      const open = O.gates.every(G => G.open);
+      call = (onStage ? 'organiser on the stage' : 'ORGANISER NOT ON THE STAGE (' + (m ? (g - y).toFixed(2) + ' from ' + (y0 - y).toFixed(1) : 'no mark') + ')') + ', ' + (held ? 'march held' : 'MARCH NOT HELD') + ', ' + (open ? 'doors open after' : 'DOORS STILL SHUT AFTER');
+      delete F['talk:ch2_receipts']; delete F['qdone:ch2c']; for (const G of O.gates) G.open = 0; O.opened = 0; O.called = 0; O.hold = 0; }
     const ppl = M.MARKS.filter(m => m.src === 'PLAZA'), nok = ppl.filter(m => !m.K);
-    r = O.gates.length + ' barricades, flood ' + n + ' cells' + (leak.length ? ' LEAKS TO ' + leak.map(l => l[2]).join(', ') : ', sealed') + ' | doors ' + doors.join(', ') + ' | routes ' + routes.join(', ') + ' | march ' + walk + ' | ' + ppl.length + ' people';
+    r = O.gates.length + ' barricades, flood ' + n + ' cells' + (leak.length ? ' LEAKS TO ' + leak.map(l => l[2]).join(', ') : ', sealed') + ' | doors ' + doors.join(', ') + ' | routes ' + routes.join(', ') + ' | march ' + walk + ' | ' + ppl.length + ' people | call: ' + call;
     why = O.gates.length !== O.BARS.length ? 'A BARRICADE WITH NO GATE' : leak.length ? 'A WAY ROUND THE BARRICADES' : n < 300 ? 'THE FLOOD NEVER LEFT THE STAGE' : doors.some(d => /SHUT/.test(d)) ? 'A DOOR THAT IS SHUT'
-      : routes.some(t => /BLOCKED/.test(t)) ? 'A ROUTE THROUGH SOMETHING' : walk !== 'form > out > hold > back > sit' ? 'THE MARCH NEVER CAME BACK' : nok.length ? 'SOMEBODY WITH NO KIND' : '';
+      : routes.some(t => /BLOCKED/.test(t)) ? 'A ROUTE THROUGH SOMETHING' : walk !== 'form > out > hold > back > sit' ? 'THE MARCH NEVER CAME BACK' : nok.length ? 'SOMEBODY WITH NO KIND' : /[A-Z]{4,} [A-Z]/.test(call) ? 'THE CALL: ' + call : '';
   } else why = 'NOT BUILT';
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + 'PLAZA', r, why); }

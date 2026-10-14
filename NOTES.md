@@ -7,6 +7,23 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CHAPTER 2'S BOSS IS THE ORGANISER, EXPOSED ON THE STAGE, AND IT ENDS THE STRIKE AND OPENS THE PLAZA (m364, C6-4c,
+  `QUESTS` `ch2c`, `plazaCall`, `OPLAZA.hold` / `called` / `opened`, `OPLAZA.stageAt` / `sideAt`).** Once Marisol has the
+  receipts (`talk:ch2_receipts`) the organiser comes DOWN: `plazaCall` moves Ash's MARK to the stage (so a body spawned
+  later stands there too) and the live body with it, and Marisol to her place beside it; no march goes out while the call
+  stands (`O.hold`: the sit-in's clock just re-arms). The quest (`from: 'ch2_receipts'`): be at the stage -> `skin` (the
+  receipts read out; the thing wearing Ash bursts out, `big` 1.85, `downs` 5; Felix and Otto, the two most devoted, turn
+  with it, `also`) -> `unskin` Ash -> `unskin` the two -> talk to Ash (a man in a nice suit; weeks upstairs talking into a
+  dish; call it off). `onDone`: `strikeSet(0)` (Old Town's crews go back -- `strike:called` keeps it from being called
+  again), chapter 3, Old Town +15 (`DHEALTH.boss`), and the card. After it, on every load: Ash stays by the stage with
+  different lines and stops being the one who does not flee, and **every barricade is `G.open`** -- the doors stand open
+  for anybody (the junk still stands; only the doors were ever a way through).
+  **THE SUIT IS THE THREAD**: the man in a nice suit paid the Old Town protest's signs (m347), sent Briggs his "workforce
+  optimisation" (m342) and bought the Pearl's organiser. Nobody has met him yet.
+  `npm run places` (exit 0): `ok  QUESTS ... | ch2c.0 goto | ch2c.1 skin | ch2c.2 unskin | ch2c.3 unskin | ch2c.4 talk | ...`;
+  the PLAZA row runs the call (`call: organiser on the stage, march held, doors open after`) and puts the save back.
+  **Not built:** Chapter 3 (no region, so no map reveal), a crowd that reacts to the reading (it flees the Skinsuits, which
+  is the ordinary fear), and any sound.
 - **THE ORGANISER'S ROOF: ASH AT A TRANSMITTER, THE PAPERS BY THE DOOR, AND MARISOL READS THEM (m363, C6-4b, `QUESTS`
   `ch2b`, `OPEARL.ROOF.HQ` `console` / `papers` / `ORG`, `pearl:receipts`).** On W4's roof beside the shed: a console with a
   lit screen and a cable up to the dish, and Ash the organiser at it (`pearl_organiser`, a fixed beat, facing the
