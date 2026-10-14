@@ -52,6 +52,10 @@ npm run check      # ~4s: the syntax gate and the boot gate
 npm run places     # ~40s: ONLY for a build that adds or moves a place -- builds the REAL kit city, island and
                    # farm, sends him to every tkit GOD place, ticks the farm's steps; exits 1 on a BAD row.
                    # Paste its output in the NOTES entry (STEER, m302: the farm was never in his game for 14 builds)
+npm run play       # ~1 min: ONLY for a build that touches a quest, a gate, a chapter, or anything stepped in
+                   # `frameBody` -- plays Chapter 0 through the SHIPPED frame in the REAL kit city, headless, and a
+                   # frame that throws is a BAD row. (m429: the kit city had thrown on EVERY frame since m336 and
+                   # neither `check:boot` (test site, no hats) nor `places` (no frame) could see it.)
 ```
 
 Those two earn their seconds because they are the one failure he **cannot** look at and correct:

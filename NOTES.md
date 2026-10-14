@@ -7,6 +7,40 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE HEADLESS PLAYTHROUGH, AND THE KIT CITY HAD THROWN ON EVERY FRAME SINCE m336 (m429, F0b-1, `npm run play`,
+  `tools/play.mjs`, `cartStep`).** The tool: the shipped `index.html` in headless Chromium (SwiftShader) on a FRESH save (a
+  new context has no `mel.*` keys, so `SAVE` is chapter 0 and `crashSpawn` puts him at the wreck); `window.__play` spliced in
+  beside `mel` with the things the driver reads and writes; `performance.now` replaced by a clock the tool advances 1/fps s a
+  frame and `frameBody()` called by hand (rAF never fires here -- m416); `renderer.render` a no-op unless `--draw`. The driver
+  acts ONLY through the pads and the shipped functions: `stick.L.x/y` from a world direction by the inverse of `stickWorld`
+  (`ly = -(wx sa + wz ca)`, `lx = wz sa - wx ca`), `dummyBlow(d, h, 1, null)` from arm's reach (what `strikeSweep` calls when a
+  limb reaches a body; power 1 is >= any `K.hard`, dmg null is `K.dmg.fist`), `stick.R` held still with `far` 0 over a downed
+  body for `sampleStep`, `talkTap()`, and `godTo` only after `STUCK` (4 s) without progress -- said in the row. A gate is
+  walked from 7 m on his side to 7 m past; a teleport lands outside its span and sets no flag, so it cannot cheat one. Each
+  step's pass is the shipped `questTest` advancing `quest.step`. Rows: ok/BAD, step, game seconds, metres, side-steps, frames
+  spent leaving cover, teleports, blows. Exit 1 on a BAD step, a frame error, or `qdone:<ch>` missing.
+  **WHAT THE FIRST RUN FOUND: `TypeError: Cannot set properties of undefined (setting 'emissiveIntensity') at cartStep`, on
+  frame one.** `peopleHat` builds the hat with `tip = m(0x6dff8a, {emissive...})` -- a MATERIAL -- and the mesh is `tp`;
+  `HATS.push({ d, ant, tip, ph })` pushes the material, and `cartStep` wrote `H.tip.material.emissiveIntensity`. `frame()`
+  catches the throw and shows it on the crash card, and **everything in `frameBody` after line ~42795 never ran**: footStep,
+  the district health, decay, the strike, the protest, the fair, the rally, the plaza, the incursion, the orb, smart objects,
+  the cyborgs, the lookout, the watcher, the amp, the crash hero, the river, `cellStep`, the sun, the grade, the skyline, the
+  waypoint, the bolts, the marks, sparks, smoke, flashes... and **`renderer.render` at 42861**. Since 0a6f9dc (m336, the cart
+  pod and Norrie's hat), i.e. 93 builds of the kit city that drew no frame after init. **NO HARNESS COULD SEE IT**: `check:boot`
+  runs the test site in node (no hats: `peopleHat` runs off `P.hat` marks, which are the good kiosks' and the cart's, tkit
+  only); `places` runs the builders, never a frame; `worlds` settles the camera by hand. `play` steps the real frame in the
+  real world and a throw is a BAD row -- it is the gate for this class now. Fix: `H.tip.emissiveIntensity`.
+  **WHAT ELSE THE ROWS SAID** (the walk is a thumb's: cover on a wall is left by pushing along `p.wall.nx/nz`, a stall
+  side-steps alternately before it counts as stuck -- a straight line is not a path, and a teleport is not a failure):
+      ok   ch0.0  goto   'Find Clancy at the wreck'          2.1 s, 0 m, off a wall x59f   <- he SPAWNS against the hull: the
+                                                              first push forward is cover, not a walk (F1's crash polish)
+      ok   ch0.1  goto   'the farmer, by his barn'           14.1 s, 36 m, TELEPORTED x1 at 294,304 (the yard's hedges)
+      ok   ch0.2  defeat 'Knock the farmer down'             0.7 s
+      ok   ch0.3  sample 'Take his sample'                   9.9 s, 2 more blows: he is up and running ~3 s after a knock-down
+      ok   ch0.4  goto   'Walk to the bridge as the farmer'  5.5 s;  ch0.5 gate 5.2 s (through, as HICK SKINNY);  ch0.6 flag 4.9 s
+      ok   ch0 COMPLETE: 7 steps | chapter 1, forms [zap HICK SKINNY], inTown 1   54 s wall
+  **DO NOT make the driver write the save, `quest.step`, or a body's state**: the whole value is that the shipped tests pass
+  on shipped actions. `--draw` keeps the raster for a true run (slow). `ch1+` want their own drivers (F0b-2).
 - **THE FOG CULL FOR EVERYTHING, AND F0a CLOSED WITH ITS OVERS STATED (m428, F0a-2i, `perfRegFog`, `perfFogged`,
   `PERF.fogCull`, `TDRESS`'s sphere, `cellOf` in `buildWP`).** The pass opened by counting draws AND triangles per family
   (a scratch hook on `renderBufferDirect`, `gr.count / 3` per group, x `count` for an instanced set), which `--who` does not:

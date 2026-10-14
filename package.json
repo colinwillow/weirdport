@@ -24,6 +24,7 @@
     "twins": "node tools/twins.mjs",
     "donor": "node tools/donor.mjs",
     "places": "node tools/placecheck.mjs",
+    "play": "node tools/play.mjs",
     "shot": "node tools/shot.mjs",
     "worlds": "node tools/worlds.mjs"
   },
