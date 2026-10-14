@@ -293,7 +293,7 @@ differ" table there, so no region feels like the last one.
     - [x] m372 **C6-5e** the rally, the region's living system: it builds, the leader speaks, it boils over.
     - [ ] **C6-5f** Chapter 3's quests: the biker form, the gang's respect, the infiltrated rally leader (the boss).
       - [x] m373 **C6-5f-1** Chapter 3 opens: over the water, Pap, a biker's sample, Spud's challenge.
-      - [ ] **C6-5f-2** the motorcycle: the biker form rides (the skateboard's riding, a bike under him, faster, no deck tricks).
+      - [x] m374 **C6-5f-2** the motorcycle: the biker form rides (the skateboard's riding, a bike under him, faster, no deck tricks).
       - [ ] **C6-5f-3** the gang's respect: race Big Rae round the dirt track; win, and the gang knows your name.
       - [ ] **C6-5f-4** the rally man: on the stage at the rally, in front of everyone; he bursts (the boss); Chapter 3 complete.
 
@@ -999,3 +999,10 @@ differ" table there, so no region feels like the last one.
   to Hollow Creek, to Pap at the trailer park (wear the farmer, since locals only talk to their own),
   to a biker's sample, and to Spud in the pits, who challenges you to race Big Rae. GOD's Chapter 3
   button now drops you at the freight pier.
+
+- **m374 (C6-5f-2) The motorcycle.** Wearing the biker in Hollow Creek's world puts you on his
+  Fat Boy, the motorcycle you rigged in m107, loaded again for the player. It rides on the
+  skateboard's physics with a throttle instead of push strokes. It's faster (27 against 19), with
+  no deck tricks, flips or grinds. Like Rollergirl's skates, you don't get off: change form to walk.
+  **Untested on a phone:** which way it leans, whether he sits right on the seat, and whether the
+  wheels spin the right way.

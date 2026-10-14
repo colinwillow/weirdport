@@ -7,6 +7,29 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE BIKER RIDES: HIS OWN FAT BOY, ON THE SKATEBOARD'S PHYSICS (m374, C6-5f-2, `BIKER.mode`, `BIKE`, `PBIKE`, `bikeOn`,
+  `buildPlayerBike`, `bikePose`, `bikeSeatLift`, `bikeAnim`).** Wearing the biker in the kit city puts him on a
+  motorcycle. **There was one in the repo already** -- his m107 `motorcycle_fatboy.glb` (rigged wheels, a raked steering
+  joint, a SEAT marker), ridden round a ring in the test site only (`MOTO`) -- so it is loaded a second time in the kit city
+  as the PLAYER'S (`PBIKE`, its own record; `buildMoto` is left alone because `MOTO.up` drives the ring bike). The physics
+  is the board's, Rollergirl's pattern: `mode: 'bike'` on the BIKER kind, `bikeOn()` (worn, finished becoming him, the
+  bike loaded, the kit city), `boardOut()` true, `p.bike` beside `p.blade`, and `stepSkate`'s numbers `BIKE` over `SK8`:
+  a THROTTLE in place of the push stroke (`acc` 8 while the thumb points the way he is going, tapering to `top` 27 against
+  the board's 19), a long roll, a hard brake, slower steering at speed, a smaller pop. OFF on a bike: both pads' flicks
+  (`boardFlick` eats them -- no deck tricks, no body flips, no dismount: revert to walk, the skates' rule), the grind catch
+  and the second jump. Drawn under him on his floor along his heading, LEANING into the turn, the fork STEERED by `MOTO`'s
+  wheelbase arithmetic (`atan(L w / v)`, clamped at 20 degrees), the wheels at distance over the measured radius. He SITS:
+  his root lifted by the seat's measured height (`PBIKE.seat`, off the seat bone) less his hips' height over his root in the
+  driving clip, read off his posed skeleton a frame late (`stepRide`'s m109 rule), and his three driving clips blend by how
+  hard it steers, summing to 1 (his idle if a clip is missing -- never a zero table, which is the T-pose).
+  **`fat_biker_01` AND `fat_biker_02` FOLD TO ONE FORM NAME** (`mphFold`: "FAT BIKER"), and `mkrKind` returns the BIKER
+  table (02, the one with the driving clips) first -- so Hollow Creek's bikers were already him. They say 02 now, the
+  quest's sample says 02, and `places` fails a Hollow Creek biker who is not him.
+  **UNVERIFIED, AND THESE ARE THE PHONE'S QUESTIONS**: which way it leans (`mel.MOTO.lean` negative flips it, shared with
+  the ring bike), whether he sits on the seat or in it (`PBIKE.seat`, the drop read off `driving_idle`), whether the wheels
+  turn the right way, and whether the form wheel's FAT BIKER is the BIKER table (it should be: the same first match).
+  `npm run places` (exit 0): `ok  BIKE mode bike | 9 Hollow Creek bikers, 9 of them the riding biker | top 27 (board 19), acc 8, ollie 8.5, the rest the board's (trick fill 0.78) | bike loaded false, riding false`
+  (no bike in the harness: it is draco).
 - **CHAPTER 3 OPENS: OVER THE WATER, PAP, A BIKER'S LOOK, SPUD'S CHALLENGE (m373, C6-5f-1, `QUESTS` `ch3`, `creek:in`).**
   The quest (chapter 3): over the water to Hollow Creek (`creek:in` -- set on its land a few metres in from its coast, on
   the ground, however he got there, with a card: the freight, or past the gang as one of them) -> Pap at the trailer park

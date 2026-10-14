@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m373</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m374</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m373</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m374</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm373';
+const BUILD = 'm374';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -3664,6 +3664,8 @@ const CLANCY = {
 const BIKER = {
   file: 'models/characters/fat_biker_02.glb',
   h: 1.75, r: .42, hp: 5, snd: 'soft',
+  // m374 (C6-5f-2): WORN, HE RIDES -- `bikeOn()` reads this (Rollergirl's `mode: 'blade'`, one vehicle over)
+  mode: 'bike',
   // CHECKED AS RECTANGLES against all fourteen boxes, both buildings, every one of the seventeen
   // bodies AND the bike's own lane -- m60's rule, because a placement picked off a mental picture
   // is one the player simply cannot walk through. Clearances 2.50 m and 3.87 m.
@@ -4313,6 +4315,30 @@ const BLADE = Object.assign(Object.create(SK8), {
 function bladeOn() {
   const K = player.mphK;
   return !!(K && K.mode === 'blade' && !player.mphSt && K.mph && rig.model === K.mph.model);
+}
+// ============================================================================================
+// THE BIKER RIDES (m374, ROADMAP C6-5f-2, `BIKE`, `PBIKE`, `bikeOn`, `buildPlayerBike`, `bikePose`, `bikeAnim`)
+// ============================================================================================
+// REGIONS' Hollow Creek: "Tech: the biker: the motorcycle". Wearing the BIKER (fat_biker_02, `mode: 'bike'`) puts him ON
+// HIS FAT BOY -- his own m107 export, loaded a second time in the kit city for the player (`PBIKE`; the test site's ring
+// bike, `MOTO`, is its own and stays there). **NO SECOND PHYSICS**: it is the skateboard's riding (`boardOut`,
+// `stepSkate`), Rollergirl's pattern -- its numbers are `BIKE` over the board's (`Object.create(SK8)`): a THROTTLE in place
+// of the push stroke (`acc`, while the thumb points the way he is going), a higher top, a longer roll, a harder brake,
+// slower steering at speed. What the deck does that a bike does not is OFF: the deck tricks, the body flips, the grind
+// catch, the second jump (`p.bike` gates each). He does not step off (the skates' rule: revert to walk).
+// The bike is drawn where he is, on his floor, along his heading, LEANING into the turn and its fork STEERED by the
+// wheelbase arithmetic (`MOTO`'s own, `atan(L w / v)`, clamped at its 20 degrees), wheels at distance over the measured
+// radius -- and he SITS on it: his root lifted by the seat's measured height less his hips' height in the driving clip,
+// read off his own posed skeleton (`stepRide`'s m109 rule: hips to seat, never typed). His three driving clips blend by
+// how hard it steers and sum to 1. **Unverified offline**: the bike is draco and nothing here builds a skin, so which way it
+// leans and whether he sits on it are phone questions; `mel.BIKE` and `mel.PBIKE` are live.
+const BIKE = Object.assign(Object.create(SK8), {
+  top: 27, roll: .035, brake: 18, turn: 2.2, turnHi: .6, acc: 8, slope: 7, min: .4, ollie: 8.5,
+});
+const PBIKE = { up: 0, root: null, model: null, bones: null, k: 1, wb: 1.6, rad: .28, low: -.28, seat: .65, steer: 0, spin: 0, lean: 0, h0: null, hips: null, hipsOf: null };
+function bikeOn() {
+  const K = player.mphK;
+  return !!(K && K.mode === 'bike' && PBIKE.up && inTK() && !player.mphSt && K.mph && rig.model === K.mph.model);
 }
 
 // ============================================================================================
@@ -14405,7 +14431,7 @@ function buildSkateClips(g) {
 // which is Shredworld's own c84 `KIT.on` bug (*one variable, two facts*) with the fields
 // renamed. The deck being IN HIS HAND is still a slot, because that really is what he is
 // carrying; the deck being UNDER HIS FEET is `p.riding` and nothing else.
-function boardOut() { return !!(SK8.on && ((board.ready && player.riding) || bladeOn()) && !boardBusy()); }
+function boardOut() { return !!(SK8.on && ((board.ready && player.riding) || bladeOn() || bikeOn()) && !boardBusy()); }
 function boardHeld() { return !!(SK8.on && board.ready && slotNow().board && !player.riding); }
 // **GETTING ON AND OFF IS THE LEFT PAD'S FLICK, AND IT COSTS NO NEW GESTURE.** Not riding, that
 // flick is the dodge roll -- so the mount takes only the UP/forward half and a sideways or
@@ -14579,6 +14605,7 @@ function stepGrind(dt) {
 function boardFlick(dx, dy, body) {
   const p = player;
   if (!p.board) return 0;                           // not ours: the roll and the strike stand
+  if (p.bike) return 1;                             // m374: a bike has no deck tricks and no flips -- the flicks are eaten
   // **HER RIGHT FLICK IS THE STRIKE, ON THE GROUND AND IN THE AIR (m274, Rollergirl r39/r44).** It went to the
   // deck's tricks -- nothing on the ground, a kickflip of a board she has not got in the air. Her game plays Zap's
   // strike chain there, and she wears Zap's pool, so `meleeGo` is the whole of it.
@@ -14688,7 +14715,7 @@ function trickStep(dt) {
 function stepSkate(dt) {
   const p = player, s = stickWorld();
   // HER NUMBERS ON SKATES, THE BOARD'S OTHERWISE (m263) -- one physics, two feels
-  const S = p.blade ? BLADE : SK8;
+  const S = p.blade ? BLADE : p.bike ? BIKE : SK8;                 // m374: and the bike's
   if (p.railCool > 0) p.railCool -= dt;
   // **THE GRIND OWNS THE BODY AND RETURNS**, above the ground test and above the collider --
   // he is locked to a line, so gravity, the resolver and the ground snap all have nothing to
@@ -14736,6 +14763,10 @@ function stepSkate(dt) {
       const rate = lerp(S.turn, S.turnHi, clamp(Math.abs(sp) / S.top, 0, 1));
       if (!back) p.boardH += clamp(ang * 3, -rate, rate) * dt * s.mag;
       if (back && sp > S.min) sp = Math.max(0, sp - S.brake * dt * s.mag);   // a brake
+      else if (!back && p.bike) {
+        // m374: A THROTTLE, NOT A STROKE -- while the thumb points the way he is going, tapering toward the top
+        want = 1; sp += S.acc * s.mag * clamp(fwdC, 0, 1) * (1 - clamp(sp / S.top, 0, 1) * .7) * dt;
+      }
       else if (!back) {
         // **THE CYCLE IS A PHASE, NOT A CLOCK**, because the period moves with the speed.
         const per = lerp(S.pushFast, S.pushDur, clamp(sp / S.top, 0, 1));
@@ -14803,8 +14834,8 @@ function stepSkate(dt) {
     // is called below the velocity rather than above it.
     if (p.jump) {
       p.jump = 0;
-      if (railCatch()) return;
-      if (p.jumps > 0 && p.jumps < 2 && !p.rail) {
+      if (!p.bike && railCatch()) return;                            // m374: a bike does not grind
+      if (p.jumps > 0 && p.jumps < 2 && !p.rail && !p.bike) {
         p.jumps = 2;
         p.vel.y = S.ollie * S.second;
         p.coyote = 0;
@@ -14890,6 +14921,8 @@ function boardPose(dt) {
   // last frame's offset -- which is a body permanently displaced off a roll that has ended.
   _roll.set(0, 0, 0);
   const p = player;
+  bikePose(dt);                                    // m374: the bike under him, or hidden
+  if (p.board && p.bike) { if (board.ready) board.group.visible = false; return; }
   // **ON SKATES THERE IS NO DECK (m263)**, but the barrel roll's waist offset below is still
   // HERS -- it is read by the root block -- so it is computed and nothing is drawn.
   if (p.board && p.blade) {
@@ -14997,7 +15030,7 @@ function stepPlayer(dt) {
       // else in `boardBusy` is transient -- a roll, a strike, a swap -- and popping back on
       // when it ends is right, because he never chose to step off.
       // ...EXCEPT ON SKATES (m263): they are her feet, so there is nothing to drop
-      if (p.knock && !p.blade) boardDrop();
+      if (p.knock && !p.blade && !p.bike) boardDrop();
       p.braked = 0;
       p.rail = null; p.trick = ''; p.trickName = '';
       p.bRoll = 0; p.bYaw = 0; p.bRollA = 0; p.bYawA = 0; p.barrel = 0; p.barrelA = 0;
@@ -15005,6 +15038,7 @@ function stepPlayer(dt) {
     }
     p.board = on ? 1 : 0;
     p.blade = on && bladeOn() ? 1 : 0;
+    p.bike = on && bikeOn() ? 1 : 0;                                  // m374
   }
   // HER WING SUIT (m266) owns the body above the board -- a flight has no ground and no gravity
   if (p.wing && stepWing(dt)) return;
@@ -16359,6 +16393,7 @@ function rigAnim(dt) {
     else setScale(nm, Math.max(0, p.speed / Math.max(.3, GAIT.walkRef)) * CLIMB.rate);
     setWeights(t, dt); return;
   }
+  if (p.board && p.bike) { bikeAnim(dt, t); return; }               // m374
   if (p.board && p.blade) { bladeAnim(dt, t); return; }
   if (p.board) {
     const c = clamp(p.crouch, 0, 1);
@@ -24867,6 +24902,59 @@ function stepRide(d, dt, t) {
   return 1;
 }
 
+// m374: THE PLAYER'S BIKE -- `buildMoto`'s measurements, into its own record (the ring bike is `MOTO`'s)
+function buildPlayerBike(g) {
+  const model = g.scene, B0 = PBIKE; model.updateMatrixWorld(true);
+  let lo = null, hi = null;
+  model.traverse(o => { if (!(o.isMesh || o.isSkinnedMesh) || !o.geometry) return; o.geometry.computeBoundingBox(); const b = o.geometry.boundingBox;
+    lo = lo ? lo.min(b.min) : b.min.clone(); hi = hi ? hi.max(b.max) : b.max.clone(); });
+  if (!lo) throw new Error('motorcycle has no geometry');
+  const authored = hi.z - lo.z, k = authored > .01 ? MOTO.len / authored : 1, B = motoBones(model);
+  for (const key of ['steer', 'front', 'back']) if (B[key]) B[key].userData.rest = B[key].quaternion.clone();
+  let wb = .8, rad = .14, seat = .32;
+  if (B.front && B.back) { const f = B.front.getWorldPosition(new THREE.Vector3()), b2 = B.back.getWorldPosition(new THREE.Vector3()); wb = f.distanceTo(b2); rad = Math.max(.02, f.y - lo.y); }
+  if (B.seat) seat = B.seat.getWorldPosition(new THREE.Vector3()).y - lo.y;
+  B0.wb = wb * k; B0.rad = rad * k; B0.low = lo.y * k; B0.seat = seat * k; B0.k = k; B0.bones = B;
+  model.scale.setScalar(k);
+  model.traverse(o => { if (o.isMesh || o.isSkinnedMesh) { o.castShadow = true; o.receiveShadow = true; o.frustumCulled = false; }
+    for (const m of (o.material ? (Array.isArray(o.material) ? o.material : [o.material]) : [])) { if (!m.isMeshStandardMaterial) continue; m.side = THREE.FrontSide; if (m.map) { m.emissiveMap = m.map; m.emissive = new THREE.Color(0xffffff); } m.emissiveIntensity = RIG.emissive; } });
+  const root = new THREE.Group(); root.add(model); root.visible = false; scene.add(root);
+  B0.root = root; B0.model = model; B0.up = 1;
+  console.log('[melee] player bike: x' + k.toFixed(3) + ', wheelbase ' + B0.wb.toFixed(2) + ', wheel r ' + B0.rad.toFixed(2) + ', seat ' + B0.seat.toFixed(2));
+  if (!B.seat) note('PBIKE NO SEAT');
+}
+// under him on his floor, along his heading, leaning and steering into the turn, the wheels turning
+function bikePose(dt) {
+  const p = player, B = PBIKE; if (!B.up || !B.root) return;
+  const on = !!(p.board && p.bike); B.root.visible = on; if (!on) { B.h0 = null; return; }
+  const v = Math.hypot(p.vel.x, p.vel.z), dh = B.h0 == null ? 0 : wrapAngle(p.boardH - B.h0); B.h0 = p.boardH;
+  const w = dt > 0 ? dh / dt : 0, want = clamp(Math.atan2(B.wb * w, Math.max(.5, v)), -MOTO.lock, MOTO.lock);
+  B.steer = damp(B.steer, want, MOTO.ease, dt);
+  B.lean = damp(B.lean, -(B.steer / MOTO.lock) * MOTO.lean * clamp(v / 6, 0, 1.5), MOTO.ease, dt);
+  B.spin += v * dt / Math.max(.02, B.rad);
+  B.root.position.set(p.pos.x, p.pos.y + (p.stepOff || 0) - B.low + MOTO.lift, p.pos.z);
+  B.root.quaternion.setFromAxisAngle(AX_Y, p.boardH).multiply(_mq.setFromAxisAngle(AX_Z, B.lean));
+  const Bn = B.bones;
+  for (const key of ['front', 'back']) { const b = Bn[key]; if (b && b.userData.rest) b.quaternion.copy(b.userData.rest).multiply(_mq.setFromAxisAngle(AX_X, B.spin)); }
+  if (Bn.steer && Bn.steer.userData.rest) Bn.steer.quaternion.copy(Bn.steer.userData.rest).multiply(_mq.setFromAxisAngle(AX_Y, B.steer));
+}
+// his root up onto the seat: the seat's height less his hips' height over his root IN THE DRIVING CLIP, read off his
+// posed skeleton a frame late (exact: it is a fact about the pose, not the position) -- `stepRide`'s rule
+function bikeSeatLift() {
+  const B = PBIKE;
+  if (B.hipsOf !== rig.model) { B.hipsOf = rig.model; B.hips = null; if (rig.model) rig.model.traverse(o => { if (!B.hips && o.isBone && /hips/i.test(o.name)) B.hips = o; }); }
+  let drop = .373;                                   // m109's measurement of driving_idle, until the bone answers
+  if (B.hips && rig.root) { B.hips.getWorldPosition(_mv2); const d = _mv2.y - rig.root.position.y; if (d > .1 && d < 1.2) drop = d; }
+  return B.seat - drop;
+}
+// his three driving clips by how hard it steers, summing to 1 (`stepRide`'s table); his idle if a clip is missing
+function bikeAnim(dt, t) {
+  const K = player.mphK, C = (K && K.clips) || {}, has = n => !!(n && rig.actions[n]);
+  const s = clamp(PBIKE.steer / MOTO.lock, -1, 1), a = Math.abs(s), turn = s > 0 ? C.rideL : C.rideR;
+  if (has(C.ride)) { t[C.ride] = has(turn) ? 1 - a : 1; if (has(turn) && a > 0) t[turn] = a; }
+  else t[CLIPS.idle] = 1;
+  setWeights(t, dt);
+}
 // AND HE GOES BACK FOR IT (m109, `motoSeek`). *"Then he should go try to find it again. I
 // don't have him picking it up animation but I'll make one eventually."*
 // **IT RUNS IN THE SAME LINE AS `stepRide`, ABOVE THE BRAIN**, because a man walking back to his
@@ -28066,7 +28154,7 @@ const QUESTS = [
   { id: 'ch3', title: 'CHAPTER 3 · HOLLOW CREEK', world: 'tkit', ch: 3, steps: [
     { type: 'flag',   flag: 'creek:in', at: () => HCTRAIN.hcAt, text: 'Over the water to Hollow Creek', tip: "The road's watched by the gang. The freight leaves from the pier on Old Town's south-west beach -- stand on the flatcar." },
     { type: 'talk',   who: 'mk_hc_trail_pap', text: 'Find Pap, fishing at the trailer park on stilts', tip: "They only talk to their own out here. Wear the farmer." },
-    { type: 'sample', kind: 'fat_biker_01', text: "Take a biker's sample", tip: 'Bikers in the pits by the dirt track, on the porches, in the stands. Catch one on his own.' },
+    { type: 'sample', kind: 'fat_biker_02', text: "Take a biker's sample", tip: 'Bikers in the pits by the dirt track, on the porches, in the stands. Catch one on his own.' },
     { type: 'talk',   who: 'ch3_spud', npc: 'hc_bike_cutter', text: 'Talk to Spud in the pits, as a biker', tip: 'The gang talks to riders. Keep the leathers on.',
       say: { name: 'Spud', group: 'biker', talks: ['biker'], alien: 'brush', brushAlien: ["Pits are for riders."],
         lines: ["New face. Nice leathers. You ride, or you just dress like it?",
@@ -31643,7 +31731,7 @@ const HCTRAIL = {
   PEOPLE: [
     { id: 'hc_trail_earl', role: 'redneck', name: 'Earl', on: [-26, -1], lines: "Park office. I'm the office. What d'you want.|Lot rent's due Friday. Has been since 1994.|You hear the rally's Saturday? Whole creek goes. You'd best go." },
     { id: 'hc_trail_dolly', kind: 'hick_skinny', name: 'Dolly', on: [1, 1], lines: "Dish gets ninety channels. Ninety. Nothing on any of 'em but the rally man.|Don't mind the boardwalk. It's only fell in the once.|City folk come up the creek sometimes. They don't stay." },
-    { id: 'hc_trail_tank', kind: 'fat_biker_01', name: 'Cutter', on: [19, 1], lines: "That's my bike under the tarp. Touch it and you'll be in the creek.|The gang runs the roads. The rally man runs the gang. Nobody runs the rally man.|Want respect round here? Get a bike. Get it dirty." },
+    { id: 'hc_trail_tank', kind: 'fat_biker_02', name: 'Cutter', on: [19, 1], lines: "That's my bike under the tarp. Touch it and you'll be in the creek.|The gang runs the roads. The rally man runs the gang. Nobody runs the rally man.|Want respect round here? Get a bike. Get it dirty." },
     { id: 'hc_trail_pap', kind: 'hobo_01', name: 'Pap', on: [-3, 1], fish: 1, lines: "Fish ain't biting. Ain't bit since the lights come over the hill.|My granddad built this walk. Out of a barn. The barn didn't mind.|Kids today. Hollerin' at a rally. In my day we hollered at the creek." },
   ],
   brush: 'Private property, city. Turn round.',
@@ -31755,7 +31843,7 @@ const HCMILL = {
   FLUME: { u: 6, v0: -10, v1: 46, w: 1.1, wall: .6 },
   PEOPLE: [
     { id: 'hc_mill_buck', role: 'redneck', name: 'Buck', at: [-6, 13, 0], lines: "Mind the piles. They roll.|Mill runs six days. Saturday's the rally. The new owner's orders.|New owner? The rally man. Bought the mill, the diner and half the trailers. Paid cash." },
-    { id: 'hc_mill_jolene', kind: 'fat_biker_01', name: 'Jolene', at: [-2, -11, 1], lines: "Upstairs is the saw line. Downstairs is everything else.|That flume? Runs the cut logs out over the creek. Ride it if you're stupid. I have.|The gang says the rally man's got friends in the city. Nice suits." },
+    { id: 'hc_mill_jolene', kind: 'fat_biker_02', name: 'Jolene', at: [-2, -11, 1], lines: "Upstairs is the saw line. Downstairs is everything else.|That flume? Runs the cut logs out over the creek. Ride it if you're stupid. I have.|The gang says the rally man's got friends in the city. Nice suits." },
     { id: 'hc_mill_hal', kind: 'hick_skinny', name: 'Hal', at: [2, 1.5, 0], lines: "Foreman. Don't ask me what happened to the old foreman.|We cut more since the lights came over the hill. Nobody asked for more. We just do.|You're not from round here. I can tell. You walk like you've never been tired." },
   ],
   brush: "Mill's closed to outsiders. Hard hats and locals.",
@@ -31862,7 +31950,7 @@ const HCFAIR = {
   PEOPLE: [
     { id: 'hc_fair_wayne', role: 'redneck', name: 'Wayne', at: [0, -6], lines: "Saturday. The rally man. Whole creek'll be here.|He says what everybody's thinking. I don't know what I'm thinking till he says it.|Last year the Pearl lot showed up with signs. Got lively." },
     { id: 'hc_fair_crystal', kind: 'hick_skinny', name: 'Crystal', at: [6, 4], lines: "Best seats are up the grandstand. Worst seats too. It's all the same seat.|They're putting up more speakers every day. LOUDER speakers.|My cousin went to the city once. Came back talking about oat milk. We don't talk about it." },
-    { id: 'hc_fair_rex', kind: 'fat_biker_01', name: 'Rex', at: [-6, 14], lines: "The gang parks up front at the rally. That's respect.|You want in with the gang, you ride. No bike, no respect.|The rally man pays for the beer. And the gas. And the signs. Generous fella." },
+    { id: 'hc_fair_rex', kind: 'fat_biker_02', name: 'Rex', at: [-6, 14], lines: "The gang parks up front at the rally. That's respect.|You want in with the gang, you ride. No bike, no respect.|The rally man pays for the beer. And the gas. And the signs. Generous fella." },
     { id: 'hc_fair_lou', kind: 'hobo_01', name: 'Old Lou', at: [12, 18], lines: "Fair's been here since before the creek had a name.|Used to be pigs and pie. Now it's speeches.|Them lights over the hill? They come every rally night. Funny that." },
     { id: 'hc_fair_corndog', kind: 'fat_hipster', name: 'Darlene', stall: 0, lines: "Corn dog? Corn dog. Everybody wants a corn dog.|Rally night I sell nine hundred of 'em. Rally man buys half for the crowd.|You look hungry in a way I can't put my finger on." },
     { id: 'hc_fair_gallery', kind: 'hick_skinny', name: 'Skeeter', stall: 1, lines: "Three shots a dollar. The sights are bent. That's the game.|Win a prize! The prize is a smaller prize.|Ducks go round, you shoot 'em. Philosophy of the creek." },
@@ -31977,8 +32065,8 @@ const HCBIKE = {
   TABLES: [ { s: .13, why: 'the start straight: the first one, to settle you' }, { s: .58, why: 'the north straight, between the two sets of ridges' } ],
   START: { s: .02, h: 1.3 }, PITS: { a: 78, b: -126 }, TOWER: { a: 98, b: -124, h: 6 },
   PEOPLE: [
-    { id: 'hc_bike_cutter', kind: 'fat_biker_01', name: 'Spud', pit: 0, lines: "Gang rides Saturdays, before the rally. Then the rally man talks.|No bike, no respect. No respect, no rally. No rally -- well. You get it.|That ridge on the far side's the widow-maker. Hit it flat." },
-    { id: 'hc_bike_rae', kind: 'fat_biker_01', name: 'Big Rae', pit: 1, lines: "Pits are for riders. You ride?|The rally man bought the whole gang new bikes. Shiny. Nobody asked where from.|He don't ride, mind. Never seen him on a bike. Never seen him eat, either." },
+    { id: 'hc_bike_cutter', kind: 'fat_biker_02', name: 'Spud', pit: 0, lines: "Gang rides Saturdays, before the rally. Then the rally man talks.|No bike, no respect. No respect, no rally. No rally -- well. You get it.|That ridge on the far side's the widow-maker. Hit it flat." },
+    { id: 'hc_bike_rae', kind: 'fat_biker_02', name: 'Big Rae', pit: 1, lines: "Pits are for riders. You ride?|The rally man bought the whole gang new bikes. Shiny. Nobody asked where from.|He don't ride, mind. Never seen him on a bike. Never seen him eat, either." },
     { id: 'hc_bike_dale', role: 'redneck', name: 'Dale', pit: 2, lines: "I flag the start. Green, go. Red, stop. Yellow, I forgot.|Track's been here longer than the trailers. The ridges did all the work.|You wanna race, you need a bike and a name. Name's free." },
     { id: 'hc_bike_kid', kind: 'hick_skinny', name: 'Junior', tower: 1, lines: "I call the races up here. Best seat on the track.|You can see the whole creek from the tower. And the lights over the hill.|One day I'm gonna ride. Pa says when I'm older. Pa says that about everything." },
   ],
@@ -32235,8 +32323,8 @@ const HCROAD = {
   on: 1, n: 0, land: [-60, -150], hcPath: [[-60, -150], [-60, -110], [-62, -60], [-58, -15], [-66, 3], [-74, 7]],
   w: 8, shoulder: 1.6, arch: 5, gateBack: 9,
   GANG: [
-    { id: 'hc_gang_moose', kind: 'fat_biker_01', name: 'Moose', lines: "Road's closed. To you. Not to us.|You want across, you ride with us or you ride the freight. And nobody rides the freight.|The rally man says watch the road. So we watch the road." },
-    { id: 'hc_gang_dot', kind: 'fat_biker_01', name: 'Dot', lines: "Locals only. Says so on the sign. I painted the sign.|City folk come up this road to look at us. We look back.|Saturday's the rally. Then we'll see who's watching who." },
+    { id: 'hc_gang_moose', kind: 'fat_biker_02', name: 'Moose', lines: "Road's closed. To you. Not to us.|You want across, you ride with us or you ride the freight. And nobody rides the freight.|The rally man says watch the road. So we watch the road." },
+    { id: 'hc_gang_dot', kind: 'fat_biker_02', name: 'Dot', lines: "Locals only. Says so on the sign. I painted the sign.|City folk come up this road to look at us. We look back.|Saturday's the rally. Then we'll see who's watching who." },
   ],
 };
 function buildHighway() {
@@ -32314,9 +32402,9 @@ const HCRALLY = {
   LEADER: { id: 'hc_rally_boss', role: 'rallyboss', name: 'the rally man', at: [0, -23.4],
     lines: "Great crowd. The best crowd. Bigger than last time. Bigger than next time.|The city wants your creek. I won't let 'em have it. I'll keep it for you. Personally.|Those lights over the hill? Nothing. Swamp gas. Look at ME." },
   GOERS: [   // where they live round the fair (fair frame u, v), and their kind or role
-    { role: 'redneck', name: 'Bobby Ray', home: [-14, -6] }, { kind: 'hick_skinny', name: 'Lurleen', home: [-15, 6] }, { kind: 'fat_biker_01', name: 'Chopper', home: [16, 14] },
+    { role: 'redneck', name: 'Bobby Ray', home: [-14, -6] }, { kind: 'hick_skinny', name: 'Lurleen', home: [-15, 6] }, { kind: 'fat_biker_02', name: 'Chopper', home: [16, 14] },
     { role: 'redneck', name: 'Cletus', home: [14, -16] }, { kind: 'hobo_01', name: 'Uncle Vern', home: [8, 14] }, { kind: 'hick_skinny', name: 'Tammy', home: [-12, 17] },
-    { kind: 'fat_biker_01', name: 'Grease', home: [12, 9] }, { role: 'redneck', name: 'Hank', home: [-8, 22] }, { kind: 'hick_skinny', name: 'Bubba', home: [4, 22] },
+    { kind: 'fat_biker_02', name: 'Grease', home: [12, 9] }, { role: 'redneck', name: 'Hank', home: [-8, 22] }, { kind: 'hick_skinny', name: 'Bubba', home: [4, 22] },
     { kind: 'hobo_01', name: 'Mae', home: [-16, -12] },
   ],
   goerLines: "Rally's Saturday. It's always Saturday at the rally.|He talks, we holler. Simple. I like simple.|The Pearl lot? They come up on the freight with their signs. We give 'em what for.",
@@ -38550,7 +38638,8 @@ function frameBody() {
     rig.root.position.y += player.leapYd;
     // HE STANDS ON THE DECK, so he is lifted by its measured height -- his COLLIDER stays on
     // the ground, which is right: the board is a picture and the man is the body.
-    if (player.board && !player.blade) rig.root.position.y += board.deck;
+    if (player.board && player.bike) rig.root.position.y += bikeSeatLift();      // m374: on the seat
+    else if (player.board && !player.blade) rig.root.position.y += board.deck;
     // ON HER SKATES THE GUN TURNS HER WHOLE BODY, her swivel (m271) -- not his rigid barrel comp
     rig.root.rotation.y = player.faceH + rig.faceOff + RIG.spin + (bladeOn() ? ((rig.bl && rig.bl.body) || 0) : aimComp(dt));
     rig.drawnYaw = rig.root.rotation.y;
@@ -39027,7 +39116,7 @@ async function init() {
   // +1 at m158 (the collision), +1 at m160 (the breakables), and the kit city's library and
   // buildings on top of the toon city's three (m180)
   // +2 in the kit worlds for the construction worker and his hammer (m187)
-  PROG.total = inWP() ? 28 : inTC() ? 31 : inTK() ? 36 : inKit() ? 31 : 29;
+  PROG.total = inWP() ? 28 : inTC() ? 31 : inTK() ? 37 : inKit() ? 31 : 29;      // m374: tkit +1, the player's bike
   // ---- the character. There is no game without him, so a failure here is reported on the
   //      card rather than warned to a console that does not exist on a phone.
   let g;
@@ -39299,6 +39388,8 @@ async function init() {
     await side(HYD.file, 'loading props', { name: 'HYDRANT', build: buildHydrant });
     await side(KCITY.pieces, 'loading the wall pieces', { name: 'KCITYLIB', build: kitTwinIndex });
     await side(KCITY.bld, 'loading the kit buildings', { name: 'KCITYBLD', build: buildKit });
+    // THE PLAYER'S MOTORCYCLE (m374): his own Fat Boy again, for whoever wears the biker
+    await side(MOTO.file, 'loading a motorcycle', { name: 'PBIKE', build: buildPlayerBike });
     await cityDetile();
     // THE ISLAND (m264): last, because it measures the finished collider and appends to it
     try { buildIsle(); } catch (e) { ISLE.live = 0; note('ISLE FAIL'); console.warn('[melee] island', e); }
@@ -39555,7 +39646,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
