@@ -265,7 +265,7 @@ differ" table there, so no region feels like the last one.
   (where to stand or sit, which way to face, which clip). NPCs nearby walk to one, use it for a while,
   and leave. Missing clips fall back to an idle and the chip names the clip, so his animations drop in
   with no code change. Start in Old Town.
-- [ ] **C3 Uplift cyborgs.** A cyborg variant of a worker (placeholder tint/parts until his models
+- [x] m355 **C3 Uplift cyborgs.** A cyborg variant of a worker (placeholder tint/parts until his models
   land) with its own behaviour.
 - [ ] **C4 The glider.** The hang-glider guy at a lookout; his form flies (reuse her wingsuit flight).
 - [ ] **C5 Hidden good aliens.** A network of disguised shopkeepers who give tips and upgrades.
@@ -845,3 +845,10 @@ differ" table there, so no region feels like the last one.
   `sit_sofa`. Until a model has those clips it stands in its idle, and the chip shows which clip is
   missing (`SM`). Nobody actually sits on a bench yet: that needs your sit clip and the bench's
   collision letting them through. Bus stops and shop counters come later.
+
+- **m355 (C3):** Uplift sends a two-cyborg survey crew to walk loops of Old Town's streets. They're
+  workers with steel tint, a red visor, shoulder plates and a chest light. They never run from you.
+  At each stop they sweep a red scan beam; if it catches you as the alien, out in the open, they log
+  you. That pushes the watcher's alert up, or brings police heat if the watcher is down. Knock one down
+  twice and the implant shorts out, leaving a dazed ordinary worker. The pacifier's trance doesn't work
+  on them. Their real home and the conversion line belong to the Waterfront chapter.

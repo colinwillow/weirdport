@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m354</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m355</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m354</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m355</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm354';
+const BUILD = 'm355';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -29689,7 +29689,7 @@ function orbStep(dt) {
   if ((O.tT = (O.tT || 0) - dt) > 0) return; O.tT = .5;
   let n = 0;
   for (const d of DUMMIES) {
-    if (d.gone || isAlien(d.K) || d.st === 'down' || d.st === 'up') continue;
+    if (d.gone || isAlien(d.K) || d.st === 'down' || d.st === 'up' || d.role === 'cyborg') continue;     // m355: Uplift's own are not the grid's to trance
     const x = d.root.position.x, z = d.root.position.z, inR = Math.hypot(x - O.T.x, z - O.T.z) < O.R;
     if (inR && !d.trance) {
       d.trance = { route: d.route || null, talk: d.talk || null };
@@ -29947,6 +29947,94 @@ function smartStep(dt) {
     best.d = d; d.smart = { S: best, st: 'go', t: 0, off: { route: d.route || null, rest: d.rest || null } };
     d.route = [[best.x, best.z]]; d.routeI = undefined; d.rx = best.x; d.rz = best.z; d.roamT = 0;
     M.users++;
+  }
+}
+// ============================================================================================
+// UPLIFT CYBORGS (m355, ROADMAP C3, `UPLIFT`, `buildUplift`, `cyborgStep`)
+// ============================================================================================
+// GAME_DESIGN: "Uplift Corp -- turns working people into cyborg versions of themselves"; LORE: the Greys' human front
+// company; REGIONS (the Waterfront): "Cold, efficient, inhuman ... shut it down and the cyborgs start turning back."
+// Until his models land a cyborg is the roster's `cyborg` role (a worker, steel-tinted, a red visor band) plus PARTS on
+// the root (shoulder plates, a chest light) -- and every body wearing that role behaves like one, a GOD spawn included:
+// it does not run from the alien; at each stop of its patrol it SCANS -- a red beam from the head sweeping either way --
+// and the undisguised alien in that beam, out in the open, inside `scanR`, is LOGGED: the watcher's alert (C2b-2) jumps
+// if it is still up, else it is the police's heat; once per `again`. Knock one down twice and the implant shorts out: the
+// parts and the tint come off, and a dazed worker is left ("I was... optimised?"), Old Town +2.
+// Old Town has a two-cyborg Uplift SURVEY CREW walking a loop of its east and south streets (`OTLIFE`'s way: points round
+// the middle snapped to street level) -- the Waterfront is where they come from; this is them coming to Old Town.
+const UPLIFT = {
+  on: 1, n: 0, logs: 0, reverts: 0, scanR: 13, scanArc: .38, sweep: .55, again: 18, downs: 2, alertK: 40,
+  CREW: [
+    { id: 'uplift_1', name: 'UPLIFT SURVEYOR 7', loop: { r: 52, n: 9, a0: 4.4 }, why: "Uplift's survey crew: the east and south streets, scanning" },
+    { id: 'uplift_2', name: 'UPLIFT SURVEYOR 12', loop: { r: 52, n: 9, a0: 1.3 }, why: 'the other half of the crew, the other way round' },
+  ],
+  lines: ['OPTIMAL. MOVE ALONG, CITIZEN.', 'UPLIFT: BETTER PEOPLE. BETTER PROFIT.', 'YOUR INEFFICIENCY HAS BEEN NOTED.'],
+  dazed: ["Ugh. I was... optimised? For how long?", "I want a sandwich. A really inefficient sandwich.", "There's a man in a nice suit at Uplift. He said it wouldn't hurt. It didn't. That's the worst part."],
+};
+function buildUplift() {
+  const U = UPLIFT, R = ISLE.rect; if (!U.on || !inTK() || !R) return 0;
+  const mid = [(R[0] + R[1]) / 2, (R[2] + R[3]) / 2];
+  for (const C of U.CREW) {
+    const { r, n, a0 } = C.loop, pts = [];
+    for (let i = 0; i < n; i++) { const a = a0 + (C.id === 'uplift_2' ? -1 : 1) * i / n * Math.PI * 2, s = lifeSpot(mid[0] + Math.cos(a) * r, mid[1] + Math.sin(a) * r, 12); if (s) pts.push(s); }
+    if (pts.length < 3) { note('UPLIFT ' + C.id + ' NO ROUTE'); continue; }
+    peopleMark(C.id, pts[0][0], pts[0][1], 0, { role: 'cyborg', name: C.name, group: 'worker', talks: ['*'], alien: 'talk',
+      lines: U.lines.join('|'), beat: pts.map(q => [q[0], q[1]]) }, pts[0][2], 'UPLIFT', 'worker');
+    U.n++;
+  }
+  return U.n;
+}
+// the parts, on the root (the root turns with him; his right is -x there)
+function cyborgParts(d) {
+  const g = new THREE.Group(), steel = new THREE.MeshStandardMaterial({ color: 0x9aa3a8, metalness: .6, roughness: .35 });
+  const red = new THREE.MeshStandardMaterial({ color: 0x400a0a, emissive: new THREE.Color(0xff3a3a), emissiveIntensity: 2.2 });
+  for (const s of [-1, 1]) { const p = new THREE.Mesh(new THREE.BoxGeometry(.22, .08, .3), steel); p.position.set(s * .26, 1.48, 0); p.rotation.z = s * .25; g.add(p); }
+  const c = new THREE.Mesh(new THREE.SphereGeometry(.05, 10, 8), red); c.position.set(0, 1.22, .2); g.add(c);
+  const back = new THREE.Mesh(new THREE.BoxGeometry(.3, .4, .1), steel); back.position.set(0, 1.2, -.2); g.add(back);
+  // the scan beam, from the head forward, hidden until it scans
+  const bg = new THREE.ConeGeometry(UPLIFT.scanR * Math.tan(.12), UPLIFT.scanR, 16, 1, true); bg.translate(0, -UPLIFT.scanR / 2, 0); bg.rotateX(-Math.PI / 2);
+  const beam = new THREE.Mesh(bg, new THREE.MeshBasicMaterial({ color: 0xff3a3a, transparent: true, opacity: .16, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, fog: false }));
+  beam.position.set(0, 1.6, .1); beam.visible = false; g.add(beam);
+  d.root.add(g); d.cy = { g, beam, logT: 0, sw: Math.random() * 6 };
+}
+function cyborgRevert(d) {
+  const C = d.cy; if (!C) return;
+  d.root.remove(C.g); d.cy = null; d.cyDone = 1;
+  if (d.matCol0) d.mats.forEach((m, i) => { if (m.color && d.matCol0[i]) m.color.copy(d.matCol0[i]); });
+  if (d.roleProp && d.roleProp.parent) d.roleProp.parent.remove(d.roleProp);
+  d.role = null; d.route = null;
+  d.talk = { id: 'uplift_dazed', name: 'a worker', lines: [UPLIFT.dazed[(Math.random() * UPLIFT.dazed.length) | 0]], done: 0, talks: ['*'], alien: 'talk' }; d.talkSeen = 1;
+  spkBurst(d.root.position.x, d.root.position.y + 1.4, d.root.position.z, 30, { col: [1, .5, .3], spread: 4, up: 2.5, r: .4, size: .12, life: .6 });
+  snd('zap', { g: .35, r: 1.5, dur: .3 });
+  UPLIFT.reverts++; dhPush('oldtown', 2);
+  toast('The implant shorts out. Just a worker now.', 2);
+}
+function cyborgStep(dt) {
+  const U = UPLIFT; if (!U.on) return;
+  const P = player.pos, me = fearLooks() && !(groundAt(P.x, P.z, 60, 60) - P.y > 2), now = performance.now() * .001;
+  for (const d of DUMMIES) {
+    if (d.role !== 'cyborg' || d.gone || d.cyDone) continue;
+    if (!d.cy) cyborgParts(d);
+    const C = d.cy;
+    d.fleeT = 0;                                                           // it does not run from you
+    if ((d.downs || 0) >= U.downs && d.st !== 'down') { cyborgRevert(d); continue; }
+    // scanning while it stands at a stop
+    const scan = d.roamT > 0 && d.st !== 'down' && d.st !== 'up' && d.st !== 'hit';
+    C.beam.visible = scan;
+    if (!scan) continue;
+    C.sw += dt * 1.6; const sweep = Math.sin(C.sw) * U.sweep;
+    C.beam.rotation.y = sweep;
+    C.beam.material.opacity = .12 + .06 * Math.sin(now * 20);
+    if ((C.logT -= dt) > 0 || !me) continue;
+    const dx = P.x - d.root.position.x, dz = P.z - d.root.position.z, L = Math.hypot(dx, dz);
+    if (L > U.scanR || L < .5) continue;
+    const look = (d.h || 0) + sweep, off = Math.abs(wrapAngle(Math.atan2(dx, dz) - look));
+    if (off > U.scanArc) continue;
+    // LOGGED
+    C.logT = U.again; U.logs++;
+    if (OWATCH.st === 'up') { OWATCH.alert = Math.min(100, OWATCH.alert + U.alertK); cardShow('UPLIFT HAS LOGGED YOU', 'THE WATCHER KNOWS', 2.6); }
+    else { heatAdd(1, 'uplift'); cardShow('UPLIFT HAS LOGGED YOU', 'THEY CALLED IT IN', 2.6); }
+    snd('zap', { g: .3, r: .55, dur: .5, x: d.root.position.x, z: d.root.position.z });
   }
 }
 // ============================================================================================
@@ -31785,8 +31873,8 @@ const rosterKind = R => R && !R.pc ? mkrKind(R.stem) : null;
 // a role's look on a body: the tint into its own (per-body, cloned) materials, its prop, its size
 function rosterApply(d, R) {
   if (!d || !R) return;
-  if (R.tint && d.mats) { const c = new THREE.Color(R.tint); for (const m of d.mats) if (m.color) m.color.lerp(c, .45); }
-  if (R.prop) rosterProp(d, R);
+  if (R.tint && d.mats) { d.matCol0 = d.mats.map(m => m.color ? m.color.clone() : null); const c = new THREE.Color(R.tint); for (const m of d.mats) if (m.color) m.color.lerp(c, .45); }
+  if (R.prop) d.roleProp = rosterProp(d, R);
   if (R.bag) rosterBag(d, R.bag);
   if (R.big) d.root.scale.setScalar(R.big);
   d.role = R.id;
@@ -34853,6 +34941,7 @@ const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
   { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
+  { id: 'uplift', world: 'tkit', name: "OLD TOWN · Uplift's survey crew (the cyborgs' first stop)", at: () => { const M = MARKS.find(m => m.id === 'uplift_1'); return M && [M.x, M.y + .1, M.z, null]; } },
   { id: 'amp', world: 'tkit', name: 'OLD TOWN · under the amplifier (over the square)', at: () => OAMP.godAt },
   { id: 'watcher', world: 'tkit', name: 'OLD TOWN · under the watcher (the east side)', at: () => OWATCH.godAt },
   { id: 'orb', world: 'tkit', name: 'OLD TOWN · under the pacifier orb (the south side)', at: () => OORB.godAt },
@@ -36590,6 +36679,7 @@ function frameBody() {
   incurStep(dt);                // a Skinsuit ship over Old Town now and then (m349)
   orbStep(dt);                  // the pacifier orb: its trance, its crackle, its fall (m350)
   smartStep(dt);                // smart objects: people use the furniture (m354)
+  cyborgStep(dt);               // Uplift's cyborgs: fearless, scanning, logging you (m355)
   watchStep(dt);                // the watcher: its searchlight, the aliens' alert, its call (m351)
   ampStep(dt);                  // the amplifier: over the crowd, feeding it (m352)                // the wreck burns and smokes; reaching town once moves the start (m289)
   crashHeroStep(dt);            // ...and pulses, arcs, hums, and stands a beam over the farm (m300)
@@ -37326,6 +37416,8 @@ async function init() {
     try { buildOrbs(); } catch (e) { note('ORB FAIL'); console.warn('[melee] orbs', e); }
     try { buildWatcher(); } catch (e) { note('WATCHER FAIL'); console.warn('[melee] watcher', e); }
     try { buildAmp(); } catch (e) { note('AMP FAIL'); console.warn('[melee] amplifier', e); }
+    // UPLIFT'S SURVEY CREW (m355): two cyborgs on a loop of the east and south streets
+    try { buildUplift(); } catch (e) { note('UPLIFT FAIL'); console.warn('[melee] uplift', e); }
     // THE FOOTBRIDGE TO THE PEARL (m341): before the city ring, which keeps its trees off the bridge's bearing
     try { buildFootbridge(); } catch (e) { note('FOOTBRIDGE FAIL'); console.warn('[melee] footbridge', e); }
     // THE LOOK FOLLOWS OLD TOWN'S HEALTH (m344): boards, rubble, litter -- after every Old Town builder, over the street
@@ -37506,7 +37598,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

@@ -7,6 +7,20 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **UPLIFT CYBORGS: A ROLE THAT BEHAVES, NOT A KIND (m355, C3, `UPLIFT`, `buildUplift`, `cyborgStep`, `cyborgRevert`).**
+  Every body whose `d.role` is the roster's `cyborg` (a worker, steel tint, red visor) gets PARTS on its root the first
+  frame it is seen (shoulder plates, a back unit, a red chest light, a red scan cone from the head) and the behaviour:
+  it never flees (`fleeT = 0`); the pacifier's trance skips it (Uplift's own are not the grid's); and at each stop of its
+  route (`roamT > 0`, the roam's own pause) it SCANS -- the cone sweeps +-.55 rad -- and the undisguised alien in the open
+  inside 13 m and .38 rad of the beam is LOGGED (once per 18 s): the watcher's alert +40 if it is up, else a star of
+  heat. Two knock-downs (`d.downs`, which `bodyLaunch` already counts) and the implant shorts out: parts off, the role's
+  tint and prop taken back (`rosterApply` now keeps `d.matCol0` and `d.roleProp` so it CAN be taken back), a dazed worker,
+  Old Town +2. Old Town's SURVEY CREW is two of them on nine-stop loops of its streets (opposite ways round). GOD: the
+  place "Uplift's survey crew", and ROSTER > Uplift cyborg spawns one that behaves the same.
+  `places`: `ok  UPLIFT UPLIFT SURVEYOR 7 (cyborg -> contruction_worker.glb) 9 stops | UPLIFT SURVEYOR 12 ... 9 stops`,
+  `ok  cyborgStep 30 frames`, exit 0. **Not built:** the conversion line (the Waterfront's), cyborgs repairing, and any
+  cyborg version of a kind other than the worker.
+
 - **SMART OBJECTS: A SPOT IS WHERE, WHICH WAY, WHICH CLIPS, HOW LONG AND WHO (m354, C2d, `SMART`, `smartAdd`,
   `smartStep`).** The builders that own furniture register its spots: the food-cart pod (a customer at each open cart,
   facing it, `order_food`; four places at each of its three tables, behind the benches, facing the table, `sit_eat`) and
