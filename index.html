@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m313</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m314</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m313</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m314</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm313';
+const BUILD = 'm314';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -29539,6 +29539,158 @@ function buildNeighbours() {
   return boxes;
 }
 
+// ============================================================================================
+// THE TRACTOR AT WORK AND THE PICKUP ON THE TRACK (m314, STEER step 5b, `FVEH`, `buildVehicles`, `vehStep`)
+// ============================================================================================
+// **THE TRACTOR PLOUGHS** the field under the far hill: up and down its LANES along the furrow direction, each lane
+// MEASURED off the owner lattice (the longest run inside the field, trimmed `trim` m into the headland, so the turns
+// happen on the field and not through its fence), ping-pong across them, at a walk, dust behind it.
+// **THE PICKUP RUNS ERRANDS**: from the barn door out along the sunken lane and the bridge road to the bridge, a wait,
+// and back -- the route is the lane's own centreline put through the barn's frame and `FPLAN`'s bridge road.
+// Both are KINEMATIC followers (steer at the next waypoint at a capped turn rate, slow in the turns), each ONE merged,
+// vertex-coloured mesh (one draw call), sitting on `flHeightAt` and pitched to it. They push him out of their
+// footprint and stop for him if he is ahead of them. The parked tractor is the barnyard's (`FPROPS`). GOD `ploughing`,
+// `pickup`. No engine sound yet -- a held synth voice like the wreck's hum is the obvious one (`crashHumSet`).
+const FVEH = { on: 1, list: [], dustEvery: .18 };
+function vehMerge(parts) {
+  let nv = 0, ni = 0;
+  const gs = parts.map(([g, hex, m]) => { const q = g.clone(); q.applyMatrix4(m); nv += q.attributes.position.count; ni += q.index ? q.index.count : q.attributes.position.count; return [q, new THREE.Color(hex)]; });
+  const pos = new Float32Array(nv * 3), nor = new Float32Array(nv * 3), col = new Float32Array(nv * 3), idx = new Uint32Array(ni);
+  let ov = 0, oi = 0;
+  for (const [g, c] of gs) {
+    const n = g.attributes.position.count;
+    pos.set(g.attributes.position.array, ov * 3); nor.set(g.attributes.normal.array, ov * 3);
+    for (let k = 0; k < n; k++) { col[(ov + k) * 3] = c.r; col[(ov + k) * 3 + 1] = c.g; col[(ov + k) * 3 + 2] = c.b; }
+    if (g.index) { const I = g.index.array; for (let k = 0; k < I.length; k++) idx[oi++] = I[k] + ov; } else for (let k = 0; k < n; k++) idx[oi++] = k + ov;
+    ov += n; g.dispose();
+  }
+  const out = new THREE.BufferGeometry();
+  out.setAttribute('position', new THREE.BufferAttribute(pos, 3)); out.setAttribute('normal', new THREE.BufferAttribute(nor, 3));
+  out.setAttribute('color', new THREE.BufferAttribute(col, 3)); out.setIndex(new THREE.BufferAttribute(idx, 1)); out.computeBoundingSphere();
+  const m = new THREE.Mesh(out, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: .7, metalness: .1 }));
+  m.castShadow = true; m.receiveShadow = true; m.rotation.order = 'YXZ';
+  return m;
+}
+// model space: forward +z, right +x, up +y. Parts: [geometry, colour, x, y, z, ry, rx, rz]
+function vehParts(list) {
+  const E = new THREE.Euler(), Q = new THREE.Quaternion(), P = new THREE.Vector3(), S = new THREE.Vector3(1, 1, 1);
+  return list.map(([g, c, x, y, z, ry = 0, rx = 0, rz = 0]) => [g, c, new THREE.Matrix4().compose(P.set(x, y, z), Q.setFromEuler(E.set(rx, ry, rz)), S)]);
+}
+function vehTractor() {
+  const B = (w, h, l) => new THREE.BoxGeometry(w, h, l), W = (r, w) => new THREE.CylinderGeometry(r, r, w, 16), red = 0xb5332a, dk = 0x222222, st = 0x8a8f94;
+  const P = [[B(1.1, .7, 2.0), red, 0, .95, .5], [B(.9, .3, 1.0), red, 0, 1.45, .95], [B(1.3, .12, 1.4), red, 0, 2.55, -.55],
+    [B(.9, .9, 1.0), 0x3a4a52, 0, 1.75, -.55], [B(.6, .4, .5), dk, 0, 1.35, -.6], [B(.09, .8, .09), dk, .32, 1.7, 1.25]];
+  for (const [x, z] of [[-.58, -1.18], [.58, -1.18], [-.58, .08], [.58, .08]]) P.push([B(.07, 1.2, .07), dk, x, 1.9, z]);
+  for (const s of [-1, 1]) { P.push([W(.82, .45), dk, s * .8, .82, -.6, 0, 0, Math.PI / 2]); P.push([W(.4, .47), 0xd8c25a, s * .8, .82, -.6, 0, 0, Math.PI / 2]);
+    P.push([W(.46, .3), dk, s * .62, .46, 1.15, 0, 0, Math.PI / 2]); }
+  // the plough behind: a frame and three discs
+  P.push([B(1.8, .25, .5), st, 0, .55, -1.8]);
+  for (const x of [-.6, 0, .6]) P.push([W(.32, .05), st, x, .35, -1.95, 0, .3, Math.PI / 2]);
+  return vehMerge(vehParts(P));
+}
+function vehPickup() {
+  const B = (w, h, l) => new THREE.BoxGeometry(w, h, l), W = (r, w) => new THREE.CylinderGeometry(r, r, w, 14), blue = 0x4a6f8a, dk = 0x1e2022, glass = 0x2c3a44;
+  const P = [[B(1.9, .5, 4.8), blue, 0, .78, 0], [B(1.82, .82, 1.75), blue, 0, 1.44, .35], [B(1.85, .46, 1.2), glass, 0, 1.58, .45],
+    [B(1.86, .3, 1.25), blue, 0, 1.17, 1.75], [B(1.95, .2, .2), 0x9aa0a6, 0, .72, 2.42], [B(1.95, .2, .2), 0x9aa0a6, 0, .72, -2.42],
+    [B(.08, .4, 1.8), blue, -.9, 1.23, -1.4], [B(.08, .4, 1.8), blue, .9, 1.23, -1.4], [B(1.8, .4, .08), blue, 0, 1.23, -2.33],
+    [B(.9, .8, .9), 0xd9b25a, -.3, 1.43, -1.5], [B(.25, .12, .1), 0xffe6a0, -.6, .95, 2.44], [B(.25, .12, .1), 0xffe6a0, .6, .95, 2.44],
+    [B(.4, .25, .1), 0x8a3a2a, .55, 1.2, -1.95]];
+  for (const s of [-1, 1]) for (const z of [-1.5, 1.5]) P.push([W(.4, .3), dk, s * .9, .4, z, 0, 0, Math.PI / 2]);
+  return vehMerge(vehParts(P));
+}
+// a field's ploughing LANES: along `dir`, `gap` apart, each the longest run inside the field trimmed `trim` into it
+function vehLanes(fid, gap, trim) {
+  const fi = FPLAN.FIELDS.findIndex(f => f.id === fid), Fd = FPLAN.FIELDS[fi]; if (fi < 0) return [];
+  const da = Math.cos(Fd.dir || 0), db = Math.sin(Fd.dir || 0), na = -db, nb = da, lanes = [];
+  const inside = (a, b) => fpOwnAt(a, b) === fi && fpOwnAt(a + na * 3, b + nb * 3) === fi && fpOwnAt(a - na * 3, b - nb * 3) === fi;
+  for (let o = -70; o <= 70; o += gap) {
+    let best = null, run = null;
+    for (let t = -90; t <= 90; t += 1) {
+      const a = Fd.a + na * o + da * t, b = Fd.b + nb * o + db * t;
+      if (inside(a, b)) { if (!run) run = [t, t]; else run[1] = t; } else if (run) { if (!best || run[1] - run[0] > best[1] - best[0]) best = run; run = null; }
+    }
+    if (run && (!best || run[1] - run[0] > best[1] - best[0])) best = run;
+    if (best && best[1] - best[0] > 2 * trim + 10) {
+      const p0 = [Fd.a + na * o + da * (best[0] + trim), Fd.b + nb * o + db * (best[0] + trim)], p1 = [Fd.a + na * o + da * (best[1] - trim), Fd.b + nb * o + db * (best[1] - trim)];
+      lanes.push([p0, p1]);
+    }
+  }
+  return lanes;
+}
+function buildVehicles() {
+  const FL = FARMLAND, V = FVEH; if (!V.on || !FL.live || !FPLAN.owners) return 0;
+  // ---- the tractor: the lanes of the field under the far hill, boustrophedon
+  { const lanes = vehLanes('north_plough', 5, 7), pts = [];
+    lanes.forEach(([p0, p1], i) => { if (i % 2) pts.push(p1, p0); else pts.push(p0, p1); });
+    if (pts.length >= 4) {
+      const m = vehTractor(); scene.add(m);
+      const W = pts.map(([a, b]) => flWorld(a, b));
+      V.list.push({ id: 'tractor', m, pts: W, i: 1, dir: 1, x: W[0][0], z: W[0][1], h: Math.atan2(W[1][0] - W[0][0], W[1][1] - W[0][1]),
+        v: 0, vmax: 2.2, turn: .55, hw: .95, hl: 2.4, reach: 1.6, wait: 0, waitEnd: 3, dustT: 0, dust: [.62, .5, .36] });
+    } else note('TRACTOR NO LANES');
+  }
+  // ---- the pickup: the barn door, out along the lane, down the bridge road to the bridge
+  { const A = FARM.at, C = Math.cos(A.th), S = Math.sin(A.th), L = LANE.pts, T = FPLAN.trackPts[FPLAN.TRACKS.findIndex(t => t.id === 'bridge_road')];
+    if (L && T) {
+      const lane = [L[2], L[1], L[0]].map(([u, v]) => [A.x + u * C + v * S, A.z - u * S + v * C]);
+      const road = T.slice().reverse().map(([a, b]) => flWorld(a, b));          // its last point is the lane's mouth: from there to the bridge
+      const W = [...lane, ...road.slice(1)];
+      const m = vehPickup(); scene.add(m);
+      V.list.push({ id: 'pickup', m, pts: W, i: 1, dir: 1, x: W[0][0], z: W[0][1], h: Math.atan2(W[1][0] - W[0][0], W[1][1] - W[0][1]),
+        v: 0, vmax: 7.5, turn: 1.1, hw: 1.0, hl: 2.5, reach: 2.4, wait: 4, waitEnd: 9, dustT: 0, dust: [.66, .58, .46] });
+    }
+  }
+  for (const c of V.list) vehPlace(c, 0);
+  return V.list.length;
+}
+function vehPlace(c, dt) {
+  const y = flHeightAt(c.x, c.z), fx = Math.sin(c.h), fz = Math.cos(c.h);
+  const yf = flHeightAt(c.x + fx * 1.6, c.z + fz * 1.6), yb = flHeightAt(c.x - fx * 1.6, c.z - fz * 1.6);
+  c.y = y;
+  c.m.position.set(c.x, (yf + yb) / 2 * .5 + y * .5, c.z);
+  c.m.rotation.set(-Math.atan2(yf - yb, 3.2), c.h, 0);          // order YXZ: yaw, then pitch about its own right (nose up when climbing)
+}
+function vehStep(dt) {
+  const V = FVEH; if (!V.list.length) return;
+  const p = player, P = p.pos;
+  for (const c of V.list) {
+    const far = Math.hypot(P.x - c.x, P.z - c.z);
+    if (c.wait > 0) { c.wait -= dt; c.v = 0; }
+    else {
+      const [tx, tz] = c.pts[c.i], dx = tx - c.x, dz = tz - c.z, d = Math.hypot(dx, dz);
+      if (d < c.reach) {
+        const nx = c.i + c.dir;
+        if (nx < 0 || nx >= c.pts.length) { c.dir = -c.dir; c.wait = c.waitEnd; }
+        c.i = clamp(c.i + c.dir, 0, c.pts.length - 1);
+      } else {
+        const off = wrapAngle(Math.atan2(dx, dz) - c.h);
+        c.h += clamp(off, -c.turn * dt, c.turn * dt);
+        // stop for him if he is in front of it
+        const lx = (P.x - c.x) * Math.cos(c.h) - (P.z - c.z) * Math.sin(c.h), lz = (P.x - c.x) * Math.sin(c.h) + (P.z - c.z) * Math.cos(c.h);
+        const blocked = lz > 0 && lz < c.hl + 5 && Math.abs(lx) < c.hw + 1 && Math.abs(P.y - c.y) < 2.5;
+        const want = blocked ? 0 : c.vmax * clamp(1 - Math.abs(off) / 1.6, .25, 1) * (d < 6 ? .6 : 1);
+        c.v = damp(c.v, want, blocked ? 6 : 1.4, dt);
+        c.x += Math.sin(c.h) * c.v * dt; c.z += Math.cos(c.h) * c.v * dt;
+      }
+    }
+    vehPlace(c, dt);
+    // its bulk against his: an oriented box, pushed out along the shallower side
+    { const cs = Math.cos(c.h), sn = Math.sin(c.h), dx = P.x - c.x, dz = P.z - c.z, lx = dx * cs - dz * sn, lz = dx * sn + dz * cs, R = p.r || .35;
+      const px = c.hw + R - Math.abs(lx), pz = c.hl + R - Math.abs(lz);
+      if (px > 0 && pz > 0 && Math.abs(P.y - c.y) < 2.4) {
+        let nlx = lx, nlz = lz;
+        if (px < pz) nlx = Math.sign(lx || 1) * (c.hw + R); else nlz = Math.sign(lz || 1) * (c.hl + R);
+        P.x = c.x + nlx * cs + nlz * sn; P.z = c.z - nlx * sn + nlz * cs;
+      } }
+    // dust off the back wheels while it moves
+    if (c.v > .5 && far < 140 && (c.dustT -= dt) <= 0) {
+      c.dustT = FVEH.dustEvery * (.7 + Math.random() * .6);
+      const bx = c.x - Math.sin(c.h) * c.hl, bz = c.z - Math.cos(c.h) * c.hl;
+      smokeAt(bx + (Math.random() - .5) * 1.4, c.y + .3, bz + (Math.random() - .5) * 1.4, .9, .8, c.dust);
+    }
+  }
+}
+
 // ---- THE CREEK AND THE POND, ON THE LAND (m307, step 2, `buildFarmWaters`): the water, a footbridge, willows, reeds.
 // The valley and the bowl are already in the ground (`flHeight`'s carves); this is what sits in and over them. Built in
 // a frame on the land's own axes: `farmFrame` with th = atan2(-ua.z, ua.x) makes its u = a and its v = -b (derived:
@@ -31538,6 +31690,8 @@ const godFL = H => { const [x, z] = flWorld(H.a, H.b); return [x, null, z, Math.
 const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
   { id: 'overlook', world: 'tkit', name: 'GRISTLE FARM · the west hill: fields, and the city on the horizon', at: () => FARMLAND.live && godFL(FARMLAND.HILLS[0]) },
+  { id: 'ploughing', world: 'tkit', name: 'GRISTLE FARM · the tractor ploughing', at: () => { const c = FVEH.list.find(q => q.id === 'tractor'); return c && [c.x + Math.cos(c.h) * 7, null, c.z - Math.sin(c.h) * 7, c.h - Math.PI / 2]; } },
+  { id: 'pickup',   world: 'tkit', name: 'GRISTLE FARM · the pickup on the bridge road', at: () => { const c = FVEH.list.find(q => q.id === 'pickup'); return c && [c.x + Math.cos(c.h) * 5, null, c.z - Math.sin(c.h) * 5, c.h - Math.PI / 2]; } },
   { id: 'herd',     world: 'tkit', name: 'GRISTLE FARM · the herd on the far hill', at: () => { const c = COWS.find(q => q.field != null && FPLAN.FIELDS[q.field].id === 'far_hill'); return c && [c.x + 6, null, c.z + 6, Math.atan2(-6, -6)]; } },
   { id: 'neighbour', world: 'tkit', name: "GRISTLE FARM · the neighbour's farm shop on the ridge", at: () => FNEIGH.shopAt && [FNEIGH.shopAt[0], null, FNEIGH.shopAt[1], FNEIGH.shopAt[2]] },
   { id: 'haybarn',  world: 'tkit', name: 'GRISTLE FARM · the lone hay barn', at: () => FNEIGH.barnAt && [FNEIGH.barnAt[0], null, FNEIGH.barnAt[1], FNEIGH.barnAt[2]] },
@@ -33189,6 +33343,7 @@ function frameBody() {
   farmhouseStep(dt);            // the chimney smokes and the washing flaps (m304)
   floraStep(dt);                // the corn, wheat and tufts sway and part round him (m297)
   cowStep(dt);                  // the herd: brains, bodies, and their bulk against him -- before the lens too (m294)
+  vehStep(dt);                  // the tractor at work and the pickup on its errands, and their bulk against him (m314)
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)
@@ -33909,6 +34064,8 @@ async function init() {
     // THE WAY TO THE BRIDGE (m305): the fingerpost, the churn stand, the cattle grid (the road itself is ground paint)
     try { buildRoadside(); } catch (e) { note('ROAD FAIL'); console.warn('[melee] roadside', e); }
     try { buildCows(); } catch (e) { note('COWS FAIL'); console.warn('[melee] cows', e); }
+    // THE TRACTOR AT WORK AND THE PICKUP (m314): after the lane, whose centreline the pickup drives
+    try { buildVehicles(); } catch (e) { note('VEHICLES FAIL'); console.warn('[melee] vehicles', e); }
     // THE GROUND (m301): dirt, mud and the lane's track, under everything
     try { buildGroundPaint(); } catch (e) { note('GROUND FAIL'); console.warn('[melee] ground paint', e); }
     // THE GROWTH (m297): last, so the tufts can hug every wall, post and bank the farm built
@@ -34114,7 +34271,7 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // THE FARM'S PROPS (m299): `mel.FPROPS` -- `wind` (shared direction), `spin`
   FPROPS,
   // THE GROUND PAINT (m301): `mel.GPAINT` -- the patch table and the lane track
-  GPAINT, HROW, FHOUSE, FROAD, FARMLAND, FWATER, FPLAN, FCROP, FNEIGH,
+  GPAINT, HROW, FHOUSE, FROAD, FARMLAND, FWATER, FPLAN, FCROP, FNEIGH, FVEH,
   FARM, farm: () => { const F = FARM.at; if (!F) return 'no farm in this world'; const p = player; p.pos.set(F.x - Math.sin(F.th) * 12, 2, F.z - Math.cos(F.th) * 12); p.vel.set(0, 0, 0); p.heading = p.faceH = F.th; return 'farm at ' + F.x.toFixed(0) + ',' + F.z.toFixed(0); },
   PORTAL, PORTALS, portal: () => portalOpen(),
   // THE DEMOS, ON PURPOSE ONLY (m292, STEER 1): round where you stand, for testing the systems

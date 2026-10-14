@@ -7,6 +7,90 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A TRACTOR PLOUGHS AND A PICKUP RUNS THE BRIDGE ROAD (m314, step 5b, `FVEH`, `buildVehicles`, `vehStep`, `vehLanes`, `vehMerge`).**
+  **The tractor** works the field under the far hill: `vehLanes` walks lines along the field's furrow `dir`, 5 m
+  apart, takes the longest run whose lattice owner is the field (and 3 m either side of it), and trims 7 m into the
+  headland -- 12 lanes, driven boustrophedon and ping-ponged, at 2.2 m/s, turning 0.55 rad/s, so the U-turns happen
+  on the field and not through its fence. **The pickup** drives the lane's own centreline from the barn door (the
+  lane's points put through the barn's frame) to its mouth, then `FPLAN`'s bridge road reversed to the bridge (its last
+  point IS the lane's mouth, so the join is exact), waits 9 s, and comes back. Both are KINEMATIC followers (steer at
+  the next waypoint at a capped turn rate, slow in the turns and near a waypoint), sit on `flHeightAt` and pitch to it
+  (Euler order YXZ: yaw, then pitch about its own right; nose up = -atan(rise)), push him out of an oriented box along
+  its shallower side, and stop (damped hard) if he is in the 5 m in front of them. Dust (`smokeAt`, earth colours)
+  off the back while moving and within 140 m.
+  **Each vehicle is ONE draw call**: `vehMerge` bakes its parts into a single vertex-coloured geometry (box, wheel and
+  plough discs, the pickup's cab glass, lights and a bale in the bed). The parked tractor is still the barnyard's.
+  **No engine sound** -- a held synth voice like the wreck's hum is the obvious next step. GOD `ploughing`, `pickup`
+  (beside each, facing it, wherever it is). `npm run places` ticks `vehStep` with the rest.
+  `npm run places`, after the bump:
+  ```
+  ok   buildFarmland
+  ok   buildFarmWaters
+  ok   buildFieldBounds
+  ok   buildFieldCrops
+  ok   buildNeighbours
+  ok   buildFarm
+  ok   buildFarmProps
+  ok   buildCrash
+  ok   crashHero
+  ok   buildLane
+  ok   buildBridge
+  ok   buildHedgerows
+  ok   buildFarmhouse
+  ok   buildRoadside
+  ok   buildCows
+  ok   buildVehicles
+  ok   buildGroundPaint
+  ok   buildFlora
+  widest grass 66.5 at 172deg | headland ray 7deg grass 38.2 need 60 | rays 520 rect [-93.5,90.5,-90.3,93.5]
+  FARM.at {"x":333.8,"z":150.5,"th":1.281} | CRASH.at yes | LANE.at yes | BRIDGE.gate yes (side 0) | ISLE.live 1
+  FARMLAND live [ 354, 196 ] chunks 9 floor tris 12344 water tris 8346 | BRIDGE len 166 piers 5 gate [112,64]
+  FWATER 7 boxes, reeds 31 | pond level 0.1 | creek bed [ 5.19, -8.5 ] len 255
+  FPLAN 1623 boxes: hedge 361 fence 378 hedge oaks 94 tree line 9 | m2: margins 69.5k yard 5.3k town_edge 2.7k, south_wheat 5.5k, south_plough 4.3k, pond_pasture 2.3k, west_corn 4.6k, west_hay 3.8k, west_hill 7.1k, lone_barn_hay 5.2k, north_plough 3.8k, far_hill 4.6k, north_wheat 2.6k, ridge_corn 2.9k, neighbour 6.6k, ridge_pasture 5.7k, creek_meadow 4.8k, crash_wheat 5.8k, east_corn 2.1k, far_east_hay 2.5k, east_pasture 5.2k, knoll 5.6k, home_corn 4.4k, home_pasture 2.7k, orchard 2.2k, creek_pasture 2.5k
+  FCROP 39711 clumps in 21 chunks {"south_wheat":4715,"pond_pasture":320,"west_corn":3115,"west_hay":2078,"west_hill":4159,"lone_barn_hay":2873,"far_hill":717,"north_wheat":2175,"ridge_corn":1738,"ridge_pasture":906,"creek_meadow":2724,"crash_wheat":4866,"east_corn":1290,"far_east_hay":1360,"east_pasture":813,"knoll":1955,"home_corn":2899,"home_pasture":387,"orchard":268,"creek_pasture":353}
+  ok  COWS 30 {"paddock":3,"far_hill":5,"ridge_pasture":6,"east_pasture":5,"pond_pasture":4,"home_pasture":4,"creek_pasture":3} all in their pastures
+  FVEH tractor 24 pts, pickup 7 pts
+  FROAD 3 road pts NONE foot null | FHOUSE 34 chimney [376.8,11.8,208.3] | HROW 0 boxes 0 trees 0 gates | FLORA {"tufts":900}
+  notes ["TC NO OBB JSON","ISLE 0/3 TEX"]
+  ok  oldtown    -> player 0.0,0.1,0.0 ground 0.00 
+  ok  overlook   -> player 464.3,9.1,68.0 ground 8.99 
+  ok  ploughing  -> player 416.5,2.2,178.8 ground 2.06 
+  ok  pickup     -> player 316.3,1.4,137.8 ground 1.29 
+  ok  herd       -> player 483.2,2.8,230.3 ground 2.61 
+  ok  neighbour  -> player 397.4,6.0,284.6 ground 5.88 
+  ok  haybarn    -> player 477.7,5.9,142.2 ground 5.72 
+  ok  circle     -> player 271.6,0.6,347.9 ground 0.48 
+  ok  swell      -> player 294.5,0.7,343.3 ground 0.50 
+  ok  fplough    -> player 429.9,2.2,166.6 ground 2.05 
+  ok  creek      -> player 306.6,1.5,245.6 ground 1.35 
+  ok  pond       -> player 363.6,1.5,63.8 ground 1.36 
+  ok  channel    -> player 241.6,0.5,134.3 ground 0.34 
+  ok  farmyard   -> player 320.1,1.5,152.7 ground 1.32 
+  ok  hayloft    -> player 333.7,4.7,156.8 ground 9.00 
+  ok  crash      -> player 284.8,0.8,333.3 ground 0.69 
+  ok  corn       -> player 367.8,1.4,113.3 ground 1.28 
+  ok  wheat      -> player 291.5,0.3,56.8 ground 0.15 
+  ok  orchard    -> player 331.2,2.8,222.0 ground 2.62 
+  ok  farmhouse  -> player 367.2,1.8,206.2 ground 1.64 
+  ok  windmill   -> player 341.2,1.6,154.2 ground 1.42 
+  ok  scarecrow  -> player 368.8,1.4,107.4 ground 1.20 
+  ok  tractor    -> player 327.2,1.5,139.8 ground 1.33 
+  ok  paddock    -> player 340.7,1.6,157.1 ground 1.42 
+  ok  lane       -> player 320.6,1.5,140.3 ground 1.31 
+  ok  road       -> player 336.6,1.5,118.1 ground 1.36 
+  ok  bridge     -> player 112.1,3.0,63.6 ground 2.80 
+  every tkit GOD place is somewhere
+  ok  vehStep        30 frames
+  ok  farmPropsStep  30 frames
+  ok  farmhouseStep  30 frames
+  ok  floraStep      30 frames
+  ok  cowStep        30 frames
+  ok  crashStep      30 frames
+  ok  crashHeroStep  30 frames
+  ok  riverStep      30 frames
+  ok  gradeStep      30 frames
+  ```
+
 - **HERDS IN THE PASTURES, EACH KEPT TO ITS OWN FIELD (m313, step 5a, `FHERDS`, `fpOwnAt`, `buildCows`, `cowPick`).**
   The m294 cows were six in the paddock and a field beside the old crash. On the farm's own land: the paddock keeps
   three, and `FHERDS` puts 27 more in six pastures (far hill 5, the neighbour's ridge 6, the slope above the creek
