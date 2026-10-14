@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m341</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m342</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m341</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m342</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm341';
+const BUILD = 'm342';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -25747,7 +25747,8 @@ function virusGo(d, to) {
   // m339: WHO HE IS rides the turn both ways -- a quest's tag, his lines, his mark, his beat -- so the person who comes back
   // is the person who went. The alien in between holds them and says nothing (`talkOk` refuses a `wasK` body).
   const keep = (d.qTag || d.talk || d.markId || d.keepTalk) ? { tag: d.qTag || null, talk: d.keepTalk || d.talk || null,
-    after: d.qAfter || null, markId: d.keepMark || d.markId || null, beat: d.keepBeat || d.beat || null } : null;
+    after: d.qAfter || null, markId: d.keepMark || d.markId || null, beat: d.keepBeat || d.beat || null,
+    big: d.qBig || 0, downs: d.qDowns || 0 } : null;                // m342: a boss's size and how many downs it takes
   // **BOTH SILHOUETTES ARE TAKEN BEFORE THE OLD BODY GOES**, the DNA morph's own rule: the blob
   // has to BE the old shape at one end and the new one at the other, so a profile taken after
   // the body it describes has been removed is a profile of nothing.
@@ -25784,7 +25785,8 @@ function virusArrive(T, loud) {
   const Kp = T.keep;                                     // m339: see `virusGo`
   if (Kp) {
     n.qTag = Kp.tag;
-    if (T.going) { n.keepTalk = Kp.talk; n.qAfter = Kp.after; n.keepMark = Kp.markId; n.keepBeat = Kp.beat; }
+    if (T.going) { n.keepTalk = Kp.talk; n.qAfter = Kp.after; n.keepMark = Kp.markId; n.keepBeat = Kp.beat;
+      n.qDowns = Kp.downs; if (Kp.big > 1) { n.qBig = Kp.big; n.root.scale.setScalar(Kp.big); n.hpMax = (n.hpMax || 1) * Kp.big; n.hp = n.hpMax; } }
     else { n.talk = Kp.after || Kp.talk; n.talkSeen = 1; n.markId = Kp.markId; if (Kp.beat) { n.beat = Kp.beat; n.roamT = 1.5; } }
   }
   // **HE COMES OUT ANGRY, AND THAT IS THE WHOLE POINT OF THE MECHANIC.** A civilian who becomes
@@ -27939,6 +27941,26 @@ const QUESTS = [
     { type: 'goto', at: () => FOOT.dockAt && [FOOT.dockAt[0], FOOT.dockAt[2]], r: 6, text: "Cross to The Pearl's dock" },
     { type: 'goto', at: () => FOOT.padAt && [FOOT.padAt[0], FOOT.padAt[2]], r: 1.2, text: 'Step on the pad: a way back as yourself', tip: 'A pad you have stood on takes you to any other one, in any form.' },
   ] },
+  // CHAPTER 1's BOSS (m342, B5): Briggs's invitation, once the footbridge is done (`needQ`). At the office he bursts out of
+  // his skin as a Skinsuit nearly twice your height (`big`) that takes five knock-downs (`downs`), and the two of the crew
+  // who never stopped to eat turn with him (`also`); beat them all back, Briggs comes round starving, and the chapter is
+  // done: Chapter 2, The Pearl revealed on the map.
+  { id: 'ch1d', title: 'THE FOREMAN', world: 'tkit', ch: 1, from: 'ch1_briggs', needQ: 'ch1c',
+    onDone: () => { progChapter(2); progRegion('tkit:pearl'); setTimeout(() => cardShow('CHAPTER 1 COMPLETE', 'THE PEARL IS ON THE MAP', 4.5), 3600); }, steps: [
+    { type: 'goto',   npc: 'foreman_briggs', r: 10, text: 'After your shift: Briggs, at the site office. Alone.', tip: 'Keep the hard hat on. He only lets the crew in.' },
+    { type: 'skin',   tag: 'ch1boss', npc: 'foreman_briggs', r: 7, big: 1.85, downs: 5, text: 'The safety briefing', tip: 'That was never Briggs. Knock it down. Again. And again.',
+      after: { id: 'ch1_briggs_after', name: 'Foreman Briggs', group: 'worker', talks: ['*'], alien: 'talk',
+        lines: ["...Why am I on the floor. Why is everybody looking at me. Why am I so HUNGRY.",
+                "Last thing I remember, a fella in a nice suit came by the office about 'workforce optimisation'.",
+                "Weeks. I've been gone for WEEKS. Somebody get me a burger. Somebody get the whole crew a burger.",
+                "And whoever you are under that hard hat -- the footbridge is yours. The Pearl's that way. Mind the gap."] },
+      also: { tag: 'ch1crew', npcs: ['crew_run_1', 'crew_run_2'],
+        after: { id: 'ch1_crew_after', name: 'a worker', group: 'worker', talks: ['*'], alien: 'talk',
+          lines: ["Is it lunch? Tell me it's lunch.", "I had the weirdest dream. I was walking to the food carts and back. For a month."] } } },
+    { type: 'unskin', tag: 'ch1boss', npc: 'foreman_briggs', r: 7, text: 'Beat the thing wearing Briggs: five times down' },
+    { type: 'unskin', tag: 'ch1crew', npcs: ['crew_run_1', 'crew_run_2'], r: 12, text: 'Free the rest of the crew', tip: 'The two who never stopped to eat turned with him. The beam finds them.' },
+    { type: 'talk',   who: 'ch1_briggs_after', text: 'See if Briggs is himself again' },
+  ] },
   // CHAPTER 0 (m333, B1f-4): Nell at the farm shop gives it, and only to one of her own -- `from` her script, which she only
   // finishes for country folk. The first real task in the game: a marker, a waypoint and the distance, to the checkpoint.
   { id: 'qroad', title: 'THE ROAD TO TOWN', world: 'tkit', from: 'mk_nell', steps: [
@@ -28016,6 +28038,7 @@ const questOf = id => QUESTS.find(q => q.id === id);
 const questAvail = () => QUESTS.filter(q => !SAVE.flags['qdone:' + q.id] && (!q.world || q.world === WORLD.now) &&
   (!q.dormant || SAVE.flags['qon:' + q.id]) &&               // m293: a stand-in waits to be switched on
   (!q.from || SAVE.flags['talk:' + q.from]) &&               // m332: a task FROM somebody waits until he has told you
+  (!q.needQ || SAVE.flags['qdone:' + q.needQ]) &&            // m342: and, if it says so, until another task is done
   (q.ch === undefined || SAVE.ch === q.ch));                 // m334: a chapter's own quest only while you are in it
 function questPick() {
   const A = questAvail();
@@ -28074,7 +28097,7 @@ function questWpt() {
   if (!quest.wptOn) { el.classList.add('on'); quest.wptOn = 1; }
 }
 function questEnter(q, i) {
-  quest.cur = q; quest.step = i; quest.cnt = 0; quest.base = talk.heard || 0;
+  quest.cur = q; quest.step = i; quest.cnt = 0; quest.cntN = 0; quest.base = talk.heard || 0;
   if (q && SAVE.flags['q:' + q.id] !== i) progFlag('q:' + q.id, i);
   // m334: a step that teaches something says so, once per step per save, in the pill under the objective
   const st = q && q.steps[i];
@@ -28091,6 +28114,17 @@ function questNear(ok) {
   const P = player.pos; let b = null, bd = 1e9;
   for (const d of DUMMIES) { if (!ok(d)) continue; const q = Math.hypot(d.root.position.x - P.x, d.root.position.z - P.z); if (q < bd) { bd = q; b = d; } }
   return b;
+}
+// m342: what a quest says about the bodies it turns -- the `skin` step with that tag, or its `also` -- put on the body
+// before `virusGo`, which carries it through the turn (`keep`): the script it comes back with, a boss's size and downs
+function skinDef(tag) {
+  for (const t of (quest.cur && quest.cur.steps) || []) { if (t.type === 'skin' && t.tag === tag) return t; if (t.also && t.also.tag === tag) return t.also; }
+  return null;
+}
+function skinArm(d, tag) {
+  const A = skinDef(tag); d.qTag = tag; if (!A) return;
+  if (A.after) d.qAfter = Object.assign({}, A.after, { lines: A.after.lines.slice(), done: !!SAVE.flags['talk:' + A.after.id] });
+  d.qBig = A.big || 0; d.qDowns = A.downs || 0;
 }
 // does this step pass NOW? and where should the beam point (`quest.tgt`, or null)?
 function questTest(s) {
@@ -28138,19 +28172,24 @@ function questTest(s) {
       if (b) quest.tgt = b.root.position;
       return quest.cnt >= (s.n || 1);
     }
-    case 'skin': case 'unskin': {                                   // m339 (B4-1)
-      const b = DUMMIES.find(d => d.qTag === s.tag && !d.gone);
-      if (b) { quest.tgt = b.root.position; return s.type === 'skin' ? isAlien(b.K) : !isAlien(b.K); }
-      if (VTX.some(v => v.T.keep && v.T.keep.tag === s.tag)) return false;       // mid-turn
+    case 'skin': case 'unskin': {                                   // m339 (B4-1); m342 several bodies (`npcs`, `also`) and a boss
+      const T = DUMMIES.filter(d => d.qTag === s.tag && !d.gone), fly = VTX.some(v => v.T.keep && v.T.keep.tag === s.tag);
+      if (T.length) {
+        const al = T.filter(d => isAlien(d.K)), aim = (al.length && questNear(d => al.includes(d))) || T[0];
+        quest.tgt = aim.root.position;
+        if (s.type === 'skin') return al.length > 0;
+        quest.cnt = T.length - al.length; quest.cntN = T.length;
+        return !al.length && !fly;
+      }
+      if (fly) return false;                                         // mid-turn
       // nobody carries the tag -- the step has just begun, or a reload took the Skinsuit away: turn her when he is close
-      const d = questNear(q => q.markId === s.npc && !q.wasK) || questNear(q => CIVILS.includes(q.K) && !q.wasK);
+      const ids = s.npcs || [s.npc];
+      const d = questNear(q => ids.includes(q.markId) && !q.wasK) || (!s.big && s.npc && questNear(q => CIVILS.includes(q.K) && !q.wasK));
       if (!d) return false;
       quest.tgt = d.root.position;
       if (Math.hypot(d.root.position.x - P.x, d.root.position.z - P.z) < (s.r || 15) && virusOK(d)) {
-        const A = ((quest.cur && quest.cur.steps) || []).find(t => t.tag === s.tag && t.after);
-        d.qTag = s.tag;
-        if (A) d.qAfter = Object.assign({}, A.after, { lines: A.after.lines.slice(), done: !!SAVE.flags['talk:' + A.after.id] });
-        virusGo(d);
+        skinArm(d, s.tag); virusGo(d);
+        if (s.also) for (const o of DUMMIES.filter(q => s.also.npcs.includes(q.markId) && !q.wasK && virusOK(q))) { skinArm(o, s.also.tag); virusGo(o); }
       }
       return false;
     }
@@ -28197,6 +28236,7 @@ function questStep(dt) {
   if (quest.line) {
     const st = q.steps[quest.step];
     const txt = st.text + (st.type === 'defeat' && (st.n || 1) > 1 ? ' (' + quest.cnt + '/' + st.n + ')' : '') +
+      (st.type === 'unskin' && quest.cntN > 1 ? ' (' + quest.cnt + '/' + quest.cntN + ')' : '') +
       (T && quest.d > 6 ? ' · ' + quest.d.toFixed(0) + 'm' : '');
     if (txt !== quest.last) { quest.last = txt; quest.line.querySelector('i').textContent = txt; quest.line.querySelector('b').textContent = q.title; }
     quest.line.classList.add('on');
@@ -33650,7 +33690,7 @@ const GOD = { on: 0, fly: 0, vy: 0, flyV: 14, flyUp: 8, store: 'mel.god', goKey:
 const GODCHAP = [
   { n: 0, name: 'THE CRASH',         place: 'crash' },     // Gristle Farm, beside the wreck: where a new game starts
   { n: 1, name: 'OLD TOWN',          place: 'carts' },     // m339: the food carts, where its first step (Chef Norrie) is
-  { n: 2, name: 'THE PEARL',         place: null },
+  { n: 2, name: 'THE PEARL',         place: 'pearldock' },   // m342: only its door so far, dock 1
   { n: 3, name: 'THE OUTSKIRTS',     place: null },
   { n: 4, name: 'THE WATERFRONT',    place: null },
   { n: 5, name: 'THE SKATE ISLANDS', place: null },
@@ -33831,6 +33871,7 @@ function godMenuOpen(on) {
   for (const q of QUESTS.filter(q => !q.dormant && (!q.world || q.world === WORLD.now))) btn((SAVE.flags['qdone:' + q.id] ? 'AGAIN: ' : '') + q.title, () => {
     if (q.ch !== undefined) { progChapter(q.ch); progFlag('inTown', q.ch >= 1 ? 1 : 0); }
     if (q.from) progFlag('talk:' + q.from);
+    if (q.needQ) progFlag('qdone:' + q.needQ);
     for (const st of q.steps) if (st.type === 'talk' && st.who) { progFlag('talk:' + st.who, 0); progFlag('talk:' + st.who + ':alien', 0); }
     progFlag('qdone:' + q.id, 0); progFlag('q:' + q.id, 0); questTrack(q.id);
     toast('Started: ' + q.title, 1.6); godMenuOpen(0);
@@ -34313,7 +34354,7 @@ function stepDummies(dt) {
         // narrower one -- *"he shrinks back into THE normal civilian character"* -- which is a
         // body that came OUT of somebody. `VIRUS.downsAny` opens it to all of them if that turns
         // out to be the game.
-        if ((d.wasK || VIRUS.downsAny) && virusBack(d) && (d.downs || 0) >= VIRUS.downs)
+        if ((d.wasK || VIRUS.downsAny) && virusBack(d) && (d.downs || 0) >= (d.qDowns || VIRUS.downs))      // m342: a boss takes more
           { VTURN.push(d); continue; }
         if (!d.back && K.flip !== 0) d.h += Math.PI;
         d.st = 'up'; d.t = 0;

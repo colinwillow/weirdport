@@ -232,7 +232,7 @@ differ" table there, so no region feels like the last one.
   - [x] m339 **B4-1** the good alien points you at the building site; you watch a worker turned into a Skinsuit and beat it back; she tells you about the foreman.
   - [x] m340 **B4-2** get the worker form: knock a worker down and take the sample; as a worker the crew talk to you, and the foreman gives you a job.
   - [x] m341 **B4-3** the collapsed footbridge to The Pearl (REGIONS: over the rail cut), rebuilt as the worker: the bridge gate, the quest step, and the far side as a portal.
-- [ ] **B5 Chapter 1 boss.** The infiltrated foreman bursts out of his skin; beat him; revert the
+- [x] m342 **B5 Chapter 1 boss.** The infiltrated foreman bursts out of his skin; beat him; revert the
   crew; chapter complete → Chapter 2 region unlocks on the map.
 
 ## Phase C — systems the later chapters need
@@ -745,3 +745,11 @@ differ" table there, so no region feels like the last one.
   worker for two seconds. That also applies to any future "broken bridge" gate: before, the right form
   could walk straight into the gap. There's a portal pad at each end. If you'd rather have the rail
   cut, it can become a trench inside The Pearl's land when Chapter 2 builds it.
+
+- **m342 (B5):** after the footbridge, Briggs's "safety briefing". At the site office he bursts out as
+  a Skinsuit about 1.85 times normal size that takes five knock-downs, not three. At the same moment
+  the two crew members who walk to the carts all day turn too, so freeing the rest of the crew means
+  hunting them down. When everyone's back, Briggs comes round starving and blames "a fella in a nice
+  suit" (a lead for later), Chapter 1 completes, and The Pearl is revealed on the map. The boss is
+  only bigger to look at: his reach and hits are a normal warrior's, until your model for him exists.
+  GOD's Chapter 2 button now takes you to The Pearl's dock.

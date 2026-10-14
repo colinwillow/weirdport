@@ -7,6 +7,22 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CHAPTER 1'S BOSS IS A QUEST STEP, NOT A SECOND FIGHTING SYSTEM (m342, B5, quest `ch1d` "THE FOREMAN", `skinDef` /
+  `skinArm`, `keep.big` / `keep.downs`).** Briggs's invitation (`from: 'ch1_briggs'`, and `needQ: 'ch1c'` -- new: a
+  task can wait for another to be DONE). At the office, within 7 m, he bursts out of his skin through the same `virusGo`
+  as Dee, but the `skin` step says `big: 1.85` and `downs: 5`: `virusArrive` scales the alien's ROOT (nothing else writes
+  `d.root.scale` -- checked) and its `hpMax` by the same, and the knock-down revert reads `d.qDowns || VIRUS.downs`. The
+  two crew runners turn on the same frame wherever they are (`also`: their own tag, their own after-script); `unskin`
+  now counts several tagged bodies, aims the beam at the nearest one still alien, and the objective reads `(freed/n)`.
+  Briggs comes round starving and blames a man in a nice suit; finishing it is `progChapter(2)` and
+  `progRegion('tkit:pearl')` (the map's key is `<world>:<id>`), with a CHAPTER 1 COMPLETE card after the quest's own.
+  GOD: QUESTS > THE FOREMAN starts it (setting `needQ` done too), and CHAPTER 2 now lands at The Pearl's dock.
+  **The boss is only BIG to look at**: his reach, his collider and his health bar's height are the warrior's own, scaled
+  nowhere. That is the placeholder GAME_DESIGN asks for ("scaling an existing model up is a cheap way to get a
+  placeholder boss") and it is stated rather than assumed. `places`: `ok  QUESTS ... ch1d.0 goto | ch1d.1 skin | ch1d.2
+  unskin | ch1d.3 unskin | ch1d.4 talk`, and the row now fails on an `npcs`/`also` mark with no body and a `needQ` that
+  names no quest. Exit 0.
+
 - **THE FOOTBRIDGE TO THE PEARL, AND A `fix` GATE NOW STOPS EVERY FORM UNTIL IT IS FIXED (m341, B4-3, `FOOT`,
   `buildFootbridge`, `footFix`, quest `ch1c` "THE FOOTBRIDGE").** REGIONS puts it "over the rail cut"; his kit city has no
   rail cut, so it crosses the WATER off Old Town's west shore, on The Pearl's bearing as `SKYLINE` draws it (its `pearl`

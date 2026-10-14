@@ -175,6 +175,8 @@ quiet('LIFE', M.OTLIFE.n, 'routes:', M.OTLIFE.routes.map(r => r.id + ' ' + r.bea
       if (st.npc) why = !ids.has(st.npc) ? 'NO MARK ' + st.npc : !ids.get(st.npc).K ? 'MARK ' + st.npc + ' HAS NO KIND' : why;
       if (st.type === 'talk' && st.who && !after.has(st.who) && !(st.say && st.npc) && !(st.who.startsWith('mk_') && ids.has(st.who.slice(3)))) why = 'NOBODY IS ' + st.who;
       if (st.type === 'gate' && !M.GATES.find(g => g.id === st.id)) why = 'NO GATE ' + st.id;
+      for (const id of [...(st.npcs || []), ...((st.also && st.also.npcs) || [])]) if (!ids.has(id) || !ids.get(id).K) why = 'NO BODY ON MARK ' + id;   // m342
+      if (i === 0 && q.needQ && !M.QUESTS.find(o => o.id === q.needQ)) why = 'NEEDS A QUEST THAT IS NOT THERE: ' + q.needQ;
       if (st.kind && !M.MARKS.some(m => m.type === 'npc' && m.K && m.p.kind === st.kind && m.id !== st.not)) why = 'NOBODY OF KIND ' + st.kind;   // m340
       if (why) nb++;
       out.push(q.id + '.' + i + ' ' + st.type + (why ? ' BAD ' + why : ''));
