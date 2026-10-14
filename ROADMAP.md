@@ -397,4 +397,12 @@ differ" table there, so no region feels like the last one.
   meadow, with lit windows, green shutters, a red roof, a smoking chimney, a porch with chairs facing
   the corn and the lane, and washing flapping on a line behind it. Climb the rain barrel onto the
   porch roof to see over the corn to the wreck. It's the natural home for the farmer in B2.
+- **m305 (farm pass 10: the way to the bridge):** a worn **road** now carries on from the end of the
+  sunken lane, round the wreck, to the foot of the bridge ramp. A **fingerpost** at the lane's end
+  points to THE BRIDGE · TOWN one way and GRISTLE FARM the other. There's a **milk-churn stand**
+  on the verge and a **cattle grid** across the road at the ramp (the stampede in B1e will stop
+  there).
+- **Farm polish: stopping at ten passes** (your STEER said ten was fine) and moving on to **B1e**
+  (the hayloft rope, the climbable silo ladder, the orchard terrace, the stampede), then B2. If the
+  farm still looks wrong on your phone, say what and it jumps the queue.
 

@@ -7,6 +7,68 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **NOTHING SAID WHERE THE BRIDGE WAS (m305, farm pass 10, `FROAD`, `buildRoadside`, `GPAINT.road`, `BRIDGE.foot`).**
+  Chapter 0 ends "walk to the bridge as the farmer"; the lane ran out into grass at its east mouth and the hairpin stood
+  20 m off past the wreck. Now: a ROAD in the ground paint (the lane's ribbon factored into `ribbon(L, G)`, called for
+  both) from `LANE.pts[0]` round the head of the crash furrow (2.5 m off its start at (42, -1)) and in from the SEA side
+  to the hairpin's foot -- `BRIDGE.foot`, stored by `buildBridge` where ramp A starts (measured (49, 3)); a FINGERPOST
+  at the lane's mouth with two painted arms (one 512x400 canvas atlas, four rows: each arm's front and back); a
+  MILK-CHURN STAND on the verge (you can stand on it); a CATTLE GRID across the road at the ramp's foot (B1e's stampede
+  will read `FROAD.grid`).
+  **The sign's arrow is a canvas PATH, not a glyph**: a phone's fallback font may not have the triangle, and a missing
+  glyph is a box. **Its back face reads correctly**: the back plane is turned psi + pi, so its +x runs from the tip to
+  the post and the arrow belongs at its LEFT -- each face has its own atlas row.
+  **Caught before shipping**: the atlas rows were 8:1 on 5:1 planes (letters squashed to 65%) -- now 512 x 100; and the
+  cattle grid's top sat 3 cm UNDER the road paint (+.05, transparent, drawn after) so the ribbon covered it -- raised
+  to +.09. **Drawn only on the + side** (`BRIDGE.side` 1, as measured); mirrored, the road is not drawn and the chip
+  says `ROAD MIRRORED`. GOD `road`.
+  `npm run places`, after the bump:
+  ```
+  ok   buildFarm
+  ok   buildFarmProps
+  ok   buildCrash
+  ok   crashHero
+  ok   buildLane
+  ok   buildBridge
+  ok   buildHedgerows
+  ok   buildFarmhouse
+  ok   buildRoadside
+  ok   buildCows
+  ok   buildGroundPaint
+  ok   buildFlora
+  widest grass 78.5 at -13deg | headland ray 7deg grass 65.6 need 60 | rays 520 rect [-93.5,90.5,-90.3,93.5]
+  FARM.at {"x":119,"z":16.2,"th":1.66} | CRASH.at yes | LANE.at yes | BRIDGE.gate yes (side 1) | ISLE.live 1
+  FROAD 5 road pts 8 foot [49,3] | FHOUSE 24 chimney [129.2,9.3,-3.8] | HROW 140 boxes 23 trees 4 gates | FLORA {"corn_by_the_crash":273,"wheat_to_the_shore":1774,"hay_meadow":1218,"crash_stubble":995,"potato_rows":1135,"river_meadow":629,"copse_ferns":1013,"tufts":900}
+  notes ["TC NO OBB JSON","ISLE 0/3 TEX"]
+  ok  oldtown    -> player 0.0,0.1,0.0 ground 0.00 
+  ok  farmyard   -> player 107.1,-0.1,23.3 ground -0.28 
+  ok  hayloft    -> player 121.3,3.0,22.0 ground 7.24 
+  ok  crash      -> player 114.1,-0.3,-16.6 ground -0.42 
+  ok  corn       -> player 108.8,-0.1,3.1 ground -0.27 
+  ok  wheat      -> player 138.6,-1.1,21.5 ground -1.25 
+  ok  farmhouse  -> player 120.5,-0.4,0.8 ground -0.53 
+  ok  meadow     -> player 150.4,-1.0,4.1 ground -1.15 
+  ok  plough     -> player 117.2,-0.5,52.5 ground -0.61 
+  ok  copse      -> player 123.7,-0.8,68.0 ground -0.90 
+  ok  windmill   -> player 127.3,-0.8,16.9 ground -0.90 
+  ok  scarecrow  -> player 113.3,-0.2,2.4 ground -0.36 
+  ok  tractor    -> player 108.9,-0.1,8.7 ground -0.29 
+  ok  paddock    -> player 127.9,-0.8,19.7 ground -0.93 
+  ok  lane       -> player 103.0,-0.0,11.6 ground -0.19 
+  ok  ford       -> player 105.5,-0.1,39.5 ground -0.25 
+  ok  road       -> player 109.6,-0.2,-15.0 ground -0.32 
+  ok  bridge     -> player 113.7,3.5,-54.4 ground 3.22 
+  every tkit GOD place is somewhere
+  ok  farmPropsStep  30 frames
+  ok  farmhouseStep  30 frames
+  ok  floraStep      30 frames
+  ok  cowStep        30 frames
+  ok  crashStep      30 frames
+  ok  crashHeroStep  30 frames
+  ok  riverStep      30 frames
+  ok  gradeStep      30 frames
+  ```
+
 - **THE FARM HAD NOBODY'S HOUSE (m304, farm pass 9, `FHOUSE`, `buildFarmhouse`, `farmhouseStep`).**
   REGIONS.md: *"the farmer and his family"* -- and the yard was a barn, a silo and a lean-to. Pass 9 is the farmhouse,
   the biggest silhouette that was missing: two storeys of cream board-and-batten (`cream`, FPAINT kind 1) on a stone

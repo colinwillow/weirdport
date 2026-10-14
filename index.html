@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m304</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m305</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m304</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m305</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm304';
+const BUILD = 'm305';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -29522,6 +29522,7 @@ function buildBridge() {
   const gA = gnd(U(uR - 14), vB + 2), yL = (gA + yD) / 2;
   const uA = uR - hw - W - 11.5, uB = uR - hw - W - 6.5;                               // the two ramps' centrelines
   ramp(uA, vB + 2, gA, vLand + 2, yL, 4);                                           // A: from the field, toward town
+  BRIDGE.foot = [U(uA), vB + 2];                                                    // its foot, where the farm road arrives (m305)
   { const g = gnd(U((uA + uB) / 2), vLand);                                            // the landing, the turn
     bx(U((uA + uB) / 2), vLand, g - .4, yL, uB - uA + 4.4, 4, 'earth');
     bx(U((uA + uB) / 2), vLand - 2.2, Math.min(g, yL) - .3, yL + .85, uB - uA + 4.8, .4, 'stone');
@@ -30090,6 +30091,97 @@ function floraStep(dt) {
 }
 
 // ============================================================================================
+// THE WAY TO THE BRIDGE (m305, farm polish pass 10, `FROAD`, `buildRoadside`, the road in `GPAINT`)
+// ============================================================================================
+// Chapter 0 is "walk to the bridge as the farmer", and from the yard nothing said where the bridge was: the lane ran out
+// at its east end into grass, the hairpin stood 20 m off past the wreck, and the way between was a guess. Now a worn
+// ROAD (a ribbon in the ground paint, ruts and all) carries on from the lane's mouth, round the head of the crash
+// furrow, to the foot of the hairpin; a FINGERPOST at the lane's mouth names both ways (painted arms, one canvas atlas,
+// the arrow DRAWN, not a glyph a phone's font may lack); a MILK-CHURN STAND sits on the verge the way they do at a farm
+// gate; and a CATTLE GRID lies across the road at the ramp's foot -- the line the herd does not cross (B1e's stampede
+// will read it). Placed off measured anchors: the lane's first point (`LANE.pts[0]`) and the hairpin's foot
+// (`BRIDGE.foot`), so if either moves the roadside moves with it. GOD `road`.
+const FROAD = {
+  on: 1, n: 0, at: null,
+  post: [3.5, 3.6],      // the fingerpost, off the lane's mouth (u +, v +): on the yard-side verge
+  stand: [5.5, -2.4],    // the churn stand, on the town-side verge
+  ARMS: [
+    { text: 'THE BRIDGE · TOWN', to: 'road', why: 'down the road, round the wreck, to the checkpoint' },
+    { text: 'GRISTLE FARM', to: 'lane', why: 'back along the lane to the yard and the barn' },
+  ],
+};
+function froadAtlas() {
+  // four rows of 512 x 100 -- the arm's face is .98 x .19, so a row has its aspect and the letters are not squashed
+  const c = document.createElement('canvas'); c.width = 512; c.height = 400;
+  const g = c.getContext('2d');
+  FROAD.ARMS.forEach((A, i) => for2(i, A.text));
+  function for2(i, text) {
+    for (const back of [0, 1]) {
+      const y0 = (i * 2 + back) * 100;
+      g.fillStyle = '#e9dfc4'; g.fillRect(0, y0, 512, 100);
+      g.fillStyle = 'rgba(90,70,40,.25)'; for (let k = 0; k < 8; k++) g.fillRect(0, y0 + 8 + k * 12, 512, 1);
+      g.fillStyle = '#2a2420'; g.font = '700 58px "Barlow Condensed", system-ui, sans-serif'; g.textBaseline = 'middle';
+      // the arrow is a path: at the tip end, which is the RIGHT on the front face and the LEFT on the back
+      const ax = back ? 18 : 494, d = back ? 1 : -1;
+      g.beginPath(); g.moveTo(ax, y0 + 50); g.lineTo(ax + d * 34, y0 + 22); g.lineTo(ax + d * 34, y0 + 78); g.closePath(); g.fill();
+      g.textAlign = back ? 'left' : 'right'; g.fillText(text, back ? 66 : 446, y0 + 53);
+    }
+  }
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4;
+  return t;
+}
+function buildRoadside() {
+  const A = FARM.at, R = FROAD; if (!R.on || !A || !LANE.pts) return 0;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .85, metalness: 0 }), o || {});
+  const MAT = { wood: M(0x6f5034), metal: Object.assign(M(0xb9c2c6), { metalness: .35, roughness: .5 }), dark: M(0x1e1c1a),
+    sign: M(0xffffff, { map: froadAtlas(), roughness: .8 }) };
+  const F = farmFrame(A.x, A.z, A.th, MAT, 'road'), { bx, geo, gnd, wx, wz } = F;
+  const [lu, lv] = LANE.pts[0];
+  // ---- the fingerpost
+  const pu = lu + R.post[0], pv = lv + R.post[1], g = gnd(pu, pv);
+  bx(pu, pv, g - .3, g + 2.6, .16, .16, 'wood');
+  bx(pu, pv, g + 2.6, g + 2.7, .24, .24, 'wood', 0, false);
+  const aim = { road: (GPAINT.road.mid[1] || [pu + 10, pv]), lane: (LANE.pts[2] || [pu - 10, pv]) };
+  R.ARMS.forEach((Arm, i) => {
+    const [tu, tv] = aim[Arm.to], psi = Math.atan2(-(tv - pv), tu - pu), cs = Math.cos(psi), sn = -Math.sin(psi);
+    const y = g + 2.25 - i * .32, cu = pu + cs * .55, cv = pv + sn * .55;
+    bx(cu, cv, y - .11, y + .11, 1.05, .06, 'wood', psi, false);
+    // the two painted faces: the plane's +z is the box's local z = (sin psi, cos psi) in (u, v)
+    for (const back of [0, 1]) {
+      const pg = new THREE.PlaneGeometry(.98, .19), uv = pg.attributes.uv, r = i * 2 + back;
+      for (let k = 0; k < uv.count; k++) uv.setY(k, 1 - (r + 1) / 4 + uv.getY(k) / 4);
+      const o = back ? -.032 : .032;
+      geo(pg, 'sign', cu + Math.sin(psi) * o, y, cv + Math.cos(psi) * o, psi + (back ? Math.PI : 0));
+    }
+  });
+  // ---- the churn stand: a platform at cart height, three churns on it
+  { const su = lu + R.stand[0], sv = lv + R.stand[1], gs = gnd(su, sv), top = gs + .85;
+    bx(su, sv, gs - .2, top, 1.7, 1.0, 'wood', .08);
+    for (const [du, dv] of [[-.5, -.15], [.05, .2], [.55, -.1]]) {
+      const cu = su + du, cv = sv + dv;
+      geo(new THREE.CylinderGeometry(.22, .25, .62, 12), 'metal', cu, top + .31, cv);
+      geo(new THREE.CylinderGeometry(.12, .21, .16, 12), 'metal', cu, top + .7, cv);
+      geo(new THREE.CylinderGeometry(.14, .14, .06, 12), 'metal', cu, top + .81, cv);
+    }
+    bx(su, sv, top, top + .84, 1.4, .7, 'metal', .08); F.parts.metal.pop();     // the churns, as one thing you can stand on
+  }
+  // ---- the cattle grid across the road, just before the ramp
+  const fo = BRIDGE.foot;
+  if (fo && BRIDGE.side === 1) {
+    const [fu, fv] = fo, cu = fu, cv = fv + 2.6, gg = gnd(cu, cv);
+    // its pit and bars stand proud of the road's paint (+.05), or the ribbon is drawn over them
+    bx(cu, cv, gg - .3, gg + .09, 3.6, 1.6, 'dark', 0, false);
+    for (let k = 0; k < 8; k++) bx(cu, cv - .7 + k * .2, gg + .09, gg + .15, 3.6, .07, 'metal', 0, false);
+    for (const sd of [-1, 1]) bx(cu + sd * 1.95, cv, gg - .1, gg + .55, .3, 1.7, 'wood');     // its wing posts
+    R.grid = [wx(cu, cv), wz(cu, cv)];
+  }
+  const r = F.commit();
+  R.n = r.boxes;
+  R.at = [wx(pu - 1.6, pv - 1.2), wz(pu - 1.6, pv - 1.2), A.th + Math.PI / 2];     // GOD: by the post, looking down the road
+  return R.n;
+}
+
+// ============================================================================================
 // THE FARMHOUSE (m304, farm polish pass 9, `FHOUSE`, `buildFarmhouse`, `farmhouseStep`) -- where the farmer lives
 // ============================================================================================
 // REGIONS.md: *"People: the farmer and his family"* -- and the farm had a barn, a silo and a lean-to, and nowhere anybody
@@ -30479,6 +30571,7 @@ const GODPLACES = [
   { id: 'paddock',  world: 'tkit', name: 'GRISTLE FARM · the cows in the paddock', at: () => godFarm(-4.3, 8.5, 0) },
   { id: 'lane',     world: 'tkit', name: 'GRISTLE FARM · the sunken lane', at: () => LANE.at && [LANE.at.x, null, LANE.at.z, null] },
   { id: 'ford',     world: 'tkit', name: 'GRISTLE FARM · the ford and the footbridge', at: () => LANE.at && [LANE.at.ford[0], null, LANE.at.ford[1], null] },
+  { id: 'road',     world: 'tkit', name: 'GRISTLE FARM · the fingerpost and the road to the bridge', at: () => FROAD.at && [FROAD.at[0], null, FROAD.at[1], FROAD.at[2]] },
   { id: 'bridge',   world: 'tkit', name: 'GRISTLE FARM · the bridge checkpoint', at: () => BRIDGE.gate && [BRIDGE.gate.x, BRIDGE.gate.y + .1, BRIDGE.gate.z, null] },
   { id: 'test',     world: 'test', name: 'TEST SITE', at: () => [0, null, 4, null] },
   { id: 'weirdport', world: 'weirdport', name: 'WEIRDPORT · the downtown slice', at: () => [WP.spawn[0], null, WP.spawn[1], null] },
@@ -30883,6 +30976,11 @@ const GPAINT = {
     { id: 'porch',   u: 14,  v: 3.4,   ru: 1.4, rv: 2.0, col: 0x6a5640, a: .7, why: 'the path off the farmhouse steps, worn to the corn and the lane (m304)' },
   ],
   lane: { col: 0x6a5640, rut: 0x3e3226, w: 1.65, a: .85, why: 'the sunken lane: a worn track down its floor, two ruts from carts' },
+  // m305: THE ROAD TO THE BRIDGE -- from the lane's east mouth, round the head of the crash furrow, to the foot of the
+  // hairpin (`BRIDGE.foot`, measured where the bridge is built). Chapter 0 ends with "walk to the bridge", and nothing
+  // on the ground said where it was. Written for the bridge on the + side (`BRIDGE.side`); mirrored, it is not drawn.
+  road: { col: 0x77624a, rut: 0x46392b, w: 1.95, a: .9, mid: [[37, -7.4], [42.5, -4.8]],
+    why: 'the farm road: the lane, then round the furrow head to the bridge ramp' },
 };
 const gpH = (x, z) => { const s = Math.sin(x * 127.1 + z * 311.7) * 43758.5453; return s - Math.floor(s); };
 function gpNoise(x, z) {
@@ -30908,10 +31006,9 @@ function buildGroundPaint() {
     }
   };
   for (const P of GPAINT.TABLE) grid(P.u, P.v, P.ru, P.rv, P.col, P.a, .55);
-  // the lane's floor: a ribbon down its centreline, ruts darker, edges fading
-  const L = LANE.pts;
-  if (L && L.length > 1) {
-    const G = GPAINT.lane, cA = new THREE.Color(G.col), cR = new THREE.Color(G.rut), across = [-1, -.6, -.38, -.22, 0, .22, .38, .6, 1];
+  // a track: a ribbon down a centreline, ruts darker, edges fading -- the lane's floor, and the road on from it (m305)
+  const ribbon = (L, G) => {
+    const cA = new THREE.Color(G.col), cR = new THREE.Color(G.rut), across = [-1, -.6, -.38, -.22, 0, .22, .38, .6, 1];
     for (let s = 0; s < L.length - 1; s++) {
       const [u0, v0] = L[s], [u1, v1] = L[s + 1], len = Math.hypot(u1 - u0, v1 - v0), n = Math.max(2, Math.ceil(len / .8));
       const tu = (u1 - u0) / len, tv = (v1 - v0) / len, nu = -tv, nv = tu, base = pos.length / 3;
@@ -30927,7 +31024,15 @@ function buildGroundPaint() {
         if (k < n) for (let q = 0; q < across.length - 1; q++) { const o = base + k * across.length + q, o2 = o + across.length; idx.push(o, o + 1, o2, o + 1, o2 + 1, o2); }
       }
     }
-  }
+  };
+  if (LANE.pts && LANE.pts.length > 1) ribbon(LANE.pts, GPAINT.lane);
+  // the road: from the lane's east end (its first point) to the hairpin's foot, coming at it from the sea side
+  const fo = BRIDGE.foot;
+  if (LANE.pts && fo && BRIDGE.side === 1) {
+    const [fu, fv] = fo;
+    GPAINT.roadPts = [LANE.pts[0], ...GPAINT.road.mid, [fu - 4.4, fv - 1.2], [fu - 3.4, fv + 2.8], [fu - .8, fv + 4.2], [fu, fv + 2], [fu, fv]];
+    ribbon(GPAINT.roadPts, GPAINT.road);
+  } else if (fo) note('ROAD MIRRORED');
   if (!idx.length) return 0;
   const g = new THREE.BufferGeometry();
   g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
@@ -32789,6 +32894,8 @@ async function init() {
     try { buildHedgerows(); } catch (e) { note('HEDGE FAIL'); console.warn('[melee] hedgerows', e); }
     // THE FARMHOUSE (m304): before the cows, the ground paint and the plants, which all see it
     try { buildFarmhouse(); } catch (e) { note('HOUSE FAIL'); console.warn('[melee] farmhouse', e); }
+    // THE WAY TO THE BRIDGE (m305): the fingerpost, the churn stand, the cattle grid (the road itself is ground paint)
+    try { buildRoadside(); } catch (e) { note('ROAD FAIL'); console.warn('[melee] roadside', e); }
     try { buildCows(); } catch (e) { note('COWS FAIL'); console.warn('[melee] cows', e); }
     // THE GROUND (m301): dirt, mud and the lane's track, under everything
     try { buildGroundPaint(); } catch (e) { note('GROUND FAIL'); console.warn('[melee] ground paint', e); }
@@ -32995,7 +33102,7 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // THE FARM'S PROPS (m299): `mel.FPROPS` -- `wind` (shared direction), `spin`
   FPROPS,
   // THE GROUND PAINT (m301): `mel.GPAINT` -- the patch table and the lane track
-  GPAINT, HROW, FHOUSE,
+  GPAINT, HROW, FHOUSE, FROAD,
   FARM, farm: () => { const F = FARM.at; if (!F) return 'no farm in this world'; const p = player; p.pos.set(F.x - Math.sin(F.th) * 12, 2, F.z - Math.cos(F.th) * 12); p.vel.set(0, 0, 0); p.heading = p.faceH = F.th; return 'farm at ' + F.x.toFixed(0) + ',' + F.z.toFixed(0); },
   PORTAL, PORTALS, portal: () => portalOpen(),
   // THE DEMOS, ON PURPOSE ONLY (m292, STEER 1): round where you stand, for testing the systems
