@@ -7,6 +7,30 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE GANTRY CRANES: CLIMB ONE, RIDE ITS TROLLEY, RIDE ITS BOX OUT OVER THE RIVER (m380, C6-6c, `WCRANE`, `wfCranes`,
+  `wfCraneParts`, `wfCranePlace`, `wfCraneStep`).** Two ship-to-shore cranes on m377's rails (u 2 and u 34): four legs in a
+  portal (X-braced on the SIDES, so the box's way through the middle is clear), a boom of two girders from over the yard to
+  44 m out over the river, an A-frame with its stays, a machine house at the back. **Up**: a ladder on the east land leg to
+  a railed landing at 17 m, a second from the landing to the east catwalk at 34 m (a gap in its rail where it tops out);
+  catwalks both sides of the boom, railed, the girders between them standable. **The trolley** runs between the girders
+  with its roof .3 over the catwalks, so you step on; **the box** (a container under a spreader on four cables) works for
+  ever between its pad on the quay (a crate stair of ten .3 risers up to the SPREADER's top, which is what you stand on)
+  and the barge moored off the quay (crane 1) or out along pier 2 between its bollards (crane 2): hold, hoist 20 m, run
+  out (eased, `vmax` 3.2), lower, hold. It swings on its cables, a damped pendulum driven by the trolley's own
+  acceleration, the box's collider moving with the swing. Trolley roof and box are `BDYN` boxes; THE CARRY is
+  `trainStep`'s with the box's HEIGHT in it too (and a rising box zeroes his fall). GOD: out on crane 1's boom, crane 1's
+  box, the barge; "THE CRANES: STOP / RUN". Nobody drives one yet: the engineer is C6-6e.
+  **The `CRANES` row's first run caught a real bug**: the box was BURIED at load -- its height started at 0, and only
+  the first step put it on the pad -- so the crate stair walked onto the quay instead of the box (`0, 0 (want 3)`). It
+  runs both cranes' cycles through the shipped step (every hold's box ON the floor under it, measured with the box
+  itself switched off), bounds the swing, and stands him on crane 1's box from its land hold to its sea hold. Teeth: the
+  carry's `P.y += dy` taken out reads `rode ... 0.0 m out, up to 3.0 m THE BOX DOES NOT CARRY HIM`, exit 1.
+  `npm run places` (exit 0):
+      ok  wfcrane    -> player 79.8,37.5,-195.5 ground 37.20
+      ok  wfpad      -> player 118.9,3.5,-240.4 ground 3.20
+      ok  wfbarge    -> player 84.4,-1.0,-214.8 ground -1.20
+      ok  CRANES 2 cranes | ladders 4 | landing / catwalk 17 / 34, 17 / 34 (want 17 / 34) | crate stairs onto the box 3, 3 (want 3) | cycles up>go>down>hold>up>go>down>hold>up>go>down>hold>up>go>down>hold>up>go>down>hold>up>go>down>hold ; up>go>down>hold>up>go>down>hold>up>go>down>hold>up>go>down>hold>up>go>down>hold>up>go | holds on the floor: sea 0.00, land 0.00, sea 0.00, land 0.00, sea 0.00, land 0.00 ; sea 0.00, land 0.00, sea 0.00, land 0.00, sea 0.00 | swing 0.15 rad | rode crane 1's box 35.0 m out, up to 23.0 m
+
 - **THE CONVERSION LINE: FIVE DOCKERS RIDE IT ROUND FOR EVER, IN HUMAN AND OUT CYBORG (m379, C6-6b-2, `WFCONV`,
   `wfConvBuild`, `wfRide`, `wfConvStep`, `wfStation`, `wfUnconvert`).** Five marks (`wf_line_0..4`, `role: 'docker'`)
   spaced round a 209 m ROUTE (`WFCONV.ROUTE`: frame points, heights, `walk`/`belt`/`lift`): queue in the lot, walk in, up

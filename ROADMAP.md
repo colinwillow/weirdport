@@ -301,7 +301,7 @@ differ" table there, so no region feels like the last one.
     - [x] m379 **C6-6b** the cyborg factory: the hall opened up, conveyor lines through it at several levels, catwalks; the conversion line (workers go in human, come out cyborg), the signature system.
       - [x] m378 **C6-6b-1** the hall opened up: the line climbing through it on three levels (belts that carry), walkways, the west stair, the control room, the gallery and the outfeed tower.
       - [x] m379 **C6-6b-2** the conversion line: workers ride it in human and come out cyborg; the line's own clock and noise.
-    - [ ] **C6-6c** the gantry cranes on the quay's rails: climb one, ride the trolley along the boom, swing a container.
+    - [x] m380 **C6-6c** the gantry cranes on the quay's rails: climb one, ride the trolley along the boom, swing a container.
     - [ ] **C6-6d** the way in: the ferry from Old Town's docks to pier 1; a second way (the swing bridge, or the drainage outfall).
     - [ ] **C6-6e** the engineer / hacker form: locked doors, turrets, security robots; as the engineer they open, turn and stand down.
     - [ ] **C6-6f** Chapter 4's quests and its boss; shut the line down and the cyborgs turn back; Chapter 4 complete.
@@ -1049,3 +1049,9 @@ differ" table there, so no region feels like the last one.
   - Knock a rider off and they leave the line for good.
   - GOD has a stop/start switch.
   - The line also makes a thunk now and then while it runs.
+- **m380 (C6-6c) The gantry cranes.** There are two cranes on the container quay.
+  - Two ladders take you to the boom's catwalks, 34 m up, which run out over the river.
+  - The trolley carries you if you stand on its roof.
+  - Each crane moves one container forever: from a pad on the quay (a crate stair lets you climb onto it) up 20 m, out over the water, and down onto a barge (crane 1) or out along pier 2 (crane 2), then back. It swings on its cables as it moves.
+  - They run on their own. Driving one yourself waits for the engineer form.
+  - GOD has a stop/run switch.
