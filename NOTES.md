@@ -7,6 +7,19 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE MAN IN THE NICE SUIT, AND THE END (m406, C6-8e-3, quest `ch6c`, `ISUIT`, `buildShipSuit`, `shipFree`, `shipEnd`).**
+  The boss is the ordinary `skin` step (big 2.4, seven downs) on a `fat_secret_service` mark in the core. **THE TURNED COME
+  OUT** through `shipFolkStep`: once `qdone:ch6c` is set, each bound pod body gets `shipFree`, which clears the passenger
+  (`podR`), copies back the colours `podCol0` took BEFORE the green lerp (m401 lerped in place and kept nothing, so this
+  build had to start saving them), swaps in the freed lines, and dims the pods' shared glass material (`ISDECK.podMat`).
+  **THE SHIP GOES DARK** in `shipEnd`: the hull's torus ring, the tether's ring (its pulse in `thermStep` now waits on
+  `!ISUIT.ended`), and the machine's crown (it stops turning). A save with `qdone:ch6c` comes back dark: `shipPodStep` calls
+  `shipEnd` once. `progChapter(7)` is the after-the-end save; nothing reads chapter 7 yet.
+  **`npm run places`, exit 0** (teeth: the release line made `if (0)` reads `BAD BOSS6 ... out NO, their own colours NO,
+  freed words NO ... THE TURNED STAY IN THEIR PODS`):
+      ok  BOSS6 the man in the suit (fat_secret_service.glb) in the core | ch6c goto > skin > unskin > talk after ch6b, 2.4x, 7 downs | before the end a pod holds them; after it, out yes, their own colours yes, freed words yes, the glass dimmed yes | the ship dark yes 
+  **AND THAT IS C6: SIX CHAPTERS, THE CRASH TO THE MOTHERSHIP.** The roadmap's next is Phase D (turf).
+
 - **THE SIX LOCKS AS A QUEST (m405, C6-8e-2, quest `ch6b`).** Five `gate` steps (the quest engine points at
   `GATES.find(id)` and completes on `gate:<id>`, which `gatePush` sets on a crossing in the right body, or `gateStep` on a
   mend) and a `reach` at `ISGAUNT.godAt`. **THE ROW CHECKS THE ORDER AGAINST THE WAY ITSELF**: each gate's distance along

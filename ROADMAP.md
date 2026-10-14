@@ -271,7 +271,7 @@ differ" table there, so no region feels like the last one.
   - [x] m356 **C4-1** his form flies: her wingsuit flight (double tap the right pad) under a hang glider instead of her wings; the gap gate wants his form.
   - [x] m357 **C4-2** the lookout: a tower on Old Town's ring over the water, the glider guy on top with his glider, and a task to take his form and fly.
 - [x] m358 **C5 Hidden good aliens.** A network of disguised shopkeepers who give tips and upgrades.
-- [ ] **C6 Chapter 2 greybox (The Pearl)** with its quests and boss — then 3, 4…
+- [x] m406 **C6 Chapter 2 greybox (The Pearl)** with its quests and boss — then 3, 4…
   - [x] m359 **C6-1** the land: piers past dock 1's door, eight warehouses round a plaza, containers, stalls, string lights, four locals; GOD place.
   - [x] m360 **C6-2** the plaza protest and a barricade on every street into it.
   - [x] m361 **C6-3** up top: rooftop gardens, catwalks and rope bridges between the warehouses.
@@ -327,17 +327,17 @@ differ" table there, so no region feels like the last one.
       - [x] m396 **C6-7e-1** Chapter 5 opens: over to the islands, Rue on the landing field, Rollergirl at the pier (the tether, the lighthouse that points up), up the mesa to Teo.
       - [x] m397 **C6-7e-2** the gaps: land on Rue's field, clear the gap ramp's jump, top the needle.
       - [x] m398 **C6-7e-3** the boss: the lighthouse keeper (a Skinsuit guiding the Mothership in), the wind turned on you while he stands; after him Chapter 5 is complete and the tether is the way on.
-  - [ ] **C6-8** Chapter 6 greybox (the Mothership -- GAME_DESIGN's finale, REGIONS 10), split:
+  - [x] m406 **C6-8** Chapter 6 greybox (the Mothership -- GAME_DESIGN's finale, REGIONS 10), split:
     - [x] m399 **C6-8a** in: the pod up the tether into the ship's belly -- a round chamber in the hull with a glass floor over the cloud's hole, looking down the tether at the islands; the way on shut.
     - [x] m400 **C6-8b** the corridors: organic tubes off the belly up through the ship, the conversion chamber (pods of half-turned people), the bridge with Weirdport under it.
     - [x] m401 **C6-8c** its people: Skinsuit grunts on patrol, the turned in their pods.
     - [x] m403 **C6-8d** every form one last time, split:
       - [x] m402 **C6-8d-1** the way to the core: the torn walkway (the worker mends it), the neural lock (the engineer's mind opens it), the shaft (a flight rides its lift up), the core on the ship's back.
       - [x] m403 **C6-8d-2** the rest: the activist's march, the biker's jump, the farmer -- each one more stretch of the way.
-    - [ ] **C6-8e** Chapter 6's quests and the final boss; the end, split:
+    - [x] m406 **C6-8e** Chapter 6's quests and the final boss; the end, split:
       - [x] m404 **C6-8e-1** Chapter 6 opens: up the tether, the conversion chamber, Benny in his pod (the man in the nice suit, the core behind six locks), the bridge.
       - [x] m405 **C6-8e-2** the six locks as a quest: each gate a step, the form it wants in its tip; up the shaft to the core.
-      - [ ] **C6-8e-3** the man in the nice suit: the final boss in the core; after him, the turned come back and the end.
+      - [x] m406 **C6-8e-3** the man in the nice suit: the final boss in the core; after him, the turned come back and the end.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
 
@@ -1147,3 +1147,4 @@ differ" table there, so no region feels like the last one.
 - **m403 (C6-8d-2) Every form one last time, part two.** The way to the core now has six gates, one for each chapter's form, in order. **The pen** (Chapter 0): a gate with a farmer's latch that swings open for anyone country (the farmer or a farmhand). **The torn walkway** (Chapter 1, the worker). **The file of the turned** (Chapter 2): the turned shuffle in a line through a green curtain, and anyone who looks like the city's own (the activist, a hippie, a hipster) can shuffle through with them. **The rumble door** (Chapter 3): an iris that opens only to an engine, so you have to *ride* up to it as the biker; on foot he's stopped. **The neural lock** (Chapter 4, the engineer). **The shaft** (Chapter 5, flight). The route turns west after the file's hall, because carried on north it put the core off the hull's back. The core is now 44 m from the hull's middle. Overrule which form any gate wants.
 - **m404 (C6-8e-1) Chapter 6 opens.** The finale's story is my call. **The man in the nice suit** is the one every earlier boss pointed at: the temp agency, the stationery, the office at the top of Dump Tower. He is the Mothership's master and its final boss, in the core. Quest `ch6`: ride the tether's pod up, find the conversion chamber, and talk to **Benny** in pod 5. He's the docker whose cousin you freed in Chapter 4, and he talks to you as you are. He tells you about the suit and the six locks to the core. Then look down from the bridge. Next: the six locks as quest steps, then the boss and the end. Overrule the story.
 - **m405 (C6-8e-2) The six locks as a quest.** Quest `ch6b`, after Benny: one step per gate in the order the way runs (pen, tear, file, rumble door, lock), each tip naming the form it wants and where to get it, then up the shaft to the core. GOD can start it from the quest list. The boss and the end come next.
+- **m406 (C6-8e-3) The man in the nice suit, and the end.** Quest `ch6c`. The man every boss pointed at stands in the core, by the shaft's mouth. Get close and the thing wearing him bursts out: the biggest boss yet (2.4x, seven knock-downs). Afterwards he comes round. He sold insurance in Tacoma and signed something with a warm pen in an office at the top of Dump Tower, and there are floors of others still in there. That leaves Dump Tower as the hook for the metropolis core. **The turned come out of their pods** in their own colours, saying their own freed lines. **The ship goes dark**: the hull's ring, the tether's ring, the machine's crown, and the pods' glass. Then two cards: "Chapter 6 complete" and **"THE END · WEIRDPORT IS YOURS"**. The save moves to chapter 7, a free roam after the end. **That closes C6, all six chapters in GAME_DESIGN's list**, and Phase D (turf) is next on the roadmap. Overrule the ending.

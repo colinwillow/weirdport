@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m405</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m406</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m405</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m406</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm405';
+const BUILD = 'm406';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28408,6 +28408,21 @@ const QUESTS = [
     { type: 'gate', id: 'ms_lock', text: 'The neural lock', tip: "An engineer's mind opens it. Wear Ivy's face (or Dex's)." },
     { type: 'reach', at: () => ISGAUNT.godAt, r: 7, text: 'Up the shaft to the core', tip: 'No ladder. Open your wings in the shaft -- Skye\'s glider or the wingsuit -- and the air carries you up.' },
   ] },
+  // CHAPTER 6's BOSS AND THE END (m406, C6-8e-3): the man in the nice suit, in the core. Close to, the thing wearing him bursts
+  // out (2.4x, seven knock-downs). After: he comes round (he signed something in a tower; the others are still in there),
+  // the turned come out of their pods, the ship goes dark -- Chapter 6 complete, and the end.
+  { id: 'ch6c', title: 'THE MAN IN THE NICE SUIT', world: 'tkit', ch: 6, needQ: 'ch6b',
+    onDone: () => { progChapter(7); shipEnd(); setTimeout(() => cardShow('CHAPTER 6 COMPLETE', 'THE MOTHERSHIP IS DARK: THE TURNED ARE FREE', 4.5), 3600); setTimeout(() => cardShow('THE END', 'WEIRDPORT IS YOURS', 6), 9000); }, steps: [
+    { type: 'goto', npc: 'ms_suit', r: 9, text: 'The man in the nice suit', tip: 'In the core, by the shaft\'s mouth. Every boss so far worked for him.' },
+    { type: 'skin', tag: 'ch6boss', npc: 'ms_suit', r: 7, big: 2.4, downs: 7, text: 'What wears the suit', tip: 'The biggest yet. Knock it down seven times. Mind the shaft: it is a long way to fall and a long way back.',
+      after: { id: 'ch6_suit_after', name: 'the man in the nice suit', group: 'worker', talks: ['*'], alien: 'talk',
+        lines: ["...The suit's not mine. None of it was ever mine. I sold insurance. In Tacoma.",
+                "I signed something. In a tower, in an office at the top. The pen was warm. I remember thinking pens shouldn't be warm.",
+                "There were others in that tower. Floors of them. Dump Tower. They're still in there, signing.",
+                "...Is it over? Is it actually over? Then go home, whatever you are. Go and see your city."] } },
+    { type: 'unskin', tag: 'ch6boss', npc: 'ms_suit', r: 10, text: 'Beat the thing wearing the suit: seven times down' },
+    { type: 'talk', who: 'ch6_suit_after', text: 'See who he really is' },
+  ] },
   // m357 (C4-2): Skye's, once he has told you how
   { id: 'qglide', title: 'THE LOOKOUT', world: 'tkit', from: 'mk_lookout_skye', steps: [
     { type: 'sample', kind: 'jack', text: "Take Skye's sample -- he is lying down for you", tip: 'Stand over him while he is down and HOLD the right pad.' },
@@ -34811,7 +34826,7 @@ function thermStep(dt) {
   DUST.wy = T.on ? 6 * thermAt(camera.position.x, camera.position.y, camera.position.z) : 0;
   // the tether sways with the wind (a little), the ring pulses, the gulls circle
   const wv = IWIND.on ? IWIND.spd / 10 : .5;
-  if (T.tether) { T.tether.rotation.set(Math.sin(T.t * .31) * T.sway * wv, 0, Math.cos(T.t * .23) * T.sway * wv); T.ringM.emissiveIntensity = 1.8 + Math.sin(T.t * 3) * .7; }
+  if (T.tether) { T.tether.rotation.set(Math.sin(T.t * .31) * T.sway * wv, 0, Math.cos(T.t * .23) * T.sway * wv); if (!ISUIT.ended) T.ringM.emissiveIntensity = 1.8 + Math.sin(T.t * 3) * .7; }
   for (const B of T.birds) { B.a += B.w * dt; B.b.position.set(T.axis[0] + Math.cos(B.a) * B.rr, B.y + Math.sin(T.t * .5 + B.rr) * 2, T.axis[1] + Math.sin(B.a) * B.rr); B.b.rotation.set(0, -B.a + (B.w > 0 ? 0 : Math.PI), (B.w > 0 ? -1 : 1) * .35 + Math.sin(T.t * 6 + B.rr) * .15); }
   if (T.mship) T.mship.visible = !!T.ship;
   // the ring reached: the way on
@@ -34944,7 +34959,8 @@ function shipPodStep(dt) {
   if (on && ISLE.live) ISLE.safeTk = Math.max(ISLE.safeTk || 0, .5);
   // he rides what it did
   if (on && Q.y !== y0) { const dy = Q.y - y0; P.y += dy; if (dy > 0) p.vel.y = Math.max(p.vel.y, 0); if (typeof cam !== 'undefined' && cam.pos) { cam.pos.y += dy; if (cam.tgt) cam.tgt.y += dy; } }
-  if (ISDECK.spin) ISDECK.spin.rotation.y += dt * .6;           // m400: the conversion machine's crown turns
+  if (ISDECK.spin && !ISUIT.ended) ISDECK.spin.rotation.y += dt * .6;           // m400: the conversion machine's crown turns (m406: until the end)
+  if (!ISUIT.ended && SAVE.flags['qdone:ch6c']) shipEnd();
   // inside: the first time is the chapter's door
   const inside = Math.hypot(P.x - S.axis[0], P.z - S.axis[1]) < S.R + 3 && Math.abs(P.y - S.floorY) < 3;
   if (inside && !S.inside && progFlag('ms:in')) try { cardShow('CHAPTER 6', 'THE MOTHERSHIP', 3.5); } catch (e) {}
@@ -35012,7 +35028,7 @@ function buildShipDecks() {
   const pod = (u, v) => { bx(u, v, yC, yC + .35, 1.3, 1.3, 'steel'); geo(new THREE.CylinderGeometry(.62, .62, 2.3, 16, 1, true), 'pod', u, yC + 1.5, v);
     geo(new THREE.CapsuleGeometry(.26, .95, 4, 8), 'shade', u, yC + 1.4, v); bx(u, v, yC + 2.65, yC + 2.95, 1.3, 1.3, 'steel', 0, false); bx(u, v, yC, yC + 2.9, .95, .95, 'steel'); F.parts.steel.pop();
     pearlSeg(geo, 'rib', [u, yC + 2.95, v], [C.u + (u - C.u) * .5, yC + C.H, C.v + (v - C.v) * .5], .14, .14, 0); };
-  D.pods = [];
+  D.pods = []; D.podMat = MAT.pod;
   // m402: none in front of the north door (outer 83 and 102 deg, inner 90 deg)
   for (let k = 0; k < 11; k++) { if (k === 7 || k === 8) continue; const a = -50 * Math.PI / 180 + k * 19 * Math.PI / 180, u = C.u + Math.cos(a) * 10, v = C.v + Math.sin(a) * 10; pod(u, v); D.pods.push([u, yC, v]); }
   for (let k = 0; k < 6; k++) { if (k === 4) continue; const a = -30 * Math.PI / 180 + k * 30 * Math.PI / 180, u = C.u + Math.cos(a) * 6, v = C.v + Math.sin(a) * 6; pod(u, v); D.pods.push([u, yC, v]); }
@@ -35066,6 +35082,7 @@ const ISFOLK = {
   KINDS: ['hick_skinny', 'hobo_01', 'fat_hipster', 'fat_activist_01', 'beautiful_blonde', 'contruction_worker', 'dummy_officer', 'fat_biker_01', 'beautiful_asian', 'moussa', 'fat_hippie', 'colin'],
   lines: "...is it morning?...|...it hums. It never stops humming...|...I was only going to the shop...|...don't let them finish...",
   tint: 0x3aff8a, tintK: .35, list: [], beats: {},
+  freeLines: "...I'm out? I'm OUT. Somebody pinch me. No -- don't, not with those hands.|Where are we? Why is the floor glass? Why is the city DOWN there?|Thank you. Whoever you are. Whatever you are.|I was only going to the shop.",
 };
 function buildShipFolk() {
   const F = ISFOLK, S = ISHIP, D = ISDECK; if (!F.on || !D.built) return 0;
@@ -35092,12 +35109,19 @@ function shipPod(d, dt, t) {
   d.st = 'pod'; const p = d.root.position; p.set(R.at[0], R.at[1] + Math.sin(d.t * .7 + R.at[0]) * .06, R.at[2]); d.h = R.h; t[d.K.clips.idle] = 1;
   return 1;
 }
+function shipFree(d) {
+  d.podR = null; if (d.podCol0 && d.mats) d.mats.forEach((m, i) => { if (m.color && d.podCol0[i]) m.color.copy(d.podCol0[i]); });
+  if (d.talk) d.talk.lines = ISFOLK.freeLines.split('|'); if (d.st === 'pod') d.st = 'idle'; d.hx = d.root.position.x; d.hz = d.root.position.z; ISFOLK.freed = (ISFOLK.freed || 0) + 1;
+  if (ISDECK.podMat && ISDECK.podMat.emissiveIntensity > 0) { ISDECK.podMat.emissiveIntensity = 0; ISDECK.podMat.opacity = .12; }
+}
 function shipFolkStep(dt) {
   const F = ISFOLK; if (!F.on || !F.list.length || !inTK()) return;
   for (const R of F.list) {
     if (R.d && R.d.gone) R.d = null;
     if (!R.d) { const d = DUMMIES.find(q => q.markId === R.id && !q.gone); if (!d) continue; R.d = d; d.podR = R;
-      if (d.mats && !d.podTint) { const c = new THREE.Color(F.tint); for (const m of d.mats) if (m.color) m.color.lerp(c, F.tintK); d.podTint = 1; } }
+      if (d.mats && !d.podTint) { d.podCol0 = d.mats.map(m => m.color ? m.color.clone() : null); const c = new THREE.Color(F.tint); for (const m of d.mats) if (m.color) m.color.lerp(c, F.tintK); d.podTint = 1; } }
+    // m406: the man in the suit beaten -- out of the pods, their own colours back, their own words
+    if (R.d && R.d.podR && SAVE.flags['qdone:ch6c']) shipFree(R.d);
   }
 }
 // ============================================================================================
@@ -35210,6 +35234,29 @@ function shipGauntStep(dt) {
     if (g.iris) for (const pl of g.iris) { const a = pl.userData.a; pl.position.set(Math.cos(a) * 1.7 * g.okK, 1.9 + Math.sin(a) * 1.7 * g.okK, 0); pl.scale.setScalar(1 - .6 * g.okK); } }
   // the file: the turned shuffle along the tube's west side and through the curtain, round and round
   const L = G.fileLine; if (L) for (const f of G.file) { f.s = (f.s + dt * .55) % (L.z1 - L.z0); f.m.position.set(L.x + Math.sin(f.s * 2.1) * .06, L.y + Math.abs(Math.sin(f.s * 4.2)) * .05, L.z0 + f.s); }
+}
+// ============================================================================================
+// THE MAN IN THE NICE SUIT (m406, ROADMAP C6-8e-3, `ISUIT`, `buildShipSuit`, `shipEnd`)
+// ============================================================================================
+// Every boss so far pointed at him -- the temp agency, the stationery, the office at the top of Dump Tower. He waits in the
+// core, on the ship's back, at its rail over the shaft's mouth: a man in a suit (the secret-service body, the suit it is).
+// Close to (`ch6c`'s skin step) the thing wearing him bursts out, the biggest yet (2.4x his height), and it takes seven
+// knock-downs. After: he comes round, the turned come out of their pods (`shipFree`), the ship goes dark (`shipEnd`), and
+// that is the end -- Chapter 6 complete, the city yours.
+const ISUIT = { on: 1, at: [-6.5, 0], lines: "Ah. The stray. Do you know what you've cost me?|Every one of them was an asset. Every district, a portfolio.|Sit down. I'll find you a pod.", ended: 0 };
+function buildShipSuit() {
+  const U = ISUIT, G = ISGAUNT; if (!U.on || !G.core) return 0;
+  const x = G.core.x + U.at[0], z = G.core.z + U.at[1], h = Math.atan2(G.core.x - x, G.core.z - z);
+  peopleMark('ms_suit', x, z, h, { kind: 'fat_secret_service', name: 'the man in the nice suit', group: 'worker', talks: ['*'], alien: 'brush', brushAlien: 'You. The little green outlier. Sit down; you are interrupting.', lines: U.lines }, G.core.y, 'ISUIT', 'worker');
+  U.spot = [x, G.core.y, z];
+  return 1;
+}
+// the ship goes dark: the hull's ring, the tether's, the machine's crown; the pods empty (`shipFree` dims their glass)
+function shipEnd() {
+  const U = ISUIT; if (U.ended) return; U.ended = 1;
+  const T = ITHERM; if (T.mship) T.mship.traverse(o => { if (o.isMesh && o.material && o.material.color && o.geometry && o.geometry.type === 'TorusGeometry') o.material.color.setHex(0x221a24); });
+  if (T.ringM) { T.ringM.emissive.setHex(0x1a2a30); T.ringM.emissiveIntensity = .2; }
+  if (ISDECK.spin) ISDECK.spin.traverse(o => { if (o.isMesh && o.material.emissive) o.material.emissiveIntensity = .1; });
 }
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
@@ -42154,6 +42201,7 @@ async function init() {
     try { buildShipDecks(); } catch (e) { note('DECKS FAIL'); console.warn('[melee] mothership decks', e); }
     try { buildShipFolk(); } catch (e) { note('FOLK FAIL'); console.warn('[melee] mothership people', e); }
     try { buildShipGauntlet(); } catch (e) { note('GAUNT FAIL'); console.warn('[melee] mothership gauntlet', e); }
+    try { buildShipSuit(); } catch (e) { note('SUIT FAIL'); console.warn('[melee] the man in the suit', e); }
     // AND THE SWING BRIDGE (m382): the second way over, before the city ring keeps its trees off its landing
     try { buildSwing(); } catch (e) { note('SWING FAIL'); console.warn('[melee] swing bridge', e); }
     // ITS CREEK AND POND (m307): what stands in and over the valley and the bowl the land is carved with
@@ -42405,7 +42453,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
