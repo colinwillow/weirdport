@@ -306,6 +306,9 @@ differ" table there, so no region feels like the last one.
       - [x] m381 **C6-6d-1** the ferry: Old Town's landing on the south-east shore, a double-ended boat on its own clock, pier 1's pontoon.
       - [x] m382 **C6-6d-2** a second way: the swing bridge (or the drainage outfall), its own kind of crossing.
     - [ ] **C6-6e** the engineer / hacker form: locked doors, turrets, security robots; as the engineer they open, turn and stand down.
+      - [x] m383 **C6-6e-1** the engineer form (a ROLE's form: sample Ivy or Dex) and the doors: Uplift's gate and the swing bridge's control box answer to the engineer.
+      - [ ] **C6-6e-2** the turrets on Uplift's lot: they fire on strangers; the engineer turns them.
+      - [ ] **C6-6e-3** the security robots in the yard: they chase strangers off; for the engineer they stand down.
     - [ ] **C6-6f** Chapter 4's quests and its boss; shut the line down and the cyborgs turn back; Chapter 4 complete.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
@@ -1063,3 +1066,9 @@ differ" table there, so no region feels like the last one.
   - If you're standing on the swinging part, you go round with it and wait mid-river until it closes.
   - I moved one Old Town ring house (287° to 274°) because it stood where the ramp lands.
   - A cyborg runs it from a control box on the quay. Operating it yourself comes with the engineer form.
+- **m383 (C6-6e-1) The engineer form.** I split C6-6e into the engineer and doors (this build), the turrets, then the robots.
+  - The engineer is the first form that's a role rather than a body: Uplift's engineers use the same stand-in body as the baristas, so a body alone couldn't tell them apart.
+  - Sample Ivy at crane 1, or Dex on the transit shed roof. The form wheel then shows ENGINEER.
+  - As the engineer, Uplift's gate slides open for you, and the swing bridge's control box swings the bridge on the spot.
+  - The factory fence is now 3.4 m and wired, because at 2.6 m you could just hop it.
+  - Not done: the engineer looks exactly like the hipster body (no tint, no visor). Say if that needs fixing before the boss.

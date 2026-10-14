@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m382</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m383</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m382</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m383</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm382';
+const BUILD = 'm383';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -23097,6 +23097,7 @@ function mphWear(skin) {
   s.cw = {}; s.cw[idle] = 1; rig.cw = s.cw;
   const a = rig.actions[idle]; if (a) { a.play(); a.setEffectiveWeight(1); }
   player.mphK = skin ? skin.K : null;
+  player.mphRole = skin ? (player.mphRoleNext || null) : null; player.mphRoleNext = null;      // m383
   player.mphH = s.h;
   // **THE RAGDOLL IS BUILT HERE, BECAUSE THIS IS THE ONE PLACE THAT KNOWS WHICH BODY IS
   // DRAWN.** Its chains hold BONE references, so a swap leaves them pointing at a skeleton no
@@ -23109,7 +23110,7 @@ function mphWear(skin) {
 // pose -- true, and it stopped being true the moment `mphBorrow` put zap's own pool on the
 // skin. `mphBare()` is what they read now; the KIT stays on `mphOn()`, because a borrowed rig
 // genuinely has no weapon mount and that is his own *"we could like ignore weapons for now"*.
-function morphGo(K) {
+function morphGo(K, role) {
   const p = player;
   if (!MORPH.on || p.mphSt) return 0;                 // one transform at a time
   if (K && !dnaOK(K)) return 0;
@@ -23118,7 +23119,7 @@ function morphGo(K) {
   if (K && !to) return 0;
   // JUICE (m284): becoming somebody costs; going back to yourself is free
   if (K && !juicePay()) return 0;
-  p.mphNext = K || null; p.mphSt = 'out'; p.mphT = 0; p.mphU = 0;
+  p.mphNext = K || null; p.mphSt = 'out'; p.mphT = 0; p.mphU = 0; p.mphRoleNext = K && role ? role : null;   // m383: and the role it is worn in
   // THE TWO SILHOUETTES ARE TAKEN NOW, both of them, because the blob has to be the OLD shape
   // before the swap and the new one after it -- and the incoming skin already exists by here,
   // which is the whole reason `mphSkin` is built on the frame the shot lands rather than at it.
@@ -27926,7 +27927,7 @@ const SOCIAL = {
 };
 function socialGroup(name) { for (const [re, g] of SOCIAL.groups) if (re.test(name || '')) return g; return 'folk'; }
 // what you are to them right now
-const socialMe = () => fearLooks() ? 'alien' : socialGroup(player.mphK ? mphName(player.mphK) : 'zap');
+const socialMe = () => fearLooks() ? 'alien' : player.mphRole && ROLEFORM[player.mphRole] ? ROLEFORM[player.mphRole].group : socialGroup(player.mphK ? mphName(player.mphK) : 'zap');   // m383: a role's group
 const socialOf = d => d.talk.group || (d.talk.group = socialGroup(mphName(d.K)));
 // will he talk to you properly as you are?
 function socialOk(d) {
@@ -28953,12 +28954,12 @@ function cardShow(top, title, sec) {
   clearTimeout(cardShow.t); cardShow.t = setTimeout(() => c.classList.remove('on'), (sec || QUEST.doneT) * 1000);
 }
 function sampleTake(d) {
-  const nm = mphName(d.K);
+  const rf = d.role && ROLEFORM[d.role] ? d.role : null, nm = rf ? ROLEFORM[rf].name : mphName(d.K);   // m383: a role's form by its own name
   FORMK[nm] = d.K;
   const fresh = progForm(nm);
   SAMPLE.n++;
-  cardShow(fresh ? 'NEW FORM' : 'SAMPLE TAKEN', (d.talk && d.talk.name) || nm.replace(/_\d+$/, '').replace(/_/g, ' ').toUpperCase());
-  morphGo(d.K);
+  cardShow(fresh ? 'NEW FORM' : 'SAMPLE TAKEN', rf ? 'THE ' + nm : (d.talk && d.talk.name) || nm.replace(/_\d+$/, '').replace(/_/g, ' ').toUpperCase());
+  if (!morphGo(d.K, rf) && player.mphK === d.K && !player.mphSt) player.mphRole = rf;
 }
 function sampleStep(dt) {
   if (!samp.el) samp.el = document.getElementById('samp');
@@ -29020,9 +29021,17 @@ function sampleStep(dt) {
 // still yours, this world just has nobody to borrow the skeleton from.
 // `formNow()` is what A8's gates will ask.
 const FORMS = { on: 1, n: 0 };
-const formNow = () => player.mphK ? mphName(player.mphK) : 'zap';
+// **A FORM CAN BE A ROLE, NOT ONLY A KIND (m383, `ROLEFORM`).** Uplift's engineers stand in on the hipster's body
+// (`ROSTER` hacker), so by kind alone "the engineer" and "a barista" were one form. A role here makes its own: sample a body
+// wearing it and the form is the role's NAME (`ENGINEER`), worn as that kind with `player.mphRole` set; its group is the
+// role's. `formNow()` answers the name, so a gate's `need` can be a role (`uplift`) with no other change.
+const ROLEFORM = { hacker: { name: 'ENGINEER', group: 'worker' } };
+const roleFormOf = nm => Object.keys(ROLEFORM).find(r => ROLEFORM[r].name === nm) || null;
+const formNow = () => player.mphK ? (player.mphRole && ROLEFORM[player.mphRole] ? ROLEFORM[player.mphRole].name : mphName(player.mphK)) : 'zap';
+const engineerOn = () => player.mphRole === 'hacker' && !!player.mphK && !player.mphSt;
 function formKind(nm) {
   if (nm === 'zap') return null;
+  { const rf = roleFormOf(nm); if (rf) { const K = FORMK[nm] || rosterKind(rosterOf(rf)); return K && dnaOK(K) ? (FORMK[nm] = K) : undefined; } }   // m383: a role's form
   if (FORMK[nm] && dnaOK(FORMK[nm])) return FORMK[nm];
   for (const d of DUMMIES) if (mphName(d.K) === nm && dnaOK(d.K)) return (FORMK[nm] = d.K);
   if (she && she.K && mphName(she.K) === nm && dnaOK(she.K)) return she.K;
@@ -29040,8 +29049,9 @@ function formPick(nm) {
   if (nm === formNow()) return;
   FORMS.n++;
   if (nm === 'zap') { morphOff(); return; }
-  const K = formKind(nm);
-  if (K) morphGo(K);
+  const K = formKind(nm), rf = roleFormOf(nm);
+  if (K && K === player.mphK && !player.mphSt) { player.mphRole = rf; toast('As ' + (rf ? 'the ' + nm.toLowerCase() : formLabel(nm).toLowerCase()), 1.6); return; }   // m383: the same body, another role
+  if (K) morphGo(K, rf);
 }
 const form = { row: null, pick: null, rowOn: -1, open: 0 };
 function formClose() { form.open = 0; if (form.pick) form.pick.classList.remove('on'); if (form.row) paintArcRow(form.row, form.rowOn > 0, -1); }
@@ -29175,6 +29185,8 @@ const GATE_TYPES = {
   gang:      { need: 'hick_skinny',        pass: 'walk', label: 'GANG ROAD',     say: "Gang road. Locals and riders only. Turn round, city -- or ride the freight, if you're stupid.", groups: ['country', 'biker'] },
   gap:       { need: 'jack',               pass: 'walk', label: 'GAP',           say: 'Too far to jump. Something that flies could cross.' },   // m356: the roster's `glider` stem
   // m334 (B2): the bridge's police checkpoint -- ANY human passes, the alien does not, and trying it is noticed
+  // m383 (C6-6e-1): UPLIFT'S GATE -- a ROLE's form (`ROLEFORM`): only an engineer's face; `bare`, the waterfront draws its sliding gate
+  uplift:    { need: 'ENGINEER',           pass: 'walk', label: 'UPLIFT GATE',   say: 'UPLIFT CORP. AUTHORISED ENGINEERS ONLY. Your face has been noted.', bare: 1 },
   checkpoint: { need: 'human',             pass: 'walk', label: 'POLICE CHECKPOINT', say: "Checkpoint. Faces only, and that is not a face.", heat: 1 },
 };
 // **A GATE'S `need` IS A FILE STEM AND `formNow()` IS THE DISPLAY FORM** (m334): compared raw, 'dummy_officer' never equalled
@@ -32735,6 +32747,8 @@ const WFRONT = {
     { id: 'wf_benny', role: 'docker', name: 'Benny', at: [-56.5, 58], face: [1, 0], lines: "That ship's been in the dry dock six years. They keep repairing it. It's never once been wet.|You hear the line at night? Thunk, hiss, thunk. Folks go into that factory one way and come out... tidier.|Don't climb the stacks. I mean it. I'm the one who does the paperwork." },
     { id: 'wf_marge', role: 'docker', name: 'Marge', at: [-76, 6], face: [0, -1], lines: "Shed's locked. Everything's locked. Even the lockers are locked.|My cousin signed an Uplift contract. Now he answers the phone 'how may I optimise you'.|Ferry's the only way in from Old Town. Unless you swim. Don't swim." },
     { id: 'wf_unit7', role: 'cyborg', name: 'Unit 7 (formerly Doug)', at: [-84.5, 48], face: [0, -1], lines: "GOOD EVENING. YOU ARE OUTSIDE YOUR AUTHORISED ZONE.|I USED TO LIKE FISHING. NOW I LIKE THROUGHPUT.|THE CONVERSION IS PAINLESS. THE PAPERWORK IS NOT." },
+    { id: 'wf_ivy', role: 'hacker', name: 'Ivy, field engineer', at: [-13.5, 25], face: [1, 0], lines: "Field engineer, Uplift. I keep the cranes honest. They lie, you know. About their weight.|Every gate on this dock reads one thing: an engineer's face. Not the badge. The face.|The bridge? Its control box is on the quay by the cranes. It only answers to us. Don't tell Unit 3 I said 'us'." },   // m383
+    { id: 'wf_dex', role: 'hacker', name: 'Dex', at: [-96, 18], y: 9.5, face: [0, -1], lines: "Shh. I'm 'maintaining' Uplift's network. From their own roof. On their own cable.|Engineers walk through every door on this dock. I wanted to see what's behind them. Spoiler: more doors.|Look like one of us and it's all yours. The gate. The bridge. Soon the robots." },
     { id: 'wf_unit12', role: 'cyborg', name: 'Unit 12', at: [14, 74], beat: [[14, 74], [14, 112], [-12, 112], [-12, 74]], face: [0, 1], lines: "CONTAINER 4471 IS IN THE WRONG PLACE. I HAVE BEEN LOOKING AT IT SINCE TUESDAY.|SMILE. YOU ARE ON A CAMERA. ALL OF YOU IS ON A CAMERA.|PLEASE DO NOT CLIMB THE INVENTORY." },
   ],
   brush: 'INTRUDER NOTED. A FORM HAS BEEN FILED.',
@@ -32918,14 +32932,16 @@ function buildWaterfront() {
       bx(Fc.u + a, Fc.v + 16, Y + Fc.h, Y + Fc.h + 22, 2.4, 2.4, 'panel'); F.parts.panel.pop(); }
     // the fence round the lot, a gate in its front (locked), a booth and a barrier outside it
     const run = (u0, v0f, u1, v1f, gap) => { const L = Math.hypot(u1 - u0, v1f - v0f), ps = Math.atan2(u1 - u0, v1f - v0f), n = Math.ceil(L / 3);
-      for (let k = 0; k <= n; k++) { const t = k / n; bx(u0 + (u1 - u0) * t, v0f + (v1f - v0f) * t, Y, Y + 2.7, .09, .09, 'steel', 0, false); }
+      for (let k = 0; k <= n; k++) { const t = k / n; bx(u0 + (u1 - u0) * t, v0f + (v1f - v0f) * t, Y, Y + 3.5, .09, .09, 'steel', 0, false); }      // m383: 3.4 m and wired -- no hopping it
       const segs = gap ? [[0, gap[0]], [gap[1], 1]] : [[0, 1]];
       for (const [a, b] of segs) { const cu = u0 + (u1 - u0) * (a + b) / 2, cv = v0f + (v1f - v0f) * (a + b) / 2, l = L * (b - a);
-        bx(cu, cv, Y, Y + 2.6, .06, l, 'iron', ps); F.parts.iron.pop(); bx(cu, cv, Y + .1, Y + 2.5, .03, l, 'mesh', ps, false); bx(cu, cv, Y + 2.6, Y + 2.68, .06, l, 'steel', ps, false); } };
+        bx(cu, cv, Y, Y + 3.4, .06, l, 'iron', ps); F.parts.iron.pop(); bx(cu, cv, Y + .1, Y + 2.5, .03, l, 'mesh', ps, false); bx(cu, cv, Y + 2.6, Y + 2.68, .06, l, 'steel', ps, false);
+        for (const h of [2.95, 3.2, 3.45]) bx(cu, cv, Y + h, Y + h + .025, .03, l, 'dark', ps, false); } };
     const g0 = (Fc.gate[0] - lu0) / (lu1 - lu0), g1 = (Fc.gate[1] - lu0) / (lu1 - lu0);
     run(lu0, lv0, lu1, lv0, [g0, g1]); run(lu1, lv0, lu1, lv1); run(lu1, lv1, lu0, lv1); run(lu0, lv1, lu0, lv0);
     const gm = (Fc.gate[0] + Fc.gate[1]) / 2, gw = Fc.gate[1] - Fc.gate[0];
-    bx(gm, lv0, Y, Y + 2.8, gw, .12, 'yel'); for (let k = 0; k < 7; k++) bx(gm - gw / 2 + .4 + k * (gw - .8) / 6, lv0 - .08, Y + .2, Y + 2.6, .05, .05, 'dark', 0, false);
+    for (const s of [-1, 1]) bx(gm + s * (gw / 2 + .15), lv0, Y, Y + 3.5, .3, .3, 'yel');                    // m383: the gate's posts; the gate is `GATES`' (`uplift`)
+    W.gatePos = [gm, lv0, gw];
     bx(gm + 6, lv0 - 4, Y, Y + 2.8, 2.4, 2.4, 'white'); bx(gm + 6, lv0 - 4, Y + 2.8, Y + 3, 2.8, 2.8, 'dark', 0, false); bx(gm + 6, lv0 - 5.23, Y + 1.3, Y + 2.3, 1.8, .06, 'glass', 0, false);
     bx(gm, lv0 - 4, Y + 1, Y + 1.12, gw + 1, .12, 'red', 0, false); bx(gm + gw / 2 + .7, lv0 - 4, Y, Y + 1.2, .4, .4, 'dark');
     for (let k = 0; k < 4; k++) bx(gm - gw / 2 + .5 + k * 1.8, lv0 - 4, Y + 1.004, Y + 1.124, .9, .124, 'white', 0, false);
@@ -32938,6 +32954,12 @@ function buildWaterfront() {
     for (let k = 0; k < 6; k++) { const [fu, fv] = at(P.w / 2 + 2.9 + (k % 2 ? 2.55 : -2.55), -6 + Math.floor(k / 2) * 5); geo(new THREE.TorusGeometry(.35, .14, 6, 12), 'rubber', fu, ty - .2, fv, yw + Math.PI / 2); }
     const [lu, lv] = at(P.w / 2 + .25, -8); pearlLadder(F, lu, lv, yw + Math.PI / 2, ty, Y, (([a, b]) => [a, Y, b])(at(P.w / 2 - 1.2, -8)), 'wf_tug'); W.ladders++; }
   W.n = F.commit().boxes;
+  // m383: UPLIFT'S GATE -- a `GATES` gate of its own type, and its slab drawn to slide aside for whoever it lets through
+  { const [gm, lv0, gw] = W.gatePos, G = gateAdd('uplift', wx(gm, lv0), wz(gm, lv0), hd(0, 1), gw, 'wf_gate', Y);
+    const g = new THREE.Group(), m = (geo, c) => new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: c, roughness: .6, metalness: .3 }));
+    { const p = m(new THREE.BoxGeometry(gw, .14, .1), 0xe0b02a); p.position.y = 3.3; g.add(p); const q = m(new THREE.BoxGeometry(gw, .14, .1), 0xe0b02a); q.position.y = .25; g.add(q); }
+    for (let k = 0; k < 9; k++) { const b = m(new THREE.BoxGeometry(.07, 3.1, .07), k % 2 ? 0x24262b : 0xe0b02a); b.position.set(-gw / 2 + .3 + k * (gw - .6) / 8, 1.8, 0); g.add(b); }
+    g.position.set(wx(gm, lv0), Y, wz(gm, lv0)); g.rotation.y = W.th; scene.add(g); W.gate = { G, g, x0: gm, lv0, gw, k: 0 }; }
   wfLineParts(F, W, Y);                                                          // m378: the line's moving parts
   wfConvBuild(W);                                                                // m379: and the workers who ride it
   wfCraneParts(F, W, Y);                                                         // m380: the cranes' trolleys and boxes
@@ -32963,7 +32985,7 @@ function buildWaterfront() {
   for (const P of W.PEOPLE) {
     const [x, z] = [wx(P.at[0], P.at[1]), wz(P.at[0], P.at[1])], cy = P.role === 'cyborg';
     peopleMark(P.id, x, z, hd(P.face[0], P.face[1]), Object.assign(cy ? { group: 'worker', talks: ['*'], alien: 'brush', brushAlien: W.brush } : { group: 'worker', talks: ['worker'], alien: 'flee' },
-      P, P.beat ? { beat: P.beat.map(([u, v]) => [wx(u, v), wz(u, v)]) } : {}), Y, 'WFRONT', 'worker');
+      P, P.beat ? { beat: P.beat.map(([u, v]) => [wx(u, v), wz(u, v)]) } : {}), Y + (P.y || 0), 'WFRONT', 'worker');
   }
   // the places GOD names, and the map's region
   W.quayAt = [wx(10, 12), Y + .1, wz(10, 12), hd(0, 1)];
@@ -32972,6 +32994,7 @@ function buildWaterfront() {
   W.deckAt = [wx(D.u - 2, 51), deck + .1, wz(D.u - 2, 51), hd(0, -1)];
   W.lineAt = [wx(-92, 68), Y + .1, wz(-92, 68), hd(0, 1)]; W.controlAt = [wx(-106, 115), Y + WFLINE.L2 + .1, wz(-106, 115), hd(1, 0)];   // m378
   W.towerAt = [wx(-30, 108), Y + .1, wz(-30, 108), hd(-1, 0)];
+  W.ivyAt = [wx(-16, 22.5), Y + .1, wz(-16, 22.5), hd(1, .8)];      // m383: by Ivy, at crane 1
   { let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9;
     for (const [u, v] of [[W.U[0], W.V[0]], [W.U[1], W.V[0]], [W.U[1], W.V[1]], [W.U[0], W.V[1]]]) { const x = wx(u, v), z = wz(u, v); x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); }
     W.bbox = { x0, x1, z0, z1 }; }
@@ -33586,6 +33609,9 @@ function buildSwing() {
   for (const v of [0, O.ends[0], O.ends[1], vW]) for (const s of [-1, 1]) { bx(U + s * (hw + .3), v, Y, Y + 4.6, .14, .14, 'steel', 0, false); bx(U + s * (hw + .3), v, Y + 4.6, Y + 4.9, .4, .4, 'lamp', 0, false); }
   // the gate posts at each end of the swing span (the barriers and lights are made below and move)
   for (const v of [O.ends[0] + .9, O.ends[1] - .9]) for (const s of [-1, 1]) { bx(U + s * (hw + .2), v, Y, Y + 1.4, .3, .3, 'red'); }
+  // m383: ITS CONTROL BOX on the quay, by Unit 3: it answers to an engineer (`wfSecStep`)
+  bx(U - 6.5, 4.8, Y, Y + 1.2, .8, .6, 'yel'); bx(U - 6.5, 4.48, Y + .9, Y + 1.15, .6, .05, 'dark', 0, false); bx(U - 6.5, 4.8, Y + 1.2, Y + 1.26, .9, .7, 'dark', 0, false);
+  O.ctl = [wx(U - 6.5, 4), wz(U - 6.5, 4)];
   O.n = F.commit().boxes;
   // THE SWING SPAN, turned with it: deck, rails, trusses, the house on its portal
   const grp = new THREE.Group(); scene.add(grp); O.grp = grp;
@@ -33653,6 +33679,27 @@ function swingStep(dt) {
   if (on) { const W = WFRONT, x0 = W.O[0] + O.u * W.C + O.pivot * W.S, z0 = W.O[1] - O.u * W.S + O.pivot * W.C, rx = P.x - x0, rz = P.z - z0, c = Math.cos(da), s = Math.sin(da);
     const nxp = x0 + rx * c + rz * s, nzp = z0 - rx * s + rz * c, dx = nxp - P.x, dz = nzp - P.z; P.x = nxp; P.z = nzp;
     if (typeof cam !== 'undefined' && cam.pos) { cam.pos.x += dx; cam.pos.z += dz; if (cam.tgt) { cam.tgt.x += dx; cam.tgt.z += dz; } } O.carried += dt; }
+}
+// ============================================================================================
+// THE ENGINEER'S DOORS (m383, ROADMAP C6-6e-1, `wfSecStep`) -- Uplift's gate slides for an engineer; the swing bridge's
+// control box answers to one. Everything else in the yard is a robot's (C6-6e-3) or a turret's (C6-6e-2) to come.
+// ============================================================================================
+const WFSEC = { ctlR: 1.7, ctlT: 0, sayT: 0, overrides: 0, gateOpens: 0 };
+function wfSecStep(dt) {
+  const W = WFRONT, S = WFSEC; if (!W.live || !inTK()) return;
+  const P = player.pos;
+  // the gate: open while whoever it lets through is near it, shut otherwise -- the slab slides along the fence, outside it
+  if (W.gate) { const Gt = W.gate, near = Math.hypot(P.x - Gt.G.x, P.z - Gt.G.z) < 7, want = (near && (gateLets(GATE_TYPES.uplift) || GOD.fly)) ? 1 : 0;
+    if (want && Gt.k < .05) S.gateOpens++;
+    Gt.k = damp(Gt.k, want, .35, dt); const a = Gt.x0 + Gt.k * (Gt.gw - .3), b = Gt.lv0 - .25 * Gt.k;
+    Gt.g.position.set(W.O[0] + a * W.C + b * W.S, W.Y, W.O[1] - a * W.S + b * W.C); }
+  // the swing bridge's control box
+  const O = OSWING; if (!O.ctl) return;
+  if (S.ctlT > 0) S.ctlT -= dt; if (S.sayT > 0) S.sayT -= dt;
+  if (Math.hypot(P.x - O.ctl[0], P.z - O.ctl[1]) > S.ctlR || S.ctlT > 0) return;
+  if (!engineerOn()) { if (S.sayT <= 0) { S.sayT = 3; toast('BRIDGE CONTROL: AUTHORISED ENGINEERS ONLY.', 2.4); } return; }
+  if (O.st === 'shut') { O.t = 0; S.ctlT = 6; S.overrides++; toast('BRIDGE CONTROL: OVERRIDE. OPENING.', 2.4); }
+  else if (O.st === 'open') { O.t = 0; S.ctlT = 6; S.overrides++; toast('BRIDGE CONTROL: OVERRIDE. CLOSING.', 2.4); }
 }
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
@@ -38056,6 +38103,7 @@ const GODPLACES = [
   { id: 'wfferry', world: 'tkit', name: "THE WATERFRONT · the ferry's pontoon off pier 1", at: () => OFERRY.wfAt },
   { id: 'otswing', world: 'tkit', name: "OLD TOWN · the swing bridge's foot (the second way to the Waterfront)", at: () => OSWING.otAt },   // m382
   { id: 'wfswing', world: 'tkit', name: "THE WATERFRONT · the swing bridge's quay end", at: () => OSWING.wfAt },
+  { id: 'wfivy', world: 'tkit', name: 'THE WATERFRONT · Ivy, an Uplift engineer (sample her: the ENGINEER form)', at: () => WFRONT.ivyAt },   // m383
   { id: 'wfquay', world: 'tkit', name: 'THE WATERFRONT · the container quay (Chapter 4)', at: () => WFRONT.quayAt },   // m377
   { id: 'wfdock', world: 'tkit', name: 'THE WATERFRONT · the head of the dry dock', at: () => WFRONT.dockAt },
   { id: 'wfdeck', world: 'tkit', name: 'THE WATERFRONT · on the ship in the dry dock', at: () => WFRONT.deckAt },
@@ -38173,7 +38221,7 @@ function godRoster() {
   if (she && she.K) all.push(she.K);
   return all;
 }
-const godForms = () => ['zap', ...new Set(godRoster().map(mphName))];
+const godForms = () => ['zap', ...new Set(godRoster().map(mphName)), ...Object.keys(ROLEFORM).filter(r => rosterKind(rosterOf(r))).map(r => ROLEFORM[r].name)];   // m383: the role forms too
 // the blaster's modes: all of them in GOD, the DNA gun back on the row
 function godModes() {
   if (!WEAP.modesAll) return;
@@ -39819,6 +39867,7 @@ function frameBody() {
   wfCraneStep(dt);              // the gantry cranes, and him on a trolley or a box (m380) -- before the lens, which it moves
   ferryStep(dt);                // the ferry to the Waterfront, and him on it (m381) -- before the lens, which it moves
   swingStep(dt);                // the swing bridge, and him round with it (m382) -- before the lens, which it moves
+  wfSecStep(dt);                // Uplift's gate and the bridge's control box, for an engineer (m383)
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)

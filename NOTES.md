@@ -7,6 +7,30 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A FORM CAN BE A ROLE: THE ENGINEER, AND THE DOORS THAT ANSWER TO ONE (m383, C6-6e-1, `ROLEFORM`, `roleFormOf`,
+  `engineerOn`, `player.mphRole`, `GATE_TYPES.uplift`, `WFSEC`, `wfSecStep`).** Uplift's engineers stand in on the hipster's
+  body (`ROSTER` hacker: fat_hipster, tint, green visor), so BY KIND "the engineer" and "a barista" were one form. A role in
+  `ROLEFORM` is now a form of its own: sample a body wearing it (`sampleTake`) and the form saved is the role's NAME
+  (`ENGINEER`), worn as that kind with `player.mphRole` set (`morphGo(K, role)` carries it to the swap; the form wheel's
+  `formPick` sets it straight away when the body is already the one worn). `formNow()` answers the role's name, so a gate's
+  `need` can be a role with nothing else changed (`gateLets` unchanged); `socialMe()` answers the role's group (`worker`).
+  GOD's wheel lists the role forms. **NOT DONE: the role does not change how HE looks** -- the engineer is a hipster's body
+  without the tint or the visor; the wheel's label and the toast are what say which you are.
+  Two engineers to sample: Ivy at crane 1 (`wf_ivy`) and Dex, the rogue one, on the transit shed's roof (`wf_dex`, up its
+  ladder). UPLIFT'S GATE is a real `GATES` gate now (`uplift`, `bare`: its slab is a group that SLIDES aside along the fence
+  while an engineer is near), the fence round the lot 3.4 m and wired so it cannot be hopped (m377's 2.6 could, just). The
+  SWING BRIDGE's control box on the quay by Unit 3: stand at it as the engineer and it opens (or, open, closes) on the spot;
+  as anyone else, "AUTHORISED ENGINEERS ONLY". GOD: by Ivy.
+  **The `ENGINEER` row**: the role resolves to the engineers' own kind (no skins in the harness, so `dnaOK` is false and
+  `formKind` cannot answer here -- the row says why rather than pretending), the plain body is FAT HIPSTER/city and the
+  engineer ENGINEER/worker, the shipped `gatePush` turns the plain body back and lets the engineer through, the fence is
+  over 3.2, and the bridge box ignores the one and swings for the other.
+  `npm run places` (exit 0):
+      ok  wfivy      -> player 121.6,3.5,-234.3 ground 3.20
+      ok  CONVERSION 5 riders (5 with kinds) | route 209 m over walk/belt/lift, 167 s a lap | stations scan > strip > arms > convert > visor | on the belts 545/545 samples on the floor (worst 0.00 m), the tower stair on its steps | out a cyborg, talking like one | back to the queue a docker: true
+      ok  SWING landing at 284 deg, ramp 27.0 m down to -0.32 | grass -> quay shut 3.20 (quay 3.2), open -24.19 | foreign on its ramp: none | shut > warn > opening > open: carried 90.0 deg round the pivot (radius kept to 0.000 m), still on the deck | people Unit 3 (BRIDGE CONTROL), Walt
+      ok  ENGINEER engineers Ivy, field engineer, Dex | ENGINEER -> a kind | the plain body is FAT HIPSTER/city/false, the engineer ENGINEER/worker/true | the gate: plain turned back, engineer through | fence 3.5 m | the bridge box: plain ignored, engineer swung it
+
 - **THE SWING BRIDGE: A CROSSING ONLY WHILE IT IS SHUT (m382, C6-6d-2, `OSWING`, `buildSwing`, `swingPlace`, `swingStep`).**
   The second way between Old Town and the Waterfront: off the container quay between the two cranes (frame u 20, the lane
   of water crane 1's barge and pier 2 leave), a fixed span on piers to v -26, a 43 m SWING SPAN on a round pivot pier at
