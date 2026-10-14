@@ -7,6 +7,42 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE TOON CITY'S FAR COPY (m420, F0a-2e, `lodAdd` for InstancedMesh, `TCITY.lodOut`).** `lodAdd` takes instanced sets now:
+  grouped by geometry+material, every set's instances copied into one InstancedMesh (`far:tcity`, matrices only), the
+  sources marked `lodOf` only when a copy exists (a singleton set is left alone, or it would vanish when far with nothing
+  standing in). Called in `buildTCity` after both passes on `tcRoot`'s direct meshes. **`lodOut` 140 LEFT THE LANDING ROCK
+  INSIDE**: the city's merges include the roads and ground, which run to the shore, so from the landing 100 m off it the
+  set was "near" and the props still drew per cell (islanding 534 -> 626, the rest noise from Moussa's two bodies at 32
+  draws apiece). At 90 m: 360. The trade is draws for triangles (a far copy's sphere never leaves the frustum), which
+  CLAUDE.md's rule settles: draw calls are the first thing that costs anything here.
+  **THE SPAWN READS 71 ONE RUN AND 307 THE NEXT** (kT 410 vs 2463), both with the fixed +z heading -- not chased; something
+  at the crash site is bimodal between boots (the crops' fade, or what has uploaded by the first frame). Compare the
+  other thirteen places, which are steady.
+  `npm run worlds tkit`:
+      == tkit  boot 22.9 s (swiftshader)  147 textures 270 MB (gl 51)  1927 geometries 170 MB (gl 191)  118 programs  62s
+         spawn         71 DC   410 kT  cells 96/2348 
+         oldtown      741 DC  1628 kT  cells 2028/2348  OVER dc  OVER kT
+         camp         276 DC  1186 kT  cells 1958/2348  OVER kT
+         pearl        142 DC   963 kT  cells 655/2348
+         overlook     144 DC   727 kT  cells 67/2348 
+         farmyard     128 DC   605 kT  cells 161/2348
+         hcmill        58 DC   262 kT  cells 64/2348 
+         hctrail      285 DC  1426 kT  cells 165/2348  OVER kT
+         wfquay       116 DC   473 kT  cells 771/2348
+         wfstacks     323 DC  1507 kT  cells 317/2348  OVER dc  OVER kT
+         islanding    360 DC  1593 kT  cells 392/2348  OVER dc  OVER kT
+         isneedle     323 DC  1645 kT  cells 164/2348  OVER dc  OVER kT
+         isship       135 DC   691 kT  cells 66/2348 
+         iscore       125 DC   636 kT  cells 59/2348 
+         textures: moussa_toon_body 21.3M, moussa_toon_head 21.3M, hdri_game.png 8.0M, impact_marks_atlas.png 8.0M, fire_sprites_01.png 6.0M, colin_head_1080 5.9M
+         geometry: far:kit 10.7M, far:tcity 8.0M, ground_wr_sidewalk 7.0M, far:farm:1,1 5.6M, far:farm:1,0 4.6M, ground_wr_curbs 4.2M
+         OVER: dc 741 > 300 at oldtown | kT 1628 > 1000 | textures 270 MB > 160 | geometry 170 MB > 128
+      budget: 300 DC, 1000 kT, 160 MB textures, 128 MB geometry | tkit OVER | 62s
+      exit 1
+  Geometry 161 -> 170 MB (the tcity copy, 8 MB). In town (741): `WK_M_doors 54, WK_M_trim 50, farm_batch 39, inst dressing
+  14`, bodies. The doors are `kitInst`'s 54 sets (one per door geometry x material); a `BatchedMesh` per material would be
+  3 draws WITH `WEBGL_multi_draw` and a draw per door without -- unknown on his phone, so not built. F0a-2f.
+
 - **THE FAR COPIES (m419, F0a-2c, `LOD`, `lodAdd(name, meshes, out, { flat })`, `KIT.lodOut`, `FBATCH.lodOut`, `cellStep`).** Each
   cell-batched set (`kitBatch`'s meshes per material per 48 m cell; `farmBatch`'s per material per 200 m cell) gets its
   cells merged once more into one mesh per material -- the far copy -- and `cellStep` decides per frame, per set, by the
