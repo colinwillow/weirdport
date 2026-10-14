@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m350</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m351</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m350</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m351</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm350';
+const BUILD = 'm351';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -27974,6 +27974,10 @@ const QUESTS = [
   { id: 'qorb', title: 'SOMETHING HUMMING', dormant: 1, world: 'tkit', steps: [
     { type: 'flag', flag: 'orb:pacifier', text: 'Shoot down the orb over the south side', tip: 'Point the camera at it: the shot finds it. Three hits.' },
   ] },
+  // m351 (C2b-2): the first time you come near the watcher
+  { id: 'qwatch', title: 'THE SEARCHLIGHT', dormant: 1, world: 'tkit', steps: [
+    { type: 'flag', flag: 'orb:watcher', text: 'Shoot down the watcher over the east side', tip: 'Stay out of its light as yourself -- or wear somebody. Point the camera at it to shoot it.' },
+  ] },
   // m349 (C2): an incursion's task, switched on fresh by `incurStart` each time (`qon`, its old flags cleared) and followed.
   // `lost: 'pass'`: nobody carries the tag any more (a reload) and it is over, rather than turning somebody new.
   { id: 'qinc', title: 'SKINSUITS ON THE STREET', dormant: 1, world: 'tkit', steps: [
@@ -29704,6 +29708,108 @@ function airAim() {
   }
   return best;
 }
+// ============================================================================================
+// THE ORBS: THE WATCHER (m351, ROADMAP C2b-2, `OWATCH`, `watchStep`, the aliens' ALERT)
+// ============================================================================================
+// LORE.md: "Watcher: sweeps a searchlight; seeing you raises the aliens' alert. Shoot it down: the alert drops; it can't
+// call others." Over a clear lot on Old Town's east side (66.5, -20.3, m337's sweep), 12 m up: a cone of light down to a
+// pool on the street that wanders a slow figure round the lot. THE ALIENS' ALERT is its own number (0-100, not the
+// police's heat): the pool on the undisguised alien, out in the open (no roof over him), LOCKS ON -- it follows him --
+// and fills it; out of the pool it drains. At 100 the watcher CALLS THE OTHERS: a Skinsuit ship comes for the street
+// round him (`incurStart`), the alert falls back, and it cannot call again for `callAgain`. A disguise walks under it.
+// Shot down (three hits, `AIRT`), the alert drops to nothing and stays there (saved: `orb:watcher`); Old Town +3.
+const OWATCH = {
+  on: 1, g: null, T: null, at: [66.5, -20.3], why: "a clear lot on Old Town's east side (m337's sweep), its searchlight over the streets either side",
+  y: 12, poolR: 3.4, sweep: [5, 15], fill: 24, drain: 9, callAgain: 90, hp: 3, seeR: 60,
+  alert: 0, st: 'off', lock: 0, lostT: 0, callT: 0, calls: 0, px: 0, pz: 0, ph: 0,
+};
+function orbBody(col, emi) {
+  const g = new THREE.Group();
+  const core = new THREE.Mesh(new THREE.SphereGeometry(.7, 20, 14), new THREE.MeshStandardMaterial({ color: col, emissive: new THREE.Color(emi), emissiveIntensity: 2.6, roughness: .3 }));
+  const ring = new THREE.Mesh(new THREE.TorusGeometry(1.05, .05, 6, 40), new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: .6, fog: false }));
+  g.add(core); g.add(ring); g.add(glowSprite(emi, 4)); scene.add(g);
+  return { g, core, ring };
+}
+function buildWatcher() {
+  const O = OWATCH; if (!O.on || !inTK() || !ISLE.rect) return 0;
+  const s = lifeSpot(O.at[0], O.at[1], 8); if (!s) { note('WATCHER NO SPOT'); return 0; }
+  O.cx = s[0]; O.cz = s[1]; O.gy = s[2];
+  { const v = lifeSpot(O.cx - 14, O.cz + 4, 8) || s; O.godAt = [v[0], v[2] + .1, v[1], Math.atan2(O.cx - v[0], O.cz - v[1])]; }
+  Object.assign(O, orbBody(0x3a2a08, 0xffd23a));
+  // the searchlight: an open cone from the orb down to the pool, and the pool on the street
+  const cg = new THREE.CylinderGeometry(.12, 1, 1, 24, 1, true); cg.translate(0, -.5, 0);
+  O.beam = new THREE.Mesh(cg, new THREE.MeshBasicMaterial({ color: 0xfff2b0, transparent: true, opacity: .14, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide, fog: false }));
+  scene.add(O.beam);
+  O.pool = new THREE.Mesh(new THREE.CircleGeometry(O.poolR, 32), new THREE.MeshBasicMaterial({ color: 0xfff2b0, transparent: true, opacity: .32, blending: THREE.AdditiveBlending, depthWrite: false, fog: false }));
+  O.pool.rotation.x = -Math.PI / 2; O.pool.renderOrder = 3; scene.add(O.pool);
+  O.T = { x: O.cx, y: O.gy + O.y, z: O.cz, r: 1.15, on: 1, hit: watchHit };
+  AIRT.push(O.T);
+  O.st = SAVE.flags['orb:watcher'] ? 'down' : 'up'; O.hpNow = O.hp; O.px = O.cx; O.pz = O.cz;
+  watchShow(O.st === 'up');
+  return 1;
+}
+function watchShow(on) { const O = OWATCH; O.g.visible = on; O.beam.visible = on; O.pool.visible = on; O.T.on = on ? 1 : 0; }
+function watchHit(b) {
+  const O = OWATCH; if (O.st !== 'up') return;
+  O.hpNow -= 1 + (b.chg > .8 ? 1 : 0);
+  spkBurst(O.T.x, O.T.y, O.T.z, 22, { col: [1, .85, .4], spread: 5, up: 2, r: .5, size: .16, life: .6 });
+  O.flash = .25;
+  if (O.hpNow > 0) { toast('WATCHER ' + O.hpNow + ' MORE', 1); return; }
+  O.st = 'falling'; O.fall = 0; O.vy = 0; O.T.on = 0; O.beam.visible = false; O.pool.visible = false;
+  snd('boom', { g: .6, x: O.T.x, z: O.T.z });
+  spkBurst(O.T.x, O.T.y, O.T.z, 60, { col: [1, .9, .5], spread: 9, up: 4, r: .8, size: .2, life: .9 });
+  progFlag('orb:watcher'); O.alert = 0; O.lock = 0;
+  dhPush('oldtown', 3);
+  cardShow('THE WATCHER IS DOWN', 'NOBODY IS LOOKING NOW', 3);
+}
+function watchStep(dt) {
+  const O = OWATCH; if (!O.g || !inTK()) return;
+  const now = performance.now() * .001;
+  if (O.st === 'falling') {
+    O.vy -= 20 * dt; O.T.y = Math.max(O.gy + .7, O.T.y + O.vy * dt); O.fall += dt;
+    O.g.position.set(O.T.x, O.T.y, O.T.z); O.core.material.emissiveIntensity = Math.max(0, 2.6 - O.fall * 2);
+    if (O.fall > 2.5) { O.st = 'down'; watchShow(false); }
+    return;
+  }
+  if (O.st !== 'up') { O.alert = 0; return; }
+  O.T.y = O.gy + O.y + Math.sin(now * 1.1) * .3;
+  O.g.position.set(O.T.x, O.T.y, O.T.z); O.ring.rotation.x = now * .7; O.ring.rotation.z = now * .5;
+  O.flash = Math.max(0, (O.flash || 0) - dt);
+  O.core.material.emissiveIntensity = 2.4 + Math.sin(now * 5) * .3 + O.flash * 8;
+  const P = player.pos, seenOk = fearLooks() && !(groundAt(P.x, P.z, 60, 60) - P.y > 2);   // out in the open, as yourself (GOD too: it is how you see it work)
+  const inPool = Math.hypot(P.x - O.px, P.z - O.pz) < O.poolR;
+  // where the pool goes: after him while it has him, else its slow figure round the lot
+  if (O.lock) {
+    const dx = P.x - O.px, dz = P.z - O.pz, L = Math.hypot(dx, dz), k = Math.min(1, 6.5 * dt / Math.max(L, 1e-3));
+    O.px += dx * k; O.pz += dz * k;
+    if (!(inPool && seenOk)) { if ((O.lostT += dt) > 2.2) { O.lock = 0; toast('The searchlight lost you', 1.4); } } else O.lostT = 0;
+    if (Math.hypot(O.px - O.cx, O.pz - O.cz) > 34) O.lock = 0;          // it does not chase you across town
+  } else {
+    O.ph += dt * .32;
+    const r = O.sweep[0] + (O.sweep[1] - O.sweep[0]) * (.5 + .5 * Math.sin(O.ph * .61));
+    const tx = O.cx + Math.cos(O.ph) * r, tz = O.cz + Math.sin(O.ph * 1.3) * r, L = Math.hypot(tx - O.px, tz - O.pz), k = Math.min(1, 4 * dt / Math.max(L, 1e-3));
+    O.px += (tx - O.px) * k; O.pz += (tz - O.pz) * k;
+    if (inPool && seenOk) { O.lock = 1; O.lostT = 0; toast('THE SEARCHLIGHT HAS YOU', 1.6); snd('zap', { g: .35, r: .6, dur: .4 }); }
+  }
+  // the alert: up while it has you, down while it does not
+  O.alert = clamp(O.alert + (O.lock && inPool && seenOk ? O.fill : -O.drain) * dt, 0, 100);
+  O.callT = Math.max(0, O.callT - dt);
+  if (O.alert >= 100 && O.callT <= 0) {
+    O.calls++; O.callT = O.callAgain; O.alert = 40; O.lock = 0;
+    cardShow('THE WATCHER CALLED THEM', 'A SHIP IS COMING FOR YOU', 3.2);
+    if (OINCUR.st === 'off') incurStart(1);
+  }
+  // the beam and the pool where they are
+  const gy = groundAt(O.px, O.pz, O.gy + 3, 6), py = (gy > -50 ? gy : O.gy) + .06;
+  O.pool.position.set(O.px, py, O.pz); O.pool.material.opacity = O.lock ? .5 + .15 * Math.sin(now * 14) : .3;
+  O.pool.material.color.setHex(O.lock ? 0xff6a4d : 0xfff2b0); O.beam.material.color.setHex(O.lock ? 0xff8a6a : 0xfff2b0);
+  const dx = O.px - O.T.x, dy = py - O.T.y, dz = O.pz - O.T.z, L = Math.hypot(dx, dy, dz);
+  O.beam.position.set(O.T.x, O.T.y, O.T.z); O.beam.scale.set(O.poolR, L, O.poolR);
+  _wv.set(dx / L, dy / L, dz / L); O.beam.quaternion.setFromUnitVectors(_wdn, _wv);
+  // the task, the first time you are near
+  if (Math.hypot(P.x - O.T.x, P.z - O.T.z) < O.seeR && !SAVE.flags['qon:qwatch']) { progFlag('qon:qwatch', 1); cardShow('A SEARCHLIGHT', 'OVER THE EAST SIDE', 3); }
+}
+const _wv = new THREE.Vector3(), _wdn = new THREE.Vector3(0, -1, 0);
 // ============================================================================================
 // PORTALS (m286, ROADMAP A8b) -- no one-way trips
 // ============================================================================================
@@ -34494,6 +34600,7 @@ const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
   { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
+  { id: 'watcher', world: 'tkit', name: 'OLD TOWN · under the watcher (the east side)', at: () => OWATCH.godAt },
   { id: 'orb', world: 'tkit', name: 'OLD TOWN · under the pacifier orb (the south side)', at: () => OORB.godAt },
   { id: 'barricade', world: 'tkit', name: 'OLD TOWN · the police line across the march', at: () => OPROTEST.lineAt && [OPROTEST.lineAt[0] - Math.sin(OPROTEST.lineAt[3]) * 4, OPROTEST.lineAt[1] + .1, OPROTEST.lineAt[2] - Math.cos(OPROTEST.lineAt[3]) * 4, OPROTEST.lineAt[3]] },
   { id: 'protest', world: 'tkit', name: 'OLD TOWN · the square, where the protest gathers', at: () => OPROTEST.a && [OPROTEST.a[0], OPROTEST.a[1] + .1, OPROTEST.a[2], null] },
@@ -34631,6 +34738,7 @@ function godMenuOpen(on) {
   }
   btn('WIPE THE SAVE', () => { progReset(); location.replace(location.pathname); }, 'warn');
   if (inTK()) btn('A SKINSUIT INCURSION NOW (' + OINCUR.st.toUpperCase() + ')', () => { godMenuOpen(0); incurStart(1); });
+  if (OWATCH.g) btn('THE WATCHER ORB: ' + (OWATCH.st === 'up' ? 'UP (alert ' + Math.round(OWATCH.alert) + ')' : 'RAISE IT AGAIN'), () => { if (OWATCH.st !== 'up') { progFlag('orb:watcher', 0); OWATCH.st = 'up'; OWATCH.hpNow = OWATCH.hp; OWATCH.core.material.emissiveIntensity = 2.6; watchShow(true); } godMenuOpen(1); });
   if (OORB.g) btn('THE PACIFIER ORB: ' + (OORB.st === 'up' ? 'UP' : 'RAISE IT AGAIN'), () => { if (OORB.st !== 'up') { progFlag('orb:pacifier', 0); OORB.st = 'up'; OORB.hpNow = OORB.hp; OORB.g.visible = true; OORB.T.on = 1; OORB.cone.visible = true; OORB.core.material.emissiveIntensity = 2.6; } godMenuOpen(1); });
   if (OPROTEST.path) btn('START THE PROTEST NOW (' + OPROTEST.st.toUpperCase() + ')', () => { protestStart(); godMenuOpen(0); toast('The protest is gathering at the square', 2); });
   // both sides to the rally first (they live 43 m apart), then it goes off 12 s later
@@ -36219,7 +36327,8 @@ function frameBody() {
   strikeStep(dt);               // the crews on the picket line, or back at work (m345)
   protestStep(dt);              // the protest: gather, march, rally, home (m346)
   incurStep(dt);                // a Skinsuit ship over Old Town now and then (m349)
-  orbStep(dt);                  // the pacifier orb: its trance, its crackle, its fall (m350)                // the wreck burns and smokes; reaching town once moves the start (m289)
+  orbStep(dt);                  // the pacifier orb: its trance, its crackle, its fall (m350)
+  watchStep(dt);                // the watcher: its searchlight, the aliens' alert, its call (m351)                // the wreck burns and smokes; reaching town once moves the start (m289)
   crashHeroStep(dt);            // ...and pulses, arcs, hums, and stands a beam over the farm (m300)
   riverStep(dt);                // the farm's river: no wading, the current puts you back (m291)
   cellStep();
@@ -36542,6 +36651,7 @@ function frameBody() {
       (GOD.on ? ' · GOD' + (GOD.fly ? ' FLY' : '') : '') +
       ' · CH' + SAVE.ch + (SAVE.fresh ? ' NEW' : '') + (SAVE.bad ? ' BADSAVE' : '') +
       // OT: Old Town's health and its band's initial, `s` while the crews strike (m343)
+      (OWATCH.st === 'up' && OWATCH.alert > .5 ? ' · AL' + Math.round(OWATCH.alert) : '') +
       (inTK() && DHEALTH.on ? ' · OT' + Math.round(dhGet('oldtown')) + dhBand(dhGet('oldtown'))[0].toLowerCase() + (SAVE.flags['strike:oldtown'] ? 's' : '') : '') +
       // T: speakers seeded / scripts heard (m277); `*` = one is in reach right now
       // MK: markers read from his files (m293), and npc markers given their bodies
@@ -36949,6 +37059,7 @@ async function init() {
     try { buildProtest(); } catch (e) { note('PROTEST FAIL'); console.warn('[melee] protest', e); }
     // THE PACIFIER ORB (m350): over the south side, unless it was shot down in this save
     try { buildOrbs(); } catch (e) { note('ORB FAIL'); console.warn('[melee] orbs', e); }
+    try { buildWatcher(); } catch (e) { note('WATCHER FAIL'); console.warn('[melee] watcher', e); }
     // THE FOOTBRIDGE TO THE PEARL (m341): before the city ring, which keeps its trees off the bridge's bearing
     try { buildFootbridge(); } catch (e) { note('FOOTBRIDGE FAIL'); console.warn('[melee] footbridge', e); }
     // THE LOOK FOLLOWS OLD TOWN'S HEALTH (m344): boards, rubble, litter -- after every Old Town builder, over the street
@@ -37129,7 +37240,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

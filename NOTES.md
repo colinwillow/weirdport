@@ -7,6 +7,18 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE WATCHER AND THE ALIENS' ALERT, WHICH IS NOT THE POLICE'S HEAT (m351, C2b-2, `OWATCH`, `buildWatcher`,
+  `watchStep`, `orbBody`).** A gold orb 12 m over a clear lot on Old Town's east side (66.5, -20.3) with a searchlight: an
+  open cone down to a pool (3.4 m) on the street that wanders a slow figure 5-15 m round the lot. The pool on the
+  UNDISGUISED alien OUT IN THE OPEN (nothing over him) locks on -- it turns red and follows him at 6.5 m/s, never past
+  34 m from its lot -- and the ALERT (0-100, its own number, in the chip as `AL<n>` while it is above zero) fills at 24 a
+  second; out of the pool it drains at 9, and 2.2 s out of it loses the lock. At 100 it CALLS THE OTHERS: an incursion
+  ship for the street round him (`incurStart`), the alert back to 40, no second call for 90 s. A disguise walks under it.
+  It is not switched off in GOD (the place to see it work is GOD), unlike heat. Three hits (`AIRT`, the shot finds it like
+  the pacifier) and it falls, the alert to 0 for good (saved `orb:watcher`), Old Town +3; the task THE SEARCHLIGHT
+  appears within 60 m. `places` drives the shipped step with him stood in the pool: `ok  WATCHER over [66.5,0.2,-20.3] |
+  locked at 0.0 s, called at ...` and `after 3 hits down, alert 0`, exit 0.
+
 - **A FLYING TARGET IS A SPHERE IN `AIRT`, TESTED IN `stepBolts` AFTER THE BODIES, AND THE AIM SWINGS TO IT (m350,
   C2b-1, `OORB`, `buildOrbs`, `orbStep`, `orbHit`, `airAim`).** THE PACIFIER: an orb (a violet core, a ring turning, a
   halo, a faint cone of light under it) 10 m over a clear lot on Old Town's south side (4.5, -44.3), drifting a 5 m circle.

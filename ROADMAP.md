@@ -256,7 +256,7 @@ differ" table there, so no region feels like the last one.
   it down, and they come out of it dazed. Lights flicker and cars stall near it (the
   electromagnetic tell). Then the watcher and the amplifier, which feeds the protests and brawls.
   - [x] m350 **C2b-1** the pacifier over the south side: the trance, the crackle, the shot that finds it, the dazed release.
-  - [ ] **C2b-2** the watcher: a searchlight orb; caught in its beam you raise the alert (heat), and it calls the others; shot down, the alert drops.
+  - [x] m351 **C2b-2** the watcher: a searchlight orb; caught in its beam you raise the alert (heat), and it calls the others; shot down, the alert drops.
   - [ ] **C2b-3** the amplifier: over the square, it makes the protest louder and the brawl likelier; shot down, the crowd calms.
 - [ ] **C2c Placeholder roster (`CHARACTERS.md`).** Build against ROLES, not models: a roster table of
   every role the regions need, each mapped to a stand-in (existing body + tint + prop + name tag).
@@ -818,3 +818,9 @@ differ" table there, so no region feels like the last one.
   bring it down; a full charge counts as two. Everyone comes round dazed, Old Town gains 5 health, and
   it stays down. No lights flicker or cars stall: the city's lamps aren't lights the game controls, and
   the kit city has no traffic. GOD can raise it again.
+
+- **m351 (C2b-2):** the watcher hangs over the east side, and its searchlight sweeps the streets. It
+  only notices you as the alien, out in the open; any disguise walks right under it. Once it has you, it
+  follows you and an alert climbs (`AL` in the chip). At full alert it calls a Skinsuit ship down on
+  you, then can't call again for 90 seconds. Shooting it down clears the alert for good. The alert is
+  separate from police heat and stays on in GOD mode, so you can watch it work.
