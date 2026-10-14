@@ -53,8 +53,8 @@ What to build (several builds; ship each step, never wait):
    thin (low houses, lots, a warehouse) and thickens. Also soften the city island's own edge the same way
    (scattered houses, yards, fences, trees on the ring) so the kit city doesn't end at a ruler line.
    Split: **6a the edge of town on the farm's side (gas station, trailer park, houses with yards,
-   billboards, power poles, fruit stand, the road paved) — done m316.** 6b the city side starting thin
-   past the bridge, and the city island's own edge softened.
+   billboards, power poles, fruit stand, the road paved) — done m316.** **6b the city side starting thin
+   past the bridge, and the city island's own edge softened — done m317.**
 7. **Phone cost**: instance everything repeated (trees, fence posts, bales, cows, crop stalks), merge
    per material, chunk the terrain, and keep draw calls in the tens. Distance fades the small stuff.
 7b. **More than one way from the farm to town** (the new "connective tissue" rules in `REGIONS.md`): the
@@ -531,4 +531,8 @@ differ" table there, so no region feels like the last one.
   station under an 11 m price sign, a trailer park, three little houses with picket-fenced yards, two
   tall billboards ("VISIT WEIRDPORT · IT'S PERFECTLY NORMAL HERE"), a fruit stand, power poles along
   the road, and the bridge road paved for its last stretch. Next is the city side of the bridge.
+- **m317 (farm rebuild, step 6b):** across the bridge the city now starts thin. Where the bridge comes in
+  there's a big warehouse (climb its outside stair to the roof) and a fenced lot of parked cars. Ten
+  low houses with fenced yards sit round the city island's grass ring, and about 40 trees are planted
+  right against the city's edge, so it no longer ends at a ruler line. That finishes step 6.
 

@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m316</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m317</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m316</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m317</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm316';
+const BUILD = 'm317';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -29913,6 +29913,126 @@ function buildTownEdge() {
   return T.n;
 }
 
+// ============================================================================================
+// THE CITY STARTS THIN (m317, STEER step 6b, `FRING`, `buildCityRing`) -- the island's ring, no longer a ruler line
+// ============================================================================================
+// Across the bridge the city must not begin at its rectangle's edge with grass on one side and towers on the other.
+// The island's grass ring (city edge to beach top, `ISLE.rays`) gets the thin end of town: where the bridge comes in,
+// a WAREHOUSE (with an outside stair to a roof you can walk) and a fenced LOT of parked cars; round the rest of the
+// ring, low HOUSES facing into the city with fenced yards, and TREES -- some planted right against the city's edge so
+// its line is broken. Every row is a spot: a bearing (the rays' convention, degrees) and `s`, how far across the grass
+// (0 the city's edge, 1 the beach top), and why. One identity frame (`farmFrame(0, 0, 0)`: u = x, v = z), one mesh per
+// material, painted; a house is turned by `psi = atan2(dx, dz)` so its local +v points out to sea and its front (-v)
+// faces the city.
+const FRING = {
+  on: 1, n: 0, houses: 0, trees: 0,
+  ROWS: [
+    { deg: 18, s: .42, k: 'warehouse', why: 'where the bridge comes in: the first big thing in town is a shed full of somebody else\'s stuff' },
+    { deg: 39, s: .38, k: 'lot', why: 'the lot beside the bridge ramp, three cars that have not moved in a while' },
+    { deg: 48, s: .5, k: 'house', col: 'mint', why: 'the first house in town on the other side of the ramp' },
+    { deg: 6, s: .55, k: 'house', col: 'pink', why: 'past the warehouse, toward the city\'s +x side' },
+    { deg: 64, s: .5, k: 'house', col: 'cream', why: 'the city thinning out round the corner' },
+    { deg: 96, s: .45, k: 'house', col: 'blue', why: 'the +z side: a house with its back to the sea' },
+    { deg: 128, s: .55, k: 'house', col: 'mint', why: 'the +z side, farther round' },
+    { deg: 162, s: .5, k: 'house', col: 'pink', why: 'the -x side' },
+    { deg: 205, s: .45, k: 'house', col: 'cream', why: 'the -x side, past the middle' },
+    { deg: 246, s: .5, k: 'house', col: 'blue', why: 'the -z side' },
+    { deg: 287, s: .55, k: 'house', col: 'mint', why: 'the -z side, farther round' },
+    { deg: 326, s: .5, k: 'house', col: 'pink', why: 'back toward the bridge on the +x side' },
+  ],
+  treeEvery: 9,         // degrees between the trees planted against the city's edge, give or take
+  whAt: null,
+};
+function ringHouse(F, cu, cv, psi, col) {
+  const { bx, geo, gnd } = F, c = Math.cos(psi), sn = Math.sin(psi);
+  const L = (lu, lv) => [cu + lu * c + lv * sn, cv - lu * sn + lv * c];
+  const W2 = 3.4, D2 = 2.9, Eh = 2.7, Rh = 4.5;
+  let lo = 1e9, hi = -1e9; for (const [p, q] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) { const [u, v] = L(p * W2, q * D2), y = gnd(u, v); lo = Math.min(lo, y); hi = Math.max(hi, y); }
+  const y0 = hi + .3, B = (lu, lv, y1, y2, w, d, mat, p0 = 0, col2 = true, tilt = 0) => { const [u, v] = L(lu, lv); bx(u, v, y1, y2, w, d, mat, psi + p0, col2, tilt); };
+  B(0, 0, lo - .3, y0, 2 * W2 + .3, 2 * D2 + .3, 'stone');
+  B(0, -D2, y0, y0 + Eh, 2 * W2, .2, col); B(0, D2, y0, y0 + Eh, 2 * W2, .2, col); B(-W2, 0, y0, y0 + Eh, .2, 2 * D2, col); B(W2, 0, y0, y0 + Eh, .2, 2 * D2, col);
+  const gab = new THREE.ExtrudeGeometry(new THREE.Shape([new THREE.Vector2(-D2 - .1, 0), new THREE.Vector2(D2 + .1, 0), new THREE.Vector2(0, Rh - Eh)]), { depth: .2, bevelEnabled: false });
+  for (const s2 of [-1, 1]) { const [u, v] = L(s2 * W2 - .1, 0); geo(gab, col, u, y0 + Eh, v, psi + Math.PI / 2); }
+  const run = D2 + .4, ang = Math.atan2(Rh - Eh, D2), rise = run * Math.tan(ang), sl = Math.hypot(run, rise);
+  for (const s2 of [-1, 1]) B(0, s2 * run / 2, y0 + Rh - rise / 2 - .08, y0 + Rh - rise / 2 + .08, sl, 2 * W2 + .7, 'roof', Math.PI / 2, false, s2 * ang);
+  for (const du of [-1.9, 1.9]) B(du, -D2 - .13, y0 + .9, y0 + 2.0, 1.0, .05, 'glow', 0, false);
+  B(0, -D2 - .13, y0, y0 + 2.1, .9, .05, 'dark', 0, false);
+  B(0, -D2 - 1, lo - .2, y0 - .02, 2.4, 1.6, 'wood');
+  // the yard: a fence round the back half and the sides, open to the city
+  const yw = 7, yb = 6.5;
+  for (const [lu, lv, w, d] of [[0, yb, 2 * yw, .06], [-yw, (yb - D2 - 1) / 2 + .5, .06, yb + D2 + 1], [yw, (yb - D2 - 1) / 2 + .5, .06, yb + D2 + 1]]) {
+    const [u, v] = L(lu, lv), g = gnd(u, v);
+    B(lu, lv, g + .35, g + .45, w, d, 'white', 0, false); B(lu, lv, g + .8, g + .9, w, d, 'white', 0, false); B(lu, lv, g - .1, g + .95, w, d, 'white'); F.parts.white.pop();
+  }
+  return [L(0, -D2 - 4)];
+}
+function buildCityRing() {
+  const I = ISLE, R = I.rect, FR = FRING; if (!FR.on || !inTK() || !I.live || !I.rays || !R) return 0;
+  const cx = (R[0] + R[1]) / 2, cz = (R[2] + R[3]) / 2;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .82, metalness: 0 }), o || {});
+  const MAT = { mint: M(0xa9cdb5), pink: M(0xd9a9a1), cream: M(0xe4dcc6), blue: M(0x8fa3b5), white: M(0xf2efe6), roof: M(0x5a4a44),
+    wood: M(0x7a5232), dark: M(0x24262b), stone: M(0x8d8a82), glow: M(0x3a2a14, { emissive: new THREE.Color(0xffc56a), emissiveIntensity: 1.2 }),
+    metal: Object.assign(M(0x9aa1a6), { metalness: .4, roughness: .5 }), steel: Object.assign(M(0x6f767c), { metalness: .45, roughness: .5 }),
+    yellow: M(0xe0b02a), car1: M(0x9a3a32), car2: M(0x3e6a8a), car3: M(0xcfc9b8), tyre: M(0x1e1e20), glass: M(0x2c3a44),
+    bark: M(0x4f3d2c), leaf: M(0x3c6a2a), leaf2: M(0x6f9440) };
+  const F = farmFrame(0, 0, 0, MAT, 'ring'), { bx, geo, gnd } = F;
+  let seed = 317; const rr = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const ico0 = new THREE.IcosahedronGeometry(1, 0);
+  // a spot on the ring: its bearing in degrees, how far across the grass
+  const at = (deg, sf) => { const th = deg * Math.PI / 180, r = isleRayAt(th), d = r.rb + Math.max(2, r.gw * sf); return { x: cx + r.dx * d, z: cz + r.dz * d, dx: r.dx, dz: r.dz, gw: r.gw }; };
+  for (const Rw of FR.ROWS) {
+    const P = at(Rw.deg, Rw.s), psi = Math.atan2(P.dx, P.dz);
+    if (Rw.k === 'house') { ringHouse(F, P.x, P.z, psi, Rw.col); FR.houses++;
+      // a tree in its yard, behind it
+      if (farmTree(F, rr, ico0, P.x + P.dx * 5 + P.dz * 3, P.z + P.dz * 5 - P.dx * 3, .8 + rr() * .3, 'oak')) FR.trees++; }
+    else if (Rw.k === 'warehouse') {
+      const c = Math.cos(psi), sn = Math.sin(psi), L = (lu, lv) => [P.x + lu * c + lv * sn, P.z - lu * sn + lv * c];
+      const B = (lu, lv, y1, y2, w, d, mat, p0 = 0, col = true, tilt = 0) => { const [u, v] = L(lu, lv); bx(u, v, y1, y2, w, d, mat, psi + p0, col, tilt); };
+      const W2 = 13, D2 = 7, H = 6.5; let lo = 1e9, hi = -1e9;
+      for (const [p, q] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) { const [u, v] = L(p * W2, q * D2), y = gnd(u, v); lo = Math.min(lo, y); hi = Math.max(hi, y); }
+      const y0 = hi + .15;
+      B(0, 0, lo - .3, y0, 2 * W2 + .4, 2 * D2 + .4, 'stone');
+      B(0, D2, y0, y0 + H, 2 * W2, .3, 'metal'); B(-W2, 0, y0, y0 + H, .3, 2 * D2, 'metal'); B(W2, 0, y0, y0 + H, .3, 2 * D2, 'metal');
+      B(-7.5, -D2, y0, y0 + H, 11, .3, 'metal'); B(9, -D2, y0, y0 + H, 8, .3, 'metal'); B(2.5, -D2, y0 + 4.4, y0 + H, 5, .3, 'metal');
+      B(2.5, -D2 - .05, y0, y0 + 4.4, 5, .1, 'dark', 0, false);                                    // the roll-up door, half open: dark inside
+      for (let k = 0; k < 4; k++) B(2.5, -D2 - .12, y0 + 3.5 + k * .22, y0 + 3.6 + k * .22, 5, .05, 'steel', 0, false);
+      B(0, 0, y0 + H, y0 + H + .3, 2 * W2 + .4, 2 * D2 + .4, 'steel');                               // the flat roof: walkable
+      for (const [lu, lv, w, d] of [[0, -D2, 2 * W2 + .4, .25], [0, D2, 2 * W2 + .4, .25], [-W2, 0, .25, 2 * D2 + .4], [W2, 0, .25, 2 * D2 + .4]]) B(lu, lv, y0 + H + .3, y0 + H + .9, w, d, 'steel', 0, false);
+      B(-6, -D2 - 1.4, lo - .3, y0 + 1.2, 9, 2.6, 'stone');                                          // the loading dock
+      // the outside stair up the +u end to the roof: 12 steps, .55 a step, then a landing
+      for (let k = 0; k < 12; k++) { const lv = -D2 + 1 + k * 1.05, top = y0 + .55 * (k + 1); B(W2 + 1.1, lv, lo - .2, top, 1.6, 1.05, 'steel'); }
+      // crates on the dock, a forklift beside it
+      for (const [lu, h] of [[-9, 1.2], [-7.6, 2.4], [-3.8, 1.2]]) B(lu, -D2 - 1.2, y0 + 1.2, y0 + 1.2 + h, 1.2, 1.2, 'wood');
+      { const [u, v] = L(-12, -D2 - 4), g = gnd(u, v); bx(u, v, g, g + 1.4, 1.2, 2.2, 'yellow', psi); bx(u, v, g + 1.4, g + 2.3, 1.1, .06, 'steel', psi, false); }
+      FR.whAt = L(4, -D2 - 7);
+    } else if (Rw.k === 'lot') {
+      const c = Math.cos(psi), sn = Math.sin(psi), L = (lu, lv) => [P.x + lu * c + lv * sn, P.z - lu * sn + lv * c];
+      // a chain-link fence (posts and a top rail) round three sides, open to the city
+      for (const [lu0, lv0, lu1, lv1] of [[-10, -6, -10, 6], [-10, 6, 10, 6], [10, 6, 10, -6]]) {
+        const n = Math.round(Math.hypot(lu1 - lu0, lv1 - lv0) / 2.5);
+        for (let k = 0; k <= n; k++) { const [u, v] = L(lu0 + (lu1 - lu0) * k / n, lv0 + (lv1 - lv0) * k / n), g = gnd(u, v); bx(u, v, g - .2, g + 2.0, .08, .08, 'steel', psi, false); }
+        const [u, v] = L((lu0 + lu1) / 2, (lv0 + lv1) / 2), g = gnd(u, v), len = Math.hypot(lu1 - lu0, lv1 - lv0), pp = psi + Math.atan2(-(lv1 - lv0), lu1 - lu0);
+        bx(u, v, g + 1.9, g + 2.0, len, .05, 'steel', pp, false); bx(u, v, g, g + 2.0, len, .05, 'steel', pp); F.parts.steel.pop();
+      }
+      // three parked cars, nose to the fence
+      [[-6, 'car1', .1], [0, 'car2', -.05], [6, 'car3', .2]].forEach(([lu, mat, r]) => {
+        const [u, v] = L(lu, 2), g = gnd(u, v), p0 = psi + Math.PI / 2 + r;
+        bx(u, v, g + .35, g + 1.1, 4.2, 1.8, mat, p0); bx(u, v, g + 1.1, g + 1.65, 2.2, 1.6, 'glass', p0, false);
+        const cc = Math.cos(p0), ss = Math.sin(p0);
+        for (const [a2, b2] of [[-1.4, -.85], [1.4, -.85], [-1.4, .85], [1.4, .85]]) geo(new THREE.CylinderGeometry(.36, .36, .25, 12), 'tyre', u + a2 * cc + b2 * ss, g + .36, v - a2 * ss + b2 * cc, p0 + Math.PI / 2, 0, Math.PI / 2);
+      });
+    }
+  }
+  // TREES against the city's edge, all the way round, so its line is broken (never on the bridge's own approach)
+  for (let deg = 0; deg < 360; deg += FR.treeEvery * (.7 + rr() * .6)) {
+    if (Math.abs(((deg - FARMLAND.bearing * 180 / Math.PI + 540) % 360) - 180) < 5) continue;
+    const P = at(deg, .06 + rr() * .1);
+    if (farmTree(F, rr, ico0, P.x, P.z, .75 + rr() * .5, rr() < .2 ? 'willow' : 'oak')) FR.trees++;
+  }
+  FR.n = F.commit().boxes;
+  return FR.n;
+}
+
 // ---- THE CREEK AND THE POND, ON THE LAND (m307, step 2, `buildFarmWaters`): the water, a footbridge, willows, reeds.
 // The valley and the bowl are already in the ground (`flHeight`'s carves); this is what sits in and over them. Built in
 // a frame on the land's own axes: `farmFrame` with th = atan2(-ua.z, ua.x) makes its u = a and its v = -b (derived:
@@ -30062,7 +30182,7 @@ function farmMerge(parts, mat) {
 // it is the same merged meshes. The noise is a cheap 3D value noise; nothing is sampled.
 const FPAINT = { on: 1, kinds: { red: 1, wood: 1, stone: 2, cap: 2, roof: 3, hay: 4, dirt: 5, earth: 5, bank: 5, turf: 5, road: 5,
   hedge: 6, hedge2: 6, metal: 7, pipe: 7, hull: 7, trim: 0, white: 0, dark: 0, steel: 7, tractor: 7, straw: 4, cloth: 0, tyre: 0, bark: 7, leaf: 6, leaf2: 6, cream: 1, shut: 0, shed: 3, coop: 1, blue: 1, tank: 7, droof: 3, apple: 0, pumpkin: 0, greens: 6,
-  mint: 1, pink: 1, trailer: 7, stripe: 0 }, n: 0 };
+  mint: 1, pink: 1, trailer: 7, stripe: 0, yellow: 0, car1: 7, car2: 7, car3: 7, glass: 0 }, n: 0 };
 const FPAINT_GLSL = `
 float fpH(vec3 p) { p = fract(p * .3183099 + .1); p *= 17.0; return fract(p.x * p.y * p.z * (p.x + p.y + p.z)); }
 float fpN(vec3 x) { vec3 i = floor(x), f = fract(x); f = f * f * (3.0 - 2.0 * f);
@@ -31915,6 +32035,7 @@ const GODPLACES = [
   { id: 'overlook', world: 'tkit', name: 'GRISTLE FARM · the west hill: fields, and the city on the horizon', at: () => FARMLAND.live && godFL(FARMLAND.HILLS[0]) },
   { id: 'ploughing', world: 'tkit', name: 'GRISTLE FARM · the tractor ploughing', at: () => { const c = FVEH.list.find(q => q.id === 'tractor'); return c && [c.x + Math.cos(c.h) * 7, null, c.z - Math.sin(c.h) * 7, c.h - Math.PI / 2]; } },
   { id: 'pickup',   world: 'tkit', name: 'GRISTLE FARM · the pickup on the bridge road', at: () => { const c = FVEH.list.find(q => q.id === 'pickup'); return c && [c.x + Math.cos(c.h) * 5, null, c.z - Math.sin(c.h) * 5, c.h - Math.PI / 2]; } },
+  { id: 'warehouse', world: 'tkit', name: 'OLD TOWN · the warehouse where the bridge comes in', at: () => FRING.whAt && [FRING.whAt[0], null, FRING.whAt[1], null] },
   { id: 'gas',      world: 'tkit', name: 'EDGE OF TOWN · the gas station by the bridge', at: () => FTOWN.gasAt && [FTOWN.gasAt[0], null, FTOWN.gasAt[1], null] },
   { id: 'trailers', world: 'tkit', name: 'EDGE OF TOWN · the trailer park', at: () => FTOWN.parkAt && [FTOWN.parkAt[0], null, FTOWN.parkAt[1], null] },
   { id: 'herd',     world: 'tkit', name: 'GRISTLE FARM · the herd on the far hill', at: () => { const c = COWS.find(q => q.field != null && FPLAN.FIELDS[q.field].id === 'far_hill'); return c && [c.x + 6, null, c.z + 6, Math.atan2(-6, -6)]; } },
@@ -34295,6 +34416,8 @@ async function init() {
     try { buildFarmhands(); } catch (e) { note('FARMHANDS FAIL'); console.warn('[melee] farmhands', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)
     try { buildTownEdge(); } catch (e) { note('TOWN EDGE FAIL'); console.warn('[melee] town edge', e); }
+    // THE CITY STARTS THIN (m317): the island's ring by the bridge and all the way round
+    try { buildCityRing(); } catch (e) { note('CITY RING FAIL'); console.warn('[melee] city ring', e); }
     // THE GROUND (m301): dirt, mud and the lane's track, under everything
     try { buildGroundPaint(); } catch (e) { note('GROUND FAIL'); console.warn('[melee] ground paint', e); }
     // THE GROWTH (m297): last, so the tufts can hug every wall, post and bank the farm built
@@ -34500,7 +34623,7 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // THE FARM'S PROPS (m299): `mel.FPROPS` -- `wind` (shared direction), `spin`
   FPROPS,
   // THE GROUND PAINT (m301): `mel.GPAINT` -- the patch table and the lane track
-  GPAINT, HROW, FHOUSE, FROAD, FARMLAND, FWATER, FPLAN, FCROP, FNEIGH, FVEH, FHANDS, FTOWN,
+  GPAINT, HROW, FHOUSE, FROAD, FARMLAND, FWATER, FPLAN, FCROP, FNEIGH, FVEH, FHANDS, FTOWN, FRING,
   FARM, farm: () => { const F = FARM.at; if (!F) return 'no farm in this world'; const p = player; p.pos.set(F.x - Math.sin(F.th) * 12, 2, F.z - Math.cos(F.th) * 12); p.vel.set(0, 0, 0); p.heading = p.faceH = F.th; return 'farm at ' + F.x.toFixed(0) + ',' + F.z.toFixed(0); },
   PORTAL, PORTALS, portal: () => portalOpen(),
   // THE DEMOS, ON PURPOSE ONLY (m292, STEER 1): round where you stand, for testing the systems
