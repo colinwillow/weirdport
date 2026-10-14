@@ -7,6 +7,39 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **NO GATE EVER LET ANY FORM THROUGH: `need` WAS A FILE STEM, `formNow()` THE DISPLAY FORM (m334, `mphFold`, `gateLets`).** The same
+  bug as m332's `mkrKind`, one system over: `GATE_TYPES.cordon.need` is 'dummy_officer', `formNow()` is 'DUMMY OFFICER', and
+  `me === T.need` never held -- from m285, every gate held everyone back (and no `fix` gate could ever be mended). **One
+  fold now, `mphFold(stem)`, the same transform `mphName` applies to a kind's file**, used by `mkrKind` and by `gateLets`.
+  **Any table that names a form by its FILE must go through it before it meets `mphName`/`formNow`.** Grep for the next one.
+
+- **CHAPTER 0, START TO FINISH: SEVEN STEPS, A TIP EACH, AND THE BRIDGE'S POLICE CHECKPOINT (m334, B2, `QUESTS` `ch0`, `tipShow`,
+  `GATE_TYPES.checkpoint`, `FHANDS.PEOPLE` cop_bridge_a/b).** GAME_DESIGN's Chapter 0: crash, Clancy, the farmer panics, knock
+  him down, take his sample, become him, walk through the checkpoint into town.
+  - **`ch0` THE CRASH**, available only while `SAVE.ch === 0` (a quest's new `ch`), `onDone` -> `progChapter(1)`: find Clancy
+    (`goto who: 'CLANCY'`) -> the farmer by his barn (`goto npc: 'farmer_gristle'` -- a step can name ONE placed body by its
+    mark now) -> knock him down (`defeat npc:`) -> take his sample (`sample form: 'HICK SKINNY'`; sampling wears it) -> walk to
+    the bridge -> through the checkpoint (`gate id: 'bridge_checkpoint'`, the beam on the gate) -> into Old Town (a new
+    `flag` step: `inTown`, which `crashStep` writes when he crosses into `ISLE.rect`). The fog lifting is A9's own reveal.
+  - **Tips**: a step's `tip` shows once per save (`tip:<quest>.<step>`) in a gold pill under the objective -- "FLICK the
+    RIGHT pad to strike. Chase him: you are faster." -- **deferred while the boot card is up** (the first one fired under it).
+  - **THE CHECKPOINT** is a gate across the deck at `BRIDGE.gate` (6 m, at the deck's own y -- `gateAdd` takes a y now; at
+    load the player is nowhere near it), type `checkpoint`: need 'human' = any form but the alien (`fearLooks`). The alien
+    is held back with "Checkpoint. Faces only, and that is not a face." and **every say is +1 heat** (`T.heat`) -- try it
+    as yourself and the police come. GOD's fly passes every gate. Two officers stand either side (`law`, talk only to
+    law, brush the alien off: "That is NOT a face. Pruitt! PRUITT!"); they are `town` people, checked within 12 m of the
+    gate instead of on the farmland.
+  **Checked headless** (`?spawn=crash&fresh`): chapter 0, the objective "Find Clancy at the wreck · 11m", the first tip up;
+  at the checkpoint the alien got the toast and was held, the farmer's form crossed and wrote `gate:bridge_checkpoint`.
+  (The probe teleports in .1 m steps between slow software frames, so it can hop the 1.2 m slab; walking cannot -- a
+  sprint is ~.36 m a frame even at 20 fps.)
+      ok  FARMHANDS Dale (hobo -> hobo_01.glb) 299,75 | Wendell (hobo -> hobo_01.glb) 483,59 | Mags (hobo -> hobo_01.glb) 337,222 | Earl (hobo -> hobo_01.glb) 418,153 | Farmer Gristle (farmer -> hick_skinny.glb) 322,149 | Ma Gristle (beautiful_blonde -> beautiful_blonde.glb) 368,208 | Grandpa Gristle (hobo_01 -> hobo_01.glb) 369,205 | Officer Pruitt (cop -> dummy_officer.glb) 114,62 | Officer Dunn (cop 
+      GATES bridge_checkpoint checkpoint w6.0 y2.80 @112,64
+      ok  crash      -> player 288.2,0.4,337.8 ground 0.29
+      ok  bridge     -> player 112.1,3.0,63.6 ground 2.80
+      ok  NEW GAME  -> player 288.2,337.8 ground 0.29 | 15.2 m from the wreck
+      every tkit GOD place is somewhere
+
 - **CHAPTER 0 TALKS: THE FAMILY BRUSH OFF THE ALIEN, NELL GIVES THE FARMER THE ROAD TO TOWN AND THE HILL RUMOUR (m333,
   B1f-4, `FHANDS.PEOPLE`, `brushAlien`, `QUESTS` `qroad`).** Everything m330-m332 built, used by Chapter 0:
   - **Ma and Grandpa Gristle** on the farmhouse yard (beautiful_blonde, hobo_01): `country`, talk only to `country`, and

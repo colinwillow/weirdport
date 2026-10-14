@@ -218,7 +218,7 @@ differ" table there, so no region feels like the last one.
   - [x] m331 **B1f-2** rumours: a separate list, no marker (or a rough circle), resolved when you find the thing.
   - [x] m332 **B1f-3** who talks to whom: forms a speaker talks to, forms it brushes off (a short line), the alien makes it flee; a task can need a form to start.
   - [x] m333 **B1f-4** Chapter 0 uses it: the farmer's family brush off the alien; as the farmer, the neighbour at the farm shop gives the bridge task and the hill rumour.
-- [ ] **B2 Chapter 0 script.** Crash → find Clancy → the farmer sees you and panics → knock him
+- [x] m334 **B2 Chapter 0 script.** Crash → find Clancy → the farmer sees you and panics → knock him
   down → take his sample → walk to the bridge as him → the cop checkpoint lets the farmer through
   (and stops the alien) → Old Town, fog lifts. Tutorial prompts along the way.
 - [ ] **B3 Old Town setup.** Region bounds, a homeless camp, a food cart with the hidden good
@@ -666,3 +666,18 @@ differ" table there, so no region feels like the last one.
     and the rumour about the man at the top of the hill.
   - **Names and models:** I picked them from what we have. Ma uses the blonde model, Nell the Asian
     model, and Grandpa the hobo. Say if you want different bodies for them.
+
+- **m334 (B2):** Chapter 0 plays start to finish as one quest with a tip on each step:
+  1. Find Clancy.
+  2. Find the farmer at his barn.
+  3. Knock him down.
+  4. Take his sample.
+  5. Walk to the bridge as him.
+  6. Get through the checkpoint.
+  7. Reach Old Town.
+
+  Finishing it moves you to Chapter 1. The bridge now has a police checkpoint with two officers: any
+  human form walks through, and the alien is held back and raises heat each time it tries.
+  Another bug fix of the m332 kind: the gates (cordon, fire, barricade, broken bridge) never let
+  ANY form through since m285. They do now.
+  To play it: GOD → NEW GAME AT THE CRASH.

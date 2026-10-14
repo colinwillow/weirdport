@@ -517,6 +517,11 @@ body.dyn.desk .zone { display: none; }
   background: rgba(11,13,18,.82); border: 2px solid var(--sun); border-radius: 8px; padding: 5px 12px;
   font-family: var(--ui); font-size: 15px; font-weight: 600; color: #fff; line-height: 1.2; }
 #toast.on { opacity: 1; }
+/* THE TUTORIAL TIP (m334, B2): one line under the objective when a step that teaches something begins */
+#tip { position: fixed; left: 50%; top: calc(58px + env(safe-area-inset-top)); transform: translateX(-50%); z-index: 5; pointer-events: none;
+  max-width: 76vw; text-align: center; opacity: 0; transition: opacity .3s ease; background: rgba(255,194,71,.94); color: var(--ink);
+  border: 2px solid var(--ink); border-radius: 8px; padding: 4px 11px; font-family: var(--ui); font-size: 14px; font-weight: 700; line-height: 1.2; }
+#tip.on { opacity: 1; }
 /* THE ALARM (m302): a builder that bailed out, in red, at the top -- only in GOD, tap to dismiss */
 #alarm { position: fixed; left: 50%; top: calc(8px + env(safe-area-inset-top)); transform: translateX(-50%);
   z-index: 22; display: none; max-width: 78vw; text-align: center; pointer-events: auto;
@@ -729,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m333</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m334</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m333</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m334</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -753,6 +758,7 @@ body.desk.free #deskHint { display: block; }
 <div id="formRow" aria-hidden="true"></div>
 <div id="formPick" aria-hidden="true"></div>
 <div id="toast" aria-hidden="true"></div>
+<div id="tip" aria-hidden="true"></div>
 <div id="alarm" aria-hidden="true"></div>
 <div id="portPick" aria-hidden="true"></div>
 <canvas id="mini" aria-hidden="true"></canvas>
@@ -816,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm333';
+const BUILD = 'm334';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -22548,6 +22554,9 @@ function bindPose(bones, model) {
 }
 // his own file, read as a name. Nothing in the kinds carries one and six table edits to add a
 // string is six things to keep in step with the filenames they would be copied from.
+// a FILE STEM ('dummy_officer', 'hobo_01') folded to the form `mphName` gives a kind ('DUMMY OFFICER', 'HOBO') -- m333:
+// every table here that names a form by its file has to go through this to be compared with `mphName` / `formNow`
+const mphFold = s => String(s || '').replace(/\.glb$/i, '').replace(/^alien[ _-]+/i, '').replace(/[ _-]*\d+$/, '').replace(/[_-]+/g, ' ').toUpperCase();
 const mphName = K => String(K.file).split('/').pop().replace(/\.glb$/i, '')
   .replace(/^alien[ _-]+/i, '').replace(/[ _-]*\d+$/, '').replace(/[_-]+/g, ' ').toUpperCase();
 
@@ -27858,6 +27867,17 @@ const QUESTS = [
     { type: 'defeat', n: 1, text: 'Knock somebody down' },
     { type: 'reach',  y: 3, text: 'Get up high: a roof, a ladder, a stack of anything' },
   ] },
+  // CHAPTER 0 (m334, B2): the tutorial, start to finish -- only while the save is in chapter 0 (`ch`), and finishing it is
+  // chapter 1 (`onDone`). Every step that teaches something has a `tip`, shown once in the pill under the objective.
+  { id: 'ch0', title: 'CHAPTER 0 · THE CRASH', world: 'tkit', ch: 0, onDone: () => { progChapter(1); }, steps: [
+    { type: 'goto',   who: 'CLANCY', r: 4, text: 'Find Clancy at the wreck', tip: 'Push the LEFT pad to walk. Push it further to run.' },
+    { type: 'goto',   npc: 'farmer_gristle', r: 12, text: 'Somebody saw the crash: the farmer, by his barn', tip: "Everyone runs from an alien. He will too. That's fine." },
+    { type: 'defeat', npc: 'farmer_gristle', text: 'Knock the farmer down', tip: 'FLICK the RIGHT pad to strike. Chase him: you are faster.' },
+    { type: 'sample', form: 'HICK SKINNY', text: 'Take his sample', tip: 'Stand over him while he is down and HOLD the right pad.' },
+    { type: 'goto',   at: () => BRIDGE.gate && [BRIDGE.gate.x, BRIDGE.gate.z], r: 10, text: 'Walk to the bridge as the farmer', tip: 'Nobody looks twice at the farmer. Keep it on and walk.' },
+    { type: 'gate',   id: 'bridge_checkpoint', text: 'Through the police checkpoint', tip: 'Walk past the police like you belong. As yourself, they stop you.' },
+    { type: 'flag',   flag: 'inTown', text: 'Into Old Town' },
+  ] },
   // CHAPTER 0 (m333, B1f-4): Nell at the farm shop gives it, and only to one of her own -- `from` her script, which she only
   // finishes for country folk. The first real task in the game: a marker, a waypoint and the distance, to the checkpoint.
   { id: 'qroad', title: 'THE ROAD TO TOWN', world: 'tkit', from: 'mk_nell', steps: [
@@ -27934,7 +27954,8 @@ const questOf = id => QUESTS.find(q => q.id === id);
 // picked in the task list), else the first.
 const questAvail = () => QUESTS.filter(q => !SAVE.flags['qdone:' + q.id] && (!q.world || q.world === WORLD.now) &&
   (!q.dormant || SAVE.flags['qon:' + q.id]) &&               // m293: a stand-in waits to be switched on
-  (!q.from || SAVE.flags['talk:' + q.from]));                // m332: a task FROM somebody waits until he has told you
+  (!q.from || SAVE.flags['talk:' + q.from]) &&               // m332: a task FROM somebody waits until he has told you
+  (q.ch === undefined || SAVE.ch === q.ch));                 // m334: a chapter's own quest only while you are in it
 function questPick() {
   const A = questAvail();
   return A.find(q => q.id === SAVE.flags.qtrack) || A[0] || null;
@@ -27994,6 +28015,15 @@ function questWpt() {
 function questEnter(q, i) {
   quest.cur = q; quest.step = i; quest.cnt = 0; quest.base = talk.heard || 0;
   if (q && SAVE.flags['q:' + q.id] !== i) progFlag('q:' + q.id, i);
+  // m334: a step that teaches something says so, once per step per save, in the pill under the objective
+  const st = q && q.steps[i];
+  if (st && st.tip && !SAVE.flags['tip:' + q.id + '.' + i]) { progFlag('tip:' + q.id + '.' + i); tipShow(st.tip); }
+}
+function tipShow(t, sec) {
+  const el = document.getElementById('tip'); if (!el) return;
+  if (!bootCard.classList.contains('gone')) { setTimeout(() => tipShow(t, sec), 600); return; }   // not under the boot card
+  el.textContent = t; el.classList.add('on');
+  clearTimeout(tipShow.t); tipShow.t = setTimeout(() => el.classList.remove('on'), (sec || 7) * 1000);
 }
 // the nearest body that answers `ok`, flat distance
 function questNear(ok) {
@@ -28014,6 +28044,7 @@ function questTest(s) {
     case 'goto': {
       let x = s.x, z = s.z;
       if (s.at) { const a = s.at(); if (!a) return false; x = a[0]; z = a[1]; quest.tgt = { x, y: 0, z }; }
+      else if (s.npc) { const b = questNear(d => d.markId === s.npc); if (!b) return false; x = b.root.position.x; z = b.root.position.z; quest.tgt = b.root.position; }   // m334
       else if (s.mark) { const M = mkrFind('goal', s.mark); if (!M) return false; x = M.x; z = M.z; quest.tgt = M; }
       else if (s.who) { const b = questNear(d => mphName(d.K) === s.who); if (!b) return false; x = b.root.position.x; z = b.root.position.z; quest.tgt = b.root.position; }
       else quest.tgt = { x, y: 0, z };
@@ -28027,7 +28058,7 @@ function questTest(s) {
       return inR && p.grounded && P.y >= y;
     }
     case 'defeat': {
-      const want = d => !d.wasK && (!s.who || mphName(d.K) === s.who);
+      const want = d => !d.wasK && (s.npc ? d.markId === s.npc : !s.who || mphName(d.K) === s.who);      // m334: or one named body
       for (const d of DUMMIES) {
         const dn = d.st === 'down';
         if (dn && !d.qDn && want(d)) quest.cnt++;
@@ -28038,7 +28069,8 @@ function questTest(s) {
       return quest.cnt >= (s.n || 1);
     }
     case 'sample': return SAVE.forms.includes(s.form);
-    case 'gate': return !!SAVE.flags['gate:' + s.id];
+    case 'gate': { const G = GATES.find(g => g.id === s.id); if (G) quest.tgt = { x: G.x, y: G.y, z: G.z }; return !!SAVE.flags['gate:' + s.id]; }
+    case 'flag': return !!SAVE.flags[s.flag];                        // m334: anything the game writes in the save
   }
   return false;
 }
@@ -28065,6 +28097,7 @@ function questStep(dt) {
     else {
       progFlag('qdone:' + q.id); QUEST.n++; juiceGain(JUICE.task * 2, 'quest');
       cardShow('QUEST COMPLETE', q.title);
+      if (q.onDone) { try { q.onDone(); } catch (e) { console.warn('[melee] quest done', e); } }
       quest.cur = null; beam.visible = false;
       return;
     }
@@ -28656,7 +28689,13 @@ const GATE_TYPES = {
   bridge:    { need: 'contruction_worker', pass: 'fix',  label: 'BROKEN BRIDGE', say: 'Broken. A construction worker could fix it.' },
   barricade: { need: 'fat_activist_01',    pass: 'walk', label: 'BARRICADE',     say: 'Marchers only. An activist could get through.' },
   gap:       { need: 'glider',             pass: 'walk', label: 'GAP',           say: 'Too far to jump. Something that flies could cross.' },
+  // m334 (B2): the bridge's police checkpoint -- ANY human passes, the alien does not, and trying it is noticed
+  checkpoint: { need: 'human',             pass: 'walk', label: 'POLICE CHECKPOINT', say: "Checkpoint. Faces only, and that is not a face.", heat: 1 },
 };
+// **A GATE'S `need` IS A FILE STEM AND `formNow()` IS THE DISPLAY FORM** (m334): compared raw, 'dummy_officer' never equalled
+// 'DUMMY OFFICER', so from m285 no gate let ANY form through -- the same fold `mkrKind` lacked (m332). 'human' is any
+// form that is not the alien (`fearLooks`, the same test the fear and the talk use).
+const gateLets = T => T.need === 'human' ? !fearLooks() : formNow() === mphFold(T.need);
 const GATE = {
   on: 1,
   t: .5,            // m: the slab's thickness
@@ -28709,10 +28748,10 @@ function gateMesh(G) {
   return g;
 }
 // place a gate: centre (x, z), facing h (its NORMAL points along (sin h, cos h)), w wide
-function gateAdd(type, x, z, h, w, id) {
+function gateAdd(type, x, z, h, w, id, y) {
   if (!GATE_TYPES[type]) return null;
   const G = { id: id || type + GATES.length, type, x, z, h, w: w || 4.5, side: 0, sayT: 0, fixT: 0,
-    y: groundAt(x, z, player.pos.y + 2, MOVE.step) };
+    y: y != null ? y : groundAt(x, z, player.pos.y + 2, MOVE.step) };      // m334: a gate placed at load gives its own y
   if (!(G.y > -1e3)) G.y = player.pos.y;
   G.open = GATE_TYPES[type].pass === 'fix' && !!SAVE.flags['gate:' + G.id];
   G.g = gateMesh(G);
@@ -28741,7 +28780,6 @@ function gatePush(dt) {
   // the demos wait a beat so the spawn, the crowd and the ground under them have all settled
   if (!gate.demoDone && rig.ready && (gate.waitT = (gate.waitT || 0) + dt) > 1.5 && player.grounded) gateDemo();
   const p = player, P = p.pos, r = p.r || .35;
-  const me = formNow();
   for (const G of GATES) {
     const T = GATE_TYPES[G.type];
     const s = Math.sin(G.h), c = Math.cos(G.h);
@@ -28749,7 +28787,7 @@ function gatePush(dt) {
     const v = dx * s + dz * c, u = dx * c - dz * s;     // v along the normal, u along the gate
     const sideNow = v >= 0 ? 1 : -1;
     const inSpan = Math.abs(u) < G.w * .5 + r && P.y > G.y - .5 && P.y < G.y + GATE.hi;
-    const ok = G.open || me === T.need;
+    const ok = G.open || gateLets(T) || GOD.fly;                 // GOD's fly: nothing collides
     if (!inSpan) { G.side = sideNow; G.fixT = 0; continue; }
     const half = GATE.t * .5 + r;
     if (ok) {
@@ -28766,7 +28804,7 @@ function gatePush(dt) {
     const vn = p.vel.x * s + p.vel.z * c;
     if (vn * sd < 0) { p.vel.x -= vn * s; p.vel.z -= vn * c; }
     G.side = sd;
-    if ((G.sayT -= dt) <= 0) { G.sayT = GATE.sayAgain; GATE.said++; toast(T.say, 2.6); }
+    if ((G.sayT -= dt) <= 0) { G.sayT = GATE.sayAgain; GATE.said++; toast(T.say, 2.6); if (T.heat) heatAdd(T.heat, 'gate'); }   // m334: a checkpoint NOTICES
   }
 }
 // a `fix` gate is mended by leaning on it as the right body; flames flicker; the toast fades
@@ -28776,7 +28814,7 @@ function gateStep(dt) {
   for (const G of GATES) {
     if (G.flames) for (const f of G.flames) { const k = .8 + .25 * Math.sin(now * 9 + f.userData.ph) + .1 * Math.sin(now * 23 + f.userData.ph * 2); f.scale.set(1, k, 1); f.position.y = .9 * k; }
     const T = GATE_TYPES[G.type];
-    if (T.pass !== 'fix' || G.open || me !== T.need) continue;
+    if (T.pass !== 'fix' || G.open || !gateLets(T)) continue;
     const s = Math.sin(G.h), c = Math.cos(G.h), dx = P.x - G.x, dz = P.z - G.z;
     if (Math.abs(dx * c - dz * s) < G.w * .5 && Math.abs(dx * s + dz * c) < 1.6) {
       if ((G.fixT += dt) >= GATE.fixT) { gateOpen(G); progFlag('gate:' + G.id); toast(T.label + ': fixed', 2); }
@@ -29950,6 +29988,14 @@ const FHANDS = {
       why: 'on the porch with Ma, in no hurry: the family brush off the alien (B1f-4)',
       lines: "Back in my day the sky stayed where it was put.|Saw lights like that in forty-six. Nobody believed me then either.|Fetch me my pipe. No? Then shoo.",
       brushAlien: "I fought in two wars and a bake-off. Go away.|Martha! There's a vegetable on the porch!" },
+    // m334 (B2): the bridge checkpoint's two officers, either side of the road at the barrier -- LAW, and the checkpoint
+    // gate between them (`buildFarmhands` adds it) lets any human through and stops the alien
+    { id: 'cop_bridge_a', at: () => BRIDGE.gate && [BRIDGE.gate.x, BRIDGE.gate.z, BRIDGE.gate.h], off: [2.6, -1.2], kind: 'cop', name: 'Officer Pruitt', group: 'law', talks: ['law'], alien: 'brush', town: 1,
+      why: 'at the bridge checkpoint: the police line Chapter 0 walks you through (B2)',
+      lines: "Papers? Kidding. Nobody has papers anymore. Go on through.|Lights in the sky. Lights in the sky. That's all anybody says today.", brushAlien: "Whoa. Nope. Back up. Back all the way up." },
+    { id: 'cop_bridge_b', at: () => BRIDGE.gate && [BRIDGE.gate.x, BRIDGE.gate.z, BRIDGE.gate.h], off: [-2.6, -1.6], kind: 'cop', name: 'Officer Dunn', group: 'law', talks: ['law'], alien: 'brush', town: 1,
+      why: 'at the bridge checkpoint, the other side of the road (B2)',
+      lines: "Keep it moving, sir.|If you see anything weird on the farm, you didn't.", brushAlien: "That is NOT a face. Pruitt! PRUITT!" },
     { id: 'nell', at: () => FNEIGH.shopAt, off: [0, 1.6], kind: 'beautiful_asian', name: 'Nell Haskins', talks: ['country'], alien: 'flee', rumour: 'hillman',
       why: "at her farm shop on the ridge: as the farmer, she gives you the road to town and the hill rumour (B1f-4)",
       lines: "You're the Gristles' new hand? Huh. Thought you'd be taller.|You'll want town. Everybody wants town, eventually. It's over the bridge.|There's a police checkpoint on it since the bang. Keep your hat on and your head down." },
@@ -29969,7 +30015,7 @@ function buildFarmhands() {
   const add = (id, x, z, yaw, R, y) => {
     MARKS.push({ type: 'npc', id, name: R.name, src: 'FARMHANDS', x, y: y != null ? y : groundAt(x, z, 30, 0), z, yaw, sx: 0, sz: 0,
       p: { kind: R.kind, name: R.name, lines: R.lines, rumour: R.rumour, group: R.group || 'country', talks: R.talks || ['country', 'street'], alien: R.alien || 'flee',
-           brushAlien: R.brushAlien }, used: 0 });
+           brushAlien: R.brushAlien, town: R.town || 0 }, used: 0 });
     MKR.by.npc = (MKR.by.npc || 0) + 1; H.n++;
   };
   for (const R of H.ROWS) {
@@ -29990,6 +30036,8 @@ function buildFarmhands() {
     const g0 = groundAt(P[0], P[1], 4, 8), y = groundAt(x, z, (g0 > -50 ? g0 : 0) + 1.5, 2);
     add(R.id, x, z, h + Math.PI, R, y > -50 ? y : null);
   }
+  // m334 (B2): THE CHECKPOINT itself, across the deck at the barrier: any human walks through, the alien is held back
+  if (BRIDGE.gate) { const B = BRIDGE.gate; H.gate = gateAdd('checkpoint', B.x, B.z, B.h, B.w || 7, 'bridge_checkpoint', B.y); }
   return H.n;
 }
 
@@ -31791,7 +31839,7 @@ function mkrKind(word) {
   // **`mphName` IS THE DISPLAY FORM** ('HOBO', 'HICK SKINNY': prefix and number off, upper case) and the stem is a FILE's
   // ('hobo_01', 'hick_skinny'). Compared raw they never matched, so from m293 to m332 no npc marker -- his, or the
   // farmhands -- ever found its kind and not one of those bodies existed. Both sides go through the same fold now.
-  const t = String(stem).replace(/^alien[ _-]+/i, '').replace(/[ _-]*\d+$/, '').replace(/[_-]+/g, ' ').toUpperCase();
+  const t = mphFold(stem);
   return all.find(K => mphName(K) === t) || all.find(K => mphName(K).startsWith(t)) || null;
 }
 // after the world's builders: portals, gates, regions
@@ -35540,7 +35588,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { fireSheet, BURN, burnStart, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { fireSheet, BURN, burnStart, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
