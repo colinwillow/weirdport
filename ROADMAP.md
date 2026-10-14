@@ -41,7 +41,8 @@ What to build (several builds; ship each step, never wait):
    farmhouse and yard, the barn and silo, sheds and coop, a neighbour's farm on another ridge, a lone hay
    barn. **The crash site far out in a field**, a long gouge through the wheat, the crop circle near it.
    Split: **4a the crash far out, the gouge, the crop circle — done m310.** **4b the yard cluster spread into
-   farmhouse+yard, barn+silo, sheds+coop — done m311.** 4c the neighbour's farm on the ridge and the lone hay barn.
+   farmhouse+yard, barn+silo, sheds+coop — done m311.** **4c the neighbour's farm on the ridge and the lone hay barn
+   — done m312.**
 5. **Life**: herds of cows in the pastures, a tractor working a field and one parked, farmhands in the
    fields, a pickup on the track.
 6. **The transition into town, never a line**: dirt track -> country road -> past the neighbour's farm
@@ -504,4 +505,9 @@ differ" table there, so no region feels like the last one.
   in rows, and a pasture down to the creek. The old headland's hedge-and-crop layout and the little
   brook through the lane are switched off on the new land (not deleted), since the field plan and
   the creek valley do their jobs now.
+- **m312 (farm rebuild, step 4c):** the neighbour's farm now stands on the ridge where the ridge track
+  ends: a tall, thin blue house beside a long, low cattle shed, a skinny water tower, and a little
+  farm shop by the track with an awning and crates of apples and pumpkins (where the neighbour in
+  B1f will give you the bridge task). Out in a far hay field stands a lone open-sided hay barn with
+  a curved roof; its bales are stacked in steps you can climb. That finishes step 4.
 
