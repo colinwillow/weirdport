@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m365</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m366</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m365</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m366</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm365';
+const BUILD = 'm366';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -31591,6 +31591,125 @@ function buildHollowLand() {
   return nCh;
 }
 // ============================================================================================
+// THE TRAILER PARK ON STILTS (m366, ROADMAP C6-5b-1, `HCTRAIL`, `buildTrailerPark`)
+// ============================================================================================
+// REGIONS: "a trailer park on stilts over the creek". Rough, loud, proud; rust, tin, flannel red, mud. Down the gorge's
+// middle reach (its point 5, the bend), a BOARDWALK runs along the creek on stilts a little under the rim -- following the
+// creek's own line, not a ruler -- and the TRAILERS hang off it either side over the gorge's walls on platforms of their
+// own (each a step up or down from the walk, with a porch, a tin awning, steps), their stilts going down to wherever the
+// rock is under them. Two plank RAMPS come down to it from either rim (the way in), a LADDER goes down to the water for
+// the fishing, and on the rims: a burn barrel, a pickup on blocks, a satellite dish or two, a flag. Laundry between the
+// trailers. Four people live here and talk to their own (`country`): to anybody else it is "private property".
+// Its own frame: +v down the gorge (the way the creek runs here), +u across.
+const HCTRAIL = {
+  on: 1, n: 0, at: 5, half: 32, below: .8, walkW: 3.4,
+  TRAILERS: [   // v along the walk, side (+1 = +u), length, colour, the step up or down from the walk, why
+    { v: -26, side: -1, len: 10, col: 'cream', dy: .3, why: "the first one off the ramp: the park's office, a sign in the window" },
+    { v: -18, side: 1, len: 9, col: 'tin', dy: -.35, why: "a silver one, its porch hanging right out over the water" },
+    { v: -8, side: -1, len: 11, col: 'rust', dy: 0, why: 'the long rusted one: three generations in it' },
+    { v: 1, side: 1, len: 9, col: 'cream', dy: .35, why: 'the one with the dish and the flag' },
+    { v: 11, side: -1, len: 8, col: 'tin', dy: -.3, why: 'a small one, all porch' },
+    { v: 19, side: 1, len: 10, col: 'red', dy: 0, why: 'painted flannel red, the biker who lives in it' },
+    { v: 27, side: -1, len: 9, col: 'cream', dy: .3, why: 'the last one before the gorge narrows' },
+  ],
+  RAMPS: [ { v: -22, side: 1, why: 'from the near rim, by the road in' }, { v: 7, side: -1, why: 'from the far rim, by the burn barrel' } ],
+  LADDER: { v: -3, side: 1, why: 'down to the water: the fishing' },
+  PEOPLE: [
+    { id: 'hc_trail_earl', role: 'redneck', name: 'Earl', on: [-26, -1], lines: "Park office. I'm the office. What d'you want.|Lot rent's due Friday. Has been since 1994.|You hear the rally's Saturday? Whole creek goes. You'd best go." },
+    { id: 'hc_trail_dolly', kind: 'hick_skinny', name: 'Dolly', on: [1, 1], lines: "Dish gets ninety channels. Ninety. Nothing on any of 'em but the rally man.|Don't mind the boardwalk. It's only fell in the once.|City folk come up the creek sometimes. They don't stay." },
+    { id: 'hc_trail_tank', kind: 'fat_biker_01', name: 'Cutter', on: [19, 1], lines: "That's my bike under the tarp. Touch it and you'll be in the creek.|The gang runs the roads. The rally man runs the gang. Nobody runs the rally man.|Want respect round here? Get a bike. Get it dirty." },
+    { id: 'hc_trail_pap', kind: 'hobo_01', name: 'Pap', on: [-3, 1], fish: 1, lines: "Fish ain't biting. Ain't bit since the lights come over the hill.|My granddad built this walk. Out of a barn. The barn didn't mind.|Kids today. Hollerin' at a rally. In my day we hollered at the creek." },
+  ],
+  brush: 'Private property, city. Turn round.',
+};
+function buildTrailerPark() {
+  const T = HCTRAIL, H = HCREEK; if (!T.on || !H.live) return 0;
+  const P = H.GORGE.pts, p0 = P[T.at - 1], p2 = P[T.at + 1], [Ox, Oz] = hcWorld(...P[T.at]);
+  const [x0, z0] = hcWorld(...p0), [x2, z2] = hcWorld(...p2), th = Math.atan2(x2 - x0, z2 - z0);
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .82 }), o || {});
+  const MAT = { plank: M(0x7a5a3a), post: M(0x4a3626), rope: M(0xc9b48a), steel: Object.assign(M(0x7a8a96), { metalness: .45, roughness: .45 }), dark: M(0x24262b),
+    cream: M(0xe8e0c8), tin: Object.assign(M(0xa8b0b4), { metalness: .55, roughness: .4 }), rust: M(0x8a4a2a), red: M(0xb83a2e), roof: Object.assign(M(0x8a9094), { metalness: .5, roughness: .5 }),
+    cloth: M(0xd8d0b8, { side: THREE.DoubleSide }), flag: M(0xb83a2e, { side: THREE.DoubleSide }), tarp: M(0x3a5a7a), drum: M(0x6a3a22) };
+  const F = farmFrame(Ox, Oz, th, MAT, 'creek'), { bx, geo, wx, wz } = F, C = Math.cos(th), S = Math.sin(th);
+  const loc = (x, z) => [(x - Ox) * C - (z - Oz) * S, (x - Ox) * S + (z - Oz) * C];
+  const gnd = (u, v) => hcHeightAt(wx(u, v), wz(u, v));
+  // the creek's line in this frame: the gorge's points, and the centre's u at any v along it
+  const L = P.map(([a, b]) => loc(...hcWorld(a, b)));
+  const cU = v => { for (let i = 0; i < L.length - 1; i++) { const [ua, va] = L[i], [ub, vb] = L[i + 1]; if ((v - va) * (v - vb) <= 0 && va !== vb) return ua + (ub - ua) * (v - va) / (vb - va); } return 0; };
+  // the walk's height: under the LOWER rim over the whole reach, so it never pokes out of the ground
+  let rim = 1e9; for (let v = -T.half; v <= T.half; v += 4) for (const s of [-1, 1]) rim = Math.min(rim, gnd(cU(v) + s * 13, v));
+  const Y = rim - T.below; T.y = Y;
+  const posts = (u, v, w, d, psi, top) => { const cs = Math.cos(psi), sn = Math.sin(psi);
+    for (const [a, b] of [[-w / 2 + .2, -d / 2 + .2], [w / 2 - .2, -d / 2 + .2], [-w / 2 + .2, d / 2 - .2], [w / 2 - .2, d / 2 - .2]]) {
+      const pu = u + a * cs + b * sn, pv = v - a * sn + b * cs, g = gnd(pu, pv); if (g > top - .4) continue;
+      bx(pu, pv, g - .4, top - .2, .22, .22, 'post', psi);
+      if (top - g > 3) bx(pu, pv, g + (top - g) * .45, g + (top - g) * .45 + .1, .1, .1, 'post', psi, false); } };
+  // THE WALK: segments along the creek's line, a post pair under each joint, rails either side but where something joins
+  const joins = [...T.TRAILERS.map(R => [R.v, R.side, 2.4]), ...T.RAMPS.map(R => [R.v, R.side, 1.8]), [T.LADDER.v, T.LADDER.side, .9]];
+  const segs = []; for (let v = -T.half; v < T.half; v += 4) segs.push([v, v + 4]);
+  for (const [va, vb] of segs) {
+    const ua = cU(va), ub = cU(vb), um = (ua + ub) / 2, vm = (va + vb) / 2, len = Math.hypot(ub - ua, vb - va), psi = Math.atan2(ub - ua, vb - va);
+    bx(um, vm, Y - .25, Y, T.walkW, len + .3, 'plank', psi);
+    posts(um, vm, T.walkW, len, psi, Y - .25);
+    for (const s of [-1, 1]) {
+      if (joins.some(([jv, js, jw]) => js === s && Math.abs(jv - vm) < jw + 1.5)) continue;
+      const ru = um + Math.cos(psi) * s * (T.walkW / 2 - .05), rv = vm - Math.sin(psi) * s * (T.walkW / 2 - .05);
+      bx(ru, rv, Y, Y + 1.0, .08, len, 'plank', psi); F.parts.plank.pop(); bx(ru, rv, Y + .92, Y + 1.0, .08, len, 'plank', psi, false); bx(ru, rv, Y, Y + 1.0, .08, .08, 'post', psi, false);
+    }
+  }
+  // THE TRAILERS: on their own platforms off the walk, a porch between, awnings, windows, steps up or down
+  const cc = { cream: 'cream', tin: 'tin', rust: 'rust', red: 'red' };
+  T.homes = [];
+  for (const R of T.TRAILERS) {
+    const u0 = cU(R.v), off = T.walkW / 2 + 1.6 + 1.5, u = u0 + R.side * off, v = R.v, yp = Y + R.dy;
+    bx(u, v, yp - .25, yp, 4.2, R.len + 1.6, 'plank', 0); posts(u, v, 4.2, R.len + 1.6, 0, yp - .25);
+    bx(u + R.side * .4, v, yp, yp + 2.7, 2.6, R.len, cc[R.col], 0);                                       // the trailer
+    bx(u + R.side * .4, v, yp + 2.7, yp + 2.82, 2.7, R.len + .1, 'roof', 0, false);
+    bx(u + R.side * .4, v, yp + .9, yp + 1.05, 2.62, R.len + .02, R.col === 'red' ? 'cream' : 'red', 0, false);   // the stripe
+    for (let k = -1; k <= 1; k++) bx(u + R.side * .4 - R.side * 1.31, v + k * R.len * .3, yp + 1.3, yp + 2.1, .04, 1.2, 'dark', 0, false);    // windows, walk side
+    bx(u + R.side * .4 - R.side * 1.31, v - R.len * .1, yp, yp + 2.1, .05, .9, 'dark', 0, false);           // the door
+    // the porch: the gap between walk and platform, at the HIGHER of the two -- so it is one step either way, up or down
+    const pu = u0 + R.side * (T.walkW / 2 + .8), py = Math.max(Y, yp);
+    bx(pu, v - R.len * .1, py - .25, py, 1.7, 2.2, 'plank', 0);
+    bx(u - R.side * .9, v - R.len * .1, yp + 2.35, yp + 2.42, 2.2, 3.2, 'tin', 0, false, R.side * .12);
+    for (const k of [-1, 1]) bx(u - R.side * 1.9, v - R.len * .1 + k * 1.4, yp, yp + 2.4, .08, .08, 'steel', 0, false);
+    // what lives on the porch: a chair, a drum or two, a cooler
+    bx(u - R.side * 1.5, v + R.len * .25, yp, yp + .45, .6, .6, R.col === 'tin' ? 'red' : 'tin', .4);
+    bx(u - R.side * 1.6, v + R.len * .4, yp, yp + .9, .6, .6, 'drum', 0);
+    T.homes.push({ u, v, y: yp, side: R.side, len: R.len });
+  }
+  // laundry: a line between neighbours across the walk, things hanging off it
+  for (let i = 0; i < T.homes.length - 1; i++) { const A = T.homes[i], B = T.homes[i + 1], ya = A.y + 2.5, yb = B.y + 2.5;
+    for (let k = 1; k < 6; k++) { const t = k / 6, uu = A.u + (B.u - A.u) * t, vv = A.v + (B.v - A.v) * t, yy = ya + (yb - ya) * t - Math.sin(t * Math.PI) * .5;
+      geo(new THREE.PlaneGeometry(.55, .7), 'cloth', uu, yy - .38, vv, Math.atan2(B.u - A.u, B.v - A.v) + Math.PI / 2); } }
+  // THE RAMPS down from either rim, and THE LADDER down to the water
+  T.rampAt = []; T.ramps = [];
+  for (const R of T.RAMPS) {
+    const u0 = cU(R.v); let ue = u0 + R.side * 10; for (let k = 0; k < 20 && gnd(ue, R.v) < Y + .3; k++) ue += R.side * .8;
+    const K = { A: [u0 + R.side * T.walkW / 2, Y, R.v], B: [ue + R.side * 1.5, gnd(ue + R.side * 1.5, R.v) + .05, R.v], kind: 'cat', hw: .7 };
+    K.L = Math.hypot(K.B[0] - K.A[0], K.B[2] - K.A[2]); K.pt = pearlSpan(F, K, 0); T.ramps.push(K); T.rampAt.push([wx(K.B[0], K.B[2]), K.B[1], wz(K.B[0], K.B[2])]);
+  }
+  { const D = T.LADDER, u0 = cU(D.v), ue = u0 + D.side * (T.walkW / 2 + .3), bed = gnd(ue + D.side * .5, D.v), psi = D.side > 0 ? Math.PI / 2 : -Math.PI / 2;
+    T.lad = pearlLadder(F, ue, D.v, psi, bed, Y, [u0, Y + .02, D.v], 'hc_ladder_creek'); }
+  // THE RIMS: a burn barrel (a tame fire), a pickup on blocks, a dish, a flag
+  { const u = cU(7) - 15.5, v = 9, g = gnd(u, v); bx(u, v, g, g + .9, .7, .7, 'drum', 0); T.fireAt = [wx(u, v), g + 1.0, wz(u, v)];
+    const pu = cU(-22) + 15, pv = -26, pg = gnd(pu, pv);
+    bx(pu, pv, pg + .5, pg + 1.4, 2.0, 4.8, 'red', .3); bx(pu, pv, pg + 1.4, pg + 2.2, 1.9, 1.9, 'red', .3, false); bx(pu, pv, pg, pg + .5, 1.6, 4, 'post', .3);
+    const fu = cU(1) + 9, fg = gnd(fu, 1); bx(fu, 1, fg, fg + 6, .1, .1, 'steel', 0, false); geo(new THREE.PlaneGeometry(1.6, 1), 'flag', fu, fg + 5.4, 1 + .82, Math.PI / 2);
+    for (const h of T.homes.filter((_, i) => i % 3 === 1)) geo(new THREE.CylinderGeometry(.55, .08, .2, 12, 1, true), 'steel', h.u + h.side * .4, h.y + 3.2, h.v + h.len * .3, 0, -.6, 0); }
+  T.n = F.commit().boxes;
+  if (T.fireAt && typeof fireStart === 'function') T.fire = fireStart(T.fireAt[0], T.fireAt[1], T.fireAt[2], { k: .45, r: .25, life: Infinity, tame: 1 });
+  // THE PEOPLE: on the walk or a porch, a beat on the spot, their own only
+  for (const Pp of T.PEOPLE) {
+    const [v, s] = Pp.on, h = T.homes.find(q => Math.abs(q.v - v) < .5 && q.side === s), u = h ? h.u - s * 1.2 : cU(v) + s * 1.1, y = h ? h.y : Y;
+    const x = wx(u, v), z = wz(u, v);
+    peopleMark(Pp.id, x, z, th + (s > 0 ? -Math.PI / 2 : Math.PI / 2), Object.assign({ group: 'country', talks: ['country'], alien: 'flee', brushAlien: T.brush, beat: [[x, z]] }, Pp), y, 'HCTRAIL', 'country');
+  }
+  T.walkAt = [wx(cU(-12), -12), Y + .1, wz(cU(-12), -12), th];
+  T.frame = { Ox, Oz, th, cU, Y };
+  return T.n;
+}
+// ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
 // ============================================================================================
 // Irregular patches of wheat, corn, ploughed earth, hay meadow and pasture, divided by hedgerows, fences, tree lines and
@@ -35972,6 +36091,7 @@ const GODPLACES = [
   { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
   { id: 'pearl', world: 'tkit', name: 'THE PEARL · the plaza (Chapter 2)', at: () => OPEARL.plazaAt },
+  { id: 'hctrail', world: 'tkit', name: 'HOLLOW CREEK · the trailer park on stilts', at: () => HCTRAIL.walkAt },   // m366
   { id: 'hcrim', world: 'tkit', name: 'HOLLOW CREEK · the gorge (Chapter 3)', at: () => HCREEK.rimAt },    // m365
   { id: 'hchill', world: 'tkit', name: 'HOLLOW CREEK · the top of the hill', at: () => HCREEK.hillAt },
   { id: 'pearlhq', world: 'tkit', name: "THE PEARL · the organiser's roof (Ash, the transmitter)", at: () => OPEARL.ROOF.hqGod },   // m363
@@ -38480,6 +38600,8 @@ async function init() {
     try { buildPearlPlaza(); } catch (e) { note('PLAZA FAIL'); console.warn('[melee] plaza', e); }
     // UP TOP: THE PEARL'S ROOFS (m361)
     try { buildPearlRoofs(); } catch (e) { note('ROOFS FAIL'); console.warn('[melee] roofs', e); }
+    // HOLLOW CREEK'S TRAILER PARK ON STILTS (m366)
+    try { buildTrailerPark(); } catch (e) { note('TRAILERS FAIL'); console.warn('[melee] trailers', e); }
     // THE STRIKE'S PICKET (m345): hidden until the crews walk out
     try { buildStrike(); } catch (e) { note('STRIKE FAIL'); console.warn('[melee] strike', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)

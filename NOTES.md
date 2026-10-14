@@ -7,6 +7,24 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE TRAILER PARK HANGS OFF A BOARDWALK THAT FOLLOWS THE CREEK, NOT A RULER (m366, C6-5b-1, `HCTRAIL`,
+  `buildTrailerPark`).** Down the gorge's bend (its point 5), in a frame along the creek: the walk is 4 m segments laid
+  along the creek's own line (`cU(v)`: the gorge's points in this frame), at the LOWER rim minus .8 over the whole reach
+  (so it never pokes out of the ground), on post pairs down to wherever the rock is (`posts`: none where the ground is
+  already up at the deck, a brace halfway on the tall ones), railed either side except where something joins. Seven
+  TRAILERS on their own platforms off it, each a step up or down from the walk (`dy`), with a porch between at the HIGHER
+  of the two so it is one step either way (the first version laid it at the lower and added a step block -- which made the
+  way to a lower trailer a climb up and a drop down), a stripe, windows and a door on the walk side, a tin awning, a chair
+  and a drum. Laundry between neighbours. Two steel RAMPS up to the rims (`pearlSpan`, `kind: 'cat'` -- the Pearl's span
+  builder is generic: two ends in a frame and a kind), a LADDER down to the water (`pearlLadder`; Pap fishes by it), and on
+  the rims a burn barrel (a `tame` fire), a pickup on blocks, a flag, dishes on every third roof. Four residents (`country`:
+  Earl the office (role `redneck`), Dolly, Cutter the biker, Pap) who only talk to their own; to anybody else
+  "Private property, city. Turn round."
+  **`places`' first TRAILERS row read `NO PLATFORM` on the two LOWER homes** and the build was right: the probe sat where
+  the porch (at the walk's height) overlaps the platform's edge, which is the one-step-down working as meant. The probe
+  stands where the people do now (the strip between the trailer's wall and the platform's edge).
+  `npm run places` (exit 0): `ok  hctrail -> player -225.3,5.3,283.7 ground 5.00`;
+  `ok  TRAILERS 184 boxes | walk at 7.2 m over the sea, floor all along | homes ok x7 | ramps 2.4 m up, 2.5 m up | ladder 7.8 m | Earl, Dolly, Cutter, Pap`.
 - **HOLLOW CREEK IS A SECOND LANDMASS, BUILT BY ITS OWN COPY OF THE FARMLAND'S RECIPE (m365, C6-5a, `HCREEK`, `hcBase`,
   `hcHeight`, `hcGorgeAt`, `hcWorld` / `hcLocal` / `hcEdge`, `buildHollowLand`).** Chapter 3's region: across the water at
   bearing 2.3 (centre -274, 307 -- to the island's south-west, off the farm's and the metropolis's axes, in view of the
