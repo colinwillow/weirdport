@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m389</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m390</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m389</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m390</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm389';
+const BUILD = 'm390';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -34007,7 +34007,7 @@ function wfBotStep(dt) {
 // Nothing gets you here yet but flight (the glider, C4) and GOD; its people and its wind are C6-7b and C6-7c.
 const ISLES = {
   on: 1, live: 0, bearing: Math.PI / 2, gap: 70, cell: 2, chunk: 40, seed: 89,
-  U: [-75, 95], V: [-40, 160],
+  U: [-75, 110], V: [-40, 160],                                                           // m390: U to 110, the old pier runs out to u 105
   ISLANDS: [
     { id: 'landing', u: 0, v: 0, r: 22, h: 6, kind: 'low', why: "the landing rock: low, its beach toward Old Town's lookout -- the first glide" },
     { id: 'mesa', u: -30, v: 55, r: 30, h: 18, kind: 'mesa', ladders: [-1.2, .9], why: "the mesa: sheer all round, a flat top -- the BASE jumpers' (C6-7b)" },
@@ -34121,6 +34121,74 @@ function buildIslands() {
   I.live = 1;
   console.log('[melee] river islands: ' + nCh + ' chunks, ' + I.tris + ' floor tris, ' + I.ladders + ' ladders, centre ' + I.O.map(v => v.toFixed(0)).join(','));
   return nCh;
+}
+// ============================================================================================
+// THE OLD PIER'S SKATE PARK (m390, ROADMAP C6-7b-1, `ISKATE`, `buildIslandSkate`)
+// ============================================================================================
+// REGIONS 8: "a skate park on an old pier ... skaters ... skate wheels ... sun-bleached wood, bright kites. (Rollergirl is the
+// Easter egg here.)" Off the pier island's east side, an old timber pier on piles 42 m out over the water, and on it the
+// locals' park, every piece of it something the board already knows how to use: a QUARTER PIPE at the far end (a curve of
+// walkable `TRI` quads to 55 deg, a steel coping you can grind, a platform behind it to drop in from), a FUNBOX in the middle
+// (banks both ends, a flat top whose edges are rails -- every box's top edge is a grind rail, m153), two KICKERS from the
+// island end, a LEDGE up three steps, a MANUAL PAD, a FLAT RAIL on posts, the pier's own railings, and a graffiti wall at
+// the island end. Three locals, and **ROLLERGIRL**, on her skates, at home here (she knows what you are and does not mind).
+const ISKATE = {
+  on: 1, u0: 63, u1: 105, v0: 15, v1: 33, deckH: 3.1,
+  PEOPLE: [
+    { id: 'is_kai', role: 'skater', name: 'Kai', at: [69, 30.5], face: [1, -.5], lines: "The pier's been closed since forever. Which is why it's the best pier.|Wind picks up after noon. You can kite clear to the needle if you're dumb enough.|See the guy in the helmet up on the mesa? Jumps off it every day. Lands in the water every day." },
+    { id: 'is_nova', role: 'skater', name: 'Nova', at: [90, 18.5], face: [-1, .3], lines: "Board's free if you want one. Kidding. Get your own.|There's a girl here on skates who never falls. Ever. It's unsettling.|Grind the coping, not the people." },
+    { id: 'is_ruben', role: 'skater', name: 'Ruben', at: [104.2, 24], y: 1.71, face: [-1, 0], lines: "Drop in or don't. The ramp doesn't care.|The lighthouse keeper says the needle hums at night. The lighthouse keeper says a lot of things.|Fell in twice today. The water's warm. Suspiciously warm." },
+    { id: 'is_rollergirl', kind: 'alien_rollerskate_blue', name: 'Rollergirl', at: [84, 20.5], face: [1, 0], alien: 'talk', talks: ['*'], lines: "Oh! You're one too! Don't tell anybody. I'm on holiday.|Keep up if you can. Nobody keeps up.|Up on the needle, at night, the sky opens a little. Don't look straight at it." },
+  ],
+  n: 0, tris: 0,
+};
+function buildIslandSkate() {
+  const S = ISKATE, I = ISLES; if (!S.on || !I.live) return 0;
+  const sea = ISLE.sea, y = sea + S.deckH;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .85 }), o || {});
+  const MAT = { deck: M(0xc9b48a), plank: M(0xb39a70), pile: M(0x5a4a3a), conc: M(0xb8b4ac), ramp: M(0xd8c8a0), steel: Object.assign(M(0x8a96a0), { metalness: .5, roughness: .4 }),
+    paint: M(0x2a9ad8), pink: M(0xff6aa8), yel: M(0xffd23a), dark: M(0x2a2420), plant: M(0x5f8a4a), steel2: M(0x5a6a74) };
+  const F = farmFrame(I.O[0], I.O[1], I.th, MAT, 'isles'), { bx, geo, quad } = F;
+  const cu = (S.u0 + S.u1) / 2, cv = (S.v0 + S.v1) / 2, L = S.u1 - S.u0, W = S.v1 - S.v0;
+  // THE PIER: the deck, its piles, a plank pattern, railings down the long sides and across the end (open at the island)
+  bx(cu, cv, y - .45, y, L, W, 'deck');
+  for (let u = S.u0 + 3; u < S.u1; u += 4.5) for (const v of [S.v0 + 1, cv, S.v1 - 1]) bx(u, v, sea - 4, y - .45, .45, .45, 'pile', 0, false);
+  for (let u = S.u0 + .6; u < S.u1; u += 1.2) bx(u, cv, y, y + .01, .04, W - .2, 'plank', 0, false);
+  const rail = (u0, v0, u1, v1) => { const c = [(u0 + u1) / 2, (v0 + v1) / 2], l = Math.hypot(u1 - u0, v1 - v0), ps = Math.atan2(u1 - u0, v1 - v0);
+    bx(c[0], c[1], y, y + 1.0, .1, l, 'plank', ps); F.parts.plank.pop(); bx(c[0], c[1], y + .92, y + 1.0, .12, l, 'plank', ps, false); bx(c[0], c[1], y + .45, y + .52, .08, l, 'plank', ps, false);
+    for (let t = 0; t <= l; t += 2) bx(u0 + (u1 - u0) * t / l, v0 + (v1 - v0) * t / l, y, y + 1.0, .12, .12, 'pile', 0, false); };
+  rail(S.u0 + 3, S.v0 + .1, S.u1, S.v0 + .1); rail(S.u0 + 3, S.v1 - .1, S.u1, S.v1 - .1); rail(S.u1 - .1, S.v0, S.u1 - .1, S.v1);
+  // a ribbon of quads, a strip `w` wide across v at u (the board's surfaces): the walk in TRI, a thin slab you see
+  const strip = (pts, v0, v1, mat) => { for (let k = 0; k < pts.length - 1; k++) { const [ua, ya] = pts[k], [ub, yb] = pts[k + 1];
+      quad([ua, ya, v0], [ub, yb, v0], [ub, yb, v1], [ua, ya, v1]); pearlSeg(geo, mat, [ua, ya - .05, (v0 + v1) / 2], [ub, yb - .05, (v0 + v1) / 2], v1 - v0, .1, 0); } };
+  // THE QUARTER PIPE at the far end: a 4 m radius to 55 deg, the coping, a platform to drop in from
+  { const R = 4, u0 = S.u1 - 5.5, pts = []; for (let k = 0; k <= 10; k++) { const a = k / 10 * 55 * Math.PI / 180; pts.push([u0 + R * Math.sin(a), y + R * (1 - Math.cos(a))]); }
+    strip(pts, S.v0 + 3, S.v1 - 3, 'ramp'); const [tu, ty] = pts[pts.length - 1]; S.qpTop = ty - y;
+    bx((tu + S.u1) / 2, cv, y, ty, S.u1 - tu, W - 6, 'conc'); bx(tu + .05, cv, ty - .1, ty + .02, .12, W - 6, 'steel');
+    for (const s of [-1, 1]) bx(u0 + 1.6, cv + s * (W / 2 - 3 + .1), y, y + .9, 3.4, .2, 'conc', 0, false);
+    S.qp = [(u0 + tu) / 2, cv]; }
+  // THE FUNBOX in the middle: banks to a flat top .7 up, its edges the rails
+  { const fu = 84, fv = 24, h = .7; bx(fu, fv, y, y + h, 5, 4, 'conc');
+    strip([[fu - 4.5, y], [fu - 2.5, y + h]], fv - 2, fv + 2, 'ramp'); strip([[fu + 2.5, y + h], [fu + 4.5, y]], fv - 2, fv + 2, 'ramp');
+    bx(fu, fv + 2.05, y + h, y + h + .06, 5, .1, 'yel', 0, false); S.fun = [fu, fv, h]; }
+  // two KICKERS off the island end, the LEDGE up three steps, the MANUAL PAD, the FLAT RAIL on its posts
+  for (const kv of [19.5, 28.5]) { strip([[70, y], [72, y + .9]], kv - 1, kv + 1, 'ramp'); bx(72.05, kv, y, y + .9, .1, 2, 'pile', 0, false); }
+  S.kick = [71, 19.5];
+  { bx(94.5, 31.4, y, y + .9, 5, 1.8, 'conc'); for (let k = 0; k < 3; k++) bx(91.4 + k * .4 + .2, 31.4, y, y + (k + 1) * .3, .4, 1.8, 'conc'); bx(94.5, 30.48, y + .9, y + .96, 5, .06, 'steel', 0, false); }
+  bx(78, 31.6, y, y + .25, 4, 1.4, 'conc');
+  { bx(93, 17, y + .42, y + .5, 6, .08, 'steel'); for (const u of [90.5, 95.5]) bx(u, 17, y, y + .42, .08, .08, 'steel2', 0, false); }
+  // the graffiti wall at the island end, its paint, a plant or two
+  bx(65, 31.6, y, y + 2.4, 3.4, .3, 'conc');
+  for (const [a, b, mat] of [[-1.2, .6, 'paint'], [.2, 1.4, 'pink'], [1.1, .9, 'yel']]) bx(65 + a, 31.43, y + b - .4, y + b + .4, .9, .02, mat, 0, false);
+  for (const [u, v] of [[64.5, 16.5], [66, 16.2]]) { bx(u, v, y, y + .6, .7, .7, 'plank'); geo(new THREE.IcosahedronGeometry(.6, 0), 'plant', u, y + 1.1, v); }
+  const r = F.commit(); S.n = r.boxes; S.tris = r.tris;
+  // the people of the park, and Rollergirl
+  const hd = (du, dv) => Math.atan2(du * I.C + dv * I.S, -du * I.S + dv * I.C);
+  for (const P of S.PEOPLE) { const [x, z] = islWorld(P.at[0], P.at[1]);
+    peopleMark(P.id, x, z, hd(P.face[0], P.face[1]), Object.assign({ group: 'city', talks: ['city', 'street', 'worker'], alien: 'flee' }, P), y + (P.y || 0), 'ISKATE', 'city'); }
+  { const [x, z] = islWorld(68, 24); S.godAt = [x, y + .1, z, hd(1, 0)]; }
+  S.y = y;
+  return S.n;
 }
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
@@ -38524,6 +38592,7 @@ const GODPLACES = [
   { id: 'islanding', world: 'tkit', name: 'THE RIVER ISLANDS · the landing rock (Chapter 5)', at: () => ISLES.landAt },   // m389
   { id: 'ismesa', world: 'tkit', name: 'THE RIVER ISLANDS · on top of the mesa', at: () => ISLES.mesaAt },
   { id: 'isneedle', world: 'tkit', name: 'THE RIVER ISLANDS · on top of the needle, the highest point', at: () => ISLES.needleAt },
+  { id: 'isskate', world: 'tkit', name: 'THE RIVER ISLANDS · the skate park on the old pier', at: () => ISKATE.godAt },   // m390
   { id: 'otferry', world: 'tkit', name: "OLD TOWN · the ferry landing to the Waterfront (Chapter 4's way in)", at: () => OFERRY.otAt },   // m381
   { id: 'wfferry', world: 'tkit', name: "THE WATERFRONT · the ferry's pontoon off pier 1", at: () => OFERRY.wfAt },
   { id: 'otswing', world: 'tkit', name: "OLD TOWN · the swing bridge's foot (the second way to the Waterfront)", at: () => OSWING.otAt },   // m382
@@ -41034,6 +41103,7 @@ async function init() {
     try { buildFerry(); } catch (e) { note('FERRY FAIL'); console.warn('[melee] ferry', e); }
     // THE RIVER ISLANDS (m389): Chapter 5's chain, off Old Town's +z shore, after the island it measures its place off
     try { buildIslands(); } catch (e) { ISLES.live = 0; note('ISLANDS FAIL'); console.warn('[melee] islands', e); }
+    try { buildIslandSkate(); } catch (e) { note('SKATE FAIL'); console.warn('[melee] island skate park', e); }
     // AND THE SWING BRIDGE (m382): the second way over, before the city ring keeps its trees off its landing
     try { buildSwing(); } catch (e) { note('SWING FAIL'); console.warn('[melee] swing bridge', e); }
     // ITS CREEK AND POND (m307): what stands in and over the valley and the bowl the land is carved with

@@ -7,6 +7,25 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE OLD PIER'S SKATE PARK (m390, C6-7b-1, `ISKATE`, `buildIslandSkate`).** REGIONS 8: *"a skate park on an old pier
+  ... skaters ... sun-bleached wood, bright kites. (Rollergirl is the Easter egg here.)"* A timber deck on piles off the pier
+  island's east side, u 63..105 / v 15..33 in the islands' frame, **3.1 m over the sea** (`ISLE.sea + deckH`), open at the
+  island end so it is walked straight on from the grass. **EVERY PIECE IS SOMETHING THE BOARD ALREADY KNOWS**: the quarter
+  pipe is walkable `TRI` quads (`quad`) to 55 deg, which is what the board rides on any ramp; its coping, the funbox's top
+  edges, the ledge, the flat rail and the railings are all boxes, and **every box's top edge is a grind rail (m153)**, so
+  nothing new had to be taught to `stepSkate`. The deck floor is ONE box (the collider) with plank lines on it as
+  non-colliding slivers.
+  **`ISLES.U[1]` WENT 95 -> 110** so the pier is inside `islEdge` (the `is*` GOD-place rule and the row's own test). That
+  adds about 750 seabed cells to the island mesh, and nothing else reads `U`.
+  **THE PEOPLE ARE MARKS, NOT BUILDERS**: three `skater` locals (the ROSTER's moussa body) and Rollergirl by `kind:
+  'alien_rollerskate_blue'` (the `SKATER` table: she skates rather than walks, m263) with `alien: 'talk'`, so she speaks to
+  the alien as one of her own. Ruben stands on the quarter pipe's platform (`y: 1.71`, its measured top).
+  GOD -> *THE RIVER ISLANDS · the skate park on the old pier*.
+  **`npm run places`, exit 0** (teeth: dropping the ledge's three steps reads `BAD SKATE ... THE LEDGE STEPS ARE NOT STEPS`):
+      ok  SKATE 16 boxes, 28 tris | deck 3.1 over the sea | deck 0/0, deck far 0/0, qp low 0.38/0.37, qp high 1.43/1.43, qp deck 1.71/1.71, funbox bank 0.35/0.35, funbox top 0.7/0.7, kicker 0.45/0.45, kicker 2 0.45/0.45, ledge 0.9/0.9, manual 0.25/0.25 | walked on from the island 0, up the funbox 0.7, up the ledge steps 0.9 | Kai (moussa.glb), Nova (moussa.glb), Ruben (moussa.glb), Rollergirl (alien_rollerskate_blue.glb) 
+  **WHAT IS NOT HERE YET**: the BASE platform, the kites and the humps' launch ramp (C6-7b-2); wind (C6-7c); no skater
+  actually rides the park. They stand and talk. A body that skates the ramps needs the board on a body, which nothing has yet.
+
 - **THE RIVER ISLANDS' LAND: SIX ISLANDS AT SIX HEIGHTS, WATER IN EVERY GAP (m389, C6-7a, `ISLES`, `islOne`, `islHeight`,
   `islWorld` / `islLocal` / `islEdge`, `buildIslands`).** Chapter 5's chain (GAME_DESIGN's "Skate Islands", REGIONS 8),
   due +z off Old Town (bearing pi/2: between the farm and Hollow Creek, in front of the lookout at 112 deg, so the glider's
