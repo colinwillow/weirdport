@@ -311,7 +311,7 @@ differ" table there, so no region feels like the last one.
       - [x] m385 **C6-6e-3** the security robots in the yard: they chase strangers off; for the engineer they stand down.
     - [ ] **C6-6f** Chapter 4's quests and its boss; shut the line down and the cyborgs turn back; Chapter 4 complete.
       - [x] m386 **C6-6f-1** Chapter 4 opens: over the river, Rosa on pier 1, Dex on the shed roof, an engineer's face, through Uplift's gate.
-      - [ ] **C6-6f-2** shut the line: the control room's red lever, the line stops for good, the cyborgs start turning back.
+      - [x] m387 **C6-6f-2** shut the line: the control room's red lever, the line stops for good, the cyborgs start turning back.
       - [ ] **C6-6f-3** the boss: the line's supervisor bursts out (Uplift's own, nearly twice your height); after him Chapter 4 is complete.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
@@ -1090,3 +1090,8 @@ differ" table there, so no region feels like the last one.
 - **m386 (C6-6f-1) Chapter 4 opens.** I split C6-6f into three: this opening; the lever that shuts the line so the cyborgs turn back; then the boss.
   - The opening goes: cross the river, talk to Rosa on pier 1, climb to Dex on the transit shed roof, take an engineer's face (sample Ivy), then walk through Uplift's gate.
   - Rosa and Dex talk to workers, so the worker form from Chapter 1 is how you start the conversation.
+- **m387 (C6-6f-2) The lever.** Pull the red lever in the control room as the engineer and the line stops for good.
+  - The belts stop and the factory's green screens turn red.
+  - Every converted worker comes back to himself one at a time, nearest first, with sparks and a dazed line about a man in a nice suit.
+  - Then you talk to Benny's cousin in the line-up (third from the left). He points you at the line supervisor: next build's boss.
+  - Only the engineer can pull the lever, to match the gate.

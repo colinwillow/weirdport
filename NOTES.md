@@ -7,6 +7,28 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE LEVER: THE LINE STOPS FOR GOOD, AND THE CONVERTED COME BACK TO THEMSELVES ONE AT A TIME (m387, C6-6f-2, `QUESTS`
+  `ch4b`, `wfLineOff`, `wfFree`, `line:off`, `line:freed`, `WFSEC.wave`).** The control room's red lever (m378's
+  `WFLINE.leverAt`) answers to an ENGINEER ("LINE CONTROL: AUTHORISED ENGINEERS ONLY" otherwise): `wfLineOff` saves
+  `line:off`, the horn three times, THE LINE STOPS. From then on (and on every load): `WFCONV` has no clock and no
+  recycling (`C.off`), the belts stand still (`WFLINE.run` 0: no carry), riders on a belt stand where they are and a
+  rider bound at load is never caught up through the booth or the visor arch; the factory's green screens go RED
+  (`W.MAT.screen` -- the batch keys on the emissive hex and this is the one material with it). **THE WAVE**: every
+  `role: 'cyborg'` body on the Waterfront comes back to himself, nearest first, one every 1.4 s -- `cyborgRevert` (the
+  sparks, the zap, "Just a worker now", and `UPLIFT.dazed`'s lines: *"There's a man in a nice suit at Uplift"*) when he
+  is near enough to see, `wfFree` (the same without the show) when not, or for 10 s after a load with the lever already
+  pulled, when they all come back at once, quietly. The last one back sets `line:freed` (THE LINE IS DOWN).
+  The quest (`needQ: 'ch4'`): reach the control room -> the lever -> `line:freed` (the beam on the line-up behind the
+  dry dock) -> talk to Benny's cousin (`wf_line_2`, the third from the left): the line SUPERVISOR -- hi-vis over a nice
+  suit, never went home, never ate -- is still in there. GOD: PULL THE LEVER (for good).
+  **The `LEVER` row**: the plain body at the lever does nothing, the engineer stops the line and its clock through the
+  shipped `wfSecStep` / `wfConvStep`, two fabricated converts on the quay come back one at a time, and `line:freed`
+  follows the last; the save and the screens are put back after.
+  `npm run places` (exit 0):
+      ok  CH4 on the quay: wf:in set | ch4 flag > talk > talk > sample > gate
+      ok  LEVER the plain body at the lever: nothing | the engineer: pulled it, the line stopped | two converted on the quay: 2 back to themselves in 5.3 s, one at a time: true | line:freed true
+      ok  QUESTS ... ch4.0 flag | ch4.1 talk | ch4.2 talk | ch4.3 sample | ch4.4 gate | ch4b.0 reach | ch4b.1 flag | ch4b.2 flag | ch4b.3 talk ...
+
 - **CHAPTER 4 OPENS: OVER THE RIVER, ROSA, DEX ON THE SHED ROOF, AN ENGINEER'S FACE, THROUGH THE GATE (m386, C6-6f-1,
   `QUESTS` `ch4`, `wf:in`).** The chapter's own quest (`ch: 4`, picked once Chapter 3's boss is done): **flag `wf:in`**
   (the beam on Old Town's ferry landing; set by `wfSecStep` the first time his feet are on the Waterfront's land 6 m in,
