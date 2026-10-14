@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m362</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m363</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m362</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m363</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm362';
+const BUILD = 'm363';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28017,6 +28017,26 @@ const QUESTS = [
                 "Where are they? Upstairs. The tall one, north-west. They haven't come down in weeks. They send notes. Very neat handwriting. Very... even.",
                 "The stairs are boarded up -- security. The only way up is over the roofs. If you go, ask them about the signs. Somebody keeps paying for the signs."] } },
   ] },
+  // CHAPTER 2 (m363, C6-4b): Marisol's lead, `from` her script. Over the roofs to the organiser's (the HQ: a shed, a dish, a
+  // transmitter, and Ash at it, who talks like the notes read and is the one person in The Pearl who does not run from an
+  // alien), the papers by the shed's door (`pearl:receipts`: walking up to them reads them -- the signs for BOTH sides,
+  // paid by one "friend"), and back to Marisol with them, who calls the organiser down to the stage (C6-4c, `from` that).
+  { id: 'ch2b', title: "THE ORGANISER'S ROOF", world: 'tkit', ch: 2, from: 'ch2_marisol', steps: [
+    { type: 'reach', at: () => OPEARL.ROOF.hqAt, r: 10, text: "Up onto the organiser's roof: the tall one, north-west", tip: "Over the roofs: the ladder by the dock door, the stair up to the studios, the catwalk over the lane." },
+    { type: 'talk',  who: 'ch2_organiser', npc: 'pearl_organiser', text: 'Talk to the organiser at the transmitter',
+      say: { name: 'Ash, the organiser', group: 'city', talks: ['*'], alien: 'talk',
+        lines: ["The strike continues. The strike is good.",
+                "You have come up. Nobody comes up. Return to the plaza. March. Make signs.",
+                "The signs are paid for. By a friend. Friends are good. The strike is good.",
+                "...Why are you still here. Return to the plaza."] } },
+    { type: 'flag',  flag: 'pearl:receipts', at: () => OPEARL.ROOF.papersAt, text: "Look at the papers by the shed's door", tip: 'Walk up to the table.' },
+    { type: 'talk',  who: 'ch2_receipts', npc: 'pplaza_marisol', text: 'Take the receipts to Marisol, as one of them', tip: 'Back down into the plaza. She only talks to her own.',
+      say: { name: 'Marisol', group: 'city', talks: ['city'], alien: 'brush', brushAlien: ['Not now. Not you.'],
+        lines: ["What's this? Receipts. For the signs. ...Four thousand signs?",
+                "'Paid by a friend.' And this one -- KEEP WEIRDPORT NORMAL. That's the OTHER lot's signs. Same friend. Same handwriting.",
+                "Somebody is paying both sides to shout at each other. And the organiser's been cashing it.",
+                "Right. I'm calling them down. The stage, in front of everybody. If they're who they say they are, they'll come."] } },
+  ] },
   // m350 (C2b-1): the first time you come near the pacifier -- one step, passed the moment it is shot down
   { id: 'qorb', title: 'SOMETHING HUMMING', dormant: 1, world: 'tkit', steps: [
     { type: 'flag', flag: 'orb:pacifier', text: 'Shoot down the orb over the south side', tip: 'Point the camera at it: the shot finds it. Three hits.' },
@@ -30254,7 +30274,12 @@ const OPEARL = {
       { id: 'pearl_roof_lark', w: 2, at: [-5, -4], face: Math.PI / 2, kind: 'fat_hippie', name: 'Lark', lines: "Shh. I'm painting the sky. It keeps moving.|The lights over the plaza at night? You get used to them. Then you notice they don't blink like planes.|There's a ladder down the side into the plaza. The marchers pretend it isn't there." },
       { id: 'pearl_roof_moss', w: 5, at: [-2, -3], face: 0, kind: 'beautiful_asian', name: 'Moss', lines: "The bees like it up here. So do the drummers. The bees do not like the drummers.|The organiser's roof has a satellite dish now. For the newsletter, apparently.|Mind the rope bridges. They sag. That's the charm." },
     ],
-    HQ: { w: 4, at: [-6, 2] },          // the organiser's shed and dish, for C6-4
+    HQ: { w: 4, at: [-6, 2],            // the organiser's shed and dish, for C6-4
+      // m363 (C6-4b): the organiser at a transmitter beside it, facing it (and away from everything else), and the papers
+      // on a table by the shed's door
+      console: [-2.9, 2.6], papers: [-7.6, -.6],
+      ORG: { id: 'pearl_organiser', at: [-1.7, 2.6], kind: 'fat_activist_01', name: 'Ash, the organiser', alien: 'brush', brushAlien: 'Ah. One of the other ones. Carry on.',
+        lines: "The strike continues. The strike is good.|Return to the plaza. March. Make signs. The signs are paid for.|...Why are you still here. Return to the plaza." } },
     GOD: { w: 2, at: [2, 5] },          // GOD: the studios' roof garden
   },
   PEOPLE: [
@@ -30470,7 +30495,8 @@ function buildPearlRoofs() {
   const { ox, oz, thf, y } = E, Ws = O.WAREHOUSES;
   const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .82 }), o || {});
   const MAT = { steel: Object.assign(M(0x7a8a96), { metalness: .45, roughness: .45 }), plank: M(0x8a6a44), rope: M(0xc9b48a), dark: M(0x24262b),
-    bed: M(0x7a5a3a), soil: M(0x3a2a1c), plant: M(0x5f9a4a), bloom: M(0xff9fc0), tank: Object.assign(M(0xb8d8f2), { metalness: .2, roughness: .5 }), shed: M(0xcfc0ee), dish: M(0xf2efe6) };
+    bed: M(0x7a5a3a), soil: M(0x3a2a1c), plant: M(0x5f9a4a), bloom: M(0xff9fc0), tank: Object.assign(M(0xb8d8f2), { metalness: .2, roughness: .5 }), shed: M(0xcfc0ee), dish: M(0xf2efe6),
+    paper: M(0xf6f2e8), screen: Object.assign(M(0x1a2a30), { emissive: new THREE.Color(0x4dffb0), emissiveIntensity: .9 }) };
   const F = farmFrame(ox, oz, thf, MAT, 'pearl'), { bx, geo } = F;
   R.n = { links: 0, ladders: 0, beds: 0 };
   const clear = Ws.map(() => []);
@@ -30505,11 +30531,23 @@ function buildPearlRoofs() {
     bx(u, v, yh, yh + 2.7, 4.2, 3.2, 'shed', W.yaw); bx(u, v, yh + 2.7, yh + 2.85, 4.6, 3.6, 'dark', W.yaw, false); clear[R.HQ.w].push([a, b], [a, b - 2.4]);
     const [du, dv] = [u - sn * 1.61, v - cs * 1.61]; bx(du, dv, yh, yh + 2.1, .9, .06, 'dark', W.yaw, false);
     geo(new THREE.CylinderGeometry(.9, .1, .35, 14, 1, true), 'dish', u + cs * 1.2, yh + 3.6, v - sn * 1.2, 0, -.7, 0); bx(u + cs * 1.2, v - sn * 1.2, yh + 2.85, yh + 3.5, .08, .08, 'steel', W.yaw, false);
-    R.hqAt = [F.wx(u, v), yh, F.wz(u, v)]; }
+    R.hqAt = [F.wx(u, v), yh, F.wz(u, v)];
+    // m363: the transmitter (a console, its screen lit, a cable up to the dish) and the papers table by the door
+    const at = ([a2, b2]) => [W.u + a2 * cs + b2 * sn, W.v - a2 * sn + b2 * cs], [cu, cv] = at(R.HQ.console), [pu, pv] = at(R.HQ.papers);
+    bx(cu, cv, yh, yh + 1.05, .7, 1.4, 'dark', W.yaw); geo(new THREE.BoxGeometry(.04, .5, 1.1), 'screen', cu + cs * .36, yh + 1.25, cv - sn * .36, W.yaw, 0, -.25);
+    bx(cu, cv, yh + 1.05, yh + 2.8, .06, .06, 'steel', W.yaw, false);
+    bx(pu, pv, yh, yh + .78, 1.1, .7, 'plank', W.yaw);
+    for (let k = 0; k < 5; k++) bx(pu + (k % 3 - 1) * .28 * cs, pv - (k % 3 - 1) * .28 * sn, yh + .78 + (k > 2) * .05, yh + .82 + (k > 2) * .05, .26, .34, 'paper', W.yaw + (k - 2) * .2, false);
+    clear[R.HQ.w].push(R.HQ.console, R.HQ.ORG.at, R.HQ.papers);
+    R.papersAt = [F.wx(pu, pv), yh, F.wz(pu, pv)];
+    { const [gu, gv] = at([R.HQ.papers[0], R.HQ.papers[1] - 1.5]); R.hqGod = [F.wx(gu, gv), yh + .1, F.wz(gu, gv), thf + W.yaw]; }   // GOD: in front of the table, facing it
+    { const [ou, ov] = at(R.HQ.ORG.at); R.orgAt = [F.wx(ou, ov), yh, F.wz(ou, ov)]; R.orgYaw = thf + W.yaw - Math.PI / 2; } }
   // THE GARDENS
   Ws.forEach((W, i) => { R.n.beds += pearlGarden(F, W, y + W.h, clear[i], i + 3); });
   F.commit();
   for (const G of R.GARDENERS) peopleMark(G.id, G.x, G.z, thf + G.face, Object.assign({ group: 'city', talks: ['*'], alien: 'flee', beat: [[G.x, G.z]] }, G), G.y, 'PEARL', 'city');
+  // m363: THE ORGANISER -- at the transmitter, never down; the one person in The Pearl who does not run from an alien
+  if (R.orgAt) { const G = R.HQ.ORG; peopleMark(G.id, R.orgAt[0], R.orgAt[2], R.orgYaw, Object.assign({ group: 'city', talks: ['*'], beat: [[R.orgAt[0], R.orgAt[2]]] }, G), R.orgAt[1], 'PEARL', 'city'); }
   { const W = Ws[R.GOD.w], cs = Math.cos(W.yaw), sn = Math.sin(W.yaw), [a, b] = R.GOD.at; R.godAt = [F.wx(W.u + a * cs + b * sn, W.v - a * sn + b * cs), y + W.h + .1, F.wz(W.u + a * cs + b * sn, W.v - a * sn + b * cs), thf]; }
   return R.n.links;
 }
@@ -30665,6 +30703,10 @@ function plazaStep(dt) {
     protestChant(ans ? O.chant2 : O.chant, p[ans], ans, 1); O.chant.visible = !ans; O.chant2.visible = !!ans;
   }
   if ((O.tick -= dt) > 0) return; const step = .5 - O.tick; O.tick = .5;
+  // m363 (C6-4b): THE PAPERS on the organiser's roof -- walking up to them is reading them
+  { const Q = OPEARL.ROOF && OPEARL.ROOF.papersAt;
+    if (Q && !SAVE.flags['pearl:receipts'] && Math.hypot(player.pos.x - Q[0], player.pos.z - Q[2]) < 1.9 && Math.abs(player.pos.y - Q[1]) < 1.5) {
+      progFlag('pearl:receipts'); cardShow('RECEIPTS', '4,000 SIGNS, BOTH SIDES -- PAID BY "A FRIEND"', 4.2); } }
   // m362 (C6-4a): IN THE PLAZA -- by the stage, on the ground, while they sit: however he got in (the march, the roofs)
   if (!SAVE.flags['pearl:in'] && O.st === 'sit' && Math.hypot(player.pos.x - O.mid[0], player.pos.z - O.mid[1]) < 10 && Math.abs(player.pos.y - O.y) < 1.5) progFlag('pearl:in');
   const all = DUMMIES.filter(d => !d.gone && d.markId && d.markId.startsWith('pplaza_') && !isAlien(d.K));
@@ -35696,6 +35738,7 @@ const GODPLACES = [
   { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
   { id: 'pearl', world: 'tkit', name: 'THE PEARL · the plaza (Chapter 2)', at: () => OPEARL.plazaAt },
+  { id: 'pearlhq', world: 'tkit', name: "THE PEARL · the organiser's roof (Ash, the transmitter)", at: () => OPEARL.ROOF.hqGod },   // m363
   { id: 'pearlroof', world: 'tkit', name: "THE PEARL · up on the studios' roof garden", at: () => OPEARL.ROOF.godAt },   // m361
   { id: 'pearlbar', world: 'tkit', name: 'THE PEARL · the barricade across the dock street (outside it)', at: () => OPLAZA.outAt },   // m360
   { id: 'mags', world: 'tkit', name: "OLD TOWN · Mags's newsstand (a hidden good alien)", at: () => (OGOOD.KIOSKS[0] || {}).godAt },

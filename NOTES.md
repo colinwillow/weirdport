@@ -7,6 +7,19 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE ORGANISER'S ROOF: ASH AT A TRANSMITTER, THE PAPERS BY THE DOOR, AND MARISOL READS THEM (m363, C6-4b, `QUESTS`
+  `ch2b`, `OPEARL.ROOF.HQ` `console` / `papers` / `ORG`, `pearl:receipts`).** On W4's roof beside the shed: a console with a
+  lit screen and a cable up to the dish, and Ash the organiser at it (`pearl_organiser`, a fixed beat, facing the
+  console) -- who talks the way the notes read ("The strike continues. The strike is good.") and is **the one person in
+  The Pearl who does not run from an alien** (`alien: 'brush'`, "Ah. One of the other ones. Carry on."): the tell. A
+  table of papers by the shed's door: walking up to it IS reading it (`plazaStep` sets `pearl:receipts` within 1.9 m and
+  cards "4,000 SIGNS, BOTH SIDES -- PAID BY 'A FRIEND'"). The quest (`from: 'ch2_marisol'`): up onto the roof (`reach` the
+  HQ) -> talk to Ash -> the papers -> back to Marisol as one of her own (`ch2_receipts`): the same friend paid KEEP WEIRDPORT
+  NORMAL, somebody is paying both sides to shout at each other, and she is calling the organiser down to the stage --
+  C6-4c hangs `from` that. GOD: "THE PEARL · the organiser's roof" (in front of the table).
+  `npm run places` (exit 0): `ok  pearlhq -> player -251.3,20.6,-116.7 ground 20.40`; `ok  QUESTS ... | ch2b.0 reach |
+  ch2b.1 talk | ch2b.2 flag | ch2b.3 talk | ...`; the ROOFS row adds `HQ organiser on the roof, papers in reach` (the
+  organiser on the roof floor, the GOD spot on the floor and within the papers' 1.9 m).
 - **CHAPTER 2 OPENS WITH THE STRIKE AND ENDS ITS FIRST QUEST ON MARISOL (m362, C6-4a, `QUESTS` `ch2`, `strike:called`,
   `pearl:in`; `sample` takes `kinds`, `flag` takes `at`).** Eight seconds into Chapter 2, `strikeStep` calls the strike ONCE
   (`strike:called` -- C6-4c will end it and that flag keeps it ended; the delay keeps its card off the chapter's). The quest:

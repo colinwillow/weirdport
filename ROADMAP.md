@@ -277,7 +277,7 @@ differ" table there, so no region feels like the last one.
   - [x] m361 **C6-3** up top: rooftop gardens, catwalks and rope bridges between the warehouses.
   - [ ] **C6-4** Chapter 2's quests: the strike starts, the organiser's rooftop HQ (W5), expose the infiltrator (the boss), the strike ends and the crews go back.
     - [x] m362 **C6-4a** Chapter 2 opens: the strike is called; to The Pearl, Juno, an activist's look, into the plaza, Marisol.
-    - [ ] **C6-4b** the organiser's roof: up over the roofs to the HQ shed; the organiser at the transmitter; the receipts for the signs; take them to Marisol.
+    - [x] m363 **C6-4b** the organiser's roof: up over the roofs to the HQ shed; the organiser at the transmitter; the receipts for the signs; take them to Marisol.
     - [ ] **C6-4c** the exposure: the organiser called down to the stage; knocked down in front of the crowd, it bursts (the boss); after, the strike ends and the crews go back; Chapter 2 complete.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
@@ -910,3 +910,9 @@ differ" table there, so no region feels like the last one.
   activist's sample, into the plaza and to Marisol on the stage. Getting into the plaza counts
   whether you came in with the march or over the roofs. GOD's Chapter 2 button now drops you at
   dock 1 instead of the plaza.
+
+- **m363 (C6-4b) The organiser's roof.** Ash, the organiser, stands at a transmitter beside the
+  shed and talks like the notes read. **Ash is the one person in the Pearl who doesn't run from the
+  alien**, which is the hint. The receipts are on a table by the shed door, and walking up to them
+  reads them: the same "friend" paid for both sides' signs. Marisol reads them and calls the
+  organiser down to the stage, which is the next build.
