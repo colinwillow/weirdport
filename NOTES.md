@@ -7,6 +7,21 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE HEDGE BANKS ARE MOUNDS, NOT BOXES; THE BOX IS ONLY THE COLLIDER NOW (m324, farm polish 3, `buildFieldBounds`,
+  `buildLane` `banks` / `bankProf` / `bankEnd`).** m321's road shot: every bank a hard earth slab with vertical sides.
+  Two builders, two fixes, one rule -- **`bx(...)` then `parts[mat].pop()` keeps the collider and drops the slab**, and
+  something softer is drawn in its place:
+  1. **the field hedges (FPLAN, 380 pieces)**: an ellipsoid (`ico1`) along the run, half-length (piece + 1.7) / 2, so
+     each overlaps its neighbours by ~40% and the line reads as ONE lumpy bank; top at ~g + .46 against the collider's
+     g + .45. Three clumps instead of two, at jittered heights, so the hedge's top line wanders.
+  2. **the lane's sunken banks (1.9 m, walked on)**: a shouldered PROFILE run along the piece -- the foot spreads .55 m
+     past the collider each side, the TOP keeps the collider's full width (so standing on the edge never floats over a
+     visual slope), the crown .1 m proud. Built once per (W, H); **every face turned outward by a convexity test**
+     (face centre minus the axis, dotted with the normal), not hand-ordered winding -- the profile is convex, so the
+     test is exact. And **where a run starts or stops** (the lane's ends, the gaps at the barn's doors) an ellipsoid
+     rounds it off: the flat cut end of the first piece was the most box-like thing left in the shot.
+  Judged with `npm run shot town` (three passes: slab, profile, profile + ends) and `ridge`.
+
 - **THE METROPOLIS ON THE HORIZON: A SCALED HOMOTHETY ABOUT THE LENS, ONE DRAW CALL (m323, farm polish 2, `SKYLINE`,
   `buildSkyline`, `skylineStep`).** m321/m322's shots: from the west hill the island city is a thin low strip, and from
   the crash site the hedges hide it entirely -- its buildings are two and three storeys at ~450 m (~3 deg over the

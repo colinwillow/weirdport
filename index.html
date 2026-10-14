@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m323</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m324</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m323</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m324</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm323';
+const BUILD = 'm324';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -29328,7 +29328,7 @@ function buildFieldBounds() {
   const MAT = { bank: M(0x5c6a32), hedge: M(0x2f5a24), hedge2: M(0x40712c), wood: M(0x8a6a48), bark: M(0x4f3d2c), leaf: M(0x3c6a2a), leaf2: M(0x6f9440) };
   const Fr = farmFrame(FL.O[0], FL.O[1], Math.atan2(-FL.ua[1], FL.ua[0]), MAT, 'fields'), { bx, geo, gnd, parts } = Fr;
   let seed = 308; const rr = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
-  const ico0 = new THREE.IcosahedronGeometry(1, 0);
+  const ico0 = new THREE.IcosahedronGeometry(1, 0), ico1 = new THREE.IcosahedronGeometry(1, 1);
   // ---- the owner lattice, and where two owners meet
   const G = F.grid, A0 = -FL.A - 10, B0 = -FL.B - 10, NA = Math.ceil((2 * FL.A + 20) / G), NB = Math.ceil((2 * FL.B + 20) / G);
   const own = new Int16Array((NA + 1) * (NB + 1));
@@ -29377,11 +29377,15 @@ function buildFieldBounds() {
     const kind = kindOf(p.lo, p.hi), u = p.a, v = -p.b, psi = Math.atan2(p.db, p.da), g = gnd(u, v);
     if (!(g > ISLE.sea + .6)) continue;
     if (kind === 'hedge') {
-      bx(u, v, g - .4, g + .45, F.piece + .5, 1.5, 'bank', psi);
+      // m324 polish 3: the bank is a long low MOUND, not a slab -- m321's road shot read every hedge as a row of
+      // earth boxes. An ellipsoid along the run, overlapping its neighbours by ~40%, so the line is one lumpy bank;
+      // the box stays as the COLLIDER only. Three clumps, not two, at jittered heights, so the top line wanders.
+      bx(u, v, g - .4, g + .45, F.piece + .5, 1.5, 'bank', psi); parts.bank.pop();
+      geo(ico1, 'bank', u, g - .14 + (rr() - .5) * .1, v, psi + (rr() - .5) * .16, 0, 0, (F.piece + 1.7) * .5, .6 + rr() * .1, .9 + rr() * .15);
       bx(u, v, g + .4, g + 1.85, F.piece + .4, 1.05, 'hedge', psi); parts.hedge.pop();
-      for (let c = 0; c < 2; c++) {
-        const t = (c - .5) * F.piece * .5, r = .68 + rr() * .3, cu = u + p.da * t, cv = v - p.db * t;
-        geo(ico0, rr() < .5 ? 'hedge' : 'hedge2', cu, g + 1.05 + r * .4, cv, rr() * 3, rr() * 2, 0, r * 1.3, r, r * 1.1);
+      for (let c = 0; c < 3; c++) {
+        const t = (c - 1) * F.piece * .36 + (rr() - .5) * .3, r = .66 + rr() * .34, cu = u + p.da * t, cv = v - p.db * t;
+        geo(ico0, rr() < .5 ? 'hedge' : 'hedge2', cu, g + .95 + r * .45 + (rr() - .5) * .2, cv, rr() * 3, rr() * 2, 0, r * 1.25, r * (.9 + rr() * .3), r * 1.1);
       }
       F.pieces++;
       // an oak standing in the hedge every `treeGap`
@@ -30950,6 +30954,32 @@ function buildLane() {
   const lane = laneOut([[30, -9], [18, -12.5], [6, -15.5], [-6, -16], [-16, -14.5], [-26, -15.5], [-38, -19]]);
   // a bank (or a gully side) each side of a polyline; `skip(u, v, sd)` leaves a gap. The lane runs toward -u, so
   // its normal for sd = +1 is about (0, -1): **sd +1 is the TOWN side, sd -1 the yard / sea side**
+  // m324 polish 3: a bank's LOOK is a sloped, shouldered profile run along the piece -- m321's road shot read the lane's
+  // 1.9 m banks as a row of earth boxes. The top keeps the collider's width (it is walked on: no floating off a visual
+  // edge), the foot spreads .55 m out each side, and the crown is .1 m proud. The box stays as the COLLIDER only.
+  // Built once per (W, H); every face turned outward by the convexity test, not by hand-ordered winding.
+  const profs = new Map(), bankEnd = new THREE.IcosahedronGeometry(1, 1);
+  const bankProf = (W, H) => {
+    const key = W + ':' + H; if (profs.has(key)) return profs.get(key);
+    const h = W / 2, P = [[-(h + .55), -.4], [-(h + .22), H * .55], [-h, H], [0, H + .1], [h, H], [h + .22, H * .55], [h + .55, -.4]];
+    const tri = [], cy = (H - .4) / 2;
+    for (let i = 0; i < P.length - 1; i++) { const [z0, y0] = P[i], [z1, y1] = P[i + 1];
+      tri.push([[-.5, y0, z0], [.5, y0, z0], [.5, y1, z1]], [[-.5, y0, z0], [.5, y1, z1], [-.5, y1, z1]]); }
+    for (const x of [-.5, .5]) for (let i = 0; i < P.length; i++) { const [z0, y0] = P[i], [z1, y1] = P[(i + 1) % P.length];
+      tri.push([[x, cy, 0], [x, y0, z0], [x, y1, z1]]); }
+    const pos = [], A = new THREE.Vector3(), B = new THREE.Vector3(), C = new THREE.Vector3(), N = new THREE.Vector3(), M = new THREE.Vector3();
+    for (const t of tri) {
+      A.set(...t[0]); B.set(...t[1]); C.set(...t[2]);
+      N.subVectors(B, A).cross(M.subVectors(C, A));
+      M.addVectors(A, B).add(C).divideScalar(3); M.y -= cy;                      // from the axis to the face
+      if (Math.abs(M.x) < .49) M.x = 0;                                           // a side face: outward is across
+      const o = N.dot(M) < 0 ? [t[0], t[2], t[1]] : t;
+      for (const q of o) pos.push(...q);
+    }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.computeVertexNormals();
+    g.setAttribute('uv', new THREE.Float32BufferAttribute(new Float32Array(pos.length / 3 * 2), 2));
+    profs.set(key, g); return g;
+  };
   function banks(P, half, W, H, mat, hedge, skip) {
     for (const sd of [-1, 1]) for (let i = 0; i < P.length - 1; i++) {
       const [u0, v0] = P[i], [u1, v1] = P[i + 1], L = Math.hypot(u1 - u0, v1 - v0), n = Math.max(1, Math.round(L / 3.5));
@@ -30958,7 +30988,14 @@ function buildLane() {
         const a = (k + .5) / n, cu = u0 + (u1 - u0) * a + nu * (half + W / 2), cv = v0 + (v1 - v0) * a + nv * (half + W / 2);
         if (skip && skip(cu, cv, sd)) continue;
         const g = gnd(cu, cv), seg = L / n + .45;
-        bx(cu, cv, g - .4, g + H, seg, W, mat, psi);
+        bx(cu, cv, g - .4, g + H, seg, W, mat, psi); F.parts[mat].pop();
+        geo(bankProf(W, H), mat, cu, g, cv, psi, 0, 0, seg, 1, 1);
+        // where a run starts or stops (the lane's ends, a gap at a door) the bank ROUNDS OFF instead of showing its cut
+        for (const dir of [-1, 1]) {
+          const end = dir < 0 ? (i === 0 && k === 0) : (i === P.length - 2 && k === n - 1);
+          if (!end && !(skip && skip(cu + tu * dir * seg, cv + tv * dir * seg, sd))) continue;
+          geo(bankEnd, mat, cu + tu * dir * seg * .5, g - .3, cv + tv * dir * seg * .5, psi, 0, 0, 1.8, H + .2, W * .62);
+        }
         if (hedge) {
           // the hedge on the OUTER half: a collider, and clumps of leaves drawn over it
           const hu = cu + nu * W * .25, hv = cv + nv * W * .25;

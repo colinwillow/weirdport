@@ -576,3 +576,8 @@ differ" table there, so no region feels like the last one.
   green alien beacon pulsing on top. It's scenery: you can't reach it, and from the island city it
   shows across the water on the far side. It's one draw call. GOD → SWITCHES → METROPOLIS ON THE
   HORIZON turns it off if you'd rather not have it. Next: the hedge banks.
+
+- **m324 (farm polish 3):** the hedge banks are no longer boxes. Field hedges sit on long lumpy
+  mounds, and the farm lane's tall banks have sloped sides with rounded ends where they stop. Walking
+  on them is unchanged (same colliders). That's the three things m321's shots showed. Next pass:
+  take new shots and polish whatever looks weakest, or move to B1e if it all reads right.
