@@ -276,6 +276,9 @@ differ" table there, so no region feels like the last one.
   - [x] m360 **C6-2** the plaza protest and a barricade on every street into it.
   - [x] m361 **C6-3** up top: rooftop gardens, catwalks and rope bridges between the warehouses.
   - [ ] **C6-4** Chapter 2's quests: the strike starts, the organiser's rooftop HQ (W5), expose the infiltrator (the boss), the strike ends and the crews go back.
+    - [x] m362 **C6-4a** Chapter 2 opens: the strike is called; to The Pearl, Juno, an activist's look, into the plaza, Marisol.
+    - [ ] **C6-4b** the organiser's roof: up over the roofs to the HQ shed; the organiser at the transmitter; the receipts for the signs; take them to Marisol.
+    - [ ] **C6-4c** the exposure: the organiser called down to the stage; knocked down in front of the crowd, it bursts (the boss); after, the strike ends and the crews go back; Chapter 2 complete.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
 
@@ -900,3 +903,10 @@ differ" table there, so no region feels like the last one.
   the march** (climb up outside, cross, drop off an edge; there is no fall damage). I kept that on
   purpose: the march is the way in on foot, the roofs the way in for climbers. If you want the march
   to be the only way in, I can make the drop into the plaza hurt or fence the edges.
+
+- **m362 (C6-4a) Chapter 2 opens.** I split C6-4 into three: Chapter 2's start, the organiser's
+  roof, and the exposure. The strike is called eight seconds into Chapter 2, so its card doesn't
+  land on top of the chapter card. The first quest takes you across to the Pearl, to Juno, to an
+  activist's sample, into the plaza and to Marisol on the stage. Getting into the plaza counts
+  whether you came in with the march or over the roofs. GOD's Chapter 2 button now drops you at
+  dock 1 instead of the plaza.

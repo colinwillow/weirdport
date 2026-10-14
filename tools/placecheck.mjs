@@ -192,6 +192,7 @@ quiet('LIFE', M.OTLIFE.n, 'routes:', M.OTLIFE.routes.map(r => r.id + ' ' + r.bea
       for (const id of [...(st.npcs || []), ...((st.also && st.also.npcs) || [])]) if (!ids.has(id) || !ids.get(id).K) why = 'NO BODY ON MARK ' + id;   // m342
       if (i === 0 && q.needQ && !M.QUESTS.find(o => o.id === q.needQ)) why = 'NEEDS A QUEST THAT IS NOT THERE: ' + q.needQ;
       if (st.kind && !M.MARKS.some(m => m.type === 'npc' && m.K && (m.p.kind === st.kind || (m.p.role && (M.ROSTER.find(r => r.id === m.p.role) || {}).stem === st.kind)) && m.id !== st.not)) why = 'NOBODY OF KIND ' + st.kind;   // m340; m357 or a role of it
+      for (const k of st.kinds || []) if (!M.MARKS.some(m => m.type === 'npc' && m.K && m.p.kind === k)) why = 'NOBODY OF KIND ' + k;   // m362
       if (why) nb++;
       out.push(q.id + '.' + i + ' ' + st.type + (why ? ' BAD ' + why : ''));
     });

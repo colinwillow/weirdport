@@ -7,6 +7,20 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CHAPTER 2 OPENS WITH THE STRIKE AND ENDS ITS FIRST QUEST ON MARISOL (m362, C6-4a, `QUESTS` `ch2`, `strike:called`,
+  `pearl:in`; `sample` takes `kinds`, `flag` takes `at`).** Eight seconds into Chapter 2, `strikeStep` calls the strike ONCE
+  (`strike:called` -- C6-4c will end it and that flag keeps it ended; the delay keeps its card off the chapter's). The quest:
+  over the footbridge to dock 1 -> Juno on the dock street (her script, `mk_pearl_juno`) -> an activist's sample (`kinds`:
+  activist, hippie or hipster -- the beam goes to the nearest of them) -> INTO THE PLAZA (`pearl:in`) -> Marisol on the
+  stage (`say`, `talks: ['city']`: only to her own), who says the organiser called the strike, lives upstairs in the tall
+  one north-west, has not come down in weeks, and that somebody keeps paying for the signs. That script (`ch2_marisol`)
+  is what C6-4b's quest will hang `from`.
+  **`pearl:in` IS SET TWO WAYS**: crossing a `pbarricade` inward (gatePush, beside its `gate:<id>`), and being on the
+  ground within 10 m of the stage while the crowd sits -- because the roofs are a way in too (m361) and a task that only
+  counts the march would tell a player who climbed in that he is still outside.
+  GOD's CHAPTER 2 now lands at dock 1 (`pearldock`), where the chapter's first step is, not in the plaza.
+  `npm run places`: `ok  QUESTS ... | ch2.0 goto | ch2.1 talk | ch2.2 sample | ch2.3 flag | ch2.4 talk | ...` (the row now
+  also fails a `kinds` entry nobody carries), exit 0.
 - **THE PEARL'S ROOFS ARE A SECOND PEARL OVER THE FIRST, AND THE CLIMBER'S WAY INTO THE PLAZA (m361, C6-3, `OPEARL.ROOF`,
   `pearlRoofPlan`, `pearlFace`, `pearlSpan`, `pearlSeg`, `pearlLadder`, `pearlGarden`, `buildPearlRoofs`).** Every warehouse
   roof is a garden (raised beds with plants and blooms on a loose grid, a tank on legs in the corner farthest from the
