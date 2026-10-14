@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m412</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m413</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m412</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m413</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm412';
+const BUILD = 'm413';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -35440,6 +35440,83 @@ function turfVirus(d) {
   const al = isAlien(d.K), P = d.root.position;
   return turfMove(P.x, P.z, 'skin', al ? -(d.qTag ? TPUSH.boss : TPUSH.cure) : TPUSH.turn, al ? (d.qTag ? 'a Skinsuit exposed' : 'a body cured') : 'a body turned', al && d.qTag);
 }
+// ============================================================================================
+// FLASHPOINTS: THE FACTIONS PUSH AT THEIR BORDERS ON THEIR OWN (m413, ROADMAP D5b, `TFLASH`, `flashPick`, `flashStart`, `flashStep`)
+// ============================================================================================
+// GAME_DESIGN "Turf": *"Factions push against each other at their borders (turf flashpoints: a rally marching into protest
+// territory, a developer bulldozing a camp), so the map keeps moving even when you don't."* Every couple of minutes while you
+// are in Old Town, one faction pushes across a border: a block it holds against a neighbour held by somebody else (the
+// stronger its hold, the likelier; the nearer you, the likelier -- it is no use if it always happens out of sight). It is
+// the CROWD that does it: up to `n` of that faction's own bodies already on the street near the border are recruited, given
+// a placard, and walk to a spot four metres into the other block, under a ring and a light column in the faction's colour.
+// For `dur` seconds, every body of theirs standing there moves the block their way (`rate` a second, all of them). **You can
+// tip it**: knock down `need` of them and it breaks -- the block's holder keeps it and gains for holding (`held`); leave it
+// and they take ground. Either way they put the placards down and go back to the street.
+const TFLASH = { on: 1, gap: [150, 240], first: 75, dur: 60, rate: .003, need: .6, held: .05, n: 5, r: 45, near: 90, spot: 4, st: 'quiet', t: 75, tick: 0,
+  runs: 0, won: 0, lost: 0, cur: null, ring: null, k: '' };
+const FLASHSAY = { act: ['A RALLY MARCHES INTO', 'OCCUPY!'], red: ['BIKERS ROLL INTO', 'RIDE FREE'], big: ['A DEVELOPER MOVES ON', 'NOW LEASING'], small: ['SHOPKEEPERS SET UP IN', 'OPEN!'],
+  home: ['THE CAMP SPREADS INTO', 'WE LIVE HERE'], upl: ['UPLIFT SWEEPS', 'UPLIFT YOURSELF'], skin: ['SKINSUITS CREEP INTO', 'JOIN US'] };
+// a body that can be borrowed: on its feet, nobody else's (quest, protest, strike, the smart crowd, a pal), and of the faction
+const flashFree = (d, f) => !d.gone && d.K && !d.K.pal && !d.K.repair && d.st !== 'down' && d.st !== 'up' && d.st !== 'hit' && !(d.fleeT > 0) && !d.trance && !d.strikeOff &&
+  !d.pT && !d.qTag && !d.copOff && !d.talkTo && !d.smart && !d.fp && !(d.markId && !/^walker_/.test(d.markId)) && turfBodyF(d) === f;
+// the border to push across: [attacker block, defender block, the spot, the bodies], or null
+function flashPick(nearest) {
+  const T = TURF, n = T.n, P = player.pos, out = [];
+  for (const A of T.blocks) { const [fa, sa] = turfHold(A), f = T.FACTIONS[fa].id;
+    for (const [di, dj] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) { const D = T.blocks[(A.i + di) * n + (A.j + dj)]; if (!D || A.i + di < 0 || A.i + di >= n || A.j + dj < 0 || A.j + dj >= n) continue;
+      const [fd] = turfHold(D); if (fd === fa) continue;
+      const mx = (A.cx + D.cx) / 2, mz = (A.cz + D.cz) / 2, L = Math.hypot(D.cx - A.cx, D.cz - A.cz) || 1, sx = mx + (D.cx - A.cx) / L * TFLASH.spot, sz = mz + (D.cz - A.cz) / L * TFLASH.spot;
+      const dist = Math.hypot(sx - P.x, sz - P.z);
+      const bodies = DUMMIES.filter(d => flashFree(d, f) && Math.hypot(d.root.position.x - sx, d.root.position.z - sz) < TFLASH.r);
+      if (bodies.length < 2) continue;
+      out.push({ A, D, f, fd, x: sx, z: sz, dist, bodies, w: sa * (1 - D.sh[fa]) * (dist < TFLASH.near ? 1 : .15) }); } }
+  if (!out.length) return null;
+  if (nearest) return out.sort((a, b) => a.dist - b.dist)[0];
+  const sum = out.reduce((a, b) => a + b.w, 0); let r = Math.random() * sum; for (const c of out) if ((r -= c.w) <= 0) return c; return out[out.length - 1];
+}
+function flashStart(nearest) {
+  if (TFLASH.cur || !TURF.blocks.length) return null;
+  const c = flashPick(nearest); if (!c) return null;
+  const T = TURF, F = T.FACTIONS[turfF(c.f)], say = FLASHSAY[c.f] || ['PUSHES INTO', ''];
+  c.ds = c.bodies.sort((a, b) => Math.hypot(a.root.position.x - c.x, a.root.position.z - c.z) - Math.hypot(b.root.position.x - c.x, b.root.position.z - c.z)).slice(0, TFLASH.n);
+  c.ds.forEach((d, k) => { const a = k / c.ds.length * Math.PI * 2; d.fp = c; d.fpDown = 0; protestTo(d, c.x + Math.cos(a) * 2.4, c.z + Math.sin(a) * 2.4);
+    if (!d.pSign && say[1]) { try { protestSign(d, say[1]); d.fpSign = 1; } catch (e) {} } });
+  c.t = TFLASH.dur; c.push = 0; TFLASH.cur = c; TFLASH.st = 'live'; TFLASH.runs++;
+  // the ring and the column, in the faction's colour, where they are going
+  if (!TFLASH.ring) { const g = new THREE.Group(), m = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: .55, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide });
+    const ring = new THREE.Mesh(new THREE.RingGeometry(5.2, 6, 48), m); ring.rotation.x = -Math.PI / 2; ring.position.y = .06; g.add(ring);
+    const col = new THREE.Mesh(new THREE.CylinderGeometry(.5, .9, 40, 12, 1, true), m.clone()); col.material.opacity = .16; col.position.y = 20; g.add(col);
+    g.userData.m = [m, col.material]; scene.add(g); TFLASH.ring = g; }
+  const cc = new THREE.Color(F.col); for (const m of TFLASH.ring.userData.m) m.color.copy(cc);
+  TFLASH.ring.position.set(c.x, groundAt(c.x, c.z, player.pos.y + 20, 40), c.z); TFLASH.ring.visible = true;
+  try { toast('FLASHPOINT: ' + say[0] + ' ' + c.D.name + ' (' + T.FACTIONS[c.fd].name + ')', 3); } catch (e) {}
+  return c;
+}
+function flashEnd(how) {
+  const c = TFLASH.cur; if (!c) return;
+  const T = TURF, F = T.FACTIONS[turfF(c.f)], Dn = T.FACTIONS[c.fd];
+  for (const d of c.ds) { d.fp = null; if (d.fpSign && d.pSign) { if (d.pSign.parent) d.pSign.parent.remove(d.pSign); d.pSign = null; } d.fpSign = 0;
+    if (d.pT) { d.pT = null; d.route = null; d.roamT = .2 + Math.random(); } }
+  if (how === 'held') { TFLASH.lost++; turfMove(c.x, c.z, Dn.id, TFLASH.held, 'held the line', 1); try { toast(Dn.name + ' HOLD ' + c.D.name, 2.6); } catch (e) {} }
+  else if (how === 'won') { TFLASH.won++; progSave(); try { toast(F.name + ' TAKE GROUND IN ' + c.D.name, 2.6); } catch (e) {} }
+  c.how = how; TFLASH.last = c; TFLASH.cur = null; TFLASH.st = 'quiet'; TFLASH.t = TFLASH.gap[0] + Math.random() * (TFLASH.gap[1] - TFLASH.gap[0]);
+  if (TFLASH.ring) TFLASH.ring.visible = false; TFLASH.k = '';
+}
+function flashStep(dt) {
+  if (!TFLASH.on || !TURF.blocks.length || !inTK()) { if (TFLASH.cur) flashEnd('off'); return; }
+  if (TFLASH.ring && TFLASH.ring.visible) { TFLASH.ring.rotation.y += dt * .4; const s = 1 + .06 * Math.sin(performance.now() * .004); TFLASH.ring.children[0].scale.set(s, s, 1); }
+  if ((TFLASH.tick -= dt) > 0) return; const step = .5 - TFLASH.tick; TFLASH.tick = .5;
+  const c = TFLASH.cur;
+  if (!c) { if (turfAt(player.pos.x, player.pos.z) && (TFLASH.t -= step) <= 0) { if (!flashStart()) TFLASH.t = 20; } return; }
+  c.t -= step;
+  let here = 0, down = 0;
+  for (const d of c.ds) { if (d.gone || d.st === 'down' || d.st === 'up') d.fpDown = 1; if (d.fpDown) down++;
+    else if (Math.hypot(d.root.position.x - c.x, d.root.position.z - c.z) < 6.5) here++; }
+  if (down >= Math.ceil(c.ds.length * TFLASH.need)) return flashEnd('held');
+  if (here) { const a = TFLASH.rate * step * here / c.ds.length * c.ds.length / TFLASH.n; c.push += a; turfMove(c.x, c.z, c.f, a, 'a flashpoint'); }
+  TFLASH.k = TURF.FACTIONS[turfF(c.f)].short + '>' + c.D.name + ' ' + Math.max(0, c.t).toFixed(0) + 's ' + down + '/' + c.ds.length;
+  if (c.t <= 0) flashEnd('won');
+}
 // the full map's overlay: each block in its holder's colour, stronger the clearer its lead; its holder's name across it
 function turfMap(g, E) {
   const T = TURF; if (!T.map || !T.blocks.length) return;
@@ -35448,6 +35525,9 @@ function turfMap(g, E) {
     g.globalAlpha = .14 + Math.min(.4, lead * 1.6); g.fillStyle = F.col; g.fillRect(Math.min(ua, ub), Math.min(va, vb), Math.abs(ub - ua), Math.abs(vb - va));
     g.globalAlpha = .55; g.strokeStyle = '#0c0f16'; g.lineWidth = 1.5; g.strokeRect(Math.min(ua, ub), Math.min(va, vb), Math.abs(ub - ua), Math.abs(vb - va));
     g.globalAlpha = .85; g.fillStyle = '#ffffff'; g.fillText(B.name + ' ' + F.short, (ua + ub) / 2, (va + vb) / 2); }
+  // m413: a flashpoint, where it is
+  const c = TFLASH.cur; if (c) { const u = mapU(E, c.x), v = mapV(E, c.z); g.globalAlpha = .95; g.strokeStyle = T.FACTIONS[turfF(c.f)].col; g.lineWidth = 3;
+    g.beginPath(); g.arc(u, v, 11 + 3 * Math.sin(performance.now() * .006), 0, Math.PI * 2); g.stroke(); g.fillStyle = '#ffffff'; g.fillText('!', u, v); }
   g.restore();
 }
 // ============================================================================================
@@ -40480,6 +40560,8 @@ function godMenuOpen(on) {
     btn('A GUST NOW (THE ISLANDS)', () => { windGust(); toast('Gust: +' + IWIND.gustAdd.toFixed(0) + ' m/s', 1.4); godMenuOpen(0); }); }
   if (TURF.blocks.length) btn('TURF ON THE MAP ' + (TURF.map ? 'ON' : 'OFF'), () => { TURF.map = TURF.map ? 0 : 1; godMenuOpen(1); });   // m407
   if (TURF.blocks.length) btn('YOUR ACTIONS MOVE THE TURF ' + (TPUSH.on ? 'ON' : 'OFF'), () => { TPUSH.on = TPUSH.on ? 0 : 1; godMenuOpen(1); });   // m412
+  if (TURF.blocks.length) { btn('FLASHPOINTS ' + (TFLASH.on ? 'ON' : 'OFF'), () => { TFLASH.on = TFLASH.on ? 0 : 1; godMenuOpen(1); });   // m413
+    btn(TFLASH.cur ? 'END THE FLASHPOINT' : 'A FLASHPOINT NOW (THE NEAREST BORDER)', () => { if (TFLASH.cur) flashEnd('off'); else if (!flashStart(1)) toast('No border with bodies to push across it near here', 2); godMenuOpen(0); }); }
   if (TDRESS.built) { btn('FACTION DRESSING ' + (TDRESS.on ? 'ON' : 'OFF'), () => { TDRESS.on = TDRESS.on ? 0 : 1; for (const Mm of TDRESS.meshes) Mm.mesh.visible = !!TDRESS.on; godMenuOpen(1); });   // m409
     btn('HAND THIS BLOCK TO THE NEXT FACTION', () => { const R = turfAt(player.pos.x, player.pos.z); if (!R) { toast('Not in Old Town', 1.4); return; }
       const [fi] = turfHold(R), F = TURF.FACTIONS[(fi + 1) % TURF.FACTIONS.length]; turfPush(player.pos.x, player.pos.z, F.id, .95); toast(R.name + ' to ' + F.short, 1.6); godMenuOpen(0); }); }
@@ -42048,7 +42130,7 @@ function frameBody() {
   islXingStep(dt);              // a flight down on the islands' landing field (m394)
   keeperStep(dt);               // the lighthouse's beam, and the keeper's storm while the thing wearing him stands (m398)
   turfStep(dt);                 // which block he is in and who holds it, for the chip (m407)
-  turfDressStep(dt); kswapStep(dt);            // the buildings wear their block's holder, cross-fading when it changes hands (m409)
+  turfDressStep(dt); kswapStep(dt); flashStep(dt);            // the buildings wear their block's holder, cross-fading when it changes hands (m409)
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)
@@ -42397,7 +42479,7 @@ function frameBody() {
                         (rig.borrowed ? '+' + rig.borrowed : ' NOBORROW') + (wn || '') : '';
     const line = fps.toFixed(0) + ' FPS · ' + renderer.info.render.calls + ' DC ' + Math.round(renderer.info.render.triangles / 1000) + 'kT' + (CELL.list.length ? ' c' + CELL.shown + '/' + CELL.list.length : '') + (STEPUP.n ? ' ke' + STEPUP.n : '') + PROF.sum + ' · pr' + PERF.pr.toFixed(2) + (PERF.holdT > 0 ? 'h' : '') + ' B' + PERF.seen + '/' + DUMMIES.length + ' · ' +
       p.speed.toFixed(1) + ' m/s · ' + st + lk + hue + bx + cv + brkC + kitC + inf + shp + cl + sk + sk8 + vs + mo + fl + wp + tc + mp +
-      bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + (ITHERM.k > 0 ? ' TH' + Math.round(ITHERM.k * 100) : '') + (TURF.k ? ' TURF ' + TURF.k + (TPUSH.n ? ' m' + TPUSH.n : '') : '') + (KSWAP.made || KSWAP.gone.size || KSWAP.settles ? ' RB' + KSWAP.made + '/' + KSWAP.gone.size + (KSWAP.settles ? 's' + KSWAP.settles : '') : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
+      bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + (ITHERM.k > 0 ? ' TH' + Math.round(ITHERM.k * 100) : '') + (TURF.k ? ' TURF ' + TURF.k + (TPUSH.n ? ' m' + TPUSH.n : '') : '') + (TFLASH.k ? ' FP ' + TFLASH.k : '') + (KSWAP.made || KSWAP.gone.size || KSWAP.settles ? ' RB' + KSWAP.made + '/' + KSWAP.gone.size + (KSWAP.settles ? 's' + KSWAP.settles : '') : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
       // CH: the saved chapter (m276); NEW = this boot was `?fresh`, BADSAVE = a save was there and would not parse
       (GOD.on ? ' · GOD' + (GOD.fly ? ' FLY' : '') : '') +
       ' · CH' + SAVE.ch + (SAVE.fresh ? ' NEW' : '') + (SAVE.bad ? ' BADSAVE' : '') +
@@ -43051,7 +43133,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { TPUSH, turfMove, KSWAP, kswapGod, kswapSettle, KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { TFLASH, flashStart, flashEnd, TPUSH, turfMove, KSWAP, kswapGod, kswapSettle, KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

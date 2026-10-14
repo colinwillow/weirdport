@@ -7,6 +7,21 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **FLASHPOINTS (m413, D5b, `TFLASH`, `FLASHSAY`, `flashFree`, `flashPick`, `flashStart`, `flashEnd`, `flashStep`).** **`FLASH` WAS
+  TAKEN** (the muzzle-flash pool, m94, line ~11135): the first insert was a `SyntaxError: Identifier 'FLASH' has already been
+  declared` that `npm run check` caught before anything else did -- a blank page. Grep the name before declaring a const.
+  The bodies are BORROWED, not spawned: `flashFree` is `smartFree` without the alien test (the Skinsuits push too) plus
+  `!d.smart`, `!d.fp`, and no `markId` but a walker's, and `turfBodyF(d) === f`. They walk with `protestTo` (the
+  protest's own steering: `pT`, `route`, `rx/rz`, `roamT = 0`) and carry `protestSign` placards; `flashEnd` takes back
+  ONLY what it gave (`fpSign`, then `pT`/`route` cleared and `roamT` set, as `homeAll` does). The push is `rate x step x
+  here / n` a tick through `turfMove` (not saved per tick; `flashEnd` saves a win). Broken at `ceil(n x need)` down (a body
+  seen `down`/`up`/gone stays counted, `fpDown`). The pick weights `holder share x (1 - its share in the target) x (1 if
+  the spot is within `near` of him, else .15)`; a pair needs 2 free bodies within `r` of the spot.
+  `places` (five fabricated bodies of each faction round the camp):
+      ok  FLASHPT SHOP into F5 (HOME), 5 of their own, the spot inside it | left alone 60 s: won, SHOP 0.238 > 0.418 (+0.180, rate x dur 0.180) | the next (HOME into F5), 3 of 5 knocked down: held, holder +0.050 | still borrowed after: 0 | runs 2 won 1 held 1
+  Teeth: the break check removed and `flashEnd` releasing nobody -> `3 of 5 knocked down: undefined ... still borrowed
+  after: 10 ... KNOCKING THEM DOWN DOES NOT BREAK IT`.
+
 - **WHAT YOU DO MOVES THE TURF (m412, D5a, `TPUSH`, `turfMove`, `turfKnock`, `turfVirus`, `turfBodyF`; hooks in `dummyBlow`,
   `virusGo`, `cyborgRevert`, `protestStep`, `protestBrawl`, `strikeSet`).** **"YOURS" IS `pal === undefined` IN `dummyBlow`, NOT
   `!pal`**: every other caller names the thrower (a pal's pounce, the protest's brawlers, the strike's punches pass the body),
