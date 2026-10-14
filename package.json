@@ -20,6 +20,7 @@
     "hull": "node tools/hull.mjs",
     "lanes": "node tools/lanes.mjs",
     "ktx": "node tools/ktx.mjs",
+    "ktxpng": "node tools/ktxpng.mjs",
     "twins": "node tools/twins.mjs",
     "donor": "node tools/donor.mjs",
     "places": "node tools/placecheck.mjs",

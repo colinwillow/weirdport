@@ -7,6 +7,21 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE LOOSE SHEETS TO KTX2 (m425, F0a-2d-2, `tools/ktxpng.mjs`, `texTwin`, `texLoad`, `texLoadAsync`, `KTX2SWAP` +4).** A PNG
+  through `TextureLoader` is sampled with `flipY = true`; a KTX2 through `KTX2Loader` with `flipY = false` -- so the twin is
+  encoded `isYFlip: true` (the flip baked into the pixels) and the sheets' `grid`/`cut` maths reads the same frame. The fire,
+  water and crack sheets set `minFilter = LinearFilter` and `generateMipmaps = false`, so their twins are baked `nomip` (a
+  third fewer bytes); the atlas and the trim keep their mips. `texLoad` returns the texture object either way (`kl.load`
+  returns its CompressedTexture up front like `TextureLoader` does), so `FL.sheetT = texLoad(...)` still holds one.
+  **THE SKY'S PNG IS NOT A CANDIDATE**: `skyImgFog` reads rows of pixels off `skyImg`'s image for the fog colour, and a
+  compressed texture has no image to read. It is 8 MB resident for the HDRI key's live swap. **`ktx2` HAD TO GO INTO
+  `bump.mjs`'s `EXT`** -- the twelfth time the hash table was one entry short (CLAUDE.md's "check EXT too").
+  Baked (the tool's own report, resident): impact_marks_atlas 8 -> 2, fire_01 8 -> 1.5 (nomip), fire_02 2 -> .3, fire_03
+  5 -> 1, water 5 -> 1, crack 5 -> 1, weirdport_trim 21 -> 5.3; the GLBs zap 5 -> 1, alien_female_purple 21 -> 5,
+  alien_base_01 21 -> 5, alien_tower_01 21 -> 5. Measured on the page: tkit 193 -> 176 MB, weirdport 240 -> 128, test
+  202 -> 78. Left in the kit city: `hdri_game.png 8.0M` (above), `paint_atlas 5.3M` (a 1K canvas the paint shader makes
+  in the page), an unnamed `5.3M`, Moussa's two at 5.3 (UASTC; ETC1S would be 1.3 each).
+
 - **THE CHARACTERS' TEXTURES TO KTX2 (m424, F0a-2d-1, `KTX2SWAP`, `ktx2Twin`, `loadGLB`, `npm run ktx <glb>`).** `tools/ktx.mjs`
   needs `ktx2-encoder` and `sharp`, which were NOT in `node_modules` here (`ERR_MODULE_NOT_FOUND` on the first run, which
   the background loop swallowed as "Done" in two seconds -- read the log, not the exit) -- `npm install` put them in.
