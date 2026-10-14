@@ -7,6 +7,21 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE HIGHWAY IN, AND THE GANG ON IT: A GATE BY GROUP (m371, C6-5d-2, `HCROAD`, `buildHighway`, `GATE_TYPES.gang`,
+  `T.groups`).** A road bridge from Old Town's south-west ring (at 119 deg, between the lookout and the moved house) arching
+  5 m over the water on concrete piers -- road, a shoulder each side, a centre line, guardrails (a collider each side),
+  lamps -- 149 m to Hollow Creek's near shore west of the gorge's mouth, and a road on up the land (a ribbon on its mesh)
+  to the fairground's parking, where the rally's trucks come in. ON THE DECK at its far end, the gang: a pickup across the
+  near lane, a burn barrel (tame), LOCALS ONLY, two bikers in lawn chairs (Moose, Dot) -- and a `gang` GATE across the deck
+  between the rails. **`T.groups` is new on `GATE_TYPES`**: a gate that asks for a GROUP (`socialMe()`), not one form --
+  `country` or `biker` through, anybody else turned round. It is on the bridge so the only way round it is the water, and
+  `G.free` lets anybody LEAVE Hollow Creek by it. So: in as one of them by road, or as anybody by the freight.
+  **`biker` IS ITS OWN SOCIAL GROUP** (`SOCIAL.groups`: /biker/), so every Hollow Creek resident placed m366-m369 with
+  `talks: ['country']` would have snubbed a player wearing a biker -- in the region whose tech is the biker. All four
+  builders now say `talks: ['country', 'biker']`.
+  The ring's trees skip the highway's bearing; Hollow Creek's pines keep 10 m off the road.
+  `npm run places` (exit 0): `ok  otroad -> player -61.1,0.6,108.8 ground 0.38`; `ok  gangbridge -> player -121.3,0.5,219.8 ground 0.22`;
+  `ok  HIGHWAY bridge 149 m, arch 5 m, at 119 deg | walked from the grass to the gang: 1.65 (of 1.65) | gate: the alien turned round, out of the creek free | road 58 pts, trees on it 0 | Moose, Dot`.
 - **THE FREIGHT LINE: A TRAIN YOU RIDE, BECAUSE STANDING ON A MOVING BOX NOW CARRIES YOU (m370, C6-5d-1, `HCTRAIN`,
   `buildFreight`, `trainStep`, `trainPlace`, `trainUnder`).** Old Town -> Hollow Creek's main route (REGIONS): a line on a
   trestle straight along Hollow Creek's own bearing, 155 m from a pier on Old Town's south-west beach to a halt on Hollow

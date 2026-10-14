@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m370</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m371</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m370</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m371</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm370';
+const BUILD = 'm371';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28957,6 +28957,8 @@ const GATE_TYPES = {
   // m360 (C6-2): THE PEARL'S BARRICADES -- the plaza's own, so `crowd: 'pearl'` asks about ITS march (`pearlCrowd`); `bare`: the
   // builder draws the junk wall itself; and each one is placed with `G.free`, the plaza's side, from which anybody walks out
   pbarricade: { need: 'fat_activist_01',   pass: 'walk', label: 'BARRICADE',     say: "The protest's barricade. Anyone can leave; only the march comes back in -- inside it, as one of them.", crowd: 'pearl', bare: 1 },
+  // m371 (C6-5d-2): THE GANG'S ROAD -- by GROUP, not one form: locals and riders (`groups`), anybody else turned round
+  gang:      { need: 'hick_skinny',        pass: 'walk', label: 'GANG ROAD',     say: "Gang road. Locals and riders only. Turn round, city -- or ride the freight, if you're stupid.", groups: ['country', 'biker'] },
   gap:       { need: 'jack',               pass: 'walk', label: 'GAP',           say: 'Too far to jump. Something that flies could cross.' },   // m356: the roster's `glider` stem
   // m334 (B2): the bridge's police checkpoint -- ANY human passes, the alien does not, and trying it is noticed
   checkpoint: { need: 'human',             pass: 'walk', label: 'POLICE CHECKPOINT', say: "Checkpoint. Faces only, and that is not a face.", heat: 1 },
@@ -28964,7 +28966,7 @@ const GATE_TYPES = {
 // **A GATE'S `need` IS A FILE STEM AND `formNow()` IS THE DISPLAY FORM** (m334): compared raw, 'dummy_officer' never equalled
 // 'DUMMY OFFICER', so from m285 no gate let ANY form through -- the same fold `mkrKind` lacked (m332). 'human' is any
 // form that is not the alien (`fearLooks`, the same test the fear and the talk use).
-const gateLets = T => T.crowd ? socialMe() === 'city' && (T.crowd === 'pearl' ? pearlCrowd() : protestCrowd()) : T.need === 'human' ? !fearLooks() : formNow() === mphFold(T.need);
+const gateLets = T => T.groups ? T.groups.includes(socialMe()) : T.crowd ? socialMe() === 'city' && (T.crowd === 'pearl' ? pearlCrowd() : protestCrowd()) : T.need === 'human' ? !fearLooks() : formNow() === mphFold(T.need);
 const GATE = {
   on: 1,
   t: .5,            // m: the slab's thickness
@@ -31569,6 +31571,7 @@ function buildHollowLand() {
     // m369: and off the dirt-bike track (its loop, built after this), out of its pits and its tower
     const bl = HCBIKE.on ? bikeLoop().pts : [], bw = HCBIKE.w / 2 + 6, clr = HCBIKE.on ? [[HCBIKE.PITS.a, HCBIKE.PITS.b, 24], [HCBIKE.TOWER.a, HCBIKE.TOWER.b, 8]] : [];
     const rail = (a, b) => HCTRAIN.on && Math.abs(a) < 10 && b < -F.B + HCTRAIN.inland + 14;            // m370: the freight line's corridor and its halt
+    const road = (a, b) => { if (!HCROAD.on) return false; const P = HCROAD.hcPath; for (let i = 0; i < P.length - 1; i++) { const [a0, b0] = P[i], ux = P[i + 1][0] - a0, uz = P[i + 1][1] - b0, L2 = ux * ux + uz * uz, t = clamp(((a - a0) * ux + (b - b0) * uz) / L2, 0, 1); if (Math.hypot(a - a0 - ux * t, b - b0 - uz * t) < HCROAD.w / 2 + 6) return true; } return false; };   // m371
     for (let a = -F.A; a <= F.A; a += T.step) for (let b = -F.B; b <= F.B; b += T.step) {
       const ja = a + (rr() - .5) * T.step * .9, jb = b + (rr() - .5) * T.step * .9, e = hcEdge(ja, jb);
       if (e < F.beach + T.beach) continue;
@@ -31576,7 +31579,7 @@ function buildHollowLand() {
       if (patch < 1 - T.keep - rr() * .25) continue;
       if (hcGorgeAt(ja, jb)[0] < F.GORGE.hb + T.gorge) continue;
       if (F.FLATS.some(Fl => Math.hypot(ja - Fl.a, jb - Fl.b) < Fl.r * T.flat)) continue;
-      if (rail(ja, jb) || clr.some(([a, b, r]) => Math.hypot(ja - a, jb - b) < r) || bl.some(p => Math.abs(ja - p[0]) < bw && Math.abs(jb - p[1]) < bw && Math.hypot(ja - p[0], jb - p[1]) < bw)) continue;
+      if (rail(ja, jb) || road(ja, jb) || clr.some(([a, b, r]) => Math.hypot(ja - a, jb - b) < r) || bl.some(p => Math.abs(ja - p[0]) < bw && Math.abs(jb - p[1]) < bw && Math.hypot(ja - p[0], jb - p[1]) < bw)) continue;
       const y = hcHeight(ja, jb), sl = Math.hypot(hcHeight(ja + 1, jb) - y, hcHeight(ja, jb + 1) - y); if (sl > T.slope) continue;
       const [x, z] = hcWorld(ja, jb); pts.push([x, y, z, .75 + rr() * .6, rr() * 6.28]);
     }
@@ -31710,7 +31713,7 @@ function buildTrailerPark() {
   for (const Pp of T.PEOPLE) {
     const [v, s] = Pp.on, h = T.homes.find(q => Math.abs(q.v - v) < .5 && q.side === s), u = h ? h.u - s * 1.2 : cU(v) + s * 1.1, y = h ? h.y : Y;
     const x = wx(u, v), z = wz(u, v);
-    peopleMark(Pp.id, x, z, th + (s > 0 ? -Math.PI / 2 : Math.PI / 2), Object.assign({ group: 'country', talks: ['country'], alien: 'flee', brushAlien: T.brush, beat: [[x, z]] }, Pp), y, 'HCTRAIL', 'country');
+    peopleMark(Pp.id, x, z, th + (s > 0 ? -Math.PI / 2 : Math.PI / 2), Object.assign({ group: 'country', talks: ['country', 'biker'], alien: 'flee', brushAlien: T.brush, beat: [[x, z]] }, Pp), y, 'HCTRAIL', 'country');
   }
   T.walkAt = [wx(cU(-12), -12), Y + .1, wz(cU(-12), -12), th];
   T.frame = { Ox, Oz, th, cU, Y };
@@ -31820,7 +31823,7 @@ function buildMill() {
   O.n = F.commit().boxes;
   if (O.fireAt && typeof fireStart === 'function') O.fire = fireStart(O.fireAt[0], O.fireAt[1], O.fireAt[2], { k: .6, r: .4, life: Infinity, tame: 1 });
   for (const P of O.PEOPLE) { const [u, v, up] = P.at, x = wx(u, v), z = wz(u, v);
-    peopleMark(P.id, x, z, th + Math.PI, Object.assign({ group: 'country', talks: ['country'], alien: 'flee', brushAlien: O.brush, beat: [[x, z]] }, P), up ? my : y, 'HCMILL', 'country'); }
+    peopleMark(P.id, x, z, th + Math.PI, Object.assign({ group: 'country', talks: ['country', 'biker'], alien: 'flee', brushAlien: O.brush, beat: [[x, z]] }, P), up ? my : y, 'HCMILL', 'country'); }
   O.at = [wx(2, 8), y + .1, wz(2, 8), th + Math.PI];
   O.frame = { cx, cz, th, y, my };
   return O.n;
@@ -31931,7 +31934,7 @@ function buildFairground() {
   O.n = F.commit().boxes;
   // THE PEOPLE
   for (const P of O.PEOPLE) { const [u, v] = P.stall !== undefined ? O.STALLS[P.stall].at : P.at, x = wx(u, v), z = wz(u, v);
-    peopleMark(P.id, x, z, th + (P.stall !== undefined ? Math.PI / 2 : Math.PI * .9), Object.assign({ group: 'country', talks: ['country'], alien: 'flee', brushAlien: O.brush, beat: P.stall !== undefined ? [[x, z]] : null }, P), y, 'HCFAIR', 'country'); }
+    peopleMark(P.id, x, z, th + (P.stall !== undefined ? Math.PI / 2 : Math.PI * .9), Object.assign({ group: 'country', talks: ['country', 'biker'], alien: 'flee', brushAlien: O.brush, beat: P.stall !== undefined ? [[x, z]] : null }, P), y, 'HCFAIR', 'country'); }
   O.at = [wx(0, 20), y + .1, wz(0, 20), th + Math.PI];
   O.frame = { cx, cz, th, y };
   return O.n;
@@ -32066,7 +32069,7 @@ function buildBikeTrack() {
   O.n = F.commit().boxes;
   // THE BIKERS
   for (const P of O.PEOPLE) { const at = P.tower ? O.towerAt : O.pitAt[P.pit], x = at[0] + (P.tower ? .6 : 0), z = at[2];
-    peopleMark(P.id, x, z, th, Object.assign({ group: 'country', talks: ['country'], alien: 'flee', brushAlien: O.brush, beat: [[x, z]] }, P), at[1], 'HCBIKE', 'country'); }
+    peopleMark(P.id, x, z, th, Object.assign({ group: 'country', talks: ['country', 'biker'], alien: 'flee', brushAlien: O.brush, beat: [[x, z]] }, P), at[1], 'HCBIKE', 'country'); }
   { const p = pts[Math.round(.3 * pts.length)], [x, z] = hcWorld(p[0] - p[3] * (hw + 4), p[1] + p[2] * (hw + 4)); O.at = [x, gAB(p[0] - p[3] * (hw + 4), p[1] + p[2] * (hw + 4)) + .1, z, Math.atan2(-p[3], p[2])]; }
   O.frame = { Ox, Oz, th, fr };
   return O.n;
@@ -32200,6 +32203,80 @@ function trainStep(dt) {
   const B = ds && (p.grounded || p.vel.y === 0) ? trainUnder(P) : null;
   trainPlace();
   if (B) { const dx = T.dir[0] * ds, dz = T.dir[1] * ds; P.x += dx; P.z += dz; if (typeof cam !== 'undefined' && cam.pos) { cam.pos.x += dx; cam.pos.z += dz; if (cam.tgt) { cam.tgt.x += dx; cam.tgt.z += dz; } } T.carried += Math.abs(ds); }
+}
+// ============================================================================================
+// THE HIGHWAY IN, AND THE GANG ON IT (m371, ROADMAP C6-5d-2, `HCROAD`, `buildHighway`)
+// ============================================================================================
+// REGIONS: "Old Town -> Hollow Creek: ... the highway shoulder", and Hollow Creek's problem: "gang turf. Outsiders get run
+// off, and the roads are watched." A ROAD BRIDGE from Old Town's south-west ring, arching over the water on concrete piers
+// (lamps, guardrails, a shoulder each side), landing on Hollow Creek's near shore west of the gorge's mouth -- and a road on
+// up the land to the fairground's parking, which is where the rally's trucks come in. AT ITS FAR END, ON THE DECK, THE
+// GANG: a pickup parked half across it, a burn barrel, a hand-painted LOCALS ONLY, two bikers in lawn chairs -- and a
+// `gang` GATE across the deck between the guardrails: locals and riders through (`country`, `biker`), anybody else turned
+// round. It is ON the bridge so there is no way round it but the water. So there are two ways in: as one of them, by road,
+// or as anybody, by the freight (which the gang does not watch).
+const HCROAD = {
+  on: 1, n: 0, land: [-60, -150], hcPath: [[-60, -150], [-60, -110], [-62, -60], [-58, -15], [-66, 3], [-74, 7]],
+  w: 8, shoulder: 1.6, arch: 5, gateBack: 9,
+  GANG: [
+    { id: 'hc_gang_moose', kind: 'fat_biker_01', name: 'Moose', lines: "Road's closed. To you. Not to us.|You want across, you ride with us or you ride the freight. And nobody rides the freight.|The rally man says watch the road. So we watch the road." },
+    { id: 'hc_gang_dot', kind: 'fat_biker_01', name: 'Dot', lines: "Locals only. Says so on the sign. I painted the sign.|City folk come up this road to look at us. We look back.|Saturday's the rally. Then we'll see who's watching who." },
+  ],
+};
+function buildHighway() {
+  const O = HCROAD, H = HCREEK, I = ISLE; if (!O.on || !H.live || !I.rect || !I.rays) return 0;
+  const R = I.rect, c = [(R[0] + R[1]) / 2, (R[2] + R[3]) / 2], sea = I.sea;
+  const [lx, lz] = hcWorld(...O.land), th0 = Math.atan2(lz - c[1], lx - c[0]), ray = isleRayAt(th0 < 0 ? th0 + Math.PI * 2 : th0);
+  O.deg = (th0 * 180 / Math.PI + 360) % 360;
+  const ds = ray.rb + ray.L * .35, A = [c[0] + ray.dx * ds, c[1] + ray.dz * ds], B = [lx, lz];   // from the ring's grass to the creek's shore
+  const L = Math.hypot(B[0] - A[0], B[1] - A[1]), th = Math.atan2(B[0] - A[0], B[1] - A[1]);
+  const M = (cc, o) => Object.assign(new THREE.MeshStandardMaterial({ color: cc, roughness: .85 }), o || {});
+  const MAT = { road: M(0x3a3c40), line: M(0xe0c040), conc: M(0x9a968e), rail: Object.assign(M(0x9aa0a4), { metalness: .5, roughness: .4 }), lamp: M(0xfff1c8, { emissive: new THREE.Color(0xffe0a0), emissiveIntensity: .8 }),
+    truck: M(0x6a2a22), dark: M(0x24262b), drum: M(0x6a3a22), chair: M(0x3a6a5a), sign: M(0xd8c8a0), shoulder: M(0x6a6058) };
+  const F = farmFrame(A[0], A[1], th, MAT, 'creek'), { bx, geo, quad, wx, wz } = F, hw = O.w / 2 + O.shoulder;
+  const gnd = (u, v) => groundAt(wx(u, v), wz(u, v), 30, 0);
+  const yA = Math.max(gnd(0, 0), sea + .5), yB = Math.max(gnd(0, L), sea + .5), yv = v => lerp(yA, yB, v / L) + O.arch * Math.sin(Math.PI * clamp(v / L, 0, 1));
+  O.frame = { A, th, L, yv };
+  // THE DECK: walkable quads in 3 m pieces, the road and its shoulders, a centre line, guardrails (a collider each side), lamps
+  for (let v = 0; v < L; v += 3) { const v1 = Math.min(L, v + 3), y0 = yv(v), y1 = yv(v1);
+    quad([-hw, y0, v], [-hw, y1, v1], [hw, y1, v1], [hw, y0, v]);
+    pearlSeg(geo, 'road', [0, y0 - .12, v], [0, y1 - .12, v1], O.w, .24, 0);
+    for (const s of [-1, 1]) { pearlSeg(geo, 'shoulder', [s * (O.w / 2 + O.shoulder / 2), y0 - .1, v], [s * (O.w / 2 + O.shoulder / 2), y1 - .1, v1], O.shoulder, .2, 0);
+      pearlSeg(geo, 'rail', [s * (hw - .1), y0 + .7, v], [s * (hw - .1), y1 + .7, v1], .08, .3, 0);
+      bx(s * (hw + .05), v + 1.5, Math.min(y0, y1) - .2, Math.max(y0, y1) + 1.0, .12, 3.05, 'rail', 0); F.parts.rail.pop(); }
+    if ((v / 3) % 2 === 0) pearlSeg(geo, 'line', [0, y0 + .005, v + .3], [0, y1 + .005, v1 - .3], .15, .02, 0);
+    if ((v / 3) % 8 === 4) for (const s of [-1, 1]) { bx(s * (hw - .1), v, y0, y0 + 6, .14, .14, 'rail', 0, false); bx(s * (hw - .9), v, y0 + 5.9, y0 + 6.05, 1.6, .3, 'rail', 0, false); geo(new THREE.SphereGeometry(.22, 8, 6), 'lamp', s * (hw - 1.6), y0 + 5.8, v); }
+    // the piers, where it is over water
+    if ((v / 3) % 5 === 2) { const g = Math.max(gnd(0, v), sea - 6); if (g < yv(v) - 2) bx(0, v, g - 1, yv(v) - .3, 3, 2, 'conc', 0); }
+  }
+  // the deck's undersides (a slab you see from the water)
+  for (let v = 0; v < L; v += 6) pearlSeg(geo, 'conc', [0, yv(v) - .5, v], [0, yv(Math.min(L, v + 6)) - .5, Math.min(L, v + 6)], hw * 2 + .2, .5, 0);
+  // THE GANG: on the deck, near its far end -- the pickup across the near lane, a barrel, the sign, two chairs; and the gate
+  const gv = L - O.gateBack, gy = yv(gv);
+  { const py = yv(gv + 3.5); bx(-2.4, gv + 3.5, py, py + 1.1, 4.9, 2.1, 'truck', .3); bx(-3.6, gv + 3.85, py + 1.1, py + 1.9, 1.9, 2.0, 'truck', .3, false); }   // across the near lane
+  bx(3.6, gv + 2, gy, gy + .9, .7, .7, 'drum', 0); O.fireAt = [wx(3.6, gv + 2), gy + 1.0, wz(3.6, gv + 2)];
+  for (const [u, dv] of [[2.4, 4.5], [3.8, 5.2]]) { bx(u, gv + dv, gy, gy + .45, .6, .6, 'chair', 0); bx(u, gv + dv + .3, gy + .45, gy + 1.0, .6, .08, 'chair', 0, false); }
+  { const tx = new THREE.CanvasTexture(protestPaint('LOCALS ONLY', '#d8c8a0', '#6a2a22', 512, 128)); tx.colorSpace = THREE.SRGBColorSpace;
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(3.2, .8), new THREE.MeshStandardMaterial({ map: tx, side: THREE.DoubleSide })); m.position.set(wx(hw - .2, gv - .5), gy + 1.8, wz(hw - .2, gv - .5)); m.rotation.y = th; scene.add(m);
+    bx(hw - .2, gv - .5, gy, gy + 2.3, .1, .1, 'dark', 0, false); }
+  O.n = F.commit().boxes;
+  O.gate = gateAdd('gang', wx(0, gv), wz(0, gv), th + Math.PI, hw * 2 + .4, 'hc_gang_road', gy);   // its normal points back at Old Town
+  if (O.gate) O.gate.free = -1;                                         // anybody may leave Hollow Creek by it
+  if (O.fireAt && typeof fireStart === 'function') O.fire = fireStart(O.fireAt[0], O.fireAt[1], O.fireAt[2], { k: .45, r: .25, life: Infinity, tame: 1 });
+  O.GANG.forEach((G, i) => { const u = [2.4, 3.8][i], x = wx(u, gv + [4.5, 5.2][i] - .1), z = wz(u, gv + [4.5, 5.2][i] - .1);
+    peopleMark(G.id, x, z, th + Math.PI, Object.assign({ group: 'biker', talks: ['country', 'biker'], alien: 'brush', brushAlien: "Whatever you are, you ain't local.", beat: [[x, z]] }, G), gy, 'HCROAD', 'biker'); });
+  // THE ROAD ON, up Hollow Creek to the fairground's parking: a ribbon on the land's mesh, a shoulder each side
+  { const P = O.hcPath, pos = [], idx = []; let n = 0;
+    const pts = []; for (let i = 0; i < P.length - 1; i++) { const [a0, b0] = P[i], [a1, b1] = P[i + 1], l = Math.hypot(a1 - a0, b1 - b0), k = Math.ceil(l / 3); for (let j = 0; j < k; j++) pts.push([a0 + (a1 - a0) * j / k, b0 + (b1 - b0) * j / k, (a1 - a0) / l, (b1 - b0) / l]); }
+    pts.push([...P[P.length - 1], 0, 1]);
+    for (const p of pts) { for (const s of [-1, 0, 1]) { const a = p[0] - p[3] * s * (O.w / 2), b = p[1] + p[2] * s * (O.w / 2), [x, z] = hcWorld(a, b); pos.push(x, (H.meshH ? H.meshH(a, b) : hcHeight(a, b)) + .09, z); }
+      if (n) { const q = (n - 1) * 3; idx.push(q, q + 3, q + 1, q + 1, q + 3, q + 4, q + 1, q + 4, q + 2, q + 2, q + 4, q + 5); } n++; }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals();
+    if (g.attributes.normal.array[1] < 0) { for (let k = 0; k < idx.length; k += 3) { const t = idx[k + 1]; idx[k + 1] = idx[k + 2]; idx[k + 2] = t; } g.setIndex(idx); g.computeVertexNormals(); }
+    const m = new THREE.Mesh(g, MAT.road); m.receiveShadow = true; m.name = 'hcroad'; scene.add(m); O.roadPts = pts; }
+  O.otAt = [wx(0, 6), yv(6) + .1, wz(0, 6), th];
+  O.gangAt = [wx(0, gv - 8), yv(gv - 8) + .1, wz(0, gv - 8), th];
+  return O.n;
 }
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
@@ -33890,6 +33967,7 @@ function buildCityRing() {
     if (Math.abs(((deg - FTRES.landDeg + 540) % 360) - 180) < 5) continue;       // nor on the old trestle's (m319)
     if (FOOT.deg !== null && Math.abs(((deg - FOOT.deg + 540) % 360) - 180) < 6) continue;   // nor the footbridge's (m341)
     if (HCTRAIN.deg != null && Math.abs(((deg - HCTRAIN.deg + 540) % 360) - 180) < 5) continue;   // nor the freight line's (m370)
+    if (HCROAD.deg != null && Math.abs(((deg - HCROAD.deg + 540) % 360) - 180) < 6) continue;    // nor the highway's (m371)
     if (OLOOK.topAt && Math.abs(((deg - OLOOK.deg + 540) % 360) - 180) < 5) continue;         // nor the lookout's (m357)
     const P = at(deg, .06 + rr() * .1);
     if (farmTree(F, rr, ico0, P.x, P.z, .75 + rr() * .5, rr() < .2 ? 'willow' : 'oak')) FR.trees++;
@@ -36584,6 +36662,8 @@ const GODPLACES = [
   { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
   { id: 'pearl', world: 'tkit', name: 'THE PEARL · the plaza (Chapter 2)', at: () => OPEARL.plazaAt },
+  { id: 'otroad', world: 'tkit', name: 'OLD TOWN · the highway bridge to Hollow Creek', at: () => HCROAD.otAt },   // m371
+  { id: 'gangbridge', world: 'tkit', name: "HOLLOW CREEK · the gang on the bridge (Old Town's side of them)", at: () => HCROAD.gangAt },
   { id: 'otfreight', world: 'tkit', name: 'OLD TOWN · the freight pier (the train to Hollow Creek)', at: () => HCTRAIN.otAt },   // m370
   { id: 'hchalt', world: 'tkit', name: 'HOLLOW CREEK · the halt (the freight line)', at: () => HCTRAIN.hcAt },
   { id: 'hcbikes', world: 'tkit', name: 'HOLLOW CREEK · the dirt-bike track', at: () => HCBIKE.at },   // m369
@@ -39110,6 +39190,8 @@ async function init() {
     try { buildBikeTrack(); } catch (e) { note('BIKES FAIL'); console.warn('[melee] bikes', e); }
     // THE FREIGHT LINE TO HOLLOW CREEK (m370): before the city ring, which keeps its trees off its bearing
     try { buildFreight(); } catch (e) { note('FREIGHT FAIL'); console.warn('[melee] freight', e); }
+    // THE HIGHWAY BRIDGE TO HOLLOW CREEK, AND THE GANG ON IT (m371)
+    try { buildHighway(); } catch (e) { note('HIGHWAY FAIL'); console.warn('[melee] highway', e); }
     // THE STRIKE'S PICKET (m345): hidden until the crews walk out
     try { buildStrike(); } catch (e) { note('STRIKE FAIL'); console.warn('[melee] strike', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)

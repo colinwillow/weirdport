@@ -287,9 +287,9 @@ differ" table there, so no region feels like the last one.
     - [x] m369 **C6-5c** the fairground and the dirt-bike track; the people (rednecks, bikers, rally-goers).
       - [x] m368 **C6-5c-1** the fairground: the stage and its truss, the field, the grandstand, the midway, the Ferris wheel, the barn, the gate; rally-goers.
       - [x] m369 **C6-5c-2** the dirt-bike track over the ridges: jumps, berms, a start gate, the pits; the bikers.
-    - [ ] **C6-5d** the way in: the freight line out of Old Town over the water, and a second way (the highway shoulder).
+    - [x] m371 **C6-5d** the way in: the freight line out of Old Town over the water, and a second way (the highway shoulder).
       - [x] m370 **C6-5d-1** the freight line: a trestle from Old Town's south-west beach to a halt at the creek's mouth, and a train you ride.
-      - [ ] **C6-5d-2** the second way: the highway shoulder (a road bridge in, watched by the gang).
+      - [x] m371 **C6-5d-2** the second way: the highway shoulder (a road bridge in, watched by the gang).
     - [ ] **C6-5e** the rally, the region's living system: it builds, the leader speaks, it boils over.
     - [ ] **C6-5f** Chapter 3's quests: the biker form, the gang's respect, the infiltrated rally leader (the boss).
 
@@ -974,3 +974,10 @@ differ" table there, so no region feels like the last one.
   the only way across: stand on the flatcar's open deck or the caboose porch and it carries you. The
   train runs in every chapter. Hollow Creek isn't closed to anyone, and the chapter decides what
   you do there. I moved one Old Town ring house a few degrees so the landing stairs fit.
+
+- **m371 (C6-5d-2) The highway and the gang.** A road bridge runs from Old Town's south-west edge
+  over the water to Hollow Creek, then a road goes up to the fairground. The gang sits on the far end
+  of the bridge with a pickup, a burn barrel and a LOCALS ONLY sign. **Only country folk or bikers
+  get past; anyone else is turned round**, but anyone can leave. So there are two ways in: as one of
+  them by road, or as anything by freight train. I also let all Hollow Creek's people talk to
+  bikers as well as country folk, since bikers count as their own group.
