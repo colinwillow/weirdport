@@ -7,6 +7,68 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE MEASURE (m416, F0a-1, `perfMem`, `PERF.mem`, `PERF.bootMs`, `mel.mem()`, `npm run worlds`, `tools/worlds.mjs`).**
+  `perfMem` walks the scene's materials (every map slot, shader uniforms, `scene.environment`/`background`), counts each
+  texture once at its RESIDENT size -- a KTX2 `CompressedTexture` at the byte size of its mip chain, anything else at
+  w x h x 4 (x 4/3 with mips, x faces for a cube) -- and every geometry at its attributes' bytes. The chip's perf line
+  runs it every `PERF.memEvery` (3) s. `renderer.info.memory.textures` is higher than the material count (327 vs 147 in
+  the kit city): render targets, the PMREM chain and the shadow map are GL textures no material names.
+  **`npm run worlds` DOES NOT WAIT FOR THE GAME'S OWN FRAME LOOP.** Under SwiftShader a frame runs seconds (or none in a
+  minute), and the first version's 2.5 s settle read the THREE camera where the LAST place had left it -- pearl and overlook
+  came back identical to the triangle. `godPlace` moves `cam.pos`; only `stepCam` copies it into `camera`. So after
+  `mel.go` the tool calls `stepCam(1/30)` ten times and `cellStep()` itself, then renders one frame and reads `info`.
+  A settle-in-frames version (`info.render.frame` + 3, 60 s) never saw a frame at any place and was thrown out.
+  `npm run worlds` (SwiftShader; the boot seconds are a ratio between worlds, not a phone's):
+      == tkit  boot 21.6 s (swiftshader)  147 textures 270 MB (gl 327)  1855 geometries 109 MB (gl 520)  120 programs  70s
+         spawn        774 DC  3005 kT  cells 0/692     OVER dc  OVER kT
+         oldtown      821 DC  2854 kT  cells 692/692   OVER dc  OVER kT
+         camp         592 DC  2430 kT  cells 692/692   OVER dc  OVER kT
+         pearl        393 DC  2126 kT  cells 657/692   OVER dc  OVER kT
+         overlook     801 DC  2635 kT  cells 0/692     OVER dc  OVER kT
+         farmyard     429 DC  2280 kT  cells 268/692   OVER dc  OVER kT
+         hcmill       371 DC  2022 kT  cells 0/692     OVER dc  OVER kT
+         hctrail      962 DC  2792 kT  cells 123/692   OVER dc  OVER kT
+         wfquay       389 DC  1849 kT  cells 668/692   OVER dc  OVER kT
+         wfstacks    1463 DC  2967 kT  cells 479/692   OVER dc  OVER kT
+         islanding   1713 DC  3065 kT  cells 684/692   OVER dc  OVER kT
+         isneedle    1238 DC  2735 kT  cells 371/692   OVER dc  OVER kT
+         isship       435 DC  1926 kT  cells 0/692     OVER dc  OVER kT
+         iscore       375 DC  1825 kT  cells 0/692     OVER dc  OVER kT
+         textures: moussa_toon_body 21.3M, moussa_toon_head 21.3M, hdri_game.png 8.0M, impact_marks_atlas.png 8.0M, fire_sprites_01.png 6.0M, colin_head_1080 5.9M
+         geometry: ground_wr_sidewalk 7.0M, ground_wr_curbs 4.2M, farm_batch 3.6M, farm_batch 2.1M, farm_batch 1.9M, farm_batch 1.7M
+         OVER: dc 1713 > 300 at islanding | kT 3065 > 1000 | textures 270 MB > 160
+      == toon  boot 8.9 s (swiftshader)  80 textures 219 MB (gl 124)  446 geometries 61 MB (gl 197)  47 programs  120s  NOTE: ISLE 2/3 TEX
+         spawn        346 DC   832 kT  cells 542/542   OVER dc
+         toon         356 DC   832 kT  cells 542/542   OVER dc
+         textures: alien_female_purple_2K 21.3M, moussa_toon_body 21.3M, moussa_toon_head 21.3M, hdri_game.png 8.0M, impact_marks_atlas.png 8.0M, fire_sprites_01.png 6.0M
+         geometry: ground_wr_sidewalk 7.0M, ground_wr_curbs 4.2M, tcmerge_WK_M_trim 1.3M, tcmerge_WK_M_trim 1.1M, tcmerge_WK_M_trim 1.0M, tcmerge_WK_M_ivy 0.9M
+         OVER: dc 356 > 300 at toon | textures 219 MB > 160
+      == kit  boot 13.1 s (swiftshader)  64 textures 191 MB (gl 102)  276 geometries 26 MB (gl 207)  46 programs  158s
+         spawn         75 DC   360 kT  cells 57/57   
+         kit           75 DC   360 kT  cells 57/57   
+         textures: moussa_toon_body 21.3M, moussa_toon_head 21.3M, hdri_game.png 8.0M, impact_marks_atlas.png 8.0M, fire_sprites_01.png 6.0M, colin_head_1080 5.9M
+         geometry: a60cc5a1 1.0M, alien_warrior 0.9M, ae7322ca 0.9M, hobo_MIX 0.8M, firefighter_MIX 0.8M, hick_MIX 0.8M
+         OVER: textures 191 MB > 160
+      == weirdport  boot 5.9 s (swiftshader)  66 textures 240 MB (gl 117)  277 geometries 40 MB (gl 102)  38 programs  186s
+         spawn        192 DC  1608 kT  cells -         OVER kT
+         weirdport    192 DC  1564 kT  cells -         OVER kT
+         textures: weirdport_trim_basecolor.png 21.3M, alien_female_purple_2K 21.3M, moussa_toon_body 21.3M, moussa_toon_head 21.3M, hdri_game.png 8.0M, fire_sprites_01.png 6.0M
+         geometry: vis_paint_white 4.0M, vis_city_trim 2.2M, vis_curb_concrete 1.3M, vis_neon_pink 1.1M, alien_warrior 0.9M, alien_female_MIX 0.9M
+         OVER: kT 1608 > 1000 | textures 240 MB > 160
+      == test  boot 8.8 s (swiftshader)  43 textures 202 MB (gl 90)  83 geometries 19 MB (gl 50)  37 programs  214s
+         spawn         73 DC   388 kT  cells -       
+         test          71 DC   356 kT  cells -       
+         textures: alien_base_01_2048 21.3M, alien_tower_2k 21.3M, alien_female_purple_2K 21.3M, moussa_toon_body 21.3M, moussa_toon_head 21.3M, hdri_game.png 8.0M
+         geometry: alien_warrior 0.9M, alien_female_MIX 0.9M, hobo_MIX 0.8M, firefighter_MIX 0.8M, hick_MIX 0.8M, fat_biker_02_MIX 0.8M
+         OVER: textures 202 MB > 160
+      budget: 300 DC, 1000 kT, 160 MB textures, 128 MB geometry | tkit OVER, toon OVER, kit OVER, weirdport OVER, test OVER | 214s
+      exit 1
+  **What the table says**: the kit city is over on draw calls and triangles EVERYWHERE -- `cells 0/692` at the spawn, the
+  mill, the ship and the core means the kit buildings' fog culling has hidden every cell and the count is still 370-800,
+  so the farm, Hollow Creek, the Waterfront, the islands and the ship are drawn from everywhere; the islands' landing is
+  1,713 DC and the container cliff 1,463. Textures: 270 MB, and the top of the list is the same in every world (Moussa's
+  two 2K maps, 42 MB, resident even on the test site where he is not). F0a-2 starts with the biggest OVER.
+
 - **NIGHT SIGNALS (m415, E2, `RADIO`, `buildRadio`, `radioStep`, `radioNext`, `radioSay`, `radioNear`, `radioDeeds`, `radioSight`).**
   Art's roof is his `kit_010` (178 deg, so very nearly axis-aligned; interior x -24.0..-16.2, z 57.7..65.6; the hatch in the
   middle cell, x -21.5..-18.5, z 59.8..62.8; the exterior ladder `climb_kit_010_ladder_x4__X4_0` tops out at the north
