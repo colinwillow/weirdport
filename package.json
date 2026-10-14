@@ -22,7 +22,8 @@
     "ktx": "node tools/ktx.mjs",
     "twins": "node tools/twins.mjs",
     "donor": "node tools/donor.mjs",
-    "places": "node tools/placecheck.mjs"
+    "places": "node tools/placecheck.mjs",
+    "shot": "node tools/shot.mjs"
   },
   "type": "module",
   "devDependencies": {

@@ -1,0 +1,85 @@
+// npm run shot [name ...] -- headless Chromium (SwiftShader) boots the SHIPPED index.html, sends him to a GOD place,
+// lets the frame loop settle round him, then renders ONE frame from an authored camera and saves it as a JPEG.
+//
+// m295 tried `page.screenshot` and dropped it: it waits for the compositor to produce a frame, and the kit city under
+// software GL takes longer than its 30 s timeout. This never asks the compositor. It renders inside `page.evaluate`
+// and reads the canvas with `toDataURL` in the SAME task, before the drawing buffer is cleared. The only thing added
+// to the served text is a handle on `renderer`, `scene` and `camera` (`window.__shot`), spliced in front of `mel`.
+//
+// Every shot is a row in SHOTS: a GOD place to stand at, and a camera written in the page from the live game state.
+// Output: the scratch dir given by SHOT_DIR, or ./shots (gitignored).
+import http from 'node:http';
+import fs from 'node:fs';
+import path from 'node:path';
+import { createRequire } from 'node:module';
+
+const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
+const OUT = process.env.SHOT_DIR || path.join(ROOT, 'shots');
+const req = createRequire(import.meta.url);
+let pw;
+for (const p of ['playwright', '/opt/node22/lib/node_modules/playwright', '/opt/node-tools/node_modules/playwright']) {
+  try { pw = req(p); break; } catch (e) {}
+}
+if (!pw) { console.error('no playwright'); process.exit(1); }
+
+// The cameras. Each runs in the page with `S` = window.__shot and `mel`, after him standing at `place` for `settle` s.
+// Returns [eye x, y, z, target x, y, z]. Heights are over his feet.
+const SHOTS = {
+  ridge: { place: 'overlook', settle: 3, why: 'a wide shot from the west hill: fields, buildings and the skyline',
+    cam: `(() => { const p = mel.player.pos, I = mel.ISLE.rect, cx = (I[0] + I[1]) / 2, cz = (I[2] + I[3]) / 2;
+      const O = mel.FARMLAND.O, dx = O[0] - p.x, dz = O[1] - p.z, L = Math.hypot(dx, dz), tx = cx * .35 + O[0] * .65, tz = cz * .35 + O[1] * .65;
+      return [p.x - dx / L * 10, p.y + 14, p.z - dz / L * 10, tx, p.y - 6, tz]; })()` },
+  town: { place: 'road', settle: 3, why: 'the road through the transition: the fingerpost, the edge of town, the bridge',
+    cam: `(() => { const p = mel.player.pos, B = mel.BRIDGE.gate || mel.BRIDGE.at, bx = B.x != null ? B.x : B[0], bz = B.z != null ? B.z : B[1];
+      const dx = bx - p.x, dz = bz - p.z, L = Math.hypot(dx, dz);
+      return [p.x - dx / L * 14, p.y + 7, p.z - dz / L * 14, p.x + dx / L * 60, p.y - 2, p.z + dz / L * 60]; })()` },
+  crash: { place: 'crash', settle: 3, why: 'the wreck from where the new game starts',
+    cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz);
+      return [p.x - dx / L * 8, p.y + 4, p.z - dz / L * 8, C.x, p.y + 1, C.z]; })()` },
+};
+
+const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json',
+  '.wasm': 'application/wasm', '.glb': 'model/gltf-binary', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp',
+  '.ktx2': 'image/ktx2', '.mp3': 'audio/mpeg', '.ogg': 'audio/ogg', '.webmanifest': 'application/manifest+json' };
+const server = http.createServer((q, r) => {
+  const u = decodeURIComponent(new URL(q.url, 'http://x').pathname), f = path.join(ROOT, u === '/' ? 'index.html' : u);
+  if (!f.startsWith(ROOT) || !fs.existsSync(f) || fs.statSync(f).isDirectory()) { r.writeHead(404); r.end(); return; }
+  let body = fs.readFileSync(f);
+  if (f.endsWith('index.html')) {
+    const s = body.toString(), k = 'window.melee = window.mel = {';
+    if (!s.includes(k)) { console.error('shot: no mel handle in index.html'); process.exit(1); }
+    body = s.replace(k, 'window.__shot = { renderer, scene, camera }; ' + k);
+  }
+  r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
+});
+await new Promise(ok => server.listen(0, ok));
+const port = server.address().port;
+
+const want = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(SHOTS);
+fs.mkdirSync(OUT, { recursive: true });
+const t0 = Date.now(), el = () => ((Date.now() - t0) / 1000).toFixed(0) + 's';
+const browser = await pw.chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+const page = await browser.newPage({ viewport: { width: 960, height: 540 }, deviceScaleFactor: 1 });
+page.on('pageerror', e => console.log('  pageerror', e.message));
+let code = 0;
+try {
+  await page.goto(`http://127.0.0.1:${port}/index.html?w=tkit&god`, { timeout: 120000 });
+  await page.waitForFunction(() => document.getElementById('boot').classList.contains('gone') && window.__shot && window.mel, null, { timeout: 180000, polling: 1000 });
+  console.log(`booted ${el()} | FARMLAND ${await page.evaluate(() => mel.FARMLAND.live)}`);
+  for (const id of want) {
+    const S = SHOTS[id]; if (!S) { console.log('no shot', id, '--', Object.keys(SHOTS).join(' ')); code = 1; continue; }
+    const went = await page.evaluate(pl => mel.go(pl), S.place);
+    await page.waitForTimeout(S.settle * 1000);
+    const url = await page.evaluate(cam => {
+      const { renderer, scene, camera } = window.__shot, c = eval(cam);
+      camera.position.set(c[0], c[1], c[2]); camera.lookAt(c[3], c[4], c[5]); camera.updateMatrixWorld(true);
+      renderer.render(scene, camera);
+      return renderer.domElement.toDataURL('image/jpeg', .85);
+    }, S.cam);
+    const f = path.join(OUT, id + '.jpg');
+    fs.writeFileSync(f, Buffer.from(url.split(',')[1], 'base64'));
+    console.log(`ok  ${id.padEnd(6)} ${el()} at "${went}" -> ${path.relative(ROOT, f)} | ${S.why}`);
+  }
+} catch (e) { console.log('FAIL', el(), e.message.split('\n')[0]); code = 1; }
+await browser.close(); server.close();
+process.exit(code);

@@ -7,6 +7,69 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **STEP 8, PROVED: `npm run places` AND THREE SCREENSHOTS, AND THE SCREENSHOT TOOL WORKS NOW (m321, `tools/shot.mjs`,
+  `npm run shot`).** m295 dropped a screenshot tool because `page.screenshot` waits for the compositor to produce a
+  frame and the kit city under SwiftShader takes longer than its 30 s timeout. **This one never asks the compositor**:
+  it renders inside `page.evaluate` and reads the canvas with `toDataURL` in the SAME task, before the drawing buffer is
+  cleared (no `preserveDrawingBuffer` needed). Boot ~25 s, one shot ~25 s, three in about 100 s. It serves the SHIPPED
+  `index.html` and splices in exactly one thing, `window.__shot = { renderer, scene, camera }` in front of `mel`. Each
+  shot is a row in `SHOTS`: a GOD place to stand at (`mel.go`), a settle time so the frame loop's steps (flora chunks,
+  grade, culling) run round him, and a camera computed in the page from live state. Output to `shots/` (gitignored) or
+  `SHOT_DIR`. Playwright is the global one (`/opt/node22/lib/node_modules/playwright`), Chromium from `/opt/pw-browsers`.
+  **`places` gained the NEW GAME row**: chapter 0, never in town, the shipped `crashSpawn` -- it lands 9.5 m from the
+  wreck, on the farmland, on ground. Before this nothing checked the spawn itself, only the GOD place beside it.
+  **What the shots show (the next polish passes, weakest first):**
+  1. **From the ridge the patchwork does not read.** Every far field is the same lime green; the crops fade out with
+     distance (as they should) and what is left is a ground tint that barely differs field to field. Wheat should
+     read gold and ploughed earth brown from a hill, by the GROUND colour, because that is all there is at 200 m.
+  2. **The city skyline is lost in haze** on the horizon from the overlook: the trestle reads, the towers do not.
+  3. **The hedge banks are hard-edged earth boxes** with bushes on top -- from the road shot they read as rectangles.
+  4. The crash shot reads well: wheat close up, the gouge, the saucer, fires, the hedge line and the farm beyond.
+  `npm run places`:
+      FARM.at {"x":333.8,"z":150.5,"th":1.281} | CRASH.at yes | LANE.at yes | BRIDGE.gate yes (side 0) | ISLE.live 1
+      FARMLAND live [ 354, 196 ] chunks 9 floor tris 12344 water tris 8346 | BRIDGE len 166 piers 5 gate [112,64]
+      ok  COWS 33 {"paddock":6,"far_hill":5,"ridge_pasture":6,"east_pasture":5,"pond_pasture":4,"home_pasture":4,"creek_pasture":3} all in their pastures
+      ok  FARMHANDS Dale (hobo) 299,75 | Wendell (hobo) 483,59 | Mags (hobo) 337,222 | Earl (hobo) 418,153 | Farmer Gristle (farmer) 322,149
+      FBATCH on 115 static meshes -> 74 batched, 7 left out, 114342 tris | meshes in the scene now 157
+      FFORD 70 stones over 172.3 m, washed gap 26.1 m | culvert [332.1,276.5,-2.1] bed -0.12
+      FTRES 68 boxes+tris, farm end [313.2,65.2,-2.1] city end [98.3,-9.3]
+      ok  oldtown    -> player 0.0,0.1,0.0 ground 0.00
+      ok  overlook   -> player 464.3,9.1,68.0 ground 8.99
+      ok  ploughing  -> player 409.0,2.2,172.2 ground 2.03
+      ok  pickup     -> player 316.3,1.4,137.8 ground 1.29
+      ok  stones     -> player 187.0,-0.4,208.3 ground -0.50
+      ok  culvert    -> player 332.1,0.1,276.5 ground 0.21
+      ok  trestle    -> player 313.2,0.5,65.2 ground 0.39
+      ok  backyards  -> player 98.3,-0.0,-9.3 ground -0.17
+      ok  warehouse  -> player 94.3,0.0,28.5 ground -0.12
+      ok  gas        -> player 262.7,0.7,111.7 ground 0.52
+      ok  trailers   -> player 227.8,1.8,161.0 ground 1.64
+      ok  herd       -> player 502.4,-0.8,246.5 ground -0.96
+      ok  neighbour  -> player 397.4,6.0,284.6 ground 5.88
+      ok  haybarn    -> player 477.7,5.9,142.2 ground 5.72
+      ok  circle     -> player 271.6,0.6,347.9 ground 0.48
+      ok  swell      -> player 294.5,0.7,343.3 ground 0.50
+      ok  fplough    -> player 429.9,2.2,166.6 ground 2.05
+      ok  creek      -> player 306.6,1.5,245.6 ground 1.35
+      ok  pond       -> player 363.6,1.5,63.8 ground 1.36
+      ok  channel    -> player 241.6,0.5,134.3 ground 0.34
+      ok  farmyard   -> player 320.1,1.5,152.7 ground 1.32
+      ok  hayloft    -> player 333.7,4.7,156.8 ground 9.00
+      ok  crash      -> player 284.8,0.8,333.3 ground 0.69
+      ok  corn       -> player 367.8,1.4,113.3 ground 1.28
+      ok  wheat      -> player 291.5,0.3,56.8 ground 0.15
+      ok  orchard    -> player 331.2,2.8,222.0 ground 2.62
+      ok  farmhouse  -> player 367.2,1.8,206.2 ground 1.64
+      ok  windmill   -> player 341.2,1.6,154.2 ground 1.42
+      ok  scarecrow  -> player 368.8,1.4,107.4 ground 1.20
+      ok  tractor    -> player 327.2,1.5,139.8 ground 1.33
+      ok  paddock    -> player 340.7,1.6,157.1 ground 1.42
+      ok  lane       -> player 320.6,1.5,140.3 ground 1.31
+      ok  road       -> player 336.6,1.5,118.1 ground 1.36
+      ok  bridge     -> player 112.1,3.0,63.6 ground 2.80
+      ok  NEW GAME  -> player 284.8,333.3 ground 0.69 | 9.5 m from the wreck
+      every tkit GOD place is somewhere
+
 - **THE STEPPING-STONE FORD AND THE CREEK CULVERT (m320, step 7b-2, `FFORD`, `buildFord`, `FWATER.culvertAt`).**
   The third way over the channel and the lowest: flat stones a stride apart (`gap` 1.75 m) from the beach below the
   east pasture (`from` in the land's own (a, b)) out to the city's shore at bearing `toDeg` 79, the ray's coast

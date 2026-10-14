@@ -70,7 +70,8 @@ What to build (several builds; ship each step, never wait):
 8. **Prove it**: `npm run places` passes with every GOD farm place moving him onto the new land, and the
    crash spawn landing at the wreck. **Screenshots allowed and wanted** for this work: a wide shot from a
    ridge showing fields, buildings and the distant skyline, and one of the road through the transition.
-   Paste the `places` output in NOTES.
+   Paste the `places` output in NOTES. **— done m321** (`npm run shot`: the ridge, the road to town, the crash;
+   `places` checks the new-game spawn too).
 
 
 **URGENT, NEXT BUILD — THE FARM DOES NOT EXIST IN THE REAL GAME.** Colin opened every GOD place and
@@ -554,3 +555,11 @@ differ" table there, so no region feels like the last one.
   three cows drinking at the foot. Like the trestle, a 26 m stretch in the middle is under the tide
   for now, so the checkpoint still teaches; it opens later. Also a stone culvert where the east
   track crosses the creek, with earth ramps up to it, so the track no longer runs into the water.
+
+- **m321 (farm rebuild, step 8):** a screenshot tool works here now (`npm run shot`). It renders one
+  frame from a named spot and saves it, about 100 s for three shots. The three shots (ridge, road to
+  town, crash) are in the chat. What they showed decides the next farm polish passes, in this order:
+  1. From the ridge every far field is the same green; wheat and ploughed earth should read from a hill.
+  2. The city skyline is lost in the haze.
+  3. The hedge banks look like boxes.
+  These come before B1e, per the STEER's "polish passes on the farm until it is beautiful".
