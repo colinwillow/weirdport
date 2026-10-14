@@ -7,6 +7,37 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **NO NPC MARKER EVER FOUND ITS KIND: `mphName` IS THE DISPLAY FORM AND `mkrKind` COMPARED IT TO FILE STEMS (m332, `mkrKind`).**
+  Found while testing who-talks-to-whom headless: `MARKS` held all five farm people (m315) and **`MKR.npcs` was 0** -- every
+  mark's `K` false, not one body spawned, ever. `mphName(K)` is 'HOBO' / 'HICK SKINNY' (alien prefix and number off, `_`
+  to space, upper case); `mkrKind` looked up `MKR.alias` ('hobo' -> 'hobo_01') and compared THAT to it raw. Never equal,
+  never a prefix. So since m293 **every** `npc_*` marker -- his from Blender as much as the farmhands -- placed nothing,
+  and the note `MKR NPC <id> kind?` went to the chip where nobody looked. The stem now goes through the same fold as
+  `mphName` before the compare.
+  **And `places` said "ok FARMHANDS" the whole time**, because it checked the marks' POSITIONS (on the farmland) and never
+  whether they became anybody. It now runs `mkrNpcPlace` and fails a mark with no kind (`WITH NO KIND`):
+      ok  FARMHANDS Dale (hobo -> hobo_01.glb) 299,75 | Wendell (hobo -> hobo_01.glb) 483,59 | Mags (hobo -> hobo_01.glb) 337,222 | Earl (hobo -> hobo_01.glb) 418,153 | Farmer Gristle (farmer -> hick_skinny.glb) 322,149
+      every tkit GOD place is somewhere
+  **A ROW THAT CHECKS WHERE A THING WOULD BE IS NOT A ROW THAT CHECKS THE THING EXISTS.** Same shape as m302's farm.
+
+- **WHO TALKS TO WHOM: A GROUP PER FORM, A BRUSH-OFF LINE FOR THE WRONG SORT, THE ALIEN RUN OFF (m332, B1f-3, `SOCIAL`,
+  `socialGroup`, `socialMe`, `socialOk`, `socialBrush`, `QUESTS[].from`).** GAME_DESIGN "soft social friction". Every form
+  is in a group off its name (`SOCIAL.groups`, regexes on `mphName`: country, street, law, worker, city, biker, crew,
+  alien, else folk); undisguised you are 'alien' (`fearLooks`, the same test the fear uses). A speaker has `group`
+  (default its kind's), `talks` (the groups it talks to properly; default its own) and `alien` ('flee' default, or
+  'brush'), off its mark's props -- so his Blender `npc_*` markers can carry `group`, `talks` (comma list) and `alien`.
+  - **The wrong sort** gets ONE line from `SOCIAL.BRUSH[their group][yours]` (else `.any`), `tap ×`, and it is over: not
+    finished, nothing heard, no rumour, no `talk:` in the save. Light, never mean ("You lost? The coffee place is forty
+    miles that way.").
+  - **The alien**: m278's "a speaker with something unsaid does not panic" now only holds for `alien: 'brush'` -- by default
+    a speaker runs from the alien like anyone (A4's fear). One who brushes him off gets the alien line.
+  - **A task can come FROM somebody** (`from: '<talk id>'`): it is not available until that script is finished -- which
+    only happens in a form he talks to. "Only a farmhand will get anything out of old Mabel."
+  - The farmhands are `country` and talk to `country` and `street` (they are hobo bodies with farm jobs; a tramp gets a
+    chat, a hipster gets the coffee line).
+  **Checked headless**: Wendell existed (he never had), the alien got "Nope. Not today. Not ever.", wearing the hick he
+  told his three lines and the rail-bridge rumour -- `talk:mk_farmhand_wendell` and `rm:trestle` saved. Chip `SOCIAL.brushes`.
+
 - **RUMOURS: HEARD AS A SCRIPT'S LAST LINE, A ROUGH RING ON THE MAP, FOUND BY GOING THERE (m331, B1f-2, `RUMOURS`,
   `rumourHear`, `rumourStep`, `rumourCircle`).** GAME_DESIGN: "vague ... a separate list with no marker, or at most a
   rough circle on the map ... often how the best stuff is found". A rumour is a row: `title` (the card and the list),

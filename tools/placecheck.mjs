@@ -146,9 +146,13 @@ quiet('FCROP', M.FCROP.n, 'clumps in', M.FCROP.chunks.length, 'chunks', JSON.str
   globalThis.__cowBad = astray;          // `bad` is declared below: carried, not read above its own `let`
   quiet((astray ? 'BAD ' : 'ok  ') + 'COWS', M.COW.n, JSON.stringify(by), astray ? astray + ' OUTSIDE THEIR PASTURE' : 'all in their pastures'); }
 quiet('FVEH', M.FVEH.list.map(c => c.id + ' ' + c.pts.length + ' pts').join(', '));
-{ const F = M.MARKS.filter(m => m.src === 'FARMHANDS'), off = F.filter(m => !(M.flEdgeAt(m.x, m.z) > 0));
-  if (off.length) globalThis.__cowBad = (globalThis.__cowBad || 0) + off.length;
-  quiet((off.length ? 'BAD ' : 'ok  ') + 'FARMHANDS', F.map(m => m.p.name + ' (' + m.p.kind + ') ' + m.x.toFixed(0) + ',' + m.z.toFixed(0)).join(' | '), off.length ? off.length + ' OFF THE FARMLAND' : ''); }
+// m332: and each npc mark RESOLVES TO A KIND (`mkrNpcPlace` -> `mkrKind`) -- from m293 none did (`mphName` is the display
+// form, the stems are files), so not one farmhand ever existed while this row said ok off the marks' positions alone
+try { M.mkrNpcPlace(); } catch (e) { quiet('mkrNpcPlace throw', e.message); }
+{ const F = M.MARKS.filter(m => m.src === 'FARMHANDS'), off = F.filter(m => !(M.flEdgeAt(m.x, m.z) > 0)), nok = F.filter(m => !m.K);
+  if (off.length + nok.length) globalThis.__cowBad = (globalThis.__cowBad || 0) + off.length + nok.length;
+  quiet((off.length + nok.length ? 'BAD ' : 'ok  ') + 'FARMHANDS', F.map(m => m.p.name + ' (' + m.p.kind + ' -> ' + (m.K ? m.K.file.split('/').pop() : 'NO KIND') + ') ' + m.x.toFixed(0) + ',' + m.z.toFixed(0)).join(' | '),
+    off.length ? off.length + ' OFF THE FARMLAND' : '', nok.length ? nok.length + ' WITH NO KIND' : ''); }
 { let meshes = 0; M.scene.traverse(o => { if (o.isMesh && o.visible) meshes++; });
   quiet('FBATCH', M.FBATCH.on ? 'on' : 'OFF', M.FBATCH.before, 'static meshes ->', M.FBATCH.after, 'batched,', M.FBATCH.kept, 'left out,', M.FBATCH.tris, 'tris | meshes in the scene now', meshes); }
 quiet('FFORD', M.FFORD.n, 'stones over', M.FFORD.at && M.FFORD.cityAt && +Math.hypot(M.FFORD.cityAt[0] - M.FFORD.at[0], M.FFORD.cityAt[1] - M.FFORD.at[1]).toFixed(1), 'm, washed gap', M.FFORD.gapM && +M.FFORD.gapM.toFixed(1), 'm | culvert', JSON.stringify(M.FWATER.culvertAt && M.FWATER.culvertAt.map(v => +v.toFixed(1))), 'bed', M.FWATER.culvertY && +M.FWATER.culvertY.toFixed(2));

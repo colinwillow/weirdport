@@ -216,7 +216,7 @@ differ" table there, so no region feels like the last one.
     the hill (no marker).
   - [x] m330 **B1f-1** the "New task" card, the task list (tap the objective), several tasks with one followed, the waypoint's distance in the world, and the same metres on the map.
   - [x] m331 **B1f-2** rumours: a separate list, no marker (or a rough circle), resolved when you find the thing.
-  - [ ] **B1f-3** who talks to whom: forms a speaker talks to, forms it brushes off (a short line), the alien makes it flee; a task can need a form to start.
+  - [x] m332 **B1f-3** who talks to whom: forms a speaker talks to, forms it brushes off (a short line), the alien makes it flee; a task can need a form to start.
   - [ ] **B1f-4** Chapter 0 uses it: the farmer's family brush off the alien; as the farmer, the neighbour at the farm shop gives the bridge task and the hill rumour.
 - [ ] **B2 Chapter 0 script.** Crash → find Clancy → the farmer sees you and panics → knock him
   down → take his sample → walk to the bridge as him → the cop checkpoint lets the farmer through
@@ -645,3 +645,15 @@ differ" table there, so no region feels like the last one.
   on the full map (never a marker or a waypoint). Getting to the place gives "RUMOUR FOUND". The
   fourth, "the man on the hill", is for the farm-shop neighbour in B1f-4. GOD → HEAR EVERY RUMOUR
   fills the list for a look.
+
+- **m332 (B1f-3), with a bug fix:**
+  - **Bug fix:** the farmhands (Dale, Wendell, Mags, Earl) and Farmer Gristle had never actually
+    appeared. Their markers never matched a character file (a name-format mismatch since m293), and
+    the same bug would have stopped any npc marker you place in Blender. Fixed, and `places` now fails
+    if one doesn't resolve.
+  - **Who talks to whom:** people now react to your form. The alien makes them run, or gets a
+    brush-off from the few who stand their ground. The wrong sort of local gets one short, light
+    brush-off line. Their own sort gets the real conversation, rumours included. Farmhands talk to
+    country folk and tramps.
+  - **Tasks:** a task can now come from a person and only unlock once they've talked to you properly.
+  - **Your Blender npc markers** can carry `group`, `talks` and `alien` too.
