@@ -273,7 +273,7 @@ differ" table there, so no region feels like the last one.
 - [x] m358 **C5 Hidden good aliens.** A network of disguised shopkeepers who give tips and upgrades.
 - [ ] **C6 Chapter 2 greybox (The Pearl)** with its quests and boss — then 3, 4…
   - [x] m359 **C6-1** the land: piers past dock 1's door, eight warehouses round a plaza, containers, stalls, string lights, four locals; GOD place.
-  - [ ] **C6-2** the plaza protest and a barricade on every street into it.
+  - [x] m360 **C6-2** the plaza protest and a barricade on every street into it.
   - [ ] **C6-3** up top: rooftop gardens, catwalks and rope bridges between the warehouses.
   - [ ] **C6-4** Chapter 2's quests: the strike starts, the organiser's rooftop HQ (W5), expose the infiltrator (the boss), the strike ends and the crews go back.
 
@@ -885,3 +885,11 @@ differ" table there, so no region feels like the last one.
   lights and four locals. The fifth warehouse, the tallest, is held for the organiser's rooftop
   HQ in C6-4. I split C6 into four: the land, the plaza protest and barricades, the rooftops, and
   the quests and boss.
+
+- **m360 (C6-2) The plaza's barricades.** Four junk walls close the four streets between the
+  plaza's warehouses. Each has a door with a keeper. Anybody can walk OUT; to get IN you have to
+  be an activist (or hipster/hippie) walking inside the march. The sit-in is twelve people round a
+  stage with Marisol on a megaphone. Every minute or two they march out and back, alternating
+  between the dock (so you can join them at dock 1 and get carried in) and the far pier. I made
+  leaving free so the plaza is never a trap, and moved Juno out to the dock street so the first
+  person you meet tells you why it is shut.

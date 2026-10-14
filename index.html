@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m359</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m360</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m359</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m360</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm359';
+const BUILD = 'm360';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28894,6 +28894,9 @@ const GATE_TYPES = {
   // m348 (C1-3): `crowd` -- the line opens only to one of the march's own (an activist, a hippie, a hipster: the `city`
   // group), and only while he walks inside the march itself (`protestCrowd`)
   barricade: { need: 'fat_activist_01',    pass: 'walk', label: 'POLICE LINE',   say: 'Police line. Only the march goes through -- and only if you look like part of it.', crowd: 1 },
+  // m360 (C6-2): THE PEARL'S BARRICADES -- the plaza's own, so `crowd: 'pearl'` asks about ITS march (`pearlCrowd`); `bare`: the
+  // builder draws the junk wall itself; and each one is placed with `G.free`, the plaza's side, from which anybody walks out
+  pbarricade: { need: 'fat_activist_01',   pass: 'walk', label: 'BARRICADE',     say: "The protest's barricade. Anyone can leave; only the march comes back in -- inside it, as one of them.", crowd: 'pearl', bare: 1 },
   gap:       { need: 'jack',               pass: 'walk', label: 'GAP',           say: 'Too far to jump. Something that flies could cross.' },   // m356: the roster's `glider` stem
   // m334 (B2): the bridge's police checkpoint -- ANY human passes, the alien does not, and trying it is noticed
   checkpoint: { need: 'human',             pass: 'walk', label: 'POLICE CHECKPOINT', say: "Checkpoint. Faces only, and that is not a face.", heat: 1 },
@@ -28901,7 +28904,7 @@ const GATE_TYPES = {
 // **A GATE'S `need` IS A FILE STEM AND `formNow()` IS THE DISPLAY FORM** (m334): compared raw, 'dummy_officer' never equalled
 // 'DUMMY OFFICER', so from m285 no gate let ANY form through -- the same fold `mkrKind` lacked (m332). 'human' is any
 // form that is not the alien (`fearLooks`, the same test the fear and the talk use).
-const gateLets = T => T.crowd ? socialMe() === 'city' && protestCrowd() : T.need === 'human' ? !fearLooks() : formNow() === mphFold(T.need);
+const gateLets = T => T.crowd ? socialMe() === 'city' && (T.crowd === 'pearl' ? pearlCrowd() : protestCrowd()) : T.need === 'human' ? !fearLooks() : formNow() === mphFold(T.need);
 const GATE = {
   on: 1,
   t: .5,            // m: the slab's thickness
@@ -28925,7 +28928,8 @@ function gateMesh(G) {
   const T = G.type, g = new THREE.Group(), w = G.w;
   const mat = c => new THREE.MeshStandardMaterial({ color: c, roughness: .7 });
   const box = (sx, sy, sz, c, x, y) => { const m = new THREE.Mesh(new THREE.BoxGeometry(sx, sy, sz), mat(c)); m.position.set(x || 0, y, 0); g.add(m); return m; };
-  if (T === 'cordon' || T === 'barricade') {
+  if (GATE_TYPES[T].bare) { /* m360: its builder draws it */ }
+  else if (T === 'cordon' || T === 'barricade') {
     const n = Math.max(2, Math.round(w / 2.2));
     for (let i = 0; i <= n; i++) box(.14, 1.1, .14, T === 'cordon' ? 0x1d2a55 : 0x777777, -w / 2 + i * w / n, .55);
     if (T === 'cordon') { box(w, .1, .03, 0xffd23a, 0, .95); box(w, .1, .03, 0xffd23a, 0, .6); }
@@ -28994,12 +28998,14 @@ function gatePush(dt) {
     const sideNow = v >= 0 ? 1 : -1;
     const inSpan = Math.abs(u) < G.w * .5 + r && P.y > G.y - .5 && P.y < G.y + GATE.hi;
     // m341: a `fix` gate is a gap -- nobody walks it until it is mended, the right body included (he leans on it to fix it)
-    const ok = G.open || (T.pass !== 'fix' && gateLets(T)) || GOD.fly;      // GOD's fly: nothing collides
+    // m360: `G.free` -- the side anybody may leave by (the Pearl's plaza: the barricades keep people OUT, not in)
+    const out = G.free && (G.side || sideNow) === G.free;
+    const ok = G.open || (T.pass !== 'fix' && gateLets(T)) || GOD.fly || out;      // GOD's fly: nothing collides
     if (!inSpan) { G.side = sideNow; G.fixT = 0; continue; }
     const half = GATE.t * .5 + r;
     if (ok) {
-      // crossing it in the right body is what the quests count
-      if (G.side && sideNow !== G.side && progFlag('gate:' + G.id)) toast(T.label + ': through', 1.4);
+      // crossing it in the right body is what the quests count (walking OUT of a `free` gate is not getting through it)
+      if (G.side && sideNow !== G.side && !out && progFlag('gate:' + G.id)) toast(T.label + ': through', 1.4);
       G.side = sideNow; G.fixT = 0;
       continue;
     }
@@ -29418,8 +29424,8 @@ function protestCrowd() {
   const c = O.chant.position; return Math.hypot(player.pos.x - c.x, player.pos.z - c.z) < 4.5;
 }
 // the leader point at distance `s` along the path, and the heading there
-function protestAt(s) {
-  const P = OPROTEST.path; let acc = 0;
+function protestAt(s, P) {
+  P = P || OPROTEST.path; let acc = 0;                    // m360: any path (the Pearl's march walks its own)
   for (let i = 1; i < P.length; i++) { const L = Math.hypot(P[i].x - P[i - 1].x, P[i].z - P[i - 1].z);
     if (acc + L >= s || i === P.length - 1) { const k = L ? clamp((s - acc) / L, 0, 1) : 1; return { x: P[i - 1].x + (P[i].x - P[i - 1].x) * k, z: P[i - 1].z + (P[i].z - P[i - 1].z) * k, h: Math.atan2(P[i].x - P[i - 1].x, P[i].z - P[i - 1].z) }; }
     acc += L; }
@@ -29436,10 +29442,10 @@ function protestSign(d, t) {
 }
 function protestStart() { const O = OPROTEST; if (!O.path) return false; O.st = 'gather'; O.t = O.gather; O.s = 0; O.runs++; return true; }
 // one chant line painted on a sprite's canvas
-function protestChant(S, t, alt) {
-  const g = S.userData.cv.getContext('2d'); g.clearRect(0, 0, 512, 128); g.fillStyle = 'rgba(42,33,64,.82)'; g.fillRect(16, 20, 480, 88);
-  g.fillStyle = ampUp() ? (alt ? '#ff8a5a' : '#ff5a5a') : alt ? '#ffc247' : '#ffffff'; g.textAlign = 'center'; g.textBaseline = 'middle';   // m352: red while it is fed
-  S.scale.set(ampUp() ? 6.6 : 5.2, ampUp() ? 1.65 : 1.3, 1);
+function protestChant(S, t, alt, own) {
+  const g = S.userData.cv.getContext('2d'), hot = !own && ampUp(); g.clearRect(0, 0, 512, 128); g.fillStyle = 'rgba(42,33,64,.82)'; g.fillRect(16, 20, 480, 88);
+  g.fillStyle = hot ? (alt ? '#ff8a5a' : '#ff5a5a') : alt ? '#ffc247' : '#ffffff'; g.textAlign = 'center'; g.textBaseline = 'middle';   // m352: red while it is fed (m360: `own` -- not the Pearl's; the amplifier is Old Town's)
+  S.scale.set(hot ? 6.6 : 5.2, hot ? 1.65 : 1.3, 1);
   g.font = '800 56px "Barlow Condensed", system-ui, sans-serif'; g.fillText(t, 256, 66); S.userData.tx.needsUpdate = true;
 }
 const protestSide = d => d.markId && d.markId.startsWith('protest_') && d.markId !== 'protest_suit' ? 'a' : d.markId && d.markId.startsWith('counter_') ? 'c' : null;
@@ -30207,8 +30213,8 @@ const OPEARL = {
   STALLS: 7, STALLR: 15,
   PEOPLE: [
     { id: 'pearl_wren', kind: 'fat_activist_01', name: 'Wren', at: [-8, 56], lines: "Welcome to The Pearl! Everything here is community-run. Even the pigeons have a committee.|The plaza's ours. We're never leaving. That's the protest. It's been three years.|Tuesday is drum circle. So is every other day." },
-    { id: 'pearl_juno', kind: 'fat_hipster', name: 'Juno', at: [20, 58], lines: "Oat, soy, hemp, or air? The air latte is very popular.|I roast on the second floor. The smell is the whole business model.|Someone keeps buying everybody's signs. Nobody knows who. Very generous. Slightly creepy." },
-    { id: 'pearl_saffron', kind: 'fat_hippie', name: 'Saffron', at: [-24, 66], lines: "Mind the wet paint. All of it. Everything here is wet paint.|That mural's about the sky. Or the sea. It changes depending on how you feel.|The organiser's up in the tall building. Very busy. Never comes down." },
+    { id: 'pearl_juno', kind: 'fat_hipster', name: 'Juno', at: [3, 36], lines: "Oat, soy, hemp, or air? The air latte is very popular.|The plaza? Sealed. Three years now. You get in with the march or not at all -- and you'd want to look like one of them.|Someone keeps buying everybody's signs. Nobody knows who. Very generous. Slightly creepy." },   // m360: out on the dock street, by the barricade
+    { id: 'pearl_saffron', kind: 'fat_hippie', name: 'Saffron', at: [-15, 70], lines: "Mind the wet paint. All of it. Everything here is wet paint.|That mural's about the sky. Or the sea. It changes depending on how you feel.|The organiser's up in the tall building. Very busy. Never comes down." },
     { id: 'pearl_pip', kind: 'beautiful_blonde', name: 'Pip', at: [4, 74], lines: "Are you here for the march? There's always a march.|My mum says Old Town's crews are coming out on strike for us. Solidarity!|What are we striking for? ...Good question. Ask the organiser." },
   ],
 };
@@ -30298,6 +30304,197 @@ function buildPearl() {
     for (const D of O.DECKS) for (const a of D.u) for (const b of D.v) { const x = wx(a, b), z = wz(a, b); x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); }
     if (r) { r.x0 = Math.min(r.x0, x0); r.x1 = Math.max(r.x1, x1); r.z0 = Math.min(r.z0, z0); r.z1 = Math.max(r.z1, z1); } if (map.ext) mapBuild(); }
   return O.n;
+}
+// ============================================================================================
+// THE PLAZA'S PROTEST AND ITS BARRICADES (m360, ROADMAP C6-2, `OPLAZA`, `buildPearlPlaza`, `plazaStep`, `plazaStart`)
+// ============================================================================================
+// REGIONS: "a permanent protest has sealed the plaza; barricades block every street through it. As an activist you march
+// through the barricades inside the crowd ... the crowd as moving terrain: the protest swells, marches, chants." The plaza
+// is closed by its four warehouses and FOUR BARRICADES across the four streets between them: a junk wall each (pallets,
+// drums, jersey barriers, an old sofa, crates) with a door in it, a banner over the door and a keeper just inside. Each
+// one is ALSO a `pbarricade` GATE along its whole length -- the junk is what you see, the gate is what stops you (up to
+// 4 m, so nobody hops the sofa): ANYBODY walks OUT (`G.free`, the plaza's side), and only one of the march's own -- a
+// `city` form, walking inside the march (`pearlCrowd`) -- comes IN. Each barricade's two ends run on into the warehouse
+// walls, so there is no way round; `places` floods the plaza to prove it.
+// THE SIT-IN: twelve people round a low stage in the middle, signs up, Marisol on the stage with a megaphone calling and
+// the crowd answering. Now and then THE MARCH: they form up behind her and walk a route out through a door and back --
+// to DOCK 1 (to call Old Town's crews out) or north to THE FAR PIER, past the organiser's door -- hold at the end a
+// while, chanting, and walk back in. The leader point only moves on while they keep up (`OPROTEST`'s rule), so a crowd
+// you are standing in the middle of is a crowd you are carried along by. The way over the top is C6-3's rooftops; the
+// organiser, the strike and the counter-protest's clash are C6-4's.
+const OPLAZA = {
+  on: 1, n: 0, st: 'sit', t: 0, tick: 0, s: 0, ri: 0, runs: 0, lead: null, cc: null, chant: null, chant2: null, cI: 0, cT: 0, shufT: 8,
+  STAGE: { u: -2, v: 63, w: 5, d: 3.5, h: .35 },             // the plaza's middle, its front to the dock street (-v)
+  // [u, v] ends (each runs on into a warehouse: checked by `places`), the door's place along it (0..1), its banner
+  BARS: [
+    { id: 'south', a: [-26.7, 44], b: [21.3, 44], door: .41, banner: 'THE PEARL STAYS', why: 'the dock street\'s end, from the studios to the food hall: the way in from dock 1' },
+    { id: 'west', a: [-24, 63.4], b: [-21.2, 76.8], door: .5, banner: 'MARCHERS ONLY', why: 'the lane between the studios and the organiser\'s building' },
+    { id: 'north', a: [-21.8, 81], b: [19, 81], door: .46, banner: 'SOLIDARITY', why: 'between the organiser\'s building and the rehearsal space: the far pier' },
+    { id: 'east', a: [19.8, 56], b: [18.3, 74.6], door: .5, banner: 'FRIENDS WELCOME (NOT YOU)', why: 'between the food hall and the rehearsal space' },
+  ],
+  door: 5,                    // m: the gap in the junk
+  ROUTES: [
+    { id: 'dock', label: 'TO THE DOCK', path: [[-3, 57], [-7, 50], [-7, 44], [-4.5, 38], [-2.5, 31], [-2.5, 11]], hold: 14,
+      why: 'out the south door and down the dock street to dock 1, to call Old Town\'s crews out' },
+    { id: 'pier', label: 'TO THE FAR PIER', path: [[-3, 70], [-3, 81], [-3, 85.5], [5.5, 88.5], [3, 97], [0, 105]], hold: 14,
+      why: 'out the north door past the organiser\'s, round the containers to the flea market and the gym' },
+  ],
+  quiet: [70, 120], first: [25, 40], form: 8, speed: .9, lag: 4, join: 5, gapX: 1.05, gapZ0: 1.3, gapZ: 1.4,
+  CROWD: [
+    { kind: 'fat_activist_01', name: 'Juniper', sign: 'WHOSE PLAZA? OUR PLAZA' },
+    { kind: 'fat_hippie', name: 'Clover', sign: 'COMPOST THE MAN' },
+    { kind: 'fat_hipster', name: 'Felix', sign: 'I WAS HERE BEFORE THE PROTEST' },
+    { kind: 'beautiful_asian', name: 'Mei', sign: 'SOLIDARITY WITH OLD TOWN' },
+    { kind: 'beautiful_blonde', name: 'Harper', sign: 'ART IS A VERB' },
+    { kind: 'fat_activist_01', name: 'Basil', sign: 'BIKES NOT BOSSES' },
+    { kind: 'fat_hippie', name: 'Indigo', sign: 'THE TIDE IS COMING (IN)' },
+    { kind: 'fat_hipster', name: 'Otto', sign: 'OAT MILK IS A HUMAN RIGHT' },
+    { kind: 'beautiful_asian', name: 'Suki', sign: 'NO TO THINGS' },
+    { kind: 'beautiful_blonde', name: 'Poppy', sign: 'YES TO OTHER THINGS' },
+    { kind: 'fat_activist_01', name: 'Arlo', sign: 'THIS SIGN IS RECYCLED' },
+    { kind: 'fat_hippie', name: 'Rain', sign: 'WHO PAID FOR THESE SIGNS?' },
+  ],
+  lines: "Whose plaza? OUR plaza! ...Sorry. Reflex.|Three years we've held it. The barricades keep THEM out. Who? It's in the pamphlet.|The march goes out and comes back. Want in? Walk in the middle of it. Look the part.",
+  SPEAKER: { kind: 'fat_activist_01', name: 'Marisol', lines: "Welcome, friend! The plaza is a liberated zone. The barricades are for THEM. Not you. Unless you're them.|We march to the dock to call Old Town's crews out on strike. Grab a sign -- we have spares. Somebody keeps buying spares.|The organiser sends word from upstairs. Nobody's seen them in weeks. That's how you know they're busy." },
+  KEEPERS: [
+    { kind: 'fat_hipster', name: 'Bex' }, { kind: 'fat_hippie', name: 'Tully' }, { kind: 'beautiful_asian', name: 'Ozzie' }, { kind: 'beautiful_blonde', name: 'Fern' },
+  ],
+  keepLines: "Marchers only. Leaving's fine -- it's getting back in that's the trick.|Want in? Wait for the march. It goes out through one of the doors and comes back. Be inside it.|Nice outfit. Is it ironic? Everything here is a little bit ironic.",
+  CHANT: [['WHOSE PLAZA?', 'OUR PLAZA!'], ['WHAT DO WE WANT?', 'A SAY!'], ['IN WHAT?', 'EVERYTHING!'], ['STRIKE! STRIKE!', 'SOLIDARITY!'], ['THE PEARL?', 'STAYS!'], ['WHO BOUGHT THE SIGNS?', '...NEXT QUESTION!']],
+  near: 130,                  // m: no chant painted past this (a canvas upload a line, for nobody)
+};
+// the megaphone, on the speaker's root like a sign (it rides the body and leaves with it)
+function plazaHorn(d) {
+  const m = new THREE.Mesh(new THREE.CylinderGeometry(.13, .05, .32, 10, 1, true), new THREE.MeshStandardMaterial({ color: 0xf2efe6, roughness: .5, side: THREE.DoubleSide }));
+  m.rotation.x = Math.PI / 2; m.position.set(.1, 1.52, .3); d.root.add(m); d.pHorn = m;
+}
+function buildPearlPlaza() {
+  const O = OPLAZA, E = OPEARL.frame; if (!O.on || !inTK() || !E) return 0;
+  const { ox, oz, thf, y } = E, P0 = OPEARL.PLAZA;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .82 }), o || {});
+  const MAT = { wood: M(0x8a6a44), crate: M(0xa0784a), drum: M(0x3f6f8f), pink: M(0xf2b8c6), mint: M(0xb8e6d0), cream: M(0xf2e6c8), lilac: M(0xcfc0ee),
+    sofa: M(0x9a7ab8), steel: Object.assign(M(0x7a8a96), { metalness: .45, roughness: .45 }), plat: M(0x9a968c) };
+  const F = farmFrame(ox, oz, thf, MAT, 'pearl'), { bx, geo, wx, wz } = F;
+  const pics = new THREE.Group(); pics.position.set(ox, 0, oz); pics.rotation.y = thf; scene.add(pics);
+  let bi = 0; const banner = (t, u, h, v, ry, w) => { const tx = new THREE.CanvasTexture(protestPaint(t, ['#ffc9a8', '#9fe3d2', '#c9b8ff', '#fff1a8', '#ff9fc0'][bi++ % 5], '#2a2140', 512, 128)); tx.colorSpace = THREE.SRGBColorSpace;
+    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, w / 4), new THREE.MeshStandardMaterial({ map: tx, roughness: .9, side: THREE.DoubleSide })); m.position.set(u, h, v); m.rotation.y = ry; pics.add(m); };
+  let seed = 360; const rr = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  // THE STAGE: low enough to walk up, a banner on two poles behind it
+  { const T = O.STAGE; bx(T.u, T.v, y, y + T.h, T.w, T.d, 'plat');
+    for (const s of [-1, 1]) bx(T.u + s * 2.3, T.v + T.d / 2 - .1, y + T.h, y + T.h + 3.4, .1, .1, 'steel', 0, false);
+    banner('THE PEARL STAYS', T.u, y + T.h + 2.6, T.v + T.d / 2 - .1, Math.PI, 4.4); }
+  // THE BARRICADES
+  O.gates = []; O.doors = [];
+  for (const B of O.BARS) {
+    const du = B.b[0] - B.a[0], dv = B.b[1] - B.a[1], L = Math.hypot(du, dv), eu = du / L, ev = dv / L, mu = (B.a[0] + B.b[0]) / 2, mv = (B.a[1] + B.b[1]) / 2;
+    let nu = ev, nv = -eu; if (nu * (P0[0] - mu) + nv * (P0[1] - mv) < 0) { nu = -nu; nv = -nv; }    // into the plaza
+    const psi = Math.atan2(-ev, eu), at = (s, n) => [B.a[0] + eu * s + nu * n, B.a[1] + ev * s + nv * n], dS = B.door * L;
+    // the junk, along it -- not over the door; every piece a collider of its own (the gate stands over all of it)
+    let k = 0;
+    for (let s = .8; s < L - .6; s += 1.45 + rr() * .35, k++) {
+      if (Math.abs(s - dS) < O.door / 2 + .6) continue;
+      const [u, v] = at(s, (rr() - .5) * .5), j = psi + (rr() - .5) * .35, kind = (k * 7 + (rr() * 3 | 0)) % 5;
+      if (kind === 0) { const h = .9 + rr() * .6; bx(u, v, y, y + h, 1.3, 1.1, 'wood', j); }
+      else if (kind === 1) bx(u, v, y, y + .85, 1.8, .62, ['pink', 'mint', 'cream'][k % 3], j);
+      else if (kind === 2) { bx(u, v, y, y + .9, 1.3, .65, 'drum', j); F.parts.drum.pop();
+        for (const s2 of [-.33, .33]) geo(new THREE.CylinderGeometry(.3, .3, .9, 10), 'drum', u + Math.cos(j) * s2, y + .45, v - Math.sin(j) * s2); }
+      else if (kind === 3) { bx(u, v, y, y + .48, 1.9, .9, 'sofa', j); const [u2, v2] = [u - Math.sin(j) * .36, v - Math.cos(j) * .36]; bx(u2, v2, y + .48, y + .95, 1.9, .22, 'sofa', j); }
+      else { bx(u, v, y, y + 1, 1, 1, 'crate', j); bx(u, v, y + 1, y + 1.75, .8, .8, 'crate', j + .4, false); }
+    }
+    // the door: two poles, a banner over it on both faces, and its keeper just inside
+    for (const s of [-1, 1]) { const [u, v] = at(dS + s * (O.door / 2 + .1), 0); bx(u, v, y, y + 3.7, .14, .14, 'steel', psi); }
+    { const [u, v] = at(dS, 0); banner(B.banner, u, y + 3.1, v, Math.atan2(nu, nv), O.door + .3); }
+    const W = (s, n) => { const [u, v] = at(s, n); return [wx(u, v), wz(u, v)]; };
+    const [gx, gz] = W(L / 2, 0), G = gateAdd('pbarricade', gx, gz, thf + Math.atan2(nu, nv), L, 'pearl_bar_' + B.id, y);
+    if (G) { G.free = 1; O.gates.push(G); }
+    const [dx, dz] = W(dS, 0), [kx, kz] = W(dS + O.door / 2 + .6, 1.4), K = O.KEEPERS[O.BARS.indexOf(B)];
+    O.doors.push({ id: B.id, x: dx, z: dz, out: thf + Math.atan2(-nu, -nv) });
+    if (K) { peopleMark('pplaza_keep_' + B.id, kx, kz, thf + Math.atan2(-nu, -nv), Object.assign({ group: 'city', talks: ['*'], alien: 'flee', lines: O.keepLines, beat: [[kx, kz]] }, K), y, 'PLAZA', 'city'); O.n++; }
+  }
+  F.commit();
+  // THE ROUTES, into the world once
+  O.routes = O.ROUTES.map(R => { const path = R.path.map(([u, v]) => ({ x: wx(u, v), z: wz(u, v) })); let len = 0;
+    for (let i = 1; i < path.length; i++) len += Math.hypot(path[i].x - path[i - 1].x, path[i].z - path[i - 1].z);
+    return Object.assign({}, R, { path, len }); });
+  // THE SIT-IN: a fan round the stage's front, each facing it; Marisol on it
+  O.byId = {};
+  const T = O.STAGE, sx = wx(T.u, T.v), sz = wz(T.u, T.v);
+  O.CROWD.forEach((P, i) => {
+    const a = -1.2 + i / (O.CROWD.length - 1) * 2.4 + (rr() - .5) * .15, r = 4.2 + (i % 3) * 1.4 + rr() * .6, u = T.u + Math.sin(a) * r, v = T.v - T.d / 2 - Math.cos(a) * r;
+    P.id = 'pplaza_' + i; P.i = i; P.sit = [wx(u, v), wz(u, v)]; P.cur = null; O.byId[P.id] = P;
+    peopleMark(P.id, P.sit[0], P.sit[1], Math.atan2(sx - P.sit[0], sz - P.sit[1]), Object.assign({ group: 'city', talks: ['*'], alien: 'flee', lines: O.lines }, P), y, 'PLAZA', 'city'); O.n++;
+  });
+  { const S = O.SPEAKER; S.id = 'pplaza_marisol'; S.horn = 1; S.sit = [wx(T.u, T.v + .3), wz(T.u, T.v + .3)]; O.byId[S.id] = S;
+    peopleMark(S.id, S.sit[0], S.sit[1], thf + Math.PI, Object.assign({ group: 'city', talks: ['*'], alien: 'flee' }, S), y + T.h, 'PLAZA', 'city'); O.n++; }
+  // the chants: the call over her, the answer over them
+  const chant = () => { const cv = protestPaint('', 'rgba(0,0,0,0)', '#fff', 512, 128), tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;
+    const S = new THREE.Sprite(new THREE.SpriteMaterial({ map: tx, transparent: true, depthWrite: false, fog: false }));
+    S.scale.set(5.2, 1.3, 1); S.visible = false; S.renderOrder = 6; S.userData.cv = cv; S.userData.tx = tx; scene.add(S); return S; };
+  O.chant = chant(); O.chant2 = chant();
+  O.mid = [wx(P0[0], P0[1]), wz(P0[0], P0[1])]; O.y = y;
+  O.outAt = [wx(-5, 37), y + .1, wz(-5, 37), thf];          // GOD: outside the south barricade, looking at it
+  O.st = 'sit'; O.t = rnd(O.first);
+  return O.gates.length;
+}
+// is he walking inside the Pearl's march? -- it is out (formed up, marching, holding, coming back) and he is within
+// `join` of the middle of it
+function pearlCrowd() { const O = OPLAZA; return !!O.routes && O.st !== 'sit' && !!O.cc && Math.hypot(player.pos.x - O.cc[0], player.pos.z - O.cc[1]) < O.join; }
+function plazaStart(ri) {
+  const O = OPLAZA; if (!O.routes) return false;
+  O.ri = ri !== undefined ? ri : O.runs % O.routes.length; O.runs++; O.st = 'form'; O.t = O.form; O.s = 0;
+  if (Math.hypot(player.pos.x - O.mid[0], player.pos.z - O.mid[1]) < 80) toast('THE PEARL MARCHES -- ' + O.routes[O.ri].label, 2.6);
+  return true;
+}
+function plazaStep(dt) {
+  const O = OPLAZA; if (!O.routes || !inTK()) return;
+  O.t -= dt;
+  // the chant -- call over Marisol, answer over the crowd, one at a time -- only near enough to read
+  const near = Math.hypot(player.pos.x - O.mid[0], player.pos.z - O.mid[1]) < O.near;
+  if (!near) { O.chant.visible = O.chant2.visible = false; }
+  else if ((O.cT -= dt) <= 0) {
+    O.cT = 1.7; O.cI = (O.cI + 1) % 24;
+    const p = O.CHANT[(O.cI >> 1) % O.CHANT.length], ans = O.cI & 1;
+    protestChant(ans ? O.chant2 : O.chant, p[ans], ans, 1); O.chant.visible = !ans; O.chant2.visible = !!ans;
+  }
+  if ((O.tick -= dt) > 0) return; const step = .5 - O.tick; O.tick = .5;
+  const all = DUMMIES.filter(d => !d.gone && d.markId && d.markId.startsWith('pplaza_') && !isAlien(d.K));
+  const crowd = all.filter(d => O.byId[d.markId] && O.byId[d.markId].i !== undefined), spk = all.find(d => d.markId === 'pplaza_marisol');
+  for (const d of all) { const P = O.byId[d.markId]; if (!P) continue; if (P.sign && !d.pSign) protestSign(d, P.sign); if (P.horn && !d.pHorn) plazaHorn(d); }
+  const free = d => !(d.fleeT > 0) && d.st !== 'down' && d.st !== 'up' && d.st !== 'hit';
+  const R = O.routes[O.ri];
+  // the state
+  if (O.st === 'sit') {
+    if (O.t <= 0) plazaStart();
+    else if ((O.shufT -= step) <= 0) { O.shufT = 6 + Math.random() * 8; const P = O.CROWD[(Math.random() * O.CROWD.length) | 0]; if (P.sit) P.cur = [P.sit[0] + (Math.random() - .5) * 2.4, P.sit[1] + (Math.random() - .5) * 2.4]; }
+  } else if (O.st === 'form') { if (O.t <= 0) O.st = 'out'; }
+  else if (O.st === 'out' || O.st === 'back') {
+    let lag = 0, n = 0;
+    for (const d of crowd) { if (!free(d) || !d.pT) continue; lag += Math.hypot(d.root.position.x - d.pT[0], d.root.position.z - d.pT[1]); n++; }
+    if (!n || lag / n < O.lag) O.s = O.st === 'out' ? Math.min(R.len, O.s + O.speed * step) : Math.max(0, O.s - O.speed * step);
+    if (O.st === 'out' && O.s >= R.len) { O.st = 'hold'; O.t = R.hold; }
+    else if (O.st === 'back' && O.s <= 0) { O.st = 'sit'; O.t = rnd(O.quiet); }
+  } else if (O.st === 'hold') { if (O.t <= 0) O.st = 'back'; }
+  // everyone to their place: their spot round the stage, or theirs in the block round the leader point
+  let cx = 0, cz = 0, k = 0;
+  if (O.st === 'sit') {
+    O.lead = null;
+    for (const d of all) { const P = O.byId[d.markId]; if (!P || !P.sit) continue; if (P.i !== undefined) { cx += d.root.position.x; cz += d.root.position.z; k++; }
+      if (free(d)) { const s = P.cur || P.sit; protestTo(d, s[0], s[1]); } }
+    O.cc = null;
+  } else {
+    const L = O.lead = protestAt(O.s, R.path), h = O.st === 'back' ? L.h + Math.PI : L.h, fx = Math.sin(h), fz = Math.cos(h), rx = -fz, rz = fx;
+    for (const d of crowd) { const P = O.byId[d.markId]; cx += d.root.position.x; cz += d.root.position.z; k++;
+      if (!free(d)) continue;
+      const a = ((P.i % 4) - 1.5) * O.gapX, b = O.gapZ0 + (P.i / 4 | 0) * O.gapZ;
+      protestTo(d, L.x + rx * a - fx * b, L.z + rz * a - fz * b); }
+    if (spk && free(spk)) protestTo(spk, L.x + fx * 1.3, L.z + fz * 1.3);
+    O.cc = k ? [cx / k, cz / k] : [L.x - fx * 2.5, L.z - fz * 2.5];
+  }
+  // the chants follow them
+  const yC = O.y + 3.7;
+  if (k) O.chant2.position.set(cx / k, yC, cz / k); else if (O.cc) O.chant2.position.set(O.cc[0], yC, O.cc[1]); else O.chant2.position.set(O.mid[0], yC, O.mid[1]);
+  if (spk) O.chant.position.set(spk.root.position.x, spk.root.position.y + 2.7, spk.root.position.z);
+  else if (O.lead) O.chant.position.set(O.lead.x, yC, O.lead.z); else O.chant.position.set(O.mid[0], yC + .4, O.mid[1]);
 }
 // ============================================================================================
 // PORTALS (m286, ROADMAP A8b) -- no one-way trips
@@ -35289,6 +35486,7 @@ const GODPLACES = [
   { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
   { id: 'pearl', world: 'tkit', name: 'THE PEARL · the plaza (Chapter 2)', at: () => OPEARL.plazaAt },
+  { id: 'pearlbar', world: 'tkit', name: 'THE PEARL · the barricade across the dock street (outside it)', at: () => OPLAZA.outAt },   // m360
   { id: 'mags', world: 'tkit', name: "OLD TOWN · Mags's newsstand (a hidden good alien)", at: () => (OGOOD.KIOSKS[0] || {}).godAt },
   { id: 'pruitt', world: 'tkit', name: "OLD TOWN · Pruitt's key-cutting kiosk (a hidden good alien)", at: () => (OGOOD.KIOSKS[1] || {}).godAt },
   { id: 'ines', world: 'tkit', name: "OLD TOWN · Ines's alterations (a hidden good alien)", at: () => (OGOOD.KIOSKS[2] || {}).godAt },
@@ -35446,6 +35644,8 @@ function godMenuOpen(on) {
   if (OORB.g) btn('THE PACIFIER ORB: ' + (OORB.st === 'up' ? 'UP' : 'RAISE IT AGAIN'), () => { if (OORB.st !== 'up') { progFlag('orb:pacifier', 0); OORB.st = 'up'; OORB.hpNow = OORB.hp; OORB.g.visible = true; OORB.T.on = 1; OORB.cone.visible = true; OORB.core.material.emissiveIntensity = 2.6; } godMenuOpen(1); });
   if (OPROTEST.path) btn('START THE PROTEST NOW (' + OPROTEST.st.toUpperCase() + ')', () => { protestStart(); godMenuOpen(0); toast('The protest is gathering at the square', 2); });
   // both sides to the rally first (they live 43 m apart), then it goes off 12 s later
+  // m360: the Pearl's march, either route
+  if (OPLAZA.routes) OPLAZA.routes.forEach((R, i) => btn('THE PEARL MARCHES ' + R.label + ' (' + OPLAZA.st.toUpperCase() + ')', () => { godMenuOpen(0); plazaStart(i); toast('The Pearl is forming up ' + R.label.toLowerCase(), 2.2); }));
   if (OPROTEST.path) btn('SKIP TO THE RALLY, THEN THE BRAWL', () => { const O = OPROTEST; godMenuOpen(0); protestStart(); O.st = 'rally'; O.s = O.len; O.t = O.rally; O.provoked = null; O.provokeAt = 12; toast('Rally at the corner lot; it goes off in 12 s', 2.4); });
   // m343: district health -- push it by hand to see the bands (and, from C0-2, the look) change; the strike
   if (inTK() && DHEALTH.on) {
@@ -37030,6 +37230,7 @@ function frameBody() {
   decayStep(dt);                // ...and the look following it: boards, rubble, litter, squatters (m344)
   strikeStep(dt);               // the crews on the picket line, or back at work (m345)
   protestStep(dt);              // the protest: gather, march, rally, home (m346)
+  plazaStep(dt);                // the Pearl's sit-in, its chant, and its march out through the barricades and back (m360)
   incurStep(dt);                // a Skinsuit ship over Old Town now and then (m349)
   orbStep(dt);                  // the pacifier orb: its trance, its crackle, its fall (m350)
   smartStep(dt);                // smart objects: people use the furniture (m354)
@@ -37783,6 +37984,8 @@ async function init() {
     try { buildDecay(); } catch (e) { note('DECAY FAIL'); console.warn('[melee] decay', e); }
     // THE PEARL (m359): past dock 1, through its door
     try { buildPearl(); } catch (e) { note('PEARL FAIL'); console.warn('[melee] pearl', e); }
+    // THE PLAZA'S PROTEST AND ITS BARRICADES (m360)
+    try { buildPearlPlaza(); } catch (e) { note('PLAZA FAIL'); console.warn('[melee] plaza', e); }
     // THE STRIKE'S PICKET (m345): hidden until the crews walk out
     try { buildStrike(); } catch (e) { note('STRIKE FAIL'); console.warn('[melee] strike', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)
@@ -37959,7 +38162,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

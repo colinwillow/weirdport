@@ -7,6 +7,39 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE PLAZA IS SEALED BY FOUR BARRICADES THAT ARE GATES ALONG THEIR WHOLE LENGTH, AND ANYBODY MAY LEAVE (m360, C6-2,
+  `OPLAZA`, `buildPearlPlaza`, `plazaStep`, `plazaStart`, `pearlCrowd`, `GATE_TYPES.pbarricade`, `G.free`).** Four junk walls
+  (pallets, drums, jersey barriers, a sofa, crates) close the four streets between the plaza's four warehouses, each with
+  a 5 m door, a banner over it and a keeper just inside (Bex, Tully, Ozzie, Fern). The junk is what you see and what stops
+  BODIES; a `pbarricade` gate over the whole line is what stops YOU (up to 4 m, so nobody hops the sofa: his jump is
+  2.8 m). Each line's ends run on into warehouse walls (`BARS` in deck space, checked inside the boxes by `places`).
+  **`G.free` IS NEW AND GENERAL**: the side anybody may cross FROM. The barricades keep people out, not in, so the GOD place
+  inside the plaza is not a trap, and walking out does NOT set `gate:<id>` (only getting IN counts). In: a `city` form
+  inside the march (`pearlCrowd`: it is out and you are within 5 m of its middle) -- `gateLets`' `crowd` field now names
+  WHICH march (`'pearl'`), and Old Town's police line still asks `protestCrowd`.
+  **THE SIT-IN AND THE MARCH**: twelve people (signs: `protestSign`) in a fan round a low stage (.35 m, a banner behind),
+  Marisol on it with a megaphone on her root (`plazaHorn`); the call shows over her, the answer over them, one at a time
+  (`protestChant(..., own)` -- `own` keeps the Old Town amplifier's red off it), painted only within 130 m. Every 70-120 s
+  (the first 25-40 s in): FORM (8 s) -> OUT along a route -> HOLD 14 s -> BACK -> SIT, alternating TO THE DOCK (out the
+  south door, down the dock street to dock 1) and TO THE FAR PIER (out the north door, round the pinch-point container).
+  The leader point moves only while they keep up (`OPROTEST`'s rule); `protestAt` takes a path now. Someone shuffles to a
+  new spot every 6-14 s in the sit-in.
+  **W4, THE ORGANISER'S BUILDING, FACES SOUTH**, into the west lane -- OUTSIDE the plaza. C6-1's comment and my own first
+  reading said east; `buildPearl` picks the face nearest the plaza by aspect, and the numbers said south. The flood's
+  "lane west" sample sat on that platform's edge and read as unreachable, which is how it was found.
+  **Juno moved out to the dock street** (the first person past the door, and she says why the plaza is shut); Saffron moved
+  inside (she was standing on the west barricade's line).
+  `npm run places` (147 rows, exit 0):
+      ok  pearlbar   -> player -219.2,2.6,-69.0 ground 2.40
+      ok  PEARL 143 boxes, 8 warehouses | the dock platform 1.1, behind the door 1.1, the pier 0, dock street 0, the plaza 0 | locals Wren, Juno, Saffron, Pip
+      ok  PLAZA 4 barricades, flood 1468 cells, sealed | doors south 0.00, west 0.00, north 0.00, east 0.00 | routes dock 48 m, pier 42 m | march form > out > hold > back > sit | 17 people
+  **The flood was tested by breaking it**: with the west barricade left out of the check it reads `flood 5729 cells LEAKS TO
+  the dock street, the lane west, the far pier, the east gap, behind the studios`, exit 1. The first version of the
+  flood had its cell centres on the integer grid, and the south and north lines sit on whole metres: a step ONTO a line
+  and a step OFF it are both "touching", neither a crossing, and it leaked through every barricade. The cells are offset
+  (.37, .41) now.
+  **Not built:** the swell, any counter-protest or clash (C6-4), drums or a crowd sound (no recording), and the rooftop way
+  over (C6-3).
 - **THE PEARL STARTS BEHIND DOCK 1'S DOOR, ON PIERS, AND EVERY DECK CARRIES ITS OWN RAILS (m359, C6-1, `OPEARL`,
   `buildPearl`, `pearlMural`, `FT.frame`).** Chapter 2's district, greyboxed: three pier decks (A, B, C, each at its own
   slight angle) on piles over the water past the footbridge's dock, a plaza at [-2, 63] in deck space, eight warehouses
