@@ -65,6 +65,8 @@ What to build (several builds; ship each step, never wait):
    through backyards and fence gaps on the town edge. Early on, block or hide the extras (a grate,
    broken planks, a dog in the yard) so the checkpoint still teaches; they open later with forms or
    Clancy. Each route bends, crosses over or under another one, and has something on it.
+   Split: **7b-1 the old rail trestle (broken for now) and the backyards it comes down into — done m319.**
+   7b-2 the shallow ford downstream with cows drinking, and the creek culvert.
 8. **Prove it**: `npm run places` passes with every GOD farm place moving him onto the new land, and the
    crash spawn landing at the wreck. **Screenshots allowed and wanted** for this work: a wide shot from a
    ridge showing fields, buildings and the distant skyline, and one of the road through the transition.
@@ -541,4 +543,9 @@ differ" table there, so no region feels like the last one.
   city ring is now merged by paint type into 200 m patches: 108 separate draws became 71, and the
   ones behind you aren't drawn at all. It should look exactly the same. If anything looks different
   (wrong colour, missing paint), GOD has a FARM BATCHING switch to compare with it off.
+- **m319 (farm rebuild, step 7b-1):** a second way over the channel: an old wooden rail trestle west
+  of the bridge, on an embankment out of the south wheat. It bends toward town and comes down behind
+  a house whose back fence is broken, a way through the backyards past the checkpoint. For now a
+  19 m stretch of it has fallen in (too far to jump), so the checkpoint still teaches; it opens later
+  with a form or Clancy.
 

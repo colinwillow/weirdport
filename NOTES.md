@@ -7,6 +7,103 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE OLD RAIL TRESTLE: A SECOND WAY OVER THE CHANNEL, BROKEN FOR NOW (m319, step 7b-1, `FTRES`, `buildTrestle`, `ringHouse` gap).**
+  REGIONS' connective tissue (never one road): west of the bridge an earth embankment climbs out of the south wheat
+  (`FTRES.cut`, a margin in `fpOwner`: no crop on it, a gap in the hedges) to a timber trestle -- bents of two posts,
+  X-braces and a cap every 5 m standing on the REAL seabed (the higher of `flHeightAt` and `isleBedAt`, floored at
+  sea - 12), ties every .65 m, two rusted rails, no parapet -- that runs straight out, BENDS toward the city, and
+  comes down a short ramp into the island's ring behind a house whose back fence is BROKEN (`FRING` row at 346 deg,
+  `gap`): the way through the backyards into town without passing the checkpoint. No ring trees on its landing.
+  **Measured, not assumed**: a probe along the whole 225 m every metre (`groundAt` a step above the last footing)
+  found footing everywhere but the broken stretch. **The first break was 8 m in b, which removed ONE 5 m span and
+  left a 4 m hole -- jumpable at a run** (`MOVE.jump` 10.6, g 20: ~1.06 s of air, 7.4 m at 7 m/s). It is
+  b -170..-188 now and the probe reads 19 m with no footing, which nothing on foot clears: the extras are blocked
+  so the checkpoint still teaches (STEER 7b); a form or Clancy opens it later.
+  GOD `trestle` (the farm end) and `backyards` (where it comes down). 7b-2 (the stepping-stone ford with cows
+  drinking, and the creek culvert) follows.
+  `npm run places`, after the bump:
+  ```
+  ok   buildFarmland
+  ok   buildFarmWaters
+  ok   buildFieldBounds
+  ok   buildFieldCrops
+  ok   buildNeighbours
+  ok   buildFarm
+  ok   buildFarmProps
+  ok   buildCrash
+  ok   crashHero
+  ok   buildLane
+  ok   buildBridge
+  ok   buildHedgerows
+  ok   buildFarmhouse
+  ok   buildRoadside
+  ok   buildCows
+  ok   buildVehicles
+  ok   buildFarmhands
+  ok   buildTownEdge
+  ok   buildCityRing
+  ok   buildTrestle
+  ok   farmBatch
+  ok   buildGroundPaint
+  ok   buildFlora
+  widest grass 66.5 at 172deg | headland ray 7deg grass 38.2 need 60 | rays 520 rect [-93.5,90.5,-90.3,93.5]
+  FARM.at {"x":333.8,"z":150.5,"th":1.281} | CRASH.at yes | LANE.at yes | BRIDGE.gate yes (side 0) | ISLE.live 1
+  FARMLAND live [ 354, 196 ] chunks 9 floor tris 12344 water tris 8346 | BRIDGE len 166 piers 5 gate [112,64]
+  FWATER 7 boxes, reeds 31 | pond level 0.1 | creek bed [ 5.19, -8.5 ] len 255
+  FPLAN 1681 boxes: hedge 380 fence 383 hedge oaks 97 tree line 10 | m2: margins 69.8k barnyard 3.7k, houseyard 1.7k, townedge 4.1k south_wheat 4.5k, south_plough 3.4k, pond_pasture 2.2k, west_corn 4.4k, west_hay 4.0k, west_hill 6.7k, lone_barn_hay 4.9k, north_plough 4.7k, far_hill 4.7k, north_wheat 2.9k, ridge_corn 3.0k, neighbour 6.4k, ridge_pasture 4.9k, creek_meadow 4.3k, crash_wheat 5.9k, east_corn 2.8k, far_east_hay 2.7k, east_pasture 5.2k, knoll 5.7k, home_corn 4.2k, home_pasture 2.2k, orchard 2.6k, creek_pasture 2.9k
+  FCROP 38496 clumps in 21 chunks {"south_wheat":3462,"pond_pasture":286,"west_corn":2982,"west_hay":2168,"west_hill":3836,"lone_barn_hay":2687,"far_hill":728,"north_wheat":2408,"ridge_corn":1884,"ridge_pasture":747,"creek_meadow":2409,"crash_wheat":5000,"east_corn":1767,"far_east_hay":1484,"east_pasture":819,"knoll":2032,"home_corn":2756,"home_pasture":320,"orchard":316,"creek_pasture":405}
+  ok  COWS 30 {"paddock":3,"far_hill":5,"ridge_pasture":6,"east_pasture":5,"pond_pasture":4,"home_pasture":4,"creek_pasture":3} all in their pastures
+  FVEH tractor 28 pts, pickup 7 pts
+  ok  FARMHANDS Dale (hobo) 299,75 | Wendell (hobo) 483,59 | Mags (hobo) 337,222 | Earl (hobo) 418,153 | Farmer Gristle (farmer) 322,149 
+  FBATCH on 111 static meshes -> 73 batched, 7 left out, 110398 tris | meshes in the scene now 156
+  FTRES 68 boxes+tris, farm end [313.2,65.2,-2.1] city end [98.3,-9.3]
+  FTOWN 71 boxes, poles 4 | FRING 179 boxes, houses 11 trees 48
+  FROAD 3 road pts NONE foot null | FHOUSE 34 chimney [376.8,11.8,208.3] | HROW 0 boxes 0 trees 0 gates | FLORA {"tufts":900}
+  notes ["TC NO OBB JSON","ISLE 0/3 TEX"]
+  ok  oldtown    -> player 0.0,0.1,0.0 ground 0.00 
+  ok  overlook   -> player 464.3,9.1,68.0 ground 8.99 
+  ok  ploughing  -> player 409.0,2.2,172.2 ground 2.03 
+  ok  pickup     -> player 316.3,1.4,137.8 ground 1.29 
+  ok  trestle    -> player 313.2,0.5,65.2 ground 0.39 
+  ok  backyards  -> player 98.3,-0.0,-9.3 ground -0.17 
+  ok  warehouse  -> player 94.3,0.0,28.5 ground -0.12 
+  ok  gas        -> player 262.7,0.7,111.7 ground 0.52 
+  ok  trailers   -> player 227.8,1.8,161.0 ground 1.64 
+  ok  herd       -> player 465.5,4.1,238.3 ground 3.95 
+  ok  neighbour  -> player 397.4,6.0,284.6 ground 5.88 
+  ok  haybarn    -> player 477.7,5.9,142.2 ground 5.72 
+  ok  circle     -> player 271.6,0.6,347.9 ground 0.48 
+  ok  swell      -> player 294.5,0.7,343.3 ground 0.50 
+  ok  fplough    -> player 429.9,2.2,166.6 ground 2.05 
+  ok  creek      -> player 306.6,1.5,245.6 ground 1.35 
+  ok  pond       -> player 363.6,1.5,63.8 ground 1.36 
+  ok  channel    -> player 241.6,0.5,134.3 ground 0.34 
+  ok  farmyard   -> player 320.1,1.5,152.7 ground 1.32 
+  ok  hayloft    -> player 333.7,4.7,156.8 ground 9.00 
+  ok  crash      -> player 284.8,0.8,333.3 ground 0.69 
+  ok  corn       -> player 367.8,1.4,113.3 ground 1.28 
+  ok  wheat      -> player 291.5,0.3,56.8 ground 0.15 
+  ok  orchard    -> player 331.2,2.8,222.0 ground 2.62 
+  ok  farmhouse  -> player 367.2,1.8,206.2 ground 1.64 
+  ok  windmill   -> player 341.2,1.6,154.2 ground 1.42 
+  ok  scarecrow  -> player 368.8,1.4,107.4 ground 1.20 
+  ok  tractor    -> player 327.2,1.5,139.8 ground 1.33 
+  ok  paddock    -> player 340.7,1.6,157.1 ground 1.42 
+  ok  lane       -> player 320.6,1.5,140.3 ground 1.31 
+  ok  road       -> player 336.6,1.5,118.1 ground 1.36 
+  ok  bridge     -> player 112.1,3.0,63.6 ground 2.80 
+  every tkit GOD place is somewhere
+  ok  vehStep        30 frames
+  ok  farmPropsStep  30 frames
+  ok  farmhouseStep  30 frames
+  ok  floraStep      30 frames
+  ok  cowStep        30 frames
+  ok  crashStep      30 frames
+  ok  crashHeroStep  30 frames
+  ok  riverStep      30 frames
+  ok  gradeStep      30 frames
+  ```
+
 - **THE FARM'S STATIC MESHES ARE BATCHED BY PAINT KIND AND CELL (m318, STEER step 7, `FBATCH`, `farmBatch`, `fbKey`, `farmPaintKind`).**
   Every builder since m288 works in its own `farmFrame` with its own materials and `commit` merged per material only
   WITHIN that frame: 108 static meshes, a draw call each, most in view from a hill with the fog at 950. After every
