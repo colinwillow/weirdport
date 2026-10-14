@@ -69,6 +69,38 @@ Each region's lock is a kind of obstacle (a fire wall, a police cordon, a broken
 barricade, a gap) and each needs a particular form. Forms stack: once you have one, it is in your
 form wheel for good.
 
+## Direction and discovery: guided at first, then a mix
+
+Not pure Zelda, where half the time you don't know what to do, and not a checklist either. It's a
+phone game, so there is always something to go and do, but plenty is left for you to find.
+
+**The arc:**
+1. **Early on, a clear guide.** Chapter 0 tells you what to do next, one step at a time, until you
+   learn the big idea: everyone runs from an alien, so you have to become a local before anyone
+   will talk to you.
+2. **Then a mix of two kinds of lead:**
+   - **Tasks** come from someone you've talked to. A card pops up ("New task: …"), the task goes in
+     your list, and you get a **marker on the map and a waypoint in the world** that shows the
+     distance. Go to it. You always have at least one of these, so you're never lost.
+   - **Rumours** are vague, and you have to work them out: *"I heard the man at the top of the hill
+     knows a thing or two."* A rumour goes in a separate list with no marker, or at most a rough
+     circle on the map. Following one up is often how the best stuff is found: side quests, secrets,
+     new forms.
+3. **Later regions lean more on rumours and less on markers.** The world opens up and you know how it
+   works.
+
+**Who will talk to you depends on who you are (soft social friction).** The form you're wearing
+changes how people react, and some people only open up to their own kind:
+- As the **alien**, everyone screams and runs, and the cops come.
+- As a **local of the wrong type**, people don't run but they cold-shoulder you. Country folk are
+  wary of city types; hipsters roll their eyes at a redneck; a cop gets short with the homeless; the
+  rich won't give a hobo the time of day. You get a short brush-off line, not a conversation.
+- As **one of their own**, they talk properly: directions, rumours, tasks, and the good stuff.
+
+So some leads need a particular form before the person will talk ("only a farmhand will get anything
+out of old Mabel"). Keep it light and funny, satire that lands on everyone equally, never mean or
+crude. It should feel like the town's attitude, not a lecture.
+
 ## Who's out there
 
 **The alien races** (Reptilians at the top, Greys as the drone workforce behind Uplift Corp,

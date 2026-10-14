@@ -180,6 +180,17 @@ differ" table there, so no region feels like the last one.
   - [x] m291 **B1d The road and the bridge** — the road climbing from the farm to a bridge into town (split: the cows are B1d2).
   - [x] m294 **B1d2 The cows** — cows that moo and wander the farm.
   - [ ] **B1e From REGIONS.md's Gristle Farm entry, not in m288** — a rope down from the hayloft, the silo ladder made climbable, an orchard terrace, and cows that panic and stampede (its signature system).
+- [ ] **B1f Direction and discovery** (see the new section in `GAME_DESIGN.md`). Build on m278's quests:
+  - a **"New task" card** when a task unlocks, and a **task list** you can open;
+  - the waypoint in the world shows the **distance** in metres, and the map marker matches it;
+  - **rumours**: lines that add an entry to a rumour list with no marker (or a rough circle), resolved
+    when you find the thing;
+  - **who talks to whom**: each speaker has a list of forms it talks to properly, forms it
+    cold-shoulders (a short brush-off line), and the alien makes it flee. A task can require a form
+    to start ("only talks to farmhands"). Keep the lines light and funny, never mean.
+  - Chapter 0 uses it: the farmer's family brush off the alien; as the farmer, a neighbour at the
+    farm shop gives you the bridge task (marker + waypoint) and a rumour about the man at the top of
+    the hill (no marker).
 - [ ] **B2 Chapter 0 script.** Crash → find Clancy → the farmer sees you and panics → knock him
   down → take his sample → walk to the bridge as him → the cop checkpoint lets the farmer through
   (and stops the alien) → Old Town, fog lifts. Tutorial prompts along the way.
