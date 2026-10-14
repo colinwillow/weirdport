@@ -46,6 +46,12 @@ What to build (several builds; ship each step, never wait):
    (scattered houses, yards, fences, trees on the ring) so the kit city doesn't end at a ruler line.
 7. **Phone cost**: instance everything repeated (trees, fence posts, bales, cows, crop stalks), merge
    per material, chunk the terrain, and keep draw calls in the tens. Distance fades the small stuff.
+7b. **More than one way from the farm to town** (the new "connective tissue" rules in `REGIONS.md`): the
+   bridge checkpoint is the main route the tutorial teaches, but also build a creek culvert under the
+   road, an old rail trestle over the river, a shallow ford downstream with cows drinking, and a way
+   through backyards and fence gaps on the town edge. Early on, block or hide the extras (a grate,
+   broken planks, a dog in the yard) so the checkpoint still teaches; they open later with forms or
+   Clancy. Each route bends, crosses over or under another one, and has something on it.
 8. **Prove it**: `npm run places` passes with every GOD farm place moving him onto the new land, and the
    crash spawn landing at the wreck. **Screenshots allowed and wanted** for this work: a wide shot from a
    ridge showing fields, buildings and the distant skyline, and one of the road through the transition.
@@ -117,6 +123,10 @@ can't get to it, it isn't done.
 - **After the farm looks right:** B1e, then B2, then on down the list.
 
 ## Standing rules for anything built in the world
+
+- **Connective tissue:** between any two regions, build several irregular routes of different kinds
+  (water, crossings, over and under, open ground), never a single road and never a straight border.
+  Read "The connective tissue" in `REGIONS.md`.
 
 Read `GAME_DESIGN.md` → "The world: dense, vertical, organic, alive" before building any place.
 **Intimate, vertical, organic, interactive, and one place finished at a time.** Never a flat plane

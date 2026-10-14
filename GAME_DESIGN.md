@@ -141,6 +141,10 @@ and nothing between them.
 - **No borders that are lines.** Where two places meet there is a transition zone you travel
   through: the city thins into suburbs, then a gas station, a trailer park, scattered houses and
   billboards, then fences and fields. Never a straight edge with one place on each side of it.
+- **Many ways between places.** Regions are separate, but joined by irregular connective tissue:
+  creeks and channels, culverts, bridges, underpasses and overpasses, fields, tree lines, yards,
+  hillside paths. Every neighbouring pair has several routes of different kinds (see "The connective
+  tissue" in `REGIONS.md`), so the world feels connected and every region still feels distinct.
 - **Vertical, always.** Every place has layers: street, stoops and kerbs, balconies, fire escapes,
   rooftops, bridges and walkways over the street, stairs down to cellars, canals, sewers below.
   Places stack and overlap; you can go over and under the same spot.
