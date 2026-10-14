@@ -7,7 +7,7 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
-- **THE SKY ON KTX2, AND THE HUE READ OFF THE GPU (m426, F0a-2d-3, `skyLoad`, `hueReadGPU`, `measureHue`).** `scene.background`
+- **THE SKY ON KTX2, AND THE HUE READ OFF THE GPU (m427 -- the bump ran twice this pass, the commit says m426; F0a-2d-3, `skyLoad`, `hueReadGPU`, `measureHue`).** `scene.background`
   is the equirect itself (three draws it through its own sampler every frame), so the 8 MB PNG was resident for the sky,
   not only for the PMREM. The twin (`images/hdri_game.ktx2`, UASTC with mips, 1774 x 887) is the GPU texture;
   `skyBandLin` still needs pixels for the fog colour, so the PNG is fetched as an `Image` (never a THREE texture), read
