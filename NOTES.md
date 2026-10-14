@@ -7,6 +7,20 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE GLIDER'S FORM FLIES HER FLIGHT UNDER A HANG GLIDER (m356, C4-1, `gliderOn`, `wingOk`, `wingGlider`).** `wingOk`
+  was `WING.on && bladeOn()` -- Rollergirl only. It is `bladeOn() || gliderOn()` now, `gliderOn` being the form you wear,
+  settled (`!mphSt`), named as the ROSTER's `glider` stem (Jack, standing in -- his model is one roster line). Nothing else
+  in the flight is hers: the double tap of the right pad (`wingTapR`), `wingFly`, `stepWing` and `wingPose` already read
+  only the player, and the wings already ride WHATEVER `rig.model`'s Spine2 is. What he wears instead of her panels is a
+  delta sail (orange left half, yellow right) with a keel, two leading edges and the A-frame down to his hands, built in the
+  wings' own body frame (+X his left, +Y up his spine, +Z his front -- so "over him", lying prone, is -Z, where her pack
+  already sits) as a child of the wings' group, so it rides every pose they do; her panels, jets and tip sparks hide while
+  it shows. The `gap` gate now needs `jack` (the roster's glider stem) -- `'glider'` was a stem no file has, so no form
+  could ever pass a gap.
+  **A HEADLESS PROBE SAID THE FORM TAKES THE WINGS** (`mel.dna('jack')` settles after ~15 s of SwiftShader, then
+  `wingSet(true)` returns true and `p.wing` is 1), **AND COULD NOT PICTURE THE FLIGHT**: at a few seconds a frame he is on
+  the ground before the sail has grown in. `npm run shot glider` is the row for a faster machine. Shipped unverified.
+
 - **UPLIFT CYBORGS: A ROLE THAT BEHAVES, NOT A KIND (m355, C3, `UPLIFT`, `buildUplift`, `cyborgStep`, `cyborgRevert`).**
   Every body whose `d.role` is the roster's `cyborg` (a worker, steel tint, red visor) gets PARTS on its root the first
   frame it is seen (shoulder plates, a back unit, a red chest light, a red scan cone from the head) and the behaviour:

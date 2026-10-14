@@ -85,6 +85,10 @@ const SHOTS = {
       return [G[0] + fx * 11 + fz * 4, G[1] + 3.2, G[2] + fz * 11 - fx * 4, G[0] + fx * 2, G[1] + 1.4, G[2] + fz * 2]; })()` },
   barricade: { place: 'barricade', settle: 3, pre: process.env.SHOT_PRE || '', why: 'the police line across the march, from above (C1-3)',
     cam: `(() => { const L = mel.OPROTEST.lineAt; return [L[0] - Math.sin(L[3]) * 16, 30, L[2] - Math.cos(L[3]) * 16, L[0], 0, L[2]]; })()` },
+  glider: { place: 'beat', settle: 18, pre: "mel.dna('jack')", mid: "mel.wingSet(true); mel.player.pos.y += 40; mel.player.vel.y = 0", midT: 5,
+    why: "the glider's form in flight under his hang glider (C4-1)",
+    cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
+      return [p.x - fx * 7 + fz * 4, p.y + 3.5, p.z - fz * 7 - fx * 4, p.x, p.y, p.z]; })()` },
   wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
       return [C.x + sx * 16 - dx / L * 6, p.y + 7, C.z + sz * 16 - dz / L * 6, C.x, p.y + .5, C.z]; })()` },
@@ -126,6 +130,7 @@ try {
     const went = await page.evaluate(pl => mel.go(pl), S.place);
     if (S.pre) await page.evaluate(S.pre);
     await page.waitForTimeout(S.settle * 1000);
+    if (S.mid) { await page.evaluate(S.mid); await page.waitForTimeout((S.midT || 2) * 1000); }
     const url = await page.evaluate(cam => {
       const { renderer, scene, camera } = window.__shot, c = eval(cam);
       camera.position.set(c[0], c[1], c[2]); camera.lookAt(c[3], c[4], c[5]); camera.far = Math.max(camera.far, 600); camera.updateProjectionMatrix(); camera.updateMatrixWorld(true);

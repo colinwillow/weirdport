@@ -268,6 +268,8 @@ differ" table there, so no region feels like the last one.
 - [x] m355 **C3 Uplift cyborgs.** A cyborg variant of a worker (placeholder tint/parts until his models
   land) with its own behaviour.
 - [ ] **C4 The glider.** The hang-glider guy at a lookout; his form flies (reuse her wingsuit flight).
+  - [x] m356 **C4-1** his form flies: her wingsuit flight (double tap the right pad) under a hang glider instead of her wings; the gap gate wants his form.
+  - [ ] **C4-2** the lookout: a tower on Old Town's ring over the water, the glider guy on top with his glider, and a task to take his form and fly.
 - [ ] **C5 Hidden good aliens.** A network of disguised shopkeepers who give tips and upgrades.
 - [ ] **C6 Chapter 2 greybox (The Pearl)** with its quests and boss — then 3, 4…
 
@@ -852,3 +854,9 @@ differ" table there, so no region feels like the last one.
   you. That pushes the watcher's alert up, or brings police heat if the watcher is down. Knock one down
   twice and the implant shorts out, leaving a dazed ordinary worker. The pacifier's trance doesn't work
   on them. Their real home and the conversion line belong to the Waterfront chapter.
+
+- **m356 (C4-1):** the glider's form (Jack stands in for now; swapping in your model is one roster line)
+  flies Rollergirl's wingsuit flight with the same double tap of the right pad. Instead of her pink
+  panels he hangs under an orange and yellow hang glider. The "gap" gate needed a form called
+  "glider" that doesn't exist, so nothing could ever cross a gap; it now needs his form. The lookout
+  and the glider guy himself come next.
