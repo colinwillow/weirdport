@@ -281,9 +281,9 @@ differ" table there, so no region feels like the last one.
     - [x] m364 **C6-4c** the exposure: the organiser called down to the stage; knocked down in front of the crowd, it bursts (the boss); after, the strike ends and the crews go back; Chapter 2 complete.
   - [ ] **C6-5** Chapter 3 greybox (Hollow Creek, REGIONS 4), split:
     - [x] m365 **C6-5a** the land: its own landmass across the water, the hill, the bike-track ridges, the gorge and its stream, the two flats, the forest; GOD places.
-    - [ ] **C6-5b** the trailer park on stilts over the creek, and the logging mill with its flume and conveyors.
+    - [x] m367 **C6-5b** the trailer park on stilts over the creek, and the logging mill with its flume and conveyors.
       - [x] m366 **C6-5b-1** the trailer park on stilts: a boardwalk down the creek, seven trailers off it, ramps from the rims, a ladder to the water, four residents.
-      - [ ] **C6-5b-2** the logging mill on its flat by the gorge: the shed, the log deck, conveyors, a flume dropping into the creek.
+      - [x] m367 **C6-5b-2** the logging mill on its flat by the gorge: the shed, the log deck, conveyors, a flume dropping into the creek.
     - [ ] **C6-5c** the fairground and the dirt-bike track; the people (rednecks, bikers, rally-goers).
     - [ ] **C6-5d** the way in: the freight line out of Old Town over the water, and a second way (the highway shoulder).
     - [ ] **C6-5e** the rally, the region's living system: it builds, the leader speaks, it boils over.
@@ -946,3 +946,10 @@ differ" table there, so no region feels like the last one.
   trailers hang off it on stilts, each a step up or down, with porches, awnings and laundry. Two
   steel ramps come down from the rims and a ladder goes down to the water. Four residents only
   talk to country folk and tell anyone else it's private property.
+
+- **m367 (C6-5b-2) The logging mill.** The tin shed has an upper floor with a stair, and two
+  conveyors you can walk: one up from the log deck, one out to the smoking burner. There's a crane
+  with a ladder to its cab and a water tower. The flume runs from the upper floor down over the
+  gorge, and you can walk it all the way down and drop into the creek. That's my start on the
+  "down the log flume" route to the next region. I widened the mill's flat so everything stands
+  on level ground.

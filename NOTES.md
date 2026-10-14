@@ -7,6 +7,24 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE MILL: A SHED WITH AN UPPER FLOOR, CONVEYORS AND A FLUME YOU CAN RUN DOWN INTO THE GORGE (m367, C6-5b-2, `HCMILL`,
+  `buildMill`).** On its flat, in a frame whose +v points at the creek: a tin SHED (24 x 14 x 9, a pitched roof -- the
+  slopes are `rotateX(-s * a)`: the first sign had them falling toward the ridge), its walls laid ROUND their openings (the
+  big door, a slot for each conveyor and for the flume), an upper floor across the back half, a stair up the inside whose
+  top step ends AT that floor's edge (the first version tucked its last two steps under it -- it worked, and `places` said
+  SHORT, because the probe in front of the edge found the second-top step); the saw line, sawdust. The LOG DECK (piles
+  whose collider top is a floor), a log truck, a CRANE on a lattice tower with a ladder to its cab. CONVEYOR ONE from the
+  log deck up through the front wall onto the upper floor, CONVEYOR TWO out of the side wall up to the rusted teepee
+  BURNER (smoking: a `tame` fire on top) -- both `pearlSpan`. A WATER TOWER piping to THE FLUME: a plank trough from the
+  upper floor out through the front wall, level to the wall then easing down across the flat (`t^.85`), over the rim and
+  out over the gorge, its floor in `TRI` with a low wall each side, water in it, logs resting in it, trestles, a spill down
+  into the creek at its end -- walk in at its head on the upper floor and run it down to the gorge. Three loggers (the
+  rally man BOUGHT the mill; "friends in the city. Nice suits.").
+  **A FLAT IS ONLY LEVEL OUT TO .55 OF ITS RADIUS** (`hcBase`'s blend), and the mill stands out to 24 m: at r 26 the crane,
+  the burner, the truck and the water tower stood on ground that was already sloping, and the crane's ladder read
+  `NO FOOT`. The mill's flat is r 44 now. **Anything built at the flat's `y` must stand inside .55 r.**
+  `npm run places` (exit 0): `ok  hcmill -> player -317.3,9.1,319.0 ground 8.87`;
+  `ok  MILL 152 boxes | upper floor ok, stair ok | belts ok, ok | flume 29 pts floor all along, ends 10.7 m over the gorge | piles 0, 0, 0, 0 | crane ladder ok | Buck, Jolene, Hal`.
 - **THE TRAILER PARK HANGS OFF A BOARDWALK THAT FOLLOWS THE CREEK, NOT A RULER (m366, C6-5b-1, `HCTRAIL`,
   `buildTrailerPark`).** Down the gorge's bend (its point 5), in a frame along the creek: the walk is 4 m segments laid
   along the creek's own line (`cU(v)`: the gorge's points in this frame), at the LOWER rim minus .8 over the whole reach
