@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m374</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m375</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m374</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m375</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm374';
+const BUILD = 'm375';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -4336,6 +4336,8 @@ const BIKE = Object.assign(Object.create(SK8), {
   top: 27, roll: .035, brake: 18, turn: 2.2, turnHi: .6, acc: 8, slope: 7, min: .4, ollie: 8.5,
 });
 const PBIKE = { up: 0, root: null, model: null, bones: null, k: 1, wb: 1.6, rad: .28, low: -.28, seat: .65, steer: 0, spin: 0, lean: 0, h0: null, hips: null, hipsOf: null };
+// m375: BIG RAE'S, for the race -- the same file a third time, the same record; `lock`/`h` because `stepRide` seats her by them
+const RBIKE = { up: 0, root: null, model: null, bones: null, k: 1, wb: 1.6, rad: .28, low: -.28, seat: .65, steer: 0, spin: 0, lean: 0, h: 0, lock: 20 * Math.PI / 180 };
 function bikeOn() {
   const K = player.mphK;
   return !!(K && K.mode === 'bike' && PBIKE.up && inTK() && !player.mphSt && K.mph && rig.model === K.mph.model);
@@ -24902,9 +24904,11 @@ function stepRide(d, dt, t) {
   return 1;
 }
 
-// m374: THE PLAYER'S BIKE -- `buildMoto`'s measurements, into its own record (the ring bike is `MOTO`'s)
-function buildPlayerBike(g) {
-  const model = g.scene, B0 = PBIKE; model.updateMatrixWorld(true);
+// m374: THE PLAYER'S BIKE -- `buildMoto`'s measurements, into its own record (the ring bike is `MOTO`'s); m375: any record
+function buildPlayerBike(g) { bikeRecord(g, PBIKE, 'player'); }
+function buildRivalBike(g) { bikeRecord(g, RBIKE, 'rival'); racePark(); }
+function bikeRecord(g, B0, who) {
+  const model = g.scene; model.updateMatrixWorld(true);
   let lo = null, hi = null;
   model.traverse(o => { if (!(o.isMesh || o.isSkinnedMesh) || !o.geometry) return; o.geometry.computeBoundingBox(); const b = o.geometry.boundingBox;
     lo = lo ? lo.min(b.min) : b.min.clone(); hi = hi ? hi.max(b.max) : b.max.clone(); });
@@ -24920,23 +24924,30 @@ function buildPlayerBike(g) {
     for (const m of (o.material ? (Array.isArray(o.material) ? o.material : [o.material]) : [])) { if (!m.isMeshStandardMaterial) continue; m.side = THREE.FrontSide; if (m.map) { m.emissiveMap = m.map; m.emissive = new THREE.Color(0xffffff); } m.emissiveIntensity = RIG.emissive; } });
   const root = new THREE.Group(); root.add(model); root.visible = false; scene.add(root);
   B0.root = root; B0.model = model; B0.up = 1;
-  console.log('[melee] player bike: x' + k.toFixed(3) + ', wheelbase ' + B0.wb.toFixed(2) + ', wheel r ' + B0.rad.toFixed(2) + ', seat ' + B0.seat.toFixed(2));
-  if (!B.seat) note('PBIKE NO SEAT');
+  console.log('[melee] ' + who + ' bike: x' + k.toFixed(3) + ', wheelbase ' + B0.wb.toFixed(2) + ', wheel r ' + B0.rad.toFixed(2) + ', seat ' + B0.seat.toFixed(2));
+  if (!B.seat) note((who === 'player' ? 'PBIKE' : 'RBIKE') + ' NO SEAT');
 }
-// under him on his floor, along his heading, leaning and steering into the turn, the wheels turning
-function bikePose(dt) {
-  const p = player, B = PBIKE; if (!B.up || !B.root) return;
-  const on = !!(p.board && p.bike); B.root.visible = on; if (!on) { B.h0 = null; return; }
-  const v = Math.hypot(p.vel.x, p.vel.z), dh = B.h0 == null ? 0 : wrapAngle(p.boardH - B.h0); B.h0 = p.boardH;
+// a bike record to (x, z) on its floor at heading h, doing v: steered, leaned, its wheels turning (the player's and Rae's alike)
+function bikePlace(B, x, y, z, h, v, dt) {
+  if (!B.up || !B.root) return;
+  const dh = B.h0 == null ? 0 : wrapAngle(h - B.h0); B.h0 = h; B.h = h;
   const w = dt > 0 ? dh / dt : 0, want = clamp(Math.atan2(B.wb * w, Math.max(.5, v)), -MOTO.lock, MOTO.lock);
   B.steer = damp(B.steer, want, MOTO.ease, dt);
   B.lean = damp(B.lean, -(B.steer / MOTO.lock) * MOTO.lean * clamp(v / 6, 0, 1.5), MOTO.ease, dt);
   B.spin += v * dt / Math.max(.02, B.rad);
-  B.root.position.set(p.pos.x, p.pos.y + (p.stepOff || 0) - B.low + MOTO.lift, p.pos.z);
-  B.root.quaternion.setFromAxisAngle(AX_Y, p.boardH).multiply(_mq.setFromAxisAngle(AX_Z, B.lean));
+  B.root.visible = true;
+  B.root.position.set(x, y - B.low + MOTO.lift, z);
+  B.root.quaternion.setFromAxisAngle(AX_Y, h).multiply(_mq.setFromAxisAngle(AX_Z, B.lean));
   const Bn = B.bones;
   for (const key of ['front', 'back']) { const b = Bn[key]; if (b && b.userData.rest) b.quaternion.copy(b.userData.rest).multiply(_mq.setFromAxisAngle(AX_X, B.spin)); }
   if (Bn.steer && Bn.steer.userData.rest) Bn.steer.quaternion.copy(Bn.steer.userData.rest).multiply(_mq.setFromAxisAngle(AX_Y, B.steer));
+  B.root.updateMatrixWorld(true);
+}
+// under him on his floor, along his heading, leaning and steering into the turn, the wheels turning
+function bikePose(dt) {
+  const p = player, B = PBIKE; if (!B.up || !B.root) return;
+  const on = !!(p.board && p.bike); if (!on) { B.root.visible = false; B.h0 = null; return; }
+  bikePlace(B, p.pos.x, p.pos.y + (p.stepOff || 0), p.pos.z, p.boardH, Math.hypot(p.vel.x, p.vel.z), dt);
 }
 // his root up onto the seat: the seat's height less his hips' height over his root IN THE DRIVING CLIP, read off his
 // posed skeleton a frame late (exact: it is a fact about the pose, not the position) -- `stepRide`'s rule
@@ -24955,6 +24966,69 @@ function bikeAnim(dt, t) {
   else t[CLIPS.idle] = 1;
   setWeights(t, dt);
 }
+// ============================================================================================
+// THE RACE FOR THE GANG'S RESPECT (m375, ROADMAP C6-5f-3, `HCRACE`, `raceStep`, `racePark`)
+// ============================================================================================
+// Spud: "Big Rae's the fastest round the track. Beat her and the whole creek knows your name." Ride up to the START GATE on
+// the bike and stop: Rae lines up beside you on hers (her own copy of the Fat Boy, `RBIKE`, seated by `stepRide` like the
+// ring rider -- `d.st = 'ride'`, `d.ride = RBIKE`), a countdown, and TWO LAPS of the loop. She rides the loop's own line
+// (`bikeLoop`), slowing for its bends (the line's curvature) and a little rubber in it (slower when far ahead, quicker when
+// far behind). You must pass every one of ten CHECKPOINTS in order (no cutting across the middle). First home: you, and
+// it is `gang:respect` and a card; her, and the gate is there to go again. Rae's bike waits by her pit between races.
+// The race runs whether or not her body or her bike are loaded (a harness can run it; a missing bike just isn't drawn).
+const HCRACE = { on: 1, st: 'idle', t: 0, laps: 2, cps: 10, base: 15, turnK: .5, far: [40, 30], startR: 8, cool: 0, runs: 0, wins: 0, sR: 0, lap: 0, cp: 0 };
+function raceLoop() { const R = HCRACE; if (!R.pts) { const L = bikeLoop(); R.pts = L.pts; R.len = L.len; R.step = L.len / L.pts.length; } return R; }
+// the loop at distance s: world x, z, its floor, its heading and how hard it bends there
+function raceAt(s, side) {
+  const R = raceLoop(), n = R.pts.length, f = ((s % R.len) + R.len) % R.len / R.step, i = Math.floor(f) % n, j = (i + 1) % n, k = f - Math.floor(f);
+  const P = R.pts[i], Q = R.pts[j], a = P[0] + (Q[0] - P[0]) * k - P[3] * (side || 0), b = P[1] + (Q[1] - P[1]) * k + P[2] * (side || 0), [x, z] = hcWorld(a, b);
+  const T = R.pts[(i + 3) % n], [x1, z1] = hcWorld(P[0], P[1]), [x2, z2] = hcWorld(P[0] + P[2], P[1] + P[3]);
+  const bend = Math.abs(wrapAngle(Math.atan2(T[2], T[3]) - Math.atan2(P[2], P[3]))) / (3 * R.step);
+  return { x, z, y: groundAt(x, z, hcHeight(a, b) + 3, 3.2), h: Math.atan2(x2 - x1, z2 - z1), bend };
+}
+// her bike by her pit, out of the way
+function racePark() { const B = RBIKE; if (!B.up || !HCBIKE.pitAt) return; const P = HCBIKE.pitAt[1]; B.h0 = null; bikePlace(B, P[0] + 1.6, P[1], P[2] - .6, (HCBIKE.frame ? HCBIKE.frame.th : 0) + 1.2, 0, 0); }
+function raceRae() { return DUMMIES.find(d => d.markId === 'hc_bike_rae' && !d.gone) || null; }
+function raceStep(dt) {
+  const R = HCRACE; if (!R.on || !HCBIKE.startAt || !inTK()) return;
+  raceLoop();
+  const p = player, P = p.pos, S = HCBIKE.startAt, atGate = Math.hypot(P.x - S[0], P.z - S[2]) < R.startR, riding = !!(p.board && p.bike), v = Math.hypot(p.vel.x, p.vel.z);
+  const rae = raceRae();
+  if (R.st === 'idle') {
+    if ((R.cool -= dt) > 0) return;
+    if (riding && atGate && v < 3) { R.st = 'count'; R.t = 3.6; R.n = 4; R.runs++; R.sR = 0; R.lap = 0; R.cp = 1; R.v = 0;
+      if (rae && RBIKE.up) { rae.st = 'ride'; rae.ride = RBIKE; rae.raceOff = 1; } RBIKE.h0 = null; }      // no bike, no seat: she is not put on nothing
+    return;
+  }
+  if (R.st === 'count') {
+    if (!riding || !atGate) { R.st = 'idle'; R.cool = 2; toast('Race off. Line up at the gate.', 1.6); raceEnd(); return; }
+    R.t -= dt; const n = Math.ceil(R.t - .6); if (n !== R.n) { R.n = n; toast(n > 0 ? String(n) : 'GO!', .9); if (n <= 0) { R.st = 'race'; R.t = 0; } }
+    const A = raceAt(0, -2.2); bikePlace(RBIKE, A.x, A.y, A.z, A.h, 0, dt);
+    return;
+  }
+  if (R.st === 'race') {
+    R.t += dt;
+    // HER: along the line, easing for bends, a little rubber
+    const A0 = raceAt(R.sR, -1.4), lead = R.sR - (R.lap * R.len + R.cp / R.cps * R.len);
+    let want = R.base * (1 - R.turnK * clamp(A0.bend * 6, 0, 1)) * (lead > R.far[0] ? .8 : lead < -R.far[1] ? 1.12 : 1);
+    R.v = damp(R.v || 0, want, .5, dt); R.sR += R.v * dt;
+    const A = raceAt(R.sR, -1.4); bikePlace(RBIKE, A.x, A.y, A.z, A.h, R.v, dt);
+    // YOU: the next checkpoint, in order; through the last back to the first is a lap
+    const C = raceAt(R.cp / R.cps * R.len);
+    if (Math.hypot(P.x - C.x, P.z - C.z) < 9) { R.cp++; if (R.cp > R.cps) { R.cp = 1; R.lap++; if (R.lap < R.laps) toast('LAP ' + (R.lap + 1) + ' OF ' + R.laps, 1.4); } }
+    if ((R.hudT = (R.hudT || 0) - dt) <= 0) { R.hudT = 1.2; const you = R.lap * R.cps + R.cp - 1, her = Math.floor(R.sR / R.len * R.cps); toast('LAP ' + Math.min(R.laps, R.lap + 1) + '/' + R.laps + '  ·  ' + (you >= her ? '1ST' : '2ND'), 1.1); }
+    if (R.lap >= R.laps) return raceDone(1);
+    if (R.sR >= R.laps * R.len) return raceDone(0);
+    if (!riding) return raceDone(0, 'You got off. Big Rae wins.');
+  }
+}
+function raceDone(won, why) {
+  const R = HCRACE; R.st = 'idle'; R.cool = 6;
+  if (won) { R.wins++; if (progFlag('gang:respect')) cardShow('YOU BEAT BIG RAE', 'THE GANG KNOWS YOUR NAME', 3.8); else toast('You beat Big Rae again.', 2); }
+  else toast(why || 'Big Rae wins. Line up at the gate to go again.', 2.4);
+  raceEnd(); return won;
+}
+function raceEnd() { const rae = raceRae(); if (rae && rae.raceOff) { rae.st = 'idle'; rae.ride = null; rae.raceOff = 0; rae.t = 0; } racePark(); }
 // AND HE GOES BACK FOR IT (m109, `motoSeek`). *"Then he should go try to find it again. I
 // don't have him picking it up animation but I'll make one eventually."*
 // **IT RUNS IN THE SAME LINE AS `stepRide`, ABOVE THE BRAIN**, because a man walking back to his
@@ -28161,6 +28235,18 @@ const QUESTS = [
                 "Gang don't care where you're from. Gang cares if you can ride.",
                 "Big Rae's the fastest round the track. Beat her and the whole creek knows your name.",
                 "Then maybe you get near the rally man. Nobody gets near the rally man."] } },
+  ] },
+  // CHAPTER 3 (m375, C6-5f-3): Spud's challenge, `from` his script -- to the start gate on the bike, beat Big Rae over two
+  // laps (`gang:respect`, set by the race), and hear what she has to say about the rally man. C6-5f-4 hangs `from` that.
+  { id: 'ch3b', title: "THE GANG'S RESPECT", world: 'tkit', ch: 3, from: 'ch3_spud', steps: [
+    { type: 'goto', at: () => HCBIKE.startAt && [HCBIKE.startAt[0], HCBIKE.startAt[2]], r: 8, text: 'Ride to the start gate at the dirt track', tip: 'Wear the biker: you ride. Stop at the gate and Big Rae lines up.' },
+    { type: 'flag', flag: 'gang:respect', at: () => HCBIKE.startAt, text: 'Beat Big Rae: two laps', tip: 'Over the ridges and every checkpoint in order -- no cutting across the middle.' },
+    { type: 'talk', who: 'ch3_rae', npc: 'hc_bike_rae', text: 'See what Big Rae has to say', tip: 'Riders talk to riders.',
+      say: { name: 'Big Rae', group: 'biker', talks: ['biker'], alien: 'brush', brushAlien: ["Riders only."],
+        lines: ["Well. Damn. Nobody's beat me since the lights came over the hill.",
+                "Gang knows your name now. Ride up front at the rally -- riders always get the front.",
+                "The rally man? Never rides. Never eats. Never sweats under them lights. Talks into a box in his trailer at night.",
+                "You want to know what he is, get up on that stage when he's talking. In front of everybody."] } },
   ] },
   // m350 (C2b-1): the first time you come near the pacifier -- one step, passed the moment it is shot down
   { id: 'qorb', title: 'SOMETHING HUMMING', dormant: 1, world: 'tkit', steps: [
@@ -37102,6 +37188,8 @@ function godMenuOpen(on) {
   if (OPROTEST.path) btn('START THE PROTEST NOW (' + OPROTEST.st.toUpperCase() + ')', () => { protestStart(); godMenuOpen(0); toast('The protest is gathering at the square', 2); });
   // both sides to the rally first (they live 43 m apart), then it goes off 12 s later
   // m372: Hollow Creek's rally
+  // m375: the race, without lining up
+  if (HCBIKE.startAt) btn('RACE BIG RAE NOW (' + HCRACE.st.toUpperCase() + ')', () => { godMenuOpen(0); const S = HCBIKE.startAt; player.pos.set(S[0], S[1] + .1, S[2]); player.vel.set(0, 0, 0); toast('Wear the biker and stop at the gate', 2.2); });
   if (HCRALLY.trucks) { btn('START THE RALLY (' + HCRALLY.st.toUpperCase() + ')', () => { godMenuOpen(0); rallyStart(); toast('The trucks are on the road', 2); });
     btn('SKIP TO THE RALLY BRAWL', () => { godMenuOpen(0); if (HCRALLY.st === 'quiet') rallyStart(); HCRALLY.st = 'speech'; HCRALLY.t = 6; HCRALLY.provoked = 'GOD'; toast('It goes off in a moment', 2); }); }
   // m360: the Pearl's march, either route
@@ -38605,6 +38693,7 @@ function frameBody() {
     // world position, so a bike stepped after him leaves him a frame behind it -- which at 6 m/s
     // is 10 cm of a man sliding along beside his own seat. `stepShip`'s ordering rule one repo over.
     stepMoto(dt);
+    raceStep(dt);         // m375: Big Rae's bike -- above `stepDummies`, which seats her on it
     kitStep(dt);
     _pt = pT('kit', _pt);
     // **ABOVE `stepDummies` FOR `stepMoto`'s OWN REASON.** The player's resolver is handed each
@@ -39116,7 +39205,7 @@ async function init() {
   // +1 at m158 (the collision), +1 at m160 (the breakables), and the kit city's library and
   // buildings on top of the toon city's three (m180)
   // +2 in the kit worlds for the construction worker and his hammer (m187)
-  PROG.total = inWP() ? 28 : inTC() ? 31 : inTK() ? 37 : inKit() ? 31 : 29;      // m374: tkit +1, the player's bike
+  PROG.total = inWP() ? 28 : inTC() ? 31 : inTK() ? 38 : inKit() ? 31 : 29;      // m374: tkit +1, the player's bike; m375 +1, Rae's
   // ---- the character. There is no game without him, so a failure here is reported on the
   //      card rather than warned to a console that does not exist on a phone.
   let g;
@@ -39390,6 +39479,7 @@ async function init() {
     await side(KCITY.bld, 'loading the kit buildings', { name: 'KCITYBLD', build: buildKit });
     // THE PLAYER'S MOTORCYCLE (m374): his own Fat Boy again, for whoever wears the biker
     await side(MOTO.file, 'loading a motorcycle', { name: 'PBIKE', build: buildPlayerBike });
+    await side(MOTO.file, 'loading a motorcycle', { name: 'RBIKE', build: buildRivalBike });      // m375: Big Rae's
     await cityDetile();
     // THE ISLAND (m264): last, because it measures the finished collider and appends to it
     try { buildIsle(); } catch (e) { ISLE.live = 0; note('ISLE FAIL'); console.warn('[melee] island', e); }
@@ -39646,7 +39736,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

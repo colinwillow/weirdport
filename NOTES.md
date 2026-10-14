@@ -7,6 +7,20 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE RACE FOR THE GANG'S RESPECT (m375, C6-5f-3, `HCRACE`, `raceStep`, `raceAt`, `racePark`, `RBIKE`, `bikeRecord`,
+  `bikePlace`, `QUESTS` `ch3b`).** Ride up to the dirt track's start gate on the bike and stop: Big Rae lines up beside you on
+  HER Fat Boy (the same file loaded a third time, `RBIKE`; the measuring is one function now, `bikeRecord`, and the drawing
+  one, `bikePlace`, for the player's and hers alike), seated by `stepRide` exactly as the m107 ring rider is
+  (`d.st = 'ride'`, `d.ride = RBIKE`, and only if her bike loaded -- nobody is sat on nothing). A countdown, then TWO LAPS of
+  the loop (`bikeLoop`): she rides its own line at 15 m/s, easing for its bends (its curvature), with a little rubber (.8x
+  far ahead, 1.12x far behind); you must pass ten CHECKPOINTS in order. First home: you -> `gang:respect` and a card; her ->
+  the gate is there to go again; getting off is a loss. Her bike waits by her pit between races. `raceStep` runs above
+  `stepDummies` (it is what she is seated on: `stepMoto`'s ordering rule). The quest (`from: 'ch3_spud'`): to the gate,
+  beat her, and she says the rally man never rides, never eats, talks into a box in his trailer at night -- "get up on that
+  stage when he's talking. In front of everybody." (C6-5f-4). GOD: RACE BIG RAE NOW.
+  **THE RACE RUNS WITH NOTHING LOADED**, so `places` can ride it: a rider taking the loop at 21 m/s through every
+  checkpoint WINS, one sitting at the gate LOSES (Rae does 619 m), and one hopping start-to-halfway across the middle LOSES.
+  `npm run places` (exit 0): `ok  RACE loop 309 m x 2 laps, 10 checkpoints | riding it: WON in 32 s (count>race>idle) | sitting at the gate: lost (Rae 619 m) | cutting start-to-halfway across the middle: lost`.
 - **THE BIKER RIDES: HIS OWN FAT BOY, ON THE SKATEBOARD'S PHYSICS (m374, C6-5f-2, `BIKER.mode`, `BIKE`, `PBIKE`, `bikeOn`,
   `buildPlayerBike`, `bikePose`, `bikeSeatLift`, `bikeAnim`).** Wearing the biker in the kit city puts him on a
   motorcycle. **There was one in the repo already** -- his m107 `motorcycle_fatboy.glb` (rigged wheels, a raked steering

@@ -294,7 +294,7 @@ differ" table there, so no region feels like the last one.
     - [ ] **C6-5f** Chapter 3's quests: the biker form, the gang's respect, the infiltrated rally leader (the boss).
       - [x] m373 **C6-5f-1** Chapter 3 opens: over the water, Pap, a biker's sample, Spud's challenge.
       - [x] m374 **C6-5f-2** the motorcycle: the biker form rides (the skateboard's riding, a bike under him, faster, no deck tricks).
-      - [ ] **C6-5f-3** the gang's respect: race Big Rae round the dirt track; win, and the gang knows your name.
+      - [x] m375 **C6-5f-3** the gang's respect: race Big Rae round the dirt track; win, and the gang knows your name.
       - [ ] **C6-5f-4** the rally man: on the stage at the rally, in front of everyone; he bursts (the boss); Chapter 3 complete.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
@@ -1006,3 +1006,9 @@ differ" table there, so no region feels like the last one.
   no deck tricks, flips or grinds. Like Rollergirl's skates, you don't get off: change form to walk.
   **Untested on a phone:** which way it leans, whether he sits right on the seat, and whether the
   wheels spin the right way.
+
+- **m375 (C6-5f-3) The race.** Stop at the dirt track's start gate on the bike and Big Rae lines
+  up on her own bike. After a countdown you race two laps through ten checkpoints, so cutting
+  across the middle doesn't count. She eases off in the bends and has a little catch-up built in.
+  Win and the gang knows your name; she then points you at the rally man's stage. I tuned her to
+  about 15 m/s, which a clean ride on the bike beats. Tell me if she's too easy or too hard.
