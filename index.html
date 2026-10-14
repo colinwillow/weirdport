@@ -729,10 +729,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m332</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m333</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m332</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m333</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -816,7 +816,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm332';
+const BUILD = 'm333';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -27705,7 +27705,8 @@ function socialOk(d) {
   return me === mine || (T.talks || []).includes(me);
 }
 function socialBrush(d) {
-  const B = SOCIAL.BRUSH[socialOf(d)] || SOCIAL.BRUSH.folk, L = B[socialMe()] || B.any || SOCIAL.BRUSH.folk.any;
+  const me = socialMe(), B = SOCIAL.BRUSH[socialOf(d)] || SOCIAL.BRUSH.folk;
+  const L = (me === 'alien' && d.talk.brushAlien) || B[me] || B.any || SOCIAL.BRUSH.folk.any;      // m333: his own lines for the alien
   SOCIAL.brushes++;
   return L[Math.floor(Math.random() * L.length)];
 }
@@ -27856,6 +27857,11 @@ const QUESTS = [
     { type: 'talk',   text: 'Talk to someone with a !' },
     { type: 'defeat', n: 1, text: 'Knock somebody down' },
     { type: 'reach',  y: 3, text: 'Get up high: a roof, a ladder, a stack of anything' },
+  ] },
+  // CHAPTER 0 (m333, B1f-4): Nell at the farm shop gives it, and only to one of her own -- `from` her script, which she only
+  // finishes for country folk. The first real task in the game: a marker, a waypoint and the distance, to the checkpoint.
+  { id: 'qroad', title: 'THE ROAD TO TOWN', world: 'tkit', from: 'mk_nell', steps: [
+    { type: 'goto', at: () => BRIDGE.gate && [BRIDGE.gate.x, BRIDGE.gate.z], r: 9, text: 'Walk to the bridge checkpoint' },
   ] },
   // DORMANT (m330): a second stand-in, so the task list has two to choose between. Its steps point at places that exist
   // (the silo's landing, the terrace's top, the bridge's checkpoint) through `at`, read live. GOD: THE STAND-IN TASKS.
@@ -28041,7 +28047,8 @@ function questStep(dt) {
   const beam = questBeam();
   if (!QUEST.on) { beam.visible = false; if (quest.line) quest.line.classList.remove('on'); return; }
   // m330: A NEW TASK GETS A CARD, once (`qseen:` in the save), one card at a time
-  if ((quest.newT -= dt) <= 0) for (const q of questAvail()) if (!SAVE.flags['qseen:' + q.id]) {
+  // (and never on top of a card that went up in the last 2.6 s -- Nell's rumour and her task land in the same tap)
+  if ((quest.newT -= dt) <= 0 && performance.now() - (cardShow.at || 0) > 2600) for (const q of questAvail()) if (!SAVE.flags['qseen:' + q.id]) {
     progFlag('qseen:' + q.id); cardShow('NEW TASK', q.title); quest.newT = QUEST.doneT + .4; break; }
   if (quest.line && !quest.line._wired) { quest.line._wired = 1;
     quest.line.addEventListener('pointerdown', e => e.stopPropagation());
@@ -28432,7 +28439,7 @@ const sampOk = d => d.st === 'down' && !d.wasK && !d.K.pal && dnaOK(d.K) && !/al
 function cardShow(top, title, sec) {
   const c = document.getElementById('qdone'); if (!c) return;
   c.querySelector('small').textContent = top; c.querySelector('b').textContent = title;
-  c.classList.remove('on'); void c.offsetWidth; c.classList.add('on');
+  c.classList.remove('on'); void c.offsetWidth; c.classList.add('on'); cardShow.at = performance.now();
   clearTimeout(cardShow.t); cardShow.t = setTimeout(() => c.classList.remove('on'), (sec || QUEST.doneT) * 1000);
 }
 function sampleTake(d) {
@@ -29930,6 +29937,23 @@ const FHANDS = {
     { field: 'north_plough', off: [0, -18], kind: 'hobo', name: 'Earl', why: 'at the foot of the ploughed field, watching the tractor work',
       lines: "That tractor's older than me and runs better.|Cows been jumpy since the bang.|You walk funny. No offence.", rumour: 'ford' },
   ],
+  // m333 (B1f-4): Chapter 0's talkers. The family are COUNTRY and talk only to country folk, and they do not run from
+  // the alien -- they brush him off (`alien: 'brush'`, their own `brushAlien` lines). Nell, the neighbour, runs from him
+  // like anyone; as one of them (the farmer's form) she talks properly, ends on the hill rumour, and finishing her
+  // gives THE ROAD TO TOWN (`QUESTS` `qroad`, `from: 'mk_nell'`). Spots: `at` live, `off` = [his right, ahead] of it.
+  PEOPLE: [
+    { id: 'ma_gristle', at: () => FHOUSE.at, off: [1.9, 1.4], kind: 'beautiful_blonde', name: 'Ma Gristle', talks: ['country'], alien: 'brush',
+      why: 'on the farmhouse porch: the family brush off the alien (B1f-4)',
+      lines: "Wipe your boots. I don't care whose they are.|He's out by the barn, fussing about his wheat.|Supper's at six. You're not invited. Yet.",
+      brushAlien: "Not in my kitchen. Not in any of my kitchens.|Whatever you're selling, we've got two." },
+    { id: 'grandpa_gristle', at: () => FHOUSE.at, off: [-1.9, 1.0], kind: 'hobo_01', name: 'Grandpa Gristle', talks: ['country'], alien: 'brush',
+      why: 'on the porch with Ma, in no hurry: the family brush off the alien (B1f-4)',
+      lines: "Back in my day the sky stayed where it was put.|Saw lights like that in forty-six. Nobody believed me then either.|Fetch me my pipe. No? Then shoo.",
+      brushAlien: "I fought in two wars and a bake-off. Go away.|Martha! There's a vegetable on the porch!" },
+    { id: 'nell', at: () => FNEIGH.shopAt, off: [0, 1.6], kind: 'beautiful_asian', name: 'Nell Haskins', talks: ['country'], alien: 'flee', rumour: 'hillman',
+      why: "at her farm shop on the ridge: as the farmer, she gives you the road to town and the hill rumour (B1f-4)",
+      lines: "You're the Gristles' new hand? Huh. Thought you'd be taller.|You'll want town. Everybody wants town, eventually. It's over the bridge.|There's a police checkpoint on it since the bang. Keep your hat on and your head down." },
+  ],
   FARMER: { barn: [-2, -11.5], kind: 'farmer', name: 'Farmer Gristle', why: "at his barn doors: B2's farmer, who sees you and panics",
     lines: "Something came down in my wheat last night. Big as a barn.|Police'll want to know. If the phone worked.|You seen my dog?" },
 };
@@ -29942,9 +29966,10 @@ function fpCentroid(fid) {
 }
 function buildFarmhands() {
   const H = FHANDS; if (!H.on || !FARMLAND.live || !FPLAN.owners) return 0;
-  const add = (id, x, z, yaw, R) => {
-    MARKS.push({ type: 'npc', id, name: R.name, src: 'FARMHANDS', x, y: groundAt(x, z, 30, 0), z, yaw, sx: 0, sz: 0,
-      p: { kind: R.kind, name: R.name, lines: R.lines, rumour: R.rumour, group: R.group || 'country', talks: R.talks || ['country', 'street'], alien: R.alien || 'flee' }, used: 0 });
+  const add = (id, x, z, yaw, R, y) => {
+    MARKS.push({ type: 'npc', id, name: R.name, src: 'FARMHANDS', x, y: y != null ? y : groundAt(x, z, 30, 0), z, yaw, sx: 0, sz: 0,
+      p: { kind: R.kind, name: R.name, lines: R.lines, rumour: R.rumour, group: R.group || 'country', talks: R.talks || ['country', 'street'], alien: R.alien || 'flee',
+           brushAlien: R.brushAlien }, used: 0 });
     MKR.by.npc = (MKR.by.npc || 0) + 1; H.n++;
   };
   for (const R of H.ROWS) {
@@ -29956,6 +29981,15 @@ function buildFarmhands() {
   }
   { const A = FARM.at, R = H.FARMER, C = Math.cos(A.th), S = Math.sin(A.th), [u, v] = R.barn;
     add('farmer_gristle', A.x + u * C + v * S, A.z - u * S + v * C, A.th + Math.PI, R); }    // facing out of his yard
+  // m333: the people by a place -- [his right, ahead] off the place's own heading, facing back the way he came in; their
+  // height from just over the place's own ground, so a porch roof overhead is never mistaken for the floor
+  for (const R of H.PEOPLE || []) {
+    const P = R.at(); if (!P) { note('PERSON ' + R.name + ' NO PLACE'); continue; }
+    const h = P[2] || 0, fx = Math.sin(h), fz = Math.cos(h), rx = -fz, rz = fx;
+    const x = P[0] + rx * R.off[0] + fx * R.off[1], z = P[1] + rz * R.off[0] + fz * R.off[1];
+    const g0 = groundAt(P[0], P[1], 4, 8), y = groundAt(x, z, (g0 > -50 ? g0 : 0) + 1.5, 2);
+    add(R.id, x, z, h + Math.PI, R, y > -50 ? y : null);
+  }
   return H.n;
 }
 
@@ -31816,7 +31850,8 @@ function mkrStep() {
       b.talk = { id, name: P.name || (S && S.name) || mkrLabel(M), lines, done: !!SAVE.flags['talk:' + id], rumour: Rm ? Rm.id : null,
         // m332: who he talks to -- his marker's `group` / `talks` (a list or a comma string) / `alien`, else his kind's group
         group: P.group || null, talks: Array.isArray(P.talks) ? P.talks : typeof P.talks === 'string' ? P.talks.split(',').map(t => t.trim()).filter(Boolean) : null,
-        alien: P.alien || 'flee' };
+        alien: P.alien || 'flee',
+        brushAlien: typeof P.brushAlien === 'string' ? P.brushAlien.split('|').map(t => t.trim()).filter(Boolean) : null };
       b.talkSeen = 1; TALK.n++;
     }
   }
@@ -32939,7 +32974,7 @@ const GODPLACES = [
   { id: 'gas',      world: 'tkit', name: 'EDGE OF TOWN · the gas station by the bridge', at: () => FTOWN.gasAt && [FTOWN.gasAt[0], null, FTOWN.gasAt[1], null] },
   { id: 'trailers', world: 'tkit', name: 'EDGE OF TOWN · the trailer park', at: () => FTOWN.parkAt && [FTOWN.parkAt[0], null, FTOWN.parkAt[1], null] },
   { id: 'herd',     world: 'tkit', name: 'GRISTLE FARM · the herd on the far hill', at: () => { const c = COWS.find(q => q.field != null && FPLAN.FIELDS[q.field].id === 'far_hill'); return c && [c.x + 6, null, c.z + 6, Math.atan2(-6, -6)]; } },
-  { id: 'neighbour', world: 'tkit', name: "GRISTLE FARM · the neighbour's farm shop on the ridge", at: () => FNEIGH.shopAt && [FNEIGH.shopAt[0], null, FNEIGH.shopAt[1], FNEIGH.shopAt[2]] },
+  { id: 'neighbour', world: 'tkit', name: "GRISTLE FARM · the neighbour's farm shop on the ridge (Nell: the road to town)", at: () => FNEIGH.shopAt && [FNEIGH.shopAt[0], null, FNEIGH.shopAt[1], FNEIGH.shopAt[2]] },
   { id: 'haybarn',  world: 'tkit', name: 'GRISTLE FARM · the lone hay barn', at: () => FNEIGH.barnAt && [FNEIGH.barnAt[0], null, FNEIGH.barnAt[1], FNEIGH.barnAt[2]] },
   { id: 'circle',   world: 'tkit', name: 'GRISTLE FARM · the crop circle by the wreck', at: () => FARMLAND.live && FPLAN.crash && godFL({ a: FPLAN.crash.circle.a - 13, b: FPLAN.crash.circle.b - 4 }) },
   { id: 'swell',    world: 'tkit', name: 'GRISTLE FARM · the big wheat on the swell', at: () => FARMLAND.live && godFL(FPLAN.FIELDS.find(f => f.id === 'crash_wheat')) },
@@ -32957,7 +32992,7 @@ const GODPLACES = [
   { id: 'wheat',    world: 'tkit', name: 'GRISTLE FARM · the south wheat off the bridge', at: () => FARMLAND.live ? godFL(FPLAN.FIELDS.find(f => f.id === 'south_wheat')) : godMid(FLORA.FIELDS[1]) },
   { id: 'orchard',  world: 'tkit', name: 'GRISTLE FARM · the orchard terrace, at the foot of its steps', at: () => FTERR.foot ? [FTERR.foot[0], null, FTERR.foot[1], FTERR.foot[2]] : FARMLAND.live && godFL(FPLAN.FIELDS.find(f => f.id === 'orchard')) },
   { id: 'terrace',  world: 'tkit', name: 'GRISTLE FARM · the top of the orchard terrace', at: () => FTERR.at && [FTERR.at[0], FTERR.at[1], FTERR.at[2], null] },
-  { id: 'farmhouse', world: 'tkit', name: 'GRISTLE FARM · the farmhouse porch', at: () => FHOUSE.at && [FHOUSE.at[0], null, FHOUSE.at[1], FHOUSE.at[2]] },
+  { id: 'farmhouse', world: 'tkit', name: 'GRISTLE FARM · the farmhouse porch (Ma and Grandpa Gristle)', at: () => FHOUSE.at && [FHOUSE.at[0], null, FHOUSE.at[1], FHOUSE.at[2]] },
   { id: 'windmill', world: 'tkit', name: 'GRISTLE FARM · the windmill pump', at: () => FPROPS.at.windmill && [FPROPS.at.windmill[0], null, FPROPS.at.windmill[1], null] },
   { id: 'scarecrow', world: 'tkit', name: 'GRISTLE FARM · the scarecrow in the corn', at: () => FPROPS.at.scarecrow && [FPROPS.at.scarecrow[0], null, FPROPS.at.scarecrow[1], null] },
   { id: 'tractor', world: 'tkit', name: 'GRISTLE FARM · the tractor in the yard', at: () => FPROPS.at.tractor && [FPROPS.at.tractor[0], null, FPROPS.at.tractor[1], FPROPS.at.tractor[2]] },

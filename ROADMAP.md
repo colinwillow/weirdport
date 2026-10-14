@@ -203,7 +203,7 @@ differ" table there, so no region feels like the last one.
     - [x] m327 **B1e-1** the rope down from the hayloft and the silo ladder, climbable, with a landing on top.
     - [x] m328 **B1e-2** an orchard terrace.
     - [x] m329 **B1e-3** cows that panic and stampede (the farm's signature system).
-- [ ] **B1f Direction and discovery** (see the new section in `GAME_DESIGN.md`). Build on m278's quests:
+- [x] m333 **B1f Direction and discovery** (see the new section in `GAME_DESIGN.md`). Build on m278's quests:
   - a **"New task" card** when a task unlocks, and a **task list** you can open;
   - the waypoint in the world shows the **distance** in metres, and the map marker matches it;
   - **rumours**: lines that add an entry to a rumour list with no marker (or a rough circle), resolved
@@ -217,7 +217,7 @@ differ" table there, so no region feels like the last one.
   - [x] m330 **B1f-1** the "New task" card, the task list (tap the objective), several tasks with one followed, the waypoint's distance in the world, and the same metres on the map.
   - [x] m331 **B1f-2** rumours: a separate list, no marker (or a rough circle), resolved when you find the thing.
   - [x] m332 **B1f-3** who talks to whom: forms a speaker talks to, forms it brushes off (a short line), the alien makes it flee; a task can need a form to start.
-  - [ ] **B1f-4** Chapter 0 uses it: the farmer's family brush off the alien; as the farmer, the neighbour at the farm shop gives the bridge task and the hill rumour.
+  - [x] m333 **B1f-4** Chapter 0 uses it: the farmer's family brush off the alien; as the farmer, the neighbour at the farm shop gives the bridge task and the hill rumour.
 - [ ] **B2 Chapter 0 script.** Crash → find Clancy → the farmer sees you and panics → knock him
   down → take his sample → walk to the bridge as him → the cop checkpoint lets the farmer through
   (and stops the alien) → Old Town, fog lifts. Tutorial prompts along the way.
@@ -657,3 +657,12 @@ differ" table there, so no region feels like the last one.
     country folk and tramps.
   - **Tasks:** a task can now come from a person and only unlock once they've talked to you properly.
   - **Your Blender npc markers** can carry `group`, `talks` and `alien` too.
+
+- **m333 (B1f-4, so B1f is done):** Chapter 0's talkers.
+  - **Ma and Grandpa Gristle** are on the farmhouse yard. They don't run from the alien; they get rid
+    of you with their own lines.
+  - **Nell Haskins** is at her farm shop on the ridge. She runs from the alien but talks to the farmer:
+    she gives you THE ROAD TO TOWN (the first real task, with waypoint and distance to the checkpoint)
+    and the rumour about the man at the top of the hill.
+  - **Names and models:** I picked them from what we have. Ma uses the blonde model, Nell the Asian
+    model, and Grandpa the hobo. Say if you want different bodies for them.

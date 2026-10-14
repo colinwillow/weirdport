@@ -7,6 +7,30 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CHAPTER 0 TALKS: THE FAMILY BRUSH OFF THE ALIEN, NELL GIVES THE FARMER THE ROAD TO TOWN AND THE HILL RUMOUR (m333,
+  B1f-4, `FHANDS.PEOPLE`, `brushAlien`, `QUESTS` `qroad`).** Everything m330-m332 built, used by Chapter 0:
+  - **Ma and Grandpa Gristle** on the farmhouse yard (beautiful_blonde, hobo_01): `country`, talk only to `country`, and
+    `alien: 'brush'` -- they do not run from him (m332: only a 'brush' speaker stands his ground), they get rid of him
+    with their OWN lines (`brushAlien`, a `|` string on the mark: "Martha! There's a vegetable on the porch!").
+  - **Nell Haskins** at her farm shop on the ridge (beautiful_asian): `country`, talks only to `country`, runs from the
+    alien. As one of her own (the farmer is a HICK SKINNY: country) she talks, ends on the `hillman` rumour, and
+    finishing her is `talk:mk_nell` -- which is `qroad` THE ROAD TO TOWN's `from`, so the first real task in the game
+    appears: NEW TASK, "Walk to the bridge checkpoint", the beam, the waypoint, the metres.
+  - **People by a place** (`PEOPLE`: `at` a GOD place's spot read live, `off` [his right, ahead] off its heading,
+    facing back the way he came in) and **their height from just over that place's own ground** (`groundAt(x, z,
+    g0 + 1.5, 2)`), so the porch roof over Ma is never taken for the floor -- `groundAt` from 30 m would have found it.
+  - **A new-task card waits for a card that went up in the last 2.6 s** (`cardShow.at`): Nell's rumour and her task land
+    in one tap, and the second card wiped the first.
+  **Checked headless**: the alien at Ma -> "Martha! There's a vegetable on the porch!"; as the hick at Nell -> her three
+  lines, the hill line, `rm:hillman` + `talk:mk_nell` + `qseen:qroad`, the objective "Walk to the bridge checkpoint ·
+  363m" and the waypoint "◀363 m". (Walking up to Nell AS THE ALIEN first makes her run and phone it in -- then she will
+  not talk to anyone until that is over, which is right.)
+      ok  FARMHANDS Dale (hobo -> hobo_01.glb) 299,75 | Wendell (hobo -> hobo_01.glb) 483,59 | Mags (hobo -> hobo_01.glb) 337,222 | Earl (hobo -> hobo_01.glb) 418,153 | Farmer Gristle (farmer -> hick_skinny.glb) 322,149 | Ma Gristle (beautiful_blonde -> beautiful_blonde.glb) 368,208 | Grandpa Gristle (hobo_01 -> hobo_01.glb) 369,205 | Nell Haskins (beautiful_asian -> beautiful_asian.glb) 399,285
+      ok  neighbour  -> player 397.4,6.0,284.6 ground 5.88
+      ok  farmhouse  -> player 367.2,1.8,206.2 ground 1.64
+      every tkit GOD place is somewhere
+      ok  farmhouseStep  30 frames
+
 - **NO NPC MARKER EVER FOUND ITS KIND: `mphName` IS THE DISPLAY FORM AND `mkrKind` COMPARED IT TO FILE STEMS (m332, `mkrKind`).**
   Found while testing who-talks-to-whom headless: `MARKS` held all five farm people (m315) and **`MKR.npcs` was 0** -- every
   mark's `K` false, not one body spawned, ever. `mphName(K)` is 'HOBO' / 'HICK SKINNY' (alien prefix and number off, `_`
