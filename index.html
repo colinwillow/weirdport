@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m371</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m372</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m371</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m372</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm371';
+const BUILD = 'm372';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -26193,7 +26193,8 @@ function dummyBlow(d, dirH, power, dmg, pal) {
   // gives up when you do.
   if (!pal) d.mark = PALMARK;
   if (!pal) heatHit(d);           // a blow you land is heat (m280)
-  if (!pal && d.markId && /^(protest|counter)_/.test(d.markId) && OPROTEST.st === 'rally') OPROTEST.provoked = 'you';   // m347
+  if (!pal && d.markId && /^(protest|counter)_/.test(d.markId) && OPROTEST.st === 'rally') OPROTEST.provoked = 'you';
+  if (!pal && d.markId && /^hc_(rally|pearl)_/.test(d.markId) && HCRALLY.st === 'speech') HCRALLY.provoked = 'you';       // m372   // m347
   // AND HOW A MAN WHO DOES NOT FIGHT DECIDES TO LEAVE. Capped, so standing over him and
   // punching is not a man who runs for a minute.
   if (K.flee0) { d.fleeT = Math.min(K.fleeMax, (d.fleeT || 0) + (d.fleeT ? K.fleeAdd : K.flee0)); d.roamT = 0; }
@@ -32279,6 +32280,168 @@ function buildHighway() {
   return O.n;
 }
 // ============================================================================================
+// THE RALLY (m372, ROADMAP C6-5e, `HCRALLY`, `buildRally`, `rallyStep`, `rallyStart`)
+// ============================================================================================
+// REGIONS: "the rally. It builds through the day: trucks arrive, the crowd grows, the leader speaks, it boils over into a
+// brawl with the Pearl's protesters." Hollow Creek's living system, an EVENT on its own clock at the fairground:
+//   quiet  -> BUILD   four pickups come up the highway road one after another and park behind the gate's row; the
+//                     rally-goers leave their places round the fair and fill the field in front of the stage
+//          -> SPEECH  the rally man at his podium calls and the crowd answers (two sprites, the Pearl's own machinery)
+//          -> BOIL    the Pearl's counter-protest marches in from its camp by the road, signs up; a sandwich is thrown,
+//                     or you throw the first punch: a BRAWL, everybody at the nearest of the other lot (`dummyBlow`)
+//          -> DISPERSE everybody limps home, the trucks drive back down the road and are gone
+// The rally man (role `rallyboss`: the big one) stands on his stage the whole time; he is Chapter 3's boss (C6-5f), and
+// nobody here has seen him eat. Trucks are `BDYN` boxes while they move, like the train's cars.
+const HCRALLY = {
+  on: 1, st: 'quiet', t: 0, tick: 0, cI: 0, cT: 0, n: 0, runs: 0, brawls: 0,
+  quiet: [110, 170], first: [40, 70], build: 34, speech: 42, brawlMax: 32, disperse: 14, near: 160,
+  boil: .06, punch: [1.1, 2.2], reach: 1.25,
+  LEADER: { id: 'hc_rally_boss', role: 'rallyboss', name: 'the rally man', at: [0, -23.4],
+    lines: "Great crowd. The best crowd. Bigger than last time. Bigger than next time.|The city wants your creek. I won't let 'em have it. I'll keep it for you. Personally.|Those lights over the hill? Nothing. Swamp gas. Look at ME." },
+  GOERS: [   // where they live round the fair (fair frame u, v), and their kind or role
+    { role: 'redneck', name: 'Bobby Ray', home: [-14, -6] }, { kind: 'hick_skinny', name: 'Lurleen', home: [-15, 6] }, { kind: 'fat_biker_01', name: 'Chopper', home: [16, 14] },
+    { role: 'redneck', name: 'Cletus', home: [14, -16] }, { kind: 'hobo_01', name: 'Uncle Vern', home: [8, 14] }, { kind: 'hick_skinny', name: 'Tammy', home: [-12, 17] },
+    { kind: 'fat_biker_01', name: 'Grease', home: [12, 9] }, { role: 'redneck', name: 'Hank', home: [-8, 22] }, { kind: 'hick_skinny', name: 'Bubba', home: [4, 22] },
+    { kind: 'hobo_01', name: 'Mae', home: [-16, -12] },
+  ],
+  goerLines: "Rally's Saturday. It's always Saturday at the rally.|He talks, we holler. Simple. I like simple.|The Pearl lot? They come up on the freight with their signs. We give 'em what for.",
+  PEARL: [ { kind: 'fat_activist_01', name: 'Clem', sign: 'THE CREEK IS EVERYONE\'S' }, { kind: 'fat_hippie', name: 'Sunny', sign: 'TRUCKS ARE NOT A PERSONALITY' },
+           { kind: 'fat_hipster', name: 'Thatcher', sign: 'ASK HIM ABOUT THE LIGHTS' }, { kind: 'fat_activist_01', name: 'Bree', sign: 'WHO PAYS FOR THIS?' } ],
+  pearlLines: "We came up on the freight. Solidarity with... whoever's oppressed today.|Every Saturday they rally and every Saturday we counter-rally. It's basically a sport.|Has anybody noticed the rally man never blinks? Just us? Okay.",
+  CAMP: [-55, -24],                    // the counter-protest camp, Hollow Creek's own (a, b): by the road, short of the gate
+  CHANT: [['WHO WATCHES THE ROAD?', 'WE DO!'], ['WHOSE CREEK?', 'OUR CREEK!'], ['WHAT DO WE WANT?', 'LESS!'], ['WHEN?', 'YESTERDAY!'], ['THE LIGHTS OVER THE HILL?', 'NOTHING TO SEE!'], ['WHO BUYS THE BEER?', 'HE DOES!']],
+  TRUCKS: 4, tspeed: 9, tgap: 6,
+};
+function buildRally() {
+  const O = HCRALLY, Fr = HCFAIR.frame, R = HCROAD; if (!O.on || !Fr || !HCREEK.live) return 0;
+  const { cx, cz, th, y } = Fr, C = Math.cos(th), S = Math.sin(th), W = (u, v) => [cx + u * C + v * S, cz - u * S + v * C];
+  O.W = W; O.y = y;
+  // the people
+  { const L = O.LEADER, [x, z] = W(...L.at); peopleMark(L.id, x, z, th + Math.PI, Object.assign({ group: 'country', talks: ['country', 'biker'], alien: 'brush', brushAlien: "Get off my stage. Whatever you are.", beat: [[x, z]] }, L), y + HCFAIR.STAGE.h, 'HCRALLY', 'country'); O.n++; }
+  O.GOERS.forEach((G, i) => { G.id = 'hc_rally_' + i; G.i = i; const [x, z] = W(...G.home); G.homeW = [x, z];
+    // their place on the field: rows facing the stage
+    const row = i / 5 | 0, col = i % 5; G.spot = W((col - 2) * 2.4 + (row % 2) * 1.2, -14 + row * 2.6);
+    peopleMark(G.id, x, z, th + Math.PI, Object.assign({ group: 'country', talks: ['country', 'biker'], alien: 'flee', lines: O.goerLines }, G), y, 'HCRALLY', 'country'); O.n++; });
+  // the counter-protest's camp, by the road: a tarp, a cooler, a couple of folding chairs; they live round it
+  { const [ca, cb] = O.CAMP, [x0, z0] = hcWorld(ca, cb), g0 = hcHeight(ca, cb);
+    const M = (cc, o) => Object.assign(new THREE.MeshStandardMaterial({ color: cc, roughness: .85 }), o || {});
+    const MAT = { tarp: M(0x9fe3d2, { side: THREE.DoubleSide }), post: M(0x7a5a3a), chair: M(0xff9fc0), cool: M(0x2e4a8a) };
+    const F = farmFrame(x0, z0, th, MAT, 'creek'), { bx } = F;
+    for (const [a, b] of [[-2, -1.5], [2, -1.5], [-2, 1.5], [2, 1.5]]) bx(a, b, g0, g0 + 2.2, .08, .08, 'post', 0, false);
+    bx(0, 0, g0 + 2.2, g0 + 2.26, 4.4, 3.4, 'tarp', 0, false, .1); bx(1.2, -2.2, g0, g0 + .5, .8, .5, 'cool', 0); bx(-1, 2.3, g0, g0 + .45, .55, .55, 'chair', .3);
+    F.commit();
+    O.PEARL.forEach((P, i) => { P.id = 'hc_pearl_' + i; const a = ca + Math.cos(i * 1.6) * 3.4, b = cb + Math.sin(i * 1.6) * 3.4, [x, z] = hcWorld(a, b); P.homeW = [x, z];
+      P.spot = W((i - 1.5) * 2.2, 2);                                 // where they stand to counter it: the field's gate end
+      peopleMark(P.id, x, z, th, Object.assign({ group: 'city', talks: ['*'], alien: 'flee', lines: O.pearlLines }, P), g0, 'HCRALLY', 'city'); O.n++; }); }
+  // the chants: the call over him, the answer over them
+  const chant = () => { const cv = protestPaint('', 'rgba(0,0,0,0)', '#fff', 512, 128), tx = new THREE.CanvasTexture(cv); tx.colorSpace = THREE.SRGBColorSpace;
+    const Sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tx, transparent: true, depthWrite: false, fog: false }));
+    Sp.scale.set(5.2, 1.3, 1); Sp.visible = false; Sp.renderOrder = 6; Sp.userData.cv = cv; Sp.userData.tx = tx; scene.add(Sp); return Sp; };
+  O.chant = chant(); O.chant2 = chant();
+  // THE TRUCKS: up the highway road (Hollow Creek's own (a, b)), then to a slot behind the gate's row
+  O.path = R && R.roadPts ? R.roadPts.map(p => [p[0], p[1]]) : [];
+  if (O.path.length) {
+    const mats = [0x8a2a22, 0x2e4a6a, 0x5a6a3a, 0xc8c0a8].map(c => new THREE.MeshStandardMaterial({ color: c, roughness: .6, metalness: .2 })), dk = new THREE.MeshStandardMaterial({ color: 0x1c1c1e, roughness: .7 });
+    O.trucks = [];
+    for (let k = 0; k < O.TRUCKS; k++) {
+      const g = new THREE.Group(), add = (w, h, d, m, x, yy, z) => { const q = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), m); q.position.set(x, yy, z); g.add(q); };
+      add(2.0, .9, 5, mats[k], 0, 1.0, 0); add(1.9, .85, 2, mats[k], 0, 1.85, .7); add(1.6, .05, 1.7, dk, 0, 2.0, -1.2);
+      for (const [a, b] of [[-.95, 1.6], [.95, 1.6], [-.95, -1.6], [.95, -1.6]]) { const w = new THREE.Mesh(new THREE.CylinderGeometry(.42, .42, .3, 12), dk); w.rotation.z = Math.PI / 2; w.position.set(a, .42, b); g.add(w); }
+      g.visible = false; scene.add(g);
+      const box = { dyn: 1, hx: 1.05, hz: 2.6, cs: 1, sn: 0, cx: 0, cz: 0, minx: 0, maxx: 0, minz: 0, maxz: 0, miny: 0, maxy: 0, _off: 1 }; BDYN.push(box);
+      const slot = W(-9 + k * 6, 38);
+      O.trucks.push({ g, box, s: 0, st: 'gone', slot, k });
+    }
+    // the road's arc lengths, once
+    O.acc = [0]; for (let i = 1; i < O.path.length; i++) O.acc.push(O.acc[i - 1] + Math.hypot(O.path[i][0] - O.path[i - 1][0], O.path[i][1] - O.path[i - 1][1]));
+  }
+  O.st = 'quiet'; O.t = rnd(O.first);
+  O.at = W(0, -4);
+  return O.n;
+}
+// a point `s` m up the road in the world, its heading and its floor
+function rallyRoad(s) {
+  const O = HCRALLY, P = O.path, A = O.acc, L = A[A.length - 1]; s = clamp(s, 0, L);
+  let i = 1; while (i < A.length - 1 && A[i] < s) i++;
+  const k = (s - A[i - 1]) / ((A[i] - A[i - 1]) || 1), a = P[i - 1][0] + (P[i][0] - P[i - 1][0]) * k, b = P[i - 1][1] + (P[i][1] - P[i - 1][1]) * k;
+  const [x, z] = hcWorld(a, b), [x2, z2] = hcWorld(P[i][0], P[i][1]), [x1, z1] = hcWorld(P[i - 1][0], P[i - 1][1]);
+  return { x, z, y: (HCREEK.meshH ? HCREEK.meshH(a, b) : hcHeight(a, b)) + .09, h: Math.atan2(x2 - x1, z2 - z1) };
+}
+function rallyTruckPlace(T, x, y, z, h) {
+  T.g.position.set(x, y, z); T.g.rotation.y = h; T.g.visible = true;
+  const B = T.box, cs = Math.cos(h), sn = -Math.sin(h); B.cx = x; B.cz = z; B.cs = cs; B.sn = sn; B._off = 0;
+  const ex = B.hx * Math.abs(cs) + B.hz * Math.abs(sn), ez = B.hx * Math.abs(sn) + B.hz * Math.abs(cs);
+  B.minx = x - ex; B.maxx = x + ex; B.minz = z - ez; B.maxz = z + ez; B.miny = y + .2; B.maxy = y + 2.3;
+}
+function rallyStart() { const O = HCRALLY; if (!O.trucks) return false; O.st = 'build'; O.t = O.build; O.runs++; O.provoked = null;
+  O.trucks.forEach(T => { T.st = 'in'; T.parked = 0; T.s = -T.k * O.tgap * O.tspeed; });      // each one `tgap` s behind the last
+  if (Math.hypot(player.pos.x - O.at[0], player.pos.z - O.at[1]) < 200) toast('The trucks are coming up the road: RALLY DAY', 2.6); return true; }
+function rallyStep(dt) {
+  const O = HCRALLY; if (!O.trucks || !inTK()) return;
+  O.t -= dt;
+  // THE TRUCKS, every frame: up the road and into their slots, or back down and gone
+  const L = O.acc[O.acc.length - 1];
+  for (const T of O.trucks) {
+    if (T.st === 'in' || T.st === 'out') {
+      T.s += (T.st === 'in' ? 1 : -1) * O.tspeed * dt;
+      if (T.s < 0 && T.st === 'in') { T.g.visible = false; T.box._off = 1; continue; }             // still waiting its turn
+      if (T.st === 'in' && T.s >= L) { T.st = 'pull'; const P = rallyRoad(L); T.px = P.x; T.pz = P.z; T.py = P.y; }
+      else if (T.st === 'out' && T.s <= 0) { T.st = 'gone'; T.g.visible = false; T.box._off = 1; continue; }
+      if (T.st !== 'park') { const P = rallyRoad(T.s); rallyTruckPlace(T, P.x, P.y, P.z, T.st === 'in' ? P.h : P.h + Math.PI); continue; }
+    }
+    // off the road's end and into its slot behind the gate's row, slowly
+    if (T.st === 'pull') { const [x, z] = T.slot, dx = x - T.px, dz = z - T.pz, d = Math.hypot(dx, dz), stp = Math.min(d, O.tspeed * .45 * dt);
+      if (d < .3) { T.st = 'park'; const y = groundAt(x, z, O.y + 3, .6); rallyTruckPlace(T, x, y > -500 ? y : O.y, z, HCFAIR.frame.th + Math.PI + (T.k - 1.5) * .12); }
+      else { T.px += dx / d * stp; T.pz += dz / d * stp; const y = groundAt(T.px, T.pz, O.y + 3, .6); rallyTruckPlace(T, T.px, y > -500 ? y : O.y, T.pz, Math.atan2(dx, dz)); } }
+  }
+  // the chants, call and answer, near enough to read and only in the speech
+  const near = Math.hypot(player.pos.x - O.at[0], player.pos.z - O.at[1]) < O.near;
+  if (O.st !== 'speech' || !near) { O.chant.visible = O.chant2.visible = false; }
+  else if ((O.cT -= dt) <= 0) { O.cT = 1.8; O.cI = (O.cI + 1) % 24; const p = O.CHANT[(O.cI >> 1) % O.CHANT.length], ans = O.cI & 1;
+    protestChant(ans ? O.chant2 : O.chant, p[ans], ans, 1); O.chant.visible = !ans; O.chant2.visible = !!ans; }
+  if ((O.tick -= dt) > 0) return; const step = .5 - O.tick; O.tick = .5;
+  const all = DUMMIES.filter(d => !d.gone && d.markId && /^hc_(rally|pearl)_/.test(d.markId) && !isAlien(d.K));
+  const goers = all.filter(d => /^hc_rally_\d/.test(d.markId)), pearl = all.filter(d => /^hc_pearl_/.test(d.markId)), boss = DUMMIES.find(d => d.markId === 'hc_rally_boss' && !d.gone);
+  for (const d of pearl) if (!d.pSign) { const P = O.PEARL.find(q => q.id === d.markId); if (P) protestSign(d, P.sign); }
+  const free = d => !(d.fleeT > 0) && d.st !== 'down' && d.st !== 'up' && d.st !== 'hit';
+  const byId = id => O.GOERS.find(q => q.id === id) || O.PEARL.find(q => q.id === id);
+  const home = () => { for (const d of all) if (d.pT) { d.pT = null; d.route = null; d.roamT = .2 + Math.random(); } };
+  if (O.st === 'quiet') { if (O.t <= 0) rallyStart(); }
+  else if (O.st === 'build') {
+    // they come in a few at a time as the trucks arrive
+    const k = Math.floor((1 - O.t / O.build) * goers.length * 1.4);
+    goers.forEach((d, i) => { if (i <= k && free(d)) { const G = byId(d.markId); if (G) protestTo(d, G.spot[0], G.spot[1]); } });
+    if (O.t <= 0) { O.st = 'speech'; O.t = O.speech; }
+  } else if (O.st === 'speech') {
+    for (const d of goers) if (free(d)) { const G = byId(d.markId); if (G) protestTo(d, G.spot[0], G.spot[1]); }
+    // the Pearl's lot set out from their camp when it is half done
+    if (O.t < O.speech * .55) for (const d of pearl) if (free(d)) { const P = byId(d.markId); if (P) protestTo(d, P.spot[0], P.spot[1]); }
+    if (!O.provoked && pearl.some(d => Math.hypot(d.root.position.x - byId(d.markId).spot[0], d.root.position.z - byId(d.markId).spot[1]) < 4) && Math.random() < O.boil * step) O.provoked = 'a sandwich';
+    if (O.provoked || O.t <= 0) rallyBrawl(O.provoked || 'a corn dog');
+  } else if (O.st === 'brawl') {
+    O.bT = (O.bT || 0) + step;
+    for (const d of [...goers, ...pearl]) {
+      d.fleeT = 0; if (!free(d)) continue;
+      const foes = goers.includes(d) ? pearl : goers; let T = null, td = 16;
+      for (const o of foes) { if (!free(o) && o.st !== 'hit') continue; const q = Math.hypot(o.root.position.x - d.root.position.x, o.root.position.z - d.root.position.z); if (q < td) { td = q; T = o; } }
+      if (!T) continue; protestTo(d, T.root.position.x, T.root.position.z);
+      if ((d.punchT = (d.punchT || 0) - step) <= 0 && td < O.reach && d.st !== 'hit') { d.punchT = rnd(O.punch); const h = Math.atan2(T.root.position.x - d.root.position.x, T.root.position.z - d.root.position.z); d.h = h; dummyBlow(T, h, .45 + Math.random() * .6, null, d); O.punches = (O.punches || 0) + 1; }
+    }
+    if (O.bT > O.brawlMax || !pearl.some(free) || !goers.some(free)) { toast('It peters out. Everybody limps home.', 2.4); for (const d of all) if (free(d)) { d.fleeT = 2 + Math.random() * 2; d.roamT = 0; } O.st = 'disperse'; O.t = O.disperse; O.brawls++;
+      for (const T of O.trucks) { T.st = 'out'; T.parked = 0; T.s = L + T.k * O.tgap * O.tspeed * .5; T.g.visible = false; T.box._off = 1; } }   // they reappear on the road as they go
+  } else if (O.st === 'disperse') { home(); if (O.t <= 0) { O.st = 'quiet'; O.t = rnd(O.quiet); } }
+  // the chants follow them
+  let cx = 0, cz = 0, k = 0; for (const d of goers) { cx += d.root.position.x; cz += d.root.position.z; k++; }
+  if (k) O.chant2.position.set(cx / k, O.y + 3.6, cz / k); else O.chant2.position.set(O.at[0], O.y + 3.6, O.at[1]);
+  if (boss) O.chant.position.set(boss.root.position.x, boss.root.position.y + 3.6, boss.root.position.z); else { const [x, z] = O.W(...O.LEADER.at); O.chant.position.set(x, O.y + 5, z); }
+}
+function rallyBrawl(why) {
+  const O = HCRALLY; if (O.st === 'brawl') return false; O.st = 'brawl'; O.bT = 0; O.provoked = why || 'GOD';
+  O.chant.visible = O.chant2.visible = false;
+  if (Math.hypot(player.pos.x - O.at[0], player.pos.z - O.at[1]) < O.near) cardShow('A BRAWL AT THE RALLY', why === 'you' ? 'YOU STARTED IT' : 'SOMEBODY THREW ' + why.toUpperCase(), 2.6);
+  return true;
+}
+// ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
 // ============================================================================================
 // Irregular patches of wheat, corn, ploughed earth, hay meadow and pasture, divided by hedgerows, fences, tree lines and
@@ -36667,6 +36830,7 @@ const GODPLACES = [
   { id: 'otfreight', world: 'tkit', name: 'OLD TOWN · the freight pier (the train to Hollow Creek)', at: () => HCTRAIN.otAt },   // m370
   { id: 'hchalt', world: 'tkit', name: 'HOLLOW CREEK · the halt (the freight line)', at: () => HCTRAIN.hcAt },
   { id: 'hcbikes', world: 'tkit', name: 'HOLLOW CREEK · the dirt-bike track', at: () => HCBIKE.at },   // m369
+  { id: 'hcrally', world: 'tkit', name: 'HOLLOW CREEK · the rally field (in front of the stage)', at: () => HCRALLY.at && [HCRALLY.at[0], HCRALLY.y + .1, HCRALLY.at[1], HCFAIR.frame.th + Math.PI] },   // m372
   { id: 'hcfair', world: 'tkit', name: 'HOLLOW CREEK · the fairground (the rally)', at: () => HCFAIR.at },   // m368
   { id: 'hcmill', world: 'tkit', name: 'HOLLOW CREEK · the logging mill', at: () => HCMILL.at },   // m367
   { id: 'hctrail', world: 'tkit', name: 'HOLLOW CREEK · the trailer park on stilts', at: () => HCTRAIL.walkAt },   // m366
@@ -36832,6 +36996,9 @@ function godMenuOpen(on) {
   if (OORB.g) btn('THE PACIFIER ORB: ' + (OORB.st === 'up' ? 'UP' : 'RAISE IT AGAIN'), () => { if (OORB.st !== 'up') { progFlag('orb:pacifier', 0); OORB.st = 'up'; OORB.hpNow = OORB.hp; OORB.g.visible = true; OORB.T.on = 1; OORB.cone.visible = true; OORB.core.material.emissiveIntensity = 2.6; } godMenuOpen(1); });
   if (OPROTEST.path) btn('START THE PROTEST NOW (' + OPROTEST.st.toUpperCase() + ')', () => { protestStart(); godMenuOpen(0); toast('The protest is gathering at the square', 2); });
   // both sides to the rally first (they live 43 m apart), then it goes off 12 s later
+  // m372: Hollow Creek's rally
+  if (HCRALLY.trucks) { btn('START THE RALLY (' + HCRALLY.st.toUpperCase() + ')', () => { godMenuOpen(0); rallyStart(); toast('The trucks are on the road', 2); });
+    btn('SKIP TO THE RALLY BRAWL', () => { godMenuOpen(0); if (HCRALLY.st === 'quiet') rallyStart(); HCRALLY.st = 'speech'; HCRALLY.t = 6; HCRALLY.provoked = 'GOD'; toast('It goes off in a moment', 2); }); }
   // m360: the Pearl's march, either route
   if (OPLAZA.routes) OPLAZA.routes.forEach((R, i) => btn('THE PEARL MARCHES ' + R.label + ' (' + OPLAZA.st.toUpperCase() + ')', () => { godMenuOpen(0); plazaStart(i); toast('The Pearl is forming up ' + R.label.toLowerCase(), 2.2); }));
   if (OPROTEST.path) btn('SKIP TO THE RALLY, THEN THE BRAWL', () => { const O = OPROTEST; godMenuOpen(0); protestStart(); O.st = 'rally'; O.s = O.len; O.t = O.rally; O.provoked = null; O.provokeAt = 12; toast('Rally at the corner lot; it goes off in 12 s', 2.4); });
@@ -38420,6 +38587,7 @@ function frameBody() {
   strikeStep(dt);               // the crews on the picket line, or back at work (m345)
   protestStep(dt);              // the protest: gather, march, rally, home (m346)
   fairStep(dt);                 // Hollow Creek's Ferris wheel turns (m368)
+  rallyStep(dt);                // ...and the rally: trucks up the road, the crowd, the speech, the brawl (m372)
   plazaStep(dt);                // the Pearl's sit-in, its chant, and its march out through the barricades and back (m360)
   incurStep(dt);                // a Skinsuit ship over Old Town now and then (m349)
   orbStep(dt);                  // the pacifier orb: its trance, its crackle, its fall (m350)
@@ -39192,6 +39360,8 @@ async function init() {
     try { buildFreight(); } catch (e) { note('FREIGHT FAIL'); console.warn('[melee] freight', e); }
     // THE HIGHWAY BRIDGE TO HOLLOW CREEK, AND THE GANG ON IT (m371)
     try { buildHighway(); } catch (e) { note('HIGHWAY FAIL'); console.warn('[melee] highway', e); }
+    // HOLLOW CREEK'S RALLY (m372): after the fairground and the highway it uses
+    try { buildRally(); } catch (e) { note('RALLY FAIL'); console.warn('[melee] rally', e); }
     // THE STRIKE'S PICKET (m345): hidden until the crews walk out
     try { buildStrike(); } catch (e) { note('STRIKE FAIL'); console.warn('[melee] strike', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)
@@ -39368,7 +39538,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

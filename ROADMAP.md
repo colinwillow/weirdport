@@ -290,7 +290,7 @@ differ" table there, so no region feels like the last one.
     - [x] m371 **C6-5d** the way in: the freight line out of Old Town over the water, and a second way (the highway shoulder).
       - [x] m370 **C6-5d-1** the freight line: a trestle from Old Town's south-west beach to a halt at the creek's mouth, and a train you ride.
       - [x] m371 **C6-5d-2** the second way: the highway shoulder (a road bridge in, watched by the gang).
-    - [ ] **C6-5e** the rally, the region's living system: it builds, the leader speaks, it boils over.
+    - [x] m372 **C6-5e** the rally, the region's living system: it builds, the leader speaks, it boils over.
     - [ ] **C6-5f** Chapter 3's quests: the biker form, the gang's respect, the infiltrated rally leader (the boss).
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
@@ -981,3 +981,10 @@ differ" table there, so no region feels like the last one.
   get past; anyone else is turned round**, but anyone can leave. So there are two ways in: as one of
   them by road, or as anything by freight train. I also let all Hollow Creek's people talk to
   bikers as well as country folk, since bikers count as their own group.
+
+- **m372 (C6-5e) The rally.** It runs on its own clock every two to three minutes. Four trucks drive
+  up the highway road and park, ten locals fill the field, and the rally man calls from his stage
+  while the crowd answers. Halfway through, the Pearl's four counter-protesters march in from their
+  camp by the road. It boils over into a brawl, on its own or when you throw the first punch, and
+  then everyone limps home and the trucks drive off. The rally man is the Chapter 3 boss in C6-5f;
+  for now he just stands on the stage.

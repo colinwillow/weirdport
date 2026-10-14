@@ -7,6 +7,23 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE RALLY: TRUCKS UP THE ROAD, THE CROWD, THE SPEECH, THE BRAWL (m372, C6-5e, `HCRALLY`, `buildRally`, `rallyStep`,
+  `rallyStart`, `rallyBrawl`, `rallyRoad`).** Hollow Creek's living system, an event on its own clock at the fairground
+  (quiet 110-170 s, the first 40-70 s in): BUILD (34 s) -- four pickups come up the highway road (`HCROAD.roadPts`) one
+  `tgap` behind another, pull off its end into slots behind the gate's row, and the rally-goers (ten: rednecks, bikers, two
+  old-timers, living round the fair) leave their places a few at a time for rows on the field; SPEECH (42 s) -- the rally
+  man (role `rallyboss`, the big one, on his stage the whole time) calls and the crowd answers (two sprites, the Pearl's
+  `protestChant`; "THE LIGHTS OVER THE HILL?" "NOTHING TO SEE!"), and halfway through the Pearl's counter-protest (four,
+  signs up, living at a camp by the road short of the gate -- "we came up on the freight") marches in to the field's gate
+  end; it BOILS OVER (a sandwich -- 6% a second once they are there -- your punch on either side, or the speech running
+  out): a BRAWL, each at the nearest of the other lot (`dummyBlow`, `pal` set: no heat on you), 32 s at most or until one
+  side is down; DISPERSE -- everybody home, the trucks back down the road and gone. Trucks are `BDYN` boxes while they show.
+  GOD: "HOLLOW CREEK · the rally field", START THE RALLY, SKIP TO THE RALLY BRAWL. Three homes first landed inside the
+  grandstand and the pens; moved.
+  `npm run places` (exit 0): `ok  hcrally -> player -199.5,6.0,386.7 ground 5.72`;
+  `ok  RALLY 15 people (1 rally man) | spots off the floor 0 | build > speech > brawl > disperse > quiet | trucks parked 4/4 (slots 0.03, 0.02, 0.03, 0.05 over the fair), gone after true`
+  (the trucks are still driving off when it goes quiet; the row waits for them).
+  **Not built:** a crowd sound, the leader's own clips (he stands), anybody arrested (there is no law in Hollow Creek).
 - **THE HIGHWAY IN, AND THE GANG ON IT: A GATE BY GROUP (m371, C6-5d-2, `HCROAD`, `buildHighway`, `GATE_TYPES.gang`,
   `T.groups`).** A road bridge from Old Town's south-west ring (at 119 deg, between the lookout and the moved house) arching
   5 m over the water on concrete piers -- road, a shoulder each side, a centre line, guardrails (a collider each side),
