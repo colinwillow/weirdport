@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m364</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m365</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m364</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m365</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm364';
+const BUILD = 'm365';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28043,7 +28043,7 @@ const QUESTS = [
   // Ash comes round; the strike is called off and Old Town's crews go back (`strikeSet(0)`, the district's boss bonus), the
   // barricades' doors open for good, and the chapter is done.
   { id: 'ch2c', title: 'THE EXPOSURE', world: 'tkit', ch: 2, from: 'ch2_receipts',
-    onDone: () => { strikeSet(0); progChapter(3); dhPush('oldtown', DHEALTH.boss); setTimeout(() => cardShow('CHAPTER 2 COMPLETE', 'THE STRIKE IS OVER: THE CREWS GO BACK', 4.5), 3600); }, steps: [
+    onDone: () => { strikeSet(0); progChapter(3); progRegion('tkit:creek'); dhPush('oldtown', DHEALTH.boss); setTimeout(() => cardShow('CHAPTER 2 COMPLETE', 'THE STRIKE IS OVER: THE CREWS GO BACK', 4.5), 3600); }, steps: [
     { type: 'goto',   npc: 'pearl_organiser', r: 9, text: 'Be at the stage when the organiser comes down', tip: 'In with the march, or over the roofs. Marisol does the talking.' },
     { type: 'skin',   tag: 'ch2boss', npc: 'pearl_organiser', r: 8, big: 1.85, downs: 5, text: 'The receipts, read out in front of everyone', tip: 'That was never Ash. Knock it down. Again. And again.',
       after: { id: 'ch2_ash_after', name: 'Ash', group: 'city', talks: ['*'], alien: 'talk',
@@ -31400,6 +31400,197 @@ function buildFarmland() {
 }
 
 // ============================================================================================
+// HOLLOW CREEK'S LAND (m365, ROADMAP C6-5a, `HCREEK`, `hcHeight`, `buildHollowLand`) -- Chapter 3's region
+// ============================================================================================
+// REGIONS: "where the city frays into forest. Rough, loud, proud ... a trailer park on stilts over the creek, a dirt-bike
+// track over ridges, the logging mill with log flumes and conveyors, the fairground where the rally is held, forest trails
+// up a hill." The rural ring, so its own LANDMASS across the water at its own bearing -- on the far side of the island
+// from the metropolis's axis and from the farm, so from Old Town's south ring (the lookout) it is a dark line of forest
+// over the water. Its ground is the farmland's recipe (a superellipse coast, a shelf, a beach, the land rising inland,
+// gaussian hills and ridges, chunked meshes on the island's own material, every floor triangle into `TRI`) with more
+// relief: THE HILL (28 m), a line of RIDGES for the bike track, and THE GORGE -- the creek cut 9 m down through the
+// middle of it from the hill's foot to the sea (its bed a running minimum downstream, steep rock walls, a stream in it).
+// Two FLATS for the fairground and the mill. A pine FOREST over the rest, in patches with clearings (two instanced
+// meshes, a trunk collider each). It has its own frame -- (a along the coast, b away from the city) -- like the farm's.
+// What stands on it is C6-5b on; how you get there (the freight line) is C6-5d. Until then, GOD.
+// **Its sea is the island's**: it has no water of its own (the farm's needed one for its creek and pond; this gorge runs
+// to the sea above it), so the shallows off its beach read as the island's deep water. A polish pass, not a bug.
+const HCREEK = {
+  on: 1, live: 0,
+  bearing: 2.3, gap: 110, A: 190, B: 150, pw: 2.6, wob: .12, seed: 53,
+  beach: 10, cell: 4, chunk: 48, margin: 70, rise: 9,        // 4 m, not the farm's 5: the gorge's bed is 6.4 m across
+  HILLS: [
+    { a: 105, b: 85, r: 55, h: 28, why: 'THE HILL: forest trails up it, the outskirts seen from the top (REGIONS)' },
+    { a: -120, b: 95, r: 50, h: 12, why: 'the far shoulder behind the fairground' },
+    { a: 30, b: 120, r: 40, h: 14, why: 'the saddle the creek comes down out of' },
+  ],
+  RIDGES: [
+    { a0: 40, b0: -95, a1: 150, b1: -60, w: 9, h: 4.2, why: 'the bike track: the first of its ridges, along the near shore' },
+    { a0: 45, b0: -70, a1: 140, b1: -38, w: 8, h: 3.6, why: '...the second' },
+    { a0: 55, b0: -45, a1: 130, b1: -15, w: 8, h: 4.6, why: '...the third, the big one' },
+  ],
+  GORGE: { pts: [[25, 118], [8, 80], [-14, 52], [-8, 16], [-28, -22], [-18, -62], [-36, -104], [-30, -160]],
+    hb: 3.2, wall: 1.1, dig: 9, why: "the creek: down out of the saddle, past the mill's flat, under the trailer park, to the sea facing Old Town" },
+  FLATS: [
+    { a: -105, b: 10, r: 48, why: 'THE FAIRGROUND: where the rally is held (C6-5c)' },
+    { a: 32, b: 40, r: 26, why: 'THE MILL: beside the gorge, where the flume can drop into it (C6-5b)' },
+  ],
+  forest: { step: 7.5, keep: .66, gorge: 7, beach: 6, slope: .75, flat: 1.1 },
+  O: null, ua: null, ub: null, noise: null, tris: 0, chunks: 0, trees: 0, bbox: null,
+};
+const hcWorld = (a, b) => { const F = HCREEK; return [F.O[0] + a * F.ua[0] + b * F.ub[0], F.O[1] + a * F.ua[1] + b * F.ub[1]]; };
+const hcLocal = (x, z) => { const F = HCREEK, dx = x - F.O[0], dz = z - F.O[1]; return [dx * F.ua[0] + dz * F.ua[1], dx * F.ub[0] + dz * F.ub[1]]; };
+function hcEdge(a, b) {
+  const F = HCREEK, p = F.pw, L = Math.hypot(a, b) || 1e-6;
+  const rr = Math.pow(Math.pow(Math.abs(a) / F.A, p) + Math.pow(Math.abs(b) / F.B, p), 1 / p);
+  const rn = Math.pow(Math.pow(Math.abs(a / L) / F.A, p) + Math.pow(Math.abs(b / L) / F.B, p), 1 / p);
+  return (1 + F.wob * (2 * F.noise(Math.atan2(b / F.B, a / F.A)) - 1) - rr) / rn;
+}
+function hcBase(a, b) {
+  const F = HCREEK, sea = ISLE.sea, e = hcEdge(a, b);
+  if (e < 0) return Math.max(sea - 26, sea - .35 + e * .3);
+  if (e < F.beach) return sea - .35 + 1.65 * ss01(0, F.beach, e);
+  const y = sea + 1.3 + F.rise * (1 - Math.exp(-(e - F.beach) / 50));      // higher ground than the farm's: the gorge has to cut into something
+  let h = 0;
+  for (const H of F.HILLS) { const d2 = ((a - H.a) ** 2 + (b - H.b) ** 2) / (H.r * H.r); if (d2 < 9) h += H.h * Math.exp(-d2 * 1.6); }
+  for (const R of F.RIDGES) {
+    const ux = R.a1 - R.a0, uz = R.b1 - R.b0, t = clamp(((a - R.a0) * ux + (b - R.b0) * uz) / (ux * ux + uz * uz), 0, 1);
+    const d = Math.hypot(a - R.a0 - ux * t, b - R.b0 - uz * t) / R.w;
+    if (d < 3) h += R.h * Math.exp(-d * d * 1.6) * ss01(0, .08, t) * ss01(1, .92, t);
+  }
+  h += 1.6 * Math.sin(a * .031 + b * .013 + .4) * Math.sin(b * .037 - a * .011 + 1.1) + .7 * Math.sin(a * .083 - b * .061);
+  h *= ss01(F.beach, F.beach + 35, e);
+  let out = y + h;
+  if (F.flatOn) for (const Fl of F.FLATS) { if (Fl.y == null) continue; const w = 1 - ss01(Fl.r * .55, Fl.r, Math.hypot(a - Fl.a, b - Fl.b)); if (w > 0) out = lerp(out, Fl.y, w); }
+  return out;
+}
+// the distance to the gorge's line and how far down it that is
+function hcGorgeAt(a, b) {
+  const P = HCREEK.GORGE.pts; let best = 1e9, sAt = 0, acc = 0;
+  for (let i = 0; i < P.length - 1; i++) {
+    const [a0, b0] = P[i], ux = P[i + 1][0] - a0, uz = P[i + 1][1] - b0, L2 = ux * ux + uz * uz, L = Math.sqrt(L2);
+    const t = clamp(((a - a0) * ux + (b - b0) * uz) / L2, 0, 1), d = Math.hypot(a - a0 - ux * t, b - b0 - uz * t);
+    if (d < best) { best = d; sAt = acc + t * L; }
+    acc += L;
+  }
+  return [best, sAt];
+}
+function hcHeight(a, b) {
+  const F = HCREEK, base = hcBase(a, b), C = F.gbed; if (!C) return base;
+  const [d, s] = hcGorgeAt(a, b); if (d > 60) return base;
+  const k = clamp(s / C.step, 0, C.y.length - 1.001), i = Math.floor(k), bed = lerp(C.y[i], C.y[i + 1], k - i), G = F.GORGE;
+  return Math.min(base, d <= G.hb ? bed : bed + (d - G.hb) * G.wall + .25 * (d - G.hb) * (d - G.hb) * .05);
+}
+const hcHeightAt = (x, z) => { const [a, b] = hcLocal(x, z); return hcHeight(a, b); };
+function buildHollowLand() {
+  const F = HCREEK, I = ISLE; F.live = 0;
+  if (!F.on || !inTK() || !I.live || !I.rays || !I.lmat) return 0;
+  const R = I.rect, cx = (R[0] + R[1]) / 2, cz = (R[2] + R[3]) / 2, sea = I.sea;
+  F.noise = isleNoise(F.seed);
+  F.ub = [Math.cos(F.bearing), Math.sin(F.bearing)]; F.ua = [-F.ub[1], F.ub[0]];
+  const ray = isleRayAt(F.bearing), d = ray.rb + ray.L + F.gap + F.B;
+  F.O = [cx + F.ub[0] * d, cz + F.ub[1] * d];
+  F.flatOn = 0; for (const Fl of F.FLATS) { Fl.y = null; Fl.y = hcBase(Fl.a, Fl.b); } F.flatOn = 1;
+  // the gorge's bed: `dig` under the land down its length, a running minimum downstream, resampled to an even step
+  F.gbed = null;
+  { const P = F.GORGE.pts, step = 2, raw = [], sl = [0]; let acc = 0;
+    for (let i = 0; i < P.length - 1; i++) { const L = Math.hypot(P[i + 1][0] - P[i][0], P[i + 1][1] - P[i][1]), n = Math.max(1, Math.round(L / step));
+      for (let k = 0; k < n; k++) { const t = k / n; raw.push(hcBase(lerp(P[i][0], P[i + 1][0], t), lerp(P[i][1], P[i + 1][1], t)) - F.GORGE.dig); }
+      for (let k = 1; k <= n; k++) sl.push(acc + L * k / n); acc += L; }
+    raw.push(hcBase(...P[P.length - 1]) - F.GORGE.dig);
+    for (let k = 1; k < raw.length; k++) raw[k] = Math.min(raw[k], raw[k - 1] - .02);
+    const ev = []; for (let s0 = 0, j = 0; s0 <= acc + 1e-6; s0 += step) { while (j < sl.length - 2 && sl[j + 1] < s0) j++; ev.push(Math.max(sea - .6, lerp(raw[j], raw[j + 1], clamp((s0 - sl[j]) / ((sl[j + 1] - sl[j]) || 1), 0, 1)))); }
+    F.gbed = { step, y: ev, len: acc }; }
+  // the grid and the chunks: the farmland's own loop, on the island's material
+  const C = F.cell, a0 = -F.A - F.margin, b0 = -F.B - F.margin;
+  const NA = Math.ceil((2 * F.A + 2 * F.margin) / C), NB = Math.ceil((2 * F.B + 2 * F.margin) / C);
+  const H = new Float32Array((NA + 1) * (NB + 1));
+  for (let j = 0; j <= NB; j++) for (let i = 0; i <= NA; i++) H[j * (NA + 1) + i] = hcHeight(a0 + i * C, b0 + j * C);
+  const hAt = (i, j) => H[clamp(j, 0, NB) * (NA + 1) + clamp(i, 0, NA)];
+  const CH = F.chunk, tris = []; let flip = null, nCh = 0;
+  let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9;
+  for (let cj = 0; cj < NB; cj += CH) for (let ci = 0; ci < NA; ci += CH) {
+    const ni = Math.min(CH, NA - ci), nj = Math.min(CH, NB - cj), W = ni + 1;
+    const pos = new Float32Array(W * (nj + 1) * 3), nor = new Float32Array(W * (nj + 1) * 3), spl = new Float32Array(W * (nj + 1) * 3);
+    let deep = 1;
+    for (let jj = 0; jj <= nj; jj++) for (let ii = 0; ii <= ni; ii++) {
+      const i = ci + ii, j = cj + jj, a = a0 + i * C, b = b0 + j * C, y = hAt(i, j), [x, z] = hcWorld(a, b), o = (jj * W + ii) * 3;
+      if (y > sea - 12) deep = 0;
+      if (y > sea) { x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); }
+      pos[o] = x; pos[o + 1] = y; pos[o + 2] = z;
+      const ga = (hAt(i + 1, j) - hAt(i - 1, j)) / (2 * C), gb = (hAt(i, j + 1) - hAt(i, j - 1)) / (2 * C);
+      let nx = -ga * F.ua[0] - gb * F.ub[0], ny = 1, nz = -ga * F.ua[1] - gb * F.ub[1];
+      const nl = Math.hypot(nx, ny, nz); nor[o] = nx / nl; nor[o + 1] = ny / nl; nor[o + 2] = nz / nl;
+      const e = hcEdge(a, b), slope = Math.hypot(ga, gb), rock = ss01(.38, .75, slope);
+      if (y < sea - .2) { const k = ss01(sea - .2, sea - 6, y); spl[o] = 0; spl[o + 1] = 1 - k; spl[o + 2] = .15 + k; }
+      else if (e < F.beach + 2) { const g = ss01(F.beach - 3, F.beach + 2, e); spl[o] = g; spl[o + 1] = 1 - g; spl[o + 2] = .05; }
+      else { spl[o] = 1 - rock; spl[o + 1] = .12 * (1 - rock); spl[o + 2] = rock; }          // a little dirt in the grass: rougher than the farm
+    }
+    if (deep) continue;
+    const idx = [];
+    for (let jj = 0; jj < nj; jj++) for (let ii = 0; ii < ni; ii++) {
+      const A0 = jj * W + ii, B0 = A0 + 1, C0 = A0 + W + 1, D0 = A0 + W;
+      const top = Math.max(pos[A0 * 3 + 1], pos[B0 * 3 + 1], pos[C0 * 3 + 1], pos[D0 * 3 + 1]);
+      if (top < sea - 12) continue;
+      if (flip === null) { const ux = pos[B0 * 3] - pos[A0 * 3], uz = pos[B0 * 3 + 2] - pos[A0 * 3 + 2], vx = pos[C0 * 3] - pos[A0 * 3], vz = pos[C0 * 3 + 2] - pos[A0 * 3 + 2]; flip = uz * vx - ux * vz < 0; }
+      const t1 = flip ? [A0, C0, B0] : [A0, B0, C0], t2 = flip ? [A0, D0, C0] : [A0, C0, D0];
+      idx.push(...t1, ...t2);
+      if (top > sea - 2.5) for (const t of [t1, t2]) for (const v of t) tris.push(pos[v * 3], pos[v * 3 + 1], pos[v * 3 + 2]);
+    }
+    if (!idx.length) continue;
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(pos, 3)); g.setAttribute('normal', new THREE.BufferAttribute(nor, 3)); g.setAttribute('aSplat', new THREE.BufferAttribute(spl, 3));
+    g.setIndex(idx); g.computeBoundingSphere();
+    const m = new THREE.Mesh(g, I.lmat); m.name = 'hollowland'; m.receiveShadow = true; m.userData.noHole = 1; scene.add(m); nCh++;
+  }
+  F.chunks = nCh; F.tris = isleAppend(tris); F.bbox = { x0, x1, z0, z1 };
+  // the MESH's height at (a, b) -- its two triangles a cell, the diagonal A-C either way round -- which over a 6 m bed on a 4 m
+  // grid is not the function's: the stream sits on what you SEE
+  const meshH = (a, b) => { const fi = (a - a0) / C, fj = (b - b0) / C, i = Math.floor(fi), j = Math.floor(fj), x = fi - i, y = fj - j;
+    const hA = hAt(i, j), hB = hAt(i + 1, j), hC = hAt(i + 1, j + 1), hD = hAt(i, j + 1);
+    return x >= y ? hA + (hB - hA) * x + (hC - hB) * y : hA + (hC - hD) * x + (hD - hA) * y; };
+  // THE STREAM: a ribbon down the gorge's bed
+  { const G = F.GORGE, Cb = F.gbed, wp = [], wi = []; let n = 0;
+    for (let s0 = 0; s0 <= Cb.len; s0 += 3) {
+      let acc = 0, P = G.pts, pa = null;
+      for (let i = 0; i < P.length - 1; i++) { const L = Math.hypot(P[i + 1][0] - P[i][0], P[i + 1][1] - P[i][1]); if (acc + L >= s0 || i === P.length - 2) { const t = clamp((s0 - acc) / L, 0, 1); pa = [lerp(P[i][0], P[i + 1][0], t), lerp(P[i][1], P[i + 1][1], t), (P[i + 1][0] - P[i][0]) / L, (P[i + 1][1] - P[i][1]) / L]; break; } acc += L; }
+      const y = Math.max(Cb.y[Math.min(Cb.y.length - 1, Math.round(s0 / Cb.step))] + .28, meshH(pa[0], pa[1]) + .12), w = G.hb * .85;
+      for (const sd of [-1, 1]) { const [x, z] = hcWorld(pa[0] - pa[3] * sd * w, pa[1] + pa[2] * sd * w); wp.push(x, y, z); }
+      if (n) { const q = (n - 1) * 2; wi.push(q, q + 1, q + 2, q + 1, q + 3, q + 2); } n++;
+    }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(wp, 3)); g.setIndex(wi); g.computeVertexNormals();
+    const m = new THREE.Mesh(g, new THREE.MeshStandardMaterial({ color: 0x3f7d86, roughness: .15, metalness: .1, transparent: true, opacity: .82, side: THREE.DoubleSide }));
+    m.name = 'hollow_creek'; m.renderOrder = 1; scene.add(m); }
+  // THE FOREST: a jittered lattice kept where the noise says forest and nothing else claims the ground
+  { const T = F.forest, pts = [], nz2 = isleNoise(F.seed + 7); let s0 = F.seed * 131 + 7; const rr = () => (s0 = (s0 * 9301 + 49297) % 233280) / 233280;
+    for (let a = -F.A; a <= F.A; a += T.step) for (let b = -F.B; b <= F.B; b += T.step) {
+      const ja = a + (rr() - .5) * T.step * .9, jb = b + (rr() - .5) * T.step * .9, e = hcEdge(ja, jb);
+      if (e < F.beach + T.beach) continue;
+      const patch = .5 + .5 * Math.sin(ja * .021 + 1.3) * Math.sin(jb * .027 + .4) + .25 * (nz2(Math.atan2(jb, ja) + ja * .003) - .5);
+      if (patch < 1 - T.keep - rr() * .25) continue;
+      if (hcGorgeAt(ja, jb)[0] < F.GORGE.hb + T.gorge) continue;
+      if (F.FLATS.some(Fl => Math.hypot(ja - Fl.a, jb - Fl.b) < Fl.r * T.flat)) continue;
+      const y = hcHeight(ja, jb), sl = Math.hypot(hcHeight(ja + 1, jb) - y, hcHeight(ja, jb + 1) - y); if (sl > T.slope) continue;
+      const [x, z] = hcWorld(ja, jb); pts.push([x, y, z, .75 + rr() * .6, rr() * 6.28]);
+    }
+    const trunk = new THREE.CylinderGeometry(.16, .26, 3, 6); trunk.translate(0, 1.5, 0);
+    const crown = new THREE.ConeGeometry(1.7, 6, 7); crown.translate(0, 5.2, 0);
+    const mT = new THREE.InstancedMesh(trunk, new THREE.MeshStandardMaterial({ color: 0x5a3d28, roughness: .9 }), pts.length);
+    const mC = new THREE.InstancedMesh(crown, new THREE.MeshStandardMaterial({ color: 0x2f5a35, roughness: .85 }), pts.length);
+    const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), sc = new THREE.Vector3(), p = new THREE.Vector3(), up = new THREE.Vector3(0, 1, 0);
+    pts.forEach((P, i) => { q.setFromAxisAngle(up, P[4]); sc.set(P[3], P[3] * (.9 + (i % 5) * .06), P[3]); p.set(P[0], P[1] - .1, P[2]); m4.compose(p, q, sc); mT.setMatrixAt(i, m4); mC.setMatrixAt(i, m4);
+      BOXES.push({ minx: P[0] - .3, maxx: P[0] + .3, minz: P[2] - .3, maxz: P[2] + .3, miny: P[1] - .2, maxy: P[1] + 3 * P[3], farm: 'creek' }); });
+    for (const M of [mT, mC]) { M.instanceMatrix.needsUpdate = true; M.computeBoundingSphere(); M.castShadow = false; M.receiveShadow = true; scene.add(M); }
+    boxGrid(); F.trees = pts.length; }
+  // the places GOD names: the gorge's rim over the trailer park's reach, and the top of the hill
+  { const P = F.GORGE.pts[5], Q = F.GORGE.pts[4], ux = P[0] - Q[0], uz = P[1] - Q[1], L = Math.hypot(ux, uz), ra = P[0] + uz / L * 14, rb = P[1] - ux / L * 14, [x, z] = hcWorld(ra, rb);
+    F.rimAt = [x, hcHeight(ra, rb) + .1, z, Math.atan2(-uz / L * F.ua[0] + ux / L * F.ub[0], -uz / L * F.ua[1] + ux / L * F.ub[1])]; }
+  { const H0 = F.HILLS[0], [x, z] = hcWorld(H0.a, H0.b); F.hillAt = [x, hcHeight(H0.a, H0.b) + .1, z, F.bearing]; }
+  F.live = 1;
+  console.log('[melee] hollow creek: ' + nCh + ' chunks, ' + F.tris + ' floor tris, ' + F.trees + ' trees, centre ' + F.O.map(v => v.toFixed(0)).join(','));
+  return nCh;
+}
+// ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
 // ============================================================================================
 // Irregular patches of wheat, corn, ploughed earth, hay meadow and pasture, divided by hedgerows, fences, tree lines and
@@ -32033,6 +32224,7 @@ function mapRegionsTkit() {
     for (const [a, b] of [[-1, -1], [1, -1], [1, 1], [-1, 1]]) { const [x, z] = flWorld(a * FARMLAND.A, b * FARMLAND.B); x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); }
     regs.push({ id: 'farm', name: 'GRISTLE FARM', x0, x1, z0, z1 });
   }
+  if (HCREEK.live && HCREEK.bbox) { const B = HCREEK.bbox; regs.push({ id: 'creek', name: 'HOLLOW CREEK', x0: B.x0, x1: B.x1, z0: B.z0, z1: B.z1 }); }   // m365
   MAPREG.tkit = regs; if (map.ext) mapBuild();
   return regs.length;
 }
@@ -35780,6 +35972,8 @@ const GODPLACES = [
   { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
   { id: 'pearl', world: 'tkit', name: 'THE PEARL · the plaza (Chapter 2)', at: () => OPEARL.plazaAt },
+  { id: 'hcrim', world: 'tkit', name: 'HOLLOW CREEK · the gorge (Chapter 3)', at: () => HCREEK.rimAt },    // m365
+  { id: 'hchill', world: 'tkit', name: 'HOLLOW CREEK · the top of the hill', at: () => HCREEK.hillAt },
   { id: 'pearlhq', world: 'tkit', name: "THE PEARL · the organiser's roof (Ash, the transmitter)", at: () => OPEARL.ROOF.hqGod },   // m363
   { id: 'pearlroof', world: 'tkit', name: "THE PEARL · up on the studios' roof garden", at: () => OPEARL.ROOF.godAt },   // m361
   { id: 'pearlbar', world: 'tkit', name: 'THE PEARL · the barricade across the dock street (outside it)', at: () => OPLAZA.outAt },   // m360
@@ -38225,6 +38419,8 @@ async function init() {
     try { buildIsle(); } catch (e) { ISLE.live = 0; note('ISLE FAIL'); console.warn('[melee] island', e); }
     // GRISTLE FARM'S OWN LAND (m306): across the channel, after the island it measures its place off
     try { buildFarmland(); } catch (e) { FARMLAND.live = 0; note('FARMLAND FAIL'); console.warn('[melee] farmland', e); }
+    // HOLLOW CREEK'S LAND (m365): Chapter 3's, across the water to the south-west, after the island it measures its place off
+    try { buildHollowLand(); } catch (e) { HCREEK.live = 0; note('HOLLOW FAIL'); console.warn('[melee] hollow creek', e); }
     // ITS CREEK AND POND (m307): what stands in and over the valley and the bowl the land is carved with
     try { buildFarmWaters(); } catch (e) { note('WATERS FAIL'); console.warn('[melee] farm waters', e); }
     // THE ORCHARD TERRACE (m328): its tops go into TRI before the field bounds, so the orchard's rows stand on them

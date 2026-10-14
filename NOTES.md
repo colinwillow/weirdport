@@ -7,6 +7,29 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **HOLLOW CREEK IS A SECOND LANDMASS, BUILT BY ITS OWN COPY OF THE FARMLAND'S RECIPE (m365, C6-5a, `HCREEK`, `hcBase`,
+  `hcHeight`, `hcGorgeAt`, `hcWorld` / `hcLocal` / `hcEdge`, `buildHollowLand`).** Chapter 3's region: across the water at
+  bearing 2.3 (centre -274, 307 -- to the island's south-west, off the farm's and the metropolis's axes, in view of the
+  lookout), 380 x 300 m. The farmland's machinery is hard-wired to `FARMLAND` (the creek, the pond, the yard, the field
+  plan's tint), so this is a COPY of its shape, not a generalisation: a superellipse coast, the shelf, the beach, the
+  land rising inland -- 9 m (`rise`), not the farm's 3.2, because the gorge needs something to cut into: at 3.2 the first
+  `places` run read `gorge depth 4.5, 4.7, 5.4, 4.4 m` (the bed is held at the sea, so the land was the limit) -- then
+  THE HILL (28 m), the far shoulder, the saddle, three RIDGES for the bike track (each faded in and out at its ends), THE
+  GORGE (a running-minimum bed 9 m down, rock walls at 1.1 per metre steepening, out to the sea facing Old Town), and two
+  FLATS (the fairground, the mill). On the island's OWN material (`ISLE.lmat`, no new material) at a 4 m grid (the farm's
+  5 m could not hold a 6.4 m bed), every floor triangle into `TRI`. A stream ribbon down the bed, set to the MESH's height
+  (`meshH`: the grid's own two triangles a cell), not the function's -- over a narrow bed they differ and the water would be
+  buried. 900 pines (two `InstancedMesh`es, a trunk collider each, `farm: 'creek'`) in patches with clearings, never in the
+  gorge, on a flat, on the beach or on a slope over .75.
+  **Its sea is the island's**: no water of its own, so the shallows off its beach read deep. GOD: "HOLLOW CREEK · the
+  gorge" (on the rim over the trailer park's reach) and "the top of the hill". The map has its region (`creek`), revealed
+  when Chapter 2 ends. **Nothing stands on it yet** -- and nothing gets you there but GOD (the freight line is C6-5d).
+  **GOD place ids for it start `hc`**: `places` holds them to `hcEdge > 0` the way it holds the farm's to `flEdgeAt` (and
+  there was already a farm place called `creek`).
+  `npm run places` (155 rows, exit 0):
+      ok  hcrim      -> player -207.0,7.0,278.9 ground 6.75
+      ok  hchill     -> player -409.0,31.6,300.1 ground 31.03
+      ok  HOLLOW 8 chunks, 13566 floor tris, 900 trees | centre -274,307 | clear of the farm, the island, the pearl | gorge depth 8.6, 10.2, 10.3, 7.7 m, mouth -0.60 over the sea | flats level to 0, 0 | hill 33.6 m
 - **CHAPTER 2'S BOSS IS THE ORGANISER, EXPOSED ON THE STAGE, AND IT ENDS THE STRIKE AND OPENS THE PLAZA (m364, C6-4c,
   `QUESTS` `ch2c`, `plazaCall`, `OPLAZA.hold` / `called` / `opened`, `OPLAZA.stageAt` / `sideAt`).** Once Marisol has the
   receipts (`talk:ch2_receipts`) the organiser comes DOWN: `plazaCall` moves Ash's MARK to the stage (so a body spawned

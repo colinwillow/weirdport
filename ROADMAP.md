@@ -279,6 +279,13 @@ differ" table there, so no region feels like the last one.
     - [x] m362 **C6-4a** Chapter 2 opens: the strike is called; to The Pearl, Juno, an activist's look, into the plaza, Marisol.
     - [x] m363 **C6-4b** the organiser's roof: up over the roofs to the HQ shed; the organiser at the transmitter; the receipts for the signs; take them to Marisol.
     - [x] m364 **C6-4c** the exposure: the organiser called down to the stage; knocked down in front of the crowd, it bursts (the boss); after, the strike ends and the crews go back; Chapter 2 complete.
+  - [ ] **C6-5** Chapter 3 greybox (Hollow Creek, REGIONS 4), split:
+    - [x] m365 **C6-5a** the land: its own landmass across the water, the hill, the bike-track ridges, the gorge and its stream, the two flats, the forest; GOD places.
+    - [ ] **C6-5b** the trailer park on stilts over the creek, and the logging mill with its flume and conveyors.
+    - [ ] **C6-5c** the fairground and the dirt-bike track; the people (rednecks, bikers, rally-goers).
+    - [ ] **C6-5d** the way in: the freight line out of Old Town over the water, and a second way (the highway shoulder).
+    - [ ] **C6-5e** the rally, the region's living system: it builds, the leader speaks, it boils over.
+    - [ ] **C6-5f** Chapter 3's quests: the biker form, the gang's respect, the infiltrated rally leader (the boss).
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
 
@@ -923,3 +930,11 @@ differ" table there, so no region feels like the last one.
   and Old Town's crews go back, Old Town gets the boss bonus, and Chapter 3 starts. **I also opened
   the barricade doors for good afterwards**, so the cured Pearl is open to everyone. Ash stays
   down by the stage with new lines. Chapter 3 has no region yet, so nothing new shows on the map.
+
+- **m365 (C6-5a) Hollow Creek's land.** I took "then 3, 4…" as Chapter 3 and split it into six
+  steps in the ROADMAP. Hollow Creek is its own landmass across the water to the island's
+  south-west, out of line with both the farm and the skyline, so the lookout faces it. It has a
+  28 m hill, three ridges for the bike track, a 9-10 m gorge with a stream running to the sea, two
+  flat spots for the fairground and the mill, and 900 pines. It's raised higher than the farm so
+  the gorge has something to cut into. For now only GOD gets you there. It shows on the map once
+  Chapter 2 ends.
