@@ -438,7 +438,7 @@ differ" table there, so no region feels like the last one.
   points to THE BRIDGE · TOWN one way and GRISTLE FARM the other. There's a **milk-churn stand**
   on the verge and a **cattle grid** across the road at the ramp (the stampede in B1e will stop
   there).
-- **Farm polish: stopping at ten passes** (your STEER said ten was fine) and moving on to **B1e**
-  (the hayloft rope, the climbable silo ladder, the orchard terrace, the stampede), then B2. If the
-  farm still looks wrong on your phone, say what and it jumps the queue.
+- **Farm polish: stopped at ten passes.** Your new STEER (the farm as open countryside across the
+  river) landed while m305 was shipping, so it goes next, ahead of B1e. m288-m305's pieces get
+  reused on the new land, as it says.
 
