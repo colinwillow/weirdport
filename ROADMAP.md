@@ -270,7 +270,7 @@ differ" table there, so no region feels like the last one.
 - [x] m357 **C4 The glider.** The hang-glider guy at a lookout; his form flies (reuse her wingsuit flight).
   - [x] m356 **C4-1** his form flies: her wingsuit flight (double tap the right pad) under a hang glider instead of her wings; the gap gate wants his form.
   - [x] m357 **C4-2** the lookout: a tower on Old Town's ring over the water, the glider guy on top with his glider, and a task to take his form and fly.
-- [ ] **C5 Hidden good aliens.** A network of disguised shopkeepers who give tips and upgrades.
+- [x] m358 **C5 Hidden good aliens.** A network of disguised shopkeepers who give tips and upgrades.
 - [ ] **C6 Chapter 2 greybox (The Pearl)** with its quests and boss — then 3, 4…
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
@@ -867,3 +867,10 @@ differ" table there, so no region feels like the last one.
   sample. The task THE LOOKOUT is: take his form, run off the ramp, double tap, and stay up five
   seconds. REGIONS puts his real lookout in the River Islands; this one is in Old Town so his form can
   be had now.
+
+- **m358 (C5):** the hidden good aliens are a chain of four. Chef Norrie points you to Mags's
+  newsstand, Mags to Pruitt's key-cutting kiosk, and Pruitt to Ines the tailor. Each one only drops the
+  act for the alien, gives a tip and one upgrade, and tells you where the next one is as a rumour.
+  The upgrades: Norrie a bigger juice tank, Mags slower juice drain, Pruitt quicker sampling, Ines
+  cheaper transforms. Every kiosk keeper wears the antenna hat. I placed the kiosks on three open
+  lots well apart: west, south and south-east.

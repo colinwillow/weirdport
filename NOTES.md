@@ -7,6 +7,24 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE HIDDEN GOOD ALIENS ARE A CHAIN: EACH ONE'S LAST WORD TO THE ALIEN IS THE NEXT ONE'S WHEREABOUTS (m358, C5,
+  `OGOOD`, `UPGRADES`, `upApply`, `goodGift`, `buildGoodKiosks`).** Norrie (B3-2) plus three keepers in kiosks of their own
+  (a hut with a window, a counter, an awning, a canvas sign, goods out front; each turned toward the most open street,
+  8 bearings tried): MAGS's newsstand (west, between the camp and the site), PRUITT's key cutting (south), INES's
+  alterations (south-east). To people they are shopkeepers; to the ALIEN each owns up, gives a tip that points at a
+  system (the orbs, the lookout, Uplift), an UPGRADE once (`gift`: Norrie a bigger tank x1.25, Mags a better seal -- drain
+  x.67, Pruitt quick hands -- the sample's hold x.67, Ines a cheaper change -- cost x.75; saved `up:<id>`, applied by
+  `upApply` at boot and on the spot), and the next one as a RUMOUR (`rumourAlien`, appended to their alien script the way
+  `rumour` is to the ordinary one, heard when it ends). The pacifier's trance skips them (Pruitt's corner is inside it).
+  **AND A COMMENT ATE HALF A LINE OF THIS BUILD.** A `// out front, facing the street` written mid-line took `name`,
+  `group`, `talks`, `alien: 'talk'` and `hat: 1` with it -- the keepers had no name, no hat and fled the alien they were
+  written to talk to, and `npm run check` cannot see that. The `places` row caught it by printing the names
+  (`undefined (beautiful_blonde.glb, seal)`), and now fails a keeper with no name, hat or word for the alien:
+  `ok  GOOD MAGS (beautiful_blonde.glb, seal) -58,26 | PRUITT (hick_skinny.glb, quick) -8,-62 | INES (beautiful_asian.glb,
+  cheap) 77,-72 | rumours good_mags ok, good_pruitt ok, good_ines ok | tank 100 -> 125 hold 1.1 -> 0.74`, exit 0. Every
+  other trailing comment added since m338 was checked by eye: they are comments. GOD: the three places, and GIVE ME EVERY
+  UPGRADE.
+
 - **THE LOOKOUT: A TOWER WHOSE LADDERS COME UP THROUGH HATCHES, AND SKYE ON TOP (m357, C4-2, `OLOOK`, `buildLookout`,
   `lookoutStep`, quest `qglide`).** On Old Town's ring at bearing 112 deg (+z side, between two ring houses; the ring's trees
   keep 5 deg off it), a timber tower: four posts, cross braces, decks at 5.5 / 11 / 16 m, a canopy, a windsock, his parked

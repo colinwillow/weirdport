@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m357</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m358</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m357</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m358</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm357';
+const BUILD = 'm358';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -27820,7 +27820,9 @@ function talkTap() {
     const d = talk.cur;
     if (talk.brush) { talkClose(); return true; }                   // m332: a brush-off is one line and it is over
     if (talk.alt) {                                                  // m336: the alien's own script, its own flag, a gift
-      if (++talk.line >= talk.alt.length) { if (progFlag('talk:' + d.talk.id + ':alien')) { juiceGain(JUICE.help * 2, 'help'); } talk.heard++; talkClose(); }
+      if (++talk.line >= talk.alt.length) { if (progFlag('talk:' + d.talk.id + ':alien')) { juiceGain(JUICE.help * 2, 'help'); }
+        if (d.talk.gift) goodGift(d.talk.gift); if (d.talk.rumourAlien) rumourHear(d.talk.rumourAlien, d.talk.name);   // m358
+        talk.heard++; talkClose(); }
       else talkShow();
       return true;
     }
@@ -28054,6 +28056,16 @@ const RUMOURS = [
   { id: 'ford', world: 'tkit', title: 'A WAY OVER THE WATER', gist: 'The cows know a way over the water, down below the east pasture.',
     say: "Cows know a way over the water. Stones, down below the east pasture. Tide's got the middle of it, mind.",
     at: () => FFORD.at && [FFORD.at[0], FFORD.at[1]], r: 12, circle: 80 },
+  // m358: THE GOOD ALIENS' NETWORK -- each one's last line to the alien is the next one's whereabouts
+  { id: 'good_mags', world: 'tkit', title: 'THE NEWSSTAND', gist: 'Another of us sells newspapers on the west side, between the camp and the building site.',
+    say: "There's another of us. Mags -- sells the papers on the west side, between the camp and the site. Tell her Norrie sent you.",
+    at: () => { const M = MARKS.find(m => m.id === 'good_mags'); return M && [M.x, M.z]; }, r: 8, circle: 40 },
+  { id: 'good_pruitt', world: 'tkit', title: 'THE KEY CUTTER', gist: 'An old man cuts keys on a corner on the south side. He has a hat too.',
+    say: "Pruitt cuts keys on the south side, on a corner. Old fella. Hat. You'll know.",
+    at: () => { const M = MARKS.find(m => m.id === 'good_pruitt'); return M && [M.x, M.z]; }, r: 8, circle: 40 },
+  { id: 'good_ines', world: 'tkit', title: 'THE TAILOR', gist: 'A tailor out on the south-east, where the streets thin out. Alterations, while you wait.',
+    say: "And Ines does alterations, out on the south-east where it thins out. She'll tell you why none of them fit.",
+    at: () => { const M = MARKS.find(m => m.id === 'good_ines'); return M && [M.x, M.z]; }, r: 8, circle: 40 },
   { id: 'hillman', world: 'tkit', title: 'THE MAN ON THE HILL', gist: 'The man at the top of the hill knows a thing or two.',
     say: "If you want to know anything, ask the man at the top of the hill. He knows a thing or two.",
     at: () => FARMLAND.live && FARMLAND.HILLS && flWorld(FARMLAND.HILLS[0].a, FARMLAND.HILLS[0].b), r: 16 },   // B1f-4 gives it out
@@ -28833,6 +28845,7 @@ function juicePay() {
 function juiceStep(dt) {
   if (!juice.el) {
     juice.el = document.getElementById('juice'); juice.fill = juice.el && juice.el.querySelector('i');
+    upApply();                                                         // m358: the good aliens' upgrades in this save
     if (!SAVE.flags.juiceInit) { SAVE.juice = JUICE.cap; progFlag('juiceInit'); }
   }
   const p = player;
@@ -29722,7 +29735,7 @@ function orbStep(dt) {
   if ((O.tT = (O.tT || 0) - dt) > 0) return; O.tT = .5;
   let n = 0;
   for (const d of DUMMIES) {
-    if (d.gone || isAlien(d.K) || d.st === 'down' || d.st === 'up' || d.role === 'cyborg') continue;     // m355: Uplift's own are not the grid's to trance
+    if (d.gone || isAlien(d.K) || d.st === 'down' || d.st === 'up' || d.role === 'cyborg' || (d.talk && d.talk.gift)) continue;     // m355: Uplift's own; m358: nor the good aliens, who know what it is
     const x = d.root.position.x, z = d.root.position.z, inR = Math.hypot(x - O.T.x, z - O.T.z) < O.R;
     if (inR && !d.trance) {
       d.trance = { route: d.route || null, talk: d.talk || null };
@@ -31352,7 +31365,7 @@ function fpCentroid(fid) {
 function peopleMark(id, x, z, yaw, R, y, src, grp) {
   MARKS.push({ type: 'npc', id, name: R.name, src, x, y: y != null ? y : groundAt(x, z, 30, 0), z, yaw, sx: 0, sz: 0,
     p: { kind: R.kind, name: R.name, lines: R.lines, talk: R.talk, rumour: R.rumour, group: R.group || grp, talks: R.talks || [grp], alien: R.alien || 'flee',
-         brushAlien: R.brushAlien, alienLines: R.alienLines, hat: R.hat || 0, town: R.town || 0, beat: R.beat || null, role: R.role || null }, used: 0 });
+         brushAlien: R.brushAlien, alienLines: R.alienLines, hat: R.hat || 0, town: R.town || 0, beat: R.beat || null, role: R.role || null, gift: R.gift || null, rumourAlien: R.rumourAlien || null }, used: 0 });
   MKR.by.npc = (MKR.by.npc || 0) + 1;
 }
 function buildFarmhands() {
@@ -31504,7 +31517,7 @@ const OTCARTS = {
     { a: 66, name: 'WAFFLE WAGON', sub: 'BACK SOON (LIES)', col: 0x8ad46a, bg: '#2f4a26', fg: '#d7ffc8', shut: 1 },
   ],
   PEOPLE: [
-    { id: 'cart_norrie', cart: 1, kind: 'fat_hipster', name: 'Chef Norrie', group: 'city', talks: ['*'], alien: 'talk', hat: 1,
+    { id: 'cart_norrie', cart: 1, kind: 'fat_hipster', name: 'Chef Norrie', group: 'city', talks: ['*'], alien: 'talk', hat: 1, gift: 'tank', rumourAlien: 'good_mags',   // m358
       why: 'at THE GOOD GRILL: the hidden good alien, the antenna under the hat (B3-2)',
       lines: "Three bucks a burger. Four if you ask what's in it.|Best grill in Old Town. Ask anybody. Not the health inspector.|The hat? Chef thing. Very traditional. Very... normal.|...You're not from round here, are you. Nobody walks like that. Go and look at the building site -- the crews there don't eat lunch any more.",
       alienLines: "Psst. Antenna. Yes, mine. Keep your voice down.|There are more of us here than you'd think. Hats are very popular in Weirdport.|Something's eating this town from the inside. Start with the building site -- the crews there don't eat lunch any more.|Here. On the house. You look like you crash-landed. Because you did." },
@@ -32041,6 +32054,83 @@ function rosterSpawn(id) {
   foeBar(d); d.h = h + Math.PI; d.root.rotation.y = d.h + (d.faceOff || 0);
   rosterApply(d, R); rosterTag(d, R); ROSTERSPAWNED.push(d);
   return d;
+}
+// ============================================================================================
+// THE HIDDEN GOOD ALIENS (m358, ROADMAP C5, `OGOOD`, `UPGRADES`, `upApply`, `goodGift`, `buildGoodKiosks`)
+// ============================================================================================
+// GAME_DESIGN: "Men-in-Black style: they live among people in disguise -- a food-cart owner, a shopkeeper -- with a
+// tell (an antenna under a hat). They give tips, upgrades, and the next lead." LORE: the Nordics. A NETWORK of four:
+// Chef Norrie at the carts (B3-2) and three kiosk keepers -- MAGS's newsstand, PRUITT's key cutting, INES's alterations
+// -- each in a little kiosk of their own at a street corner (an authored spot and a reason). To people they are
+// shopkeepers. To the ALIEN (their `alienLines`) each one owns up, gives a TIP, a one-time UPGRADE (`gift`) and the NEXT
+// one's whereabouts as a RUMOUR (`rumourAlien`: a rough circle on the map, found when you get there), so meeting one
+// starts you round the network. The upgrades live in the save (`up:<id>`) and are applied to the numbers they change
+// at boot and on the spot (`upApply`).
+const UPGRADES = {
+  tank:  { name: 'A BIGGER TANK',      say: 'Your juice tank holds a quarter more.' },
+  seal:  { name: 'A BETTER SEAL',      say: 'A form wears your juice down a third slower.' },
+  quick: { name: 'QUICK HANDS',        say: 'Taking a sample is a third quicker.' },
+  cheap: { name: 'A CHEAPER CHANGE',   say: 'Becoming somebody costs a quarter less juice.' },
+};
+function upApply() {
+  const B = JUICE.base || (JUICE.base = { cap: JUICE.cap, drain: JUICE.drain, cost: JUICE.cost, hold: SAMPLE.hold }), has = k => !!SAVE.flags['up:' + k];
+  JUICE.cap = B.cap * (has('tank') ? 1.25 : 1); JUICE.drain = B.drain * (has('seal') ? .67 : 1);
+  JUICE.cost = B.cost * (has('cheap') ? .75 : 1); SAMPLE.hold = B.hold * (has('quick') ? .67 : 1);
+}
+function goodGift(id) {
+  const U = UPGRADES[id]; if (!U || !progFlag('up:' + id)) return false;
+  upApply(); setTimeout(() => cardShow('UPGRADE · ' + U.name, U.say, 3.6), 2800);
+  return true;
+}
+const OGOOD = {
+  on: 1, n: 0,
+  KIOSKS: [
+    { id: 'mags', at: [-57.5, 25.7], why: "a clear lot on the walk between the camp and the building site (m337's sweep): a newsstand where everybody passes",
+      name: 'MAGS', sign: 'MAGS · NEWS & SMOKES', col: 0x2f6fb0, bg: '#2f6fb0', fg: '#fff3e0', goods: 'papers', kind: 'beautiful_blonde',
+      lines: "Papers, gum, lottery tickets. Not the lottery numbers. I'm not psychic.|Front page: LIGHTS OVER OLD TOWN. Again. They print it every week.|You need anything else? No? Then you're blocking the comics.",
+      alienLines: "You read the paper? Good. Then you've seen the orbs. They hum before you see them -- three of them, all over town.|Shoot the red one over the square and the crowds calm right down. Trust me, I sell the papers that cover the riots.|Here -- a better seal for that tank of yours. Don't ask where I got it.",
+      gift: 'seal', next: 'good_pruitt' },
+    { id: 'pruitt', at: [-7.5, -62.3], why: "a clear lot on the south side (m337's sweep): a key-cutting kiosk on a corner, the kind nobody looks at twice",
+      name: 'PRUITT', sign: 'KEYS CUT · SHOES MENDED', col: 0x8a5a33, bg: '#3a2a1a', fg: '#ffc247', goods: 'keys', kind: 'hick_skinny',
+      lines: "Keys cut while you wait. Shoes mended while you hop.|Forty years at this corner. Seen everything. Said nothing.|Lost your key? Everybody's lost something round here lately.",
+      alienLines: "...You've got a tell, friend. So have I. Don't stare at the hat.|Want to see the town from above? There's a lad called Skye up the lookout by the water. Be him and you'll fly.|Quick hands, you'll need them. Here -- you'll take a sample in half the time.",
+      gift: 'quick', next: 'good_ines' },
+    { id: 'ines', at: [76.5, -72.3], why: "a clear lot out on the south-east (m337's sweep), where the streets thin out: alterations, while you wait",
+      name: 'INES', sign: 'INES · ALTERATIONS', col: 0xc23a5a, bg: '#f2efe6', fg: '#c23a5a', goods: 'clothes', kind: 'beautiful_asian',
+      lines: "Hems, cuffs, zips. Whatever it is, I can take it in.|Business is good. Everybody wants to look like somebody else these days.|Mind the pins.",
+      alienLines: "Oh, you poor thing -- that skin doesn't fit you at all. None of them will, not quite.|Uplift's surveyors are logging faces. Wear somebody when you pass them; they only see what you show them.|Let me take it in for you: changing will cost you a quarter less. There. Lovely.",
+      gift: 'cheap', next: null },
+  ],
+};
+// a kiosk: a hut with a counter window, an awning, a sign, goods out front; the keeper at the counter, facing the street
+function buildGoodKiosks() {
+  const G = OGOOD; if (!G.on || !inTK() || !ISLE.rect) return 0;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .8 }), o || {});
+  for (const K of G.KIOSKS) {
+    const s = lifeSpot(K.at[0], K.at[1], 8); if (!s) { note('KIOSK ' + K.id + ' NO SPOT'); continue; }
+    // it faces the nearest open street: the way with the most clear ground in front (8 bearings, 6 m out)
+    let best = 0, bh = 0; for (let i = 0; i < 8; i++) { const a = i / 8 * 6.2832; let n = 0; for (let r = 1.5; r <= 6; r += 1.5) if (kitStand(s[0] + Math.sin(a) * r, s[1] + Math.cos(a) * r) !== null) n++; if (n > best) { best = n; bh = a; } }
+    const MAT = { hut: M(K.col), roof: M(0x2a2420), wood: M(0x7a5232), dark: M(0x24262b), paper: M(0xf2efe6), goods: M(K.goods === 'keys' ? 0xc8a24a : K.goods === 'clothes' ? 0xc23a5a : 0xe8dcc0) };
+    const F = farmFrame(s[0], s[1], bh, MAT, 'kiosk'), { bx, geo, gnd, wx, wz } = F, g = gnd(0, 0);
+    bx(0, -.9, g, g + 2.4, 2.2, 1.6, 'hut');                                      // the hut, its front at v -.1
+    bx(0, -.9, g + 2.4, g + 2.55, 2.6, 2.0, 'roof');
+    bx(0, -.06, g + 1.1, g + 1.9, 1.7, .04, 'dark', 0, false);                    // the serving window
+    bx(0, .12, g + 1.0, g + 1.06, 1.9, .42, 'wood');                             // the counter
+    geo(new THREE.BoxGeometry(2.5, .05, 1.1), 'hut', 0, g + 2.25, .4, 0, -.3, 0); // the awning
+    if (K.goods === 'papers') for (let i = 0; i < 4; i++) bx(-.7 + i * .45, .55, g, g + .3 + (i % 2) * .12, .38, .3, 'paper', (i - 1.5) * .05);
+    else if (K.goods === 'keys') { bx(-1.25, -.4, g + .6, g + 1.8, .05, .9, 'wood', 0, false); for (let i = 0; i < 12; i++) bx(-1.28, -.75 + (i % 4) * .23, g + .8 + Math.floor(i / 4) * .3, g + .9 + Math.floor(i / 4) * .3, .02, .05, 'goods', 0, false); }
+    else { bx(1.4, .1, g, g + 1.6, .05, .05, 'dark', 0, false); bx(1.4, .1, g + 1.55, g + 1.6, .05, 1.1, 'dark', 0, false); for (let i = 0; i < 4; i++) bx(1.4, -.35 + i * .3, g + .7, g + 1.5, .32, .05, 'goods', 0, false); }
+    F.commit();
+    { const tx = footSign(K.sign.split(' · ')[0], K.sign.split(' · ')[1] || '', K.bg, K.fg), sm = new THREE.MeshStandardMaterial({ map: tx, roughness: .7 });
+      const p = new THREE.Mesh(new THREE.PlaneGeometry(2.0, .62), sm); p.position.set(wx(0, -.08), g + 2.78, wz(0, -.08)); p.rotation.y = bh; scene.add(p); }
+    const kx = wx(0, .75), kz = wz(0, .75);
+    // out front, facing the street
+    peopleMark('good_' + K.id, kx, kz, bh, { kind: K.kind, name: K.name, group: 'city', talks: ['*'], alien: 'talk', hat: 1,
+      lines: K.lines, alienLines: K.alienLines, gift: K.gift, rumourAlien: K.next }, g, 'GOOD', 'city');
+    K.godAt = [wx(0, 3.2), g + .1, wz(0, 3.2), bh + Math.PI];
+    G.n++;
+  }
+  return G.n;
 }
 // THE TELL: a hat on his head bone, an antenna through its crown. Sized in METRES and divided by the bone's world scale
 // (the armature is .01 and the body is scaled again), placed in the bone's own frame (a Mixamo bone's +Y runs along it,
@@ -33940,7 +34030,9 @@ function mkrStep() {
         group: P.group || null, talks: Array.isArray(P.talks) ? P.talks : typeof P.talks === 'string' ? P.talks.split(',').map(t => t.trim()).filter(Boolean) : null,
         alien: P.alien || 'flee',
         brushAlien: typeof P.brushAlien === 'string' ? P.brushAlien.split('|').map(t => t.trim()).filter(Boolean) : null,
-        alienLines: typeof P.alienLines === 'string' ? P.alienLines.split('|').map(t => t.trim()).filter(Boolean) : null };
+        alienLines: typeof P.alienLines === 'string' ? P.alienLines.split('|').map(t => t.trim()).filter(Boolean) : null,
+        gift: P.gift || null, rumourAlien: P.rumourAlien || null };                          // m358: the good aliens' upgrade, and the next one
+      { const Rn = P.rumourAlien && rumourOf(P.rumourAlien); if (Rn && b.talk.alienLines) b.talk.alienLines.push(Rn.say); }
       b.talkSeen = 1; TALK.n++;
     }
     if (P.role) rosterApply(b, rosterOf(P.role));                    // m353: the role's tint, prop, size
@@ -35057,6 +35149,9 @@ const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
   { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
+  { id: 'mags', world: 'tkit', name: "OLD TOWN · Mags's newsstand (a hidden good alien)", at: () => (OGOOD.KIOSKS[0] || {}).godAt },
+  { id: 'pruitt', world: 'tkit', name: "OLD TOWN · Pruitt's key-cutting kiosk (a hidden good alien)", at: () => (OGOOD.KIOSKS[1] || {}).godAt },
+  { id: 'ines', world: 'tkit', name: "OLD TOWN · Ines's alterations (a hidden good alien)", at: () => (OGOOD.KIOSKS[2] || {}).godAt },
   { id: 'lookout', world: 'tkit', name: "OLD TOWN · the lookout, on top (Skye and his glider)", at: () => OLOOK.topAt },
   { id: 'lookfoot', world: 'tkit', name: 'OLD TOWN · the foot of the lookout (the first ladder)', at: () => OLOOK.footAt },
   { id: 'uplift', world: 'tkit', name: "OLD TOWN · Uplift's survey crew (the cyborgs' first stop)", at: () => { const M = MARKS.find(m => m.id === 'uplift_1'); return M && [M.x, M.y + .1, M.z, null]; } },
@@ -35203,6 +35298,7 @@ function godMenuOpen(on) {
   for (const R of ROSTER) btn(R.role + '  ·  ' + R.where + '  ·  ' + (R.st === 'have' ? 'HIS MODEL' : R.st === 'none' ? 'NOTHING CLOSE (' + R.stem + ')' : 'STAND-IN: ' + R.stem + (R.tint ? ' tinted' : '') + (R.prop ? ' + ' + R.prop : '')), () => { godMenuOpen(0); rosterSpawn(R.id); });
   if (ROSTERSPAWNED.length) btn('CLEAR THE ROSTER SPAWNS (' + ROSTERSPAWNED.length + ')', () => { for (const d of ROSTERSPAWNED.splice(0)) if (!d.gone) bodyGone(d); godMenuOpen(1); }, 'warn');
   sec('EVENTS');
+  btn('GIVE ME EVERY UPGRADE (' + Object.keys(UPGRADES).filter(k => SAVE.flags['up:' + k]).length + '/' + Object.keys(UPGRADES).length + ')', () => { for (const k in UPGRADES) goodGift(k); godMenuOpen(1); });
   if (SMART.spots.length) btn('SMART OBJECTS: ' + SMART.spots.length + ' spots, ' + SMART.users + ' in use -- send everybody near to one now', () => { for (const d of DUMMIES) d.smartT = 0; toast('Off they go', 1.2); godMenuOpen(0); });
   if (inTK()) btn('A SKINSUIT INCURSION NOW (' + OINCUR.st.toUpperCase() + ')', () => { godMenuOpen(0); incurStart(1); });
   if (OAMP.g) btn('THE AMPLIFIER ORB: ' + (OAMP.st === 'up' ? 'UP' : 'RAISE IT AGAIN'), () => { if (OAMP.st !== 'up') { progFlag('orb:amp', 0); OAMP.st = 'up'; OAMP.hpNow = OAMP.hp; OAMP.g.visible = true; OAMP.T.on = 1; OAMP.core.material.emissiveIntensity = 2.6; } godMenuOpen(1); });
@@ -37539,6 +37635,8 @@ async function init() {
     try { buildUplift(); } catch (e) { note('UPLIFT FAIL'); console.warn('[melee] uplift', e); }
     // THE LOOKOUT (m357): on the ring, before the city ring's trees (which keep off its bearing)
     try { buildLookout(); } catch (e) { note('LOOKOUT FAIL'); console.warn('[melee] lookout', e); }
+    // THE GOOD ALIENS' KIOSKS (m358): the rest of Norrie's network
+    try { buildGoodKiosks(); } catch (e) { note('KIOSKS FAIL'); console.warn('[melee] kiosks', e); }
     // THE FOOTBRIDGE TO THE PEARL (m341): before the city ring, which keeps its trees off the bridge's bearing
     try { buildFootbridge(); } catch (e) { note('FOOTBRIDGE FAIL'); console.warn('[melee] footbridge', e); }
     // THE LOOK FOLLOWS OLD TOWN'S HEALTH (m344): boards, rubble, litter -- after every Old Town builder, over the street
@@ -37719,7 +37817,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
