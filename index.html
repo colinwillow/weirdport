@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m338</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m339</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m338</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m339</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm338';
+const BUILD = 'm339';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -25744,6 +25744,10 @@ function virusGo(d, to) {
   const h = d.h || 0, mark = d.mark, aggro = d.aggro;
   const was = isAlien(d.K) ? null : d.K;     // going alien: remember him. Coming back: forget.
   const going = isAlien(toK);
+  // m339: WHO HE IS rides the turn both ways -- a quest's tag, his lines, his mark, his beat -- so the person who comes back
+  // is the person who went. The alien in between holds them and says nothing (`talkOk` refuses a `wasK` body).
+  const keep = (d.qTag || d.talk || d.markId || d.keepTalk) ? { tag: d.qTag || null, talk: d.keepTalk || d.talk || null,
+    after: d.qAfter || null, markId: d.keepMark || d.markId || null, beat: d.keepBeat || d.beat || null } : null;
   // **BOTH SILHOUETTES ARE TAKEN BEFORE THE OLD BODY GOES**, the DNA morph's own rule: the blob
   // has to BE the old shape at one end and the new one at the other, so a profile taken after
   // the body it describes has been removed is a profile of nothing.
@@ -25751,7 +25755,7 @@ function virusGo(d, to) {
   const M = (VIRUS.dur > .05 && MORPH.blob && pA && pB) ? vBlob() : null;
   bodyGone(d);
   if (M) {
-    VTX.push({ M, T: vFacts(toK, P, x, y, z, h, mark, aggro, was, going), t: 0, n: null,
+    VTX.push({ M, T: vFacts(toK, P, x, y, z, h, mark, aggro, was, going, keep), t: 0, n: null,
                pA, hA: d.K.vProfH || 0, pB, hB: toK.vProfH || 0, going });
     // the burst and the zap belong to the START now, where the body actually leaves -- fired
     // after the spawn they were a noise about something that had already happened
@@ -25761,12 +25765,12 @@ function virusGo(d, to) {
     snd('zap', { g: .42, r: going ? 1.0 : 1.35, dur: .45 });
     return null;                                  // he arrives at the midpoint, not now
   }
-  return virusArrive(vFacts(toK, P, x, y, z, h, mark, aggro, was, going), 1);
+  return virusArrive(vFacts(toK, P, x, y, z, h, mark, aggro, was, going, keep), 1);
 }
 // the turn's own facts, in one place, so the instant path and the blob's midpoint cannot end up
 // building two slightly different men
-function vFacts(toK, P, x, y, z, h, mark, aggro, was, going) {
-  return { toK, P, x, y, z, h, mark, aggro, was, going };
+function vFacts(toK, P, x, y, z, h, mark, aggro, was, going, keep) {
+  return { toK, P, x, y, z, h, mark, aggro, was, going, keep: keep || null };
 }
 // **HE ARRIVES, AND THIS IS THE ONLY PLACE HE DOES.** Called at the blob's midpoint, or straight
 // away when there is no blob -- one description of what the new body is, rather than two that
@@ -25777,6 +25781,12 @@ function virusArrive(T, loud) {
   n.h = T.h;
   n.root.rotation.y = T.h + n.faceOff;
   n.wasK = T.was;
+  const Kp = T.keep;                                     // m339: see `virusGo`
+  if (Kp) {
+    n.qTag = Kp.tag;
+    if (T.going) { n.keepTalk = Kp.talk; n.qAfter = Kp.after; n.keepMark = Kp.markId; n.keepBeat = Kp.beat; }
+    else { n.talk = Kp.after || Kp.talk; n.talkSeen = 1; n.markId = Kp.markId; if (Kp.beat) { n.beat = Kp.beat; n.roamT = 1.5; } }
+  }
   // **HE COMES OUT ANGRY, AND THAT IS THE WHOLE POINT OF THE MECHANIC.** A civilian who becomes
   // a warrior and then wanders off is a costume change; `mark` and `aggro` are what make him
   // come at you, and they are exactly what the state machine already reads.
@@ -27891,6 +27901,22 @@ const QUESTS = [
     { type: 'gate',   id: 'bridge_checkpoint', text: 'Through the police checkpoint', tip: 'Walk past the police like you belong. As yourself, they stop you.' },
     { type: 'flag',   flag: 'inTown', text: 'Into Old Town' },
   ] },
+  // CHAPTER 1 (m339, B4-1): Old Town. The good alien at the carts points you at the building site; at the site you watch one
+  // of the crew turned into a Skinsuit (`skin`: the virus system's own turn, on the body holding that mark) and beat it
+  // until it lets go of her (`unskin`: `VIRUS.downs` knock-downs). What she says when she comes round (`after`, carried
+  // through the turn by `virusArrive`) is the lead into B4-2: a hard hat and a face the foreman knows.
+  { id: 'ch1', title: 'CHAPTER 1 · OLD TOWN', world: 'tkit', ch: 1, steps: [
+    { type: 'talk',   who: 'mk_cart_norrie', text: 'Find the cook in the hat at THE GOOD GRILL', tip: 'Anyone with a ! has something to say. Walk up and TAP the right pad.' },
+    { type: 'goto',   at: () => OTSITE.gateAt && [OTSITE.gateAt[0], OTSITE.gateAt[2]], r: 14, text: 'Go and look at the building site' },
+    { type: 'skin',   tag: 'ch1dee', npc: 'site_dee', r: 15, text: 'Find Dee, by the mixer', tip: "Watch. This is what is happening to the crews.",
+      after: { id: 'ch1_dee', name: 'Dee', group: 'worker', talks: ['*'], alien: 'talk',
+        lines: ["Ugh. My head. Was that -- were you the one hitting me? ...Thanks. I think.",
+                "Briggs called me into the site office. 'Safety briefing.' Then it was like wearing myself from the inside. I could see everything. I couldn't stop any of it.",
+                "He's doing it to the whole crew, one at a time. That's why nobody eats. There's nobody home in there to be hungry.",
+                "You want to get near him, you'll need a hard hat and a face he knows. One of us."] } },
+    { type: 'unskin', tag: 'ch1dee', npc: 'site_dee', r: 15, text: 'Knock the Skinsuit down until it lets go of Dee', tip: 'Knock it down. Again. On the third it lets go of her.' },
+    { type: 'talk',   who: 'ch1_dee', text: 'See if Dee is all right' },
+  ] },
   // CHAPTER 0 (m333, B1f-4): Nell at the farm shop gives it, and only to one of her own -- `from` her script, which she only
   // finishes for country folk. The first real task in the game: a marker, a waypoint and the distance, to the checkpoint.
   { id: 'qroad', title: 'THE ROAD TO TOWN', world: 'tkit', from: 'mk_nell', steps: [
@@ -28050,9 +28076,15 @@ function questTest(s) {
   quest.tgt = null;
   switch (s.type) {
     case 'talk': {
-      const b = questNear(d => d.talk && !d.wasK && (s.who ? d.talk.id === s.who : !d.talk.done));
+      let b = questNear(d => d.talk && !d.wasK && (s.who ? d.talk.id === s.who : !d.talk.done));
+      // m339: a script an earlier step hands over (`after`) that nobody holds -- a reload brought her back as she was --
+      // goes to the body on that step's mark
+      if (!b && s.who && quest.cur) {
+        const A = quest.cur.steps.find(t => t.after && t.after.id === s.who), d = A && questNear(q => q.markId === A.npc && !q.wasK);
+        if (d) { d.talk = Object.assign({}, A.after, { lines: A.after.lines.slice(), done: !!SAVE.flags['talk:' + s.who] }); d.talkSeen = 1; b = d; }
+      }
       if (b) quest.tgt = b.root.position;
-      return s.who ? !!SAVE.flags['talk:' + s.who] : (talk.heard || 0) > quest.base;
+      return s.who ? !!(SAVE.flags['talk:' + s.who] || SAVE.flags['talk:' + s.who + ':alien']) : (talk.heard || 0) > quest.base;   // m339: either script
     }
     case 'goto': {
       let x = s.x, z = s.z;
@@ -28080,6 +28112,22 @@ function questTest(s) {
       const b = questNear(d => want(d) && d.st !== 'down');
       if (b) quest.tgt = b.root.position;
       return quest.cnt >= (s.n || 1);
+    }
+    case 'skin': case 'unskin': {                                   // m339 (B4-1)
+      const b = DUMMIES.find(d => d.qTag === s.tag && !d.gone);
+      if (b) { quest.tgt = b.root.position; return s.type === 'skin' ? isAlien(b.K) : !isAlien(b.K); }
+      if (VTX.some(v => v.T.keep && v.T.keep.tag === s.tag)) return false;       // mid-turn
+      // nobody carries the tag -- the step has just begun, or a reload took the Skinsuit away: turn her when he is close
+      const d = questNear(q => q.markId === s.npc && !q.wasK) || questNear(q => CIVILS.includes(q.K) && !q.wasK);
+      if (!d) return false;
+      quest.tgt = d.root.position;
+      if (Math.hypot(d.root.position.x - P.x, d.root.position.z - P.z) < (s.r || 15) && virusOK(d)) {
+        const A = ((quest.cur && quest.cur.steps) || []).find(t => t.tag === s.tag && t.after);
+        d.qTag = s.tag;
+        if (A) d.qAfter = Object.assign({}, A.after, { lines: A.after.lines.slice(), done: !!SAVE.flags['talk:' + A.after.id] });
+        virusGo(d);
+      }
+      return false;
     }
     case 'sample': return SAVE.forms.includes(s.form);
     case 'gate': { const G = GATES.find(g => g.id === s.id); if (G) quest.tgt = { x: G.x, y: G.y, z: G.z }; return !!SAVE.flags['gate:' + s.id]; }
@@ -30178,7 +30226,7 @@ const OTCARTS = {
   PEOPLE: [
     { id: 'cart_norrie', cart: 1, kind: 'fat_hipster', name: 'Chef Norrie', group: 'city', talks: ['*'], alien: 'talk', hat: 1,
       why: 'at THE GOOD GRILL: the hidden good alien, the antenna under the hat (B3-2)',
-      lines: "Three bucks a burger. Four if you ask what's in it.|Best grill in Old Town. Ask anybody. Not the health inspector.|The hat? Chef thing. Very traditional. Very... normal.",
+      lines: "Three bucks a burger. Four if you ask what's in it.|Best grill in Old Town. Ask anybody. Not the health inspector.|The hat? Chef thing. Very traditional. Very... normal.|...You're not from round here, are you. Nobody walks like that. Go and look at the building site -- the crews there don't eat lunch any more.",
       alienLines: "Psst. Antenna. Yes, mine. Keep your voice down.|There are more of us here than you'd think. Hats are very popular in Weirdport.|Something's eating this town from the inside. Start with the building site -- the crews there don't eat lunch any more.|Here. On the house. You look like you crash-landed. Because you did." },
     { id: 'cart_lupe', cart: 0, kind: 'fat_activist_01', name: 'Lupe', group: 'city', talks: ['*'], alien: 'flee', why: 'at TACO PLANET',
       lines: "Taco Planet: out of this world. Don't laugh, it's trademarked.|Nights are slow since the lights in the sky. People stay home.|Norrie next door? Sweetheart. Never takes that hat off. Not even in the rain." },
@@ -33387,7 +33435,7 @@ const GOD = { on: 0, fly: 0, vy: 0, flyV: 14, flyUp: 8, store: 'mel.god', goKey:
 // as broken. Each now takes him to its place (a `GODPLACES` id); a chapter with no place yet says so on its button.
 const GODCHAP = [
   { n: 0, name: 'THE CRASH',         place: 'crash' },     // Gristle Farm, beside the wreck: where a new game starts
-  { n: 1, name: 'OLD TOWN',          place: 'oldtown' },   // the kit city, where the bridge comes in
+  { n: 1, name: 'OLD TOWN',          place: 'carts' },     // m339: the food carts, where its first step (Chef Norrie) is
   { n: 2, name: 'THE PEARL',         place: null },
   { n: 3, name: 'THE OUTSKIRTS',     place: null },
   { n: 4, name: 'THE WATERFRONT',    place: null },

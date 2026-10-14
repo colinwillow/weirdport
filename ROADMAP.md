@@ -229,6 +229,9 @@ differ" table there, so no region feels like the last one.
   - [x] m338 **B3-4** ambient life placed by role (cops on the beat, people on the pavements, the crews' comings and goings).
 - [ ] **B4 Chapter 1 quests.** The good alien points you at the building site; workers are being
   turned into Skinsuits; get the worker form; repair the broken bridge (gate) to the next district.
+  - [x] m339 **B4-1** the good alien points you at the building site; you watch a worker turned into a Skinsuit and beat it back; she tells you about the foreman.
+  - [ ] **B4-2** get the worker form: knock a worker down and take the sample; as a worker the crew talk to you, and the foreman gives you a job.
+  - [ ] **B4-3** the collapsed footbridge to The Pearl (REGIONS: over the rail cut), rebuilt as the worker: the bridge gate, the quest step, and the far side as a portal.
 - [ ] **B5 Chapter 1 boss.** The infiltrated foreman bursts out of his skin; beat him; revert the
   crew; chapter complete → Chapter 2 region unlocks on the map.
 
@@ -720,3 +723,10 @@ differ" table there, so no region feels like the last one.
   back. Each stops briefly at every point and moves on, instead of wandering at random. They're all
   ordinary people otherwise: they talk, brush you off by group, and run if you scare them. I left out
   cars in town and any day/night schedule.
+
+- **m339 (B4-1):** Chapter 1 opens at the food carts. Chef Norrie recognises you whatever form you're
+  in and sends you to the building site. There, Dee (by the mixer) is turned into a Skinsuit in front
+  of you, and you beat it down three times until it lets go of her. Then she tells you about Briggs's
+  "safety briefing". I picked Dee rather than Sal because she already says the crew have stopped
+  eating. A person turned by the virus now comes back as the same person, with their name and lines,
+  and that applies to every turn, not just this one. GOD's Chapter 1 button now takes you to the carts.

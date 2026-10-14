@@ -7,6 +7,28 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A PERSON SURVIVES BEING A SKINSUIT NOW: THE TURN CARRIES WHO THEY ARE BOTH WAYS (m339, B4-1, `keep` in `virusGo` /
+  `vFacts` / `virusArrive`; quest steps `skin` / `unskin`).** Chapter 1's first quest: Chef Norrie (any form -- his last
+  line now recognises you; as the alien his own script says the same) sends you to the building site; at the site, within
+  15 m of Dee, she is turned into a Skinsuit (`virusGo`, the virus system's own blob and chest thump), and you knock it
+  down `VIRUS.downs` (3) times until it lets go of her; then she tells you about Briggs's "safety briefing" and that you
+  need a hard hat and a face he knows (the lead into B4-2). **Until now a turn was a respawn that kept the place and the
+  kind and nothing else**, so a named NPC turned and reverted came back as a nameless stranger. `virusGo` now builds a
+  `keep` (quest tag, talk script, mark id, beat route, and an `after` script) and `virusArrive` parks it on the alien
+  (`keepTalk`/`keepMark`/`keepBeat`/`qAfter` -- the alien itself says nothing, `talkOk` refuses a `wasK` body) and hands
+  it back on the way out (`after` wins over the old script). That applies to EVERY turn, so the virus gun now returns
+  Norrie as Norrie, too. (His hat does not come back: `peopleHat` is spawn-only.)
+  **A RELOAD MID-CHAPTER IS HANDLED, NOT ASSUMED**: the Skinsuit is not in the save, so `skin`/`unskin` with nobody
+  carrying the tag (and no blob in flight carrying it) turn Dee again when he is near; and the last `talk` step, finding
+  nobody holding `ch1_dee`, hands that script to the body on Dee's mark.
+  **`places` CHECKS THE QUESTS NOW**: every live tkit step's `at` resolves, its `npc` is a mark that found a kind, a
+  `talk` speaker is a mark (`mk_<id>`) or an earlier step's `after`, a `gate` was built. Tested by breaking it on purpose
+  (`npc: 'site_deex'` -> `BAD ... ch1.2 skin BAD NO MARK site_deex`, exit 1), then restored:
+  `ok  QUESTS ch0.0 goto | ch0.1 goto | ch0.2 defeat | ch0.3 sample | ch0.4 goto | ch0.5 gate | ch0.6 flag | ch1.0 talk | ch1.1 goto | ch1.2 skin | ch1.3 unskin | ch1.4 talk | qroad.0 goto`
+  GOD's CHAPTER 1 button now lands at the carts (Norrie) instead of (0, 0).
+  **Not built here:** the worker form step (B4-2), the broken footbridge (B4-3), the foreman (B5). The talk step's flag
+  now also accepts `talk:<id>:alien`, so a speaker's alien script finishes a step as well as his own.
+
 - **A ROUTE IS A LIST OF NAMED PLACES, SNAPPED ONCE AT BUILD, AND A BODY WALKS IT IN ORDER (m338, `OTLIFE`, `buildLife`, `d.beat`).**
   B3-4, ambient life by role. Eight bodies, each a row in `OTLIFE.ROLES` with a reason: two cops walking a ring round
   Old Town's middle (Kowalski r34 x8 points, Haines r66 x10), four pedestrians between the named places (`carts`, `mid`,
