@@ -7,6 +7,23 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE CHARACTERS' TEXTURES TO KTX2 (m424, F0a-2d-1, `KTX2SWAP`, `ktx2Twin`, `loadGLB`, `npm run ktx <glb>`).** `tools/ktx.mjs`
+  needs `ktx2-encoder` and `sharp`, which were NOT in `node_modules` here (`ERR_MODULE_NOT_FOUND` on the first run, which
+  the background loop swallowed as "Done" in two seconds -- read the log, not the exit) -- `npm install` put them in.
+  UASTC (the default), not `etc1s`: these are faces; UASTC transcodes to ASTC on iOS at near-lossless, ETC1S to PVRTC/ETC
+  at a quarter the size and visibly softer. The tool's own report, per file: `RESIDENT 43 MB -> ~11` (Moussa, two 2K maps),
+  `15 -> 4` (Colin, five), `12 -> 3` (Jack), `21 -> 5` (the antenna alien), `5 -> 1` (the warrior, the skater, the officer,
+  the worker, the truck). Measured on the page (`perfMem`): the kit city 270 -> 193 MB.
+  **THE SWAP IS AT LOAD, NEVER IN A TABLE.** `mphName`, `mkrKind`, `TURFKINDS`, the roster and the turf's cast all derive a
+  kind's name from `K.file`'s stem; a table pointing at `moussa_ktx2.glb` would have renamed Moussa. `ktx2Twin(url)` in
+  `loadGLB` takes `<name>_ktx2.glb` when `ASSETS` (the bump's hash table) knows it -- so an unbaked re-export loads his
+  file, and the tell that a bake is outstanding is `npm run bump` reporting the raw GLB CHANGED with the twin unmoved.
+  **THE WIRE GROWS**: UASTC in this tool is not supercompressed (no zstd), so Moussa is 9.2 MB on the wire (was 0.8),
+  Colin 2.6, the antenna alien 5.1 -- +22 MB over the nine, cached after the first load.
+  Left (F0a-2d-2): `hdri_game.png 8.0M, impact_marks_atlas.png 8.0M, fire_sprites_01 6.0M, fire_sprites_03 4.0M, paint_atlas
+  5.3M` (PNGs through `TextureLoader`, not in a GLB), `alien_antenna_1k 5.3M` (zap.glb's own map -- the player's file was
+  not in the nine), an unnamed 5.3M, and the 1K crowd maps at 1.3 MB each.
+
 - **THE SECOND DRAW PER BODY WAS THE SHADOW MAP (m423, F0a-2h, `PERF.shadowFar`, `d.casters`, `bodyCull`).** Counting the frame's
   draws BY MATERIAL TYPE (a `MeshDepthMaterial` draw is the shadow pass) at Old Town: `MeshStandardMaterial 383 | (unnamed) 110
   | MeshDepthMaterial skinned 79 | MeshPhysicalMaterial skinned 70 | Sprite 22 | MeshDepthMaterial 16 | ...` -- so the per-body
