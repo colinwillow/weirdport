@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m417</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m418</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m417</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m418</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm417';
+const BUILD = 'm418';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -20373,11 +20373,17 @@ function cellOf(o) {
   _ceB.copy(o.geometry.boundingBox).applyMatrix4(o.matrixWorld).getCenter(_ceV);
   return '|' + Math.floor(_ceV.x / CELL.size) + ',' + Math.floor(_ceV.z / CELL.size);
 }
-// m417: a mesh may carry a distance of its OWN (`ownFar`), under the fog's: small things that are nothing at range
-function cellReg(m, ownFar) {
+// m417: a mesh may carry a distance of its OWN (`ownFar`), under the fog's: small things that are nothing at range.
+// m418: and it may be culled BY LAYER rather than by `visible` (`byLayer`): a thing some other system shows and hides
+// (`visible` is that system's to write -- one writer per value) is moved onto layer 1, which the camera does not draw,
+// and back onto 0 when it is near. Its sphere is read in WORLD space (`matrixWorld`), so a thing that moves, or sits in a
+// turned group, is measured where it is.
+const _ceS = new THREE.Vector3(), _ceSc = new THREE.Vector3();
+function cellReg(m, ownFar, byLayer) {
   if (m.isInstancedMesh) { if (!m.boundingSphere) m.computeBoundingSphere(); }
   else if (!m.geometry.boundingSphere) m.geometry.computeBoundingSphere();
   if (ownFar) m.userData.ownFar = ownFar;
+  if (byLayer) m.userData.cellLayer = 1;
   CELL.list.push(m);
 }
 function cellStep() {
@@ -20387,11 +20393,40 @@ function cellStep() {
   let n = 0;
   for (const m of CELL.list) {
     const S = m.isInstancedMesh ? m.boundingSphere : m.geometry.boundingSphere, f = m.userData.ownFar ? Math.min(far, m.userData.ownFar) : far;
-    const on = !S || S.center.distanceTo(cp) - S.radius < f;
-    if (m.visible !== on) m.visible = on;
+    let on = true;
+    if (S) {
+      if (m.userData.cellLayer) { _ceS.copy(S.center).applyMatrix4(m.matrixWorld); _ceSc.setFromMatrixScale(m.matrixWorld); on = _ceS.distanceTo(cp) - S.radius * Math.max(_ceSc.x, _ceSc.y, _ceSc.z) < f; }
+      else on = S.center.distanceTo(cp) - S.radius < f;
+    }
+    if (m.userData.cellLayer) { if ((m.layers.mask === 1) !== on) m.layers.set(on ? 0 : 1); }
+    else if (m.visible !== on) m.visible = on;
     if (on) n++;
   }
   CELL.shown = n;
+}
+// **THE SMALL THINGS, ONCE, AFTER EVERY BUILDER (m418, F0a-2b, `perfRegSmall`).** `npm run worlds --who` put names and places
+// to what was still drawn from across the water after m417: the Waterfront line's crates (166 draws), the glow sprites over
+// Old Town (42), every painted sign (30), tyres, drums -- each a few pixels at 300 m and each its own draw call, from
+// everywhere, because the kit city's fog is 950 m. Rather than chase every builder, one pass over the finished scene
+// registers every Mesh or Sprite whose world sphere is under `smallR` with a distance of `smallFar`, culled by LAYER so a
+// builder that shows and hides it keeps `visible` to itself. Bodies (their own cull, m417), the player's rig, instanced
+// sets, skinned meshes, points and lines, colliders and anything already registered are left alone.
+function perfRegSmall() {
+  const R = PERF; if (!R.smallFar) return 0;
+  const have = new Set(CELL.list), skip = new Set(); for (const d of DUMMIES) if (d.root) skip.add(d.root); if (rig.root) skip.add(rig.root);
+  let n = 0;
+  const walk = o => {
+    if (skip.has(o)) return;
+    if ((o.isMesh || o.isSprite) && !o.isInstancedMesh && !o.isSkinnedMesh && !have.has(o) && o.geometry && !(o.userData && o.userData.collider)) {
+      const g = o.geometry; if (!g.boundingSphere) g.computeBoundingSphere();
+      o.updateWorldMatrix(false, false); _ceSc.setFromMatrixScale(o.matrixWorld);
+      if (g.boundingSphere && g.boundingSphere.radius * Math.max(_ceSc.x, _ceSc.y, _ceSc.z) < R.smallR) { cellReg(o, R.smallFar, true); n++; }
+    }
+    for (const c of o.children) walk(c);
+  };
+  scene.updateMatrixWorld(true); walk(scene);
+  R.small = n;
+  return n;
 }
 function kitBatch(root, cast, hangAt) {
   let before = 0;
@@ -27758,6 +27793,7 @@ const PERF = {
   pr: 0, t: 0, n: 0, last: 0, dropped: 0, holdT: 0, upT: 0, seen: 0,
   memEvery: 3, memT: 0, mem: null, bootMs: 0,     // m416: what is resident, and how long the boot took
   bodyFar: 150,                                     // m417: m from the lens beyond which a body is not drawn at all (0 = always)
+  smallR: 3.5, smallFar: 220, small: 0,             // m418: a mesh or sprite under this world radius is not drawn beyond this (0 = never)
 };
 // ============================================================================================
 // WHAT IS RESIDENT (m416, ROADMAP F0a-1, `perfMem`, `npm run worlds`)
@@ -33255,7 +33291,7 @@ function buildWaterfront() {
     const g = new THREE.Group(), m = (geo, c) => new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: c, roughness: .6, metalness: .3 }));
     { const p = m(new THREE.BoxGeometry(gw, .14, .1), 0xe0b02a); p.position.y = 3.3; g.add(p); const q = m(new THREE.BoxGeometry(gw, .14, .1), 0xe0b02a); q.position.y = .25; g.add(q); }
     for (let k = 0; k < 9; k++) { const b = m(new THREE.BoxGeometry(.07, 3.1, .07), k % 2 ? 0x24262b : 0xe0b02a); b.position.set(-gw / 2 + .3 + k * (gw - .6) / 8, 1.8, 0); g.add(b); }
-    g.position.set(wx(gm, lv0), Y, wz(gm, lv0)); g.rotation.y = W.th; scene.add(g); W.gate = { G, g, x0: gm, lv0, gw, k: 0 }; }
+    g.position.set(wx(gm, lv0), Y, wz(gm, lv0)); g.rotation.y = W.th; scene.add(g); mergeLeaves(g); W.gate = { G, g, x0: gm, lv0, gw, k: 0 }; }
   wfLineParts(F, W, Y);                                                          // m378: the line's moving parts
   wfConvBuild(W);                                                                // m379: and the workers who ride it
   wfCraneParts(F, W, Y);                                                         // m380: the cranes' trolleys and boxes
@@ -33696,6 +33732,7 @@ function wfCraneParts(F, W, Y) {
       v: K.land, vel: 0, h: Y, th: 0, om: 0, st: 'hold', t: C.hold * (cr.i + 1) * .6, at: 'land',
       low: { land: Y, sea: K.at === 'barge' ? sea + 1 : Y }, Y, B });
     wfCranePlace(cr, 0);
+    mergeLeaves(tg); mergeLeaves(bg);                                             // m418: a draw a box no more; the cables stay their own (scaled per frame)
   }
 }
 // put a crane's trolley, box and cables where its state says, and its boxes with them
@@ -33829,7 +33866,8 @@ function buildFerry() {
     O.deck = dyn(0, 0, Bm / 2, L / 2, sea - 1, sea + top);
     for (const s of [-1, 1]) dyn(s * (Bm / 2 - .05), 0, .05, L / 2, sea + top, sea + top + 1.05);
     dyn(0, 0, 2, 2.5, sea + top, sea + top + 2.6); dyn(0, 0, 1.2, 1.2, sea + top + 2.6, sea + top + 4);
-    for (const z of [-6, 6]) dyn(0, z, 1.8, .25, sea + top, sea + top + .45); }
+    for (const z of [-6, 6]) dyn(0, z, 1.8, .25, sea + top, sea + top + .45);
+    mergeLeaves(grp); }                                                           // m418
   ferryPlace();
   // the people at the landing
   for (const Pp of O.PEOPLE) { const v = Pp.at[1] === 'end' ? vEnd + Pp.at[2] : Pp.at[2], u = Pp.at[0];
@@ -33931,6 +33969,7 @@ function buildSwing() {
   for (const s of [-1, 1]) add(new THREE.BoxGeometry(.4, 4.6, .4), 0x5a6a74, s * (hw + .2), 2.3, 0);
   add(new THREE.BoxGeometry(O.w + 1.2, .5, 2), 0x5a6a74, 0, 4.8, 0); add(new THREE.BoxGeometry(4, 2.6, 3.4), 0xe8e6e0, 0, 6.35, 0); add(new THREE.BoxGeometry(4.06, .9, 2.6), 0x1a2a30, 0, 6.6, 0, { metalness: .3, roughness: .2 });
   add(new THREE.BoxGeometry(4.4, .2, 3.8), 0x24262b, 0, 7.75, 0);
+  mergeLeaves(grp);                                                              // m418: the span, the truss and each arm as one mesh apiece
   const cs0 = Math.cos(W.th), sn0 = -Math.sin(W.th);
   const dyn = (lu, lv, hx, hz, y0, y1, spin) => { const b = { dyn: 1, swing: 1, lu, lv, hx, hz, y0, y1, spin, cs: cs0, sn: sn0, cx: 0, cz: 0, minx: 0, maxx: 0, minz: 0, maxz: 0, miny: 0, maxy: 0 }; BDYN.push(b); return b; };
   O.boxes = [dyn(0, 0, hw, O.half, Y - .6, Y, 1), dyn(-(hw - .05), 0, .05, O.half, Y, Y + 1.1, 1), dyn(hw - .05, 0, .05, O.half, Y, Y + 1.1, 1), dyn(0, 0, 2, 1.7, Y + 5.05, Y + 7.85, 1),
@@ -38700,6 +38739,54 @@ function farmBatch() {
   return B.after;
 }
 
+// ============================================================================================
+// THE LEAVES OF A HAND-BUILT GROUP, MERGED (m418, F0a-2b, `mergeLeaves`)
+// ============================================================================================
+// The cranes, the ferry, the swing bridge and Uplift's gate were built by hand as a Group of `new THREE.Mesh(box, new
+// Material({ color }))` -- a draw call a box, 128 of them from the container cliff (`npm run worlds --who`). A thing that
+// moves is a GROUP (a crane's trolley, its box, the swing's arms), and what is inside the group moves with it; so every
+// Group in the subtree gets its plain leaves (no name, no map, not transparent or emissive, not kept by name) merged into
+// ONE mesh per roughness/metalness, the colours in the vertices, the sources emptied (`material = []`) rather than removed
+// so nothing that held one breaks. A leaf that is moved on its own afterwards (the crane's cables) is passed in `keep`.
+const _mlM3 = new THREE.Matrix3(), _mlV3 = new THREE.Vector3(), _mlCol = new THREE.Color();
+function mergeLeaves(root, keep) {
+  const K = new Set(keep || []); let before = 0, after = 0;
+  const groups = []; root.traverse(o => { if (o.isGroup || o === root) groups.push(o); });
+  for (const G of groups) {
+    const by = new Map();
+    for (const m of G.children) {
+      if (!m.isMesh || m.isInstancedMesh || m.isSkinnedMesh || m.name || K.has(m) || !m.visible) continue;
+      const mt = m.material; if (!mt || Array.isArray(mt) || !mt.isMeshStandardMaterial || mt.map || mt.transparent || mt.side !== THREE.FrontSide || mt.vertexColors || (mt.emissive && mt.emissive.getHex())) continue;
+      const g = m.geometry; if (!g || !g.attributes.position || !g.attributes.normal) continue;
+      const key = mt.roughness.toFixed(2) + ':' + mt.metalness.toFixed(2); let L = by.get(key); if (!L) by.set(key, L = []); L.push(m);
+    }
+    for (const [key, L] of by) {
+      if (L.length < 2) continue;
+      let nv = 0, ni = 0; for (const m of L) { const g = m.geometry; nv += g.attributes.position.count; ni += g.index ? g.index.count : g.attributes.position.count; }
+      const P = new Float32Array(nv * 3), N = new Float32Array(nv * 3), C = new Float32Array(nv * 3), I = nv > 65535 ? new Uint32Array(ni) : new Uint16Array(ni);
+      let v = 0, i = 0;
+      for (const m of L) {
+        m.updateMatrix(); const g = m.geometry, pos = g.attributes.position, nrm = g.attributes.normal, flip = m.matrix.determinant() < 0; _mlM3.getNormalMatrix(m.matrix); _mlCol.copy(m.material.color);
+        const v0 = v;
+        for (let k = 0; k < pos.count; k++, v++) {
+          _mlV3.fromBufferAttribute(pos, k).applyMatrix4(m.matrix); P[v * 3] = _mlV3.x; P[v * 3 + 1] = _mlV3.y; P[v * 3 + 2] = _mlV3.z;
+          _mlV3.fromBufferAttribute(nrm, k).applyMatrix3(_mlM3).normalize(); N[v * 3] = _mlV3.x; N[v * 3 + 1] = _mlV3.y; N[v * 3 + 2] = _mlV3.z;
+          C[v * 3] = _mlCol.r; C[v * 3 + 1] = _mlCol.g; C[v * 3 + 2] = _mlCol.b;
+        }
+        const idx = g.index, n = idx ? idx.count : pos.count;
+        for (let t = 0; t < n; t += 3) { const a = idx ? idx.getX(t) : t, b = idx ? idx.getX(t + 1) : t + 1, c = idx ? idx.getX(t + 2) : t + 2; I[i++] = v0 + a; if (flip) { I[i++] = v0 + c; I[i++] = v0 + b; } else { I[i++] = v0 + b; I[i++] = v0 + c; } }
+        m.material = []; before++;
+      }
+      const geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.BufferAttribute(P, 3)); geo.setAttribute('normal', new THREE.BufferAttribute(N, 3)); geo.setAttribute('color', new THREE.BufferAttribute(C, 3));
+      geo.setIndex(new THREE.BufferAttribute(I, 1)); geo.computeBoundingSphere();
+      const [r, mt] = key.split(':'), mesh = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: 0xffffff, vertexColors: true, roughness: +r, metalness: +mt }));
+      mesh.name = 'leaves:' + (root.name || G.name || 'group'); G.add(mesh); after++;
+    }
+  }
+  PERF.leaves = (PERF.leaves || 0) + before; PERF.leafMeshes = (PERF.leafMeshes || 0) + after;
+  return [before, after];
+}
 // A BUILDING FRAME (m289, lifted out of m288's `buildFarm` so the crash site and the rest of the farm share it):
 // local (u along the tangent, v out to sea) turned `th` about (Ox, Oz). `bx` adds a box -- drawn, and an
 // ORIENTED collider unless `col` is false; `geo` adds any geometry; `quad` a walkable floor (both windings,
@@ -43481,6 +43568,8 @@ async function init() {
   // because the crowd is placed relative to them; the y is taken here, where everything that
   // could be underneath him is already in the collider.
   player.pos.y = groundAt(player.pos.x, player.pos.z, 0, MOVE.step);
+  // THE SMALL THINGS (m418): after every builder and the crowd, so the pass sees the finished scene
+  try { perfRegSmall(); } catch (e) { console.warn('[melee] small things', e); }
   rig.ready = true;
   setBoot('go', 1);
   PERF.bootMs = performance.now();                  // m416: the boot, from the page's start to the card going

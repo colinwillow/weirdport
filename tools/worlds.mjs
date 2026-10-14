@@ -40,20 +40,21 @@ const server = http.createServer((q, r) => {
   if (f.endsWith('index.html')) {
     const s = body.toString(), k = 'window.melee = window.mel = {';
     if (!s.includes(k)) { console.error('worlds: no mel handle in index.html'); process.exit(1); }
-    body = s.replace(k, 'window.__shot = { renderer, scene, camera, MISSING, CELL, stepCam, cellStep }; ' + k);
+    body = s.replace(k, 'window.__shot = { renderer, scene, camera, MISSING, CELL, stepCam, cellStep, perfStep, cam, player, GODPLACES }; ' + k);
   }
   r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
 });
 await new Promise(ok => server.listen(0, ok));
 const port = server.address().port;
 const WHO = process.argv.includes('--who');     // print who draws at every place
+const AT = (process.argv.find(a => a.startsWith('--at=')) || '').slice(5).split(',').filter(Boolean);   // only these places
 const want = process.argv.slice(2).filter(a => !a.startsWith('--')).length ? process.argv.slice(2).filter(a => !a.startsWith('--')) : Object.keys(WORLDS);
 const t0 = Date.now(), el = () => ((Date.now() - t0) / 1000).toFixed(0) + 's';
 const browser = await pw.chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
 const rows = [];
 let code = 0;
 for (const w of want) {
-  const places = WORLDS[w]; if (!places) { console.log('no world', w, '--', Object.keys(WORLDS).join(' ')); code = 1; continue; }
+  const places = AT.length ? AT : WORLDS[w]; if (!places) { console.log('no world', w, '--', Object.keys(WORLDS).join(' ')); code = 1; continue; }
   const page = await browser.newPage({ viewport: { width: 960, height: 540 }, deviceScaleFactor: 1 });
   const errs = []; page.on('pageerror', e => errs.push(e.message.split('\n')[0]));
   const tw = Date.now();
@@ -64,17 +65,26 @@ for (const w of want) {
     const R = { w, bootS: boot.ms / 1000, wall: (Date.now() - tw) / 1000, at: [], errs, notes: boot.notes.trim() };
     for (const pl of places) {
       const went = pl ? await page.evaluate(id => mel.go(id), pl) : 'spawn';
+      // THE HEADING IS SET, NOT INHERITED: a place with no heading of its own kept the last place's, and Old Town read 534 one
+      // run and 678 the next depending on which way he arrived. The place's own `at()[3]` if it has one, else due +z.
+      await page.evaluate(id => { const S = window.__shot, P = id && S.GODPLACES.find(q => q.id === id); let a = null; try { a = P && P.at && P.at(); } catch (e) {}
+        const h = a && a[3] != null ? a[3] : 0; S.cam.az = S.player.faceH = S.player.heading = h; }, pl);
       // THE GAME'S OWN LOOP IS NOT WAITED FOR. Under SwiftShader it runs seconds a frame (or not at all for a minute), and a
       // 2.5 s wait measured the THREE camera where the LAST place had left it (pearl and overlook came back identical): `godPlace`
       // moves `cam.pos`, but only `stepCam` copies that into the camera. So the move is settled by hand -- `stepCam` ten times
       // (the camera arrives at `cam.pos`), then `cellStep` (the fog culling), then the one frame we read.
       await page.waitForTimeout(300);
-      const m = await page.evaluate(() => { const S = window.__shot; for (let k = 0; k < 10; k++) S.stepCam(1 / 30); S.cellStep();
+      const m = await page.evaluate(() => { const S = window.__shot; for (let k = 0; k < 10; k++) S.stepCam(1 / 30); for (let k = 0; k < 30; k++) S.perfStep(1 / 30); S.cellStep();
         // WHO is drawing: every draw call of this frame counted by the object's family -- its name with the digits taken out, or
         // the nearest named ancestor's -- so an OVER has a name to cut rather than a number to stare at
-        const who = {}, R = S.renderer, orig = R.renderBufferDirect, fam = o => { for (let a = o; a; a = a.parent) { const n = a.name || (a === o && a.material && a.material.name ? 'mat:' + a.material.name : '') || (a.userData && a.userData.fbatch !== undefined ? 'fbatch' : ''); if (n) return n.replace(/[0-9]+/g, '#').replace(/_i_#$/, '').slice(0, 26); } return o.type; };
-        R.renderBufferDirect = function (cam, sc, geo, mat, obj, grp) { const k = fam(obj); who[k] = (who[k] || 0) + 1; return orig.call(this, cam, sc, geo, mat, obj, grp); };
-        S.renderer.render(S.scene, S.camera); R.renderBufferDirect = orig; const top = Object.entries(who).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([k, v]) => k + ' ' + v); const i = S.renderer.info.render, M = mel.perfMem(6);
+        const who = {}, R = S.renderer, orig = R.renderBufferDirect, fam = o => { for (let a = o; a; a = a.parent) { const n = a.name || (a === o && a.material && a.material.name ? 'mat:' + a.material.name : '') || (a.userData && a.userData.fbatch !== undefined ? 'fbatch' : ''); if (n) return n.replace(/[0-9]+/g, '#').replace(/_i_#$/, '').slice(0, 26); }
+          // nameless all the way up: say what it IS -- the geometry, the material, a map, instanced, skinned -- and how many vertices
+          const g = o.geometry, m = o.material, nv = g && g.attributes.position ? g.attributes.position.count : 0;
+          return (o.isInstancedMesh ? 'inst:' : o.isSkinnedMesh ? 'skin:' : o.isSprite ? 'sprite:' : '') + (g ? g.type.replace('Geometry', '') : '?') + '/' + (m ? m.type.replace('Mesh', '').replace('Material', '') : '?') + (m && m.map ? ':map' : '') + (m && m.transparent ? ':tr' : '') + ' v' + (nv < 1000 ? nv : (nv / 1000).toFixed(0) + 'k'); };
+        const where = {}; R.renderBufferDirect = function (cam, sc, geo, mat, obj, grp) { const k = fam(obj); who[k] = (who[k] || 0) + 1;
+          if (!obj.name && !(obj.material && obj.material.name)) { const L = where[k] || (where[k] = []); if (L.length < 4) { obj.updateWorldMatrix(true, false); const e = obj.matrixWorld.elements, P = { x: e[12], y: e[13], z: e[14] }; let chain = []; for (let a = obj.parent; a && a !== sc; a = a.parent) chain.push(a.name || a.type); L.push(P.x.toFixed(0) + ',' + P.y.toFixed(0) + ',' + P.z.toFixed(0) + (chain.length ? ' <' + chain.join('<') : ' <scene') + (obj.material && obj.material.color ? ' #' + obj.material.color.getHexString() : '')); } }
+          return orig.call(this, cam, sc, geo, mat, obj, grp); };
+        S.renderer.render(S.scene, S.camera); R.renderBufferDirect = orig; const top = Object.entries(who).sort((a, b) => b[1] - a[1]).slice(0, 14).map(([k, v]) => k + ' ' + v + (where[k] ? ' {' + where[k].join(' | ') + '}' : '')); const i = S.renderer.info.render, M = mel.perfMem(6);
         return { dc: i.calls, kT: i.triangles / 1000, tex: M.tex, texMB: M.texMB, geo: M.geo, geoMB: M.geoMB, top: M.top, topG: M.topG, glTex: M.glTex, glGeo: M.glGeo, programs: M.programs, cells: (S.CELL && S.CELL.list.length ? S.CELL.shown + '/' + S.CELL.list.length : '-'), who: top }; });
       R.at.push({ pl: pl || 'spawn', went, ...m });
     }

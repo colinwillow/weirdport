@@ -7,6 +7,51 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE SMALL THINGS AND THE HAND-BUILT GROUPS (m418, F0a-2b, `perfRegSmall`, `PERF.smallR/smallFar`, `cellReg(m, far, byLayer)`,
+  `mergeLeaves`, `npm run worlds --who --at=`).** `--who` grew three things: a nameless mesh is described (`Box/Standard v24`,
+  `Plane/Standard:map v4`, `sprite:...`), four of each family are placed (`{107,5,-246 <Group<Group #2a5a8a | ...}` -- world
+  position, parent chain, colour), and `--at=a,b` measures only those places. The colours found the builders: `0x2a2d33`
+  is the Waterfront's `hull`, `0x2a5a8a` its container `c1`, `0xe8e6e0` the ferry's white -- all of them `new THREE.Mesh(box,
+  new Material({ color }))` in hand-built groups (the cranes' trolleys and boxes, the ferry, the swing bridge, the gate).
+  **THE SETTLE RUNS `perfStep` NOW.** The m417 body cull lives in `perfStep`, which the game's loop calls; the tool's settle
+  did not, so the FIRST place measured in a run still had every body drawn (hctrail 801 with `--at=hctrail` first, 416 when
+  it came eighth). And **THE HEADING IS SET AT EVERY PLACE** (`at()[3]` or due +z): Old Town read 534 one run and 678 the next
+  by which way he had arrived.
+  `cellReg(m, far, byLayer)`: a registered thing may be culled by LAYER (moved to layer 1, which the camera does not draw)
+  instead of `visible`, because `visible` belongs to whoever built it (the stash hides on done, the pod's parts, the lids)
+  -- one writer per value -- and its sphere is read through `matrixWorld`, so a moving thing is measured where it is.
+  `perfRegSmall` runs once before `rig.ready`: every Mesh/Sprite under `smallR` (3.5 m) world radius that is not a body, the
+  rig, instanced, skinned, a collider or already registered -> `cellReg(o, 220, true)`. 1,321 things in the kit city.
+  **A thing made AFTER init is not registered** (the flashpoint ring, debris, a generated building -- big anyway).
+  `mergeLeaves(root, keep)`: per Group in the subtree, the plain leaves (no name, no map, not transparent/emissive, FrontSide,
+  not in `keep`) merged per roughness:metalness into one vertex-coloured mesh; sources emptied (`material = []`), never
+  removed. A singleton leaf (the crane's `metalness .5` box) is left as is. The cranes' cables are scaled per frame and
+  live in the crane's root group, not a sub-group, so they were never candidates.
+  Like for like (same headings, `--at`): wfstacks 1192 -> 792 (small things) -> 680 (leaves); islanding 1304 -> 989 -> 933;
+  hctrail 588 -> 364. `npm run worlds tkit`, the new fixed-heading baseline:
+      == tkit  boot 22.7 s (swiftshader)  148 textures 270 MB (gl 326)  1801 geometries 108 MB (gl 433)  121 programs  68s
+         spawn        307 DC  2463 kT  cells 35/2113   OVER dc  OVER kT
+         oldtown      654 DC  1033 kT  cells 1940/2113  OVER dc  OVER kT
+         camp         285 DC  1201 kT  cells 1875/2113  OVER kT
+         pearl        127 DC   863 kT  cells 909/2113
+         overlook     327 DC  1315 kT  cells 26/2113   OVER dc  OVER kT
+         farmyard     128 DC   605 kT  cells 299/2113
+         hcmill        71 DC   377 kT  cells 20/2113 
+         hctrail      421 DC  1019 kT  cells 177/2113  OVER dc  OVER kT
+         wfquay        94 DC   393 kT  cells 986/2113
+         wfstacks     798 DC  1303 kT  cells 681/2113  OVER dc  OVER kT
+         islanding   1098 DC  1645 kT  cells 945/2113  OVER dc  OVER kT
+         isneedle     667 DC  1310 kT  cells 395/2113  OVER dc  OVER kT
+         isship       157 DC   688 kT  cells 47/2113 
+         iscore       143 DC   661 kT  cells 51/2113 
+         textures: moussa_toon_body 21.3M, moussa_toon_head 21.3M, hdri_game.png 8.0M, impact_marks_atlas.png 8.0M, fire_sprites_01.png 6.0M, colin_head_1080 5.9M
+         geometry: ground_wr_sidewalk 7.0M, ground_wr_curbs 4.2M, farm_batch 3.6M, farm_batch 2.1M, farm_batch 1.9M, farm_batch 1.7M
+         OVER: dc 1098 > 300 at islanding | kT 1645 > 1000 | textures 270 MB > 160
+      budget: 300 DC, 1000 kT, 160 MB textures, 128 MB geometry | tkit OVER | 68s
+      exit 1
+  What is left is the two static families: `farm_batch` 50-90 everywhere and the kit cells (`mat:WK_M_*`, 300-400 from the
+  islands) -- F0a-2c, a far LOD. The spawn's 2,463k triangles looking +z are the crops and the ground, not draws.
+
 - **THE FAR CULLS (m417, F0a-2a, `PERF.bodyFar`, `KIT.partFar`, `cellReg(m, ownFar)`, `npm run worlds --who`).** The measure
   grew a WHO: `renderBufferDirect` wrapped for the one frame, every draw counted by the object's name (digits out), else its
   material's name, else the nearest named ancestor's. The first `--who` of the kit city said the same thing at every place:
