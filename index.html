@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m420</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m421</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m420</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m421</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm420';
+const BUILD = 'm421';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -18509,6 +18509,7 @@ const KIT = {
   fog: { near: 60, far: 320 },
   partFar: 220,          // m417: m beyond which the instanced moving parts (doors, lids, AC units) are not drawn
   lodOut: 140,           // m419: m outside the buildings' rectangle beyond which the cell batches give way to the far copy
+  multi: 1,              // m421: the moving parts as one BatchedMesh per material where WEBGL_multi_draw exists (0 = the instanced sets always)
   // **`dmg` CONVERTS THE GAME'S DAMAGE SCALE TO HIS.** `FOE.dmg.bolt` is 1.9 and his chunks are
   // hp 20, so without it a wall chunk is an eleven-shot object. `BRK.dmg`'s own argument, one
   // asset along -- and it is ONE number rather than his hp being rewritten, because the hp is
@@ -20382,7 +20383,7 @@ function cellOf(o) {
 // turned group, is measured where it is.
 const _ceS = new THREE.Vector3(), _ceSc = new THREE.Vector3();
 function cellReg(m, ownFar, byLayer) {
-  if (m.isInstancedMesh) { if (!m.boundingSphere) m.computeBoundingSphere(); }
+  if (m.isInstancedMesh || m.isBatchedMesh) { if (!m.boundingSphere) m.computeBoundingSphere(); }
   else if (!m.geometry.boundingSphere) m.geometry.computeBoundingSphere();
   if (ownFar) m.userData.ownFar = ownFar;
   if (byLayer) m.userData.cellLayer = 1;
@@ -20397,7 +20398,7 @@ function cellStep() {
   LOD.active = act;
   let n = 0;
   for (const m of CELL.list) {
-    const S = m.isInstancedMesh ? m.boundingSphere : m.geometry.boundingSphere, f = m.userData.ownFar ? Math.min(far, m.userData.ownFar) : far;
+    const S = (m.isInstancedMesh || m.isBatchedMesh) ? m.boundingSphere : m.geometry.boundingSphere, f = m.userData.ownFar ? Math.min(far, m.userData.ownFar) : far;
     let on = true;
     const ud = m.userData; if (ud.lodOf) { if (ud.lodOf.far) on = false; } else if (ud.lodFar && !ud.lodFar.far) on = false;
     if (S && on) {
@@ -20468,6 +20469,18 @@ function lodAdd(name, meshes, out, opts) {
   }
   L.mb = bytes / 1048576; LOD.mb += L.mb; LOD.groups.push(L);
   return L;
+}
+// **A BODY'S SMALL PARTS (m421, F0a-2f, `perfRegBodyParts`).** In town 74 bodies stand within `bodyFar` of the lens, and a body is
+// six to ten draws: the eyes, the teeth, the shoes, the headphones, the hat are their own meshes with their own materials.
+// Past `partFar` m none of those is a pixel, so each small mesh of a body (world radius under `partR`) is registered at spawn
+// with its own distance, culled by LAYER (`visible` is the morph's and the virus's to write). The body's main mesh stays.
+function perfRegBodyParts(d) {
+  const R = PERF; if (!R.partFar || !d.root) return 0;
+  let n = 0; d.root.updateWorldMatrix(true, true);
+  d.root.traverse(o => { if (!(o.isMesh || o.isSkinnedMesh) || !o.geometry || o.isInstancedMesh) return;
+    const g = o.geometry; if (!g.boundingSphere) g.computeBoundingSphere(); if (!g.boundingSphere) return;
+    _ceSc.setFromMatrixScale(o.matrixWorld); if (g.boundingSphere.radius * Math.max(_ceSc.x, _ceSc.y, _ceSc.z) < R.partR) { cellReg(o, R.partFar, true); n++; } });
+  R.parts += n; return n;
 }
 // **THE SMALL THINGS, ONCE, AFTER EVERY BUILDER (m418, F0a-2b, `perfRegSmall`).** `npm run worlds --who` put names and places
 // to what was still drawn from across the water after m417: the Waterfront line's crates (166 draws), the glow sprites over
@@ -20566,6 +20579,27 @@ function kitInst(parts, cast) {
     });
   }
   const out = new THREE.Group(); out.name = 'kitInst';
+  // **ONE DRAW PER MATERIAL WHERE THE GPU CAN MULTI-DRAW (m421, F0a-2f).** An InstancedMesh is one geometry; the city's doors are
+  // 54 geometries (a door per style per slot), so 54 sets and 54 draws from anywhere in town. A `BatchedMesh` holds many
+  // geometries under one material and issues them as ONE call through `WEBGL_multi_draw` -- and as a call per instance where
+  // the extension is missing, which is worse than the sets. So it is used only where the extension answers, and the sets stay
+  // the fallback. `kitInstSync` writes either the same way (`setMatrixAt`).
+  const multi = KIT.multi && renderer.extensions.has('WEBGL_multi_draw'); PERF.multi = multi ? 1 : 0;
+  if (multi) {
+    const byMat = new Map();
+    for (const L of by.values()) { const c0 = L[0].c, g = c0.geometry, sig = c0.material.uuid + '|' + Object.keys(g.attributes).sort().join(',') + '|' + (g.index ? 'i' : 'n');
+      let B = byMat.get(sig); if (!B) byMat.set(sig, B = { mat: c0.material, geos: new Map(), list: [] }); B.geos.set(g.uuid, g); for (const e of L) B.list.push(e); }
+    for (const B of byMat.values()) {
+      let nv = 0, ni = 0; for (const g of B.geos.values()) { nv += g.attributes.position.count; ni += g.index ? g.index.count : g.attributes.position.count; }
+      const bm = new THREE.BatchedMesh(B.list.length, nv, ni, B.mat); bm.name = 'kitInst:' + (B.mat.name || '?'); bm.sortObjects = false; bm.perObjectFrustumCulled = true;
+      const ids = new Map(); for (const [u, g] of B.geos) ids.set(u, bm.addGeometry(g));
+      for (const e of B.list) { const i = bm.addInstance(ids.get(e.c.geometry.uuid)); bm.setMatrixAt(i, e.c.matrixWorld); (e.P.inst || (e.P.inst = [])).push({ im: bm, i, m: e.c }); e.c.userData.kitMat = e.c.material; e.c.material = []; }
+      bm.castShadow = cast; bm.receiveShadow = true; bm.computeBoundingSphere(); bm.boundingSphere.radius += 3; bm.frustumCulled = true;
+      cellReg(bm, KIT.partFar); out.add(bm);
+    }
+    if (out.children.length) world.add(out);
+    return out.children.length;
+  }
   for (const L of by.values()) {
     const im = new THREE.InstancedMesh(L[0].c.geometry, L[0].c.material, L.length);
     im.castShadow = cast; im.receiveShadow = true;
@@ -20587,7 +20621,7 @@ function kitInst(parts, cast) {
 }
 function kitInstSync(P, gone) {
   if (!gone) P.o.updateMatrixWorld(true);
-  for (const e of P.inst) { e.im.setMatrixAt(e.i, gone ? _kim0 : e.m.matrixWorld); e.im.instanceMatrix.needsUpdate = true; }
+  for (const e of P.inst) { e.im.setMatrixAt(e.i, gone ? _kim0 : e.m.matrixWorld); if (e.im.instanceMatrix) e.im.instanceMatrix.needsUpdate = true; }   // m421: a BatchedMesh has no instanceMatrix to flag
 }
 // **AND THE GRAPH IS PRUNED (m180, `kitPrune`).** 9,650 nodes, 2,930 of them marker empties his
 // note says to read into a table rather than keep -- and three walks every node in the scene every
@@ -22685,6 +22719,7 @@ function bodySpawn(P, K, x, z, y0) {
     d.smokeT = Math.random() * 1.5;          // so three of them are not one metronome
     if (!d.smokeAt && !K._noSmoke) { K._noSmoke = 1; note('NO ' + K.smoke); }
   }
+  try { perfRegBodyParts(d); } catch (e) {}      // m421: its eyes, teeth and trinkets stop drawing at 45 m
   DUMMIES.push(d);
   return d;
 }
@@ -27862,6 +27897,7 @@ const PERF = {
   memEvery: 3, memT: 0, mem: null, bootMs: 0,     // m416: what is resident, and how long the boot took
   bodyFar: 150,                                     // m417: m from the lens beyond which a body is not drawn at all (0 = always)
   smallR: 3.5, smallFar: 220, small: 0,             // m418: a mesh or sprite under this world radius is not drawn beyond this (0 = never)
+  partR: .45, partFar: 45, parts: 0,                // m421: a body's own small meshes (eyes, teeth, a hat, headphones) are not drawn beyond this (0 = never)
 };
 // ============================================================================================
 // WHAT IS RESIDENT (m416, ROADMAP F0a-1, `perfMem`, `npm run worlds`)
@@ -42990,7 +43026,7 @@ function frameBody() {
     // m416: TX = textures the scene's materials hold, and their resident MB; G = geometry MB; boot = s to the card going
     if ((PERF.memT -= 1) <= 0) { PERF.memT = PERF.memEvery; try { perfMem(); } catch (e) {} }
     const mem = PERF.mem ? ' TX' + PERF.mem.tex + '/' + PERF.mem.texMB.toFixed(0) + 'M G' + PERF.mem.geoMB.toFixed(0) + 'M' : '';
-    const line = fps.toFixed(0) + ' FPS · ' + renderer.info.render.calls + ' DC ' + Math.round(renderer.info.render.triangles / 1000) + 'kT' + mem + (PERF.bootMs ? ' boot' + (PERF.bootMs / 1000).toFixed(1) + 's' : '') + (CELL.list.length ? ' c' + CELL.shown + '/' + CELL.list.length : '') + (LOD.groups.length ? ' L' + LOD.active + '/' + LOD.groups.length : '') + (STEPUP.n ? ' ke' + STEPUP.n : '') + PROF.sum + ' · pr' + PERF.pr.toFixed(2) + (PERF.holdT > 0 ? 'h' : '') + ' B' + PERF.seen + '/' + DUMMIES.length + ' · ' +
+    const line = fps.toFixed(0) + ' FPS · ' + renderer.info.render.calls + ' DC ' + Math.round(renderer.info.render.triangles / 1000) + 'kT' + mem + (PERF.bootMs ? ' boot' + (PERF.bootMs / 1000).toFixed(1) + 's' : '') + (CELL.list.length ? ' c' + CELL.shown + '/' + CELL.list.length : '') + (LOD.groups.length ? ' L' + LOD.active + '/' + LOD.groups.length : '') + (PERF.multi ? ' md' : '') + (STEPUP.n ? ' ke' + STEPUP.n : '') + PROF.sum + ' · pr' + PERF.pr.toFixed(2) + (PERF.holdT > 0 ? 'h' : '') + ' B' + PERF.seen + '/' + DUMMIES.length + ' · ' +
       p.speed.toFixed(1) + ' m/s · ' + st + lk + hue + bx + cv + brkC + kitC + inf + shp + cl + sk + sk8 + vs + mo + fl + wp + tc + mp +
       bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + (ITHERM.k > 0 ? ' TH' + Math.round(ITHERM.k * 100) : '') + (TURF.k ? ' TURF ' + TURF.k + (TPUSH.n ? ' m' + TPUSH.n : '') : '') + (TFLASH.k ? ' FP ' + TFLASH.k : '') + (RADIO.heard ? ' R' + RADIO.heard + (RADIO.calls ? 'c' + RADIO.calls : '') : '') + (KSWAP.made || KSWAP.gone.size || KSWAP.settles ? ' RB' + KSWAP.made + '/' + KSWAP.gone.size + (KSWAP.settles ? 's' + KSWAP.settles : '') : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
       // CH: the saved chapter (m276); NEW = this boot was `?fresh`, BADSAVE = a save was there and would not parse

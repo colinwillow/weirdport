@@ -7,6 +7,48 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE MEASURE'S BODY CULL CALLED THE WRONG FUNCTION, AND EVERY IN-TOWN NUMBER FROM m417 TO m420 WAS WRONG (m421, F0a-2f).**
+  m417 put the body cull in `bodyCull()` (the function `frameBody` calls once a frame); m418 made the measure's settle call
+  `perfStep` "so the cull runs" -- `perfStep` is the resolution governor and never touches a body. So bodies kept whatever
+  `visible` the game's own slow frames had left them with: measured FIRST in a run, every body drew (oldtown 835); measured
+  after the spawn, the crowd stayed hidden (4 of 74 near bodies drawn, oldtown 538-741). **A HARNESS THAT MEASURES A PATH
+  THE GAME DOES NOT TAKE MEASURES A DIFFERENT GAME** -- the oldest rule here, and the tool now prints `bodies <drawn>/<near>/
+  <all>` at every place so that disagreement cannot hide again. The far-place numbers (m417-m420) stand: there the game's
+  frames had hidden the crowd and the tool's result matched the real one.
+  **THE KIT'S PARTS AS A `BatchedMesh` PER MATERIAL (`KIT.multi`, `PERF.multi`, chip `md`).** `kitInst` builds one BatchedMesh per
+  material + attribute signature + indexed-ness (`addGeometry` per distinct door geometry, `addInstance` per door) when
+  `renderer.extensions.has('WEBGL_multi_draw')`, else the InstancedMesh sets as before; `kitInstSync` writes both through
+  `setMatrixAt` and flags `instanceMatrix` only where it exists. `cellReg`/`cellStep` read `m.boundingSphere` for a
+  BatchedMesh as for an InstancedMesh (its `geometry.boundingSphere` is null). SwiftShader has the extension; his phone is
+  unknown and the chip's `md` says.
+  **A BODY'S SMALL PARTS (`perfRegBodyParts`, `PERF.partR/partFar`)**: at `bodySpawn`, every mesh of the body under .45 m world
+  radius (the armature's 0.01 is in `matrixWorld`) registered `cellReg(o, 45, true)` -- by layer, since `model.visible` is
+  the morph's and the virus's. Bodies are clones of the prototype (`proto.clone(true)`, not of each other), so a layer set
+  on one body's eye never reaches a disguise.
+  `npm run worlds tkit` (honest):
+      == tkit  boot 23.1 s (swiftshader)  147 textures 270 MB (gl 72)  1896 geometries 170 MB (gl 358)  118 programs  60s
+         spawn         67 DC   376 kT  cells 102/2487
+         oldtown      598 DC  1233 kT  cells 1965/2487  OVER dc  OVER kT
+         camp         205 DC   614 kT  cells 1878/2487
+         pearl         94 DC   488 kT  cells 699/2487
+         overlook     140 DC   591 kT  cells 68/2487 
+         farmyard     121 DC   552 kT  cells 164/2487
+         hcmill        59 DC   252 kT  cells 70/2487 
+         hctrail      283 DC  1325 kT  cells 173/2487  OVER kT
+         wfquay        95 DC   296 kT  cells 803/2487
+         wfstacks     300 DC  1353 kT  cells 324/2487  OVER kT
+         islanding    323 DC  1285 kT  cells 400/2487  OVER dc  OVER kT
+         isneedle     275 DC  1313 kT  cells 168/2487  OVER kT
+         isship        98 DC   394 kT  cells 86/2487 
+         iscore        84 DC   333 kT  cells 67/2487 
+         textures: moussa_toon_body 21.3M, moussa_toon_head 21.3M, hdri_game.png 8.0M, impact_marks_atlas.png 8.0M, fire_sprites_01.png 6.0M, colin_head_1080 5.9M
+         geometry: far:kit 10.7M, far:tcity 8.0M, ground_wr_sidewalk 7.0M, far:farm:1,1 5.6M, far:farm:1,0 4.6M, ground_wr_curbs 4.2M
+         OVER: dc 598 > 300 at oldtown | kT 1233 > 1000 | textures 270 MB > 160 | geometry 170 MB > 128
+      budget: 300 DC, 1000 kT, 160 MB textures, 128 MB geometry | tkit OVER | 60s
+      exit 1
+  Before (honest): oldtown 835, protest 401 -> 401 (the square's bodies are near), camp 208. Old Town's floor is the crowd:
+  74 bodies within 150 m. F0a-2g.
+
 - **THE TOON CITY'S FAR COPY (m420, F0a-2e, `lodAdd` for InstancedMesh, `TCITY.lodOut`).** `lodAdd` takes instanced sets now:
   grouped by geometry+material, every set's instances copied into one InstancedMesh (`far:tcity`, matrices only), the
   sources marked `lodOf` only when a copy exists (a singleton set is left alone, or it would vanish when far with nothing

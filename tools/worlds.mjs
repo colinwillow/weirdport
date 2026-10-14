@@ -40,7 +40,7 @@ const server = http.createServer((q, r) => {
   if (f.endsWith('index.html')) {
     const s = body.toString(), k = 'window.melee = window.mel = {';
     if (!s.includes(k)) { console.error('worlds: no mel handle in index.html'); process.exit(1); }
-    body = s.replace(k, 'window.__shot = { renderer, scene, camera, MISSING, CELL, stepCam, cellStep, perfStep, cam, player, GODPLACES }; ' + k);
+    body = s.replace(k, 'window.__shot = { renderer, scene, camera, MISSING, CELL, stepCam, cellStep, perfStep, bodyCull, cam, player, GODPLACES, DUMMIES, PERF }; ' + k);
   }
   r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
 });
@@ -74,7 +74,10 @@ for (const w of want) {
       // moves `cam.pos`, but only `stepCam` copies that into the camera. So the move is settled by hand -- `stepCam` ten times
       // (the camera arrives at `cam.pos`), then `cellStep` (the fog culling), then the one frame we read.
       await page.waitForTimeout(300);
-      const m = await page.evaluate(() => { const S = window.__shot; for (let k = 0; k < 10; k++) S.stepCam(1 / 30); for (let k = 0; k < 30; k++) S.perfStep(1 / 30); S.cellStep();
+      const m = await page.evaluate(() => { const S = window.__shot; for (let k = 0; k < 10; k++) S.stepCam(1 / 30);
+        // the body cull is `bodyCull` (m417 put it there, not in `perfStep`): it reads the camera's inverse, which `render` would
+        // refresh -- so refresh it by hand, then cull, then the fog and far-copy pass
+        S.camera.updateMatrixWorld(true); S.camera.matrixWorldInverse.copy(S.camera.matrixWorld).invert(); for (let k = 0; k < 3; k++) S.bodyCull(); S.cellStep();
         // WHO is drawing: every draw call of this frame counted by the object's family -- its name with the digits taken out, or
         // the nearest named ancestor's -- so an OVER has a name to cut rather than a number to stare at
         const who = {}, R = S.renderer, orig = R.renderBufferDirect, fam = o => { for (let a = o; a; a = a.parent) { const n = a.name || (a === o && a.material && a.material.name ? 'mat:' + a.material.name : '') || (a.userData && a.userData.fbatch !== undefined ? 'fbatch' : ''); if (n) return n.replace(/[0-9]+/g, '#').replace(/_i_#$/, '').slice(0, 26); }
@@ -85,14 +88,15 @@ for (const w of want) {
           if (!obj.name && !(obj.material && obj.material.name)) { const L = where[k] || (where[k] = []); if (L.length < 4) { obj.updateWorldMatrix(true, false); const e = obj.matrixWorld.elements, P = { x: e[12], y: e[13], z: e[14] }; let chain = []; for (let a = obj.parent; a && a !== sc; a = a.parent) chain.push(a.name || a.type); L.push(P.x.toFixed(0) + ',' + P.y.toFixed(0) + ',' + P.z.toFixed(0) + (chain.length ? ' <' + chain.join('<') : ' <scene') + (obj.material && obj.material.color ? ' #' + obj.material.color.getHexString() : '')); } }
           return orig.call(this, cam, sc, geo, mat, obj, grp); };
         S.renderer.render(S.scene, S.camera); R.renderBufferDirect = orig; const top = Object.entries(who).sort((a, b) => b[1] - a[1]).slice(0, 14).map(([k, v]) => k + ' ' + v + (where[k] ? ' {' + where[k].join(' | ') + '}' : '')); const i = S.renderer.info.render, M = mel.perfMem(6);
-        return { dc: i.calls, kT: i.triangles / 1000, tex: M.tex, texMB: M.texMB, geo: M.geo, geoMB: M.geoMB, top: M.top, topG: M.topG, glTex: M.glTex, glGeo: M.glGeo, programs: M.programs, cells: (S.CELL && S.CELL.list.length ? S.CELL.shown + '/' + S.CELL.list.length : '-'), who: top }; });
+        return { dc: i.calls, kT: i.triangles / 1000, tex: M.tex, texMB: M.texMB, geo: M.geo, geoMB: M.geoMB, top: M.top, topG: M.topG, glTex: M.glTex, glGeo: M.glGeo, programs: M.programs, cells: (S.CELL && S.CELL.list.length ? S.CELL.shown + '/' + S.CELL.list.length : '-'), who: top,
+          bodies: (() => { const cp = S.camera.position; let vis = 0, near = 0, all = 0; for (const d of S.DUMMIES) { if (d.gone || !d.root) continue; all++; if (d.root.visible) vis++; if (Math.hypot(d.root.position.x - cp.x, d.root.position.z - cp.z) <= (S.PERF.bodyFar || 1e9)) near++; } return vis + ' drawn/' + near + ' near/' + all; })(), md: S.PERF.multi ? 1 : 0 }; });
       R.at.push({ pl: pl || 'spawn', went, ...m });
     }
     rows.push(R);
     const worst = R.at.reduce((a, b) => (b.dc > a.dc ? b : a), R.at[0]), m0 = R.at[0];
     console.log(`\n== ${w}  boot ${R.bootS.toFixed(1)} s (swiftshader)  ${m0.tex} textures ${m0.texMB.toFixed(0)} MB (gl ${m0.glTex})  ${m0.geo} geometries ${m0.geoMB.toFixed(0)} MB (gl ${m0.glGeo})  ${m0.programs} programs  ${el()}` + (R.notes ? `  NOTE: ${R.notes}` : '') + (errs.length ? `  PAGEERROR: ${errs[0]}` : ''));
     for (const a of R.at) { console.log(`   ${a.pl.padEnd(10)} ${String(a.dc).padStart(5)} DC ${a.kT.toFixed(0).padStart(5)} kT  cells ${a.cells.padEnd(8)}` + (a.dc > BUDGET.dc ? '  OVER dc' : '') + (a.kT > BUDGET.kT ? '  OVER kT' : ''));
-      if (WHO) console.log(`              who: ${a.who.join(', ')}`); }
+      if (WHO) console.log(`              who: ${a.who.join(', ')}  | bodies ${a.bodies}${a.md ? ' | multi-draw' : ''}`); }
     console.log(`   textures: ${m0.top.join(', ')}`); console.log(`   geometry: ${m0.topG.join(', ')}`);
     const over = []; if (worst.dc > BUDGET.dc) over.push(`dc ${worst.dc} > ${BUDGET.dc} at ${worst.pl}`); if (worst.kT > BUDGET.kT) over.push(`kT ${worst.kT.toFixed(0)} > ${BUDGET.kT}`);
     if (m0.texMB > BUDGET.texMB) over.push(`textures ${m0.texMB.toFixed(0)} MB > ${BUDGET.texMB}`); if (m0.geoMB > BUDGET.geoMB) over.push(`geometry ${m0.geoMB.toFixed(0)} MB > ${BUDGET.geoMB}`);
