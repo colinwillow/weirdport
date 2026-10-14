@@ -7,6 +7,21 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **TURF: THE INFLUENCE MODEL (m407, D1, `TURF`, `turfBuild`, `turfAt`, `turfHold`, `turfPush`, `turfStep`, `turfMap`,
+  `SAVE.turf`).** The city has no street or block data, so Old Town's blocks are a 6 x 6 grid over `ISLE.rect`, named A..F
+  from its +x side (the map draws +x on the LEFT, so A is the left column) and 1..6 from -z. A block's first shares are
+  `base` + a little hashed noise + each SEED (one of GOD's own places: camp, carts, site, uplift, protest, amp, watcher, orb)
+  falling off over its radius, normalised to one, and written into `SAVE.turf[id]`. A saved block is read back as it is.
+  **THE SAVE GAINED A FIELD**: `turf` is loaded if it is an object, written by `progSave`, and cleared by `progReset`.
+  **`turfBuild` RUNS AFTER EVERY OLD TOWN BUILDER** (beside `buildDecay`): the first placement, beside the ship's builders,
+  came before the camp, carts and site existed, and every seed would have read nothing.
+  `turfPush(x, z, faction, amt)` gives `amt` to one faction, takes it from the others in proportion, keeps the sum at one,
+  and saves. Nothing calls it yet; D5 will. The full map's overlay (`turfMap`, inside `mapFull` after the fog) fills each
+  block in its holder's colour at .14 + the lead x 1.6 (capped .54), outlines it and writes `<block> <holder>`.
+  **`npm run places`, exit 0** (teeth: the seeds' strength zeroed reads `BAD TURF ... every seed ... SHOP ... A SEED DOES NOT
+  HOLD ITS BLOCK`):
+      ok  TURF 36 blocks | shares sum to one in 36, negative in 0 | seeds: camp>F5 HOME, carts>E6 SHOP, site>E1 BIG, uplift>D2 UPL, protest>D5 ACT, amp>C4 ACT, watcher>B3 SKIN, orb>D2 UPL | 6 factions hold ground | a push of .9 to home: A1 SHOP > HOME, saved | off Old Town none 
+
 - **THE MAN IN THE NICE SUIT, AND THE END (m406, C6-8e-3, quest `ch6c`, `ISUIT`, `buildShipSuit`, `shipFree`, `shipEnd`).**
   The boss is the ordinary `skin` step (big 2.4, seven downs) on a `fat_secret_service` mark in the core. **THE TURNED COME
   OUT** through `shipFolkStep`: once `qdone:ch6c` is set, each bound pod body gets `shipFree`, which clears the passenger

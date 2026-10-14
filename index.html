@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m406</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m407</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m406</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m407</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm406';
+const BUILD = 'm407';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -2202,6 +2202,7 @@ const SAVE = {
   forms: ['zap'],       // unlocked forms; his own is always there
   regions: [],          // revealed region keys
   flags: {},            // quest flags, free-form
+  turf: {},             // m407: each block's faction shares (`TURF`)
   portals: [],          // activated portal keys
   juice: 0,             // the DNA tool's tank (A7b decides the size and the rates)
   fresh: 0,             // 1 when this boot wiped the store (`?fresh`) -- the chip says so
@@ -2226,11 +2227,12 @@ const SAVE = {
     if (o.flags && typeof o.flags === 'object') SAVE.flags = o.flags;
     if (Array.isArray(o.portals)) SAVE.portals = o.portals.filter(f => typeof f === 'string');
     if (Number.isFinite(o.juice)) SAVE.juice = o.juice;
+    if (o.turf && typeof o.turf === 'object') SAVE.turf = o.turf;
   }
 }
 const progSave = () => {
-  const { ch, forms, regions, flags, portals, juice, v } = SAVE;
-  try { localStorage.setItem(SAVE.key, JSON.stringify({ v, ch, forms, regions, flags, portals, juice })); } catch (e) {}
+  const { ch, forms, regions, flags, portals, juice, turf, v } = SAVE;
+  try { localStorage.setItem(SAVE.key, JSON.stringify({ v, ch, forms, regions, flags, portals, juice, turf })); } catch (e) {}
 };
 // each returns true when it CHANGED something, so a caller can fire its moment exactly once
 const progAdd = (list, k) => { if (SAVE[list].includes(k)) return false; SAVE[list].push(k); progSave(); return true; };
@@ -2242,7 +2244,7 @@ const progChapter = n => { n |= 0; if (SAVE.ch === n) return false; SAVE.ch = n;
 const progJuice = n => { SAVE.juice = Math.max(0, n); progSave(); return SAVE.juice; };
 // new game without the URL: wipes this key only, leaves tuning and settings alone
 const progReset = () => {
-  Object.assign(SAVE, { ch: 0, forms: ['zap'], regions: [], flags: {}, portals: [], juice: 0 });
+  Object.assign(SAVE, { ch: 0, forms: ['zap'], regions: [], flags: {}, portals: [], juice: 0, turf: {} });
   progSave();
 };
 const inWP = () => WORLD.now === 'weirdport';
@@ -31479,6 +31481,7 @@ function mapFull() {
   g.setTransform(1, 0, 0, 1, 0, 0); g.clearRect(0, 0, W, W);
   g.setTransform(k, 0, 0, k, 0, 0);
   g.drawImage(map.fog, 0, 0);
+  if (WORLD.now === 'tkit') turfMap(g, E);          // m407: who holds each block
   g.font = '400 ' + 26 + 'px Bungee, sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
   for (const r of map.regs) if (mapSeen(r)) { g.fillStyle = 'rgba(70,224,255,.55)'; g.fillText(r.name, mapU(E, (r.x0 + r.x1) / 2), mapV(E, r.z1) + 30); }
   mapMarks(g, E, 1.6, 1);
@@ -35257,6 +35260,79 @@ function shipEnd() {
   const T = ITHERM; if (T.mship) T.mship.traverse(o => { if (o.isMesh && o.material && o.material.color && o.geometry && o.geometry.type === 'TorusGeometry') o.material.color.setHex(0x221a24); });
   if (T.ringM) { T.ringM.emissive.setHex(0x1a2a30); T.ringM.emissiveIntensity = .2; }
   if (ISDECK.spin) ISDECK.spin.traverse(o => { if (o.isMesh && o.material.emissive) o.material.emissiveIntensity = .1; });
+}
+// ============================================================================================
+// TURF: WHO HOLDS EACH BLOCK (m407, ROADMAP D1, `TURF`, `turfBuild`, `turfAt`, `turfHold`, `turfPush`, `turfMap`)
+// ============================================================================================
+// GAME_DESIGN's "Turf: the city is up for grabs": every block carries an influence SHARE for each faction -- the activists,
+// the rednecks, big business, small business, the homeless, Uplift, the Skinsuits -- and who holds it is whoever's share
+// is biggest. Old Town is cut into a 6 x 6 grid of blocks over its own rectangle (`ISLE.rect`), named like a chess board
+// (A1 at its +x, -z corner) so the map and the chip can say which one you stand in. A block's first shares are SEEDED from
+// what is really there (the camp, the carts, the building site, Uplift's office, the protest, the amplifier, the watcher:
+// GOD's own places), with a little of everybody everywhere; then they are SAVED (`SAVE.turf`), so whatever moves them
+// later (D5's pressure and your doing, through `turfPush`) stays moved. **D1 is the model and the reading of it**: the map
+// overlay (each block in its holder's colour, stronger the clearer the lead) and the chip's `TURF <block> <holder> <%>`.
+const TURF = {
+  on: 1, map: 1, n: 6,
+  FACTIONS: [
+    { id: 'act', name: 'ACTIVISTS', short: 'ACT', col: '#ff6aa8' },
+    { id: 'red', name: 'REDNECKS', short: 'RED', col: '#e07a2a' },
+    { id: 'big', name: 'BIG BUSINESS', short: 'BIG', col: '#ffd23a' },
+    { id: 'small', name: 'SMALL BUSINESS', short: 'SHOP', col: '#3ad08a' },
+    { id: 'home', name: 'THE HOMELESS', short: 'HOME', col: '#a8957e' },
+    { id: 'upl', name: 'UPLIFT', short: 'UPL', col: '#46e0ff' },
+    { id: 'skin', name: 'THE SKINSUITS', short: 'SKIN', col: '#b03aff' },
+  ],
+  base: [.08, .04, .14, .22, .14, .05, .05], noise: .06,
+  SEEDS: [['camp', 'home', .6, 48], ['carts', 'small', .5, 42], ['site', 'big', .5, 42], ['uplift', 'upl', .5, 38], ['protest', 'act', .45, 46], ['amp', 'act', .25, 36], ['watcher', 'skin', .3, 40], ['orb', 'skin', .2, 40]],
+  blocks: [], rect: null, k: '', t: 0, pushes: 0,
+};
+const turfF = id => TURF.FACTIONS.findIndex(f => f.id === id);
+function turfBuild() {
+  const T = TURF, R = ISLE.rect; T.blocks = []; if (!T.on || !inTK() || !R) return 0;
+  T.rect = R; const n = T.n, w = (R[1] - R[0]) / n, d = (R[3] - R[2]) / n;
+  const seedAt = []; for (const [pid, f, k, r] of T.SEEDS) { const P = GODPLACES.find(q => q.id === pid); let a = null; try { a = P && P.at && P.at(); } catch (e) {} if (a && isFinite(a[0]) && isFinite(a[2])) seedAt.push({ x: a[0], z: a[2], fi: turfF(f), k, r }); }
+  let fresh = 0;
+  for (let i = 0; i < n; i++) for (let j = 0; j < n; j++) {
+    const id = 'ot:' + i + ':' + j, x0 = R[1] - (i + 1) * w, x1 = R[1] - i * w, z0 = R[2] + j * d, z1 = R[2] + (j + 1) * d, cx = (x0 + x1) / 2, cz = (z0 + z1) / 2;
+    let sh = SAVE.turf[id];
+    if (!Array.isArray(sh) || sh.length !== T.FACTIONS.length) {
+      let h = (i * 73 + j * 151 + 7) % 997; const rnd = () => (h = (h * 9301 + 49297) % 233280) / 233280;
+      sh = T.base.map(b => b + rnd() * T.noise);
+      for (const S of seedAt) { const dd = Math.hypot(cx - S.x, cz - S.z); if (dd < S.r) sh[S.fi] += S.k * (1 - dd / S.r); }
+      const sum = sh.reduce((a, b) => a + b, 0); sh = sh.map(v => v / sum); SAVE.turf[id] = sh; fresh++;
+    }
+    T.blocks.push({ id, i, j, name: 'ABCDEF'[i] + (j + 1), x0, x1, z0, z1, cx, cz, sh });
+  }
+  if (fresh) progSave();
+  return T.blocks.length;
+}
+function turfAt(x, z) { const T = TURF, R = T.rect; if (!R || !T.blocks.length || x < R[0] || x > R[1] || z < R[2] || z > R[3]) return null;
+  const n = T.n, i = clamp(Math.floor((R[1] - x) / ((R[1] - R[0]) / n)), 0, n - 1), j = clamp(Math.floor((z - R[2]) / ((R[3] - R[2]) / n)), 0, n - 1); return T.blocks[i * n + j]; }
+// who holds it: [faction index, its share, its lead over the next]
+function turfHold(B) { let a = 0, b = -1; B.sh.forEach((v, k) => { if (v > B.sh[a]) { b = a; a = k; } else if (k !== a && (b < 0 || v > B.sh[b])) b = k; }); return [a, B.sh[a], B.sh[a] - (b >= 0 ? B.sh[b] : 0)]; }
+// move a block's shares: `amt` to faction `f` (an id), taken from the others in proportion; saved
+function turfPush(x, z, f, amt) {
+  const B = turfAt(x, z), fi = turfF(f); if (!B || fi < 0) return null;
+  const sh = B.sh, add = clamp(amt, -sh[fi], 1 - sh[fi]), rest = 1 - sh[fi];
+  for (let k = 0; k < sh.length; k++) if (k !== fi) sh[k] = rest > 1e-9 ? sh[k] * (1 - add / rest) : 0;
+  sh[fi] += add; SAVE.turf[B.id] = sh; TURF.pushes++; progSave();
+  return turfHold(B);
+}
+// the chip's reading, twice a second
+function turfStep(dt) {
+  const T = TURF; if (!T.blocks.length) { T.k = ''; return; } if ((T.t -= dt) > 0) return; T.t = .5;
+  const B = turfAt(player.pos.x, player.pos.z); if (!B) { T.k = ''; return; } const [fi, s] = turfHold(B); T.k = B.name + ' ' + T.FACTIONS[fi].short + Math.round(s * 100) + '%';
+}
+// the full map's overlay: each block in its holder's colour, stronger the clearer its lead; its holder's name across it
+function turfMap(g, E) {
+  const T = TURF; if (!T.map || !T.blocks.length) return;
+  g.save(); g.textAlign = 'center'; g.textBaseline = 'middle'; g.font = '400 15px Bungee, sans-serif';
+  for (const B of T.blocks) { const [fi, s, lead] = turfHold(B), F = T.FACTIONS[fi], ua = mapU(E, B.x0), ub = mapU(E, B.x1), va = mapV(E, B.z0), vb = mapV(E, B.z1);
+    g.globalAlpha = .14 + Math.min(.4, lead * 1.6); g.fillStyle = F.col; g.fillRect(Math.min(ua, ub), Math.min(va, vb), Math.abs(ub - ua), Math.abs(vb - va));
+    g.globalAlpha = .55; g.strokeStyle = '#0c0f16'; g.lineWidth = 1.5; g.strokeRect(Math.min(ua, ub), Math.min(va, vb), Math.abs(ub - ua), Math.abs(vb - va));
+    g.globalAlpha = .85; g.fillStyle = '#ffffff'; g.fillText(B.name + ' ' + F.short, (ua + ub) / 2, (va + vb) / 2); }
+  g.restore();
 }
 // ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
@@ -39899,6 +39975,7 @@ function godMenuOpen(on) {
   if (ISLES.live) { btn('THE ISLANDS\' WIND ' + (IWIND.on ? 'ON' : 'OFF'), () => { IWIND.on = IWIND.on ? 0 : 1; godMenuOpen(1); });   // m393
     btn('THE MOTHERSHIP OVER THE ISLANDS ' + (ITHERM.ship ? 'ON' : 'OFF'), () => { ITHERM.ship = ITHERM.ship ? 0 : 1; godMenuOpen(1); });   // m395
     btn('A GUST NOW (THE ISLANDS)', () => { windGust(); toast('Gust: +' + IWIND.gustAdd.toFixed(0) + ' m/s', 1.4); godMenuOpen(0); }); }
+  if (TURF.blocks.length) btn('TURF ON THE MAP ' + (TURF.map ? 'ON' : 'OFF'), () => { TURF.map = TURF.map ? 0 : 1; godMenuOpen(1); });   // m407
   if (SKYLINE.g) btn('METROPOLIS ON THE HORIZON ' + (SKYLINE.g.visible ? 'ON' : 'OFF'), () => { SKYLINE.g.visible = !SKYLINE.g.visible; godMenuOpen(1); });
   btn('THE STAND-IN QUEST (WEIRDPORT 101)', () => { progFlag('qon:q0'); quest.cur = null; toast('Quest on', 1.4); });
   btn('THE STAND-IN TASKS (TWO, FOR THE TASK LIST)', () => { progFlag('qon:q0'); progFlag('qon:qtour'); quest.cur = null; toast('Two tasks on', 1.4); godMenuOpen(0); });
@@ -41458,6 +41535,7 @@ function frameBody() {
   shipGauntStep(dt);            // the neural lock's membrane, parting for an engineer (m402)
   islXingStep(dt);              // a flight down on the islands' landing field (m394)
   keeperStep(dt);               // the lighthouse's beam, and the keeper's storm while the thing wearing him stands (m398)
+  turfStep(dt);                 // which block he is in and who holds it, for the chip (m407)
   kitCamStep();
   stepCam(dt);
   mkrStep();                    // his npc markers get their roles once their bodies exist (m293)
@@ -41806,7 +41884,7 @@ function frameBody() {
                         (rig.borrowed ? '+' + rig.borrowed : ' NOBORROW') + (wn || '') : '';
     const line = fps.toFixed(0) + ' FPS · ' + renderer.info.render.calls + ' DC ' + Math.round(renderer.info.render.triangles / 1000) + 'kT' + (CELL.list.length ? ' c' + CELL.shown + '/' + CELL.list.length : '') + (STEPUP.n ? ' ke' + STEPUP.n : '') + PROF.sum + ' · pr' + PERF.pr.toFixed(2) + (PERF.holdT > 0 ? 'h' : '') + ' B' + PERF.seen + '/' + DUMMIES.length + ' · ' +
       p.speed.toFixed(1) + ' m/s · ' + st + lk + hue + bx + cv + brkC + kitC + inf + shp + cl + sk + sk8 + vs + mo + fl + wp + tc + mp +
-      bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + (ITHERM.k > 0 ? ' TH' + Math.round(ITHERM.k * 100) : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
+      bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + (ITHERM.k > 0 ? ' TH' + Math.round(ITHERM.k * 100) : '') + (TURF.k ? ' TURF ' + TURF.k : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
       // CH: the saved chapter (m276); NEW = this boot was `?fresh`, BADSAVE = a save was there and would not parse
       (GOD.on ? ' · GOD' + (GOD.fly ? ' FLY' : '') : '') +
       ' · CH' + SAVE.ch + (SAVE.fresh ? ' NEW' : '') + (SAVE.bad ? ' BADSAVE' : '') +
@@ -42257,6 +42335,8 @@ async function init() {
     try { buildFootbridge(); } catch (e) { note('FOOTBRIDGE FAIL'); console.warn('[melee] footbridge', e); }
     // THE LOOK FOLLOWS OLD TOWN'S HEALTH (m344): boards, rubble, litter -- after every Old Town builder, over the street
     try { buildDecay(); } catch (e) { note('DECAY FAIL'); console.warn('[melee] decay', e); }
+    // TURF (m407): Old Town's blocks and who holds them -- after every Old Town builder, whose places seed the shares
+    try { turfBuild(); } catch (e) { note('TURF FAIL'); console.warn('[melee] turf', e); }
     // THE PEARL (m359): past dock 1, through its door
     try { buildPearl(); } catch (e) { note('PEARL FAIL'); console.warn('[melee] pearl', e); }
     // THE PLAZA'S PROTEST AND ITS BARRICADES (m360)
@@ -42453,7 +42533,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
