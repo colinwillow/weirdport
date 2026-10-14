@@ -7,6 +7,23 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE PATCHWORK READS FROM THE RIDGE NOW: A WARM FIELD DYES THE GRASS, IT DOES NOT MULTIPLY IT (m322, farm polish 1,
+  `isleLandMat` FLD block, `FPLAN.dye`, `FPLAN.TINT`).** m321's ridge shot: every far field the same lime green.
+  **Lime times gold is still lime** -- m308's tint MULTIPLIED the grass texture, so wheat [1.8, 1.38, .55] on a
+  lime texel came out (.81, 1.03, .08), a yellower lime, and the crops (which carry the real colour) fade out with
+  distance, leaving only the ground. Now, on the farmland only:
+  1. the grass as a whole is taken a fifth of the way to grey and warmed (x 1.06, 1, .86) -- REGIONS' "golden
+     countryside, straw", not acid lime;
+  2. a tint whose red beats its green (wheat, hay, stubble, plough, the gouge, the scorch, the circle) DYES: the
+     grass's LUMINANCE times the tint times `FPLAN.dye` (1.05), blended in by `(r - g) * 5`; a green tint (corn,
+     pasture, orchard, reserve) multiplies exactly as before.
+  So of 23 fields, 11 are warm (5 hay now STRAW, 3 wheat gold, 1 stubble, 2 plough brown with their furrows) and 12
+  green, and corn [.62, .88, .42] is darker than pasture instead of the same. **Judged with `npm run shot ridge`**
+  three times (before, dye .8, dye 1.05 + warm base), which is what the STEER's screenshot permission is for.
+  `mel.FPLAN.dye.value` is live (a uniform); the TINT table wants a reload (it is baked into `aFld`).
+  The GLSL is inside a JS template literal: **no backticks in its comments** (the first draft had them escaped, which
+  is legal JS and was taken out rather than trusted to the GLSL preprocessor).
+
 - **STEP 8, PROVED: `npm run places` AND THREE SCREENSHOTS, AND THE SCREENSHOT TOOL WORKS NOW (m321, `tools/shot.mjs`,
   `npm run shot`).** m295 dropped a screenshot tool because `page.screenshot` waits for the compositor to produce a
   frame and the kit city under SwiftShader takes longer than its 30 s timeout. **This one never asks the compositor**:
