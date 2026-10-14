@@ -7,6 +7,78 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE CREEK VALLEY AND THE POND ARE CARVED INTO THE ONE HEIGHT FUNCTION (m307, step 2, `FARMLAND.CREEK`/`POND`, `flBase`, `buildFarmWaters`, `farmTree`).**
+  `flHeight` is now `flBase` (m306's land) then two carves, so the mesh, the collider and the sea's depth all see the
+  same valley and bowl. **The creek's bed is a RUNNING MINIMUM downstream** of (`flBase` - `dig`) sampled every 2 m and
+  resampled to an even arc step (the per-segment sample counts round differently, so the raw array is not even) --
+  its water can never run uphill or stand above the ground it is cut into. Measured: 5.19 at the source under the
+  long ridge, -8.5 where it reaches the sea, 255 m long; where the land rises again (the low rise) it cuts a gorge.
+  Profile: a slight channel `hb` 1.7 either side, then walls at `wall` .3 (17 deg, walkable).
+  **The pond's level is MEASURED**: the lowest of 24 points on a ring 1.25 r out, minus .35 (and never under sea + .6),
+  so its banks always hold it -- 0.1 here. Bowl `depth` 1.7, banks at `bank` .22 per metre.
+  **Placed off a measurement of the m306 cluster in (a, b)** (`flLocal` over every farm box: a -99..56, b -60..18): the
+  creek runs EAST of it (a 58..100), the pond WEST (a -140, b -75), the footbridge at point 2.35 east of the copse.
+  **The water ribbon's first height floated**: +.22 over a bed whose channel lip is level with the bed put its edges
+  .27 m over the bank; it is +.05 and `hb` + .25 wide now, so the edges dip into the walls.
+  `farmTree` is the m303 tree lifted out of `buildHedgerows` (same `rr` draws in the same order, so the hedgerows'
+  trees are unchanged) and takes any frame -- the pond's four willows use it. **The features frame**: `farmFrame` with
+  th = atan2(-ua.z, ua.x) has u = a but v = -b (its v axis (sin th, cos th) is -ub), so everything goes in as (a, -b).
+  Reeds in clumps round the pond with gaps (where the cows will drink), lily pads. GOD `creek`, `pond`.
+  `npm run places`, after the bump:
+  ```
+  ok   buildFarmland
+  ok   buildFarmWaters
+  ok   buildFarm
+  ok   buildFarmProps
+  ok   buildCrash
+  ok   crashHero
+  ok   buildLane
+  ok   buildBridge
+  ok   buildHedgerows
+  ok   buildFarmhouse
+  ok   buildRoadside
+  ok   buildCows
+  ok   buildGroundPaint
+  ok   buildFlora
+  widest grass 66.5 at 172deg | headland ray 7deg grass 38.2 need 60 | rays 520 rect [-93.5,90.5,-90.3,93.5]
+  FARM.at {"x":333.8,"z":150.5,"th":1.281} | CRASH.at yes | LANE.at yes | BRIDGE.gate yes (side 0) | ISLE.live 1
+  FARMLAND live [ 354, 196 ] chunks 9 floor tris 12344 water tris 8346 | BRIDGE len 166 piers 5 gate [112,64]
+  FWATER 7 boxes, reeds 31 | pond level 0.1 | creek bed [ 5.19, -8.5 ] len 255
+  FROAD 3 road pts NONE foot null | FHOUSE 24 chimney [350.6,11.4,135.7] | HROW 143 boxes 22 trees 4 gates | FLORA {"corn_by_the_crash":274,"wheat_to_the_shore":2188,"hay_meadow":1293,"crash_stubble":1113,"potato_rows":1292,"river_meadow":625,"copse_ferns":1104,"tufts":900}
+  notes ["TC NO OBB JSON","ISLE 0/3 TEX"]
+  ok  oldtown    -> player 0.0,0.1,0.0 ground 0.00 
+  ok  overlook   -> player 464.3,9.1,68.0 ground 8.99 
+  ok  creek      -> player 306.6,1.5,245.6 ground 1.35 
+  ok  pond       -> player 363.6,1.5,63.8 ground 1.36 
+  ok  channel    -> player 241.6,0.5,134.3 ground 0.34 
+  ok  farmyard   -> player 320.1,1.5,152.7 ground 1.32 
+  ok  hayloft    -> player 333.7,4.7,156.8 ground 9.00 
+  ok  crash      -> player 341.3,1.5,118.3 ground 1.38 
+  ok  corn       -> player 329.2,1.5,134.5 ground 1.34 
+  ok  wheat      -> player 350.0,1.6,162.7 ground 1.46 
+  ok  farmhouse  -> player 340.8,1.6,136.8 ground 1.41 
+  ok  meadow     -> player 367.4,1.6,150.9 ground 1.46 
+  ok  plough     -> player 318.7,1.5,183.6 ground 1.30 
+  ok  copse      -> player 318.9,1.7,200.4 ground 1.57 
+  ok  windmill   -> player 341.2,1.6,154.2 ground 1.42 
+  ok  scarecrow  -> player 333.6,1.5,135.5 ground 1.37 
+  ok  tractor    -> player 327.2,1.5,139.8 ground 1.33 
+  ok  paddock    -> player 340.7,1.6,157.1 ground 1.42 
+  ok  lane       -> player 320.6,1.5,140.3 ground 1.31 
+  ok  ford       -> player 312.6,1.4,167.2 ground 1.22 
+  ok  road       -> player 336.6,1.5,118.1 ground 1.36 
+  ok  bridge     -> player 112.1,3.0,63.6 ground 2.80 
+  every tkit GOD place is somewhere
+  ok  farmPropsStep  30 frames
+  ok  farmhouseStep  30 frames
+  ok  floraStep      30 frames
+  ok  cowStep        30 frames
+  ok  crashStep      30 frames
+  ok  crashHeroStep  30 frames
+  ok  riverStep      30 frames
+  ok  gradeStep      30 frames
+  ```
+
 - **THE FARM IS ITS OWN LAND ACROSS A CHANNEL NOW (m306, STEER "farm rebuild" step 1, `FARMLAND`, `buildFarmland`, `buildChannelBridge`).**
   He walked m302-m304: *"it's like 12 feet away from the border of the city... a very small city block tacked onto the
   edge of the city... the border between the city and the farm is just a line."* The docs had said "intimate, empty

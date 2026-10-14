@@ -31,7 +31,8 @@ What to build (several builds; ship each step, never wait):
    `BRIDGE` there). Fog `far` and the sky must let the skyline read from the farm. **— done m306** (the land,
    its water, the channel bridge, the long view; the old pieces came along as one cluster round the yard).
 2. **Rolling terrain**: a heightfield with low ridges and hills, a creek valley with a footbridge, a pond.
-   Walkable through the real collider (`groundAt`), chunked so the camera culls what is behind it.
+   Walkable through the real collider (`groundAt`), chunked so the camera culls what is behind it. **— done
+   m306 (hills, ridges, chunks) + m307 (the creek valley, its footbridge, the pond with willows).**
 3. **Fields that follow the land**: irregular patches of wheat, corn, ploughed earth, hay meadow and
    pasture, divided by hedgerows, fences, tree lines and dirt tracks. Nothing square to the world grid.
 4. **Spread the existing pieces out into clusters** (reuse m288-m304, do not throw them away): the
@@ -470,4 +471,8 @@ differ" table there, so no region feels like the last one.
   came along as one cluster round the yard for now; steps 2 to 4 spread it out and send the crash
   far into a field. I put it on bearing .5 (north-east-ish, `FARMLAND.bearing`) and 70 m of water
   away (`FARMLAND.gap`); both are one number if you want it elsewhere.
+- **m307 (farm rebuild, step 2):** a creek now runs down a real valley from the long ridge to the
+  sea, east of the farmyard, with a wooden footbridge across it. A pond with reeds, lily pads and
+  four willows sits in the low ground west of the yard. Both are cut into the land itself, so you
+  can walk down into the valley and the pond's banks hold its water.
 

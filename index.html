@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m306</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m307</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m306</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m307</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm306';
+const BUILD = 'm307';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28939,6 +28939,13 @@ const FARMLAND = {
     { a0: 30, b0: -125, a1: 125, b1: -70, w: 24, h: 3.2, why: 'a low rise between the bridge and the yard' },
   ],
   yard: { a: -30, b: -40, r: 75, why: "the farmyard's ground, settled level: m288-m305's barn, house, lane and fields stand on it" },
+  // m307 (step 2): the land's own water. Both are CARVED into the one height function (`flHeight`), so the mesh, the
+  // collider and the sea's depth all agree there is a valley and a bowl
+  CREEK: { pts: [[100, 62], [88, 30], [74, -5], [78, -40], [64, -75], [70, -110], [58, -140], [62, -182]],
+    hb: 1.7, wall: .3, dig: 1.4, bridge: 2.35,     // half-bed, bank slope (m per m), how far under the land its bed lies, the footbridge (point index)
+    why: "off the long ridge's south flank, east of the yard and west of the far fields, cutting the low rise to the sea a stone's throw east of the bridge" },
+  POND: { a: -140, b: -75, r: 22, depth: 1.7, bank: .22,
+    why: "in the low ground west of the yard, between the west hill and the shore: the cows' water, with willows" },
   fog: { near: 150, far: 950 },
   bridgeEnd: 2,         // m past the farm's beach top where the bridge's deck comes down onto its ramp
   O: null, ua: null, ub: null, noise: null, rect: null, tris: 0, chunks: 0, wtris: 0,
@@ -28956,6 +28963,33 @@ function flEdge(a, b) {
   return (w - rr) / rn;
 }
 function flHeight(a, b) {
+  let h = flBase(a, b);
+  const F = FARMLAND;
+  // THE CREEK (m307): never above its bed plus the bank -- a flat bed `hb` either side of the line, a slight channel,
+  // walls rising `wall` per metre beyond; `F.cbed` is the running minimum down its length (see `buildFarmland`)
+  if (F.cbed) {
+    const P = F.CREEK.pts, C = F.cbed;
+    let best = 1e9, sAt = 0, acc = 0;
+    for (let i = 0; i < P.length - 1; i++) {
+      const [a0, b0] = P[i], ux = P[i + 1][0] - a0, uz = P[i + 1][1] - b0, L2 = ux * ux + uz * uz, L = Math.sqrt(L2);
+      const t = clamp(((a - a0) * ux + (b - b0) * uz) / L2, 0, 1), d = Math.hypot(a - a0 - ux * t, b - b0 - uz * t);
+      if (d < best) { best = d; sAt = acc + t * L; }
+      acc += L;
+    }
+    if (best < 40) {
+      const k = clamp(sAt / C.step, 0, C.y.length - 1.001), i = Math.floor(k), bed = lerp(C.y[i], C.y[i + 1], k - i);
+      const hb = F.CREEK.hb, ch = best < hb ? -.3 * (1 - (best / hb) ** 2) : (best - hb) * F.CREEK.wall;
+      h = Math.min(h, bed + ch);
+    }
+  }
+  // THE POND (m307): a bowl under its level, banks rising `bank` per metre outside it
+  if (F.pondY != null) {
+    const Pd = F.POND, d = Math.hypot(a - Pd.a, b - Pd.b);
+    if (d < Pd.r + 30) h = Math.min(h, d < Pd.r ? F.pondY - Pd.depth * (1 - (d / Pd.r) ** 2) : F.pondY + (d - Pd.r) * Pd.bank);
+  }
+  return h;
+}
+function flBase(a, b) {
   const F = FARMLAND, sea = ISLE.sea, e = flEdge(a, b);
   if (e < 0) return Math.max(sea - 26, sea - .35 + e * .3);                      // the shelf
   if (e < F.beach) return sea - .35 + 1.65 * ss01(0, F.beach, e);                // the beach, to its top at sea + 1.3
@@ -28999,6 +29033,27 @@ function buildFarmland() {
   F.ub = [Math.cos(F.bearing), Math.sin(F.bearing)]; F.ua = [-F.ub[1], F.ub[0]];
   const ray = isleRayAt(F.bearing), d = ray.rb + ray.L + F.gap + F.B;
   F.O = [cx + F.ub[0] * d, cz + F.ub[1] * d];
+  // ---- the creek's bed: sampled every `step` m down its line, each sample `dig` under the uncarved land there, then
+  // a RUNNING MINIMUM downstream -- so the water never runs uphill and is never above the ground it is carved into
+  F.cbed = null; F.pondY = null;
+  { const P = F.CREEK.pts, step = 2, y = [];
+    for (let i = 0; i < P.length - 1; i++) {
+      const L = Math.hypot(P[i + 1][0] - P[i][0], P[i + 1][1] - P[i][1]), n = Math.max(1, Math.round(L / step));
+      for (let k = 0; k < n; k++) { const t = k / n; y.push(flBase(lerp(P[i][0], P[i + 1][0], t), lerp(P[i][1], P[i + 1][1], t)) - F.CREEK.dig); }
+    }
+    y.push(flBase(...P[P.length - 1]) - F.CREEK.dig);
+    for (let k = 1; k < y.length; k++) y[k] = Math.min(y[k], y[k - 1] - .01);
+    F.cbed = { step: 0, y };
+    // `step` is the ARC length per sample, which differs per segment; resample to a true even step
+    const sl = [0]; let acc = 0;
+    for (let i = 0; i < P.length - 1; i++) { const L = Math.hypot(P[i + 1][0] - P[i][0], P[i + 1][1] - P[i][1]), n = Math.max(1, Math.round(L / step)); for (let k = 1; k <= n; k++) sl.push(acc + L * k / n); acc += L; }
+    const ev = [];
+    for (let s0 = 0, j = 0; s0 <= acc + 1e-6; s0 += step) { while (j < sl.length - 2 && sl[j + 1] < s0) j++; ev.push(lerp(y[j], y[j + 1], clamp((s0 - sl[j]) / ((sl[j + 1] - sl[j]) || 1), 0, 1))); }
+    F.cbed = { step, y: ev, len: acc };
+  }
+  { const Pd = F.POND; let lo = 1e9;
+    for (let k = 0; k < 24; k++) { const t = k / 24 * Math.PI * 2; lo = Math.min(lo, flBase(Pd.a + Math.cos(t) * Pd.r * 1.25, Pd.b + Math.sin(t) * Pd.r * 1.25)); }
+    F.pondY = Math.max(sea + .6, lo - .35); }
   // ---- the height grid, once: positions, normals, splats
   const C = F.cell, a0 = -F.A - F.margin, b0 = -F.B - F.margin;
   const NA = Math.ceil((2 * F.A + 2 * F.margin) / C), NB = Math.ceil((2 * F.B + 2 * F.margin) / C);
@@ -29081,6 +29136,82 @@ function buildFarmland() {
   F.live = 1;
   console.log('[melee] farmland: ' + nCh + ' chunks, ' + F.tris + ' floor tris, water ' + F.wtris + ' tris, centre ' + F.O.map(v => v.toFixed(0)).join(','));
   return nCh;
+}
+
+// ---- THE CREEK AND THE POND, ON THE LAND (m307, step 2, `buildFarmWaters`): the water, a footbridge, willows, reeds.
+// The valley and the bowl are already in the ground (`flHeight`'s carves); this is what sits in and over them. Built in
+// a frame on the land's own axes: `farmFrame` with th = atan2(-ua.z, ua.x) makes its u = a and its v = -b (derived:
+// its v axis (sin th, cos th) comes out as -ub), so every (a, b) below goes in as (a, -b).
+const FWATER = { n: 0, bridgeAt: null, pondAt: null, reeds: 0 };
+function buildFarmWaters() {
+  const FL = FARMLAND; if (!FL.live || !FL.cbed) return 0;
+  const sea = ISLE.sea, Cr = FL.CREEK, Pd = FL.POND;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .9, metalness: 0 }), o || {});
+  const MAT = { wood: M(0x7a5232), bark: M(0x4f3d2c), leaf: M(0x3c6a2a), leaf2: M(0x7a9a48), reed: M(0x6f7f3a), lily: M(0x3f6e2c) };
+  const F = farmFrame(FL.O[0], FL.O[1], Math.atan2(-FL.ua[1], FL.ua[0]), MAT, 'water'), { bx, geo, gnd, parts } = F;
+  const UV = (a, b) => [a, -b];
+  let seed = 307; const rr = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const ico1 = new THREE.IcosahedronGeometry(1, 1);
+  const water = new THREE.MeshStandardMaterial({ color: 0x3f8fae, roughness: .06, metalness: .25, transparent: true, opacity: .8,
+    side: THREE.DoubleSide, polygonOffset: true, polygonOffsetFactor: -1, polygonOffsetUnits: -1 });
+  // ---- the creek's water: a ribbon down its line, until the sea takes it. **Level with the channel's lip (+.05), and
+  // wider than the bed (`hb` + .25), so its edges dip into the walls** -- at +.22 over a bed whose lip is level with it
+  // the ribbon's edges hovered .27 m over the bank
+  { const P = Cr.pts, B = FL.cbed, pos = [], idx = [], hw = Cr.hb + .25;
+    let acc = 0, n = 0;
+    for (let i = 0; i < P.length - 1; i++) {
+      const [a0, b0] = P[i], ux = P[i + 1][0] - a0, uz = P[i + 1][1] - b0, L = Math.hypot(ux, uz), ta = ux / L, tb = uz / L, k = Math.max(1, Math.round(L / 2));
+      for (let j = 0; j < k; j++) {
+        const t = j / k, a = a0 + ux * t, b = b0 + uz * t, sAt = acc + L * t, q = clamp(sAt / B.step, 0, B.y.length - 1.001), ii = Math.floor(q);
+        const y = lerp(B.y[ii], B.y[ii + 1], q - ii) + .05;
+        if (y < sea + .05) { n = 0; continue; }               // under the sea's surface: the sea has it from here
+        for (const sd of [-1, 1]) { const [x, z] = flWorld(a - tb * hw * sd, b + ta * hw * sd); pos.push(x, y, z); }
+        if (n) { const o = pos.length / 3 - 4; idx.push(o, o + 2, o + 1, o + 1, o + 2, o + 3); }
+        n++;
+      }
+      acc += L;
+    }
+    if (idx.length) {
+      const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setIndex(idx); g.computeVertexNormals();
+      const m = new THREE.Mesh(g, water); m.renderOrder = 1; scene.add(m);
+    }
+  }
+  // ---- the footbridge, across the creek at `bridge` (a point index with a fraction), deck bank to bank
+  { const P = Cr.pts, i = Math.floor(Cr.bridge), t = Cr.bridge - i, [a0, b0] = P[i], [a1, b1] = P[i + 1];
+    const a = lerp(a0, a1, t), b = lerp(b0, b1, t), L = Math.hypot(a1 - a0, b1 - b0), ta = (a1 - a0) / L, tb = (b1 - b0) / L;
+    const na = tb, nb = -ta;                                       // across the creek, in (a, b)
+    const [du, dv] = [na, -nb], psi = Math.atan2(-dv, du), half = 7;   // in the frame: (u, v) = (a, -b)
+    const [cu, cv] = UV(a, b), eu = du * half, ev = dv * half;
+    const top = Math.max(gnd(cu + eu, cv + ev), gnd(cu - eu, cv - ev)) + .06;
+    bx(cu, cv, top - .16, top, half * 2 + .6, 1.6, 'wood', psi);                                   // the deck
+    for (const sd of [-1, 1]) {
+      const ou = -dv * .78 * sd, ov = du * .78 * sd;                                                   // along the creek, either side
+      bx(cu + ou, cv + ov, top + .02, top + 1.0, half * 2, .08, 'wood', psi);                         // the handrails
+      for (let k = 0; k <= 6; k++) { const f = -half + k * half * 2 / 6; bx(cu + ou + du * f, cv + ov + dv * f, top - .1, top + 1.05, .12, .12, 'wood', psi, false); }
+    }
+    for (const f of [-2.6, 2.6]) { const pu = cu + du * f, pv = cv + dv * f; bx(pu, pv, gnd(pu, pv) - .2, top - .16, .3, 1.4, 'wood', psi, false); }   // trestles
+    FWATER.bridgeAt = [...flWorld(a + na * (half + 2), b + nb * (half + 2)), Math.atan2(-(na * FL.ua[0] + nb * FL.ub[0]), -(na * FL.ua[1] + nb * FL.ub[1]))];
+  }
+  // ---- the pond: its surface, lily pads, reeds round the edge, willows on the bank
+  { const [x, z] = flWorld(Pd.a, Pd.b), g = new THREE.CircleGeometry(Pd.r + 1.5, 48); g.rotateX(-Math.PI / 2);
+    const m = new THREE.Mesh(g, water.clone()); m.material.color.setHex(0x3a7a74); m.position.set(x, FL.pondY, z); m.renderOrder = 1; scene.add(m);
+    const [pu, pv] = UV(Pd.a, Pd.b);
+    for (let k = 0; k < 14; k++) { const t = rr() * 6.28, r = Pd.r * (.35 + rr() * .5), s2 = .45 + rr() * .5;
+      geo(new THREE.CircleGeometry(s2, 9, .3, 5.7), 'lily', pu + Math.cos(t) * r, FL.pondY + .03, pv + Math.sin(t) * r, rr() * 6, -Math.PI / 2); }
+    let nR = 0;
+    for (let k = 0; k < 46; k++) { const t = k / 46 * 6.28 + rr() * .1, r = Pd.r * (.9 + rr() * .22);
+      if (rr() < .25) continue;                                    // gaps, where the cows come down to drink
+      const u = pu + Math.cos(t) * r, v = pv + Math.sin(t) * r, g2 = gnd(u, v);
+      for (let c = 0; c < 4; c++) geo(new THREE.ConeGeometry(.05, 1.2 + rr() * .9, 4), 'reed', u + (rr() - .5) * .7, Math.max(g2, FL.pondY) + .6, v + (rr() - .5) * .7, 0, (rr() - .5) * .3, (rr() - .5) * .3);
+      nR++;
+    }
+    FWATER.reeds = nR;
+    for (const [t, s2] of [[.4, 1.15], [1.9, .95], [3.3, 1.05], [4.9, .9]]) farmTree(F, rr, ico1, pu + Math.cos(t) * (Pd.r + 4.5), pv + Math.sin(t) * (Pd.r + 4.5), s2, 'willow');
+    FWATER.pondAt = [...flWorld(Pd.a + (Pd.r + 6) * .7, Pd.b + (Pd.r + 6) * .7), Math.atan2(-((-.7) * FL.ua[0] + (-.7) * FL.ub[0]), -((-.7) * FL.ua[1] + (-.7) * FL.ub[1]))];
+  }
+  const r = F.commit();
+  FWATER.n = r.boxes;
+  return FWATER.n;
 }
 
 // ============================================================================================
@@ -30655,6 +30786,26 @@ const HROW = {
   BALES: [[8.5, 24, 1.3], [12, 24.6, 1.5], [15.6, 23.8, 1.7], [18.4, 25.2, 1.4], [9.5, 37, .2], [16.5, 38, -.3]],
   STACK: { u: 12.4, v: 31.5, psi: .25, why: 'three bales stacked in the meadow: up on top you see over the hedges to the wreck' },
 };
+// A TREE (m303, shared m307): an oak (a broad crown on a short trunk) or a willow (a leaning trunk, a crown that droops),
+// into any `farmFrame` whose materials have `bark`, `leaf` and `leaf2`; `rr` is the caller's seeded stream
+function farmTree(F, rr, ico1, u, v, s, k) {
+  const { bx, geo, gnd, parts } = F;
+  if (!(gnd(u, v) > ISLE.sea + .6)) return 0;
+  const g = gnd(u, v), wil = k === 'willow', th = (wil ? 2.6 : 3.4) * s;
+  geo(new THREE.CylinderGeometry(.24 * s, .4 * s, th + .6, 9), 'bark', u, g + th / 2 - .3, v, rr() * 6, wil ? .12 : 0, wil ? -.1 : 0);
+  bx(u, v, g - .2, g + th, .75 * s, .75 * s, 'bark'); parts.bark.pop();             // the trunk is a post you walk round
+  // two limbs out of the fork, so the crown sits ON something
+  // Euler XYZ applies Rz first: z = -.75 leans the limb's top toward local +x, then y = -a turns that onto (cos a, sin a)
+  for (let b = 0; b < 2; b++) { const a = rr() * 6.28;
+    geo(new THREE.CylinderGeometry(.09 * s, .17 * s, 1.9 * s, 6), 'bark', u + Math.cos(a) * .62 * s, g + th + .65 * s, v + Math.sin(a) * .62 * s, -a, 0, -.75); }
+  const cy = g + th + (wil ? 1.0 : 1.9) * s, n = wil ? 7 : 6;
+  for (let c = 0; c < n; c++) {
+    const a = c / n * 6.28 + rr() * .6, d = (c === 0 ? 0 : (wil ? 1.7 : 1.5)) * s, r = (c === 0 ? 2.3 : 1.45 + rr() * .5) * s;
+    const y = cy + (c === 0 ? .4 * s : (wil ? -.5 - rr() * .8 : rr() * .9 - .2) * s);
+    geo(ico1, (c + (wil ? 1 : 0)) % 3 ? 'leaf' : 'leaf2', u + Math.cos(a) * d, y, v + Math.sin(a) * d, rr() * 3, rr() * 3, 0, r, r * (wil ? 1.05 : .8), r);
+  }
+  return 1;
+}
 function buildHedgerows() {
   const A = FARM.at; if (!HROW.on || !A) return 0;
   const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .9, metalness: 0 }), o || {});
@@ -30665,25 +30816,8 @@ function buildHedgerows() {
   let seed = 303;
   const rr = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
   const ico0 = new THREE.IcosahedronGeometry(1, 0), ico1 = new THREE.IcosahedronGeometry(1, 1);
-  // ---- a tree: an oak (a broad crown on a short trunk) or a willow (a leaning trunk, a crown that droops)
-  function tree(u, v, s, k) {
-    if (!dry(u, v)) return 0;
-    const g = gnd(u, v), wil = k === 'willow', th = (wil ? 2.6 : 3.4) * s;
-    geo(new THREE.CylinderGeometry(.24 * s, .4 * s, th + .6, 9), 'bark', u, g + th / 2 - .3, v, rr() * 6, wil ? .12 : 0, wil ? -.1 : 0);
-    bx(u, v, g - .2, g + th, .75 * s, .75 * s, 'bark'); parts.bark.pop();             // the trunk is a post you walk round
-    // two limbs out of the fork, so the crown sits ON something
-    // Euler XYZ applies Rz first: z = -.75 leans the limb's top toward local +x, then y = -a turns that onto (cos a, sin a)
-    for (let b = 0; b < 2; b++) { const a = rr() * 6.28;
-      geo(new THREE.CylinderGeometry(.09 * s, .17 * s, 1.9 * s, 6), 'bark', u + Math.cos(a) * .62 * s, g + th + .65 * s, v + Math.sin(a) * .62 * s, -a, 0, -.75); }
-    const cy = g + th + (wil ? 1.0 : 1.9) * s, n = wil ? 7 : 6;
-    for (let c = 0; c < n; c++) {
-      const a = c / n * 6.28 + rr() * .6, d = (c === 0 ? 0 : (wil ? 1.7 : 1.5)) * s, r = (c === 0 ? 2.3 : 1.45 + rr() * .5) * s;
-      const y = cy + (c === 0 ? .4 * s : (wil ? -.5 - rr() * .8 : rr() * .9 - .2) * s);
-      geo(ico1, (c + (wil ? 1 : 0)) % 3 ? 'leaf' : 'leaf2', u + Math.cos(a) * d, y, v + Math.sin(a) * d, rr() * 3, rr() * 3, 0, r, r * (wil ? 1.05 : .8), r);
-    }
-    HROW.trees++;
-    return 1;
-  }
+  // ---- a tree: the shared one (`farmTree`), counted here
+  const tree = (u, v, sc, k) => { const r = farmTree(F, rr, ico1, u, v, sc, k); HROW.trees += r; return r; };
   // ---- a gate: two posts either side of the gap and a five-bar gate swung open into the field
   function gate(u, v, tu, tv) {
     const psi = Math.atan2(-tv, tu), hw = HROW.gateW / 2;
@@ -30840,6 +30974,8 @@ const godFL = H => { const [x, z] = flWorld(H.a, H.b); return [x, null, z, Math.
 const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
   { id: 'overlook', world: 'tkit', name: 'GRISTLE FARM · the west hill: fields, and the city on the horizon', at: () => FARMLAND.live && godFL(FARMLAND.HILLS[0]) },
+  { id: 'creek',    world: 'tkit', name: 'GRISTLE FARM · the creek footbridge', at: () => FWATER.bridgeAt && [FWATER.bridgeAt[0], null, FWATER.bridgeAt[1], FWATER.bridgeAt[2]] },
+  { id: 'pond',     world: 'tkit', name: 'GRISTLE FARM · the pond and its willows', at: () => FWATER.pondAt && [FWATER.pondAt[0], null, FWATER.pondAt[1], FWATER.pondAt[2]] },
   { id: 'channel',  world: 'tkit', name: 'GRISTLE FARM · the channel bridge, the farm end', at: () => BRIDGE.farmEnd && [BRIDGE.farmEnd[0], null, BRIDGE.farmEnd[1], FARMLAND.live ? Math.atan2(-FARMLAND.ub[0], -FARMLAND.ub[1]) : null] },
   { id: 'farmyard', world: 'tkit', name: 'GRISTLE FARM · the farmyard, at the barn doors', at: () => godFarm(-6, -12.5, 0) },
   { id: 'hayloft',  world: 'tkit', name: 'GRISTLE FARM · up in the hayloft', at: () => FARM.loft && [FARM.loft[0], FARM.loft[1], FARM.loft[2], null] },
@@ -33168,6 +33304,8 @@ async function init() {
     try { buildIsle(); } catch (e) { ISLE.live = 0; note('ISLE FAIL'); console.warn('[melee] island', e); }
     // GRISTLE FARM'S OWN LAND (m306): across the channel, after the island it measures its place off
     try { buildFarmland(); } catch (e) { FARMLAND.live = 0; note('FARMLAND FAIL'); console.warn('[melee] farmland', e); }
+    // ITS CREEK AND POND (m307): what stands in and over the valley and the bowl the land is carved with
+    try { buildFarmWaters(); } catch (e) { note('WATERS FAIL'); console.warn('[melee] farm waters', e); }
     // THE FARM (m288): on the island's ring, so after the island -- and in a try, a yard is not worth a boot
     try { buildFarm(); } catch (e) { note('FARM FAIL'); console.warn('[melee] farm', e); }
     // ITS SILHOUETTE AND CLUTTER (m299): before the cows and the plants, so both see these colliders
@@ -33390,7 +33528,7 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // THE FARM'S PROPS (m299): `mel.FPROPS` -- `wind` (shared direction), `spin`
   FPROPS,
   // THE GROUND PAINT (m301): `mel.GPAINT` -- the patch table and the lane track
-  GPAINT, HROW, FHOUSE, FROAD, FARMLAND,
+  GPAINT, HROW, FHOUSE, FROAD, FARMLAND, FWATER,
   FARM, farm: () => { const F = FARM.at; if (!F) return 'no farm in this world'; const p = player; p.pos.set(F.x - Math.sin(F.th) * 12, 2, F.z - Math.cos(F.th) * 12); p.vel.set(0, 0, 0); p.heading = p.faceH = F.th; return 'farm at ' + F.x.toFixed(0) + ',' + F.z.toFixed(0); },
   PORTAL, PORTALS, portal: () => portalOpen(),
   // THE DEMOS, ON PURPOSE ONLY (m292, STEER 1): round where you stand, for testing the systems
