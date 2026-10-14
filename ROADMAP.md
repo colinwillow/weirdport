@@ -15,128 +15,24 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
-**NEXT, BEFORE ANY OTHER FARM PASS — THE FARM IS THE WRONG SIZE AND IN THE WRONG PLACE. REBUILD IT AS
-OPEN COUNTRYSIDE ACROSS THE RIVER.** Colin finally walked it (m302-m304) and said: *"it's like 12 feet
-away from the border of the city... a very small city block tacked onto the edge of the city... the
-border between the city and the farm is just a line, it's not organic at all. I want it to be farmland:
-fields, meadows, cows, tractors, farmers, trees, buildings, ridges... exactly not what I meant."* This is
-our fault, not the loop's: the docs said "intimate, empty ground is a failure" and "SMALL and DENSE: a few
-blocks". Both are rewritten now. **Read the new "Scale follows the place" and "No borders that are lines"
-rules in `GAME_DESIGN.md` and the new Gristle Farm entry in `REGIONS.md` before starting.**
+**From Colin: keep going, never wait.** Every earlier STEER block (God mode, the farm rebuild, the
+farm's room) is done and has been cleared from here. **The roadmap now has a Phase F; take its items in
+order.** The rules that still stand:
 
-What to build (several builds; ship each step, never wait):
-1. **A separate farm landmass across a river from the city island**, not a lobe on the city's coast.
-   Roughly 400 x 300 m or more, at an authored bearing, far enough that the city is a SKYLINE on the
-   horizon from the crash site. One river/channel between them, crossed by the checkpoint bridge (move
-   `BRIDGE` there). Fog `far` and the sky must let the skyline read from the farm. **— done m306** (the land,
-   its water, the channel bridge, the long view; the old pieces came along as one cluster round the yard).
-2. **Rolling terrain**: a heightfield with low ridges and hills, a creek valley with a footbridge, a pond.
-   Walkable through the real collider (`groundAt`), chunked so the camera culls what is behind it. **— done
-   m306 (hills, ridges, chunks) + m307 (the creek valley, its footbridge, the pond with willows).**
-3. **Fields that follow the land**: irregular patches of wheat, corn, ploughed earth, hay meadow and
-   pasture, divided by hedgerows, fences, tree lines and dirt tracks. Nothing square to the world grid.
-   **— m308: the plan (20 named fields), the patchwork on the ground, hedges/fences/tree lines, four
-   tracks.** Split: **3b** the crops standing on the new fields (instanced, chunked, faded) **— done m309.**
-4. **Spread the existing pieces out into clusters** (reuse m288-m304, do not throw them away): the
-   farmhouse and yard, the barn and silo, sheds and coop, a neighbour's farm on another ridge, a lone hay
-   barn. **The crash site far out in a field**, a long gouge through the wheat, the crop circle near it.
-   Split: **4a the crash far out, the gouge, the crop circle — done m310.** **4b the yard cluster spread into
-   farmhouse+yard, barn+silo, sheds+coop — done m311.** **4c the neighbour's farm on the ridge and the lone hay barn
-   — done m312.**
-5. **Life**: herds of cows in the pastures, a tractor working a field and one parked, farmhands in the
-   fields, a pickup on the track. Split: **5a herds in the pastures — done m313.** **5b a tractor working a
-   field (the parked one is the barnyard's) and a pickup on the tracks — done m314.** **5c farmhands in the
-   fields — done m315.**
-6. **The transition into town, never a line**: dirt track -> country road -> past the neighbour's farm
-   -> an edge-of-town strip on the farm's side of the river (gas station, trailer park, a few houses with
-   yards, billboards, power poles, a fruit stand) -> the bridge checkpoint -> across it the city starts
-   thin (low houses, lots, a warehouse) and thickens. Also soften the city island's own edge the same way
-   (scattered houses, yards, fences, trees on the ring) so the kit city doesn't end at a ruler line.
-   Split: **6a the edge of town on the farm's side (gas station, trailer park, houses with yards,
-   billboards, power poles, fruit stand, the road paved) — done m316.** **6b the city side starting thin
-   past the bridge, and the city island's own edge softened — done m317.**
-7. **Phone cost**: instance everything repeated (trees, fence posts, bales, cows, crop stalks), merge
-   per material, chunk the terrain, and keep draw calls in the tens. Distance fades the small stuff.
-   **— done m318** (the static batch: 108 farm meshes into 71 across 13 materials in 200 m cells) with
-   m309 (crops chunked and faded), m306 (terrain chunks), m294 (cows instanced).
-7b. **More than one way from the farm to town** (the new "connective tissue" rules in `REGIONS.md`): the
-   bridge checkpoint is the main route the tutorial teaches, but also build a creek culvert under the
-   road, an old rail trestle over the river, a shallow ford downstream with cows drinking, and a way
-   through backyards and fence gaps on the town edge. Early on, block or hide the extras (a grate,
-   broken planks, a dog in the yard) so the checkpoint still teaches; they open later with forms or
-   Clancy. Each route bends, crosses over or under another one, and has something on it.
-   Split: **7b-1 the old rail trestle (broken for now) and the backyards it comes down into — done m319.**
-   **7b-2 the shallow ford downstream with cows drinking, and the creek culvert — done m320.**
-8. **Prove it**: `npm run places` passes with every GOD farm place moving him onto the new land, and the
-   crash spawn landing at the wreck. **Screenshots allowed and wanted** for this work: a wide shot from a
-   ridge showing fields, buildings and the distant skyline, and one of the road through the transition.
-   Paste the `places` output in NOTES. **— done m321** (`npm run shot`: the ridge, the road to town, the crash;
-   `places` checks the new-game spawn too).
-
-
-**URGENT, NEXT BUILD — THE FARM DOES NOT EXIST IN THE REAL GAME.** Colin opened every GOD place and
-none of them work. Measured with `npm run places` (new; builds the REAL kit city collider and island,
-runs every farm builder, then the shipped `godPlace`): the widest grass on the island ring is
-**14.9 m**, `buildFarm` needs 18, so it returns early with `FARM NO ROOM 15` and `FARM.at` stays null.
-Crash, lane, bridge, cows, flora and props all hang off `FARM.at`, so NONE of m288 to m300 is in his
-game, and every farm place in the GOD menu does nothing. (The CHAPTER buttons only set the chapter
-flag; they move nothing, which is also confusing. Make each one take him to where that chapter starts.)
-Fix:
-1. Give the farm the ground it needs: grow the island out into a farm peninsula at an authored
-   bearing (a lobe on the waterline in `buildIsle`, wide and deep enough for the yard, the fields
-   down to the shore, the lane, the creek and the road to the bridge), and place the farm on it.
-   Do not just lower the 18 m threshold: 15 m of grass cannot hold a farm.
-2. Prove it with `npm run places`: `FARM.at` and `CRASH.at` non-null, and every GOD place in `tkit`
-   moving the player somewhere sensible. **From now on run `npm run places` before pushing any build
-   that adds or moves a place, and paste its result in the build's NOTES entry.** A place that only
-   exists in a fabricated test does not exist.
-3. A builder that bails out must say so loudly: show a red toast at boot for any `... NO ROOM` /
-   `... FAIL` note while GOD mode is on, not only a token in the chip. **— done m302.**
-
-**TOP PRIORITY, BEFORE THE NEXT FARM PASS — GOD MODE (Colin can't see anything you've built).**
-He can't find the farm, any new place, or Rollergirl: the world key only cycles the old worlds, the
-form wheel only offers sampled forms, and new things are only reachable through play. Build a
-**PLAY / GOD** switch: a key in the top-left gutter with the world key, remembered in storage, plus
-`?god` in the URL. In GOD mode:
-- **Places menu:** every authored place in every world, by name (the farmyard, the crash site, the
-  creek, the bridge checkpoint, Old Town, each portal, each quest giver…). Tapping one takes him
-  there, switching world if needed. It's a list, so a place added later is one line.
-- **Every form unlocked** in the form wheel, including Rollergirl and every character on the
-  roster; infinite juice.
-- **Every weapon and mode**, including the DNA gun.
-- **Fly:** a free-flight toggle (stick moves, a second control rises and sinks, nothing collides)
-  to explore and look at things.
-- **No heat, no damage.**
-- **The whole map revealed**; tap anywhere on the full map to teleport there.
-- **Chapter controls:** start a new game at the crash, jump to any chapter, reset the save.
-- The chip says **GOD** while it's on.
-PLAY mode is the game as it plays now. Ship this as the next build, then carry on with the farm. **— done m298.**
-
-**Standing rule from now on:** anything you build must be reachable from GOD mode in the same build
-(a new place goes in the Places menu, a new form in the wheel, a new system gets a toggle). If he
-can't get to it, it isn't done.
-
-**From Colin (updated, replaces the earlier STEER): keep going, never wait.**
-
-- **Never stop or wait for Colin.** If something seems to need him, make the call, log it under
-  "Decisions for Colin", and carry on. (The earlier STEER said to pause until he had looked at the
-  farm; that was wrong and is withdrawn.)
-- **There is no Blender work for about a week.** Places are built in code until then. `MARKERS.md`
-  can wait; do not build anything that depends on his markers.
-- **The placement rule stays:** nothing goes in the world as a "demo", "near the spawn" or
-  "somewhere open". Everything placed comes from an authored placement table: a named spot in a
-  named place, and a one-line reason it is there. (Done: m292 took the demo gates and portals out.)
-- **Now: polish passes on the farm until it is beautiful.** One pass per build, as many passes as it
-  takes; ten is fine. Each pass, pick the weakest-looking thing about the farm and make it better:
-  the light and atmosphere (golden hour, haze, long shadows), the materials and colours (painted, not
-  flat greybox; `REGIONS.md`'s farm palette), detail density (crops, grass tufts, fences, clutter,
-  tools, hay), silhouettes and rooflines, layering and foreground, the wreck as a hero moment. Keep
-  the draw-call budget in mind (merge what does not move).
-- **You may build a screenshot tool for these passes** (`tools/shot.mjs`, headless Chromium from
-  `/opt/pw-browsers`, the player's camera at a named spot) so you can see the farm before and after
-  each pass, instead of polishing blind. If a shot takes more than about two minutes or will not
-  render, drop it and carry on without it.
-- **After the farm looks right:** B1e, then B2, then on down the list.
+- **Never wait for Colin.** No Blender work for about a week; places are built in code. If an item is
+  too big for one build, split it in the roadmap and ship the first half. If the roadmap ever runs dry,
+  write the next items yourself from `GAME_DESIGN.md`, `REGIONS.md`, `LORE.md` and `CHARACTERS.md` — and
+  say so under Decisions — rather than idling.
+- **He has seen nothing since the farm (m304).** Everything from m305 to m415 is unverified on a phone, so
+  Phase F starts with the phone pass and the whole-game check before anything new is built.
+- **Polish is worth as many passes as it takes.** *"If we need to run the same pass over and over for
+  like 10 passes until it looks beautiful, so be it."* Use `npm run shot` on every polish pass and fix
+  the worst thing in the shot.
+- **`npm run places` before pushing any build that adds or moves a place**, output in the NOTES entry.
+- **Anything built must be reachable from GOD mode in the same build.**
+- **Authored placement only**: nothing dropped in the world without a reason and a place for it.
+- **The world rules** (scale follows the place, no borders that are lines, connective tissue,
+  exaggerated scale, vertical, organic, interactive) apply to every place, old and new.
 
 ## Standing rules for anything built in the world
 
@@ -149,8 +45,9 @@ can't get to it, it isn't done.
   Read "The connective tissue" in `REGIONS.md`.
 
 Read `GAME_DESIGN.md` → "The world: dense, vertical, organic, alive" before building any place.
-**Intimate, vertical, organic, interactive, and one place finished at a time.** Never a flat plane
-with spaced-out rectangles on it, never a grid of separate areas. Build small and finish it.
+**Scale follows the place, vertical, organic, interactive, and one place finished at a time.** Never a
+flat plane with spaced-out rectangles on it, never a grid of separate areas, never a straight border.
+Build one place at the scale that place really is (dense city, open country) and finish it.
 **Before building in a region, read its entry in `REGIONS.md`** and check it against the "what has to
 differ" table there, so no region feels like the last one.
 
@@ -362,6 +259,51 @@ differ" table there, so no region feels like the last one.
   template for the rest.
 - [x] m415 **E2 The late-night radio host.** A voice on car radios that reacts to what you've done and
   points at sightings; a side-quest hub.
+
+## Phase F — what the docs call for that isn't built yet (after E; Colin has not seen m305-m415)
+
+- [ ] **F0 The phone pass and the whole-game check.** Before anything new:
+  - [ ] **F0a Measure every world** as it is now: draw calls, triangles, resident texture memory and
+    boot time per world, printed in the chip and in NOTES. Set a budget per world for a phone (draw
+    calls in the low hundreds, textures KTX2, nothing resident that isn't on screen) and cut the worst
+    offenders: instance, merge, fade with distance, cull by chunk, drop what nobody sees. Repeat per
+    world until each is inside its budget.
+  - [ ] **F0b A headless playthrough** (`npm run play`): drive Chapter 0 to the end through the shipped
+    quest steps and the shipped `godPlace`, every gate and boss in order, and fail if any step can't
+    complete. Run it before every build that touches a quest, a gate or a chapter from now on.
+  - [ ] **F0c Every world boots** through the real loader with no red toast, in `places`.
+- [ ] **F1 Polish passes, region by region, with `npm run shot`.** The farm had five; each of the others
+  gets at least three, one build each, fixing the worst thing in the shots and checked against the
+  world rules (exaggerated scale, connective tissue, vertical, no straight borders, nothing bare):
+  Old Town, The Pearl, Hollow Creek, the Waterfront, the River Islands, the Mothership. Then the
+  routes between them (the trestle, the ferry, the freight line, the bridges) as places in their own
+  right, with something on every one.
+- [ ] **F2 The regions still missing from `REGIONS.md`**, each as land → places → people → the ways in
+  (several, per the connective-tissue rules) → its quests and boss. Read the entry first.
+  - [ ] **F2a The Underneath** (3): the tunnels under Old Town, the Pearl and the Waterfront, surfacing in
+    cellars and drains; the hobo's and the miner's region; the safe-house portals.
+  - [ ] **F2b Dump Tower** (6): the vertical level, the Reptilians' seat. It goes BEFORE the Mothership in
+    the chapter order (Dump Tower is the last stop in the metropolis; renumber the chapters and the
+    Mothership's six locks become seven).
+  - [ ] **F2c The Gorge** (7): falls, the stilt village, the scuba diver; between Hollow Creek and the
+    River Islands, down the log flume.
+  - [ ] **F2d The Hothouse** (9): the alien takeover, as a region that grows across the map while the
+    grid stands and shrinks as you cure districts.
+  - [ ] **F2e The metropolis hub**: the tall city in the middle of the map that the other regions ring,
+    opened a part at a time as chapters complete; Dump Tower stands in it.
+- [ ] **F3 The rest of the grid and the fail states** (`LORE.md`): the projector, poltergeist and relay
+  orbs; the EM tell (lights flicker, cars stall, radios hiss near the grid); the Hum; black triangles at
+  night and tic-tacs that chase flyers; **missing time** as the capture fail state and something at
+  zero health (Colin's open question: propose one, build it switchable).
+- [ ] **F4 The forms still missing** from the forms table, each with the door it opens: cop (cordons,
+  arrest), firefighter (fires, the truck ladder), hobo as stealth (guards ignore him), CEO (Dump Tower),
+  scuba diver (the Gorge), cave miner (the Underneath), military (the base at high heat).
+- [ ] **F5 Side quests**, one build each, from the table in `LORE.md`, in this order: the Roswell diner,
+  the tinfoil-hat bunker (the grid on the map), the Majestic Dozen, Mothman, the Phoenix Lights, the
+  haunted ranch, the tic-tac pilot, Bigfoot, D.B. Cooper, Betty & Barney, Travis Walton, Area 15.
+- [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
+  queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
+  author; the turf's building swap in every region, not only Old Town.
 
 ## Ongoing (fill gaps between items, never instead of them)
 
