@@ -7,6 +7,23 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **SMART OBJECTS: A SPOT IS WHERE, WHICH WAY, WHICH CLIPS, HOW LONG AND WHO (m354, C2d, `SMART`, `smartAdd`,
+  `smartStep`).** The builders that own furniture register its spots: the food-cart pod (a customer at each open cart,
+  facing it, `order_food`; four places at each of its three tables, behind the benches, facing the table, `sit_eat`) and
+  the camp (a place beside each crate at the barrel, `sit_crate`/`warm_hands`; the sofa, `sit_sofa` -- the camp's own
+  people only, `who: 'camp_'`). Every half second a body with nothing better to do (no job, quest, strike, march, trance,
+  fear or route -- Old Town's walkers excepted) whose own cooldown has run out takes the nearest free spot within 30 m,
+  walks to it as a one-point route, then FACES the spot's way and holds the first of its clips it HAS (`d.rest`, which
+  the roam's wait branch already plays), else its idle -- and the missing clip's name goes in the chip (`SM<using>:
+  <first missing>`), so `sit_bench` plays the day it exists with no code change. Then it gives the spot back, its own
+  route and rest clip with it, and waits 25-70 s. Abandoned on a blow, a fright, a trance, or 25 s without arriving.
+  **THE FIRST SPOTS WERE ON TOP OF THE FURNITURE**: beside a crate or behind a bench is closer than `kitStand`'s .5 m
+  (the widest body clear of everything), so 16 of 19 failed; they moved out by a body's width, and the `places` row
+  tests what a spot needs -- street level and nothing within .3 m, since arrival allows `roamAt` + .35 of slack:
+  `ok  SMART 19 spots {"barrel":3,"sofa":1,"cart":3,"table":12} | all standable`, exit 0. GOD: SMART OBJECTS -- send
+  everybody near to one now. **Not built:** a real SEAT (a body on a bench at bench height needs a sit clip and to be
+  let through the bench's collider), bus stops, café tables elsewhere, counters in shops, doors.
+
 - **THE ROSTER: ROLES, NOT MODELS (m353, C2c, `ROSTER`, `rosterApply`, `rosterSpawn`, `rosterTag`).** CHARACTERS.md's
   table in code: 30 roles, each a stand-in -- a body (`stem`, resolved by `mkrKind`), a `tint` lerped 45% into the
   body's OWN cloned materials, a `prop` on the head bone sized in metres over the bone's world scale (`peopleHat`'s way:

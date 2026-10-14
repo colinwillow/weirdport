@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m353</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m354</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m353</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m354</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm353';
+const BUILD = 'm354';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -29886,6 +29886,70 @@ function ampStep(dt) {
   if (Math.hypot(Pp.x - O.T.x, Pp.z - O.T.z) < O.seeR && !SAVE.flags['qon:qamp']) { progFlag('qon:qamp', 1); cardShow('A RED LIGHT', 'OVER THE SQUARE', 3); }
 }
 // ============================================================================================
+// SMART OBJECTS (m354, ROADMAP C2d, `SMART`, `smartAdd`, `smartStep`)
+// ============================================================================================
+// CHARACTERS.md: "Benches, café tables, bus stops, food carts, counters and doors should carry USE SPOTS: where to stand
+// or sit, which way to face, which clip to play. NPCs pick a spot near them, walk to it, use it for a while and leave."
+// A spot is where to stand, which way to face, the CLIPS to try in order (his, when they exist), how long, and WHO may
+// use it ('street': a nameless person or one of Old Town's walkers; or a mark prefix, e.g. the camp's own). A body with
+// nothing better to do (no job, no quest, no route but a walker's, not fleeing, not tranced, not on strike, not
+// marching) and its own cooldown run out takes the nearest free spot inside `near`, walks there (a one-point route),
+// faces the way the spot says and holds the first clip it HAS -- else its idle, and the clip's name goes in the chip
+// (`SM<using>:<missing>`), so the day he exports `sit_bench` it plays with no code change -- then gives the spot back
+// and its own route with it. Built by the places that own the furniture: the food-cart pod (a customer at each open
+// cart, four places at each table) and the camp (a crate at the barrel, three; the sofa).
+const SMART = { on: 1, spots: [], users: 0, missing: new Set(), near: 30, cool: [25, 70], every: .5, t: 0, uses: 0 };
+function smartAdd(obj, x, z, fx, fz, clips, dur, who, y) {
+  SMART.spots.push({ obj, x, z, y, h: Math.atan2(fx - x, fz - z), clips, dur: dur || [8, 18], who: who || 'street', d: null });
+}
+function smartWho(S, d) {
+  if (S.who === 'street') return !d.markId || /^walker_/.test(d.markId);
+  return !!(d.markId && d.markId.startsWith(S.who));
+}
+// can this body be borrowed at all right now?
+const smartFree = d => !d.gone && !isAlien(d.K) && !d.K.pal && !d.K.repair && d.st !== 'down' && d.st !== 'up' && d.st !== 'hit' &&
+  !(d.fleeT > 0) && !d.trance && !d.strikeOff && !d.pT && !d.qTag && !d.copOff && !d.talkTo && talk.cur !== d;
+function smartLeave(d, give) {
+  const U = d.smart; if (!U) return; d.smart = null;
+  if (U.S.d === d) U.S.d = null;
+  d.route = U.off.route; d.routeI = undefined; d.rest = U.off.rest; d.roamT = .2 + Math.random() * .6;
+  d.smartT = rnd(SMART.cool) * (give ? 1 : .4);
+  SMART.users = Math.max(0, SMART.users - 1);
+}
+function smartStep(dt) {
+  const M = SMART; if (!M.on || !M.spots.length) return;
+  if ((M.t -= dt) > 0) return; const step = M.every - M.t; M.t = M.every;
+  for (const d of DUMMIES) {
+    const U = d.smart;
+    if (U) {
+      if (!smartFree(d) && !(d.st === 'idle' || d.st === 'roam' || d.st === undefined)) { smartLeave(d, 0); continue; }
+      if (d.gone || d.fleeT > 0 || d.trance || d.st === 'down') { smartLeave(d, 0); continue; }
+      const S = U.S, q = Math.hypot(d.root.position.x - S.x, d.root.position.z - S.z);
+      if (U.st === 'go') {
+        if ((U.t += step) > 25) { smartLeave(d, 0); continue; }                    // could not get there
+        if (q < (d.K.roamAt || .8) + .35) {
+          // there: face the way the spot says, hold the first clip he has, for a while
+          U.st = 'use'; U.t = rnd(S.dur); d.h = S.h; d.route = null; d.rx = S.x; d.rz = S.z;
+          const has = S.clips.find(n => d.actions && d.actions[n]);
+          if (!has) M.missing.add(S.clips[0]);
+          d.rest = has || d.K.clips.idle; d.look = ''; d.roamT = U.t + 1; M.uses++;
+        } else { d.route = [[S.x, S.z]]; if (!(d.roamT > 0)) { d.rx = S.x; d.rz = S.z; } }
+      } else if ((U.t -= step) <= 0 || q > 2.5) smartLeave(d, 1);
+      else { d.h = S.h; d.roamT = Math.max(d.roamT || 0, 1); }
+      continue;
+    }
+    if ((d.smartT = (d.smartT === undefined ? rnd(M.cool) * .5 : d.smartT) - step) > 0) continue;
+    if (!smartFree(d) || (d.route && !/^walker_/.test(d.markId || ''))) { d.smartT = 5; continue; }
+    // the nearest free spot he may use
+    let best = null, bd = M.near;
+    for (const S of M.spots) { if (S.d || !smartWho(S, d)) continue; const q = Math.hypot(d.root.position.x - S.x, d.root.position.z - S.z); if (q < bd) { bd = q; best = S; } }
+    if (!best) { d.smartT = 8 + Math.random() * 8; continue; }
+    best.d = d; d.smart = { S: best, st: 'go', t: 0, off: { route: d.route || null, rest: d.rest || null } };
+    d.route = [[best.x, best.z]]; d.routeI = undefined; d.rx = best.x; d.rz = best.z; d.roamT = 0;
+    M.users++;
+  }
+}
+// ============================================================================================
 // PORTALS (m286, ROADMAP A8b) -- no one-way trips
 // ============================================================================================
 // **STEP ON A PAD AND IT IS YOURS FOR GOOD** (`progPortal(id)`, saved). Standing on an ACTIVE pad,
@@ -31173,7 +31237,9 @@ function buildCamp() {
   // the burn barrel, its fire (`campStep` keeps it lit), and crates round it to sit on
   { const g0 = gnd(0, 0); geo(new THREE.CylinderGeometry(.33, .3, .9, 12), 'rust', 0, g0 + .45, 0); bx(0, 0, g0 - .1, g0 + .9, .66, .66, 'rust'); F.parts.rust.pop();
     C.fireAt = [F.wx(0, 0), g0 + .92, F.wz(0, 0)];
-    for (const [u, v, r] of [[1.4, .6, .3], [-1.3, 1.1, -.4], [.4, -1.5, .9]]) { const g = gnd(u, v); bx(u, v, g - .05, g + .45, .55, .45, 'wood', r); } }
+    for (const [u, v, r] of [[1.4, .6, .3], [-1.3, 1.1, -.4], [.4, -1.5, .9]]) { const g = gnd(u, v); bx(u, v, g - .05, g + .45, .55, .45, 'wood', r);
+      const L = Math.hypot(u, v), su = u + u / L * .8, sv = v + v / L * .8;                           // m354: beside the crate (clear of it by a body's width), facing the fire
+      smartAdd('barrel', F.wx(su, sv), F.wz(su, sv), F.wx(0, 0), F.wz(0, 0), ['sit_crate', 'warm_hands'], [12, 28], 'camp_'); } }
   // the pallet wall behind it all, toward the water, and a tarp lean-to off it over a mattress
   for (let i = 0; i < 6; i++) { const u = -6 + i * 1.25, v = -9.2 + Math.sin(i * 1.7) * .25, g = gnd(u, v); bx(u, v, g - .1, g + 1.25, 1.2, .14, 'wood', Math.sin(i * 2.3) * .08, true, Math.sin(i) * .04); }
   { const g = gnd(-4.6, -7.6); bx(-4.6, -7.9, g + 1.15, g + 1.21, 3.2, 2.2, 'tarp', 0, false, 0); geo(new THREE.BoxGeometry(3.2, .06, 2.4), 'tarp', -4.6, g + .95, -7.7, 0, -.32, 0);
@@ -31182,7 +31248,9 @@ function buildCamp() {
   // the sofa, facing the barrel
   { const u = 3.6, v = -1.4, g = gnd(u, v), r = -1.9;
     bx(u, v, g, g + .45, 2.0, .9, 'sofa', r); bx(u + Math.sin(r) * .0, v, g + .45, g + .95, 2.0, .22, 'sofa', r, false);
-    for (const s of [-1, 1]) bx(u + Math.cos(r) * s * .95, v - Math.sin(r) * s * .95, g + .4, g + .7, .22, .9, 'sofa', r, false); }
+    for (const s of [-1, 1]) bx(u + Math.cos(r) * s * .95, v - Math.sin(r) * s * .95, g + .4, g + .7, .22, .9, 'sofa', r, false);
+    { const L = Math.hypot(u, v), su = u - u / L * 1.2, sv = v - v / L * 1.2;                             // m354: in front of it (clear by a body's width), facing the fire
+      smartAdd('sofa', F.wx(su, sv), F.wz(su, sv), F.wx(0, 0), F.wz(0, 0), ['sit_sofa'], [15, 35], 'camp_'); } }
   // two shopping carts, cardboard on the ground, crates and a mattress, a couple of bottles
   for (const [u, v, r] of [[6.3, 1.8, .7], [-7.2, 2.2, -.3]]) { const g = gnd(u, v);
     bx(u, v, g + .35, g + .95, .55, .85, 'steel', r, true); for (const [a, b] of [[-.22, -.36], [.22, -.36], [-.22, .36], [.22, .36]]) bx(u + a, v + b, g, g + .35, .04, .04, 'steel', r, false); }
@@ -31298,6 +31366,13 @@ function buildCarts() {
   { const g = gnd(0, -9.4); bx(0, -9.4, g, g + .8, 1.2, .8, 'dark'); }
   { const g = gnd(0, 9.2); bx(0, 9.2, g, g + 1.3, .9, .06, 'dark', .1, false); bx(0, 9.2, g - .05, g + .9, .08, .5, 'wood', .1, false); }
   F.commit(); C.n = C.carts.length;
+  // m354: SMART SPOTS -- a customer at each open cart (facing it), and four places at each table (behind its benches, facing
+  // it; `sit_eat` is the clip he will export, a stand at the table is what plays until then)
+  C.CARTS.forEach((K, i) => { if (K.shut) return; const P = C.carts[i], a = P.a, u = P.u + Math.sin(a) * -2.6, v = P.v - Math.cos(a) * -2.6;
+    smartAdd('cart', F.wx(u, v), F.wz(u, v), F.wx(P.u, P.v), F.wz(P.u, P.v), ['order_food', 'talk_gesture'], [6, 12], 'street'); });
+  for (const [u, v, r] of [[-1.8, 1.2, .3], [2.2, 2.4, -.25], [.2, 4.6, .1]]) for (const s of [-1, 1]) for (const k of [-.45, .45]) {
+    const nu = -Math.sin(r) * s, nv = -Math.cos(r) * s, au = Math.cos(r), av = -Math.sin(r), su = u + nu * 1.4 + au * k, sv = v + nv * 1.4 + av * k;   // behind the bench by a body's width
+    smartAdd('table', F.wx(su, sv), F.wz(su, sv), F.wx(u, v), F.wz(u, v), ['sit_eat', 'sit_bench'], [10, 22], 'street'); }
   // the chefs, at their counters, facing the tables
   for (const P of C.PEOPLE) {
     const K = C.carts[P.cart], [u, v] = K.front, x = F.wx(u, v), z = F.wz(u, v);
@@ -34921,6 +34996,7 @@ function godMenuOpen(on) {
   for (const R of ROSTER) btn(R.role + '  ·  ' + R.where + '  ·  ' + (R.st === 'have' ? 'HIS MODEL' : R.st === 'none' ? 'NOTHING CLOSE (' + R.stem + ')' : 'STAND-IN: ' + R.stem + (R.tint ? ' tinted' : '') + (R.prop ? ' + ' + R.prop : '')), () => { godMenuOpen(0); rosterSpawn(R.id); });
   if (ROSTERSPAWNED.length) btn('CLEAR THE ROSTER SPAWNS (' + ROSTERSPAWNED.length + ')', () => { for (const d of ROSTERSPAWNED.splice(0)) if (!d.gone) bodyGone(d); godMenuOpen(1); }, 'warn');
   sec('EVENTS');
+  if (SMART.spots.length) btn('SMART OBJECTS: ' + SMART.spots.length + ' spots, ' + SMART.users + ' in use -- send everybody near to one now', () => { for (const d of DUMMIES) d.smartT = 0; toast('Off they go', 1.2); godMenuOpen(0); });
   if (inTK()) btn('A SKINSUIT INCURSION NOW (' + OINCUR.st.toUpperCase() + ')', () => { godMenuOpen(0); incurStart(1); });
   if (OAMP.g) btn('THE AMPLIFIER ORB: ' + (OAMP.st === 'up' ? 'UP' : 'RAISE IT AGAIN'), () => { if (OAMP.st !== 'up') { progFlag('orb:amp', 0); OAMP.st = 'up'; OAMP.hpNow = OAMP.hp; OAMP.g.visible = true; OAMP.T.on = 1; OAMP.core.material.emissiveIntensity = 2.6; } godMenuOpen(1); });
   if (OWATCH.g) btn('THE WATCHER ORB: ' + (OWATCH.st === 'up' ? 'UP (alert ' + Math.round(OWATCH.alert) + ')' : 'RAISE IT AGAIN'), () => { if (OWATCH.st !== 'up') { progFlag('orb:watcher', 0); OWATCH.st = 'up'; OWATCH.hpNow = OWATCH.hp; OWATCH.core.material.emissiveIntensity = 2.6; watchShow(true); } godMenuOpen(1); });
@@ -36513,6 +36589,7 @@ function frameBody() {
   protestStep(dt);              // the protest: gather, march, rally, home (m346)
   incurStep(dt);                // a Skinsuit ship over Old Town now and then (m349)
   orbStep(dt);                  // the pacifier orb: its trance, its crackle, its fall (m350)
+  smartStep(dt);                // smart objects: people use the furniture (m354)
   watchStep(dt);                // the watcher: its searchlight, the aliens' alert, its call (m351)
   ampStep(dt);                  // the amplifier: over the crowd, feeding it (m352)                // the wreck burns and smokes; reaching town once moves the start (m289)
   crashHeroStep(dt);            // ...and pulses, arcs, hums, and stands a beam over the farm (m300)
@@ -36838,6 +36915,8 @@ function frameBody() {
       ' · CH' + SAVE.ch + (SAVE.fresh ? ' NEW' : '') + (SAVE.bad ? ' BADSAVE' : '') +
       // OT: Old Town's health and its band's initial, `s` while the crews strike (m343)
       (OWATCH.st === 'up' && OWATCH.alert > .5 ? ' · AL' + Math.round(OWATCH.alert) : '') +
+      // SM: people using smart objects now, and the first clips they asked for that nobody has yet (m354)
+      (SMART.spots.length ? ' · SM' + SMART.users + (SMART.missing.size ? ':' + [...SMART.missing].slice(0, 2).join(',') : '') : '') +
       (inTK() && DHEALTH.on ? ' · OT' + Math.round(dhGet('oldtown')) + dhBand(dhGet('oldtown'))[0].toLowerCase() + (SAVE.flags['strike:oldtown'] ? 's' : '') : '') +
       // T: speakers seeded / scripts heard (m277); `*` = one is in reach right now
       // MK: markers read from his files (m293), and npc markers given their bodies
@@ -37427,7 +37506,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

@@ -261,7 +261,7 @@ differ" table there, so no region feels like the last one.
 - [x] m353 **C2c Placeholder roster (`CHARACTERS.md`).** Build against ROLES, not models: a roster table of
   every role the regions need, each mapped to a stand-in (existing body + tint + prop + name tag).
   When his model for a role lands it is one line. GOD mode lists every role and spawns one.
-- [ ] **C2d Smart objects.** Benches, café tables, bus stops, food carts and counters carry use spots
+- [x] m354 **C2d Smart objects.** Benches, café tables, bus stops, food carts and counters carry use spots
   (where to stand or sit, which way to face, which clip). NPCs nearby walk to one, use it for a while,
   and leave. Missing clips fall back to an idle and the chip names the clip, so his animations drop in
   with no code change. Start in Old Town.
@@ -837,3 +837,11 @@ differ" table there, so no region feels like the last one.
   a silver cop with a cyan visor and the scuba diver as a navy-tinted woman with goggles. Their tags
   say "nothing close yet". Bosses are drawn bigger. In GOD, tap any role to spawn one in front of you.
   None of the people already placed in the world have been switched over to roles yet.
+
+- **m354 (C2d):** the first smart objects are the furniture I'd already built: the food carts (order
+  at the counter), their three picnic tables (four places each) and the camp's barrel and sofa (the
+  camp's own people only). Nearby people with nothing to do walk over, face the right way, use the spot
+  for a while and leave. Your clip names are `order_food`, `sit_eat`, `sit_crate`/`warm_hands` and
+  `sit_sofa`. Until a model has those clips it stands in its idle, and the chip shows which clip is
+  missing (`SM`). Nobody actually sits on a bench yet: that needs your sit clip and the bench's
+  collision letting them through. Bus stops and shop counters come later.
