@@ -51,6 +51,9 @@ const SHOTS = {
   herd: { place: 'herd', settle: 3, why: 'a herd in its pasture',
     cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
       return [p.x - fx * 8, p.y + 3.5, p.z - fz * 8, p.x + fx * 25, p.y, p.z + fz * 25]; })()` },
+  terrace: { place: 'orchard', settle: 3, why: 'the orchard terrace from the foot of its steps',
+    cam: `(() => { const p = mel.player.pos, A = mel.FTERR.at, dx = A[0] - p.x, dz = A[2] - p.z, L = Math.hypot(dx, dz);
+      return [p.x - dx / L * 10 - dz / L * 8, p.y + 6, p.z - dz / L * 10 + dx / L * 8, A[0], A[1] - 3, A[2]]; })()` },
   wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
       return [C.x + sx * 16 - dx / L * 6, p.y + 7, C.z + sz * 16 - dz / L * 6, C.x, p.y + .5, C.z]; })()` },

@@ -7,6 +7,36 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE ORCHARD TERRACE IS BUILT UP, NOT CUT IN: FOUR STONE TIERS ON THE ORCHARD'S OWN OUTLINE (m328, B1e-2, `FTERR`,
+  `buildOrchardTerrace`, `ftRad`, `ftEdge`, `ftIn`).** Measured first (a throwaway probe on the places harness): the
+  orchard stood on a 1.6 m swell (1.35..3.02 m over 2,580 m2) -- nothing to cut a terrace into. So the tiers are BUILT:
+  tier 0 at the highest ground inside it + .3, each next one `rise` 1.4 m up (3.33 / 4.73 / 6.13 / 7.53), the
+  "exaggerated scale" rule -- a hill of apple rows you climb.
+  **The outline is the field's, measured**: from the seed, `NT` 96 directions, march out while `fpOwner` gives the orchard
+  at the point AND `margin` 3 m past it, then smooth twice (a 1-2-3-2-1 kernel: a noisy owner border would be a
+  saw-toothed wall). Upper tiers are that outline x (1 - .22k). Base radius 13.7..34.8 m. `TERRACE NO ROOM` if under 6.
+  **Walls**: dry-stone boxes every 1.8 m along each outline (360 samples, arc-length stepped), turned along it, from the
+  tier below (or the ground - .4) to the tier top + a .25 lip; moss on the coping of ~half. **Stairs**: one flight a tier
+  at `stepAt[k]`, nudged within +-.6 rad to the WIDEST ring there (the flight must fit on the tier below), .28 m risers,
+  and the wall leaves a gap exactly its width. The way up winds round the hill.
+  **The tops are walkable triangles (`isleAppend`), wound UP by a cross-product test** -- `triAdd` keeps up-facing floors
+  only and `flWorld` is a reflection of (a, b), so the winding is derived per triangle, never assumed. They draw with the
+  farmland's OWN material (`aSplat` all grass, `aFld` the orchard's tint), so the terrace grass is the same grass.
+  **Built after `buildFarmWaters`, before `buildFieldBounds`** -- and the apple trees after the tops are in `TRI`, so
+  `farmTree`'s `gnd` stands each one on its tier. **The field's grid rows skip the terrace (`ftIn`)** -- they fell on walls
+  more often than not -- and the terrace plants its own: a ring down the middle of each tier every ~5.5 m (off walls and
+  stairs by `ftEdge` 1.9), a ring and a centre tree on top; 54 trees, six apples in every crown and two in the grass,
+  and two crates (one full) at the head of each stair.
+  **Cost**: FBATCH static tris 114k -> 184k (the crowns are ico-1, ~550 tris a tree), draw calls unchanged (batched:
+  77 batches). Triangles are the last thing that costs here; watch it if the farm grows more trees.
+  GOD `orchard` is now the foot of the first stair, `terrace` the top. Judged with `npm run shot terrace` (new row).
+      ok  COWS 39 {"paddock":6,"far_hill":7,"ridge_pasture":7,"east_pasture":7,"pond_pasture":5,"home_pasture":4,"creek_pasture":3} all in their pastures
+      FBATCH on 123 static meshes -> 77 batched, 7 left out, 183550 tris | meshes in the scene now 162
+      FTERR 246 wall pieces, 54 apple trees, tiers [3.33,4.73,6.13,7.53] steps 4 base R [ 13.7, 34.8 ]
+      ok  orchard    -> player 336.1,1.5,190.9 ground 1.39
+      ok  terrace    -> player 331.2,7.7,222.0 ground 7.53
+      every tkit GOD place is somewhere
+
 - **THE HAYLOFT ROPE AND THE SILO LADDER ARE CLIMBS IN `KCLIMB`, WITH THEIR FRONT GIVEN, NOT PROBED (m327, B1e-1,
   `farmClimb`, `FARM.rope`, `FARM.siloLad`).** REGIONS' Gristle Farm: "a rope down from the hayloft, the silo ladder".
   **No new climbing system**: `farmClimb(F, u, v, ha, hn, y0, top, mark, nm, out)` hands an oriented box (the frame's u

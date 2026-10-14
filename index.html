@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m327</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m328</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m327</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m328</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm327';
+const BUILD = 'm328';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -29408,6 +29408,7 @@ function buildFieldBounds() {
     for (let r2 = -60; r2 <= 60; r2 += 7) for (let t = -60; t <= 60; t += 6) {
       const a = Fd.a + ca * t - sb * r2, b = Fd.b + sb * t + ca * r2;
       if ([[0, 0], [3, 0], [-3, 0], [0, 3], [0, -3]].some(([da, db]) => ownAt(a + da, b + db) !== idx)) continue;
+      if (ftIn(a, b)) continue;                               // m328: the terrace plants its own rows (`buildOrchardTerrace`)
       if (farmTree(Fr, rr, ico0, a, -b, .55 + rr() * .15, 'oak')) F.orch = (F.orch || 0) + 1;
     }
   });
@@ -30297,6 +30298,167 @@ function skylineStep(dt) {
   g.position.set(cp.x + dx * k, cp.y + (0 - cp.y) * k, cp.z + dz * k);
   g.scale.setScalar(k);
   const U = S.mat.uniforms; U.uFog.value.copy(scene.fog.color); U.uHaze.value = S.haze; U.uClear.value = S.clear; U.uT.value += dt;
+}
+
+// ============================================================================================
+// THE ORCHARD TERRACE (m328, ROADMAP B1e-2, `FTERR`, `buildOrchardTerrace`, `ftEdge`)
+// ============================================================================================
+// REGIONS' Gristle Farm: "an orchard" -- and B1e: "an orchard terrace". The orchard (m311) stood on a 1.6 m swell (measured:
+// 1.35..3.02 over 2,580 m2), too gentle to cut into, so the terraces are BUILT UP: four tiers of dry-stone walls, each
+// `rise` 1.4 m over the last, ~7 m in all -- a hill of apple rows you climb, the GAME_DESIGN "exaggerated scale" rule.
+// **Every tier's outline is MEASURED against the field** (`fpOwner` marched out from the seed in `NT` directions, kept
+// `margin` inside the orchard's own edge, then smoothed) and the upper tiers are that outline shrunk toward the centre,
+// so the hill is the orchard's shape, not an ellipse on top of it. Stone steps come up each tier at a different side
+// (`stepAt`, nudged to the widest ring nearby), so the way up winds round. **The tops are walkable TRIANGLES built
+// before `buildFieldBounds`**, so the orchard's own rows (m311) stand on the tiers without knowing they exist, and
+// `ftEdge` keeps a tree off a wall or a stair. The walls are boxes (colliders, batched); the tops use the farmland's
+// own ground material, so the grass is the same grass.
+const FTERR = {
+  on: 1, field: 'orchard', tiers: 4, rise: 1.4, shrink: .22, margin: 3, NT: 96,
+  wallT: .7, lip: .25, stepH: .28, stepD: .55, stepW: 2.0,
+  stepAt: [-2.2, .6, 2.9, -.9],      // rad round the centre where each tier's steps come up: the way up winds round
+  why: 'REGIONS: an orchard between the house and the creek -- terraced, so it is somewhere you climb, apples above the fields',
+  n: 0, c: null, R: null, top: [], steps: [], at: null,
+};
+// the tier-k radius at angle th, off the measured base outline (linear between its NT samples)
+function ftRad(k, th) {
+  const T = FTERR, N = T.NT, q = ((th / (Math.PI * 2)) % 1 + 1) % 1 * N, i = Math.floor(q) % N, f = q - Math.floor(q);
+  return (T.R[i] * (1 - f) + T.R[(i + 1) % N] * f) * (1 - T.shrink * k);
+}
+// is (a, b) on the terrace (inside tier 0's wall, plus a metre)?
+function ftIn(a, b) { const T = FTERR; if (!T.R) return false; const da = a - T.c[0], db = b - T.c[1]; return Math.hypot(da, db) < ftRad(0, Math.atan2(db, da)) + 1; }
+// how far (a, b) is from the nearest terrace wall or stair, in metres; Infinity off the terrace
+function ftEdge(a, b) {
+  const T = FTERR; if (!T.R) return Infinity;
+  const da = a - T.c[0], db = b - T.c[1], r = Math.hypot(da, db), th = Math.atan2(db, da);
+  let d = Infinity;
+  for (let k = 0; k < T.tiers; k++) d = Math.min(d, Math.abs(r - ftRad(k, th)));
+  for (const S of T.steps) {
+    const al = da * S.dx + db * S.dy, ac = Math.abs(-da * S.dy + db * S.dx);
+    if (al > S.r0 - 1 && al < S.r1 + 1) d = Math.min(d, Math.max(0, ac - T.stepW / 2));
+  }
+  return d;
+}
+function buildOrchardTerrace() {
+  const T = FTERR, FL = FARMLAND; if (!T.on || !FL.live || !FPLAN.on) return 0;
+  const fi = FPLAN.FIELDS.findIndex(f => f.id === T.field); if (fi < 0) return 0;
+  const Fd = FPLAN.FIELDS[fi]; T.c = [Fd.a, Fd.b];
+  // ---- the base outline: march out from the seed while the orchard owns the point AND `margin` past it
+  const N = T.NT, R = new Float32Array(N);
+  for (let i = 0; i < N; i++) {
+    const th = i / N * Math.PI * 2, ca = Math.cos(th), sb = Math.sin(th);
+    let r = 0;
+    for (let s = .5; s < 80; s += .5) { if (fpOwner(T.c[0] + ca * (s + T.margin), T.c[1] + sb * (s + T.margin)) !== fi) break; r = s; }
+    R[i] = r;
+  }
+  // smoothed, twice, so a noisy border does not become a saw-toothed wall
+  for (let pass = 0; pass < 2; pass++) { const R2 = R.slice(); for (let i = 0; i < N; i++) R[i] = (R2[(i + N - 2) % N] + 2 * R2[(i + N - 1) % N] + 3 * R2[i] + 2 * R2[(i + 1) % N] + R2[(i + 2) % N]) / 9; }
+  T.R = R;
+  if (Math.min(...R) < 6) { note('TERRACE NO ROOM ' + Math.min(...R).toFixed(0)); T.R = null; return 0; }
+  // ---- the heights: tier 0 just over the highest ground inside it
+  let hmax = -1e9;
+  for (let i = 0; i < N; i += 2) for (let r = 0; r <= R[i]; r += 2) { const th = i / N * Math.PI * 2, [x, z] = flWorld(T.c[0] + Math.cos(th) * r, T.c[1] + Math.sin(th) * r); hmax = Math.max(hmax, flHeightAt(x, z)); }
+  for (let k = 0; k < T.tiers; k++) T.top[k] = hmax + .3 + k * T.rise;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .95, metalness: 0 }), o || {});
+  const MAT = { stone: M(0x8c8473), moss: M(0x56703a), wood: M(0x7a5232) };
+  const F = farmFrame(FL.O[0], FL.O[1], Math.atan2(-FL.ua[1], FL.ua[0]), MAT, 'terrace'), { bx, gnd } = F;
+  const UV = (a, b) => [a, -b];
+  let seed = 328; const rr = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const P = (k, th) => { const r = ftRad(k, th); return [T.c[0] + Math.cos(th) * r, T.c[1] + Math.sin(th) * r]; };
+  // ---- the stairs first (the walls leave a gap for them): at `stepAt[k]`, nudged within +-.6 rad to the widest ring
+  T.steps = [];
+  for (let k = 0; k < T.tiers; k++) {
+    let best = T.stepAt[k % T.stepAt.length], bw = -1;
+    for (let d = -.6; d <= .6; d += .05) { const th = T.stepAt[k % T.stepAt.length] + d, w = k ? ftRad(k - 1, th) - ftRad(k, th) : 99;
+      if (w > bw) { bw = w; best = th; } }
+    const th = best, dx = Math.cos(th), dy = Math.sin(th), rk = ftRad(k, th);
+    const [fa, fb] = [T.c[0] + dx * (rk + 3), T.c[1] + dy * (rk + 3)];
+    const below = k ? T.top[k - 1] : flHeightAt(...flWorld(fa, fb));
+    const n = Math.max(2, Math.ceil((T.top[k] - below) / T.stepH));
+    T.steps.push({ k, th, dx, dy, r0: rk, r1: rk + n * T.stepD });
+    for (let i = 0; i < n; i++) {
+      const r = rk + (n - i - .5) * T.stepD, a = T.c[0] + dx * r, b = T.c[1] + dy * r, [u, v] = UV(a, b);
+      const yt = below + (i + 1) * (T.top[k] - below) / n;
+      bx(u, v, (k ? below : gnd(u, v)) - .3, yt, T.stepD + .04, T.stepW, 'stone', Math.atan2(dy, dx));
+    }
+  }
+  // ---- the walls: segments every ~1.8 m along each tier's outline, turned along it; a gap where the stair comes up
+  for (let k = 0; k < T.tiers; k++) {
+    const pts = []; for (let i = 0; i <= 360; i++) { const th = i / 360 * Math.PI * 2; pts.push([...P(k, th), th]); }
+    const S = T.steps[k];
+    let acc = 0, next = 0;
+    for (let i = 1; i < pts.length; i++) {
+      const [a0, b0] = pts[i - 1], [a1, b1, th] = pts[i], L = Math.hypot(a1 - a0, b1 - b0);
+      acc += L; if (acc < next) continue;
+      next = acc + 1.8;
+      const ta = (a1 - a0) / L, tb = (b1 - b0) / L, [u, v] = UV(a1, b1);
+      // the stair's gap: the segment's centre across the stair's own line
+      const da = a1 - T.c[0], db = b1 - T.c[1];
+      if (Math.abs(-da * S.dy + db * S.dx) < T.stepW / 2 + .2 && da * S.dx + db * S.dy > 0) continue;
+      const y0 = k ? T.top[k - 1] - .2 : gnd(u, v) - .4, y1 = T.top[k] + T.lip;
+      bx(u, v, y0, y1, 2.1, T.wallT, 'stone', Math.atan2(tb, ta) + (rr() - .5) * .05);
+      if (rr() < .45) bx(u, v, y1, y1 + .07, 2.0 * (.5 + rr() * .5), T.wallT + .08, 'moss', Math.atan2(tb, ta), false);   // moss on the coping
+      T.n++;
+    }
+  }
+  F.commit();
+  // ---- the tops: a fan per tier, walkable (into TRI, so the orchard's trees and crops find them) and drawn with the
+  // farmland's own ground material (`aSplat` all grass, `aFld` the orchard's tint)
+  const walk = [], pos = [], spl = [], fld = [], tint = fpTint(fi);
+  for (let k = 0; k < T.tiers; k++) {
+    const y = T.top[k], [cx, cz] = flWorld(T.c[0], T.c[1]), M2 = 72;
+    for (let i = 0; i < M2; i++) {
+      const [a0, b0] = P(k, i / M2 * Math.PI * 2), [a1, b1] = P(k, (i + 1) / M2 * Math.PI * 2), [x0, z0] = flWorld(a0, b0), [x1, z1] = flWorld(a1, b1);
+      // wound so the normal points UP (triAdd keeps only up-facing floors; flWorld is a reflection of (a, b))
+      const up = (x0 - cx) * (z1 - cz) - (z0 - cz) * (x1 - cx) < 0;
+      const t = up ? [cx, y, cz, x0, y, z0, x1, y, z1] : [cx, y, cz, x1, y, z1, x0, y, z0];
+      walk.push(...t); pos.push(...t);
+      for (let j = 0; j < 3; j++) { spl.push(1, 0, 0); fld.push(tint[0], tint[1], tint[2], 0); }
+    }
+  }
+  isleAppend(walk);
+  { const g = new THREE.BufferGeometry(), nor = new Float32Array(pos.length); for (let i = 1; i < nor.length; i += 3) nor[i] = 1;
+    g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); g.setAttribute('normal', new THREE.BufferAttribute(nor, 3));
+    g.setAttribute('aSplat', new THREE.Float32BufferAttribute(spl, 3)); g.setAttribute('aFld', new THREE.Float32BufferAttribute(fld, 4));
+    g.computeBoundingSphere();
+    const m = new THREE.Mesh(g, FL.lmat); m.name = 'orchard_terrace'; m.receiveShadow = true; scene.add(m); }
+  // ---- THE APPLE ROWS, on the tiers now they are floors: a ring of trees down the middle of each terrace every ~5.5 m
+  // (kept off the walls and stairs by `ftEdge`), apples in every crown and a few in the grass, and crates of picked
+  // ones at the head of each stair
+  { const MT = { bark: M(0x5a4430), leaf: M(0x4f7a30), leaf2: M(0x86a64a), apple: M(0xc8322a, { emissive: new THREE.Color(0x3a0806) }), wood: M(0x8a6a48) };
+    const G = farmFrame(FL.O[0], FL.O[1], Math.atan2(-FL.ua[1], FL.ua[0]), MT, 'terrace_trees');
+    const ico1 = new THREE.IcosahedronGeometry(1, 1), ico0 = new THREE.IcosahedronGeometry(1, 0);
+    T.trees = 0;
+    for (let k = 0; k < T.tiers; k++) {
+      const top = k === T.tiers - 1;
+      for (const f of top ? [.45, 0] : [.5]) {
+        const L = f ? 2 * Math.PI * (top ? ftRad(k, 0) * f : (ftRad(k, 0) + ftRad(k + 1, 0)) / 2) : 0, n = f ? Math.max(3, Math.round(L / 5.5)) : 1;
+        for (let i = 0; i < n; i++) {
+          const th = (i + rr() * .3) / n * Math.PI * 2, r = !f ? 0 : top ? ftRad(k, th) * f : (ftRad(k, th) + ftRad(k + 1, th)) / 2;
+          const a = T.c[0] + Math.cos(th) * r, b = T.c[1] + Math.sin(th) * r;
+          if (f && ftEdge(a, b) < 1.9) continue;
+          const sc = .55 + rr() * .15, [u, v] = UV(a, b);
+          if (!farmTree(G, rr, ico1, u, v, sc, 'oak')) continue;
+          T.trees++;
+          const g = G.gnd(u, v), cy = g + 5.3 * sc;
+          for (let q = 0; q < 6; q++) { const aa = rr() * 6.28, dd = (1.2 + rr() * .7) * sc;
+            G.geo(ico0, 'apple', u + Math.cos(aa) * dd, cy + (rr() - .45) * 1.6 * sc, v + Math.sin(aa) * dd, rr() * 3, rr() * 3, 0, .13, .13, .13); }
+          for (let q = 0; q < 2; q++) { const aa = rr() * 6.28, dd = .8 + rr() * 1.4;
+            G.geo(ico0, 'apple', u + Math.cos(aa) * dd, g + .1, v + Math.sin(aa) * dd, 0, 0, 0, .12, .1, .12); }
+        }
+      }
+    }
+    for (const S of T.steps) {                                 // two crates at the head of each stair, one full
+      const r = ftRad(S.k, S.th) - 2.2;
+      for (const sd of [-1, 1]) { const a = T.c[0] + S.dx * r - S.dy * sd * 1.6, b = T.c[1] + S.dy * r + S.dx * sd * 1.6, [u, v] = UV(a, b), g = G.gnd(u, v);
+        G.bx(u, v, g, g + .45, .7, .5, 'wood', Math.atan2(S.dy, S.dx) + sd * .2);
+        if (sd > 0) for (let q = 0; q < 5; q++) G.geo(ico0, 'apple', u + (rr() - .5) * .45, g + .5, v + (rr() - .5) * .3, 0, 0, 0, .12, .1, .12); }
+    }
+    G.commit(); }
+  const [ax, az] = flWorld(T.c[0], T.c[1]);
+  T.at = [ax, T.top[T.tiers - 1] + .05, az];
+  { const S = T.steps[0], [fx, fz] = flWorld(T.c[0] + S.dx * (S.r1 + 2.5), T.c[1] + S.dy * (S.r1 + 2.5)); T.foot = [fx, fz, Math.atan2(ax - fx, az - fz)]; }
+  return T.n;
 }
 
 // ---- THE CREEK AND THE POND, ON THE LAND (m307, step 2, `buildFarmWaters`): the water, a footbridge, willows, reeds.
@@ -32540,7 +32702,8 @@ const GODPLACES = [
   { id: 'crash',    world: 'tkit', name: 'GRISTLE FARM · the crash site', at: () => CRASH.at && [CRASH.at.you[0], null, CRASH.at.you[1], Math.atan2(CRASH.at.x - CRASH.at.you[0], CRASH.at.z - CRASH.at.you[1])] },
   { id: 'corn',     world: 'tkit', name: 'GRISTLE FARM · the corn west of the barn', at: () => FARMLAND.live ? godFL({ a: FPLAN.FIELDS.find(f => f.id === 'home_corn').a + 6, b: FPLAN.FIELDS.find(f => f.id === 'home_corn').b }) : godMid(FLORA.FIELDS[0]) },   // 6 m off the seed: the scarecrow stands on it
   { id: 'wheat',    world: 'tkit', name: 'GRISTLE FARM · the south wheat off the bridge', at: () => FARMLAND.live ? godFL(FPLAN.FIELDS.find(f => f.id === 'south_wheat')) : godMid(FLORA.FIELDS[1]) },
-  { id: 'orchard',  world: 'tkit', name: 'GRISTLE FARM · the orchard', at: () => FARMLAND.live && godFL(FPLAN.FIELDS.find(f => f.id === 'orchard')) },
+  { id: 'orchard',  world: 'tkit', name: 'GRISTLE FARM · the orchard terrace, at the foot of its steps', at: () => FTERR.foot ? [FTERR.foot[0], null, FTERR.foot[1], FTERR.foot[2]] : FARMLAND.live && godFL(FPLAN.FIELDS.find(f => f.id === 'orchard')) },
+  { id: 'terrace',  world: 'tkit', name: 'GRISTLE FARM · the top of the orchard terrace', at: () => FTERR.at && [FTERR.at[0], FTERR.at[1], FTERR.at[2], null] },
   { id: 'farmhouse', world: 'tkit', name: 'GRISTLE FARM · the farmhouse porch', at: () => FHOUSE.at && [FHOUSE.at[0], null, FHOUSE.at[1], FHOUSE.at[2]] },
   { id: 'windmill', world: 'tkit', name: 'GRISTLE FARM · the windmill pump', at: () => FPROPS.at.windmill && [FPROPS.at.windmill[0], null, FPROPS.at.windmill[1], null] },
   { id: 'scarecrow', world: 'tkit', name: 'GRISTLE FARM · the scarecrow in the corn', at: () => FPROPS.at.scarecrow && [FPROPS.at.scarecrow[0], null, FPROPS.at.scarecrow[1], null] },
@@ -34879,6 +35042,8 @@ async function init() {
     try { buildFarmland(); } catch (e) { FARMLAND.live = 0; note('FARMLAND FAIL'); console.warn('[melee] farmland', e); }
     // ITS CREEK AND POND (m307): what stands in and over the valley and the bowl the land is carved with
     try { buildFarmWaters(); } catch (e) { note('WATERS FAIL'); console.warn('[melee] farm waters', e); }
+    // THE ORCHARD TERRACE (m328): its tops go into TRI before the field bounds, so the orchard's rows stand on them
+    try { buildOrchardTerrace(); } catch (e) { note('TERRACE FAIL'); console.warn('[melee] terrace', e); }
     // ITS FIELDS (m308): hedges, fences, tree lines and tracks between the patchwork's fields
     try { buildFieldBounds(); } catch (e) { note('FIELDS FAIL'); console.warn('[melee] fields', e); }
     // AND WHAT GROWS IN THEM (m309): instanced, chunked, faded with distance
@@ -35080,7 +35245,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { fireSheet, BURN, burnStart, SKYLINE, buildSkyline,
+window.melee = window.mel = { fireSheet, BURN, burnStart, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

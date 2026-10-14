@@ -201,7 +201,7 @@ differ" table there, so no region feels like the last one.
   - [x] m294 **B1d2 The cows** — cows that moo and wander the farm.
   - [ ] **B1e From REGIONS.md's Gristle Farm entry, not in m288** — a rope down from the hayloft, the silo ladder made climbable, an orchard terrace, and cows that panic and stampede (its signature system).
     - [x] m327 **B1e-1** the rope down from the hayloft and the silo ladder, climbable, with a landing on top.
-    - [ ] **B1e-2** an orchard terrace.
+    - [x] m328 **B1e-2** an orchard terrace.
     - [ ] **B1e-3** cows that panic and stampede (the farm's signature system).
 - [ ] **B1f Direction and discovery** (see the new section in `GAME_DESIGN.md`). Build on m278's quests:
   - a **"New task" card** when a task unlocks, and a **task list** you can open;
@@ -606,3 +606,9 @@ differ" table there, so no region feels like the last one.
   terrace, then the stampede. The rope hangs from the hook beam over the loft door; walk into it
   facing the barn and push up to land in the loft. The silo ladder climbs to a railed landing at
   11 m.
+
+- **m328 (B1e-2):** the orchard sat on ground too gentle to cut terraces into (1.6 m of rise), so
+  I built them up: four dry-stone tiers, 1.4 m each, about 7.5 m to the top, following the orchard
+  field's own outline. A stair comes up each tier on a different side, so the way up winds round.
+  There's a row of apple trees on every tier (54 trees), apples in the grass, and crates at the
+  stair heads. Next: the stampede.
