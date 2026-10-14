@@ -7,6 +7,22 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE MOTHERSHIP'S PEOPLE, AND A WARRIOR NOW NOTICES ONLY AT ITS OWN HEIGHT (m401, C6-8c, `ISFOLK`, `buildShipFolk`,
+  `shipFolkStep`, `shipPod`, `foeAI`'s `noticeY`).** **THE GRUNTS** are marks with ROSTER `grunt` (the warrior, FOE) and a
+  `beat`, which `mkrStep` turns into `d.route`, which `foeWander`'s roam walks. Nothing new drives them. In tkit the
+  warrior's test-site `at` is already reset by `crowdDeal` (FOE is in KCROWD's crowd), so marks only ADD bodies.
+  **`foeAI` NOTICED BY HORIZONTAL DISTANCE ALONE**: a grunt in the belly was "beside" a man on the needle 330 m below (the
+  same x, z) and would have gone for him, which on the Mothership means down the shaft. Noticing now also wants `|dy| <
+  K.noticeY` (8 by default), and the chase ends past 1.6x that. **THE TEETH NEEDED BOTH LINES OFF**: with only the notice
+  gate removed, the lose line dropped the aggro in the same frame and the row still read "no". The rule is the two lines
+  together, and a teeth test has to break the rule, not one line of it.
+  **THE TURNED** are marks of twelve different kinds inside `ISDECK.pods`. `shipPod`, a passenger like the jumper's, holds
+  each at its spot with a .06 m sway, facing the machine. `shipFolkStep` binds them by `markId` and lerps their (per-body)
+  materials toward green once. A blow knocks one out of the passenger line in the ordinary way; the pod takes it back
+  after.
+  **`npm run places`, exit 0** (teeth: both of `foeAI`'s height tests off reads `BAD ... notices a man 330 m below: YES`):
+      ok  SHIPFOLK 5 grunts (alien_warrior.glb), beats belly, climb, clear, pods, bridge, every waypoint on a floor | the turned: 12 (12 with bodies), 12 in a pod | a body held 0.06 m from its spot, tinted, let go by a blow yes | a grunt in the belly notices a man 330 m below: no, beside it: yes 
+
 - **THE MOTHERSHIP'S DECKS: THE CLIMB, THE CONVERSION CHAMBER, THE BRIDGE (m400, C6-8b, `ISDECK`, `shipTube`, `shipRoom`,
   `buildShipDecks`).** Two helpers do all of it. **`shipTube(F, A, B, w, h)`**: a quad strip in `TRI` to walk (sloped as it
   likes), a `pearlSeg` floor you see, a collider down each side (pictures popped), arches every 1.8 m (a half torus with its

@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m400</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m401</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m400</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m401</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm400';
+const BUILD = 'm401';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -26531,8 +26531,11 @@ function foeAI(d, dt, t) {
   const dd = Math.hypot(px, pz);
   const toP = Math.atan2(px, pz);
 
-  if (!d.aggro && dd < K.notice) { d.aggro = 1; d.gap = V.react; }
-  if (d.aggro && dd > K.lose) d.aggro = 0;
+  // m401: AND WITHIN `noticeY` OF HIS HEIGHT -- across alone, a grunt in the Mothership's belly "noticed" a man on the needle
+  // 330 m under it, and went for the shaft
+  const dyT = Math.abs(TP.y - d.root.position.y), nY = K.noticeY || 8;
+  if (!d.aggro && dd < K.notice && dyT < nY) { d.aggro = 1; d.gap = V.react; }
+  if (d.aggro && (dd > K.lose || dyT > nY * 1.6)) d.aggro = 0;
   d.gap = Math.max(0, d.gap - dt);
 
   // **THE LINE OF FIRE OUTRANKS EVERYTHING, INCLUDING A SWING IN PROGRESS (m99).** Above the
@@ -35014,6 +35017,62 @@ function buildShipDecks() {
   return D.n;
 }
 // ============================================================================================
+// THE MOTHERSHIP'S PEOPLE (m401, ROADMAP C6-8c, `ISFOLK`, `buildShipFolk`, `shipFolkStep`, `shipPod`)
+// ============================================================================================
+// **GRUNTS ON PATROL**: five of the evil aliens' own (ROSTER `grunt`, the warrior), each walking a beat (`route`, the
+// roam's own waypoints) -- round the belly's shaft, up and down the climb, the chamber's clear side, between its pods, and
+// the bridge behind the chair -- and the warrior's brain is theirs: they notice you and come for you. (Noticing now wants
+// you within `noticeY` of their height as well as `notice` across: a grunt in the belly had "noticed" a man on the needle
+// 330 m below.) **THE TURNED IN THEIR PODS**: twelve of the city's people -- a farmhand, a hipster, a cop, a biker -- held
+// in the chamber's pods (`shipPod`, a passenger: they stay put, they sway a little in the fluid, they are tinted green),
+// murmuring if you speak to them. Getting them out is Chapter 6's.
+const ISFOLK = {
+  on: 1,
+  GRUNTS: [
+    { id: 'ms_grunt_belly', beat: 'belly', why: "round the belly's shaft, where the pod comes in" },
+    { id: 'ms_grunt_climb', beat: 'climb', why: 'up and down the climb to the chamber' },
+    { id: 'ms_grunt_floor', beat: 'clear', why: "the chamber's clear side, door to door" },
+    { id: 'ms_grunt_pods', beat: 'pods', why: "between the chamber's two rings of pods" },
+    { id: 'ms_grunt_bridge', beat: 'bridge', why: 'the bridge, behind the chair' },
+  ],
+  KINDS: ['hick_skinny', 'hobo_01', 'fat_hipster', 'fat_activist_01', 'beautiful_blonde', 'contruction_worker', 'dummy_officer', 'fat_biker_01', 'beautiful_asian', 'moussa', 'fat_hippie', 'colin'],
+  lines: "...is it morning?...|...it hums. It never stops humming...|...I was only going to the shop...|...don't let them finish...",
+  tint: 0x3aff8a, tintK: .35, list: [], beats: {},
+};
+function buildShipFolk() {
+  const F = ISFOLK, S = ISHIP, D = ISDECK; if (!F.on || !D.built) return 0;
+  const [ax, az] = S.axis, y0 = S.floorY, C = D.CH, B = D.BR, yC = y0 + C.y, yB = y0 + B.y, W = (u, v) => [ax + u, az + v];
+  const ring = (cu, cv, r, degs) => degs.map(a => W(cu + Math.cos(a * Math.PI / 180) * r, cv + Math.sin(a * Math.PI / 180) * r));
+  F.beats = {
+    belly: { y: y0, pts: ring(0, 0, 8.5, [0, 90, 180, 270]) },
+    climb: { y: null, pts: [W(S.R + 4.5, 0), W(C.u - C.R - 1.5, C.v)] },
+    clear: { y: yC, pts: ring(C.u, C.v, 8, [190, 225, 260]) },
+    pods: { y: yC, pts: ring(C.u, C.v, 8, [20, 60, 100]) },
+    bridge: { y: yB, pts: [W(B.u - 3, B.v + 3), W(B.u + 3, B.v + 3)] },
+  };
+  for (const G of F.GRUNTS) { const b = F.beats[G.beat], [x, z] = b.pts[0];
+    peopleMark(G.id, x, z, 0, { role: 'grunt', name: 'a grunt', group: 'alien', talks: [], beat: b.pts }, b.y != null ? b.y : groundAt(x, z, y0 + 8, 9), 'ISFOLK', 'alien'); }
+  F.list = [];
+  D.pods.slice(0, F.KINDS.length).forEach(([u, y, v], i) => { const [x, z] = [ax + u, az + v], h = Math.atan2(ax + C.u - x, az + C.v - z), id = 'ms_pod_' + i;
+    peopleMark(id, x, z, h, { kind: F.KINDS[i], name: 'someone in a pod', group: 'city', talks: ['*'], alien: 'talk', lines: F.lines }, y + .35, 'ISFOLK', 'city');
+    F.list.push({ id, at: [x, y + .35, z], h, d: null }); });
+  return F.list.length;
+}
+// IN `stepDummies`, ABOVE THE BRAIN: held in the pod, swaying a little in the fluid
+function shipPod(d, dt, t) {
+  const R = d.podR; if (!R || (d.st !== 'idle' && d.st !== 'pod')) return 0;
+  d.st = 'pod'; const p = d.root.position; p.set(R.at[0], R.at[1] + Math.sin(d.t * .7 + R.at[0]) * .06, R.at[2]); d.h = R.h; t[d.K.clips.idle] = 1;
+  return 1;
+}
+function shipFolkStep(dt) {
+  const F = ISFOLK; if (!F.on || !F.list.length || !inTK()) return;
+  for (const R of F.list) {
+    if (R.d && R.d.gone) R.d = null;
+    if (!R.d) { const d = DUMMIES.find(q => q.markId === R.id && !q.gone); if (!d) continue; R.d = d; d.podR = R;
+      if (d.mats && !d.podTint) { const c = new THREE.Color(F.tint); for (const m of d.mats) if (m.color) m.color.lerp(c, F.tintK); d.podTint = 1; } }
+  }
+}
+// ============================================================================================
 // THE FIELDS THAT FOLLOW THE LAND (m308, STEER step 3, `FPLAN`, `fpOwner`, `buildFieldBounds`)
 // ============================================================================================
 // Irregular patches of wheat, corn, ploughed earth, hay meadow and pasture, divided by hedgerows, fences, tree lines and
@@ -40080,7 +40139,7 @@ function stepDummies(dt) {
     // without a gate in each of them.
     // AND THE MOTORCYCLE'S RIDER IS THE SAME SHAPE ONE VEHICLE OVER (m107) -- above the brain,
     // for the same reason: a man on a bike has no gait, no roam and nothing to be separated from.
-    if ((K.pal && stepPack(d, dt, t)) || stepRide(d, dt, t) || motoSeek(d, dt, t) || wfRide(d, dt, t) || wfBot(d, dt, t) || isJump(d, dt, t) || isKite(d, dt, t)) {      // m379: a rider of Uplift's line; m392 the islands' jumper and kite surfers
+    if ((K.pal && stepPack(d, dt, t)) || stepRide(d, dt, t) || motoSeek(d, dt, t) || wfRide(d, dt, t) || wfBot(d, dt, t) || isJump(d, dt, t) || isKite(d, dt, t) || shipPod(d, dt, t)) {      // m379: a rider of Uplift's line; m392 the islands' jumper and kite surfers
       skinWeights(d, t, dt, .06, K.clips.idle);
       bodyMix(d, dt);
       d.root.rotation.y = d.h + d.faceOff + (d.spin || 0);
@@ -41208,6 +41267,7 @@ function frameBody() {
   wfTurretStep(dt);             // Uplift's turrets: they fire on strangers; an engineer turns them (m384)
   wfBotStep(dt);                // Uplift's robots, bound to their bodies (m385); `wfBot` drives them in `stepDummies`
   islMoversStep(dt);            // the islands' BASE jumper and kite surfers, bound to their bodies (m392); `isJump` / `isKite` drive them
+  shipFolkStep(dt);             // the turned in the Mothership's pods, bound and tinted (m401); `shipPod` holds them
   islXingStep(dt);              // a flight down on the islands' landing field (m394)
   keeperStep(dt);               // the lighthouse's beam, and the keeper's storm while the thing wearing him stands (m398)
   kitCamStep();
@@ -41951,6 +42011,7 @@ async function init() {
     try { buildIslandKeeper(); } catch (e) { note('KEEPER FAIL'); console.warn('[melee] island keeper', e); }
     try { buildMothership(); } catch (e) { note('SHIP FAIL'); console.warn('[melee] mothership', e); }
     try { buildShipDecks(); } catch (e) { note('DECKS FAIL'); console.warn('[melee] mothership decks', e); }
+    try { buildShipFolk(); } catch (e) { note('FOLK FAIL'); console.warn('[melee] mothership people', e); }
     // AND THE SWING BRIDGE (m382): the second way over, before the city ring keeps its trees off its landing
     try { buildSwing(); } catch (e) { note('SWING FAIL'); console.warn('[melee] swing bridge', e); }
     // ITS CREEK AND POND (m307): what stands in and over the valley and the bowl the land is carved with
@@ -42202,7 +42263,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
