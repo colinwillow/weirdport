@@ -7,6 +7,20 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CHAPTER 5 OPENS (m396, C6-7e-1, quest `ch5`, `isl:in` in `islXingStep`, `IXING.beachAt`).** REGIONS 8 gives the islands
+  no villain, so the story is a Decision: **the lighthouse keeper is a Skinsuit** guiding the Mothership in, with his lamp
+  pointing up the tether at night. **Rollergirl says it first**: she is one of GAME_DESIGN's hidden good aliens ("an Easter
+  egg ... maybe one of these"), `alien: 'talk'`, so she speaks to him as he is. That uses the egg without making it a pillar.
+  The steps: `isl:in` (the first time he stands on the islands' frame, grounded, over the sea: a bridge to them counts,
+  Old Town's beach does not), then Rue, then Rollergirl, then a reach to `IBASE.godBase`, then Teo. Each talk is a `say`
+  override with `talks: ['*']`: any disguise, never the bare alien (except Rollergirl).
+  **ARRIVING ALSO CALLS `progRegion('tkit:islands')`**, which m388's chapter end already did. Twice is harmless and covers a
+  player who walks over early.
+  **`npm run places`, exit 0** (teeth: the hook's height test at sea + 300 reads `BAD CH5 ... ARRIVING IS NOT NOTICED`):
+      ok  CH5 on Old Town's beach: isl:in not set | on the landing rock: set | ch5 flag > talk > talk > reach > talk | its people is_rue, is_rollergirl, is_teo | its places ok, ok 
+  **NEXT**: C6-7e-2, the gaps (Rue's field is `isl:landed`, already set by m394; the ramp's jump needs a `isl:gap` detector;
+  the needle is a reach); C6-7e-3, the keeper.
+
 - **THE THERMAL, THE CEILING AND THE TETHER (m395, C6-7d-2, `ITHERM`, `thermAt`, `buildIslandThermal`, `thermStep`, and
   `wingWind`'s y).** REGIONS 8's way on: *"a thermal column up to the Mothership's tether."* **THE WINGS CLIMB ON THEIR OWN**
   (`wingFly`: thrust holds `cruise`, so at full pitch the steady climb is about 9 m/s), and without a cap the thermal would

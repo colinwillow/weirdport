@@ -796,6 +796,20 @@ const walkUp = (pts, y0) => { let y = y0; for (let i = 0; i < pts.length - 1; i+
   } else why = 'NOT BUILT';
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + 'THERMAL', r, why); }
+// ---- CHAPTER 5 OPENS (m396): standing on the landing rock sets `isl:in` (the shipped `islXingStep`) and standing on Old
+// Town's beach does not; the chapter's steps each point at a body that exists (Rue, Rollergirl, Teo) or a place that does
+{ const F = M.SAVE.flags, p = M.player, X = M.IXING, keep = { pos: p.pos.clone(), g: p.grounded, w: p.wing }, was = F['isl:in']; let r = '', why = '';
+  const at = (u, v) => { const [x, z] = M.islWorld(u, v); return [x, M.groundAt(x, z, 60, 80), z]; };
+  delete F['isl:in']; p.wing = 0; p.grounded = true; X.wasWing = 0;
+  p.pos.set(...X.beachAt); p.pos.z -= 3; p.pos.y = M.groundAt(p.pos.x, p.pos.z, 60, 80); M.islXingStep(.016); const onBeach = !!F['isl:in'];
+  p.pos.set(...at(0, 0)); M.islXingStep(.016); const onRock = !!F['isl:in'];
+  if (was) F['isl:in'] = was; else delete F['isl:in']; p.pos.copy(keep.pos); p.grounded = keep.g; p.wing = keep.w;
+  const q = M.QUESTS.find(q => q.id === 'ch5'), npcs = q ? q.steps.filter(s => s.npc).map(s => { const m = M.MARKS.find(m => m.id === s.npc); return s.npc + (m && m.K ? '' : ' MISSING'); }) : [];
+  const ats = q ? q.steps.filter(s => s.at).map(s => { const a = s.at(); return a && a.length >= 3 ? 'ok' : 'NO PLACE'; }) : [];
+  r = "on Old Town's beach: isl:in " + (onBeach ? 'SET' : 'not set') + ' | on the landing rock: ' + (onRock ? 'set' : 'NOT SET') + ' | ch5 ' + (q ? q.steps.map(s => s.type).join(' > ') : 'MISSING') + ' | its people ' + npcs.join(', ') + ' | its places ' + ats.join(', ');
+  why = onBeach ? 'OLD TOWN COUNTS AS THE ISLANDS' : !onRock ? 'ARRIVING IS NOT NOTICED' : !q ? 'NO CHAPTER 5' : npcs.some(n => /MISSING/.test(n)) ? 'A STEP POINTS AT NOBODY' : ats.some(a => a !== 'ok') ? 'A STEP POINTS NOWHERE' : '';
+  if (why) bad++;
+  quiet((why ? 'BAD ' : 'ok  ') + 'CH5', r, why); }
 // ---- HOLLOW CREEK'S LAND (m365): built, clear of every other land (its coast sampled against the farm's, the island's
 // rectangle and The Pearl's), the gorge cut at least 5 m under its rims down its length and running out to the sea, the
 // two flats level, and a forest standing on it
