@@ -378,8 +378,13 @@ const walkUp = (pts, y0) => { let y = y0; for (let i = 0; i < pts.length - 1; i+
     const slots = O.trucks.map(T => { const [x, z] = T.slot; return +(M.groundAt(x, z, O.y + 3, .6) - O.y).toFixed(2); });
     for (let f = 0; f < 600 && !O.trucks.every(T => T.st === 'gone'); f++) M.rallyStep(.1);          // they are still driving off when it goes quiet
     const gone = O.trucks.every(T => T.st === 'gone' && !T.g.visible && T.box._off);
-    r = ppl.length + ' people (' + ppl.filter(m => m.p.role === 'rallyboss').length + ' rally man) | spots off the floor ' + spots + ' | ' + seen.join(' > ') + ' | trucks parked ' + maxPark + '/' + O.trucks.length + ' (slots ' + slots.join(', ') + ' over the fair), gone after ' + gone;
-    why = nok.length ? 'SOMEBODY WITH NO KIND' : spots ? 'A SPOT NOT ON THE FIELD' : seen.join(' > ') !== 'build > speech > brawl > disperse > quiet' ? 'THE RALLY NEVER RAN ITS COURSE' : maxPark < O.trucks.length ? 'A TRUCK NEVER ARRIVED' : !gone ? 'THE TRUCKS NEVER LEFT' : slots.some(h => Math.abs(h) > 1.2) ? 'A TRUCK SLOT OFF THE GROUND' : '';
+    let stage = false, over = '';                                              // m376: the stage is noticed in the speech, the boss ends it all
+    { const F = M.SAVE.flags, p = M.player, [x, z] = O.W(...O.LEADER.at), was = F['rally:stage']; delete F['rally:stage'];
+      O.st = 'speech'; O.t = 30; O.tick = 0; p.pos.set(x + 1, O.y + M.HCFAIR.STAGE.h, z); M.rallyStep(.6); stage = !!F['rally:stage'];
+      F['qdone:ch3c'] = 1; O.st = 'quiet'; O.t = 5; O.tick = 0; M.rallyStep(.6); over = (O.t > 1e8 ? 'no more rallies' : 'STILL RALLYING') + ', ' + (M.HCROAD.gate && M.HCROAD.gate.open ? 'the road open' : 'THE ROAD SHUT');
+      delete F['qdone:ch3c']; if (was) F['rally:stage'] = was; else delete F['rally:stage']; O.over = 0; O.st = 'quiet'; O.t = 60; if (M.HCROAD.gate) M.HCROAD.gate.open = 0; }
+    r = ppl.length + ' people (' + ppl.filter(m => m.p.role === 'rallyboss').length + ' rally man) | spots off the floor ' + spots + ' | ' + seen.join(' > ') + ' | trucks parked ' + maxPark + '/' + O.trucks.length + ' (slots ' + slots.join(', ') + ' over the fair), gone after ' + gone + ' | on the stage in the speech: ' + (stage ? 'noticed' : 'NOT NOTICED') + ' | after the boss: ' + over;
+    why = nok.length ? 'SOMEBODY WITH NO KIND' : spots ? 'A SPOT NOT ON THE FIELD' : seen.join(' > ') !== 'build > speech > brawl > disperse > quiet' ? 'THE RALLY NEVER RAN ITS COURSE' : maxPark < O.trucks.length ? 'A TRUCK NEVER ARRIVED' : !gone ? 'THE TRUCKS NEVER LEFT' : slots.some(h => Math.abs(h) > 1.2) ? 'A TRUCK SLOT OFF THE GROUND' : !stage ? 'THE STAGE IS NOT NOTICED' : /STILL|SHUT/.test(over) ? 'THE BOSS CHANGES NOTHING' : '';
   } else why = 'NOT BUILT';
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + 'RALLY', r, why); }

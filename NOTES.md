@@ -7,6 +7,26 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE RALLY MAN, CHAPTER 3's BOSS (m376, C6-5f-4, `QUESTS` `ch3c`, `rally:stage`, `HCRALLY.over`).** Rae's last line
+  points you at the rally. The quest's first step is a FLAG with a beam on the podium: while he SPEAKS (`O.st === 'speech'`),
+  stand within 5 m of `LEADER.at` at the stage's own height (`O.y + HCFAIR.STAGE.h`, ±.7) and `rally:stage` is set with an
+  ON THE STAGE card. The stage has no gate of its own -- its corner steps are the way up, which is what m368 rebuilt to .28.
+  Then the m364 boss shape exactly, one region over: `skin` on `hc_rally_boss` (big 1.85, five downs), `also` two of the
+  front row (`hc_rally_0`, `hc_rally_3`), `unskin` both, `talk` the man who comes round (insurance, Ohio, a man in a nice
+  suit). **No new step type and no new boss code** -- `skin`/`unskin`/`also` already carry everything a burst needs.
+  **TWO THINGS THE RALLY DOES ABOUT IT, BOTH IN `rallyStep`'s tick:** the moment `hc_rally_boss` is an alien kind during
+  build/speech/brawl the rally DISPERSES (chants off, every truck still there turns to `out` and its box goes `_off`) --
+  a boss fight in the middle of a speech with the trucks still parked and the crowd still chanting is two scenes at once.
+  And once `qdone:ch3c` is set, `O.over`: a quiet rally never comes round again (`O.t = 1e9`) and `HCROAD.gate.open = 1`,
+  so the gang's road (m371) lets anybody through. Chapter 3 complete card 3.6 s after, `progChapter(4)`.
+  **The `RALLY` row now checks both** -- the player put on the stage in a speech must set the flag, and `qdone:ch3c` must
+  stop the rallies and open the road; it restores every flag it touched. Teeth: the stage test turned to `'nope'` reads
+  `BAD RALLY ... on the stage in the speech: NOT NOTICED`, exit 1.
+  `npm run places`: `ok  RALLY 15 people (1 rally man) | spots off the floor 0 | build > speech > brawl > disperse > quiet |
+  trucks parked 4/4 (slots 0.03, 0.02, 0.03, 0.05 over the fair), gone after true | on the stage in the speech: noticed |
+  after the boss: no more rallies, the road open`; `QUESTS ... ch3c.0 flag | ch3c.1 skin | ch3c.2 unskin | ch3c.3 unskin |
+  ch3c.4 talk`; exit 0.
+
 - **THE RACE FOR THE GANG'S RESPECT (m375, C6-5f-3, `HCRACE`, `raceStep`, `raceAt`, `racePark`, `RBIKE`, `bikeRecord`,
   `bikePlace`, `QUESTS` `ch3b`).** Ride up to the dirt track's start gate on the bike and stop: Big Rae lines up beside you on
   HER Fat Boy (the same file loaded a third time, `RBIKE`; the measuring is one function now, `bikeRecord`, and the drawing

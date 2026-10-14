@@ -279,7 +279,7 @@ differ" table there, so no region feels like the last one.
     - [x] m362 **C6-4a** Chapter 2 opens: the strike is called; to The Pearl, Juno, an activist's look, into the plaza, Marisol.
     - [x] m363 **C6-4b** the organiser's roof: up over the roofs to the HQ shed; the organiser at the transmitter; the receipts for the signs; take them to Marisol.
     - [x] m364 **C6-4c** the exposure: the organiser called down to the stage; knocked down in front of the crowd, it bursts (the boss); after, the strike ends and the crews go back; Chapter 2 complete.
-  - [ ] **C6-5** Chapter 3 greybox (Hollow Creek, REGIONS 4), split:
+  - [x] m376 **C6-5** Chapter 3 greybox (Hollow Creek, REGIONS 4), split:
     - [x] m365 **C6-5a** the land: its own landmass across the water, the hill, the bike-track ridges, the gorge and its stream, the two flats, the forest; GOD places.
     - [x] m367 **C6-5b** the trailer park on stilts over the creek, and the logging mill with its flume and conveyors.
       - [x] m366 **C6-5b-1** the trailer park on stilts: a boardwalk down the creek, seven trailers off it, ramps from the rims, a ladder to the water, four residents.
@@ -291,11 +291,11 @@ differ" table there, so no region feels like the last one.
       - [x] m370 **C6-5d-1** the freight line: a trestle from Old Town's south-west beach to a halt at the creek's mouth, and a train you ride.
       - [x] m371 **C6-5d-2** the second way: the highway shoulder (a road bridge in, watched by the gang).
     - [x] m372 **C6-5e** the rally, the region's living system: it builds, the leader speaks, it boils over.
-    - [ ] **C6-5f** Chapter 3's quests: the biker form, the gang's respect, the infiltrated rally leader (the boss).
+    - [x] m376 **C6-5f** Chapter 3's quests: the biker form, the gang's respect, the infiltrated rally leader (the boss).
       - [x] m373 **C6-5f-1** Chapter 3 opens: over the water, Pap, a biker's sample, Spud's challenge.
       - [x] m374 **C6-5f-2** the motorcycle: the biker form rides (the skateboard's riding, a bike under him, faster, no deck tricks).
       - [x] m375 **C6-5f-3** the gang's respect: race Big Rae round the dirt track; win, and the gang knows your name.
-      - [ ] **C6-5f-4** the rally man: on the stage at the rally, in front of everyone; he bursts (the boss); Chapter 3 complete.
+      - [x] m376 **C6-5f-4** the rally man: on the stage at the rally, in front of everyone; he bursts (the boss); Chapter 3 complete.
 
 ## Phase D — turf (after Phase C; see "Turf" in GAME_DESIGN.md)
 
@@ -1012,3 +1012,9 @@ differ" table there, so no region feels like the last one.
   across the middle doesn't count. She eases off in the bends and has a little catch-up built in.
   Win and the gang knows your name; she then points you at the rally man's stage. I tuned her to
   about 15 m/s, which a clean ride on the bike beats. Tell me if she's too easy or too hard.
+- **m376 (C6-5f-4) The rally man.** At the next rally, climb the stage steps while he's speaking;
+  standing by the podium counts. The thing wearing him bursts out (about twice your height, five
+  knock-downs) and two of the front row turn with it. The moment it bursts, the rally breaks up and
+  the trucks leave, so the fight isn't happening in the middle of a speech. Once he comes round,
+  the rallies stop for good and the gang's road opens to anybody. Then the Chapter 3 complete card
+  shows. Next up: Chapter 4 (The Waterfront).
