@@ -7,6 +7,85 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FARM IS ITS OWN LAND ACROSS A CHANNEL NOW (m306, STEER "farm rebuild" step 1, `FARMLAND`, `buildFarmland`, `buildChannelBridge`).**
+  He walked m302-m304: *"it's like 12 feet away from the border of the city... a very small city block tacked onto the
+  edge of the city... the border between the city and the farm is just a line."* The docs had said "intimate, empty
+  ground is a failure" and "SMALL and DENSE"; both are rewritten ("Scale follows the place", "No borders that are
+  lines"). Step 1:
+  **THE LAND**: a superellipse 460 x 340 m (`A` 230, `B` 170, `pw` 3.2, coast wandering `wob` 9%) centred 404 m out
+  on bearing .5 rad (the sun's side, so from the farm the city is lit from behind you), `gap` 70 m of channel from
+  the city island's waterline. Authored `HILLS` and `RIDGES`, each with its reason; the yard's patch settled level
+  (`yard`, r 75) so m288-m305's pieces stand on it. **One height function** (`flHeight`) feeds the mesh, the collider
+  (12,344 floor tris through `isleAppend`) and the water's depth; normals by central differences off it, so the nine
+  chunks (`chunk` 40 cells of 5 m, culled by the camera) do not seam. The island's land material, shared.
+  **THE WATER, AND WHY IT IS A SECOND MESH**: the city's sea is radial and its skirt is single triangles out to 1,800 m,
+  so it cannot carry a second shore. The farm has its own grid IN ITS OWN FRAME, depth = sea - max(`flHeight`,
+  `isleBedAt`), on the sea's own uniforms (`wmat.clone()` with `uniforms` re-shared, `FARMW` defined); the city's water
+  discards inside that turned rectangle (`uCut`, `uCutA`). **First cut was an axis-aligned box round the turned
+  island: it reached back to x -14, over the city's own coast, and drew 23,810 water tris -- the turned rect is 8,254.**
+  **THE BRIDGE** (`buildChannelBridge`, dispatched from `buildBridge` while `FARMLAND.live`): 166 m from just past the
+  city's edge to the farm's beach top (both feet MEASURED by marching the bearing), ramps at 16% off each shore, a deck
+  on 5 piers with cutwaters, lamps, parapets, and the checkpoint (booth, striped arm) at the TOWN end --
+  `BRIDGE.gate`. The m291 river/hairpin is not built in `tkit` now (`riverStep` and `cowClear` read `river.F`, null).
+  **THE LONG VIEW** (`gradeStep`): golden hour by `flEdgeAt` (the whole land, fading over the channel), and the fog
+  lerps to `FARMLAND.fog` (150 / 950) with `camera.far` following it +150 -- which also lets `cellStep` (culls past
+  the fog) draw the city's far cells. The skyline is the real city.
+  **STILL IN THE OLD SHAPE** (steps 2-6): everything m288-m305 built came along as one cluster round the yard, in its
+  old frame; the crash is still beside it; no creek valley or pond in the land yet; no track from the bridge to the
+  yard (the m305 road needs `BRIDGE.foot`, which the channel bridge does not set, so it is not drawn).
+  GOD `overlook` (the west hill, facing the city) and `channel` (the bridge's farm end). Chip `FL<chunks>/<floor tris>`.
+  `npm run places` now flags `OFF THE FARMLAND` for any farm place not on it (`flEdgeAt`).
+  `npm run places`, after the bump:
+  ```
+  ok   buildFarmland
+  ok   buildFarm
+  ok   buildFarmProps
+  ok   buildCrash
+  ok   crashHero
+  ok   buildLane
+  ok   buildBridge
+  ok   buildHedgerows
+  ok   buildFarmhouse
+  ok   buildRoadside
+  ok   buildCows
+  ok   buildGroundPaint
+  ok   buildFlora
+  widest grass 66.5 at 172deg | headland ray 7deg grass 38.2 need 60 | rays 520 rect [-93.5,90.5,-90.3,93.5]
+  FARM.at {"x":333.8,"z":150.5,"th":1.281} | CRASH.at yes | LANE.at yes | BRIDGE.gate yes (side 0) | ISLE.live 1
+  FARMLAND live [ 354, 196 ] chunks 9 floor tris 12344 water tris 8254 | BRIDGE len 166 piers 5 gate [112,64]
+  FROAD 3 road pts NONE foot null | FHOUSE 24 chimney [350.6,11.4,135.7] | HROW 143 boxes 22 trees 4 gates | FLORA {"corn_by_the_crash":274,"wheat_to_the_shore":2188,"hay_meadow":1290,"crash_stubble":1113,"potato_rows":1292,"river_meadow":627,"copse_ferns":1100,"tufts":900}
+  notes ["TC NO OBB JSON","ISLE 0/3 TEX"]
+  ok  oldtown    -> player 0.0,0.1,0.0 ground 0.00 
+  ok  overlook   -> player 464.3,9.1,68.0 ground 8.99 
+  ok  channel    -> player 241.6,0.5,134.3 ground 0.34 
+  ok  farmyard   -> player 320.1,1.5,152.7 ground 1.32 
+  ok  hayloft    -> player 333.7,4.7,156.8 ground 9.00 
+  ok  crash      -> player 341.3,1.5,118.3 ground 1.38 
+  ok  corn       -> player 329.2,1.5,134.5 ground 1.34 
+  ok  wheat      -> player 350.0,1.6,162.7 ground 1.46 
+  ok  farmhouse  -> player 340.8,1.6,136.8 ground 1.41 
+  ok  meadow     -> player 367.4,1.6,150.9 ground 1.46 
+  ok  plough     -> player 318.7,1.5,183.6 ground 1.30 
+  ok  copse      -> player 318.9,1.7,200.4 ground 1.57 
+  ok  windmill   -> player 341.2,1.6,154.2 ground 1.42 
+  ok  scarecrow  -> player 333.6,1.5,135.5 ground 1.37 
+  ok  tractor    -> player 327.2,1.5,139.8 ground 1.33 
+  ok  paddock    -> player 340.7,1.6,157.1 ground 1.42 
+  ok  lane       -> player 320.6,1.5,140.3 ground 1.31 
+  ok  ford       -> player 312.6,1.4,167.2 ground 1.22 
+  ok  road       -> player 336.6,1.5,118.1 ground 1.36 
+  ok  bridge     -> player 112.1,3.0,63.6 ground 2.80 
+  every tkit GOD place is somewhere
+  ok  farmPropsStep  30 frames
+  ok  farmhouseStep  30 frames
+  ok  floraStep      30 frames
+  ok  cowStep        30 frames
+  ok  crashStep      30 frames
+  ok  crashHeroStep  30 frames
+  ok  riverStep      30 frames
+  ok  gradeStep      30 frames
+  ```
+
 - **NOTHING SAID WHERE THE BRIDGE WAS (m305, farm pass 10, `FROAD`, `buildRoadside`, `GPAINT.road`, `BRIDGE.foot`).**
   Chapter 0 ends "walk to the bridge as the farmer"; the lane ran out into grass at its east mouth and the hairpin stood
   20 m off past the wreck. Now: a ROAD in the ground paint (the lane's ribbon factored into `ribbon(L, G)`, called for

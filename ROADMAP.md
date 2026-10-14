@@ -28,7 +28,8 @@ What to build (several builds; ship each step, never wait):
 1. **A separate farm landmass across a river from the city island**, not a lobe on the city's coast.
    Roughly 400 x 300 m or more, at an authored bearing, far enough that the city is a SKYLINE on the
    horizon from the crash site. One river/channel between them, crossed by the checkpoint bridge (move
-   `BRIDGE` there). Fog `far` and the sky must let the skyline read from the farm.
+   `BRIDGE` there). Fog `far` and the sky must let the skyline read from the farm. **— done m306** (the land,
+   its water, the channel bridge, the long view; the old pieces came along as one cluster round the yard).
 2. **Rolling terrain**: a heightfield with low ridges and hills, a creek valley with a footbridge, a pond.
    Walkable through the real collider (`groundAt`), chunked so the camera culls what is behind it.
 3. **Fields that follow the land**: irregular patches of wheat, corn, ploughed earth, hay meadow and
@@ -441,4 +442,11 @@ differ" table there, so no region feels like the last one.
 - **Farm polish: stopped at ten passes.** Your new STEER (the farm as open countryside across the
   river) landed while m305 was shipping, so it goes next, ahead of B1e. m288-m305's pieces get
   reused on the new land, as it says.
+- **m306 (farm rebuild, step 1):** the farm is now its own landmass across a channel, about
+  460 x 340 m of rolling ground 400 m from the city's middle, on the sunset side, so from the farm
+  the city is a skyline lit gold from behind you. A 166 m stone bridge on piers crosses the channel,
+  with the checkpoint at the town end. Everything built so far (barn, house, fields, lane, crash)
+  came along as one cluster round the yard for now; steps 2 to 4 spread it out and send the crash
+  far into a field. I put it on bearing .5 (north-east-ish, `FARMLAND.bearing`) and 70 m of water
+  away (`FARMLAND.gap`); both are one number if you want it elsewhere.
 

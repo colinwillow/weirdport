@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m305</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m306</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m305</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m306</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm305';
+const BUILD = 'm306';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -7011,7 +7011,7 @@ const ISLE = {
   // the way the rays are (0 = +x, pi/2 = +z): **the +x side, under the low sun** (it comes from about 40 deg), so the
   // barn and the wreck throw their long shadows back across the yard toward town, and the sea behind the fields is the
   // glittering side. Only in the kit city (`tkit`), where the farm is; `buildFarm` stands on the ray nearest `th`.
-  head: { on: 1, th: .12, half: .75, flat: .5, out: 24, calm: .65 },
+  head: { on: 0, th: .12, half: .75, flat: .5, out: 24, calm: .65 },     // m306: OFF -- the farm has its own land (`FARMLAND`)
   // ---- state
   rect: null, land: null, water: null, rockM: null, lmat: null, wmat: null,
   safe: null, safeTk: 0, splashes: 0, t: 0, tris: 0, texN: 0, rays: null,
@@ -20845,6 +20845,8 @@ function isleWaterMat() {
     uFoamC: { value: new THREE.Color(I.foamCol) },
     uHor: { value: new THREE.Color(SKY.hor) }, uZen: { value: new THREE.Color(SKY.zen) },
     uSky: { value: isleWhite() }, uSkyOn: { value: 0 }, uSkyK: { value: 1 }, uSkyRot: { value: 0 },
+    // m306: the farmland's own water's rectangle, in ITS frame: (centre x, z, half a, half b) and its a axis
+    uCut: { value: new THREE.Vector4(0, 0, -1, -1) }, uCutA: { value: new THREE.Vector2(1, 0) },
   });
   const m = new THREE.ShaderMaterial({
     uniforms: U, fog: true, transparent: true, depthWrite: true,
@@ -20865,6 +20867,8 @@ void main() {
 }`,
     fragmentShader: `
 uniform float uT, uWave, uGlint, uFoam, uClear, uSkyOn, uSkyK, uSkyRot;
+uniform vec4 uCut;
+uniform vec2 uCutA;
 uniform vec3 uSun, uSunCol, uDeep, uShallow, uFoamC, uHor, uZen;
 uniform sampler2D uSky;
 varying vec3 vW;
@@ -20878,6 +20882,10 @@ float wN(vec2 p) { vec2 i = floor(p), f = fract(p); f = f * f * (3.0 - 2.0 * f);
 vec2 wv(vec2 p, vec2 d, float k, float w, float a) { return d * (a * k * cos(dot(p, d) * k + uT * w)); }
 void main() {
   #include <logdepthbuf_fragment>
+#ifndef FARMW
+  { vec2 q = vW.xz - uCut.xy;                     // the farmland's water is drawn there (m306): its frame, b = a turned
+    if (abs(dot(q, uCutA)) < uCut.z && abs(dot(q, vec2(uCutA.y, -uCutA.x))) < uCut.w) discard; }
+#endif
   vec2 p = vW.xz;
   float D = max(vD, 0.0);
   vec2 g = vec2(0.0);
@@ -28895,6 +28903,187 @@ function mapStep(dt) {
 }
 
 // ============================================================================================
+// GRISTLE FARM'S OWN LAND (m306, STEER "the farm rebuild" step 1, `FARMLAND`, `buildFarmland`)
+// ============================================================================================
+// *"It's like 12 feet away from the border of the city... a very small city block tacked onto the edge of the city."*
+// The farm is not on the city's coast any more: it is its OWN LANDMASS across a channel, ~460 x 340 m of rolling
+// ground, 390 m out from the city's middle on the sun's bearing, so from the farm the city is a SKYLINE on the
+// horizon, lit gold from behind you. (`ISLE.head`, the m302 lobe, is off.)
+// **AUTHORED, NOT ROLLED** (the placement rule): the coast is a superellipse (`A` x `B`, power `pw`) that wanders by
+// `wob`; the ground rises from a beach to the interior and every hill and ridge is a row in `HILLS` / `RIDGES` with
+// the reason it is there; the yard's patch is settled flat (`yard`) so a barn stands level.
+// **ONE HEIGHT FUNCTION, THREE USES** (`flHeight`): the mesh, the collider (every triangle above the shelf into `TRI`
+// through `isleAppend`, so `groundAt` walks it like the island), and the water's depth. Normals come off the same
+// function by central differences, so the chunks (`chunk` cells each, one draw apiece, culled by the camera) do not
+// seam where `computeVertexNormals` would.
+// **THE WATER**: the city's sea is one radial mesh whose skirt runs 1,800 m out in single triangles, so it cannot carry
+// a second shore. The farm gets its own world-aligned water grid over its rectangle (`rect`), depth = sea minus the
+// higher of the two beds (`flHeight`, `isleBedAt`), sharing the sea's material uniforms; the city's water DISCARDS
+// inside that rectangle (`uCut`, `FARMW` keeps the farm's own). Both are deep at the seam.
+// **THE FAR VIEW**: `gradeStep` opens the fog to `fog` and the camera's far plane past it while he is on this land,
+// which also lets `cellStep` draw the city's far cells -- the skyline is the real city, not a card.
+const FARMLAND = {
+  on: 1, live: 0,
+  bearing: .5,          // rad, the rays' convention (0 = +x, pi/2 = +z): the sun's side (~40 deg), so the city is lit from behind you
+  gap: 70,              // m of open water between the city island's waterline and the farm's, on that bearing
+  A: 230, B: 170, pw: 3.2, wob: .09, seed: 31,
+  beach: 14, cell: 5, chunk: 40, margin: 80, wmargin: 60,
+  HILLS: [
+    { a: -165, b: 35, r: 55, h: 9, why: 'the west hill: the overlook -- field after field, and the city on the horizon' },
+    { a: 165, b: -70, r: 45, h: 5, why: 'a knoll above the bridge end, so the road from the bridge climbs and the farm is hidden till the top' },
+    { a: -60, b: 125, r: 50, h: 6, why: 'the far hill behind the farm, the last thing before the sea' },
+    { a: 120, b: 40, r: 40, h: 3.5, why: 'a low swell in the far fields, where the crash will lie (step 4)' },
+  ],
+  RIDGES: [
+    { a0: -110, b0: 105, a1: 135, b1: 75, w: 36, h: 6, why: "the long ridge along the back of the farm: the neighbour's farm stands on it (step 4)" },
+    { a0: 30, b0: -125, a1: 125, b1: -70, w: 24, h: 3.2, why: 'a low rise between the bridge and the yard' },
+  ],
+  yard: { a: -30, b: -40, r: 75, why: "the farmyard's ground, settled level: m288-m305's barn, house, lane and fields stand on it" },
+  fog: { near: 150, far: 950 },
+  bridgeEnd: 2,         // m past the farm's beach top where the bridge's deck comes down onto its ramp
+  O: null, ua: null, ub: null, noise: null, rect: null, tris: 0, chunks: 0, wtris: 0,
+};
+// local (a along the coast, b away from the city) <-> world
+const flWorld = (a, b) => { const F = FARMLAND; return [F.O[0] + a * F.ua[0] + b * F.ub[0], F.O[1] + a * F.ua[1] + b * F.ub[1]]; };
+const flLocal = (x, z) => { const F = FARMLAND, dx = x - F.O[0], dz = z - F.O[1]; return [dx * F.ua[0] + dz * F.ua[1], dx * F.ub[0] + dz * F.ub[1]]; };
+// metres inside the coast (negative out to sea). The superellipse is homogeneous: rr(t p) = t rr(p), so along a
+// ray the distance in from the coast is (w - rr(p)) / rr(n) exactly, n the ray's unit direction
+function flEdge(a, b) {
+  const F = FARMLAND, p = F.pw, L = Math.hypot(a, b) || 1e-6;
+  const rr = Math.pow(Math.pow(Math.abs(a) / F.A, p) + Math.pow(Math.abs(b) / F.B, p), 1 / p);
+  const rn = Math.pow(Math.pow(Math.abs(a / L) / F.A, p) + Math.pow(Math.abs(b / L) / F.B, p), 1 / p);
+  const w = 1 + F.wob * (2 * F.noise(Math.atan2(b / F.B, a / F.A)) - 1);
+  return (w - rr) / rn;
+}
+function flHeight(a, b) {
+  const F = FARMLAND, sea = ISLE.sea, e = flEdge(a, b);
+  if (e < 0) return Math.max(sea - 26, sea - .35 + e * .3);                      // the shelf
+  if (e < F.beach) return sea - .35 + 1.65 * ss01(0, F.beach, e);                // the beach, to its top at sea + 1.3
+  const y = sea + 1.3 + 2.4 * (1 - Math.exp(-(e - F.beach) / 45));              // the land rising inland
+  let h = 0;
+  for (const H of F.HILLS) { const d2 = ((a - H.a) ** 2 + (b - H.b) ** 2) / (H.r * H.r); if (d2 < 9) h += H.h * Math.exp(-d2 * 1.6); }
+  for (const R of F.RIDGES) {
+    const ux = R.a1 - R.a0, uz = R.b1 - R.b0, t = clamp(((a - R.a0) * ux + (b - R.b0) * uz) / (ux * ux + uz * uz), 0, 1);
+    const d = Math.hypot(a - R.a0 - ux * t, b - R.b0 - uz * t) / R.w;
+    if (d < 3) h += R.h * Math.exp(-d * d * 1.6);
+  }
+  h += 1.1 * Math.sin(a * .029 + b * .011 + .7) * Math.sin(b * .034 - a * .009 + 1.9) + .5 * Math.sin(a * .071 - b * .053);
+  h *= ss01(F.beach, F.beach + 45, e);                                           // the hills settle to the beach
+  const Y = F.yard, wY = 1 - ss01(Y.r * .55, Y.r, Math.hypot(a - Y.a, b - Y.b));
+  return y + h * (1 - wY);
+}
+const flHeightAt = (x, z) => { const [a, b] = flLocal(x, z); return flHeight(a, b); };
+const flEdgeAt = (x, z) => { if (!FARMLAND.live) return -1e9; const [a, b] = flLocal(x, z); return flEdge(a, b); };
+// the city island's seabed under any point, off its own rays -- what its water mesh would say there
+function isleBedAt(x, z) {
+  const I = ISLE, R = I.rect; if (!I.rays || !R) return -1e3;
+  const cx = (R[0] + R[1]) / 2, cz = (R[2] + R[3]) / 2, dx = x - cx, dz = z - cz, d = Math.hypot(dx, dz);
+  let th = Math.atan2(dz, dx); if (th < 0) th += Math.PI * 2;
+  const S = I.rays.length, f = th / (Math.PI * 2) * S, i0 = Math.floor(f) % S, i1 = (i0 + 1) % S, t = f - Math.floor(f);
+  const one = r => {
+    const s = d - r.rb, P = r.smp, n = P.length;
+    if (s <= P[0][0]) return P[0][1];
+    if (s >= P[n - 1][0]) return lerp(P[n - 1][1], I.sea - 40, Math.min(1, (s - P[n - 1][0]) / Math.max(1, I.far - r.rb - P[n - 1][0])));
+    let j = 1; while (P[j][0] < s) j++;
+    const a = P[j - 1], b = P[j]; return lerp(a[1], b[1], (s - a[0]) / ((b[0] - a[0]) || 1));
+  };
+  return lerp(one(I.rays[i0]), one(I.rays[i1]), t);
+}
+const isleRayAt = th => { const R = ISLE.rays, S = R.length; return R[((Math.round(th / (Math.PI * 2) * S) % S) + S) % S]; };
+function buildFarmland() {
+  const F = FARMLAND, I = ISLE;
+  F.live = 0;
+  if (!F.on || !inTK() || !I.live || !I.rays) return 0;
+  const R = I.rect, cx = (R[0] + R[1]) / 2, cz = (R[2] + R[3]) / 2, sea = I.sea;
+  F.noise = isleNoise(F.seed);
+  F.ub = [Math.cos(F.bearing), Math.sin(F.bearing)]; F.ua = [-F.ub[1], F.ub[0]];
+  const ray = isleRayAt(F.bearing), d = ray.rb + ray.L + F.gap + F.B;
+  F.O = [cx + F.ub[0] * d, cz + F.ub[1] * d];
+  // ---- the height grid, once: positions, normals, splats
+  const C = F.cell, a0 = -F.A - F.margin, b0 = -F.B - F.margin;
+  const NA = Math.ceil((2 * F.A + 2 * F.margin) / C), NB = Math.ceil((2 * F.B + 2 * F.margin) / C);
+  const H = new Float32Array((NA + 1) * (NB + 1));
+  for (let j = 0; j <= NB; j++) for (let i = 0; i <= NA; i++) H[j * (NA + 1) + i] = flHeight(a0 + i * C, b0 + j * C);
+  const hAt = (i, j) => H[clamp(j, 0, NB) * (NA + 1) + clamp(i, 0, NA)];
+  // ---- the land: chunks of `chunk` cells, each its own mesh so the camera culls what is behind it
+  const CH = F.chunk, tris = [];
+  let flip = null, nCh = 0;
+  for (let cj = 0; cj < NB; cj += CH) for (let ci = 0; ci < NA; ci += CH) {
+    const ni = Math.min(CH, NA - ci), nj = Math.min(CH, NB - cj), W = ni + 1;
+    const pos = new Float32Array(W * (nj + 1) * 3), nor = new Float32Array(W * (nj + 1) * 3), spl = new Float32Array(W * (nj + 1) * 3);
+    let deep = 1;
+    for (let jj = 0; jj <= nj; jj++) for (let ii = 0; ii <= ni; ii++) {
+      const i = ci + ii, j = cj + jj, a = a0 + i * C, b = b0 + j * C, y = hAt(i, j), [x, z] = flWorld(a, b), o = (jj * W + ii) * 3;
+      if (y > sea - 12) deep = 0;
+      pos[o] = x; pos[o + 1] = y; pos[o + 2] = z;
+      const ga = (hAt(i + 1, j) - hAt(i - 1, j)) / (2 * C), gb = (hAt(i, j + 1) - hAt(i, j - 1)) / (2 * C);
+      // the local normal (-ga, 1, -gb) in (a, y, b), turned into the world: a -> ua, b -> ub
+      let nx = -ga * F.ua[0] - gb * F.ub[0], ny = 1, nz = -ga * F.ua[1] - gb * F.ub[1];
+      const nl = Math.hypot(nx, ny, nz); nor[o] = nx / nl; nor[o + 1] = ny / nl; nor[o + 2] = nz / nl;
+      const e = flEdge(a, b), slope = Math.hypot(ga, gb), rock = ss01(.42, .8, slope);
+      if (y < sea - .2) { const k = ss01(sea - .2, sea - 6, y); spl[o] = 0; spl[o + 1] = 1 - k; spl[o + 2] = .15 + k; }
+      else if (e < F.beach + 2) { const g = ss01(F.beach - 3, F.beach + 2, e); spl[o] = g; spl[o + 1] = 1 - g; spl[o + 2] = .05; }
+      else { spl[o] = 1 - rock; spl[o + 1] = 0; spl[o + 2] = rock; }
+    }
+    if (deep) continue;                                      // all of it under 12 m of sea: never seen
+    const idx = [];
+    for (let jj = 0; jj < nj; jj++) for (let ii = 0; ii < ni; ii++) {
+      const A0 = jj * W + ii, B0 = A0 + 1, C0 = A0 + W + 1, D0 = A0 + W;
+      const ys = [pos[A0 * 3 + 1], pos[B0 * 3 + 1], pos[C0 * 3 + 1], pos[D0 * 3 + 1]], top = Math.max(...ys);
+      if (top < sea - 12) continue;
+      if (flip === null) {   // the winding is DERIVED off the first triangle, not trusted (the island's own rule)
+        const ux = pos[B0 * 3] - pos[A0 * 3], uz = pos[B0 * 3 + 2] - pos[A0 * 3 + 2], vx = pos[C0 * 3] - pos[A0 * 3], vz = pos[C0 * 3 + 2] - pos[A0 * 3 + 2];
+        flip = uz * vx - ux * vz < 0;
+      }
+      const t1 = flip ? [A0, C0, B0] : [A0, B0, C0], t2 = flip ? [A0, D0, C0] : [A0, C0, D0];
+      idx.push(...t1, ...t2);
+      if (top > sea - 2.5) for (const t of [t1, t2]) for (const v of t) tris.push(pos[v * 3], pos[v * 3 + 1], pos[v * 3 + 2]);
+    }
+    if (!idx.length) continue;
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+    g.setAttribute('normal', new THREE.BufferAttribute(nor, 3));
+    g.setAttribute('aSplat', new THREE.BufferAttribute(spl, 3));
+    g.setIndex(idx); g.computeBoundingSphere();
+    const m = new THREE.Mesh(g, I.lmat);
+    m.name = 'farmland'; m.receiveShadow = true; m.castShadow = false; m.userData.noHole = 1;
+    scene.add(m); nCh++;
+  }
+  F.chunks = nCh;
+  F.tris = isleAppend(tris);
+  // ---- its water: a grid in ITS OWN frame over its shelf; the city's sea leaves that rectangle to it. `wmargin` past
+  // the coast is deep enough (the shelf falls .3 per metre) that both meshes say "deep" at the seam -- an axis-aligned
+  // box round a turned island reached back over the city's own coast
+  const WA = F.A + F.wmargin, WB = F.B + F.wmargin;
+  F.rect = [WA, WB];
+  { const WC = 6, nx = Math.ceil(2 * WA / WC), nz = Math.ceil(2 * WB / WC), wp = [], wd = [], wi = [], bed = [];
+    for (let j = 0; j <= nz; j++) for (let i = 0; i <= nx; i++) {
+      const a = Math.min(WA, -WA + i * WC), b = Math.min(WB, -WB + j * WC), [x, z] = flWorld(a, b), bd = Math.max(flHeight(a, b), isleBedAt(x, z));
+      wp.push(x, sea, z); wd.push(sea - bd); bed.push(bd);
+    }
+    for (let j = 0; j < nz; j++) for (let i = 0; i < nx; i++) {
+      const A0 = j * (nx + 1) + i, B0 = A0 + 1, C0 = A0 + nx + 2, D0 = A0 + nx + 1;
+      if (Math.min(bed[A0], bed[B0], bed[C0], bed[D0]) > sea + 1.2) continue;   // dry land all round: the land hides it
+      wi.push(A0, B0, C0, A0, C0, D0);
+    }
+    { const a = wi[0] * 3, b = wi[1] * 3, c = wi[2] * 3;
+      const ux = wp[b] - wp[a], uz = wp[b + 2] - wp[a + 2], vx = wp[c] - wp[a], vz = wp[c + 2] - wp[a + 2];
+      if (uz * vx - ux * vz < 0) for (let k = 0; k < wi.length; k += 3) { const t = wi[k + 1]; wi[k + 1] = wi[k + 2]; wi[k + 2] = t; } }
+    const wg = new THREE.BufferGeometry();
+    wg.setAttribute('position', new THREE.Float32BufferAttribute(wp, 3));
+    wg.setAttribute('aDepth', new THREE.Float32BufferAttribute(wd, 1));
+    wg.setIndex(wi); wg.computeBoundingSphere();
+    const wm = I.wmat.clone(); wm.uniforms = I.wmat.uniforms; wm.defines = Object.assign({}, wm.defines, { FARMW: 1 });
+    const w = new THREE.Mesh(wg, wm); w.name = 'farmland_water'; w.renderOrder = -1; w.userData.noHole = 1;
+    scene.add(w); F.water = w; F.wtris = wi.length / 3;
+    I.wmat.uniforms.uCut.value.set(F.O[0], F.O[1], WA, WB); I.wmat.uniforms.uCutA.value.set(F.ua[0], F.ua[1]);
+  }
+  F.live = 1;
+  console.log('[melee] farmland: ' + nCh + ' chunks, ' + F.tris + ' floor tris, water ' + F.wtris + ' tris, centre ' + F.O.map(v => v.toFixed(0)).join(','));
+  return nCh;
+}
+
+// ============================================================================================
 // THE FARM, PART ONE: THE FARMYARD (m288, ROADMAP B1a) -- on the island ring, outside the city
 // ============================================================================================
 // **WHERE: ITS OWN HEADLAND (`ISLE.head`, m302), READ OFF THE ISLAND'S OWN RAYS.** `ISLE.rays[i]` runs from
@@ -29081,12 +29270,19 @@ function buildFarm() {
   if (!FARM.on || !ISLE.live || !ISLE.rays || !ISLE.rect) return 0;
   const R = ISLE.rect, cx0 = (R[0] + R[1]) / 2, cz0 = (R[2] + R[3]) / 2;
   // the ray down the middle of ITS HEADLAND (m302) -- an authored bearing, not "the widest grass on the ring"
-  const S = ISLE.rays.length, hth = ISLE.head ? ISLE.head.th : 0;
-  const best = ISLE.rays[((Math.round(hth / (Math.PI * 2) * S) % S) + S) % S], bw = best ? best.gw : 0;
-  if (!best || bw < FARM.need) { note('FARM NO ROOM ' + bw.toFixed(0) + '/' + FARM.need); return 0; }
-  const dOut = best.rb + 2 + (bw - 2) * FARM.inset;
-  const Ox = cx0 + best.dx * dOut, Oz = cz0 + best.dz * dOut;
-  const th = Math.atan2(best.dx, best.dz) + FARM.skew;
+  let Ox, Oz, th;
+  if (FARMLAND.live) {
+    // m306: ON ITS OWN LAND, at the yard's settled patch, the frame's +v pointing away from the city as it always has
+    const Y = FARMLAND.yard; [Ox, Oz] = flWorld(Y.a, Y.b);
+    th = Math.atan2(FARMLAND.ub[0], FARMLAND.ub[1]) + FARM.skew;
+  } else {
+    const S = ISLE.rays.length, hth = ISLE.head ? ISLE.head.th : 0;
+    const best = ISLE.rays[((Math.round(hth / (Math.PI * 2) * S) % S) + S) % S], bw = best ? best.gw : 0;
+    if (!best || bw < FARM.need) { note('FARM NO ROOM ' + bw.toFixed(0) + '/' + FARM.need); return 0; }
+    const dOut = best.rb + 2 + (bw - 2) * FARM.inset;
+    Ox = cx0 + best.dx * dOut; Oz = cz0 + best.dz * dOut;
+    th = Math.atan2(best.dx, best.dz) + FARM.skew;
+  }
   FARM.at = { x: Ox, z: Oz, th };
   const M = c => new THREE.MeshStandardMaterial({ color: c, roughness: .82, metalness: 0 });
   const MAT = { red: M(0xa8352b), trim: M(0xeee6d8), roof: M(0x3f4a45), wood: M(0x7a5232), stone: M(0x8d8a82),
@@ -29441,7 +29637,81 @@ const BRIDGE = {
   putBacks: 0,
 };
 const river = { u0: 0, u1: 0, v0: 0, v1: 0, safe: null, safeT: 0, F: null, y: 0 };
+// ---- THE CHANNEL BRIDGE (m306): from the city island's edge to the farm's land, over open water, on the farm's
+// bearing. A ramp up off each shore, a deck on piers across the channel, parapets, lamps, and the CHECKPOINT at the
+// town end -- a booth and a barrier arm, `BRIDGE.gate` for B2's cordon. Built in a frame whose +u runs from the city
+// to the farm (`farmFrame` with th = atan2(-ub.z, ub.x), so its u axis (cos th, -sin th) IS the bearing). Both ramp
+// feet are MEASURED: the city one just past the city's edge, the farm one where the farm's land is `bridgeEnd` past its
+// beach top, so the deck spans exactly the water between.
+function buildChannelBridge() {
+  const FL = FARMLAND, I = ISLE, R = I.rect, sea = I.sea;
+  const cx = (R[0] + R[1]) / 2, cz = (R[2] + R[3]) / 2, ub = FL.ub, ray = isleRayAt(FL.bearing);
+  const d0 = ray.rb + 3, P0 = [cx + ub[0] * d0, cz + ub[1] * d0];
+  // march out along the bearing to the farm's beach top
+  let dB = d0 + 10;
+  while (dB < d0 + 900 && flEdgeAt(cx + ub[0] * dB, cz + ub[1] * dB) < FL.beach + FL.bridgeEnd) dB += .5;
+  if (dB >= d0 + 900) { note('BRIDGE NO SHORE'); return 0; }
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .88, metalness: 0 }), o || {});
+  const MAT = { stone: M(0x8a857a), cap: M(0xb0aa9c), earth: M(0x5f6d34), road: M(0x6b5a46), dark: M(0x24262b),
+    red: M(0xc8332b), white: M(0xeeeeee), glass: M(0x9fd8f0, { roughness: .2 }),
+    lamp: M(0x3a2a14, { emissive: new THREE.Color(0xffd08a), emissiveIntensity: 1.6 }) };
+  const th = Math.atan2(-ub[1], ub[0]);
+  const F = farmFrame(P0[0], P0[1], th, MAT, 'bridge'), { bx, geo, quad, gnd, wx, wz } = F;
+  const W = BRIDGE.deckW + 1, yD = sea + 5, slope = .16;
+  const g0 = gnd(0, 0), uB = dB - d0;                     // the city foot (u 0), the farm's beach top (u uB)
+  const r0 = Math.max(10, (yD - g0) / slope);             // the city ramp: u 0 -> r0
+  const gF = gnd(uB + 20, 0), r1 = Math.max(10, (yD - gF) / slope), uE = uB + r1;   // the farm ramp: uB -> uE
+  function ramp(ua, ya, ub2, yb) {
+    const L = ub2 - ua;
+    quad([ua, ya + .06, -W / 2], [ua, ya + .06, W / 2], [ub2, yb + .06, W / 2], [ub2, yb + .06, -W / 2]);
+    const n = Math.max(2, Math.ceil(L / 2));
+    for (let k = 0; k < n; k++) {
+      const a0 = k / n, a1 = (k + 1) / n, um = ua + L * (a0 + a1) / 2, lo = Math.min(ya + (yb - ya) * a0, ya + (yb - ya) * a1), top = ya + (yb - ya) * (a0 + a1) / 2, g = gnd(um, 0);
+      bx(um, 0, g - .4, Math.max(g + .02, lo - .02), L / n + .05, W, 'earth');
+      for (const sd of [-1, 1]) bx(um, sd * (W / 2 + .2), Math.min(g, top) - .3, top + .9, L / n + .1, .4, 'cap');
+    }
+    geo(new THREE.BoxGeometry(Math.hypot(L, yb - ya), .06, W), 'road', (ua + ub2) / 2, (ya + yb) / 2 + .03, 0, 0, 0, Math.atan2(yb - ya, L));
+  }
+  ramp(0, g0, r0, yD);
+  ramp(uB, yD, uE, gF);
+  // ---- the deck, on piers where it is over water
+  const seg = 6;
+  for (let u = r0; u < uB - 1e-3; u += seg) {
+    const L = Math.min(seg, uB - u), um = u + L / 2;
+    bx(um, 0, yD - .6, yD, L + .05, W, 'stone');
+    for (const sd of [-1, 1]) bx(um, sd * (W / 2 - .2), yD, yD + .95, L + .05, .4, 'cap');
+  }
+  let piers = 0;
+  for (let u = r0 + 9; u < uB - 4; u += 18) {
+    const g = gnd(u, 0);
+    if (g > sea + .5) continue;
+    bx(u, 0, g - .5, yD - .6, 2.2, W - .4, 'stone'); piers++;
+    geo(new THREE.CylinderGeometry(1.1, 1.3, yD - .6 - g + .5, 4, 1), 'stone', u, (yD - .6 + g - .5) / 2, -W / 2 + .2, Math.PI / 4);   // its cutwater
+    geo(new THREE.CylinderGeometry(1.1, 1.3, yD - .6 - g + .5, 4, 1), 'stone', u, (yD - .6 + g - .5) / 2, W / 2 - .2, Math.PI / 4);
+  }
+  // lamps along the parapets, alternating sides
+  for (let u = r0 + 4, k = 0; u < uB - 2; u += 16, k++) {
+    const sd = k % 2 ? 1 : -1;
+    bx(u, sd * (W / 2 - .2), yD + .95, yD + 4.2, .14, .14, 'dark');
+    bx(u, sd * (W / 2 - .55), yD + 4.0, yD + 4.4, .5, .35, 'lamp', 0, false);
+  }
+  // ---- THE CHECKPOINT at the town end of the deck: a booth to one side, a striped arm across the rest
+  { const uc = r0 + 5;
+    bx(uc, W / 2 - 1.1, yD, yD + 2.5, 1.7, 1.7, 'white');
+    bx(uc, W / 2 - 1.1, yD + 2.5, yD + 2.7, 2.1, 2.1, 'dark', 0, false);
+    bx(uc - .87, W / 2 - 1.1, yD + 1.1, yD + 1.9, .05, 1.2, 'glass', 0, false);
+    for (let k = 0; k < 6; k++) bx(uc - 1.2, W / 2 - 2.2 - k * .66, yD + 1.0, yD + 1.12, .12, .66, k % 2 ? 'white' : 'red', 0, false);
+    // heading along the bridge toward town: the world's (-ub)
+    BRIDGE.gate = { x: wx(uc - 1.2, 0), z: wz(uc - 1.2, 0), y: yD, h: Math.atan2(-ub[0], -ub[1]), w: W }; }
+  const r = F.commit();
+  BRIDGE.n = r.boxes; BRIDGE.tris = r.tris; BRIDGE.side = 0; BRIDGE.foot = null; BRIDGE.piers = piers;
+  BRIDGE.at = { x: wx((r0 + uB) / 2, 0), z: wz((r0 + uB) / 2, 0), y: yD };
+  BRIDGE.farmEnd = [wx(uE + 3, 0), wz(uE + 3, 0)];       // where the farm's road will meet it (step 3)
+  BRIDGE.len = uE;
+  return BRIDGE.n;
+}
 function buildBridge() {
+  if (FARMLAND.live) return buildChannelBridge();          // m306: across the channel, not the m291 river
   const A = FARM.at; if (!BRIDGE.on || !A || !ISLE.rect) return 0;
   const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .88, metalness: 0 }), o || {});
   const MAT = { stone: M(0x8a857a), cap: M(0xb0aa9c), earth: M(0x5f6d34), road: M(0x6b5a46), dark: M(0x24262b),
@@ -29929,8 +30199,11 @@ function gradeStep(dt) {
   if (!GRADE.fog0) GRADE.fog0 = scene.fog.color.clone();
   if (GRADE.near0 == null) { GRADE.near0 = scene.fog.near; GRADE.far0 = scene.fog.far; }
   let want = 0;
-  const A = FARM.at;
-  if (GRADE.on && A) {
+  const A = FARM.at, FL = FARMLAND;
+  if (GRADE.on && FL.live) {
+    // m306: the whole of the farm's land is golden hour, fading out over the channel toward town
+    const P = player.pos; want = smooth(-90, 10, flEdgeAt(P.x, P.z));
+  } else if (GRADE.on && A) {
     const P = player.pos;
     want = 1 - smooth(GRADE.r[0], GRADE.r[1], Math.hypot(P.x - A.x, P.z - A.z));
     const R = ISLE.rect;
@@ -29943,8 +30216,16 @@ function gradeStep(dt) {
   hemi.color.copy(GRADE.sky0).lerp(_grC.setHex(GRADE.sky), k);
   hemi.groundColor.copy(GRADE.gnd0).lerp(_grC.setHex(GRADE.gnd), k);
   scene.fog.color.copy(GRADE.fog0).lerp(_grC.setHex(GRADE.fog), k * GRADE.fogMix);
-  scene.fog.near = GRADE.near0 * (1 - (1 - GRADE.nearK) * k);
-  scene.fog.far = GRADE.far0 * (1 - (1 - GRADE.farK) * k);
+  if (FL.live) {
+    // m306: THE LONG VIEW -- the fog opens to the farmland's and the lens's far plane follows it out, so the city is a
+    // skyline from the fields (and `cellStep`, which culls past the fog, draws its far cells)
+    scene.fog.near = lerp(GRADE.near0, FL.fog.near, k); scene.fog.far = lerp(GRADE.far0, FL.fog.far, k);
+    const cf = Math.max(400, scene.fog.far + 150);
+    if (Math.abs(camera.far - cf) > 5) { camera.far = cf; camera.updateProjectionMatrix(); }
+  } else {
+    scene.fog.near = GRADE.near0 * (1 - (1 - GRADE.nearK) * k);
+    scene.fog.far = GRADE.far0 * (1 - (1 - GRADE.farK) * k);
+  }
   GRADE.k0 = k;
 }
 // ============================================================================================
@@ -30553,9 +30834,13 @@ function godAlarm(dt) {
 const godFarm = (u, v, h) => { const A = FARM.at; if (!A) return null; const C = Math.cos(A.th), S = Math.sin(A.th);
   return [A.x + u * C + v * S, null, A.z - u * S + v * C, h == null ? null : A.th + h]; };
 const godMid = F => godFarm((F.u[0] + F.u[1]) / 2, F.v[0] - 2, 0);
+// a spot on the farmland by its own (a, b), looking back at the city (m306)
+const godFL = H => { const [x, z] = flWorld(H.a, H.b); return [x, null, z, Math.atan2(-FARMLAND.ub[0], -FARMLAND.ub[1])]; };
 // THE PLACES. One line each: where it is, what world, and a function that answers [x, y|null, z, heading|null].
 const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
+  { id: 'overlook', world: 'tkit', name: 'GRISTLE FARM · the west hill: fields, and the city on the horizon', at: () => FARMLAND.live && godFL(FARMLAND.HILLS[0]) },
+  { id: 'channel',  world: 'tkit', name: 'GRISTLE FARM · the channel bridge, the farm end', at: () => BRIDGE.farmEnd && [BRIDGE.farmEnd[0], null, BRIDGE.farmEnd[1], FARMLAND.live ? Math.atan2(-FARMLAND.ub[0], -FARMLAND.ub[1]) : null] },
   { id: 'farmyard', world: 'tkit', name: 'GRISTLE FARM · the farmyard, at the barn doors', at: () => godFarm(-6, -12.5, 0) },
   { id: 'hayloft',  world: 'tkit', name: 'GRISTLE FARM · up in the hayloft', at: () => FARM.loft && [FARM.loft[0], FARM.loft[1], FARM.loft[2], null] },
   { id: 'crash',    world: 'tkit', name: 'GRISTLE FARM · the crash site', at: () => CRASH.at && [CRASH.at.you[0], null, CRASH.at.you[1], Math.atan2(CRASH.at.x - CRASH.at.you[0], CRASH.at.z - CRASH.at.you[1])] },
@@ -32539,6 +32824,7 @@ function frameBody() {
       (map.regs.length ? ' RG' + map.regs.filter(mapSeen).length + '/' + map.regs.length + 'b' + MAP.n : '') +
       (PORTAL.n ? ' PT' + PORTALS.filter(q => q.on).length + '/' + PORTAL.n + (PORTAL.trips ? '>' + PORTAL.trips : '') : '') +
       // FARM: boxes / roof triangles kept (m288) -- no token is no room on the ring or not the kit city
+      (FARMLAND.live ? ' FL' + FARMLAND.chunks + '/' + FARMLAND.tris : '') +
       (FARM.n ? ' FARM' + FARM.n + '/' + FARM.tris + (GRADE.k > .01 ? ' gold' + GRADE.k.toFixed(2) : '') : '') +
       (HROW.n ? ' HR' + HROW.n + 't' + HROW.trees + 'g' + HROW.gates : '') + (FHOUSE.n ? ' FH' + FHOUSE.n : '') +
       // CR: the crash site's colliders, and `*` when this boot woke at it (m289)
@@ -32880,6 +33166,8 @@ async function init() {
     await cityDetile();
     // THE ISLAND (m264): last, because it measures the finished collider and appends to it
     try { buildIsle(); } catch (e) { ISLE.live = 0; note('ISLE FAIL'); console.warn('[melee] island', e); }
+    // GRISTLE FARM'S OWN LAND (m306): across the channel, after the island it measures its place off
+    try { buildFarmland(); } catch (e) { FARMLAND.live = 0; note('FARMLAND FAIL'); console.warn('[melee] farmland', e); }
     // THE FARM (m288): on the island's ring, so after the island -- and in a try, a yard is not worth a boot
     try { buildFarm(); } catch (e) { note('FARM FAIL'); console.warn('[melee] farm', e); }
     // ITS SILHOUETTE AND CLUTTER (m299): before the cows and the plants, so both see these colliders
@@ -33102,7 +33390,7 @@ window.melee = window.mel = { fireSheet, BURN, burnStart,
   // THE FARM'S PROPS (m299): `mel.FPROPS` -- `wind` (shared direction), `spin`
   FPROPS,
   // THE GROUND PAINT (m301): `mel.GPAINT` -- the patch table and the lane track
-  GPAINT, HROW, FHOUSE, FROAD,
+  GPAINT, HROW, FHOUSE, FROAD, FARMLAND,
   FARM, farm: () => { const F = FARM.at; if (!F) return 'no farm in this world'; const p = player; p.pos.set(F.x - Math.sin(F.th) * 12, 2, F.z - Math.cos(F.th) * 12); p.vel.set(0, 0, 0); p.heading = p.faceH = F.th; return 'farm at ' + F.x.toFixed(0) + ',' + F.z.toFixed(0); },
   PORTAL, PORTALS, portal: () => portalOpen(),
   // THE DEMOS, ON PURPOSE ONLY (m292, STEER 1): round where you stand, for testing the systems
