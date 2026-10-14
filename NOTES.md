@@ -7,6 +7,24 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **RUMOURS: HEARD AS A SCRIPT'S LAST LINE, A ROUGH RING ON THE MAP, FOUND BY GOING THERE (m331, B1f-2, `RUMOURS`,
+  `rumourHear`, `rumourStep`, `rumourCircle`).** GAME_DESIGN: "vague ... a separate list with no marker, or at most a
+  rough circle on the map ... often how the best stuff is found". A rumour is a row: `title` (the card and the list),
+  `gist` (what you remember), `say` (the line somebody tells it in), `at` (the place, read LIVE -- the crop circle off
+  `FPLAN.crash.circle`, the trestle's farm end, the ford), `r` (how close counts as found) and an optional `circle`.
+  - **Heard**: a mark's `rumour` APPENDS `say` to that person's lines (a copy -- a `TALKS` script is shared) and finishing
+    the conversation calls `rumourHear` -> `rm:<id>` = who said it, a RUMOUR card. The farmhands carry three: Dale (the
+    wheat) the ring in the wheat, Wendell (the west hill) the old rail bridge, Earl (the plough) the cows' way over
+    the water. `hillman` is in the table for B1f-4's neighbour to give out.
+  - **Listed**: the task list's RUMOURS section, the gist in quotes and who said it; found ones under DONE. Not
+    followable -- no beam, no waypoint, no objective line. That is the whole difference from a task.
+  - **On the map**: a dashed sky ring and a '?' on the FULL map only, its centre pushed .45 r off the true spot in a
+    direction fixed per rumour (a hash of the id) -- so it says "round here", and the same thing every time you open it.
+  - **Found**: twice a second (`rumourStep`, after `questStep`), within `r` of the place -> `rmdone:<id>`, RUMOUR FOUND,
+    a task's worth of juice. Chip `RM<heard>/<found>`. GOD -> HEAR EVERY RUMOUR.
+  **Checked headless** (the probe again: a throw in a per-frame step freezes the game): all four listed with "(GOD)",
+  the full map opened with the rings, and GOD `stones` -> RUMOUR FOUND / A WAY OVER THE WATER, `rmdone:ford` saved.
+
 - **TASKS: SEVERAL AT ONCE, ONE FOLLOWED, A CARD WHEN ONE ARRIVES, AND THE SAME METRES IN THREE PLACES (m330, B1f-1,
   `questAvail`, `questTrack`, `tasksOpen`, `questWpt`, `#tasks`, `#wpt`).** GAME_DESIGN "Direction and discovery": a task
   comes from someone, a card pops up ("New task: ..."), it goes in your list, and you get a map marker and a waypoint

@@ -215,7 +215,7 @@ differ" table there, so no region feels like the last one.
     farm shop gives you the bridge task (marker + waypoint) and a rumour about the man at the top of
     the hill (no marker).
   - [x] m330 **B1f-1** the "New task" card, the task list (tap the objective), several tasks with one followed, the waypoint's distance in the world, and the same metres on the map.
-  - [ ] **B1f-2** rumours: a separate list, no marker (or a rough circle), resolved when you find the thing.
+  - [x] m331 **B1f-2** rumours: a separate list, no marker (or a rough circle), resolved when you find the thing.
   - [ ] **B1f-3** who talks to whom: forms a speaker talks to, forms it brushes off (a short line), the alien makes it flee; a task can need a form to start.
   - [ ] **B1f-4** Chapter 0 uses it: the farmer's family brush off the alien; as the farmer, the neighbour at the farm shop gives the bridge task and the hill rumour.
 - [ ] **B2 Chapter 0 script.** Crash → find Clancy → the farmer sees you and panics → knock him
@@ -635,3 +635,13 @@ differ" table there, so no region feels like the last one.
     an arrow when it's off screen. The full map shows the same metres by its gold dot.
   - No real tasks exist until Chapter 0 (B2). To try it: GOD → THE STAND-IN TASKS, then tap the
     objective.
+
+- **m331 (B1f-2):** rumours. Three farmhands now end their chat with one:
+  - Dale in the wheat: a ring in the wheat.
+  - Wendell on the west hill: the old rail bridge.
+  - Earl by the plough: the cows' way over the water.
+
+  A rumour goes in the task list under RUMOURS, with who told you, and shows as a rough dashed circle
+  on the full map (never a marker or a waypoint). Getting to the place gives "RUMOUR FOUND". The
+  fourth, "the man on the hill", is for the farm-shop neighbour in B1f-4. GOD → HEAR EVERY RUMOUR
+  fills the list for a look.
