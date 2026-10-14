@@ -45,7 +45,8 @@ What to build (several builds; ship each step, never wait):
    — done m312.**
 5. **Life**: herds of cows in the pastures, a tractor working a field and one parked, farmhands in the
    fields, a pickup on the track. Split: **5a herds in the pastures — done m313.** **5b a tractor working a
-   field (the parked one is the barnyard's) and a pickup on the tracks — done m314.** 5c farmhands in the fields.
+   field (the parked one is the barnyard's) and a pickup on the tracks — done m314.** **5c farmhands in the
+   fields — done m315.**
 6. **The transition into town, never a line**: dirt track -> country road -> past the neighbour's farm
    -> an edge-of-town strip on the farm's side of the river (gas station, trailer park, a few houses with
    yards, billboards, power poles, a fruit stand) -> the bridge checkpoint -> across it the city starts
@@ -518,4 +519,9 @@ differ" table there, so no region feels like the last one.
   its furrows, dust behind it. A blue pickup with a bale in the back drives from the barn door out
   along the sunken lane and the bridge road to the bridge, waits, and comes back. Both stop if you
   stand in front of them. No engine sound yet; I left that for later rather than fake one badly.
+- **m315 (farm rebuild, step 5c):** four farmhands now work the land, Dale in the wheat by the bridge
+  road, Wendell on the west hill's hay, Mags in the orchard and Earl by the ploughed field, plus
+  Farmer Gristle at his barn doors. Each has a name and a few lines. They're stand-in bodies
+  (hobo for the hands, the skinny hick for the farmer, as CHARACTERS.md says) until your models
+  land. That finishes step 5.
 
