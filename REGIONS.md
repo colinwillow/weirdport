@@ -235,21 +235,47 @@ below. Every form and every tech is needed one last time.
 
 ## The connective tissue
 
-Getting from one region to the next is an EVENT, never a loading screen. Each transition has its own
-travel moment, and once crossed it becomes a portal so you can return as the alien.
+**Regions are separate places joined by many clever, irregular ways between them.** Each region keeps
+its own identity (its own shape, light and people, and a clear moment where you feel you've arrived),
+but the land BETWEEN regions is a place in its own right, not a gap and not a line. The goal is a
+world that feels like one connected whole while every region still feels like somewhere else.
 
-| From → to | The journey |
-|---|---|
-| Farm → Old Town | the river bridge checkpoint, crossed on foot in disguise |
-| Old Town → The Pearl | the footbridge over the rail cut, which you rebuild |
-| downtown ↔ downtown | the Underneath's tunnels, surfacing in cellars |
-| Old Town → Waterfront | the ferry across the river |
-| Old Town → Hollow Creek | the freight train out of the rail cut |
-| hill → Dump Tower | the aerial tram |
-| Hollow Creek → The Gorge | down the log flume and the river rapids |
-| The Gorge → River Islands | the glider off the lookout |
-| River Islands → Mothership | the thermal up to the tether |
-| everywhere | portals, once activated |
+**The rules:**
+- **Every pair of neighbouring regions has several ways between them, never just one.** Usually three
+  or more, of different kinds: a main road, a back way, a hidden or form-locked way, and often one
+  over the top and one underneath.
+- **Mix the kinds.** Water (channels, creeks, culverts, a ford, a ferry, a canal towpath), crossings
+  (road bridges, footbridges, rail trestles, a fallen log, rope bridges), levels (underpasses,
+  overpasses, cuttings, tunnels, storm drains, stairs and ramps up a hillside), and open ground (fields,
+  tree lines, backyards and gaps in fences, hillside paths, a railway line you walk along).
+- **Irregular, never a grid.** Routes bend, follow creeks and ridges, cross each other, pass over and
+  under one another (a creek under a road under a rail line), and branch. A route is something you
+  can get a little lost on.
+- **Every route has something on it.** A culvert with a homeless camp, a trestle with graffiti, a ford
+  with cows drinking, an overpass with a billboard you can climb, a yard with a dog. Travel is never
+  empty.
+- **Routes match forms.** The main road needs a disguise (the checkpoint); the culvert suits the hobo;
+  the rooftop line suits the glider; the creek suits the scuba diver; Clancy finds the gap in the
+  fence. Early on most are blocked or hidden, so the intended route teaches; later they open up and
+  the world gets looser.
+- **The threshold is a moment, not a wall.** Where a region begins there's a landmark you notice
+  (a gateway, a sign, the first neon, a change of light), but the ground on both sides blends.
+
+Getting from one region to the next is an EVENT, never a loading screen, and once crossed it becomes
+a portal so you can return as the alien. The main route for each border, plus examples of the others:
+
+| From → to | Main route | Other ways (examples) |
+|---|---|---|
+| Farm → Old Town | the river bridge checkpoint, crossed on foot in disguise | the creek culvert under the road; the old rail trestle; a shallow ford downstream; through backyards on the town edge |
+| Old Town → The Pearl | the footbridge over the rail cut, which you rebuild | under the overpass; along the rail cut; across rooftops |
+| downtown ↔ downtown | the Underneath's tunnels, surfacing in cellars | storm drains; fire escapes and skybridges; alleys |
+| Old Town → Waterfront | the ferry across the river | a swing bridge; the canal towpath; a drainage outfall |
+| Old Town → Hollow Creek | the freight train out of the rail cut | the highway shoulder; a hillside trail through the woods |
+| hill → Dump Tower | the aerial tram | the service road; the executive lift from the parking levels |
+| Hollow Creek → The Gorge | down the log flume and the river rapids | the logging road; a cliff path |
+| The Gorge → River Islands | the glider off the lookout | swimming the channel (scuba); a rope bridge between islands |
+| River Islands → Mothership | the thermal up to the tether | — |
+| everywhere | portals, once activated | |
 
 ## What is not decided
 
