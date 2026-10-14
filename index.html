@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m336</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m337</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m336</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m337</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm336';
+const BUILD = 'm337';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -4010,6 +4010,10 @@ const CIVILS = [
   MOUSSA,                                                           // m252, his own clips
   // m242: Colin's clips, the biker's hit reactions.
   JACKK,
+  // m337: THE CREW -- the worker's model as a plain civilian (his clips, the biker's for what he lacks), for the people
+  // a table puts at the building site. `WORKER` is the repair AI with the hammer and spawns only from its own list, so
+  // an npc mark of 'contruction_worker' resolves to THIS kind (`mkrKind` searches CIVILS; WORKER is not in its list).
+  civil('models/characters/contruction_worker.glb', []),
 ];
 
 // **EVERY BODY THAT WALKS GETS THE SLIDE, THE CLEAR SPOT AND THE GIVE-UP (m145).** *"All the
@@ -30243,6 +30247,119 @@ function buildCarts() {
   C.godAt = [F.wx(0, 9), F.wz(0, 9), th + Math.PI];
   return C.n;
 }
+// ============================================================================================
+// THE BUILDING SITE (m337, ROADMAP B3-3, `OTSITE`, `buildSite`)
+// ============================================================================================
+// REGIONS' Old Town: "building sites wrapped in scaffolding" -- and the crews who are being turned into Skinsuits, which
+// is Chapter 1. On the third lot of m335's sweep, (65.5, 78.7), 10.5 m clear: a three-storey concrete FRAME half built
+// (a slab, columns, two floors with a hole in each, bare beams on top, brick infill going up on the ground floor) and
+// round it the SCAFFOLD -- standards, ledgers, braces and a plank deck at every lift, WALKABLE, with a LADDER between
+// each (climbs in `KCLIMB`, the farm's `farmClimb`), so the site is somewhere you go UP: from the top lift Old Town is
+// under you. A TOWER CRANE in the corner, far taller than anything near it (the exaggerated-scale rule), its hook load
+// hanging; a hoarding fence with the gate onto the street, the site office, a mixer, a skip, stacks of block and pipe,
+// cones and a sign. Three of the crew -- and the foreman, who is not right.
+const OTSITE = {
+  // m337: (-55.5, -66.3), 9 m clear with NOTHING OVERHEAD -- the first pick (65.5, 78.7) had his COSMIC FUEL station on it
+  on: 1, n: 0, at: [-55.5, -66.3], face: [0, 0], why: "a clear lot in Old Town's south-west quarter: a block going up, nobody's sure who for",
+  W: 6, D: 4.5, lift: 3, lifts: 3,     // the frame, m; the scaffold's lift height and how many
+  PEOPLE: [
+    { id: 'site_sal', off: [-4.6, 6.0], kind: 'contruction_worker', name: 'Sal', talk: 'contruction_worker', talks: ['worker'], why: 'at the site gate, on his break: the one who says it out loud' },
+    { id: 'site_dee', off: [2.6, 4.4], kind: 'contruction_worker', name: 'Dee', talks: ['worker'], why: 'by the mixer, keeping her head down',
+      lines: "Hard hat, mate. Where's your -- oh. You're one of us. Sorry. Long week.|Half the crew stopped taking breaks. They just... stand there at lunch. Staring.|If Briggs asks, I never said anything. About anything." },
+    { id: 'foreman_briggs', off: [6.0, .4], kind: 'contruction_worker', name: 'Foreman Briggs', talks: ['worker'], alien: 'brush', why: "at the site office door: the foreman, who doesn't eat and doesn't blink (B5's boss)",
+      lines: "Back to work.|Lunch is a habit. Habits can be broken.|You look... tired. Come and see me after your shift. Alone.",
+      brushAlien: "Hm. Interesting. Very interesting. Run along now." },
+  ],
+};
+function buildSite() {
+  const S = OTSITE; if (!S.on || !ISLE.live || !inTK()) return 0;
+  const [cx, cz] = S.at, th = Math.atan2(S.face[0] - cx, S.face[1] - cz);
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .85, metalness: 0 }), o || {});
+  const MAT = { conc: M(0xa9a59c), brick: M(0x9c4a36), steel: M(0x8a949a, { metalness: .5, roughness: .45 }), plank: M(0xb88a52),
+    yellow: M(0xf2c12e), orange: M(0xff6a1a), hoard: M(0x2f5a8a), white: M(0xeeeeea), dark: M(0x2a2826), green: M(0x3f7a3a) };
+  const F = farmFrame(cx, cz, th, MAT, 'site'), { bx, geo } = F;
+  // m337: STREET-LEVEL ground only -- `F.gnd` takes the highest floor under 9 m, and one of the slab's samples found
+  // something tall nearby: the whole site went up on a 9 m plinth. A lot is never more than 2 m up.
+  const gnd = (u, v) => { const y = groundAt(F.wx(u, v), F.wz(u, v), 1, 1); return y > -50 ? y : 0; };
+  let seed = 337; const rr = () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+  const g0 = Math.max(gnd(0, 0), gnd(-S.W / 2, -S.D / 2), gnd(S.W / 2, S.D / 2)) + .15, W2 = S.W / 2, D2 = S.D / 2, L = S.lift;
+  // ---- the frame: a slab, columns, floors with a stair hole, bare beams on top, brick going up on the ground floor
+  bx(0, 0, g0 - .5, g0, S.W + .6, S.D + .6, 'conc');
+  for (const u of [-W2, 0, W2]) for (const v of [-D2, D2]) bx(u, v, g0, g0 + L * S.lifts, .4, .4, 'conc');
+  for (let k = 1; k < S.lifts; k++) {
+    const y = g0 + k * L;
+    bx(-.9, 0, y - .25, y, S.W - 1.8 + .4, S.D + .4, 'conc');                // the floor, a hole at the +u end
+    bx(W2 - .45, -D2 + .9, y - .25, y, .9, 1.8 + .4, 'conc');
+  }
+  for (const v of [-D2, D2]) bx(0, v, g0 + L * S.lifts - .3, g0 + L * S.lifts, S.W + .4, .3, 'steel');     // top beams
+  for (const u of [-W2, W2]) bx(u, 0, g0 + L * S.lifts - .3, g0 + L * S.lifts, .3, S.D + .4, 'steel');
+  for (let i = 0; i < 5; i++) { const u = -W2 + .6 + i * 1.2, h = 1.1 + (i % 3) * .5 + rr() * .3; bx(u, -D2, g0, g0 + h, 1.2, .3, 'brick'); }   // infill, going up
+  // ---- the scaffold, a metre out all round: standards, ledgers and a walkable plank deck at every lift
+  const so = 1.0, su = W2 + so, sv = D2 + so;
+  for (let u = -su; u <= su + .01; u += su / 2) for (const v of [-sv, sv]) bx(u, v, g0 - .2, g0 + L * S.lifts + 1.1, .08, .08, 'steel', 0, true);
+  for (let v = -sv + sv / 2; v < sv - .01; v += sv / 2) for (const u of [-su, su]) bx(u, v, g0 - .2, g0 + L * S.lifts + 1.1, .08, .08, 'steel', 0, true);
+  for (let k = 1; k <= S.lifts; k++) {
+    const y = g0 + k * L;
+    // the deck: a ring of planks round the frame, 1.1 m wide, walkable; the guard rails at 1.0 and .5 on the outside
+    bx(0, -sv, y - .08, y, 2 * su + 1.1, 1.1, 'plank'); bx(0, sv, y - .08, y, 2 * su + 1.1, 1.1, 'plank');
+    bx(-su, 0, y - .08, y, 1.1, 2 * sv - 1.1, 'plank'); bx(su, 0, y - .08, y, 1.1, 2 * sv - 1.1, 'plank');
+    for (const [u, v, w, d] of [[0, -sv - .5, 2 * su + 1.1, .05], [0, sv + .5, 2 * su + 1.1, .05], [-su - .5, 0, .05, 2 * sv + 1.1], [su + .5, 0, .05, 2 * sv + 1.1]]) {
+      bx(u, v, y + .95, y + 1.0, w, d, 'steel', 0, false); bx(u, v, y + .48, y + .52, w, d, 'steel', 0, false);
+      bx(u, v, y, y + 1.0, w, d + .02, 'steel', 0, true); F.parts.steel.pop();
+    }
+    // a brace across each face of the lift below
+    for (const v of [-sv - .02, sv + .02]) geo(new THREE.BoxGeometry(Math.hypot(su, L), .06, .06), 'steel', -su / 2, y - L / 2, v, 0, 0, Math.atan2(L, su) * (k % 2 ? 1 : -1));
+  }
+  // ladders up the -u end, one per lift, alternating sides of the deck so each lands clear of the next; the deck at
+  // that spot has a gap the ladder comes up through (the rails stay). Climb volumes in `KCLIMB` (`farmClimb`)
+  S.lad = [];
+  for (let k = 0; k < S.lifts; k++) {
+    const v = (k % 2 ? 1 : -1) * (sv - 1.8), u = -su - .5, y0 = g0 + k * L, y1 = g0 + (k + 1) * L;
+    for (let r = 0; r < Math.round(L / .3); r++) bx(u, v, y0 + .25 + r * .3, y0 + .29 + r * .3, .05, .5, 'steel', 0, false);
+    for (const s2 of [-1, 1]) bx(u, v + s2 * .27, y0, y1 + 1.0, .05, .05, 'steel', 0, false);
+    // its climb: the frame's -u side, so it is a ladder on a wall that faces -u. `farmClimb` takes the wall along the
+    // frame's u axis -- this one runs along v -- so it is built as an AABB-less oriented box by hand: u along v
+    const cxw = F.wx(u - .25, v), czw = F.wz(u - .25, v), ax = F.S, az = F.C;     // the frame's v axis in the world: (S, C)
+    const Lc = kitClimbAdd({ minx: cxw - .6, maxx: cxw + .6, miny: y0, maxy: y1, minz: czw - .6, maxz: czw + .6, cx: cxw, cz: czw, hx: .3, hz: .25, cs: ax, sn: az }, 'site_ladder_' + k, y1);
+    Lc.mark = { x: F.wx(u + 1.0, v), y: y1 + .02, z: F.wz(u + 1.0, v) };
+    Lc.fg = { x: -F.C, z: F.S };                                                   // its front: the frame's -u in the world
+    S.lad.push(Lc);
+  }
+  // ---- the tower crane, in the +u,+v corner: a lattice mast far above everything, the jib over the frame, its load
+  { const mu = su + 1.8, mv = sv + 1.2, gm = gnd(mu, mv), H = 26, jib = 17, cj = 6;
+    bx(mu, mv, gm - .3, gm + .6, 2.6, 2.6, 'conc');
+    for (const [a, b] of [[-.7, -.7], [.7, -.7], [-.7, .7], [.7, .7]]) bx(mu + a, mv + b, gm + .6, gm + H, .14, .14, 'yellow', 0, false);
+    for (let y = gm + 1.6; y < gm + H; y += 2) { for (const [a, b, w, d] of [[0, -.7, 1.4, .08], [0, .7, 1.4, .08], [-.7, 0, .08, 1.4], [.7, 0, .08, 1.4]]) bx(mu + a, mv + b, y, y + .08, w, d, 'yellow', 0, false);
+      geo(new THREE.BoxGeometry(1.98, .06, .06), 'yellow', mu, y + 1, mv - .7, 0, 0, .78); }
+    bx(mu, mv, gm, gm + H, 1.5, 1.5, 'yellow', 0, true); F.parts.yellow.pop();          // the mast's collider only
+    const jy = gm + H + .4, ja = Math.atan2(-mv, -mu);                                  // the jib points back over the frame
+    geo(new THREE.BoxGeometry(jib + cj, .9, .9), 'yellow', mu + Math.cos(ja) * (jib - cj) / 2, jy, mv + Math.sin(ja) * (jib - cj) / 2, -ja);
+    geo(new THREE.BoxGeometry(1.8, 1.6, 1.6), 'white', mu, jy + .1, mv, -ja);                 // the cab
+    geo(new THREE.BoxGeometry(2.2, 1.4, 1.4), 'conc', mu - Math.cos(ja) * (cj - 1), jy - .6, mv - Math.sin(ja) * (cj - 1), -ja);   // counterweights
+    geo(new THREE.BoxGeometry(.5, 3.2, .5), 'yellow', mu, jy + 2, mv);                      // the A-frame
+    const hu = mu + Math.cos(ja) * (jib * .7), hv = mv + Math.sin(ja) * (jib * .7), hy = g0 + L * S.lifts + 5.5;
+    bx(hu, hv, hy, jy - .45, .03, .03, 'dark', 0, false);                                   // the hook line, and its load
+    bx(hu, hv, hy - .9, hy, 1.2, 1.0, 'plank', .4, false); for (let i = 0; i < 3; i++) bx(hu, hv, hy - .8 + i * .22, hy - .62 + i * .22, 1.0, .8, 'brick', .4, false); }
+  // ---- the hoarding round the site, a gate onto the street (+v), the office, the mixer, the skip, the stacks
+  { const fu = su + 3.2, fv = sv + 2.2;          // inside the lot's measured 9 m clear: the corners are at ~9.0
+    for (let u = -fu; u < fu - .01; u += 2.4) for (const v of [-fv]) { const g = gnd(u + 1.2, v); bx(u + 1.2, v, g - .1, g + 2.2, 2.4, .1, 'hoard'); }
+    for (const sd of [-1, 1]) for (let v = -fv; v < fv - .01; v += 2.4) { const g = gnd(sd * fu, v + 1.2); bx(sd * fu, v + 1.2, g - .1, g + 2.2, .1, 2.4, 'hoard'); }
+    for (let u = -fu; u < fu - .01; u += 2.4) { if (Math.abs(u + 1.2) < 2.6) continue; const g = gnd(u + 1.2, fv); bx(u + 1.2, fv, g - .1, g + 2.2, 2.4, .1, 'hoard'); }   // the gate gap
+    for (const s2 of [-1, 1]) { const g = gnd(s2 * 2.5, fv); bx(s2 * 2.5, fv, g - .1, g + 2.6, .2, .2, 'orange'); }
+    const g = gnd(0, fv + .1); bx(0, fv + .12, g + 2.3, g + 2.9, 3.4, .06, 'yellow', 0, false);                               // the sign over the gate
+    S.gateAt = [F.wx(0, fv - 1.6), gnd(0, fv - 1.6), F.wz(0, fv - 1.6), th + Math.PI]; }     // just inside the gate, at street level
+  { const ou = su + 2.0, ov = -sv + .3, g = gnd(ou, ov); bx(ou, ov, g, g + 2.6, 2.4, 5.0, 'white'); bx(ou, ov, g + 2.6, g + 2.75, 2.6, 5.2, 'dark', 0, false);
+    bx(ou - 1.22, ov + 1.0, g + 1.0, g + 2.0, .04, 1.2, 'dark', 0, false); }                                             // the site office, its window
+  { const u = 3.0, v = sv + 1.4, g = gnd(u, v); geo(new THREE.CylinderGeometry(.6, .45, 1.1, 12).rotateZ(.9), 'orange', u, g + 1.0, v, .5); bx(u, v, g, g + .6, 1.4, .9, 'steel', .5); }   // the mixer
+  { const u = -su - 2.2, v = sv + .6, g = gnd(u, v); bx(u, v, g, g + 1.3, 2.0, 3.2, 'yellow', .1); }                                                // the skip
+  for (const [u, v, h, m2] of [[-su - 2.4, -sv + .6, .9, 'conc'], [-su - 2.4, -sv + 1.9, .6, 'conc'], [su + 1.4, sv + 1.6, .5, 'brick'], [-1.4, sv + 1.5, .7, 'brick']]) { const g = gnd(u, v); bx(u, v, g - .05, g + h, 1.1, 1.0, m2, rr() * .4); }
+  for (let i = 0; i < 5; i++) { const g = gnd(-su - 2.4, -sv + 3.4 + i * .12); geo(new THREE.CylinderGeometry(.12, .12, 2.6, 8).rotateZ(Math.PI / 2), 'steel', -su - 2.4 + (i % 2) * .24, g + .12 + Math.floor(i / 2) * .22, -sv + 3.4 + i * .1, Math.PI / 2); }
+  for (const [u, v] of [[-1.8, sv + 1.6], [1.9, sv + 1.7], [4.6, sv + 1.6]]) { const g = gnd(u, v); geo(new THREE.ConeGeometry(.18, .55, 10), 'orange', u, g + .28, v); }
+  F.commit(); S.n = 1;
+  for (const P of S.PEOPLE) { const [u, v] = P.off, x = F.wx(u, v), z = F.wz(u, v); peopleMark(P.id, x, z, th + Math.PI + (rr() - .5), P, gnd(u, v), 'SITE', 'worker'); }
+  S.topAt = [F.wx(.9, -sv), g0 + L * S.lifts + .05, F.wz(.9, -sv)];       // between two standards, on the planks
+  return S.n;
+}
 // THE TELL: a hat on his head bone, an antenna through its crown. Sized in METRES and divided by the bone's world scale
 // (the armature is .01 and the body is scaled again), placed in the bone's own frame (a Mixamo bone's +Y runs along it,
 // so up the head). `cartStep` wobbles the antenna and pulses its tip.
@@ -33252,6 +33369,8 @@ const godFL = H => { const [x, z] = flWorld(H.a, H.b); return [x, null, z, Math.
 // THE PLACES. One line each: where it is, what world, and a function that answers [x, y|null, z, heading|null].
 const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
+  { id: 'site',     world: 'tkit', name: 'OLD TOWN · the building site (Sal, Dee, Foreman Briggs)', at: () => OTSITE.gateAt && [OTSITE.gateAt[0], OTSITE.gateAt[1], OTSITE.gateAt[2], OTSITE.gateAt[3]] },
+  { id: 'sitetop',  world: 'tkit', name: 'OLD TOWN · the top lift of the scaffold', at: () => OTSITE.topAt && [OTSITE.topAt[0], OTSITE.topAt[1], OTSITE.topAt[2], null] },
   { id: 'carts',    world: 'tkit', name: 'OLD TOWN · the food-cart pod (Chef Norrie: the antenna under the hat)', at: () => OTCARTS.godAt && [OTCARTS.godAt[0], null, OTCARTS.godAt[1], OTCARTS.godAt[2]] },
   { id: 'camp',     world: 'tkit', name: 'OLD TOWN · the camp at the west edge (Dusty, Pockets, Mother Agnes)', at: () => OTCAMP.godAt && [OTCAMP.godAt[0], null, OTCAMP.godAt[1], OTCAMP.godAt[2]] },
   { id: 'overlook', world: 'tkit', name: 'GRISTLE FARM · the west hill: fields, and the city on the horizon', at: () => FARMLAND.live && godFL(FARMLAND.HILLS[0]) },
@@ -35663,6 +35782,7 @@ async function init() {
     try { mapRegionsTkit(); } catch (e) { note('REGIONS FAIL'); console.warn('[melee] regions', e); }
     try { buildCamp(); } catch (e) { note('CAMP FAIL'); console.warn('[melee] camp', e); }
     try { buildCarts(); } catch (e) { note('CARTS FAIL'); console.warn('[melee] carts', e); }
+    try { buildSite(); } catch (e) { note('SITE FAIL'); console.warn('[melee] site', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)
     try { buildTownEdge(); } catch (e) { note('TOWN EDGE FAIL'); console.warn('[melee] town edge', e); }
     // THE CITY STARTS THIN (m317): the island's ring by the bridge and all the way round
@@ -35837,7 +35957,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { fireSheet, BURN, burnStart, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { fireSheet, BURN, burnStart, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

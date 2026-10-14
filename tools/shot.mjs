@@ -62,6 +62,9 @@ const SHOTS = {
   carts: { place: 'carts', settle: 5, why: 'the food-cart pod and Chef Norrie',
     cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
       return [p.x - fx * 3, p.y + 3.2, p.z - fz * 3, p.x + fx * 9, p.y + 1, p.z + fz * 9]; })()` },
+  site: { place: 'site', settle: 5, why: 'the building site: the frame, the scaffold, the crane',
+    cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
+      return [p.x - fx * 12, p.y + 6, p.z - fz * 12, p.x + fx * 6, p.y + 5, p.z + fz * 6]; })()` },
   wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
       return [C.x + sx * 16 - dx / L * 6, p.y + 7, C.z + sz * 16 - dz / L * 6, C.x, p.y + .5, C.z]; })()` },

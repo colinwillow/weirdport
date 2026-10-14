@@ -225,7 +225,7 @@ differ" table there, so no region feels like the last one.
   alien (the tell under the hat), a building site. Ambient life placed by role.
   - [x] m335 **B3-1** the map's real regions (Old Town, Gristle Farm) and the homeless camp.
   - [x] m336 **B3-2** the food-cart pod in a lot, with the hidden good alien at one cart (the antenna under the hat).
-  - [ ] **B3-3** a building site wrapped in scaffolding, with its crew.
+  - [x] m337 **B3-3** a building site wrapped in scaffolding, with its crew.
   - [ ] **B3-4** ambient life placed by role (cops on the beat, people on the pavements, the crews' comings and goings).
 - [ ] **B4 Chapter 1 quests.** The good alien points you at the building site; workers are being
   turned into Skinsuits; get the worker form; repair the broken bridge (gate) to the next district.
@@ -703,3 +703,13 @@ differ" table there, so no region feels like the last one.
     he admits it, and he points you at the building site (gives juice the first time).
   - **Bodies:** Norrie, Lupe and Minh use the hipster, activist and hippie stand-ins, per
     CHARACTERS.md.
+
+- **m337 (B3-3):** the building site is on a clear lot in Old Town's south-west quarter. It's a
+  three-storey concrete frame in scaffolding, with plank decks at every lift you can walk and
+  ladders between them up to 9 m. A tower crane stands over it, and there's hoarding, the site
+  office, a mixer and a skip. Sal, Dee and Foreman Briggs work there; Briggs is clearly not right
+  (B5's boss).
+  My first pick of lot had your COSMIC FUEL gas station on it: its walls aren't in the collision
+  boxes, so my lot measurement missed it. I fixed the measurement and moved the site. The
+  construction workers there use a new plain-civilian copy of the worker model, so they stay put
+  rather than going off to repair walls.

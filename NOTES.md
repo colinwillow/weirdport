@@ -7,6 +7,40 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **A LOT SWEEP MUST LOOK FOR A ROOF OVERHEAD: THE FIRST SITE WENT UP ON TOP OF HIS GAS STATION (m337).** m335's sweep scored lots by
+  ground HEIGHT and the clear radius to the nearest BOX. His "COSMIC FUEL" station on (65.5, 78.7) has no boxes there --
+  its walls are triangles (which `triAdd` throws away as "not a floor", m166) and its canopy and roof are floors -- so the
+  lot read 10.5 m clear, and the first build put the scaffold, the frame and the hoarding round a gas station (the shot
+  showed it; `places` only said the GOD spot was on something 4.9 m up). And `F.gnd` (the highest floor under 9 m) took
+  the canopy for the ground: the frame stood on a 9 m plinth. **Two rules now**: a city builder reads the ground from
+  street level (`groundAt(x, z, 1, 1)`), and the sweep (v2) rejects any point with a floor MORE THAN .8 m OVER the
+  ground anywhere in the disc (`groundAt(x, z, 60, 60) - groundAt(x, z, 2, .6)`), boxes tested 6 m tall, 80% lot ground.
+  Re-checked: the camp and carts lots pass (0 roofed samples); the gas station lot has 37. Clear lots, v2:
+  (-85.5, 59.7) 11, (-67.5, 81.7) 11, (-55.5, 69.7) 11, (-55.5, -66.3) 9, (-7.5, 35.7) 7, (66.5, -20.3) 7, (76.5, -72.3) 7,
+  (-69.5, 53.7) 6, (-57.5, 25.7) 6, (-7.5, -62.3) 6, (4.5, -44.3) 6, (30.5, 55.7) 6.
+  **And the harness does not load his kit buildings' file (`KBLD` 0 there)** -- only his collision file -- so anything
+  that exists only in the buildings GLB is invisible to a harness sweep. The shot tool loads everything; look with it.
+
+- **THE BUILDING SITE: A FRAME IN SCAFFOLDING YOU CLIMB, A CRANE OVER IT, THE CREW AND THE FOREMAN (m337, B3-3, `OTSITE`, `buildSite`,
+  CIVILS crew kind).** REGIONS' Old Town: "building sites wrapped in scaffolding". On (-55.5, -66.3), 9 m clear, nothing
+  overhead. A three-storey concrete FRAME (6 x 4.5 m: slab, columns, two floors each with a stair hole, steel beams on
+  top, brick infill going up on the ground floor) and the SCAFFOLD a metre out: standards, guard rails at .5 and 1.0 (with
+  colliders), a brace per face, and a 1.1 m PLANK DECK AT EVERY LIFT, walkable; a LADDER up each lift at the -u end,
+  alternating sides, each a climb in `KCLIMB` with its own front and top-out mark (oriented by hand: its wall runs along
+  the frame's v, which `farmClimb` does not do). The top lift is 9 m up -- Old Town under you. A TOWER CRANE in the corner,
+  26 m, the jib back over the frame with a pallet of block hanging off it, cab, counterweights; hoarding with a gate onto
+  the street and a sign over it; the site office, a mixer, a skip, block, pipes, cones.
+  **The crew is a new CIVILS kind** (the worker model as a plain civilian, the biker's clips for what he lacks): `WORKER` is
+  the repair AI with the hammer, spawned only from its own list, and `mkrKind` searches CIVILS -- so an npc mark of
+  'contruction_worker' now finds a body that stands where it is put. Sal (his m277 script), Dee, and **Foreman Briggs**
+  ("Lunch is a habit. Habits can be broken."; brushes the alien off: "Hm. Interesting. Very interesting.") -- B5's boss.
+  GOD `site` (inside the gate, street level) and `sitetop`. `places`:
+      ok   buildSite
+      ok  CAMP+CARTS Dusty (hobo_01.glb) -82,62 | Pockets (hobo_01.glb) -87,59 | Mother Agnes (hobo_01.glb) -85,67 | Chef Norrie (fat_hipster.glb) -64,83 | Lupe (fat_activist_01.glb) -60,83 | Minh (fat_hippie.glb) -67,81 | Sal (contruction_worker.glb) -55,-59 | Dee (contruction_worker.glb) -51,-65 | Foreman Briggs (contruction_worker.glb) -51,-70 | fire at [-84.5,1.2,60.7] | regions ["oldtown -107,105,-104,107","farm 95,614,-87,479"]
+      ok  site       -> player -53.0,0.4,-63.3 ground 0.20
+      ok  sitetop    -> player -56.9,9.6,-69.4 ground 9.35
+      every tkit GOD place is somewhere
+
 - **THE FOOD-CART POD, AND CHEF NORRIE'S ANTENNA ON HIS HEAD BONE (m336, B3-2, `OTCARTS`, `buildCarts`, `peopleHat`,
   `cartStep`, social `alien: 'talk'` / `talks: ['*']` / `alienLines`).** REGIONS' Old Town: "the food-cart pod in a lot ...
   the hidden good alien at a food cart"; GAME_DESIGN: hidden good aliens in disguise "with a tell (an antenna under a hat)".
