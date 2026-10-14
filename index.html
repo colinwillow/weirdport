@@ -710,10 +710,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m328</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m329</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m328</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m329</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -795,7 +795,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm328';
+const BUILD = 'm329';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -8916,6 +8916,7 @@ function dnaCatch(x, z, r) {
 }
 function fireBolt(chg) {
   const m = muzzleWorld().clone();
+  cowFright(m.x, m.z, COW.fearR);              // m329: a shot sets any herd within earshot running
   const a = aimTarget();
   const dir = new THREE.Vector3(a.p.x - m.x, a.p.y - m.y, a.p.z - m.z);
   if (dir.lengthSq() < 1e-6) dir.set(Math.sin(cam.az), 0, Math.cos(cam.az));
@@ -31650,6 +31651,15 @@ const COW = {
   mooEvery: [8, 24], mooDur: [.9, 1.6], f0: 112, mooG: .3, mooFull: 12, mooOut: 70,
   shyR: 2.8, shyV: 3,       // a man running past this close, faster than this, startles it
   herdP: .7, herdR: 7,      // m326: how often a cow picks a spot near a herd-mate, and how near -- a herd grazes together
+  // m329, THE STAMPEDE (REGIONS' signature system: "cows panic and stampede when frightened, and block lanes")
+  stampede: 5.6,            // m/s flat out -- faster than he jogs, slower than he sprints
+  panicT: [7, 11],          // s a panic lasts, then a walk back toward its field
+  fearR: 34,                // m: a shot fired this close panics a cow
+  alienR: 6,                // m: the alien undisguised this close panics one (a man running past only startles it)
+  spreadR: 14, spreadT: [.15, .7],   // a panicking cow sets off every herd-mate this close, each after this long
+  hitDmg: 7, hitPush: 7, hitUp: 2.2, hitStun: .3,   // a stampeding cow that runs into him knocks him down
+  dustEvery: .3,            // s between dust puffs off a running cow (within 60 m)
+  panics: 0, hits: 0,
   round: .5,                // m326: how far each part's corners are pulled toward a sphere (0 = the old boxes)
   n: 0, moos: 0, startles: 0,
 };
@@ -31775,8 +31785,8 @@ function cowPut(i, base, tx, ty, tz, ry, rx, rz, ox, oy, oz, sx, sy, sz) {
 }
 function cowDraw(c) {
   const b = c.i * COW_PARTS, R = cowK.R, H = cowK.H;
-  const moving = c.st === 'walk' || c.st === 'trot', spd = moving ? (c.st === 'trot' ? COW.trot : c.sp) : 0;
-  const bob = moving ? Math.abs(Math.sin(c.phase)) * (c.st === 'trot' ? .06 : .03) : 0;
+  const run = c.st === 'run', moving = c.st === 'walk' || c.st === 'trot' || run, spd = moving ? (run ? COW.stampede : c.st === 'trot' ? COW.trot : c.sp) : 0;
+  const bob = moving ? Math.abs(Math.sin(c.phase)) * (run ? .11 : c.st === 'trot' ? .06 : .03) : 0;
   R.makeRotationY(c.h); R.setPosition(c.x, c.y + bob, c.z);
   cowPut(b, R, 0, 1.08, 0, 0, 0, 0, 0, 0, 0, .95, .9, 2.0);                      // body
   cowPut(b + 1, R, 0, .58, -.45, 0, 0, 0, 0, 0, 0, .34, .18, .36);                // udder
@@ -31784,7 +31794,7 @@ function cowDraw(c) {
     const [pz, pl, py, ph] = c.pat[k], on = c.pal.pat ? 1 : 0;
     cowPut(b + 2 + k, R, 0, py, pz, 0, 0, 0, 0, 0, 0, .97 * on, ph * on, pl * on);
   }
-  const amp = Math.min(1, spd / .8) * (c.st === 'trot' ? .7 : .45);
+  const amp = Math.min(1, spd / .8) * (run ? .95 : c.st === 'trot' ? .7 : .45);
   const legs = [[.3, .72, 0], [-.3, .72, Math.PI], [.3, -.72, Math.PI], [-.3, -.72, 0]];   // diagonal pairs in step
   for (let k = 0; k < 4; k++) { const [lx, lz, ph] = legs[k];
     cowPut(b + 5 + k, R, lx, .8, lz, 0, Math.sin(c.phase + ph) * amp, 0, 0, -.39, 0, .17, .78, .17); }
@@ -31845,6 +31855,28 @@ function mooAt(x, z, k, dur) {
   COW.moos++;
   return 1;
 }
+// THE STAMPEDE (m329): a cow panics away from (x, z) -- or along heading `h` when a herd-mate set it off -- and every
+// herd-mate within `spreadR` that is not already running follows a moment later, the same way. Running, it ignores its
+// field: it goes through the gaps, out onto the tracks and the lanes, and stands there when the panic is over.
+function cowPanic(c, x, z, h) {
+  if (c.st === 'run') { c.panicT = Math.max(c.panicT, rnd(COW.panicT) * .6); return; }
+  c.st = 'run'; c.panicT = rnd(COW.panicT); c.stuck = 0; c.spook = 0; c.t = 1;
+  c.fleeH = h != null ? h + (Math.random() - .5) * .5 : Math.atan2(c.x - x, c.z - z) + (Math.random() - .5) * .6;
+  c.mooT = Math.random() * .4; COW.panics++;
+  for (const o of COWS) if (o !== c && o.st !== 'run' && !(o.spook > 0) && Math.hypot(o.x - c.x, o.z - c.z) < COW.spreadR) {
+    o.spook = rnd(COW.spreadT); o.spookH = c.fleeH; }
+}
+// GOD / console: panic the cow nearest him, away from him -- the herd follows
+function cowSpook() {
+  const P = player.pos; let b = null, bd = 1e9;
+  for (const c of COWS) { const d = Math.hypot(c.x - P.x, c.z - P.z); if (d < bd) { bd = d; b = c; } }
+  if (!b) return 'no cows';
+  cowPanic(b, P.x, P.z); return 'stampede: ' + bd.toFixed(0) + ' m off';
+}
+// something loud or frightening at (x, z): every cow within r panics (a shot: `fireBolt`)
+function cowFright(x, z, r) {
+  for (const c of COWS) if (Math.hypot(c.x - x, c.z - z) < r) cowPanic(c, x, z);
+}
 // AFTER he moves and BEFORE the camera: the herd's brains, its bodies, and its bulk against his
 function cowStep(dt) {
   if (!COWS.length || !cowK.mesh) return;
@@ -31852,8 +31884,12 @@ function cowStep(dt) {
   for (const c of COWS) {
     const far = Math.hypot(c.x - P.x, c.z - P.z);
     c.t -= dt;
+    // m329: set off by a herd-mate's panic; or the alien himself, undisguised, close
+    if (c.spook > 0 && (c.spook -= dt) <= 0) cowPanic(c, 0, 0, c.spookH);
+    if (c.st !== 'run' && far < COW.alienR && fearLooks() && !GOD.fly) cowPanic(c, P.x, P.z);
+    if (c.hitT > 0) c.hitT -= dt;
     // startled: a man running past close
-    if (c.st !== 'trot' && far < COW.shyR && p.speed > COW.shyV) {
+    if (c.st !== 'trot' && c.st !== 'run' && far < COW.shyR && p.speed > COW.shyV) {
       const a = Math.atan2(c.x - P.x, c.z - P.z);
       c.tx = c.x + Math.sin(a) * 5; c.tz = c.z + Math.cos(a) * 5; c.st = 'trot'; c.t = 2.5; COW.startles++;
       if (c.mooT > .8) c.mooT = .05;
@@ -31865,23 +31901,33 @@ function cowStep(dt) {
         else { c.st = 'graze'; c.t = rnd(COW.graze); }
       }
     } else {
+      // m329: the stampede -- its target runs on ahead of it along the flight, wavering, until the panic is spent
+      if (c.st === 'run') {
+        if ((c.panicT -= dt) <= 0) { c.st = 'walk'; c.t = COW.walkMax; c.sp = rnd(COW.walk); c.stuck = 0; if (!cowPick(c)) { c.st = 'graze'; c.t = rnd(COW.graze); } }
+        else { const w = c.fleeH + Math.sin(performance.now() * .0011 + c.seed) * .3; c.tx = c.x + Math.sin(w) * 8; c.tz = c.z + Math.cos(w) * 8; c.t = 1;
+          if (far < 60 && (c.dustT = (c.dustT || 0) - dt) <= 0) { c.dustT = COW.dustEvery * (.7 + Math.random() * .6);
+            smokeAt(c.x - Math.sin(c.h) * 1.1, c.y + .25, c.z - Math.cos(c.h) * 1.1, .8, 1.1, [.56, .46, .34]); } }
+      }
+      const run = c.st === 'run';
       const dx = c.tx - c.x, dz = c.tz - c.z, L = Math.hypot(dx, dz);
       if (L < .6 || c.t <= 0) { c.st = 'graze'; c.t = rnd(COW.graze); }
       else {
-        const want = Math.atan2(dx, dz), off = wrapAngle(want - c.h);
-        c.h += clamp(off, -COW.turn * dt * (c.st === 'trot' ? 2 : 1), COW.turn * dt * (c.st === 'trot' ? 2 : 1));
-        const sp = (c.st === 'trot' ? COW.trot : c.sp) * clamp(1 - Math.abs(off) / 1.3, .15, 1);
+        const want = Math.atan2(dx, dz), off = wrapAngle(want - c.h), tk = run ? 3 : c.st === 'trot' ? 2 : 1;
+        c.h += clamp(off, -COW.turn * dt * tk, COW.turn * dt * tk);
+        const sp = (run ? COW.stampede * (c.panicT < 2 ? .4 + c.panicT * .3 : 1) : c.st === 'trot' ? COW.trot : c.sp) * clamp(1 - Math.abs(off) / 1.3, run ? .35 : .15, 1);
         const ox = c.x, oz = c.z;
         c.x += Math.sin(c.h) * sp * dt; c.z += Math.cos(c.h) * sp * dt;
         const Q = cowK.probe; Q.x = c.x; Q.y = c.y; Q.z = c.z;
         resolveBoxes(Q, COW.r, 1.4);
         c.x = Q.x; c.z = Q.z;
         const g = groundAt(c.x, c.z, c.y + .2, COW.step);
-        if (g > -50 && g > ISLE.sea + .3) c.y = g; else { c.x = ox; c.z = oz; c.st = 'graze'; c.t = 1; }
+        // a running cow that meets a drop, the water or a wall TURNS (it does not stop to graze mid-panic)
+        if (g > -50 && g > ISLE.sea + .3) c.y = g; else { c.x = ox; c.z = oz; if (run) c.fleeH += (c.i % 2 ? 1.3 : -1.3); else { c.st = 'graze'; c.t = 1; } }
         const moved = Math.hypot(c.x - ox, c.z - oz);
         c.phase += moved / COW.stride * 6.283;
         c.stuck = moved < sp * dt * .3 ? c.stuck + dt : 0;
-        if (c.stuck > 1.2) { c.st = 'graze'; c.t = 1 + Math.random() * 2; }
+        if (run && c.stuck > .35) { c.fleeH += (c.i % 2 ? 1.3 : -1.3); c.stuck = 0; }
+        else if (c.stuck > 1.2) { c.st = 'graze'; c.t = 1 + Math.random() * 2; }
       }
     }
     // the herd keeps its own room
@@ -31890,16 +31936,19 @@ function cowStep(dt) {
     // and its bulk against his: two circles along the body
     if (Math.abs(P.y - c.y) < 1.7) for (const o of [.7, -.7]) {
       const cx = c.x + Math.sin(c.h) * o, cz = c.z + Math.cos(c.h) * o, dx = P.x - cx, dz = P.z - cz, d = Math.hypot(dx, dz), R = .62 + (p.r || .35);
-      if (d < R) { const ux = d > 1e-4 ? dx / d : Math.cos(c.h), uz = d > 1e-4 ? dz / d : -Math.sin(c.h); P.x = cx + ux * R; P.z = cz + uz * R; }
+      if (d < R) { const ux = d > 1e-4 ? dx / d : Math.cos(c.h), uz = d > 1e-4 ? dz / d : -Math.sin(c.h); P.x = cx + ux * R; P.z = cz + uz * R;
+        // m329: a stampeding cow does not shove him, it RUNS HIM DOWN -- once a cow per 1.5 s, the blow along its run
+        if (c.st === 'run' && !(c.hitT > 0) && !p.knock) { c.hitT = 1.5; COW.hits++; playerHurt(COW.hitDmg, c.h, COW.hitPush, COW.hitUp, COW.hitStun, 1); } }
     }
     // the moo
     if (c.mooing > 0) c.mooing -= dt;
     if ((c.mooT -= dt) <= 0) {
-      c.mooT = rnd(COW.mooEvery);
-      if (far < COW.mooOut) { const d = rnd(COW.mooDur); if (mooAt(c.x, c.z, c.mooK * (c.st === 'trot' ? 1.15 : 1), d)) c.mooing = d; }
+      const run = c.st === 'run';
+      c.mooT = run ? rnd([1.4, 3.5]) : rnd(COW.mooEvery);                 // m329: a panicking cow bellows, high and short
+      if (far < COW.mooOut) { const d = run ? rnd([.5, .9]) : rnd(COW.mooDur); if (mooAt(c.x, c.z, c.mooK * (run ? 1.32 : c.st === 'trot' ? 1.15 : 1), d)) c.mooing = d; }
     }
     // the head: down to graze, up to look or moo, level to walk
-    const pt = c.mooing > 0 ? -.35 : c.st === 'graze' ? 1.05 + Math.sin(performance.now() * .004 + c.seed) * .05 : c.st === 'look' ? -.12 : .1;
+    const pt = c.st === 'run' ? .22 : c.mooing > 0 ? -.35 : c.st === 'graze' ? 1.05 + Math.sin(performance.now() * .004 + c.seed) * .05 : c.st === 'look' ? -.12 : .1;
     c.pitch = damp(c.pitch, pt, .25, dt);
     c.g = damp(c.g, c.st === 'graze' && c.mooing <= 0 ? 1 : 0, .3, dt);
     c.yawH = damp(c.yawH, c.st === 'look' ? Math.sin(performance.now() * .0006 + c.seed) * .55 : 0, .4, dt);
@@ -32806,6 +32855,7 @@ function godMenuOpen(on) {
   sec('SWITCHES');
   btn('FLY ' + (GOD.fly ? 'ON' : 'OFF'), () => { godFly(!GOD.fly); godMenuOpen(1); });
   btn('FARM BATCHING ' + (FBATCH.on ? 'ON' : 'OFF') + ' (reloads)', () => { try { sessionStorage.setItem('mel.batch', FBATCH.on ? '0' : '1'); } catch (e) {} location.replace(location.pathname); });
+  if (COWS.length) btn('SPOOK THE NEAREST HERD (STAMPEDE)', () => { toast(cowSpook(), 1.6); godMenuOpen(0); });
   if (SKYLINE.g) btn('METROPOLIS ON THE HORIZON ' + (SKYLINE.g.visible ? 'ON' : 'OFF'), () => { SKYLINE.g.visible = !SKYLINE.g.visible; godMenuOpen(1); });
   btn('THE STAND-IN QUEST (WEIRDPORT 101)', () => { progFlag('qon:q0'); quest.cur = null; toast('Quest on', 1.4); });
   btn('DEMO GATES HERE', () => { gateDemo(1); toast(GATES.length + ' gates', 1.4); });
@@ -34707,7 +34757,7 @@ function frameBody() {
       // COW: the herd, moos heard, startles (m294) -- COW6 with m0 after a minute nearby is "no audio context yet"
       // FL: plants on the farm (m297)
       (FLORA.n ? ' FL' + FLORA.n : '') + (GPAINT.n ? ' GP' + GPAINT.n : '') +
-      (COW.n ? ' COW' + COW.n + 'm' + COW.moos + (COW.startles ? 's' + COW.startles : '') : '') +
+      (COW.n ? ' COW' + COW.n + 'm' + COW.moos + (COW.startles ? 's' + COW.startles : '') + (COW.panics ? 'p' + COW.panics + (COW.hits ? 'h' + COW.hits : '') : '') : '') +
       (BRIDGE.n ? ' BR' + BRIDGE.n + '/' + BRIDGE.tris + (BRIDGE.putBacks ? '~' + BRIDGE.putBacks : '') : '') +
       (GATE.n ? ' G' + GATE.n + '/' + GATE.said : '') +
       (quest.cur ? ' Q' + quest.cur.id + '.' + quest.step + (quest.tgt ? '' : '~') : '') +
@@ -35245,7 +35295,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { fireSheet, BURN, burnStart, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { fireSheet, BURN, burnStart, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

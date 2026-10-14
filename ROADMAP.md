@@ -199,10 +199,10 @@ differ" table there, so no region feels like the last one.
   - [x] m290 **B1c The sunken lane and the creek** — a lane cut below the fields between hedges, a creek with a footbridge.
   - [x] m291 **B1d The road and the bridge** — the road climbing from the farm to a bridge into town (split: the cows are B1d2).
   - [x] m294 **B1d2 The cows** — cows that moo and wander the farm.
-  - [ ] **B1e From REGIONS.md's Gristle Farm entry, not in m288** — a rope down from the hayloft, the silo ladder made climbable, an orchard terrace, and cows that panic and stampede (its signature system).
+  - [x] m329 **B1e From REGIONS.md's Gristle Farm entry, not in m288** — a rope down from the hayloft, the silo ladder made climbable, an orchard terrace, and cows that panic and stampede (its signature system).
     - [x] m327 **B1e-1** the rope down from the hayloft and the silo ladder, climbable, with a landing on top.
     - [x] m328 **B1e-2** an orchard terrace.
-    - [ ] **B1e-3** cows that panic and stampede (the farm's signature system).
+    - [x] m329 **B1e-3** cows that panic and stampede (the farm's signature system).
 - [ ] **B1f Direction and discovery** (see the new section in `GAME_DESIGN.md`). Build on m278's quests:
   - a **"New task" card** when a task unlocks, and a **task list** you can open;
   - the waypoint in the world shows the **distance** in metres, and the map marker matches it;
@@ -612,3 +612,12 @@ differ" table there, so no region feels like the last one.
   field's own outline. A stair comes up each tier on a different side, so the way up winds round.
   There's a row of apple trees on every tier (54 trees), apples in the grass, and crates at the
   stair heads. Next: the stampede.
+
+- **m329 (B1e-3, so B1e is done):** cows stampede:
+  - A shot within 34 m, or the alien undisguised within 6 m, panics a cow.
+  - The panic ripples through its herd, and they all bolt the same way at 5.6 m/s.
+  - While stampeding they ignore their field, so they end up out on tracks and lanes, then wander back.
+  - A stampeding cow knocks you down (not in GOD mode, which takes no damage).
+
+  The 6 m alien range means walking up to cows as yourself always sets them off. That's on purpose:
+  being a farmhand is how you get close. `mel.COW.alienR` is the dial.

@@ -7,6 +7,28 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE STAMPEDE: A PANIC SPREADS THROUGH THE HERD, A RUNNING COW IGNORES ITS FIELD AND RUNS HIM DOWN (m329, B1e-3,
+  `cowPanic`, `cowFright`, `cowSpook`, `COW.stampede` ...).** REGIONS' signature system for the farm: "cows wander, panic
+  and stampede when frightened, and block lanes". On the m294 brain (graze / look / walk / trot) a fourth state, `run`:
+  - **What frightens a cow**: a SHOT -- `fireBolt` calls `cowFright(muzzle, fearR 34)` -- and the ALIEN, undisguised
+    (`fearLooks`, the same test the humans' fear uses), within `alienR` 6 m. A man in a human form running past still
+    only startles it into the old trot. There is no shared "noise event" in this game; `cowFright(x, z, r)` is the
+    cows' own, and anything else loud (a blast, a cop's pistol) is one call to it.
+  - **It spreads**: `cowPanic` sets every herd-mate within `spreadR` 14 m that is not already running to `spook` after
+    `spreadT` .15-.7 s, along the SAME heading (+-.25 rad) -- so a herd bolts as a herd, in a ripple, not as one cow.
+  - **Running**: the target runs 8 m ahead along the flight heading, wavering +-.3 rad; `stampede` 5.6 m/s (faster than
+    he jogs, slower than he sprints), turning 3x a walk, easing off over the last 2 s of `panicT` 7-11 s. **It ignores its
+    field** (no `fpOwnAt` test while running) -- through the gaps, out onto the tracks and the lanes, which is "block
+    lanes" -- then walks back toward its field when the panic is spent (and may well stand at a fence a while: that is
+    a cow). Walls, fences and drops still stop it: a running cow that meets one TURNS (+-1.3 rad, alternating by index)
+    instead of dropping to graze. Brown dust off its heels every .3 s within 60 m (the smoke pool), a high short bellow
+    every 1.4-3.5 s (`mooAt` x1.32), head low, a bigger bob and a full leg swing.
+  - **It runs him down**: in the bulk shove, a running cow `playerHurt`s him -- 7 damage, push 7 along its run, a
+    knock-down -- once per cow per 1.5 s. GOD takes no damage (playerHurt returns), so to feel it, leave GOD.
+  GOD SWITCHES: **SPOOK THE NEAREST HERD (STAMPEDE)** (`mel.cowSpook()`); `mel.cowFright(x, z, r)`. Chip: `COW..p<panics>
+  h<hits>`. **`places` now spooks a herd before it ticks the farm's steps**, so the 30 frames of `cowStep` run the
+  stampede branch -- a throw there is caught by `frame()` and freezes every frame after it.
+
 - **THE ORCHARD TERRACE IS BUILT UP, NOT CUT IN: FOUR STONE TIERS ON THE ORCHARD'S OWN OUTLINE (m328, B1e-2, `FTERR`,
   `buildOrchardTerrace`, `ftRad`, `ftEdge`, `ftIn`).** Measured first (a throwaway probe on the places harness): the
   orchard stood on a 1.6 m swell (1.35..3.02 m over 2,580 m2) -- nothing to cut a terrace into. So the tiers are BUILT:
