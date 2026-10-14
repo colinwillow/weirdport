@@ -224,7 +224,7 @@ differ" table there, so no region feels like the last one.
 - [ ] **B3 Old Town setup.** Region bounds, a homeless camp, a food cart with the hidden good
   alien (the tell under the hat), a building site. Ambient life placed by role.
   - [x] m335 **B3-1** the map's real regions (Old Town, Gristle Farm) and the homeless camp.
-  - [ ] **B3-2** the food-cart pod in a lot, with the hidden good alien at one cart (the antenna under the hat).
+  - [x] m336 **B3-2** the food-cart pod in a lot, with the hidden good alien at one cart (the antenna under the hat).
   - [ ] **B3-3** a building site wrapped in scaffolding, with its crew.
   - [ ] **B3-4** ambient life placed by role (cops on the beat, people on the pavements, the crews' comings and goings).
 - [ ] **B4 Chapter 1 quests.** The good alien points you at the building site; workers are being
@@ -695,3 +695,11 @@ differ" table there, so no region feels like the last one.
     barrel that stays lit, a lean-to, sofa, carts, a washing line and string lights.
   - Dusty, Pockets and Mother Agnes live there. They talk to street folk and brush off the alien
     rather than run.
+
+- **m336 (B3-2):** the food-cart pod is on the lot next to the camp. TACO PLANET, THE GOOD GRILL,
+  PHO REAL and a shut WAFFLE WAGON sit round tables, umbrellas and lights.
+  - **Chef Norrie** at THE GOOD GRILL is the hidden good alien. His hat has an antenna poking through
+    it, wobbling, with a glowing tip. To humans he's a cart guy. To you as the alien he never runs,
+    he admits it, and he points you at the building site (gives juice the first time).
+  - **Bodies:** Norrie, Lupe and Minh use the hipster, activist and hippie stand-ins, per
+    CHARACTERS.md.

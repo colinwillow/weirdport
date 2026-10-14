@@ -7,6 +7,34 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FOOD-CART POD, AND CHEF NORRIE'S ANTENNA ON HIS HEAD BONE (m336, B3-2, `OTCARTS`, `buildCarts`, `peopleHat`,
+  `cartStep`, social `alien: 'talk'` / `talks: ['*']` / `alienLines`).** REGIONS' Old Town: "the food-cart pod in a lot ...
+  the hidden good alien at a food cart"; GAME_DESIGN: hidden good aliens in disguise "with a tell (an antenna under a hat)".
+  - **On the second-best lot** (m335's sweep: (-62.5, 78.7), 12 m clear), 28 m from the camp -- Mother Agnes's line about
+    the cart man was written for it. Four carts in a horseshoe facing the city (TACO PLANET, THE GOOD GRILL, PHO REAL, and
+    WAFFLE WAGON shut: "BACK SOON (LIES)"), each with a serving window, counter, a flip-up awning, wheels, a hitch and a
+    ROOF SIGN (a canvas texture per cart, its own material -- 4 small draws); three tables under umbrellas, bins, the
+    generator, a chalkboard, string lights roof to roof.
+  - **The roof sign hid INSIDE its own board** the first time (plane and box on the same centre) -- the face is .07 m in
+    front now. The sign's `rotation.y` is `th + yaw`: `R_y(yaw)` takes +z to (sin yaw, cos yaw), which is toward the
+    tables -- adding PI (the first draft) faces it at the hitch. The border is four `fillRect`s because the places
+    harness's canvas stub has no `strokeRect` (it failed `buildCarts` there; the browser would not have).
+  - **The tell** (`peopleHat`): a felt hat with a pink band and an ANTENNA through its crown, its tip glowing green,
+    parented to his HEAD bone (found by name: a bone ending "head", not "top") -- so it rides every clip -- sized in
+    METRES and divided by the bone's world scale (the armature's .01 and the body's own), sat .17 m up the bone's +Y.
+    `cartStep` wobbles it and pulses the tip. A mark row's `hat: 1` is all it takes; `HAT NO HEAD <name>` if a rig has none.
+  - **Who he is to whom**: `talks: ['*']` (anyone human -- he runs a cart), `alien: 'talk'` -- he NEVER runs from the alien
+    (the fear skips him) and talks to him with a different script, `alienLines`: "Psst. Antenna. Yes, mine." ... and
+    points at the building site (B4). Its own flag (`talk:<id>:alien`) and, the first time, two helps' worth of juice.
+    Lupe and Minh (TACO PLANET, PHO REAL) run from the alien like anyone, and both talk about the crews who stopped
+    eating. Stand-ins per CHARACTERS.md: Norrie the hipster, Lupe the activist, Minh the hippie.
+  Judged with `npm run shot carts` (new row). `places`:
+      ok   buildCarts
+      ok  CAMP+CARTS Dusty (hobo_01.glb) -82,62 | Pockets (hobo_01.glb) -87,59 | Mother Agnes (hobo_01.glb) -85,67 | Chef Norrie (fat_hipster.glb) -64,83 | Lupe (fat_activist_01.glb) -60,83 | Minh (fat_hippie.glb) -67,81 | fire at [-84.5,1.2,60.7] | regions ["oldtown -107,105,-104,107","farm 95,614,-87,479"]
+      ok  carts      -> player -56.9,0.4,71.7 ground 0.23
+      every tkit GOD place is somewhere
+      ok  cartStep       30 frames
+
 - **OLD TOWN, SET UP 1: REAL MAP REGIONS AND THE CAMP, ON THE BIGGEST LOT THERE IS -- MEASURED (m335, B3-1, `mapRegionsTkit`,
   `OTCAMP`, `buildCamp`, `campStep`, `peopleMark`).**
   - **Regions**: the kit city's map had placeholder quadrants. Now OLD TOWN (`ISLE.rect` + 14 m: the city square and its

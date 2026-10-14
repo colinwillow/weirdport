@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m335</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m336</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m335</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m336</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm335';
+const BUILD = 'm336';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"3b1cba2b","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -27710,8 +27710,8 @@ const socialOf = d => d.talk.group || (d.talk.group = socialGroup(mphName(d.K)))
 // will he talk to you properly as you are?
 function socialOk(d) {
   const me = socialMe(), T = d.talk, mine = socialOf(d);
-  if (me === 'alien') return false;
-  return me === mine || (T.talks || []).includes(me);
+  if (me === 'alien') return T.alien === 'talk';                   // m336: the hidden good aliens know their own
+  return me === mine || (T.talks || []).includes(me) || (T.talks || []).includes('*');
 }
 function socialBrush(d) {
   const me = socialMe(), B = SOCIAL.BRUSH[socialOf(d)] || SOCIAL.BRUSH.folk;
@@ -27749,12 +27749,13 @@ const talkOk = d => d.talk && !d.wasK && d.st !== 'down' && d.st !== 'up' && !d.
 function talkShow() {
   const d = talk.cur; if (!d || !talk.box) return;
   talk.nm.textContent = d.talk.name;
-  talk.tx.textContent = talk.brush || d.talk.lines[talk.line] || '';       // m332: or the one brush-off line
-  talk.go.textContent = !talk.brush && talk.line < d.talk.lines.length - 1 ? 'tap ▸' : 'tap ×';
+  const L = talk.alt || d.talk.lines;
+  talk.tx.textContent = talk.brush || L[talk.line] || '';       // m332: or the one brush-off line
+  talk.go.textContent = !talk.brush && talk.line < L.length - 1 ? 'tap ▸' : 'tap ×';
   talk.box.classList.add('on');
 }
 function talkClose() {
-  talk.cur = null; talk.line = 0; talk.brush = null;
+  talk.cur = null; talk.line = 0; talk.brush = null; talk.alt = null;
   if (talk.box) talk.box.classList.remove('on');
 }
 // the tap: advance the open conversation, or start one with whoever is in reach
@@ -27763,6 +27764,11 @@ function talkTap() {
   if (talk.cur) {
     const d = talk.cur;
     if (talk.brush) { talkClose(); return true; }                   // m332: a brush-off is one line and it is over
+    if (talk.alt) {                                                  // m336: the alien's own script, its own flag, a gift
+      if (++talk.line >= talk.alt.length) { if (progFlag('talk:' + d.talk.id + ':alien')) { juiceGain(JUICE.help * 2, 'help'); } talk.heard++; talkClose(); }
+      else talkShow();
+      return true;
+    }
     if (++talk.line >= d.talk.lines.length) {
       d.talk.done = 1; talk.heard++;          // every finish, for A3's "talk to anyone" (m278)
       if (d.talk.rumour) rumourHear(d.talk.rumour, d.talk.name);      // m331: the last line was a rumour
@@ -27774,6 +27780,7 @@ function talkTap() {
   if (!talk.near) return false;
   talk.cur = talk.near; talk.line = 0;
   talk.brush = socialOk(talk.cur) ? null : socialBrush(talk.cur);   // m332: the wrong sort gets the cold shoulder
+  talk.alt = !talk.brush && socialMe() === 'alien' && talk.cur.talk.alienLines ? talk.cur.talk.alienLines : null;   // m336: what he says to his own
   talkShow();
   return true;
 }
@@ -28208,7 +28215,7 @@ function fearStep(dt) {
     if (!looks || !fearHuman(d)) continue;
     if (d.fleeT > 0 || d.callT > 0 || d.fearAg > 0 || d.aggro) continue;
     if (d.st === 'down' || d.st === 'up' || d.st === 'ride' || d.st === 'leap' || d.vy) continue;
-    if (d.talk && !d.talk.done && d.talk.alien === 'brush') continue;   // m332: only one who brushes the alien off stands his ground
+    if (d.talk && (d.talk.alien === 'talk' || (!d.talk.done && d.talk.alien === 'brush'))) continue;   // m332: one who brushes him off stands his ground; m336: one who TALKS to him never runs
     if ((d.fearChk = (d.fearChk === undefined ? Math.random() * FEAR.every : d.fearChk) - dt) > 0) continue;
     d.fearChk = FEAR.every;
     if (!fearSees(d)) continue;
@@ -30015,7 +30022,7 @@ function fpCentroid(fid) {
 function peopleMark(id, x, z, yaw, R, y, src, grp) {
   MARKS.push({ type: 'npc', id, name: R.name, src, x, y: y != null ? y : groundAt(x, z, 30, 0), z, yaw, sx: 0, sz: 0,
     p: { kind: R.kind, name: R.name, lines: R.lines, talk: R.talk, rumour: R.rumour, group: R.group || grp, talks: R.talks || [grp], alien: R.alien || 'flee',
-         brushAlien: R.brushAlien, town: R.town || 0 }, used: 0 });
+         brushAlien: R.brushAlien, alienLines: R.alienLines, hat: R.hat || 0, town: R.town || 0 }, used: 0 });
   MKR.by.npc = (MKR.by.npc || 0) + 1;
 }
 function buildFarmhands() {
@@ -30141,6 +30148,130 @@ function buildCamp() {
   }
   C.godAt = [F.wx(0, 6.5), F.wz(0, 6.5), th + Math.PI];
   return C.n;
+}
+// ============================================================================================
+// THE FOOD-CART POD AND THE HIDDEN GOOD ALIEN (m336, ROADMAP B3-2, `OTCARTS`, `buildCarts`, `peopleHat`, `cartStep`)
+// ============================================================================================
+// REGIONS' Old Town: "the food-cart pod in a lot ... the hidden good alien at a food cart"; GAME_DESIGN: the good aliens
+// live among people in disguise, "a food-cart owner ... with a tell (an antenna under a hat)". On the second-best lot
+// in Old Town (measured at m335: (-62.5, 78.7), 12 m clear), 28 m from the camp -- Mother Agnes's "the cart man by the
+// lot gives us the burnt ones". Four carts in a horseshoe round shared picnic tables, facing the city, signs on their
+// roofs, string lights cart to cart; one shuttered.
+// **CHEF NORRIE** at THE GOOD GRILL (a hipster stand-in, CHARACTERS.md) wears a hat with an ANTENNA poking out of it,
+// wobbling, its tip glowing -- parented to his HEAD BONE (`peopleHat`), so it rides every clip. To any human he is a cart
+// man (`talks: ['*']`); to the ALIEN he is one of us (`alien: 'talk'`: he never runs, and `alienLines` is what he says
+// to you as yourself -- the first time, it is worth a gift of juice). B4 has him send you to the building site.
+const OTCARTS = {
+  on: 1, n: 0, at: [-62.5, 78.7], face: [0, 0], why: "the second-best lot in Old Town, by the camp: the pod where the cart man feeds the camp the burnt ones",
+  CARTS: [
+    { a: -66, name: 'TACO PLANET', sub: 'OUT OF THIS WORLD', col: 0xff4d8a, bg: '#ff4d8a', fg: '#fff3fa' },
+    { a: -22, name: 'THE GOOD GRILL', sub: 'BURGERS  ·  NO QUESTIONS', col: 0x46e0ff, bg: '#123a4a', fg: '#9ff3ff' },
+    { a: 22, name: 'PHO REAL', sub: 'BROTH  ·  NOODLES  ·  TRUTH', col: 0xffc247, bg: '#ffc247', fg: '#2a2420' },
+    { a: 66, name: 'WAFFLE WAGON', sub: 'BACK SOON (LIES)', col: 0x8ad46a, bg: '#2f4a26', fg: '#d7ffc8', shut: 1 },
+  ],
+  PEOPLE: [
+    { id: 'cart_norrie', cart: 1, kind: 'fat_hipster', name: 'Chef Norrie', group: 'city', talks: ['*'], alien: 'talk', hat: 1,
+      why: 'at THE GOOD GRILL: the hidden good alien, the antenna under the hat (B3-2)',
+      lines: "Three bucks a burger. Four if you ask what's in it.|Best grill in Old Town. Ask anybody. Not the health inspector.|The hat? Chef thing. Very traditional. Very... normal.",
+      alienLines: "Psst. Antenna. Yes, mine. Keep your voice down.|There are more of us here than you'd think. Hats are very popular in Weirdport.|Something's eating this town from the inside. Start with the building site -- the crews there don't eat lunch any more.|Here. On the house. You look like you crash-landed. Because you did." },
+    { id: 'cart_lupe', cart: 0, kind: 'fat_activist_01', name: 'Lupe', group: 'city', talks: ['*'], alien: 'flee', why: 'at TACO PLANET',
+      lines: "Taco Planet: out of this world. Don't laugh, it's trademarked.|Nights are slow since the lights in the sky. People stay home.|Norrie next door? Sweetheart. Never takes that hat off. Not even in the rain." },
+    { id: 'cart_minh', cart: 2, kind: 'fat_hippie', name: 'Minh', group: 'city', talks: ['*'], alien: 'flee', why: 'at PHO REAL',
+      lines: "Pho Real. Best broth this side of the river.|The construction boys used to queue here every noon. Now? Nobody. Not hungry, they say.|Not hungry! A construction crew! Something is very wrong over there." },
+  ],
+};
+function cartSign(C) {
+  const c = document.createElement('canvas'); c.width = 512; c.height = 160;
+  const g = c.getContext('2d');
+  g.fillStyle = C.bg; g.fillRect(0, 0, 512, 160);
+  g.fillStyle = C.fg; g.fillRect(8, 8, 496, 8); g.fillRect(8, 144, 496, 8); g.fillRect(8, 8, 8, 144); g.fillRect(496, 8, 8, 144);   // the border (fillRect: the places harness's canvas has no strokeRect)
+  g.fillStyle = C.fg; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.font = '800 64px "Barlow Condensed", system-ui, sans-serif'; g.fillText(C.name, 256, 64);
+  g.font = '600 30px "Barlow Condensed", system-ui, sans-serif'; g.fillText(C.sub, 256, 118);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+function buildCarts() {
+  const C = OTCARTS; if (!C.on || !ISLE.live || !inTK()) return 0;
+  const [cx, cz] = C.at, th = Math.atan2(C.face[0] - cx, C.face[1] - cz);
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .6, metalness: .1 }), o || {});
+  const MAT = { steel: M(0xb9c2c6, { metalness: .5, roughness: .4 }), dark: M(0x24262c), wood: M(0x8a6a48, { roughness: .9 }), tyre: M(0x1a1a1c, { roughness: .95 }),
+    green: M(0x2f5a3a), umb: M(0xf1e7cf), bulb: M(0xffd27a, { emissive: new THREE.Color(0xffb84a), emissiveIntensity: 1.6 }),
+    c0: M(OTCARTS.CARTS[0].col), c1: M(OTCARTS.CARTS[1].col), c2: M(OTCARTS.CARTS[2].col), c3: M(OTCARTS.CARTS[3].col) };
+  const F = farmFrame(cx, cz, th, MAT, 'carts'), { bx, geo, gnd } = F;
+  C.carts = [];
+  C.CARTS.forEach((K, i) => {
+    const a = K.a * Math.PI / 180, R = 6.6, u = Math.sin(a) * R, v = -Math.cos(a) * R, yaw = -a, g = gnd(u, v), col = 'c' + i;
+    // body, roof, the serving window and its counter, a flip-up awning, two wheels and a hitch -- its FRONT faces the tables (+v when yaw 0)
+    const fw = (d) => [u + Math.sin(a) * -d, v - Math.cos(a) * -d];          // a point `d` m toward the tables from the cart's centre
+    bx(u, v, g + .35, g + 2.3, 2.8, 1.7, col, yaw);
+    bx(u, v, g + 2.3, g + 2.42, 3.0, 1.9, 'steel', yaw, false);
+    const [wu, wv] = fw(.86); bx(wu, wv, g + 1.15, g + 1.95, 1.9, .05, K.shut ? 'steel' : 'dark', yaw, false);
+    const [ku, kv] = fw(1.05); bx(ku, kv, g + 1.08, g + 1.14, 2.0, .4, 'steel', yaw, false);
+    const [au, av] = fw(1.25);
+    if (!K.shut) geo(new THREE.BoxGeometry(2.2, .05, .9), col, au, g + 2.12, av, yaw, -.35, 0);
+    for (const s of [-1, 1]) geo(new THREE.CylinderGeometry(.3, .3, .14, 14).rotateZ(Math.PI / 2), 'tyre', u + Math.cos(a) * s * 1.1, g + .3, v + Math.sin(a) * s * 1.1, yaw);
+    const [hu, hv] = fw(-1.4); bx(hu, hv, g + .25, g + .35, .1, 1.0, 'steel', yaw, false);
+    // the roof sign: its own material (a canvas texture), facing the tables
+    { const sm = new THREE.MeshStandardMaterial({ map: cartSign(K), roughness: .7, emissive: new THREE.Color(0xffffff), emissiveIntensity: .25, emissiveMap: null });
+      const sg = new THREE.Mesh(new THREE.PlaneGeometry(2.7, .84), sm), [su, sv] = fw(.27), [bu2, bv2] = fw(.2);   // the face .07 m in front of its board
+      sg.position.set(F.wx(su, sv), g + 2.92, F.wz(su, sv)); sg.rotation.y = th + yaw;     // the plane's front (+z) faces the tables: R_y(yaw) takes +z to (sin yaw, cos yaw) = toward them
+      scene.add(sg);
+      bx(bu2, bv2, g + 2.42, g + 3.36, 2.8, .08, 'dark', yaw, false); }
+    C.carts.push({ u, v, a, front: fw(1.7), g });
+  });
+  // the tables, their benches and umbrellas, in the middle of the horseshoe
+  for (const [u, v, r] of [[-1.8, 1.2, .3], [2.2, 2.4, -.25], [.2, 4.6, .1]]) {
+    const g = gnd(u, v);
+    bx(u, v, g + .72, g + .78, 1.8, .8, 'wood', r); bx(u, v, g - .05, g + .72, .12, .5, 'wood', r, false);
+    for (const s of [-1, 1]) bx(u - Math.sin(r) * s * .7, v - Math.cos(r) * s * .7, g + .42, g + .47, 1.8, .3, 'wood', r);
+    bx(u, v, g + .78, g + 2.3, .05, .05, 'steel', 0, false);
+    geo(new THREE.ConeGeometry(1.3, .5, 10, 1, true), 'umb', u, g + 2.45, v);
+  }
+  // string lights from cart roof to cart roof, a bin per cart, the generator behind, a chalkboard at the front
+  for (let i = 0; i < C.carts.length - 1; i++) { const A = C.carts[i], B = C.carts[i + 1];
+    for (let k = 1; k < 9; k++) { const t = k / 9, u = A.u + (B.u - A.u) * t, v = A.v + (B.v - A.v) * t + Math.sin(t * Math.PI) * 1.2, y = A.g + 2.6 - Math.sin(t * Math.PI) * .5;
+      geo(new THREE.SphereGeometry(.07, 6, 4), 'bulb', u, y, v); } }
+  for (const K of C.carts) { const [u, v] = [K.front[0] + Math.cos(K.a) * 1.5, K.front[1] + Math.sin(K.a) * 1.5], g = gnd(u, v); geo(new THREE.CylinderGeometry(.25, .22, .8, 10), 'green', u, g + .4, v); }
+  { const g = gnd(0, -9.4); bx(0, -9.4, g, g + .8, 1.2, .8, 'dark'); }
+  { const g = gnd(0, 9.2); bx(0, 9.2, g, g + 1.3, .9, .06, 'dark', .1, false); bx(0, 9.2, g - .05, g + .9, .08, .5, 'wood', .1, false); }
+  F.commit(); C.n = C.carts.length;
+  // the chefs, at their counters, facing the tables
+  for (const P of C.PEOPLE) {
+    const K = C.carts[P.cart], [u, v] = K.front, x = F.wx(u, v), z = F.wz(u, v);
+    peopleMark(P.id, x, z, Math.atan2(F.wx(0, 1) - x, F.wz(0, 1) - z), P, gnd(u, v), 'CARTS', 'city');
+  }
+  C.godAt = [F.wx(0, 9), F.wz(0, 9), th + Math.PI];
+  return C.n;
+}
+// THE TELL: a hat on his head bone, an antenna through its crown. Sized in METRES and divided by the bone's world scale
+// (the armature is .01 and the body is scaled again), placed in the bone's own frame (a Mixamo bone's +Y runs along it,
+// so up the head). `cartStep` wobbles the antenna and pulses its tip.
+const HATS = [];
+function peopleHat(d, kind) {
+  let head = null; d.model.traverse(o => { if (!head && o.isBone && /head$/i.test(o.name) && !/top/i.test(o.name)) head = o; });
+  if (!head) { note('HAT NO HEAD ' + (d.talk ? d.talk.name : '')); return null; }
+  d.model.updateMatrixWorld(true);
+  const ws = new THREE.Vector3(); head.getWorldScale(ws);
+  const m = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .8 }), o || {});
+  const felt = m(0x2b2f3a), band = m(0xc23a5a), wire = m(0x9aa3a8, { metalness: .6, roughness: .3 }), tip = m(0x6dff8a, { emissive: new THREE.Color(0x6dff8a), emissiveIntensity: 2 });
+  const g = new THREE.Group();
+  const add = (geo, mat, y) => { const o = new THREE.Mesh(geo, mat); o.position.y = y; g.add(o); return o; };
+  add(new THREE.CylinderGeometry(.19, .19, .02, 18), felt, 0);
+  add(new THREE.CylinderGeometry(.12, .13, .13, 18), felt, .075);
+  add(new THREE.CylinderGeometry(.133, .133, .03, 18), band, .025);
+  const ant = new THREE.Group(); ant.position.y = .13; g.add(ant);
+  const st = new THREE.Mesh(new THREE.CylinderGeometry(.005, .006, .13, 6), wire); st.position.y = .065; ant.add(st);
+  const tp = new THREE.Mesh(new THREE.SphereGeometry(.02, 10, 8), tip); tp.position.y = .135; ant.add(tp);
+  g.scale.set(1 / ws.x, 1 / ws.y, 1 / ws.z); g.position.y = .17 / ws.y;
+  head.add(g);
+  HATS.push({ d, ant, tip, ph: Math.random() * 6 });
+  return g;
+}
+function cartStep(dt) {
+  if (!HATS.length) return;
+  const t = performance.now() * .001;
+  for (const H of HATS) { H.ant.rotation.z = Math.sin(t * 3.1 + H.ph) * .28; H.ant.rotation.x = Math.sin(t * 2.3 + H.ph) * .15;
+    H.tip.material.emissiveIntensity = 1.4 + Math.sin(t * 5 + H.ph) * .8; }
 }
 // the barrel never goes out: lit once, and lit again if the fire pool ever evicts it (the crash's rule)
 function campStep(dt) {
@@ -32007,9 +32138,11 @@ function mkrStep() {
         // m332: who he talks to -- his marker's `group` / `talks` (a list or a comma string) / `alien`, else his kind's group
         group: P.group || null, talks: Array.isArray(P.talks) ? P.talks : typeof P.talks === 'string' ? P.talks.split(',').map(t => t.trim()).filter(Boolean) : null,
         alien: P.alien || 'flee',
-        brushAlien: typeof P.brushAlien === 'string' ? P.brushAlien.split('|').map(t => t.trim()).filter(Boolean) : null };
+        brushAlien: typeof P.brushAlien === 'string' ? P.brushAlien.split('|').map(t => t.trim()).filter(Boolean) : null,
+        alienLines: typeof P.alienLines === 'string' ? P.alienLines.split('|').map(t => t.trim()).filter(Boolean) : null };
       b.talkSeen = 1; TALK.n++;
     }
+    if (P.hat) peopleHat(b, P.hat);                                   // m336: the hidden good alien's tell
   }
 }
 
@@ -33119,6 +33252,7 @@ const godFL = H => { const [x, z] = flWorld(H.a, H.b); return [x, null, z, Math.
 // THE PLACES. One line each: where it is, what world, and a function that answers [x, y|null, z, heading|null].
 const GODPLACES = [
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
+  { id: 'carts',    world: 'tkit', name: 'OLD TOWN · the food-cart pod (Chef Norrie: the antenna under the hat)', at: () => OTCARTS.godAt && [OTCARTS.godAt[0], null, OTCARTS.godAt[1], OTCARTS.godAt[2]] },
   { id: 'camp',     world: 'tkit', name: 'OLD TOWN · the camp at the west edge (Dusty, Pockets, Mother Agnes)', at: () => OTCAMP.godAt && [OTCAMP.godAt[0], null, OTCAMP.godAt[1], OTCAMP.godAt[2]] },
   { id: 'overlook', world: 'tkit', name: 'GRISTLE FARM · the west hill: fields, and the city on the horizon', at: () => FARMLAND.live && godFL(FARMLAND.HILLS[0]) },
   { id: 'ploughing', world: 'tkit', name: 'GRISTLE FARM · the tractor ploughing', at: () => { const c = FVEH.list.find(q => q.id === 'tractor'); return c && [c.x + Math.cos(c.h) * 7, null, c.z - Math.sin(c.h) * 7, c.h - Math.PI / 2]; } },
@@ -34806,7 +34940,8 @@ function frameBody() {
   mapStep(dt);                  // the minimap, the full map, region fog (m287)
   godStep(dt);                  // GOD mode: the key, the menu, the boot jump (m298)
   crashStep(dt);
-  campStep(dt);                 // the camp's barrel stays lit (m335)                // the wreck burns and smokes; reaching town once moves the start (m289)
+  campStep(dt);                 // the camp's barrel stays lit (m335)
+  cartStep(dt);                 // the good alien's antenna wobbles (m336)                // the wreck burns and smokes; reaching town once moves the start (m289)
   crashHeroStep(dt);            // ...and pulses, arcs, hums, and stands a beam over the farm (m300)
   riverStep(dt);                // the farm's river: no wading, the current puts you back (m291)
   cellStep();
@@ -35527,6 +35662,7 @@ async function init() {
     // OLD TOWN (m335): the map's regions, and the camp at the west edge
     try { mapRegionsTkit(); } catch (e) { note('REGIONS FAIL'); console.warn('[melee] regions', e); }
     try { buildCamp(); } catch (e) { note('CAMP FAIL'); console.warn('[melee] camp', e); }
+    try { buildCarts(); } catch (e) { note('CARTS FAIL'); console.warn('[melee] carts', e); }
     // THE EDGE OF TOWN on the farm's side of the river (m316)
     try { buildTownEdge(); } catch (e) { note('TOWN EDGE FAIL'); console.warn('[melee] town edge', e); }
     // THE CITY STARTS THIN (m317): the island's ring by the bridge and all the way round
@@ -35701,7 +35837,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { fireSheet, BURN, burnStart, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { fireSheet, BURN, burnStart, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
