@@ -7,6 +7,47 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE FAR COPIES (m419, F0a-2c, `LOD`, `lodAdd(name, meshes, out, { flat })`, `KIT.lodOut`, `FBATCH.lodOut`, `cellStep`).** Each
+  cell-batched set (`kitBatch`'s meshes per material per 48 m cell; `farmBatch`'s per material per 200 m cell) gets its
+  cells merged once more into one mesh per material -- the far copy -- and `cellStep` decides per frame, per set, by the
+  lens's distance OUTSIDE the set's rectangle (`L.out`): far -> the copies draw and every cell is off; else the cells draw
+  and the copies are off. One writer (the cells' `visible` was already `cellStep`'s; `userData.lodOf` / `lodFar`).
+  **THE FARM'S BATCHES SPAN THE WHOLE MAP** -- every farmFrame of every region goes through `farmBatch` -- so the first cut,
+  one far copy for all of them, was NEVER far from the lens (its rectangle is Weirdport) and 21 MB of copies drew nothing.
+  Now a copy per 200 m cell (`userData.fbCell`, parsed off the bucket key), FLAT: one shared `flatShading` vertex-colour
+  material, no normal attribute (the shader takes the normal off the triangle), a third fewer bytes, the paint/metal/
+  emissive keys folded (gone at 180 m). The kit's copy keeps its materials: `tcTint`/`kitCutMat`/`kitWobMat` hook them
+  through `onBeforeCompile`, which `clone()` does not carry, so a flat kit copy would lose the city's tint.
+  `mergeLeaves(G.g, flames + planks)` on every gate (46 grey posts at Old Town's cordon were 46 draws; `gateStep` only ever
+  toggles the whole group).
+  `npm run worlds tkit`, before (m418) -> after:
+      == tkit  boot 27.0 s (swiftshader)  148 textures 270 MB (gl 326)  1888 geometries 161 MB (gl 429)  123 programs  69s
+         spawn        307 DC  2463 kT  cells 86/2314   OVER dc  OVER kT
+         oldtown      622 DC   964 kT  cells 2034/2314  OVER dc
+         camp         278 DC  1200 kT  cells 1963/2314  OVER kT
+         pearl        127 DC   863 kT  cells 757/2314
+         overlook     211 DC  1219 kT  cells 67/2314   OVER kT
+         farmyard     126 DC   605 kT  cells 166/2314
+         hcmill        76 DC   430 kT  cells 56/2314 
+         hctrail      273 DC  1099 kT  cells 145/2314  OVER kT
+         wfquay       116 DC   473 kT  cells 888/2314
+         wfstacks     399 DC  1210 kT  cells 407/2314  OVER dc  OVER kT
+         islanding    534 DC  1356 kT  cells 595/2314  OVER dc  OVER kT
+         isneedle     395 DC  1392 kT  cells 240/2314  OVER dc  OVER kT
+         isship       129 DC   656 kT  cells 61/2314 
+         iscore       121 DC   629 kT  cells 57/2314 
+         textures: moussa_toon_body 21.3M, moussa_toon_head 21.3M, hdri_game.png 8.0M, impact_marks_atlas.png 8.0M, fire_sprites_01.png 6.0M, colin_head_1080 5.9M
+         geometry: far:kit 10.7M, ground_wr_sidewalk 7.0M, far:farm:1,1 5.6M, far:farm:1,0 4.6M, ground_wr_curbs 4.2M, farm_batch 3.6M
+         OVER: dc 622 > 300 at oldtown | textures 270 MB > 160 | geometry 161 MB > 128
+      budget: 300 DC, 1000 kT, 160 MB textures, 128 MB geometry | tkit OVER | 70s
+      exit 1
+  m418: spawn 307, oldtown 654, camp 285, pearl 127, overlook 327, farmyard 128, hcmill 71, hctrail 421, wfquay 94,
+  wfstacks 798, islanding 1098, isneedle 667, isship 157, iscore 143. **Geometry 108 -> 161 MB** (copies: kit 10.7, farm ~22).
+  What is left from the islands (`--who --at=islanding`): `farm_batch 40` (cells within 180 m of the landing -- the islands'
+  own frames), `far:kit 28`, the TOON CITY's instanced props by cell (`tc_debris_soda_can_# 16, tc_plant_weed_* 13-14,
+  tc_prop_planter_# 13 ...` -- `lodAdd` skips InstancedMesh) and its merges (`tcmerge_*` 12-13 per material), signs 17.
+  In town: `WK_M_doors 54`, `WK_M_trim 50`, bodies. F0a-2e.
+
 - **THE SMALL THINGS AND THE HAND-BUILT GROUPS (m418, F0a-2b, `perfRegSmall`, `PERF.smallR/smallFar`, `cellReg(m, far, byLayer)`,
   `mergeLeaves`, `npm run worlds --who --at=`).** `--who` grew three things: a nameless mesh is described (`Box/Standard v24`,
   `Plane/Standard:map v4`, `sprite:...`), four of each family are placed (`{107,5,-246 <Group<Group #2a5a8a | ...}` -- world

@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m418</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m419</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m418</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m419</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,7 +822,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm418';
+const BUILD = 'm419';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/dummy_officer.glb":"724965ac","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/moussa.glb":"6d80b1cf","models/characters/zap.glb":"5e5cca54","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/towers/alien_tower_01.glb":"98d23375","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.png":"dac55f41","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -18507,6 +18507,7 @@ const KIT = {
   plane: 120, planeY: -.02, planeCol: 0x6f6a63,
   fog: { near: 60, far: 320 },
   partFar: 220,          // m417: m beyond which the instanced moving parts (doors, lids, AC units) are not drawn
+  lodOut: 140,           // m419: m outside the buildings' rectangle beyond which the cell batches give way to the far copy
   // **`dmg` CONVERTS THE GAME'S DAMAGE SCALE TO HIS.** `FOE.dmg.bolt` is 1.9 and his chunks are
   // hp 20, so without it a wall chunk is an eleven-shot object. `BRK.dmg`'s own argument, one
   // asset along -- and it is ONE number rather than his hp being rewritten, because the hp is
@@ -20390,11 +20391,15 @@ function cellStep() {
   if (!CELL.list.length) return;
   const far = CELL.far && scene.fog && scene.fog.far ? scene.fog.far + CELL.pad : 1e9;
   const cp = camera.position;
+  // m419: each batched set is far or near this frame, by the lens's distance outside its rectangle
+  let act = 0; for (const L of LOD.groups) { const dx = Math.max(L.x0 - cp.x, 0, cp.x - L.x1), dz = Math.max(L.z0 - cp.z, 0, cp.z - L.z1); L.far = LOD.on && Math.hypot(dx, dz) > L.out ? 1 : 0; act += L.far; }
+  LOD.active = act;
   let n = 0;
   for (const m of CELL.list) {
     const S = m.isInstancedMesh ? m.boundingSphere : m.geometry.boundingSphere, f = m.userData.ownFar ? Math.min(far, m.userData.ownFar) : far;
     let on = true;
-    if (S) {
+    const ud = m.userData; if (ud.lodOf) { if (ud.lodOf.far) on = false; } else if (ud.lodFar && !ud.lodFar.far) on = false;
+    if (S && on) {
       if (m.userData.cellLayer) { _ceS.copy(S.center).applyMatrix4(m.matrixWorld); _ceSc.setFromMatrixScale(m.matrixWorld); on = _ceS.distanceTo(cp) - S.radius * Math.max(_ceSc.x, _ceSc.y, _ceSc.z) < f; }
       else on = S.center.distanceTo(cp) - S.radius < f;
     }
@@ -20403,6 +20408,50 @@ function cellStep() {
     if (on) n++;
   }
   CELL.shown = n;
+}
+// ============================================================================================
+// THE FAR COPY (m419, F0a-2c, `LOD`, `lodAdd`): a cell-batched set seen from outside is ONE mesh per material
+// ============================================================================================
+// `npm run worlds` after m418: from the islands' landing the kit city is 300-400 draw calls of cell batches (790 meshes,
+// one per material per 48 m cell, m232), and the farm's 200 m batches are 50-90 draws from everywhere in Weirdport. The
+// cells exist so three can cull what is behind the lens and what is past the fog; from 150 m outside the city none of that
+// buys anything and every cell in view is its own draw. So each batched set gets a FAR COPY: its cell meshes merged once
+// more, per material, into one mesh each (the same geometry a second time, world space, +MB in `mel.mem()`), and
+// `cellStep` draws EITHER the cells OR the copies by where the lens is -- outside the set's rectangle by more than `out`,
+// the copies (a dozen draws); inside or near, the cells. One writer: the cells' `visible` was already `cellStep`'s.
+// **A broken wall is whole in its far copy** -- the copy is cut at load and never rewritten, which at 150 m is nothing.
+const LOD = { on: 1, groups: [], active: 0, mb: 0, flatMat: null };
+function lodAdd(name, meshes, out, opts) {
+  if (!meshes.length) return null;
+  const L = { name, out, far: 0, cells: [], copies: [], x0: 1e9, x1: -1e9, z0: 1e9, z1: -1e9 }, flat = !!(opts && opts.flat);
+  // a FLAT copy: every material folded into one flat-shaded vertex-colour material and the normals dropped (the shader
+  // takes them off the triangle) -- a third fewer bytes, one draw per group, and the paint, the metal and the glow gone,
+  // which at `out` metres is nothing. The kit's copy keeps its materials: their tint, cut and wobble hooks are not clonable.
+  if (flat && !LOD.flatMat) LOD.flatMat = new THREE.MeshStandardMaterial({ color: 0xffffff, vertexColors: true, flatShading: true, roughness: .85 });
+  const byMat = new Map();
+  for (const m of meshes) {
+    if (!m.isMesh || m.isInstancedMesh || !m.geometry || !m.geometry.attributes.position) continue;
+    const S = m.geometry.boundingSphere || (m.geometry.computeBoundingSphere(), m.geometry.boundingSphere);
+    L.x0 = Math.min(L.x0, S.center.x - S.radius); L.x1 = Math.max(L.x1, S.center.x + S.radius); L.z0 = Math.min(L.z0, S.center.z - S.radius); L.z1 = Math.max(L.z1, S.center.z + S.radius);
+    m.userData.lodOf = L; L.cells.push(m);
+    const mk = flat ? LOD.flatMat : m.material; let Q = byMat.get(mk); if (!Q) byMat.set(mk, Q = []); Q.push(m);
+  }
+  let bytes = 0;
+  for (const [mat, Q] of byMat) {
+    const keys = (flat ? ['position', 'color'] : ['position', 'normal', 'uv', 'color']).filter(k => Q.every(m => m.geometry.attributes[k]));
+    let nv = 0, ni = 0; for (const m of Q) { const g = m.geometry; nv += g.attributes.position.count; ni += g.index ? g.index.count : g.attributes.position.count; }
+    const geo = new THREE.BufferGeometry();
+    for (const k of keys) { const sz = Q[0].geometry.attributes[k].itemSize, A = new Float32Array(nv * sz); let o = 0;
+      for (const m of Q) { const a = m.geometry.attributes[k]; for (let i = 0; i < a.count; i++) for (let c = 0; c < sz; c++) A[o++] = a.getComponent(i, c); }
+      geo.setAttribute(k, new THREE.BufferAttribute(A, sz)); bytes += A.byteLength; }
+    const I = nv > 65535 ? new Uint32Array(ni) : new Uint16Array(ni); let o = 0, base = 0;
+    for (const m of Q) { const g = m.geometry, idx = g.index, n = idx ? idx.count : g.attributes.position.count; for (let i = 0; i < n; i++) I[o++] = base + (idx ? idx.getX(i) : i); base += g.attributes.position.count; }
+    geo.setIndex(new THREE.BufferAttribute(I, 1)); geo.computeBoundingSphere(); bytes += I.byteLength;
+    const c = new THREE.Mesh(geo, mat); c.name = 'far:' + name; c.castShadow = Q[0].castShadow; c.receiveShadow = Q[0].receiveShadow; c.userData.lodFar = L;
+    (Q[0].parent || scene).add(c); cellReg(c); L.copies.push(c);
+  }
+  L.mb = bytes / 1048576; LOD.mb += L.mb; LOD.groups.push(L);
+  return L;
 }
 // **THE SMALL THINGS, ONCE, AFTER EVERY BUILDER (m418, F0a-2b, `perfRegSmall`).** `npm run worlds --who` put names and places
 // to what was still drawn from across the water after m417: the Waterfront line's crates (166 draws), the glow sprites over
@@ -20473,6 +20522,7 @@ function kitBatch(root, cast, hangAt) {
     L.tags.forEach((m, k) => hangAt.set(m, { mesh: R.mesh, ...R.ranges[k] }));
   }
   world.add(out);
+  if (KIT.lodOut) try { lodAdd('kit', out.children.slice(), KIT.lodOut); } catch (e) { console.warn('[melee] kit far copy', e); }   // m419
   return [before, out.children.length];
 }
 // what the root still draws on its own -- counted AFTER the instancing has emptied the parts
@@ -29576,6 +29626,7 @@ function gateAdd(type, x, z, h, w, id, y) {
   if (!(G.y > -1e3)) G.y = player.pos.y;
   G.open = GATE_TYPES[type].pass === 'fix' && !!SAVE.flags['gate:' + G.id];
   G.g = gateMesh(G);
+  try { mergeLeaves(G.g, [...(G.flames || []), ...(G.planks || [])]); } catch (e) {}   // m419: a cordon's posts and boards as one mesh
   if (G.open) gateOpen(G);
   GATES.push(G); GATE.n++;
   return G;
@@ -38677,7 +38728,7 @@ function farmPaintKind(m, kind) {
 // barn's roof), already vertex-coloured, and the CRASH's and its debris's frames (`skip`: their glow is animated through
 // its material). The paint shader reads world position and normal, so baked geometry paints exactly as before.
 // `?batch=0` (or the GOD switch) builds the farm unbatched, for the A/B.
-const FBATCH = { on: 1, cell: 200, skip: ['crash', 'wreckbits'], frames: [], before: 0, after: 0, kept: 0, tris: 0 };
+const FBATCH = { on: 1, cell: 200, lodOut: 180, skip: ['crash', 'wreckbits'], frames: [], before: 0, after: 0, kept: 0, tris: 0 };   // m419: `lodOut`, m outside the farm's batches beyond which their far copy draws
 try { if (/[?&]batch=0\b/.test(location.search) || sessionStorage.getItem('mel.batch') === '0') FBATCH.on = 0; } catch (e) {}
 function fbKey(m) {
   if (!m || !m.isMeshStandardMaterial || m.map || m.transparent || m.side !== THREE.FrontSide || m.vertexColors) return null;
@@ -38728,13 +38779,18 @@ function farmBatch() {
     mt.name = 'farm_batch_' + key;
     shared.set(key, mt);
   }
-  for (const q of buckets.values()) {
+  const made = [];
+  for (const [bk, q] of buckets) {
     const g = new THREE.BufferGeometry();
     g.setAttribute('position', new THREE.Float32BufferAttribute(q.p, 3)); g.setAttribute('normal', new THREE.Float32BufferAttribute(q.n, 3));
     g.setAttribute('color', new THREE.Float32BufferAttribute(q.c, 3)); g.computeBoundingSphere();
-    const m = new THREE.Mesh(g, shared.get(q.key)); m.castShadow = m.receiveShadow = true; m.name = 'farm_batch';
-    scene.add(m); B.after++;
+    const m = new THREE.Mesh(g, shared.get(q.key)); m.castShadow = m.receiveShadow = true; m.name = 'farm_batch'; m.userData.fbCell = bk.split('|')[1];
+    scene.add(m); B.after++; cellReg(m); made.push(m);
   }
+  // m419: a FLAT far copy per 200 m cell -- the batches span the whole map (every frame of every region goes through here),
+  // so one copy for the lot would never be far from the lens; a cell's is far whenever the lens is `lodOut` outside it
+  if (B.lodOut) try { const byCell = new Map(); for (const m of made) { let Q = byCell.get(m.userData.fbCell); if (!Q) byCell.set(m.userData.fbCell, Q = []); Q.push(m); }
+    for (const [c, Q] of byCell) lodAdd('farm:' + c, Q, B.lodOut, { flat: true }); } catch (e) { console.warn('[melee] farm far copy', e); }
   console.log('[melee] farm batch: ' + B.before + ' meshes -> ' + B.after + ' (' + shared.size + ' materials, ' + B.kept + ' left out, ' + B.tris + ' tris)');
   return B.after;
 }
@@ -40993,6 +41049,7 @@ function godMenuOpen(on) {
     btn('A GUST NOW (THE ISLANDS)', () => { windGust(); toast('Gust: +' + IWIND.gustAdd.toFixed(0) + ' m/s', 1.4); godMenuOpen(0); }); }
   if (TURF.blocks.length) btn('TURF ON THE MAP ' + (TURF.map ? 'ON' : 'OFF'), () => { TURF.map = TURF.map ? 0 : 1; godMenuOpen(1); });   // m407
   if (TURF.blocks.length) btn('YOUR ACTIONS MOVE THE TURF ' + (TPUSH.on ? 'ON' : 'OFF'), () => { TPUSH.on = TPUSH.on ? 0 : 1; godMenuOpen(1); });   // m412
+  if (LOD.groups.length) btn('THE FAR COPIES (ONE DRAW PER MATERIAL FROM OUTSIDE) ' + (LOD.on ? 'ON' : 'OFF'), () => { LOD.on = LOD.on ? 0 : 1; godMenuOpen(1); });   // m419
   if (RADIO.built) { btn('THE RADIO EVERYWHERE ' + (RADIO.everywhere ? 'ON' : 'OFF'), () => { RADIO.everywhere = RADIO.everywhere ? 0 : 1; godMenuOpen(1); });   // m415
     btn('A RADIO LINE NOW', () => { RADIO.everywhere = 1; RADIO.live = null; RADIO.t = 0; godMenuOpen(0); }); }
   if (TURF.blocks.length) { btn('FLASHPOINTS ' + (TFLASH.on ? 'ON' : 'OFF'), () => { TFLASH.on = TFLASH.on ? 0 : 1; godMenuOpen(1); });   // m413
@@ -42915,7 +42972,7 @@ function frameBody() {
     // m416: TX = textures the scene's materials hold, and their resident MB; G = geometry MB; boot = s to the card going
     if ((PERF.memT -= 1) <= 0) { PERF.memT = PERF.memEvery; try { perfMem(); } catch (e) {} }
     const mem = PERF.mem ? ' TX' + PERF.mem.tex + '/' + PERF.mem.texMB.toFixed(0) + 'M G' + PERF.mem.geoMB.toFixed(0) + 'M' : '';
-    const line = fps.toFixed(0) + ' FPS · ' + renderer.info.render.calls + ' DC ' + Math.round(renderer.info.render.triangles / 1000) + 'kT' + mem + (PERF.bootMs ? ' boot' + (PERF.bootMs / 1000).toFixed(1) + 's' : '') + (CELL.list.length ? ' c' + CELL.shown + '/' + CELL.list.length : '') + (STEPUP.n ? ' ke' + STEPUP.n : '') + PROF.sum + ' · pr' + PERF.pr.toFixed(2) + (PERF.holdT > 0 ? 'h' : '') + ' B' + PERF.seen + '/' + DUMMIES.length + ' · ' +
+    const line = fps.toFixed(0) + ' FPS · ' + renderer.info.render.calls + ' DC ' + Math.round(renderer.info.render.triangles / 1000) + 'kT' + mem + (PERF.bootMs ? ' boot' + (PERF.bootMs / 1000).toFixed(1) + 's' : '') + (CELL.list.length ? ' c' + CELL.shown + '/' + CELL.list.length : '') + (LOD.groups.length ? ' L' + LOD.active + '/' + LOD.groups.length : '') + (STEPUP.n ? ' ke' + STEPUP.n : '') + PROF.sum + ' · pr' + PERF.pr.toFixed(2) + (PERF.holdT > 0 ? 'h' : '') + ' B' + PERF.seen + '/' + DUMMIES.length + ' · ' +
       p.speed.toFixed(1) + ' m/s · ' + st + lk + hue + bx + cv + brkC + kitC + inf + shp + cl + sk + sk8 + vs + mo + fl + wp + tc + mp +
       bk + (IWIND.k > 0 ? ' WIND' + IWIND.spd.toFixed(0) + (IWIND.gustT > 0 ? 'G' : '') : '') + (ITHERM.k > 0 ? ' TH' + Math.round(ITHERM.k * 100) : '') + (TURF.k ? ' TURF ' + TURF.k + (TPUSH.n ? ' m' + TPUSH.n : '') : '') + (TFLASH.k ? ' FP ' + TFLASH.k : '') + (RADIO.heard ? ' R' + RADIO.heard + (RADIO.calls ? 'c' + RADIO.calls : '') : '') + (KSWAP.made || KSWAP.gone.size || KSWAP.settles ? ' RB' + KSWAP.made + '/' + KSWAP.gone.size + (KSWAP.settles ? 's' + KSWAP.settles : '') : '') + ' · HP' + p.hp.toFixed(0) + (DUMMIES.length ? ' ' + DUMMIES.length + 'B' : '') +
       // CH: the saved chapter (m276); NEW = this boot was `?fresh`, BADSAVE = a save was there and would not parse
@@ -43578,7 +43635,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { perfMem, mem: () => { const m = perfMem(8); return m.tex + ' textures ' + m.texMB.toFixed(1) + ' MB (' + m.top.join(', ') + ') | ' + m.geo + ' geometries ' + m.geoMB.toFixed(1) + ' MB (' + m.topG.join(', ') + ') | gl ' + m.glTex + ' tex ' + m.glGeo + ' geo ' + m.programs + ' programs'; }, RADIO, radioSay, radioNext, E115, e115Done, TFLASH, flashStart, flashEnd, TPUSH, turfMove, KSWAP, kswapGod, kswapSettle, KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { LOD, perfMem, mem: () => { const m = perfMem(8); return m.tex + ' textures ' + m.texMB.toFixed(1) + ' MB (' + m.top.join(', ') + ') | ' + m.geo + ' geometries ' + m.geoMB.toFixed(1) + ' MB (' + m.topG.join(', ') + ') | gl ' + m.glTex + ' tex ' + m.glGeo + ' geo ' + m.programs + ' programs'; }, RADIO, radioSay, radioNext, E115, e115Done, TFLASH, flashStart, flashEnd, TPUSH, turfMove, KSWAP, kswapGod, kswapSettle, KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,
