@@ -7,6 +7,19 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE SKY WAS BLACK IN EVERY WORLD FROM m427 TO m434 (m435, `skyLoad`, `SKY.ktx`, `mel.skypick`).** *"In story mode the sky
+  is just black, there's no HDRI."* m427 made the sky's equirect a KTX2 twin to save ~6 MB. **A compressed equirect as
+  `scene.background` draws BLACK** -- measured headless by rendering the background ALONE into a 64x36 target and reading it
+  back: (0, 0, 0) in tkit and the test site with the twin, (186, 91, 144) with the PNG. m427's own check only confirmed the
+  texture LOADED (`sky image (ktx2)` in the console), never that it DREW -- the same "it loaded" / "it showed" gap as every
+  other entry here. The alien world's pano went through the same path and was black too. `SKY.ktx` 0: the PNG is the picture
+  again (8 MB resident); the twin path stays behind the flag. **A first theory was wrong and is recorded so it is not re-tried:**
+  1774 x 887 is not a multiple of 4 and block-compressed textures can be rejected for that on phones -- but the kit city's own
+  1254 x 1254 compressed maps have drawn since m158, and the black reproduced on a desktop renderer. The baker change it
+  prompted was reverted.
+  **THE SKY SWITCH:** GOD menu `SKY: THE GAME HDRI / THE ALIEN PANO` (reloads; `mel.skypick` in localStorage), because which
+  sky the main game wears is his call (*"you could try that out... it's kind of wild"*). Unset, each world wears its own.
+  Still wanted (his): a sky per area, and night and day.
 - **THE 24 BUILDINGS IN THE ALIEN WORLD, BAKED; AND A FALL THAT TUNNELLED THROUGH THE GROUND (m434, `awBuildings`,
   `AW.bldFar`, `AW.bldOn`, `?bld=0`, `stepPlayer`'s landing, `ktx2Twin`).** His Blender session pushed the 24 building GLBs, the
   critters and a pass-4 coast WHILE m433 was being written (merged; the coast's KTX2 twin was stale and was re-baked). The
