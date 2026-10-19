@@ -7,6 +7,15 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE ALIEN WORLD EXPORTS LANDED IN THE REPO (m431, `models/alien_world/`).** *"Is there any way for you to push
+  the exports to my GitHub so I don't have to do it manually?"* Pushed from the Blender session: `alien_coast.glb` (the new
+  Delfino-style plaza coast, 21.7 MB) + `_collision.glb` + `_splat.png`, `alien_town.glb`, `alien_streets.glb`,
+  `alien_town_kit_buildings.glb` + `_collision.glb`, `alien_sky.glb`, the placements json, the terrain tiles and the sky
+  pano in `textures/`, and the export notes as `README_ALIEN_WORLD.md`. **Both folders went into `bump.mjs`'s `DIRS`**
+  (the twelfth time that rule mattered). **NOTHING IN THE GAME LOADS THEM YET** -- no world key, no builder; that is its
+  own build. The kit buildings follow the Weirdport building-kit contract (`_CHUNK` walls, `col_*` children, `nav_`/`room_`
+  markers), so `buildKit`/`kitSwap` should take them; none of it is KTX2-baked yet (`npm run ktx` per file when wired).
+
 - **CHAPTER 1 IN THE PLAYTHROUGH, THE FIX GATE'S LEAN, A NaN SEEN ONCE (m430, F0b-2a, `tools/play.mjs`, `GATE.lean`,
   `gatePush`, `gateStep`).** The tool grew: `--seed=N` (mulberry32 over `Math.random`, installed by `addInitScript` before
   the page boots, so init is seeded too); a chapter is every quest with that `ch`, and THE SHIPPED PICKER drives the order
