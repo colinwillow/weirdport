@@ -15,6 +15,16 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
+**NEXT, AHEAD OF THE REST: LOAD THE ALIEN PLAZA AS ITS OWN LEVEL (`models/alien_plaza/`, pushed m436).** Colin is building
+the alien side as SMALL hand-made levels, one at a time; this is Level 1, "Glowtide". Read `models/alien_plaza/README_ALIEN_PLAZA.md`
+(the contract), `LEVELS.md` (cores, events, markers) and `ROUTES.txt` (every route, beat by beat). First build: a world key
+`plaza` (`?w=plaza`) that loads the visual, the collision (the usual prefixes), spawns at `spawn_player`, draws the water levels
+from the README, and puts every marker's `aw` name on the GOD place list. Measure it the F0a way. Then, one build each: the
+movers and events in `alien_plaza_level.json` (bells in order -> shutter, sluice -> canal water drops 1.4 m, the generators,
+the slab), the Hover Pack (hold jump in the air: 1.0 s of hover, +1.0 m lift, refills on the ground -- the checker's numbers),
+the launcher NPC, the zipline, and the plaza fight's three waves. The geometry is final for these numbers: do not move ledges
+to fit a different hover -- tell Colin and the Blender side re-runs the checker.
+
 **NEXT BUILD, AHEAD OF PHASE F — THE ALIEN WORLD AS A NEW WORLD YOU CAN EXPLORE.** Colin's Blender session
 pushed it in m431: `models/alien_world/`. **Read `models/alien_world/README_ALIEN_WORLD.md` first; it is the
 contract** (units, origins, extras, `_CHUNK`, colliders, lights, lifts, critters, sky, splat shader). He

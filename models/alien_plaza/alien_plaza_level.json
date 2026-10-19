@@ -1,0 +1,848 @@
+{
+ "level": "glowtide",
+ "number": 1,
+ "title": "Glowtide",
+ "tech": "hover_pack",
+ "units": "metres, Blender Z-up; glTF/three: (x, y, z) -> (x, z, -y)",
+ "spawn": "spawn_player",
+ "cores": 5,
+ "events": {
+  "market_cleared": {
+   "when": "all wave-3 enemies down (waves 1-3 spawn in turn when the player steps into the plaza)",
+   "does": [
+    "reveal core_1 from the fountain",
+    "townsfolk spawn",
+    "shops talk"
+   ]
+  },
+  "bells_rung": {
+   "when": "bell_1, bell_2, bell_3 hit with the hammer in that order (a wrong bell resets)",
+   "does": [
+    "mover_bellroom_shutter",
+    "reveal core_2"
+   ]
+  },
+  "checkpoint": {
+   "when": "player enters trig_checkpoint_* while NOT disguised as a goo guard",
+   "does": [
+    "guards push the player back"
+   ]
+  },
+  "sluice_open": {
+   "when": "sluice_wheel hit 3 times with the hammer",
+   "does": [
+    "mover_canal_water -2.0 -> -3.4 over 4 s",
+    "ledges at -2.9 become walkable"
+   ]
+  },
+  "vault_entered": {
+   "when": "trig_vault",
+   "does": [
+    "grant tech_hover",
+    "reveal core_3"
+   ]
+  },
+  "lamp_powered": {
+   "when": "gen_1, gen_2, gen_3 destroyed (blaster)",
+   "does": [
+    "mover_lamp_slab becomes breakable"
+   ]
+  },
+  "lamp_broken": {
+   "when": "mover_lamp_slab broken",
+   "does": [
+    "reveal core_4",
+    "lighthouse light on"
+   ]
+  },
+  "fuel_delivered": {
+   "when": "fuel_cell carried to npc_00 (launcher)",
+   "does": [
+    "launch_pad active"
+   ]
+  },
+  "launched": {
+   "when": "player uses launch_pad",
+   "does": [
+    "arc to the keep summit",
+    "reveal core_5"
+   ]
+  },
+  "beacon": {
+   "when": "5 cores held and trig_beacon entered",
+   "does": [
+    "gate emblem lights",
+    "mover_waterfall",
+    "mover_vault_door",
+    "portal_exit on"
+   ]
+  }
+ },
+ "markers": [
+  {
+   "name": "spawn_player",
+   "pos": [
+    0,
+    -12,
+    0
+   ],
+   "yaw": 0
+  },
+  {
+   "name": "Market Core",
+   "pos": [
+    0,
+    0,
+    2.2
+   ],
+   "core": 1,
+   "hidden_until": "market_cleared"
+  },
+  {
+   "name": "Bell Core",
+   "pos": [
+    -10,
+    20,
+    15.6
+   ],
+   "core": 2,
+   "hidden_until": "bells_rung"
+  },
+  {
+   "name": "Canal Core",
+   "pos": [
+    0,
+    105.5,
+    -1.9
+   ],
+   "core": 3,
+   "hidden_until": "vault_entered"
+  },
+  {
+   "name": "Lighthouse Core",
+   "pos": [
+    100,
+    86,
+    19.4
+   ],
+   "core": 4,
+   "hidden_until": "lamp_broken"
+  },
+  {
+   "name": "Keep Core",
+   "pos": [
+    67,
+    -35,
+    21.8
+   ],
+   "core": 5,
+   "hidden_until": "launched"
+  },
+  {
+   "name": "tech_hover",
+   "pos": [
+    0,
+    104,
+    -1.7
+   ],
+   "tech": "hover_pack",
+   "refill": "grounded",
+   "hover_s": 1.0,
+   "lift_m": 1.0
+  },
+  {
+   "name": "glyph_1",
+   "pos": [
+    -58.5,
+    74,
+    16.2
+   ],
+   "glyph": 1,
+   "needs": "hover_pack",
+   "note": "twin tower balcony, hammer the cracked wall"
+  },
+  {
+   "name": "glyph_2",
+   "pos": [
+    -125,
+    55,
+    2.0
+   ],
+   "glyph": 2,
+   "needs": "hover_pack",
+   "note": "NW islet across the boats"
+  },
+  {
+   "name": "glyph_3",
+   "pos": [
+    104,
+    10,
+    -3.0
+   ],
+   "glyph": 3,
+   "needs": "clancy",
+   "note": "beach hatch -> sewer"
+  },
+  {
+   "name": "enemy_00",
+   "pos": [
+    -11.066184537594317,
+    -6.441280761610921,
+    -0.9
+   ],
+   "wave": 1,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_01",
+   "pos": [
+    4.839244784532355,
+    -9,
+    -0.9
+   ],
+   "wave": 1,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_02",
+   "pos": [
+    -1.1329178848423354,
+    -9,
+    -0.9
+   ],
+   "wave": 1,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_03",
+   "pos": [
+    12.446841834328767,
+    1.3755840666190131,
+    -0.9
+   ],
+   "wave": 1,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_04",
+   "pos": [
+    13.566487332948956,
+    -3.0537080612195626,
+    -0.9
+   ],
+   "wave": 1,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_05",
+   "pos": [
+    7.402929501626976,
+    -3.208241472431529,
+    -0.9
+   ],
+   "wave": 1,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_06",
+   "pos": [
+    -10.265673288044766,
+    1.2219131240513492,
+    -0.9
+   ],
+   "wave": 2,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_07",
+   "pos": [
+    -13.22975568718829,
+    -2.2244552520788936,
+    -0.9
+   ],
+   "wave": 2,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_08",
+   "pos": [
+    10.132836655738352,
+    0.5018418160838308,
+    -0.9
+   ],
+   "wave": 2,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_09",
+   "pos": [
+    -3.1462407374839247,
+    10.12357212606685,
+    -0.9
+   ],
+   "wave": 2,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_10",
+   "pos": [
+    0.9233097945598073,
+    -5.730911659229065,
+    -0.9
+   ],
+   "wave": 2,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_11",
+   "pos": [
+    2.7176391076893522,
+    -5.3914219956735865,
+    -0.9
+   ],
+   "wave": 2,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_12",
+   "pos": [
+    -6.868265056956016,
+    -3.732756283578694,
+    -0.9
+   ],
+   "wave": 2,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_13",
+   "pos": [
+    16.713009212141312,
+    0.11177589938350702,
+    -0.9
+   ],
+   "wave": 2,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_14",
+   "pos": [
+    2.5655356538372756,
+    5.895232127151683,
+    -0.9
+   ],
+   "wave": 3,
+   "kind": "goo_warrior"
+  },
+  {
+   "name": "enemy_15",
+   "pos": [
+    16.616318380004927,
+    -1.137270978312185,
+    -0.9
+   ],
+   "wave": 3,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_16",
+   "pos": [
+    -4.290348427629865,
+    10.250581307078876,
+    -0.9
+   ],
+   "wave": 3,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "enemy_17",
+   "pos": [
+    -14.337949754078009,
+    -2.148426393316289,
+    -0.9
+   ],
+   "wave": 3,
+   "kind": "goo_grunt"
+  },
+  {
+   "name": "npc_00",
+   "pos": [
+    48,
+    2,
+    6
+   ],
+   "role": "launcher",
+   "line": "My launcher's dry. Bring me a fuel cell off the boathouse dome and I'll send you to the keep!"
+  },
+  {
+   "name": "npc_01",
+   "pos": [
+    31,
+    66,
+    0
+   ],
+   "role": "guard",
+   "line": "Goo Gang only past here."
+  },
+  {
+   "name": "npc_02",
+   "pos": [
+    31,
+    62,
+    0
+   ],
+   "role": "guard",
+   "line": "Move along, alien."
+  },
+  {
+   "name": "npc_03",
+   "pos": [
+    63,
+    72,
+    0
+   ],
+   "role": "guard",
+   "line": "Goo Gang only."
+  },
+  {
+   "name": "npc_04",
+   "pos": [
+    -18,
+    12,
+    -0.6000000000000001
+   ],
+   "role": "shopkeep",
+   "line": "The clock never lies... look where its hands point."
+  },
+  {
+   "name": "npc_05",
+   "pos": [
+    18,
+    12,
+    -0.6000000000000001
+   ],
+   "role": "shopkeep",
+   "line": "Fresh glowfruit!"
+  },
+  {
+   "name": "npc_06",
+   "pos": [
+    -30,
+    -30,
+    0
+   ],
+   "role": "townsfolk",
+   "line": "The beacon's been dark for weeks."
+  },
+  {
+   "name": "npc_07",
+   "pos": [
+    24,
+    -30,
+    0
+   ],
+   "role": "townsfolk",
+   "line": "They say the waterfall hides something."
+  },
+  {
+   "name": "npc_08",
+   "pos": [
+    88,
+    18,
+    0
+   ],
+   "role": "townsfolk",
+   "line": "Lovely day for the beach."
+  },
+  {
+   "name": "npc_09",
+   "pos": [
+    -80,
+    -10,
+    0.5
+   ],
+   "role": "dockhand",
+   "line": "The crane cab's stuck. Nobody can jump that high."
+  },
+  {
+   "name": "npc_10",
+   "pos": [
+    -40,
+    46,
+    0
+   ],
+   "role": "townsfolk",
+   "line": "Bells used to ring in order. Violet, teal, amber..."
+  },
+  {
+   "name": "npc_11",
+   "pos": [
+    100,
+    30,
+    -1.0
+   ],
+   "role": "beachgoer",
+   "line": "My dog keeps digging by that amber umbrella."
+  },
+  {
+   "name": "npc_12",
+   "pos": [
+    2,
+    86,
+    3.0
+   ],
+   "role": "elder",
+   "line": "Five cores, one beacon."
+  },
+  {
+   "name": "launch_pad",
+   "pos": [
+    48,
+    2,
+    6
+   ],
+   "to": [
+    67,
+    -35,
+    21.2
+   ],
+   "needs": "fuel_delivered"
+  },
+  {
+   "name": "fuel_cell",
+   "pos": [
+    -92,
+    -22,
+    11.4
+   ],
+   "carry": true,
+   "to": "npc_00"
+  },
+  {
+   "name": "bell_1",
+   "pos": [
+    -68,
+    0,
+    16.6
+   ],
+   "order": 1,
+   "color": "violet",
+   "hit": "hammer"
+  },
+  {
+   "name": "bell_2",
+   "pos": [
+    13,
+    41,
+    18.3
+   ],
+   "order": 2,
+   "color": "teal",
+   "hit": "hammer"
+  },
+  {
+   "name": "bell_3",
+   "pos": [
+    52,
+    8,
+    7.2
+   ],
+   "order": 3,
+   "color": "amber",
+   "hit": "hammer"
+  },
+  {
+   "name": "gen_1",
+   "pos": [
+    40,
+    33,
+    9
+   ],
+   "hp": 30
+  },
+  {
+   "name": "gen_2",
+   "pos": [
+    72,
+    60,
+    9
+   ],
+   "hp": 30
+  },
+  {
+   "name": "gen_3",
+   "pos": [
+    91,
+    82,
+    18.4
+   ],
+   "hp": 30
+  },
+  {
+   "name": "sluice_wheel",
+   "pos": [
+    47,
+    75.5,
+    1.4
+   ],
+   "hits": 3,
+   "hit": "hammer",
+   "event": "sluice_open"
+  },
+  {
+   "name": "trig_checkpoint_w",
+   "pos": [
+    31,
+    66,
+    1
+   ],
+   "event": "checkpoint",
+   "size": [
+    3,
+    4,
+    3
+   ],
+   "allow": "disguise:goo"
+  },
+  {
+   "name": "trig_checkpoint_e",
+   "pos": [
+    63,
+    72,
+    1
+   ],
+   "event": "checkpoint",
+   "size": [
+    3,
+    4,
+    3
+   ],
+   "allow": "disguise:goo"
+  },
+  {
+   "name": "trig_vault",
+   "pos": [
+    0,
+    104.5,
+    -1.9
+   ],
+   "event": "vault_entered",
+   "size": [
+    8,
+    5,
+    3
+   ]
+  },
+  {
+   "name": "trig_beacon",
+   "pos": [
+    0,
+    88.5,
+    4.0
+   ],
+   "event": "beacon",
+   "size": [
+    12,
+    5,
+    3
+   ],
+   "needs_cores": 5
+  },
+  {
+   "name": "mover_bellroom_shutter",
+   "pos": [
+    -10,
+    20,
+    15
+   ],
+   "kind": "slide",
+   "axis": "z",
+   "dist": 3.2,
+   "on": "bells_rung"
+  },
+  {
+   "name": "mover_canal_water",
+   "pos": [
+    0,
+    60,
+    -2.0
+   ],
+   "kind": "water_level",
+   "from": -2.0,
+   "to": -3.4,
+   "on": "sluice_open",
+   "obj": "PL_canal_water"
+  },
+  {
+   "name": "mover_waterfall",
+   "pos": [
+    0,
+    101,
+    8
+   ],
+   "kind": "hide",
+   "on": "beacon",
+   "obj": "PL_waterfall"
+  },
+  {
+   "name": "mover_vault_door",
+   "pos": [
+    0,
+    108.9,
+    -1.2999999999999998
+   ],
+   "kind": "slide",
+   "axis": "x",
+   "dist": 5,
+   "on": "beacon"
+  },
+  {
+   "name": "mover_lamp_slab",
+   "pos": [
+    98.2,
+    86,
+    19.4
+   ],
+   "kind": "breakable",
+   "hp": 40,
+   "hit": "hammer",
+   "on": "lamp_powered",
+   "event": "lamp_broken"
+  },
+  {
+   "name": "portal_exit",
+   "pos": [
+    0,
+    113,
+    -1.9
+   ],
+   "to": "level_2",
+   "on": "beacon"
+  }
+ ],
+ "ladders": [
+  {
+   "x": -44.8,
+   "y": -4,
+   "z0": -0.9,
+   "z1": 6,
+   "face": "x+",
+   "label": "plaza -> west wing 6 m"
+  },
+  {
+   "x": -51.8,
+   "y": 6,
+   "z0": 6,
+   "z1": 9,
+   "face": "x+",
+   "label": "6 -> 9"
+  },
+  {
+   "x": -63.8,
+   "y": 0,
+   "z0": 9,
+   "z1": 15,
+   "face": "x+",
+   "label": "9 -> 15 (bell 1 tower)"
+  },
+  {
+   "x": -13.2,
+   "y": 20,
+   "z0": 6,
+   "z1": 15,
+   "face": "x-",
+   "label": "hall roof -> bell room"
+  },
+  {
+   "x": 56.2,
+   "y": 10,
+   "z0": 0,
+   "z1": 6,
+   "face": "x+",
+   "label": "street -> east wing roof (bell 3, launcher)"
+  },
+  {
+   "x": 56.2,
+   "y": 38,
+   "z0": 0,
+   "z1": 9,
+   "face": "x+",
+   "label": "street -> dome roof (gen 1)"
+  },
+  {
+   "x": 69.8,
+   "y": 80,
+   "z0": 9,
+   "z1": 19,
+   "face": "x-",
+   "label": "eq5 roof -> e3 tower"
+  },
+  {
+   "x": 7.8,
+   "y": 34,
+   "z0": 0,
+   "z1": 12,
+   "face": "x-",
+   "label": "canal walk -> eq1 roof"
+  },
+  {
+   "x": 9.8,
+   "y": 41,
+   "z0": 12,
+   "z1": 17,
+   "face": "x-",
+   "label": "eq1 roof -> spire belfry (bell 2)"
+  },
+  {
+   "x": 61.8,
+   "y": -35,
+   "z0": 12,
+   "z1": 21,
+   "face": "x-",
+   "label": "keep roof -> keep tower"
+  },
+  {
+   "x": -43.8,
+   "y": 70,
+   "z0": 0,
+   "z1": 12,
+   "face": "x+",
+   "label": "alley -> wq4 roof (twin tower)"
+  },
+  {
+   "x": -4.6,
+   "y": 28,
+   "z0": -2.9,
+   "z1": 0,
+   "face": "x+",
+   "label": "quay -> canal ledge (dry after the sluice)"
+  },
+  {
+   "x": -83.2,
+   "y": -35,
+   "z0": 0.5,
+   "z1": 2.5,
+   "face": "x+",
+   "label": "pier -> crane cab"
+  }
+ ],
+ "ropes": [
+  {
+   "a": [
+    -68,
+    0,
+    15.3
+   ],
+   "b": [
+    -19,
+    20,
+    6.3
+   ],
+   "label": "ww3 tower -> bell hall roof"
+  }
+ ],
+ "water": {
+  "sea": -3.0,
+  "canal": -2.0,
+  "canal_drained": -3.4
+ }
+}

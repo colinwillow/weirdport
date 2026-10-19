@@ -7,6 +7,17 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE ALIEN PLAZA IS A STANDALONE LEVEL, NOT PART OF THE ALIEN WORLD (m436, `models/alien_plaza/`).** *"I wanna go piece by
+  piece and do one level at a time... every level to have first and foremost the level design, the logic, be amazing."* Level 1
+  "Glowtide": a Delfino-Plaza-style harbour town, five cores, the Hover Pack as its tech. Built headless (Blender 5.1 as a
+  python module in the Claude container, `aw_plaza.py` in his alien_world/scripts) from ONE layout table, which also builds the
+  colliders, so the two cannot drift (the m433 "decks 150 m off" failure). **Read `models/alien_plaza/README_ALIEN_PLAZA.md`
+  first**; the design is `LEVELS.md`, the zone map `PLAZA_DESIGN.md`, and **`ROUTES.txt` is the route checker's output**:
+  every core's path as beats with the measured gap and rise, under the game's jump (10.6 m/s, g 20, sprint 7.2, ledge
+  grab ~.6). Its first run found four shortcuts that skipped the tech gates; all were fixed in the geometry before export.
+  Measured file: 88,158 static tris in ONE joined `PL_static` with 15 materials, 10 separate movers, 60 marker empties (`aw`
+  JSON extras), draco, 13 WEBP images embedded (0 broken refs), 1.7 MB; collision 78 objects (`col_deck_` / `col_bld_` /
+  `climb_NN`), 6.6 MB. Materials multiply by COLOR_0. `PA_winatlas` wants alphaTest. Nothing in index.html reads it yet.
 - **THE SKY WAS BLACK IN EVERY WORLD FROM m427 TO m434 (m435, `skyLoad`, `SKY.ktx`, `mel.skypick`).** *"In story mode the sky
   is just black, there's no HDRI."* m427 made the sky's equirect a KTX2 twin to save ~6 MB. **A compressed equirect as
   `scene.background` draws BLACK** -- measured headless by rendering the background ALONE into a 64x36 target and reading it
