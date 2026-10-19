@@ -7,6 +7,15 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE 24 ALIEN BUILDINGS AND THE CRITTERS (m432, `models/alien_world/`).** The other window found that m431 pushed the
+  placement file (`alien_town_placements.json`, 25 rows over 24 distinct buildings) but none of the building GLBs it names,
+  nor `critters.glb`. All 24 are in now (`border_fort` .. `watch_tower_gate`, 2.5-6.9 MB each, textures EMBEDDED -- the
+  `*_atlas_*.png` files on his disk are bake inputs, not runtime dependencies), plus `critters.glb` (18 KB). The coast is
+  re-exported too: canal edges fixed, a raised back terrace with stairs, a ridge path to the main map, canal rails/lamps/
+  boats, filler and graffiti -- `alien_coast.glb` 21.7 -> 23.0 MB, its collision adds `deck_LV_coast_terrace` and
+  `deck_LV_coast_ridgepath`. `models/alien_world` is 164 MB of GLB now; NOTHING is KTX2-baked and the loader should measure
+  texture memory before it trusts any of it on a phone.
+
 - **THE ALIEN WORLD EXPORTS LANDED IN THE REPO (m431, `models/alien_world/`).** *"Is there any way for you to push
   the exports to my GitHub so I don't have to do it manually?"* Pushed from the Blender session: `alien_coast.glb` (the new
   Delfino-style plaza coast, 21.7 MB) + `_collision.glb` + `_splat.png`, `alien_town.glb`, `alien_streets.glb`,
