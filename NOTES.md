@@ -7,6 +7,11 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE HOVER PACK IS TAUGHT BY A SHRINE, AND THE ROUTE CHECKER SEES WALLS NOW (m438, `models/alien_plaza/`).** The tech
+  vault behind the waterfall opens east into a BotW-style shrine: a 12.5 m pit (hover), a 3.8 m ledge (hover lift), stairs,
+  and a one-way door (`mover_shrine_door`, event `shrine_door`) onto the gate terrace as the shortcut home. The checker
+  gained a line-of-sight test against every `col_bld_` box -- before it, a "route" could pass through the vault wall -- and
+  treats the vault/shrine as inside the mountain (reachable only through the falls or the door). 0 problems.
 - **THE PLAZA'S SECOND PASS: SHORTCUTS HOME, BREADCRUMBS, A 30-SECOND REWARD (m437, `models/alien_plaza/`).** After *"how do
   we plan a world so meticulously crafted... you have to jump up on this ledge and it's just high enough"*, every route is
   now checked AND dressed from the checker's own path: `pickup_NNN` markers (35) are laid as arcs over its jumps and columns up

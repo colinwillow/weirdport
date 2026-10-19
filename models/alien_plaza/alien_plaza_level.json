@@ -68,6 +68,12 @@
     "reveal core_5"
    ]
   },
+  "shrine_door": {
+   "when": "player reaches trig_shrine_door from INSIDE the shrine",
+   "does": [
+    "mover_shrine_door opens for good (shortcut)"
+   ]
+  },
   "beacon": {
    "when": "5 cores held and trig_beacon entered",
    "does": [
@@ -627,19 +633,19 @@
   {
    "name": "pickup_012",
    "pos": [
-    38.0,
-    81.75,
-    8.59
+    0.0,
+    109.5,
+    4.0
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 3 vault"
   },
   {
    "name": "pickup_013",
    "pos": [
     38.0,
     81.75,
-    9.35
+    8.59
    ],
    "kind": "spore",
    "route": "core 4 lighthouse gallery"
@@ -649,13 +655,23 @@
    "pos": [
     38.0,
     81.75,
-    9.24
+    9.35
    ],
    "kind": "spore",
    "route": "core 4 lighthouse gallery"
   },
   {
    "name": "pickup_015",
+   "pos": [
+    38.0,
+    81.75,
+    9.24
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_016",
    "pos": [
     45.5,
     83.84,
@@ -665,7 +681,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_016",
+   "name": "pickup_017",
    "pos": [
     47.0,
     84.56,
@@ -675,7 +691,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_017",
+   "name": "pickup_018",
    "pos": [
     48.5,
     85.28,
@@ -685,7 +701,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_018",
+   "name": "pickup_019",
    "pos": [
     63.25,
     85.5,
@@ -695,7 +711,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_019",
+   "name": "pickup_020",
    "pos": [
     64.5,
     85.0,
@@ -705,7 +721,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_020",
+   "name": "pickup_021",
    "pos": [
     65.75,
     84.5,
@@ -715,7 +731,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_021",
+   "name": "pickup_022",
    "pos": [
     69.3,
     80.0,
@@ -725,7 +741,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_022",
+   "name": "pickup_023",
    "pos": [
     69.3,
     80.0,
@@ -735,7 +751,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_023",
+   "name": "pickup_024",
    "pos": [
     69.3,
     80.0,
@@ -745,7 +761,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_024",
+   "name": "pickup_025",
    "pos": [
     79.73,
     82.0,
@@ -755,7 +771,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_025",
+   "name": "pickup_026",
    "pos": [
     81.47,
     82.0,
@@ -765,7 +781,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_026",
+   "name": "pickup_027",
    "pos": [
     83.2,
     82.0,
@@ -775,7 +791,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_027",
+   "name": "pickup_028",
    "pos": [
     84.93,
     82.0,
@@ -785,7 +801,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_028",
+   "name": "pickup_029",
    "pos": [
     86.67,
     82.0,
@@ -795,7 +811,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_029",
+   "name": "pickup_030",
    "pos": [
     94.3,
     84.6,
@@ -805,7 +821,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_030",
+   "name": "pickup_031",
    "pos": [
     95.0,
     84.6,
@@ -815,7 +831,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_031",
+   "name": "pickup_032",
    "pos": [
     95.7,
     84.6,
@@ -825,7 +841,7 @@
    "route": "core 4 lighthouse gallery"
   },
   {
-   "name": "pickup_032",
+   "name": "pickup_033",
    "pos": [
     56.7,
     10.0,
@@ -835,7 +851,7 @@
    "route": "core 5 keep summit"
   },
   {
-   "name": "pickup_033",
+   "name": "pickup_034",
    "pos": [
     56.7,
     10.0,
@@ -845,7 +861,7 @@
    "route": "core 5 keep summit"
   },
   {
-   "name": "pickup_034",
+   "name": "pickup_035",
    "pos": [
     56.7,
     10.0,
@@ -1078,6 +1094,31 @@
    ],
    "to": "level_2",
    "on": "beacon"
+  },
+  {
+   "name": "mover_shrine_door",
+   "pos": [
+    20,
+    100,
+    4.5
+   ],
+   "kind": "one_way_door",
+   "opens_from": "inside (+y)",
+   "note": "hover shrine exit = shortcut home onto the gate terrace"
+  },
+  {
+   "name": "trig_shrine_door",
+   "pos": [
+    20,
+    101.5,
+    4.0
+   ],
+   "event": "shrine_door",
+   "size": [
+    2,
+    2,
+    2
+   ]
   }
  ],
  "ladders": [

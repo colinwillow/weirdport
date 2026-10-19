@@ -79,6 +79,9 @@ mountain path to Level 2.
   ledge path along the main canal.
 - Follow the ledges to the waterfall. Behind it is the **Tech Vault**: you get the **Hover Pack** and
   the third core.
+- **The way out is a hover shrine** (the Breath of the Wild pattern): hover a 12.5 m pit, hover up a 3.8 m
+  ledge, climb the stairs, and push open a one-way door onto the gate terrace. That door stays open as a
+  shortcut home.
 - *Teaches:* forms as keys, environmental mechanisms, and the payoff of a hidden place.
 
 **4. The Lighthouse Core: Hover Pack traversal.**
