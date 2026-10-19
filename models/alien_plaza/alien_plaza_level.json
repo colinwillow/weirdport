@@ -494,6 +494,367 @@
    "line": "Five cores, one beacon."
   },
   {
+   "name": "crate_spawn",
+   "pos": [
+    7,
+    -17,
+    0
+   ],
+   "breakable": "crate",
+   "reward": "spores_10",
+   "note": "first reward inside 30 s of the spawn"
+  },
+  {
+   "name": "pickup_000",
+   "pos": [
+    7.3,
+    34.0,
+    3.0
+   ],
+   "kind": "spore",
+   "route": "core 2 bell room"
+  },
+  {
+   "name": "pickup_001",
+   "pos": [
+    7.3,
+    34.0,
+    6.0
+   ],
+   "kind": "spore",
+   "route": "core 2 bell room"
+  },
+  {
+   "name": "pickup_002",
+   "pos": [
+    7.3,
+    34.0,
+    9.0
+   ],
+   "kind": "spore",
+   "route": "core 2 bell room"
+  },
+  {
+   "name": "pickup_003",
+   "pos": [
+    7.5,
+    29.0,
+    13.14
+   ],
+   "kind": "spore",
+   "route": "core 2 bell room"
+  },
+  {
+   "name": "pickup_004",
+   "pos": [
+    7.0,
+    28.0,
+    12.45
+   ],
+   "kind": "spore",
+   "route": "core 2 bell room"
+  },
+  {
+   "name": "pickup_005",
+   "pos": [
+    6.5,
+    27.0,
+    10.89
+   ],
+   "kind": "spore",
+   "route": "core 2 bell room"
+  },
+  {
+   "name": "pickup_006",
+   "pos": [
+    -6.0,
+    20.0,
+    9.39
+   ],
+   "kind": "spore",
+   "route": "core 2 bell room"
+  },
+  {
+   "name": "pickup_007",
+   "pos": [
+    -6.0,
+    20.0,
+    9.45
+   ],
+   "kind": "spore",
+   "route": "core 2 bell room"
+  },
+  {
+   "name": "pickup_008",
+   "pos": [
+    -6.0,
+    20.0,
+    8.64
+   ],
+   "kind": "spore",
+   "route": "core 2 bell room"
+  },
+  {
+   "name": "pickup_009",
+   "pos": [
+    -13.7,
+    20.0,
+    8.25
+   ],
+   "kind": "spore",
+   "route": "core 2 bell room"
+  },
+  {
+   "name": "pickup_010",
+   "pos": [
+    -13.7,
+    20.0,
+    10.5
+   ],
+   "kind": "spore",
+   "route": "core 2 bell room"
+  },
+  {
+   "name": "pickup_011",
+   "pos": [
+    -13.7,
+    20.0,
+    12.75
+   ],
+   "kind": "spore",
+   "route": "core 2 bell room"
+  },
+  {
+   "name": "pickup_012",
+   "pos": [
+    38.0,
+    81.75,
+    8.59
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_013",
+   "pos": [
+    38.0,
+    81.75,
+    9.35
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_014",
+   "pos": [
+    38.0,
+    81.75,
+    9.24
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_015",
+   "pos": [
+    45.5,
+    83.84,
+    9.99
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_016",
+   "pos": [
+    47.0,
+    84.56,
+    10.85
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_017",
+   "pos": [
+    48.5,
+    85.28,
+    10.84
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_018",
+   "pos": [
+    63.25,
+    85.5,
+    11.26
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_019",
+   "pos": [
+    64.5,
+    85.0,
+    11.7
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_020",
+   "pos": [
+    65.75,
+    84.5,
+    11.26
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_021",
+   "pos": [
+    69.3,
+    80.0,
+    11.5
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_022",
+   "pos": [
+    69.3,
+    80.0,
+    14.0
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_023",
+   "pos": [
+    69.3,
+    80.0,
+    16.5
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_024",
+   "pos": [
+    79.73,
+    82.0,
+    20.85
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_025",
+   "pos": [
+    81.47,
+    82.0,
+    21.3
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_026",
+   "pos": [
+    83.2,
+    82.0,
+    21.4
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_027",
+   "pos": [
+    84.93,
+    82.0,
+    21.1
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_028",
+   "pos": [
+    86.67,
+    82.0,
+    20.45
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_029",
+   "pos": [
+    94.3,
+    84.6,
+    20.66
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_030",
+   "pos": [
+    95.0,
+    84.6,
+    21.1
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_031",
+   "pos": [
+    95.7,
+    84.6,
+    20.66
+   ],
+   "kind": "spore",
+   "route": "core 4 lighthouse gallery"
+  },
+  {
+   "name": "pickup_032",
+   "pos": [
+    56.7,
+    10.0,
+    1.5
+   ],
+   "kind": "spore",
+   "route": "core 5 keep summit"
+  },
+  {
+   "name": "pickup_033",
+   "pos": [
+    56.7,
+    10.0,
+    3.0
+   ],
+   "kind": "spore",
+   "route": "core 5 keep summit"
+  },
+  {
+   "name": "pickup_034",
+   "pos": [
+    56.7,
+    10.0,
+    4.5
+   ],
+   "kind": "spore",
+   "route": "core 5 keep summit"
+  },
+  {
    "name": "launch_pad",
    "pos": [
     48,
@@ -838,6 +1199,45 @@
     6.3
    ],
    "label": "ww3 tower -> bell hall roof"
+  },
+  {
+   "a": [
+    -10,
+    22,
+    15.4
+   ],
+   "b": [
+    0,
+    -6,
+    0.09999999999999998
+   ],
+   "label": "SHORTCUT HOME: bell room -> plaza"
+  },
+  {
+   "a": [
+    100,
+    86,
+    18.8
+   ],
+   "b": [
+    95,
+    40,
+    1.0
+   ],
+   "label": "SHORTCUT HOME: lighthouse -> beach"
+  },
+  {
+   "a": [
+    67,
+    -35,
+    21.4
+   ],
+   "b": [
+    30,
+    -30,
+    1.0
+   ],
+   "label": "SHORTCUT HOME: keep summit -> promenade"
   }
  ],
  "water": {

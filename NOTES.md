@@ -7,6 +7,12 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE PLAZA'S SECOND PASS: SHORTCUTS HOME, BREADCRUMBS, A 30-SECOND REWARD (m437, `models/alien_plaza/`).** After *"how do
+  we plan a world so meticulously crafted... you have to jump up on this ledge and it's just high enough"*, every route is
+  now checked AND dressed from the checker's own path: `pickup_NNN` markers (35) are laid as arcs over its jumps and columns up
+  its ladders; three zipline shortcuts home (`ropes`); a breakable `crate_spawn` by the stage. Pastel walls, hip roofs off the
+  routes, rooftop props, bunting, lamps, stalls. `LEVEL_BLUEPRINTS.md` is the design library (12 classic levels taken apart,
+  a level spec template, 8 rules). Route checker: 0 problems. 94,408 static tris, 15 materials, 1.8 MB.
 - **THE ALIEN PLAZA IS A STANDALONE LEVEL, NOT PART OF THE ALIEN WORLD (m436, `models/alien_plaza/`).** *"I wanna go piece by
   piece and do one level at a time... every level to have first and foremost the level design, the logic, be amazing."* Level 1
   "Glowtide": a Delfino-Plaza-style harbour town, five cores, the Hover Pack as its tech. Built headless (Blender 5.1 as a

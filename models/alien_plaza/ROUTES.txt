@@ -13,8 +13,8 @@ ROUTE CHECK  (jump apex 2.81 m, flat sprint gap 7.6 m, hover gap 15.5 m, hover r
   3. sprint-jump k2#1 -> t6#0   (6.7 across, +1.7 up)
   4. sprint-jump t6#0 -> eq5#0   (5.4 across, +0.0 up)
   5. ladder      eq5#0 -> tower_e3#0   (eq5 roof -> e3 tower)
-  6. hover       tower_e3#0 -> lighthouse#3   (11.0 across, -0.6 up)
-  7. jump        lighthouse#3 -> lighthouse#1   (3.4 across, +0.0 up)
+  6. hover       tower_e3#0 -> lighthouse#3   (10.4 across, -0.6 up)
+  7. jump        lighthouse#3 -> lighthouse#1   (2.8 across, +0.0 up)
 ## core 5 keep summit   (surface keep#1, top 21.0)
   1. ladder      ground -> ew#0   (street -> east wing roof (bell 3, launcher))
   2. launch      ew#0 -> keep#1   (the launcher NPC)
@@ -44,4 +44,3 @@ ROUTE CHECK  (jump apex 2.81 m, flat sprint gap 7.6 m, hover gap 15.5 m, hover r
   1. ladder      ground -> ew#0   (street -> east wing roof (bell 3, launcher))
 
 0 problem(s)
-

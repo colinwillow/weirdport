@@ -58,8 +58,20 @@ its own world.
 **The canal ledges (`col_deck_canal_ledges`, top -2.9) sit under the water** until `sluice_open`
 lowers it to -3.4.
 
-**The rope** (west wing tower to the bell hall roof) is in `alien_plaza_level.json` under `ropes`.
-Treat it as a zipline: catch it at the high end and slide down.
+**Ziplines.** `ropes` in `alien_plaza_level.json` lists four, all ridden from the high end down:
+- The route rope from the west wing tower to the bell hall roof.
+- Three SHORTCUTS HOME: the bell room to the plaza, the lighthouse to the beach, and the keep summit to the
+  promenade. Every finished route takes seconds to leave.
+
+**Pickups.** `pickup_NNN` markers (kind `spore`) are breadcrumbs laid along the real core routes by the route
+checker:
+- an arc over every jump or hover;
+- a column up every ladder;
+- one on every landing.
+
+They show the player where to jump.
+
+**`crate_spawn`** is breakable and sits beside the stage, so the first reward comes within 30 s.
 
 ## Places, for GOD and for testing
 | Place | Blender (x, y, z) |
