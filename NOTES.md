@@ -7,6 +7,16 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE START SCREEN (m441, `START`, `startGate`, `#start`, `mel.started`).** *"Kind of crazy getting this far and not having a
+  start screen... choose levels or the main game, so we don't have to do this all through debug code."* `startGate()` runs
+  BEFORE `init` (the last line is `startGate().then(init)`), so nothing heavy has loaded when it shows: STORY (Start the story /
+  Continue + New game, read off `SAVE`), ALIEN LEVELS (Glowtide), SANDBOX (the alien planet, Weirdport, toon, kit, test). A pick
+  of the world already chosen just carries on; any other pick RELOADS into it, because `WORLD.now` decides things at module
+  scope (the sky image, the floor) and cannot be swapped under a running page. The hero is his app-icon art (`icons/icon-512-v4.png`).
+  **SKIPPED** for `?w=` / `?spawn=` links, GOD's cross-world jump (`GOD.goKey`), once per tab (`mel.started` in sessionStorage),
+  and every tool -- headless Chromium reports `navigator.webdriver`, the boot gate's navigator is `node` -- **or every harness here
+  would wait for ever on a button.** The world key opens it now (it used to cycle blind). Checked once headless at 390x844
+  with `webdriver` masked: the screen shows, Glowtide's button reloads into GLOWTIDE with the menu gone.
 - **GLOWTIDE, LEVEL 1, LOADS ON ITS OWN (m438, STEER "load the alien plaza as its own level", `PL`, `buildPlaza`, `plPos`,
   `plYaw`, world key `plaza`, `?w=plaza`).** His first SMALL hand-made alien level (`models/alien_plaza/`; README_ALIEN_PLAZA.md is
   the contract, LEVELS.md the design, ROUTES.txt every route beat by beat). Through the alien world's machinery: `awColFile` on
