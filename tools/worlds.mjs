@@ -29,6 +29,7 @@ const BUDGET = { dc: 300, kT: 1000, texMB: 160, geoMB: 128 };
 const WORLDS = {
   tkit: ['', 'oldtown', 'camp', 'pearl', 'overlook', 'farmyard', 'hcmill', 'hctrail', 'wfquay', 'wfstacks', 'islanding', 'isneedle', 'isship', 'iscore'],
   toon: ['', 'toon'], kit: ['', 'kit'], weirdport: ['', 'weirdport'], test: ['', 'test'],
+  alien: ['', 'awskyway', 'awcoast', 'awsummit', 'awisles', 'awfire', 'awgoo', 'awcrater'],   // m432
 };
 
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.wasm': 'application/wasm', '.glb': 'model/gltf-binary',

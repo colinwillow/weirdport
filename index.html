@@ -734,10 +734,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m431</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m433</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m431</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m433</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; tap to swap</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -822,9 +822,9 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm431';
+const BUILD = 'm433';
 /* ASSETS:START */
-const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_antenna_game_ktx2.glb":"28afac8c","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_female_purple_ktx2.glb":"fc914afb","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_rollerskate_blue_ktx2.glb":"a66d5697","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/alien_warrior_ktx2.glb":"a13fb7b6","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/colin_ktx2.glb":"35040f87","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/contruction_worker_ktx2.glb":"3df8c344","models/characters/dummy_officer.glb":"724965ac","models/characters/dummy_officer_ktx2.glb":"db640cda","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/jack_ktx2.glb":"1f4c9f7f","models/characters/moussa.glb":"6d80b1cf","models/characters/moussa_ktx2.glb":"66e040f8","models/characters/zap.glb":"5e5cca54","models/characters/zap_ktx2.glb":"4b29d886","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/dump_truck_ktx2.glb":"21ee7059","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/buildings/alien_base_01_ktx2.glb":"6cbbfef2","models/towers/alien_tower_01.glb":"98d23375","models/towers/alien_tower_01_ktx2.glb":"47597651","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.ktx2":"efe0840e","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/alien_world/alien_coast.glb":"7be52706","models/alien_world/alien_coast_collision.glb":"f58fe9c1","models/alien_world/alien_coast_splat.png":"a2d30e85","models/alien_world/alien_sky.glb":"09921f46","models/alien_world/alien_streets.glb":"428b278b","models/alien_world/alien_town.glb":"0458b33a","models/alien_world/alien_town_kit_buildings.glb":"97dc424c","models/alien_world/alien_town_kit_buildings_collision.glb":"acf6a163","models/alien_world/alien_town_placements.json":"49b70ec2","models/alien_world/alien_town_splat.png":"2e637c89","models/alien_world/textures/bark.png":"d969d679","models/alien_world/textures/dirt.png":"e4aff3f7","models/alien_world/textures/foliage.png":"1492930d","models/alien_world/textures/grass.png":"7818548a","models/alien_world/textures/moss.png":"23a9d283","models/alien_world/textures/mud.png":"56f4a041","models/alien_world/textures/p_sand.png":"84dd3c6f","models/alien_world/textures/rock.png":"1b83fb09","models/alien_world/textures/sky_alien_pano.png":"263d3606","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.ktx2":"4aa55fde","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.ktx2":"922e1191","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.ktx2":"e0cbfe1d","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.ktx2":"4fbbb985","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.ktx2":"0feb5c79","images/hdri_game.png":"dac55f41","images/water_sprites_01.ktx2":"326924c5","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.ktx2":"99952ec9","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
+const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_antenna_game_ktx2.glb":"28afac8c","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_female_purple_ktx2.glb":"fc914afb","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_rollerskate_blue_ktx2.glb":"a66d5697","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/alien_warrior_ktx2.glb":"a13fb7b6","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/colin_ktx2.glb":"35040f87","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/contruction_worker_ktx2.glb":"3df8c344","models/characters/dummy_officer.glb":"724965ac","models/characters/dummy_officer_ktx2.glb":"db640cda","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/jack_ktx2.glb":"1f4c9f7f","models/characters/moussa.glb":"6d80b1cf","models/characters/moussa_ktx2.glb":"66e040f8","models/characters/zap.glb":"5e5cca54","models/characters/zap_ktx2.glb":"4b29d886","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/dump_truck_ktx2.glb":"21ee7059","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/buildings/alien_base_01_ktx2.glb":"6cbbfef2","models/towers/alien_tower_01.glb":"98d23375","models/towers/alien_tower_01_ktx2.glb":"47597651","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.ktx2":"efe0840e","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/alien_world/alien_coast.glb":"7be52706","models/alien_world/alien_coast_collision.glb":"f58fe9c1","models/alien_world/alien_coast_ktx2.glb":"9d049248","models/alien_world/alien_coast_splat.png":"a2d30e85","models/alien_world/alien_sky.glb":"09921f46","models/alien_world/alien_streets.glb":"428b278b","models/alien_world/alien_streets_ktx2.glb":"b39c105e","models/alien_world/alien_town.glb":"0458b33a","models/alien_world/alien_town_kit_buildings.glb":"97dc424c","models/alien_world/alien_town_kit_buildings_collision.glb":"acf6a163","models/alien_world/alien_town_kit_buildings_ktx2.glb":"9ee63ae9","models/alien_world/alien_town_ktx2.glb":"458796fb","models/alien_world/alien_town_placements.json":"49b70ec2","models/alien_world/alien_town_splat.png":"2e637c89","models/alien_world/textures/bark.png":"d969d679","models/alien_world/textures/dirt.png":"e4aff3f7","models/alien_world/textures/foliage.png":"1492930d","models/alien_world/textures/grass.png":"7818548a","models/alien_world/textures/moss.png":"23a9d283","models/alien_world/textures/mud.png":"56f4a041","models/alien_world/textures/p_sand.png":"84dd3c6f","models/alien_world/textures/rock.png":"1b83fb09","models/alien_world/textures/sky_alien_pano.ktx2":"27c79a18","models/alien_world/textures/sky_alien_pano.png":"263d3606","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.ktx2":"4aa55fde","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.ktx2":"922e1191","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.ktx2":"e0cbfe1d","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.ktx2":"4fbbb985","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.ktx2":"0feb5c79","images/hdri_game.png":"dac55f41","images/water_sprites_01.ktx2":"326924c5","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.ktx2":"99952ec9","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
 // Every runtime asset URL goes through A(). `npm run bump` writes the sha1 of each file's
 // CONTENTS into ASSETS above, so a file replaced IN PLACE -- same folder, same name, new bytes
@@ -2167,7 +2167,7 @@ const WORLD = {
   now: 'tkit',
   store: 'mel.world',
   // KIT CITY FIRST, so the key's cycle starts from the main world
-  list: { tkit: 'KIT CITY', test: 'TEST SITE', weirdport: 'WEIRDPORT', toon: 'TOON CITY', kit: 'BUILDING KIT' },
+  list: { tkit: 'KIT CITY', test: 'TEST SITE', weirdport: 'WEIRDPORT', toon: 'TOON CITY', kit: 'BUILDING KIT', alien: 'ALIEN WORLD' },   // m432: his alien planet
 };
 {
   // **THE STORE IS READ INSIDE A TRY, AT MODULE SCOPE.** A throw up here is `init()` never
@@ -6658,7 +6658,7 @@ const SKY = {
   //      sRGB value would go into the environment map undecoded -- invisible on a dark sky and
   //      a white reflection on everything under a bright one.
   src: 'img',        // 'img' is his file, 'gen' is the gradient. The HDRI key swaps them live.
-  img: 'images/hdri_game.png',
+  img: WORLD.now === 'alien' ? 'models/alien_world/textures/sky_alien_pano.png' : 'images/hdri_game.png',   // m432: the alien world's own pano
   imgK: 1.35,        // measured, see above -- what it takes to match the gradient's own band
   imgBand: .06,      // the fraction of the image either side of the centre row the fog samples
 };
@@ -7453,7 +7453,7 @@ const _bnpF = { d: 0, nx: 0, nz: 0, cx: 0, cz: 0 };
 // here" rather than 0 is what leaves the floor at zero doing its job off the edge of the slice.
 function groundAt(x, z, y, step) {
   // outside the city on the island there is no floor at zero -- the sea is not glass (m264)
-  let best = ISLE.live ? gFloor0(x, z) : 0;
+  let best = ISLE.live ? gFloor0(x, z) : WORLD.now === 'alien' ? -1e3 : 0;      // m432: the alien terrain dips under 0
   if (TRI.on) { const t = triGround(x, z, y, step); if (t > best) best = t; }
   for (const b of boxesNear(x, x, z, z, _bnG)) {
     if (x < b.minx || x > b.maxx || z < b.minz || z > b.maxz) continue;
@@ -7837,6 +7837,17 @@ const dl = new DRACOLoader().setDecoderPath('./vendor/draco/');
 // world that fails to boot over a loader nobody attached is the one failure he cannot correct.
 const kl = new KTX2Loader().setTranscoderPath('./vendor/basis/').detectSupport(renderer);
 const gltf = new GLTFLoader().setDRACOLoader(dl).setKTX2Loader(kl);
+// m432: A TEXTURE THAT NAMES NO IMAGE IS SKIPPED, NOT FATAL. His alien exports carry textures with no `source` and an empty
+// `extensions` (the image was never written: 15 of the town's materials, 3 of the coast's), and the stock loader throws on
+// the first one -- which loses the WHOLE FILE, not one map. This answers `loadTexture` for exactly those with null, so the
+// material keeps its base colour, and counts them (`GLB NO IMG <n>` in the chip). Every other texture falls through untouched.
+const GLBNOIMG = { n: 0 };
+gltf.register(parser => ({ name: 'MELEE_no_image', loadTexture(i) {
+  const t = parser.json.textures && parser.json.textures[i];
+  if (!t || t.source !== undefined) return null;
+  const ex = t.extensions || {};
+  if (ex.EXT_texture_webp || ex.KHR_texture_basisu || ex.EXT_texture_avif || ex.MSFT_texture_dds) return null;
+  GLBNOIMG.n++; return Promise.resolve(null); } }));
 
 // A SLOW CONNECTION IS NOT A MISSING FILE, and from the call site the two are
 // indistinguishable -- one wants to carry on without the thing, the other wants to ask again.
@@ -7848,7 +7859,9 @@ const gltf = new GLTFLoader().setDRACOLoader(dl).setKTX2Loader(kl);
 // A twin that is missing (a re-export not yet baked) falls back to his file by the loader's own retry -> miss path.
 const KTX2SWAP = new Set(['models/characters/moussa.glb', 'models/characters/colin.glb', 'models/characters/jack.glb', 'models/characters/alien_antenna_game.glb',
   'models/characters/alien_warrior.glb', 'models/characters/alien_rollerskate_blue.glb', 'models/characters/dummy_officer.glb', 'models/characters/contruction_worker.glb', 'models/vehicles/dump_truck.glb',
-  'models/characters/zap.glb', 'models/characters/alien_female_purple.glb', 'models/buildings/alien_base_01.glb', 'models/towers/alien_tower_01.glb']);   // m425
+  'models/characters/zap.glb', 'models/characters/alien_female_purple.glb', 'models/buildings/alien_base_01.glb', 'models/towers/alien_tower_01.glb',
+  // m432: the alien world's four GLBs (`npm run ktx <glb> etc1s` after every re-export of his)
+  'models/alien_world/alien_town.glb', 'models/alien_world/alien_streets.glb', 'models/alien_world/alien_coast.glb', 'models/alien_world/alien_town_kit_buildings.glb']);   // m425
 const ktx2Twin = url => { const t = url.replace(/\.glb$/, '_ktx2.glb'); return KTX2SWAP.has(url) && ASSETS[t] ? t : url; };
 // **AND A LOOSE PNG'S TWIN (m425, F0a-2d-2, `texLoad`, `npm run ktxpng`).** The sprite sheets, the impact atlas and the Weirdport
 // trim go through `TextureLoader` on their own; when the bump has hashed `<name>.ktx2` beside one, it is fetched through the
@@ -18982,7 +18995,11 @@ function kitObb(o) {
     b.miny = Math.min(b.miny, v.y); b.maxy = Math.max(b.maxy, v.y);
     b.minz = Math.min(b.minz, v.z); b.maxz = Math.max(b.maxz, v.z);
   }
-  if (pos.count !== 8) return b;
+  // m432: a flat-shaded box carries 24 vertices (one per face corner) and is the same 8 corners -- his alien exports are all
+  // 24, so without this every turned box there fell back to its world AABB
+  if (pos.count === 24) { const u = []; for (const v of _kobV) if (!u.some(q => q.distanceToSquared(v) < 1e-8)) u.push(v); if (u.length === 8) { _kobV.length = 0; _kobV.push(...u); } }
+  if (_kobV.length !== 8) return b;
+  b.box8 = 1;
   const bot = _kobV.filter(v => v.y < b.miny + 1e-3);
   if (bot.length !== 4) return b;
   const a = bot[0], rest = bot.slice(1).sort((p, q) => a.distanceToSquared(p) - a.distanceToSquared(q));
@@ -24085,7 +24102,19 @@ function flubPix(tex) {
     const g = c.getContext('2d', { willReadFrequently: true });
     g.drawImage(tex.image, 0, 0, 128, 128);
     tex.userData.flPix = g.getImageData(0, 0, 128, 128).data;
-  } catch (e) { console.warn('[melee] flubber: texture unreadable', e); }
+  } catch (e) {
+    // m432: A COMPRESSED TEXTURE HAS NOTHING A CANVAS CAN DRAW (zap's map is KTX2 since m425: `flubber: texture unreadable` in
+    // every world since) -- so it is read back off the GPU, as the glow hue is (`hueReadGPU`). The target's rows run from the
+    // bottom (uv v = 0) and its bytes are linear; the canvas's run from the top and are sRGB, so both are converted here and
+    // `flubTex` reads either the same way.
+    try {
+      const buf = hueReadGPU(tex, 128), out = new Uint8ClampedArray(128 * 128 * 4), enc = c => 255 * Math.pow(c / 255, 1 / 2.2);
+      for (let y = 0; y < 128; y++) { const sy = tex.flipY ? 127 - y : y;
+        for (let x = 0; x < 128; x++) { const a = (sy * 128 + x) * 4, b = (y * 128 + x) * 4;
+          out[b] = enc(buf[a]); out[b + 1] = enc(buf[a + 1]); out[b + 2] = enc(buf[a + 2]); out[b + 3] = buf[a + 3]; } }
+      tex.userData.flPix = out;
+    } catch (e2) { console.warn('[melee] flubber: texture unreadable', e, e2); }
+  }
   return tex.userData.flPix;
 }
 function flubColor(sm, i, out) {
@@ -40956,6 +40985,16 @@ const godMid = F => godFarm((F.u[0] + F.u[1]) / 2, F.v[0] - 2, 0);
 const godFL = H => { const [x, z] = flWorld(H.a, H.b); return [x, null, z, Math.atan2(-FARMLAND.ub[0], -FARMLAND.ub[1])]; };
 // THE PLACES. One line each: where it is, what world, and a function that answers [x, y|null, z, heading|null].
 const GODPLACES = [
+  // THE ALIEN WORLD (m432): read off his own decks, kit roots and placements at load (`awPlaces`), never typed
+  { id: 'awplaza', world: 'alien', name: 'ALIEN WORLD · the town plaza', at: () => AW.places.plaza },
+  { id: 'awskyway', world: 'alien', name: 'ALIEN WORLD · the street district, up on the skyway', at: () => AW.places.skyway },
+  { id: 'awcoast', world: 'alien', name: 'ALIEN WORLD · the coast plaza (south)', at: () => AW.places.coast },
+  { id: 'awsummit', world: 'alien', name: 'ALIEN WORLD · the summit, by the comms tower', at: () => AW.places.summit },
+  { id: 'awisles', world: 'alien', name: 'ALIEN WORLD · the sky islands', at: () => AW.places.isles },
+  { id: 'awlift', world: 'alien', name: 'ALIEN WORLD · the top of the cliff lift', at: () => AW.places.lift },
+  { id: 'awfire', world: 'alien', name: 'ALIEN WORLD · the fire region (south)', at: () => AW.places.fire },
+  { id: 'awgoo', world: 'alien', name: 'ALIEN WORLD · the goo region (west)', at: () => AW.places.goo },
+  { id: 'awcrater', world: 'alien', name: 'ALIEN WORLD · the crash crater (east)', at: () => AW.places.crater },
   { id: 'oldtown',  world: 'tkit', name: 'OLD TOWN · the kit city', at: () => [KCITY.spawn[0], null, KCITY.spawn[1], null] },
   { id: 'footbridge', world: 'tkit', name: 'OLD TOWN · the broken footbridge to The Pearl (west shore)', at: () => FOOT.footAt },
   { id: 'pearldock', world: 'tkit', name: "THE PEARL · dock 1, across the footbridge (Chapter 2's door)", at: () => FOOT.dockAt },
@@ -42689,6 +42728,7 @@ function frameBody() {
     windStep(dt);         // the islands' wind: him in the air, the dust, the windsock (m393) -- after he moved, before the sea's rule
     thermStep(dt);        // the needle's thermal: him floating in it, the dust rising, the tether, the gulls (m395)
     isleStep(dt);         // the sea's rule, right after he moved (m264)
+    awStep(dt);           // the alien world's water and falls (m432)
     _pt = pT('plyr', _pt);
     // AFTER HIM, because the deck is drawn where he ENDED UP -- read before `stepPlayer` it is
     // a board trailing the man standing on it by a frame, which at 13 m/s is 22 cm.
@@ -43216,6 +43256,321 @@ addEventListener('resize', resize);
 addEventListener('orientationchange', () => setTimeout(resize, 120));
 resize();
 
+// ============================================================================================
+// THE ALIEN WORLD (m432, STEER "the alien world as a new world you can explore", `AW`, world key `alien`, `?w=alien`)
+// ============================================================================================
+// His Blender session's export, `models/alien_world/` -- read `README_ALIEN_WORLD.md` there, it is the contract. Six files at
+// ONE shared origin: the 260 m town level with its ~3,000 scatter nodes, the street district, the coast region to the south,
+// its collision, and fifteen kit buildings with theirs. Measured before a line of this was written (`npm run worlds alien`
+// re-measures it in the game):
+//     alien_town.glb        8.9 MB  draco   7,721 draws  5.0M tris   <- 4.0M of it is SC_ scatter: a flower clump is 7,056
+//                                                                      tris, a fern 6,000, a street lamp 8,172 in 11 pieces
+//     alien_coast.glb      20.7 MB  NO draco 10,915 draws  370k tris  <- 7,755 nodes, the town blocks as loose kit pieces
+//     alien_town_kit_*.glb 23.2 MB  NO draco  3,928 draws  380k tris  <- the textures duplicate the coast's (cloth_red ...)
+//     alien_streets.glb     3.0 MB  draco      210 draws  156k tris
+//     alien_sky.glb         2.7 MB              1 draw    <- NOT loaded: the pano (KTX2 twin) is the sky, as SKY.img
+// So the load does what the kit city's does, generically (`awOptimize`): colliders out of the picture and into the
+// collider; everything that repeats INSTANCED per 48 m cell, everything else MERGED per material and cell; every result on
+// the fog cull; the scatter (`SC_`) on a short draw distance of its own (`AW.scatterFar`), because no amount of batching
+// makes 4 million triangles cheap -- the real fix is decimating the scatter in Blender, and the chip says how far off it is.
+// **WHAT IS NOT HERE YET** (each its own build): the 24 per-building GLBs the placements name (loaded when they arrive, no
+// code change: `NO BLD <n>` in the chip until then), the kit buildings as BREAKABLE (`buildKit`/`kitSwap` -- static for now),
+// the splat shader on the two terrains, the water shader, the lift, the boats' bob and the balloons' float, the critters
+// (`critters.glb` is not in the repo), and bodies.
+const AW = {
+  dir: 'models/alien_world/',
+  town: 'alien_town.glb', streets: 'alien_streets.glb', coast: 'alien_coast.glb', coastCol: 'alien_coast_collision.glb',
+  kit: 'alien_town_kit_buildings.glb', kitCol: 'alien_town_kit_buildings_collision.glb', place: 'alien_town_placements.json',
+  pano: 'models/alien_world/textures/sky_alien_pano.png',
+  // the README's light: a low warm sun FROM (.55, .35, .45), a teal/violet hemisphere, a violet haze
+  sun: { col: 0xffd1a8, int: 2.2, dir: [.55, .35, .45] }, hemi: { sky: 0x7fd8e0, gnd: 0x6a3f86, int: .9 },
+  fog: { col: 0x6b548c, near: 60, far: 260 },
+  // the water: y -2 in the town, -6 on the coast (its terrain's own rectangle, measured at load); a body more than `deep`
+  // under it is swimming, which this world does not have yet, so he is put back on the last dry ground
+  water: -2, coastWater: -6, deep: 1.2, kill: -40,
+  // colliders by prefix, as the README says; never drawn
+  colRe: /^(col_|deck_|bld_|ramp_|climb_|ground_|solid_)/,
+  walkRe: /^(col_deck_|deck_|ground_|ramp_|col_ramp_)/, climbRe: /^(col_)?climb_/, critRe: /CRIT_/,
+  cols: { tag: 'ALIEN', cols: 1, cell: .8, maxCells: 4096, tol: .35, full: .92, fill: .5 },
+  // his scatter: `SC_*` nodes, whose multi-material meshes come back as parts named `X_*` -- so the test is the whole chain
+  scatterRe: /^(SC_|X_)/,
+  scatterFar: 55,         // m past which a scatter cell is not drawn (the fog ends at 260)
+  scatterTiny: 32,        // ... and the ground cover (flower clumps, grass, pebbles, shells, reeds)
+  tinyRe: /^(SC_|X_)(FILL|GRASS|SHORE|shore|PLANT|flowers|rock_cliff|SRC_bulb|bulb)/,
+  // INSTANCE only what is heavy (scatter, or >= `instMin` tris a copy); a light repeated piece (his kit's wall variants,
+  // 50-500 tris) is MERGED per material and cell instead -- instancing it was one draw per variant per cell, thousands
+  instMin: 1500,
+  // and each coast / kit cell gets a FLAT far copy (one draw for the whole cell) past `lodOut` m outside it
+  lodOut: 50,
+  // ITS OWN CELL, twice the kit city's: with ~260 materials across his three files, a draw is a material in a cell, so the
+  // cell count in view is the multiplier (48 m: 1,300 draws at the plaza)
+  cell: 96,
+  scatCell: 32,           // the scatter's cells are SMALL instead: it is culled by distance, so a cell is how much of it rides along
+  cast: 0,                // receives shadows, casts none: a merged cell never culls out of the shadow pass
+  // ---- state
+  root: null, coastBox: null, anim: [], missing: [], bld: 0, safe: null, safeT: 0, puts: 0,
+  n: { inst: 0, instN: 0, merged: 0, mergedN: 0, kept: 0, colTri: 0, walk: 0, box: 0, cols: 0, climb: 0, dropped: 0, texDup: 0 },
+  draws0: 0, places: {}, decks: {},
+};
+const inAW = () => WORLD.now === 'alien';
+AW.texBy = new Map();
+// a material once: a closed shell is front-faced (Blender's double-sided default is fill nobody sees), a card keeps both
+// faces; a texture with the same name and size as one already loaded IS that texture (the coast and the kit carry the same
+// sixteen maps, each its own upload otherwise)
+function awMat(m) {
+  if (!m || m.userData.aw) return; m.userData.aw = 1;
+  if (m.side === THREE.DoubleSide && !m.transparent && !m.alphaTest) { m.side = THREE.FrontSide; m.needsUpdate = true; }
+  for (const k of ['map', 'emissiveMap', 'normalMap', 'roughnessMap', 'metalnessMap', 'alphaMap', 'aoMap']) {
+    const t = m[k]; if (!t || !t.image) continue;
+    const key = (t.name || '') + '|' + (t.image.width | 0) + 'x' + (t.image.height | 0);
+    if (!t.name) continue;
+    const have = AW.texBy.get(key);
+    if (have && have !== t) { m[k] = have; m.needsUpdate = true; AW.n.texDup++; if (t.image.close) { try { t.image.close(); } catch (e) {} } t.dispose(); }
+    else if (!have) AW.texBy.set(key, t);
+  }
+}
+// a multi-part mesh comes back from the loader as a GROUP carrying the node's name, its parts carrying the MESH's name (the
+// plaza's collider is the plaza's own five-material mesh) -- so the name that says "collider" may be a parent's
+const awColName = o => { for (let a = o; a && !a.userData.awRoot; a = a.parent) if (AW.colRe.test(a.name || '') || (a.userData && a.userData.collider)) return a.name || ''; return ''; };
+const awIsCol = o => !!awColName(o);
+const _awCB = new THREE.Box3(), _awCV = new THREE.Vector3();
+function awCellOf(o, sz) {
+  sz = sz || AW.cell;
+  if (!o.geometry.boundingBox) o.geometry.computeBoundingBox();
+  o.updateWorldMatrix(true, false);
+  _awCB.copy(o.geometry.boundingBox).applyMatrix4(o.matrixWorld).getCenter(_awCV);
+  return '|' + Math.floor(_awCV.x / sz) + ',' + Math.floor(_awCV.z / sz);
+}
+// THE COLLIDER, from any of the files (the town carries its own `col_*`; the coast and the kit have a file each)
+const _awA = new THREE.Vector3(), _awB = new THREE.Vector3(), _awC = new THREE.Vector3();
+// **HIS LATER DECKS ARE 150 m NORTH OF THEIR PICTURES (m432, measured).** Every tree, rock, lamp and bollard collider in the
+// town sits on its scatter to 0.1-0.8 m; but `col_deck_deck_*` (streets, bridges, the stilt village, the sky islands, the
+// lift's top) and `col_bld_wall_*` (their railings) are all ~150 m further north: street S1 is drawn at z -18..2 and its
+// collider is at -168..-149, sky island A at -120..-105 against -268..-255. An export bug (his to fix in Blender); until
+// then the shift is MEASURED off the streets -- each has a drawn `street_<id>` and a `col_deck_deck_street_<id>` -- and
+// applied to those two families only. No pairs, no shift, and the chip says `AW SHIFT ?`.
+AW.shiftRe = /^col_(deck_deck_|bld_wall_)/; AW.shift = null; AW.streetVis = {};
+const _awSM = new THREE.Matrix4();
+function awShiftMeasure(root) {
+  const dx = [], dz = [];
+  root.updateMatrixWorld(true);
+  const seen = new Set();
+  root.traverse(o => { const m = /^col_deck_deck_street_([A-Za-z0-9]+)$/.exec(o.name || ''); if (!m || seen.has(m[1])) return; seen.add(m[1]);
+    const V = AW.streetVis[m[1]]; if (!V) return;
+    const b = new THREE.Box3().setFromObject(o);
+    dx.push((V.min.x + V.max.x) / 2 - (b.min.x + b.max.x) / 2); dz.push((V.min.z + V.max.z) / 2 - (b.min.z + b.max.z) / 2); });
+  if (!dx.length) { note('AW SHIFT ?'); return null; }
+  const med = a => a.slice().sort((p, q) => p - q)[a.length >> 1];
+  AW.shift = { dx: med(dx), dz: med(dz), n: dx.length };
+  // a shift under half a metre is noise in a decimated path, not an offset
+  if (Math.hypot(AW.shift.dx, AW.shift.dz) < .5) AW.shift.dx = AW.shift.dz = 0;
+  return AW.shift;
+}
+function awColMesh(o) {
+  const nm = awColName(o) || o.name || '';
+  if (!o.isMesh || !o.geometry || !o.geometry.attributes.position) return 0;
+  if (AW.critRe.test(nm)) return 1;                                   // the jellies' colliders: they float over the lake
+  o.updateWorldMatrix(true, false);
+  if (AW.shift && (AW.shift.dx || AW.shift.dz) && AW.shiftRe.test(nm) && !o.userData.awShifted) {
+    o.userData.awShifted = 1; o.matrixWorld.premultiply(_awSM.makeTranslation(AW.shift.dx, 0, AW.shift.dz)); }
+  const bx = new THREE.Box3().setFromBufferAttribute(o.geometry.attributes.position).applyMatrix4(o.matrixWorld);
+  const key = nm.replace(/_\d+$/, '').replace(/^(col_deck_deck_|col_deck_|deck_|ground_)/, '');
+  AW.decks[key] = AW.decks[key] ? AW.decks[key].union(bx) : bx;                                                 // walkable names are the GOD places' landmarks
+  if (AW.climbRe.test(nm)) { kitClimbAdd(kitObb(o), nm, null); AW.n.climb++; return 1; }
+  const walk = AW.walkRe.test(nm);
+  const pos = o.geometry.attributes.position, idx = o.geometry.index, n = idx ? idx.count : pos.count, M = o.matrixWorld;
+  for (let i = 0; i < n; i += 3) {
+    _awA.fromBufferAttribute(pos, idx ? idx.getX(i) : i).applyMatrix4(M);
+    _awB.fromBufferAttribute(pos, idx ? idx.getX(i + 1) : i + 1).applyMatrix4(M);
+    _awC.fromBufferAttribute(pos, idx ? idx.getX(i + 2) : i + 2).applyMatrix4(M);
+    if (walk) AW.n.walk += triAdd(_awA.x, _awA.y, _awA.z, _awB.x, _awB.y, _awB.z, _awC.x, _awC.y, _awC.z);
+    surfAdd(_awA.x, _awA.y, _awA.z, _awB.x, _awB.y, _awB.z, _awC.x, _awC.y, _awC.z);
+    AW.n.colTri++;
+  }
+  if (walk) return 1;
+  // a solid: a box is its own turned box (24 or 8 corners); anything rounder (a tank, a rock) is rasterised into columns
+  const b = kitObb(o);
+  if (b.box8) { b.name = nm; BOXES.push(b); AW.n.box++; return 1; }
+  const got = []; solidColumns(o, AW.cols, got);
+  for (const c of got) { c.name = nm; BOXES.push(c); }
+  AW.n.cols += got.length;
+  return 1;
+}
+function awColFile(g) {
+  g.scene.userData.awRoot = 1; g.scene.updateMatrixWorld(true);
+  let n = 0;
+  g.scene.traverse(o => { if (o.isMesh && awIsCol(o)) n += awColMesh(o); });
+  // the coast's terrain is the coast's rectangle: its sea level is -6, the town's -2
+  g.scene.traverse(o => { if (o.isMesh && /coast_terrain/.test(o.name || '')) AW.coastBox = new THREE.Box3().setFromObject(o); });
+  return n;
+}
+// THE PICTURE, batched: the colliders taken out (handed to `awColMesh` first if `withCol`), the animated nodes kept whole,
+// then INSTANCED by geometry + material + cell and MERGED by material + attribute set + cell, everything on the fog cull
+function awOptimize(g, tag, withCol, opts) {
+  opts = opts || {};
+  const root = g.scene; root.userData.awRoot = 1; root.updateMatrixWorld(true);
+  const meshes = [], drop = [], keep = new Set();
+  root.traverse(o => { if (o.userData && o.userData.animate) { AW.anim.push(o); o.traverse(c => keep.add(c)); } });
+  root.traverse(o => {
+    if (!o.isMesh) return;
+    AW.draws0 += Array.isArray(o.material) ? o.material.length : 1;
+    if (awIsCol(o)) { if (withCol) awColMesh(o); drop.push(o); return; }
+    o.castShadow = !!AW.cast; o.receiveShadow = true;
+    for (const m of [].concat(o.material)) awMat(m);
+    if (keep.has(o)) return;
+    meshes.push(o);
+  });
+  for (const o of drop) { o.parent && o.parent.remove(o); AW.n.dropped++; }
+  const famOf = o => { for (let a = o; a; a = a.parent) if (a.name && a !== root) return a.name; return ''; };
+  // the scatter distance off the WHOLE chain (a part named `X_FILL_flowers1` under a node named `SC_flowers.012`)
+  const farOfO = o => { let f = 0; for (let a = o; a && a !== root; a = a.parent) { const nm = a.name || ''; if (AW.scatterRe.test(nm)) { const d = AW.tinyRe.test(nm) ? AW.scatterTiny : AW.scatterFar; f = f ? Math.min(f, d) : d; } } return f; };
+  const farOf = x => typeof x === 'string' ? 0 : farOfO(x);
+  const trisOf = ge => (ge.index ? ge.index.count : ge.attributes.position.count) / 3;
+  const lodCells = new Map(), lodPut = (m, o) => { if (!opts.lod || farOfO(o)) return; const k = awCellOf(o); let Q = lodCells.get(k); if (!Q) lodCells.set(k, Q = []); Q.push(m); };
+  const out = new THREE.Group(); out.name = 'aw_' + tag; AW.root.add(out);
+  // 1. INSTANCED
+  const by = new Map();
+  for (const o of meshes) {
+    if (Array.isArray(o.material) || o.isSkinnedMesh || o.isInstancedMesh) continue;
+    if (!farOfO(o) && trisOf(o.geometry) < AW.instMin) continue;     // light: merged below
+    const k = o.geometry.uuid + '|' + o.material.uuid + awCellOf(o, farOfO(o) ? AW.scatCell : AW.cell);
+    let L = by.get(k); if (!L) by.set(k, L = []); L.push(o);
+  }
+  const done = new Set();
+  for (const L of by.values()) {
+    if (L.length < 2) continue;
+    const im = new THREE.InstancedMesh(L[0].geometry, L[0].material, L.length);
+    im.name = 'awi_' + famOf(L[0]);
+    for (let i = 0; i < L.length; i++) { im.setMatrixAt(i, L[i].matrixWorld); done.add(L[i]); }
+    im.instanceMatrix.needsUpdate = true; im.castShadow = !!AW.cast; im.receiveShadow = true;
+    im.computeBoundingSphere(); out.add(im); cellReg(im, farOfO(L[0])); lodPut(im, L[0]);
+    AW.n.inst++; AW.n.instN += L.length;
+  }
+  // 2. MERGED: what is left, per material + attribute layout + cell (a bucket that disagrees would merge to null)
+  const sig = ge => Object.keys(ge.attributes).sort().map(a => { const t = ge.attributes[a]; return a + t.itemSize + (t.normalized ? 'n' : '') + t.array.constructor.name; }).join(',') + (ge.index ? '|i' : '|n');
+  const mb = new Map();
+  for (const o of meshes) {
+    if (done.has(o) || Array.isArray(o.material) || o.isSkinnedMesh || o.isInstancedMesh) continue;
+    const k = o.material.uuid + '|' + sig(o.geometry) + awCellOf(o, farOfO(o) ? AW.scatCell : AW.cell) + '|' + farOfO(o);
+    let B = mb.get(k); if (!B) mb.set(k, B = { m: o.material, list: [] }); B.list.push(o);
+  }
+  for (const B of mb.values()) {
+    if (B.list.length < 2) { const o = B.list[0]; out.attach(o); cellReg(o, farOfO(o)); lodPut(o, o); AW.n.kept++; continue; }
+    const parts = []; for (const o of B.list) { const ge = o.geometry.clone(); ge.applyMatrix4(o.matrixWorld); parts.push(ge); }
+    const one = mergeGeometries(parts, false); for (const p of parts) p.dispose();
+    if (!one) { for (const o of B.list) { out.attach(o); cellReg(o, farOfO(o)); lodPut(o, o); AW.n.kept++; } continue; }
+    one.computeBoundingSphere();
+    const me = new THREE.Mesh(one, B.m); me.name = 'awm_' + famOf(B.list[0]); me.castShadow = !!AW.cast; me.receiveShadow = true;
+    out.add(me); cellReg(me, farOfO(B.list[0])); lodPut(me, B.list[0]);
+    AW.n.merged++; AW.n.mergedN += B.list.length;
+  }
+  // the animated ones and whatever is left (multi-material, skinned) stay as they came, under the world
+  for (const o of AW.anim) if (o.parent === root || (o.parent && !out.children.includes(o))) out.attach(o);
+  // the far copies, one group per cell: past `lodOut` m outside it the cell is ONE flat draw
+  let nL = 0; for (const [k, Q] of lodCells) { try { if (lodAdd('aw:' + tag + k, Q, AW.lodOut, { flat: true })) nL++; } catch (e) { console.warn('[melee] alien far copy', e); } }
+  AW.n.lod = (AW.n.lod || 0) + nL;
+  return out.children.length;
+}
+// THE BUILDINGS THE PLACEMENTS NAME: loaded if the bump has hashed the file, skipped LOUDLY if not
+async function awBuildings(P) {
+  const L = (P && P.buildings) || [], names = [...new Set(L.map(b => b.building))];
+  for (const nm of names) {
+    const path = AW.dir + nm + '.glb';
+    if (!ASSETS[path]) { AW.missing.push(nm); continue; }
+    let g = null; try { g = await loadGLB(path, 'loading ' + nm); } catch (e) { AW.missing.push(nm); continue; }
+    for (const b of L.filter(q => q.building === nm)) {
+      const c = g.scene.clone(true); c.position.set(b.pos[0], b.pos[1], b.pos[2]); c.rotation.y = +b.rotY || 0;
+      const host = new THREE.Group(); host.add(c); host.updateMatrixWorld(true);
+      try { awOptimize({ scene: host }, nm, 1, { lod: 1 }); AW.bld++; } catch (e) { console.warn('[melee] alien building ' + nm, e); note('AW BLD FAIL ' + nm); }
+    }
+  }
+  if (AW.missing.length) { note('NO BLD ' + AW.missing.length); console.warn('[melee] alien world: ' + AW.missing.length + ' building GLBs not in the repo: ' + AW.missing.join(', ')); }
+}
+// THE LIGHT AND THE SKY: the README's numbers (the pano is the sky through `SKY.img`, chosen at module scope)
+function awLight() {
+  sun.color.setHex(AW.sun.col); sun.intensity = AW.sun.int;
+  const L = Math.hypot(_sunOff.x, _sunOff.y, _sunOff.z) || 60, d = AW.sun.dir, dl = Math.hypot(d[0], d[1], d[2]);
+  _sunOff.set(d[0] / dl * L, d[1] / dl * L, d[2] / dl * L);
+  hemi.color.setHex(AW.hemi.sky); hemi.groundColor.setHex(AW.hemi.gnd); hemi.intensity = AW.hemi.int;
+  scene.fog.near = AW.fog.near; scene.fog.far = AW.fog.far;
+  if (!SKY.fog) scene.fog.color.setHex(AW.fog.col);
+}
+// THE SPAWN: the plaza's middle, searched outward for open ground (no box over it, not under water)
+function awOpen(x, z) {
+  const y = groundAt(x, z, 99, MOVE.step);
+  if (!(y > awSea(x, z) + .1)) return null;
+  for (const b of BOXES) if (x > b.minx - .4 && x < b.maxx + .4 && z > b.minz - .4 && z < b.maxz + .4 && b.maxy > y + .3 && b.miny < y + 1.8) {
+    if (b.cs === undefined) return null;
+    const dx = x - b.cx, dz = z - b.cz, u = dx * b.cs + dz * b.sn, v = -dx * b.sn + dz * b.cs;
+    if (Math.abs(u) < b.hx + .4 && Math.abs(v) < b.hz + .4) return null; }
+  return y;
+}
+function awSpot(x, z, R) {
+  for (let r = 0; r <= (R || 30); r += 1.5) for (let a = 0; a < 16; a++) {
+    const t = a / 16 * Math.PI * 2, px = x + Math.cos(t) * r, pz = z + Math.sin(t) * r, y = awOpen(px, pz);
+    if (y !== null) return [px, y, pz];
+    if (!r) break;
+  }
+  return null;
+}
+const awSea = (x, z) => { const C = AW.coastBox; return C && x > C.min.x && x < C.max.x && z > C.min.z && z < C.max.z ? AW.coastWater : AW.water; };
+// the GOD places, off his own names -- a deck, a building root, a placement -- never typed
+function awPlaces(P) {
+  const c = b => b ? [(b.min.x + b.max.x) / 2, (b.min.z + b.max.z) / 2] : null, D = AW.decks;
+  const at = (xz, R) => xz ? awSpot(xz[0], xz[1], R) : null;
+  const pl = AW.places, B = (P && P.buildings) || [];
+  pl.plaza = at(c(D.plaza), 30);
+  const st = Object.keys(D).filter(k => /^street_/.test(k)).sort((a, b) => D[b].max.y - D[a].max.y);
+  if (st.length) { const b = D[st[0]]; pl.skyway = [(b.min.x + b.max.x) / 2, b.max.y + .2, (b.min.z + b.max.z) / 2]; }
+  pl.coast = at(c(D.LV_coast_paving), 40);
+  const isle = D.LV_sky_isle_a || D.LV_sky_isle_b; if (isle) pl.isles = [(isle.min.x + isle.max.x) / 2, isle.max.y + .2, (isle.min.z + isle.max.z) / 2];
+  const sum = B.filter(b => b.building === 'comms_tower').sort((a, b) => b.pos[1] - a.pos[1])[0]; if (sum) pl.summit = at([sum.pos[0] + 8, sum.pos[2] + 8], 20);
+  const cr = B.find(b => b.building === 'signal_tower'); if (cr) pl.crater = at([cr.pos[0] - 10, cr.pos[2]], 25);
+  const reg = re => { const R = AW.kitRoots.filter(r => re.test(r.name)); if (!R.length) return null; let x = 0, z = 0; for (const r of R) { x += r.x; z += r.z; } return at([x / R.length, z / R.length], 30); };
+  pl.fire = reg(/^KB_fire_/); pl.goo = reg(/^KB_goo_/);
+  if (D.lift_top) pl.lift = [(D.lift_top.min.x + D.lift_top.max.x) / 2, D.lift_top.max.y + .2, (D.lift_top.min.z + D.lift_top.max.z) / 2];
+  return Object.keys(pl).filter(k => pl[k]).length;
+}
+AW.kitRoots = [];
+// EVERY FRAME: the water's rule and the fall's -- nothing here swims yet, so under it is back on the last dry ground
+function awStep(dt) {
+  if (!inAW() || !rig.ready) return;
+  const p = player, P = p.pos, sea = awSea(P.x, P.z);
+  if (p.grounded && P.y > sea + .2 && !GOD.fly) { if ((AW.safeT -= dt) <= 0) { AW.safeT = .5; AW.safe = [P.x, P.y, P.z]; } }
+  if ((P.y < sea - AW.deep || P.y < AW.kill) && !GOD.fly) {
+    const s = AW.safe || AW.places.plaza; if (!s) return;
+    godTo(s[0], s[1] + .2, s[2]); GOD.n--; AW.puts++; toast('Too deep. Back on dry ground.', 1.4);
+  }
+}
+async function buildAlienWorld() {
+  const t0 = performance.now();
+  AW.root = new THREE.Group(); AW.root.name = 'alienworld'; world.add(AW.root);
+  awLight();
+  let P = null;
+  try { const r = await fetch(A(AW.dir + AW.place)); P = r.ok ? await r.json() : null; } catch (e) { P = null; }
+  if (!P) note('AW NO PLACEMENTS');
+  const side = (f, label, build) => loadGLB(AW.dir + f, label).then(g => { try { build(g); } catch (e) { console.error('[melee] alien ' + f, e); note('AW ' + f + ' FAILED'); } },
+    e => { console.warn('[melee] alien ' + f + ' did not load', e); note('NO ' + f); });
+  // THE COLLISION FIRST (the ground he stands on), then the pictures; the town carries its own colliders
+  await side(AW.streets, 'loading the streets', g => { g.scene.updateMatrixWorld(true); g.scene.traverse(o => { const m = /^street_(\w+)$/.exec(o.name || ''); if (m && !AW.streetVis[m[1]]) AW.streetVis[m[1]] = new THREE.Box3().setFromObject(o); }); awOptimize(g, 'streets', 0); });
+  await side(AW.town, 'loading the alien town', g => { awShiftMeasure(g.scene); awOptimize(g, 'town', 1); });
+  await side(AW.coastCol, 'loading the coast', g => awColFile(g));
+  await side(AW.kitCol, 'loading the kit buildings', g => awColFile(g));
+  await side(AW.coast, 'loading the coast', g => awOptimize(g, 'coast', 0, { lod: 1 }));
+  await side(AW.kit, 'loading the kit buildings', g => { g.scene.traverse(o => { if (/^KB_[a-z]+(_[a-z])?_\d+$/.test(o.name || '')) { o.updateWorldMatrix(true, false); const e = o.matrixWorld.elements; AW.kitRoots.push({ name: o.name, x: e[12], z: e[14] }); } }); awOptimize(g, 'kit', 0, { lod: 1 }); });
+  await awBuildings(P);
+  const nT = triBuild(), nS = surfBuild(), cells = boxGrid();
+  if (!nT) note('AW NO GROUND');
+  if (GLBNOIMG.n) note('GLB NO IMG ' + GLBNOIMG.n);
+  if (AW.missing.length) setTimeout(() => { if (GOD.on) toast('NOT IN THE REPO YET: ' + AW.missing.join(', '), 8); }, 4000);
+  const nP = awPlaces(P);
+  const s = AW.places.plaza;
+  if (s) { player.pos.x = s[0]; player.pos.z = s[2]; } else note('AW NO SPAWN');
+  console.log('[melee] alien world: ' + AW.draws0 + ' source draws -> ' + AW.n.inst + ' instanced sets (' + AW.n.instN + ' nodes) + ' + AW.n.merged +
+    ' merges (' + AW.n.mergedN + ') + ' + AW.n.kept + ' kept | collider ' + nT + ' walkable tris of ' + AW.n.colTri + ', ' + AW.n.box + ' boxes, ' + AW.n.cols +
+    ' columns, ' + AW.n.climb + ' ladders, grid ' + cells + ' | ' + (AW.n.lod || 0) + ' far-copy cells | ' + AW.n.texDup + ' duplicate textures shared | ' + nP + ' places | ' + AW.bld +
+    ' placed buildings, ' + AW.missing.length + ' missing | deck shift ' + (AW.shift ? AW.shift.dx.toFixed(1) + ',' + AW.shift.dz.toFixed(1) + ' off ' + AW.shift.n + ' streets' : 'none') + ' | ' + Math.round(performance.now() - t0) + ' ms');
+}
 async function init() {
   // **THE DENOMINATOR IS THE WORLD'S, AND IT IS SET BEFORE THE FIRST FETCH (m127).** It was 4
   // against a test site that loads FIFTEEN files, so the bar was home before half the city had
@@ -43229,7 +43584,7 @@ async function init() {
   // +1 at m158 (the collision), +1 at m160 (the breakables), and the kit city's library and
   // buildings on top of the toon city's three (m180)
   // +2 in the kit worlds for the construction worker and his hammer (m187)
-  PROG.total = inWP() ? 28 : inTC() ? 31 : inTK() ? 38 : inKit() ? 31 : 29;      // m374: tkit +1, the player's bike; m375 +1, Rae's
+  PROG.total = inWP() ? 28 : inTC() ? 31 : inTK() ? 38 : inKit() ? 31 : inAW() ? 32 : 29;   // m432: the alien world's six files      // m374: tkit +1, the player's bike; m375 +1, Rae's
   // ---- the character. There is no game without him, so a failure here is reported on the
   //      card rather than warned to a console that does not exist on a phone.
   let g;
@@ -43667,6 +44022,11 @@ async function init() {
     try { buildIsle(); } catch (e) { ISLE.live = 0; note('ISLE FAIL'); console.warn('[melee] island', e); }
     // AFTER the collider, so the y he lands on is the one his own road actually has.
     player.pos.x = TCITY.spawn[0]; player.pos.z = TCITY.spawn[1];
+  } else if (inAW()) {
+    // THE ALIEN WORLD (m432): his planet, and nothing of the other worlds' -- no crowd yet (every `at` table is test-site
+    // coordinates, and his town has no body placement in it), no test boxes
+    decalLoad();
+    try { await buildAlienWorld(); } catch (e) { console.error('[melee] alien world', e); note('AW FAILED'); }
   } else {
     await side(BLD.file, 'loading a building', { name: 'BUILDING',
                build: g => buildBuildings(g, BLD) });
@@ -43709,7 +44069,8 @@ async function init() {
     // `?crowd=0` (or `KCROWD.on = 0`) is the empty world back, for the A/B.
     PROG.done += 1 + (crowdOn ? 0 : 9 + CIVILS.length);
   }
-  if (!kitWorld() || crowdOn) {
+  if (inAW()) PROG.done += 1 + 9 + CIVILS.length;     // m432: the crowd is not loaded here (yet)
+  if (!inAW() && (!kitWorld() || crowdOn)) {
   if (!kitWorld() && (!inWP() || WP.she)) await side(SHE.file, 'loading the alien girl', { name: 'SHE', build: buildShe });
   else if (!kitWorld()) PROG.done++;
   // THE MACE FIRST, because the warrior mounts it as he is built -- and it is only a weapon he
@@ -43795,7 +44156,7 @@ async function init() {
 
 // the console handle. Every tuning object is live, so a number can be moved on the phone
 // without a rebuild and without a push.
-window.melee = window.mel = { LOD, perfMem, mem: () => { const m = perfMem(8); return m.tex + ' textures ' + m.texMB.toFixed(1) + ' MB (' + m.top.join(', ') + ') | ' + m.geo + ' geometries ' + m.geoMB.toFixed(1) + ' MB (' + m.topG.join(', ') + ') | gl ' + m.glTex + ' tex ' + m.glGeo + ' geo ' + m.programs + ' programs'; }, RADIO, radioSay, radioNext, E115, e115Done, TFLASH, flashStart, flashEnd, TPUSH, turfMove, KSWAP, kswapGod, kswapSettle, KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
+window.melee = window.mel = { AW, awSpot, awOpen, awPlaces, GLBNOIMG, LOD, perfMem, mem: () => { const m = perfMem(8); return m.tex + ' textures ' + m.texMB.toFixed(1) + ' MB (' + m.top.join(', ') + ') | ' + m.geo + ' geometries ' + m.geoMB.toFixed(1) + ' MB (' + m.topG.join(', ') + ') | gl ' + m.glTex + ' tex ' + m.glGeo + ' geo ' + m.programs + ' programs'; }, RADIO, radioSay, radioNext, E115, e115Done, TFLASH, flashStart, flashEnd, TPUSH, turfMove, KSWAP, kswapGod, kswapSettle, KGEN, KGSTYLE, KPIECE, kgenMake, kgenDrop, kgenGod, TDRESS, TURF, turfPush, turfAt, ISUIT, shipEnd, ISGAUNT, ISFOLK, ISDECK, ISHIP, IKEEP, ITHERM, IXING, IWIND, windGust, IJUMP, IKITE, IBASE, ISKATE, HCRACE, RBIKE, raceStep, BIKE, PBIKE, bikeOn, HCRALLY, rallyStart, rallyBrawl, HCTRAIN, HCROAD, OPLAZA, plazaStart, pearlCrowd, OPEARL, OGOOD, UPGRADES, goodGift, upApply, OLOOK, UPLIFT, cyborgRevert, SMART, ROSTER, rosterSpawn, rosterApply, OAMP, OWATCH, OORB, AIRT, orbRelease, OINCUR, incurStart, protestCrowd, OPROTEST, protestStart, protestBrawl, OSTRIKE, strike: strikeSet, ODECAY, decayApply, DHEALTH, dhPush, dhGet, FOOT, footFix, fireSheet, BURN, burnStart, OTLIFE, OTSITE, OTCARTS, HATS, OTCAMP, MAPREG, tipShow, GATES, SOCIAL, socialMe, talkTap, mapOpen, RUMOURS, rumourHear, tasksOpen, questTrack, cowSpook, cowFright, FTERR, SKYLINE, buildSkyline,
   // PROGRESS (m276): `mel.SAVE` is the save; the setters write it through; `mel.progReset()` is a new game
   // TALK (m277): `mel.TALK` live; `mel.TALKS` the scripts by kind; `mel.talk` the state
   TALK, TALKS, talk,

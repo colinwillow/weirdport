@@ -7,6 +7,52 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE ALIEN WORLD LOADS (m433 -- m432 was hashed mid-pass; STEER "the alien world", `AW`, `buildAlienWorld`, `awOptimize`,
+  `awColMesh`, `awShiftMeasure`, `awStep`, world key `alien`, `?w=alien`).** His planet from `models/alien_world/` (README_ALIEN_WORLD.md
+  is the contract). Six files at one origin; the sky is the pano through `SKY.img` (chosen at module scope off `WORLD.now`), so
+  `alien_sky.glb` is never fetched. Measured off the files first (`awinspect.mjs` in the scratchpad):
+      alien_town.glb        8.9 MB  draco    7,721 draws  5.0M tris  <- 4.0M is SC_ scatter: a flower clump 7,056 tris, a fern 6,000,
+                                                                       a street lamp 8,172 in 11 parts, a willow 4,000
+      alien_coast.glb      20.7 MB  NO draco 10,915 draws  370k       alien_town_kit_buildings.glb 23.2 MB NO draco 3,928 draws 380k
+      alien_streets.glb     3.0 MB  draco      210 draws  156k       ~260 materials across the three
+  **FOUR THINGS IN HIS EXPORT THAT ARE HIS TO FIX** (each handled here so the world still loads):
+  1. **Textures that name no image.** 15 of the town's materials (K_rust, K_brass, K_rock, K_steel_teal, K_dome_dark, K_bolt,
+     K_pipe_dark, K_wood_door, K_rock_painted, K_paint_yellow, K_path_plate, K_steel_rust, K_cloth_pink, K_steel_slimeteal,
+     K_cap_mottle), 3 of the coast's (AK_core, K_coast_stone, K_rock_painted), 1 of the kit's: `textures[i]` with no `source` and
+     `extensions: {}`. Stock GLTFLoader throws `reading 'uri'` on the first one and the WHOLE FILE fails (that was four of five
+     files on the first boot). `gltf.register(MELEE_no_image)` answers `loadTexture` with null for exactly those; the material
+     keeps its base colour; `GLB NO IMG <n>` in the chip (20).
+  2. **His later decks are 150 m north of their pictures.** Every tree/rock/lamp/bollard collider sits on its scatter to 0.1-0.8 m,
+     but `col_deck_deck_*` (streets, bridges, the stilt village, the sky islands, the lift's top) and `col_bld_wall_*` are +150 m
+     in Blender y (-150 in three z): street S1 drawn at z -18..2, collider -168..-149; sky isle A -120..-105 against -268..-255.
+     `awShiftMeasure` takes the median centre difference over the 19 `street_<id>` / `col_deck_deck_street_<id>` pairs
+     (0.0, 149.96) and shifts those two families only. No pairs, no shift, `AW SHIFT ?`.
+  3. **No draco on the coast or the kit** -- 44 MB of the ~60 MB wire. And **the 24 per-building GLBs** the placements name and
+     `critters.glb` are not in the repo: `NO BLD 24` + a GOD toast with the names; they load with no code change.
+  4. **Multi-material meshes come back as a GROUP named after the node with parts named after the MESH** -- so `col_deck_plaza`
+     (the plaza's own five-material mesh used as its collider) arrived as parts with the visual's name, was DRAWN, and was never
+     walkable; and the scatter is `SC_*` nodes over `X_*` parts. `awColName` / `farOfO` test the whole ancestor chain.
+  **THE LOADER (`awOptimize`)**: colliders out (to `awColMesh`) by prefix; HEAVY repeats (scatter, or >= 1,500 tris a copy)
+  INSTANCED per cell; light ones (his kit's wall variants, 50-500 tris) MERGED per material + attribute layout + cell -- instancing
+  them was one draw per variant per cell; scatter on its own distance (55 m, ground cover 32) in 32 m cells, everything else in
+  96 m cells; coast and kit cells get a FLAT far copy past 50 m (`lodAdd`); a texture with the same name and size as one already
+  loaded is that one (71 shared). `kitObb` now reads a 24-vertex flat-shaded box as its 8 corners (every alien box is 24; without
+  it every turned box fell back to its AABB) and marks `b.box8`. `groundAt` has NO floor at 0 in this world (valleys and lakes
+  dip under it); `awStep` puts him back on the last dry ground under the water (-2 town, -6 inside the coast terrain's box) or
+  below -40. Spawn and nine GOD places off his own names (`awPlaces`), searched with `awSpot`.
+  **KTX2: `npm run ktx <glb> etc1s` on all four** (streets 72->9 MB, town 128->16, kit 125->16, coast 146->18) and `ktxpng` on
+  the pano (8->2); `KTX2SWAP` lists them. RE-RUN AFTER EVERY RE-EXPORT of his.
+  `npm run worlds alien` (SwiftShader, fixed headings):
+      == alien  boot 14.5 s  52 textures 84 MB  1678 geometries 145 MB  39 programs   NOTE: NO BLD 24, GLB NO IMG 20
+         spawn 1165 DC 1621 kT | skyway 878/1206 | coast 110/188 | summit 277/1466 | isles 225/1374 | fire 452/559 | goo 539/1131 | crater 323/771
+  Before the loader's policy (all instanced, 48 m cells, scatter distance missed): spawn 3074 DC / 2461 kT, summit 3153 / 4104,
+  textures 278 MB. **What is left is the export's**: the scatter's per-copy triangles (seven ferns at the plaza are 100 kT) want
+  decimating to ~500 a copy, and ~260 materials want atlasing -- no batching makes a material per cell go away. Walk check
+  (headless, stick from the plaza four ways): the height follows the terrain, grounded throughout, no put-backs.
+  **ALSO FIXED: `flubber: texture unreadable` in every world since m425** (zap's map is KTX2; `flubPix` drew it through a canvas):
+  read back off the GPU through `hueReadGPU`, rows flipped for `flipY`, linear bytes encoded to sRGB.
+  **NOT BUILT YET**: breakable kit walls here (static for now), the splat shader on both terrains, the water shader, the lift,
+  the boats' bob and the balloons' float, critters, bodies, `places` coverage for this world.
 - **THE ALIEN WORLD EXPORTS LANDED IN THE REPO (m431, `models/alien_world/`).** *"Is there any way for you to push
   the exports to my GitHub so I don't have to do it manually?"* Pushed from the Blender session: `alien_coast.glb` (the new
   Delfino-style plaza coast, 21.7 MB) + `_collision.glb` + `_splat.png`, `alien_town.glb`, `alien_streets.glb`,

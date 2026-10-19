@@ -648,6 +648,12 @@ a map at all:
   ladder only latches from its FRONT (the piece's local +Z), and on a roof the lens pulls out.
   **NOT BUILT:** interior culling for far buildings (his suggestion 3), and a swapped twin is 3–4
   draws of its own. `mel.kitBoom()` swaps and breaks where he stands; the chip says `SW<swaps>`.
+- **THE ALIEN WORLD IS A SIXTH WORLD** (`AW`, world key `alien`, `?w=alien`, m433) -- his alien planet, a separate avenue he is
+  exploring. `buildAlienWorld` loads six files at one origin through `awOptimize` (colliders out by prefix, heavy repeats
+  instanced, light ones merged per material and cell, scatter on its own short distance, flat far copies) and `awColMesh`. **Read
+  `models/alien_world/README_ALIEN_WORLD.md` first** and grep `NOTES.md` for `(m433`: his export has image-less textures
+  (`GLB NO IMG`), decks 150 m off their pictures (`awShiftMeasure` corrects them), and 24 building GLBs not yet pushed
+  (`NO BLD`). **Re-run `npm run ktx models/alien_world/<file>.glb etc1s` after every re-export of his** (`KTX2SWAP` lists the four).
 - **The ragdoll has no self-collision (m156).** `doll.hulls` is empty, so a limb can pass into
   his own torso — her hair has head/chest/hips spheres for exactly that reason. The arms are
   pinned at the shoulder under a .85 cone and cannot reach far, so it is left out rather than
