@@ -15,6 +15,36 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
+**NEXT BUILD, AHEAD OF PHASE F — THE ALIEN WORLD AS A NEW WORLD YOU CAN EXPLORE.** Colin's Blender session
+pushed it in m431: `models/alien_world/`. **Read `models/alien_world/README_ALIEN_WORLD.md` first; it is the
+contract** (units, origins, extras, `_CHUNK`, colliders, lights, lifts, critters, sky, splat shader). He
+wants to load it, walk round it and find the bugs and the performance problems. Not a story, not a chapter.
+1. **A new world key `alien` (`?w=alien`), in the world key and the GOD menu.** Load at one shared origin:
+   `alien_town.glb` (260 x 260 m level + ~660 scatter instances), `alien_streets.glb`, `alien_coast.glb` +
+   `alien_coast_collision.glb`, `alien_town_kit_buildings.glb` + its collision. The kit buildings follow the
+   same contract as his Weirdport kit, so reuse `buildKit` / `kitSwap` / the breakable walls rather than a
+   second path. Colliders by prefix as the README says (`col_deck_`/`deck_`/`ground_` walkable,
+   `col_bld_`/`bld_` solid, `ramp_`, `climb_` ladders); never draw them.
+2. **Look:** the sky dome or the pano as background + environment, the sun/hemi/fog numbers in the README,
+   the splat shader for both terrains (town: grass/dirt/rock/moss; coast: sand in the G slot), water at
+   y -2 (coast -6, canals -3/-0.9) with the existing water shader, below it = swim / put back. The
+   PNG textures go through the repo's KTX2 path (`npm run ktxpng`) like the rest.
+3. **Life:** the lift (`lifts` in placements), boats bob and balloons float (`extras.animate`), and some
+   bodies walking the plaza and the streets so it isn't empty (existing NPCs; placed by a sweep of the
+   real collider, never typed). Critters only if `critters.glb` is in the repo.
+4. **Buildings from `alien_town_placements.json` load if their GLB is there and are skipped LOUDLY if not.
+   25 building GLBs it names (spore_pharmacy, slime_cafe, ... signal_tower) are NOT in the repo yet**,
+   nor `critters.glb` — Colin's Blender session has to push them. Show `NO BLD <n>` in the chip and a GOD
+   toast listing the missing names, and build the rest. When they arrive they need no code change.
+   Their `_CHUNK` / `chunks` / `lights` extras use the same breakable rules as the kit walls.
+5. **Measure it** the F0a way (draw calls, triangles, texture memory, boot time) in the chip and NOTES,
+   and cut whatever is far over budget: the scatter instanced, far copies, the fog cull. 45 MB of GLB on
+   the wire is a lot for a phone, so say what the boot costs.
+6. **Spawn** on the plaza, searched not typed. GOD places: town plaza, streets/skyway, coast plaza, the
+   summit, the sky islands, the fire region, the goo region, the crash crater. `npm run places` covers them.
+Split it over as many builds as it takes; ship the load-and-walk first. Then go back to Phase F.
+
+
 **From Colin: keep going, never wait.** Every earlier STEER block (God mode, the farm rebuild, the
 farm's room) is done and has been cleared from here. **The roadmap now has a Phase F; take its items in
 order.** The rules that still stand:
