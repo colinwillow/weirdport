@@ -653,7 +653,8 @@ a map at all:
   instanced, light ones merged per material and cell, scatter on its own short distance, flat far copies) and `awColMesh`. **Read
   `models/alien_world/README_ALIEN_WORLD.md` first** and grep `NOTES.md` for `(m433`: his export has image-less textures
   (`GLB NO IMG`), decks 150 m off their pictures (`awShiftMeasure` corrects them), and 24 building GLBs not yet pushed
-  (`NO BLD`). **Re-run `npm run ktx models/alien_world/<file>.glb etc1s` after every re-export of his** (`KTX2SWAP` lists the four).
+  (`NO BLD`; all 24 in at m434, 90k-471k tris EACH -- they need decimating; `?bld=0` / the GOD switch leaves them out). **Re-run
+  `npm run ktx models/alien_world/<file>.glb etc1s` after every re-export of his** (any baked twin in that folder is taken).
 - **The ragdoll has no self-collision (m156).** `doll.hulls` is empty, so a limb can pass into
   his own torso — her hair has head/chest/hips spheres for exactly that reason. The arms are
   pinned at the shoulder under a .85 cone and cannot reach far, so it is left out rather than

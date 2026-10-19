@@ -7,6 +7,27 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE 24 BUILDINGS IN THE ALIEN WORLD, BAKED; AND A FALL THAT TUNNELLED THROUGH THE GROUND (m434, `awBuildings`,
+  `AW.bldFar`, `AW.bldOn`, `?bld=0`, `stepPlayer`'s landing, `ktx2Twin`).** His Blender session pushed the 24 building GLBs, the
+  critters and a pass-4 coast WHILE m433 was being written (merged; the coast's KTX2 twin was stale and was re-baked). The
+  buildings are the heaviest thing in the world: **90k-471k triangles each** (spore_pharmacy 471k, res_complex 287k, fire_forge
+  ~280k), two 2048 atlases each (~100 MB resident apiece as WebP; ~12 after `npm run ktx etc1s`, all 24 baked). `ktx2Twin` now
+  takes a twin for ANY `models/alien_world/*.glb` once the bump has hashed it, so a newly baked file needs no line.
+  `npm run worlds alien` with all 28 placed:
+      == alien  boot 27.8 s  108 textures 356 MB  2447 geometries 337 MB   NOTE: GLB NO IMG 20
+         spawn 1365 DC 2477 kT | skyway 1000/1727 | coast 118/194 | summit 1095/5176 | isles 1066/5024 | fire 510/838 | goo 896/2564
+  The first version gave the buildings flat far copies like the coast's cells: geometry 437 MB, because a far copy of a 400k
+  building IS 400k triangles again. They get none now; `AW.bldFar` 150 m (inside the fog, half-fogged at 160) is a STOPGAP
+  draw distance that pops. **From the summit and the sky islands the whole town is in view: 5 MILLION triangles.** Nothing at
+  runtime fixes that -- the buildings want ~30-50k each, decimated in Blender. 700 MB of textures + geometry may kill a phone
+  tab, so `?bld=0` or the GOD switch `ALIEN BUILDINGS` (remembered in `mel.awbld`) leaves them out: without them the world is
+  84 MB textures / 145 MB geometry (m433's table).
+  **THE LANDING TUNNELLED (found walking the plaza headless: two put-backs where there is no water).** `stepPlayer` asked
+  `groundAt(x, z, p.pos.y, step)` at the END of the frame. Off the 4.9 m market kiosk roof at 12.7 m/s he went 0.68 -> 0.24 in
+  one frame past the terrain at 0.62; at 0.24 + 0.36 the terrain is out of reach, so the plaza's deck at 0.10 (which runs on
+  UNDER the terrain) won -- he walked under the ground and fell out of the world where the deck ended. **Falling, the ground is
+  now asked at max(start of frame, end of frame)**: he lands at 0.63. Every world: `npm run play` ch0+ch1 pass (58 s / 124 s).
+  **DO NOT give the buildings far copies again** until they are decimated, and do not raise `bldFar` past the fog's half.
 - **THE ALIEN WORLD LOADS (m433 -- m432 was hashed mid-pass; STEER "the alien world", `AW`, `buildAlienWorld`, `awOptimize`,
   `awColMesh`, `awShiftMeasure`, `awStep`, world key `alien`, `?w=alien`).** His planet from `models/alien_world/` (README_ALIEN_WORLD.md
   is the contract). Six files at one origin; the sky is the pano through `SKY.img` (chosen at module scope off `WORLD.now`), so
@@ -53,6 +74,15 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
   read back off the GPU through `hueReadGPU`, rows flipped for `flipY`, linear bytes encoded to sRGB.
   **NOT BUILT YET**: breakable kit walls here (static for now), the splat shader on both terrains, the water shader, the lift,
   the boats' bob and the balloons' float, critters, bodies, `places` coverage for this world.
+- **THE 24 ALIEN BUILDINGS AND THE CRITTERS (m432, `models/alien_world/`).** The other window found that m431 pushed the
+  placement file (`alien_town_placements.json`, 25 rows over 24 distinct buildings) but none of the building GLBs it names,
+  nor `critters.glb`. All 24 are in now (`border_fort` .. `watch_tower_gate`, 2.5-6.9 MB each, textures EMBEDDED -- the
+  `*_atlas_*.png` files on his disk are bake inputs, not runtime dependencies), plus `critters.glb` (18 KB). The coast is
+  re-exported too: canal edges fixed, a raised back terrace with stairs, a ridge path to the main map, canal rails/lamps/
+  boats, filler and graffiti -- `alien_coast.glb` 21.7 -> 23.0 MB, its collision adds `deck_LV_coast_terrace` and
+  `deck_LV_coast_ridgepath`. `models/alien_world` is 164 MB of GLB now; NOTHING is KTX2-baked and the loader should measure
+  texture memory before it trusts any of it on a phone.
+
 - **THE ALIEN WORLD EXPORTS LANDED IN THE REPO (m431, `models/alien_world/`).** *"Is there any way for you to push
   the exports to my GitHub so I don't have to do it manually?"* Pushed from the Blender session: `alien_coast.glb` (the new
   Delfino-style plaza coast, 21.7 MB) + `_collision.glb` + `_splat.png`, `alien_town.glb`, `alien_streets.glb`,
