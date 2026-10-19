@@ -655,6 +655,10 @@ a map at all:
   (`GLB NO IMG`), decks 150 m off their pictures (`awShiftMeasure` corrects them), and 24 building GLBs not yet pushed
   (`NO BLD`; all 24 in at m434, 90k-471k tris EACH -- they need decimating; `?bld=0` / the GOD switch leaves them out). **Re-run
   `npm run ktx models/alien_world/<file>.glb etc1s` after every re-export of his** (any baked twin in that folder is taken).
+- **GLOWTIDE IS A SEVENTH WORLD** (`PL`, world key `plaza`, `?w=plaza`, m438) -- Level 1 of his small hand-made alien levels
+  (`models/alien_plaza/`; read README_ALIEN_PLAZA.md, LEVELS.md, ROUTES.txt). Loaded by `buildPlaza` through the alien world's
+  `awOptimize` / `awColFile`; the level JSON is BLENDER axes (`plPos`). **The geometry is final for the route checker's numbers
+  (jump apex 2.81 m, sprint gap 7.6 m, hover 1.0 s / +1.0 m): never move a ledge to fit a different hover -- tell him.**
 - **The ragdoll has no self-collision (m156).** `doll.hulls` is empty, so a limb can pass into
   his own torso — her hair has head/chest/hips spheres for exactly that reason. The arms are
   pinned at the shoulder under a .85 cone and cannot reach far, so it is left out rather than

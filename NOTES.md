@@ -7,6 +7,28 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **GLOWTIDE, LEVEL 1, LOADS ON ITS OWN (m438, STEER "load the alien plaza as its own level", `PL`, `buildPlaza`, `plPos`,
+  `plYaw`, world key `plaza`, `?w=plaza`).** His first SMALL hand-made alien level (`models/alien_plaza/`; README_ALIEN_PLAZA.md is
+  the contract, LEVELS.md the design, ROUTES.txt every route beat by beat). Through the alien world's machinery: `awColFile` on
+  the collision file, `awOptimize` on the visual with `keepRe` keeping the level's own objects whole (`PL_mover_*`, bells,
+  generators, fuel cell, sluice, sea, canal water, waterfall -> `PL.kept` by name, for the event builds). The level JSON's
+  positions are BLENDER axes: `plPos` (x, y, z) -> (x, z, -y), `plYaw` y -> PI - y (yaw 0 faces +Y, north = three -z = heading
+  PI). Every one of the 96 markers is a GOD place (`godLive`, ids `pl_<name>`); `mel.go` now finds live places too. The sky is
+  the alien pano; the sea's put-back is the level's own `water.sea` (-3) less `AW.deep`.
+  **TWO TRAPS, BOTH FOUND BY MEASURING:** (1) `PL` had `data:` twice in its literal (the file name and the loaded JSON), the
+  second won, and the fetch asked for `models/alien_plaza/null` -> `PL NO LEVEL JSON`, `PL NO SPAWN`. The file key is `json`.
+  (2) **`PL_static` -- the whole visible plaza, 15 materials -- carries `collider: "ground_"` in its Blender extras** (8 visual
+  nodes do), and `awIsCol` honours `userData.collider` (the kit buildings' contract), so the plaza was DROPPED as a hidden
+  collider: 8 draws, only the water drawn. Its colliders all live in the collision file, so `buildPlaza` clears the tag on
+  the visual and logs how many. Worth telling the Blender side to stop writing it on render meshes.
+  `npm run worlds plaza` (SwiftShader; KTX2-baked, `ktx2Twin` now takes `models/alien_plaza/*` too):
+      == plaza  boot 4.9 s  25 textures 45 MB  54 geometries 11 MB  26 programs
+         spawn 27 DC / 106 kT | bell_1 25 | trig_vault 41 | launch_pad 25 | fuel_cell 22 | portal_exit 42 -- INSIDE THE BUDGET
+  (before the bake 97 MB of textures; the plaza's own 13 images 69 -> 9). Against the big map's 1,365 DC / 2.5M kT at its plaza,
+  this is what "a small level at a time" buys. Walk check headless: spawn (0, 0, 12) facing PI, down the stage into the sunken
+  plaza to the fountain, no put-backs.
+  **NOT BUILT (one build each, STEER):** the events and movers (bells -> shutter, sluice -> canal drops 1.4 m, generators, the
+  slab, the beacon), the Hover Pack, the launcher NPC, the ziplines, the three waves, pickups, townsfolk.
 - **THE PLAZA'S SECOND PASS: SHORTCUTS HOME, BREADCRUMBS, A 30-SECOND REWARD (m437, `models/alien_plaza/`).** After *"how do
   we plan a world so meticulously crafted... you have to jump up on this ledge and it's just high enough"*, every route is
   now checked AND dressed from the checker's own path: `pickup_NNN` markers (35) are laid as arcs over its jumps and columns up
