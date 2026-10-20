@@ -605,6 +605,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m683 (T4z): THE DRY DOCK'S KEEL BLOCKS, THE QUAY FENDERS AND THE STAIR TOWER ARE HIS** (`dry_dock.glb`, `WDK`, `wdPut`, `wdBuild`,
+  `?wdock=0`). Blocks and fenders are INSTANCED (no mirror): a fender's water face is Blender -Y = glTF +Z, so its yaw turns it out --
+  PI on the river edge, `P.psi + s*PI/2` on a pier's sides, `P.psi + PI` on a pier's end (box rule: local +z -> (sin, cos)). Keel
+  blocks scale Y by hb - floor. `wd_stairs` is one `campPlace` (mirrored, flight up +v), Y scaled by (deck - Y) / 6.25; the landing's
+  and the 20 steps' colliders stay, the posts and rails are not drawn. `places`: WATERFRONT stair tower -> 9.45 (deck 9.45), unchanged.
+
 - **m681 (T4y): THE ORCHARD TERRACE'S WALLS AND STEPS ARE HIS DRY-STONE** (`orchard_terrace.glb`, `OTK`, `otPut`, `otBuild`,
   `?oterr=0`). Instanced like the fence (m670): world matrix at `(F.wx, y0, F.wz)`, yaw `psi + F.th`, Y scale = the code's box height
   (both pieces are built 0..1 m). Every wall and step collider stays; the stone draw pops. **The moss coping's two `rr()` rolls are

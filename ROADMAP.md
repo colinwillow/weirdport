@@ -530,7 +530,7 @@ different context window, let me know."*
   outline), scaled Z by y1 - y0 (built 2.1 x .7 x 1.0 from 0, the coping on top), in place of the stone box and the moss box (it has
   its own moss); `ot_step` at each step's (u, base, v) turned like its box (X along the stair's run), scaled Z by its height (built
   .55 x 2.0 x 1.0 from 0, a worn tread on top), in place of the stone box. Instance both: there are a lot of them.
-- [ ] **T4z. Swap in the dry dock's blocks, the quay's fenders and the ship's stair tower** (`models/campaign/dry_dock.glb`; no
+- [x] m683 **T4z. Swap in the dry dock's blocks, the quay's fenders and the ship's stair tower** (`models/campaign/dry_dock.glb`; no
   collision -- keep every box that collides). In `buildWaterfront`, Blender X = u, +Y = v: `wd_keelblock` at each keel and bilge
   block's (u, floor, v), scaled Z by hb - floor, in place of the 'block' box; `wd_fender` at each fender's (u, Y, v + .18) on the
   river's edge (its face -Y toward the water; turn it for the piers' sides and ends like their boxes) in place of the 'rubber' box;
@@ -1904,3 +1904,6 @@ differ" table there, so no region feels like the last one.
   the ship. One step across and the existing tether ride takes over, so there is one way into the ship and not two. The pod is
   rider-triggered (stand on it ~1 s), not on a timer: the ride is long (about a kilometre at up to 26 m/s). Left at the tether and
   walked away from (120 m), it drifts home empty, so the nursery is never missing its pod for good.
+- **m683 (T4z), the quay fenders:** each fender's centre is put where the code's rubber box was centred (v - .18, hanging off the
+  face), not at v + .18 as the item says. At + .18 the 0.36 m-deep fender would sit inside the quay wall. They are instanced with
+  no mirror, so each one's water face is turned outward by its yaw instead.
