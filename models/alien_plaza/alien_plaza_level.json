@@ -594,7 +594,7 @@
   {
    "name": "smoke_eq5_0",
    "pos": [
-    74.36363636363636,
+    72.4,
     52.44117647058823,
     11.9
    ],
@@ -2184,6 +2184,138 @@
     2,
     2
    ]
+  },
+  {
+   "name": "hide_bin_00",
+   "pos": [
+    -30,
+    -32.5,
+    0.0
+   ],
+   "kind": "hide_bin",
+   "color": "blue",
+   "note": "jump in = you are the bin; walk slowly, cops ignore you; jump to pop out"
+  },
+  {
+   "name": "hide_bin_01",
+   "pos": [
+    -29,
+    -32.5,
+    0.0
+   ],
+   "kind": "hide_bin",
+   "color": "orange",
+   "note": "jump in = you are the bin; walk slowly, cops ignore you; jump to pop out"
+  },
+  {
+   "name": "hide_bin_02",
+   "pos": [
+    -28,
+    -32.5,
+    0.0
+   ],
+   "kind": "hide_bin",
+   "color": "black",
+   "note": "jump in = you are the bin; walk slowly, cops ignore you; jump to pop out"
+  },
+  {
+   "name": "hide_bin_03",
+   "pos": [
+    22,
+    -32.5,
+    0.0
+   ],
+   "kind": "hide_bin",
+   "color": "green",
+   "note": "jump in = you are the bin; walk slowly, cops ignore you; jump to pop out"
+  },
+  {
+   "name": "hide_bin_04",
+   "pos": [
+    23,
+    -32.5,
+    0.0
+   ],
+   "kind": "hide_bin",
+   "color": "blue",
+   "note": "jump in = you are the bin; walk slowly, cops ignore you; jump to pop out"
+  },
+  {
+   "name": "hide_bin_05",
+   "pos": [
+    -8.375,
+    24.5,
+    0.0
+   ],
+   "kind": "hide_bin",
+   "color": "black",
+   "note": "jump in = you are the bin; walk slowly, cops ignore you; jump to pop out"
+  },
+  {
+   "name": "hide_bin_06",
+   "pos": [
+    8.84375,
+    24.5,
+    0.0
+   ],
+   "kind": "hide_bin",
+   "color": "orange",
+   "note": "jump in = you are the bin; walk slowly, cops ignore you; jump to pop out"
+  },
+  {
+   "name": "hide_bin_07",
+   "pos": [
+    -44.5,
+    20.125,
+    0.12
+   ],
+   "kind": "hide_bin",
+   "color": "green",
+   "note": "jump in = you are the bin; walk slowly, cops ignore you; jump to pop out"
+  },
+  {
+   "name": "hide_bin_08",
+   "pos": [
+    33,
+    50.5,
+    -4.2
+   ],
+   "kind": "hide_bin",
+   "color": "blue",
+   "note": "jump in = you are the bin; walk slowly, cops ignore you; jump to pop out"
+  },
+  {
+   "name": "hide_bin_09",
+   "pos": [
+    62,
+    50.5,
+    -4.2
+   ],
+   "kind": "hide_bin",
+   "color": "orange",
+   "note": "jump in = you are the bin; walk slowly, cops ignore you; jump to pop out"
+  },
+  {
+   "name": "hide_bin_10",
+   "pos": [
+    -43,
+    60,
+    0.12
+   ],
+   "kind": "hide_bin",
+   "color": "black",
+   "note": "jump in = you are the bin; walk slowly, cops ignore you; jump to pop out"
+  },
+  {
+   "name": "hide_bin_11",
+   "pos": [
+    84,
+    20,
+    0.0
+   ],
+   "kind": "hide_bin",
+   "color": "green",
+   "note": "jump in = you are the bin; walk slowly, cops ignore you; jump to pop out"
   }
  ],
  "ladders": [

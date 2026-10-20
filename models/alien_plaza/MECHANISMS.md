@@ -61,3 +61,16 @@ What Glowtide is missing from the catalogue: a conveyor, a geyser, a gondola, a 
 ## The world structure
 
 Every world has about five missions. Each mission pays one piece: a ship piece, a moon, whatever the game counts. The next world opens at a count (ten pieces, say), not on finishing everything, so a hard mission can be skipped and come back to. Side prizes count too, in smaller change. This is how Sunshine and Odyssey do it, and it is why those games never feel stuck: there is always another door you could try.
+
+## The disguise world (the game's spine)
+
+Evil aliens are taking over Earth. You are a good alien who crashed. People run from you; cops and the military shoot you on sight, because you are an alien. So you hide, and you disguise, and slowly you earn trust.
+
+**Disguises are a vocabulary, not one trick:**
+- **A person.** The DNA gun. Nobody reacts; guards wave you through.
+- **A wheelie bin.** Jump into one of the big plastic bins on the street and you ARE the bin: you trundle along at walking pace, low, and press jump to pop out. Cops ignore a bin. Blue, orange, green, black; graffiti on most of them. Bins are placed where a route needs a quiet way past a watcher. (Glowtide has twelve as of m460: `hide_bin_NN` markers, kind `hide_bin`, with a colour.)
+- **Other objects later:** a mailbox, a hydrant, a planter, a crate on the dock. Each one a level's joke.
+
+**The trust meter.** A per-world number. It rises when you do good in front of people (save someone, fix something, beat the evil aliens where they can see). Low trust: everyone runs, cops shoot, you live in bins and borrowed faces. Middle: civilians stare but stay, cops warn first. High: you walk the street as yourself, and the propaganda billboards flip from fear to welcome. The meter is the long arc of the whole game, and each world moves it a notch.
+
+**Propaganda and the retro-future dressing.** Giant screens and billboards with alien faces: FEAR THEM at first, then, as trust rises, the same frames carry WELCOME. Retro TV sets in shop windows playing the news. Roswell posters, UFO diner signs, a flying saucer as the lost ship. Men in black in black sedans, and it is never quite clear which agency is on your side: one of them helps, one of them hunts. Powers that fit the fiction and the catalogue above: telepathy (read a guard's patrol), psychokinesis (move the crate, throw the bin), mind control (a guard opens his own gate), hoverboards and the saucer itself as late tech. Each one is a world's unlock and a mechanism's key.
