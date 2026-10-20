@@ -504,7 +504,7 @@ differ" table there, so no region feels like the last one.
     - [x] m513 **F2a-2** its people: THE CAMP off the cistern's north ledge (bedrolls round a fire barrel, a tarp, candles in bottles, a cart, washing) and THE HIDDEN MARKET east of the junction (six tarp stalls of found goods under strung bulbs, a smuggler's counter with a scale); Rook, Aunt Mags, Tibbs, Fennick, Cass, June. (The hobo form's way in moves to F2a-5 with the miner's.)
     - [x] m522 **F2a-3** the water level: the PUMP ROOM off the cistern's west wall -- step on the grate by the wheel and the cistern drains (y -.3 to -2.6) or fills. LOW: down a stair off the west ledge, under the south ledge, into the SMUGGLERS' VAULT at the pit's floor; but the second tunnel's SLUICE GATE drops shut. HIGH: the vault is under black water, the way to the second shaft is open.
     - [x] m524 **F2a-4** the other surfacings: THE CROSSWAYS east of the market -- a shaft up a drain into the Pearl (the dock street's side), a shaft up to a cellar door at the Waterfront's transit shed, and the GOOD ALIENS' SAFE HOUSE (cots, a laid table, plants under a grow lamp, Pell and Wren, a portal pad `under_safe`).
-    - [ ] **F2a-5** the cave miner (sees in the dark, digs through a collapse) and the Underneath's quest.
+    - [x] m526 **F2a-5** the Underneath's quest (THE UNDERNEATH, a side quest from Aunt Mags: drain the cistern, the vault, through the collapse to the safe house, Pell) and THE COLLAPSE between the crossways and the safe house -- a gate cleared by somebody who digs. The cave miner's own form waits for his model (F4); the construction worker digs in his place.
   - [ ] **F2b Dump Tower** (6): the vertical level, the Reptilians' seat. It goes BEFORE the Mothership in
     the chapter order (Dump Tower is the last stop in the metropolis; renumber the chapters and the
     Mothership's six locks become seven).
@@ -1403,4 +1403,7 @@ differ" table there, so no region feels like the last one.
   moves with you, as a portal's does), with a short toast. If you would rather it were a real stair, the floor needs a
   cut-out first -- say so. **And `groundAt` now ignores the island floor INSIDE the Underneath's box only** (it ignored
   height before, so nothing under the ground could be stood on); nothing above ground sees a change.
+- **m526 (F2a-5) The collapse under the city is cleared by the CONSTRUCTION WORKER**, standing in for the cave miner, who has
+  no model yet. When a miner GLB exists, `GATE_TYPES.undercollapse.need` is the one line to change. The miner's "sees in the
+  dark" is not built either -- the tunnels are lit enough to play.
 

@@ -77,6 +77,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE UNDERNEATH'S QUEST AND ITS COLLAPSE (F2a-5, m526).** A side quest `under` (from Aunt Mags): `flag under:drained` (set by
+  `underStep` once the water is within .3 of low), `reach` the vault, `reach` the safe house, `talk` to Pell. **A marker
+  person's talk id is `mk_` + the mark's id** (`from: 'mk_un_mags'`, `who: 'mk_un_pell'`) -- `places` failed the first cut
+  with `NOBODY IS un_pell`. THE COLLAPSE is a `GATE_TYPES.undercollapse` gate (need `contruction_worker`, pass `fix`) across
+  the crossways-to-safe-house tunnel, with a rubble group drawn in the tunnel and hidden once `G.open`. `places` exit 0,
+  `play ch2` COMPLETE. **This closes F2a's list** -- the miner form itself is F4's.
+
 - **THE FAIRGROUND IS HIS KIT (T2j, m525, `buildFairground`).** `fair_kit.glb` (`?fair=0`, `FAIR GLB FAIL`), loaded before the
   builder. **NOT all mirrored this time -- measured per piece:** the stalls (their poles at +x 1.2, the code's u + 1.2), the
   livestock barn (door at x 0, body to +6 = the code's bu..bu + 6) and the wheel's frame stand x = u, z = v as exported; the
