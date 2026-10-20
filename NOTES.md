@@ -7,6 +7,15 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CHAPTER 2 PLAYS THROUGH HEADLESS (m468, `tools/play.mjs`).** Three harness faults, no game faults: (1) a chapter started
+  directly had only zap's form, so every Pearl local fled and the barista talk failed after 21 teleports -- a chapter-N start
+  now gets the earlier chapters' forms (`FORMS_BY`) and their quests marked `qdone:` (which also puts the m465 kit in his
+  hands); (2) the flag driver stopped at 2.5 m from a target the game reads at 1.9 (the receipts table), so it stood 0.6 m
+  short for ever -- it walks to 1.2 now, INSIDE the game's radius, never at its edge; (3) a teleport's log line now says
+  where FROM and TO with heights, which is what a "teleports every 7 s and never arrives" row needs. **STILL OPEN:** Ash's
+  after-talk (`ch2c.4`) failed once in four runs, 18 teleports and never within talk reach; it passed on the next. Seed it
+  (`npm run play ch2 --seed=N`) before calling it a game bug.
+
 - **GLOWTIDE: THE GROUND HAS SIDES (1,013 SOLID RUNS UNDER EVERY STEP, STAIR END AND QUAY EDGE) (m467, `models/alien_plaza/`).** *"I'm still walking through the sides of stairs and falling through."* The ground collider is the visual ground as WALKABLE TRIANGLES (`col_deck_ground`), and the loader keeps only up-facing ones -- so every drop in the ground (the sunken plaza's stairs, the stage, the quay edges, the canal lips) was a floor with nothing under its edge. `col_bld_ground_sides`: every 1 m ground cell standing more than 0.2 m above a neighbour gets a solid box from the lowest neighbour to its own top, merged into x-runs -- 1,013 boxes from 2,078 edge cells. Kerbs (0.12) and the beach slope stay plain floor so they can still be stepped. Route checker: 0 problems. Also on main: ROADMAP.md has the **Glowtide mechanics block (G1-G7)** for the game window -- portals, grind rails, moving platforms, hide bins, cameras, enemies, events -- gated on Colin saying "do the Glowtide block".
 - **GLOWTIDE: SIX DEAD PORTALS (CHECKPOINT + FAST TRAVEL), A QUIETER SEA (m466, `models/alien_plaza/`).** The portals from MECHANISMS.md: two posts and a ring at the stage (lit from the start) and at every core's arrival -- bell room, vault, lighthouse gallery, keep summit, boathouse dome -- as `portal_N` markers (kind `portal`, `lit`, `where`). The game lights one when you reach it and lets you jump between lit ones. The sea and canal water are tinted down (.62/.74/.8) in kit mode: compose.py flagged most frames NOISY and the culprit was the saturated cyan water filling the bottom third -- the sea is the quiet 70%, the cores and bunting are the loud 5%. (Re-pushed on top of m465 from the game window, which landed between pull and push.)
 - **THE KIT IS FOUND, NOT ISSUED (m465, `GEAR`, `gearHas`, `gearSync`).** *"You just wake up and you have all of the weapons.

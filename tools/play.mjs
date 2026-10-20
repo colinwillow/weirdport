@@ -40,7 +40,7 @@ const server = http.createServer((q, r) => {
     // THE SHIPPED TEXT, with one handle spliced in beside the game's own: the things the driver reads and writes
     const s = body.toString(), k = 'window.melee = window.mel = {';
     if (!s.includes(k)) { console.error('play: no mel handle in index.html'); process.exit(1); }
-    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow }; ' + k);
+    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm }; ' + k);
   }
   r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
 });
@@ -97,7 +97,7 @@ try {
     // the stuck rule: no progress toward the walk target for STUCK s -> the shipped teleport, said so in the row
     const progress = d => { if (d < st.best - .3) { st.best = d; st.bestT = st.t; } return st.t - st.bestT; };
     const teleport = (tx, tz, back, ty) => { const P = S.player.pos, dx = tx - P.x, dz = tz - P.z, d = Math.hypot(dx, dz) || 1, b = Math.min(back, d * .9);
-      st.log.push('TELEPORT ' + st.walked.toFixed(0) + 'm from ' + P.x.toFixed(0) + ',' + P.z.toFixed(0) + ' @' + st.t.toFixed(1)); st.tele++;
+      st.log.push('TELEPORT ' + st.walked.toFixed(0) + 'm from ' + P.x.toFixed(0) + ',' + P.y.toFixed(1) + ',' + P.z.toFixed(0) + ' to ' + tx.toFixed(0) + ',' + (ty != null ? (+ty).toFixed(1) : '-') + ',' + tz.toFixed(0) + ' @' + st.t.toFixed(1)); st.tele++;
       // the target's own level when it has one (`godTo` with no y lands on the highest floor it finds, which beside a
       // scaffold is the scaffold); a body's root y is where its feet are
       S.godTo(tx - dx / d * b, ty !== undefined && ty !== null ? ty : null, tz - dz / d * b); stickOff(); st.best = 1e9; st.bestT = st.t; };
@@ -151,7 +151,7 @@ try {
           const ax = G.x + sn * 7 * side, az = G.z + cn * 7 * side, bx = G.x - sn * 7 * side, bz = G.z - cn * 7 * side;
           if (!st.gateIn) { if (goTo(ax, az, 1.2, true, true)) st.gateIn = 1; return ''; }
           goTo(bx, bz, 1.0, false, false); return ''; }
-        case 'flag': { if (T) { goTo(T.x, T.z, 2.5, true, true, T.y); return ''; }
+        case 'flag': { if (T) { goTo(T.x, T.z, 1.2, true, true, T.y); return ''; }   // m466: inside the game's own radius (the papers: 1.9 m), not at the edge of it
           if (s.flag === 'inTown' && S.ISLE.rect) { const R = S.ISLE.rect, tx = Math.min(Math.max(P.x, R[0] + 8), R[1] - 8), tz = Math.min(Math.max(P.z, R[2] + 8), R[3] - 8); goTo(tx, tz, 1, true, true); return ''; }
           return 'flag: no driver for ' + s.flag; }
       }
@@ -187,7 +187,13 @@ try {
     if (!Q.length) { console.log('BAD  ' + CH + ': no quests carry ch ' + N); code = 1; continue; }
     const st0 = await page.evaluate(() => { const S = window.__play; return { ch: S.SAVE.ch }; });
     if (st0.ch !== N) {
-      await page.evaluate(n => { const S = window.__play; S.quest.cur = null; S.SAVE.ch = n; S.progFlag('inTown', n >= 1 ? 1 : 0); if (n >= 1) mel.go('oldtown'); S.stick.L.x = S.stick.L.y = 0; }, N);
+      await page.evaluate(n => { const S = window.__play; S.quest.cur = null; S.SAVE.ch = n; S.progFlag('inTown', n >= 1 ? 1 : 0);
+        // m466: AND WHAT THE CHAPTERS BEFORE IT GAVE HIM -- the forms their samples put on the wheel (a Chapter 2 start as
+        // nobody but himself is an alien everybody runs from, which no player arriving there is), and their quests marked
+        // done, so the kit found on the way (`GEAR`) is in his hands
+        const FORMS_BY = [[1, 'HICK SKINNY'], [2, 'CONTRUCTION WORKER']];
+        for (const [c, nm] of FORMS_BY) if (n >= c) S.progForm(nm);
+        for (const q of S.QUESTS) if (q.ch !== undefined && q.ch < n && !q.dormant) S.progFlag('qdone:' + q.id); if (n >= 1) mel.go('oldtown'); S.stick.L.x = S.stick.L.y = 0; }, N);
       console.log(`     ${CH}: the save moved to chapter ${N}` + (N >= 1 ? ' and him to the city spawn' : ''));
     }
     let bad = 0, steps = 0, cur = null, lastR = null, idle = 0;

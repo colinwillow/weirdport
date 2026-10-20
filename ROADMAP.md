@@ -365,6 +365,9 @@ differ" table there, so no region feels like the last one.
     - [ ] **F0b-2** Chapters 1 to 6 (`npm run play ch1 ch2 ...`), one chapter per build: each chapter's own step types get a driver (the Skinsuit turn and its knock-downs, `reach`, the bosses' downs, a bike, the glider, the ferry and the trains as the ways in), until every gate and boss passes in order. A chapter that cannot be driven through the shipped steps is a finding about the chapter, not the tool. Split:
       - [x] m430 **F0b-2a** Chapter 1: the turn watched, the Skinsuit knocked down each time it is up, the fix gate leaned on, the talks as the crew, the boss and the two turned crew; the shipped picker drives the quest order (the incursion's own quest included when its ship comes); a seeded random (`--seed`), a NaN watchdog with the last frames' trace, teleports to the target's level. Three seeds pass all four quests (17 steps) in about three minutes each. **Found and fixed: a `fix` gate's lean counted only while pressed inside the slab's half-thickness (0.49 m); a thumb resting 3 cm off it saw "Fixing... 1%" for ever.**
       - [ ] **F0b-2b** Chapters 2 to 6, one per build: `reach` (a climb or a jump), the Pearl's barricades inside the march, the roofs, the ferry and the swing bridge, the freight line, a bike, the glider, the islands' crossings and the Mothership's shaft; the bosses' downs.
+        - [x] m468 **F0b-2b-1** Chapter 2: a chapter-N start carries the forms and the quests (so the kit) the chapters before it gave; the flag driver walks inside the game's own radius. 14 steps, 3 quests in 115 s. Ash's after-talk failed once in four runs (18 teleports, never in talk reach) and is unsettled.
+        - [ ] **F0b-2b-2** Chapter 3 (Hollow Creek: the freight, the bike, the race, the rally man).
+        - [ ] **F0b-2b-3** Chapter 4 (the Waterfront). - [ ] **F0b-2b-4** Chapter 5 (the islands). - [ ] **F0b-2b-5** Chapter 6 (the Mothership).
   - [ ] **F0c Every world boots** through the real loader with no red toast, in `places`.
 - [ ] **F1 Polish passes, region by region, with `npm run shot`.** The farm had five; each of the others
   gets at least three, one build each, fixing the worst thing in the shots and checked against the
@@ -1224,4 +1227,7 @@ differ" table there, so no region feels like the last one.
   (ch3c), LAUNCHER at the Waterfront's end (ch4c). Clancy stays "found at the wreck" in ch0's first step. GOD > ALL KIT gives
   everything. The new technologies (psychic, mind control, telekinesis, phasers) are not built; each will be a slot plus a
   `GEAR.get` line.
+- **m468: the playthrough harness starts a later chapter as a player would arrive there** -- the earlier chapters' forms
+  (farmer, worker) and their quests marked done, so the found kit is in his hands. Without it, Chapter 2's barista ran from a
+  bare alien for two minutes, which no player would ever see.
 
