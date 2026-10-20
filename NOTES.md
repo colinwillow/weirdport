@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m631 -- the fjord's grotto and wreck as art (scenery window; ROADMAP T4c)
+
+`models/campaign/gorge_deep.glb`, for `buildGorgeDeep`. The wreck: a 7 m fishing boat lofted along Y, rolled .9 onto her side as
+the code rolls its boards, a hole stove into her side with the ribs showing through, broken gunwales, her wheelhouse, moss and
+kelp standing up off her. A clump of seven glowing crystals in the code's two colours from a rock knuckle (the first render's
+emission blew them out to white; 1.2 now, the code's own lights do the rest). The grotto's iron-banded cache chest with a spill of
+gold, and the wreck's strongbox with its dial. Shipped unverified.
+
 ## m629 -- the gorge dam's works as art (scenery window; ROADMAP T4b)
 
 `models/campaign/gorge_dam.glb`, for `buildGorgeDam`; the concrete wall stays the code's. The winch house at the code's 2.2 x 1.9 x
