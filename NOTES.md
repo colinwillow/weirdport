@@ -5,6 +5,17 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m523 -- the fairground kit as art (scenery window; ROADMAP T2j)
+
+`models/campaign/fair_kit.glb`, at buildFairground's numbers. The FERRIS WHEEL comes in three parts because the code turns it:
+the frame (braced A-frames on pads, an axle, the yellow-panelled loading booth with steps), the ROTOR (twin white rims and a red
+inner rim, 16 spokes a side, 64 rim bulbs, a red hub ringed with bulbs, the car axles) built in Blender's XZ plane with the axle
+along Y -- which glTF's Y-up turns into the `wheel` group's own XY plane, axle z, so it spins with no change to `fairStep` -- and
+one CAR (a red tub, a striped canopy, origin at its centre where the code's box was). Two MIDWAY stalls (red and blue stripes,
+scalloped canopies, bulbs along the front, prizes on a shelf). The LIVESTOCK BARN with a gambrel roof and cupola. The GATE: banded
+posts with ball tops, an arch of bulbs with a sunburst behind the canvas sign, and a striped ticket booth with a pyramid roof.
+Shipped unverified.
+
 ## m518 -- the neighbour's farm as art (scenery window; ROADMAP T2i)
 
 `models/campaign/neighbour_farm.glb`, at buildNeighbours' numbers -- the "tall and thin beside short and squat" pair kept exactly.

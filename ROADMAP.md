@@ -94,6 +94,16 @@ different context window, let me know."*
   and troughs; `nf_tower` at (tu 17, tv 17) on g -- replaces the legs, braces, tank, cap and ladder (it has a blank painted board on
   the tank: a town name later); `nf_shop` at (pu -6, pv -14) on g -- replaces the shack, roof, counter, awning slats, crates and
   produce spheres and the two sign posts. 2,354 / 508 / 487 / 1,248 faces, one mesh each.
+- [ ] **T2j. Swap in the fairground kit** (`models/campaign/fair_kit.glb`, no collision file -- `buildFairground` keeps every
+  collider, every canvas sign, the bunting, the stage and the grandstand). Blender X = the fair frame's u, +Y = its +v. Roots:
+  `ff_wheel_frame` at (W.u, W.v) on y -- replaces the four A-frame legs, their foot boxes' drawing and the red booth;
+  `ff_wheel_rotor` -- built in Blender XZ with the axle along Blender Y, so in three it is ALREADY the `wheel` group's frame (plane
+  XY, axle z): add it to `wheel` at (0,0,0) in place of the two torus rings and the spokes, and it spins as now; `ff_wheel_car` --
+  origin at the car's centre, hanger up to +.7: one per `O.cars` entry in place of the BoxGeometry (fairStep keeps them level);
+  `ff_stall_red` / `ff_stall_blue` at (-19, St.v) by `St.col` -- replace the counter, booth, canopy slats and poles (the sign plane
+  stays at u+.55, 3.3); `ff_livebarn` at (bu 16, bv 22) -- replaces the barn box, its flat roof and door (gambrel roof, cupola, a
+  blank name board; the pens stay); `ff_gate` at (0, gv 25) -- replaces the posts, beam and the ticket booth (the arch of bulbs sits
+  BEHIND the canvas sign at +.35 v). 196 / 3,426 / 104 / 392 / 392 / 278 / 983 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
