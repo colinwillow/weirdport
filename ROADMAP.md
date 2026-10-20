@@ -826,6 +826,11 @@ differ" table there, so no region feels like the last one.
     - [x] m615 **F2c-6b** down the log flume and the rapids from Hollow Creek: the mill's flume runs on, down a rapids channel, into the Gorge's upper river.
   - [ ] **F2d The Hothouse** (9): the alien takeover, as a region that grows across the map while the
     grid stands and shrinks as you cure districts.
+    - [x] m633 **F2d-1** the growth: any Old Town block the Skinsuits hold (turf `skin`) is overgrown -- vine arches over the street, glowing fronds, pods, wet moss -- growing in as it falls and dying back as it is taken. GOD `hothouse`.
+    - [ ] **F2d-2** the twilight and the spread: inside a held block the light goes to bioluminescent twilight; the Skinsuits push into the blocks next to theirs on a clock unless you cut it back (shoot or swing the pods and vines to take the block's share off them).
+    - [ ] **F2d-3** its heart: one block fully grown -- walkable vine bridges between the roofs, a pod nursery with half-turned civilians in the pods, its own GOD place.
+    - [ ] **F2d-4** its people and the way on: Skinsuits patrol the held blocks; the heart's way up to the Mothership.
+    - [ ] **F2d-5** the chapter's beat: cure the city's held blocks back, a quest that holds it together.
   - [ ] **F2e The metropolis hub**: the tall city in the middle of the map that the other regions ring,
     opened a part at a time as chapters complete; Dump Tower stands in it.
 - [ ] **F3 The rest of the grid and the fail states** (`LORE.md`): the projector, poltergeist and relay
@@ -1750,4 +1755,8 @@ differ" table there, so no region feels like the last one.
   shore nearest the Gorge (head about 17.5 m up) down across the strait to the fjord's mouth. The "rapids" are the long low run
   up the fjord over the water, past the wreck and the grotto, onto the east walk's downstream end. Its current carries him at
   8 m/s (`GFLUME.speed`). This closes F2c; the mill's own flume is unchanged.
+- **m633 (F2d-1): the Hothouse is not its own landmass. It is any Old Town turf block the Skinsuits (`skin`) hold**, overgrown
+  in place. REGIONS calls it "familiar streets overgrown", "the city underneath" and "the growth spreads", and the turf system
+  already moves blocks between factions. So it grows and shrinks with that, with no second map. A bigger standalone jungle
+  district can still come later as part of F2e's hub.
 

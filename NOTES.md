@@ -438,6 +438,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE HOTHOUSE GROWS ON THE SKINSUITS' TURF (m633, F2d-1, `HOTH`, `hothBlock`, `hothStep`, GOD `hothouse`).** Every half
+  second, each Old Town turf block whose top share is `skin` gets a jungle group, built once on its first fall:
+  - vine tubes arching edge to edge, 6-11 m up, magenta-veined
+  - teal frond cones at their feet
+  - ribbed pods lit from inside
+  - wet-black moss with teal glow patches
+  The group is four merged meshes, scaled up from the ground over `grow` 3.5 s and down when the block is lost. Ground is
+  `groundAt(x, z, 1, 1)`, street level and never a roof. Nothing is solid yet. `hothAt` falls back to the watcher's place if
+  no block is held. **placecheck needed `hothouse` in `CITYP`** (the IN THE CITY row), the way every Old Town place does.
+  `places` reads (52.5, .3, -16.3).
+
 - **THE FJORD'S GROTTO AND WRECK ARE HIS ART (m632, T4c, `gorge_deep.glb`, `?gdeep=0`, `gwPut`).** These are mirrored in z:
   - `gw_wreck` replaces the keel, hulls, ribs, wheelhouse and stern. She is rolled and holed in the file; the bulk collider
     and the mast stay.
