@@ -26,6 +26,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE MILL, DRESSED (F1-HC3, m499, `buildMill`).** Shot (`npm run shot hcmill`): the shed was four flat grey walls. Added:
+  corrugation ribs every .6 m on all four walls (the front round its door and slots, from the same span table the wall
+  is built from), rust streaks under the eaves, a concrete plinth .45 m tall (drawn only: a collider there is a ledge
+  round the whole shed), a `HOLLOW CREEK LUMBER` sign (a `protestPaint` plane) over the big door; in the yard right of
+  the flume two lumber stacks on bearers with stickers between courses (one solid box each), an offcut heap, a chopping
+  stump with its axe (solid), sawdust drifts against the walls. The trailer park is left as it was (it shot better).
+
 - **THE BIKE TRACK, DRESSED (F1-HC2b, m498, `buildBikeTrack`).** The shot: a flat brown ribbon through the pines. Added: two
   dark ruts 1.25 m either side of the line (flat `pearlSeg`s on `meshH`, drawn only); a flag on a pole every 8th point,
   alternating sides at hw + 1.6; red/white tape on stakes at hw + 2.4 down every straight (|turn| < .06 over 3 points);
