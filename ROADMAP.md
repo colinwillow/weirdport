@@ -194,7 +194,7 @@ different context window, let me know."*
   `os_mixer` at (3.0, sv+1.4) turned .5 -- replaces the drum cylinder and its box; `os_skip` at (-su-2.2, sv+.6) turned .1 --
   replaces the skip box; `os_hoarding` once per hoarding `bx` (2.4 wide, X along it, its street face -Y: turn the side runs and the
   far run so -Y faces OUT). 1,448 / 188 / 242 / 140 / 60 faces.
-- [ ] **T2x. Swap in the Pearl's market stall** (`models/campaign/market_stall.glb`, no collision file -- `buildPearl` keeps the
+- [x] m564 **T2x. Swap in the Pearl's market stall** (`models/campaign/market_stall.glb`, no collision file -- `buildPearl` keeps the
   counter's collider and the stall positions). Origin at the stall's centre on the deck, Blender X along the counter, turned `f`
   exactly as the counter box. Per stall: `pm_stall_paint` tinted with `cc[i % 5]` (one white material: clone or instance with
   setColorAt) and `pm_stall_trim`, in place of the counter's drawing, the canopy slab, the two poles and the plant icosahedron.

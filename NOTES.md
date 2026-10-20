@@ -210,6 +210,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE PEARL'S MARKET STALLS ARE HIS ART (m564, T2x, `OPEARL.stallG`, `?stall=0`).** Per stall `pm_stall_paint` (material cloned and
+  tinted `MAT[cc[i % 5]]`) and `pm_stall_trim`, turned f like the counter box and mirrored in z -- MEASURED: the fruit crates and
+  the chalkboard sit at glTF +z (Blender -Y), and the counter's local -z points at the plaza's middle, so mirrored they face the
+  people. The counter's collider stays (drawing popped); canopy, poles and plant are not built. `STALL GLB FAIL` if it fails.
+
 - **OLD TOWN'S BUILDING SITE IS HIS KIT (m562, T2w, `OTSITE.glb`, `?site=0`).** `os_crane` (rotation -ja: a mirrored piece's local +x runs
   along (cos r, -sin r), so the jib points along (cos ja, sin ja)), `os_office`, `os_mixer` (.5), `os_skip` (.1), and an
   `os_hoarding` per hoarding panel: near run unturned, far run pi, the sides -pi/2 (+u) and +pi/2 (-u), so the street face (-Y,
