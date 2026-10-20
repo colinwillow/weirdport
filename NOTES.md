@@ -96,6 +96,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **CHAPTER 6 IS DUMP TOWER; THE MOTHERSHIP IS CHAPTER 7 (m535, F2b-5a, quests `tower` / `towerb`).** Inserted after the
+  islands (ch5c now ends "DUMP TOWER IS NEXT"): reach the plaza, then three `flag` steps at the three badges (`DTOWER.badges[i].at`
+  -- the rank ladder of m532 gives them to a suit, or they are lifted off the desk/bench/table), then `towerb`: goto, `skin`
+  (`dtboss`, 2.1x, six downs) and `unskin` on `dt_ceo`, and his after-talk (`dt_ceo_after`: the man in the nice suit bought the
+  tower, then went UP the line). `onDone` -> `progChapter(7)`. **The Mothership's quests keep their ids** (`ch6`, `ch6b`, `ch6c`)
+  -- only `ch: 7` and the cards changed, and ch6c ends in `progChapter(8)` -- so `qdone:ch6c` (shipEnd, shipFree, placecheck)
+  still means the game is finished. GODCHAP gains 6 DUMP TOWER (`dtplaza`); radio gains a tower line at ch >= 7. `npm run play
+  ch6`: COMPLETE, 2/2 quests, 9 steps (one teleport on the stair to floor 3, four in the fight); `play ch7`: COMPLETE, 3/3, 15
+  steps. `places` exit 0.
+
 - **DUMP TOWER'S TRAM AND GLIDER (m534, F2b-4, `DTOWER.tram`, `tramStep`, `tramPlace`, GOD `dttram`).** A station on the grass
   behind the tower (+v; marble deck one .3 riser up, gold canopy, a bench, a steel pylon), a cable to the SKY GARDEN's north
   wall, where floor 6's glass has a 3.4 m door cut (`gap`, mullions skipped in it). The cabin is a 3 x 3 gold-and-glass box
