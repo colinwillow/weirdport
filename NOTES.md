@@ -96,6 +96,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **DUMP TOWER'S TRAM AND GLIDER (m534, F2b-4, `DTOWER.tram`, `tramStep`, `tramPlace`, GOD `dttram`).** A station on the grass
+  behind the tower (+v; marble deck one .3 riser up, gold canopy, a bench, a steel pylon), a cable to the SKY GARDEN's north
+  wall, where floor 6's glass has a 3.4 m door cut (`gap`, mullions skipped in it). The cabin is a 3 x 3 gold-and-glass box
+  hung under the cable: five `BDYN` boxes (floor, two glass sides, two end rails that are `_off` while it waits so you can
+  board), shuttling with the freight's easing (`HCTRAIN`'s wait/run), 9 s at each end. **It carries him in 3D** -- the train
+  only carried x/z; this adds dy too, and keeps vel.y from going negative under him. Arriving sets `dt:tram`. The glider out is
+  `dt_pilot` (role `glider`) on the helipad -- `gliderOn()` already flies anybody wearing that roster stem. `places` exit 0.
+
 - **THE BIKE PITS AND THE ANNOUNCER'S TOWER ARE HIS ART (m533, T2l, `HCBIKE.glb`, `?bpits=0`).** `bike_pits.glb`: eleven roots,
   each on the ground at the code's centre. Blender +Y = +v, so glTF z = -v and every piece is MIRRORED (campPlace's default) --
   checked off the asymmetric pieces: the trailer's tongue (Blender +Y to 4.6, glTF z -4.6) and the tower's loudspeaker horns on
