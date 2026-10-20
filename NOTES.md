@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m651 -- the skate park's wall and planters, and the strike placard, as art (scenery window; ROADMAP T4k)
+
+`models/campaign/street_bits.glb`. The skate park's graffiti wall at the code's 3.4 x .3 x 2.4, cast in panels with a capping, its
+park face painted with three outlined pieces at the code's own spots in blue, pink and yellow, with drips, highlights and tags (the
+first render's outlines were rectangles; they follow the pieces now); a plank planter with a bush in it; and a strike placard, a
+taped stick and a card board for the code's canvas. Shipped unverified.
+
 ## m647 -- the rope-bridge crossing's decks as art (scenery window; ROADMAP T4j)
 
 `models/campaign/island_xing.glb`, for `buildIslandXing`. The timber deck on each sea stack at the code's 4.4 m: planks on three
