@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m685 -- the scaffold up the coaster's side as art (scenery window; ROADMAP T5a)
+
+`models/campaign/ship_scaffold.glb`, for the repair scaffold `buildWaterfront` stands against the coaster in the dry dock. Tube and
+fitting: the code's 22 standards from v 30 to 60 at u +-1.4 to top + 1.1, ledgers every 1.9 m, transoms at every standard, X-braces
+on the outer face, boarded lifts at 3.8 and 7.6 and the working deck at the code's top, yellow toe boards, and the guard rail. The first
+draft hung green debris netting down the outer face, which read as a solid wall in front of the ship; it is gone. Shipped unverified.
+
 ## m682 -- the dry dock's blocks, the quay's fenders and the ship's stair tower as art (scenery window; ROADMAP T4z)
 
 `models/campaign/dry_dock.glb`, for `buildWaterfront`. A keel block at the code's 1.4 x 1: a concrete footing under cribbed timbers
