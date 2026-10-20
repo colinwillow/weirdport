@@ -741,7 +741,8 @@ differ" table there, so no region feels like the last one.
     - [x] m576 **F2c-4** the dam gates upstream: shut them and the falls dry to a trickle and the cave mouth opens; open them and they roar.
     - [x] m584 **F2c-5a** the diver (Nell, on the west walk) and SWIMMING as the diver: sink, hold to rise, a kick out of the water onto a 1.6 m ledge -- so the cave behind the falls is reached from below.
     - [x] m594 **F2c-5b** the underwater caves under the fjord: a sunken wreck and a lit grotto in the fjord floor with a cache; a swimming pose (he plays the fall pose in the water now).
-    - [ ] **F2c-6** the ways in and on: down the log flume and the rapids from Hollow Creek, the lookout and the glider to the islands; its region on the map.
+    - [x] m609 **F2c-6a** the lookout at the fjord's mouth and the glider to the islands (Ari, a glider pilot to wear); the Gorge's region on the map.
+    - [ ] **F2c-6b** down the log flume and the rapids from Hollow Creek: the mill's flume runs on, down a rapids channel, into the Gorge's upper river.
   - [ ] **F2d The Hothouse** (9): the alien takeover, as a region that grows across the map while the
     grid stands and shrinks as you cure districts.
   - [ ] **F2e The metropolis hub**: the tall city in the middle of the map that the other regions ring,
@@ -1659,4 +1660,8 @@ differ" table there, so no region feels like the last one.
 - **m594: the swim pose is a LEAN, not a clip.** The diver has no swim clip, so the whole body tips forward about the hips, up
   to 1.25 rad (`SWIM.pose`) at speed, and plays its run clip at about half speed as the stroke. Still, it treads water upright
   in its idle. `mel.SWIM.pose = 0` turns the lean off.
+- **m609 (F2c-6a): F2c-6 is split in two.** 6a is the lookout, the glider and the map region; 6b is the flume and the rapids
+  from Hollow Creek. The lookout stands on the east plateau at the fjord's mouth (b -56), with its deck 14 m over the ground,
+  about 19 m above the sea before the tower. The nearest islands (lighthouse rock, the humps) are about 120-145 m off, the same
+  glide ratio as Skye's 120 m from 15.8 m. If the glide falls short, raise `H` in `buildGorgeLook`.
 

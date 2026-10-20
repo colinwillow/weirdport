@@ -351,6 +351,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE GORGE GETS A LOOKOUT, A GLIDER PILOT AND ITS MAP REGION (m609, F2c-6a, `buildGorgeLook`, GOD `gzlook`).** A timber tower
+  stands on the east plateau at the fjord's mouth (b -56, a = river + 22):
+  - splayed legs, braces, and a railed deck 14 m up, open at the back for the ladder (`gz_lookout`);
+  - a plank roof, and a windsock (`windSock`, so the wind turns it);
+  - a bench, a chest and a folded sail at its foot;
+  - Ari (role `glider`) on the deck, facing the islands. Wear her and step off the rail.
+  The islands are ~120-145 m off (bbox gap ~100 m). `mapRegionsTkit` gets `THE GORGE` from `GORGE.bbox`; places reads it as
+  `gorge -83,79,486,636`. Shipped unverified; whether the glide reaches is the question for the phone. F2c-6b (the flume and
+  rapids from Hollow Creek) is still open.
+
 - **THE PEARL DOCK'S POTS, PLANTERS, CRATES AND CHALKBOARD ARE HIS ART (m608, T3r, `pearl_dock.glb`, `?pdock=0`).** These are
   mirrored in z:
   - `pd_pot_paint` + `pd_pot_plants` stand at the five dock pots, each turned by its index.
