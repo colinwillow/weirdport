@@ -274,6 +274,11 @@ different context window, let me know."*
   if the screens end up facing out over Old Town instead of at the chair, add pi), in place of the desk box and the screen box;
   `mb_chair` at (B.u, B.v + .6) in place of the two shade boxes (it faces -Y, out over the console); `mb_holo` added to `D.holo`
   at (0, 0, 0) in place of its base cylinder (the pedestal runs -1.3 to -.4 under the code's globe). 72 / 228 / 342 faces.
+- [ ] **T3k. Swap in the Mothership belly's eggs, glyphs and tendrils** (`models/campaign/ship_belly.glb`, no collision file -- the m507
+  block keeps the seams, the glow ring and the veins; nothing here is solid). `mb_eggs` once per clutch at (cos a, sin a) * (R - 1.1)
+  on y, X along the wall (turned -a + pi/2), in place of its five spheres; `mb_glyph` once per panel at (cos a, sin a) * (R - .3) on
+  y, turned so its -X face looks into the room, in place of its three thin glow bars; `mb_tendril` per tendril at its ceiling root
+  (y + S.H), Z scaled by L / 1.6, in place of the cylinder and its tip sphere. 1,408 / 254 / 134 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

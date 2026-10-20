@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m592 -- the Mothership belly's eggs, glyphs and tendrils as art (scenery window; ROADMAP T3k)
+
+`models/campaign/ship_belly.glb`, for the m507 belly. A CLUTCH of five leathery, veined eggs glowing green from inside, one split
+open, slime round their feet (the first pass made them round with veins like bricks: tall now, the veins fine); a GLYPH PANEL in
+a bone frame with three rows of violet strokes, dots and arcs; and a TENDRIL that sways a little as it hangs and ends in a glowing
+bulb. Shipped unverified.
+
 ## m590 -- the Mothership bridge's console, chair and holo pedestal as art (scenery window; ROADMAP T3j)
 
 `models/campaign/ship_bridge.glb`. A CONSOLE segment (five make the code's curve): a leaning organic desk with a glow strip at the
