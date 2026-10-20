@@ -96,7 +96,8 @@ try {
     const downBody = () => S.DUMMIES.find(d => d.st === 'down' && !d.wasK && !d.K.pal && !/alien/i.test(S.mphName(d.K))) || null;
     // the stuck rule: no progress toward the walk target for STUCK s -> the shipped teleport, said so in the row
     const progress = d => { if (d < st.best - .3) { st.best = d; st.bestT = st.t; } return st.t - st.bestT; };
-    const teleport = (tx, tz, back, ty) => { const P = S.player.pos, dx = tx - P.x, dz = tz - P.z, d = Math.hypot(dx, dz) || 1, b = Math.min(back, d * .9);
+    // m484: to a target's own LEVEL, beside it (0.8 m) -- a few metres short toward him is open water off a rock's edge
+    const teleport = (tx, tz, back, ty) => { const P = S.player.pos, dx = tx - P.x, dz = tz - P.z, d = Math.hypot(dx, dz) || 1, b = Math.min(ty != null ? .8 : back, d * .9);
       st.log.push('TELEPORT ' + st.walked.toFixed(0) + 'm from ' + P.x.toFixed(0) + ',' + P.y.toFixed(1) + ',' + P.z.toFixed(0) + ' to ' + tx.toFixed(0) + ',' + (ty != null ? (+ty).toFixed(1) : '-') + ',' + tz.toFixed(0) + ' @' + st.t.toFixed(1)); st.tele++;
       // the target's own level when it has one (`godTo` with no y lands on the highest floor it finds, which beside a
       // scaffold is the scaffold); a body's root y is where its feet are
@@ -133,6 +134,9 @@ try {
         // the thing wearing them: knocked down each time it is UP (a blow on a downed body only punts it; the count is at
         // the get-up, `d.downs` against `qDowns`), until the shipped turn-back takes it
         case 'unskin': { if (!T) return 'unskin: nobody tagged'; const d = bodyAt(T); if (!d) { goTo(T.x, T.z, 3, true, true); return ''; }
+          if (st.t - (st.ukT || -9) > 3) { st.ukT = st.t; const R = d.root.position; st.log.push(`boss ${d.st} ${[R.x, R.y, R.z].map(v => v.toFixed(0))} ok ${d.okY != null ? d.okY.toFixed(1) : '-'} v ${[d.vx || 0, d.vy || 0, d.vz || 0].map(v => (+v).toFixed(1))} me ${P.y.toFixed(1)}`); }
+          // m484: never walk or teleport to a body under the world (the level a body falls to over open sea)
+          if (T.y < -50) { stickOff(); return 'unskin: the body is under the world'; }
           if (goTo(T.x, T.z, 1.8, true, true, T.y) && d.st !== 'down' && st.t - st.blowT > .6) blow(d); return ''; }
         case 'sample': { let d = downBody();
           // m452: a step that names KINDS (any of them will do): one of those, downed -- knocked down first if none is
@@ -281,12 +285,15 @@ try {
           const [u, v] = S.islLocal(P.x, P.z), [lu, lv] = Rp.R(Rp.sL, 0), sNow = (u - lu) * Rp.dir[0] + (v - lv) * Rp.dir[1];
           // m483: THE TRACE -- every 0.2 s of the first 3 s of each run: where on the line, speed along it, the grade the board
           // reads, grounded, height over the floor straight under him
-          if ((st.gTrN || 0) < 16 && st.t - (st.gTrT || 0) > .2) { st.gTrT = st.t; st.gTrN = (st.gTrN || 0) + 1;
-            (st.gTr = st.gTr || []).push(sNow.toFixed(1) + '|' + (p.vel.x * Math.sin(p.boardH) + p.vel.z * Math.cos(p.boardH)).toFixed(1) + '|' + S.boardGrade(p.boardH).toFixed(2) + '|' + (p.grounded ? 'g' : 'a') + '|' + (P.y - S.groundAt(P.x, P.z, P.y + .3, 2)).toFixed(2));
-            if (st.gTrN === 16) st.log.push('trace s|v|grade|g|dy ' + st.gTr.join(' ')); }
+          if ((st.gTrN || 0) < 34 && st.t - (st.gTrT || 0) > .1 && (st.gTrN || 0) < 34) { st.gTrT = st.t; st.gTrN = (st.gTrN || 0) + 1;
+            (st.gTr = st.gTr || []).push(sNow.toFixed(1) + '|' + (p.vel.x * Math.sin(p.boardH) + p.vel.z * Math.cos(p.boardH)).toFixed(1) + '|' + S.boardGrade(p.boardH).toFixed(2) + '|' + (p.grounded ? 'g' : 'a') + '|' + (P.y - S.groundAt(P.x, P.z, P.y + .3, 2)).toFixed(2) + '|' + (S.IXING.gapArm ? 'A' + (+S.IXING.gapT).toFixed(1) : '-') + (S.SAVE.flags['isl:gap'] ? 'F' : '') + '|' + P.y.toFixed(1));
+            if (st.gTrN === 34) st.log.push('trace s|v|grade|g|dy ' + st.gTr.slice(12).join(' ')); }
+          if (S.IXING.gapArm && st.gArmPrev !== 1) st.gArmS = sNow; st.gArmPrev = S.IXING.gapArm ? 1 : 0;
           if (sNow >= -.3 && !st.gLip) { st.gLip = 1; st.log.push('lip v ' + Math.hypot(p.vel.x, p.vel.z).toFixed(1) + ' vy ' + p.vel.y.toFixed(1) + ' y ' + P.y.toFixed(1) + ' top ' + (S.SK8 ? S.SK8.top : '?')); }
           if (sNow < -5) st.gLip = 0;
-          if (p.grounded && sNow > 4 && !S.SAVE.flags['isl:gap']) { st.log.push('down at ' + sNow.toFixed(1) + ' m past the lip'); st.gRun = 0; S.godTo(G[0], G[1], G[2]); stickOff(); return ''; }
+          // m484: a beat on the ground before calling it short -- the game's own gap test reads `grounded` a frame later
+          st.gDown = p.grounded && sNow > 4 ? (st.gDown || 0) + window.__clock.dt / 1000 : 0;
+          if (st.gDown > .5 && !S.SAVE.flags['isl:gap']) { st.gDown = 0; st.log.push('down at ' + sNow.toFixed(1) + ' m past the lip, across ' + (-(u - lu) * Rp.dir[1] + (v - lv) * Rp.dir[0]).toFixed(1) + ' y ' + P.y.toFixed(1) + ' sea ' + (S.ISLE ? S.ISLE.sea : '?') + ' arm ' + S.IXING.gapArm + ' armedAt ' + (st.gArmS != null ? st.gArmS.toFixed(1) : '-')); st.gRun = 0; S.godTo(G[0], G[1], G[2]); stickOff(); return ''; }
           if ((st.gLogN || 0) < 3 && (!st.gLogT || st.t - st.gLogT > 2)) { st.gLogT = st.t; st.gLogN = (st.gLogN || 0) + 1; const hl = Math.atan2(far[0] - P.x, far[1] - P.z); st.log.push('s ' + sNow.toFixed(1) + ' v ' + Math.hypot(p.vel.x, p.vel.z).toFixed(1) + ' y ' + P.y.toFixed(1) + (p.grounded ? ' g' : ' air') + ' bH ' + (+p.boardH).toFixed(2) + ' line ' + hl.toFixed(2) + ' near ' + S.DUMMIES.filter(d => d.root && Math.hypot(d.root.position.x - P.x, d.root.position.z - P.z) < 3).map(d => d.markId || S.mphName(d.K)).join('/')); }
           walk(far[0], far[1], true); return '';
         }
@@ -313,7 +320,7 @@ try {
         if (!Number.isFinite(P.x + P.y + P.z) || !Number.isFinite(p.vel.x + p.vel.y + p.vel.z)) { out.err = 'NaN in the player: ' + ring.join('\n      '); break; }
       }
       const q = S.quest.cur, s = q && q.steps[S.quest.step], P = S.player.pos;
-      return Object.assign(out, { key: stepKey(), type: s ? s.type : '', text: s ? s.text : '', t: st.t, walked: st.walked, tele: st.tele, sides: st.sides, walls: st.walls, log: st.log.slice(-6), pos: [P.x, P.y, P.z].map(v => +v.toFixed(1)),
+      return Object.assign(out, { big: !!(s && s.type === 'unskin' && q.steps.some(x => x.type === 'skin' && x.tag === s.tag && x.big)), key: stepKey(), type: s ? s.type : '', text: s ? s.text : '', t: st.t, walked: st.walked, tele: st.tele, sides: st.sides, walls: st.walls, log: st.log.slice(-10), pos: [P.x, P.y, P.z].map(v => +v.toFixed(1)),
         form: S.player.mphK ? S.mphName(S.player.mphK) : 'zap', gate: st.gate || '', juice: Math.round(S.SAVE.juice), forms: S.SAVE.forms.slice(), ch: S.SAVE.ch, done: Object.keys(S.SAVE.flags).filter(f => f.startsWith('qdone:')), crashes: window.__crashes || [], sampT: st.holdT });
     };
   }, { STUCK });
@@ -353,7 +360,9 @@ try {
       }
       if (Q.every(id => R.done.includes('qdone:' + id))) break;
       if (R.key === '-') { idle += R.frames / FPS; if (idle > 20) { console.log(`BAD  ${CH} the shipped picker offers nothing for 20 s (chapter ${R.ch}, done [${R.done.map(d => d.slice(6)).join(' ')}])`); bad++; code = 1; break; } } else idle = 0;
-      if (R.t > BUDGET) { row(false, R, `NOT PASSED in ${BUDGET} s` + (R.why ? ' -- ' + R.why : '') + (R.log.length ? ' | ' + R.log.join(' ') : '') + ` | at ${R.pos} as ${R.form}, juice ${R.juice}` + (R.gate ? ' | ' + R.gate : '')); bad++; code = 1; break; }
+      // m484: a BIG boss (`big`, five downs, flung off its arena by every blow) gets 200 s; everything else the budget
+      const lim = R.type === 'unskin' && R.big ? Math.max(BUDGET, 200) : BUDGET;
+      if (R.t > lim) { row(false, R, `NOT PASSED in ${lim} s` + (R.why ? ' -- ' + R.why : '') + (R.log.length ? ' | ' + R.log.join(' ') : '') + ` | at ${R.pos} as ${R.form}, juice ${R.juice}` + (R.gate ? ' | ' + R.gate : '')); bad++; code = 1; break; }
       lastR = R;
     }
     const fin = await page.evaluate(() => { const S = window.__play; return { done: Object.keys(S.SAVE.flags).filter(f => f.startsWith('qdone:')), ch: S.SAVE.ch, forms: S.SAVE.forms.slice(), inTown: !!S.SAVE.flags.inTown, juice: S.SAVE.juice }; });

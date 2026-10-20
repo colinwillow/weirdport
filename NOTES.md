@@ -17,6 +17,21 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE ISLANDS MADE FAIR: FOUR GAME FIXES OFF ONE CHAPTER (m484).** (1) **The gap's landing was out of reach.** The trace past
+  the lip (s | v | grade | g | dy | arm | y): `11.9 16.1 ... a 3.93 A0.8 0.1`, `13.5 ... a -1.61 A0.9 -1.0`, `16.7 ... g ... -2.5`
+  -- he passed UNDER the landing's front edge (13 m out, y 0.7) and into the sea. The in-run tops out at ~16 m/s (ridden flat
+  out on its own line), not the board's 19 the landing was placed for. `landAt` 10, and the check is "on the landing"
+  (`> landAt - .5`) rather than a typed 12. (2) **A lip at speed launched level** -- a frame at 16 m/s is 0.53 m, longer than
+  the 0.4 m probe, so the integrator dropped him off the lip before `bladeSurfPost` could see it and the next frame read the
+  downhill: `bladeSurfPre` now launches on the face behind him when the grade ahead breaks from it by `leave` (her skates get
+  it too, which is the same bug for her); and the face test's .12 tolerance grows with the grade (a kicker is a curve).
+  (3) **Bodies out of the world.** A spot is remembered only with a real floor under it (`groundAt`, every 0.5 s); a quest's
+  body (`qTag`) in the sea counts as out of the world; one that never stood comes up beside him. (4) **A body turned or cured
+  out of the world comes out where it last stood** (`virusGo`): the keeper, beaten in the shallows, came back in the water.
+  Ch1 and ch4 replayed clean after all of it. **Harness:** teleports to a target's own level stop 0.8 m from it (a few metres
+  short is water off a rock); a big boss step gets 200 s; the board run waits 0.5 s grounded before calling it short (the
+  game's gap test reads `grounded` a frame later); the log tail is 10 lines.
+
 - **TWO BOARD BUGS, AND THE ISLANDS' GAP IS CLEARABLE AT LAST (m483, `boardGrade`, `stepSkate`).** The playthrough's trace along the
   gap ramp's line (s | speed along the deck | grade | grounded): `-14.8 4.2 +0.65 g`, then `-13.6 6.6 -1.00 g` and rolling back.
   (1) **`boardGrade` read a steep DESCENT as a wall.** Each probe took floors only up to `MOVE.step * 2` (0.7 m) over his feet;
