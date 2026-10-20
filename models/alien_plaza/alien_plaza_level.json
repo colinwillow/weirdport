@@ -594,7 +594,7 @@
   {
    "name": "smoke_eq5_0",
    "pos": [
-    72.4,
+    74.36363636363636,
     52.44117647058823,
     11.9
    ],
@@ -944,6 +944,84 @@
    "note": "first reward inside 30 s of the spawn"
   },
   {
+   "name": "portal_0",
+   "pos": [
+    6,
+    -14,
+    0
+   ],
+   "kind": "portal",
+   "yaw": 0,
+   "where": "the stage",
+   "lit": true,
+   "note": "two posts, dark until you reach it; then lit, and a checkpoint you can jump back to from any lit portal"
+  },
+  {
+   "name": "portal_1",
+   "pos": [
+    -15,
+    23,
+    15
+   ],
+   "kind": "portal",
+   "yaw": 0,
+   "where": "the bell room",
+   "lit": false,
+   "note": "two posts, dark until you reach it; then lit, and a checkpoint you can jump back to from any lit portal"
+  },
+  {
+   "name": "portal_2",
+   "pos": [
+    2.5,
+    103,
+    -2.9
+   ],
+   "kind": "portal",
+   "yaw": 0,
+   "where": "the vault",
+   "lit": false,
+   "note": "two posts, dark until you reach it; then lit, and a checkpoint you can jump back to from any lit portal"
+  },
+  {
+   "name": "portal_3",
+   "pos": [
+    100,
+    83.5,
+    18.4
+   ],
+   "kind": "portal",
+   "yaw": 0,
+   "where": "the lighthouse gallery",
+   "lit": false,
+   "note": "two posts, dark until you reach it; then lit, and a checkpoint you can jump back to from any lit portal"
+  },
+  {
+   "name": "portal_4",
+   "pos": [
+    64.5,
+    -33,
+    21
+   ],
+   "kind": "portal",
+   "yaw": 0,
+   "where": "the keep summit",
+   "lit": false,
+   "note": "two posts, dark until you reach it; then lit, and a checkpoint you can jump back to from any lit portal"
+  },
+  {
+   "name": "portal_5",
+   "pos": [
+    -90,
+    -26,
+    6.3
+   ],
+   "kind": "portal",
+   "yaw": 0,
+   "where": "the boathouse dome",
+   "lit": false,
+   "note": "two posts, dark until you reach it; then lit, and a checkpoint you can jump back to from any lit portal"
+  },
+  {
    "name": "pickup_000",
    "pos": [
     -44.3,
@@ -996,7 +1074,7 @@
   {
    "name": "pickup_005",
    "pos": [
-    -52.0,
+    -53.1,
     -1.0,
     10.51
    ],
@@ -1633,7 +1711,7 @@
   {
    "name": "gen_1",
    "pos": [
-    37.4,
+    40.0,
     33.3125,
     9
    ],

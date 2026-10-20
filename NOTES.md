@@ -7,6 +7,7 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **GLOWTIDE: SIX DEAD PORTALS (CHECKPOINT + FAST TRAVEL), A QUIETER SEA (m466, `models/alien_plaza/`).** The portals from MECHANISMS.md: two posts and a ring at the stage (lit from the start) and at every core's arrival -- bell room, vault, lighthouse gallery, keep summit, boathouse dome -- as `portal_N` markers (kind `portal`, `lit`, `where`). The game lights one when you reach it and lets you jump between lit ones. The sea and canal water are tinted down (.62/.74/.8) in kit mode: compose.py flagged most frames NOISY and the culprit was the saturated cyan water filling the bottom third -- the sea is the quiet 70%, the cores and bunting are the loud 5%. (Re-pushed on top of m465 from the game window, which landed between pull and push.)
 - **THE KIT IS FOUND, NOT ISSUED (m465, `GEAR`, `gearHas`, `gearSync`).** *"You just wake up and you have all of the weapons.
   You shouldn't start with weapons -- you discover new technologies: a hoverboard, a jet pack, the DNA gun, your blaster, the
   rocket launcher."* In the campaign (`tkit`) a new game is BARE HANDS; each slot is his once the quest in `GEAR.get` is done:

@@ -109,3 +109,5 @@ The lore hook: what people call ghosts, orbs, poltergeists and possession is the
 ## The Area 51 chapter (the saucer)
 
 Through the game you collect PIECES of your ship: a fuel cell here, a nav crystal there, one per world, which is the star-count structure under another name. The bulk of the saucer is underground in a military base, Area 51 by any other name. That chapter is the heist: a fence and searchlights (the security cameras at their hardest), hangars, a lift down, corridors with lasers, men in black who may help or hunt, the saucer on a gantry under lights. You break in with everything the game has taught: disguise as a soldier, bins and crates, hypnosis on a guard at a console, possession of the officer with the keycard, the hover pack over a laser grid. You fly out in the saucer, and that is the ending of the first game and the vehicle of the next.
+
+Glowtide now has six dead portals (`portal_0..5`, kind `portal`): the stage (lit from the start), the bell room, the vault, the lighthouse gallery, the keep summit, the boathouse dome. Two posts and a ring; the game lights one when you arrive and lets you jump between lit ones.
