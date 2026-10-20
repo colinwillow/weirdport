@@ -47,6 +47,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE BARN AND SILO ARE HIS (T2f, m516, `buildFarm`).** `models/campaign/farm_barn.glb` (`fb_barn`, `fb_silo`) loads before
+  `buildFarm` (`?barn=0` A/B; `BARN GLB FAIL` and the code shell if it does not come). The shell's boxes go through `sx`:
+  a collider box is made and its drawing popped, a drawn-only box (trims, door leaves, the roof planks) is skipped, the
+  gables are not made; the roof `quad`s, loft floor, bale stair, loft bales, outside stack, rope, lean-to and paddock stay.
+  **Orientation measured off the file, not the README's words**: the door leaves' piece sits at glTF -z and the hook beam
+  at +z (7.75), so glTF z IS the frame's v and x is u -- the model goes into the frame's group unturned at (bu, y0, bv); the
+  shot confirms it (the code loft's bales show through his loft door). The silo model replaces the drum, dome and rings;
+  its ladder, landing and rails stay code. `play ch0` COMPLETE; `places` exit 0 (it runs without the GLB: the code shell).
+
 - **THE UNDERNEATH'S PEOPLE (F2a-2, m513, `buildUnderneath`).** Two new rooms through the same `room`/`run` helpers: THE CAMP
   (10 x 6, 3.6 high) through a new gap in the cistern's north wall -- **a gap in the cistern's wall needs a fill UNDER the
   floor too** (the wall runs from the pit's bottom at y - 3, so the doorway would otherwise open onto the water's pit) and a
