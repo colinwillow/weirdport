@@ -625,6 +625,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m691 (T5c): THE TRAILER PARK'S BOARDWALK IS HIS** (`trailer_walk.glb`, `TWK`, `twPut`, `twBuild`, `?twalk=0`). Walk segments, rails,
+  trailer platforms and piles, INSTANCED (no mirror -- each piece is symmetric along its length), yaw `psi + F.th`, scaled along
+  glTF Z (Blender Y: `(len + .3) / 4.3`, `len / 4`, `R.len + 1.6`) or, for a pile, glTF Y by its drop. Every collider stays; a tall
+  pile's brace and a rail's top bar and post are in his pieces. `twBuild` runs right after `buildTrailerPark` in init.
+  **CAREFUL WITH A `try { ... }` LINE SWAP**: replacing `try { buildX(); }` as a prefix left a dangling `catch` once -- `check` caught it.
+  `places`: TRAILERS row unchanged (walk 7.2 m over the sea, floor all along), 0 BAD.
+
 - **m690 (T5b): THE COUNTER-PROTEST CAMP IS HIS** (`rally_camp.glb`, `HCRALLY.campG`, `?rcamp=0`). One `campPlace` of `rc_camp` at the
   camp frame's origin (mirrored, turned `th` with the frame) in `buildRally`; the four posts and the tarp are not drawn, and the
   cooler's and the chair's colliders stay with their draws popped. The placards are blank: nothing writes on them yet.

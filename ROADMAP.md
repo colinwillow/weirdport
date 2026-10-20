@@ -545,7 +545,7 @@ different context window, let me know."*
   boxes). In `buildRally`'s camp, Blender X = u, +Y = v in its frame (turned th like its boxes): `rc_camp` at (0, g0, 0) in place of
   the four posts, the tarp, the cooler and the chair -- all at the code's places, plus guy ropes and pegs, a string of bunting in
   the Pearl's pastels along the front and two placards on sticks (blank card for a canvas if the code wants to write on them).
-- [ ] **T5c. Swap in the trailer park's boardwalk** (`models/campaign/trailer_walk.glb`; no collision -- keep the walk, platform,
+- [x] m691 **T5c. Swap in the trailer park's boardwalk** (`models/campaign/trailer_walk.glb`; no collision -- keep the walk, platform,
   rail and post boxes). In `buildTrailerPark`, Blender X across, +Y along, turned psi like the boxes: `tw_walk` at each segment's
   (um, Y, vm), scaled Y by (len + .3) / 4.3, in place of the plank box (bearers under it); `tw_rail` at each rail's (ru, Y, rv),
   scaled Y by len / 4, in place of its two boxes and its post (posts every metre, a mid rail); `tw_platform` at each trailer's
