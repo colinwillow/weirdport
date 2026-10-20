@@ -40,7 +40,7 @@ const server = http.createServer((q, r) => {
     // THE SHIPPED TEXT, with one handle spliced in beside the game's own: the things the driver reads and writes
     const s = body.toString(), k = 'window.melee = window.mel = {';
     if (!s.includes(k)) { console.error('play: no mel handle in index.html'); process.exit(1); }
-    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK, OFERRY, socialGroup, socialOf, ROLEFORM }; ' + k);
+    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK, OFERRY, socialGroup, socialOf, ROLEFORM, OORB, kitPick, WEAP, slotNow }; ' + k);
   }
   r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
 });
@@ -206,6 +206,20 @@ try {
           const pts = [st.endAt, [O.wfAt[0], O.wfAt[2]], ...Wk, [last[0] + (last[0] - prev[0]) * 3, last[1] + (last[1] - prev[1]) * 3]];
           const Q = pts[Math.min(st.wfI, pts.length - 1)]; if (Math.hypot(P.x - Q[0], P.z - Q[1]) < 1.5 && st.wfI < pts.length - 1) st.wfI++;
           walk(Q[0], Q[1], false); return '';
+        }
+        // m480: THE PACIFIER ORB (`orbHit`, `airAim`): within 18 m of it, the blaster out (`kitPick`, the left wheel's own
+        // press), the camera turned onto it (what a thumb's drag does: `airAim` takes any orb inside 0.19 rad of the lens),
+        // and the trigger pulled straight up past `fireAt` and let go -- a charged shot, which counts twice
+        if (s.flag === 'orb:pacifier' && S.OORB.T) {
+          const O = S.OORB, Tg = O.T, d = Math.hypot(Tg.x - P.x, Tg.z - P.z);
+          if (d > 18) { goTo(Tg.x, Tg.z, 14, true, true); return ''; }
+          const L = S.stick.L; L.x = L.y = 0; L.down = 0;
+          const bi = S.WEAP.slots.findIndex(w => w.key === 'blaster'); if (!S.slotNow().aim && bi >= 0) { S.kitPick(bi); return ''; }
+          S.cam.az = Math.atan2(Tg.x - P.x, Tg.z - P.z);
+          st.fireT = (st.fireT || 0) + window.__clock.dt / 1000; const ph = st.fireT % 1.5, R = S.stick.R;
+          if (ph < 1.15) { R.down = 1; R.x = 0; R.y = -1; R.far = 1; } else { R.down = 0; R.x = R.y = 0; R.far = 0; }
+          if (!st.orbLog || st.t - st.orbLog > 6) { st.orbLog = st.t; st.log.push('orb hp ' + O.hpNow + ' d ' + d.toFixed(0) + ' slot ' + S.slotNow().key + ' @' + st.t.toFixed(1)); }
+          return '';
         }
         // falls through to the ordinary flag driver
         { if (T) { goTo(T.x, T.z, 1.2, true, true, T.y); return ''; }   // m466: inside the game's own radius (the papers: 1.9 m), not at the edge of it

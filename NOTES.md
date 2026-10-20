@@ -17,6 +17,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **CHAPTER 4 PLAYS THROUGH, THE ORB SHOT DOWN BY THE PADS (m480, `tools/play.mjs`).** 14 steps over `ch4`, `qorb`, `ch4b`, `ch4c` in
+  161 s, no game faults. The orb driver is what a thumb does: within 18 m, the blaster taken out through `kitPick` (the left
+  wheel's press), the camera's heading turned onto it (`airAim` takes an orb inside `OORB.aimCone` 0.19 rad of the lens, so
+  heading alone is enough -- no pitch), and the right pad held straight up past `fireAt` for 1.15 s and let go (a charged
+  shot counts twice). Down in 11 s. **The lever (`ch4b.1`) passes in 0.1 s** because the control room reach already stands
+  him at it; that is the step working, not skipped.
+
 - **CHAPTER 4'S FIRST QUEST PLAYS THROUGH, AND THE FERRY IS RIDDEN (m479, `tools/play.mjs`).** No game faults; four driver lessons:
   (1) **the ferry's landing is a level below the street** -- walk its own `otWalk` points, never a straight line at `otAt`;
   (2) **"aboard" is the deck's own rectangle in the boat's frame** -- a radius test passed on the pontoon (25 cm lower) and the
