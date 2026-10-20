@@ -241,6 +241,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE SKATE PARK'S HANGOUT IS HIS ART (m573, T3c, `ISKATE.hangG`, `?hang=0`).** `sk_sofa`, `sk_cooler`, `sk_speaker` at the code's spots on
+  the deck and three leaning boards (`sk_board_paint`, its material cloned and tinted pink / paint / yel, + `sk_board_trim`) with
+  `rotation.z = -1.1` -- the farm frame's `tilt` is an Euler Z, so the same lean. Mirrored in z (the sofa's back on -v as the
+  code's). The sofa, cooler and speaker crate keep their colliders (drawing popped). `HANGOUT GLB FAIL` if it does not load.
+
 - **THE FREIGHT HALTS' SHELTERS AND THE WATER TANK ARE HIS ART (m571, T3b, `HCTRAIN.haltG`, `?halt=0`).** `fh_shelter` at (pu, vm) on the
   deck at both platforms and `fh_tank` at (tu, tv) on the ground, mirrored in z and unturned (its outer edge -X is the line's
   left, side -1; the tank's spout along +X, where the code's bar was). The tank's collider stays; the roof slab and posts, the

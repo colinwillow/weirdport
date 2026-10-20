@@ -225,7 +225,7 @@ different context window, let me know."*
   -X, as side = -1; it adds a back screen, brackets, a fretted valance, a gutter and a clock). `fh_tank` at (tu, tv) on g --
   replaces the four legs, the tank cylinder, the cone, the three tori and the spout bar (a staved tank with hoops, braced timber legs
   on pads, the spout swung out along +X with its chain and valve, a ladder). 313 / 809 faces.
-- [ ] **T3c. Swap in the skate park hangout** (`models/campaign/skate_hangout.glb`, no collision file -- `buildIslandSkate` keeps
+- [x] m573 **T3c. Swap in the skate park hangout** (`models/campaign/skate_hangout.glb`, no collision file -- `buildIslandSkate` keeps
   every collider). Blender X = the islands' frame u, +Y = its v, origins on the deck y: `sk_sofa` at (66, 18.6) in place of its four
   boxes (back on -Y, as the code's); `sk_cooler` at (68.5, 17.2) in place of its two; `sk_speaker` at (63.8, 19.4) in place of the
   crate, the speaker box and its cone circle; and the three leaning boards -- `sk_board_paint` (one white material, tinted pink /
