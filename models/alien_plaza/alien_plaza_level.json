@@ -572,6 +572,367 @@
    "reason": "pressures the bell route's middle beat; knock them off the roof"
   },
   {
+   "name": "smoke_wq2_0",
+   "pos": [
+    -50,
+    52,
+    15.5
+   ],
+   "kind": "chimney_smoke",
+   "rate": 1.5
+  },
+  {
+   "name": "smoke_eq4_0",
+   "pos": [
+    20,
+    78,
+    12.100000000000001
+   ],
+   "kind": "chimney_smoke",
+   "rate": 1.5
+  },
+  {
+   "name": "smoke_eq5_0",
+   "pos": [
+    76,
+    52,
+    11.9
+   ],
+   "kind": "chimney_smoke",
+   "rate": 1.5
+  },
+  {
+   "name": "smoke_ww4_0",
+   "pos": [
+    -66,
+    18,
+    15.8
+   ],
+   "kind": "chimney_smoke",
+   "rate": 1.5
+  },
+  {
+   "name": "smoke_ww4_1",
+   "pos": [
+    -62,
+    26,
+    14.700000000000001
+   ],
+   "kind": "chimney_smoke",
+   "rate": 1.5
+  },
+  {
+   "name": "smoke_wq4_0",
+   "pos": [
+    -46,
+    82,
+    15.3
+   ],
+   "kind": "chimney_smoke",
+   "rate": 1.5
+  },
+  {
+   "name": "smoke_t5_0",
+   "pos": [
+    44,
+    90,
+    14.700000000000001
+   ],
+   "kind": "chimney_smoke",
+   "rate": 1.5
+  },
+  {
+   "name": "enemy_walker_00",
+   "pos": [
+    -20,
+    18,
+    6
+   ],
+   "kind": "spore_walker",
+   "patrol": [
+    [
+     -20.0,
+     18.0,
+     6.0
+    ],
+    [
+     -8.0,
+     18.0,
+     6.0
+    ],
+    [
+     -8.0,
+     24.0,
+     6.0
+    ],
+    [
+     -20.0,
+     24.0,
+     6.0
+    ]
+   ],
+   "reason": "pressures the bell route's last stretch (hall roof, around the lift platform)",
+   "behaviour": "walks the patrol, turns at the ends; a stomp or one hit pops it"
+  },
+  {
+   "name": "enemy_walker_01",
+   "pos": [
+    -4.5,
+    50,
+    -2.9
+   ],
+   "kind": "spore_walker",
+   "patrol": [
+    [
+     -4.5,
+     50.0,
+     -2.9
+    ],
+    [
+     -4.5,
+     72.0,
+     -2.9
+    ]
+   ],
+   "reason": "walks the drained canal ledge: stomp it or time the pass",
+   "behaviour": "walks the patrol, turns at the ends; a stomp or one hit pops it"
+  },
+  {
+   "name": "enemy_walker_02",
+   "pos": [
+    36,
+    34,
+    9
+   ],
+   "kind": "spore_walker",
+   "patrol": [
+    [
+     36.0,
+     34.0,
+     9.0
+    ],
+    [
+     52.0,
+     34.0,
+     9.0
+    ],
+    [
+     52.0,
+     42.0,
+     9.0
+    ]
+   ],
+   "reason": "guards the dome roof at the start of the lighthouse route",
+   "behaviour": "walks the patrol, turns at the ends; a stomp or one hit pops it"
+  },
+  {
+   "name": "enemy_walker_03",
+   "pos": [
+    -60,
+    -30,
+    0
+   ],
+   "kind": "spore_walker",
+   "patrol": [
+    [
+     -60.0,
+     -30.0,
+     0.0
+    ],
+    [
+     -40.0,
+     -30.0,
+     0.0
+    ]
+   ],
+   "reason": "promenade patrol: the first enemy you meet after the spawn fight",
+   "behaviour": "walks the patrol, turns at the ends; a stomp or one hit pops it"
+  },
+  {
+   "name": "enemy_walker_04",
+   "pos": [
+    20,
+    -30,
+    0
+   ],
+   "kind": "spore_walker",
+   "patrol": [
+    [
+     20.0,
+     -30.0,
+     0.0
+    ],
+    [
+     45.0,
+     -30.0,
+     0.0
+    ]
+   ],
+   "reason": "promenade patrol (east)",
+   "behaviour": "walks the patrol, turns at the ends; a stomp or one hit pops it"
+  },
+  {
+   "name": "enemy_walker_05",
+   "pos": [
+    72,
+    58,
+    9
+   ],
+   "kind": "spore_walker",
+   "patrol": [
+    [
+     72.0,
+     58.0,
+     9.0
+    ],
+    [
+     72.0,
+     80.0,
+     9.0
+    ]
+   ],
+   "reason": "on eq5's roof, between the two hover gaps",
+   "behaviour": "walks the patrol, turns at the ends; a stomp or one hit pops it"
+  },
+  {
+   "name": "enemy_walker_06",
+   "pos": [
+    -45.013770774522754,
+    163.41623810190057,
+    37.43411031411026
+   ],
+   "kind": "spore_walker",
+   "patrol": [
+    [
+     -45.013770774522754,
+     163.41623810190057,
+     37.43411031411026
+    ],
+    [
+     -14.244102985851285,
+     186.30059893025575,
+     45.726975797030505
+    ]
+   ],
+   "reason": "summit path: walks down at you between the boulders",
+   "behaviour": "walks the patrol, turns at the ends; a stomp or one hit pops it"
+  },
+  {
+   "name": "enemy_drone_07",
+   "pos": [
+    61,
+    47,
+    13
+   ],
+   "kind": "buzz_drone",
+   "patrol": [
+    [
+     61.0,
+     47.0,
+     13.0
+    ],
+    [
+     64.0,
+     49.0,
+     13.0
+    ]
+   ],
+   "reason": "hovers over the first hover gap and shoots: make the hover a decision, not a formality",
+   "behaviour": "hovers the patrol, fires a slow glowing shot every 2.5 s at the alien in range 18 m; two hits"
+  },
+  {
+   "name": "enemy_drone_08",
+   "pos": [
+    83,
+    81,
+    21
+   ],
+   "kind": "buzz_drone",
+   "patrol": [
+    [
+     83.0,
+     81.0,
+     21.0
+    ],
+    [
+     86.0,
+     82.0,
+     21.0
+    ]
+   ],
+   "reason": "hovers by the pylon over the second hover gap and shoots",
+   "behaviour": "hovers the patrol, fires a slow glowing shot every 2.5 s at the alien in range 18 m; two hits"
+  },
+  {
+   "name": "enemy_drone_09",
+   "pos": [
+    40,
+    70,
+    8
+   ],
+   "kind": "buzz_drone",
+   "patrol": [
+    [
+     40.0,
+     70.0,
+     8.0
+    ],
+    [
+     52.0,
+     70.0,
+     8.0
+    ]
+   ],
+   "reason": "watches the harbour checkpoints; shoots the alien, ignores a goo disguise",
+   "behaviour": "hovers the patrol, fires a slow glowing shot every 2.5 s at the alien in range 18 m; two hits"
+  },
+  {
+   "name": "enemy_drone_10",
+   "pos": [
+    -92,
+    -30,
+    9
+   ],
+   "kind": "buzz_drone",
+   "patrol": [
+    [
+     -92.0,
+     -30.0,
+     9.0
+    ],
+    [
+     -86.0,
+     -26.0,
+     9.0
+    ]
+   ],
+   "reason": "circles the boathouse dome: pressure on the hover lift to the rim",
+   "behaviour": "hovers the patrol, fires a slow glowing shot every 2.5 s at the alien in range 18 m; two hits"
+  },
+  {
+   "name": "enemy_drone_11",
+   "pos": [
+    27.065256453781807,
+    149.33518873929995,
+    60.25017884477525
+   ],
+   "kind": "buzz_drone",
+   "patrol": [
+    [
+     27.065256453781807,
+     149.33518873929995,
+     60.25017884477525
+    ],
+    [
+     10.59039695573235,
+     138.86961307836833,
+     64.40900778516155
+    ]
+   ],
+   "reason": "over the summit shuttle gap",
+   "behaviour": "hovers the patrol, fires a slow glowing shot every 2.5 s at the alien in range 18 m; two hits"
+  },
+  {
    "name": "crate_spawn",
    "pos": [
     7,
@@ -675,36 +1036,6 @@
   {
    "name": "pickup_009",
    "pos": [
-    -13.7,
-    20.0,
-    8.25
-   ],
-   "kind": "spore",
-   "route": "core 2"
-  },
-  {
-   "name": "pickup_010",
-   "pos": [
-    -13.7,
-    20.0,
-    10.5
-   ],
-   "kind": "spore",
-   "route": "core 2"
-  },
-  {
-   "name": "pickup_011",
-   "pos": [
-    -13.7,
-    20.0,
-    12.75
-   ],
-   "kind": "spore",
-   "route": "core 2"
-  },
-  {
-   "name": "pickup_012",
-   "pos": [
     -4.3,
     109.5,
     4.0
@@ -713,7 +1044,7 @@
    "route": "core 3"
   },
   {
-   "name": "pickup_013",
+   "name": "pickup_010",
    "pos": [
     56.7,
     38.0,
@@ -723,7 +1054,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_014",
+   "name": "pickup_011",
    "pos": [
     56.7,
     38.0,
@@ -733,7 +1064,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_015",
+   "name": "pickup_012",
    "pos": [
     56.7,
     38.0,
@@ -743,7 +1074,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_016",
+   "name": "pickup_013",
    "pos": [
     57.83,
     46.67,
@@ -753,7 +1084,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_017",
+   "name": "pickup_014",
    "pos": [
     59.67,
     47.33,
@@ -763,7 +1094,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_018",
+   "name": "pickup_015",
    "pos": [
     61.5,
     48.0,
@@ -773,7 +1104,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_019",
+   "name": "pickup_016",
    "pos": [
     63.33,
     48.67,
@@ -783,7 +1114,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_020",
+   "name": "pickup_017",
    "pos": [
     65.17,
     49.33,
@@ -793,7 +1124,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_021",
+   "name": "pickup_018",
    "pos": [
     69.3,
     80.0,
@@ -803,7 +1134,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_022",
+   "name": "pickup_019",
    "pos": [
     69.3,
     80.0,
@@ -813,7 +1144,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_023",
+   "name": "pickup_020",
    "pos": [
     69.3,
     80.0,
@@ -823,7 +1154,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_024",
+   "name": "pickup_021",
    "pos": [
     79.73,
     82.0,
@@ -833,7 +1164,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_025",
+   "name": "pickup_022",
    "pos": [
     81.47,
     82.0,
@@ -843,7 +1174,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_026",
+   "name": "pickup_023",
    "pos": [
     83.2,
     82.0,
@@ -853,7 +1184,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_027",
+   "name": "pickup_024",
    "pos": [
     84.93,
     82.0,
@@ -863,7 +1194,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_028",
+   "name": "pickup_025",
    "pos": [
     86.67,
     82.0,
@@ -873,7 +1204,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_029",
+   "name": "pickup_026",
    "pos": [
     94.3,
     84.6,
@@ -883,7 +1214,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_030",
+   "name": "pickup_027",
    "pos": [
     95.0,
     84.6,
@@ -893,7 +1224,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_031",
+   "name": "pickup_028",
    "pos": [
     95.7,
     84.6,
@@ -903,7 +1234,7 @@
    "route": "core 4"
   },
   {
-   "name": "pickup_032",
+   "name": "pickup_029",
    "pos": [
     56.7,
     10.0,
@@ -913,7 +1244,7 @@
    "route": "core 5"
   },
   {
-   "name": "pickup_033",
+   "name": "pickup_030",
    "pos": [
     56.7,
     10.0,
@@ -923,7 +1254,7 @@
    "route": "core 5"
   },
   {
-   "name": "pickup_034",
+   "name": "pickup_031",
    "pos": [
     56.7,
     10.0,
@@ -933,7 +1264,7 @@
    "route": "core 5"
   },
   {
-   "name": "pickup_035",
+   "name": "pickup_032",
    "pos": [
     -82.5,
     -35.5,
@@ -943,7 +1274,7 @@
    "route": "corefuel cell"
   },
   {
-   "name": "pickup_036",
+   "name": "pickup_033",
    "pos": [
     -82.5,
     -35.5,
@@ -953,7 +1284,7 @@
    "route": "corefuel cell"
   },
   {
-   "name": "pickup_037",
+   "name": "pickup_034",
    "pos": [
     -82.5,
     -35.5,
@@ -963,7 +1294,7 @@
    "route": "corefuel cell"
   },
   {
-   "name": "pickup_038",
+   "name": "pickup_035",
    "pos": [
     -84.0,
     -33.5,
@@ -973,7 +1304,7 @@
    "route": "corefuel cell"
   },
   {
-   "name": "pickup_039",
+   "name": "pickup_036",
    "pos": [
     -84.0,
     -33.0,
@@ -983,7 +1314,7 @@
    "route": "corefuel cell"
   },
   {
-   "name": "pickup_040",
+   "name": "pickup_037",
    "pos": [
     -84.0,
     -32.5,
@@ -993,7 +1324,7 @@
    "route": "corefuel cell"
   },
   {
-   "name": "pickup_041",
+   "name": "pickup_038",
    "pos": [
     -84.0,
     -32.0,
@@ -1003,7 +1334,7 @@
    "route": "corefuel cell"
   },
   {
-   "name": "pickup_042",
+   "name": "pickup_039",
    "pos": [
     -84.0,
     -31.5,
@@ -1013,7 +1344,7 @@
    "route": "corefuel cell"
   },
   {
-   "name": "pickup_043",
+   "name": "pickup_040",
    "pos": [
     -92.0,
     -22.0,
@@ -1023,7 +1354,7 @@
    "route": "corefuel cell"
   },
   {
-   "name": "pickup_044",
+   "name": "pickup_041",
    "pos": [
     -92.0,
     -22.0,
@@ -1033,7 +1364,7 @@
    "route": "corefuel cell"
   },
   {
-   "name": "pickup_045",
+   "name": "pickup_042",
    "pos": [
     -92.0,
     -22.0,
@@ -1043,7 +1374,7 @@
    "route": "corefuel cell"
   },
   {
-   "name": "pickup_046",
+   "name": "pickup_043",
    "pos": [
     -92.0,
     -22.0,
@@ -1053,7 +1384,7 @@
    "route": "corefuel cell"
   },
   {
-   "name": "pickup_047",
+   "name": "pickup_044",
    "pos": [
     -92.0,
     -22.0,
@@ -1063,7 +1394,7 @@
    "route": "corefuel cell"
   },
   {
-   "name": "pickup_048",
+   "name": "pickup_045",
    "pos": [
     -92.0,
     -22.0,
@@ -1073,7 +1404,7 @@
    "route": "corefuel cell"
   },
   {
-   "name": "pickup_049",
+   "name": "pickup_046",
    "pos": [
     -4.3,
     109.5,
@@ -1083,7 +1414,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_050",
+   "name": "pickup_047",
    "pos": [
     -0.32,
     108.5,
@@ -1093,7 +1424,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_051",
+   "name": "pickup_048",
    "pos": [
     1.95,
     108.0,
@@ -1103,7 +1434,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_052",
+   "name": "pickup_049",
    "pos": [
     4.23,
     107.5,
@@ -1113,7 +1444,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_053",
+   "name": "pickup_050",
    "pos": [
     9.75,
     104.0,
@@ -1123,7 +1454,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_054",
+   "name": "pickup_051",
    "pos": [
     11.5,
     104.0,
@@ -1133,7 +1464,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_055",
+   "name": "pickup_052",
    "pos": [
     13.25,
     104.0,
@@ -1143,7 +1474,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_056",
+   "name": "pickup_053",
    "pos": [
     15.0,
     104.0,
@@ -1153,7 +1484,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_057",
+   "name": "pickup_054",
    "pos": [
     16.75,
     104.0,
@@ -1163,7 +1494,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_058",
+   "name": "pickup_055",
    "pos": [
     20.25,
     107.0,
@@ -1173,7 +1504,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_059",
+   "name": "pickup_056",
    "pos": [
     20.25,
     107.0,
@@ -1183,7 +1514,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_060",
+   "name": "pickup_057",
    "pos": [
     20.25,
     107.0,
@@ -1193,7 +1524,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_061",
+   "name": "pickup_058",
    "pos": [
     20.25,
     107.0,
@@ -1203,7 +1534,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_062",
+   "name": "pickup_059",
    "pos": [
     20.25,
     107.0,
@@ -1213,7 +1544,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_063",
+   "name": "pickup_060",
    "pos": [
     20.0,
     106.0,
@@ -1223,7 +1554,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_064",
+   "name": "pickup_061",
    "pos": [
     20.0,
     105.0,
@@ -1233,7 +1564,7 @@
    "route": "corehover shrine"
   },
   {
-   "name": "pickup_065",
+   "name": "pickup_062",
    "pos": [
     20.0,
     104.0,
@@ -1881,14 +2212,6 @@
    "label": "9 -> 15 (bell 1 tower)"
   },
   {
-   "x": -13.2,
-   "y": 20,
-   "z0": 6,
-   "z1": 15,
-   "face": "x-",
-   "label": "hall roof -> bell room"
-  },
-  {
    "x": 56.2,
    "y": 10,
    "z0": 0,
@@ -1961,7 +2284,7 @@
    "label": "pier -> crane cab"
   }
  ],
- "ropes": [
+ "rails": [
   {
    "a": [
     -68,
@@ -1973,7 +2296,9 @@
     20,
     6.3
    ],
-   "label": "ww3 tower -> bell hall roof"
+   "label": "ww3 tower -> bell hall roof",
+   "kind": "grind",
+   "ride": "a -> b (downhill)"
   },
   {
    "a": [
@@ -1986,7 +2311,9 @@
     -6,
     0.09999999999999998
    ],
-   "label": "SHORTCUT HOME: bell room -> plaza"
+   "label": "SHORTCUT HOME: bell room -> plaza",
+   "kind": "grind",
+   "ride": "a -> b (downhill)"
   },
   {
    "a": [
@@ -1999,7 +2326,9 @@
     40,
     1.0
    ],
-   "label": "SHORTCUT HOME: lighthouse -> beach"
+   "label": "SHORTCUT HOME: lighthouse -> beach",
+   "kind": "grind",
+   "ride": "a -> b (downhill)"
   },
   {
    "a": [
@@ -2012,7 +2341,80 @@
     -30,
     1.0
    ],
-   "label": "SHORTCUT HOME: keep summit -> promenade"
+   "label": "SHORTCUT HOME: keep summit -> promenade",
+   "kind": "grind",
+   "ride": "a -> b (downhill)"
+  }
+ ],
+ "platforms": [
+  {
+   "name": "plat_bell_lift",
+   "size": [
+    2.4,
+    2.4,
+    0.3
+   ],
+   "path": [
+    [
+     -15.0,
+     20.0,
+     6.0
+    ],
+    [
+     -15.0,
+     20.0,
+     15.0
+    ]
+   ],
+   "speed": 1.6,
+   "wait_s": 2.0,
+   "label": "hall roof -> bell room: ride up the clock tower's flank (the old ladder)"
+  },
+  {
+   "name": "plat_summit_shuttle",
+   "size": [
+    3.2,
+    3.2,
+    0.4
+   ],
+   "path": [
+    [
+     5.620980412236519,
+     185.8145427393053,
+     49.83200599614419
+    ],
+    [
+     14.899300591937346,
+     182.3875820483803,
+     51.89019847049248
+    ]
+   ],
+   "speed": 2.2,
+   "wait_s": 1.5,
+   "label": "the summit path is broken; a shuttle crosses the gap"
+  },
+  {
+   "name": "plat_harbour_ferry",
+   "size": [
+    3.0,
+    3.0,
+    0.4
+   ],
+   "path": [
+    [
+     38.0,
+     52.5,
+     -1.5
+    ],
+    [
+     38.0,
+     75.5,
+     -1.5
+    ]
+   ],
+   "speed": 1.4,
+   "wait_s": 2.5,
+   "label": "a ferry raft along the basin's west side (decor + a rest; it does not reach the finger)"
   }
  ],
  "water": {

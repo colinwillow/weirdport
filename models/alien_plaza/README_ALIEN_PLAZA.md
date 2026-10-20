@@ -59,10 +59,32 @@ its own world.
 **The canal ledges (`col_deck_canal_ledges`, top -2.9) sit under the water** until `sluice_open`
 lowers it to -3.4.
 
-**Ziplines.** `ropes` in `alien_plaza_level.json` lists four, all ridden from the high end down:
-- The route rope from the west wing tower to the bell hall roof.
-- Three SHORTCUTS HOME: the bell room to the plaza, the lighthouse to the beach, and the keep summit to the
-  promenade. Every finished route takes seconds to leave.
+**Grind rails** (were ziplines). The `rails` list in `alien_plaza_level.json` has four; each is ridden
+from `a` (the high end) to `b`:
+- the route rail from the west wing tower to the bell hall roof;
+- three SHORTCUTS HOME: the bell room to the plaza, the lighthouse to the beach, and the keep summit to
+  the promenade.
+
+The player grinds them like any other rail.
+
+**Moving platforms** (`platforms` in the JSON; meshes `PL_plat_*`; colliders `col_deck_mover_plat_*` at
+their start position). Each has a path of top-centre points, a speed and a wait at each end:
+- `plat_bell_lift`: the hall roof (6) up to the bell room (15). It replaces the old ladder; the core 2
+  route needs it.
+- `plat_summit_shuttle`: crosses a 10 m break in the summit path.
+- `plat_harbour_ferry`: a raft along the basin's west side.
+
+**Enemies with a reason** (`enemy_walker_NN` / `enemy_drone_NN` empties). The `aw` extra has `kind`,
+`patrol` (points), `reason` and `behaviour`:
+- **`spore_walker`** (the Goomba): walks its patrol, turns at the ends, and pops to one stomp or hit.
+- **`buzz_drone`**: hovers its patrol, fires a slow glowing shot every 2.5 s within 18 m, and takes two
+  hits. Drones sit over both hover gaps, the boathouse dome, the summit gap, and the harbour checkpoint
+  (that one ignores a goo disguise).
+
+**Roofs are real surfaces now.** `col_deck_roofs` holds every upward triangle of every building, tower
+and cap above 2 m, taken straight from the visual mesh. Pitched roofs, mushroom caps and domes
+collide where they are drawn. The old box under each pitched roof is gone; that was the staircase you
+fell through. Building boxes stop at the eaves.
 
 **Pickups.** `pickup_NNN` markers (kind `spore`) are breadcrumbs laid along the real core routes by the route
 checker:
