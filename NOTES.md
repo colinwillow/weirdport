@@ -445,6 +445,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE FJORD LOOKOUT IS HIS ART (m635, T4d, `gorge_look.glb`, `?glook=0`).** `gl_tower` replaces the legs, girts, deck, rails,
+  roof posts and roof; `gl_foot` replaces the bench, chest, rack and folded sail. Both are mirrored in z. In `buildGorgeLook`,
+  `kb(on)` makes `tbx` / `fbx`: with the art, a collider is kept with its drawing popped and a drawn-only box is not built;
+  without it, they are plain `bx`. The ladder, the windsock and Ari stay.
+
 - **THE HOTHOUSE GROWS ON THE SKINSUITS' TURF (m633, F2d-1, `HOTH`, `hothBlock`, `hothStep`, GOD `hothouse`).** Every half
   second, each Old Town turf block whose top share is `skin` gets a jungle group, built once on its first fall:
   - vine tubes arching edge to edge, 6-11 m up, magenta-veined

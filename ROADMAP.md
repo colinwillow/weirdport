@@ -404,7 +404,7 @@ different context window, let me know."*
   at a few of the sixteen crystal points (each clump is ~7 of the code's cones) in place of the cones, turned by the code's yaw;
   `gw_cache` at (U(ca), cy, cb) in place of the wood box, the steel lid and the gold box (the gold spill is in it at +X);
   `gw_strongbox` at (U(sa), sy, sb) in place of the steel box and its gold band. Keep the PointLight.
-- [ ] **T4d. Swap in the fjord lookout** (`models/campaign/gorge_look.glb`; no collision -- keep the legs', deck's and rails'
+- [x] m635 **T4d. Swap in the fjord lookout** (`models/campaign/gorge_look.glb`; no collision -- keep the legs', deck's and rails'
   boxes as colliders). In `buildGorgeLook`, Blender X = u, +Y = +b: `gl_tower` at (u, g, b) in place of the eight leg boxes, the
   girts, the deck, the three rails, the four roof posts and the roof (its legs run from -.6 to the deck at 14, splayed 1.9 -> 1.45
   like the code's; X-braces; the rail is open at +Y for the ladder, which stays the code's); `gl_foot` at (u, fg, fb) in place of
