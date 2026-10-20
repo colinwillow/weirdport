@@ -26,6 +26,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE ROAD BRIDGE, OWNED (F1-RT3, m511, `buildHighway`) -- AND TWO THINGS `places` CAUGHT THAT `play` DID NOT.** Added:
+  14 potholes/patches, 18 bits of gutter litter, a broken-down car on the city end's shoulder (solid, hood up, a can by
+  it), green distance signs at each end (canvas), and at the gang's end two parked bikes, a tyre stack, a cooler with
+  cans, pennants along both rails and spray tags. `play ch3` COMPLETE. **`places` then failed twice:** (1) `HIGHWAY NOT
+  BUILT` -- `strokeRect` does not exist on `places`' stub 2D context, so the builder threw (the border is two `fillRect`s
+  now; **in a builder's canvas use fillRect / fillText only**); (2) `TREES ON THE ROAD` -- its tree test is "a creek box
+  under .7 m wide within the road", and the bikes' .5 m colliders sat at the road's start: widened to .8. `places` exit 0.
+  **That closes F1** (every region three passes, the three routes); next is F2.
+
 - **THE SWING BRIDGE, A STREET (F1-RT2, m510, `buildSwing`).** Shots `wfswing` / `otswing` (new entries). On both fixed spans:
   dashed centre line, a walking strip line each side, drain grates every 9 m (all flat); a canvas BRIDGE SWINGS / WAIT AT
   RED board on a post at each swing gap, facing the traffic; at the island end, beside Walt (`wf_swing_walt`, at vW + 6),

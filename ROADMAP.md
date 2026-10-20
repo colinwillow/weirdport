@@ -425,7 +425,7 @@ differ" table there, so no region feels like the last one.
         - [x] m485 **F0b-2b-4c-2** what is left of `ch5c`: the gap is still wind-dependent on some seeds (a head gust lands it short), and on seed 1 the driver ends up on the lighthouse's top after every teleport down to the boss (the sea's put-back takes him up there) -- look at where `islePutBack` sends him off the lighthouse rock.
         - [x] m486 **F0b-2b-5** Chapter 6 (the Mothership): 15 steps, 3 quests in 125 s -- the pod up the tether, the six locks each in its own form, the shaft, the seven-down boss, the end.
   - [x] m487 **F0c Every world boots** through the real loader with no red toast (`npm run worlds:boot`: the shipped page in headless Chromium, every world, a note in the chip's red list or a page error is BAD). 6 of 7 clean; `alien` keeps `GLB NO IMG 20` on purpose (see Decisions).
-- [ ] **F1 Polish passes, region by region, with `npm run shot`.** The farm had five; each of the others
+- [x] m511 **F1 Polish passes, region by region, with `npm run shot`.** The farm had five; each of the others
   gets at least three, one build each, fixing the worst thing in the shots and checked against the
   world rules (exaggerated scale, connective tissue, vertical, no straight borders, nothing bare):
   Old Town, The Pearl, Hollow Creek, the Waterfront, the River Islands, the Mothership. Then the
@@ -454,7 +454,7 @@ differ" table there, so no region feels like the last one.
   - [x] m508 **F1-MS3** the Mothership 3 -- the core (an empty dome): two glow rings and 12 seams across the floor, ribs of light up the dome's inside, eight nerves arcing from the dome's wall down into the shaft's mouth, glow strips climbing the shaft. Nothing solid -- it is the last fight's floor.
   - [x] m509 **F1-RT1** the routes 1 -- the freight trestle (a bare line over the water): signal masts with lit lamps every 45 m, mileposts every 30, and halfway over a railed refuge off the side with a tool chest, cable, a fisherman's bucket and rod, gulls on the rail (GOD place `frrefuge`).
   - [x] m510 **F1-RT2** the routes 2 -- the swing bridge (a grey road): dashed lane lines and painted walking strips on both fixed spans, drain grates, a BRIDGE SWINGS / WAIT AT RED board facing each swing gap, and Walt's fishing pitch at the island end -- rods over the rail, a bucket, a stool, a cool box -- with a lifebuoy.
-  - [ ] **F1-RT3** the routes 3 -- the highway shoulder into Hollow Creek, past the gang.
+  - [x] m511 **F1-RT3** the routes 3 -- the road bridge into Hollow Creek (a clean grey deck): potholes, gutter litter, a broken-down car with its hood up, green distance signs each end; at the gang's end two parked bikes, a tyre stack, a cooler and cans, pennants down both rails, spray tags.
 - [ ] **F2 The regions still missing from `REGIONS.md`**, each as land → places → people → the ways in
   (several, per the connective-tissue rules) → its quests and boss. Read the entry first.
   - [ ] **F2a The Underneath** (3): the tunnels under Old Town, the Pearl and the Waterfront, surfacing in
