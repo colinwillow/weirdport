@@ -17,6 +17,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **DOCK 1, DRESSED (m493, F1-PE3, `buildFootbridge`'s dock).** The landing Chapter 2 starts on (`pearldock`) had painted cube
+  pots with one ico0 each, square bollards and bare boards. Now: tapered round pots with a rim, a clump of three ico1 and
+  blooms (each keeps its old box collider, popped from the draw); round capped bollards (same), a rope coil on the near pair;
+  plank seams; a fish-crate stack (bottom two solid) and a sack by the bridge mouth; a chalkboard; a hanging basket off
+  each lamp; the container's roof garden as clumps with a pennant. **The second 'THE PEARL' you see behind the dock sign is
+  the MURAL (`footMural` paints the name), not a duplicate sign.** `play ch2` COMPLETE (3/3, 14 steps).
+
 - **THE PEARL'S PIER, DRESSED (m492, F1-PE2, `buildPearl`).** The shot from above: three grey deck slabs, bare steel rails,
   ico0 bushes on cubes. Added, per deck: plank seams every 1.2 m (flat boxes, no colliders); along every rail, 0.8 m inboard
   every 6 m, a bollard (a solid 0.55 m post, drawn as a cylinder and cap, its collider a popped box) with rope coiled on
