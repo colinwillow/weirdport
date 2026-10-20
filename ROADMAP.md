@@ -159,6 +159,12 @@ different context window, let me know."*
   the middle doors). `wf_tug` in pier 2's own frame (turned P.psi) at pier-local (w/2+2.9, -2), on its DECK at sea+.9, bow toward
   +Y -- replaces the hull box, the foredeck, the wheelhouse and its windows and the tyre tori (a lofted hull, red below, a stack,
   rails, bitts, a mast). 2,300 / 1,031 faces.
+- [ ] **T2s. Swap in the ferry** (`models/campaign/ferry.glb`, no collision file -- `buildFerry` keeps its moving BDYN boxes and
+  `ferryPlace` moves the group as now). One root, `fy_ferry`, in the `O.grp` group's own frame: origin at the WATERLINE on the
+  centre, Blender X = across the beam (7), Blender Y = along the length (18) -- double-ended, so either way round. Add it to `grp`
+  at (0, 0, 0) in place of the hull, the blue band, the deck, the rails and stanchions, the cabin and its window band, the
+  wheelhouse and its glass, and the two bench boxes (it has all of those at the same sizes: deck 1.25, cabin 4 x 5 to +2.6,
+  wheelhouse 2.4 sq to +4, benches at +-6), plus raised end ramps, fenders, life rings, a mast with lamps. 1,904 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

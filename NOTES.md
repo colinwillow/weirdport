@@ -5,6 +5,15 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m550 -- the ferry as art (scenery window; ROADMAP T2s)
+
+`models/campaign/ferry.glb`: the double-ended passenger ferry at buildFerry's sizes, so every moving collider it rides on still
+matches. A lofted hull drawn in and raked at both ends (white topsides, a blue band, red below the waterline), a rubbing strake
+and tyre fenders, a planked deck, end ramps hinged up on their chains, side rails with stanchions and life rings, the blue cabin
+glazed all round with doors at both ends, a railed roof, the wheelhouse glazed all round with a mast and lamps, benches with
+backs where the code's bench boxes are, bollards and rope coils, blank name boards. Origin at the waterline, in the moving
+group's own frame. Shipped unverified.
+
 ## m548 -- the transit shed and the tug as art (scenery window; ROADMAP T2r)
 
 `models/campaign/wf_shed_tug.glb`. The TRANSIT SHED was one tin box with four dark rectangles: now corrugated walls (a real
