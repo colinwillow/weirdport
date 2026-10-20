@@ -186,6 +186,14 @@ different context window, let me know."*
   lamp sphere (its lens glows at the same 12 m), the cap, the vent ball, the door, the apron and the four windows.
   `li_cottage` at (cu0, cv0) on the top, turned `cps` like its body box -- replaces the body, both roof planks, the chimney, the door
   and the two windows. 1,362 / 272 faces.
+- [ ] **T2w. Swap in the building-site kit** (`models/campaign/site_kit.glb`, no collision file -- `buildSite` keeps the frame, the
+  scaffold, every ladder and collider, the hook line and load, the stacks and cones). Blender X = the site frame's u, +Y = its v.
+  `os_crane` at (mu, mv) on gm, turned so its +X (the jib) points along (cos ja, sin ja) -- replaces the pad, the mast's four
+  legs and its bars, the jib box, cab, counterweights and A-frame (a lattice mast and jib, a slewing ring, pendant ties, a trolley at
+  the code's 0.7 jib where the hook line already hangs); `os_office` at (ou, ov) -- replaces the office box, its roof and window;
+  `os_mixer` at (3.0, sv+1.4) turned .5 -- replaces the drum cylinder and its box; `os_skip` at (-su-2.2, sv+.6) turned .1 --
+  replaces the skip box; `os_hoarding` once per hoarding `bx` (2.4 wide, X along it, its street face -Y: turn the side runs and the
+  far run so -Y faces OUT). 1,448 / 188 / 242 / 140 / 60 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

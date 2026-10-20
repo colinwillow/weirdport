@@ -5,6 +5,15 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m560 -- the building site's pieces as art (scenery window; ROADMAP T2w)
+
+`models/campaign/site_kit.glb`, at buildSite's numbers. The TOWER CRANE: a lattice box-truss mast on a pad with anchor plates,
+ladder rungs inside its face, a slewing ring, the cab off one side, the tower head, the jib and counter-jib as one lattice truss
+with pendant ties, a walkway and four counterweight blocks, a trolley where the code's hook line already hangs, red lamps on the
+head and the jib's tip. The SITE OFFICE: a ribbed portacabin on blocks, a barred window, a door with steps, an AC unit and a plate.
+The MIXER: a lathed drum on a frame with wheels and a tow bar. The SKIP: a tapered steel skip with lugs and rubble. One HOARDING
+panel with a white band, posters and battens behind, repeated round the fence. Shipped unverified.
+
 ## m557 -- the lighthouse and the keeper's cottage as art (scenery window; ROADMAP T2v)
 
 The rock had its m503 pass; the tower itself was still a cylinder with two rings. `models/campaign/lighthouse.glb`: a TAPERED tower
