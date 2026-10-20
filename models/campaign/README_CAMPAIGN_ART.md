@@ -1,0 +1,19 @@
+# Campaign art (the detail pass) -- files the scenery window owns
+
+The campaign's scenery was typed into `index.html` as boxes and spheres. This folder replaces it piece by piece with real models.
+**The scenery window owns these files; the game loop owns the code.** Each piece below has a one-build swap item in ROADMAP.md:
+load the GLB at the spot the code already computes, drop the code-built version, keep the colliders from the `_collision` file.
+
+## Contract (every file here)
+- Blender Z-up, metres, glTF Y-up on export (three: (x, y, z) -> (x, z, -y)). Draco on the visual, off on the collision.
+- **Origin = the piece's anchor ON THE GROUND**, and **+X = the piece's forward** (stated per piece). Scale is final; the game applies none.
+- Colliders: `col_bld_*` (solid boxes, one exact box per object -- the loader turns anything else into columns) and `col_deck_*` (walkable).
+- Markers are empties with the names the code already uses.
+- Materials are opaque unless they are glass or a cut-out (m459: blended kit materials cost 30 fps).
+
+## Pieces
+| File | Replaces | Anchor / forward | Markers | Tris |
+|---|---|---|---|---|
+| `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
+
+Next: the bridge roadblock (solid, or a deliberate hop with a reaction), the truck's detail (his `dump_truck.glb`: ask before changing his file), the farm bushes (three kinds), then place by place.

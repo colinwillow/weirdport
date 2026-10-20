@@ -7,6 +7,7 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CAMPAIGN DETAIL PASS, PIECE 1: THE CRASH WRECK AS A REAL MODEL (m469, `models/campaign/`).** *"Develop the game land... the crash, all that stuff could be developed further."* The campaign's scenery is typed into `index.html`, which the loop owns, so the scenery window builds each piece as a GLB in `models/campaign/` (contract in `README_CAMPAIGN_ART.md`) and ROADMAP T2a asks the loop to swap it in -- art in files, code in the loop, no collisions. The wreck: a smooth 64-segment saucer (hull, dark rim, sixteen rim lights with a third dead, glass dome over a glowing core), tipped 20 degrees nose-down and sunk, a torn gash with exposed ribs and three peeled panels on the nose side, the hatch ramp open on the tail side, a bow wave of earth in front, a scorch disc and hull shards and clods behind. 3,140 tris. Three exact colliders (tail, nose, bow wave) and the six empties `CRASH.at` already reads. `models/campaign` added to `bump.mjs` DIRS. Preview: `crash_wreck_preview.png`. Not loaded by the game until T2a.
 - **CHAPTER 2 PLAYS THROUGH HEADLESS (m468, `tools/play.mjs`).** Three harness faults, no game faults: (1) a chapter started
   directly had only zap's form, so every Pearl local fled and the barista talk failed after 21 teleports -- a chapter-N start
   now gets the earlier chapters' forms (`FORMS_BY`) and their quests marked `qdone:` (which also puts the m465 kit in his

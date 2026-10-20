@@ -36,6 +36,11 @@ adjusting the line wrap. Which is weird. And it would be nice if we could styliz
 block the bridge you can just physically jump over the barricade. The truck could have better detail. Those bushes on the
 farmland. The crash. All of that could be developed further -- keep doing detail passes, and if you want to hand that off to a
 different context window, let me know."*
+- [ ] **T2a. Swap in the crash wreck** (`models/campaign/crash_wreck.glb`, `crash_wreck_collision.glb`; read `models/campaign/README_CAMPAIGN_ART.md`).
+  In `buildCrash`: load the GLB, put its origin at `(wx(cu,cv), g0, wz(cu,cv))` with yaw `fpsi` (its +X is the travel direction,
+  nose ploughed in), drop the code-built hull / rim / dome / glow / torn panels / bow wave and the two wreck colliders, take
+  colliders from the collision file, and read `CRASH.at` (fire, fire2, smoke, hatch, you) off its empties. Keep the furrow mounds,
+  clods and scorch discs. The scenery window owns the art in `models/campaign/`; this is code only.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
