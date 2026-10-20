@@ -513,92 +513,92 @@
   {
    "name": "pickup_000",
    "pos": [
-    7.3,
-    34.0,
-    3.0
+    -44.3,
+    -4.0,
+    0.83
    ],
    "kind": "spore",
-   "route": "core 2 bell room"
+   "route": "core 2"
   },
   {
    "name": "pickup_001",
    "pos": [
-    7.3,
-    34.0,
-    6.0
+    -44.3,
+    -4.0,
+    2.55
    ],
    "kind": "spore",
-   "route": "core 2 bell room"
+   "route": "core 2"
   },
   {
    "name": "pickup_002",
    "pos": [
-    7.3,
-    34.0,
-    9.0
+    -44.3,
+    -4.0,
+    4.28
    ],
    "kind": "spore",
-   "route": "core 2 bell room"
+   "route": "core 2"
   },
   {
    "name": "pickup_003",
    "pos": [
-    7.5,
-    29.0,
-    13.14
+    -52.0,
+    -1.0,
+    9.01
    ],
    "kind": "spore",
-   "route": "core 2 bell room"
+   "route": "core 2"
   },
   {
    "name": "pickup_004",
    "pos": [
-    7.0,
-    28.0,
-    12.45
+    -52.0,
+    -1.0,
+    10.2
    ],
    "kind": "spore",
-   "route": "core 2 bell room"
+   "route": "core 2"
   },
   {
    "name": "pickup_005",
    "pos": [
-    6.5,
-    27.0,
-    10.89
+    -52.0,
+    -1.0,
+    10.51
    ],
    "kind": "spore",
-   "route": "core 2 bell room"
+   "route": "core 2"
   },
   {
    "name": "pickup_006",
    "pos": [
-    -6.0,
-    20.0,
-    9.39
+    -63.3,
+    0.0,
+    10.5
    ],
    "kind": "spore",
-   "route": "core 2 bell room"
+   "route": "core 2"
   },
   {
    "name": "pickup_007",
    "pos": [
-    -6.0,
-    20.0,
-    9.45
+    -63.3,
+    0.0,
+    12.0
    ],
    "kind": "spore",
-   "route": "core 2 bell room"
+   "route": "core 2"
   },
   {
    "name": "pickup_008",
    "pos": [
-    -6.0,
-    20.0,
-    8.64
+    -63.3,
+    0.0,
+    13.5
    ],
    "kind": "spore",
-   "route": "core 2 bell room"
+   "route": "core 2"
   },
   {
    "name": "pickup_009",
@@ -608,7 +608,7 @@
     8.25
    ],
    "kind": "spore",
-   "route": "core 2 bell room"
+   "route": "core 2"
   },
   {
    "name": "pickup_010",
@@ -618,7 +618,7 @@
     10.5
    ],
    "kind": "spore",
-   "route": "core 2 bell room"
+   "route": "core 2"
   },
   {
    "name": "pickup_011",
@@ -628,7 +628,7 @@
     12.75
    ],
    "kind": "spore",
-   "route": "core 2 bell room"
+   "route": "core 2"
   },
   {
    "name": "pickup_012",
@@ -638,237 +638,537 @@
     4.0
    ],
    "kind": "spore",
-   "route": "core 3 vault"
+   "route": "core 3"
   },
   {
    "name": "pickup_013",
    "pos": [
+    56.7,
     38.0,
-    81.75,
-    8.59
+    2.25
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
    "name": "pickup_014",
    "pos": [
+    56.7,
     38.0,
-    81.75,
-    9.35
+    4.5
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
    "name": "pickup_015",
    "pos": [
+    56.7,
     38.0,
-    81.75,
-    9.24
+    6.75
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
    "name": "pickup_016",
    "pos": [
-    45.5,
-    83.84,
-    9.99
+    57.83,
+    46.67,
+    10.95
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
    "name": "pickup_017",
    "pos": [
-    47.0,
-    84.56,
-    10.85
+    59.67,
+    47.33,
+    11.5
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
    "name": "pickup_018",
    "pos": [
-    48.5,
-    85.28,
-    10.84
+    61.5,
+    48.0,
+    11.7
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
    "name": "pickup_019",
    "pos": [
-    63.25,
-    85.5,
-    11.26
+    63.33,
+    48.67,
+    11.5
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
    "name": "pickup_020",
    "pos": [
-    64.5,
-    85.0,
-    11.7
+    65.17,
+    49.33,
+    10.95
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
    "name": "pickup_021",
-   "pos": [
-    65.75,
-    84.5,
-    11.26
-   ],
-   "kind": "spore",
-   "route": "core 4 lighthouse gallery"
-  },
-  {
-   "name": "pickup_022",
    "pos": [
     69.3,
     80.0,
     11.5
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
-   "name": "pickup_023",
+   "name": "pickup_022",
    "pos": [
     69.3,
     80.0,
     14.0
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
-   "name": "pickup_024",
+   "name": "pickup_023",
    "pos": [
     69.3,
     80.0,
     16.5
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
-   "name": "pickup_025",
+   "name": "pickup_024",
    "pos": [
     79.73,
     82.0,
     20.85
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
-   "name": "pickup_026",
+   "name": "pickup_025",
    "pos": [
     81.47,
     82.0,
     21.3
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
-   "name": "pickup_027",
+   "name": "pickup_026",
    "pos": [
     83.2,
     82.0,
     21.4
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
-   "name": "pickup_028",
+   "name": "pickup_027",
    "pos": [
     84.93,
     82.0,
     21.1
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
-   "name": "pickup_029",
+   "name": "pickup_028",
    "pos": [
     86.67,
     82.0,
     20.45
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
-   "name": "pickup_030",
+   "name": "pickup_029",
    "pos": [
     94.3,
     84.6,
     20.66
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
-   "name": "pickup_031",
+   "name": "pickup_030",
    "pos": [
     95.0,
     84.6,
     21.1
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
-   "name": "pickup_032",
+   "name": "pickup_031",
    "pos": [
     95.7,
     84.6,
     20.66
    ],
    "kind": "spore",
-   "route": "core 4 lighthouse gallery"
+   "route": "core 4"
   },
   {
-   "name": "pickup_033",
+   "name": "pickup_032",
    "pos": [
     56.7,
     10.0,
     1.5
    ],
    "kind": "spore",
-   "route": "core 5 keep summit"
+   "route": "core 5"
   },
   {
-   "name": "pickup_034",
+   "name": "pickup_033",
    "pos": [
     56.7,
     10.0,
     3.0
    ],
    "kind": "spore",
-   "route": "core 5 keep summit"
+   "route": "core 5"
   },
   {
-   "name": "pickup_035",
+   "name": "pickup_034",
    "pos": [
     56.7,
     10.0,
     4.5
    ],
    "kind": "spore",
-   "route": "core 5 keep summit"
+   "route": "core 5"
+  },
+  {
+   "name": "pickup_035",
+   "pos": [
+    -82.5,
+    -35.5,
+    3.26
+   ],
+   "kind": "spore",
+   "route": "corefuel cell"
+  },
+  {
+   "name": "pickup_036",
+   "pos": [
+    -82.5,
+    -35.5,
+    4.2
+   ],
+   "kind": "spore",
+   "route": "corefuel cell"
+  },
+  {
+   "name": "pickup_037",
+   "pos": [
+    -82.5,
+    -35.5,
+    4.26
+   ],
+   "kind": "spore",
+   "route": "corefuel cell"
+  },
+  {
+   "name": "pickup_038",
+   "pos": [
+    -84.0,
+    -33.5,
+    5.08
+   ],
+   "kind": "spore",
+   "route": "corefuel cell"
+  },
+  {
+   "name": "pickup_039",
+   "pos": [
+    -84.0,
+    -33.0,
+    6.27
+   ],
+   "kind": "spore",
+   "route": "corefuel cell"
+  },
+  {
+   "name": "pickup_040",
+   "pos": [
+    -84.0,
+    -32.5,
+    7.1
+   ],
+   "kind": "spore",
+   "route": "corefuel cell"
+  },
+  {
+   "name": "pickup_041",
+   "pos": [
+    -84.0,
+    -32.0,
+    7.53
+   ],
+   "kind": "spore",
+   "route": "corefuel cell"
+  },
+  {
+   "name": "pickup_042",
+   "pos": [
+    -84.0,
+    -31.5,
+    7.62
+   ],
+   "kind": "spore",
+   "route": "corefuel cell"
+  },
+  {
+   "name": "pickup_043",
+   "pos": [
+    -92.0,
+    -22.0,
+    9.19
+   ],
+   "kind": "spore",
+   "route": "corefuel cell"
+  },
+  {
+   "name": "pickup_044",
+   "pos": [
+    -92.0,
+    -22.0,
+    10.25
+   ],
+   "kind": "spore",
+   "route": "corefuel cell"
+  },
+  {
+   "name": "pickup_045",
+   "pos": [
+    -92.0,
+    -22.0,
+    10.44
+   ],
+   "kind": "spore",
+   "route": "corefuel cell"
+  },
+  {
+   "name": "pickup_046",
+   "pos": [
+    -92.0,
+    -22.0,
+    11.69
+   ],
+   "kind": "spore",
+   "route": "corefuel cell"
+  },
+  {
+   "name": "pickup_047",
+   "pos": [
+    -92.0,
+    -22.0,
+    12.75
+   ],
+   "kind": "spore",
+   "route": "corefuel cell"
+  },
+  {
+   "name": "pickup_048",
+   "pos": [
+    -92.0,
+    -22.0,
+    12.94
+   ],
+   "kind": "spore",
+   "route": "corefuel cell"
+  },
+  {
+   "name": "pickup_049",
+   "pos": [
+    0.0,
+    109.5,
+    4.0
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_050",
+   "pos": [
+    6.12,
+    108.5,
+    3.79
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_051",
+   "pos": [
+    6.25,
+    108.0,
+    2.75
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_052",
+   "pos": [
+    6.38,
+    107.5,
+    0.84
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_053",
+   "pos": [
+    9.75,
+    104.0,
+    -0.83
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_054",
+   "pos": [
+    11.5,
+    104.0,
+    -0.17
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_055",
+   "pos": [
+    13.25,
+    104.0,
+    0.15
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_056",
+   "pos": [
+    15.0,
+    104.0,
+    0.07
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_057",
+   "pos": [
+    16.75,
+    104.0,
+    -0.37
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_058",
+   "pos": [
+    20.25,
+    107.0,
+    0.38
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_059",
+   "pos": [
+    20.25,
+    107.0,
+    1.57
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_060",
+   "pos": [
+    20.25,
+    107.0,
+    2.4
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_061",
+   "pos": [
+    20.25,
+    107.0,
+    2.83
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_062",
+   "pos": [
+    20.25,
+    107.0,
+    2.92
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_063",
+   "pos": [
+    20.0,
+    106.0,
+    4.21
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_064",
+   "pos": [
+    20.0,
+    105.0,
+    5.0
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
+  },
+  {
+   "name": "pickup_065",
+   "pos": [
+    20.0,
+    104.0,
+    4.91
+   ],
+   "kind": "spore",
+   "route": "corehover shrine"
   },
   {
    "name": "launch_pad",
@@ -1094,6 +1394,96 @@
    ],
    "to": "level_2",
    "on": "beacon"
+  },
+  {
+   "name": "light_00",
+   "pos": [
+    7.5,
+    108.6,
+    -1.7
+   ],
+   "color": [
+    0.4,
+    0.9,
+    1.0
+   ],
+   "intensity": 6.0,
+   "range": 9.0
+  },
+  {
+   "name": "light_01",
+   "pos": [
+    13,
+    101.4,
+    0.19999999999999996
+   ],
+   "color": [
+    1.0,
+    0.5,
+    0.95
+   ],
+   "intensity": 6.0,
+   "range": 9.0
+  },
+  {
+   "name": "light_02",
+   "pos": [
+    21.6,
+    104,
+    -1.0000000000000002
+   ],
+   "color": [
+    0.4,
+    0.9,
+    1.0
+   ],
+   "intensity": 6.0,
+   "range": 9.0
+  },
+  {
+   "name": "light_03",
+   "pos": [
+    21.6,
+    108.5,
+    2.8
+   ],
+   "color": [
+    1.0,
+    0.5,
+    0.95
+   ],
+   "intensity": 6.0,
+   "range": 9.0
+  },
+  {
+   "name": "light_04",
+   "pos": [
+    20,
+    100.6,
+    4.2
+   ],
+   "color": [
+    0.4,
+    0.9,
+    1.0
+   ],
+   "intensity": 6.0,
+   "range": 9.0
+  },
+  {
+   "name": "light_05",
+   "pos": [
+    0,
+    104,
+    1.7
+   ],
+   "color": [
+    1.0,
+    0.5,
+    0.95
+   ],
+   "intensity": 6.0,
+   "range": 9.0
   },
   {
    "name": "mover_shrine_door",

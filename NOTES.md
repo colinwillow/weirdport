@@ -7,6 +7,12 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **EVERY CORE HAS AN INTENDED ROUTE, A STORYBOARD, AND A HEADROOM CHECK (m439, `models/alien_plaza/storyboards/`).**
+  `INTENDED` in aw_plaza.py lists each route's waypoints; the checker proves every leg and lays the 66 breadcrumb pickups along
+  the INTENDED line (not the shortest, which was often a shortcut). `storyboards/board_*.jpg` are renders from each beat looking
+  at the next -- the storyboard found what the checker could not: the shrine's roof was 1.0 m over its exit landing, and the
+  rig is 1.25 m. The checker now has a HEADROOM rule (1.55 m clear somewhere on every surface). Shrine light markers
+  `light_NN` (color, intensity, range) for point lights. 0 problems.
 - **THE START SCREEN (m441, `START`, `startGate`, `#start`, `mel.started`).** *"Kind of crazy getting this far and not having a
   start screen... choose levels or the main game, so we don't have to do this all through debug code."* `startGate()` runs
   BEFORE `init` (the last line is `startGate().then(init)`), so nothing heavy has loaded when it shows: STORY (Start the story /
