@@ -956,7 +956,7 @@ differ" table there, so no region feels like the last one.
     - [x] m594 **F2c-5b** the underwater caves under the fjord: a sunken wreck and a lit grotto in the fjord floor with a cache; a swimming pose (he plays the fall pose in the water now).
     - [x] m609 **F2c-6a** the lookout at the fjord's mouth and the glider to the islands (Ari, a glider pilot to wear); the Gorge's region on the map.
     - [x] m615 **F2c-6b** down the log flume and the rapids from Hollow Creek: the mill's flume runs on, down a rapids channel, into the Gorge's upper river.
-  - [ ] **F2d The Hothouse** (9): the alien takeover, as a region that grows across the map while the
+  - [x] m684 **F2d The Hothouse** (9): the alien takeover, as a region that grows across the map while the
     grid stands and shrinks as you cure districts.
     - [x] m633 **F2d-1** the growth: any Old Town block the Skinsuits hold (turf `skin`) is overgrown -- vine arches over the street, glowing fronds, pods, wet moss -- growing in as it falls and dying back as it is taken. GOD `hothouse`.
     - [x] m642 **F2d-2** the twilight and the spread: inside a held block the light goes to bioluminescent twilight; the Skinsuits push into the blocks next to theirs on a clock unless you cut it back (shoot or swing the pods and vines to take the block's share off them).
