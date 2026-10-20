@@ -17,6 +17,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE PEARL'S PIER, DRESSED (m492, F1-PE2, `buildPearl`).** The shot from above: three grey deck slabs, bare steel rails,
+  ico0 bushes on cubes. Added, per deck: plank seams every 1.2 m (flat boxes, no colliders); along every rail, 0.8 m inboard
+  every 6 m, a bollard (a solid 0.55 m post, drawn as a cylinder and cap, its collider a popped box) with rope coiled on
+  every other one, a lamp post every third slot (colliderless pole, lit head) and a life ring on the rail every fifth. At
+  dock 1's two front corners: crate stacks (the bottom two solid), lobster pots and a net drying on a frame. The loading
+  platforms' plants are clay pots with three-blob clumps; the dock street's trees have a three-blob crown. `play ch2` is
+  COMPLETE (the march's dock route runs down the middle; nothing new is within 18 m of it except the trees, which are
+  unchanged in plan). Still plain: the dock-1 landing in front of the footbridge's sign (cube planters, two overlapping
+  PEARL signs) -- that is the footbridge frame's, and PE3's first look.
+
 - **THE PEARL'S PLAZA, DRESSED -- AND A BED .45 M TALL STALLED THE MARCH (m491, F1-PE1, `buildPearlPlaza`).** The shot: a
   40 x 37 m grey floor, the sit-in and a few crates, nothing overhead. Added: four lines of pennants and bulbs at y+7.4 with
   sag (the overhead layer), a painted floor (sun before the stage, three swirls, a footprint trail; flat `geo`, no
