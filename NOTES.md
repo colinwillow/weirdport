@@ -150,6 +150,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE TRANSIT SHED AND THE TUG ARE HIS ART (m549, T2r, `WFRONT.shedG`, `?shed=0`).** `wf_shed` at (Sh.u, Sh.v) on Y and `wf_tug` at
+  pier 2's (w/2 + 2.9, -2) on sea + .9 turned P.psi, both mirrored in z -- MEASURED off the shed: its canopy reaches glTF z +14.6
+  (Blender -Y), so mirrored it is over the doors on the quay side (-v). `ks` keeps the body, roof and vent colliders and the tug's
+  hull/foredeck/wheelhouse colliders and drops their drawing; the doors' jambs and slats, the windows and the tyre tori are not
+  built. The ladders, pallets and drums stay. `SHED GLB FAIL` in the chip if it does not load.
+
 - **THE DRY DOCK'S COASTER IS HIS ART (m547, T2q, `WFRONT.coastG`, `?coaster=0`).** `wf_coaster` at (D.u, 0) on hb, mirrored in z --
   MEASURED: the mesh spans glTF z -85.6..-13.4, so mirrored she lies v 13.4..85.6, the stern at 14 and the bow at 85.5 as the
   code's SECT has her. `cb` keeps every hull/forecastle/steps/hatch/bulwark/wheelhouse collider and drops its drawing; the

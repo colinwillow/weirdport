@@ -152,7 +152,7 @@ different context window, let me know."*
   Y 14, bow at 85.5, deck at 9, forecastle 1.4 higher from 70. Stop DRAWING the five hull sections and their anti-fouling and boot
   bands, the forecastle, its steps, the three hatch covers, every bulwark, the wheelhouse, its window bands, the funnel and its mast,
   and the three repair plates. 1,813 faces, one mesh.
-- [ ] **T2r. Swap in the transit shed and the tug** (`models/campaign/wf_shed_tug.glb`, no collision file -- `buildWaterfront` keeps
+- [x] m549 **T2r. Swap in the transit shed and the tug** (`models/campaign/wf_shed_tug.glb`, no collision file -- `buildWaterfront` keeps
   every collider, the shed's roof floor, both ladders, the pallets and drums). Blender X = the frame's u, +Y = its v. `wf_shed` at
   (Sh.u, Sh.v) on Y -- replaces the body box, the roof slab, the four doors with their jambs and slats, and the three roof vents'
   drawing (corrugated walls, a canopy over the doors, clerestory windows, gutters and downpipes, skylights, a blank name board over
