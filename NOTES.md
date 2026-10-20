@@ -321,6 +321,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE MX TRACK'S ARCH, FLAGS AND TYRE STACKS ARE HIS ART (m599, T3m, `mx_track.glb`, `?mx=0`).** These are mirrored in z:
+  - `mx_arch` stands at the midpoint of the arch's two feet, turned atan2(-(R.v - L.v), R.u - L.u) so his X runs L -> R. It
+    replaces the posts, their tyres and the top bar. The code's canvas banner stays.
+  - `mx_flag` stands at every flag at turn 0, because his pennant flies +X as the code's cone does. Its `MX_flagpaint`
+    material is cloned per flag and takes `MAT[cols[k % 4]]`'s colour.
+  - `mx_tyres` stands at each berm's tyre stack; the stack's collider stays.
+  Nothing else in the m498 block was ever solid. A missing file says `MX GLB FAIL`.
+
 - **GRISTLE FARM'S SMALL PROPS ARE HIS ART (m597, T3l, `farm_props.glb`, `?fprops=0`).** These are mirrored in z, like every
   campaign piece:
   - `fp_windpump` replaces the legs, girts and platform.

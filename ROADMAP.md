@@ -286,7 +286,7 @@ different context window, let me know."*
   along -Y, which is three's XY with the axle on z, the wheel group's own frame; `fp_scarecrow` at (su, sv) in place of its post,
   bar, shirt, sleeves, head, hat brim and crown; `fp_barrel` at each barrel (u, v); `fp_barrow` at the wheelbarrow, turned .4 (its
   tray, straw and tyre). 486 / 410 / 466 / 224 / 134 faces.
-- [ ] **T3m. Swap in the MX track kit** (`models/campaign/mx_track.glb`, no collision file -- the m498 block has no colliders and keeps
+- [x] m599 **T3m. Swap in the MX track kit** (`models/campaign/mx_track.glb`, no collision file -- the m498 block has no colliders and keeps
   its ruts and tape). `mx_arch` at the midpoint of L and R on the ground, its span (Blender X) along L -> R, in place of the two posts,
   their tyre cylinders and the top bar (the code's canvas banner hangs in front of its yellow backing at 4.3); `mx_flag` at every flag
   in place of the pole and the cone pennant -- its pennant is ONE white material, tint it with the flag's `cols[k % 4]`, turned so
