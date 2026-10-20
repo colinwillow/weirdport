@@ -531,6 +531,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE TOWN EDGE'S HOUSES, FENCES, MAILBOXES AND FRUIT STAND ARE HIS ART (m661, T4o, `town_edge.glb`, `?tedge=0`).**
+  - **Houses:** `te_house_wall` (`TE_paint_white` tinted Hs.col) + `te_house_trim`, turned pi where `front` is -1, replace
+    everything the code drew. **The house loop shadows `bx` / `geo` with `teK(hArt)` / a no-op**, so its colliders stay with
+    their drawing popped and the gables and drawn-only boxes are skipped. The yard code below calls `F.bx` explicitly.
+  - **Fences:** a `te_picket` every metre along each run, turned psi, gap kept; the run's collider stays.
+  - **Mailbox:** `te_mailbox`.
+  - **Fruit stand:** `te_stand`, the same pattern; the counter collider stays.
+
 - **THE TOWN EDGE'S GAS STATION IS HIS ART (m659, T4n, `gas_station.glb`, `?gas=0`).** These are mirrored in z in the town frame:
   - `gs_canopy`
   - `gs_pumps` at both islands
