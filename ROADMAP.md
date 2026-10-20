@@ -72,6 +72,14 @@ different context window, let me know."*
   instead. Keep drawn: the loft floor, the bale stair, the loft bales, the outside hay stack, the rope, the lean-to, the paddock.
   `fb_silo`: origin at its foot centre (u bu+W2+3.4, v bv+D2+1.5), r 2.4/2.3, 11 m drum + red dome; replaces the drum, dome and
   rings; its ladder, landing and rails stay code. 1,392 + 414 faces, one mesh each (11 and 5 materials).
+- [ ] **T2g. Swap in the farmhouse** (`models/campaign/farm_house.glb`, no collision file -- `buildFarmhouse` keeps every collider).
+  `fh_house`: Blender X = frame u, Blender +Y = frame +v, so the porch and door face -v as now; origin (hu, hv) at the house FLOOR
+  y0 (plinth down to -1.6). Drawn at FHOUSE's exact numbers: W 9, D 7, E1 3.0, E2 5.8, ridge 8.1 along u, walls .25, roof .55
+  overhang, chimney at (W2+.55, +.9) topping at RIDGE+1.25 (so `FHOUSE.chim` and the smoke stay put), the windows at the `win`
+  calls' places, the door and fanlight, and the PORCH (2.3 deep: board floor, four posts, rails and balusters, its roof from 2.75 at
+  the wall to 2.4 at the posts). So in `buildFarmhouse` keep the shell's and porch's boxes as colliders but stop drawing them (plinth,
+  walls, bands, corner boards, gables, roof slabs and cap, chimney, every `win`, the door, the porch floor/posts/rails and its roof
+  slab) and keep its walkable `quad`, the steps, chairs, table, barrel, log pile, shed and coop. 4,622 faces, one mesh, 15 materials.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

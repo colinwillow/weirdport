@@ -5,6 +5,16 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m515 -- the farmhouse as art (scenery window; ROADMAP T2g)
+
+`models/campaign/farm_house.glb`: Gristle Farm's house at FHOUSE's exact numbers, so the porch roof he walks, the chimney smoke
+and every collider stay where they are. Clapboard laps every .3 m on all four faces and up the gables, cut round every opening
+(the opening list IS buildFarmhouse's `win` calls); each window has a cross mullion, sill, head and cap and louvred green shutters,
+the ground-floor fronts get window boxes with blooms; a panelled red door under a lit fanlight; a floor band and a frieze; shingle
+courses laid from points on the slope (the barn's flipped-roof lesson), fascia, gutters, a downpipe, rake boards; a stone chimney
+with courses, a corbelled cap and two pots; and the porch -- board floor, turned posts, balusters, its own shingled roof and a
+lamp. Window glow is low (.7) so the panes read as glass by day and warm by night. Shipped unverified.
+
 ## m514 -- the barn and silo as art (ROADMAP T2f)
 
 Gristle Farm's barn is the first building on the farm you see and it was red boxes. `models/campaign/farm_barn.glb` is the shell
