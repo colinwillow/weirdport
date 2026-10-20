@@ -41,6 +41,10 @@ different context window, let me know."*
   nose ploughed in), drop the code-built hull / rim / dome / glow / torn panels / bow wave and the two wreck colliders, take
   colliders from the collision file, and read `CRASH.at` (fire, fire2, smoke, hatch, you) off its empties. Keep the furrow mounds,
   clods and scorch discs. The scenery window owns the art in `models/campaign/`; this is code only.
+- [ ] **T2b. Swap in the farm pickup and tractor** (`models/campaign/farm_pickup.glb`, `farm_tractor.glb`). In `buildVehicles`
+  (and wherever `vehTractor()` / `vehPickup()` are called, the parked barnyard tractor included): load each GLB once, clone it per
+  use, and use the clone where the merged box mesh was -- same model space (forward +z, origin on the ground at the footprint
+  centre), so `vehPlace`, `vehStep` and the hw/hl push-out keep working unchanged. Fall back to the boxes if the file fails.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

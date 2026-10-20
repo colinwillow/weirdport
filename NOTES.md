@@ -7,6 +7,7 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CAMPAIGN DETAIL PASS, PIECE 2: THE FARM PICKUP AND TRACTOR AS MODELS (m472, `models/campaign/`).** *"There's a truck in the game, I don't know if it's supposed to be a tractor or what."* Both farm vehicles were boxes merged in code (`vehPickup`, `vehTractor`). Now: a retro 1950s pickup (rounded hood and cab, chrome grille and bumpers, round headlamps, running boards, curved fenders, a wooden bed with a hay bale and a spare tyre, cream hubs) and a classic red tractor (long hood with a chrome grille, exhaust stack, seat and wheel, big treaded rear tyres under curved fenders, small fronts, a three-disc plough). Bevelled and smooth-shaded, ~2,800 faces each, opaque except the glass. Same model space as `vehParts` (forward +z, origin on the ground) and the same footprints, so ROADMAP T2b is a load-and-swap with nothing else to change. Preview: `farm_vehicles_preview.png`. Not in the game until T2b.
 - **THE BALLOON STOPS RE-WRAPPING (m471, `talkShow`, `talkLetter`, `#talk.comic`).** *"Based on how you're looking at them it's
   always adjusting the line wrap."* `#talk` was `width: auto` at a moving `left`, and a fixed box's shrink-to-fit width is the
   screen LEFT BESIDE IT -- so every camera turn changed the line breaks. It is measured once when a line opens, at `left: 0`

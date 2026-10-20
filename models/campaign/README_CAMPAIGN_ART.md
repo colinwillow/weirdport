@@ -14,6 +14,8 @@ load the GLB at the spot the code already computes, drop the code-built version,
 ## Pieces
 | File | Replaces | Anchor / forward | Markers | Tris |
 |---|---|---|---|---|
+| `farm_pickup.glb` | `vehPickup`'s boxes (the blue pickup that runs barn -> bridge) | origin = footprint centre on the ground; forward = Blender -Y = three +z, exactly `vehParts`' model space; footprint 1.95 x 4.9 so FVEH's hw/hl still fit | -- | 2,828 |
+| `farm_tractor.glb` | `vehTractor`'s boxes (the red tractor ploughing the north field, and the parked one in the barnyard if it uses `vehTractor`) | same as the pickup; plough at the back (+z behind = Blender +Y) | -- | 2,780 |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
-Next: the bridge roadblock (solid, or a deliberate hop with a reaction), the truck's detail (his `dump_truck.glb`: ask before changing his file), the farm bushes (three kinds), then place by place.
+Next: the bridge roadblock (solid, or a deliberate hop with a reaction), the farm bushes (three kinds), then place by place.
