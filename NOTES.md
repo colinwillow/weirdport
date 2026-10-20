@@ -589,6 +589,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m678 (T4x): THE RALLY TRUCKS ARE HIS LIFTED PICKUP** (`rally_truck.glb`, `HCRALLY.artG`, `?rtruck=0`). `buildRally` clones
+  `rt_paint` + `rt_trim` into each truck's group at its origin, with NO mirror and no turn: the file says Blender -Y is the nose,
+  which is glTF +Z, which is already the group's +z (the old cab sat at +.7). Every mesh whose material name has `white` in it takes
+  a clone tinted with `mats[k]`, so the four trucks keep their four colours. The `BDYN` box (1.05 x 2.6 half) is untouched; without
+  the file, the old boxes and wheels are drawn.
+
 - **m676 (T4w): THE MOTHERSHIP GAUNTLET'S SAC, LOCK-ROOM RIBS AND TEAR STRANDS ARE HIS ART** (`ship_gauntlet.glb`, `ISGAUNT.artG`,
   `?sgaunt=0`). `buildShipGauntlet` places them through `campPlace` (mirrored z, Blender +Y = +v): `sg_sac` on the floor under the old
   glow sphere (its tubes up into the north wall, +v), `sg_rib` at each of the six lock-room boxes turned `-a` (X out of the wall),
