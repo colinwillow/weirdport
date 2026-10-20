@@ -582,6 +582,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m676 (T4w): THE MOTHERSHIP GAUNTLET'S SAC, LOCK-ROOM RIBS AND TEAR STRANDS ARE HIS ART** (`ship_gauntlet.glb`, `ISGAUNT.artG`,
+  `?sgaunt=0`). `buildShipGauntlet` places them through `campPlace` (mirrored z, Blender +Y = +v): `sg_sac` on the floor under the old
+  glow sphere (its tubes up into the north wall, +v), `sg_rib` at each of the six lock-room boxes turned `-a` (X out of the wall),
+  `sg_strand` at each of the 14 tear roots at yC - .1, yawed 0 on the south edge and PI on the north so its droop (+Y) leans into
+  the hole. All drawn only; nothing had a collider, and the sac's trigger (`G.sacAt`) is unchanged. No file -> the old primitives.
+
 - **THE CITY RING LOT'S CHAIN-LINK AND THE CHANNEL BRIDGE'S PIERS ARE HIS ART (m674, T4v, `chainlink.glb`, `?clink=0`, `CLINK`).**
   - At the lot, each run gets a `cl_post` at every post and a `cl_mesh` at each mid-span, X-scaled to the span and turned
     along the run. The run's thin collider stays; the top rail and the posts are not drawn.
