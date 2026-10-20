@@ -323,6 +323,15 @@ different context window, let me know."*
   at (cu - 1.8, cv) and (cu + 1.6, cv) on the container's roof (yP + 2.6), in place of the two 'pot' boxes and the leaf clumps;
   `pd_crates` at (-dW + 2.6, vL0 + 1.6) in place of the three crate boxes and the sack sphere; `pd_chalkboard` at
   (dW - 2.4, vL0 + 1.4) turned by r = -.3 in place of its legs, board and chalk lines (its face is -Y).
+- [ ] **T3s. Swap in the gang's road bridge** (`models/campaign/gang_road.glb` plus pieces already shipped; no collision -- keep the
+  boxes). In `buildHighway`, Blender X = u, +Y = v, origins on the deck at yv(v): `gr_distsign` at each distance sign's (su, v)
+  turned like its canvas plane (face +Y = the plane's front), in place of the two 'rail' posts -- keep the canvas plane, nudged
+  .01 in front of the green board; `gr_gangsign` at (hw - .2, gv - .5) in place of the 'dark' post, the LOCALS ONLY plane sitting
+  on its ply sheet (sheet 1.3..2.3 up, face +Y); `gr_cooler` at (5.0, gv + 3.4) in place of the 'line' box and the five can
+  cylinders; `gr_pennant_paint` (tint it truck / line / dark by k % 3) + `gr_pennant_string` at each of the 20 cones, in place of
+  the cone. Already in the repo: `rp_barrel` (rim_props) for the 'drum', `rp_pickup` turned across the lane for the two 'truck'
+  boxes, `tp_chair` (trailer_park) for the two chairs, `bk_bike` (bike_pits) for the two bikes, `rx_tyres` (roof_extras) for the
+  tyre stack.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

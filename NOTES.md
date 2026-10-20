@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m610 -- the gang's road bridge as art (scenery window; ROADMAP T3s)
+
+`models/campaign/gang_road.glb`, for the bridge in `buildHighway`. The green distance sign, white-bordered on two galvanised posts
+with cross-braces (the code's canvas text sits on its face); the LOCALS ONLY ply sheet on a propped post with spray marks at its
+corners (canvas on top again); a blue cooler with a white lid and cans scattered round it; and one zip-tied pennant on its string
+(one white material, tinted per pennant). The barrel, pickup, chairs, bikes and tyres reuse pieces already in the repo; T3s says
+which. Origins on the deck. Shipped unverified.
+
 ## m606 -- the Pearl's dock props as art (scenery window; ROADMAP T3r)
 
 `models/campaign/pearl_dock.glb`, for the dock in `buildFootbridge`. A turned pastel pot with a rolled rim (one white material, so
