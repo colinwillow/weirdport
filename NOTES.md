@@ -487,6 +487,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE ROPE-BRIDGE CROSSING'S DECKS, CONES AND SIGN ARE HIS ART (m649, T4j, `island_xing.glb`, `?ixing=0`, `ixPut`).** These are
+  mirrored in z:
+  - `ix_deck` sits on each sea stack, turned ps; the deck collider stays and the corner posts are not drawn.
+  - `ix_cone` stands at the fourteen field cones, its `IX_white` tinted orange or white.
+  - `ix_signframe` replaces the two posts at Old Town's end; the canvas planes stay.
+
 - **THE HOTHOUSE'S HEART: VINE BRIDGES AND THE NURSERY ON THE ROOFS (m648, F2d-3, `HHEART`, `buildHothHeart`, GOD `hothheart`).**
   **Roofs are FOUND, not looked up:** a 2 m grid of `groundAt(x, z, 90, 90)` over a block, flood-filled into flat patches
   over 3 m up (at least 6 cells). `KBLD` is empty in the harness, and the Skinsuits' own block (B3) has no buildings at all.
