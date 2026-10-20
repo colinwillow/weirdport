@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m636 -- the long flume as art (scenery window; ROADMAP T4e)
+
+`models/campaign/gorge_flume.glb`, for `buildGorgeFlume`. A 2 m section of the trough at the code's numbers (hw .75, walls .6):
+a planked floor, lapped wall boards, battens every half metre and a yoke every metre, for the code to stretch and pitch along each
+segment; the water in it as a separate piece with foam flecks; and the flume head: its planked deck on bearers, railed both sides,
+the banded tin tank on a stand with a spout into the trough's top, and a sign. The trestles stay the code's. Shipped unverified.
+
 ## m634 -- the fjord lookout as art (scenery window; ROADMAP T4d)
 
 `models/campaign/gorge_look.glb`, for `buildGorgeLook`. The 14 m timber tower: four legs splayed from 1.9 to 1.45 as the code
