@@ -314,6 +314,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **GRISTLE FARM'S SMALL PROPS ARE HIS ART (m597, T3l, `farm_props.glb`, `?fprops=0`).** These are mirrored in z, like every
+  campaign piece:
+  - `fp_windpump` replaces the legs, girts and platform.
+  - `fp_scarecrow` replaces everything above the post's collider.
+  - `fp_barrel` stands at each of the three barrels, each turned differently.
+  - `fp_barrow` is turned .4.
+  **`fp_wheel` is NOT mirrored.** It goes straight into the turning `wheel` group, whose own frame already has the axle on z;
+  it replaces the 14 blades and the rim. The head, the tail, the vane, the tractor and every collider stay. A missing file says
+  `FPROPS GLB FAIL`.
+
 - **THE MOTHERSHIP BELLY'S EGGS, GLYPHS AND TENDRILS ARE HIS ART (m596, T3k, `ship_belly.glb`, `?sbelly=0`).** `mb_eggs` per clutch
   at r = R - 1.1, turned -a + pi/2 so his X runs along the wall. `mb_glyph` per panel at r = R - .3, turned -a so its -X face
   looks into the room. `mb_tendril` per tendril at its ceiling root, its Y scaled by L / 1.6. All are mirrored in z.

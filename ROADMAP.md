@@ -279,7 +279,7 @@ different context window, let me know."*
   on y, X along the wall (turned -a + pi/2), in place of its five spheres; `mb_glyph` once per panel at (cos a, sin a) * (R - .3) on
   y, turned so its -X face looks into the room, in place of its three thin glow bars; `mb_tendril` per tendril at its ceiling root
   (y + S.H), Z scaled by L / 1.6, in place of the cylinder and its tip sphere. 1,408 / 254 / 134 faces.
-- [ ] **T3l. Swap in the farm props** (`models/campaign/farm_props.glb`, no collision file -- `buildFarmProps` keeps every collider,
+- [x] m597 **T3l. Swap in the farm props** (`models/campaign/farm_props.glb`, no collision file -- `buildFarmProps` keeps every collider,
   the windpump's head group and tail, the tractor). Blender X = the farm frame's u, +Y = its v, on the ground. `fp_windpump` at
   (wu, wv) in place of the four legs, the girts and the platform (it adds bracing, a ladder, the pump rod, a pump and a trough);
   `fp_wheel` added to `wheel` at (0, 0, 0) in place of the 14 blade boxes and the torus -- it is built in Blender XZ with the axle
