@@ -495,6 +495,13 @@ different context window, let me know."*
   `ff_post` (never scaled) in place of the post box, and `ff_rails` scaled X by F.piece + .25 (2.95) in place of the two rail
   boxes -- the rails sag and are weathered in two tones. Instance both (one InstancedMesh each); they run the whole farm.
   `ff_gate` (a 3 m five-bar gate on its hanging post, closed along +X from 0) is there for any gap the farm wants to close.
+- [ ] **T4t. Swap in the channel bridge's checkpoint and lamps, and the ford's stones** (`models/campaign/bridge_bits.glb`; no
+  collision -- keep the booth box and every stone's box). In `buildChannelBridge`, Blender X = u (city -> farm), +Y = v: `cb_booth`
+  at (uc, yD, W / 2 - 1.1) in place of the booth box, its roof, its window and the six arm boxes (the arm is in it, pivoting at
+  (-1.2, -.77) and running 3.96 to -Y, on a rest post at its end; `BRIDGE.gate` stays where the code puts it); `cb_lamp` at each
+  parapet lamp's (u, yD + .95, sd * (W / 2 - .2)), its head toward the road (turn it pi on the -v side), in place of the post and
+  the lamp box. In `buildFord`, `fd_stone` at each stone's (x, top, z), scaled by r / .65 and turned like the code's ico, in place of
+  the ico, the cylinder and the weed (its stem runs to -2 below its top).
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

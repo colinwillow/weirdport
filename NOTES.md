@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m668 -- the channel bridge's checkpoint and lamps, and the ford's stones, as art (scenery window; ROADMAP T4t)
+
+`models/campaign/bridge_bits.glb`. The checkpoint booth at the code's 1.7 m square: white panels and corner posts, glazed on three
+sides, a door, a dark roof with a red fascia and a beacon, and the striped barrier arm on its yellow pivot head and post, laid across
+the road exactly where the code lays its six arm boxes, resting on a post at its end. A parapet lamp, post and lantern. And the ford's
+stepping stone: a squat boulder on a tapered stem with weed at its waterline. Shipped unverified.
+
 ## m665 -- the fields' post-and-rail fence as art (scenery window; ROADMAP T4s)
 
 `models/campaign/farm_fence.glb`, for the 'fence' borders `buildFieldBounds` lays between pastures. An oak post with a weathered
