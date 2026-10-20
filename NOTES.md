@@ -248,6 +248,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **RUE'S FIELD IS HIS ART (m575, T3d, `IXING.rueG`, `?rue=0`).** `rf_canopy` (-11, 11), `rf_rack` (-14.5, 5), `rf_chalk` (-8, 15.5) and
+  `rf_bench` (-13, 14.5, turned .5) on the field's own ground, mirrored in z. The table's and the bench's colliders stay (drawing
+  popped); legs, roof, valance, thermos, cup, wing triangles, the board and its lines are not built. The rings, stepping stones and
+  flowers are as before. `FIELD GLB FAIL` in the chip if it does not load.
+
 - **THE SKATE PARK'S HANGOUT IS HIS ART (m573, T3c, `ISKATE.hangG`, `?hang=0`).** `sk_sofa`, `sk_cooler`, `sk_speaker` at the code's spots on
   the deck and three leaning boards (`sk_board_paint`, its material cloned and tinted pink / paint / yel, + `sk_board_trim`) with
   `rotation.z = -1.1` -- the farm frame's `tilt` is an Euler Z, so the same lean. Mirrored in z (the sofa's back on -v as the

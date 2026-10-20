@@ -231,7 +231,7 @@ different context window, let me know."*
   crate, the speaker box and its cone circle; and the three leaning boards -- `sk_board_paint` (one white material, tinted pink /
   paint / yel) + `sk_board_trim` at (70 + k*.9, S.v1 - .45, y + .1), tilted -1.1 about X as the code tilts its boxes. 192 / 94 /
   118 / 5+77 faces.
-- [ ] **T3d. Swap in Rue's field** (`models/campaign/rue_field.glb`, no collision file -- the islands' m504 block keeps the rings, the
+- [x] m575 **T3d. Swap in Rue's field** (`models/campaign/rue_field.glb`, no collision file -- the islands' m504 block keeps the rings, the
   stones, the flowers, the table's and bench's colliders). Blender X = the islands' frame u, +Y = its v, origins on the ground gT:
   `rf_canopy` at (-11, 11) in place of the four legs, the roof slab, the five valance flaps, the table, its legs, the thermos and cup
   (it adds a peaked two-tone roof, cross braces, a clipboard and a wind sock); `rf_rack` at (-14.5, 5) in place of the posts, beam
