@@ -625,6 +625,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m689 (F2e-1): THE CORE** (`MCORE`, `buildMetroCore`, GOD `core`). Towers round Dump Tower in ITS frame (`DTOWER.frame`), PACKED
+  rather than tabled: centres on a 2 m lattice over u -90..90, v -34..34, nearest first (v weighted 1.6), each taking the first spot
+  whose footprint is dry (> sea + .8 at its corners and middle), outside Old Town's rect, level within 3 m, clear of every non-dyn
+  `BOXES` box (+1.5 m) and a 5 m street from every tower so far. **The first version used a slot table and got 3 towers, 0 bridges**
+  -- the ring is narrow on the sea side, and a table cannot know that; the pack can. Every tower is solid to `yS` = Dump Tower's
+  floor 6 (its sky garden), the taller ones set back 2.5 m above it, so every terrace is at one level and a SKY-BRIDGE (railed deck)
+  joins each pair of facing faces within 18 m that overlap 3 m+. Terrace rails have gaps where bridges land. Built after the city
+  ring (so the ring's houses are boxes it avoids) and before the skyline. `placecheck` CORE row (the ladder top lands on the terrace):
+  `ok  CORE 10 towers, 6 sky-bridges, terrace 25.12 | ladder top lands on 25.12 | -22,0 stone 26m 22,0 glass 43m 20,-16 steel 40m 20,16 steel 54m -20,-18 brick 25m 42,10 stone 26m 38,-22 steel 41m 56,-8 glass 52m -68,-6 glass 26m 74,-8 brick 26m | not built: wet 480 box 162 slope 9 city 85`
+
 - **m686 (T5a): THE SCAFFOLD UP THE COASTER'S WEST SIDE IS HIS** (`ship_scaffold.glb`, `WFRONT.scafG`, `?sscaf=0`). One `campPlace` at
   (su, floor, 45), mirrored, Y scaled by (top - floor) / 10.95 (it is built for D.rise 2.2 + S.depth 9 - .25). The top deck's and the
   guard rail's colliders stay (their draws pop); standards, lift boards and the rail's top bar are not drawn. The ladder is still

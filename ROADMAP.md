@@ -981,6 +981,11 @@ differ" table there, so no region feels like the last one.
     - [x] m684 **F2d-5** the chapter's beat: cure the city's held blocks back, a quest that holds it together.
   - [ ] **F2e The metropolis hub**: the tall city in the middle of the map that the other regions ring,
     opened a part at a time as chapters complete; Dump Tower stands in it.
+    - [x] m689 **F2e-1** the core's towers: a packed cluster of skyscrapers round Dump Tower on the west ring, solid to one shared terrace level (Dump Tower's sky-garden floor), set back above it, sky-bridges between facing terraces, a fire escape up from the street, lit windows, roof tanks. GOD `core`.
+    - [ ] **F2e-2** the way across: a sky-bridge from the nearest terrace into Dump Tower's sky garden, and street life at the towers' feet (lobbies, kiosks, a crossing, traffic islands) so the streets between them are a place, not gaps.
+    - [ ] **F2e-3** the workers who keep it running: window cleaners on cradles down the faces, a lift engineer, street sweepers, a doorman per lobby -- people with a beat and lines.
+    - [ ] **F2e-4** the alien grip: beams from Dump Tower's crown to the towers' roofs, the core dim and its streets fenced while they stand; each region cured (chapter done) cuts one beam and lights a tower back up, the last at Chapter 6.
+    - [ ] **F2e-5** the horizon agrees: the distant skyline (`SKYLINE`) re-aimed or retired so what you see from the farm is the core you can walk to.
 - [ ] **F3 The rest of the grid and the fail states** (`LORE.md`): the projector, poltergeist and relay
   orbs; the EM tell (lights flicker, cars stall, radios hiss near the grid); the Hum; black triangles at
   night and tic-tacs that chase flyers; **missing time** as the capture fail state and something at
@@ -1927,3 +1932,8 @@ differ" table there, so no region feels like the last one.
   the mother pod (one bolt into her) takes .45 of the Skinsuits' share off every block that has any, which flips most held blocks
   back, and it stops the spread for good. Blocks they still hold stay held until you cut them back. Melee still doesn't cut the
   growth; only bolts do.
+- **m689 (F2e-1): the metropolis's core is built round Dump Tower on the island's west ring, not as a new landmass.** REGIONS
+  puts Dump Tower in the hub and has Old Town as its first district. So the hub grows outward from what is already there: Old
+  Town's blocks plus a tall cluster round the tower. It is packed, not tabled: towers take the nearest free dry ground with a
+  5 m street between them. All of them share one terrace level at Dump Tower's sky-garden floor, which is what the sky-bridges
+  join. The distant SKYLINE scenery still stands for now (F2e-5).
