@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m671 -- the lot's chain-link fence and the channel bridge's piers as art (scenery window; ROADMAP T4v)
+
+`models/campaign/chainlink.glb`. The city ring lot's chain-link fence: a galvanised post with its bands and a domed cap, never
+scaled, and a 1 m section of diamond weave with its top rail and bottom wire for the code to stretch between posts (the first draft's
+weave opened into big diamonds once stretched; it is three times as fine now). And the channel bridge's pier: coursed stone with a
+cap band, a green tide line, and the code's two cutwaters as pointed noses on its upstream and downstream ends, from the deck's
+underside down to -12. Shipped unverified.
+
 ## m669 -- the creek footbridge, reeds and lilies as art (scenery window; ROADMAP T4u)
 
 `models/campaign/farm_waters.glb`, for `buildFarmWaters`. The footbridge at the code's 14.6 x 1.6: planks on two bearers, both

@@ -508,6 +508,12 @@ different context window, let me know."*
   -2.5 under the deck; on deeper ground the code's own trestle can stay under them). The pond: `fw_lily` at each pad (scale by s2 /
   .7, turned by the code's angle) in place of the circle; `fw_reeds` at each reed spot (the code's four cones round it) in place of
   the cones.
+- [ ] **T4v. Swap in the lot's chain-link fence and the channel bridge's piers** (`models/campaign/chainlink.glb`; no collision --
+  keep the run colliders and the pier boxes). In `buildCityRing`'s 'lot': `cl_post` (never scaled) at each of the code's posts, and
+  `cl_mesh` (1 m along X: scale X by the span between two posts, ~2.5) between each pair, turned along the run, in place of the posts,
+  the top rail and the thin wall. In `buildChannelBridge`: `cb_pier` at each pier's (u, yD - .6, 0) in place of the pier box and its
+  two cutwater cylinders -- built for W 6 (5.6 across, the noses at +-Y = across the bridge, upstream and down), from its cap at 0
+  down to -12; it sinks into the bed below that.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
