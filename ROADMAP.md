@@ -459,6 +459,11 @@ differ" table there, so no region feels like the last one.
   (several, per the connective-tissue rules) → its quests and boss. Read the entry first.
   - [ ] **F2a The Underneath** (3): the tunnels under Old Town, the Pearl and the Waterfront, surfacing in
     cellars and drains; the hobo's and the miner's region; the safe-house portals.
+    - [x] m512 **F2a-1** the land: a hatch on the footbridge's apron down to a shaft room 28 m under the sea's level; a brick tunnel to a junction, the CISTERN (black water, two catwalks, teal growth) off it, a second tunnel to a second shaft that surfaces at a manhole in Old Town. Lanterns, pipes, dark brick. GOD place `underneath`.
+    - [ ] **F2a-2** its people: the homeless network's camp and the hidden market in the cistern's side halls; the hobo form's way in.
+    - [ ] **F2a-3** the water level: a pump room whose wheel raises and lowers the cistern, flooding one route and opening another.
+    - [ ] **F2a-4** the other surfacings: a drain into the Pearl and a cellar under the Waterfront; the good aliens' safe house and its portal pad.
+    - [ ] **F2a-5** the cave miner (sees in the dark, digs through a collapse) and the Underneath's quest.
   - [ ] **F2b Dump Tower** (6): the vertical level, the Reptilians' seat. It goes BEFORE the Mothership in
     the chapter order (Dump Tower is the last stop in the metropolis; renumber the chapters and the
     Mothership's six locks become seven).
@@ -1352,4 +1357,9 @@ differ" table there, so no region feels like the last one.
   material); that is said in the console now, not in red.
 - **m488: F1's shots are taken because the item says `npm run shot`** (the loop's "no screenshots unless asked" yields to an item
   that names the tool). One worst-thing per build, region by region, as written.
+- **m512 (F2a-1) The Underneath is reached by HATCHES, not stairs.** The city's floor (`gFloor0`) is one surface with no hole in
+  it, so a stair down would end in solid ground. A hatch is a pad: step on it and you are at the other end (the camera
+  moves with you, as a portal's does), with a short toast. If you would rather it were a real stair, the floor needs a
+  cut-out first -- say so. **And `groundAt` now ignores the island floor INSIDE the Underneath's box only** (it ignored
+  height before, so nothing under the ground could be stood on); nothing above ground sees a change.
 

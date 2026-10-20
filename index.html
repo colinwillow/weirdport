@@ -773,10 +773,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m511</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m512</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m511</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m512</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; menu</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -862,7 +862,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm511';
+const BUILD = 'm512';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_antenna_game_ktx2.glb":"28afac8c","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_female_purple_ktx2.glb":"fc914afb","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_rollerskate_blue_ktx2.glb":"a66d5697","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/alien_warrior_ktx2.glb":"a13fb7b6","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/colin_ktx2.glb":"35040f87","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/contruction_worker_ktx2.glb":"3df8c344","models/characters/dummy_officer.glb":"724965ac","models/characters/dummy_officer_ktx2.glb":"db640cda","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/jack_ktx2.glb":"1f4c9f7f","models/characters/moussa.glb":"6d80b1cf","models/characters/moussa_ktx2.glb":"66e040f8","models/characters/zap.glb":"5e5cca54","models/characters/zap_ktx2.glb":"4b29d886","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/dump_truck_ktx2.glb":"21ee7059","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/buildings/alien_base_01_ktx2.glb":"6cbbfef2","models/towers/alien_tower_01.glb":"98d23375","models/towers/alien_tower_01_ktx2.glb":"47597651","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.ktx2":"efe0840e","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/alien_world/alien_coast.glb":"d75b2306","models/alien_world/alien_coast_collision.glb":"b611b85b","models/alien_world/alien_coast_ktx2.glb":"ba5c524f","models/alien_world/alien_coast_splat.png":"54070c04","models/alien_world/alien_sky.glb":"09921f46","models/alien_world/alien_streets.glb":"428b278b","models/alien_world/alien_streets_ktx2.glb":"b39c105e","models/alien_world/alien_town.glb":"0458b33a","models/alien_world/alien_town_kit_buildings.glb":"97dc424c","models/alien_world/alien_town_kit_buildings_collision.glb":"acf6a163","models/alien_world/alien_town_kit_buildings_ktx2.glb":"9ee63ae9","models/alien_world/alien_town_ktx2.glb":"458796fb","models/alien_world/alien_town_placements.json":"49b70ec2","models/alien_world/alien_town_splat.png":"2e637c89","models/alien_world/border_fort.glb":"e74b123b","models/alien_world/border_fort_ktx2.glb":"d5cae9b0","models/alien_world/bot_workshop.glb":"cd763f7f","models/alien_world/bot_workshop_ktx2.glb":"74f98979","models/alien_world/comms_tower.glb":"5a032e77","models/alien_world/comms_tower_ktx2.glb":"23195ccf","models/alien_world/critters.glb":"196c3f20","models/alien_world/fermentation_lab.glb":"91038f74","models/alien_world/fermentation_lab_ktx2.glb":"e8b6e052","models/alien_world/fire_forge.glb":"6a1a91c8","models/alien_world/fire_forge_ktx2.glb":"ea0dd9d9","models/alien_world/fire_hangar.glb":"ec2046f3","models/alien_world/fire_hangar_ktx2.glb":"bdbebd0d","models/alien_world/fire_workshop.glb":"1e1c909b","models/alien_world/fire_workshop_ktx2.glb":"96f64328","models/alien_world/goo_barracks.glb":"afb36bce","models/alien_world/goo_barracks_ktx2.glb":"7fabb4e3","models/alien_world/goo_hangar.glb":"b2fb237d","models/alien_world/goo_hangar_ktx2.glb":"5fcf194d","models/alien_world/goo_refinery.glb":"a4692c3a","models/alien_world/goo_refinery_ktx2.glb":"4ab05908","models/alien_world/junk_repair.glb":"bac33b04","models/alien_world/junk_repair_ktx2.glb":"89c1fcdc","models/alien_world/landing_kiosk.glb":"c0d6bf48","models/alien_world/landing_kiosk_ktx2.glb":"0a463f4f","models/alien_world/lookout_tower.glb":"c6cd3268","models/alien_world/lookout_tower_ktx2.glb":"07183c2a","models/alien_world/market_kiosk.glb":"0388d41e","models/alien_world/market_kiosk_ktx2.glb":"1b57cc1d","models/alien_world/mushroom_inn.glb":"6e648c52","models/alien_world/mushroom_inn_ktx2.glb":"fff556fa","models/alien_world/noodle_bar.glb":"e3009e58","models/alien_world/noodle_bar_ktx2.glb":"ef58921c","models/alien_world/power_shack.glb":"f4a6a4c7","models/alien_world/power_shack_ktx2.glb":"afc34744","models/alien_world/refinery_tower.glb":"1ff8d31d","models/alien_world/refinery_tower_ktx2.glb":"4f14643b","models/alien_world/res_complex.glb":"ca190d47","models/alien_world/res_complex_ktx2.glb":"7043f777","models/alien_world/residential_hut.glb":"7581ded0","models/alien_world/residential_hut_ktx2.glb":"675e7618","models/alien_world/signal_tower.glb":"2723ed8c","models/alien_world/signal_tower_ktx2.glb":"7c09f873","models/alien_world/slime_cafe.glb":"5e150e2c","models/alien_world/slime_cafe_ktx2.glb":"fbc444b6","models/alien_world/spore_pharmacy.glb":"3d093c39","models/alien_world/spore_pharmacy_ktx2.glb":"057aaf8a","models/alien_world/watch_tower_gate.glb":"ec05247c","models/alien_world/watch_tower_gate_ktx2.glb":"432282e0","models/alien_world/textures/bark.png":"d969d679","models/alien_world/textures/dirt.png":"e4aff3f7","models/alien_world/textures/foliage.png":"1492930d","models/alien_world/textures/grass.png":"7818548a","models/alien_world/textures/moss.png":"23a9d283","models/alien_world/textures/mud.png":"56f4a041","models/alien_world/textures/p_sand.png":"84dd3c6f","models/alien_world/textures/rock.png":"1b83fb09","models/alien_world/textures/sky_alien_pano.ktx2":"27c79a18","models/alien_world/textures/sky_alien_pano.png":"263d3606","models/alien_plaza/alien_plaza.glb":"ce850b53","models/alien_plaza/alien_plaza_collision.glb":"f084a42e","models/alien_plaza/alien_plaza_ktx2.glb":"1737ab08","models/alien_plaza/alien_plaza_level.json":"28554a14","models/campaign/crash_site_kit.glb":"6d1ea8f6","models/campaign/crash_site_kit_collision.glb":"be9a0990","models/campaign/crash_site_kit_preview.png":"15872096","models/campaign/crash_wreck.glb":"eb6d2f81","models/campaign/crash_wreck_collision.glb":"fd63d483","models/campaign/crash_wreck_preview.png":"4ec7697f","models/campaign/farm_bushes.glb":"706747aa","models/campaign/farm_bushes_preview.png":"4908d231","models/campaign/farm_pickup.glb":"6af235c9","models/campaign/farm_tractor.glb":"efaff62e","models/campaign/farm_vehicles_preview.png":"d9d1ab83","models/campaign/roadblock_kit.glb":"b9c97643","models/campaign/roadblock_kit_collision.glb":"f19b7939","models/campaign/roadblock_kit_preview.png":"d3584222","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.ktx2":"4aa55fde","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.ktx2":"922e1191","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.ktx2":"e0cbfe1d","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.ktx2":"4fbbb985","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.ktx2":"0feb5c79","images/hdri_game.png":"dac55f41","images/water_sprites_01.ktx2":"326924c5","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.ktx2":"99952ec9","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -7578,6 +7578,10 @@ const _bnpF = { d: 0, nx: 0, nz: 0, cx: 0, cz: 0 };
 function groundAt(x, z, y, step) {
   // outside the city on the island there is no floor at zero -- the sea is not glass (m264)
   let best = ISLE.live ? gFloor0(x, z) : (WORLD.now === 'alien' || WORLD.now === 'plaza') ? -1e3 : 0;      // m432: the alien terrain dips under 0 (m438: and the plaza's)
+  // m512: UNDER THE CITY the island's floor is not a floor -- it counts only when it is within reach ABOVE the query, the rule
+  // every box already obeys. Without it nothing below the ground could ever be stood on (gFloor0 ignores y). Inside
+  // `UNDER.box` only, so no caller above ground sees a change.
+  if (UNDER.box && best > y + step && x > UNDER.box[0] && x < UNDER.box[1] && z > UNDER.box[2] && z < UNDER.box[3] && y < UNDER.box[4]) best = -1e9;
   if (TRI.on) { const t = triGround(x, z, y, step); if (t > best) best = t; }
   for (const b of boxesNear(x, x, z, z, _bnG)) {
     if (x < b.minx || x > b.maxx || z < b.minz || z > b.maxz) continue;
@@ -21729,7 +21733,7 @@ function isleStep(dt) {
   I.t += dt;
   const p = player;
   // ---- the sea's rule
-  if (p.pos.y < I.sea - I.deep && !p.climb && !GOD.fly) { islePutBack(); }
+  if (p.pos.y < I.sea - I.deep && !p.climb && !GOD.fly && !underIn(p.pos)) { islePutBack(); }   // m512: not in the Underneath
   else if (p.grounded && p.pos.y > I.sea + .3 && !p.knock) {
     I.safeTk -= dt;
     if (I.safeTk <= 0) {
@@ -38363,6 +38367,109 @@ function footMural() {
   g.font = '900 104px "Barlow Condensed", system-ui, sans-serif'; g.fillText('THE PEARL', 512, 214);
   const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
 }
+// ============================================================================================
+// THE UNDERNEATH (m512, ROADMAP F2a-1, `UNDER`, `buildUnderneath`, `underStep`) -- REGIONS 3: the tunnels
+// ============================================================================================
+// "The old smuggling tunnels and sewers under the city. Dark, close, and secret ... connective tissue as a place: it runs
+// under every downtown region." FIRST BUILD: the land -- a cellar hatch on the footbridge's apron (Old Town's edge) drops
+// you into a SHAFT ROOM 28 m under the sea's level; a brick tunnel runs inland to a JUNCTION; west off it the CISTERN, a
+// hall over black water crossed by two catwalks; south a second tunnel to a second shaft, which surfaces at a manhole
+// in Old Town. The city's floor is one slab and cannot be holed, so the ways down and up are HATCHES: step on one and
+// you are at the other end (the camera moves by the same delta, as a portal's does). No light but lanterns and the
+// teal growth (dark materials, emissive lamps -- no real lights, which every material on a phone would pay for).
+// Down here the sea's rule (`isleStep`) does not apply (`underIn`); the cistern's water puts you back on the last dry
+// stone you stood on. NOT YET: the market, the safe house, the pumps and the water level, the other surfacings, people.
+const UNDER = { on: 1, depth: 28, n: 0, frame: null, pads: [], cool: null, safe: null, box: null, trips: 0, godAt: null };
+function underIn(P) { const B = UNDER.box; if (!B) return false; P = P || player.pos; return P.x > B[0] && P.x < B[1] && P.z > B[2] && P.z < B[3] && P.y < B[4]; }
+function buildUnderneath() {
+  const U = UNDER, FT = FOOT.frame; if (!U.on || !FT || !inTK()) return 0;
+  const { Ox, Oz, thf } = FT, sea = ISLE.sea, y = sea - U.depth;
+  const M = (c, o) => Object.assign(new THREE.MeshStandardMaterial({ color: c, roughness: .8 }), o || {});
+  const MAT = { brick: M(0x3a241e), brick2: M(0x2e1c18), stone: M(0x2a2826, { roughness: .55 }), ceil: M(0x1c1412), iron: Object.assign(M(0x3a3c40), { metalness: .5, roughness: .5 }),
+    rust: M(0x5a3020), lamp: M(0x3a2a14, { emissive: new THREE.Color(0xffa040), emissiveIntensity: 2.2 }), water: M(0x0a1418, { metalness: .6, roughness: .05 }),
+    grow: M(0x0a2a28, { emissive: new THREE.Color(0x2affd0), emissiveIntensity: 1.1 }), plank: M(0x4a3626), pipe: Object.assign(M(0x4a4c50), { metalness: .45, roughness: .45 }), hatch: M(0x2a2a2c, { metalness: .4, roughness: .6 }) };
+  const F = farmFrame(Ox, Oz, thf, MAT, 'under'), { bx, geo, wx, wz } = F;
+  // where the hatch is: the apron's inland corner, left of the sandbags (the footbridge builder's own vA)
+  let hv = 0; for (let v = 0; v < 60; v += .5) { const g = groundAt(wx(0, v), wz(0, v), 60, 80); if (g < sea + .4) { hv = Math.max(5, v - 12) - 6; break; } }
+  const hu = -(FOOT.w || 3) / 2 - 3.2, gTop = groundAt(wx(hu, hv), wz(hu, hv), 60, 80);
+  if (!(gTop > sea)) { note('UNDER NO HATCH'); return 0; }
+  const H = 3.2, T = 3.0;                                     // a tunnel's height and width
+  // a box-walled corridor along u (dir 'u') or v, from a to b at c, with its floor, its two walls and its ceiling
+  const run = (dir, c, a, b, w, h, gapsL, gapsR) => { const lo = Math.min(a, b), hi = Math.max(a, b), L = hi - lo, m = (lo + hi) / 2;
+    const B = (pa, pc, la, lc, y0, y1, mat, col = true) => dir === 'u' ? bx(pa, pc, y0, y1, la, lc, mat, 0, col) : bx(pc, pa, y0, y1, lc, la, mat, 0, col);
+    B(m, c, L, w, y - .5, y, 'stone'); B(m, c, L, w + 1, y + h, y + h + .5, 'ceil');
+    for (const [sd, gaps] of [[-1, gapsL || []], [1, gapsR || []]]) { let t = lo; for (const [g0, g1] of [...gaps.slice().sort((p, q) => p[0] - q[0]), [hi, hi]]) {
+        if (g0 - t > .2) B((t + g0) / 2, c + sd * (w / 2 + .25), g0 - t, .5, y, y + h, (sd > 0) ? 'brick' : 'brick2'); t = Math.max(t, g1); } }
+    for (let t = lo + 2.5; t < hi - 1; t += 6) { const [lu, lv] = dir === 'u' ? [t, c + w / 2] : [c + w / 2, t]; bx(lu, lv, y + 2.1, y + 2.5, .22, .22, 'lamp', 0, false); bx(lu, lv, y + 2.5, y + 2.6, .3, .3, 'iron', 0, false); }
+    { const [a0, c0] = [m, c - w / 2 + .35]; dir === 'u' ? geo(new THREE.CylinderGeometry(.12, .12, L, 8).rotateZ(Math.PI / 2), 'pipe', a0, y + h - .3, c0) : geo(new THREE.CylinderGeometry(.12, .12, L, 8).rotateX(Math.PI / 2), 'pipe', c0, y + h - .3, a0); }
+    for (let t = lo + 1.5; t < hi - 1; t += 1.1) { const [lu, lv] = dir === 'u' ? [t, c] : [c, t]; bx(lu, lv, y, y + .008, dir === 'u' ? .05 : w - .2, dir === 'u' ? w - .2 : .05, 'brick2', 0, false); } };
+  // a room: a floor, a ceiling, four walls with door gaps ([side, t0, t1] in the wall's own run)
+  const room = (cu, cv, w, d, h, doors) => { bx(cu, cv, y - .5, y, w, d, 'stone'); bx(cu, cv, y + h, y + h + .5, w + 1, d + 1, 'ceil');
+    for (const [side, len, fixed, alongU] of [['s', w, cv - d / 2 - .25, 1], ['n', w, cv + d / 2 + .25, 1], ['w', d, cu - w / 2 - .25, 0], ['e', d, cu + w / 2 + .25, 0]]) {
+      const ctr = alongU ? cu : cv, gs = (doors[side] || []).map(([t0, t1]) => [ctr + t0, ctr + t1]).sort((p, q) => p[0] - q[0]); let t = ctr - len / 2 - .5;
+      for (const [g0, g1] of [...gs, [ctr + len / 2 + .5, ctr + len / 2 + .5]]) { if (g0 - t > .2) alongU ? bx((t + g0) / 2, fixed, y, y + h, g0 - t, .5, 'brick', 0) : bx(fixed, (t + g0) / 2, y, y + h, .5, g0 - t, 'brick2', 0); t = Math.max(t, g1); }
+      for (const [g0, g1] of gs) alongU ? bx((g0 + g1) / 2, fixed, y + H, y + h, g1 - g0, .5, 'brick', 0) : bx(fixed, (g0 + g1) / 2, y + H, y + h, .5, g1 - g0, 'brick2', 0); }   // a lintel over each door: above a tunnel's ceiling is open ground
+    for (const [a, b] of [[-1, -1], [1, -1], [-1, 1], [1, 1]]) bx(cu + a * (w / 2 - .4), cv + b * (d / 2 - .4), y + h - 1.1, y + h - .7, .25, .25, 'lamp', 0, false); };
+  // THE PLAN: shaft -> tunnel (-v) -> junction; west to the cistern; on (-v) to the second shaft
+  const vJ = hv - 36, uC = hu - 34, vS2 = hv - 69;
+  room(hu, hv, 5, 5, 4, { s: [[-T / 2, T / 2]] });
+  run('v', hu, hv - 2.5, vJ + 4, T, H);
+  room(hu, vJ, 8, 8, 4.5, { n: [[-T / 2, T / 2]], w: [[-T / 2, T / 2]], s: [[-T / 2, T / 2]] });
+  run('u', vJ, hu - 4, uC + 12, T, H);
+  run('v', hu, vJ - 4, vS2 + 2.5, T, H);
+  room(hu, vS2, 5, 5, 4, { n: [[-T / 2, T / 2]] });
+  // THE CISTERN: 24 x 16, 8 high; a ledge round it, black water in the middle 1.4 down, two catwalks across, the growth
+  { const cw = 24, cd = 16, ch = 8, cu = uC, cv = vJ, lw = 2.4;
+    bx(cu, cv, y + ch, y + ch + .5, cw + 1, cd + 1, 'ceil');
+    for (const [u0, v0, w, d] of [[cu, cv - cd / 2 + lw / 2, cw, lw], [cu, cv + cd / 2 - lw / 2, cw, lw], [cu - cw / 2 + lw / 2, cv, lw, cd - 2 * lw], [cu + cw / 2 - lw / 2, cv, lw, cd - 2 * lw]]) bx(u0, v0, y - .5, y, w, d, 'stone');
+    bx(cu, cv, y - 3, y - 2.4, cw - 2 * lw, cd - 2 * lw, 'stone'); geo(new THREE.PlaneGeometry(cw - 2 * lw, cd - 2 * lw).rotateX(-Math.PI / 2), 'water', cu, y - 1.4, cv);
+    for (const [side, fixed, alongU] of [['s', cv - cd / 2 - .25, 1], ['n', cv + cd / 2 + .25, 1], ['w', cu - cw / 2 - .25, 0], ['e', cu + cw / 2 + .25, 0]]) {
+      const len = alongU ? cw : cd, ctr = alongU ? cu : cv, gs = side === 'e' ? [[cv - T / 2, cv + T / 2]] : []; let t = ctr - len / 2 - .5;
+      for (const [g0, g1] of [...gs, [ctr + len / 2 + .5, ctr + len / 2 + .5]]) { if (g0 - t > .2) alongU ? bx((t + g0) / 2, fixed, y - 3, y + ch, g0 - t, .5, 'brick', 0) : bx(fixed, (t + g0) / 2, y - 3, y + ch, .5, g0 - t, 'brick2', 0); t = Math.max(t, g1); }
+      for (const [g0, g1] of gs) bx(fixed, (g0 + g1) / 2, y + H, y + ch, .5, g1 - g0, 'brick2', 0); bx(cu + cw / 2 + .25, cv, y - 3, y - .5, .5, T, 'brick2', 0); }
+    for (const cv2 of [cv - 2.6, cv + 2.6]) { bx(cu, cv2, y - .25, y, cw - 2 * lw + .2, 1.4, 'plank'); for (const sd of [-1, 1]) { bx(cu, cv2 + sd * .72, y, y + 1.05, cw - 2 * lw, .06, 'iron'); F.parts.iron.pop(); bx(cu, cv2 + sd * .72, y + .98, y + 1.05, cw - 2 * lw, .06, 'iron', 0, false); }
+      for (let u = cu - cw / 2 + lw + 1; u < cu + cw / 2 - lw; u += 3) bx(u, cv2, y - 2.4, y - .25, .14, .14, 'iron', 0, false); }
+    for (let k = 0; k < 6; k++) { const a = k / 6; bx(cu - cw / 2 + 3 + a * (cw - 6), cv + (k % 2 ? cd / 2 - .3 : -cd / 2 + .3), y + 2.4, y + 2.8, .25, .25, 'lamp', 0, false); }
+    for (let k = 0; k < 22; k++) { const t = k / 22, wall = k % 4, sz = .25 + (k % 3) * .15;
+      const [gu, gv] = wall === 0 ? [cu - cw / 2 + .05, cv - cd / 2 + 1 + t * (cd - 2)] : wall === 1 ? [cu - cw / 2 + 1 + t * (cw - 2), cv + cd / 2 - .05] : wall === 2 ? [cu - cw / 2 + 1 + t * (cw - 2), cv - cd / 2 + .05] : [cu - cw / 2 + .05, cv + cd / 2 - 1 - t * (cd - 2)];
+      geo(new THREE.SphereGeometry(sz, 8, 6), 'grow', gu, y + .4 + (k % 5) * .9, gv, 0, 0, 0, .4, 1, 1); }
+    U.wet = { u0: cu - cw / 2 + lw, u1: cu + cw / 2 - lw, v0: cv - cd / 2 + lw, v1: cv + cd / 2 - lw }; }
+  // the shafts' ladders (the look of the way up) and the hatches: a pad below, a cover above
+  const pads = [];
+  for (const [pu, pv] of [[hu, hv], [hu, vS2]]) { for (const sd of [-.35, .35]) bx(pu + sd, pv + 2.1, y, y + 4, .06, .06, 'iron', 0, false); for (let k = 0; k < 9; k++) bx(pu, pv + 2.1, y + .3 + k * .42, y + .34 + k * .42, .7, .05, 'iron', 0, false);
+    geo(new THREE.CircleGeometry(.75, 18).rotateX(-Math.PI / 2), 'grow', pu, y + .02, pv + 1.2); pads.push({ bot: [wx(pu, pv + 1.2), y, wz(pu, pv + 1.2)] }); }
+  pads[0].top = [wx(hu, hv), gTop, wz(hu, hv)];
+  { const sp = kitWorld() ? spawnBeside(kitStand, wx(hu, vS2), wz(hu, vS2), 0) : [wx(hu, vS2), wz(hu, vS2), groundAt(wx(hu, vS2), wz(hu, vS2), 60, 80)];
+    pads[1].top = [sp[0], sp[2] > -1e3 ? sp[2] : gTop, sp[1]]; }
+  // the covers up top, drawn in the world (each its own little mesh: the second is not on this frame's grid)
+  const cm = new THREE.MeshStandardMaterial({ color: 0x2a2a2c, metalness: .5, roughness: .55 }), gm = new THREE.MeshStandardMaterial({ color: 0x0a2a28, emissive: new THREE.Color(0x2affd0), emissiveIntensity: .8 });
+  pads.forEach((P, i) => { const c = new THREE.Mesh(new THREE.CylinderGeometry(.62, .66, .08, 20), cm); c.position.set(P.top[0], P.top[1] + .04, P.top[2]); scene.add(c);
+    const r = new THREE.Mesh(new THREE.TorusGeometry(.68, .04, 4, 24), gm); r.rotation.x = Math.PI / 2; r.position.set(P.top[0], P.top[1] + .05, P.top[2]); scene.add(r);
+    for (let k = -2; k <= 2; k++) { const b = new THREE.Mesh(new THREE.BoxGeometry(.9, .02, .06), cm); b.position.set(P.top[0], P.top[1] + .09, P.top[2] + k * .2); c.add(b); b.position.set(0, .05, k * .2); } });
+  U.n = F.commit().boxes;
+  // its extent in the world (the sea's rule is off inside it)
+  { let x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9; for (const [u, v] of [[hu + 6, hv + 6], [uC - 14, hv + 6], [hu + 6, vS2 - 6], [uC - 14, vS2 - 6]]) { const X = wx(u, v), Z = wz(u, v); x0 = Math.min(x0, X); x1 = Math.max(x1, X); z0 = Math.min(z0, Z); z1 = Math.max(z1, Z); }
+    U.box = [x0, x1, z0, z1, y + 9]; }
+  U.pads = pads; U.y = y; U.frame = { Ox, Oz, thf, hu, hv, vJ, uC, vS2 }; U.F = F;
+  U.godAt = [wx(hu, vJ), y + .1, wz(hu, vJ), thf + Math.PI];
+  return U.n;
+}
+// the hatches: step on one and you are at the other end; the cistern's water puts you back on dry stone
+function underStep(dt) {
+  const U = UNDER, p = player; if (!U.pads.length) return;
+  if (U.cool) { if (Math.hypot(p.pos.x - U.cool[0], p.pos.z - U.cool[2]) > 1.6 || Math.abs(p.pos.y - U.cool[1]) > 3) U.cool = null; }
+  if (!U.cool && p.grounded && !p.climb && !GOD.fly) for (const P of U.pads) for (const [a, b] of [['top', 'bot'], ['bot', 'top']]) {
+    const A = P[a], B = P[b]; if (Math.hypot(p.pos.x - A[0], p.pos.z - A[2]) > .8 || Math.abs(p.pos.y - A[1]) > .8) continue;
+    const dx = B[0] - p.pos.x, dy = B[1] + .05 - p.pos.y, dz = B[2] - p.pos.z;
+    p.pos.x += dx; p.pos.y += dy; p.pos.z += dz; p.vel.set(0, 0, 0);
+    cam.pos.x += dx; cam.pos.y += dy; cam.pos.z += dz; cam.tgt.x += dx; cam.tgt.y += dy; cam.tgt.z += dz;
+    U.cool = [B[0], B[1], B[2]]; U.trips++; snd('swoosh', { r: .5, g: .4 });
+    if (b === 'bot') { toast('THE UNDERNEATH', 1.8); progFlag && progFlag('under:in'); } else toast('UP INTO THE STREET', 1.2);
+    return; }
+  if (!underIn()) return;
+  if (p.grounded && p.pos.y > U.y - .2) U.safe = [p.pos.x, p.pos.y, p.pos.z];
+  if (p.pos.y < U.y - 1.1 && U.safe) { p.pos.set(U.safe[0], U.safe[1] + .05, U.safe[2]); p.vel.set(0, 0, 0); toast('Cold. Black. Back on the stone.', 1.6); }
+}
 function buildFootbridge() {
   const I = ISLE, R = I.rect, FT = FOOT; if (!FT.on || !inTK() || !I.live || !I.rays || !R) return 0;
   const th = footBearing(); if (th === null) return 0;
@@ -41949,6 +42056,7 @@ const GODPLACES = [
   { id: 'gangbridge', world: 'tkit', name: "HOLLOW CREEK · the gang on the bridge (Old Town's side of them)", at: () => HCROAD.gangAt },
   { id: 'otfreight', world: 'tkit', name: 'OLD TOWN · the freight pier (the train to Hollow Creek)', at: () => HCTRAIN.otAt },   // m370
   { id: 'hchalt', world: 'tkit', name: 'HOLLOW CREEK · the halt (the freight line)', at: () => HCTRAIN.hcAt },
+  { id: 'underneath', world: 'tkit', name: 'THE UNDERNEATH · the junction (the hatch is on the footbridge\'s apron)', at: () => UNDER.godAt },   // m512
   { id: 'frrefuge', world: 'tkit', name: 'THE FREIGHT LINE · the refuge halfway over the water', at: () => HCTRAIN.refugeAt },   // m509
   { id: 'hcbikes', world: 'tkit', name: 'HOLLOW CREEK · the dirt-bike track', at: () => HCBIKE.at },   // m369
   { id: 'hcrally', world: 'tkit', name: 'HOLLOW CREEK · the rally field (in front of the stage)', at: () => HCRALLY.at && [HCRALLY.at[0], HCRALLY.y + .1, HCRALLY.at[1], HCFAIR.frame.th + Math.PI] },   // m372
@@ -43774,6 +43882,7 @@ function frameBody() {
   juiceStep(dt);                // the tank: drain while worn, snap back at zero (m284)
   gateStep(dt);                 // gates: flicker, mending, the toast (m285)
   portalStep(dt);               // portals: activate on contact, light the pad (m286)
+  underStep(dt);                // m512: the Underneath's hatches and its water
   mapStep(dt);                  // the minimap, the full map, region fog (m287)
   godStep(dt);                  // GOD mode: the key, the menu, the boot jump (m298)
   crashStep(dt);
@@ -44971,6 +45080,7 @@ async function init() {
     try { buildGoodKiosks(); } catch (e) { note('KIOSKS FAIL'); console.warn('[melee] kiosks', e); }
     // THE FOOTBRIDGE TO THE PEARL (m341): before the city ring, which keeps its trees off the bridge's bearing
     try { buildFootbridge(); } catch (e) { note('FOOTBRIDGE FAIL'); console.warn('[melee] footbridge', e); }
+    try { buildUnderneath(); } catch (e) { note('UNDER FAIL'); console.warn('[melee] underneath', e); }   // m512 (F2a-1)
     // THE LOOK FOLLOWS OLD TOWN'S HEALTH (m344): boards, rubble, litter -- after every Old Town builder, over the street
     try { buildDecay(); } catch (e) { note('DECAY FAIL'); console.warn('[melee] decay', e); }
     // TURF (m407): Old Town's blocks and who holds them -- after every Old Town builder, whose places seed the shares

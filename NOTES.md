@@ -26,6 +26,21 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE UNDERNEATH, FIRST BUILD -- AND NOTHING BELOW THE GROUND COULD BE STOOD ON (F2a-1, m512, `buildUnderneath`,
+  `underStep`, `underIn`, `groundAt`).** REGIONS 3. Under Old Town, in the footbridge's frame, at `ISLE.sea - 28`: a shaft
+  room under a hatch on the apron, a 30 m brick tunnel inland to an 8 x 8 junction, west to the CISTERN (24 x 16, 8 high,
+  a 2.4 m ledge round black water 1.4 down, two railed catwalks across on posts, 22 teal growths, lamps), and on 30 m to a
+  second shaft. Every corridor/room is boxes: floor, walls with door gaps, ceiling (so the camera and a jump stop at it).
+  **Three things found on the way:** (1) `groundAt` starts from `gFloor0(x, z)`, the island's floor, WITHOUT a height
+  test -- so at -30 it said the floor was at 0, the player stood on nothing and the rig drew him on the street above. Inside
+  `UNDER.box` the island floor now counts only when it is within `y + step`, like every box. (2) A room's door gap ran the
+  wall's full height, and above a 3.2 m tunnel ceiling in a 4.5 m room that is an open window onto the city -- door
+  lintels now. (3) `isleStep` put him back on the shore below the sea's level; `underIn` exempts him. The cistern's water
+  is its own rule (back to the last dry stone). The hatches are pads (`UNDER.pads`, top/bot, a cool-down until he steps
+  off). `places` needs `buildUnderneath` in its builder list and `underneath` in CITYP/offLand, and its sea test skips
+  `underIn`; `npm run shot undernear` (SHOT_TURN turns the lens) -- the wide cams are in the rock. `places` exit 0,
+  `play ch1` COMPLETE.
+
 - **THE ROAD BRIDGE, OWNED (F1-RT3, m511, `buildHighway`) -- AND TWO THINGS `places` CAUGHT THAT `play` DID NOT.** Added:
   14 potholes/patches, 18 bits of gutter litter, a broken-down car on the city end's shoulder (solid, hood up, a can by
   it), green distance signs at each end (canvas), and at the gang's end two parked bikes, a tyre stack, a cooler with

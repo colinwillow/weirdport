@@ -97,9 +97,12 @@ const SHOTS = {
   pearl: { place: 'pearl', settle: 3, why: 'The Pearl: the pier, its warehouses round the plaza (C6-1)',
     cam: `(() => { const F = mel.OPEARL.frame, C = Math.cos(F.thf), S = Math.sin(F.thf), at = (u, v) => [F.ox + u * C + v * S, F.oz - u * S + v * C];
       const e = at(-6, 2), t = at(-2, 70); return [e[0], F.y + 16, e[1], t[0], F.y + 2, t[1]]; })()` },
-  ...Object.fromEntries(['hctrail', 'hcmill', 'hcfair', 'hchalt', 'hcbikes', 'wfquay', 'wfbots', 'wfturret', 'wfdock', 'wfferry', 'wfsuper', 'islanding', 'ismesa', 'isskate', 'isstrait', 'islight', 'isbase', 'isship', 'isconv', 'isbridge', 'iscore', 'frrefuge', 'wfswing', 'otswing', 'gangbridge'].map(id => [id, { place: id, settle: 4, pre: process.env.SHOT_PRE || '', why: `${id} from behind and above him`,   // m494 (F1-HC)
+  ...Object.fromEntries(['hctrail', 'hcmill', 'hcfair', 'hchalt', 'hcbikes', 'wfquay', 'wfbots', 'wfturret', 'wfdock', 'wfferry', 'wfsuper', 'islanding', 'ismesa', 'isskate', 'isstrait', 'islight', 'isbase', 'isship', 'isconv', 'isbridge', 'iscore', 'frrefuge', 'wfswing', 'otswing', 'gangbridge', 'underneath'].map(id => [id, { place: id, settle: 4, pre: process.env.SHOT_PRE || '', why: `${id} from behind and above him`,   // m494 (F1-HC)
     cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
       return [p.x - fx * 10 + fz * 4, p.y + 6, p.z - fz * 10 - fx * 4, p.x + fx * 10, p.y + 1, p.z + fz * 10]; })()` }])),
+  undernear: { place: 'underneath', settle: 3, why: 'the Underneath, close behind him (inside a tunnel the wide cam is in the rock)',
+    cam: `(() => { const p = mel.player.pos, h = (mel.player.heading || 0) + ${+process.env.SHOT_TURN || 0}, fx = Math.sin(h), fz = Math.cos(h);
+      return [p.x - fx * 3, p.y + 2.2, p.z - fz * 3, p.x + fx * 6, p.y + .8, p.z + fz * 6]; })()` },
   wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
       return [C.x + sx * 16 - dx / L * 6, p.y + 7, C.z + sz * 16 - dz / L * 6, C.x, p.y + .5, C.z]; })()` },
@@ -130,6 +133,7 @@ fs.mkdirSync(OUT, { recursive: true });
 const t0 = Date.now(), el = () => ((Date.now() - t0) / 1000).toFixed(0) + 's';
 const browser = await pw.chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
 const page = await browser.newPage({ viewport: { width: 960, height: 540 }, deviceScaleFactor: 1 });
+page.on('console', m => { if (/UNDERPOS|melee\] (under|hatch)/.test(m.text())) console.log('  ', m.text()); });
 page.on('pageerror', e => console.log('  pageerror', e.message));
 let code = 0;
 try {
