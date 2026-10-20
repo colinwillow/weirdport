@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m574 -- Rue's field as art (scenery window; ROADMAP T3d)
+
+`models/campaign/rue_field.glb`, at the m504 spots. Rue's CANOPY: steel legs on foot plates with knee braces, a peaked two-tone
+canvas roof, a scalloped valance, a folding table with cross braces, her thermos, a cup and a clipboard, and a wind sock on a pole
+at the corner. The WING RACK: braced posts, a beam, three folded wingsuits on hangers with straps and buckles in the code's three
+colours. The CHALKBOARD as an A-frame with the day's landings, a ledge and a stick of chalk. A slatted BENCH. Shipped unverified.
+
 ## m572 -- the skate park hangout as art (scenery window; ROADMAP T3c)
 
 `models/campaign/skate_hangout.glb`, at the m505 spots. The SOFA in faded blue with a sunk cushion, a thrown blanket and paint tags
