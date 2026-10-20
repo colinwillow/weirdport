@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m652 -- Skye's lookout as art (scenery window; ROADMAP T4l)
+
+`models/campaign/old_lookout.glb`, for `buildLookout`. The whole tower at the code's numbers: four posts to the canopy, bolted, an
+X-brace on every face of every storey alternating as the code alternates them, three planked decks at 5.5, 11 and 16 on bearers,
+each cut round its hatch where the code cuts it, rails with a rope middle (the top one open at the sea side for the ramp), the
+three ladders, the canopy on its two posts with guy ropes, and the windsock mast. One piece, 1,176 faces. Shipped unverified.
+
 ## m651 -- the skate park's wall and planters, and the strike placard, as art (scenery window; ROADMAP T4k)
 
 `models/campaign/street_bits.glb`. The skate park's graffiti wall at the code's 3.4 x .3 x 2.4, cast in panels with a capping, its

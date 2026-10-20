@@ -77,6 +77,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `alien_orb.glb` | the alien orbs: `ao_shell` (six dark petals with gaps, crown, keel, fins), `ao_core` (r .7 sphere, one white material) | origin at the orb's centre | none (air targets) | 280-498 per piece |
 | `island_xing.glb` | the rope-bridge crossing: `ix_deck` (4.4 m stack-top deck, bearers, braced posts, rope rails, bollards for the bridges), `ix_cone` (tintable field cone), `ix_signframe` | deck origin at its top centre, +Y along the chain; others on the ground; X = u, +Y = v | none | 56-374 per piece |
 | `street_bits.glb` | `sb_graffiti` (the skate park's painted wall, face -Y), `sb_planter` (plank box + bush), `sb_placard` (strike placard stick and board for the code's canvas) | origins on the ground; X = u, +Y = v | none | 54-742 per piece |
+| `old_lookout.glb` | Skye's lookout on Old Town's ring: `ol_tower` (four posts, X-braces, three decks at 5.5 / 11 / 16 with hatches, rails, ladders, canopy, windsock mast) | origin on g0 at the centre; X = u, +Y = v (+v to sea) | none | 1,176 |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
