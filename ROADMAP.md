@@ -422,7 +422,7 @@ different context window, let me know."*
   `rd_desk` at ((bx0 + bx1) / 2 + .6, y, bz0 + .5) in place of the desk box, the mixing desk, the six knobs and the mic (its
   monitors and mic arm are on its +Y side, which is the booth's wall at bz0: turn it pi if it ends up facing out); `rd_chair` in front of it; `rd_foam` at each of the nine
   foam tiles in place of the box (wedges toward the room).
-- [ ] **T4g. Swap in the BASE jumpers' shack** (`models/campaign/island_base.glb`; no collision -- keep the hut box and the bench
+- [x] m641 **T4g. Swap in the BASE jumpers' shack** (`models/campaign/island_base.glb`; no collision -- keep the hut box and the bench
   box). In `buildIslandBase`, `ib_shack` at (hu, g, hv) turned by psi like the hut box, in a local frame where +Y = e (along the
   exit deck) and +X = -n (toward the deck: the door, the awning and the rigs), in place of the hut box, its roof, the door, the
   awning `pearlSeg`, the two awning posts, the rail, the five rigs and the bench (it adds a drum and a crate round the back).

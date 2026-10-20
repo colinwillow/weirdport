@@ -466,6 +466,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE BASE JUMPERS' SHACK IS HIS ART (m641, T4g, `island_base.glb`, `?ibase=0`).** `ib_shack` is placed through `campPlace`
+  (mirrored in z) and turned psi = atan2(eu, ev). By the box rule that puts his +Y on the exit deck's e and his +X on -n, the
+  frame he built it in, so no extra turn is needed. It replaces the hut, roof, door, awning, posts, rail, five rigs and bench;
+  the hut and bench colliders stay, their drawing popped.
+
 - **THE PIRATE RADIO'S MAST, DESK, CHAIR AND FOAM ARE HIS ART (m640, T4f, `radio_kit.glb`, `?rkit=0`).** These are mirrored in
   z:
   - `rd_mast` replaces the leg rods and braces; the foot colliders, red lights and guy wires stay.
