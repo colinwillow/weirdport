@@ -133,7 +133,7 @@ different context window, let me know."*
   the bracing bars, the platform, the cab and the boom (it adds a slew ring, a railed platform, a counterweight and a grapple on its
   cable); `hm_logtruck` at (-21, 6) -- replaces the bed, cab and chassis boxes (the five logs stay); `hm_watertower` at (9, v0-4) --
   replaces the legs, the tank cylinder and the cone (staves, hoops, a ladder). 1,530 / 500 / 1,038 / 849 faces.
-- [ ] **T2o. Swap in the shipping container** (`models/campaign/container.glb`, no collision file -- `buildWaterfront` keeps the
+- [x] m542 **T2o. Swap in the shipping container** (`models/campaign/container.glb`, no collision file -- `buildWaterfront` keeps the
   column colliders, crate stairs and ladders). Two roots, origin at the BOTTOM CENTRE, Blender X = the block's u (CW 2.44), Y = its v
   (CL 12.2), height CH 2.6; the doors are on +Y, so a box whose doors face `e` = -1 turns by pi. In the yard loop, instead of the
   painted `bx` per container and its two door lines and two bars: ONE InstancedMesh of `wf_container_body` (a single white material:
@@ -1455,3 +1455,4 @@ differ" table there, so no region feels like the last one.
 - **m535 (F2b-5a) Mr. Dump is fought in the PENTHOUSE, not the boardroom** -- he lives there and the CEO's badge is what opens it, so the last door is the climax. The Mothership's quests keep their ids (`ch6`, `ch6b`, `ch6c`) and only their `ch` moved to 7, so a save that finished the game still reads `qdone:ch6c`; the tower's quests are `tower` / `towerb`.
 - **m538 (F2b-5b) The seventh lock (THE BOARD DOOR, a suit's) is between the rumble door and the neural lock, not after the lock**, and the file's hall has a SAC that fills your juice tank as you walk through: seven locks is seven forms at 20 juice each, more than a 100 tank. Chapter 6 now has a step that takes a lobby guard's sample, so every player reaching the ship has the suit's face.
 - **m539 (T2m) A side -1 trailer is MIRRORED in x, not turned by pi** as T2m said: turned, its door (Blender Y -1) lands at v + len*.1, away from the porch, awning and steps the code builds at v - len*.1. Mirrored, the door stays where they are.
+- **m542 (T2o) Containers whose doors face +v are TURNED by pi, never mirrored** -- a negative scale inside an InstancedMesh's matrix flips that instance's winding and the box draws inside out.

@@ -121,6 +121,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE CONTAINER YARD IS HIS CONTAINER, TWO INSTANCED MESHES -- AND m539/m541 NEVER SHOWED THEIR ART (m542, T2o).**
+  - `container.glb` (`WFRONT.contG`, `?cont=0`): every yard box and the three strays are instances of `wf_container_body` (its
+    material cloned white, `setColorAt` with the box's c0..c8 paint) and `wf_container_trim` (two primitives, trim + door plate,
+    so three InstancedMeshes in all, 322 instances). Doors are on glTF -z: a box whose doors face +v is TURNED by pi -- never a
+    negative scale in an instance matrix, which flips that instance's winding. The column colliders, crate stairs and ladders
+    stay; the strays keep their box collider and drop its drawing. `computeBoundingSphere` after the matrices, or the yard culls.
+  - **THE LOADER HAS TO RUN BEFORE ITS BUILDER.** The mill's and the trailer park's GLB loads (m539, m541) sat in init AFTER
+    `buildTrailerPark()` / `buildMill()`, so both built with `glb` null and drew the old boxes: two builds shipped with no visible
+    change and nothing to say so. Moved above them; the container's load sits above `buildWaterfront()`. **When adding a
+    `X.glb = await loadGLB(...)` line, grep for the builder's call and put it above.** `places` exit 0.
+
 - **THE MILL'S MACHINES ARE HIS ART (m541, T2n, `HCMILL.glb`, `?mkit=0`).** `mill_kit.glb`: `hm_burner`, `hm_crane`, `hm_logtruck`,
   `hm_watertower`, each mirrored in z (Blender +Y = +v; the crane's boom at Blender (+8, +5) reads glTF z -5.15). `km` keeps a
   collider and pops its drawing; drawn-only boxes (the crane's bracing, the truck's chassis) are dropped where the piece is placed.
