@@ -28,8 +28,20 @@
     "guards push the player back"
    ]
   },
+  "nest_door": {
+   "when": "player enters trig_nest_door while NOT disguised as goo",
+   "does": [
+    "the two nest guards block and shove the player out"
+   ]
+  },
+  "handle_fitted": {
+   "when": "item_sluice_handle carried to sluice_wheel",
+   "does": [
+    "the wheel can be turned"
+   ]
+  },
   "sluice_open": {
-   "when": "sluice_wheel hit 3 times with the hammer",
+   "when": "handle_fitted, then sluice_wheel hit 3 times with the hammer",
    "does": [
     "mover_canal_water -2.0 -> -3.4 over 4 s",
     "ledges at -2.9 become walkable"
@@ -1260,6 +1272,32 @@
    "hp": 30
   },
   {
+   "name": "item_sluice_handle",
+   "pos": [
+    -25,
+    54.5,
+    1.5
+   ],
+   "carry": true,
+   "to": "sluice_wheel",
+   "note": "inside the goo nest, on the pedestal"
+  },
+  {
+   "name": "trig_nest_door",
+   "pos": [
+    -25,
+    38,
+    1.5
+   ],
+   "event": "nest_door",
+   "size": [
+    3,
+    2,
+    3
+   ],
+   "allow": "disguise:goo"
+  },
+  {
    "name": "sluice_wheel",
    "pos": [
     47,
@@ -1268,7 +1306,75 @@
    ],
    "hits": 3,
    "hit": "hammer",
-   "event": "sluice_open"
+   "event": "sluice_open",
+   "needs": "item_sluice_handle"
+  },
+  {
+   "name": "npc_guard_nest_0",
+   "pos": [
+    -28.5,
+    35.8,
+    0
+   ],
+   "role": "goo_guard",
+   "dna": "goo",
+   "line": "Members only. You don't look like a member."
+  },
+  {
+   "name": "npc_guard_nest_1",
+   "pos": [
+    -21.5,
+    35.8,
+    0
+   ],
+   "role": "goo_guard",
+   "dna": "goo",
+   "line": "Members only. You don't look like a member."
+  },
+  {
+   "name": "npc_nest_0",
+   "pos": [
+    -29,
+    47,
+    0
+   ],
+   "role": "goo_grunt",
+   "line": "Shh, the boss hid the sluice handle here."
+  },
+  {
+   "name": "npc_nest_1",
+   "pos": [
+    -21,
+    47,
+    0
+   ],
+   "role": "goo_grunt",
+   "line": "Shh, the boss hid the sluice handle here."
+  },
+  {
+   "name": "npc_nest_2",
+   "pos": [
+    -25,
+    41,
+    0
+   ],
+   "role": "goo_grunt",
+   "line": "Shh, the boss hid the sluice handle here."
+  },
+  {
+   "name": "light_nest_0",
+   "pos": [
+    -25,
+    47,
+    4.5
+   ],
+   "color": [
+    0.7,
+    1.0,
+    0.6
+   ],
+   "intensity": 3.0,
+   "range": 12.0
   },
   {
    "name": "trig_checkpoint_w",

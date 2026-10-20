@@ -73,16 +73,20 @@ mountain path to Level 2.
 - *Teaches:* reading the world for clues, and the rooftop layer.
 
 **3. The Canal Core: disguise, a mechanism, and then THE TECH.**
-- Goo guards hold the harbour bridge checkpoint and will not let the alien pass.
-- Take a guard's DNA (knock one down at the harbour) and walk through the checkpoint in disguise.
-- Hammer the sluice wheel on the harbour finger three times. The canals drain 1.4 m, which uncovers a
-  ledge path along the main canal.
+- The sluice wheel on the harbour finger has no handle. The Goo Gang took it to their **nest** in the
+  west quarter (the violet-green building with the banner), and goo guards also hold the harbour
+  bridges.
+- Knock down one of the two nest guards and take his DNA. Disguised as goo, walk into the nest (the
+  guards wave you through) and take the handle from its pedestal.
+- Still disguised, carry it past the harbour checkpoint and fit it to the wheel. Hammer the wheel three
+  times. The canals drain 1.4 m, which uncovers a ledge path along the main canal.
 - Follow the ledges to the waterfall. Behind it is the **Tech Vault**: you get the **Hover Pack** and
   the third core.
 - **The way out is a hover shrine** (the Breath of the Wild pattern): hover a 12.5 m pit, hover up a 3.8 m
   ledge, climb the stairs, and push open a one-way door onto the gate terrace. That door stays open as a
   shortcut home.
-- *Teaches:* forms as keys, environmental mechanisms, and the payoff of a hidden place.
+- *Teaches:* forms as keys (the same disguise used twice, for the nest and then the checkpoint), carrying
+  an item, an environmental mechanism, and the payoff of a hidden place.
 
 **4. The Lighthouse Core: Hover Pack traversal.**
 - The lighthouse lamp is dead, and three generator nodes along the east quarter rooftops feed it.
