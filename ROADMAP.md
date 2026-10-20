@@ -179,7 +179,7 @@ different context window, let me know."*
   `fc_cart_trim` in place of the roof, window, counter, wheels, hitch and sign board (the code's sign plane sits on its board's front
   at +.27, unchanged); and for `K.shut` add `fc_cart_shutter` (and skip the awning: the paint root's awning is part of it, so for
   the shut cart hide or scale it -- or say so and a separate awning root can be split out). 62 / 648 / 60 faces.
-- [ ] **T2v. Swap in the lighthouse and the keeper's cottage** (`models/campaign/lighthouse.glb`, no collision file -- `buildIslands`
+- [x] m559 **T2v. Swap in the lighthouse and the keeper's cottage** (`models/campaign/lighthouse.glb`, no collision file -- `buildIslands`
   keeps the tower's box, the cottage's, the ladder, the oil store, drums, flag, washing line, pots and rope, and IKEEP keeps its beam).
   `li_lighthouse` at (K.u, K.v) on the rock top, turned so its Blender +Y (the door) points along (cos dA, sin dA) in the islands'
   frame -- replaces the tower cylinder, both bands, the gallery deck and its torus and posts, the lantern glass and mullions, the

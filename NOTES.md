@@ -185,6 +185,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE LIGHTHOUSE AND THE KEEPER'S COTTAGE ARE HIS ART (m559, T2v, `ISLES.lightG`, `?lhouse=0`).** Both mirrored in z (Blender +Y =
+  the door = local +z). The tower is turned `atan2(cos dA, sin dA)`: under rotation r a mirrored object's local +z points along
+  (sin r, cos r) in the islands' frame, so that puts the door along (cos dA, sin dA). The cottage takes `cps` like its body box.
+  In the tower's block `geo` is a no-op and `bx` keeps colliders only; the cottage's roof planks, chimney, door and windows are
+  not built; its body collider stays. The ladder, oil store, drums, flag, washing line, pots, rope and IKEEP's beam are as
+  before. `LIGHTHOUSE GLB FAIL` in the chip if it does not load. `places` exit 0.
+
 - **THE GORGE'S STILT VILLAGE (m558, F2c-3, `GVILL`, `buildGorgeVillage`, GOD `gzvillage`, places GVILLAGE).** Both walls of the
   fjord: a plank walk on stilts at sea + 3.2 (d 7.5..10 from the river's line), seven houses out over the water on platforms
   (hut with a collider, hip roof, door to the walk, a window over the water, a lantern, a fish rack, a net, a boat tied under),
