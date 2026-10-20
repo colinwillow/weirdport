@@ -26,7 +26,7 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
-- **RAE'S RACE WAS LOST SINCE m483, THREE WAYS AT ONCE (m495, F1-HC2, `raceStep`, `islePutBack`, `boardGrade`).** Bisected by
+- **RAE'S RACE WAS LOST SINCE m483, THREE WAYS AT ONCE (m496, F1-HC2, `raceStep`, `islePutBack`, `boardGrade`).** Bisected by
   swapping in old `index.html`s under today's `play.mjs`: m482 won (on its second race), m483 lost both at lap 1, gate 1 --
   and a per-second trace (`raceS`, v, y, distance off the line) showed why:
   1. **A gate missed while running wide voided the lap, silently.** Gates count in order inside a 9 m ring; at 25 m/s he

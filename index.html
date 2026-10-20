@@ -14733,7 +14733,7 @@ function boardBusy() { const p = player; return !!(p.knock || p.roll || p.melee 
 // run could reach the lip (the playthrough's trace: s -14.8 grade +0.65, s -13.6 grade -1.00, rolled back). Up to a 1:1.2
 // slope now; past that it is a wall, and a wall is what it reads as.
 function boardGrade(h) {
-  const p = player, d = SK8.probe, sx = Math.sin(h) * d, sz = Math.cos(h) * d, w = MOVE.step * 2 + (p.bike ? 0 : d * 1.2);   // m495: the bike keeps the old window -- the wide one (m483, for the islands' gap) lost him Rae's race
+  const p = player, d = SK8.probe, sx = Math.sin(h) * d, sz = Math.cos(h) * d, w = MOVE.step * 2 + (p.bike ? 0 : d * 1.2);   // m496: the bike keeps the old window -- the wide one (m483, for the islands' gap) lost him Rae's race
   const a = groundAt(p.pos.x - sx, p.pos.z - sz, p.pos.y, w);
   const b = groundAt(p.pos.x + sx, p.pos.z + sz, p.pos.y, w);
   return clamp((a - b) / (2 * d), -1, 1);
@@ -21713,7 +21713,7 @@ function islePutBack() {
   if (S) p.pos.set(S.x, S.y + .05, S.z);
   else { const sp = inTK() ? KCITY.spawn : TCITY.spawn; p.pos.set(sp[0], .3, sp[1]); }
   p.vel.set(0, 0, 0); p.speed = 0; p.grounded = false; p.airT = 0; p.jumps = 0; p.coyote = 0;
-  // m495: A SPILL IN RAE'S RACE PUTS HIM BACK ON THE TRACK where he left it, facing on, as a racing game does -- not on the
+  // m496: A SPILL IN RAE'S RACE PUTS HIM BACK ON THE TRACK where he left it, facing on, as a racing game does -- not on the
   // last dry ground, which was 27 m BACK up the west ridge, a gate behind, every time he ran wide off it into the creek
   if (HCRACE.st === 'race') { const R = HCRACE, c0 = (R.cp - 1) / R.cps * R.len; let bs = c0, bd = 1e9;
     for (let q = c0 - 10; q <= c0 + R.len / R.cps + 30; q += 2) { const B = raceAt(q), e = Math.hypot(B.x - _isP.x, B.z - _isP.z); if (e < bd) { bd = e; bs = q; } }
@@ -25538,7 +25538,7 @@ function raceStep(dt) {
     const A = raceAt(R.sR, -1.4); bikePlace(RBIKE, A.x, A.y, A.z, A.h, R.v, dt);
     // YOU: the next checkpoint, in order; through the last back to the first is a lap
     const C = raceAt(R.cp / R.cps * R.len);
-    // m495: a gate run WIDE still counts. The 9 m ring alone voided a whole lap the moment a corner was taken fast and wide (and
+    // m496: a gate run WIDE still counts. The 9 m ring alone voided a whole lap the moment a corner was taken fast and wide (and
     // every gate after it, silently: they only count in order) -- `play ch3` lost Rae's race twice on one missed gate at 25 m/s.
     // So: inside 9 m, or within 16 m of the line at a point already PAST the gate (the nearest of a short window round it).
     let past = 0; if (Math.hypot(P.x - C.x, P.z - C.z) < 30) { const c0 = R.cp / R.cps * R.len; let bk = 0, bd = 1e9;

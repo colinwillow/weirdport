@@ -184,7 +184,7 @@ try {
             // where he IS on the line: the nearest point in a window just behind to well ahead of the last one (never behind it by
             // more than the window, so running wide cannot turn him round), then aim 14 m past it
             { let bs = st.raceS, bd = 1e9; for (let q = st.raceS - 6; q <= st.raceS + 60; q += 2) { const B = S.raceAt(q), e = Math.hypot(B.x - P.x, B.z - P.z); if (e < bd) { bd = e; bs = q; } } st.raceS = Math.max(st.raceS, bs); }
-            // m495: IN THE AIR THE THUMB HOLDS ITS LINE. Steering for the next point mid-jump turned the deck under him, and a
+            // m496: IN THE AIR THE THUMB HOLDS ITS LINE. Steering for the next point mid-jump turned the deck under him, and a
             // straight landing snaps his speed onto the deck's heading -- so he came down pointed off the track and rode 20 m wide
             const A = S.raceAt(st.raceS + 14), pl = S.player;
             if (!pl.grounded) push(Math.sin(pl.boardH), Math.cos(pl.boardH), 1); else walk(A.x, A.z, true); st.lapSeen = R.lap + ':' + R.cp + ' v ' + Math.hypot(S.player.vel.x, S.player.vel.z).toFixed(1) + ' her ' + (R.sR / R.len).toFixed(2) + ' laps, me ' + ((R.lap * R.cps + R.cp - 1) / R.cps).toFixed(2) + ' @' + R.t.toFixed(0) + 's'; return '';
