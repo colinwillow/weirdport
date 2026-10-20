@@ -144,3 +144,16 @@ Mood: floating islands, wind, long drops, the Hover Pack's home.
 6. Only then dress the level.
 
 Glowtide is at step 1 with a borrowed set (the city's) to test the layout. Its own set starts at step 2.
+
+## Composition: every waypoint is a shot
+
+The reference is the Sites painting from the hotel: simple shapes, three bands, a path that leads the eye, five percent loud colour. The level is seen from where the player stands, so every intended waypoint (A to B to C) is a camera, looking at the next waypoint, and each frame has to pass:
+
+1. **Three value bands.** Foreground dark and big, mid ground the lightest (the sand, the paving), background a different hue (the green hill, then sky). If the top, middle and bottom thirds of the frame have the same brightness, the shot is flat.
+2. **A big foreground shape.** Something large and partly cut off by the frame edge in the bottom third: a tree, a wall corner, a railing, a bush. Without it the frame is a postcard, not a place you stand in.
+3. **The landmark on a thirds point.** The next door (clock tower, gate, lighthouse) sits near one of the four thirds intersections, never dead centre and never at the edge.
+4. **70 / 25 / 5 colour.** Most of the frame quiet (sand, plaster, sage), a quarter mid (greens, blues), a twentieth loud (red, orange, pink). The loud bits go on the thirds lines and on the things that matter: the core, the door, the bell.
+5. **Big, medium, small.** Two or three huge shapes, a handful medium, many tiny. Never ten of the same size.
+6. **A path leads in** from a bottom corner toward the landmark: a road, a quay edge, a railing, a line of lamps.
+
+`compose.py` renders every waypoint shot and scores 1 to 4 automatically (5 and 6 are by eye). A shot marked FIX is where dressing goes next: a foreground tree, a loud accent, a darker base. Dressing goes where a shot needs it, not everywhere.
