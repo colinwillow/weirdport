@@ -93,3 +93,19 @@ Catalogue entries it unlocks: a button out of reach, a pressure plate, paired le
 A box camera on a bracket under a cornice, like the one on SW 17th. It sweeps slowly left and right. Its field of view is DRAWN: a faint cone of light on the ground (a spotlight at night, a translucent wedge by day), so you always know whether you are about to be seen. When it catches you it LURCHES: a little animated jolt, a red light, a sound, and then the alert: two guards run to the spot. You hide (a bin, a doorway), disguise (a borrowed face walks right past it), fight, or shoot the camera out (it sparks, hangs dead, and the cone goes out). A disguise fools it; a bin fools it; the alien does not.
 
 Data per camera (`cam_NN` markers in the level JSON, kind `security_cam`): position, mount yaw, sweep half-angle and period, field of view, range, what it alerts (the nearest `npc_guard_*` pair), and `shootable: true`. Glowtide has six: the nest door, both harbour checkpoints, the keep gate, the boathouse pier and the lighthouse stair. Each one covers a route beat where the disguise is the intended answer, so the camera is the thing that makes the disguise matter.
+
+## Possession (the DNA gun, grown up)
+
+Today the DNA gun makes you a COPY of whoever you shoot. The stronger version is that you go INTO them: you leave your body (it slumps, or hides, or waits in a bin) and you drive theirs. Same silhouette trick for the world, a different game for you:
+- You have THEIR moves: a cop's gun and radio, a dockhand's crane key, a guard's door pass, a dog's crawl through the hatch. Each body is a tool, so "whom do I possess" is a puzzle question, not a cosmetic one.
+- You are fragile in there: take damage and you are thrown out; your own body is lying somewhere, and if someone finds it, that is the alarm.
+- You pull out with a button, and the host shakes his head and carries on, confused but alive. Possessing someone in front of others costs trust, like hypnosis; possessing an evil alien's soldier does not.
+- Possession and hypnosis are the same power at two strengths: hypnosis commands from outside, possession drives from inside. One is earlier tech; the other is its upgrade.
+
+## The graveyard chapter (aliens are the ghosts)
+
+The lore hook: what people call ghosts, orbs, poltergeists and possession is the same thing as the aliens. It is all minds moving matter. So there is a chapter in a graveyard, at night, with fog: orbs that drift and can be followed, an evil alien spirit who raises skeletons and zombies by possessing the dead, headstones that move when you are not looking, a mausoleum that is a door, candles that gutter when something passes. The signature effect is fog and the orbs' light. Your possession power is the key to the level: you possess a skeleton to pass as one of his, or possess the spirit's puppet and walk it off a cliff.
+
+## The Area 51 chapter (the saucer)
+
+Through the game you collect PIECES of your ship: a fuel cell here, a nav crystal there, one per world, which is the star-count structure under another name. The bulk of the saucer is underground in a military base, Area 51 by any other name. That chapter is the heist: a fence and searchlights (the security cameras at their hardest), hangars, a lift down, corridors with lasers, men in black who may help or hunt, the saucer on a gantry under lights. You break in with everything the game has taught: disguise as a soldier, bins and crates, hypnosis on a guard at a console, possession of the officer with the keycard, the hover pack over a laser grid. You fly out in the saucer, and that is the ending of the first game and the vehicle of the next.
