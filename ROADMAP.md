@@ -383,6 +383,14 @@ different context window, let me know."*
   (face -Y, so turned to face out of the wall; keep its small z tilt); `crown` -> `rx_crownsign` at (cu, H + 2, -D + .4), scaled
   X by W * .7, in place of the dark board and its gold panel (the four gold edge strips stay); `rx_mast` at (W - 1, H, -1) in
   place of the mast cylinder and its lamp sphere (`crown` and `vents` both have one).
+- [ ] **T4a. Swap in the gorge's stilt houses** (`models/campaign/stilt_village.glb`; no collision -- keep the platform and wall boxes).
+  In `buildGorgeVillage`, each house in a LOCAL frame: origin at (AU(b, s, dC), Wy, b) -- the platform's top at the house centre;
+  local +X = +d (away from the river, toward the walk and the door), local +Y = +b. Because AU flips u with s, a house on s = 1
+  needs scale.x = -1 (so +X runs to -u) and one on s = -1 needs none; then turn by ps. `sv_platform` in place of the platform box
+  (its four corner posts stop at -.6; the code's stilts to the bed stay); `sv_house_wall` (ONE white material, tint wall_k) +
+  `sv_house_roof` (ONE white material, tint roof_k) + `sv_house_trim` in place of the walls box, the cone roof, the door, the
+  window, the lamp, the rack posts and bar, the fish and the net. `sv_boat` at (AU(b + 2.6, s, 1.6), sea, b + 2.6) turned by ps
+  (its mooring line runs up 3.2 m) in place of the 'boat' box.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

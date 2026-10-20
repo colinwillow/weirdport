@@ -5,6 +5,15 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m627 -- the gorge's stilt houses as art (scenery window; ROADMAP T4a)
+
+`models/campaign/stilt_village.glb`, for the seven houses `buildGorgeVillage` builds out over the fjord. A planked platform on
+bearers at the code's 5 x 5.4; a weatherboard hut at the code's 3.2 x 3.6 x 2.6 with corner boards (one white material, so each
+house keeps its wall_a/b/c), its hip roof with timber hips (white again, roof_a/b/c), and the trim: the door to the walk, the window
+over the water, the lantern, the fish rack with four fish drying, a net hung on a pole, a crate and a coil of rope. And the rowing
+boat with thwarts, oars and its mooring line. Built in a local frame (+X out from the river) because the code's AU flips u with the
+side; T4a says how to mirror it. Shipped unverified.
+
 ## m625 -- the kit town's other roof extras as art (scenery window; ROADMAP T3z)
 
 `models/campaign/roof_extras2.glb`, the rest of `kgenMake`'s `S.extra` after m604. An alien pod at the code's s = 1, ribbed, with
