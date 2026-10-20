@@ -27,7 +27,7 @@ if (!pw) { console.error('play: playwright is not installed (npm i -D playwright
 const ROOT = process.cwd();
 const ARGS = process.argv.slice(2), opt = k => (ARGS.find(a => a.startsWith('--' + k + '=')) || '').split('=')[1];
 const DRAW = ARGS.includes('--draw'), FPS = +(opt('fps') || 30), BUDGET = +(opt('budget') || 120), STUCK = 4, SEED = +(opt('seed') || 1);
-const DRIVEN = ['ch0', 'ch1'];   // the chapters the drivers cover so far (F0b-2 adds one per build)
+const DRIVEN = ['ch0', 'ch1', 'ch2'];   // the chapters the drivers cover so far (F0b-2 adds one per build)
 const CHAPTERS = ARGS.filter(a => !a.startsWith('--')); if (!CHAPTERS.length) CHAPTERS.push(...DRIVEN);
 
 const MIME = { '.html': 'text/html', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.wasm': 'application/wasm', '.glb': 'model/gltf-binary',
@@ -40,7 +40,7 @@ const server = http.createServer((q, r) => {
     // THE SHIPPED TEXT, with one handle spliced in beside the game's own: the things the driver reads and writes
     const s = body.toString(), k = 'window.melee = window.mel = {';
     if (!s.includes(k)) { console.error('play: no mel handle in index.html'); process.exit(1); }
-    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE }; ' + k);
+    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow }; ' + k);
   }
   r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
 });
@@ -110,11 +110,19 @@ try {
       if (stall > STUCK && mayTele) teleport(tx, tz, d < r ? 0 : r * .6, ty); return false; };
     const policy = () => {
       const q = S.quest.cur; if (!q) return 'no quest';
-      const s = q.steps[S.quest.step], T = S.quest.tgt, P = S.player.pos;
+      const s = q.steps[S.quest.step], T0 = S.quest.tgt, P = S.player.pos;
+      // m452: a target with a non-finite coordinate is NEVER walked to -- the stick would carry the NaN into the player (it did,
+      // twice, on the building site's ladder, and looked like a game NaN). The step is named in the log instead.
+      const T = T0 && Number.isFinite(T0.x) && Number.isFinite(T0.z) ? T0 : null;
+      if (T0 && !T) { if (!st.nanT) { st.nanT = 1; st.log.push('NaN TARGET from the game at ' + stepKey() + ' ' + [T0.x, T0.y, T0.z].join(',')); } stickOff(); return 'the game gave a NaN target'; }
       switch (s.type) {
         case 'goto': { if (!T) return 'goto: no target yet'; goTo(T.x, T.z, (s.r || 3) * .6, true, true); return ''; }
-        case 'reach': { if (!T) return 'reach: no target'; goTo(T.x, T.z, (s.r || 4) * .6, true, true); return ''; }
-        case 'talk': { if (!T) return 'talk: nobody to talk to'; if (goTo(T.x, T.z, 2.0, false, true, T.y) && st.t - st.talkT > .6) { st.talkT = st.t; S.talkTap(); st.log.push('talk @' + st.t.toFixed(1)); } return ''; }
+        case 'reach': { if (!T) return 'reach: no target'; goTo(T.x, T.z, (s.r || 4) * .6, true, true, Number.isFinite(T.y) ? T.y : undefined); return ''; }
+        case 'talk': { if (!T) return 'talk: nobody to talk to';
+          // m452: a speaker who would not talk to him as he is (`socialOk` -- most flee an alien): put on a form they will,
+          // through the shipped picker, the way a player does at the forms wheel
+          { const d = bodyAt(T); if (d && d.talk && !S.socialOk(d) && !st.formT) { st.formT = 1;
+              for (const nm of S.SAVE.forms) { if (nm === 'zap') continue; const was = S.formNow(); S.formPick(nm); st.log.push('form ' + nm + ' @' + st.t.toFixed(1)); if (S.formNow() !== was) break; } } } if (goTo(T.x, T.z, 2.0, false, true, T.y) && st.t - st.talkT > .6) { st.talkT = st.t; S.talkTap(); st.log.push('talk @' + st.t.toFixed(1)); } return ''; }
         case 'defeat': { if (!T) return 'defeat: nobody left to knock down'; const d = bodyAt(T); if (!d) return 'defeat: target is not a body';
           st.lastNpc = d.markId || null; if (goTo(T.x, T.z, 1.6, true, true, T.y) && st.t - st.blowT > .5) blow(d); return ''; }
         // the turn is the shipped test's own doing (it fires `virusGo` when he is within `r`): walk up and watch
@@ -124,6 +132,12 @@ try {
         case 'unskin': { if (!T) return 'unskin: nobody tagged'; const d = bodyAt(T); if (!d) { goTo(T.x, T.z, 3, true, true); return ''; }
           if (goTo(T.x, T.z, 1.8, true, true, T.y) && d.st !== 'down' && st.t - st.blowT > .6) blow(d); return ''; }
         case 'sample': { let d = downBody();
+          // m452: a step that names KINDS (any of them will do): one of those, downed -- knocked down first if none is
+          if (s.kinds || s.kind) { const ks = (s.kinds || [s.kind]).map(S.mphFold), ok = x => !x.wasK && ks.includes(S.mphName(x.K));
+            d = S.DUMMIES.find(x => x.st === 'down' && ok(x)) || null;
+            if (!d) { let f = null, fd = 1e9; for (const x of S.DUMMIES) { if (!ok(x) || !x.root) continue; const q = near(x.root.position.x, x.root.position.z); if (q < fd) { fd = q; f = x; } }
+              if (!f) return 'sample: nobody of ' + ks.join('/');
+              const F = f.root.position; if (goTo(F.x, F.z, 1.6, true, true, F.y) && st.t - st.blowT > .5) blow(f); return ''; } }
           if (!d) { const f = S.DUMMIES.find(x => x.markId && x.markId === st.lastNpc && !x.wasK) || null; if (!f) return 'sample: nobody is down and the last target is gone';
             if (goTo(f.root.position.x, f.root.position.z, 1.6, true, true, f.root.position.y) && st.t - st.blowT > .5) blow(f); return ''; }
           const R = d.root.position; if (goTo(R.x, R.z, S.SAMPLE.reach * .7, true, true, R.y)) { const RS = S.stick.R; RS.down = 1; RS.x = RS.y = 0; RS.far = 0; st.holdT += window.__clock.dt / 1000; } return ''; }
@@ -137,7 +151,7 @@ try {
           const ax = G.x + sn * 7 * side, az = G.z + cn * 7 * side, bx = G.x - sn * 7 * side, bz = G.z - cn * 7 * side;
           if (!st.gateIn) { if (goTo(ax, az, 1.2, true, true)) st.gateIn = 1; return ''; }
           goTo(bx, bz, 1.0, false, false); return ''; }
-        case 'flag': { if (T) { goTo(T.x, T.z, 2.5, true, true); return ''; }
+        case 'flag': { if (T) { goTo(T.x, T.z, 2.5, true, true, T.y); return ''; }
           if (s.flag === 'inTown' && S.ISLE.rect) { const R = S.ISLE.rect, tx = Math.min(Math.max(P.x, R[0] + 8), R[1] - 8), tz = Math.min(Math.max(P.z, R[2] + 8), R[3] - 8); goTo(tx, tz, 1, true, true); return ''; }
           return 'flag: no driver for ' + s.flag; }
       }
@@ -147,14 +161,15 @@ try {
     window.__drive = n => {
       const out = { frames: 0, err: null, why: '' };
       for (let i = 0; i < n; i++) {
-        const k = stepKey(); if (k !== st.key) { stickOff(); Object.assign(st, { key: k, t: 0, best: 1e9, bestT: 0, walked: 0, tele: 0, blowT: -9, talkT: -9, holdT: 0, gateIn: 0, log: [], side: 0, sideT: -9, sides: 0, walls: 0, gate: '' }); st.px = S.player.pos.x; st.pz = S.player.pos.z; }
+        const k = stepKey(); if (k !== st.key) { stickOff(); Object.assign(st, { key: k, t: 0, best: 1e9, bestT: 0, walked: 0, tele: 0, blowT: -9, talkT: -9, holdT: 0, gateIn: 0, log: [], side: 0, sideT: -9, sides: 0, sideSign: 1, walls: 0, gate: '', formT: 0 }); st.px = S.player.pos.x; st.pz = S.player.pos.z; }
         const why = policy(); if (why) out.why = why;
         window.__clock.t += window.__clock.dt;
         try { S.frameBody(); } catch (e) { out.err = String(e && e.stack || e).split('\n').slice(0, 2).join(' | '); break; }
         const P = S.player.pos, p = S.player; st.walked += Math.hypot(P.x - st.px, P.z - st.pz); st.px = P.x; st.pz = P.z; st.t += window.__clock.dt / 1000; out.frames++;
         // THE NaN WATCHDOG: a coordinate that stops being a number is a bug in the frame that made it, and the frames before
         // it are the only trace there is (`ring`: the last 8 frames of his state) -- the step fails on the spot with them
-        ring.push(`t${st.t.toFixed(2)} pos ${[P.x, P.y, P.z].map(v => +v.toFixed(2))} vel ${[p.vel.x, p.vel.y, p.vel.z].map(v => +v.toFixed(2))} g${p.grounded ? 1 : 0} knock${p.knock ? 1 : 0} wall:${p.wallSt || ''} ledge:${p.ledgeSt || ''} climb${p.climb ? 1 : 0} hang${p.hang ? 1 : 0} ride${p.riding ? 1 : 0} hp${p.hp !== undefined ? +(+p.hp).toFixed(0) : '?'} stick ${S.stick.L.x.toFixed(2)},${S.stick.L.y.toFixed(2)}`); if (ring.length > 8) ring.shift();
+        ring.push(`t${st.t.toFixed(2)} pos ${[P.x, P.y, P.z].map(v => +v.toFixed(2))} vel ${[p.vel.x, p.vel.y, p.vel.z].map(v => +v.toFixed(2))} g${p.grounded ? 1 : 0} knock${p.knock ? 1 : 0} wall:${p.wallSt || ''} ledge:${p.ledgeSt || ''} climb${p.climb ? 1 : 0} hang${p.hang ? 1 : 0} ride${p.riding ? 1 : 0} hp${p.hp !== undefined ? +(+p.hp).toFixed(0) : '?'} stick ${S.stick.L.x.toFixed(2)},${S.stick.L.y.toFixed(2)} az ${(+S.cam.az).toFixed(3)} face ${(+p.faceH).toFixed(3)} lock ${p.lock ? (p.lock.markId || S.mphName(p.lock.K)) + '@' + [p.lock.root.position.x, p.lock.root.position.y, p.lock.root.position.z].map(v => (+v).toFixed(1)) : '-'} step ${stepKey()} tgt ${S.quest.tgt ? [S.quest.tgt.x, S.quest.tgt.y, S.quest.tgt.z].map(v => (+v).toFixed(1)) : '-'} climbL ${p.climb ? [p.climb.cx, p.climb.cz, p.climb.top, p.climb.nx, p.climb.nz, p.climb.ux, p.climb.uz, p.climb.ha].map(v => (+v).toFixed(2)).join(',') : '-'} side ${p.climbSide} badBodies ${S.DUMMIES.filter(d => d.root && !Number.isFinite(d.root.position.x + d.root.position.y + d.root.position.z)).map(d => d.markId || S.mphName(d.K)).join('/') || 0}`); if (ring.length > 8) ring.shift();
+        if (!Number.isFinite(+S.cam.az) && !out.err) { out.err = 'NaN in the camera: ' + ring.join('\n      '); break; }
         if (!Number.isFinite(P.x + P.y + P.z) || !Number.isFinite(p.vel.x + p.vel.y + p.vel.z)) { out.err = 'NaN in the player: ' + ring.join('\n      '); break; }
       }
       const q = S.quest.cur, s = q && q.steps[S.quest.step], P = S.player.pos;
@@ -187,7 +202,7 @@ try {
         try { fs.writeFileSync('play_fail.txt', (R.err || R.crashes.join('\n')) + '\n'); console.log('     trace -> play_fail.txt'); } catch (e) {}
         bad++; code = 1; break; }
       if (R.key !== cur) {
-        if (cur && cur !== '-' && lastR) { row(true, Object.assign({}, R, { key: cur, type: lastR.type, text: lastR.text, t: lastR.t, walked: lastR.walked, tele: lastR.tele, sides: lastR.sides, walls: lastR.walls }), lastR.log.filter(l => /TELEPORT|blow|talk/.test(l)).join(' ') || ''); steps++; }
+        if (cur && cur !== '-' && lastR) { row(true, Object.assign({}, R, { key: cur, type: lastR.type, text: lastR.text, t: lastR.t, walked: lastR.walked, tele: lastR.tele, sides: lastR.sides, walls: lastR.walls }), lastR.log.filter(l => /TELEPORT|blow|talk|form|NaN/.test(l)).join(' ') || ''); steps++; }
         cur = R.key;
       }
       if (Q.every(id => R.done.includes('qdone:' + id))) break;
