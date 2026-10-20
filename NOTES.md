@@ -285,6 +285,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE FREIGHT TRESTLE'S SIGNALS, MILEPOSTS AND REFUGE ARE HIS (m587, T3g, `HCTRAIN.trestleG`, `?trestle=0`).** `tr_signal` at every
+  (1.9, v) on yr, `tr_milepost` at every (-1.55, v), `tr_refuge` at (ru, vm) on ry, all mirrored in z (the signal's lamps face -Y,
+  as the code's spheres at v - .16). The refuge's deck, its three rail colliders and the tool chest's stay (drawing popped); the
+  braces, rails, cable, churn, rod and gulls are not built (his carries a stool, a cable drum, a line and two gulls). `TRESTLE GLB
+  FAIL` if it does not load.
+
 - **SWIMMING (m584, F2c-5a, `SWIM`, `swimStep`, `diverOn`, `ROLEFORM.diver`).** The gravity line in the player step is now
   `if (!swimStep(p, dt) && !hoverStep(p, dt)) p.vel.y -= MOVE.g * dt`. `swimStep` runs only for the diver form below sea - .15:
   vel.y eases (x4/s) toward -.9 (sink) or +2.4 (held: the hover's own hold test, right pad held short / left pad / space); at the

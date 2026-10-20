@@ -252,7 +252,7 @@ different context window, let me know."*
   body, cabin, glass, four wheels, the hood and the drum (it carries a raised hood, the engine bay, a flat front tyre, steam and a
   warning triangle 3 m ahead). `oc_car` is the same car with the hood shut -- for any other place a parked car is wanted.
   765 / 575 faces.
-- [ ] **T3g. Swap in the trestle kit** (`models/campaign/trestle_kit.glb`, no collision file -- `buildFreight`'s m509 block keeps the
+- [x] m587 **T3g. Swap in the trestle kit** (`models/campaign/trestle_kit.glb`, no collision file -- `buildFreight`'s m509 block keeps the
   refuge's deck and rail colliders). Blender X = the line frame's u, +Y = its v. `tr_signal` at each (1.9, v) on yr -- replaces the
   mast, its board, the two lamp spheres and the bracket beam (lamps face -Y at the code's heights); `tr_milepost` at each (-1.55, v)
   on yr -- replaces the post and its board; `tr_refuge` at (ru, vm) on ry -- replaces the deck, the three braces, the rails, the tool
