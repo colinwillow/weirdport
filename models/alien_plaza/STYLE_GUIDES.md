@@ -157,3 +157,23 @@ The reference is the Sites painting from the hotel: simple shapes, three bands, 
 6. **A path leads in** from a bottom corner toward the landmark: a road, a quay edge, a railing, a line of lamps.
 
 `compose.py` renders every waypoint shot and scores 1 to 4 automatically (5 and 6 are by eye). A shot marked FIX is where dressing goes next: a foreground tree, a loud accent, a darker base. Dressing goes where a shot needs it, not everywhere.
+
+## The building formula (from his Portland walk: the white brick warehouse, the modern brick block, the low-poly poster)
+
+A building is never a box with a texture on it. Reading the real ones, every one of them, old or new, cheap or dear, has the same seven parts, and the low-poly poster building proves they survive with almost no polygons:
+
+1. **Plinth.** A base course at the foot, 0.6 to 1.2 m, a different material (concrete under brick, stone under plaster), slightly proud. It takes the dirt and the knocks.
+2. **String course at every floor.** A thin band or slab edge where each floor meets the next. The poster building is literally slabs with walls between them.
+3. **Sill under every window,** proud by a hand's width. The poster's pink sills are the whole charm of it.
+4. **Lintel or soldier course over every opening.** Bricks on end, or a flat band.
+5. **Pilasters.** Vertical strips that divide a long wall into bays; the recessed panels between them are where windows go, or where windows WERE (bricked-in windows are the best imperfection in the set).
+6. **Cornice and parapet.** Corbelled courses stepping out at the top, then a coping. The roof slab overhangs on the poster building.
+7. **Roof furniture.** A stack, a hatch, a tank, a vent. One or two, never none.
+
+Then the imperfections that make it a place: a bricked-up window, a downpipe, a utility box bolted on, a roll-up shutter with its drum above it, paint that has peeled back to brick, a crack with a strap repair. One or two per building, placed where the eye lands.
+
+The kit's walls already carry 2, 3 and 4. `kit_hf` adds 1, 2 (string courses), 6 (cornice band and coping) to every building in the level, and rooftop dressing adds 7. Still to do: pilasters on long walls, and the imperfections as decals.
+
+## Textures from his photos
+- `t_setts.png`: the basalt setts, straight-down phone photo, lighting flattened, made tileable. Streets and promenade.
+- Candidates from the same walk: the modern pale brick with the dark soldier bands (a 2 m tile), the whitewashed brick with the red showing through (the warehouse), the reclaimed oak slats (the table) for decking and boat hulls, the orange brick with white mortar (a 1 m tile).
