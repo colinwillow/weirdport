@@ -178,9 +178,9 @@
   {
    "name": "glyph_1",
    "pos": [
-    -61.1,
-    73.95454545454545,
-    16.2
+    -58.5,
+    74,
+    17.2
    ],
    "glyph": 1,
    "needs": "hover_pack",
@@ -594,7 +594,7 @@
   {
    "name": "smoke_eq5_0",
    "pos": [
-    74.36363636363636,
+    72.4,
     52.44117647058823,
     11.9
    ],
@@ -996,7 +996,7 @@
   {
    "name": "pickup_005",
    "pos": [
-    -53.1,
+    -52.0,
     -1.0,
     10.51
    ],
@@ -1633,7 +1633,7 @@
   {
    "name": "gen_1",
    "pos": [
-    40.0,
+    37.4,
     33.3125,
     9
    ],
@@ -2559,11 +2559,11 @@
     15.4
    ],
    "b": [
-    0,
-    -6,
+    -36,
+    -8,
     0.09999999999999998
    ],
-   "label": "SHORTCUT HOME: bell room -> plaza",
+   "label": "SHORTCUT HOME: bell room -> plaza (lands at the west corner, off the fountain)",
    "kind": "grind",
    "ride": "a -> b (downhill)"
   },
