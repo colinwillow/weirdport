@@ -375,6 +375,18 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE LONG FLUME, HOLLOW CREEK TO THE GORGE (m615, F2c-6b, `GFLUME`, `buildGorgeFlume`, `gzFlumeStep`, GOD `gzflume`).** A
+  2 m-step polyline in a th = 0 `farmFrame` (u = x, v = z). It starts at a head tower on the Hollow Creek land point nearest
+  the fjord's mouth, chosen by a sweep of `hcEdge` in beach + 4..12. It runs down to (river + 2, b -88) at sea + 4.2, then up
+  the fjord to the east walk's end at Wy + .05. Floor quads go in TRI; each wall is a turned collider; trestles run down to
+  `groundAt` or sea - 8. The current is the waterfront belts' carry: grounded on a segment, within hw and .4 of its height,
+  moved `speed`*dt along it, with the camera moved too. The first ride shows a card. places: head at (-147, 17.5, 417).
+- **A HELPER `const` DECLARED BELOW ITS FIRST CALLER IS A THROWN BUILDER, NOT A BLANK PAGE, AND `check` CANNOT SEE IT (m613 ->
+  m615).** m613 put `cePut` above the pallet wall, but the barrel's seat crates, further UP `buildCamp`, call it: TDZ. The try
+  in init caught it, so the whole camp was missing (`CAMP FAIL`) for one build. `npm run places` caught it
+  (`FAIL buildCamp ... before initialization`). Declare an art helper beside the builder's other helpers, never mid-function,
+  and run `places` on art swaps whose helpers feed earlier code.
+
 - **THE REST OF THE CAMP IS HIS ART (m613, T3t, `camp_extras.glb`, `?cextra=0`, `cePut`).** In `buildCamp`, each piece is mirrored
   in z with `rotation.set(0, r, tilt)`, the box's own Euler, and scaled to the box (his Blender Z, the height, is three's y;
   scale.z carries the mirror's -1):

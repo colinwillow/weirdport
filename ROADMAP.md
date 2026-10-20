@@ -756,7 +756,7 @@ differ" table there, so no region feels like the last one.
     - [x] m534 **F2b-4** the ways in and out: the tram stop at the plaza, a glider off the helipad.
     - [x] m535 **F2b-5a** the chapter: CHAPTER 6 · DUMP TOWER (the three badges, then Mr. Dump in the penthouse -- six knock-downs), the Mothership renumbered Chapter 7.
     - [x] m538 **F2b-5b** the Mothership's seventh lock: a suit's lock (the boardroom's own), between the neural lock and the shaft; Benny's "six ways" becomes seven.
-  - [ ] **F2c The Gorge** (7): falls, the stilt village, the scuba diver; between Hollow Creek and the
+  - [x] m615 **F2c The Gorge** (7): falls, the stilt village, the scuba diver; between Hollow Creek and the
     River Islands, down the log flume.
     - [x] m543 **F2c-1** the land: its own landmass past the islands (+z), a plateau ~24 m, the upper river in a canyon at 13 m, THE FALLS (15 m, straight into the sea), the fjord below them out to the coast, pines. GOD `gzfalls`, `gzriver`.
     - [x] m551 **F2c-2** the caves behind the falls (a ledge path behind the sheet, a cave with a way up to the upper river), spray, rainbows in it, the falls' sound.
@@ -765,7 +765,7 @@ differ" table there, so no region feels like the last one.
     - [x] m584 **F2c-5a** the diver (Nell, on the west walk) and SWIMMING as the diver: sink, hold to rise, a kick out of the water onto a 1.6 m ledge -- so the cave behind the falls is reached from below.
     - [x] m594 **F2c-5b** the underwater caves under the fjord: a sunken wreck and a lit grotto in the fjord floor with a cache; a swimming pose (he plays the fall pose in the water now).
     - [x] m609 **F2c-6a** the lookout at the fjord's mouth and the glider to the islands (Ari, a glider pilot to wear); the Gorge's region on the map.
-    - [ ] **F2c-6b** down the log flume and the rapids from Hollow Creek: the mill's flume runs on, down a rapids channel, into the Gorge's upper river.
+    - [x] m615 **F2c-6b** down the log flume and the rapids from Hollow Creek: the mill's flume runs on, down a rapids channel, into the Gorge's upper river.
   - [ ] **F2d The Hothouse** (9): the alien takeover, as a region that grows across the map while the
     grid stands and shrinks as you cure districts.
   - [ ] **F2e The metropolis hub**: the tall city in the middle of the map that the other regions ring,
@@ -1687,4 +1687,9 @@ differ" table there, so no region feels like the last one.
   from Hollow Creek. The lookout stands on the east plateau at the fjord's mouth (b -56), with its deck 14 m over the ground,
   about 19 m above the sea before the tower. The nearest islands (lighthouse rock, the humps) are about 120-145 m off, the same
   glide ratio as Skye's 120 m from 15.8 m. If the glide falls short, raise `H` in `buildGorgeLook`.
+- **m615 (F2c-6b): the long flume ends at the stilt village, not on the upper river.** The Gorge's upper river is 13 m up a
+  canyon, higher than Hollow Creek's shore, so a flume can't run DOWN into it. The flume runs from a tower on Hollow Creek's
+  shore nearest the Gorge (head about 17.5 m up) down across the strait to the fjord's mouth. The "rapids" are the long low run
+  up the fjord over the water, past the wreck and the grotto, onto the east walk's downstream end. Its current carries him at
+  8 m/s (`GFLUME.speed`). This closes F2c; the mill's own flume is unchanged.
 
