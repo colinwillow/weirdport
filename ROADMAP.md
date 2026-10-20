@@ -520,6 +520,11 @@ different context window, let me know."*
   feeding tubes up into the north wall (+Y); `sg_rib` at each of the lock room's six glow boxes, turned -a like them (its X points
   out of the wall), in place of the box; `sg_strand` at each tear strand's root (the edge of the tear, yC - .1), turned toward the
   hole (s * .6), in place of the cone.
+- [ ] **T4x. Swap in the rally trucks** (`models/campaign/rally_truck.glb`; no collision -- each truck's `BDYN` box stays). In
+  `buildRally`, inside each truck's group `g` at its origin, with no turn: `rt_paint` (ONE white material -- give it mats[k]'s
+  colour) + `rt_trim`, in place of the three boxes and the four wheel cylinders. It is built in the group's own frame (the nose at
+  the group's +z, where the code's cab sits forward of the bed), 2.0 x 5.0 like the box, wheels where the code's are, a light bar
+  and two flags.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

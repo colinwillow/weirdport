@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m677 -- the rally trucks as art (scenery window; ROADMAP T4x)
+
+`models/campaign/rally_truck.glb`, for the four pickups `buildRally` drives up the highway road and parks behind the gate. Built in
+the truck group's own frame so it drops in at the origin: a lifted pickup at the code's 2.0 x 5.0, its body in one white material for
+the code's four colours, the trim -- big wheels with chrome hubs, glass (the first render had the windscreen inside the cab), the bed
+liner, chrome bumpers and grille, head and tail lamps, a roof light bar and two flags on poles in the bed. Shipped unverified.
+
 ## m675 -- the Mothership gauntlet's organics as art (scenery window; ROADMAP T4w)
 
 `models/campaign/ship_gauntlet.glb`, for `buildShipGauntlet`. The ship's juice sac at the code's r 1.1: a glowing magenta bladder in
