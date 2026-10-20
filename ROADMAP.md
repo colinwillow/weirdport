@@ -451,7 +451,7 @@ differ" table there, so no region feels like the last one.
   - [x] m505 **F1-IS3** the River Islands 3 -- the skate park (a clean deck with ramps): paint splashed on the planks, dark patched planks, string lights on poles down both rails, paint up the quarter pipe's platform and the funbox, and the hangout at the island end -- a sofa, a cooler, a speaker on a crate, boards on the rail.
   - [x] m506 **F1-MS1** the Mothership 1 -- the decks (one flat purple): in the chamber a glowing ring at the wall's foot, radial seams, a cable from every pod to the machine, conduits up the wall, a light ring round the ceiling; glow strips down both tubes; on the bridge a lit ring round the floor disc, console lights and a turning holo-globe.
   - [x] m507 **F1-MS2** the Mothership 2 -- the belly (a purple drum): floor seams out from the glass, a glow ring at the wall's foot, veins snaking up the wall, clutches of eggs at its foot, glyph panels, tendrils hanging round the organ. Nothing near the doorway; nothing solid.
-  - [ ] **F1-MS3** the Mothership 3 -- the core on its back.
+  - [x] m508 **F1-MS3** the Mothership 3 -- the core (an empty dome): two glow rings and 12 seams across the floor, ribs of light up the dome's inside, eight nerves arcing from the dome's wall down into the shaft's mouth, glow strips climbing the shaft. Nothing solid -- it is the last fight's floor.
   - [ ] **F1-RT** the routes between them.
 - [ ] **F2 The regions still missing from `REGIONS.md`**, each as land → places → people → the ways in
   (several, per the connective-tissue rules) → its quests and boss. Read the entry first.

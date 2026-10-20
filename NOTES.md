@@ -26,6 +26,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE CORE, LIT (F1-MS3, m508, `buildShipGauntlet`).** Chapter 6's last arena. Added, colliderless: two glow rings (6.2,
+  8.4 m) and 12 seams on the floor, 12 quarter-arcs of light up the dome's inside, eight nerves arcing from the dome down
+  into the shaft's mouth, glow strips up the shaft's wall (none by its door). **The dome is squashed (.75 high), so at
+  radius r its inside is only .75 sqrt(R^2 - r^2) up**: the first cut started the nerves at R - .3 and 5.2 m up, which is
+  OUTSIDE the dome there (1.8 m) -- they poked out of its top in the shot. They start at 6.8 m out, 4.4 up now (5.5 of
+  room). `play ch6` COMPLETE (3/3, 15 steps). That closes F1's per-region passes except F1-RT.
+
 - **THE BELLY, ALIVE (F1-MS2, m507, `buildMothership`).** Where the tether's pod arrives (`isship`). Added, all colliderless
   and nothing within 25 degrees of the doorway (+u): 19 seams from the glass ring to the wall, a glow ring at the wall's
   foot, 9 veins (seeded random walks up the wall in the membrane's `mem`), clutches of five eggs at the foot of six wall
