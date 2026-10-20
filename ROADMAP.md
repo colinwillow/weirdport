@@ -332,7 +332,7 @@ different context window, let me know."*
   the cone. Already in the repo: `rp_barrel` (rim_props) for the 'drum', `rp_pickup` turned across the lane for the two 'truck'
   boxes, `tp_chair` (trailer_park) for the two chairs, `bk_bike` (bike_pits) for the two bikes, `rx_tyres` (roof_extras) for the
   tyre stack.
-- [ ] **T3t. Swap in the rest of the camp** (`models/campaign/camp_extras.glb`; no collision -- keep the boxes that collide). In
+- [x] m613 **T3t. Swap in the rest of the camp** (`models/campaign/camp_extras.glb`; no collision -- keep the boxes that collide). In
   `buildCamp`, Blender X = u, +Y = v, origins on `gnd(u, v)`, each turned like the box it replaces: `ce_pallet` (1.2 x .14 x
   1.35 from -.1) at each of the six pallet-wall boxes; `ce_sheet_rust` / `ce_sheet_tarp` (1.2 x 2.4 from -.1, scale Z by
   (h + .1) / 2.4) at the seven back sheets ('rust' / 'tarp2'); `ce_leanto` at (-4.6, -7.7) in place of both tarps, the two poles

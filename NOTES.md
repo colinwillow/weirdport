@@ -367,6 +367,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE REST OF THE CAMP IS HIS ART (m613, T3t, `camp_extras.glb`, `?cextra=0`, `cePut`).** In `buildCamp`, each piece is mirrored
+  in z with `rotation.set(0, r, tilt)`, the box's own Euler, and scaled to the box (his Blender Z, the height, is three's y;
+  scale.z carries the mirror's -1):
+  - the 6 pallets and the 7 back sheets (rust or tarp)
+  - the lean-to, in place of both tarps, the poles and the mattress drawing
+  - the 4 crates and the 3 seat crates
+  - the 3 cardboard sheets
+  - the 6 bottles; the lying ones are turned 1.5 about x and lifted .045
+  - the 5 laundry pieces, `CE_cloth_white` tinted `cols[i]`, origin on the line
+  **Every `rr()` roll is spent in the same order as before**, so nothing seeded after them moves. Every collider stays.
+
 - **THE GANG'S ROAD BRIDGE IS DRESSED IN HIS ART (m611, T3s, `gang_road.glb`, `?groad=0`).** In `buildHighway`, through `grPut`
   (mirrored in z; a `*_white` material is cloned and tinted):
   - `gr_distsign` stands at both distance signs, turned 0 / pi like the canvas, which sits .01 in front of it.
