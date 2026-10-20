@@ -406,7 +406,15 @@ body.dyn.desk .zone { display: none; }
   transform: translate(-50%, -100%); max-width: min(72vw, 320px); min-width: 150px;
   background: #fff; color: var(--ink); border: 3px solid var(--ink); border-radius: 14px;
   padding: 7px 12px 16px; font-family: var(--ui); font-size: 17px; line-height: 1.25; font-weight: 600;
+  box-sizing: border-box;
 }
+/* m471: THE COMIC BALLOON. A fat round outline, an ink drop-shadow offset like a printed panel, and lettering. The tail is two
+   triangles (ink under white) at --tail, which follows the SPEAKER when the balloon is pinned against an edge. */
+#talk.comic { border-radius: 26px / 22px; border-width: 3.5px; box-shadow: 4px 5px 0 var(--ink); padding: 9px 15px 18px; }
+#talk.comic.f-comic .tx { font-family: 'Comic Neue', 'Comic Sans MS', var(--ui); font-weight: 700; font-size: 18px; }
+#talk.comic.f-hand .tx { font-family: 'Patrick Hand', 'Comic Sans MS', var(--ui); font-weight: 400; font-size: 21px; line-height: 1.12; }
+#talk.comic .nm { font-family: Bangers, var(--disp); font-size: 15px; letter-spacing: .08em; }
+#talk .tx .hide { visibility: hidden; }
 #talk.on { display: block; }
 /* THE OBJECTIVE (m278): one line, top centre, which is the one empty edge -- the chip is
    top-left and the weapon top-right. Dark pill so it reads on the white floor and the sky. */
@@ -469,8 +477,11 @@ body.dyn.desk .zone { display: none; }
   80% { opacity: 1; } 100% { opacity: 0; transform: translate(-50%, -60%) scale(1); } }
 #talk .nm { display: block; font-family: var(--disp); font-size: 12px; letter-spacing: .06em; color: var(--hot); margin-bottom: 2px; }
 #talk .go { position: absolute; right: 10px; bottom: 2px; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #0b0d1280; }
-#talk::after { content: ''; position: absolute; left: 50%; bottom: -12px; margin-left: -10px;
+#talk::after { content: ''; position: absolute; left: var(--tail, 50%); bottom: -12px; margin-left: -10px;
   border: 10px solid transparent; border-top-color: var(--ink); border-bottom: 0; }
+#talk.comic::after { bottom: -19px; margin-left: -9px; border-width: 18px 9px 0 9px; border-top-color: var(--ink); transform: skewX(-14deg); }
+#talk.comic::before { content: ''; position: absolute; left: var(--tail, 50%); bottom: -12px; margin-left: -5px; z-index: 1;
+  border: solid transparent; border-width: 13px 6px 0 6px; border-top-color: #fff; transform: skewX(-14deg); }
 /* THE MODE BUTTONS ARE ARC SEGMENTS ROUND THE RIGHT STICK (m53).
    *"Take two rings, one smaller, one larger, and cut pizza slices out of that -- those buttons
     would be like those segments."* So they are annular sectors, not a row of chips: the pad is
@@ -750,7 +761,7 @@ body.desk.free #deskHint { display: block; }
 </style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Barlow+Condensed:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bungee&family=Barlow+Condensed:wght@400;600&family=Comic+Neue:wght@700&family=Patrick+Hand&family=Bangers&display=swap" rel="stylesheet">
 <script type="importmap">
 { "imports": { "three": "./vendor/three.module.min.js" } }
 </script>
@@ -762,10 +773,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m470</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m471</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m470</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m471</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; menu</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -851,7 +862,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm470';
+const BUILD = 'm471';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_antenna_game_ktx2.glb":"28afac8c","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_female_purple_ktx2.glb":"fc914afb","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_rollerskate_blue_ktx2.glb":"a66d5697","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/alien_warrior_ktx2.glb":"a13fb7b6","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/colin_ktx2.glb":"35040f87","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/contruction_worker_ktx2.glb":"3df8c344","models/characters/dummy_officer.glb":"724965ac","models/characters/dummy_officer_ktx2.glb":"db640cda","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/jack_ktx2.glb":"1f4c9f7f","models/characters/moussa.glb":"6d80b1cf","models/characters/moussa_ktx2.glb":"66e040f8","models/characters/zap.glb":"5e5cca54","models/characters/zap_ktx2.glb":"4b29d886","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/dump_truck_ktx2.glb":"21ee7059","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/buildings/alien_base_01_ktx2.glb":"6cbbfef2","models/towers/alien_tower_01.glb":"98d23375","models/towers/alien_tower_01_ktx2.glb":"47597651","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.ktx2":"efe0840e","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/alien_world/alien_coast.glb":"d75b2306","models/alien_world/alien_coast_collision.glb":"b611b85b","models/alien_world/alien_coast_ktx2.glb":"ba5c524f","models/alien_world/alien_coast_splat.png":"54070c04","models/alien_world/alien_sky.glb":"09921f46","models/alien_world/alien_streets.glb":"428b278b","models/alien_world/alien_streets_ktx2.glb":"b39c105e","models/alien_world/alien_town.glb":"0458b33a","models/alien_world/alien_town_kit_buildings.glb":"97dc424c","models/alien_world/alien_town_kit_buildings_collision.glb":"acf6a163","models/alien_world/alien_town_kit_buildings_ktx2.glb":"9ee63ae9","models/alien_world/alien_town_ktx2.glb":"458796fb","models/alien_world/alien_town_placements.json":"49b70ec2","models/alien_world/alien_town_splat.png":"2e637c89","models/alien_world/border_fort.glb":"e74b123b","models/alien_world/border_fort_ktx2.glb":"d5cae9b0","models/alien_world/bot_workshop.glb":"cd763f7f","models/alien_world/bot_workshop_ktx2.glb":"74f98979","models/alien_world/comms_tower.glb":"5a032e77","models/alien_world/comms_tower_ktx2.glb":"23195ccf","models/alien_world/critters.glb":"196c3f20","models/alien_world/fermentation_lab.glb":"91038f74","models/alien_world/fermentation_lab_ktx2.glb":"e8b6e052","models/alien_world/fire_forge.glb":"6a1a91c8","models/alien_world/fire_forge_ktx2.glb":"ea0dd9d9","models/alien_world/fire_hangar.glb":"ec2046f3","models/alien_world/fire_hangar_ktx2.glb":"bdbebd0d","models/alien_world/fire_workshop.glb":"1e1c909b","models/alien_world/fire_workshop_ktx2.glb":"96f64328","models/alien_world/goo_barracks.glb":"afb36bce","models/alien_world/goo_barracks_ktx2.glb":"7fabb4e3","models/alien_world/goo_hangar.glb":"b2fb237d","models/alien_world/goo_hangar_ktx2.glb":"5fcf194d","models/alien_world/goo_refinery.glb":"a4692c3a","models/alien_world/goo_refinery_ktx2.glb":"4ab05908","models/alien_world/junk_repair.glb":"bac33b04","models/alien_world/junk_repair_ktx2.glb":"89c1fcdc","models/alien_world/landing_kiosk.glb":"c0d6bf48","models/alien_world/landing_kiosk_ktx2.glb":"0a463f4f","models/alien_world/lookout_tower.glb":"c6cd3268","models/alien_world/lookout_tower_ktx2.glb":"07183c2a","models/alien_world/market_kiosk.glb":"0388d41e","models/alien_world/market_kiosk_ktx2.glb":"1b57cc1d","models/alien_world/mushroom_inn.glb":"6e648c52","models/alien_world/mushroom_inn_ktx2.glb":"fff556fa","models/alien_world/noodle_bar.glb":"e3009e58","models/alien_world/noodle_bar_ktx2.glb":"ef58921c","models/alien_world/power_shack.glb":"f4a6a4c7","models/alien_world/power_shack_ktx2.glb":"afc34744","models/alien_world/refinery_tower.glb":"1ff8d31d","models/alien_world/refinery_tower_ktx2.glb":"4f14643b","models/alien_world/res_complex.glb":"ca190d47","models/alien_world/res_complex_ktx2.glb":"7043f777","models/alien_world/residential_hut.glb":"7581ded0","models/alien_world/residential_hut_ktx2.glb":"675e7618","models/alien_world/signal_tower.glb":"2723ed8c","models/alien_world/signal_tower_ktx2.glb":"7c09f873","models/alien_world/slime_cafe.glb":"5e150e2c","models/alien_world/slime_cafe_ktx2.glb":"fbc444b6","models/alien_world/spore_pharmacy.glb":"3d093c39","models/alien_world/spore_pharmacy_ktx2.glb":"057aaf8a","models/alien_world/watch_tower_gate.glb":"ec05247c","models/alien_world/watch_tower_gate_ktx2.glb":"432282e0","models/alien_world/textures/bark.png":"d969d679","models/alien_world/textures/dirt.png":"e4aff3f7","models/alien_world/textures/foliage.png":"1492930d","models/alien_world/textures/grass.png":"7818548a","models/alien_world/textures/moss.png":"23a9d283","models/alien_world/textures/mud.png":"56f4a041","models/alien_world/textures/p_sand.png":"84dd3c6f","models/alien_world/textures/rock.png":"1b83fb09","models/alien_world/textures/sky_alien_pano.ktx2":"27c79a18","models/alien_world/textures/sky_alien_pano.png":"263d3606","models/alien_plaza/alien_plaza.glb":"ce850b53","models/alien_plaza/alien_plaza_collision.glb":"f084a42e","models/alien_plaza/alien_plaza_ktx2.glb":"1737ab08","models/alien_plaza/alien_plaza_level.json":"28554a14","models/campaign/crash_wreck.glb":"eb6d2f81","models/campaign/crash_wreck_collision.glb":"fd63d483","models/campaign/crash_wreck_preview.png":"4ec7697f","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.ktx2":"4aa55fde","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.ktx2":"922e1191","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.ktx2":"e0cbfe1d","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.ktx2":"4fbbb985","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.ktx2":"0feb5c79","images/hdri_game.png":"dac55f41","images/water_sprites_01.ktx2":"326924c5","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.ktx2":"99952ec9","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -28384,6 +28395,11 @@ function bodySeat() {
 // undisguised alien yet either; that is A4's fear, and it will gate `talk.near`.
 const TALK = {
   on: 1,
+  // m471: THE BALLOON. *"It does this weird wrap: based on how you're looking at them it's always adjusting the line wrap."* The box
+  // was width:auto at a moving `left`, so its shrink-to-fit width was whatever screen was left beside it. It is MEASURED once
+  // when a line opens and pinned; only its position follows. `font`: comic | hand | plain (GOD > TALK FONT, `mel.talkfont`).
+  font: (() => { try { return localStorage.getItem('mel.talkfont') || 'comic'; } catch (e) { return 'comic'; } })(), fonts: ['comic', 'hand', 'plain'],
+  wps: 14,          // words a second as a line is lettered in (a tap mid-line finishes it); 0 = all at once
   seed: 0,          // m293: 0 -- no more one-random-speaker-per-kind; `npc_*` markers with `talk`/`lines` place them
   reach: 2.6,       // m, flat, his root to theirs -- a conversation distance, not a shout
   leave: 4.5,       // walk further than this and the bubble closes
@@ -28498,12 +28514,27 @@ function talkSeed() {
 const talkOk = d => d.talk && !d.wasK && d.st !== 'down' && d.st !== 'up' && !d.vy && !(d.fleeT > 0) && !(d.callT > 0);
 function talkShow() {
   const d = talk.cur; if (!d || !talk.box) return;
+  const B = talk.box, L = talk.alt || d.talk.lines;
   talk.nm.textContent = d.talk.name;
-  const L = talk.alt || d.talk.lines;
-  talk.tx.textContent = talk.brush || L[talk.line] || '';       // m332: or the one brush-off line
+  talk.words = (talk.brush || L[talk.line] || '').split(/\s+/).filter(Boolean);   // m332: or the one brush-off line
+  talk.rev = TALK.wps > 0 ? 0 : talk.words.length; talk.revN = -1;
+  talkLetter(true);
   talk.go.textContent = !talk.brush && talk.line < L.length - 1 ? 'tap ▸' : 'tap ×';
-  talk.box.classList.add('on');
+  const f = TALK.font; B.classList.toggle('comic', f !== 'plain'); B.classList.toggle('f-comic', f === 'comic'); B.classList.toggle('f-hand', f === 'hand');
+  // m471: MEASURED ONCE, AT THE LEFT EDGE (the whole screen beside it), THEN PINNED -- the full line is laid out (the words not
+  // yet lettered are there, hidden), so neither the camera nor the lettering can move a single line break
+  B.style.width = ''; B.style.left = '0px'; B.classList.add('on');
+  B.style.width = Math.ceil(B.getBoundingClientRect().width) + 'px';
 }
+// the line, lettered in: the first `rev` words shown, the rest laid out but hidden (`all` redraws even with no change)
+function talkLetter(all) {
+  const n = Math.min(talk.words.length, Math.floor(talk.rev));
+  if (n === talk.revN && !all) return; talk.revN = n;
+  const tx = talk.tx; while (tx.firstChild) tx.removeChild(tx.firstChild);
+  tx.appendChild(document.createTextNode(talk.words.slice(0, n).join(' ') + (n && n < talk.words.length ? ' ' : '')));
+  if (n < talk.words.length) { const h = document.createElement('span'); h.className = 'hide'; h.textContent = talk.words.slice(n).join(' '); tx.appendChild(h); }
+}
+const talkLettering = () => talk.cur && talk.words && talk.rev < talk.words.length;
 function talkClose() {
   talk.cur = null; talk.line = 0; talk.brush = null; talk.alt = null;
   if (talk.box) talk.box.classList.remove('on');
@@ -28513,6 +28544,7 @@ function talkTap() {
   if (!TALK.on) return false;
   if (talk.cur) {
     const d = talk.cur;
+    if (talkLettering()) { talk.rev = talk.words.length; talkLetter(); return true; }   // m471: the first tap finishes the line
     if (talk.brush) { talkClose(); return true; }                   // m332: a brush-off is one line and it is over
     if (talk.alt) {                                                  // m336: the alien's own script, its own flag, a gift
       if (++talk.line >= talk.alt.length) { if (progFlag('talk:' + d.talk.id + ':alien')) { juiceGain(JUICE.help * 2, 'help'); }
@@ -28582,9 +28614,13 @@ function talkStep(dt) {
       const W = innerWidth, H = innerHeight, bw = talk.box.offsetWidth || 200, bh = talk.box.offsetHeight || 60;
       let x = (v.x * .5 + .5) * W, y = (-v.y * .5 + .5) * H;
       if (v.z > 1) { x = W * .5; y = H * .45; }                  // behind the lens: centre it
+      const sx = x;
       x = Math.min(W - bw * .5 - 12, Math.max(bw * .5 + 12, x));
       y = Math.min(H * .62, Math.max(bh + 70, y));
       talk.box.style.left = x.toFixed(0) + 'px'; talk.box.style.top = y.toFixed(0) + 'px';
+      // m471: the tail points at HIM even when the balloon is held off the screen's edge
+      talk.box.style.setProperty('--tail', clamp(sx - (x - bw * .5), 22, bw - 22).toFixed(0) + 'px');
+      if (talkLettering()) { talk.rev += TALK.wps * dt; talkLetter(); }
     }
   }
   talkLight(talk.cur || talk.near, !!talk.cur);
@@ -41392,6 +41428,7 @@ function godMenuOpen(on) {
   if (inAW()) btn('ALIEN BUILDINGS ' + (AW.bldOn ? 'ON' : 'OFF') + ' (reloads; ' + AW.bld + ' placed, ' + AW.missing.length + ' missing)', () => { try { localStorage.setItem('mel.awbld', AW.bldOn ? '0' : '1'); } catch (e) {} location.replace(location.pathname); });   // m434
   { const al = /alien_pano/.test(SKY.img); btn('SKY: ' + (al ? 'THE ALIEN PANO' : 'THE GAME HDRI') + ' (tap for ' + (al ? 'the game HDRI' : 'the alien pano') + ', reloads)', () => { try { localStorage.setItem('mel.skypick', al ? 'game' : 'alien'); } catch (e) {} location.replace(location.pathname); }); }   // m435
   btn('ALL KIT ' + (GEAR.all ? 'ON' : 'OFF') + ' (campaign: everything, not just what he has found)', () => { GEAR.all = GEAR.all ? 0 : 1; try { localStorage.setItem('mel.allkit', GEAR.all ? '1' : '0'); } catch (e) {} GEAR.pack = gearHas('pack'); gearSync(1); godMenuOpen(1); });   // m465
+  btn('TALK FONT ' + TALK.font.toUpperCase() + ' (comic / hand / plain)', () => { const F = TALK.fonts; TALK.font = F[(F.indexOf(TALK.font) + 1) % F.length]; try { localStorage.setItem('mel.talkfont', TALK.font); } catch (e) {} if (talk.cur) talkShow(); godMenuOpen(1); });   // m471
   btn('WALL COVER ' + (WALL.on ? 'ON' : 'OFF'), () => { WALL.on = WALL.on ? 0 : 1; try { localStorage.setItem('mel.cover', WALL.on ? '1' : '0'); } catch (e) {} godMenuOpen(1); });   // m452
   btn('HOVER PACK ' + (HOVER.have ? 'ON' : 'OFF') + ' (hold jump in the air)', () => { HOVER.have = HOVER.have ? 0 : 1; try { localStorage.setItem('mel.hover', HOVER.have ? '1' : '0'); } catch (e) {} godMenuOpen(1); });   // m451
   btn('DOUBLE JUMP ' + (AIR.dbl ? 'ON' : 'OFF') + (inPL() ? ' (off by design here: it skips the hover gates)' : ''), () => { AIR.dbl = AIR.dbl ? 0 : 1; try { localStorage.setItem('mel.dbljump', AIR.dbl ? '1' : '0'); } catch (e) {} godMenuOpen(1); });   // m451

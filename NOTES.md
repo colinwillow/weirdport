@@ -7,6 +7,16 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE BALLOON STOPS RE-WRAPPING (m471, `talkShow`, `talkLetter`, `#talk.comic`).** *"Based on how you're looking at them it's
+  always adjusting the line wrap."* `#talk` was `width: auto` at a moving `left`, and a fixed box's shrink-to-fit width is the
+  screen LEFT BESIDE IT -- so every camera turn changed the line breaks. It is measured once when a line opens, at `left: 0`
+  (the whole screen to fit in, so `max-width` decides), and its width pinned; only `left`/`top` follow him after. **The
+  lettering cannot move a break either**: the whole line is always laid out, the words not yet lettered in a
+  `visibility: hidden` span. The tail is `--tail`, his projected x inside the balloon, so a balloon held off an edge still
+  points at him. Comic style is on by default; the fonts come from Google Fonts with system fallbacks, so a phone offline
+  gets Comic Sans rather than nothing. **A tap mid-lettering finishes the line** (the playthrough's six taps a talk still
+  finish every script: ch1 18/18). **Handing off T2:** yes -- see Decisions; the level window owns `models/campaign/` art.
+
 - **CHAPTER 3 PLAYS THROUGH, AND THE BIKER RODE FOR THE FIRST TIME (m470).** *Four game faults the playthrough found:*
   (1) **`boardBusy` refused the board to every disguise but her skates** (`p.mphK && !bladeOn()`, m263), and the biker IS a
   disguise -- so since m374 wearing him never put him on his bike, the race could never start, and `bikeOn()` read true the

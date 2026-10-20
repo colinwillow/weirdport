@@ -26,7 +26,7 @@ owns them. Do not touch `models/alien_plaza/` or `models/alien_world/`. The leve
 **FROM COLIN (Oct 20, 2 am), relayed by the level window because the loop was mid-pass -- take these next, in the campaign:**
 *"The character text when they talk to you does this weird wrap feature: based on how you're looking at them it's always
 adjusting the line wrap. Which is weird. And it would be nice if we could stylize it to look more like toon writing, comic style."*
-- [ ] **T1. Speech text: wrap ONCE, then never re-wrap.** Lay the line out when the bubble opens (fixed width in screen px or a
+- [x] m471 **T1. Speech text: wrap ONCE, then never re-wrap.** Lay the line out when the bubble opens (fixed width in screen px or a
   fixed character count) and keep that layout while it is on screen, whatever the camera does; only the bubble's POSITION follows
   the speaker. Then style it as a comic balloon: a white rounded balloon with a dark outline and a tail to the speaker, a
   hand-lettered comic font (a Google Font such as Bangers / Comic Neue / Patrick Hand -- pick one, put it on a switch he can
@@ -1260,4 +1260,11 @@ differ" table there, so no region feels like the last one.
 - **m470: the rally is called within 15 s when Chapter 3 is waiting on the speech** and you are within 60 m of the stage (it ran
   110-170 s quiet + 34 s build otherwise: up to 3.5 minutes stood at an empty stage). **The start hill's back is a ramp now**,
   not stairs: lap 2 rides up it and jumps off the front (the stairs were a wall to the bike). Rae's speed is unchanged (15).
+- **m471: the speech balloon.** Comic Neue for the words (GOD > TALK FONT cycles comic / hand (Patrick Hand) / plain), Bangers for
+  the name, a fat outline with an ink drop-shadow and a two-triangle tail that follows the speaker. Lettered in at 14 words a
+  second (`TALK.wps`; 0 = all at once); the first tap finishes the line, the next advances.
+- **m471: the detail pass (T2) goes to a scenery window, yes.** The level window already started it (m469, the crash wreck as a
+  GLB in `models/campaign/`). It owns the ART there (headless Blender, GLBs pushed); this loop owns the CODE that loads and wires
+  it (T2a, colliders, behaviour) and takes T2's code-side items itself (the roadblock that actually blocks). Neither edits the
+  other's files.
 
