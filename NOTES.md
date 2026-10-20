@@ -307,6 +307,19 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE GORGE GOES UNDER: A GROTTO, A WRECK AND A SWIM POSE (m594, F2c-5b, `buildGorgeDeep`, `GORGE.pits`, `swimPose`).** Two
+  hollows are carved into the fjord floor in `gzHeight` itself, so they are ground and not boxes: the grotto (b -57, r 8.5, floor
+  y -12.2, ten metres under the sea) and the wreck's hollow (b -69, r 7, floor -9.7). **`buildGorgeLand` only keeps a floor
+  triangle whose top is above sea - 6**, which would have left both floors with no surface, so `gzPitIn` lets theirs through.
+  The grotto has a rock roof over its +a half on a pillar, crystals that glow, a teal PointLight coming up out of the rock, and
+  a cache (`gz:grotto`). The wreck is a boat rolled .9 on its side. **Its collider is ONE upright box for its bulk, because
+  `bx` throws the tilt away for a collider**; the rolled planks are drawing only. Its strongbox (`gz:wreck`) has spilled out of
+  the hole. There is kelp round both. Nell's "light at the bottom of the fjord" is the grotto.
+  **THE SWIM POSE:** `swimPose` runs after `wingPose` and leans the root forward about the hips by the speed through the water,
+  using the same quaternion and hip-hold as the wing suit. `morphAnim` plays the kind's run clip at .45-.7 speed as the stroke,
+  or its idle to tread water. GOD `gzdeep` is the end of the west walk. Shipped unverified: the lean's sign (+ about +X is
+  forward on a +Z-facing rig) is reasoned, not measured.
+
 - **THE MOTHERSHIP BRIDGE'S CONSOLE, CHAIR AND PEDESTAL ARE HIS ART (m591, T3j, `ship_bridge.glb`, `?sbridge=0`).** Five `mb_console`
   at the desk segments, mirrored in z and turned **-a - pi/2** -- the desk box's -a + pi/2 plus pi, because his screen faces local
   +Y and the box's turn puts that out over Old Town; worked by the box rule (local +z along (sin psi, cos psi)) with the consoles at
