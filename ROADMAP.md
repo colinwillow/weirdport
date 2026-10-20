@@ -56,6 +56,13 @@ different context window, let me know."*
   instance it), `fb_round` (1.6 m round bush), `fb_cypress` (2.6 m tall cone, 41 tris) and `fb_flower` (0.9 m mound with orange/red
   blooms). Scatter round/cypress/flower along the hedge lines, by the farmhouse and at field corners (Colin: "bushes on the farm
   land"); a random yaw and 0.85-1.15 scale per copy. Opaque, vertex-free plain materials (FB_*), smooth normals.
+- [ ] **T2e. Swap in the crash-site kit** (`models/campaign/crash_site_kit.glb` + `_collision.glb`). In `buildCrash`: the furrow's
+  berm ellipsoids + plank boxes become `cs_berm` tiled every 3.0 m along each side (Blender X = along the furrow = three x, its
+  darker face -Y turned TO the furrow; the lump is 4.3 m long so neighbours overlap into one ridge; scale it up toward the wreck the
+  way `h` grows now, `a*a`), each with its `col_bld_cs_berm` box; the ico0 clods become `cs_clod_a/b/c` (random yaw); and new
+  dressing the style guide's Chapter 0 asks for: 3-4 `cs_plate` (torn hull plates) and 2 `cs_strut` along the last third of the
+  furrow, ONE `cs_pod` (cracked cargo pod, purple glow -- a natural pickup spot) off to one side, 3 `cs_fence` on the crater rim
+  where the furrow crossed the field's fence line, and `cs_grass` tufts round the edges. Colliders: berm, clod_a, plate, pod, fence.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

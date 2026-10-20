@@ -5,6 +5,15 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m495 -- the crash-site kit (scenery window, art only; the swap is ROADMAP T2e)
+
+The detail pass's crash site. The wreck itself went in at m474; what was left round it was code: faceted berm ellipsoids over
+plank colliders and ico0 clods. `models/campaign/crash_site_kit.glb` replaces those and adds the style guide's Chapter 0 dressing:
+`cs_berm` (a 3.0 m tile whose lump is 4.3 m long -- the first render at 3.4 m read as a row of potatoes, so neighbours now OVERLAP
+into one ridge), three clods, a torn hull plate with rivets and a hazard stripe, a snapped strut with a glowing end, a cracked
+cargo pod, a broken fence for the crater rim, and tall grass. Every lump is flattened at the ground. Colliders are one exact box
+per piece (`col_bld_cs_*`). Code untouched; the loop swaps it in (T2e). Shipped unverified.
+
 ## m475 -- the farm bushes (scenery window, art only; the swap is ROADMAP T2d)
 
 Colin: *"bushes on the farm land."* `models/campaign/farm_bushes.glb`: four soft, rounded pieces in the Sites painting's greens --
