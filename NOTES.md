@@ -248,6 +248,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE GORGE'S DAM (m576, F2c-4, `buildGorgeDam`, `GORGE.dam`, flag `gz:dam`, GOD `gzdam`).** 46 m above the falls (b 60) a concrete
+  wall across the canyon, 6.2 m high, a railed walk on its crest, two sluice mouths and three buttresses on its downstream face, a
+  winch house and a wheel on the crest, a ladder up its face from the river (-a side), the reservoir backed up behind it to the
+  head at crest - 1.2. **It starts SHUT.** The grate by the wheel toggles `gz:dam`; `D.k` eases 0..1 at .35/s and drives the falls'
+  sheet (width .18 -> 1, opacity), the foam, the river ribbon below the dam (sunk .4 and paler when shut), the spray's opacity, the
+  sluice jets and the scroll speed. `places` gzdam ground 19.20.
+
 - **RUE'S FIELD IS HIS ART (m575, T3d, `IXING.rueG`, `?rue=0`).** `rf_canopy` (-11, 11), `rf_rack` (-14.5, 5), `rf_chalk` (-8, 15.5) and
   `rf_bench` (-13, 14.5, turned .5) on the field's own ground, mirrored in z. The table's and the bench's colliders stay (drawing
   popped); legs, roof, valance, thermos, cup, wing triangles, the board and its lines are not built. The rings, stepping stones and

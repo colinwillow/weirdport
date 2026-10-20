@@ -652,7 +652,7 @@ differ" table there, so no region feels like the last one.
     - [x] m543 **F2c-1** the land: its own landmass past the islands (+z), a plateau ~24 m, the upper river in a canyon at 13 m, THE FALLS (15 m, straight into the sea), the fjord below them out to the coast, pines. GOD `gzfalls`, `gzriver`.
     - [x] m551 **F2c-2** the caves behind the falls (a ledge path behind the sheet, a cave with a way up to the upper river), spray, rainbows in it, the falls' sound.
     - [x] m558 **F2c-3** the stilt village: houses on stilts along the fjord's wall, walkways and rope bridges between them and across, fishers and river guides.
-    - [ ] **F2c-4** the dam gates upstream: shut them and the falls dry to a trickle and the cave mouth opens; open them and they roar.
+    - [x] m576 **F2c-4** the dam gates upstream: shut them and the falls dry to a trickle and the cave mouth opens; open them and they roar.
     - [ ] **F2c-5** the scuba diver and the underwater caves under the fjord; the scuba form swims and breathes.
     - [ ] **F2c-6** the ways in and on: down the log flume and the rapids from Hollow Creek, the lookout and the glider to the islands; its region on the map.
   - [ ] **F2d The Hothouse** (9): the alien takeover, as a region that grows across the map while the
@@ -1563,3 +1563,4 @@ differ" table there, so no region feels like the last one.
 - **m551 (F2c-2) The way into the cave behind the falls is DOWN a chimney from the upper river**, not along a ledge from the fjord: the fjord is sea water 28 m down between sheer walls and there is no swimming yet. The diver's underwater way in is F2c-5. No falls sound: there is no water recording in the repo.
 - **m556 (T2u) The shut cart keeps its awning up** for now: the awning is part of `fc_cart_paint`, so it cannot be hidden on its own. A separate `fc_cart_awning` root in `food_cart.glb` would let the shut cart drop it (one line in `buildCarts`).
 - **m567 (T2z) Each turret's control panel turns its screen AWAY from its own gun**, since nothing in `WTUR` says where the walkway is: you hack it from the side the gun is not on.
+- **m576 (F2c-4) The dam starts SHUT** -- the falls a trickle, as the fishers say ("upriver they've dammed it since spring") -- and opening it is the player's, by the grate beside the wheel on its crest. The cave behind the falls stays reached by its chimney either way; the dam changes the falls, the river below it and the spray, not a door.
