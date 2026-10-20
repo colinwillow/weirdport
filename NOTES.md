@@ -17,6 +17,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **CHAPTER 5'S FIRST QUEST PLAYS THROUGH: THE ROPE BRIDGES WALKED (m481, `tools/play.mjs`).** The driver walks every span's own sag
+  curve (`IXING.spans[i].pt(t)`, islands' frame, through `islWorld`) sample by sample at WALKING pace and with the side-step
+  off -- a 1.4 m deck has no room for the stall dodge -- then on to the landing field. 28 s from Old Town's sign to the
+  islands. Then Rue, Rollergirl, the mesa's ladders and Teo pass on the ordinary drivers. **Next is a flight**: `ch5b.0` wants
+  Skye's form (the lookout in Old Town) and a glide that comes down inside the field's cones -- a wing driver.
+
 - **CHAPTER 4 PLAYS THROUGH, THE ORB SHOT DOWN BY THE PADS (m480, `tools/play.mjs`).** 14 steps over `ch4`, `qorb`, `ch4b`, `ch4c` in
   161 s, no game faults. The orb driver is what a thumb does: within 18 m, the blaster taken out through `kitPick` (the left
   wheel's press), the camera's heading turned onto it (`airAim` takes an orb inside `OORB.aimCone` 0.19 rad of the lens, so

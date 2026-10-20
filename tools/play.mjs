@@ -40,7 +40,7 @@ const server = http.createServer((q, r) => {
     // THE SHIPPED TEXT, with one handle spliced in beside the game's own: the things the driver reads and writes
     const s = body.toString(), k = 'window.melee = window.mel = {';
     if (!s.includes(k)) { console.error('play: no mel handle in index.html'); process.exit(1); }
-    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK, OFERRY, socialGroup, socialOf, ROLEFORM, OORB, kitPick, WEAP, slotNow }; ' + k);
+    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK, OFERRY, socialGroup, socialOf, ROLEFORM, OORB, kitPick, WEAP, slotNow, IXING, islWorld }; ' + k);
   }
   r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
 });
@@ -219,6 +219,19 @@ try {
           st.fireT = (st.fireT || 0) + window.__clock.dt / 1000; const ph = st.fireT % 1.5, R = S.stick.R;
           if (ph < 1.15) { R.down = 1; R.x = 0; R.y = -1; R.far = 1; } else { R.down = 0; R.x = R.y = 0; R.far = 0; }
           if (!st.orbLog || st.t - st.orbLog > 6) { st.orbLog = st.t; st.log.push('orb hp ' + O.hpNow + ' d ' + d.toFixed(0) + ' slot ' + S.slotNow().key + ' @' + st.t.toFixed(1)); }
+          return '';
+        }
+        // m481: THE ROPE BRIDGES (`IXING.spans`, each its own sag `pt(t)` in the islands' frame): walked, not run -- the deck
+        // is 1.4 m wide -- sample by sample along every span in the chain, then onto the landing field
+        if (s.flag === 'isl:in' && S.IXING.spans && S.IXING.spans.length) {
+          if (!st.rope) { st.rope = []; for (const Sp of S.IXING.spans) for (let t = 0; t <= 1.0001; t += .08) { const q = Sp.pt(t), [x, z] = S.islWorld(q[0], q[2]); st.rope.push([x, z]); }
+            if (S.IXING.fieldAt) st.rope.push([S.IXING.fieldAt[0], S.IXING.fieldAt[2]]); st.ropeI = 0;
+            // start at the sample nearest him that is not behind the first one he can reach
+            let bd = 1e9; st.rope.forEach((q, i) => { const e = Math.hypot(q[0] - P.x, q[1] - P.z); if (e < bd) { bd = e; st.ropeI = i; } }); }
+          const Q = st.rope[Math.min(st.ropeI, st.rope.length - 1)];
+          if (Math.hypot(Q[0] - P.x, Q[1] - P.z) < (st.ropeI === 0 ? 3 : 1.2) && st.ropeI < st.rope.length - 1) st.ropeI++;
+          if (st.ropeI === 0) goTo(Q[0], Q[1], 2, true, true); else { st.side = 0; walk(Q[0], Q[1], false); }
+          if (!st.ropeLog || st.t - st.ropeLog > 15) { st.ropeLog = st.t; st.log.push('rope ' + st.ropeI + '/' + st.rope.length + ' y ' + P.y.toFixed(1) + ' @' + st.t.toFixed(1)); }
           return '';
         }
         // falls through to the ordinary flag driver

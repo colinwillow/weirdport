@@ -411,7 +411,9 @@ differ" table there, so no region feels like the last one.
         - [x] m470 **F0b-2b-2** Chapter 3 (Hollow Creek): 12 steps, 3 quests in 155 s -- the race WON at Rae's own 15 m/s in 51 s. Found and fixed on the way: **the biker never rode his bike** (since m374), the start hill's back stairs stopped every lap 2, a knocked body over the creek fell to -1000 for good, and `npm run places` had died at boot since m425.
         - [x] m479 **F0b-2b-3a** Chapter 4's first quest (`ch4`): the ferry ridden (board at Old Town, round the cabin to the far half, off over its own end), Rosa and Dex as the worker (the talk driver now picks the form by the speaker's group), an engineer's face (a role form), Uplift's gate. 5 steps.
         - [x] m480 **F0b-2b-3b** the orb side-quest the picker takes next (`qorb`: shoot down the pacifier orb -- the blaster through the pads, the camera at it), then `ch4b` (the control room, the lever, the line freed) and `ch4c` (the supervisor).
-        - [ ] **F0b-2b-4** Chapter 5 (the islands). - [ ] **F0b-2b-5** Chapter 6 (the Mothership).
+        - [x] m481 **F0b-2b-4a** Chapter 5's first quest (`ch5`): the rope bridges walked span by span, Rue, Rollergirl, up the mesa, Teo. 5 steps.
+        - [ ] **F0b-2b-4b** `ch5b`: Skye's form from the lookout and a glide down inside Rue's cones; the gap ramp on the board; up the needle.
+        - [ ] **F0b-2b-4c** `ch5c`: out to the lighthouse, the keeper in his storm. - [ ] **F0b-2b-5** Chapter 6 (the Mothership).
   - [ ] **F0c Every world boots** through the real loader with no red toast, in `places`.
 - [ ] **F1 Polish passes, region by region, with `npm run shot`.** The farm had five; each of the others
   gets at least three, one build each, fixing the worst thing in the shots and checked against the
