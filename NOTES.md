@@ -87,6 +87,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE FAIR'S STAGE AND GRANDSTAND ARE HIS ART (m529, T2k, `HCFAIR.stageG`, `?fstage=0`).** `fair_stage.glb` read straight from the
+  accessors: the stage's backdrop (FF_blue2) sits at glTF z +3.6 and the podium at z -1.5, where `buildFairground` has the
+  backdrop at -v and the podium at +v -- so both pieces are MIRRORED in z (`campPlace` default), unlike `fair_kit`'s stalls.
+  The grandstand's back wall reads x +4.7..5 = gu - 2.5 + 8 x .9 -- exact. Every collider (deck, the risers of .28, the rows of
+  .34, the catwalk and its rails, the walls) stays through `kx`; their drawing goes, as do the drawn-only truss spans, posts,
+  roof and the five lamp cans. The two canvas signs and the truss ladder stay. `STAGE GLB FAIL` in the chip if it does not load.
+
 - **DUMP TOWER STANDS (m528, F2b-1, `DTOWER`, `buildDumpTower`).** The Reptilians' seat, ten floors on its own plaza west of the
   city (ray 180 deg). One `farmFrame`, +v out from the city; 20 x 20 m, 4.2 m floors: lobby, offices x5, gym, sky garden,
   boardroom, penthouse, and the helipad on the roof. **The stair is 13 risers of .323 m** (under his .357 step, CLAUDE.md m368),

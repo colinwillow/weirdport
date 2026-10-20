@@ -104,7 +104,7 @@ different context window, let me know."*
   stays at u+.55, 3.3); `ff_livebarn` at (bu 16, bv 22) -- replaces the barn box, its flat roof and door (gambrel roof, cupola, a
   blank name board; the pens stay); `ff_gate` at (0, gv 25) -- replaces the posts, beam and the ticket booth (the arch of bulbs sits
   BEHIND the canvas sign at +.35 v). 196 / 3,426 / 104 / 392 / 392 / 278 / 983 faces.
-- [ ] **T2k. Swap in the stage and grandstand** (`models/campaign/fair_stage.glb`, no collision file -- `buildFairground` keeps every
+- [x] m529 **T2k. Swap in the stage and grandstand** (`models/campaign/fair_stage.glb`, no collision file -- `buildFairground` keeps every
   collider, the steps' and rows' boxes, both canvas signs and the truss ladder). Blender X = the fair frame's u, +Y = its +v.
   `ff_stage` at (0, S.v) on y: replaces the deck, the five steps a side, the backdrop, both pairs of speaker stacks, the podium,
   the four truss posts, both spans, the catwalk and its rails and the five lamp cans (box trusses with lacing, bunting on the deck's
