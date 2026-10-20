@@ -255,6 +255,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE DOCK PROPS ARE INSTANCED, AND THE BOLLARDS ARE HIS (m578, T3e-1, `DPK`, `dpPut`, `dpBuild`, `?dprops=0`).** The kit's six roots
+  repeat hundreds of times, so a call site `dpPut(name, x, y, z, yaw)` records a WORLD matrix where its code drew one (and keeps
+  its collider); `dpBuild` (after `buildPearl`, just before `buildDumpTower`) makes one InstancedMesh per root per material, the
+  bushes' `fbBuild` pattern. `dpPut` returns false with no file, and the call site draws its own. This build: `dp_bollard` at the
+  Pearl's rail bollards and dock 1's four, and the Waterfront's quay bollards. Rope coils, rings, lamps, pots and crates are
+  T3e-2/3. **A call site that runs AFTER `dpBuild` would put into a list nobody reads** -- keep new ones in builders above it.
+
 - **THE GORGE'S DAM (m576, F2c-4, `buildGorgeDam`, `GORGE.dam`, flag `gz:dam`, GOD `gzdam`).** 46 m above the falls (b 60) a concrete
   wall across the canyon, 6.2 m high, a railed walk on its crest, two sluice mouths and three buttresses on its downstream face, a
   winch house and a wheel on the crest, a ladder up its face from the river (-a side), the reservoir backed up behind it to the

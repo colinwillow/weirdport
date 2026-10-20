@@ -243,6 +243,9 @@ different context window, let me know."*
   (the life-ring tori: its own post, the ring facing +-Y, turned as the code turns the torus), `dp_pot` (the lobster-pot cylinders),
   `dp_crate` (the crate stacks at dock 1's corners and the Waterfront's pallets where they are crates). Instance them -- they repeat
   hundreds of times. 192 / 372 / 230 / 132 / 238 / 222 faces.
+  - [x] m578 **T3e-1** the bollards: the Pearl's rail and dock-1 bollards and the Waterfront's quay bollards, instanced (`DPK`, `dpPut`, `dpBuild`).
+  - [ ] **T3e-2** the rope coils and the life rings (`dp_rope`, `dp_ring`).
+  - [ ] **T3e-3** the Pearl's rail lamps, the lobster pots and the crate stacks (`dp_lamp`, `dp_pot`, `dp_crate`).
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
