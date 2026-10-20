@@ -140,6 +140,12 @@ different context window, let me know."*
   `setColorAt` each instance with its c0..c8 paint) and ONE of `wf_container_trim` (corner posts, castings, rails, locking bars,
   hinges -- dark steel, not tinted), each instance at (cu, cv, Y + l*CH) turned Bk.yaw + yj (+pi for e = -1). The three STRAYS use
   it too. ~330 boxes x 598 faces in two draw calls.
+- [ ] **T2p. Swap in the ship-to-shore crane** (`models/campaign/sts_crane.glb`, no collision file -- `wfCranes` keeps every collider,
+  both ladders, the crate stair, the box pad, and `wfCraneParts` keeps the moving trolley, cab, spreader and box). One root,
+  `wf_sts_crane`, Blender X = the frame's u, +Y = its v, origin at each crane's (K.u, 0) on Y, built at WCRANE's top 30 / boom 34.
+  Place one per `C.CRANES` entry and stop DRAWING what it replaces: the legs and their sills, the portal beams, the X braces, the
+  boom girders, their struts and ties, the catwalks and rails, the nose, the under-trolley beams, the A-frame and its stays, the
+  machine house and its roof, both red lights, the landing and its rails. 10,378 faces, one mesh (two cranes: ~20k).
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

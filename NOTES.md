@@ -5,6 +5,15 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m544 -- the ship-to-shore crane as art (scenery window; ROADMAP T2p)
+
+`models/campaign/sts_crane.glb`, at wfCranes' numbers so the catwalks, the landing, both ladders and the trolley's run all stay
+where the code has them. Box legs on sills with hazard stripes and wheel bogies, knees under the portal, X-braced sides and a low
+tie across the land legs; the boom as two real box TRUSSES (top and bottom chords with zigzag lacing and cross ties), grated
+catwalks with hangers and rails; the A-frame as lattice trusses with its steel stays to three points down the boom and a red light
+on the apex; the machine house with windows, vents, a door, roof plant, a red light and a blank board for the Uplift logo; the
+driver's cab under the boom and floodlights along it; the landing's grating and rails. Shipped unverified.
+
 ## m540 -- the shipping container as art (scenery window; ROADMAP T2o)
 
 The yard's ~330 containers were painted boxes with two door lines. `models/campaign/container.glb` is a real one at the code's
