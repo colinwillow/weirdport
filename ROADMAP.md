@@ -1001,13 +1001,13 @@ differ" table there, so no region feels like the last one.
     - [x] m650 **F2d-4a** its people: Skinsuits patrol the heart's block and their own on a beat round the block (the turf crowd adds more where they hold).
     - [x] m680 **F2d-4b** the way on: a spore pod from the nursery's mother pod up to the Mothership's tether (a ride, like the tower's tram).
     - [x] m684 **F2d-5** the chapter's beat: cure the city's held blocks back, a quest that holds it together.
-  - [ ] **F2e The metropolis hub**: the tall city in the middle of the map that the other regions ring,
+  - [x] m702 **F2e The metropolis hub**: the tall city in the middle of the map that the other regions ring,
     opened a part at a time as chapters complete; Dump Tower stands in it.
     - [x] m689 **F2e-1** the core's towers: a packed cluster of skyscrapers round Dump Tower on the west ring, solid to one shared terrace level (Dump Tower's sky-garden floor), set back above it, sky-bridges between facing terraces, a fire escape up from the street, lit windows, roof tanks. GOD `core`.
     - [x] m694 **F2e-2** the way across: a sky-bridge from the nearest terrace into Dump Tower's sky garden, and street life at the towers' feet (lobbies, kiosks, a crossing, traffic islands) so the streets between them are a place, not gaps.
     - [x] m696 **F2e-3** the workers who keep it running: window cleaners on cradles down the faces, a lift engineer, street sweepers, a doorman per lobby -- people with a beat and lines.
     - [x] m700 **F2e-4** the alien grip: beams from Dump Tower's crown to the towers' roofs, the core dim and its streets fenced while they stand; each region cured (chapter done) cuts one beam and lights a tower back up, the last at Chapter 6.
-    - [ ] **F2e-5** the horizon agrees: the distant skyline (`SKYLINE`) re-aimed or retired so what you see from the farm is the core you can walk to.
+    - [x] m702 **F2e-5** the horizon agrees: the distant skyline (`SKYLINE`) re-aimed or retired so what you see from the farm is the core you can walk to.
 - [ ] **F3 The rest of the grid and the fail states** (`LORE.md`): the projector, poltergeist and relay
   orbs; the EM tell (lights flicker, cars stall, radios hiss near the grid); the Hum; black triangles at
   night and tic-tacs that chase flyers; **missing time** as the capture fail state and something at
@@ -1963,3 +1963,7 @@ differ" table there, so no region feels like the last one.
   collider. A blocking fence would close off the cradles, the bridges and the fire escape before Chapter 1 has even sent you here.
   The towers are freed in even steps across chapters 1-6 (SAVE.ch 2..7), the farthest from Dump Tower first. All of them are freed
   once Dump Tower falls.
+- **m702 (F2e-5): the skyline stays, re-aimed through the real core.** From the farm, the walkable towers round Dump Tower stand
+  in front of the scenery, which now reads as the rest of the metropolis behind them (the Pearl's towers, the hill and mast, the
+  waterfront strip). The skyline's own 640 m Dump Tower and its Old Town are no longer drawn, because the real ones are right
+  there. It falls back to the old aim if the core did not build.

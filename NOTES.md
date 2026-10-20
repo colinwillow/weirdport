@@ -651,6 +651,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m702 (F2e-5): THE SKYLINE AIMS THROUGH THE REAL CORE** (`SKYLINE.real`, `SKYLINE.realSkip`). `buildSkyline` runs after
+  `buildMetroCore`; when the core has towers it aims from the farm through `DTOWER.frame`'s origin rather than the island's middle,
+  and drops its own Dump Tower (and beacon) and its `oldtown` district. Two Dump Towers on one bearing -- a 42 m one you can walk
+  into and a 640 m one behind it -- was the disagreement. `placecheck`: `SKYLINE 113 boxes, centre [-1517,-561] one mesh aimed
+  through the core`. F2e is complete.
+
 - **m700 (F2e-4): THE GRIP ON THE CORE** (`mcoreGrip`, `MCORE.beams` / `mems` / `winM` / `order`). A beam (one additive cylinder each)
   from Dump Tower's crown (y0 + N*H + 4) to every tower's roof; a magenta membrane (drawn only) across every street-crossing gap;
   each tower's windows on their OWN material (`win0..9`) so the grip can turn one magenta and dim. `mcoreGrip` frees
