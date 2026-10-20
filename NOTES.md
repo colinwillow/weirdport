@@ -255,6 +255,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **HIS LAMPS, POTS AND CRATES ON THE PEARL (m580, T3e-3; the dock props kit is done).** Every third rail post on the Pearl's piers is
+  `dp_lamp` (4.76 m, its glass where the code's sphere was) in place of the pole, sphere and cone; dock 1's corners have `dp_crate`
+  two high (.45 each, the code's own heights) turned the code's .1 k, and three `dp_pot`s, the middle one up on .41 -- the
+  measured heights of his roots. The bottom crates' colliders stay. `dpPut` false keeps the code's drawing. The Waterfront's
+  pallets are flat pallets, not crates, so they stay the code's.
+
 - **HIS ROPE COILS AND LIFE RINGS (m579, T3e-2, `dpPut('dp_rope' / 'dp_ring')`).** Every coil the code drew as a torus -- the Pearl's
   rail bollards (every other one), dock 1's first bollards, the ferry's landing stage, both pontoons -- is an instance of
   `dp_rope` on the ground there (a yaw off its position so they are not all the same way round). The Pearl's life rings are

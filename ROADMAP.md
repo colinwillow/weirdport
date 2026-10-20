@@ -237,7 +237,7 @@ different context window, let me know."*
   (it adds a peaked two-tone roof, cross braces, a clipboard and a wind sock); `rf_rack` at (-14.5, 5) in place of the posts, beam
   and the three wing triangles; `rf_chalk` at (-8, 15.5) in place of its legs, board and lines; `rf_bench` at (-13, 14.5) turned
   r2 = .5 as the code's (its slats along X). 267 / 141 / 66 / 48 faces.
-- [ ] **T3e. Swap in the dock props kit** (`models/campaign/dock_props.glb`, no collision file -- every call site keeps its colliders).
+- [x] m580 **T3e. Swap in the dock props kit** (`models/campaign/dock_props.glb`, no collision file -- every call site keeps its colliders).
   Six roots, each on its own ground centre: `dp_bollard` (.55 high: the Pearl's two geos per bollard, and the Waterfront's quay and
   pier bollards), `dp_rope` (the torus coils), `dp_lamp` (the Pearl's rail lamps: pole + sphere + cone, its glass at 4.3), `dp_ring`
   (the life-ring tori: its own post, the ring facing +-Y, turned as the code turns the torus), `dp_pot` (the lobster-pot cylinders),
@@ -245,7 +245,7 @@ different context window, let me know."*
   hundreds of times. 192 / 372 / 230 / 132 / 238 / 222 faces.
   - [x] m578 **T3e-1** the bollards: the Pearl's rail and dock-1 bollards and the Waterfront's quay bollards, instanced (`DPK`, `dpPut`, `dpBuild`).
   - [x] m579 **T3e-2** the rope coils and the life rings (`dp_rope`, `dp_ring`).
-  - [ ] **T3e-3** the Pearl's rail lamps, the lobster pots and the crate stacks (`dp_lamp`, `dp_pot`, `dp_crate`).
+  - [x] m580 **T3e-3** the Pearl's rail lamps, the lobster pots and the crate stacks (`dp_lamp`, `dp_pot`, `dp_crate`).
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
