@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m643 -- Dump Tower's plaza and doors as art (scenery window; ROADMAP T4h)
+
+`models/campaign/tower_plaza.glb`. A turned gold bollard with a ball crown at the code's .9; the plaza planter at the code's 2 x 2
+gold box with a marble lip and a clipped ball tree of r 1.2 at 1.9; the lobby's doors for the 5 m gap the code leaves in the city
+side of the curtain wall, a gold portal with a revolving door of four glass wings, glass swing doors either side, a canopy on tie
+rods and a red mat; and the badge reader for the security vestibules on floors 8 and 9. Shipped unverified.
+
 ## m639 -- the BASE jumpers' shack as art (scenery window; ROADMAP T4g)
 
 `models/campaign/island_base.glb`, for the shack `buildIslandBase` puts behind the exit point on the mesa. A weatherboard hut in
