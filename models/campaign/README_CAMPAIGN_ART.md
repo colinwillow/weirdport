@@ -37,6 +37,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `food_cart.glb` | Old Town's four food carts | origin at the cart's centre on the ground, X along the cart (2.8), +Y its front; `fc_cart_paint` is one white material to tint per cart, `fc_cart_trim` the steel and fittings, `fc_cart_shutter` for the shut one | none | 62 / 648 / 60 |
 | `lighthouse.glb` | the River Islands' lighthouse and keeper's cottage | lighthouse: origin (K.u, K.v) on the rock top, its door on Blender +Y (turn to dA); cottage: origin (cu0, cv0), door on +Y, turned cps | none | 1,362 / 272 |
 | `site_kit.glb` | Old Town's building site: tower crane, site office, mixer, skip, a hoarding panel | Blender X = site frame u, +Y = v, origins on the ground at the code's centres; the crane's jib along +X (turn to ja); the hoarding panel's street face is -Y | none | 60-1,448 per piece |
+| `market_stall.glb` | the Pearl's plaza market stalls | origin at the stall's centre on the deck, X along the counter, turned `f`; `pm_stall_paint` one white material tinted per stall, `pm_stall_trim` the rest | none | 100 / 1,340 |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

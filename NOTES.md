@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m561 -- the Pearl's market stall as art (scenery window; ROADMAP T2x)
+
+`models/campaign/market_stall.glb`, at buildPearl's stall numbers. A peaked striped canopy with a scalloped valance, its coloured
+stripes and the counter's skirt in ONE white material for the code's five pastels, the white stripes, ridge and the rest in trim:
+poles, a counter top, four crates of fruit tipped to the front, a scale, a chalk A-board, bulbs along both valances, a hanging
+basket of greens, crates under the counter. Shipped unverified.
+
 ## m560 -- the building site's pieces as art (scenery window; ROADMAP T2w)
 
 `models/campaign/site_kit.glb`, at buildSite's numbers. The TOWER CRANE: a lattice box-truss mast on a pad with anchor plates,
