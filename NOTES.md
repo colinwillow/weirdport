@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m620 -- Dump Tower's floors as art (scenery window; ROADMAP T3x)
+
+`models/campaign/tower_floors.glb`, for the furniture `buildDumpTower` draws floor by floor. The lobby's gold-fronted marble desk
+with two screens and the dark name wall behind it with its gold plate, an oxblood leather sofa on gold feet, and a gold urn with a
+clipped ball tree; an office desk with a monitor, keyboard and a swivel chair; a treadmill and a weight bench with a loaded bar for
+the gym; the sky garden's marble-planted tree and a teak bench on gold legs; the 3 x 10 m boardroom table and a leather executive
+chair; and the penthouse's white sofa, gold-and-marble coffee table and a stack of gold coins. Shipped unverified.
+
 ## m618 -- the food-cart pod's dressing as art (scenery window; ROADMAP T3w)
 
 `models/campaign/cart_pod.glb`, for the m488 block of `buildCarts`. A slatted picnic table with its benches on A-frame legs, the

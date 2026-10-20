@@ -361,6 +361,15 @@ different context window, let me know."*
   (-3.4, 5.6) and (3.6, .6); the sail clears the umbrellas); `cp_planter` at the three potted plants on the deck in place of pot +
   ico; `cp_gas` at each gas bottle; `cp_bin` at each cart's bin; `cp_generator` at (0, -9.4) in place of the 'dark' box; the
   crates behind the carts -> `ce_crate` (camp_extras) scaled to .6 x .5 x .48.
+- [ ] **T3x. Swap in Dump Tower's floors** (`models/campaign/tower_floors.glb`; no collision -- keep every box that collides). In
+  `buildDumpTower`'s "what the floor is for", Blender X = u, +Y = v, origins on the floor f. LOBBY: `dt_lobbydesk` at (3, 3) in
+  place of the gold desk and the dark name wall (the wall is in it at +.7); `dt_lobbysofa` at (+-6, -6); `dt_urn` at (+-8.5, -8.5)
+  in place of the gold cylinder and the plant sphere. OFFICES: `dt_desk` at each (u, v) in place of top, base and screen (its
+  chair is in it at -.75). GYM: `dt_treadmill` at (-1 + c * 3, -7.5) (its console at -Y) in place of both boxes; `dt_weights` at
+  (1 + c * 3, 5) in place of the 'carpet' box. GARDEN: `dt_tree` at each of the six in place of soil, trunk and ico; `dt_bench` at
+  the six benches. BOARDROOM: `dt_boardtable` at (2, 0) in place of top and base; `dt_execchair` at each chair, turned to face
+  the table (s2 = -1 -> +pi/2, +1 -> -pi/2). PENTHOUSE: `dt_whitesofa` at each sofa turned by r; `dt_coffeetable` at (4, -1);
+  `dt_coins` at the three gold cylinders.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
