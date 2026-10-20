@@ -26,6 +26,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **RUE'S FIELD, DRESSED (F1-IS2, m504, `buildCrossing`'s field block).** The landing rock read as cones on a lawn. Added:
+  two flat white rings (2.2 and 4.4 m) round the cross, seven stepping stones from the rope bridge's end, and outside the
+  ring Rue's blue-and-yellow canopy with a table, a rack of three folded wings (triangles), a chalkboard, a bench (solid)
+  and 40 wildflowers. **Nothing solid within 9 m of the cross** -- the flight lands anywhere in the 6.5 m ring and a wall
+  at its edge would be a crash, not a touchdown. `play ch5` COMPLETE (the flight onto the field included).
+
 - **LIGHTHOUSE ROCK, DRESSED (F1-IS1, m503, `buildIsles`).** Six island shots (`npm run shot islanding ismesa isskate isstrait
   islight isbase`, new entries); the worst was the lighthouse -- a white tube, two bands. Added: the lantern's gallery
   (a ring rail on 12 posts) and 8 mullions in the glass, a vent ball on the cap; a red door and a stone apron at the foot,
