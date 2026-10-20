@@ -177,3 +177,11 @@ The kit's walls already carry 2, 3 and 4. `kit_hf` adds 1, 2 (string courses), 6
 ## Textures from his photos
 - `t_setts.png`: the basalt setts, straight-down phone photo, lighting flattened, made tileable. Streets and promenade.
 - Candidates from the same walk: the modern pale brick with the dark soldier bands (a 2 m tile), the whitewashed brick with the red showing through (the warehouse), the reclaimed oak slats (the table) for decking and boat hulls, the orange brick with white mortar (a 1 m tile).
+
+## Three of everything (the kit rule)
+
+A kit is not a hundred pieces; it is THREE of each thing, and the combinations do the rest. Three corners, three awnings, three roofs, three bricks, two or three doors, three windows, three parapets, three shop fronts. Each one is a different IDEA, not a recolour: the steel canopy with slats, the straight fabric awning with a valance, the curved drape with a scalloped front. Then colour and texture multiply them.
+
+And the massing: a building is not one rectangle. The upper floors jog left of the lower ones, or the middle third of a long front steps out half a metre, or the corner is cut, or the top floor is set back behind a terrace. Subtle: half a metre, one bay. It breaks the straight line from every angle and gives the formula (plinth, string course, cornice) corners to turn.
+
+Done in Glowtide: three awnings (`kit_awnings`). Next: the massing offsets in the block fitter (each block gets ONE jog), and three parapet kinds.
