@@ -5,6 +5,16 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m475 -- the farm bushes (scenery window, art only; the swap is ROADMAP T2d)
+
+Colin: *"bushes on the farm land."* `models/campaign/farm_bushes.glb`: four soft, rounded pieces in the Sites painting's greens --
+`fb_hedge` (one 2.7 m hedge piece on an earth bank, the exact length of `FBOUND.piece`, so it replaces the bank ellipsoid and three
+faceted ico0 clumps one for one), `fb_round`, `fb_cypress`, `fb_flower` (orange/red blooms: the five percent loud colour).
+Every lump is flattened AT THE GROUND, not above it: the first render had every bush floating because the underside was clamped
+relative to the lump's own radius rather than to y = 0. The hedge is subdivision 2 throughout (740 tris) because it repeats along
+every field edge; the free-standing bushes can afford 3. No collider file: the hedge keeps its code box, the bushes are scenery.
+Code untouched; the loop swaps it in (T2d). Shipped unverified.
+
 ## Landmines
 
 - **THE CRASH WRECK IS HIS MODEL (m474, T2a, `crashModel`, `CRASH.model`).** `models/campaign/crash_wreck.glb` (3,140 tris, 46

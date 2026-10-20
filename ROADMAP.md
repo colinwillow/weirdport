@@ -50,6 +50,12 @@ different context window, let me know."*
   side, a work light at the other end; `barricade` is jersey barriers; `pbarricade` is the crowd fence. Their collider boxes make
   the line SOLID to 1.25 m (car 1.5), so with `GATE.hi` above that a jump over it is a deliberate act -- pair it with the cops'
   reaction (Colin: "when the cops block the bridge you can just physically jump over the barricade"). Keep the gate's own logic.
+- [ ] **T2d. Swap in the farm bushes** (`models/campaign/farm_bushes.glb`, no collision file). Four roots, origin on the ground at
+  the centre: `fb_hedge` (one 2.7 m hedge piece on its earth bank, Blender X = along the run = three x, 740 tris -- the same length
+  as `FBOUND.piece`, so it replaces the bank ellipsoid + three ico0 clumps one for one; keep the hedge's own box collider and
+  instance it), `fb_round` (1.6 m round bush), `fb_cypress` (2.6 m tall cone, 41 tris) and `fb_flower` (0.9 m mound with orange/red
+  blooms). Scatter round/cypress/flower along the hedge lines, by the farmhouse and at field corners (Colin: "bushes on the farm
+  land"); a random yaw and 0.85-1.15 scale per copy. Opaque, vertex-free plain materials (FB_*), smooth normals.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
