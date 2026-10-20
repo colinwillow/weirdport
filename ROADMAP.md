@@ -417,7 +417,7 @@ differ" table there, so no region feels like the last one.
         - [x] m484 **F0b-2b-4c-1** the islands made fair: a body out of the world (under it, or a quest's body in the sea) is put back where it last STOOD on a floor; a body turned or cured out there comes out at that spot; the gap's landing moved to where a real run comes down; the board leaves a curved lip on its angle at speed. Gap cleared in ~14 s (most seeds); the keeper beaten on seed 2.
         - [x] m485 **F0b-2b-4c-2** what is left of `ch5c`: the gap is still wind-dependent on some seeds (a head gust lands it short), and on seed 1 the driver ends up on the lighthouse's top after every teleport down to the boss (the sea's put-back takes him up there) -- look at where `islePutBack` sends him off the lighthouse rock.
         - [x] m486 **F0b-2b-5** Chapter 6 (the Mothership): 15 steps, 3 quests in 125 s -- the pod up the tether, the six locks each in its own form, the shaft, the seven-down boss, the end.
-  - [ ] **F0c Every world boots** through the real loader with no red toast, in `places`.
+  - [x] m487 **F0c Every world boots** through the real loader with no red toast (`npm run worlds:boot`: the shipped page in headless Chromium, every world, a note in the chip's red list or a page error is BAD). 6 of 7 clean; `alien` keeps `GLB NO IMG 20` on purpose (see Decisions).
 - [ ] **F1 Polish passes, region by region, with `npm run shot`.** The farm had five; each of the others
   gets at least three, one build each, fixing the worst thing in the shots and checked against the
   world rules (exaggerated scale, connective tissue, vertical, no straight borders, nothing bare):
@@ -1315,4 +1315,8 @@ differ" table there, so no region feels like the last one.
 - **m486: the playthrough puts him ONTO the tether's pod** (a teleport, said in the row) rather than flying the thermal up to it --
   the flight is the one piece of Chapter 6 the harness does not do with a thumb's inputs. Everything after is walked, ridden
   and fought. **The whole campaign now plays through headless**, Chapter 0 to the end, a chapter per `npm run play chN`.
+- **m487: the alien world's `GLB NO IMG 20` stays RED.** It is a fact about his export (20 texture slots with no image), the alien
+  world is the other window's, and the note is how that reaches him -- quieting it would hide the data, not fix it. Every other
+  world boots with nothing in the red list. The old toon city's island grass is white by construction (it has no grass
+  material); that is said in the console now, not in red.
 

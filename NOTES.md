@@ -17,6 +17,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **EVERY WORLD BOOTS, AND `npm run worlds:boot` SAYS SO (m487, F0c).** `tools/worlds.mjs --boot`: the shipped page through the real
+  loader in headless Chromium, each world once, no places and no costs -- a note in `MISSING` (the chip's red list, `note()`)
+  or a page error is a BAD row and exits 1. First run: tkit 50.8 s, kit 14.9, weirdport 7.1, test 10.9, plaza 6.7 clean;
+  **toon** `ISLE 2/3 TEX` (the old toon city has no `WR_Grass_b`, or any grass material -- by construction, now a console
+  line in that world only); **alien** `GLB NO IMG 20` (his export's image-less texture slots; left red on purpose, it is his
+  data and the other window's world). Boot times are SwiftShader's: a ratio between worlds, never a phone's number.
+
 - **THE WHOLE CAMPAIGN PLAYS THROUGH HEADLESS (m486, F0b done).** Chapter 6: the tether's pod (`shipPodStep`: he is put on its top while
   it is down -- the thermal flight up to it is the one step not done with a thumb's inputs -- held still while it rises, off
   to the hull's middle at its floor), Benny, the bridge, **the six locks each in the form its gate type names** (the gate driver

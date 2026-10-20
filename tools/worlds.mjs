@@ -50,6 +50,9 @@ await new Promise(ok => server.listen(0, ok));
 const port = server.address().port;
 const WHO = process.argv.includes('--who');     // print who draws at every place
 const AT = (process.argv.find(a => a.startsWith('--at=')) || '').slice(5).split(',').filter(Boolean);   // only these places
+// m487 (F0c): `--boot` -- every world booted through the real loader and NOTHING ELSE: no places, no costs. A note in the
+// chip's red list (`MISSING`, which is what `note()` writes and what he sees) or a page error is a BAD row and exits 1.
+const BOOT = process.argv.includes('--boot');
 const want = process.argv.slice(2).filter(a => !a.startsWith('--')).length ? process.argv.slice(2).filter(a => !a.startsWith('--')) : Object.keys(WORLDS);
 const t0 = Date.now(), el = () => ((Date.now() - t0) / 1000).toFixed(0) + 's';
 const browser = await pw.chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
@@ -65,6 +68,9 @@ for (const w of want) {
     await page.waitForFunction(() => document.getElementById('boot').classList.contains('gone') && window.__shot && window.mel, null, { timeout: 240000, polling: 1000 });
     const boot = await page.evaluate(() => ({ ms: mel.PERF.bootMs, notes: (window.__shot.MISSING || []).join(', ') }));
     const R = { w, bootS: boot.ms / 1000, wall: (Date.now() - tw) / 1000, at: [], errs, notes: boot.notes.trim() };
+    if (BOOT) { const ok = !R.notes && !errs.length; if (!ok) code = 1;
+      console.log(`${ok ? 'ok  ' : 'BAD '} ${w.padEnd(10)} boot ${R.bootS.toFixed(1)} s (swiftshader)` + (R.notes ? `  RED: ${R.notes}` : '') + (errs.length ? `  PAGEERROR: ${errs.join(' | ')}` : ''));
+      await page.close(); continue; }
     for (const pl of places) {
       const went = pl ? await page.evaluate(id => mel.go(id), pl) : 'spawn';
       // THE HEADING IS SET, NOT INHERITED: a place with no heading of its own kept the last place's, and Old Town read 534 one

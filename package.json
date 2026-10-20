@@ -26,7 +26,8 @@
     "places": "node tools/placecheck.mjs",
     "play": "node tools/play.mjs",
     "shot": "node tools/shot.mjs",
-    "worlds": "node tools/worlds.mjs"
+    "worlds": "node tools/worlds.mjs",
+    "worlds:boot": "node tools/worlds.mjs --boot"
   },
   "type": "module",
   "devDependencies": {
