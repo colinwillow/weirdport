@@ -428,7 +428,7 @@ different context window, let me know."*
   awning `pearlSeg`, the two awning posts, the rail, the five rigs and the bench (it adds a drum and a crate round the back).
   Every number is the code's: hut 2.6 x 3.4 x 2.3, awning from x 1.3 at 2.4 to x 3.1 at 2.0, rigs on the rail at x 2.0,
   (k - 2) * .62 along Y, bench at x 2.75.
-- [ ] **T4h. Swap in Dump Tower's plaza and doors** (`models/campaign/tower_plaza.glb`; no collision -- keep every box that
+- [x] m644 **T4h. Swap in Dump Tower's plaza and doors** (`models/campaign/tower_plaza.glb`; no collision -- keep every box that
   collides). In `buildDumpTower`, Blender X = u, +Y = v, through `dtPut`: `dt_bollard` at each of the six gold bollards
   (k * 2.6, y0, -D2 - 8); `dt_planter` at (+-9, y0, -D2 - 4) in place of the gold box, the plant sphere and the trunk; `dt_doors`
   at (0, y0, -D2) in the lobby's 5 m gap (k = 0, side 's'), its outside -Y toward the city, adding a revolving door, glass swing

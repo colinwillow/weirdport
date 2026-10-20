@@ -473,6 +473,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **DUMP TOWER'S PLAZA AND DOORS ARE HIS ART (m644, T4h, `tower_plaza.glb`, `?tplaza=0`).** Through `dtPut`:
+  - `dt_bollard` stands at the six bollards.
+  - `dt_planter` stands at the two planters; their gold colliders stay with the drawing popped.
+  - `dt_doors` sits in the lobby's 5 m gap: a revolving door, swing doors, a canopy and a mat, none of them colliders, so
+    the gap stays walkable.
+  - `dt_reader` stands beside each security vestibule's door on floors 8 and 9, at the code's own reader point (u1 + .25),
+    unturned.
+
 - **THE HOTHOUSE'S TWILIGHT, SPREAD AND CUT (m642, F2d-2, `HOTH.tw/every/push/cap/cut`, `hothCut`).**
   - **The twilight** damps in by how grown the player's block is. **It snapshots the fog colour and the sun and hemi
     intensities when it starts, writes from that base every frame while it is on, and restores and drops the base at zero.**
