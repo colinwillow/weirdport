@@ -994,7 +994,7 @@ differ" table there, so no region feels like the last one.
     opened a part at a time as chapters complete; Dump Tower stands in it.
     - [x] m689 **F2e-1** the core's towers: a packed cluster of skyscrapers round Dump Tower on the west ring, solid to one shared terrace level (Dump Tower's sky-garden floor), set back above it, sky-bridges between facing terraces, a fire escape up from the street, lit windows, roof tanks. GOD `core`.
     - [x] m694 **F2e-2** the way across: a sky-bridge from the nearest terrace into Dump Tower's sky garden, and street life at the towers' feet (lobbies, kiosks, a crossing, traffic islands) so the streets between them are a place, not gaps.
-    - [ ] **F2e-3** the workers who keep it running: window cleaners on cradles down the faces, a lift engineer, street sweepers, a doorman per lobby -- people with a beat and lines.
+    - [x] m696 **F2e-3** the workers who keep it running: window cleaners on cradles down the faces, a lift engineer, street sweepers, a doorman per lobby -- people with a beat and lines.
     - [ ] **F2e-4** the alien grip: beams from Dump Tower's crown to the towers' roofs, the core dim and its streets fenced while they stand; each region cured (chapter done) cuts one beam and lights a tower back up, the last at Chapter 6.
     - [ ] **F2e-5** the horizon agrees: the distant skyline (`SKYLINE`) re-aimed or retired so what you see from the farm is the core you can walk to.
 - [ ] **F3 The rest of the grid and the fail states** (`LORE.md`): the projector, poltergeist and relay

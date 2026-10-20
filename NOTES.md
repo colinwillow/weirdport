@@ -638,6 +638,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m696 (F2e-3): THE CORE'S WORKERS** (`MCORE.cradles`, `mcoreStep`, `MCORE.DOOR`). Two WINDOW-CLEANING CRADLES on the sea face (+v)
+  of the two towers nearest Dump Tower, each a `BDYN` box (turned with the frame: `cs = cos th`, `sn = -sin th`, the ladder's
+  convention) going street <-> terrace on its own at `cradleV` 1.1 m/s, `cradleWait` 7 s at each end; standing on one carries you
+  (dy only), and the terrace rail opens for it (a `gaps` entry on the +v edge). Cables, davits and posts are drawn only. A doorman at
+  every lobby within 60 m, the lift engineer on the nearest terrace by its davit, two sweepers walking the lobbies' loop the other
+  way round. Cradle cables are static (they run the whole height); a cradle has no cleaner riding it -- the engineer explains it.
+  `placecheck` CORE: `ok  CORE 10 towers, 8 sky-bridges, terrace 25.12 | ladder top lands on 25.12 | -22,0 stone 26m 22,0 glass 43m 20,-16 steel 40m 20,16 steel 54m -20,-18 brick 25m 42,10 stone 26m 38,-22 steel 41m 56,-8 glass 52m -68,-6 glass 26m 74,-8 brick 26m | into Dump Tower 2 (25.12, 25.12 just outside its doors), kiosks 8 | cradles -1.1->25....`
+
 - **m694 (F2e-2): INTO DUMP TOWER, AND THE STREETS BETWEEN THE TOWERS** (`DTOWER.skyDoor`, `MCORE.PEOPLE`, `MCORE.dtLinks`). Dump
   Tower's floor 6 (the sky garden) has a door in its west and east glass (`skyDoor`, v -1.4..1.4); `buildMetroCore` bridges each to
   the nearest core terrace across from it whose face spans the door (within 30 m), or glazes the door back in if there is none. The
