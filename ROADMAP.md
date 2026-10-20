@@ -303,7 +303,7 @@ different context window, let me know."*
   of the two 'red' boxes and the 'post' box (it sits on four cinder blocks, no wheels -- they are in its bed); `rp_pole` + `rp_flag`
   at (fu, 1, fg) in place of the steel box and the plane -- the flag flies along +v off the pole at 4.9..5.9 like the plane did;
   it is ONE white material, tint it with the 'flag' colour. The barrel also fits any other burn barrel (gate, camp, gang bridge).
-- [ ] **T3p. Swap in the Pearl's roof gardens** (`models/campaign/roof_garden.glb`, no collision file -- keep `pearlGarden`'s boxes as
+- [x] m605 **T3p. Swap in the Pearl's roof gardens** (`models/campaign/roof_garden.glb`, no collision file -- keep `pearlGarden`'s boxes as
   colliders, hidden). All in the warehouse's frame: X = the code's a, Blender +Y = its b, turned by `W.yaw`. `rg_bed_veg` /
   `rg_bed_flower` (alternate by the seed) at each bed's (ja, jb, y), scaled X by w2 / 2 (built 2.0 x 0.9 x 0.5, soil at .5), in
   place of the 'bed' and 'soil' boxes AND the ico plants -- the plants are in the model. `rg_tank` at the tank's corner (the 2.2 m

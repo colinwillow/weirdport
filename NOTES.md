@@ -344,6 +344,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE PEARL'S ROOF GARDENS ARE HIS ART (m605, T3p, `roof_garden.glb`, `?rgarden=0`).** In `pearlGarden`, mirrored in z and
+  turned `W.yaw` like the boxes:
+  - `rg_tank` stands at the tank's corner.
+  - `rg_pergola` replaces the posts, slats and bench.
+  - `rg_bed_veg` / `rg_bed_flower` alternate by (n + seed) % 2, with X scaled w2 / 2. They replace the bed, the soil and the
+    ico plants.
+  Every collider stays, hidden. **The plants' `rr()` rolls are still spent** (a no-op draw), so the beds after them land where
+  they did. A missing file says `RGARDEN GLB FAIL`.
+
 - **THE TRAILER PARK'S RIM PROPS ARE HIS ART (m603, T3o, `rim_props.glb`, `?rim=0`).** These are mirrored in z:
   - `rp_barrel` stands at the burn drum; its box stays as the collider and the tame fire still starts at g + 1.0.
   - `rp_pickup` is turned .3 like its boxes. The body and the blocks stay as hidden colliders and the cab drawing is gone.
