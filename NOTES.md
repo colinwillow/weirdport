@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m701 -- the fair field's poles and bunting as art (scenery window; ROADMAP T5g)
+
+`models/campaign/fair_field.glb`, for the field `buildFairground` hangs its bunting over: the code's 6 m pole tapered, with a red cap,
+three hooks where the lines tie on and a guy rope to a peg; and a pennant at the code's .4 x .45, one white material for its three
+colours, on a length of cord. T5g also maps the field's hay, the trucks at the gate and the stage's flag onto pieces already in the
+repo (the MX hay bale, the rally truck, the rim flagpole). Shipped unverified.
+
 ## m698 -- the MX track's start gate and hay bales as art (scenery window; ROADMAP T5f)
 
 `models/campaign/mx_extras.glb`, for `buildBikeTrack`. The start gate on the hill's front edge at the code's seven posts across the

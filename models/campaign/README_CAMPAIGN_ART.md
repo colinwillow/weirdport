@@ -98,6 +98,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `mill_floor.glb` | the mill floor: `ml_sawline` (21 m roller bed, head saw under a hood, motor, control box), `ml_pile4` / `ml_pile3` (log piles with cut ends), `ml_dust` (sawdust heap r 1) | origins on the floor; X = u, +Y = v | none | 12-542 per piece |
 | `trailer_porch.glb` | the trailer park's `tpc_awning` (corrugated tin on two posts, rust, bulbs) and `tpc_porch` (1.7 x 2.2 deck, posts, a step) | origins at the code's awning / porch centres; +X away from the trailer | none | 90-202 per piece |
 | `mx_extras.glb` | the MX track's `mx_gate` (start gate: seven posts, six drop-plates with number boards, yellow bar, lever; 6 m across X) and `mx_hay` (twined bale 1.5 x .9 x .85) | origins on the ground at their centres | none | 134-204 per piece |
+| `fair_field.glb` | the fair field's `fg_pole` (6 m bunting pole, cap, hooks, guy rope) and `fg_pennant` (tintable .4 x .45 pennant on its cord) | pole on the ground; pennant's origin on its line | none | 8-84 per piece |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

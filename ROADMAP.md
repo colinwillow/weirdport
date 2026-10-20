@@ -566,6 +566,13 @@ different context window, let me know."*
   In `buildBikeTrack`: `mx_gate` at at(-2.3, 0) on g0 + h, turned so its X runs across the lanes (the code's at(-2.3, w) line) and
   its plates face down the track, in place of the seven steel posts and the yellow bar (six drop-plates with number boards between
   them, and the release lever off its end); `mx_hay` at each hay bale's (u, g, v) turned like its box, in place of the 'hay' box.
+- [ ] **T5g. Swap in the fair field's poles, bunting, hay, trucks and flag** (`models/campaign/fair_field.glb` plus pieces already in
+  the repo; no collision -- keep the hay and truck boxes). In `buildFairground`, Blender X = u, +Y = v: `fg_pole` at each of the six
+  bunting poles (u, y, v) in place of the wood box; `fg_pennant` (ONE white material, tint bunt1/2/3) at each of the code's pennant
+  points (its top edge on the line), turned like the code's triangle, in place of the triangle geometry; `mx_hay` (mx_extras),
+  scaled (1.07, 1.11, 1.06), at each of the five hay bales; `rt_paint` + `rt_trim` (rally_truck, paint tinted 'truck') at each of
+  the four trucks outside the gate, nose toward -v, in place of the three boxes; `rp_pole` + `rp_flag` (rim_props) scaled Z by 2 at
+  the stage's flag, in place of the 12 m steel box and the plane.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
