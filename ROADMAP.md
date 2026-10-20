@@ -172,6 +172,13 @@ different context window, let me know."*
   three +z exactly as the code's); `ft_flat` in place of the frame, deck, two stakes and wheels (KEEP the five logs); `ft_caboose`
   in place of the frame, deck, body, cupola, roof and the two yellow bars. Each has two-axle trucks, couplers and striped end sills.
   658 / 438 / 656 faces.
+- [ ] **T2u. Swap in the food carts** (`models/campaign/food_cart.glb`, no collision file -- `buildCarts` keeps the colliders, the
+  canvas roof SIGNS and everything else in the pod). Origin at each cart's centre on the ground, Blender X along the cart, +Y its
+  FRONT toward the tables, so place at (u, v, g) turned `yaw` exactly as the body box. Per cart: `fc_cart_paint` tinted with K.col
+  (it is ONE white material -- clone it per cart or instance it with setColorAt) in place of the body box and the awning;
+  `fc_cart_trim` in place of the roof, window, counter, wheels, hitch and sign board (the code's sign plane sits on its board's front
+  at +.27, unchanged); and for `K.shut` add `fc_cart_shutter` (and skip the awning: the paint root's awning is part of it, so for
+  the shut cart hide or scale it -- or say so and a separate awning root can be split out). 62 / 648 / 60 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

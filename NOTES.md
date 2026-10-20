@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m554 -- the food carts as art (scenery window; ROADMAP T2u)
+
+`models/campaign/food_cart.glb`, at buildCarts' numbers. Split the way the container is: the PAINT (a rounded body with panel
+ribs, the propped awning) is one white material the code tints per cart, and the TRIM never is -- a steel roof, the framed serving
+window with its dark inside, a counter on brackets, awning props, string lights along the awning's edge, the sign board the code's
+canvas sign sits on, wheels with mudguards, the hitch and its jack, a vent stack, a red gas bottle, a chalk menu board, napkins and
+a jar. A roller SHUTTER for the cart that is shut (WAFFLE WAGON). Shipped unverified.
+
 ## m552 -- the freight train as art (scenery window; ROADMAP T2t)
 
 `models/campaign/freight_train.glb`, at buildFreight's car numbers so every moving box he rides still fits. The LOCOMOTIVE is a
