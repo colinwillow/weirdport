@@ -255,6 +255,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **HIS ROPE COILS AND LIFE RINGS (m579, T3e-2, `dpPut('dp_rope' / 'dp_ring')`).** Every coil the code drew as a torus -- the Pearl's
+  rail bollards (every other one), dock 1's first bollards, the ferry's landing stage, both pontoons -- is an instance of
+  `dp_rope` on the ground there (a yaw off its position so they are not all the same way round). The Pearl's life rings are
+  `dp_ring` on their own post, turned F.th + D.psi (+ pi/2 along the rail), as the code turned its torus. All go through `dpBuild`.
+
 - **THE DOCK PROPS ARE INSTANCED, AND THE BOLLARDS ARE HIS (m578, T3e-1, `DPK`, `dpPut`, `dpBuild`, `?dprops=0`).** The kit's six roots
   repeat hundreds of times, so a call site `dpPut(name, x, y, z, yaw)` records a WORLD matrix where its code drew one (and keeps
   its collider); `dpBuild` (after `buildPearl`, just before `buildDumpTower`) makes one InstancedMesh per root per material, the
