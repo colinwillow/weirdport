@@ -285,6 +285,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE SWING BRIDGE'S SIGNPOSTS AND WALT'S PITCH ARE HIS (m588, T3h, `OSWING.kitG`, `?swing=0`).** `sw_signpost` behind each WAIT AT RED
+  board (turned pi for the board that faces -v), `sw_pitch` at (U + hw - .35, vW + 6), both mirrored in z. The cool box's collider,
+  the lifebuoy on the rail, the lane paint and the canvas boards stay; the posts, rods, bucket, stool and cool-box drawing go.
+  `SWING GLB FAIL` if it does not load.
+
 - **THE FREIGHT TRESTLE'S SIGNALS, MILEPOSTS AND REFUGE ARE HIS (m587, T3g, `HCTRAIN.trestleG`, `?trestle=0`).** `tr_signal` at every
   (1.9, v) on yr, `tr_milepost` at every (-1.55, v), `tr_refuge` at (ru, vm) on ry, all mirrored in z (the signal's lamps face -Y,
   as the code's spheres at v - .16). The refuge's deck, its three rail colliders and the tool chest's stay (drawing popped); the
