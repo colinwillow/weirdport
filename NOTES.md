@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m658 -- the town edge's houses, fences and fruit stand as art (scenery window; ROADMAP T4o)
+
+`models/campaign/town_edge.glb`, for `buildTownEdge`. The one-storey house at the code's numbers (7.2 x 6, eaves 2.8, ridge 4.7):
+weatherboard and gables in one white material so each keeps its own colour; the trim on a stone footing -- the pitched roof with its
+ridge and a chimney, corner boards, the door, lit windows with mullions and shutters, the porch with its decking, steps, posts, rail
+and roof, and a chair. A 1 m picket section to lay along the code's fence runs, the mailbox with its red flag, and the fruit stand
+with a striped awning and crates of apples, pumpkins and greens. Shipped unverified.
+
 ## m656 -- the town edge's gas station as art (scenery window; ROADMAP T4n)
 
 `models/campaign/gas_station.glb`, for `buildTownEdge`. The canopy at the code's 11 x 7.2 on four posts with footings and red

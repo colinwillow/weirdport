@@ -465,6 +465,13 @@ different context window, let me know."*
   and its two pumps; `gs_shop` at (su, gs, sv) in place of its plinth, walls, window, door and roof (its front, the window and the
   door, faces -Y as the code's at sv - 3); `gs_pole` at (pu, gp, pv) in place of the pole and the dark sign box -- the code's two
   'sgas' planes stay, on its board's faces at 11.6.
+- [ ] **T4o. Swap in the town edge's houses, fences and fruit stand** (`models/campaign/town_edge.glb`; no collision -- keep the
+  boxes that collide). In `buildTownEdge`, Blender X = u, +Y = v (after `UV`): `te_house_wall` (ONE white material, tint Hs.col) +
+  `te_house_trim` at (u, y0, v), its front facing -Y -- turn it pi when Hs.front is -1 -- in place of the four walls, the two
+  gables, the roof slabs, the windows, the door, the porch, its posts and its roof (its stone footing runs to -1.0 under y0, so it
+  meets lower ground). The picket fence: `te_picket` (a 1 m section, four pickets and two rails) laid along each run every metre,
+  turned by psi, in place of the pickets and the rail (keep the run's collider). `te_mailbox` at (mu, g, mv). `te_stand` at the
+  fruit stand's (u, g, v) in place of the counter, the posts, the awning and the produce spheres.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
