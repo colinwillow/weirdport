@@ -524,6 +524,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE TOWN EDGE'S GAS STATION IS HIS ART (m659, T4n, `gas_station.glb`, `?gas=0`).** These are mirrored in z in the town frame:
+  - `gs_canopy`
+  - `gs_pumps` at both islands
+  - `gs_shop`, its front facing -v as the code's did
+  - `gs_pole`, with the code's two `sgas` planes kept on its board
+  Each piece has its own `kb(placed)`: a collider is kept with its drawing popped, and the drawn-only boxes are skipped only
+  where that piece stood. A missing piece falls back to the code's drawing on its own.
+
 - **THE GOOD ALIENS' KIOSKS ARE HIS ART (m657, T4m, `good_kiosk.glb`, `?gkiosk=0`, `gkPut`).** Each kiosk gets three pieces in
   its own frame, mirrored in z so his +Y is the street:
   - `gk_hut_paint`, with `GK_paint_white` tinted to the kiosk's colour

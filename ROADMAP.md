@@ -459,7 +459,7 @@ different context window, let me know."*
   material, tint it K.col) + `gk_hut_trim` in place of the hut box, the roof, the window, the counter and the awning (the code's
   canvas sign sits on the trim's board at 2.78); then the goods by `K.goods` -- `gk_papers` for 'papers', `gk_keys` for 'keys',
   `gk_clothes` for 'clothes' -- in place of that branch's boxes.
-- [ ] **T4n. Swap in the town edge's gas station** (`models/campaign/gas_station.glb`; no collision -- keep every box that collides).
+- [x] m659 **T4n. Swap in the town edge's gas station** (`models/campaign/gas_station.glb`; no collision -- keep every box that collides).
   In `buildTownEdge`'s gas station, Blender X = u, +Y = v (the town frame, after `UV`), origins on the ground: `gs_canopy` at
   (u, g, v) in place of the four posts, the canopy box and its red band; `gs_pumps` at (u +- 2.2, g, v) in place of each island
   and its two pumps; `gs_shop` at (su, gs, sv) in place of its plinth, walls, window, door and roof (its front, the window and the
