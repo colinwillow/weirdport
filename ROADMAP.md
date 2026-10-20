@@ -956,7 +956,7 @@ differ" table there, so no region feels like the last one.
     - [x] m642 **F2d-2** the twilight and the spread: inside a held block the light goes to bioluminescent twilight; the Skinsuits push into the blocks next to theirs on a clock unless you cut it back (shoot or swing the pods and vines to take the block's share off them).
     - [x] m648 **F2d-3** its heart: one block fully grown -- walkable vine bridges between the roofs, a pod nursery with half-turned civilians in the pods, its own GOD place.
     - [x] m650 **F2d-4a** its people: Skinsuits patrol the heart's block and their own on a beat round the block (the turf crowd adds more where they hold).
-    - [ ] **F2d-4b** the way on: a spore pod from the nursery's mother pod up to the Mothership's tether (a ride, like the tower's tram).
+    - [x] m680 **F2d-4b** the way on: a spore pod from the nursery's mother pod up to the Mothership's tether (a ride, like the tower's tram).
     - [ ] **F2d-5** the chapter's beat: cure the city's held blocks back, a quest that holds it together.
   - [ ] **F2e The metropolis hub**: the tall city in the middle of the map that the other regions ring,
     opened a part at a time as chapters complete; Dump Tower stands in it.
@@ -1894,4 +1894,7 @@ differ" table there, so no region feels like the last one.
 - **m648 (F2d-3): the Hothouse's heart is the block NEAREST the Skinsuits' own that has three roofs or more.** Their native
   block, B3 (the watcher's pool), is open street, so the heart landed on A4. It is grown for good, whoever holds the block:
   the vine bridges, the ladder and the nursery stay put. Only the jungle overlay comes and goes with the turf.
-
+- **m680 (F2d-4b), the spore pod:** it docks BESIDE the tether's own pod, at the same height as its top, rather than carrying you into
+  the ship. One step across and the existing tether ride takes over, so there is one way into the ship and not two. The pod is
+  rider-triggered (stand on it ~1 s), not on a timer: the ride is long (about a kilometre at up to 26 m/s). Left at the tether and
+  walked away from (120 m), it drifts home empty, so the nursery is never missing its pod for good.

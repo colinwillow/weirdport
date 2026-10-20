@@ -597,6 +597,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m680 (F2d-4b): THE SPORE POD, THE HOTHOUSE'S WAY ON** (`HSPORE`, `hothSporeBuild`/`Path`/`Place`/`Step`). A skin disc (a `BDYN`
+  box) under a glowing sac, berthed 4.6 m from the nursery's mother pod (`HHEART.sporeA`, the first heading round her whose disc is
+  all roof). Stand on it ~1 s and it runs a 4-point path: straight up `climb` 30, a long rise to `over` 25 above the dock, straight
+  down; the dock is beside `ISHIP.P` (the tether's pod), off by `S.pod + r + .25`, level with that pod's top at `Q.y0`. It is ridden
+  the tram's way (whatever it moved, he and the lens move). **THE DOCK IS FOUND ON FIRST STEP, NOT AT BUILD**: `buildHothHeart` runs
+  in the city's pass and the tether in the islands', so the order is not something to lean on. Walked away from at the tether (120 m),
+  it goes home empty. `hh:spore` the first time it docks with him on it. `places` HEART row unchanged (A4, 3 roofs, 6 pods).
+
 - **m678 (T4x): THE RALLY TRUCKS ARE HIS LIFTED PICKUP** (`rally_truck.glb`, `HCRALLY.artG`, `?rtruck=0`). `buildRally` clones
   `rt_paint` + `rt_trim` into each truck's group at its origin, with NO mirror and no turn: the file says Blender -Y is the nose,
   which is glTF +Z, which is already the group's +z (the old cab sat at +.7). Every mesh whose material name has `white` in it takes
