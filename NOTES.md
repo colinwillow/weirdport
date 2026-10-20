@@ -87,6 +87,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **DUMP TOWER STANDS (m528, F2b-1, `DTOWER`, `buildDumpTower`).** The Reptilians' seat, ten floors on its own plaza west of the
+  city (ray 180 deg). One `farmFrame`, +v out from the city; 20 x 20 m, 4.2 m floors: lobby, offices x5, gym, sky garden,
+  boardroom, penthouse, and the helipad on the roof. **The stair is 13 risers of .323 m** (under his .357 step, CLAUDE.md m368),
+  switching between lane A (u -8.7, rising +v, even floors) and lane B (u -6.5, rising -v, odd floors) through a hole in each
+  slab. Glass curtain walls are colliders; the lobby's door gap is on the -v side. The DUMP TOWER sign is its own Mesh (a merged
+  `geo` part loses its UVs -- the m52x neighbour sign). `places`: `dtplaza` ground -0.08, `dtroof` ground 41.92, exit 0.
+  Not yet: lifts and badges (F2b-2), people (F2b-3), tram and glider (F2b-4), the chapter (F2b-5).
+
 - **THE UNDERNEATH'S QUEST AND ITS COLLAPSE (F2a-5, m526).** A side quest `under` (from Aunt Mags): `flag under:drained` (set by
   `underStep` once the water is within .3 of low), `reach` the vault, `reach` the safe house, `talk` to Pell. **A marker
   person's talk id is `mk_` + the mark's id** (`from: 'mk_un_mags'`, `who: 'mk_un_pell'`) -- `places` failed the first cut

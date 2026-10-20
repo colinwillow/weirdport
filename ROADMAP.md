@@ -505,7 +505,7 @@ differ" table there, so no region feels like the last one.
   - [x] m511 **F1-RT3** the routes 3 -- the road bridge into Hollow Creek (a clean grey deck): potholes, gutter litter, a broken-down car with its hood up, green distance signs each end; at the gang's end two parked bikes, a tyre stack, a cooler and cans, pennants down both rails, spray tags.
 - [ ] **F2 The regions still missing from `REGIONS.md`**, each as land → places → people → the ways in
   (several, per the connective-tissue rules) → its quests and boss. Read the entry first.
-  - [ ] **F2a The Underneath** (3): the tunnels under Old Town, the Pearl and the Waterfront, surfacing in
+  - [x] m526 **F2a The Underneath** (3): the tunnels under Old Town, the Pearl and the Waterfront, surfacing in
     cellars and drains; the hobo's and the miner's region; the safe-house portals.
     - [x] m512 **F2a-1** the land: a hatch on the footbridge's apron down to a shaft room 28 m under the sea's level; a brick tunnel to a junction, the CISTERN (black water, two catwalks, teal growth) off it, a second tunnel to a second shaft that surfaces at a manhole in Old Town. Lanterns, pipes, dark brick. GOD place `underneath`.
     - [x] m513 **F2a-2** its people: THE CAMP off the cistern's north ledge (bedrolls round a fire barrel, a tarp, candles in bottles, a cart, washing) and THE HIDDEN MARKET east of the junction (six tarp stalls of found goods under strung bulbs, a smuggler's counter with a scale); Rook, Aunt Mags, Tibbs, Fennick, Cass, June. (The hobo form's way in moves to F2a-5 with the miner's.)
@@ -515,6 +515,11 @@ differ" table there, so no region feels like the last one.
   - [ ] **F2b Dump Tower** (6): the vertical level, the Reptilians' seat. It goes BEFORE the Mothership in
     the chapter order (Dump Tower is the last stop in the metropolis; renumber the chapters and the
     Mothership's six locks become seven).
+    - [x] m528 **F2b-1** the tower: ten floors on its own plaza west of the city (lobby, offices, a gym, a sky garden, the boardroom, the penthouse) joined by a switchback stair, glass curtain walls with gold mullions, the helipad on the roof. GOD places `dtplaza`, `dtroof`.
+    - [ ] **F2b-2** the lifts and the badges: a lift car that only answers a badge for its floor band; the badge cards found or lifted from the people who carry them.
+    - [ ] **F2b-3** its people and the corporate ladder: staff per floor, the Reptilian suits, a promotion that opens the next band.
+    - [ ] **F2b-4** the ways in and out: the tram stop at the plaza, a glider off the helipad.
+    - [ ] **F2b-5** the chapter: Dump Tower inserted before the Mothership, the CEO boss in the boardroom, chapters renumbered and the Mothership's locks seven.
   - [ ] **F2c The Gorge** (7): falls, the stilt village, the scuba diver; between Hollow Creek and the
     River Islands, down the log flume.
   - [ ] **F2d The Hothouse** (9): the alien takeover, as a region that grows across the map while the
@@ -1413,4 +1418,4 @@ differ" table there, so no region feels like the last one.
 - **m526 (F2a-5) The collapse under the city is cleared by the CONSTRUCTION WORKER**, standing in for the cave miner, who has
   no model yet. When a miner GLB exists, `GATE_TYPES.undercollapse.need` is the one line to change. The miner's "sees in the
   dark" is not built either -- the tunnels are lit enough to play.
-
+- **m528 (F2b-1) Dump Tower stands on the WEST edge, off the city's ray at 180 deg, 20 x 20 m, 4.2 m floors, a switchback stair rather than lifts for now.** The stair keeps every floor reachable before F2b-2's badge lifts exist; when they land the stair can be locked above the lobby band. `DTOWER.deg` moves it.
