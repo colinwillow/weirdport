@@ -554,6 +554,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE CITY RING'S HOUSES ARE HIS ART (m667, T4r, `ring_house.glb`, `?rhouse=0`).** In `ringHouse`:
+  - `rh_house_wall` (`TE_paint_white` tinted the house's `col`) + `rh_house_trim` sit at L(0, 0), turned psi and mirrored in z.
+  - `B` keeps the colliders with their drawing popped and skips the drawn-only pieces; the gables are not drawn.
+  - Each yard run gets an `rh_fence` per metre, turned along it. The run collider stays and the two rails are not drawn.
+  **`farmFrame` now returns `mats: MAT`**, so a helper handed only F can tint with the frame's own colours.
+
 - **THE CITY RING'S WAREHOUSE AND PARKED CARS ARE HIS ART (m666, T4q, `city_ring.glb`, `?cring=0`).**
   - `cr_warehouse` sits at L(0, 0), turned psi and mirrored in z. The row's `B` checks a `wa` flag: every collider (the
     walk-on roof, the stair steps, the dock) is kept with its drawing popped, and the drawn-only pieces are skipped.

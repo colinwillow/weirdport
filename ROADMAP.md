@@ -484,7 +484,7 @@ different context window, let me know."*
   the twelve stair steps and the crates; `cr_forklift` at L(-12, -D2 - 4) in place of its two boxes. The 'lot' row:
   `cr_car_paint` (ONE white material, tint car1 / car2 / car3) + `cr_car_trim` at each car's (u, g, v) turned p0, nose +X, in place
   of the body, the glass box and the four tyres.
-- [ ] **T4r. Swap in the city ring's houses** (`models/campaign/ring_house.glb`; no collision -- keep the boxes that collide). In
+- [x] m667 **T4r. Swap in the city ring's houses** (`models/campaign/ring_house.glb`; no collision -- keep the boxes that collide). In
   `ringHouse`, Blender X = lu, +Y = lv (its front, -D2, is -Y), turned psi: `rh_house_wall` (ONE white material, tint `col`) +
   `rh_house_trim` at L(0, 0) on y0 in place of the four walls, the gables, the roof slabs, the windows, the door and the 'wood'
   stoop (it is the town edge house at the ring's own 6.8 x 5.8 x 2.7 / 4.5, with a stoop, rails and a door hood instead of a porch;
