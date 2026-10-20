@@ -168,6 +168,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE FERRY IS HIS ART (m553, T2s, `OFERRY.glb`, `?ferryart=0`).** `fy_ferry` (7.4 x 19.2, -0.95..7.65 about its waterline) is cloned
+  into `O.grp` at the origin -- the group sits at the sea's height and `ferryPlace` turns and moves it, so nothing about where it
+  is changes. Double-ended: no turn, no mirror. The drawn hull, band, deck, rails, cabin, wheelhouse and benches are not built
+  (`add` is a no-op); every BDYN box (deck, sides, cabin, wheelhouse, benches) is as before. Loaded just above `buildFerry()`.
+  `FERRY GLB FAIL` in the chip if it does not load.
+
 - **THE CAVE BEHIND THE FALLS (m551, F2c-2, `buildGorgeFalls`, `GORGE.cave/caveY/slab`, GOD `gzcave`, flag `gz:cave`).** A
   heightfield cannot make a cave, so the river's last 12 m before the lip run over a ROCK SLAB (10.5..13 m, its top the bed) and
   `gzBed` drops to -.6 under it: the canyon's own walls are the cave's sides and the step back up to 13 is its back wall. **Every
