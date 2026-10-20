@@ -404,6 +404,11 @@ different context window, let me know."*
   at a few of the sixteen crystal points (each clump is ~7 of the code's cones) in place of the cones, turned by the code's yaw;
   `gw_cache` at (U(ca), cy, cb) in place of the wood box, the steel lid and the gold box (the gold spill is in it at +X);
   `gw_strongbox` at (U(sa), sy, sb) in place of the steel box and its gold band. Keep the PointLight.
+- [ ] **T4d. Swap in the fjord lookout** (`models/campaign/gorge_look.glb`; no collision -- keep the legs', deck's and rails'
+  boxes as colliders). In `buildGorgeLook`, Blender X = u, +Y = +b: `gl_tower` at (u, g, b) in place of the eight leg boxes, the
+  girts, the deck, the three rails, the four roof posts and the roof (its legs run from -.6 to the deck at 14, splayed 1.9 -> 1.45
+  like the code's; X-braces; the rail is open at +Y for the ladder, which stays the code's); `gl_foot` at (u, fg, fb) in place of
+  the bench, the tin chest, the rack posts and bar and the sail cone (bench at -1.6, chest at +1.4, rack and folded sail at +2.6).
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

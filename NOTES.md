@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m634 -- the fjord lookout as art (scenery window; ROADMAP T4d)
+
+`models/campaign/gorge_look.glb`, for `buildGorgeLook`. The 14 m timber tower: four legs splayed from 1.9 to 1.45 as the code
+splays them, bolted, two girts and X-braces on every face, a planked deck on bearers with a rail of balusters on three sides (open at
+the back for the code's ladder) and a plank roof on four posts. At its foot: a bench, the tin chest of harness, and the rack with a
+spare glider's orange sail folded over it, and a coil of rope. Shipped unverified.
+
 ## m631 -- the fjord's grotto and wreck as art (scenery window; ROADMAP T4c)
 
 `models/campaign/gorge_deep.glb`, for `buildGorgeDeep`. The wreck: a 7 m fishing boat lofted along Y, rolled .9 onto her side as
