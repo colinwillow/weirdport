@@ -452,6 +452,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE LONG FLUME IS HIS TROUGH, INSTANCED (m637, T4e, `gorge_flume.glb`, `?gflume=0`).** `fl_trough` + `fl_water` are one
+  InstancedMesh per material across every 2 m segment. Each matrix is the segment's midpoint, Euler(atan2(dy, L), psi + pi, 0,
+  'YXZ') and z scaled by the segment's slope length / 2. **No mirror in an instance matrix**: his +Y is glTF -z, and the
+  trough reads the same both ways along it, so a half-turn stands in for the mirror. `fl_head` replaces the head's deck, rail
+  tops and tank, mirrored like any campaign piece and turned psi. The floor quads, wall colliders, trestles and the head's
+  legs stay the code's.
+
 - **THE FJORD LOOKOUT IS HIS ART (m635, T4d, `gorge_look.glb`, `?glook=0`).** `gl_tower` replaces the legs, girts, deck, rails,
   roof posts and roof; `gl_foot` replaces the bench, chest, rack and folded sail. Both are mirrored in z. In `buildGorgeLook`,
   `kb(on)` makes `tbx` / `fbx`: with the art, a collider is kept with its drawing popped and a drawn-only box is not built;

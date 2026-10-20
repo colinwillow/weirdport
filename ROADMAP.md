@@ -409,7 +409,7 @@ different context window, let me know."*
   girts, the deck, the three rails, the four roof posts and the roof (its legs run from -.6 to the deck at 14, splayed 1.9 -> 1.45
   like the code's; X-braces; the rail is open at +Y for the ladder, which stays the code's); `gl_foot` at (u, fg, fb) in place of
   the bench, the tin chest, the rack posts and bar and the sail cone (bench at -1.6, chest at +1.4, rack and folded sail at +2.6).
-- [ ] **T4e. Swap in the long flume** (`models/campaign/gorge_flume.glb`; no collision -- keep the `quad` floor and the wall boxes).
+- [x] m637 **T4e. Swap in the long flume** (`models/campaign/gorge_flume.glb`; no collision -- keep the `quad` floor and the wall boxes).
   In `buildGorgeFlume`, per segment P -> R: `fl_trough` + `fl_water` at the segment's midpoint, (P.y + R.y) / 2, turned by psi
   and pitched by atan2(R.y - P.y, L), scaled Y by L / 2 (built 2 m along +Y, the floor's top at -.05 like the code's plank, inner
   width 1.5 = 2 hw, walls .6, a yoke every metre), in place of the two plank `pearlSeg`s, the water `pearlSeg` and the two wall
