@@ -434,7 +434,7 @@ different context window, let me know."*
   at (0, y0, -D2) in the lobby's 5 m gap (k = 0, side 's'), its outside -Y toward the city, adding a revolving door, glass swing
   doors, a canopy and a red mat (the gap stays walkable: the drum is not a collider); `dt_reader` beside each security
   vestibule's door on floors 8 and 9, on the side away from the stair.
-- [ ] **T4i. Give the alien orbs a body** (`models/campaign/alien_orb.glb`; no collision -- the orbs are air targets, `O.T`). In
+- [x] m646 **T4i. Give the alien orbs a body** (`models/campaign/alien_orb.glb`; no collision -- the orbs are air targets, `O.T`). In
   `orbBody` (the amp and the watcher) and `buildOrbs` (the trance orb): add `ao_shell` to the orb's group at its centre, round the
   code's core sphere (r .7), which keeps its own colour and emissive and shows through the six gaps; or swap the core for `ao_core`
   (ONE white material -- give it the orb's colour and emissive). The ring, the halo sprite, the cones and the beams stay the

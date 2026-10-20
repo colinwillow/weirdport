@@ -480,6 +480,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE ALIEN ORBS HAVE HIS SHELL (m646, T4i, `alien_orb.glb`, `?orb=0`, `orbShell`).** `ao_shell` is added to each orb's group at
+  its centre: the amp and the watcher through `orbBody`, the trance orb in `buildOrbs`. The code's core keeps its colour and
+  glow and shows through the gaps; the ring, halo, cones and beams are unchanged. The shell turns with its group. `ao_core` is
+  not used, because the code's core already carries each orb's colour.
+
 - **DUMP TOWER'S PLAZA AND DOORS ARE HIS ART (m644, T4h, `tower_plaza.glb`, `?tplaza=0`).** Through `dtPut`:
   - `dt_bollard` stands at the six bollards.
   - `dt_planter` stands at the two planters; their gold colliders stay with the drawing popped.
