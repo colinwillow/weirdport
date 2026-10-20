@@ -40,7 +40,7 @@ const server = http.createServer((q, r) => {
     // THE SHIPPED TEXT, with one handle spliced in beside the game's own: the things the driver reads and writes
     const s = body.toString(), k = 'window.melee = window.mel = {';
     if (!s.includes(k)) { console.error('play: no mel handle in index.html'); process.exit(1); }
-    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK, OFERRY, socialGroup, socialOf, ROLEFORM, OORB, kitPick, WEAP, slotNow, IXING, islWorld, wingTapR, rosterOf, mphFold, IBASE, islLocal, boardMount, groundAt, boardGrade, SK8, talk, TALK, boardStepOff }; ' + k);
+    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK, OFERRY, socialGroup, socialOf, ROLEFORM, OORB, kitPick, WEAP, slotNow, IXING, islWorld, wingTapR, rosterOf, mphFold, IBASE, islLocal, boardMount, groundAt, boardGrade, SK8, talk, TALK, boardStepOff, ISHIP, formNow }; ' + k);
   }
   r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
 });
@@ -158,6 +158,13 @@ try {
             if (goTo(f.root.position.x, f.root.position.z, 1.6, true, true, f.root.position.y) && st.t - st.blowT > .5) blow(f); return ''; }
           const R = d.root.position; if (goTo(R.x, R.z, S.SAMPLE.reach * .7, true, true, R.y)) { const RS = S.stick.R; RS.down = 1; RS.x = RS.y = 0; RS.far = 0; st.holdT += window.__clock.dt / 1000; } return ''; }
         case 'gate': { const G = S.GATES.find(g => g.id === s.id); if (!G) return 'gate: no such gate ' + s.id;
+          // m486: THE FORM THE GATE WANTS (its type's own rule: `ride` the biker on his bike, `groups` a form of that group, `crowd`
+          // the city's, `need` a stem or a role's name; 'human' anything but himself) -- put on once, through the forms wheel's picker
+          { const GT = S.GATE_TYPES[G.type], grp = nm => (S.ROLEFORM[nm] && S.ROLEFORM[nm].group) || S.socialGroup(nm), F = S.SAVE.forms.filter(nm => nm !== 'zap');
+            const want = GT.ride ? F.find(nm => /BIKER/.test(nm)) : GT.groups ? F.find(nm => GT.groups.includes(grp(nm))) : GT.crowd ? F.find(nm => grp(nm) === 'city')
+              : GT.need === 'human' ? F[0] : F.find(nm => nm === S.mphFold(GT.need) || nm === GT.need);
+            if (want && S.formNow() !== want && st.gForm !== want) { st.gForm = want; S.formPick(want); st.log.push('form ' + want + ' for ' + G.type + ' @' + st.t.toFixed(1)); return ''; }
+            if (S.player.mphSt) { stickOff(); return ''; } }
           const sn = Math.sin(G.h), cn = Math.cos(G.h), v = (P.x - G.x) * sn + (P.z - G.z) * cn, side = v >= 0 ? 1 : -1;
           // a `fix` gate is mended by LEANING on it as the right body (`gateStep`: in its span for `GATE.fixT`), so he walks
           // straight at the slab and keeps pushing -- no side-step, which would take him out of the span and reset the lean
@@ -165,7 +172,7 @@ try {
           if (S.GATE_TYPES[G.type] && S.GATE_TYPES[G.type].pass === 'fix' && !G.open) { st.side = 0; if (!st.gateIn) { if (goTo(G.x + sn * 5 * side, G.z + cn * 5 * side, 1.2, true, true, G.y)) st.gateIn = 1; return ''; } walk(G.x, G.z, false); return ''; }
           // first the approach point 7 m out on his side, then straight through to 7 m past it; no teleport: a gate is walked
           const ax = G.x + sn * 7 * side, az = G.z + cn * 7 * side, bx = G.x - sn * 7 * side, bz = G.z - cn * 7 * side;
-          if (!st.gateIn) { if (goTo(ax, az, 1.2, true, true)) st.gateIn = 1; return ''; }
+          if (!st.gateIn) { if (goTo(ax, az, 1.2, true, true, G.y)) st.gateIn = 1; return ''; }   // m486: at the gate's own level
           goTo(bx, bz, 1.0, false, false); return ''; }
         // m469: THE RACE (`raceStep`): on the bike (the biker form IS the bike), stopped at the gate for the countdown, then
         // the loop's own line ridden like a thumb would -- the stick at a point ~10 m ahead on `raceAt`, never a teleport
@@ -302,6 +309,18 @@ try {
           if ((st.gLogN || 0) < 3 && (!st.gLogT || st.t - st.gLogT > 2)) { st.gLogT = st.t; st.gLogN = (st.gLogN || 0) + 1; const hl = Math.atan2(far[0] - P.x, far[1] - P.z); st.log.push('s ' + sNow.toFixed(1) + ' v ' + Math.hypot(p.vel.x, p.vel.z).toFixed(1) + ' y ' + P.y.toFixed(1) + (p.grounded ? ' g' : ' air') + ' bH ' + (+p.boardH).toFixed(2) + ' line ' + hl.toFixed(2) + ' near ' + S.DUMMIES.filter(d => d.root && Math.hypot(d.root.position.x - P.x, d.root.position.z - P.z) < 3).map(d => d.markId || S.mphName(d.K)).join('/')); }
           walk(far[0], far[1], true); return '';
         }
+        // m486: THE TETHER'S POD (`shipPodStep`): onto its top while it is down (in place of the thermal flight up to it -- a
+        // teleport, said in the row), still while it rises, and at the top off it to the hull's middle at its floor
+        if (s.flag === 'ms:in' && S.ISHIP.P && S.ISHIP.P.box) {
+          const I = S.ISHIP, Q = I.P, B = Q.box, p = S.player;
+          const on = Math.abs(P.y - B.maxy) < .3 && Math.abs(P.x - B.cx) <= I.pod + .05 && Math.abs(P.z - B.cz) <= I.pod + .05;
+          if (st.t - (st.podLog || -9) > 5) { st.podLog = st.t; st.log.push(`pod ${Q.st} y${(+Q.y).toFixed(1)} me ${P.y.toFixed(1)} on${on ? 1 : 0}`); }
+          if (Q.st === 'top' && (on || Math.abs(P.y - I.floorY) < 3)) { walk(I.axis[0], I.axis[1], false); return ''; }
+          if (on) { stickOff(); return ''; }
+          if (Q.st === 'down') { S.godTo(B.cx, B.maxy + .05, B.cz); stickOff(); st.tele++; st.log.push('TELEPORT onto the pod @' + st.t.toFixed(1)); }
+          else stickOff();
+          return '';
+        }
         // falls through to the ordinary flag driver
         { if (T) { goTo(T.x, T.z, 1.2, true, true, T.y); return ''; }   // m466: inside the game's own radius (the papers: 1.9 m), not at the edge of it
           if (s.flag === 'inTown' && S.ISLE.rect) { const R = S.ISLE.rect, tx = Math.min(Math.max(P.x, R[0] + 8), R[1] - 8), tz = Math.min(Math.max(P.z, R[2] + 8), R[3] - 8); goTo(tx, tz, 1, true, true); return ''; }
@@ -343,7 +362,7 @@ try {
         // m466: AND WHAT THE CHAPTERS BEFORE IT GAVE HIM -- the forms their samples put on the wheel (a Chapter 2 start as
         // nobody but himself is an alien everybody runs from, which no player arriving there is), and their quests marked
         // done, so the kit found on the way (`GEAR`) is in his hands
-        const FORMS_BY = [[1, 'HICK SKINNY'], [2, 'CONTRUCTION WORKER'], [3, 'FAT HIPSTER'], [4, 'FAT BIKER']];
+        const FORMS_BY = [[1, 'HICK SKINNY'], [2, 'CONTRUCTION WORKER'], [3, 'FAT HIPSTER'], [4, 'FAT BIKER'], [5, 'ENGINEER'], [6, 'JACK']];
         for (const [c, nm] of FORMS_BY) if (n >= c) S.progForm(nm);
         for (const q of S.QUESTS) if (q.ch !== undefined && q.ch < n && !q.dormant) S.progFlag('qdone:' + q.id); if (n >= 1) mel.go('oldtown'); S.stick.L.x = S.stick.L.y = 0; }, N);
       console.log(`     ${CH}: the save moved to chapter ${N}` + (N >= 1 ? ' and him to the city spawn' : ''));
