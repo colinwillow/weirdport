@@ -80,6 +80,13 @@ different context window, let me know."*
   the wall to 2.4 at the posts). So in `buildFarmhouse` keep the shell's and porch's boxes as colliders but stop drawing them (plinth,
   walls, bands, corner boards, gables, roof slabs and cap, chimney, every `win`, the door, the porch floor/posts/rails and its roof
   slab) and keep its walkable `quad`, the steps, chairs, table, barrel, log pile, shed and coop. 4,622 faces, one mesh, 15 materials.
+- [ ] **T2h. Swap in the shed, the coop and the lone hay barn** (`models/campaign/farm_outbuildings.glb`, no collision file -- the
+  code keeps every collider). Three roots, Blender X = the frame's u, Blender +Y = +v, origin on the ground at each one's centre:
+  `fo_shed` at buildFarmhouse's (su, sv) -- replaces the slab, walls, pent roof, the doorway's dark, the tools and the drum;
+  `fo_coop` at (cu, cv) -- replaces the legs, hut, roof planks and ramp (the run's posts and wire stay code); `fo_haybarn` at the
+  lone hay barn's frame origin (FL.FLATS[1], turned thN - .45) -- replaces the posts, eave beams and the DoubleSide roof cylinder
+  (the hay steps and the round bales stay code; its roof is solid both ways, so `droof`'s DoubleSide goes). Each built at its
+  builder's exact numbers. 448 / 322 / 3,814 faces, one mesh each.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

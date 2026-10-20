@@ -5,6 +5,15 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m517 -- the shed, the coop and the lone hay barn as art (scenery window; ROADMAP T2h)
+
+`models/campaign/farm_outbuildings.glb`, at their builders' numbers. The SHED: board-and-batten in sage, its sides cut to the
+pent roof's slope, a ribbed tin roof with one rusted sheet, the red door swung open, a side window, tools leaning on the front, a
+potting bench on the back. The COOP: a painted hut on legs with battens, a pitched tin roof, the nesting box, the pop hole and its
+cleated ramp, straw on the ground. The HAY BARN: I-section posts on stone pads, eave beams, X braces in the end bays, steel
+rafters following the arch, purlins, and the tin itself corrugated every other station with rust patches -- solid, so the code's
+DoubleSide roof can go. Every roof is built from points (never rotated). Shipped unverified.
+
 ## m515 -- the farmhouse as art (scenery window; ROADMAP T2g)
 
 `models/campaign/farm_house.glb`: Gristle Farm's house at FHOUSE's exact numbers, so the porch roof he walks, the chimney smoke
