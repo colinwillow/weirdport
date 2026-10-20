@@ -146,7 +146,7 @@ different context window, let me know."*
   Place one per `C.CRANES` entry and stop DRAWING what it replaces: the legs and their sills, the portal beams, the X braces, the
   boom girders, their struts and ties, the catwalks and rails, the nose, the under-trolley beams, the A-frame and its stays, the
   machine house and its roof, both red lights, the landing and its rails. 10,378 faces, one mesh (two cranes: ~20k).
-- [ ] **T2q. Swap in the dry-dock coaster** (`models/campaign/coaster.glb`, no collision file -- `buildWaterfront` keeps every hull
+- [x] m547 **T2q. Swap in the dry-dock coaster** (`models/campaign/coaster.glb`, no collision file -- `buildWaterfront` keeps every hull
   section box, the bulwarks', forecastle's and wheelhouse's colliders, the steps, both ladders, the scaffold, the stair tower and the
   gangway). One root, `wf_coaster`, Blender X = the frame's u, +Y = its v, origin at (D.u, 0) on hb (the keel blocks' top): stern at
   Y 14, bow at 85.5, deck at 9, forecastle 1.4 higher from 70. Stop DRAWING the five hull sections and their anti-fouling and boot

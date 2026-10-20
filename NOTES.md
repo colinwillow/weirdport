@@ -141,6 +141,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE DRY DOCK'S COASTER IS HIS ART (m547, T2q, `WFRONT.coastG`, `?coaster=0`).** `wf_coaster` at (D.u, 0) on hb, mirrored in z --
+  MEASURED: the mesh spans glTF z -85.6..-13.4, so mirrored she lies v 13.4..85.6, the stern at 14 and the bow at 85.5 as the
+  code's SECT has her. `cb` keeps every hull/forecastle/steps/hatch/bulwark/wheelhouse collider and drops its drawing; the
+  anti-fouling and boot bands, windows, mast and the three repair plates (drawn-only) and the funnel (`cg`) are not built. The
+  keel blocks, ladders, scaffold, stair tower and gangway are as before. `places` WATERFRONT ok. `COASTER GLB FAIL` if it fails.
+
 - **THE WATERFRONT'S CRANES ARE HIS ART (m545, T2p, `WFRONT.stsG`, `?sts=0`).** One `wf_sts_crane` per `WCRANE.CRANES` entry at
   (K.u, 0) on Y, mirrored in z (Blender +Y = +v; the bounds are symmetric in z, so this rests on the contract, not a measurement --
   the machine house should be at +v 37.5, behind the quay). Inside `wfCranes`' per-crane block `bx` keeps every collider and drops
