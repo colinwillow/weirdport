@@ -126,7 +126,7 @@ different context window, let me know."*
   place it unturned; for -1 turn it by pi. Scale its Y by R.len / 10. Door at Y -1.0 and windows at 0, +-3 -- the code's own
   -len*.1 and k*len*.3 at len 10. Its lattice skirt runs to -.8 under the floor. Props: `tp_dish` on the dish-and-flag trailer
   (v 1), `tp_chair` replacing the porch chair box, a `tp_flamingo` or two on the platforms. 1,222 per trailer; props 68-106.
-- [ ] **T2n. Swap in the mill's machines** (`models/campaign/mill_kit.glb`, no collision file -- `buildMill` keeps the shed, the
+- [x] m541 **T2n. Swap in the mill's machines** (`models/campaign/mill_kit.glb`, no collision file -- `buildMill` keeps the shed, the
   flume, both belts, the log piles, the crane's ladder and every collider). Blender X = the mill frame's u, +Y = its +v, origins on
   the ground at y: `hm_burner` at (B.u, B.v) -- replaces the open cylinder (a hooped, seamed cone with a mesh spark-arrestor dome,
   a stoking door on -X, the belt's inlet hood at 7; the smoke point stays y+9.3); `hm_crane` at (C.u, C.v) -- replaces the legs,

@@ -121,6 +121,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE MILL'S MACHINES ARE HIS ART (m541, T2n, `HCMILL.glb`, `?mkit=0`).** `mill_kit.glb`: `hm_burner`, `hm_crane`, `hm_logtruck`,
+  `hm_watertower`, each mirrored in z (Blender +Y = +v; the crane's boom at Blender (+8, +5) reads glTF z -5.15). `km` keeps a
+  collider and pops its drawing; drawn-only boxes (the crane's bracing, the truck's chassis) are dropped where the piece is placed.
+  The burner's smoke point, both belts, the flume, the piles, the five logs on the truck and the crane's ladder stay code. `MILL
+  GLB FAIL` in the chip if it does not load.
+
 - **THE TRAILER PARK'S HOMES ARE HIS ART (m539, T2m, `HCTRAIL.glb`, `?tpark=0`).** `trailer_park.glb`: four trailers (2.96 x 2.7 x
   11.2 with the hitch, door and windows on Blender -X, lattice skirt to -.8) plus `tp_dish`, `tp_chair`, `tp_flamingo`. Each
   trailer is mirrored in z (Blender +Y = +v) and scaled z by R.len/10; **a side -1 trailer is mirrored in x as well, not turned**,
