@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m621 -- Dump Tower's roof and lift as art (scenery window; ROADMAP T3y)
+
+`models/campaign/tower_top.glb`. The helipad at the code's 6 m: a dark disc with a white ring and the H at the code's own strip
+sizes, sixteen glowing lamps round it at 6.2 m, and an orange windsock on a mast off its edge. A 1 m gold-and-glass edge rail the
+code stretches along each side. The lift cab every floor has: glass on three sides, open on -X as the code leaves it, gold corner
+posts and crown, a red carpet, a handrail, a cable, and the call panel outside. Shipped unverified.
+
 ## m620 -- Dump Tower's floors as art (scenery window; ROADMAP T3x)
 
 `models/campaign/tower_floors.glb`, for the furniture `buildDumpTower` draws floor by floor. The lobby's gold-fronted marble desk

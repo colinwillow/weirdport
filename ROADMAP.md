@@ -370,6 +370,12 @@ different context window, let me know."*
   the six benches. BOARDROOM: `dt_boardtable` at (2, 0) in place of top and base; `dt_execchair` at each chair, turned to face
   the table (s2 = -1 -> +pi/2, +1 -> -pi/2). PENTHOUSE: `dt_whitesofa` at each sofa turned by r; `dt_coffeetable` at (4, -1);
   `dt_coins` at the three gold cylinders.
+- [ ] **T3y. Swap in Dump Tower's roof and lift** (`models/campaign/tower_top.glb`; no collision -- keep the boxes that collide). In
+  `buildDumpTower`, Blender X = u, +Y = v: `dt_helipad` at (2, ry, 1) in place of the pad cylinder, the four white strips and the
+  sixteen lamp spheres (it adds a windsock off the +u edge); `dt_rail` (1 m long, scale X by w or d) along each of the four
+  roof-edge rails, turned along its run, in place of the two gold boxes each; `dt_lift` at (LU, LV, f) on every floor in place of
+  the three glass walls, the four posts, the crown, the carpet and the call panel (its open side is -X, the panel outside it at
+  (-1.25, -1.6)). Keep the glass walls' colliders.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
