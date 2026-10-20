@@ -219,7 +219,7 @@ different context window, let me know."*
   octagonal pole on a bolted flange with section joints and a hatch, a caged ladder up its -Y face, a railed grated platform on
   brackets under the head, the head frame, four floodlights tilted down and out with glowing glass at the code's lamp spots
   (the cones still come from (u, v) at top - .7), an aircraft light. 1,582 faces (eight masts: ~12.7k).
-- [ ] **T3b. Swap in the halt's shelter and water tank** (`models/campaign/halt_kit.glb`, no collision file -- `buildFreight` keeps the
+- [x] m571 **T3b. Swap in the halt's shelter and water tank** (`models/campaign/halt_kit.glb`, no collision file -- `buildFreight` keeps the
   platforms, posts, rails, stairs, bench, timetable, churns, sacks, lamps, signs and every collider). Blender X = the line frame's u,
   +Y = its v. `fh_shelter` at (pu, vm) on `deck`, at BOTH platforms -- replaces the red roof slab and its two posts (the outer edge is
   -X, as side = -1; it adds a back screen, brackets, a fretted valance, a gutter and a clock). `fh_tank` at (tu, tv) on g --

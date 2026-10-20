@@ -234,6 +234,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE FREIGHT HALTS' SHELTERS AND THE WATER TANK ARE HIS ART (m571, T3b, `HCTRAIN.haltG`, `?halt=0`).** `fh_shelter` at (pu, vm) on the
+  deck at both platforms and `fh_tank` at (tu, tv) on the ground, mirrored in z and unturned (its outer edge -X is the line's
+  left, side -1; the tank's spout along +X, where the code's bar was). The tank's collider stays; the roof slab and posts, the
+  legs, cylinder, cone, hoops and spout bar are not built. Platforms, rails, stairs, bench, timetable, churns, sacks, lamps and
+  signs are as before. `HALT GLB FAIL` in the chip if it does not load.
+
 - **THE WATERFRONT'S FLOODLIGHT MASTS ARE HIS ART (m569, T3a, `WFRONT.mastG`, `?mast=0`).** `fl_mast` at every `W.MASTS` foot on Y,
   mirrored in z (Blender +Y = +v, so its caged ladder is on -v where the code's rungs were). The pole's collider stays (drawing
   popped); the pad, head frame, lamp boxes and rungs are not built; the light cones still start at (u, v), top - .7, so they
