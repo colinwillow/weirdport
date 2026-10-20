@@ -545,6 +545,12 @@ different context window, let me know."*
   boxes). In `buildRally`'s camp, Blender X = u, +Y = v in its frame (turned th like its boxes): `rc_camp` at (0, g0, 0) in place of
   the four posts, the tarp, the cooler and the chair -- all at the code's places, plus guy ropes and pegs, a string of bunting in
   the Pearl's pastels along the front and two placards on sticks (blank card for a canvas if the code wants to write on them).
+- [ ] **T5c. Swap in the trailer park's boardwalk** (`models/campaign/trailer_walk.glb`; no collision -- keep the walk, platform,
+  rail and post boxes). In `buildTrailerPark`, Blender X across, +Y along, turned psi like the boxes: `tw_walk` at each segment's
+  (um, Y, vm), scaled Y by (len + .3) / 4.3, in place of the plank box (bearers under it); `tw_rail` at each rail's (ru, Y, rv),
+  scaled Y by len / 4, in place of its two boxes and its post (posts every metre, a mid rail); `tw_platform` at each trailer's
+  platform (u, yp, v), scaled Y by R.len + 1.6, in place of its plank box; `tw_pile` at each of `posts`' piles (pu, top - .2, pv),
+  scaled Z by (top - .2) - (g - .4), in place of the post box and its brace.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m688 -- the trailer park's boardwalk as art (scenery window; ROADMAP T5c)
+
+`models/campaign/trailer_walk.glb`, for the walk `buildTrailerPark` runs along the creek. A segment at the code's 3.4 wide and 4.3 long:
+planks in three weathered tones on three bearers; a 4 m rail with a post every metre, a top rail and a mid rail; a trailer platform
+at the code's 4.2 wide, 1 m long for the code to stretch; and a pile with its cap, 1 m tall for the code to stretch to the creek bed.
+Shipped unverified.
+
 ## m687 -- the counter-protest camp as art (scenery window; ROADMAP T5b)
 
 `models/campaign/rally_camp.glb`, for the Pearl's counter-protest camp `buildRally` pitches by Hollow Creek's road. The code's mint
