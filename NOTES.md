@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m618 -- the food-cart pod's dressing as art (scenery window; ROADMAP T3w)
+
+`models/campaign/cart_pod.glb`, for the m488 block of `buildCarts`. A slatted picnic table with its benches on A-frame legs, the
+umbrella pole and napkin box, and the umbrella's ten-panel canopy (one white material, tinted per table) with its ribs; the shade
+sail on its two posts at the code's own post positions, sagging a little and clearing the umbrellas (its first draft sagged into
+them); a green bin with a lid, the generator in its frame, a red gas bottle, a potted plant. Shipped unverified.
+
 ## m616 -- the Pearl's plaza as art (scenery window; ROADMAP T3v)
 
 `models/campaign/pearl_plaza.glb`, for `buildPearlPlaza`. The stage at the code's 5 x 3.5 x .35: a plank deck on a concrete plinth,
