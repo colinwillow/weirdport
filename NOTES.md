@@ -26,6 +26,20 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **RAE'S RACE WAS LOST SINCE m483, THREE WAYS AT ONCE (m495, F1-HC2, `raceStep`, `islePutBack`, `boardGrade`).** Bisected by
+  swapping in old `index.html`s under today's `play.mjs`: m482 won (on its second race), m483 lost both at lap 1, gate 1 --
+  and a per-second trace (`raceS`, v, y, distance off the line) showed why:
+  1. **A gate missed while running wide voided the lap, silently.** Gates count in order inside a 9 m ring; at 25 m/s he
+     takes a corner 13 m wide, misses gate 2, and every later gate is ignored. Now a gate also counts when the nearest
+     point of the line within a short window round it is already PAST it and he is within 16 m of the line.
+  2. **A spill off the west ridge into the creek (below `ISLE.sea`) put him back on the last dry ground -- 27 m back, a
+     gate behind, at 2.6 m/s.** During a race `islePutBack` now puts him on the line at his own progress, facing on.
+  3. m483's wider grade window (for the islands' gap) is the board's only: `boardGrade` uses the old one when `p.bike`.
+  The harness's thumb now holds its line in the air (steering for the next point mid-jump turned the deck, and a clean
+  landing snaps speed onto the deck). **Easing off for bends made it WORSE** (a .3 stick brakes too hard) -- not kept.
+  Rae's own tuning (`far` [40, 30]) is untouched: tried [18, 30], not needed once 1-2 were fixed. `play ch3` COMPLETE twice
+  (49.8 s, 48.1 s). The halt shot from m494 stands; the bike track's dressing is HC2b.
+
 - **THE HALT, DRESSED -- AND THE RACE IS LOST AGAIN, NOT BY THIS (m494, F1-HC1, `buildFreight`).** Hollow Creek's five places
   shot (`npm run shot hctrail hcmill hcfair hchalt hcbikes`, new entries; `SHOT_PRE` turns him round). The halt was the
   barest: a plank deck and a red roof on stilts. Both platforms now get board seams, a yellow edge line, a bench (solid,
