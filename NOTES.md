@@ -7,6 +7,21 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE KIT IS FOUND, NOT ISSUED (m465, `GEAR`, `gearHas`, `gearSync`).** *"You just wake up and you have all of the weapons.
+  You shouldn't start with weapons -- you discover new technologies: a hoverboard, a jet pack, the DNA gun, your blaster, the
+  rocket launcher."* In the campaign (`tkit`) a new game is BARE HANDS; each slot is his once the quest in `GEAR.get` is done:
+  hammer `ch1` (Dee, the building site), blaster `ch1d` (Briggs, chapter 1's end), board `ch2c`, hover pack `ch3c`, launcher
+  `ch4c`. **It is READ off the save's `qdone:` flags, never stored**, so an old save lands with what its chapter would have
+  found and nothing migrates. The wheel is REBUILT from what he has (`wepRow._ix` maps a segment back to its slot); cycling
+  and picking skip the rest; the hover pack is `HOVER.have && gearHas('pack')` (on by default in the kit city now, gated by
+  the find). A new find gets a FOUND card 1.7 s after the quest's own. `gearSync` runs every frame (5 slots, a mask compare)
+  so a GOD-marked quest updates the wheel too. Every other world has everything, and **GOD > ALL KIT** (`mel.allkit`) gives
+  the campaign everything for testing. **AT BOOT `gearSync(1, 1)` SETS ONLY THE SLOT** -- `paintKit` reaches things declared
+  thousands of lines below it, and a const read above its declaration is a blank page.
+  **NOT DONE:** the DNA gun mode is already debug-only (m282 -- sampling is the hold); Clancy is still found at the wreck in
+  ch0's first step and follows from there, which is the "rescue" as it stands; psychic / mind control / telekinesis / phasers
+  are new technologies, each its own build, and each one's slot goes in `GEAR.get` with the quest that gives it.
+
 - **COVER IS MUTED, THE LEDGE ASKS FOR THE THUMB, AND THE HARNESS'S NaN WAS ITS OWN (m464).** *"I'm trying to go around the
   corner, he covers on a building, and you're like no... the ledge hang often catches onto ledges you don't mean to, like a tree."*
   `WALL.on` 0 by default (GOD > WALL COVER, `mel.cover` remembers it); every line of the cover system is intact behind it.

@@ -1192,4 +1192,9 @@ differ" table there, so no region feels like the last one.
   a new game starts UNARMED and with no board, pack or DNA mode; each is FOUND in the story (a `SAVE.kit` list, the weapon wheel
   showing only what he has, GOD > ALL KIT for testing). Clancy rescued in the sequence rather than following from the start.
   Order of discovery is my first guess and is written into the quest table where he can move it.
+- **m465: the found kit.** A new campaign game is bare hands. Order (one id each in `GEAR.get`, move freely): HAMMER for freeing
+  Dee (ch1), BLASTER at the end of Chapter 1 (Briggs), SKATEBOARD at The Pearl's end (ch2c), HOVER PACK at Hollow Creek's end
+  (ch3c), LAUNCHER at the Waterfront's end (ch4c). Clancy stays "found at the wreck" in ch0's first step. GOD > ALL KIT gives
+  everything. The new technologies (psychic, mind control, telekinesis, phasers) are not built; each will be a slot plus a
+  `GEAR.get` line.
 
