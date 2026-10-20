@@ -383,7 +383,7 @@ different context window, let me know."*
   (face -Y, so turned to face out of the wall; keep its small z tilt); `crown` -> `rx_crownsign` at (cu, H + 2, -D + .4), scaled
   X by W * .7, in place of the dark board and its gold panel (the four gold edge strips stay); `rx_mast` at (W - 1, H, -1) in
   place of the mast cylinder and its lamp sphere (`crown` and `vents` both have one).
-- [ ] **T4a. Swap in the gorge's stilt houses** (`models/campaign/stilt_village.glb`; no collision -- keep the platform and wall boxes).
+- [x] m628 **T4a. Swap in the gorge's stilt houses** (`models/campaign/stilt_village.glb`; no collision -- keep the platform and wall boxes).
   In `buildGorgeVillage`, each house in a LOCAL frame: origin at (AU(b, s, dC), Wy, b) -- the platform's top at the house centre;
   local +X = +d (away from the river, toward the walk and the door), local +Y = +b. Because AU flips u with s, a house on s = 1
   needs scale.x = -1 (so +X runs to -u) and one on s = -1 needs none; then turn by ps. `sv_platform` in place of the platform box

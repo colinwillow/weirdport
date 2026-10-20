@@ -422,6 +422,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE GORGE'S STILT HOUSES ARE HIS ART (m628, T4a, `stilt_village.glb`, `?stilt=0`, `svPut`).** In `buildGorgeVillage`, each
+  house is in its own frame: origin on the platform at the house centre, his +X = +d (away from the river), +Y = +b (the
+  campaign mirror). **AU flips u with s, so a house on s = 1 gets scale.x = -1**; with the mirror's z flip that is a half-turn,
+  not a reflection, so the winding holds. Then each house is turned ps. The pieces:
+  - `sv_platform` and `sv_house_trim`
+  - `sv_house_wall` (tinted `wall_k`) and `sv_house_roof` (tinted `roof_k`)
+  - `sv_boat` at the mooring
+  The platform and wall colliders stay, and so do the four stilts to the bed. A house falls back to the code's drawing
+  unless all four of its pieces are found.
+
 - **THE KIT TOWN'S OTHER ROOF EXTRAS ARE HIS ART (m626, T3z, `roof_extras2.glb`, `?rx2=0`, `KGEN.rx2G`).** `kgenMake`'s `art`
   now takes a turn (rx, ry, rz) and a scale, and picks the file by name. These replace the drawn ones:
   - `rx_pod`: at the roof, uniform s, its own yaw.
