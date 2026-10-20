@@ -600,7 +600,7 @@ differ" table there, so no region feels like the last one.
     River Islands, down the log flume.
     - [x] m543 **F2c-1** the land: its own landmass past the islands (+z), a plateau ~24 m, the upper river in a canyon at 13 m, THE FALLS (15 m, straight into the sea), the fjord below them out to the coast, pines. GOD `gzfalls`, `gzriver`.
     - [x] m551 **F2c-2** the caves behind the falls (a ledge path behind the sheet, a cave with a way up to the upper river), spray, rainbows in it, the falls' sound.
-    - [ ] **F2c-3** the stilt village: houses on stilts along the fjord's wall, walkways and rope bridges between them and across, fishers and river guides.
+    - [x] m558 **F2c-3** the stilt village: houses on stilts along the fjord's wall, walkways and rope bridges between them and across, fishers and river guides.
     - [ ] **F2c-4** the dam gates upstream: shut them and the falls dry to a trickle and the cave mouth opens; open them and they roar.
     - [ ] **F2c-5** the scuba diver and the underwater caves under the fjord; the scuba form swims and breathes.
     - [ ] **F2c-6** the ways in and on: down the log flume and the rapids from Hollow Creek, the lookout and the glider to the islands; its region on the map.

@@ -185,6 +185,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE GORGE'S STILT VILLAGE (m558, F2c-3, `GVILL`, `buildGorgeVillage`, GOD `gzvillage`, places GVILLAGE).** Both walls of the
+  fjord: a plank walk on stilts at sea + 3.2 (d 7.5..10 from the river's line), seven houses out over the water on platforms
+  (hut with a collider, hip roof, door to the walk, a window over the water, a lantern, a fish rack, a net, a boat tied under),
+  two rope bridges across (`pearlSpan`, kind 'rope'), and a CLIFF STAIR up the east wall: 66 risers of .296, each step hung on the
+  wall .7 m out from where the wall is its own height (`hwDn + (y - fjord) / wall`), walking -b from the walk's upstream end.
+  **The walk was 3 m pieces turned to the river's bend and they left WEDGE GAPS on the outside of every bend** -- places' walk fell
+  through one to the bed (-4.44). It is 1.5 m pieces 1.9 long now. Four fishers/guide (role `fisher`). places: walked the walk and
+  the stair to 20.51 of 20.51.
+
 - **OLD TOWN'S FOOD CARTS ARE HIS ART (m556, T2u, `OTCARTS.glb`, `?carts=0`).** Per cart: `fc_cart_paint` (its one white material
   CLONED per cart and set to `MAT['c' + i]`'s colour), `fc_cart_trim`, and `fc_cart_shutter` on a shut one -- mirrored in z
   (MEASURED: the window and bulbs sit at glTF -z, so Blender +Y is the front) and turned `yaw` as the body box. The body's
