@@ -329,6 +329,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **EVERY FARM TREE IS HIS ART, INSTANCED (m601, T3n, `farm_trees.glb`, `?ftree=0`, `FTK`, `ftBuild`).** `farmTree` pushes a world
+  matrix for `ft_oak` / `ft_willow`: at (u, ground, v), scaled by `s`, turned by the trunk's own roll plus the frame's `th`. The
+  matrix is not mirrored, because a negative scale in an instance matrix flips the winding.
+  `ftBuild` makes one InstancedMesh per piece per material. **It runs after `buildCityRing`, the last caller, and before
+  `farmBatch`.** Without the file the code draws its own tree. **Every `rr()` roll is still spent with the file on** (the
+  drawing `geo` becomes a no-op whose arguments are still evaluated), so hedges, bushes and trees seeded after a tree stand
+  where they did. The trunk collider stays. `npm run places` reported no bad rows.
+
 - **THE MX TRACK'S ARCH, FLAGS AND TYRE STACKS ARE HIS ART (m599, T3m, `mx_track.glb`, `?mx=0`).** These are mirrored in z:
   - `mx_arch` stands at the midpoint of the arch's two feet, turned atan2(-(R.v - L.v), R.u - L.u) so his X runs L -> R. It
     replaces the posts, their tyres and the top bar. The code's canvas banner stays.
