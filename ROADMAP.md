@@ -199,7 +199,7 @@ different context window, let me know."*
   exactly as the counter box. Per stall: `pm_stall_paint` tinted with `cc[i % 5]` (one white material: clone or instance with
   setColorAt) and `pm_stall_trim`, in place of the counter's drawing, the canopy slab, the two poles and the plant icosahedron.
   100 / 1,340 faces.
-- [ ] **T2y. Swap in the camp kit** (`models/campaign/camp_kit.glb`, no collision file -- `buildCamp` keeps every collider, the
+- [x] m565 **T2y. Swap in the camp kit** (`models/campaign/camp_kit.glb`, no collision file -- `buildCamp` keeps every collider, the
   patchwork roof, the junk fence, the lean-to, the washing line, the lights, the smart spots and the fire). Blender X = the camp
   frame's u, +Y = its v, origins on the ground. In `tent(u, v, rot, L, W, H, mat)`: `oc_tent_paint` (one white material, tinted with
   `mat`'s colour) and `oc_tent_trim`, scaled (L/2.8, W/2.3, H/1.5) and turned `rot`, in place of the prism and its ridge pole;

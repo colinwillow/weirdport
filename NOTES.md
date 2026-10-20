@@ -210,6 +210,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **OLD TOWN'S CAMP IS HIS KIT (m565, T2y, `OTCAMP.glb`, `?camp=0`).** In `tent`: `oc_tent_paint` (cloned, tinted the tent's own
+  material) and `oc_tent_trim`, scaled (L/2.8, H/1.5, -W/2.3) -- the minus is the z mirror -- and turned `rot`; `oc_barrel` at the
+  fire (the fire point unchanged), `oc_sofa` turned r (checked: its front, Blender +Y, points within ~40 deg of the barrel, so no
+  extra pi), `oc_cart` per cart turned r, `oc_shack` at (u0, v0). Every collider stays (drawing popped); the prisms, ridge poles,
+  the barrel cylinder, the sofa's back and arms, the carts' legs, the shack's roof and stovepipe are not built. The patchwork roof,
+  fence, lean-to, washing line, lights, smart spots, herb tins and bucket are as before. `CAMP GLB FAIL` if it does not load.
+
 - **THE PEARL'S MARKET STALLS ARE HIS ART (m564, T2x, `OPEARL.stallG`, `?stall=0`).** Per stall `pm_stall_paint` (material cloned and
   tinted `MAT[cc[i % 5]]`) and `pm_stall_trim`, turned f like the counter box and mirrored in z -- MEASURED: the fruit crates and
   the chalkboard sit at glTF +z (Blender -Y), and the counter's local -z points at the plaza's middle, so mirrored they face the
