@@ -412,7 +412,8 @@ differ" table there, so no region feels like the last one.
         - [x] m479 **F0b-2b-3a** Chapter 4's first quest (`ch4`): the ferry ridden (board at Old Town, round the cabin to the far half, off over its own end), Rosa and Dex as the worker (the talk driver now picks the form by the speaker's group), an engineer's face (a role form), Uplift's gate. 5 steps.
         - [x] m480 **F0b-2b-3b** the orb side-quest the picker takes next (`qorb`: shoot down the pacifier orb -- the blaster through the pads, the camera at it), then `ch4b` (the control room, the lever, the line freed) and `ch4c` (the supervisor).
         - [x] m481 **F0b-2b-4a** Chapter 5's first quest (`ch5`): the rope bridges walked span by span, Rue, Rollergirl, up the mesa, Teo. 5 steps.
-        - [ ] **F0b-2b-4b** `ch5b`: Skye's form from the lookout and a glide down inside Rue's cones; the gap ramp on the board; up the needle.
+        - [x] m482 **F0b-2b-4b-1** `ch5b.0`: Skye's form (his kind sampled) and a glide from 7 m short of the cross, a dive onto it: down inside the cones.
+        - [ ] **F0b-2b-4b-2** `ch5b.1` THE GAP -- a finding first: on the board down the in-run (3.6 m of drop, ~12 m/s expected at g 20 and `SKSPEED.slope` 11) he reaches the kick at 1-3 m/s and stalls there, every run. Find why (the grade on the deck's triangles? the kick's first quads?) and fix it in the game; then the needle (`ch5b.2`).
         - [ ] **F0b-2b-4c** `ch5c`: out to the lighthouse, the keeper in his storm. - [ ] **F0b-2b-5** Chapter 6 (the Mothership).
   - [ ] **F0c Every world boots** through the real loader with no red toast, in `places`.
 - [ ] **F1 Polish passes, region by region, with `npm run shot`.** The farm had five; each of the others

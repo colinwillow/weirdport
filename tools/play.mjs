@@ -40,7 +40,7 @@ const server = http.createServer((q, r) => {
     // THE SHIPPED TEXT, with one handle spliced in beside the game's own: the things the driver reads and writes
     const s = body.toString(), k = 'window.melee = window.mel = {';
     if (!s.includes(k)) { console.error('play: no mel handle in index.html'); process.exit(1); }
-    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK, OFERRY, socialGroup, socialOf, ROLEFORM, OORB, kitPick, WEAP, slotNow, IXING, islWorld }; ' + k);
+    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK, OFERRY, socialGroup, socialOf, ROLEFORM, OORB, kitPick, WEAP, slotNow, IXING, islWorld, wingTapR, rosterOf, mphFold, IBASE, islLocal, boardMount, groundAt }; ' + k);
   }
   r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
 });
@@ -108,9 +108,9 @@ try {
       const stall = progress(d < r ? d + dy : d);
       if (stall > 1.2 && st.side <= 0 && st.t - st.sideT > 2.2) { st.side = .8; st.sideT = st.t; st.sideSign = -st.sideSign; st.sides++; }
       if (stall > STUCK && mayTele) teleport(tx, tz, d < r ? 0 : r * .6, ty); return false; };
-    const policy = () => {
+    const policy = (s0, T00) => {
       const q = S.quest.cur; if (!q) return 'no quest';
-      const s = q.steps[S.quest.step], T0 = S.quest.tgt, P = S.player.pos;
+      const s = s0 || q.steps[S.quest.step], T0 = s0 ? (T00 || null) : S.quest.tgt, P = S.player.pos;
       // m452: a target with a non-finite coordinate is NEVER walked to -- the stick would carry the NaN into the player (it did,
       // twice, on the building site's ladder, and looked like a game NaN). The step is named in the log instead.
       const T = T0 && Number.isFinite(T0.x) && Number.isFinite(T0.z) ? T0 : null;
@@ -233,6 +233,55 @@ try {
           if (st.ropeI === 0) goTo(Q[0], Q[1], 2, true, true); else { st.side = 0; walk(Q[0], Q[1], false); }
           if (!st.ropeLog || st.t - st.ropeLog > 15) { st.ropeLog = st.t; st.log.push('rope ' + st.ropeI + '/' + st.rope.length + ' y ' + P.y.toFixed(1) + ' @' + st.t.toFixed(1)); }
           return '';
+        }
+        // m482: A FLIGHT DOWN ON RUE'S FIELD (`isl:landed`: out of a flight, grounded inside the cones' 6.5 m). Skye's form
+        // first (the `glider` stem: the ordinary sample driver, on his kind), then from 7 m short of the cross, heading at it,
+        // the right pad double-tapped (`wingTapR`, a frame apart), and at once a dive with the stick (down = dive, his
+        // default) steering onto the cross (+x turns him right: heading -= x). Down outside the ring, round again.
+        if (s.flag === 'isl:landed' && S.IXING.fieldAt) {
+          const stem = S.mphFold(S.rosterOf('glider').stem), p = S.player, C = S.IXING.fieldAt, L = S.stick.L;
+          if (!p.wing && !(p.mphK && S.mphName(p.mphK) === stem)) {
+            if (S.SAVE.forms.includes(stem)) { if (!st.flForm) { st.flForm = 1; S.formPick(stem); st.log.push('form ' + stem + ' @' + st.t.toFixed(1)); } return ''; }
+            return policy({ type: 'sample', kind: S.rosterOf('glider').stem });
+          }
+          if (p.mphSt) { stickOff(); return ''; }
+          const hC = Math.atan2(C[0] - P.x, C[2] - P.z), dC = Math.hypot(C[0] - P.x, C[2] - P.z);
+          if (!p.wing) {
+            if (st.flPh === 2) { st.flPh = 0; st.flTries = (st.flTries || 0) + 1; st.log.push('landed ' + dC.toFixed(1) + ' m from the cross @' + st.t.toFixed(1)); }
+            const T1 = [C[0] - Math.sin(st.flA || 0) * 7, C[2] - Math.cos(st.flA || 0) * 7];
+            if (!st.flPh) { if (goTo(T1[0], T1[1], .8, false, true, C[1])) { st.flPh = 1; st.flT = 0; } return ''; }
+            // face the cross for a beat, then the double tap on two consecutive frames
+            st.flT += window.__clock.dt / 1000; walk(C[0], C[2], false);
+            if (st.flT > .25 && !st.tap1) { st.tap1 = 1; S.wingTapR(); } else if (st.tap1) { st.tap1 = 0; S.wingTapR(); st.flPh = 2; st.flA = (st.flA || 0) + .9; }
+            return '';
+          }
+          L.down = 1; const err = Math.atan2(Math.sin(hC - p.heading), Math.cos(hC - p.heading));
+          L.x = Math.max(-1, Math.min(1, -err * 2)); L.y = 1;
+          return '';
+        }
+        // m482: THE GAP (`isl:gap`: airborne off the humps' lip, down dry 12 m or more past it). As himself (a disguise cannot
+        // take the board), the deck out (`kitPick`) and stepped on (the left pad's up-flick, `boardMount`), from the ramp's own
+        // top (`godRamp`), then flat out along the ramp's line and never braking; down short, back to the top and again
+        if (s.flag === 'isl:gap' && S.IBASE.ramp && S.IBASE.godRamp) {
+          const p = S.player, Rp = S.IBASE.ramp, G = S.IBASE.godRamp;
+          if (p.mphK && !p.mphSt) { if (!st.gZap) { st.gZap = 1; S.formPick('zap'); st.log.push('as himself @' + st.t.toFixed(1)); } return ''; }
+          if (p.mphSt) { stickOff(); return ''; }
+          const far = S.islWorld(...Rp.R(Rp.sL + 40, 0));
+          if (!st.gMeas) { st.gMeas = 1; const m = []; for (const ss of [-3, -1.5, 0, .5, 2, 4, 8]) { const [x, z] = S.islWorld(...Rp.R(ss, 0)); m.push(ss + ':' + S.groundAt(x, z, 40, 60).toFixed(1) + '/' + Rp.tg(ss).toFixed(1)); } st.log.push('ramp floor/tg ' + m.join(' ') + ' y0 ' + Rp.y0.toFixed(1) + ' sL ' + Rp.sL.toFixed(1)); }
+          if (!p.riding) {
+            const bi = S.WEAP.slots.findIndex(w => w.board);
+            if (!st.gRun && !st.gAt) { if (goTo(G[0], G[2], 1.2, false, true, G[1])) { st.gAt = 1; st.gFace = 0; } return ''; }
+            // FACING DOWN THE LINE FIRST: on the deck a stick more than 90 degrees off its nose is the BRAKE, never a turn
+            if (!st.gRun) { st.gFace += window.__clock.dt / 1000; walk(far[0], far[1], false);
+              if (st.gFace < .5) return ''; if (!S.slotNow().board) { S.kitPick(bi); return ''; }
+              if (!p.swap) { S.boardMount(0, -1); st.gRun = 1; st.gAt = 0; st.gTry = (st.gTry || 0) + 1; st.log.push('board run ' + st.gTry + ' @' + st.t.toFixed(1)); } }
+            return '';
+          }
+          // riding: flat out at the far end of the line; once he is down again past the lip and it did not count, back to the top
+          const [u, v] = S.islLocal(P.x, P.z), [lu, lv] = Rp.R(Rp.sL, 0), sNow = (u - lu) * Rp.dir[0] + (v - lv) * Rp.dir[1];
+          if (p.grounded && sNow > 4 && !S.SAVE.flags['isl:gap']) { st.log.push('down at ' + sNow.toFixed(1) + ' m past the lip'); st.gRun = 0; S.godTo(G[0], G[1], G[2]); stickOff(); return ''; }
+          if ((st.gLogN || 0) < 3 && (!st.gLogT || st.t - st.gLogT > 2)) { st.gLogT = st.t; st.gLogN = (st.gLogN || 0) + 1; const hl = Math.atan2(far[0] - P.x, far[1] - P.z); st.log.push('s ' + sNow.toFixed(1) + ' v ' + Math.hypot(p.vel.x, p.vel.z).toFixed(1) + ' y ' + P.y.toFixed(1) + (p.grounded ? ' g' : ' air') + ' bH ' + (+p.boardH).toFixed(2) + ' line ' + hl.toFixed(2) + ' near ' + S.DUMMIES.filter(d => d.root && Math.hypot(d.root.position.x - P.x, d.root.position.z - P.z) < 3).map(d => d.markId || S.mphName(d.K)).join('/')); }
+          walk(far[0], far[1], true); return '';
         }
         // falls through to the ordinary flag driver
         { if (T) { goTo(T.x, T.z, 1.2, true, true, T.y); return ''; }   // m466: inside the game's own radius (the papers: 1.9 m), not at the edge of it

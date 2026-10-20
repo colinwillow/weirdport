@@ -17,6 +17,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE FLIGHT DOWN ON RUE'S FIELD IS DRIVEN; THE GAP IS A FINDING (m482, `tools/play.mjs`).** Flight: Skye's form by the ordinary
+  sample driver on his kind (`policy` takes a step override now), then from 7 m short of the cross, heading at it, the right
+  pad double-tapped (`wingTapR` on two consecutive frames) and at once a full dive, the stick turning onto the cross (+x turns
+  him RIGHT: `heading -= x`). Down inside the 6.5 m ring in about a second, every run. **The gap, measured:** as himself (a
+  disguise cannot take the board), facing down the line before stepping on (a stick > 90 deg off the deck's nose is the
+  BRAKE, never a turn -- the first try sat at the gate for 100 s), flat out. Floor = `tg` all along the line (no hole); the
+  in-run deck drops from 11.7 at the gate to ~8 at s 6 -- and he arrives there at **1-3 m/s and rocks in place**, run after run.
+  3.6 m of drop at g 20 is ~12 m/s and the board's slope term is 11 m/s^2 per unit grade. **Something on that deck is not
+  giving him the grade, or the kick's first quads stop him** -- the next pass instruments `boardGrade` there before touching
+  anything. The tip ("flat out from the top... a tail gust helps") reads as if it was never ridden either.
+
 - **CHAPTER 5'S FIRST QUEST PLAYS THROUGH: THE ROPE BRIDGES WALKED (m481, `tools/play.mjs`).** The driver walks every span's own sag
   curve (`IXING.spans[i].pt(t)`, islands' frame, through `islWorld`) sample by sample at WALKING pace and with the side-step
   off -- a 1.4 m deck has no room for the stall dodge -- then on to the landing field. 28 s from Old Town's sign to the
