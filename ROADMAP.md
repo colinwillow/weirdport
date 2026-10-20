@@ -56,7 +56,7 @@ different context window, let me know."*
   instance it), `fb_round` (1.6 m round bush), `fb_cypress` (2.6 m tall cone, 41 tris) and `fb_flower` (0.9 m mound with orange/red
   blooms). Scatter round/cypress/flower along the hedge lines, by the farmhouse and at field corners (Colin: "bushes on the farm
   land"); a random yaw and 0.85-1.15 scale per copy. Opaque, vertex-free plain materials (FB_*), smooth normals.
-- [ ] **T2e. Swap in the crash-site kit** (`models/campaign/crash_site_kit.glb` + `_collision.glb`). In `buildCrash`: the furrow's
+- [x] m497 **T2e. Swap in the crash-site kit** (`models/campaign/crash_site_kit.glb` + `_collision.glb`). In `buildCrash`: the furrow's
   berm ellipsoids + plank boxes become `cs_berm` tiled every 3.0 m along each side (Blender X = along the furrow = three x, its
   darker face -Y turned TO the furrow; the lump is 4.3 m long so neighbours overlap into one ridge; scale it up toward the wreck the
   way `h` grows now, `a*a`), each with its `col_bld_cs_berm` box; the ico0 clods become `cs_clod_a/b/c` (random yaw); and new

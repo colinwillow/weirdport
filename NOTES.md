@@ -26,6 +26,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE CRASH SITE IS HIS KIT (T2e, m497, `csKit`, `csFurrow`, `buildCrash`).** `models/campaign/crash_site_kit.glb` + its
+  collision file, loaded beside the wreck (`?cskit=0` is the A/B; a failed load is the old code furrow, chip note `CSKIT GLB
+  FAIL`). Every piece is INSTANCED per piece and material (`cskit:<piece>`). A piece is placed at frame (u, v) turned `psi`,
+  so its world yaw is th + psi -- `bx`'s own rule -- and its collider is HIS `col_bld_cs_<piece>` box scaled and turned with
+  it through `bx`; **a collider is only added when the scaled box stands taller than .36 m** (his step), so a clod he can
+  step on is not a wall. The berm's wet face is glTF local +Z (Blender -Y), which in the frame is +n: the +n side's berms
+  are turned by pi. Berms every 3 m, height x(.5 + 1.3 a^2) toward the wreck; clods a/b/c random; four plates and two struts
+  in the last third; ONE cargo pod 3.4 S + 3.5 m off the furrow at a = .62 (`CRASH.podAt` -- the pickup spot, nothing reads
+  it yet); three broken fence panels across the furrow's start; grass tufts. `play ch0` COMPLETE.
+
 - **RAE'S RACE WAS LOST SINCE m483, THREE WAYS AT ONCE (m496, F1-HC2, `raceStep`, `islePutBack`, `boardGrade`).** Bisected by
   swapping in old `index.html`s under today's `play.mjs`: m482 won (on its second race), m483 lost both at lap 1, gate 1 --
   and a per-second trace (`raceS`, v, y, distance off the line) showed why:
