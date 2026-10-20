@@ -466,6 +466,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE HOTHOUSE'S TWILIGHT, SPREAD AND CUT (m642, F2d-2, `HOTH.tw/every/push/cap/cut`, `hothCut`).**
+  - **The twilight** damps in by how grown the player's block is. **It snapshots the fog colour and the sun and hemi
+    intensities when it starts, writes from that base every frame while it is on, and restores and drops the base at zero.**
+    It is never a lerp of the live value, which would creep a little further every frame.
+  - **The spread:** every 40 s a random held block pushes .1 share into a random non-held 4-neighbour (`turfPush`, saved),
+    up to `cap` 18 held. It toasts when a block falls.
+  - **The cut:** `boltHit` calls `hothCut`. A bolt in a grown, held block takes `cut` x (.5 + charge) off `skin` there,
+    spits teal sparks, and toasts when the block is lost. The save is batched (`dirty`, at most every 5 s), not one write per
+    bolt.
+  The melee strike does not cut yet.
+
 - **THE BASE JUMPERS' SHACK IS HIS ART (m641, T4g, `island_base.glb`, `?ibase=0`).** `ib_shack` is placed through `campPlace`
   (mirrored in z) and turned psi = atan2(eu, ev). By the box rule that puts his +Y on the exit deck's e and his +X on -n, the
   frame he built it in, so no extra turn is needed. It replaces the hut, roof, door, awning, posts, rail, five rigs and bench;
