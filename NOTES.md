@@ -7,6 +7,23 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CHAPTER 3 PLAYS THROUGH, AND THE BIKER RODE FOR THE FIRST TIME (m470).** *Four game faults the playthrough found:*
+  (1) **`boardBusy` refused the board to every disguise but her skates** (`p.mphK && !bladeOn()`, m263), and the biker IS a
+  disguise -- so since m374 wearing him never put him on his bike, the race could never start, and `bikeOn()` read true the
+  whole time. `!bikeOn()` joins the exception. **A derived state with two conditions needs both checked when a third mode
+  arrives** -- the skates added an exception and the bike, one mode later, did not.
+  (2) **The start hill's back was a staircase across the whole track** (`buildBikeTrack`), and the loop runs THROUGH the hill:
+  lap 1 starts on top, lap 2 arrives at the back and stopped dead (0.9 m/s). It is a ramp now (h / .26 long, both windings),
+  so the hill is the lap's jump. `places`' own race row said WON (it starts lap 1 and never asks about lap 2).
+  (3) **A body knocked where there is no floor** (the creek under the stilts: `groundAt` -1000) fell to -1000 and stayed there
+  -- a quest's biker gone. Every body remembers where it last stood (`d.okX/Y/Z`, at rest above -50) and is put back there.
+  (4) **`texLoad` let `KTX2Loader.load` THROW at module scope** -- node's fetch does on a relative URL, so `npm run places` died
+  at boot from m425 to now and no build since has had its place check. Caught into `onErr` now; places runs clean.
+  *And one pacing fix:* the rally is called within 15 s while ch3c waits on the speech within 60 m of the stage.
+  *Harness:* a race driver (`gang:respect`): the biker form, still at the gate for the countdown, then the line itself -- its
+  nearest point in a window behind-to-ahead of the last one (never further back, so running wide cannot turn him round), aimed
+  14 m past. The first version advanced its target only while he was near it, ran wide, turned round, and rode 2.5x the lap.
+
 - **CAMPAIGN DETAIL PASS, PIECE 1: THE CRASH WRECK AS A REAL MODEL (m469, `models/campaign/`).** *"Develop the game land... the crash, all that stuff could be developed further."* The campaign's scenery is typed into `index.html`, which the loop owns, so the scenery window builds each piece as a GLB in `models/campaign/` (contract in `README_CAMPAIGN_ART.md`) and ROADMAP T2a asks the loop to swap it in -- art in files, code in the loop, no collisions. The wreck: a smooth 64-segment saucer (hull, dark rim, sixteen rim lights with a third dead, glass dome over a glowing core), tipped 20 degrees nose-down and sunk, a torn gash with exposed ribs and three peeled panels on the nose side, the hatch ramp open on the tail side, a bow wave of earth in front, a scorch disc and hull shards and clods behind. 3,140 tris. Three exact colliders (tail, nose, bow wave) and the six empties `CRASH.at` already reads. `models/campaign` added to `bump.mjs` DIRS. Preview: `crash_wreck_preview.png`. Not loaded by the game until T2a.
 - **CHAPTER 2 PLAYS THROUGH HEADLESS (m468, `tools/play.mjs`).** Three harness faults, no game faults: (1) a chapter started
   directly had only zap's form, so every Pearl local fled and the barista talk failed after 21 teleports -- a chapter-N start

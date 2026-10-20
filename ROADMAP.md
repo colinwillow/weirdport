@@ -393,7 +393,7 @@ differ" table there, so no region feels like the last one.
       - [x] m430 **F0b-2a** Chapter 1: the turn watched, the Skinsuit knocked down each time it is up, the fix gate leaned on, the talks as the crew, the boss and the two turned crew; the shipped picker drives the quest order (the incursion's own quest included when its ship comes); a seeded random (`--seed`), a NaN watchdog with the last frames' trace, teleports to the target's level. Three seeds pass all four quests (17 steps) in about three minutes each. **Found and fixed: a `fix` gate's lean counted only while pressed inside the slab's half-thickness (0.49 m); a thumb resting 3 cm off it saw "Fixing... 1%" for ever.**
       - [ ] **F0b-2b** Chapters 2 to 6, one per build: `reach` (a climb or a jump), the Pearl's barricades inside the march, the roofs, the ferry and the swing bridge, the freight line, a bike, the glider, the islands' crossings and the Mothership's shaft; the bosses' downs.
         - [x] m468 **F0b-2b-1** Chapter 2: a chapter-N start carries the forms and the quests (so the kit) the chapters before it gave; the flag driver walks inside the game's own radius. 14 steps, 3 quests in 115 s. Ash's after-talk failed once in four runs (18 teleports, never in talk reach) and is unsettled.
-        - [ ] **F0b-2b-2** Chapter 3 (Hollow Creek: the freight, the bike, the race, the rally man).
+        - [x] m470 **F0b-2b-2** Chapter 3 (Hollow Creek): 12 steps, 3 quests in 155 s -- the race WON at Rae's own 15 m/s in 51 s. Found and fixed on the way: **the biker never rode his bike** (since m374), the start hill's back stairs stopped every lap 2, a knocked body over the creek fell to -1000 for good, and `npm run places` had died at boot since m425.
         - [ ] **F0b-2b-3** Chapter 4 (the Waterfront). - [ ] **F0b-2b-4** Chapter 5 (the islands). - [ ] **F0b-2b-5** Chapter 6 (the Mothership).
   - [ ] **F0c Every world boots** through the real loader with no red toast, in `places`.
 - [ ] **F1 Polish passes, region by region, with `npm run shot`.** The farm had five; each of the others
@@ -1257,4 +1257,7 @@ differ" table there, so no region feels like the last one.
 - **m468: the playthrough harness starts a later chapter as a player would arrive there** -- the earlier chapters' forms
   (farmer, worker) and their quests marked done, so the found kit is in his hands. Without it, Chapter 2's barista ran from a
   bare alien for two minutes, which no player would ever see.
+- **m470: the rally is called within 15 s when Chapter 3 is waiting on the speech** and you are within 60 m of the stage (it ran
+  110-170 s quiet + 34 s build otherwise: up to 3.5 minutes stood at an empty stage). **The start hill's back is a ramp now**,
+  not stairs: lap 2 rides up it and jumps off the front (the stairs were a wall to the bike). Rae's speed is unchanged (15).
 

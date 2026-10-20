@@ -40,7 +40,7 @@ const server = http.createServer((q, r) => {
     // THE SHIPPED TEXT, with one handle spliced in beside the game's own: the things the driver reads and writes
     const s = body.toString(), k = 'window.melee = window.mel = {';
     if (!s.includes(k)) { console.error('play: no mel handle in index.html'); process.exit(1); }
-    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm }; ' + k);
+    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE }; ' + k);
   }
   r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
 });
@@ -133,8 +133,9 @@ try {
           if (goTo(T.x, T.z, 1.8, true, true, T.y) && d.st !== 'down' && st.t - st.blowT > .6) blow(d); return ''; }
         case 'sample': { let d = downBody();
           // m452: a step that names KINDS (any of them will do): one of those, downed -- knocked down first if none is
-          if (s.kinds || s.kind) { const ks = (s.kinds || [s.kind]).map(S.mphFold), ok = x => !x.wasK && ks.includes(S.mphName(x.K));
+          if (s.kinds || s.kind) { const ks = (s.kinds || [s.kind]).map(S.mphFold), ok = x => !x.wasK && !x.gone && x.root && x.root.position.y > -100 && ks.includes(S.mphName(x.K));   // m469: not one under the world
             d = S.DUMMIES.find(x => x.st === 'down' && ok(x)) || null;
+            { const lost = S.DUMMIES.find(x => x.root && x.root.position.y <= -100 && ks.includes(S.mphName(x.K)) && !x.gone); if (lost && !st.lostLog) { st.lostLog = 1; st.log.push('BODY UNDER THE WORLD ' + (lost.markId || S.mphName(lost.K)) + ' y ' + lost.root.position.y.toFixed(0)); } }
             if (!d) { let f = null, fd = 1e9; for (const x of S.DUMMIES) { if (!ok(x) || !x.root) continue; const q = near(x.root.position.x, x.root.position.z); if (q < fd) { fd = q; f = x; } }
               if (!f) return 'sample: nobody of ' + ks.join('/');
               const F = f.root.position; if (goTo(F.x, F.z, 1.6, true, true, F.y) && st.t - st.blowT > .5) blow(f); return ''; } }
@@ -151,7 +152,26 @@ try {
           const ax = G.x + sn * 7 * side, az = G.z + cn * 7 * side, bx = G.x - sn * 7 * side, bz = G.z - cn * 7 * side;
           if (!st.gateIn) { if (goTo(ax, az, 1.2, true, true)) st.gateIn = 1; return ''; }
           goTo(bx, bz, 1.0, false, false); return ''; }
-        case 'flag': { if (T) { goTo(T.x, T.z, 1.2, true, true, T.y); return ''; }   // m466: inside the game's own radius (the papers: 1.9 m), not at the edge of it
+        // m469: THE RACE (`raceStep`): on the bike (the biker form IS the bike), stopped at the gate for the countdown, then
+        // the loop's own line ridden like a thumb would -- the stick at a point ~10 m ahead on `raceAt`, never a teleport
+        case 'flag': if (s.flag === 'gang:respect') {
+          const R = S.HCRACE, G = S.HCBIKE.startAt;
+          if (!S.player.bike) { if (!st.formT) { st.formT = 1; S.formPick('FAT BIKER'); st.log.push('form FAT BIKER @' + st.t.toFixed(1)); } }
+          if (R.st === 'race') {
+            if (st.raceN !== R.runs) { st.raceN = R.runs; st.raceS = R.lap * R.len + Math.max(0, R.cp - 1) / R.cps * R.len; st.log.push('race ' + R.runs + ' GO @' + st.t.toFixed(1)); }
+            // where he IS on the line: the nearest point in a window just behind to well ahead of the last one (never behind it by
+            // more than the window, so running wide cannot turn him round), then aim 14 m past it
+            { let bs = st.raceS, bd = 1e9; for (let q = st.raceS - 6; q <= st.raceS + 60; q += 2) { const B = S.raceAt(q), e = Math.hypot(B.x - P.x, B.z - P.z); if (e < bd) { bd = e; bs = q; } } st.raceS = Math.max(st.raceS, bs); }
+            const A = S.raceAt(st.raceS + 14); walk(A.x, A.z, true); st.lapSeen = R.lap + ':' + R.cp + ' v ' + Math.hypot(S.player.vel.x, S.player.vel.z).toFixed(1) + ' her ' + (R.sR / R.len).toFixed(2) + ' laps, me ' + ((R.lap * R.cps + R.cp - 1) / R.cps).toFixed(2) + ' @' + R.t.toFixed(0) + 's'; return '';
+          }
+          if (st.raceN && st.raceN === R.runs && R.st === 'idle' && st.raceLost !== R.runs) { st.raceLost = R.runs; st.log.push('race ' + R.runs + ' LOST at lap:cp ' + st.lapSeen + ' @' + st.t.toFixed(1)); }
+          if (R.st === 'count') { stickOff(); return ''; }
+          if (st.t - (st.raceLogT || -99) > 15) { st.raceLogT = st.t; const p = S.player; st.log.push(`gate? st ${R.st} cool ${(+R.cool).toFixed(1)} board ${p.board} bike ${p.bike} mph ${p.mphK ? S.mphName(p.mphK) : '-'} d ${Math.hypot(P.x - G[0], P.z - G[2]).toFixed(1)} v ${Math.hypot(p.vel.x, p.vel.z).toFixed(1)} | PBIKE.up ${mel.PBIKE.up} mode ${p.mphK && p.mphK.mode} mph ${!!(p.mphK && p.mphK.mph)} rigIs ${!!(p.mphK && p.mphK.mph && S.rig.model === p.mphK.mph.model)} mphSt ${p.mphSt} bikeOn ${mel.bikeOn()} sk8 ${mel.SK8 && mel.SK8.on}`); }
+          if (goTo(G[0], G[2], 3, false, true, G[1])) stickOff();
+          return '';
+        }
+        // falls through to the ordinary flag driver
+        { if (T) { goTo(T.x, T.z, 1.2, true, true, T.y); return ''; }   // m466: inside the game's own radius (the papers: 1.9 m), not at the edge of it
           if (s.flag === 'inTown' && S.ISLE.rect) { const R = S.ISLE.rect, tx = Math.min(Math.max(P.x, R[0] + 8), R[1] - 8), tz = Math.min(Math.max(P.z, R[2] + 8), R[3] - 8); goTo(tx, tz, 1, true, true); return ''; }
           return 'flag: no driver for ' + s.flag; }
       }
@@ -191,7 +211,7 @@ try {
         // m466: AND WHAT THE CHAPTERS BEFORE IT GAVE HIM -- the forms their samples put on the wheel (a Chapter 2 start as
         // nobody but himself is an alien everybody runs from, which no player arriving there is), and their quests marked
         // done, so the kit found on the way (`GEAR`) is in his hands
-        const FORMS_BY = [[1, 'HICK SKINNY'], [2, 'CONTRUCTION WORKER']];
+        const FORMS_BY = [[1, 'HICK SKINNY'], [2, 'CONTRUCTION WORKER'], [3, 'FAT HIPSTER'], [4, 'FAT BIKER']];
         for (const [c, nm] of FORMS_BY) if (n >= c) S.progForm(nm);
         for (const q of S.QUESTS) if (q.ch !== undefined && q.ch < n && !q.dormant) S.progFlag('qdone:' + q.id); if (n >= 1) mel.go('oldtown'); S.stick.L.x = S.stick.L.y = 0; }, N);
       console.log(`     ${CH}: the save moved to chapter ${N}` + (N >= 1 ? ' and him to the city spawn' : ''));
