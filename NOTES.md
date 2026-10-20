@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m572 -- the skate park hangout as art (scenery window; ROADMAP T3c)
+
+`models/campaign/skate_hangout.glb`, at the m505 spots. The SOFA in faded blue with a sunk cushion, a thrown blanket and paint tags
+on its back; the COOLER with its white lid, handles and cans; the SPEAKER on a slatted crate with two cones, an LED strip, a carry
+handle and its cable; and a real SKATEBOARD -- a kicked deck with grip on top, trucks and wheels, its underside graphic one white
+material the code tints for the three boards leaning on the rail. Shipped unverified.
+
 ## m570 -- the halt's shelter and water tank as art (scenery window; ROADMAP T3b)
 
 `models/campaign/halt_kit.glb`. The halt had its m494 pass; the shelter was still a red slab on two sticks and the loco's tank a

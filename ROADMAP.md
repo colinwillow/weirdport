@@ -225,6 +225,12 @@ different context window, let me know."*
   -X, as side = -1; it adds a back screen, brackets, a fretted valance, a gutter and a clock). `fh_tank` at (tu, tv) on g --
   replaces the four legs, the tank cylinder, the cone, the three tori and the spout bar (a staved tank with hoops, braced timber legs
   on pads, the spout swung out along +X with its chain and valve, a ladder). 313 / 809 faces.
+- [ ] **T3c. Swap in the skate park hangout** (`models/campaign/skate_hangout.glb`, no collision file -- `buildIslandSkate` keeps
+  every collider). Blender X = the islands' frame u, +Y = its v, origins on the deck y: `sk_sofa` at (66, 18.6) in place of its four
+  boxes (back on -Y, as the code's); `sk_cooler` at (68.5, 17.2) in place of its two; `sk_speaker` at (63.8, 19.4) in place of the
+  crate, the speaker box and its cone circle; and the three leaning boards -- `sk_board_paint` (one white material, tinted pink /
+  paint / yel) + `sk_board_trim` at (70 + k*.9, S.v1 - .45, y + .1), tilted -1.1 about X as the code tilts its boxes. 192 / 94 /
+  118 / 5+77 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
