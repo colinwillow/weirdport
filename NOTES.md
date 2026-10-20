@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m566 -- the sentry turret as art (scenery window; ROADMAP T2z)
+
+`models/campaign/turret.glb`: Uplift's turret in the three pieces `wfTurretParts` moves -- the BASE (a flared drum with bolts and
+hazard flutes), the YOKE (a yellow cradle with cheeks up to the trunnion, a cable box, stripes) and the GUN (a banded body with a
+vented top plate, twin barrels with shrouds and muzzles, trunnion caps, a sensor hood over the code's glowing lens and two small
+status lamps, an ammo feed) -- each authored in its group's own frame so it drops in unturned and every bit of aiming stays the
+code's. And the HACK PANEL with a green screen, buttons, a striped kick plate and an aerial. Shipped unverified.
+
 ## m563 -- the camp's pieces as art (scenery window; ROADMAP T2y)
 
 `models/campaign/camp_kit.glb`, at buildCamp's numbers. A TENT whose tarp sags a little between its poles, a closed back, front

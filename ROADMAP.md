@@ -206,6 +206,13 @@ different context window, let me know."*
   `oc_barrel` at (0, 0) in place of the barrel cylinder (the fire point stays); `oc_sofa` at (3.6, -1.4) turned r in place of its
   four boxes (its back is on Blender -Y: if it ends up facing away from the barrel, add pi); `oc_cart` at each cart in place of its
   basket and legs; `oc_shack` at (u0, v0) in place of its three walls, roof, stovepipe. 55+120 / 614 / 198 / 386 / 304 faces.
+- [ ] **T2z. Swap in the sentry turret** (`models/campaign/turret.glb`, no collision file -- `wfTurrets` keeps the posts and the
+  panel's collider; `wfTurretParts` keeps the lens and its glow, the laser, tracer, flash and all the aiming). Each root is built in
+  its THREE.Group's own frame (three y up, the muzzle along +z), so add it at (0, 0, 0) in that group unturned: `tu_base` in `grp`
+  in place of the base cylinder; `tu_yoke` in `yoke` in place of the yellow box; `tu_gun` in `gun` (its origin is the trunnion,
+  where `gun` already sits at .45) in place of the gun box and both barrel cylinders -- its sensor hood sits over the code's lens at
+  (0, .12, .62); `tu_panel` at each `T.panel` (pu, pv, Y + ph) in place of the panel box and its yellow top (its screen faces -Y:
+  turn it to face the walkway). 136 / 166 / 170 / 100 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
