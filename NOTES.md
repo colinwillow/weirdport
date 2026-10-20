@@ -5,6 +5,16 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m527 -- the fair's stage and grandstand as art (scenery window; ROADMAP T2k)
+
+`models/campaign/fair_stage.glb`, at buildFairground's numbers so every step, row, the catwalk and the ladder stay where the code
+puts them. The STAGE: a plank deck with a gold nosing and a skirt of red/white/blue swags, steps with handrails, a gold-framed
+blue backdrop with pleats, banners and a line of bulbs (the canvas RALLY sign stays the code's), speaker stacks with real cones
+on the deck and on the ground, a podium with an emblem and a mic, box trusses with zigzag lacing on four towers and two spans, the
+grated catwalk with rails, five lamp cans, and two festoons of bulbs on a wire down to the ground. The GRANDSTAND: painted risers,
+seat planks and footboards on brackets, yellow aisle marks, the side walls stepped to the rows with a handrail, a ribbed tin roof
+on steel posts, a fascia, pennants. Shipped unverified.
+
 ## m523 -- the fairground kit as art (scenery window; ROADMAP T2j)
 
 `models/campaign/fair_kit.glb`, at buildFairground's numbers. The FERRIS WHEEL comes in three parts because the code turns it:

@@ -104,6 +104,13 @@ different context window, let me know."*
   stays at u+.55, 3.3); `ff_livebarn` at (bu 16, bv 22) -- replaces the barn box, its flat roof and door (gambrel roof, cupola, a
   blank name board; the pens stay); `ff_gate` at (0, gv 25) -- replaces the posts, beam and the ticket booth (the arch of bulbs sits
   BEHIND the canvas sign at +.35 v). 196 / 3,426 / 104 / 392 / 392 / 278 / 983 faces.
+- [ ] **T2k. Swap in the stage and grandstand** (`models/campaign/fair_stage.glb`, no collision file -- `buildFairground` keeps every
+  collider, the steps' and rows' boxes, both canvas signs and the truss ladder). Blender X = the fair frame's u, +Y = its +v.
+  `ff_stage` at (0, S.v) on y: replaces the deck, the five steps a side, the backdrop, both pairs of speaker stacks, the podium,
+  the four truss posts, both spans, the catwalk and its rails and the five lamp cans (box trusses with lacing, bunting on the deck's
+  skirt, handrails on the steps, bulbs over the backdrop and down two festoons to the ground). `ff_grandstand` at (gu 20, (v0+v1)/2
+  = -2) on y: replaces the rows (seat plank + footboard each, same .9 x .34), the back wall, the side walls (stepped to the rows),
+  the posts and the roof -- the roof slopes LOW AT THE FRONT (-u) and high at the back. 7,872 / 1,385 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
