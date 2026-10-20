@@ -77,6 +77,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE UNDERNEATH SURFACES IN THE PEARL AND THE WATERFRONT; THE SAFE HOUSE (F2a-4, m524, `buildUnderneath`).** East of the
+  market (a new east door) a tunnel to THE CROSSWAYS (10 x 10), two shafts off it north and south, a tunnel east to the
+  SAFE HOUSE (10 x 9: cots, a table laid, plants under a grow lamp, lamps along the walls, Pell and Wren). The shafts'
+  tops are hatches like the first two, found by a stand test on their own ground (`spawnBeside`): the Pearl's at the dock
+  street's side (OPEARL frame u -6, v 30), the Waterfront's at the transit shed's front (`WFRONT.SHED`). **So
+  `buildUnderneath` now runs AFTER the Pearl** (its frame is the drain's) -- moved in `init` and in `places`' builder
+  list. The safe house's pad is a real portal (`portalAdd('under_safe')`): step on it once and it joins the network.
+  `UNDER.box` widened east to the safe house. Pads read back in the page: four, the Pearl's top at the dock street
+  (y 2.4), the Waterfront's at the shed (y 3.2). `places` exit 0.
+
 - **THE UNDERNEATH'S WATER LEVEL (F2a-3, m522, `buildUnderneath`, `underStep`).** The cistern's water is its own mesh now
   (`U.water`: hi y - .3, lo y - 2.6, moving .45 m/s), the pump room is off the cistern's west wall (a new gap through the
   same wall loop), and the grate in front of its wheel toggles it (one press per step onto it, `Pm.armed`). The pit's floor
