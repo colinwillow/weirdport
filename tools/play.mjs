@@ -40,7 +40,7 @@ const server = http.createServer((q, r) => {
     // THE SHIPPED TEXT, with one handle spliced in beside the game's own: the things the driver reads and writes
     const s = body.toString(), k = 'window.melee = window.mel = {';
     if (!s.includes(k)) { console.error('play: no mel handle in index.html'); process.exit(1); }
-    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK }; ' + k);
+    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK, OFERRY, socialGroup, socialOf, ROLEFORM }; ' + k);
   }
   r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
 });
@@ -122,7 +122,10 @@ try {
           // m452: a speaker who would not talk to him as he is (`socialOk` -- most flee an alien): put on a form they will,
           // through the shipped picker, the way a player does at the forms wheel
           { const d = bodyAt(T); if (d && d.talk && !S.socialOk(d) && !st.formT) { st.formT = 1;
-              for (const nm of S.SAVE.forms) { if (nm === 'zap') continue; const was = S.formNow(); S.formPick(nm); st.log.push('form ' + nm + ' @' + st.t.toFixed(1)); if (S.formNow() !== was) break; } } } if (goTo(T.x, T.z, 2.0, false, true, T.y) && st.t - st.talkT > .6) { st.talkT = st.t; S.talkTap(); st.log.push('talk @' + st.t.toFixed(1)); } return ''; }
+              // m479: the form whose GROUP this speaker talks to (`socialOf` and `talks`), not merely the first that changes him
+              const want = [S.socialOf(d), ...((d.talk.talks) || [])], grp = nm => (S.ROLEFORM[nm] && S.ROLEFORM[nm].group) || S.socialGroup(nm);
+              const pick = S.SAVE.forms.find(nm => nm !== 'zap' && (want.includes('*') || want.includes(grp(nm)))) || S.SAVE.forms.find(nm => nm !== 'zap');
+              if (pick) { S.formPick(pick); st.log.push('form ' + pick + ' (' + grp(pick) + ' for ' + want.join('/') + ') @' + st.t.toFixed(1)); } } } if (goTo(T.x, T.z, 2.0, false, true, T.y) && st.t - st.talkT > .6) { st.talkT = st.t; S.talkTap(); st.log.push('talk @' + st.t.toFixed(1)); } return ''; }
         case 'defeat': { if (!T) return 'defeat: nobody left to knock down'; const d = bodyAt(T); if (!d) return 'defeat: target is not a body';
           st.lastNpc = d.markId || null; if (goTo(T.x, T.z, 1.6, true, true, T.y) && st.t - st.blowT > .5) blow(d); return ''; }
         // the turn is the shipped test's own doing (it fires `virusGo` when he is within `r`): walk up and watch
@@ -133,7 +136,10 @@ try {
           if (goTo(T.x, T.z, 1.8, true, true, T.y) && d.st !== 'down' && st.t - st.blowT > .6) blow(d); return ''; }
         case 'sample': { let d = downBody();
           // m452: a step that names KINDS (any of them will do): one of those, downed -- knocked down first if none is
-          if (s.kinds || s.kind) { const ks = (s.kinds || [s.kind]).map(S.mphFold), ok = x => !x.wasK && !x.gone && x.root && x.root.position.y > -100 && ks.includes(S.mphName(x.K));   // m469: not one under the world
+          // m479: a step naming a ROLE's form (`form: 'ENGINEER'`: Ivy by crane 1) finds the bodies wearing that role
+          const roleOf = x => x.role && S.ROLEFORM[x.role] ? S.ROLEFORM[x.role].name : null;
+          const roleStep = s.form && Object.values(S.ROLEFORM).some(R => R.name === s.form);
+          if (s.kinds || s.kind || roleStep) { const ks = (s.kinds || (s.kind ? [s.kind] : [])).map(S.mphFold), ok = x => !x.wasK && !x.gone && x.root && x.root.position.y > -100 && (roleStep ? roleOf(x) === s.form : ks.includes(S.mphName(x.K)));   // m469: not one under the world
             d = S.DUMMIES.find(x => x.st === 'down' && ok(x)) || null;
             { const lost = S.DUMMIES.find(x => x.root && x.root.position.y <= -100 && ks.includes(S.mphName(x.K)) && !x.gone); if (lost && !st.lostLog) { st.lostLog = 1; st.log.push('BODY UNDER THE WORLD ' + (lost.markId || S.mphName(lost.K)) + ' y ' + lost.root.position.y.toFixed(0)); } }
             if (!d) { let f = null, fd = 1e9; for (const x of S.DUMMIES) { if (!ok(x) || !x.root) continue; const q = near(x.root.position.x, x.root.position.z); if (q < fd) { fd = q; f = x; } }
@@ -169,6 +175,37 @@ try {
           if (st.t - (st.raceLogT || -99) > 15) { st.raceLogT = st.t; const p = S.player; st.log.push(`gate? st ${R.st} cool ${(+R.cool).toFixed(1)} board ${p.board} bike ${p.bike} mph ${p.mphK ? S.mphName(p.mphK) : '-'} d ${Math.hypot(P.x - G[0], P.z - G[2]).toFixed(1)} v ${Math.hypot(p.vel.x, p.vel.z).toFixed(1)} | PBIKE.up ${mel.PBIKE.up} mode ${p.mphK && p.mphK.mode} mph ${!!(p.mphK && p.mphK.mph)} rigIs ${!!(p.mphK && p.mphK.mph && S.rig.model === p.mphK.mph.model)} mphSt ${p.mphSt} bikeOn ${mel.bikeOn()} sk8 ${mel.SK8 && mel.SK8.on}`); }
           if (goTo(G[0], G[2], 3, false, true, G[1])) stickOff();
           return '';
+        }
+        // m479: THE FERRY (`ferryStep`): wait at Old Town's landing for it to be docked there, walk onto its deck clear of the
+        // cabin, stand still while it crosses (it carries whoever is grounded on its boxes), then walk off along its own
+        // Waterfront walk-off points and on inland until the shipped "on the Waterfront" test passes
+        if (s.flag === 'wf:in' && S.OFERRY.grp && S.OFERRY.frame) {
+          const O = S.OFERRY, B = O.grp.position, Fr = O.frame, dir = [Fr.S, Fr.C], toOT = Math.sign((O.otAt[0] - B.x) * dir[0] + (O.otAt[2] - B.z) * dir[1]) || 1;
+          const al = (P.x - B.x) * dir[0] + (P.z - B.z) * dir[1], ac = (P.x - B.x) * dir[1] - (P.z - B.z) * dir[0];
+          const onBoat = Math.abs(al) < O.len / 2 - .4 && Math.abs(ac) < O.beam / 2 - .3;   // inside the deck's own rectangle
+          const deckAt = (A, C) => [B.x + dir[0] * A * toOT + dir[1] * C, B.z + dir[1] * A * toOT - dir[0] * C];
+          const boardStep = () => { const W3 = [deckAt(O.len / 2 + 1, 0), deckAt(4.5, O.beam / 2 - .9), deckAt(-4.5, O.beam / 2 - .9)]; st.boardI = st.boardI || 0;
+            const Q = W3[Math.min(st.boardI, 2)]; if (Math.hypot(P.x - Q[0], P.z - Q[1]) < .8 && st.boardI < 3) st.boardI++;
+            if (st.boardI >= 3) stickOff(); else walk(Q[0], Q[1], false); };
+          if (st.t - (st.fLogT || -99) > 15) { st.fLogT = st.t; st.log.push(`ferry at ${O.at} ${O.st} t${(+O.t).toFixed(0)} boat ${B.x.toFixed(0)},${B.z.toFixed(0)} y${(Fr.sea + O.boatH).toFixed(1)} ot ${O.otAt.map(v => v.toFixed(0))} me ${[P.x, P.y, P.z].map(v => v.toFixed(1))} on${onBoat ? 1 : 0}`); }
+          if (!onBoat && !st.offBoat) {
+            // the ferry's own way down to its pontoon (`otWalk`), point by point, then aboard when it is docked here
+            const Wk = O.otWalk || [[O.otAt[0], O.otAt[2]]]; st.otI = st.otI || 0;
+            if (st.otI < Wk.length) { const Q = Wk[st.otI]; if (goTo(Q[0], Q[1], 1.2, false, true)) st.otI++; return ''; }
+            if (O.at === 0 && O.st === 'dock' && O.t > 1) boardStep(); else stickOff();
+            return '';
+          }
+          // aboard at Old Town and still docked: on round the cabin (4 m wide amidships) to the FAR half, so the way off at the
+          // Waterfront is a few metres and not past it in a 10 s stop
+          if (onBoat && O.at === 0 && O.st === 'dock' && (st.boardI || 0) < 3) { boardStep(); return ''; }
+          if (onBoat && !(O.at === 1 && O.st === 'dock')) { stickOff(); if (!st.ferryLog) { st.ferryLog = 1; st.log.push('aboard @' + st.t.toFixed(1)); } return ''; }
+          st.offBoat = 1; st.wfI = st.wfI || 0;
+          const Wk = O.wfWalk || [[O.wfAt[0], O.wfAt[2]]], last = Wk[Wk.length - 1], prev = Wk[Wk.length - 2] || [O.wfAt[0], O.wfAt[2]];
+          // off over the boat's OWN end (its sides are railed), then the pontoon, the pier walk, and on inland
+          if (!st.endAt) st.endAt = [B.x - dir[0] * (O.len / 2 + 1.6) * toOT, B.z - dir[1] * (O.len / 2 + 1.6) * toOT];
+          const pts = [st.endAt, [O.wfAt[0], O.wfAt[2]], ...Wk, [last[0] + (last[0] - prev[0]) * 3, last[1] + (last[1] - prev[1]) * 3]];
+          const Q = pts[Math.min(st.wfI, pts.length - 1)]; if (Math.hypot(P.x - Q[0], P.z - Q[1]) < 1.5 && st.wfI < pts.length - 1) st.wfI++;
+          walk(Q[0], Q[1], false); return '';
         }
         // falls through to the ordinary flag driver
         { if (T) { goTo(T.x, T.z, 1.2, true, true, T.y); return ''; }   // m466: inside the game's own radius (the papers: 1.9 m), not at the edge of it

@@ -17,6 +17,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **CHAPTER 4'S FIRST QUEST PLAYS THROUGH, AND THE FERRY IS RIDDEN (m479, `tools/play.mjs`).** No game faults; four driver lessons:
+  (1) **the ferry's landing is a level below the street** -- walk its own `otWalk` points, never a straight line at `otAt`;
+  (2) **"aboard" is the deck's own rectangle in the boat's frame** -- a radius test passed on the pontoon (25 cm lower) and the
+  boat left without him; (3) **board the FAR half, round the cabin** (4 m wide amidships on a 7 m beam) during the 18 s Old
+  Town stop: from the near half the cabin stood between him and the exit for the whole 10 s Waterfront stop, and he rode back;
+  (4) **a talk picks the form by the speaker's GROUP** (`socialOf` + `talks`, a role's via `ROLEFORM`), not the first form that
+  changes him -- Rosa talks to workers and got the farmer. Role-form samples (`form: 'ENGINEER'`) find bodies by `d.role`.
+  **Note for the game:** Dex carries the engineer role too, so knocking him down gives the face as well as Ivy -- probably
+  fine (a worker who was one of theirs), worth knowing. **Next:** `qorb` (the pacifier orb) is what the picker takes after
+  `ch4`; it needs a blaster driver.
+
 - **HIS HEDGES AND BUSHES, INSTANCED (m478, T2d, `FBK`, `fbPut`, `fbBeside`, `fbBuild`).** `models/campaign/farm_bushes.glb`, loaded
   before `buildFieldBounds`: each hedge piece (378) is his `fb_hedge` in place of the code's bank mound and three clumps, x along
   the run's WORLD direction (the wreck's rule), its box collider kept; `fb_round` / `fb_cypress` / `fb_flower` beside 22% of

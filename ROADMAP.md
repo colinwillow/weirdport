@@ -409,7 +409,9 @@ differ" table there, so no region feels like the last one.
       - [ ] **F0b-2b** Chapters 2 to 6, one per build: `reach` (a climb or a jump), the Pearl's barricades inside the march, the roofs, the ferry and the swing bridge, the freight line, a bike, the glider, the islands' crossings and the Mothership's shaft; the bosses' downs.
         - [x] m468 **F0b-2b-1** Chapter 2: a chapter-N start carries the forms and the quests (so the kit) the chapters before it gave; the flag driver walks inside the game's own radius. 14 steps, 3 quests in 115 s. Ash's after-talk failed once in four runs (18 teleports, never in talk reach) and is unsettled.
         - [x] m470 **F0b-2b-2** Chapter 3 (Hollow Creek): 12 steps, 3 quests in 155 s -- the race WON at Rae's own 15 m/s in 51 s. Found and fixed on the way: **the biker never rode his bike** (since m374), the start hill's back stairs stopped every lap 2, a knocked body over the creek fell to -1000 for good, and `npm run places` had died at boot since m425.
-        - [ ] **F0b-2b-3** Chapter 4 (the Waterfront). - [ ] **F0b-2b-4** Chapter 5 (the islands). - [ ] **F0b-2b-5** Chapter 6 (the Mothership).
+        - [x] m479 **F0b-2b-3a** Chapter 4's first quest (`ch4`): the ferry ridden (board at Old Town, round the cabin to the far half, off over its own end), Rosa and Dex as the worker (the talk driver now picks the form by the speaker's group), an engineer's face (a role form), Uplift's gate. 5 steps.
+        - [ ] **F0b-2b-3b** the orb side-quest the picker takes next (`qorb`: shoot down the pacifier orb -- the blaster through the pads, the camera at it), then `ch4b` (the control room, the lever, the line freed) and `ch4c` (the supervisor).
+        - [ ] **F0b-2b-4** Chapter 5 (the islands). - [ ] **F0b-2b-5** Chapter 6 (the Mothership).
   - [ ] **F0c Every world boots** through the real loader with no red toast, in `places`.
 - [ ] **F1 Polish passes, region by region, with `npm run shot`.** The farm had five; each of the others
   gets at least three, one build each, fixing the worst thing in the shots and checked against the
@@ -1298,4 +1300,6 @@ differ" table there, so no region feels like the last one.
 - **m478: the farm's bushes are scattered beside the hedges (22% of pieces) and the fences (7%)** -- 104 of them; not yet by the
   farmhouse or at field corners (the next pass on the farm can add spots there). Every hedge piece and bush is an INSTANCE
   (`FBK`): 482 copies in 11 draws. `?bush=0` is the code-built mounds.
+- **m479: T2's four named pieces are done** (roadblock m477, truck m476, bushes m478, crash m474); its "onward, place by place" waits
+  on the scenery window's next files, so the loop is back on Phase F until a new `models/campaign/` piece lands.
 
