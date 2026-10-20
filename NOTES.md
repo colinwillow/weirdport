@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m664 -- the city ring's houses as art (scenery window; ROADMAP T4r)
+
+`models/campaign/ring_house.glb`, for `ringHouse`. The town edge's house (m658) rebuilt at the ring's own numbers -- 6.8 x 5.8,
+eaves 2.7, ridge 4.5 -- with the code's stoop in place of a porch: a deck, two steps, a rail each side and a hood over the door; the
+same weatherboard and gables in one white material for the code's colour, roof, chimney, lit windows and shutters. And the yard's
+two-rail fence as a 1 m section with a capped post. Shipped unverified.
+
 ## m662 -- the city ring's warehouse and parked cars as art (scenery window; ROADMAP T4q)
 
 `models/campaign/city_ring.glb`, for `buildCityRing`. The ring's warehouse at the code's 26 x 14 x 6.5: ribbed cladding in two
