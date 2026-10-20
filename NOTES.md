@@ -390,6 +390,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE PEARL'S PLAZA IS HIS ART (m619, T3v, `pearl_plaza.glb`, `?pplaza=0`, `ppPut`).** In `buildPearlPlaza`:
+  - `pp_stage` replaces the plat box and its poles; the banner stays.
+  - The barricade junk is by kind, each turned j: `pp_pallets` (Y by h / 1.2); `pp_dresser_paint`, tinted pink / mint /
+    cream, + `_trim`; `pp_drums`; the camp kit's `oc_sofa`; `pp_crates`.
+  - `pp_bed` stands at the twelve beds.
+  - The gang road's `gr_pennant_*`, tinted `cols[k % 5]` and set .85 under the line, stand at every bunting pennant.
+  Every collider stays; every roll is spent as before. `ppPut` is declared right after the frame (m615's lesson).
+  `npm run places` reported no bad rows.
+
 - **THE CAMP'S ROOF, FENCE, HERBS AND BUCKET ARE HIS ART (m617, T3u, `camp_roof.glb`, `?croof=0`, `crPut`).** These are in
   `buildCamp`'s m489 block:
   - `cr_roof` stands once at the camp's centre; the four posts' colliders stay and the patch sheets are not drawn.
