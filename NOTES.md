@@ -576,6 +576,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE CITY RING LOT'S CHAIN-LINK AND THE CHANNEL BRIDGE'S PIERS ARE HIS ART (m674, T4v, `chainlink.glb`, `?clink=0`, `CLINK`).**
+  - At the lot, each run gets a `cl_post` at every post and a `cl_mesh` at each mid-span, X-scaled to the span and turned
+    along the run. The run's thin collider stays; the top rail and the posts are not drawn.
+  - On the bridge, `cb_pier` (noses up and down stream, cap at yD - .6) replaces each pier's drawing and its two cutwaters;
+    the pier collider stays.
+  The file loads before `buildBridge`, so both builders see it.
+
 - **THE CREEK FOOTBRIDGE, THE LILY PADS AND THE REEDS ARE HIS ART (m673, T4u, `farm_waters.glb`, `?fwater=0`).**
   - `fw_footbridge` is turned psi, his X across the creek. The deck and handrail colliders stay; the posts and trestles are
     not drawn.
