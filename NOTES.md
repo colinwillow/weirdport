@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m606 -- the Pearl's dock props as art (scenery window; ROADMAP T3r)
+
+`models/campaign/pearl_dock.glb`, for the dock in `buildFootbridge`. A turned pastel pot with a rolled rim (one white material, so
+each pot keeps its own pastel) and a bushy clump of nine leaves with pink and yellow blooms; the container-roof planter, a
+timber-edged 1.8 m box (white, tintable) planted thick; three slatted fish crates with ice and fish in the top one, and a sack; the
+roastery's A-frame chalkboard with its day chalked on it. At the code's numbers, origins on the dock. Shipped unverified.
+
 ## m604 -- the kit town's roof extras as art (scenery window; ROADMAP T3q)
 
 `models/campaign/roof_extras.glb`, for the `S.extra` dressing in `kgenMake`. The co-op's raised bed (1.1 x 2.2 x .45, three bushy
