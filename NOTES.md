@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m598 -- the farm trees as art (scenery window; ROADMAP T3n)
+
+`models/campaign/farm_trees.glb`, for `farmTree`, which draws every farm and roadside tree. `ft_oak`: a tapered trunk to 3.4 m, two
+limbs, a crown of six faceted blobs in two greens centred 1.9 m above the trunk top -- the code's own numbers at s = 1. `ft_willow`:
+a 2.6 m trunk, a domed top and twelve thin hanging fronds in a deeper green. 621 and 365 faces. Origins on the ground, so the
+caller scales by `s` and turns by its random yaw with no offset. No collider: the trunk box stays. Shipped unverified.
+
 ## m595 -- the MX track kit as art (scenery window; ROADMAP T3m)
 
 `models/campaign/mx_track.glb`, for the m498 dressing. The BANNER ARCH: lattice truss posts standing in stacks of three tyres with a

@@ -292,6 +292,11 @@ different context window, let me know."*
   in place of the pole and the cone pennant -- its pennant is ONE white material, tint it with the flag's `cols[k % 4]`, turned so
   it flies the way the code's cone does (+X); `mx_tyres` for the turns' tyre walls and the pits (where a stack of tyre cylinders is
   drawn). 2,579 / 35 / 468 faces.
+- [ ] **T3n. Swap in the farm trees** (`models/campaign/farm_trees.glb`, no collision file -- keep `farmTree`'s trunk box collider as
+  it is). In `farmTree(F, rr, ico1, u, v, s, k)` draw `ft_oak` (or `ft_willow` where the code draws its willow) at (u, v, ground),
+  origin on the ground, scaled uniformly by `s` and turned by the same random yaw, in place of the trunk cylinder, the two limbs and
+  the ico crown blobs. Both are built at s = 1 to the code's numbers: trunk to 3.4 m (willow 2.6), crown centred 1.9 m above it.
+  Instance them (one InstancedMesh per piece) -- every farm and roadside tree shares this one builder.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
