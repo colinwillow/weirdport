@@ -460,7 +460,7 @@ differ" table there, so no region feels like the last one.
   - [ ] **F2a The Underneath** (3): the tunnels under Old Town, the Pearl and the Waterfront, surfacing in
     cellars and drains; the hobo's and the miner's region; the safe-house portals.
     - [x] m512 **F2a-1** the land: a hatch on the footbridge's apron down to a shaft room 28 m under the sea's level; a brick tunnel to a junction, the CISTERN (black water, two catwalks, teal growth) off it, a second tunnel to a second shaft that surfaces at a manhole in Old Town. Lanterns, pipes, dark brick. GOD place `underneath`.
-    - [ ] **F2a-2** its people: the homeless network's camp and the hidden market in the cistern's side halls; the hobo form's way in.
+    - [x] m513 **F2a-2** its people: THE CAMP off the cistern's north ledge (bedrolls round a fire barrel, a tarp, candles in bottles, a cart, washing) and THE HIDDEN MARKET east of the junction (six tarp stalls of found goods under strung bulbs, a smuggler's counter with a scale); Rook, Aunt Mags, Tibbs, Fennick, Cass, June. (The hobo form's way in moves to F2a-5 with the miner's.)
     - [ ] **F2a-3** the water level: a pump room whose wheel raises and lowers the cistern, flooding one route and opening another.
     - [ ] **F2a-4** the other surfacings: a drain into the Pearl and a cellar under the Waterfront; the good aliens' safe house and its portal pad.
     - [ ] **F2a-5** the cave miner (sees in the dark, digs through a collapse) and the Underneath's quest.

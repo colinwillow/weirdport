@@ -26,6 +26,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE UNDERNEATH'S PEOPLE (F2a-2, m513, `buildUnderneath`).** Two new rooms through the same `room`/`run` helpers: THE CAMP
+  (10 x 6, 3.6 high) through a new gap in the cistern's north wall -- **a gap in the cistern's wall needs a fill UNDER the
+  floor too** (the wall runs from the pit's bottom at y - 3, so the doorway would otherwise open onto the water's pit) and a
+  lintel over it; THE MARKET (14 x 10) down a short tunnel from a new east door in the junction. Six people through
+  `peopleMark` at the tunnel floor's own y (group street, `alien: 'talk'` -- the hidden network does not run from him).
+  `UNDER.box` grew east to cover the market (the sea's rule and the floor fix both key off it). `places` exit 0.
+
 - **THE UNDERNEATH, FIRST BUILD -- AND NOTHING BELOW THE GROUND COULD BE STOOD ON (F2a-1, m512, `buildUnderneath`,
   `underStep`, `underIn`, `groundAt`).** REGIONS 3. Under Old Town, in the footbridge's frame, at `ISLE.sea - 28`: a shaft
   room under a hatch on the apron, a 30 m brick tunnel inland to an 8 x 8 junction, west to the CISTERN (24 x 16, 8 high,
