@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m581 -- the old car as art (scenery window; ROADMAP T3f)
+
+`models/campaign/old_car.glb`: the broken-down car on the road bridge into Hollow Creek at the m511 numbers, a faded teal sedan
+with rounded body sections, a chrome strip and bumpers, a grille, headlamps and tail lamps, a glazed cabin with pillars and
+mirrors, hubcaps, rust patches -- and BROKEN: the hood propped up on its stay over the engine block, air cleaner, battery and
+radiator, a flat front tyre, a little steam, a warning triangle three metres ahead. The same car with its hood shut is a second
+root for parking anywhere. Shipped unverified.
+
 ## m577 -- the dock props kit as art (scenery window; ROADMAP T3e)
 
 `models/campaign/dock_props.glb`: the furniture that repeats along every pier and quay, made once. A lathed cast-iron mushroom
