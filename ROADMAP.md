@@ -87,7 +87,7 @@ different context window, let me know."*
   lone hay barn's frame origin (FL.FLATS[1], turned thN - .45) -- replaces the posts, eave beams and the DoubleSide roof cylinder
   (the hay steps and the round bales stay code; its roof is solid both ways, so `droof`'s DoubleSide goes). Each built at its
   builder's exact numbers. 448 / 322 / 3,814 faces, one mesh each.
-- [ ] **T2i. Swap in the neighbour's farm** (`models/campaign/neighbour_farm.glb`, no collision file -- `buildNeighbours` keeps every
+- [x] m521 **T2i. Swap in the neighbour's farm** (`models/campaign/neighbour_farm.glb`, no collision file -- `buildNeighbours` keeps every
   collider, the picket fence and the shop's canvas SIGN plane). Four roots, Blender X = the neighbour frame's u, +Y = its +v:
   `nf_house` at (hu 8, hv 6) on the house floor y0 -- replaces the plinth, walls, gables, roof slabs, windows, door, stoop and
   chimney (6 x 5.5, eaves 8.6, ridge 12.8, all as built); `nf_shed` at (su -12, sv 14) on y0 = lo -- replaces the walls, posts, roof

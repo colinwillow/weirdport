@@ -112,6 +112,9 @@ const SHOTS = {
   shed: { place: 'farmhouse', settle: 3, pre: "mel.player.pos.x += 0", why: 'the farmhouse shed and coop, wide',
     cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
       return [p.x - fx * 18, p.y + 9, p.z - fz * 18, p.x + fx * 6, p.y + 1, p.z + fz * 6]; })()` },
+  nfarm: { place: 'neighbour', settle: 3, why: "the neighbour's farm from the track by the shop",
+    cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
+      return [p.x - fx * 9 + fz * 4, p.y + 6, p.z - fz * 9 - fx * 4, p.x + fx * 14, p.y + 4, p.z + fz * 14]; })()` },
   wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
       return [C.x + sx * 16 - dx / L * 6, p.y + 7, C.z + sz * 16 - dz / L * 6, C.x, p.y + .5, C.z]; })()` },

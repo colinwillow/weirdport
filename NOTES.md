@@ -66,6 +66,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE NEIGHBOUR'S FARM IS HIS -- AND ITS SHOP SIGN HAD BEEN A BLANK RED BOARD SINCE m312 (T2i, m521, `buildNeighbours`).**
+  `neighbour_farm.glb` (`nf_house`, `nf_shed`, `nf_tower`, `nf_shop`; `?nfarm=0`, `NFARM GLB FAIL`) through `campPlace`,
+  mirrored in z like the rest of his campaign art (every front -- the house door, the shop's awning -- is at glTF +z). Each
+  block gets a local `bx`/`geo` (colliders kept, drawings popped, drawn-only skipped); the picket fence stays code
+  (`F.bx`). **The shop's canvas sign was a `geo` part, and the frame's merge keeps no UVs** -- every fragment sampled one
+  texel, the canvas's red top stripe, so FARM SHOP / EGGS · HONEY · APPLES had never been readable. It is its own Mesh now,
+  in front of his posts. **Any textured thing put through a frame's `geo` loses its UVs: canvas signs go in as meshes.**
+  `npm run shot nfarm` (new). `play ch0` COMPLETE, `places` exit 0.
+
 - **THE SHED, THE COOP AND THE LONE HAY BARN ARE HIS (T2h, m520, `campPlace`).** `farm_outbuildings.glb` loads before
   `buildNeighbours` (`?outb=0`, `OUTB GLB FAIL`). One helper now, `campPlace(F, G, name, u, y, v)`: clones a root into the
   frame's group at (u, y, v), **mirrored in z by default** -- his campaign exports put the front at glTF +z (the farmhouse's
