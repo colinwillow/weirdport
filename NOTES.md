@@ -285,6 +285,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE MOTHERSHIP'S PODS AND MACHINE ARE HIS ART (m589, T3i, `ship_pods.glb`, `?pods=0`).** `ms_pod` stands on each pod's spot
+  in the conversion chamber, mirrored in z like every campaign piece, and replaces the drawn base and cap; the base COLLIDER, the
+  pulsing glass (`D.podMat`), the sleeper and the cable stay. `ms_machine` replaces the column cylinder at (C.u, C.v); the column
+  collider and the glow sphere stay. The loader sits ABOVE `buildShipDecks` in init (m542's lesson). A missing file draws the old
+  geometry and says `PODS GLB FAIL`. Shipped unverified.
+
 - **THE SWING BRIDGE'S SIGNPOSTS AND WALT'S PITCH ARE HIS (m588, T3h, `OSWING.kitG`, `?swing=0`).** `sw_signpost` behind each WAIT AT RED
   board (turned pi for the board that faces -v), `sw_pitch` at (U + hw - .35, vW + 6), both mirrored in z. The cool box's collider,
   the lifebuoy on the rail, the lane paint and the canvas boards stay; the posts, rods, bucket, stool and cool-box drawing go.

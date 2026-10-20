@@ -263,7 +263,7 @@ different context window, let me know."*
   (U + hw - .35, vW + 6) in place of the two rod segments, the bucket, the stool and its legs, the cool box and its lid (it adds
   reels, rod rests, lines to the water, a tackle box, a thermos, a paper); `sw_signpost` at each board's (su, v) in place of its post,
   turned pi where the board is (its frame sits just behind the board's plane at 2.1; a red lamp on top). 246 / 66 faces.
-- [ ] **T3i. Swap in the Mothership's pods and machine** (`models/campaign/ship_pods.glb`, no collision file -- `buildShipDecks` keeps
+- [x] m589 **T3i. Swap in the Mothership's pods and machine** (`models/campaign/ship_pods.glb`, no collision file -- `buildShipDecks` keeps
   every collider, the pod GLASS (`D.podMat`, so it can still pulse) and its sleeper capsule, the cable to the ceiling, the turning
   crown, the floor and walls). Origins on the chamber floor yC. `ms_pod` at each pod's (u, v) in place of the base box and the cap
   box only (its claws hold the code's glass, its cap's socket is where the code's cable starts at 2.95); `ms_machine` at (C.u, C.v)
