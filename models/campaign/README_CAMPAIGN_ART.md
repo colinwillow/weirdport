@@ -30,6 +30,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `mill_kit.glb` | the Hollow Creek mill's teepee burner, log crane, log truck and water tower | Blender X = mill frame u, +Y = +v, origins on the ground at the code's centres, exact numbers | none | 500-1,530 per piece |
 | `container.glb` | the Waterfront's shipping containers (and the strays) | two roots (`wf_container_body` white, tinted per instance; `wf_container_trim` dark steel), origin bottom centre, X = 2.44, Y = 12.2 (doors +Y), Z = 2.6 | none: the code keeps its column boxes | 320 + 278 |
 | `sts_crane.glb` | the Waterfront's two ship-to-shore cranes (the fixed structure) | Blender X = frame u, +Y = v, origin at (K.u, 0) on the quay top, WCRANE's numbers (top 30, boom 34) | none: the code keeps its boxes, ladders and moving parts | 10,378 |
+| `coaster.glb` | the coaster in the Waterfront's dry dock | Blender X = frame u, +Y = v, origin (D.u, 0) on the keel blocks' top; stern Y 14, bow 85.5, deck 9 | none: the code keeps its boxes | 1,813 |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

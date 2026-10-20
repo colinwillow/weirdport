@@ -5,6 +5,17 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m546 -- the dry-dock coaster as art (scenery window; ROADMAP T2q)
+
+`models/campaign/coaster.glb`, inside the code's hull boxes so every deck, bulwark gap, ladder and the gangway still meet her. The
+hull is LOFTED from fifteen stations (flat bottom, round bilge, sides that flare and a bottom that pulls in toward the bow, a raked
+transom aft) -- and every section carries a vertex row AT 3.3 and 3.5, so the red anti-fouling, the white boot-top and the dark
+topsides split on a clean line instead of following the facets (the first render had a white panel on the bow where a face's
+centre happened to fall in the band). Deck plating, the forecastle, ribbed green hatch covers with coamings and cleats, bulwarks
+with stays and a cap rail, two cargo masts with derricks, bollards, a windlass, hawse pipes and anchors, the accommodation house
+with the bridge's window band and wings, a railed monkey island, the green funnel with a white band, a lamp mast, two lifeboats,
+primer patches where the plates are off, a rudder and propeller, a blank name board. Shipped unverified.
+
 ## m544 -- the ship-to-shore crane as art (scenery window; ROADMAP T2p)
 
 `models/campaign/sts_crane.glb`, at wfCranes' numbers so the catwalks, the landing, both ladders and the trolley's run all stay
