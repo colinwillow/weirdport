@@ -346,6 +346,14 @@ different context window, let me know."*
   'wood' -> `cr_planks` (both 1.0 wide from -.1: scale X by L / n * .95 and Z by (h + .1) / 2.0 for the door, / 1.8 for the
   planks), 'rust' / 'tarp2' -> `ce_sheet_rust` / `ce_sheet_tarp` (camp_extras), each turned like its box; `rx_tyres` (roof_extras)
   for the three tori; `cr_herbs` at the four herb tins in place of the tin and its ico; `cr_bucket` in place of the bucket.
+- [ ] **T3v. Swap in the Pearl's plaza** (`models/campaign/pearl_plaza.glb`; no collision -- keep every box that collides). In
+  `buildPearlPlaza`, Blender X = u, +Y = v, origins on y: `pp_stage` at (T.u, T.v) in place of the 'plat' box and the two
+  'steel' poles (its poles stand at +-2.3, +Y 1.65; the banner stays the code's; its steps are at -Y, the plaza side). The
+  barricade junk by kind, each turned by j like its box: 0 -> `pp_pallets` (1.3 x 1.1, scale Z by h / 1.2); 1 ->
+  `pp_dresser_paint` (ONE white material, tint pink / mint / cream) + `pp_dresser_trim`; 2 -> `pp_drums` in place of the two
+  cylinders; 3 -> `oc_sofa` (camp_kit) or `sk_sofa`; 4 -> `pp_crates` (its top crate already turned .4). `pp_bed` at each of the
+  twelve corner beds in place of the wood and soil boxes, the stems, the discs and the leaves. Bunting: `gr_pennant_paint` +
+  `gr_pennant_string` (gang_road) at the pennants.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

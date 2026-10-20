@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m616 -- the Pearl's plaza as art (scenery window; ROADMAP T3v)
+
+`models/campaign/pearl_plaza.glb`, for `buildPearlPlaza`. The stage at the code's 5 x 3.5 x .35: a plank deck on a concrete plinth,
+two steps on the plaza side, two banner poles at the back with arms, two monitor speakers. The barricade junk the code picks by kind:
+a leaning pile of nine pallets; a pastel sideboard with drawers and brass knobs (one white material, tinted per piece); two blue
+drums; a big crate with a smaller one turned on top. The community bed with four sunflowers at the code's heights. Origins on the
+plaza floor. Shipped unverified.
+
 ## m614 -- the camp's roof and fence as art (scenery window; ROADMAP T3u)
 
 `models/campaign/camp_roof.glb`, for the m489 block of `buildCamp`. The patchwork roof over the barrel circle: four leaning posts
