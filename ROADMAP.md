@@ -246,7 +246,7 @@ different context window, let me know."*
   - [x] m578 **T3e-1** the bollards: the Pearl's rail and dock-1 bollards and the Waterfront's quay bollards, instanced (`DPK`, `dpPut`, `dpBuild`).
   - [x] m579 **T3e-2** the rope coils and the life rings (`dp_rope`, `dp_ring`).
   - [x] m580 **T3e-3** the Pearl's rail lamps, the lobster pots and the crate stacks (`dp_lamp`, `dp_pot`, `dp_crate`).
-- [ ] **T3f. Swap in the old car** (`models/campaign/old_car.glb`, no collision file -- the road bridge's m511 block keeps the car's
+- [x] m582 **T3f. Swap in the old car** (`models/campaign/old_car.glb`, no collision file -- the road bridge's m511 block keeps the car's
   collider). Origin at the car's centre on the road, Blender X across, +Y its front, the code's own numbers (1.8 x 4.2, body .3..1.0,
   cabin 1.6 x 2.0 at -.3 to 1.5, wheels at (+-.8, +-1.4) r .33): `oc_car_broken` at (u, v) = (-(O.w/2 - .2), L*.3) in place of the
   body, cabin, glass, four wheels, the hood and the drum (it carries a raised hood, the engine bay, a flat front tyre, steam and a

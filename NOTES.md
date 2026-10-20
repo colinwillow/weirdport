@@ -263,6 +263,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE ROAD BRIDGE'S BROKEN-DOWN CAR IS HIS (m582, T3f, `HCROAD.carG`, `?car=0`).** `oc_car_broken` at (-(w/2 - .2), L*.3) on the
+  road, mirrored in z (its front, Blender +Y, is +v, where the code raised its hood). The body's collider stays; the cabin, glass,
+  wheels, hood and drum are not built (his has the hood, the flat tyre, steam and the warning triangle). `oc_car` (hood shut) is
+  in the file for any other parked car and nothing uses it yet. `CAR GLB FAIL` if it does not load.
+
 - **HIS LAMPS, POTS AND CRATES ON THE PEARL (m580, T3e-3; the dock props kit is done).** Every third rail post on the Pearl's piers is
   `dp_lamp` (4.76 m, its glass where the code's sphere was) in place of the pole, sphere and cone; dock 1's corners have `dp_crate`
   two high (.45 each, the code's own heights) turned the code's .1 k, and three `dp_pot`s, the middle one up on .41 -- the
