@@ -44,6 +44,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `halt_kit.glb` | the freight line's halt shelter and the loco's water tank | Blender X = line frame u, +Y = v; shelter at (pu, vm) on the deck (outer edge -X), tank at (tu, tv) on the ground, spout +X | none | 313 / 809 |
 | `skate_hangout.glb` | the island skate park's hangout: sofa, cooler, speaker on a crate, a skateboard (paint + trim) | Blender X = islands frame u, +Y = v, origins on the deck at the code's spots; the board is .8 along X, flat, its underside one white material | none | 5-192 per piece |
 | `rue_field.glb` | Rue's field on the River Islands: canopy and table, wing rack, chalkboard, bench | Blender X = islands frame u, +Y = v, origins on the ground at the m504 spots | none | 48-267 per piece |
+| `dock_props.glb` | waterside furniture that repeats everywhere: bollard, rope coil, harbour lamp, life ring on a post, lobster pot, fish crate | each root on its own ground centre (the lamp's glass at 4.3, the bollard .55 high); instance them | none | 132-372 per piece |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

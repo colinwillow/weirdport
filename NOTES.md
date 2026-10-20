@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m577 -- the dock props kit as art (scenery window; ROADMAP T3e)
+
+`models/campaign/dock_props.glb`: the furniture that repeats along every pier and quay, made once. A lathed cast-iron mushroom
+BOLLARD with its bolts, a three-turn ROPE COIL with a tail, a green HARBOUR LAMP with a fluted base and a glowing lantern at the
+Pearl's lamp height, a red-and-white LIFE RING on its own post, a slatted LOBSTER POT with netted ends and a float, a FISH CRATE
+with ice in it. Built to be instanced: a hundred bollards should be one draw call. Shipped unverified.
+
 ## m574 -- Rue's field as art (scenery window; ROADMAP T3d)
 
 `models/campaign/rue_field.glb`, at the m504 spots. Rue's CANOPY: steel legs on foot plates with knee braces, a peaked two-tone
