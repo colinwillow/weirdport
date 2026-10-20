@@ -121,6 +121,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE GORGE HAS ITS LAND (m543, F2c-1, `GORGE`, `buildGorgeLand`, `gzHeight`, `gorgeStep`, GOD `gzfalls` / `gzriver`).** A sixth
+  landmass on the island's recipe (the creek's loop copied: superellipse coast, beach, chunked meshes on `ISLE.lmat`, floor
+  triangles through `isleAppend`), centred 560 m out on +z -- clear of the islands (z <= 384), Hollow Creek (x <= -105) and the
+  farm (x >= 95). +b points away from the city. The land rises to a PLATEAU (~24 m); the CANYON follows `gzRiverA(b)` (a slow
+  wiggle): upstream of the lip (b >= 14) a bed at 13 m, 6 m half-width, walls at 4.5:1; at the lip the bed drops to -4.5 -- THE
+  FALLS, 15 m straight into the sea's own water -- and the FJORD runs 9 m half-width out to the coast facing the islands.
+  The upper river is a ribbon at bed + .55; the falls a scrolling canvas sheet (`gorgeStep`) with a foam disc at its foot.
+  Pines (a box each, `farm: 'gorge'`). No caves, village, dam, diver, way in or map region yet (F2c-2..6). `places` exit 0:
+  gzfalls ground 22.54, gzriver 13.00.
+
 - **THE CONTAINER YARD IS HIS CONTAINER, TWO INSTANCED MESHES -- AND m539/m541 NEVER SHOWED THEIR ART (m542, T2o).**
   - `container.glb` (`WFRONT.contG`, `?cont=0`): every yard box and the three strays are instances of `wf_container_body` (its
     material cloned white, `setColorAt` with the box's c0..c8 paint) and `wf_container_trim` (two primitives, trim + door plate,

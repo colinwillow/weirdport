@@ -773,10 +773,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m542</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m543</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m542</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m543</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; menu</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -862,7 +862,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm542';
+const BUILD = 'm543';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_antenna_game_ktx2.glb":"28afac8c","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_female_purple_ktx2.glb":"fc914afb","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_rollerskate_blue_ktx2.glb":"a66d5697","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/alien_warrior_ktx2.glb":"a13fb7b6","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/colin_ktx2.glb":"35040f87","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/contruction_worker_ktx2.glb":"3df8c344","models/characters/dummy_officer.glb":"724965ac","models/characters/dummy_officer_ktx2.glb":"db640cda","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/jack_ktx2.glb":"1f4c9f7f","models/characters/moussa.glb":"6d80b1cf","models/characters/moussa_ktx2.glb":"66e040f8","models/characters/zap.glb":"5e5cca54","models/characters/zap_ktx2.glb":"4b29d886","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/dump_truck_ktx2.glb":"21ee7059","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/buildings/alien_base_01_ktx2.glb":"6cbbfef2","models/towers/alien_tower_01.glb":"98d23375","models/towers/alien_tower_01_ktx2.glb":"47597651","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.ktx2":"efe0840e","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/alien_world/alien_coast.glb":"d75b2306","models/alien_world/alien_coast_collision.glb":"b611b85b","models/alien_world/alien_coast_ktx2.glb":"ba5c524f","models/alien_world/alien_coast_splat.png":"54070c04","models/alien_world/alien_sky.glb":"09921f46","models/alien_world/alien_streets.glb":"428b278b","models/alien_world/alien_streets_ktx2.glb":"b39c105e","models/alien_world/alien_town.glb":"0458b33a","models/alien_world/alien_town_kit_buildings.glb":"97dc424c","models/alien_world/alien_town_kit_buildings_collision.glb":"acf6a163","models/alien_world/alien_town_kit_buildings_ktx2.glb":"9ee63ae9","models/alien_world/alien_town_ktx2.glb":"458796fb","models/alien_world/alien_town_placements.json":"49b70ec2","models/alien_world/alien_town_splat.png":"2e637c89","models/alien_world/border_fort.glb":"e74b123b","models/alien_world/border_fort_ktx2.glb":"d5cae9b0","models/alien_world/bot_workshop.glb":"cd763f7f","models/alien_world/bot_workshop_ktx2.glb":"74f98979","models/alien_world/comms_tower.glb":"5a032e77","models/alien_world/comms_tower_ktx2.glb":"23195ccf","models/alien_world/critters.glb":"196c3f20","models/alien_world/fermentation_lab.glb":"91038f74","models/alien_world/fermentation_lab_ktx2.glb":"e8b6e052","models/alien_world/fire_forge.glb":"6a1a91c8","models/alien_world/fire_forge_ktx2.glb":"ea0dd9d9","models/alien_world/fire_hangar.glb":"ec2046f3","models/alien_world/fire_hangar_ktx2.glb":"bdbebd0d","models/alien_world/fire_workshop.glb":"1e1c909b","models/alien_world/fire_workshop_ktx2.glb":"96f64328","models/alien_world/goo_barracks.glb":"afb36bce","models/alien_world/goo_barracks_ktx2.glb":"7fabb4e3","models/alien_world/goo_hangar.glb":"b2fb237d","models/alien_world/goo_hangar_ktx2.glb":"5fcf194d","models/alien_world/goo_refinery.glb":"a4692c3a","models/alien_world/goo_refinery_ktx2.glb":"4ab05908","models/alien_world/junk_repair.glb":"bac33b04","models/alien_world/junk_repair_ktx2.glb":"89c1fcdc","models/alien_world/landing_kiosk.glb":"c0d6bf48","models/alien_world/landing_kiosk_ktx2.glb":"0a463f4f","models/alien_world/lookout_tower.glb":"c6cd3268","models/alien_world/lookout_tower_ktx2.glb":"07183c2a","models/alien_world/market_kiosk.glb":"0388d41e","models/alien_world/market_kiosk_ktx2.glb":"1b57cc1d","models/alien_world/mushroom_inn.glb":"6e648c52","models/alien_world/mushroom_inn_ktx2.glb":"fff556fa","models/alien_world/noodle_bar.glb":"e3009e58","models/alien_world/noodle_bar_ktx2.glb":"ef58921c","models/alien_world/power_shack.glb":"f4a6a4c7","models/alien_world/power_shack_ktx2.glb":"afc34744","models/alien_world/refinery_tower.glb":"1ff8d31d","models/alien_world/refinery_tower_ktx2.glb":"4f14643b","models/alien_world/res_complex.glb":"ca190d47","models/alien_world/res_complex_ktx2.glb":"7043f777","models/alien_world/residential_hut.glb":"7581ded0","models/alien_world/residential_hut_ktx2.glb":"675e7618","models/alien_world/signal_tower.glb":"2723ed8c","models/alien_world/signal_tower_ktx2.glb":"7c09f873","models/alien_world/slime_cafe.glb":"5e150e2c","models/alien_world/slime_cafe_ktx2.glb":"fbc444b6","models/alien_world/spore_pharmacy.glb":"3d093c39","models/alien_world/spore_pharmacy_ktx2.glb":"057aaf8a","models/alien_world/watch_tower_gate.glb":"ec05247c","models/alien_world/watch_tower_gate_ktx2.glb":"432282e0","models/alien_world/textures/bark.png":"d969d679","models/alien_world/textures/dirt.png":"e4aff3f7","models/alien_world/textures/foliage.png":"1492930d","models/alien_world/textures/grass.png":"7818548a","models/alien_world/textures/moss.png":"23a9d283","models/alien_world/textures/mud.png":"56f4a041","models/alien_world/textures/p_sand.png":"84dd3c6f","models/alien_world/textures/rock.png":"1b83fb09","models/alien_world/textures/sky_alien_pano.ktx2":"27c79a18","models/alien_world/textures/sky_alien_pano.png":"263d3606","models/alien_plaza/alien_plaza.glb":"ce850b53","models/alien_plaza/alien_plaza_collision.glb":"f084a42e","models/alien_plaza/alien_plaza_ktx2.glb":"1737ab08","models/alien_plaza/alien_plaza_level.json":"28554a14","models/campaign/bike_pits.glb":"a0c2bd41","models/campaign/bike_pits_preview.png":"9e20da46","models/campaign/container.glb":"37abc06e","models/campaign/container_preview.png":"3c53fa8b","models/campaign/crash_site_kit.glb":"6d1ea8f6","models/campaign/crash_site_kit_collision.glb":"be9a0990","models/campaign/crash_site_kit_preview.png":"15872096","models/campaign/crash_wreck.glb":"eb6d2f81","models/campaign/crash_wreck_collision.glb":"fd63d483","models/campaign/crash_wreck_preview.png":"4ec7697f","models/campaign/fair_kit.glb":"da7529c7","models/campaign/fair_kit_preview.png":"d939a24c","models/campaign/fair_stage.glb":"989624c4","models/campaign/fair_stage_preview.png":"efbe04c4","models/campaign/farm_barn.glb":"257c0f01","models/campaign/farm_barn_preview.png":"00deb1d8","models/campaign/farm_bushes.glb":"706747aa","models/campaign/farm_bushes_preview.png":"4908d231","models/campaign/farm_house.glb":"50062d19","models/campaign/farm_house_preview.png":"7ade239d","models/campaign/farm_outbuildings.glb":"c9c330b9","models/campaign/farm_outbuildings_preview.png":"c8f1e320","models/campaign/farm_pickup.glb":"6af235c9","models/campaign/farm_tractor.glb":"efaff62e","models/campaign/farm_vehicles_preview.png":"d9d1ab83","models/campaign/mill_kit.glb":"337a9d81","models/campaign/mill_kit_preview.png":"2109d898","models/campaign/neighbour_farm.glb":"db7c455f","models/campaign/neighbour_farm_preview.png":"0ff54624","models/campaign/roadblock_kit.glb":"b9c97643","models/campaign/roadblock_kit_collision.glb":"f19b7939","models/campaign/roadblock_kit_preview.png":"d3584222","models/campaign/trailer_park.glb":"2f14cf93","models/campaign/trailer_park_preview.png":"31c85824","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.ktx2":"4aa55fde","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.ktx2":"922e1191","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.ktx2":"e0cbfe1d","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.ktx2":"4fbbb985","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.ktx2":"0feb5c79","images/hdri_game.png":"dac55f41","images/water_sprites_01.ktx2":"326924c5","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.ktx2":"99952ec9","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -32753,6 +32753,136 @@ function buildHollowLand() {
   return nCh;
 }
 // ============================================================================================
+// THE GORGE (m543, ROADMAP F2c-1, `GORGE`, `buildGorgeLand`) -- REGIONS 7: the water world, the land
+// ============================================================================================
+// "A river gorge with waterfalls and a fishing village on stilts. Wild and wet ... deep and down. Cliffs, a waterfall with
+// caves behind it." Its own landmass, out past the River Islands on the city's +z (between Hollow Creek to the west and the
+// farm to the east), on the island's own material and recipe (the farmland's and the creek's loop: a superellipse coast, a
+// beach, the land rising -- here to a PLATEAU, ~24 m). Through it a CANYON: the upper river in a bed at 13 m between rock walls,
+// then THE FALLS -- the bed drops straight to the sea, 15 m -- and below them a FJORD, sea water 28 m down between the walls,
+// out to the coast facing the islands. Pines on the plateau. This build is the land, the water and the falls; the caves behind
+// them, the stilt village, the dam gates, the diver and the ways in are F2c-2 on. Until then, GOD.
+const GORGE = {
+  on: 1, live: 0, bearing: Math.PI / 2, dist: 560, A: 85, B: 75, pw: 2.4, wob: .1, seed: 71, beach: 6, cell: 3, chunk: 40, margin: 40,
+  plateau: 24, upper: 13, lip: 14, head: 72, fjord: -4.5, hwUp: 6, hwDn: 9, wall: 4.5, wig: [8, 28],
+  O: null, ua: null, ub: null, noise: null, tris: 0, chunks: 0, trees: 0, bbox: null,
+};
+const gzWorld = (a, b) => { const G = GORGE; return [G.O[0] + a * G.ua[0] + b * G.ub[0], G.O[1] + a * G.ua[1] + b * G.ub[1]]; };
+const gzLocal = (x, z) => { const G = GORGE, dx = x - G.O[0], dz = z - G.O[1]; return [dx * G.ua[0] + dz * G.ua[1], dx * G.ub[0] + dz * G.ub[1]]; };
+const gzRiverA = b => GORGE.wig[0] * Math.sin(b / GORGE.wig[1]);
+function gzEdge(a, b) {
+  const G = GORGE, p = G.pw, L = Math.hypot(a, b) || 1e-6;
+  const rr = Math.pow(Math.pow(Math.abs(a) / G.A, p) + Math.pow(Math.abs(b) / G.B, p), 1 / p);
+  const rn = Math.pow(Math.pow(Math.abs(a / L) / G.A, p) + Math.pow(Math.abs(b / L) / G.B, p), 1 / p);
+  return (1 + G.wob * (2 * G.noise(Math.atan2(b / G.B, a / G.A)) - 1) - rr) / rn;
+}
+// the river's bed under (b): the upper river, rising a little to its head; past the lip, the fjord
+const gzBed = b => b >= GORGE.lip ? GORGE.upper + Math.max(0, b - 60) * .25 : GORGE.fjord;
+function gzHeight(a, b) {
+  const G = GORGE, sea = ISLE.sea, e = gzEdge(a, b);
+  let base;
+  if (e < 0) base = Math.max(sea - 26, sea - .35 + e * .3);
+  else if (e < G.beach) base = sea - .35 + 1.65 * ss01(0, G.beach, e);
+  else base = sea + 1.3 + (G.plateau - 1.3 - sea) * (1 - Math.exp(-(e - G.beach) / 16)) + 2.2 * (G.noise(a * .031 + b * .017) - .5);
+  // the canyon: distance to the river's line (its head is a rounded end)
+  const bb = Math.min(b, G.head), d = Math.hypot(a - gzRiverA(bb), b - bb), hw = b >= G.lip ? G.hwUp : G.hwDn, bed = gzBed(bb);
+  const c = d <= hw ? bed : bed + (d - hw) * G.wall;
+  return Math.min(base, c);
+}
+function buildGorgeLand() {
+  const G = GORGE, I = ISLE; G.live = 0;
+  if (!G.on || !inTK() || !I.live || !I.lmat) return 0;
+  const R = I.rect, cx = (R[0] + R[1]) / 2, cz = (R[2] + R[3]) / 2, sea = I.sea;
+  G.noise = isleNoise(G.seed);
+  G.ub = [Math.cos(G.bearing), Math.sin(G.bearing)]; G.ua = [-G.ub[1], G.ub[0]];
+  G.O = [cx + G.ub[0] * G.dist, cz + G.ub[1] * G.dist];
+  // NB: +b points AWAY from the city, so the fjord (b < lip) runs out to the coast that faces the islands
+  const C = G.cell, a0 = -G.A - G.margin, b0 = -G.B - G.margin;
+  const NA = Math.ceil((2 * G.A + 2 * G.margin) / C), NB = Math.ceil((2 * G.B + 2 * G.margin) / C);
+  const H = new Float32Array((NA + 1) * (NB + 1));
+  for (let j = 0; j <= NB; j++) for (let i = 0; i <= NA; i++) H[j * (NA + 1) + i] = gzHeight(a0 + i * C, b0 + j * C);
+  const hAt = (i, j) => H[clamp(j, 0, NB) * (NA + 1) + clamp(i, 0, NA)];
+  const CH = G.chunk, tris = []; let flip = null, nCh = 0, x0 = 1e9, x1 = -1e9, z0 = 1e9, z1 = -1e9;
+  for (let cj = 0; cj < NB; cj += CH) for (let ci = 0; ci < NA; ci += CH) {
+    const ni = Math.min(CH, NA - ci), nj = Math.min(CH, NB - cj), W = ni + 1;
+    const pos = new Float32Array(W * (nj + 1) * 3), nor = new Float32Array(W * (nj + 1) * 3), spl = new Float32Array(W * (nj + 1) * 3);
+    let deep = 1;
+    for (let jj = 0; jj <= nj; jj++) for (let ii = 0; ii <= ni; ii++) {
+      const i = ci + ii, j = cj + jj, a = a0 + i * C, b = b0 + j * C, y = hAt(i, j), [x, z] = gzWorld(a, b), o = (jj * W + ii) * 3;
+      if (y > sea - 12) deep = 0;
+      if (y > sea) { x0 = Math.min(x0, x); x1 = Math.max(x1, x); z0 = Math.min(z0, z); z1 = Math.max(z1, z); }
+      pos[o] = x; pos[o + 1] = y; pos[o + 2] = z;
+      const ga = (hAt(i + 1, j) - hAt(i - 1, j)) / (2 * C), gb = (hAt(i, j + 1) - hAt(i, j - 1)) / (2 * C);
+      let nx = -ga * G.ua[0] - gb * G.ub[0], ny = 1, nz = -ga * G.ua[1] - gb * G.ub[1];
+      const nl = Math.hypot(nx, ny, nz); nor[o] = nx / nl; nor[o + 1] = ny / nl; nor[o + 2] = nz / nl;
+      const e = gzEdge(a, b), slope = Math.hypot(ga, gb), rock = ss01(.45, .9, slope);
+      if (y < sea - .2) { const k = ss01(sea - .2, sea - 6, y); spl[o] = 0; spl[o + 1] = 1 - k; spl[o + 2] = .15 + k; }
+      else if (e < G.beach + 2) { const g = ss01(G.beach - 3, G.beach + 2, e); spl[o] = g; spl[o + 1] = 1 - g; spl[o + 2] = .05; }
+      else { spl[o] = (1 - rock) * .9; spl[o + 1] = .06 * (1 - rock); spl[o + 2] = rock; }          // moss and basalt: more rock than the creek
+    }
+    if (deep) continue;
+    const idx = [];
+    for (let jj = 0; jj < nj; jj++) for (let ii = 0; ii < ni; ii++) {
+      const A0 = jj * W + ii, B0 = A0 + 1, C0 = A0 + W + 1, D0 = A0 + W;
+      const top = Math.max(pos[A0 * 3 + 1], pos[B0 * 3 + 1], pos[C0 * 3 + 1], pos[D0 * 3 + 1]);
+      if (top < sea - 12) continue;
+      if (flip === null) { const ux = pos[B0 * 3] - pos[A0 * 3], uz = pos[B0 * 3 + 2] - pos[A0 * 3 + 2], vx = pos[C0 * 3] - pos[A0 * 3], vz = pos[C0 * 3 + 2] - pos[A0 * 3 + 2]; flip = uz * vx - ux * vz < 0; }
+      const t1 = flip ? [A0, C0, B0] : [A0, B0, C0], t2 = flip ? [A0, D0, C0] : [A0, C0, D0];
+      idx.push(...t1, ...t2);
+      if (top > sea - 6) for (const t of [t1, t2]) for (const v of t) tris.push(pos[v * 3], pos[v * 3 + 1], pos[v * 3 + 2]);
+    }
+    if (!idx.length) continue;
+    const g = new THREE.BufferGeometry();
+    g.setAttribute('position', new THREE.BufferAttribute(pos, 3)); g.setAttribute('normal', new THREE.BufferAttribute(nor, 3)); g.setAttribute('aSplat', new THREE.BufferAttribute(spl, 3));
+    g.setIndex(idx); g.computeBoundingSphere();
+    const m = new THREE.Mesh(g, I.lmat); m.name = 'gorgeland'; m.receiveShadow = true; m.userData.noHole = 1; scene.add(m); nCh++;
+  }
+  G.chunks = nCh; G.tris = isleAppend(tris); G.bbox = { x0, x1, z0, z1 };
+  // THE UPPER RIVER: a ribbon on its bed, from the head to the lip
+  const wm = new THREE.MeshStandardMaterial({ color: 0x3f7d86, roughness: .12, metalness: .1, transparent: true, opacity: .8, side: THREE.DoubleSide });
+  { const wp = [], wi = []; let n = 0;
+    for (let b = G.head - 2; b >= G.lip; b -= 2) { const ra = gzRiverA(b), y = gzBed(b) + .55, w = G.hwUp * .9;
+      for (const sd of [-1, 1]) { const [x, z] = gzWorld(ra + sd * w, b); wp.push(x, y, z); }
+      if (n) { const q = (n - 1) * 2; wi.push(q, q + 1, q + 2, q + 1, q + 3, q + 2); } n++; }
+    const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.Float32BufferAttribute(wp, 3)); g.setIndex(wi); g.computeVertexNormals();
+    const m = new THREE.Mesh(g, wm); m.name = 'gorge_river'; m.renderOrder = 1; scene.add(m); }
+  // THE FALLS: a sheet from the lip to the sea, its streaks running down (`gorgeStep` scrolls them), and a skirt of foam
+  { const c = document.createElement('canvas'); c.width = 64; c.height = 256; const g2 = c.getContext('2d');
+    g2.fillStyle = '#9fd4dc'; g2.fillRect(0, 0, 64, 256);
+    for (let k = 0; k < 90; k++) { g2.fillStyle = 'rgba(255,255,255,' + (.25 + Math.random() * .6).toFixed(2) + ')'; g2.fillRect(Math.random() * 64, Math.random() * 256, 1 + Math.random() * 3, 14 + Math.random() * 50); }
+    const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(3, 1.5); t.colorSpace = THREE.SRGBColorSpace;
+    const fm = new THREE.MeshStandardMaterial({ map: t, transparent: true, opacity: .88, roughness: .2, emissive: 0x2a4a50, side: THREE.DoubleSide, depthWrite: false });
+    const top = gzBed(G.lip) + .55, bot = sea, ra = gzRiverA(G.lip - .6), [x, z] = gzWorld(ra, G.lip - .6), w = G.hwUp * 2;
+    const sh = new THREE.Mesh(new THREE.PlaneGeometry(w, top - bot, 1, 1), fm); sh.position.set(x, (top + bot) / 2, z); sh.rotation.y = Math.atan2(G.ub[0], G.ub[1]); sh.rotation.x = .08; sh.renderOrder = 2; scene.add(sh);
+    const [fx, fz] = gzWorld(gzRiverA(G.lip - 4), G.lip - 4), foam = new THREE.Mesh(new THREE.CircleGeometry(G.hwDn * .9, 24).rotateX(-Math.PI / 2), new THREE.MeshStandardMaterial({ color: 0xe8f4f4, transparent: true, opacity: .55, roughness: .4, depthWrite: false }));
+    foam.position.set(fx, sea + .05, fz); scene.add(foam);
+    G.falls = { tex: t, at: [x, (top + bot) / 2, z], top, foam }; }
+  // THE PINES: a jittered lattice on the plateau, off the canyon's lip and the beach
+  { const pts = []; let s0 = G.seed * 131 + 7; const rr = () => (s0 = (s0 * 9301 + 49297) % 233280) / 233280;
+    for (let a = -G.A; a <= G.A; a += 8) for (let b = -G.B; b <= G.B; b += 8) {
+      const ja = a + (rr() - .5) * 7, jb = b + (rr() - .5) * 7, e = gzEdge(ja, jb); if (e < G.beach + 10 || rr() < .35) continue;
+      const bb = Math.min(jb, G.head), d = Math.hypot(ja - gzRiverA(bb), jb - bb); if (d < (jb >= G.lip ? G.hwUp : G.hwDn) + 9) continue;
+      const y = gzHeight(ja, jb), sl = Math.hypot(gzHeight(ja + 1, jb) - y, gzHeight(ja, jb + 1) - y); if (sl > .6) continue;
+      const [x, z] = gzWorld(ja, jb); pts.push([x, y, z, .8 + rr() * .7, rr() * 6.28]); }
+    const trunk = new THREE.CylinderGeometry(.16, .26, 3, 6); trunk.translate(0, 1.5, 0);
+    const crown = new THREE.ConeGeometry(1.6, 6.5, 7); crown.translate(0, 5.4, 0);
+    const mT = new THREE.InstancedMesh(trunk, new THREE.MeshStandardMaterial({ color: 0x4a3626, roughness: .9 }), pts.length);
+    const mC = new THREE.InstancedMesh(crown, new THREE.MeshStandardMaterial({ color: 0x2a5236, roughness: .85 }), pts.length);
+    const m4 = new THREE.Matrix4(), q = new THREE.Quaternion(), sc = new THREE.Vector3(), p = new THREE.Vector3(), up = new THREE.Vector3(0, 1, 0);
+    pts.forEach((P, i) => { q.setFromAxisAngle(up, P[4]); sc.set(P[3], P[3], P[3]); p.set(P[0], P[1] - .1, P[2]); m4.compose(p, q, sc); mT.setMatrixAt(i, m4); mC.setMatrixAt(i, m4);
+      BOXES.push({ minx: P[0] - .3, maxx: P[0] + .3, minz: P[2] - .3, maxz: P[2] + .3, miny: P[1] - .2, maxy: P[1] + 3 * P[3], farm: 'gorge' }); });
+    for (const M of [mT, mC]) { M.instanceMatrix.needsUpdate = true; M.computeBoundingSphere(); M.receiveShadow = true; scene.add(M); }
+    boxGrid(); G.trees = pts.length; }
+  // the places GOD names: the rim over the falls (west side, looking at them), and the upper river's bank
+  { const b = G.lip - 6, a = gzRiverA(b) - G.hwDn - 12, [x, z] = gzWorld(a, b), [fx, fz] = gzWorld(gzRiverA(G.lip), G.lip);
+    G.rimAt = [x, gzHeight(a, b) + .1, z, Math.atan2(fx - x, fz - z)]; }
+  { const b = 40, a = gzRiverA(b) + G.hwUp - 1.2, [x, z] = gzWorld(a, b); G.riverAt = [x, gzHeight(a, b) + .1, z, G.bearing + Math.PI]; }
+  G.live = 1;
+  console.log('[melee] gorge: ' + nCh + ' chunks, ' + G.tris + ' floor tris, ' + G.trees + ' trees, centre ' + G.O.map(v => v.toFixed(0)).join(',') + ', bbox x ' + x0.toFixed(0) + '..' + x1.toFixed(0) + ' z ' + z0.toFixed(0) + '..' + z1.toFixed(0));
+  return nCh;
+}
+function gorgeStep(dt) { const F = GORGE.falls; if (!F) return; F.tex.offset.y += dt * 1.6; F.foam.material.opacity = .45 + .12 * Math.sin(performance.now() * .004); }
+// ============================================================================================
 // THE TRAILER PARK ON STILTS (m366, ROADMAP C6-5b-1, `HCTRAIL`, `buildTrailerPark`)
 // ============================================================================================
 // REGIONS: "a trailer park on stilts over the creek". Rough, loud, proud; rust, tin, flannel red, mud. Down the gorge's
@@ -42546,6 +42676,8 @@ const GODPLACES = [
   { id: 'hcfair', world: 'tkit', name: 'HOLLOW CREEK · the fairground (the rally)', at: () => HCFAIR.at },   // m368
   { id: 'hcmill', world: 'tkit', name: 'HOLLOW CREEK · the logging mill', at: () => HCMILL.at },   // m367
   { id: 'hctrail', world: 'tkit', name: 'HOLLOW CREEK · the trailer park on stilts', at: () => HCTRAIL.walkAt },   // m366
+  { id: 'gzfalls', world: 'tkit', name: 'THE GORGE · the rim over the falls (past the islands)', at: () => GORGE.rimAt },   // m543
+  { id: 'gzriver', world: 'tkit', name: 'THE GORGE · the upper river', at: () => GORGE.riverAt },   // m543
   { id: 'hcrim', world: 'tkit', name: 'HOLLOW CREEK · the gorge (Chapter 3)', at: () => HCREEK.rimAt },    // m365
   { id: 'hchill', world: 'tkit', name: 'HOLLOW CREEK · the top of the hill', at: () => HCREEK.hillAt },
   { id: 'pearlhq', world: 'tkit', name: "THE PEARL · the organiser's roof (Ash, the transmitter)", at: () => OPEARL.ROOF.hqGod },   // m363
@@ -44366,6 +44498,7 @@ function frameBody() {
   gateStep(dt);                 // gates: flicker, mending, the toast (m285)
   portalStep(dt);               // portals: activate on contact, light the pad (m286)
   underStep(dt);                // m512: the Underneath's hatches and its water
+  gorgeStep(dt);                // m543: the falls run
   dtStep(dt);                   // m530: Dump Tower's lift, badges and vestibule doors
   mapStep(dt);                  // the minimap, the full map, region fog (m287)
   godStep(dt);                  // GOD mode: the key, the menu, the boot jump (m298)
@@ -45474,6 +45607,7 @@ async function init() {
     try { buildFarmland(); } catch (e) { FARMLAND.live = 0; note('FARMLAND FAIL'); console.warn('[melee] farmland', e); }
     // HOLLOW CREEK'S LAND (m365): Chapter 3's, across the water to the south-west, after the island it measures its place off
     try { buildHollowLand(); } catch (e) { HCREEK.live = 0; note('HOLLOW FAIL'); console.warn('[melee] hollow creek', e); }
+    try { buildGorgeLand(); } catch (e) { GORGE.live = 0; note('GORGE FAIL'); console.warn('[melee] gorge', e); }   // m543 (F2c-1)
     // THE WATERFRONT (m377): Chapter 4's docks, across the river to the south-east, after the island it measures its place off
     if (!/[?&]cont=0\b/.test(location.search)) { try { WFRONT.contG = await loadGLB('models/campaign/container.glb', 'loading the containers'); } catch (e) { note('CONTAINER GLB FAIL'); console.warn('[melee] container', e); WFRONT.contG = null; } }   // m542 (T2o)
     try { buildWaterfront(); } catch (e) { WFRONT.live = 0; note('WATERFRONT FAIL'); console.warn('[melee] waterfront', e); }

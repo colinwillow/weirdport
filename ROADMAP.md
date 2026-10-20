@@ -552,6 +552,12 @@ differ" table there, so no region feels like the last one.
     - [x] m538 **F2b-5b** the Mothership's seventh lock: a suit's lock (the boardroom's own), between the neural lock and the shaft; Benny's "six ways" becomes seven.
   - [ ] **F2c The Gorge** (7): falls, the stilt village, the scuba diver; between Hollow Creek and the
     River Islands, down the log flume.
+    - [x] m543 **F2c-1** the land: its own landmass past the islands (+z), a plateau ~24 m, the upper river in a canyon at 13 m, THE FALLS (15 m, straight into the sea), the fjord below them out to the coast, pines. GOD `gzfalls`, `gzriver`.
+    - [ ] **F2c-2** the caves behind the falls (a ledge path behind the sheet, a cave with a way up to the upper river), spray, rainbows in it, the falls' sound.
+    - [ ] **F2c-3** the stilt village: houses on stilts along the fjord's wall, walkways and rope bridges between them and across, fishers and river guides.
+    - [ ] **F2c-4** the dam gates upstream: shut them and the falls dry to a trickle and the cave mouth opens; open them and they roar.
+    - [ ] **F2c-5** the scuba diver and the underwater caves under the fjord; the scuba form swims and breathes.
+    - [ ] **F2c-6** the ways in and on: down the log flume and the rapids from Hollow Creek, the lookout and the glider to the islands; its region on the map.
   - [ ] **F2d The Hothouse** (9): the alien takeover, as a region that grows across the map while the
     grid stands and shrinks as you cure districts.
   - [ ] **F2e The metropolis hub**: the tall city in the middle of the map that the other regions ring,
@@ -1456,3 +1462,4 @@ differ" table there, so no region feels like the last one.
 - **m538 (F2b-5b) The seventh lock (THE BOARD DOOR, a suit's) is between the rumble door and the neural lock, not after the lock**, and the file's hall has a SAC that fills your juice tank as you walk through: seven locks is seven forms at 20 juice each, more than a 100 tank. Chapter 6 now has a step that takes a lobby guard's sample, so every player reaching the ship has the suit's face.
 - **m539 (T2m) A side -1 trailer is MIRRORED in x, not turned by pi** as T2m said: turned, its door (Blender Y -1) lands at v + len*.1, away from the porch, awning and steps the code builds at v - len*.1. Mirrored, the door stays where they are.
 - **m542 (T2o) Containers whose doors face +v are TURNED by pi, never mirrored** -- a negative scale inside an InstancedMesh's matrix flips that instance's winding and the box draws inside out.
+- **m543 (F2c-1) The Gorge is its OWN landmass past the River Islands (+z, centre ~(0, 560))**, not a cut through Hollow Creek's land: Hollow Creek already has its gorge (the trailer park, the mill's flume), and between the creek and the islands there is only ~45 m of water. Its falls drop straight into the sea, so the fjord below them is the sea's own water.
