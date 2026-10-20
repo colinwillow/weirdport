@@ -5,6 +5,12 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m675 -- the Mothership gauntlet's organics as art (scenery window; ROADMAP T4w)
+
+`models/campaign/ship_gauntlet.glb`, for `buildShipGauntlet`. The ship's juice sac at the code's r 1.1: a glowing magenta bladder in
+a skin cradle, eight veins over it, three feeding tubes up into the hall's wall; the lock room's glow rib, a skin rib with a glowing
+seam at the code's 2.2 x .5; and a tear strand drooping from the torn floor's edge with a glowing bead at its tip. Shipped unverified.
+
 ## m671 -- the lot's chain-link fence and the channel bridge's piers as art (scenery window; ROADMAP T4v)
 
 `models/campaign/chainlink.glb`. The city ring lot's chain-link fence: a galvanised post with its bands and a domed cap, never

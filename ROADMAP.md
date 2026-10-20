@@ -514,6 +514,12 @@ different context window, let me know."*
   the top rail and the thin wall. In `buildChannelBridge`: `cb_pier` at each pier's (u, yD - .6, 0) in place of the pier box and its
   two cutwater cylinders -- built for W 6 (5.6 across, the noses at +-Y = across the bridge, upstream and down), from its cap at 0
   down to -12; it sinks into the bed below that.
+- [ ] **T4w. Swap in the Mothership gauntlet's organics** (`models/campaign/ship_gauntlet.glb`; no collision -- the sac is drawn
+  only, the room is its trigger). In `buildShipGauntlet`, the ship frame (Blender X = u, +Y = v): `sg_sac` at (hall[0] + 2.5, yC,
+  hall[1] + G.hallR - 1.6) in place of the glow sphere -- its origin is the floor under the code's sphere (r 1.1 at 1.4), its
+  feeding tubes up into the north wall (+Y); `sg_rib` at each of the lock room's six glow boxes, turned -a like them (its X points
+  out of the wall), in place of the box; `sg_strand` at each tear strand's root (the edge of the tear, yC - .1), turned toward the
+  hole (s * .6), in place of the cone.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
