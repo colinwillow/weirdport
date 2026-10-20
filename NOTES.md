@@ -508,6 +508,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **SKYE'S LOOKOUT IS HIS TOWER (m655, T4l, `old_lookout.glb`, `?olook=0`).** `ol_tower` replaces the posts, braces, decks, rails,
+  ladders, canopy and mast; it is mirrored in z, so his +Y is +v, out to sea. **`lbx` / `lgeo`** keep every collider with its
+  drawing popped and skip the drawn-only pieces while the tower stands. The rail colliders keep their own `bx` + pop, so a
+  rail is never popped twice. The climbs, the ramp, the windsock's cone and the glider are still the code's. `places`: the
+  LOOKOUT row is unchanged (30 boxes, 3 ladders).
+
 - **THE SKATE PARK'S WALL AND PLANTERS, AND THE STRIKE'S PLACARDS, ARE HIS ART (m653, T4k, `street_bits.glb`, `?sbits=0`).**
   - `sb_graffiti` replaces the wall's drawing and its three paint patches; mirrored, his painted -Y face looks at the park.
   - `sb_planter` stands at the two planters.

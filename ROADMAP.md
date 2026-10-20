@@ -449,7 +449,7 @@ different context window, let me know."*
   place of the 'conc' wall box and its three paint boxes (its painted face is -Y, toward the park, as the code's paint at 31.43);
   `sb_planter` at (64.5, 16.5) and (66, 16.2) in place of the plank box and the ico. In `buildStrike`: `sb_placard` at each sign's
   (l, f) with the code's lean, in place of the stick box -- the code's canvas plane stays, on its board's +Y face at 1.55.
-- [ ] **T4l. Swap in Skye's lookout** (`models/campaign/old_lookout.glb`; no collision -- keep every deck, rail and post box, and the
+- [x] m655 **T4l. Swap in Skye's lookout** (`models/campaign/old_lookout.glb`; no collision -- keep every deck, rail and post box, and the
   `farmClimb`s). In `buildLookout`, Blender X = u, +Y = v (+v out to sea): `ol_tower` at (0, g0, 0) in place of the four posts, the
   cross braces, the three decks (cut round each hatch at the code's lu, hv -hw .. -hw + 1.05), every rail, the three ladders, the
   canopy posts, the canopy and the windsock mast (its posts run to -1.0 under g0, so a post on lower ground still meets it; the
