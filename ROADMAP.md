@@ -94,7 +94,7 @@ different context window, let me know."*
   and troughs; `nf_tower` at (tu 17, tv 17) on g -- replaces the legs, braces, tank, cap and ladder (it has a blank painted board on
   the tank: a town name later); `nf_shop` at (pu -6, pv -14) on g -- replaces the shack, roof, counter, awning slats, crates and
   produce spheres and the two sign posts. 2,354 / 508 / 487 / 1,248 faces, one mesh each.
-- [ ] **T2j. Swap in the fairground kit** (`models/campaign/fair_kit.glb`, no collision file -- `buildFairground` keeps every
+- [x] m525 **T2j. Swap in the fairground kit** (`models/campaign/fair_kit.glb`, no collision file -- `buildFairground` keeps every
   collider, every canvas sign, the bunting, the stage and the grandstand). Blender X = the fair frame's u, +Y = its +v. Roots:
   `ff_wheel_frame` at (W.u, W.v) on y -- replaces the four A-frame legs, their foot boxes' drawing and the red booth;
   `ff_wheel_rotor` -- built in Blender XZ with the axle along Blender Y, so in three it is ALREADY the `wheel` group's frame (plane

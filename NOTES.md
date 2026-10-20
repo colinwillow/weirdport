@@ -77,6 +77,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE FAIRGROUND IS HIS KIT (T2j, m525, `buildFairground`).** `fair_kit.glb` (`?fair=0`, `FAIR GLB FAIL`), loaded before the
+  builder. **NOT all mirrored this time -- measured per piece:** the stalls (their poles at +x 1.2, the code's u + 1.2), the
+  livestock barn (door at x 0, body to +6 = the code's bu..bu + 6) and the wheel's frame stand x = u, z = v as exported; the
+  GATE's ticket booth window is at +z while the code's booth is at gv - 1, so it alone goes in mirrored. The rotor is added
+  to the turning `wheel` group at its origin (it was built in the wheel's own plane); each car is a clone of `ff_wheel_car`
+  where the BoxGeometry was (`fairStep` keeps them level). `kx(on)` per piece keeps colliders, pops their drawing, drops
+  drawn-only boxes -- only when that piece is in the file. Canvas signs, bunting, the stage and the grandstand stay code.
+  `play ch3` COMPLETE (the rally is here), `places` exit 0.
+
 - **THE UNDERNEATH SURFACES IN THE PEARL AND THE WATERFRONT; THE SAFE HOUSE (F2a-4, m524, `buildUnderneath`).** East of the
   market (a new east door) a tunnel to THE CROSSWAYS (10 x 10), two shafts off it north and south, a tunnel east to the
   SAFE HOUSE (10 x 9: cots, a table laid, plants under a grow lamp, lamps along the walls, Pell and Wren). The shafts'
