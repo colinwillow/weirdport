@@ -490,7 +490,7 @@ different context window, let me know."*
   stoop (it is the town edge house at the ring's own 6.8 x 5.8 x 2.7 / 4.5, with a stoop, rails and a door hood instead of a porch;
   its footing runs to -1.0). The yard fence: `rh_fence` (a 1 m section with a post at its middle: lay one per metre, turned along the run)
   along the back and both sides, in place of the two white rails each (keep each run's collider).
-- [ ] **T4s. Swap in the fields' post-and-rail fence** (`models/campaign/farm_fence.glb`; no collision -- keep the post box and the
+- [x] m670 **T4s. Swap in the fields' post-and-rail fence** (`models/campaign/farm_fence.glb`; no collision -- keep the post box and the
   run's thin collider). In `buildFieldBounds`' 'fence' branch, at each piece (u, g, v) turned psi (Blender X = along the run):
   `ff_post` (never scaled) in place of the post box, and `ff_rails` scaled X by F.piece + .25 (2.95) in place of the two rail
   boxes -- the rails sag and are weathered in two tones. Instance both (one InstancedMesh each); they run the whole farm.

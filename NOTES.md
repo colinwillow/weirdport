@@ -568,6 +568,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE FIELDS' POST-AND-RAIL FENCE IS HIS, INSTANCED (m670, T4s, `farm_fence.glb`, `?ffence=0`, `FFK`, `ffBuild`).** At every
+  fence piece, `ff_post` (unscaled) and `ff_rails` (x scaled to `piece` + .25) get a world matrix: the frame's (u, v) taken to
+  world, yaw psi + the frame's th, his X along the run. `ffBuild` runs after `fbBuild` at the end of `buildFieldBounds`, and
+  makes one InstancedMesh per piece per material. The post collider and the run's thin collider stay; the rail boxes are not
+  built. `ff_gate` is in the file and unused.
+
 - **THE CITY RING'S HOUSES ARE HIS ART (m667, T4r, `ring_house.glb`, `?rhouse=0`).** In `ringHouse`:
   - `rh_house_wall` (`TE_paint_white` tinted the house's `col`) + `rh_house_trim` sit at L(0, 0), turned psi and mirrored in z.
   - `B` keeps the colliders with their drawing popped and skips the drawn-only pieces; the gables are not drawn.
