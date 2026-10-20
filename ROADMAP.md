@@ -152,6 +152,13 @@ different context window, let me know."*
   Y 14, bow at 85.5, deck at 9, forecastle 1.4 higher from 70. Stop DRAWING the five hull sections and their anti-fouling and boot
   bands, the forecastle, its steps, the three hatch covers, every bulwark, the wheelhouse, its window bands, the funnel and its mast,
   and the three repair plates. 1,813 faces, one mesh.
+- [ ] **T2r. Swap in the transit shed and the tug** (`models/campaign/wf_shed_tug.glb`, no collision file -- `buildWaterfront` keeps
+  every collider, the shed's roof floor, both ladders, the pallets and drums). Blender X = the frame's u, +Y = its v. `wf_shed` at
+  (Sh.u, Sh.v) on Y -- replaces the body box, the roof slab, the four doors with their jambs and slats, and the three roof vents'
+  drawing (corrugated walls, a canopy over the doors, clerestory windows, gutters and downpipes, skylights, a blank name board over
+  the middle doors). `wf_tug` in pier 2's own frame (turned P.psi) at pier-local (w/2+2.9, -2), on its DECK at sea+.9, bow toward
+  +Y -- replaces the hull box, the foredeck, the wheelhouse and its windows and the tyre tori (a lofted hull, red below, a stack,
+  rails, bitts, a mast). 2,300 / 1,031 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

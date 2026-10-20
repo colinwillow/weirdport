@@ -5,6 +5,15 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m548 -- the transit shed and the tug as art (scenery window; ROADMAP T2r)
+
+`models/campaign/wf_shed_tug.glb`. The TRANSIT SHED was one tin box with four dark rectangles: now corrugated walls (a real
+rib profile, `corr`), four roll-up doors with slats, drum housings, yellow jambs and bumpers, blank door-number boards, a personnel
+door, a steel canopy on brackets along the quay face, clerestory windows, gutters and downpipes, roof sheet laps, skylights, the
+three vents louvred, lamps and a blank name board (the first render ran the window band straight through the board). The TUG: a
+lofted hull (black topsides, red below), its foredeck, the wheelhouse with windows and a dark roof, a red stack, a mast with a lamp,
+rails, towing bitts and hook, tyre fenders round the sheer and a bow pudding. Shipped unverified.
+
 ## m546 -- the dry-dock coaster as art (scenery window; ROADMAP T2q)
 
 `models/campaign/coaster.glb`, inside the code's hull boxes so every deck, bulwark gap, ladder and the gangway still meet her. The
