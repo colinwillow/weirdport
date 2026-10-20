@@ -449,7 +449,9 @@ differ" table there, so no region feels like the last one.
   - [x] m503 **F1-IS1** the River Islands 1 -- lighthouse rock (a white tube and two bands): the lantern's gallery rail and mullions, a door, a stone apron, windows up the tower; the keeper's cottage with its chimney, an oil store with drums, a flag, a washing line, lobster pots, a rope coil.
   - [x] m504 **F1-IS2** the River Islands 2 -- Rue's field (cones on a lawn): two painted rings round the cross, stepping stones up from the rope bridge, Rue's canopy and table, a rack of folded wings, a chalkboard, a bench, wildflowers -- nothing solid within 9 m of the cross.
   - [x] m505 **F1-IS3** the River Islands 3 -- the skate park (a clean deck with ramps): paint splashed on the planks, dark patched planks, string lights on poles down both rails, paint up the quarter pipe's platform and the funbox, and the hangout at the island end -- a sofa, a cooler, a speaker on a crate, boards on the rail.
-  - [ ] **F1-MS1..3** the Mothership.
+  - [x] m506 **F1-MS1** the Mothership 1 -- the decks (one flat purple): in the chamber a glowing ring at the wall's foot, radial seams, a cable from every pod to the machine, conduits up the wall, a light ring round the ceiling; glow strips down both tubes; on the bridge a lit ring round the floor disc, console lights and a turning holo-globe.
+  - [ ] **F1-MS2** the Mothership 2 -- the belly over the tether.
+  - [ ] **F1-MS3** the Mothership 3 -- the core on its back.
   - [ ] **F1-RT** the routes between them.
 - [ ] **F2 The regions still missing from `REGIONS.md`**, each as land → places → people → the ways in
   (several, per the connective-tissue rules) → its quests and boss. Read the entry first.

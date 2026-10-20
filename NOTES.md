@@ -26,6 +26,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE MOTHERSHIP'S DECKS, LIT (F1-MS1, m506, `buildShipDecks`).** Four ship shots (`npm run shot isship isconv isbridge
+  iscore`): everything one flat purple. Added, all drawn and colliderless: in the conversion chamber a glow ring where floor
+  meets wall, 16 radial seams, a cable (a dark flat band) from every pod to the column, 8 conduits up the wall, a light
+  ring round the ceiling; a glow strip down each side of both tubes; on the bridge a lit ring round the floor disc, three
+  lights on each console desk, and a wireframe holo-globe with a pink band over the middle (`ISDECK.holo`, turned in
+  `shipPodStep` beside the crown -- that is where the per-frame ship spin lives). `play ch6` COMPLETE (3/3, 15 steps).
+
 - **THE SKATE PARK, SKATED IN (F1-IS3, m505, `buildIslandSkate`).** Added: 18 paint splashes and 7 dark patched planks (flat,
   colliderless, so nothing the board rides on changes -- the ramps, funbox, ledge and rail are untouched), poles every 9 m
   on both rails with bulbs strung between them, paint panels on the quarter pipe's platform face and the funbox's side,

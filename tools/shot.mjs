@@ -97,7 +97,7 @@ const SHOTS = {
   pearl: { place: 'pearl', settle: 3, why: 'The Pearl: the pier, its warehouses round the plaza (C6-1)',
     cam: `(() => { const F = mel.OPEARL.frame, C = Math.cos(F.thf), S = Math.sin(F.thf), at = (u, v) => [F.ox + u * C + v * S, F.oz - u * S + v * C];
       const e = at(-6, 2), t = at(-2, 70); return [e[0], F.y + 16, e[1], t[0], F.y + 2, t[1]]; })()` },
-  ...Object.fromEntries(['hctrail', 'hcmill', 'hcfair', 'hchalt', 'hcbikes', 'wfquay', 'wfbots', 'wfturret', 'wfdock', 'wfferry', 'wfsuper', 'islanding', 'ismesa', 'isskate', 'isstrait', 'islight', 'isbase'].map(id => [id, { place: id, settle: 4, pre: process.env.SHOT_PRE || '', why: `${id} from behind and above him`,   // m494 (F1-HC)
+  ...Object.fromEntries(['hctrail', 'hcmill', 'hcfair', 'hchalt', 'hcbikes', 'wfquay', 'wfbots', 'wfturret', 'wfdock', 'wfferry', 'wfsuper', 'islanding', 'ismesa', 'isskate', 'isstrait', 'islight', 'isbase', 'isship', 'isconv', 'isbridge', 'iscore'].map(id => [id, { place: id, settle: 4, pre: process.env.SHOT_PRE || '', why: `${id} from behind and above him`,   // m494 (F1-HC)
     cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
       return [p.x - fx * 10 + fz * 4, p.y + 6, p.z - fz * 10 - fx * 4, p.x + fx * 10, p.y + 1, p.z + fz * 10]; })()` }])),
   wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
