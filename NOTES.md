@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m669 -- the creek footbridge, reeds and lilies as art (scenery window; ROADMAP T4u)
+
+`models/campaign/farm_waters.glb`, for `buildFarmWaters`. The footbridge at the code's 14.6 x 1.6: planks on two bearers, both
+handrails with a mid rail and a diagonal brace in every bay between the code's seven posts, and the two trestles at +-2.6, X-braced
+with moss on their feet. A reed clump with two cattails and a few leaves; and a lily pad, notched, with a white flower. Shipped
+unverified.
+
 ## m668 -- the channel bridge's checkpoint and lamps, and the ford's stones, as art (scenery window; ROADMAP T4t)
 
 `models/campaign/bridge_bits.glb`. The checkpoint booth at the code's 1.7 m square: white panels and corner posts, glazed on three
