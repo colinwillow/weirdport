@@ -430,6 +430,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE GORGE DAM'S WORKS ARE HIS ART (m630, T4b, `gorge_dam.glb`, `?gdam=0`, `gdPut`).** These are mirrored in z, so his +Y is
+  +b:
+  - `gd_winch` replaces the hut's drawing (its tin collider stays) and the rust roof.
+  - `gd_wheel` replaces the torus, the post and the grate. The grate is only a picture; the trigger is `G.dam.pad`.
+  - `gd_sluice` stands at both mouths.
+  - `gd_rail` is X-scaled to 2 hw along both crest rails, with `gd_post` every 2 m, unscaled; the rail colliders stay.
+  The concrete wall is still the code's.
+
 - **THE GORGE'S STILT HOUSES ARE HIS ART (m628, T4a, `stilt_village.glb`, `?stilt=0`, `svPut`).** In `buildGorgeVillage`, each
   house is in its own frame: origin on the platform at the house centre, his +X = +d (away from the river), +Y = +b (the
   campaign mirror). **AU flips u with s, so a house on s = 1 gets scale.x = -1**; with the mirror's z flip that is a half-turn,

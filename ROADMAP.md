@@ -391,7 +391,7 @@ different context window, let me know."*
   `sv_house_roof` (ONE white material, tint roof_k) + `sv_house_trim` in place of the walls box, the cone roof, the door, the
   window, the lamp, the rack posts and bar, the fish and the net. `sv_boat` at (AU(b + 2.6, s, 1.6), sea, b + 2.6) turned by ps
   (its mooring line runs up 3.2 m) in place of the 'boat' box.
-- [ ] **T4b. Swap in the gorge dam's works** (`models/campaign/gorge_dam.glb`; no collision -- keep the boxes that collide; the
+- [x] m630 **T4b. Swap in the gorge dam's works** (`models/campaign/gorge_dam.glb`; no collision -- keep the boxes that collide; the
   concrete wall itself stays the code's). In `buildGorgeDam`, Blender X = u, +Y = +b (the downstream face is -Y): `gd_winch` at
   (U(hu), top, b0) in place of the tin box and the rust roof (its door faces downstream); `gd_wheel` at (U(wa), top, b0) in place
   of the yellow torus, its post and the dark grate (the wheel is at -.3 Y, as the code has it); `gd_sluice` at each mouth's
