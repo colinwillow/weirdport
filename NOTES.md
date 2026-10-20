@@ -632,6 +632,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m694 (F2e-2): INTO DUMP TOWER, AND THE STREETS BETWEEN THE TOWERS** (`DTOWER.skyDoor`, `MCORE.PEOPLE`, `MCORE.dtLinks`). Dump
+  Tower's floor 6 (the sky garden) has a door in its west and east glass (`skyDoor`, v -1.4..1.4); `buildMetroCore` bridges each to
+  the nearest core terrace across from it whose face spans the door (within 30 m), or glazes the door back in if there is none. The
+  bridge goes in `gaps` like the others, so the terrace rail opens for it. **The terrace level and the sky garden are the same
+  number by construction** (`yS = DTOWER.frame.y0 + 6 * H`), which is the whole reason the core was built to it. Street life: two
+  benches and a lamp at every lobby, a zebra crossing and a coffee kiosk under every sky-bridge, and four office people (`mc_*`)
+  walking a loop past the lobbies within 60 m, each starting from a different one. `placecheck` CORE row (floor just outside each door):
+  `ok  CORE 10 towers, 8 sky-bridges, terrace 25.12 | ladder top lands on 25.12 | -22,0 stone 26m 22,0 glass 43m 20,-16 steel 40m 20,16 steel 54m -20,-18 brick 25m 42,10 stone 26m 38,-22 steel 41m 56,-8 glass 52m -68,-6 glass 26m 74,-8 brick 26m | into Dump Tower 2 (25.12, 25.12 just outside its doors), kiosks 8 | not built: wet 480 box 162 slope 9 city 85`
+
 - **m693 (T5d): THE MILL'S SAW LINE, LOG PILES AND SAWDUST ARE HIS** (`mill_floor.glb`, `HCMILL.floorG`, `?mfloor=0`). `campPlace`
   (mirrored) in `buildMill`: `ml_sawline` at (0, y, S.v + 3.5) for the rollers, the blade and the bed's drawing (its collider stays);
   `ml_pile3` / `ml_pile4` at each pile by `P.n` (a pile of any other n keeps the code's logs) -- the pile collider, whose top is a

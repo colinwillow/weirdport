@@ -185,6 +185,7 @@ quiet('LIFE', M.OTLIFE.n, 'routes:', M.OTLIFE.routes.map(r => r.id + ' ' + r.bea
 { const O = M.MCORE, t = O.top; let r = O.n + ' towers, ' + O.bridges + ' sky-bridges, terrace ' + O.yS.toFixed(2), bad = !O.n || !O.at;
   if (t) { const g = M.groundAt(t[0], t[2], O.yS + 2, 3); r += ' | ladder top lands on ' + g.toFixed(2); if (Math.abs(g - O.yS) > .1) bad = 1; } else r += ' | NO LADDER';
   r += ' | ' + O.towers.map(q => Math.round(q.u) + ',' + Math.round(q.v) + ' ' + q.m + ' ' + (q.top - q.g).toFixed(0) + 'm').join(' ');
+  r += ' | into Dump Tower ' + O.dtLinks + ' (' + [-1, 1].map(s2 => { const T = M.DTOWER, F = T.frame, u = s2 * (T.W / 2 + 1.2), x = F.Ox + u * Math.cos(F.thf), z = F.Oz - u * Math.sin(F.thf); return M.groundAt(x, z, O.yS + 2, 3).toFixed(2); }).join(', ') + ' just outside its doors), kiosks ' + (O.kiosks || 0);
   r += ' | not built: ' + O.why.join(' ');
   console.log((bad ? 'BAD' : 'ok ') + ' CORE ' + r); if (bad) globalThis.__cowBad = (globalThis.__cowBad || 0) + 1; }
 // (m684: the HEART row runs before the quests now -- THE CURE aims at its mother pod and its gardener)
