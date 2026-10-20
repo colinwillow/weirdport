@@ -176,6 +176,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **OLD TOWN'S FOOD CARTS ARE HIS ART (m556, T2u, `OTCARTS.glb`, `?carts=0`).** Per cart: `fc_cart_paint` (its one white material
+  CLONED per cart and set to `MAT['c' + i]`'s colour), `fc_cart_trim`, and `fc_cart_shutter` on a shut one -- mirrored in z
+  (MEASURED: the window and bulbs sit at glTF -z, so Blender +Y is the front) and turned `yaw` as the body box. The body's
+  collider stays (drawing popped); the roof, window, counter, awning, wheels, hitch and sign board are not built; the canvas sign
+  plane is (fw .27, g + 2.92). The shut cart's awning stays up: it is part of the paint mesh. `CARTS GLB FAIL` if it fails.
+
 - **THE FREIGHT TRAIN IS HIS ART (m555, T2t, `HCTRAIN.glb`, `?train=0`).** `ft_loco` / `ft_flat` / `ft_caboose` are cloned into each
   car's group at (0, 0, 0), unturned (rail level, cab at three +z: the export already turned Blender Y into -z, per the contract
   -- not measured, the bounds are symmetric). For a car with art, `box` is a no-op and the wheels and the stack are not built; the

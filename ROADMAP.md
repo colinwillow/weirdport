@@ -172,7 +172,7 @@ different context window, let me know."*
   three +z exactly as the code's); `ft_flat` in place of the frame, deck, two stakes and wheels (KEEP the five logs); `ft_caboose`
   in place of the frame, deck, body, cupola, roof and the two yellow bars. Each has two-axle trucks, couplers and striped end sills.
   658 / 438 / 656 faces.
-- [ ] **T2u. Swap in the food carts** (`models/campaign/food_cart.glb`, no collision file -- `buildCarts` keeps the colliders, the
+- [x] m556 **T2u. Swap in the food carts** (`models/campaign/food_cart.glb`, no collision file -- `buildCarts` keeps the colliders, the
   canvas roof SIGNS and everything else in the pod). Origin at each cart's centre on the ground, Blender X along the cart, +Y its
   FRONT toward the tables, so place at (u, v, g) turned `yaw` exactly as the body box. Per cart: `fc_cart_paint` tinted with K.col
   (it is ONE white material -- clone it per cart or instance it with setColorAt) in place of the body box and the awning;
@@ -1503,3 +1503,4 @@ differ" table there, so no region feels like the last one.
 - **m542 (T2o) Containers whose doors face +v are TURNED by pi, never mirrored** -- a negative scale inside an InstancedMesh's matrix flips that instance's winding and the box draws inside out.
 - **m543 (F2c-1) The Gorge is its OWN landmass past the River Islands (+z, centre ~(0, 560))**, not a cut through Hollow Creek's land: Hollow Creek already has its gorge (the trailer park, the mill's flume), and between the creek and the islands there is only ~45 m of water. Its falls drop straight into the sea, so the fjord below them is the sea's own water.
 - **m551 (F2c-2) The way into the cave behind the falls is DOWN a chimney from the upper river**, not along a ledge from the fjord: the fjord is sea water 28 m down between sheer walls and there is no swimming yet. The diver's underwater way in is F2c-5. No falls sound: there is no water recording in the repo.
+- **m556 (T2u) The shut cart keeps its awning up** for now: the awning is part of `fc_cart_paint`, so it cannot be hidden on its own. A separate `fc_cart_awning` root in `food_cart.glb` would let the shut cart drop it (one line in `buildCarts`).
