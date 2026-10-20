@@ -439,6 +439,11 @@ different context window, let me know."*
   code's core sphere (r .7), which keeps its own colour and emissive and shows through the six gaps; or swap the core for `ao_core`
   (ONE white material -- give it the orb's colour and emissive). The ring, the halo sprite, the cones and the beams stay the
   code's. The shell spins with the group if the group spins; its fins point down and out.
+- [ ] **T4j. Swap in the rope-bridge crossing's decks** (`models/campaign/island_xing.glb`; no collision -- keep the deck box). In
+  `buildIslandXing`, Blender X = u, +Y = v, turned by ps like the deck box: `ix_deck` at each stack's (P.u, P.y, P.v) -- its top
+  at the origin, 4.4 square (X.deck), +Y along the chain where the bridges land, rope rails on its two sides -- in place of the
+  plank box and the four corner posts; `ix_cone` (ONE white material, tint orange / white by k % 2) at the field's fourteen cones;
+  `ix_signframe` at Old Town's end (u, y, v - 1.2) in place of the two sign posts, the code's canvas planes on its board at 2.15.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

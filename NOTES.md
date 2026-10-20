@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m647 -- the rope-bridge crossing's decks as art (scenery window; ROADMAP T4j)
+
+`models/campaign/island_xing.glb`, for `buildIslandXing`. The timber deck on each sea stack at the code's 4.4 m: planks on three
+bearers, braced corner posts down into the rock, rope rails along its sides, open at both ends for the bridges, with iron bollards
+for them to tie to. A weighted field cone (one white material, tinted orange or white like the code's ring). And the frame for the
+crossing's sign, two posts, a rail, a board and braces, for the code's canvas to sit on. Shipped unverified.
+
 ## m645 -- the alien orbs' body as art (scenery window; ROADMAP T4i)
 
 `models/campaign/alien_orb.glb`, for the three orbs (the trance orb, the amp, the watcher) that are a glowing sphere and a ring
