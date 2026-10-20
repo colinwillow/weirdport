@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m586 -- the Mothership's pods and machine as art (scenery window; ROADMAP T3i)
+
+`models/campaign/ship_pods.glb`, in the purple-and-green of the m506-m508 passes. Each POD's frame -- a ribbed bulb base with glowing
+vents, three curved bone-coloured claws holding the code's glass (which keeps its own pulsing material and sleeper), a cap with a
+glowing rim and the socket for the code's cable, a violet readout. The MACHINE: a ribbed base and upper column, the code's glow sphere
+cradled in an open cage of claws between two glowing rings, violet veins snaking up into the ceiling, conduits running off across
+the floor. Shipped unverified.
+
 ## m585 -- the swing bridge kit as art (scenery window; ROADMAP T3h)
 
 `models/campaign/swing_kit.glb`, at the m510 spots. WALT'S PITCH: two rods with cork grips and reels leaning out over the rail on
