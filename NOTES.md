@@ -651,6 +651,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m703 (T5g): THE FAIR FIELD IS HIS** (`fair_field.glb`, `HCFAIR.fieldG`, `?ffield=0`, plus `mx_extras`, `rally_truck`, `rim_props`).
+  `fg_pole` at the six bunting poles. The 105 PENNANTS are ONE InstancedMesh per material: its white material takes `setColorAt` per
+  instance (bunt1/2/3) and its cord does not, yawed like the code's triangle. `mx_hay` at the five bales, scaled (1.07, 1.11, 1.06),
+  with the hay colliders kept. `rt_paint` + `rt_trim` at the four trucks outside the gate (mirrored, so the nose is to -v), the paint
+  tinted 'truck', and the truck collider kept. `rp_pole` + `rp_flag` x2 tall at the stage's flag. **The `mx_extras` and `rally_truck`
+  loaders moved up in init to before `buildFairground`**, which now borrows them; they used to load just before their own builders,
+  after the fair. `places`: FAIR row unchanged, 0 BAD.
+
 - **m702 (F2e-5): THE SKYLINE AIMS THROUGH THE REAL CORE** (`SKYLINE.real`, `SKYLINE.realSkip`). `buildSkyline` runs after
   `buildMetroCore`; when the core has towers it aims from the farm through `DTOWER.frame`'s origin rather than the island's middle,
   and drops its own Dump Tower (and beacon) and its `oldtown` district. Two Dump Towers on one bearing -- a 42 m one you can walk
