@@ -87,6 +87,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **DUMP TOWER HAS A LIFT AND BADGES (m530, F2b-2, `DTOWER.lift` / `.vest` / `.badges`, `dtStep`).** A glass cab with a gold
+  frame at (u 8, v 8) on every floor, open on its -u side; stand in it .8 s and it rides (a teleport with the camera shifted,
+  the hatch's method): lobby -> the highest floor your badges reach, anywhere else -> the lobby. No staff badge, no ride, and
+  it says so. Floors 8 and 9 are behind SECURITY VESTIBULES -- three glass walls round the stair's head and a gold door at its
+  exit end, a BOXES entry of its own raised out of reach when `dt:badge_exec` / `dt:badge_ceo` is set (the sluice's method),
+  with a red/green reader. Badges are flags `dt:badge_staff|exec|ceo`, picked up off the lobby desk, a gym bench and the
+  boardroom table. Riding to 8/9 sets `dt:floor8|9` for F2b-5's chapter. `places` exit 0. Shipped unverified.
+
 - **THE FAIR'S STAGE AND GRANDSTAND ARE HIS ART (m529, T2k, `HCFAIR.stageG`, `?fstage=0`).** `fair_stage.glb` read straight from the
   accessors: the stage's backdrop (FF_blue2) sits at glTF z +3.6 and the podium at z -1.5, where `buildFairground` has the
   backdrop at -v and the podium at +v -- so both pieces are MIRRORED in z (`campPlace` default), unlike `fair_kit`'s stalls.

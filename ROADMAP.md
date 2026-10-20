@@ -516,7 +516,7 @@ differ" table there, so no region feels like the last one.
     the chapter order (Dump Tower is the last stop in the metropolis; renumber the chapters and the
     Mothership's six locks become seven).
     - [x] m528 **F2b-1** the tower: ten floors on its own plaza west of the city (lobby, offices, a gym, a sky garden, the boardroom, the penthouse) joined by a switchback stair, glass curtain walls with gold mullions, the helipad on the roof. GOD places `dtplaza`, `dtroof`.
-    - [ ] **F2b-2** the lifts and the badges: a lift car that only answers a badge for its floor band; the badge cards found or lifted from the people who carry them.
+    - [x] m530 **F2b-2** the lifts and the badges: a lift car that only answers a badge for its floor band; the badge cards found or lifted from the people who carry them.
     - [ ] **F2b-3** its people and the corporate ladder: staff per floor, the Reptilian suits, a promotion that opens the next band.
     - [ ] **F2b-4** the ways in and out: the tram stop at the plaza, a glider off the helipad.
     - [ ] **F2b-5** the chapter: Dump Tower inserted before the Mothership, the CEO boss in the boardroom, chapters renumbered and the Mothership's locks seven.
@@ -1419,3 +1419,4 @@ differ" table there, so no region feels like the last one.
   no model yet. When a miner GLB exists, `GATE_TYPES.undercollapse.need` is the one line to change. The miner's "sees in the
   dark" is not built either -- the tunnels are lit enough to play.
 - **m528 (F2b-1) Dump Tower stands on the WEST edge, off the city's ray at 180 deg, 20 x 20 m, 4.2 m floors, a switchback stair rather than lifts for now.** The stair keeps every floor reachable before F2b-2's badge lifts exist; when they land the stair can be locked above the lobby band. `DTOWER.deg` moves it.
+- **m530 (F2b-2) Dump Tower's lift is ONE cab with two stops per ride, not a floor picker.** From the lobby it takes you as high as your badges reach (staff -> floor 7, executive -> the boardroom, CEO -> the penthouse); from any other floor it takes you down to the lobby. The stair stays open up to floor 7; the boardroom and the penthouse are behind glass SECURITY VESTIBULES over the stair's head that open to that band's badge. Until F2b-3 gives the badges to people, they lie where their owners left them: the lobby desk, a gym bench, the boardroom table.
