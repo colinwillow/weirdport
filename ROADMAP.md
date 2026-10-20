@@ -316,7 +316,7 @@ different context window, let me know."*
   way, the post .3 toward +v. `tank`: `rx_tank` at (W - 1.6, H, -D + 1.6) in place of the drum, the cone and the four legs.
   `vents`: `rx_vent` at each vent's (u, roofH, cv) in place of the 'vent' box and its 'glow' lid. `scrap`: `rx_tyres` at
   (W - 1.2, roofH, -1.2) in place of the four tori.
-- [ ] **T3r. Swap in the Pearl's dock props** (`models/campaign/pearl_dock.glb`, no collision -- keep every collider box as it is). In
+- [x] m608 **T3r. Swap in the Pearl's dock props** (`models/campaign/pearl_dock.glb`, no collision -- keep every collider box as it is). In
   `buildFootbridge`'s dock, Blender X = u, +Y = v, origins on the dock (yP): `pd_pot_paint` (ONE white material, tint it with that
   pot's pot1/2/3 colour) + `pd_pot_plants` at each of the five pots, in place of the cylinder, the torus rim, the three icos and the
   four bloom spheres; `pd_planter_paint` (tint pot2 / pot1; built 1.8 square, scale X .89 for the 1.6 one) + `pd_planter_plants`

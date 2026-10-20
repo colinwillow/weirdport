@@ -351,6 +351,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE PEARL DOCK'S POTS, PLANTERS, CRATES AND CHALKBOARD ARE HIS ART (m608, T3r, `pearl_dock.glb`, `?pdock=0`).** These are
+  mirrored in z:
+  - `pd_pot_paint` + `pd_pot_plants` stand at the five dock pots, each turned by its index.
+  - `pd_planter_paint` + `_plants` stand on the container's roof; the 1.6 m planter is scaled X .89. The middle leaf clump
+    between them stays.
+  - `pd_crates` replaces the three crate drawings and the sack.
+  - `pd_chalkboard` is turned -.3.
+  **`PD_paint_white` is cloned per piece and tinted with the code's pot colour.** Every collider stays (the crate pair, the pot
+  boxes, the roof planters). A missing file says `PDOCK GLB FAIL`.
+
 - **THE KIT TOWN'S ROOF EXTRAS ARE HIS ART (m607, T3q, `roof_extras.glb`, `?rx=0`).** In `kgenMake`'s `S.extra` block, these
   replace the drawn ones:
   - `rx_bed` (garden beds)
