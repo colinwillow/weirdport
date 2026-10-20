@@ -5,6 +5,12 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m698 -- the MX track's start gate and hay bales as art (scenery window; ROADMAP T5f)
+
+`models/campaign/mx_extras.glb`, for `buildBikeTrack`. The start gate on the hill's front edge at the code's seven posts across the
+lanes: six drop-plates with blank number boards between them, the yellow bar along the top and the starter's release lever off the
+end. And a hay bale at the code's 1.5 x .9 x .85, two twine bands and loose straw. Shipped unverified.
+
 ## m695 -- the trailer park's porches and awnings as art (scenery window; ROADMAP T5e)
 
 `models/campaign/trailer_porch.glb`, for `buildTrailerPark`. The awning at the code's 2.2 x 3.2: a corrugated tin sheet falling
