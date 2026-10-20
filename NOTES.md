@@ -540,6 +540,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE TOWN EDGE'S BILLBOARDS AND POWER POLES ARE HIS ART (m663, T4p, `roadside2.glb`, `?rside2=0`).** These are mirrored in z:
+  - `rb_billboard` faces -v, turned pi when `Bd.face` is -1. It replaces the catwalk and the dark board; the code's sign plane
+    and the leg colliders stay.
+  - `rb_pole` replaces the pole's drawing and its crossbar; the pole collider stays, and the wires still start at the code's
+    ±.7 at 8.5.
+
 - **THE TOWN EDGE'S HOUSES, FENCES, MAILBOXES AND FRUIT STAND ARE HIS ART (m661, T4o, `town_edge.glb`, `?tedge=0`).**
   - **Houses:** `te_house_wall` (`TE_paint_white` tinted Hs.col) + `te_house_trim`, turned pi where `front` is -1, replace
     everything the code drew. **The house loop shadows `bx` / `geo` with `teK(hArt)` / a no-op**, so its colliders stay with
