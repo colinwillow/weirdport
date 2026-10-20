@@ -87,6 +87,13 @@ different context window, let me know."*
   lone hay barn's frame origin (FL.FLATS[1], turned thN - .45) -- replaces the posts, eave beams and the DoubleSide roof cylinder
   (the hay steps and the round bales stay code; its roof is solid both ways, so `droof`'s DoubleSide goes). Each built at its
   builder's exact numbers. 448 / 322 / 3,814 faces, one mesh each.
+- [ ] **T2i. Swap in the neighbour's farm** (`models/campaign/neighbour_farm.glb`, no collision file -- `buildNeighbours` keeps every
+  collider, the picket fence and the shop's canvas SIGN plane). Four roots, Blender X = the neighbour frame's u, +Y = its +v:
+  `nf_house` at (hu 8, hv 6) on the house floor y0 -- replaces the plinth, walls, gables, roof slabs, windows, door, stoop and
+  chimney (6 x 5.5, eaves 8.6, ridge 12.8, all as built); `nf_shed` at (su -12, sv 14) on y0 = lo -- replaces the walls, posts, roof
+  and troughs; `nf_tower` at (tu 17, tv 17) on g -- replaces the legs, braces, tank, cap and ladder (it has a blank painted board on
+  the tank: a town name later); `nf_shop` at (pu -6, pv -14) on g -- replaces the shack, roof, counter, awning slats, crates and
+  produce spheres and the two sign posts. 2,354 / 508 / 487 / 1,248 faces, one mesh each.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

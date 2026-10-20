@@ -5,6 +5,16 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m518 -- the neighbour's farm as art (scenery window; ROADMAP T2i)
+
+`models/campaign/neighbour_farm.glb`, at buildNeighbours' numbers -- the "tall and thin beside short and squat" pair kept exactly.
+The TALL HOUSE: pale blue clapboard cut round every window, white corner boards and floor bands, tall windows with mullions, sills
+and little pediments, round attic windows, a mustard door under a slate hood on its stoop, a steep slate roof in courses, rakes,
+a stone chimney with a pot. The CATTLE SHED: planks with battens, round-pole posts down the open front, a tin pent roof with one
+rusted sheet, troughs full of straw. The WATER TOWER: braced legs on pads, a banded red tank, a slate cone with a finial, a
+walkway rail, the ladder, and a blank painted board for a town name later. The FARM SHOP: a plank shack, a tin roof, a striped
+awning with a scalloped valance, crates of apples, pumpkins and greens, a honey jar; the canvas sign stays the code's. Shipped unverified.
+
 ## m517 -- the shed, the coop and the lone hay barn as art (scenery window; ROADMAP T2h)
 
 `models/campaign/farm_outbuildings.glb`, at their builders' numbers. The SHED: board-and-batten in sage, its sides cut to the
