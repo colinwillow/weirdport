@@ -354,7 +354,7 @@ different context window, let me know."*
   cylinders; 3 -> `oc_sofa` (camp_kit) or `sk_sofa`; 4 -> `pp_crates` (its top crate already turned .4). `pp_bed` at each of the
   twelve corner beds in place of the wood and soil boxes, the stems, the discs and the leaves. Bunting: `gr_pennant_paint` +
   `gr_pennant_string` (gang_road) at the pennants.
-- [ ] **T3w. Swap in the food-cart pod's dressing** (`models/campaign/cart_pod.glb`; no collision -- keep the boxes that collide). In
+- [x] m622 **T3w. Swap in the food-cart pod's dressing** (`models/campaign/cart_pod.glb`; no collision -- keep the boxes that collide). In
   `buildCarts`' m488 block, Blender X = u, +Y = v: `cp_table` + `cp_umbrella_paint` (ONE white material, tint umb / umb2 / umb3) +
   `cp_umbrella_ribs` at each table's (u, v, deckTop) turned by r, in place of the top, the leg, the benches, the pole, the cone and
   the napkin box; `cp_sail` ONCE at (0, deckTop, 0) in place of the two posts and the sail box (its posts stand at the code's

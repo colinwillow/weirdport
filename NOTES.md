@@ -405,6 +405,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE FOOD-CART POD'S DRESSING IS HIS ART (m622, T3w, `cart_pod.glb`, `?cpod=0`, `cpPut`).** In `buildCarts`:
+  - At each table, `cp_table` + `cp_umbrella_paint` (tinted umb / umb2 / umb3) + `_ribs`. The top and bench colliders stay;
+    the leg, pole, cone and napkin are not drawn.
+  - `cp_sail` stands once at the pod's centre.
+  - `cp_planter` at the three deck pots, `cp_gas`, `cp_bin` per cart, and `cp_generator` (its collider stays).
+  - The camp's `ce_crate`, scaled .6 x .5 x .48, stands at the crates behind the carts.
+  `cpPut` is declared right after the frame. `places` reported no bad rows.
+
 - **THE PEARL'S PLAZA IS HIS ART (m619, T3v, `pearl_plaza.glb`, `?pplaza=0`, `ppPut`).** In `buildPearlPlaza`:
   - `pp_stage` replaces the plat box and its poles; the banner stays.
   - The barricade junk is by kind, each turned j: `pp_pallets` (Y by h / 1.2); `pp_dresser_paint`, tinted pink / mint /
