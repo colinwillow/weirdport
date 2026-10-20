@@ -674,7 +674,8 @@ differ" table there, so no region feels like the last one.
     - [x] m551 **F2c-2** the caves behind the falls (a ledge path behind the sheet, a cave with a way up to the upper river), spray, rainbows in it, the falls' sound.
     - [x] m558 **F2c-3** the stilt village: houses on stilts along the fjord's wall, walkways and rope bridges between them and across, fishers and river guides.
     - [x] m576 **F2c-4** the dam gates upstream: shut them and the falls dry to a trickle and the cave mouth opens; open them and they roar.
-    - [ ] **F2c-5** the scuba diver and the underwater caves under the fjord; the scuba form swims and breathes.
+    - [x] m584 **F2c-5a** the diver (Nell, on the west walk) and SWIMMING as the diver: sink, hold to rise, a kick out of the water onto a 1.6 m ledge -- so the cave behind the falls is reached from below.
+    - [ ] **F2c-5b** the underwater caves under the fjord: a sunken wreck and a lit grotto in the fjord floor with a cache; a swimming pose (he plays the fall pose in the water now).
     - [ ] **F2c-6** the ways in and on: down the log flume and the rapids from Hollow Creek, the lookout and the glider to the islands; its region on the map.
   - [ ] **F2d The Hothouse** (9): the alien takeover, as a region that grows across the map while the
     grid stands and shrinks as you cure districts.
@@ -1585,3 +1586,4 @@ differ" table there, so no region feels like the last one.
 - **m556 (T2u) The shut cart keeps its awning up** for now: the awning is part of `fc_cart_paint`, so it cannot be hidden on its own. A separate `fc_cart_awning` root in `food_cart.glb` would let the shut cart drop it (one line in `buildCarts`).
 - **m567 (T2z) Each turret's control panel turns its screen AWAY from its own gun**, since nothing in `WTUR` says where the walkway is: you hack it from the side the gun is not on.
 - **m576 (F2c-4) The dam starts SHUT** -- the falls a trickle, as the fishers say ("upriver they've dammed it since spring") -- and opening it is the player's, by the grate beside the wheel on its crest. The cave behind the falls stays reached by its chimney either way; the dam changes the falls, the river below it and the spray, not a door.
+- **m584 (F2c-5a) Swimming is the DIVER's alone**, a role form (`ROLEFORM.diver`, sampled off Nell with the DNA gun): anybody else in the sea is still put back on the shore. The controls are the hover's -- hold the right pad (or space) to rise, let go to sink -- and at the surface the hold is one kick out of the water, high enough for a 1.6 m ledge.

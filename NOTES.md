@@ -270,6 +270,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **SWIMMING (m584, F2c-5a, `SWIM`, `swimStep`, `diverOn`, `ROLEFORM.diver`).** The gravity line in the player step is now
+  `if (!swimStep(p, dt) && !hoverStep(p, dt)) p.vel.y -= MOVE.g * dt`. `swimStep` runs only for the diver form below sea - .15:
+  vel.y eases (x4/s) toward -.9 (sink) or +2.4 (held: the hover's own hold test, right pad held short / left pad / space); at the
+  surface (above sea - .7) the first hold is a KICK of 8.5 m/s (re-armed below sea - 1.2 or once out over sea + .5) -- enough to
+  land on the cave's -0.6 floor from the -2.2 sea; horizontal speed dragged exp(-2t) and capped 4.5; no sink below sea - 12 where
+  the sea has no floor. `isleStep`'s put-back skips a diver. The diver is Nell (role `diver`, the roster's stand-in) on the west
+  walk at b -15. He plays the air pose in the water -- no swim clip yet. Unverified: how a kick feels at the cave's lip.
+
 - **THE ROAD BRIDGE'S BROKEN-DOWN CAR IS HIS (m582, T3f, `HCROAD.carG`, `?car=0`).** `oc_car_broken` at (-(w/2 - .2), L*.3) on the
   road, mirrored in z (its front, Blender +Y, is +v, where the code raised its hood). The body's collider stays; the cabin, glass,
   wheels, hood and drum are not built (his has the hood, the flat tyre, steam and the warning triangle). `oc_car` (hood shut) is
