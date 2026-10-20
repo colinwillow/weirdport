@@ -52,6 +52,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `ship_bridge.glb` | the Mothership bridge's desk segment, command chair, holo-globe pedestal | the console on its own centre (operator +Y); the chair facing -Y; the pedestal in the `D.holo` group's frame under the code's globe | none | 72 / 228 / 342 |
 | `ship_belly.glb` | the Mothership belly's egg clutch, glyph panel, hanging tendril | eggs on the floor along X; the glyph panel in the YZ plane facing -X, 1.6..2.8 m; the tendril hanging from its root down 1.6 m | none | 134-1,408 per piece |
 | `farm_props.glb` | Gristle Farm's windpump tower and wheel, scarecrow, barrel, wheelbarrow | Blender X = farm frame u, +Y = v, on the ground; the wheel in its own group's frame (Blender XZ, axle -Y) | none | 134-486 per piece |
+| `mx_track.glb` | the Hollow Creek MX track: banner arch, course flag (tintable pennant), tyre stack | origins on the ground; the arch spans Blender X (posts at +-4.9), the flag flies +X | none | 35-2,579 per piece |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

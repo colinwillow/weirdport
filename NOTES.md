@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m595 -- the MX track kit as art (scenery window; ROADMAP T3m)
+
+`models/campaign/mx_track.glb`, for the m498 dressing. The BANNER ARCH: lattice truss posts standing in stacks of three tyres with a
+painted rim, checkered strips down the posts, a truss beam across, a yellow backing frame behind the code's HOLLOW CREEK MX banner,
+a row of lamps, five flags on top. A COURSE FLAG whose pennant is one white material the code tints per flag. A TYRE STACK with a
+white stripe and dirt packed in it, for the turns. Shipped unverified.
+
 ## m593 -- the farm props as art (scenery window; ROADMAP T3l)
 
 `models/campaign/farm_props.glb`, at buildFarmProps' numbers. The WINDPUMP: splayed legs on footings, girts and X-bracing at every
