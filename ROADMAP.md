@@ -268,7 +268,7 @@ different context window, let me know."*
   crown, the floor and walls). Origins on the chamber floor yC. `ms_pod` at each pod's (u, v) in place of the base box and the cap
   box only (its claws hold the code's glass, its cap's socket is where the code's cable starts at 2.95); `ms_machine` at (C.u, C.v)
   in place of the column cylinder -- it cradles the code's glow sphere at 3.2 in an open cage (keep the sphere). 564 / 1,188 faces.
-- [ ] **T3j. Swap in the Mothership bridge's console, chair and holo pedestal** (`models/campaign/ship_bridge.glb`, no collision file
+- [x] m591 **T3j. Swap in the Mothership bridge's console, chair and holo pedestal** (`models/campaign/ship_bridge.glb`, no collision file
   -- `buildShipDecks` keeps every collider, the floor ring, the glow dots, and `D.holo`'s turning globe and band). `mb_console` at
   each of the five desk segments' (u, v) on yB, turned -a + pi/2 like the desk box (its operator side and screen face its local +Y:
   if the screens end up facing out over Old Town instead of at the chair, add pi), in place of the desk box and the screen box;

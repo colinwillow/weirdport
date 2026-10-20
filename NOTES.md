@@ -292,6 +292,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE MOTHERSHIP BRIDGE'S CONSOLE, CHAIR AND PEDESTAL ARE HIS ART (m591, T3j, `ship_bridge.glb`, `?sbridge=0`).** Five `mb_console`
+  at the desk segments, mirrored in z and turned **-a - pi/2** -- the desk box's -a + pi/2 plus pi, because his screen faces local
+  +Y and the box's turn puts that out over Old Town; worked by the box rule (local +z along (sin psi, cos psi)) with the consoles at
+  v - 2.2 and the chair at v + .6. If the screens face out after all, that pi is the one to take back. `mb_chair` replaces the seat
+  and back drawing (seat collider stays); `mb_holo` replaces the base cylinder inside `D.holo`, globe and band unchanged. Every
+  collider, the floor ring and the glow dots stay. Loader above `buildShipDecks`; a missing file says `SBRIDGE GLB FAIL`.
+
 - **THE MOTHERSHIP'S PODS AND MACHINE ARE HIS ART (m589, T3i, `ship_pods.glb`, `?pods=0`).** `ms_pod` stands on each pod's spot
   in the conversion chamber, mirrored in z like every campaign piece, and replaces the drawn base and cap; the base COLLIDER, the
   pulsing glass (`D.podMat`), the sleeper and the cable stay. `ms_machine` replaces the column cylinder at (C.u, C.v); the column
