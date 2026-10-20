@@ -17,6 +17,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE CAMP IS A ROOM (m489, F1 Old Town 2, `buildCamp`).** The shot: every piece it had (tents, barrel, sofa, carts, pallets,
+  the washing line) spread over open lawn with nothing between them. Now a trampled-dirt floor (a noisy ellipse, polygon-offset
+  over the grass); a patchwork tarp ROOF on four leaning poles over the barrel circle, the overhead layer it lacked; a junk
+  FENCE in four runs round the open sides (pallets, old doors, corrugated sheet, tarp), collided, its gaps the ways in; a tyre
+  stack; a SHACK of three walls and a tilted tin roof by the lean-to, a stovepipe up; herb tins and a bucket. **The fence runs
+  leave the barrel's smart spots and the three people's marks untouched** (`places`' CAMP row unchanged).
+
 - **THE CART POD IS A PLACE (m488, F1 Old Town 1, `buildCarts`).** The shot (`npm run shot carts`): four carts in a row on bare lawn, three
   white umbrellas over tables standing on grass -- flat and spaced out, the world rules' first sin. Now: a paved pad (a noisy
   ellipse, polygon-offset over the grass) whose edge frays into loose pavers; a timber deck in two overlapping slabs turned a

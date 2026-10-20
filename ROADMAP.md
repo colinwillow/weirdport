@@ -427,7 +427,7 @@ differ" table there, so no region feels like the last one.
   - [x] m488 **F1-OT1** Old Town 1 -- the food-cart pod: the worst shot (four carts in a row on bare lawn, tables on grass). A
     paved pad fraying into the grass, a timber deck in two skewed slabs with steps (the tables on it), a shade sail, crates,
     gas bottles, plants, three umbrella colours.
-  - [ ] **F1-OT2** Old Town 2 -- the camp at the west edge (the next worst: tents and boxes spread over open lawn).
+  - [x] m489 **F1-OT2** Old Town 2 -- the camp at the west edge: a trampled-dirt floor, a patchwork tarp roof on four poles over the fire circle, junk fencing round the open sides with gaps to walk in, a shack with a stovepipe, tins of herbs.
   - [ ] **F1-OT3** Old Town 3 -- re-shoot `carts site camp footbridge topcity` and take the worst again.
   - [ ] **F1-PE1..3** The Pearl. - [ ] **F1-HC1..3** Hollow Creek. - [ ] **F1-WF1..3** the Waterfront.
   - [ ] **F1-IS1..3** the River Islands. - [ ] **F1-MS1..3** the Mothership. - [ ] **F1-RT** the routes between them.
