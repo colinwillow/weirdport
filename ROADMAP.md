@@ -297,6 +297,12 @@ different context window, let me know."*
   origin on the ground, scaled uniformly by `s` and turned by the same random yaw, in place of the trunk cylinder, the two limbs and
   the ico crown blobs. Both are built at s = 1 to the code's numbers: trunk to 3.4 m (willow 2.6), crown centred 1.9 m above it.
   Instance them (one InstancedMesh per piece) -- every farm and roadside tree shares this one builder.
+- [ ] **T3o. Swap in the trailer park's rim props** (`models/campaign/rim_props.glb`, no collision file -- keep the three code boxes as
+  colliders, just hide them). In `buildTrailerPark`'s THE RIMS block: `rp_barrel` at the drum's (u, v, g) in place of the 'drum' box
+  (the tame fire still starts at g + 1.0, which is just above its embers); `rp_pickup` at (pu, pv, pg), its nose along +v, in place
+  of the two 'red' boxes and the 'post' box (it sits on four cinder blocks, no wheels -- they are in its bed); `rp_pole` + `rp_flag`
+  at (fu, 1, fg) in place of the steel box and the plane -- the flag flies along +v off the pole at 4.9..5.9 like the plane did;
+  it is ONE white material, tint it with the 'flag' colour. The barrel also fits any other burn barrel (gate, camp, gang bridge).
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

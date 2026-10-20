@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m600 -- the trailer park's rim props as art (scenery window; ROADMAP T3o)
+
+`models/campaign/rim_props.glb`, for THE RIMS in `buildTrailerPark`. `rp_barrel`: a rusted 0.7 x 0.9 m drum with hoops, holes
+punched round its foot, charred logs and glowing embers in the top, where the tame fire already burns at g + 1.0. `rp_pickup`: a
+faded red pickup at the code's 2.0 x 4.8 footprint and 2.2 m cab height, nose +Y, up on four cinder blocks with its wheels thrown in
+the bed. `rp_pole` + `rp_flag`: the 6 m pole with a gold ball and halyard, and a folded flag, one white material to tint. Origins on
+the ground; no collider (the code's boxes stay). Shipped unverified.
+
 ## m598 -- the farm trees as art (scenery window; ROADMAP T3n)
 
 `models/campaign/farm_trees.glb`, for `farmTree`, which draws every farm and roadside tree. `ft_oak`: a tapered trunk to 3.4 m, two

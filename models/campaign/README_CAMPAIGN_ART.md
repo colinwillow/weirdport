@@ -54,6 +54,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `farm_props.glb` | Gristle Farm's windpump tower and wheel, scarecrow, barrel, wheelbarrow | Blender X = farm frame u, +Y = v, on the ground; the wheel in its own group's frame (Blender XZ, axle -Y) | none | 134-486 per piece |
 | `mx_track.glb` | the Hollow Creek MX track: banner arch, course flag (tintable pennant), tyre stack | origins on the ground; the arch spans Blender X (posts at +-4.9), the flag flies +X | none | 35-2,579 per piece |
 | `farm_trees.glb` | the shared farm/roadside tree: `ft_oak` (trunk, two limbs, six-blob crown) and `ft_willow` (drooping fronds) | origins on the ground at s = 1; the caller scales by s and turns by its yaw | none (keep the trunk box) | 365-621 per piece |
+| `rim_props.glb` | the trailer park rims: `rp_barrel` (burn barrel, embers on top), `rp_pickup` (on cinder blocks, nose +Y), `rp_pole` + `rp_flag` (white, tintable) | origins on the ground; flag flies +Y at 4.9-5.9 | none (keep the code boxes) | 8-358 per piece |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
