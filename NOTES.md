@@ -501,6 +501,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE SKATE PARK'S WALL AND PLANTERS, AND THE STRIKE'S PLACARDS, ARE HIS ART (m653, T4k, `street_bits.glb`, `?sbits=0`).**
+  - `sb_graffiti` replaces the wall's drawing and its three paint patches; mirrored, his painted -Y face looks at the park.
+  - `sb_planter` stands at the two planters.
+  - `sb_placard` replaces each strike placard's stick: cloned with z mirrored into the strike's toggled group, turned h and
+    leaned like the stick, with the code's canvas board kept on it.
+  Every collider stays.
+
 - **SKINSUITS WALK THE HOTHOUSE (m650, F2d-4a).** `buildHothHeart` adds four `peopleMark`s: role `skinsuit` (the roster's
   alien_warrior stand-in), group `alien`, `alien: 'talk'`. Two loop the heart's block and two loop their own block, each
   on a `beat` 4 m in from the block's corners at street level, starting at different corners. The markers are pushed before

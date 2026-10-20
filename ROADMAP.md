@@ -444,7 +444,7 @@ different context window, let me know."*
   at the origin, 4.4 square (X.deck), +Y along the chain where the bridges land, rope rails on its two sides -- in place of the
   plank box and the four corner posts; `ix_cone` (ONE white material, tint orange / white by k % 2) at the field's fourteen cones;
   `ix_signframe` at Old Town's end (u, y, v - 1.2) in place of the two sign posts, the code's canvas planes on its board at 2.15.
-- [ ] **T4k. Swap in the skate park's wall and planters, and the strike's placards** (`models/campaign/street_bits.glb`; no
+- [x] m653 **T4k. Swap in the skate park's wall and planters, and the strike's placards** (`models/campaign/street_bits.glb`; no
   collision -- keep the wall and planter boxes). In `buildIslandSkate`, Blender X = u, +Y = v: `sb_graffiti` at (65, y, 31.6) in
   place of the 'conc' wall box and its three paint boxes (its painted face is -Y, toward the park, as the code's paint at 31.43);
   `sb_planter` at (64.5, 16.5) and (66, 16.2) in place of the plank box and the ico. In `buildStrike`: `sb_placard` at each sign's
