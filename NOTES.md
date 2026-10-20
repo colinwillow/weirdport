@@ -26,6 +26,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE SKATE PARK, SKATED IN (F1-IS3, m505, `buildIslandSkate`).** Added: 18 paint splashes and 7 dark patched planks (flat,
+  colliderless, so nothing the board rides on changes -- the ramps, funbox, ledge and rail are untouched), poles every 9 m
+  on both rails with bulbs strung between them, paint panels on the quarter pipe's platform face and the funbox's side,
+  and the hangout at the island end: a sofa (solid), a cooler (solid), a crate with a speaker, three boards on the rail.
+  Not play-tested: no quest step stands on the pier.
+
 - **RUE'S FIELD, DRESSED (F1-IS2, m504, `buildCrossing`'s field block).** The landing rock read as cones on a lawn. Added:
   two flat white rings (2.2 and 4.4 m) round the cross, seven stepping stones from the rope bridge's end, and outside the
   ring Rue's blue-and-yellow canopy with a table, a rack of three folded wings (triangles), a chalkboard, a bench (solid)
