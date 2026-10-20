@@ -45,7 +45,7 @@ different context window, let me know."*
   (and wherever `vehTractor()` / `vehPickup()` are called, the parked barnyard tractor included): load each GLB once, clone it per
   use, and use the clone where the merged box mesh was -- same model space (forward +z, origin on the ground at the footprint
   centre), so `vehPlace`, `vehStep` and the hw/hl push-out keep working unchanged. Fall back to the boxes if the file fails.
-- [ ] **T2c. Swap in the roadblock kit** (`models/campaign/roadblock_kit.glb` + `_collision.glb`). In `gateMesh`: a `cordon` is
+- [x] m477 **T2c. Swap in the roadblock kit** (`models/campaign/roadblock_kit.glb` + `_collision.glb`). In `gateMesh`: a `cordon` is
   sawhorses tiled across `w` (2.2 m each), a police car at one end when `w` > 5 m, three or four cones scattered on the approach
   side, a work light at the other end; `barricade` is jersey barriers; `pbarricade` is the crowd fence. Their collider boxes make
   the line SOLID to 1.25 m (car 1.5), so with `GATE.hi` above that a jump over it is a deliberate act -- pair it with the cops'
@@ -1287,4 +1287,12 @@ differ" table there, so no region feels like the last one.
   code's); if they fight, the code's go. The core's glow pulse is scaled to his own emissive strength rather than overwritten.
 - **m476: his pickup and tractor are merged per material at load** (44 / 36 meshes -> 10 / 7 draws) and made single-sided but the
   glass (every material came `doubleSided`). The boxes are the fallback; `?vehglb=0` is the A/B.
+- **m477: the bridge checkpoint was never jumped OVER -- it was walked ROUND.** The line was the deck's 5 m and `GATE.hi` (4 m) is
+  above his 2.8 m jump; up on the 0.9 m parapet and down onto the levee took him past its end. It now BLOCKS 7 m past each side
+  of the deck (`BRIDGE.gateLevee`; drawn the deck's width). So no "jump it on purpose" trick and no cops' reaction to one: the
+  line holds, which is the simpler reading of "the roadblock must actually block". Say if you want the hop as a feature.
+- **m477: cordons and checkpoints leave a 1.8 m gap in the middle** (`RBK.gap`), where the right body is waved through; a
+  sawhorse line right across the road would be walked through by every disguise it lets pass. Barricades are solid jersey
+  lines. **Only the police car and the work light are solid colliders** -- a solid line would stop the bodies it must let
+  through; the gate logic stops the wrong one. The car parks only on lines wider than 5 m (`RBK.carW`), so not on the bridge.
 

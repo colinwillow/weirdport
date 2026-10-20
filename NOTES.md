@@ -17,6 +17,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE ROADBLOCK KIT, AND THE BRIDGE LINE THAT WAS WALKED ROUND (m477, T2c, `RBK`, `gateKitMesh`, `gateKitSolid`, `gateDress`,
+  `G.span`).** *"When the cops block the bridge you can just physically jump over the barricade."* `gatePush` stops the wrong
+  body anywhere from 0.5 m under the line to `GATE.hi` (4 m) over it -- higher than his 2.8 m apex -- so it was never over:
+  the checkpoint spanned only the deck's 5 m, and a hop onto the 0.9 m parapet and down to the levee put him outside its
+  ends. **`G.span` is how wide a gate BLOCKS, `G.w` how wide it is DRAWN** (and how wide the fix-lean counts); the bridge's
+  span is the deck plus 7 m each side. **His kit:** loaded after the farm trucks; every `cordon` / `checkpoint` / `barricade`
+  already placed is re-dressed (`gateDress`), any placed later is dressed at once. Pieces are baked through the gate's frame
+  into one mesh per material (`glbInto` / `glbOut`, which `vehModel` now shares). Only `rb_car` and `rb_lightpost` get colliders
+  (`kitObb` on his `col_bld_rb_*`, through the gate's transform). `npm run play`'s header: `roadblocks 2 dressed, 1 solid`.
+
 - **FRAMES RUN DURING `init`'S AWAITS, AND ONE OF THEM WOKE A NEW GAME IN THE CITY (m476, `CRASH.placed`).** T2b put two model
   loads (the farm pickup and tractor, `vehModel`) after `buildCrash` -- and `crashStep` runs as soon as `CRASH.at` exists, with
   him still at the city's origin (the spawn comes at the END of init). Its "walked into the city once" test marked `inTown`,

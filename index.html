@@ -773,10 +773,10 @@ body.desk.free #deskHint { display: block; }
   <h1>WEIRDPORT</h1>
   <div class="msg" id="bootMsg">loading</div>
   <div class="bar"><i id="bootBar"></i></div>
-  <div class="bld">BUILD <span id="bootBuild">m476</span></div>
+  <div class="bld">BUILD <span id="bootBuild">m477</span></div>
 </div>
 
-<div class="chip" id="build"><b id="buildN">m476</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
+<div class="chip" id="build"><b id="buildN">m477</b><u id="chipMin">&minus;</u><i id="buildI"></i></div>
 <div class="chip" id="wep"><span id="wepName">UNARMED</span><small id="wepHint">tap left pad</small></div>
 <div id="worldKey"><b id="worldName">KIT CITY</b> &middot; menu</div>
 <div id="godKey"><i data-g="mode">PLAY</i><i data-g="menu" class="hide">MENU</i><i data-g="fly" class="hide">FLY</i></div>
@@ -862,7 +862,7 @@ import { KTX2Loader } from './vendor/KTX2Loader.js';
 import { clone as skeletonClone } from './vendor/SkeletonUtils.js';
 import { mergeGeometries } from './vendor/BufferGeometryUtils.js';
 
-const BUILD = 'm476';
+const BUILD = 'm477';
 /* ASSETS:START */
 const ASSETS = {"models/skate.glb":"0c612d5e","models/skateboard.glb":"5ba93796","models/characters/alien_antenna_game.glb":"f3ccf328","models/characters/alien_antenna_game_ktx2.glb":"28afac8c","models/characters/alien_female_purple.glb":"1c73eef1","models/characters/alien_female_purple_ktx2.glb":"fc914afb","models/characters/alien_rollerskate_blue.glb":"6e98dd0a","models/characters/alien_rollerskate_blue_ktx2.glb":"a66d5697","models/characters/alien_warrior.glb":"f5cc9c49","models/characters/alien_warrior_ktx2.glb":"a13fb7b6","models/characters/beautiful_asian.glb":"910f6565","models/characters/beautiful_blonde.glb":"edddc421","models/characters/clancy.glb":"b1ef602b","models/characters/colin.glb":"99d38b7d","models/characters/colin_ktx2.glb":"35040f87","models/characters/contruction_worker.glb":"8bd3d7ce","models/characters/contruction_worker_ktx2.glb":"3df8c344","models/characters/dummy_officer.glb":"724965ac","models/characters/dummy_officer_ktx2.glb":"db640cda","models/characters/fat_activist_01.glb":"3c566fee","models/characters/fat_biker_01.glb":"576b7cf5","models/characters/fat_biker_02.glb":"ab5d7ec7","models/characters/fat_hippie.glb":"f09a260d","models/characters/fat_hipster.glb":"3a8abc31","models/characters/fat_secret_service.glb":"6d546fb0","models/characters/fat_trump.glb":"5de6bc56","models/characters/firefighter.glb":"ebde005d","models/characters/hick_skinny.glb":"1ebe78e8","models/characters/hobo_01.glb":"34e80b1d","models/characters/jack.glb":"ab009b9b","models/characters/jack_ktx2.glb":"1f4c9f7f","models/characters/moussa.glb":"6d80b1cf","models/characters/moussa_ktx2.glb":"66e040f8","models/characters/zap.glb":"5e5cca54","models/characters/zap_ktx2.glb":"4b29d886","models/vehicles/dump_truck.glb":"d870dc18","models/vehicles/dump_truck_ktx2.glb":"21ee7059","models/vehicles/motorcycle_fatboy.glb":"9ed9be28","models/weapons/alien_antenna_blaster_game.glb":"54083b44","models/weapons/alien_antenna_hammer_game.glb":"707b8a27","models/weapons/alien_launcher.glb":"ba8ab96a","models/weapons/hammer.glb":"3335fdf2","models/weapons/spikey_mace.glb":"dcd43acd","models/buildings/alien_base_01.glb":"d9b9fd7f","models/buildings/alien_base_01_ktx2.glb":"6cbbfef2","models/towers/alien_tower_01.glb":"98d23375","models/towers/alien_tower_01_ktx2.glb":"47597651","models/streets/modular_streets_kit.glb":"6a4bcaa5","models/toon_city/impact_marks.json":"2b616620","models/toon_city/impact_marks_atlas.ktx2":"efe0840e","models/toon_city/impact_marks_atlas.png":"490ed049","models/toon_city/toon_city_breakables.glb":"29bddbc8","models/toon_city/toon_city_collision.glb":"fb3a693f","models/toon_city/toon_city_obb.json":"81c18a47","models/toon_city/toon_city_visual.glb":"5df62285","models/toon_city/toon_city_visual_ktx2.glb":"cf080531","models/toon_city/weirdkit_tint.js":"f6e9d802","models/building_kit/building_kit_collision.glb":"cb0ddd7e","models/building_kit/building_kit_generated_visual.glb":"97cbdd9d","models/building_kit/building_kit_generated_visual_ktx2.glb":"64de1704","models/building_kit/building_kit_pieces.glb":"04974292","models/building_kit/building_kit_test_collision.glb":"98145534","models/building_kit/building_kit_test_visual.glb":"8458991d","models/building_kit/building_kit_test_visual_ktx2.glb":"1d453825","models/toon_city_kit/toon_city_collision.glb":"5540a364","models/toon_city_kit/toon_city_kit_buildings.glb":"590e53f0","models/toon_city_kit/toon_city_kit_buildings_ktx2.glb":"e6dff3a3","models/toon_city_kit/toon_city_kit_pieces.glb":"8232bd6f","models/toon_city_kit/toon_city_kit_twins.glb":"fcc9fdfc","models/toon_city_kit/toon_city_visual.glb":"45cf2957","models/toon_city_kit/toon_city_visual_ktx2.glb":"f26a6984","models/toon_city_kit/weirdkit_detile.js":"dd05bd70","models/alien_world/alien_coast.glb":"d75b2306","models/alien_world/alien_coast_collision.glb":"b611b85b","models/alien_world/alien_coast_ktx2.glb":"ba5c524f","models/alien_world/alien_coast_splat.png":"54070c04","models/alien_world/alien_sky.glb":"09921f46","models/alien_world/alien_streets.glb":"428b278b","models/alien_world/alien_streets_ktx2.glb":"b39c105e","models/alien_world/alien_town.glb":"0458b33a","models/alien_world/alien_town_kit_buildings.glb":"97dc424c","models/alien_world/alien_town_kit_buildings_collision.glb":"acf6a163","models/alien_world/alien_town_kit_buildings_ktx2.glb":"9ee63ae9","models/alien_world/alien_town_ktx2.glb":"458796fb","models/alien_world/alien_town_placements.json":"49b70ec2","models/alien_world/alien_town_splat.png":"2e637c89","models/alien_world/border_fort.glb":"e74b123b","models/alien_world/border_fort_ktx2.glb":"d5cae9b0","models/alien_world/bot_workshop.glb":"cd763f7f","models/alien_world/bot_workshop_ktx2.glb":"74f98979","models/alien_world/comms_tower.glb":"5a032e77","models/alien_world/comms_tower_ktx2.glb":"23195ccf","models/alien_world/critters.glb":"196c3f20","models/alien_world/fermentation_lab.glb":"91038f74","models/alien_world/fermentation_lab_ktx2.glb":"e8b6e052","models/alien_world/fire_forge.glb":"6a1a91c8","models/alien_world/fire_forge_ktx2.glb":"ea0dd9d9","models/alien_world/fire_hangar.glb":"ec2046f3","models/alien_world/fire_hangar_ktx2.glb":"bdbebd0d","models/alien_world/fire_workshop.glb":"1e1c909b","models/alien_world/fire_workshop_ktx2.glb":"96f64328","models/alien_world/goo_barracks.glb":"afb36bce","models/alien_world/goo_barracks_ktx2.glb":"7fabb4e3","models/alien_world/goo_hangar.glb":"b2fb237d","models/alien_world/goo_hangar_ktx2.glb":"5fcf194d","models/alien_world/goo_refinery.glb":"a4692c3a","models/alien_world/goo_refinery_ktx2.glb":"4ab05908","models/alien_world/junk_repair.glb":"bac33b04","models/alien_world/junk_repair_ktx2.glb":"89c1fcdc","models/alien_world/landing_kiosk.glb":"c0d6bf48","models/alien_world/landing_kiosk_ktx2.glb":"0a463f4f","models/alien_world/lookout_tower.glb":"c6cd3268","models/alien_world/lookout_tower_ktx2.glb":"07183c2a","models/alien_world/market_kiosk.glb":"0388d41e","models/alien_world/market_kiosk_ktx2.glb":"1b57cc1d","models/alien_world/mushroom_inn.glb":"6e648c52","models/alien_world/mushroom_inn_ktx2.glb":"fff556fa","models/alien_world/noodle_bar.glb":"e3009e58","models/alien_world/noodle_bar_ktx2.glb":"ef58921c","models/alien_world/power_shack.glb":"f4a6a4c7","models/alien_world/power_shack_ktx2.glb":"afc34744","models/alien_world/refinery_tower.glb":"1ff8d31d","models/alien_world/refinery_tower_ktx2.glb":"4f14643b","models/alien_world/res_complex.glb":"ca190d47","models/alien_world/res_complex_ktx2.glb":"7043f777","models/alien_world/residential_hut.glb":"7581ded0","models/alien_world/residential_hut_ktx2.glb":"675e7618","models/alien_world/signal_tower.glb":"2723ed8c","models/alien_world/signal_tower_ktx2.glb":"7c09f873","models/alien_world/slime_cafe.glb":"5e150e2c","models/alien_world/slime_cafe_ktx2.glb":"fbc444b6","models/alien_world/spore_pharmacy.glb":"3d093c39","models/alien_world/spore_pharmacy_ktx2.glb":"057aaf8a","models/alien_world/watch_tower_gate.glb":"ec05247c","models/alien_world/watch_tower_gate_ktx2.glb":"432282e0","models/alien_world/textures/bark.png":"d969d679","models/alien_world/textures/dirt.png":"e4aff3f7","models/alien_world/textures/foliage.png":"1492930d","models/alien_world/textures/grass.png":"7818548a","models/alien_world/textures/moss.png":"23a9d283","models/alien_world/textures/mud.png":"56f4a041","models/alien_world/textures/p_sand.png":"84dd3c6f","models/alien_world/textures/rock.png":"1b83fb09","models/alien_world/textures/sky_alien_pano.ktx2":"27c79a18","models/alien_world/textures/sky_alien_pano.png":"263d3606","models/alien_plaza/alien_plaza.glb":"ce850b53","models/alien_plaza/alien_plaza_collision.glb":"f084a42e","models/alien_plaza/alien_plaza_ktx2.glb":"1737ab08","models/alien_plaza/alien_plaza_level.json":"28554a14","models/campaign/crash_wreck.glb":"eb6d2f81","models/campaign/crash_wreck_collision.glb":"fd63d483","models/campaign/crash_wreck_preview.png":"4ec7697f","models/campaign/farm_bushes.glb":"706747aa","models/campaign/farm_bushes_preview.png":"4908d231","models/campaign/farm_pickup.glb":"6af235c9","models/campaign/farm_tractor.glb":"efaff62e","models/campaign/farm_vehicles_preview.png":"d9d1ab83","models/campaign/roadblock_kit.glb":"b9c97643","models/campaign/roadblock_kit_collision.glb":"f19b7939","models/campaign/roadblock_kit_preview.png":"d3584222","models/characters/morph/shapes.bin":"4e680384","models/characters/morph/shapes.json":"abfc949d","images/crack_sprite_01.ktx2":"4aa55fde","images/crack_sprite_01.png":"16b52e8c","images/fire_sprites_01.ktx2":"922e1191","images/fire_sprites_01.png":"f87e2696","images/fire_sprites_02.ktx2":"e0cbfe1d","images/fire_sprites_02.png":"b373a6fd","images/fire_sprites_03.ktx2":"4fbbb985","images/fire_sprites_03.png":"7eece336","images/geyser_sprites_01.png":"b6325470","images/hdri_game.ktx2":"0feb5c79","images/hdri_game.png":"dac55f41","images/water_sprites_01.ktx2":"326924c5","images/water_sprites_01.png":"31e12659","audio/blaster_sound_01.mp3":"40d99583","audio/blaster_sound_02.mp3":"4bd7bb7c","audio/box_break_01.mp3":"e4127980","audio/electricity_beam_01.mp3":"986db8c9","audio/explosion_small.mp3":"f154a537","audio/metal_clang_01.mp3":"a333bd27","audio/metal_clang_02.mp3":"1e3ebbd6","audio/metal_clang_03.mp3":"afe44812","audio/metal_ping_01.mp3":"8ffca1a0","audio/plasma_canon.mp3":"e32c324d","audio/powerup_01.mp3":"48fbbe08","audio/swoosh_01.mp3":"193db185","audio/swoosh_02.mp3":"19145e70","audio/swoosh_03.mp3":"544fdffb","audio/swoosh_04.mp3":"843bee5d","audio/plasma_sounds/plasma_01.mp3":"e71c010f","audio/plasma_sounds/plasma_02.mp3":"ac3b1c75","audio/plasma_sounds/plasma_03.mp3":"eaa59355","audio/plasma_sounds/plasma_04.mp3":"bc7865e0","audio/plasma_sounds/plasma_05.mp3":"1d821cd0","audio/plasma_sounds/plasma_06.mp3":"cb979fbe","audio/plasma_sounds/plasma_hit.mp3":"30e5af5c","audio/alien_orc_grunt_sounds/alien_orc_grunt_01.mp3":"d6f4b343","audio/alien_orc_grunt_sounds/alien_orc_grunt_02.mp3":"78afc603","audio/alien_orc_grunt_sounds/alien_orc_grunt_03.mp3":"972c524a","audio/alien_orc_grunt_sounds/alien_orc_grunt_04.mp3":"b0ce76eb","audio/alien_orc_grunt_sounds/alien_orc_grunt_05.mp3":"1f0ba1f4","audio/alien_orc_grunt_sounds/alien_orc_grunt_06.mp3":"4f749866","audio/alien_orc_grunt_sounds/alien_orc_grunt_07.mp3":"dcf75925","audio/hit_sounds/hit_sound_01.mp3":"befaa2be","audio/hit_sounds/hit_sound_02.mp3":"73bc4433","audio/hit_sounds/hit_sound_03.mp3":"24b181e4","audio/hit_sounds/hit_sound_gound_01.mp3":"86ee2674","audio/hit_sounds/hit_sound_ground_02.mp3":"8a7cac73","audio/hit_sounds/hit_sound_plasma_01.mp3":"9abc0202","audio/hit_sounds/hit_sound_plasma_02.mp3":"6aaf0fe5","audio/creature_noises/creature_noise_01.mp3":"cbcc6ee7","audio/creature_noises/creature_noise_02.mp3":"201a8247","audio/creature_noises/creature_noise_03.mp3":"97680811","audio/creature_noises/creature_noise_04.mp3":"6f734df2","audio/creature_noises/creature_noise_05.mp3":"6f736441","audio/creature_noises/creature_noise_06.mp3":"992712e9","audio/creature_noises/creature_noise_07.mp3":"d9ad04b3","audio/footsteps/footstep_2_l.mp3":"abeabfbe","audio/footsteps/footstep_2_r.mp3":"7dd16046","audio/footsteps/footstep_l.mp3":"b66e579b","audio/footsteps/footstep_r.mp3":"96e13433","models/portland/slice_downtown/slice_manifest.json":"f8355281","models/portland/slice_downtown/weirdport_slice_collision.glb":"b472a215","models/portland/slice_downtown/weirdport_slice_visual_draco.glb":"6890f840","models/portland/textures/weirdport_trim_basecolor.ktx2":"99952ec9","models/portland/textures/weirdport_trim_basecolor.png":"5c964821","models/portland/textures/weirdport_trim_emissive.png":"4bb167f1","models/portland/textures/weirdport_trim_layout.json":"cba2f53f","models/portland/textures/weirdport_trim_tintmask.png":"229b845f","models/portland/three/weirdportCity.js":"56c8164c","models/props/prop_hydrant.glb":"f157fee9","models/props/prop_hydrant_collision.glb":"0bbfc4d2"};
 /* ASSETS:END */
@@ -29941,7 +29941,55 @@ function toast(txt, sec) {
   const el = gate.toastEl; if (!el) return;
   el.textContent = txt; el.classList.add('on'); gate.toastT = sec || 2.2;
 }
+// m477 (T2c): HIS ROADBLOCK KIT (`models/campaign/roadblock_kit.glb`): one root per piece, origin on the ground at its centre,
+// x ALONG the line, +z the approach side. A `cordon` / `checkpoint` is sawhorses tiled across the line, three or four cones on
+// the approach, a work light at one end and -- on a line wider than `carW` -- the police car at the other; a `barricade` is
+// jersey barriers. Merged per material (a whole line is a handful of draws). **ONLY THE CAR AND THE LIGHT ARE SOLID**: the
+// line itself has to let the right body walk through, which a collider box would not, and `gatePush` already stops the wrong
+// one at any height his jump reaches (`GATE.hi`). Without the file, the code's posts and tape. `?rbglb=0` is the A/B.
+const RBK = { file: 'models/campaign/roadblock_kit.glb', col: 'models/campaign/roadblock_kit_collision.glb', glb: null, colG: null,
+  len: { rb_sawhorse: 2.2, rb_jersey: 2.0, rb_fence: 2.4 }, carW: 5, gap: 1.8, n: 0, solid: 0 };
+const rbKind = T => RBK.glb && (T === 'cordon' || T === 'checkpoint' || T === 'barricade');
+function rbPiece(nm) { return RBK.glb && RBK.glb.scene.getObjectByName(nm); }
+function gateKitMesh(G) {
+  const T = G.type, w = G.w, by = new Map(), M = new THREE.Matrix4(), Q = new THREE.Quaternion(), V = new THREE.Vector3(), S1 = new THREE.Vector3(1, 1, 1), Yax = new THREE.Vector3(0, 1, 0);
+  const place = [], put = (nm, x, z, ry) => { const P = rbPiece(nm); if (!P) return; M.compose(V.set(x, 0, z), Q.setFromAxisAngle(Yax, ry || 0), S1); glbInto(P, by, M.clone()); place.push([nm, M.clone()]); };
+  const tile = T === 'barricade' ? 'rb_jersey' : 'rb_sawhorse', L = RBK.len[tile], n = Math.max(1, Math.round(w / L));
+  // a cordon / checkpoint leaves the middle OPEN (`gap`): it is where the right body is waved through, and a line of sawhorses
+  // across the whole road would be walked through by every disguise it lets pass. A barricade is solid across.
+  const gap = T === 'barricade' || w < 4 ? 0 : RBK.gap;
+  if (!gap) for (let i = 0; i < n; i++) put(tile, -w / 2 + (i + .5) * w / n, 0, (i % 2 ? .04 : -.04));
+  else { const side = (w - gap) / 2, k = Math.max(1, Math.round(side / L));
+    for (const sg of [-1, 1]) for (let i = 0; i < k; i++) put(tile, sg * (gap / 2 + (i + .5) * side / k), 0, sg * (i % 2 ? .05 : -.05)); }
+  if (T !== 'barricade') {
+    let cs = (G.id || '').length * 7 + 3; const cr = () => (cs = (cs * 9301 + 49297) % 233280) / 233280;
+    const nc = 3 + (cr() < .5 ? 1 : 0); for (let k = 0; k < nc; k++) put('rb_cone', (cr() - .5) * w * .9, 1.2 + cr() * 1.6, cr() * 3);
+    put('rb_lightpost', w / 2 + .7, .4, 0);
+    if (w > RBK.carW) put('rb_car', -w / 2 - 1.4, 1.6, Math.PI / 2 + .35);
+  }
+  const g = glbOut(by); g.position.set(G.x, G.y, G.z); g.rotation.y = G.h; scene.add(g);
+  G.rbPlace = place; RBK.n++;
+  return g;
+}
+// the car and the light as turned boxes, off his collision file, through the gate's own transform
+function gateKitSolid(G) {
+  if (!RBK.colG || !G.rbPlace) return 0;
+  const W = new THREE.Matrix4().compose(new THREE.Vector3(G.x, G.y, G.z), new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 1, 0), G.h), new THREE.Vector3(1, 1, 1));
+  let n = 0;
+  for (const [nm, M] of G.rbPlace) { if (nm !== 'rb_car' && nm !== 'rb_lightpost') continue;
+    const c = RBK.colG.scene.getObjectByName('col_bld_' + nm); if (!c || !c.geometry) continue; c.updateMatrix();
+    const b = kitObb({ geometry: c.geometry, matrixWorld: new THREE.Matrix4().multiplyMatrices(W, M).multiply(c.matrix) }); b.name = 'gate:' + G.id + ':' + nm; BOXES.push(b); n++; }
+  RBK.solid += n; return n;
+}
+// once the kit has loaded: every line placed before it is dressed again
+function gateDress() {
+  let n = 0;
+  for (const G of GATES) { if (!rbKind(G.type) || G.rbPlace) continue; if (G.g) { scene.remove(G.g); G.g.traverse(o => { if (o.geometry) o.geometry.dispose(); }); }
+    G.g = gateKitMesh(G); n += gateKitSolid(G); }
+  if (n) boxGrid();
+}
 function gateMesh(G) {
+  if (rbKind(G.type)) return gateKitMesh(G);
   const T = G.type, g = new THREE.Group(), w = G.w;
   const mat = c => new THREE.MeshStandardMaterial({ color: c, roughness: .7 });
   const box = (sx, sy, sz, c, x, y) => { const m = new THREE.Mesh(new THREE.BoxGeometry(sx, sy, sz), mat(c)); m.position.set(x || 0, y, 0); g.add(m); return m; };
@@ -29982,7 +30030,8 @@ function gateAdd(type, x, z, h, w, id, y) {
   if (!(G.y > -1e3)) G.y = player.pos.y;
   G.open = GATE_TYPES[type].pass === 'fix' && !!SAVE.flags['gate:' + G.id];
   G.g = gateMesh(G);
-  try { mergeLeaves(G.g, [...(G.flames || []), ...(G.planks || [])]); } catch (e) {}   // m419: a cordon's posts and boards as one mesh
+  if (G.rbPlace) { if (gateKitSolid(G)) boxGrid(); }   // m477
+  else try { mergeLeaves(G.g, [...(G.flames || []), ...(G.planks || [])]); } catch (e) {}   // m419: a cordon's posts and boards as one mesh
   if (G.open) gateOpen(G);
   GATES.push(G); GATE.n++;
   return G;
@@ -30014,7 +30063,7 @@ function gatePush(dt) {
     const dx = P.x - G.x, dz = P.z - G.z;
     const v = dx * s + dz * c, u = dx * c - dz * s;     // v along the normal, u along the gate
     const sideNow = v >= 0 ? 1 : -1;
-    const inSpan = Math.abs(u) < G.w * .5 + r && P.y > G.y - .5 && P.y < G.y + GATE.hi;
+    const inSpan = Math.abs(u) < (G.span || G.w) * .5 + r && P.y > G.y - .5 && P.y < G.y + GATE.hi;   // m477: `span` may be wider than it is drawn
     // m341: a `fix` gate is a gap -- nobody walks it until it is mended, the right body included (he leans on it to fix it)
     // m360: `G.free` -- the side anybody may leave by (the Pearl's plaza: the barricades keep people OUT, not in)
     const out = G.free && (G.side || sideNow) === G.free;
@@ -37114,16 +37163,19 @@ function buildNeighbours() {
 // m476 (T2b): `models` are his GLBs (`models/campaign/`, forward +z, origin on the ground at the footprint centre -- the boxes'
 // own model space), loaded in `init()` before `buildVehicles`; a missing one is the boxes. `?vehglb=0` is the A/B.
 const FVEH = { on: 1, list: [], dustEvery: .18, files: { pickup: 'models/campaign/farm_pickup.glb', tractor: 'models/campaign/farm_tractor.glb' }, models: {}, draws: {} };
-// his model as ONE mesh per material (44 / 36 parts -> ~10 / 7 draws), single-sided but the glass (every material came
-// `doubleSided`), in a YXZ group -- the order `vehPlace` writes yaw-then-pitch in. Null without the file: the caller's boxes.
-function vehModel(key) {
-  const g = FVEH.models[key]; if (!g) return null;
-  const root = g.scene.clone(true); root.updateMatrixWorld(true);
-  const by = new Map();
-  root.traverse(o => { if (!o.isMesh || !o.geometry) return; const m = o.material; if (Array.isArray(m)) return;
-    const q = o.geometry.clone(); q.applyMatrix4(o.matrixWorld); for (const k of Object.keys(q.attributes)) if (!/^(position|normal|uv|color)$/.test(k)) q.deleteAttribute(k);
-    if (!by.has(m)) by.set(m, []); by.get(m).push(q); });
-  const out = new THREE.Group(); out.rotation.order = 'YXZ';
+// m477: A MODEL, OR MANY PLACED COPIES OF ITS PIECES, AS ONE MESH PER MATERIAL. `glbInto` adds `root`'s meshes, each baked
+// through `M` (or identity) times its transform under `root`, to `by` (material -> geometries); `glbOut` merges each list
+// (one draw per material) into a group -- single-sided but the glass, because his exports come `doubleSided` throughout.
+function glbInto(root, by, M) {
+  root.updateMatrixWorld(true); const inv = new THREE.Matrix4().copy(root.matrixWorld).invert(), T = new THREE.Matrix4();
+  root.traverse(o => { if (!o.isMesh || !o.geometry || Array.isArray(o.material)) return;
+    const q = o.geometry.clone(); T.multiplyMatrices(inv, o.matrixWorld); if (M) T.premultiply(M); q.applyMatrix4(T);
+    for (const k of Object.keys(q.attributes)) if (!/^(position|normal|uv|color)$/.test(k)) q.deleteAttribute(k);
+    if (!by.has(o.material)) by.set(o.material, []); by.get(o.material).push(q); });
+  return by;
+}
+function glbOut(by, out) {
+  out = out || new THREE.Group();
   for (const [m, gs] of by) {
     // one merge per material when the parts agree on attributes and indexing; otherwise (or if it refuses) they stay separate
     const key0 = q => Object.keys(q.attributes).sort().join() + (q.index ? '#' : ''), one = gs.every(q => key0(q) === key0(gs[0]));
@@ -37131,6 +37183,14 @@ function vehModel(key) {
     const mat = m.clone(); if (!(mat.transparent && mat.opacity < .99) && !/glass/i.test(mat.name || '')) mat.side = THREE.FrontSide;
     for (const q of parts) { if (!q) continue; const mesh = new THREE.Mesh(q, mat); mesh.castShadow = mesh.receiveShadow = true; out.add(mesh); }
   }
+  return out;
+}
+// his vehicle as ONE mesh per material (44 / 36 parts -> ~10 / 7 draws), in a YXZ group -- the order `vehPlace` writes
+// yaw-then-pitch in. Null without the file: the caller's boxes.
+function vehModel(key) {
+  const g = FVEH.models[key]; if (!g) return null;
+  const out = new THREE.Group(); out.rotation.order = 'YXZ';
+  glbOut(glbInto(g.scene, new Map()), out);
   FVEH.draws[key] = out.children.length;
   return out;
 }
@@ -37359,7 +37419,11 @@ function buildFarmhands() {
     add(R.id, x, z, h + Math.PI, R, y > -50 ? y : null);
   }
   // m334 (B2): THE CHECKPOINT itself, across the deck at the barrier: any human walks through, the alien is held back
-  if (BRIDGE.gate) { const B = BRIDGE.gate; H.gate = gateAdd('checkpoint', B.x, B.z, B.h, B.w || 7, 'bridge_checkpoint', B.y); }
+  if (BRIDGE.gate) { const B = BRIDGE.gate; H.gate = gateAdd('checkpoint', B.x, B.z, B.h, B.w || 7, 'bridge_checkpoint', B.y);
+    // m477: *"When the cops block the bridge you can just physically jump over the barricade."* Not over -- ROUND: up on the
+    // 0.9 m parapet, down onto the levee beside the deck, and the 5 m line (the deck's width) no longer covers him. It
+    // BLOCKS the levees too now (`span`); it is still drawn the deck's width.
+    if (H.gate) H.gate.span = (B.w || 7) + 2 * BRIDGE.gateLevee; }
   return H.n;
 }
 
@@ -39784,6 +39848,7 @@ const BRIDGE = {
   w: 8,             // the water's width between the levees
   wall: 1.5, wallH: 3.0,
   deckW: 5,
+  gateLevee: 7,     // m477: m the checkpoint blocks beyond each side of the deck (the levees a hop off the parapet reaches)
   n: 0, at: null, gate: null, side: 1,
   putBacks: 0,
 };
@@ -44252,6 +44317,10 @@ async function init() {
     if (FVEH.on && FARMLAND.live && !/[?&]vehglb=0\b/.test(location.search)) for (const k in FVEH.files) {
       try { FVEH.models[k] = await loadGLB(FVEH.files[k], 'loading the farm trucks'); } catch (e) { note('VEH GLB FAIL ' + k); console.warn('[melee] vehicle model', k, e); } }
     try { buildVehicles(); } catch (e) { note('VEHICLES FAIL'); console.warn('[melee] vehicles', e); }
+    // m477 (T2c): his roadblock kit, then every line already placed is dressed in it (a failure keeps the posts and tape)
+    if (!/[?&]rbglb=0\b/.test(location.search)) {
+      try { RBK.glb = await loadGLB(RBK.file, 'loading the roadblocks'); RBK.colG = await loadGLB(RBK.col, 'loading the roadblocks'); gateDress(); }
+      catch (e) { note('RB GLB FAIL'); console.warn('[melee] roadblock kit', e); RBK.glb = RBK.colG = null; } }
     // THE FARMHANDS AND THE FARMER (m315): authored NPC markers, before the crowd's deal and `mkrNpcPlace`
     try { buildFarmhands(); } catch (e) { note('FARMHANDS FAIL'); console.warn('[melee] farmhands', e); }
     // OLD TOWN (m335): the map's regions, and the camp at the west edge
