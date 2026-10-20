@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m645 -- the alien orbs' body as art (scenery window; ROADMAP T4i)
+
+`models/campaign/alien_orb.glb`, for the three orbs (the trance orb, the amp, the watcher) that are a glowing sphere and a ring
+in the code. A dark metallic shell of six curved petals round the code's own core, with gaps it shines through in its own colour,
+a crown, a keel, studs and four fins pointing down; and a plain r .7 core in one white material if the code would rather tint a
+model than keep its sphere. The preview shows all three colours. Shipped unverified.
+
 ## m643 -- Dump Tower's plaza and doors as art (scenery window; ROADMAP T4h)
 
 `models/campaign/tower_plaza.glb`. A turned gold bollard with a ball crown at the code's .9; the plaza planter at the code's 2 x 2
