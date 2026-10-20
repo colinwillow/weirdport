@@ -405,6 +405,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **DUMP TOWER'S FLOORS ARE FURNISHED WITH HIS ART (m623, T3x, `tower_floors.glb`, `?tfloors=0`, `dtPut`).** By floor:
+  - lobby: the desk (with its name wall), two sofas and two urns
+  - offices: nine desks, each with its chair
+  - gym: four treadmills and three weight benches
+  - garden: six trees and six benches
+  - boardroom: the table and twelve chairs, turned -s2 * pi/2 to face it
+  - penthouse: three sofas turned by r, the coffee table and three coin stacks
+  Every collider stays with its drawing popped; drawn-only parts are skipped. `dtPut` is declared right after the frame.
+  `places` reported no bad rows.
+
 - **THE FOOD-CART POD'S DRESSING IS HIS ART (m622, T3w, `cart_pod.glb`, `?cpod=0`, `cpPut`).** In `buildCarts`:
   - At each table, `cp_table` + `cp_umbrella_paint` (tinted umb / umb2 / umb3) + `_ribs`. The top and bench colliders stay;
     the leg, pole, cone and napkin are not drawn.

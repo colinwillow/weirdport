@@ -361,7 +361,7 @@ different context window, let me know."*
   (-3.4, 5.6) and (3.6, .6); the sail clears the umbrellas); `cp_planter` at the three potted plants on the deck in place of pot +
   ico; `cp_gas` at each gas bottle; `cp_bin` at each cart's bin; `cp_generator` at (0, -9.4) in place of the 'dark' box; the
   crates behind the carts -> `ce_crate` (camp_extras) scaled to .6 x .5 x .48.
-- [ ] **T3x. Swap in Dump Tower's floors** (`models/campaign/tower_floors.glb`; no collision -- keep every box that collides). In
+- [x] m623 **T3x. Swap in Dump Tower's floors** (`models/campaign/tower_floors.glb`; no collision -- keep every box that collides). In
   `buildDumpTower`'s "what the floor is for", Blender X = u, +Y = v, origins on the floor f. LOBBY: `dt_lobbydesk` at (3, 3) in
   place of the gold desk and the dark name wall (the wall is in it at +.7); `dt_lobbysofa` at (+-6, -6); `dt_urn` at (+-8.5, -8.5)
   in place of the gold cylinder and the plant sphere. OFFICES: `dt_desk` at each (u, v) in place of top, base and screen (its
