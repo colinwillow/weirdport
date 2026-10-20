@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m625 -- the kit town's other roof extras as art (scenery window; ROADMAP T3z)
+
+`models/campaign/roof_extras2.glb`, the rest of `kgenMake`'s `S.extra` after m604. An alien pod at the code's s = 1, ribbed, with
+seven veins laid on its skin (the first draft's veins stood off it like spikes), a glowing slit and four roots; the squatters'
+tarp draped over something lumpy and held by bricks and a tyre; a boarded window, ply with two crossed planks, nails and a
+spray mark; the gold-faced crown sign, 1 m wide for the code to stretch; and a guyed 6 m mast with a red lamp on top. Shipped
+unverified.
+
 ## m621 -- Dump Tower's roof and lift as art (scenery window; ROADMAP T3y)
 
 `models/campaign/tower_top.glb`. The helipad at the code's 6 m: a dark disc with a white ring and the H at the code's own strip

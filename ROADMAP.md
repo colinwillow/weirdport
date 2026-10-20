@@ -376,6 +376,13 @@ different context window, let me know."*
   roof-edge rails, turned along its run, in place of the two gold boxes each; `dt_lift` at (LU, LV, f) on every floor in place of
   the three glass walls, the four posts, the crown, the carpet and the call panel (its open side is -X, the panel outside it at
   (-1.25, -1.6)). Keep the glass walls' colliders.
+- [ ] **T3z. Swap in the kit town's other roof extras** (`models/campaign/roof_extras2.glb`; no collision). In `kgenMake`'s
+  `S.extra` block through `add`, Blender (x, y, z) = (u, -v, h): `pods` -> `rx_pod` at each pod's (u, roofH, v), scaled uniformly
+  by s and turned by its random yaw, in place of the sphere (its origin is the roof; the code's sphere centre is .5 s up);
+  `squat` -> `rx_tarp` at each tarp in place of the tilted box, and `rx_ply` at each boarded window in place of the 'ply' box
+  (face -Y, so turned to face out of the wall; keep its small z tilt); `crown` -> `rx_crownsign` at (cu, H + 2, -D + .4), scaled
+  X by W * .7, in place of the dark board and its gold panel (the four gold edge strips stay); `rx_mast` at (W - 1, H, -1) in
+  place of the mast cylinder and its lamp sphere (`crown` and `vents` both have one).
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
