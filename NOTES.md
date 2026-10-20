@@ -576,6 +576,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE CREEK FOOTBRIDGE, THE LILY PADS AND THE REEDS ARE HIS ART (m673, T4u, `farm_waters.glb`, `?fwater=0`).**
+  - `fw_footbridge` is turned psi, his X across the creek. The deck and handrail colliders stay; the posts and trestles are
+    not drawn.
+  - `fw_lily` stands at each pad, scaled s2 / .7 and turned by its roll.
+  - `fw_reeds` stands at each reed spot, turned by its angle round the pond.
+  The pond pieces are cloned straight into the frame's group (`wPut`). Every `rr()` roll is spent in its old order, so the
+  willows and everything after them stand where they did.
+
 - **THE CHANNEL BRIDGE'S CHECKPOINT AND LAMPS, AND THE FORD'S STONES, ARE HIS ART (m672, T4t, `bridge_bits.glb`, `?bbits=0`).**
   - `cb_booth`, its arm built in, replaces the booth's drawing, roof, window and arm boxes; the booth collider and
     `BRIDGE.gate` stay.

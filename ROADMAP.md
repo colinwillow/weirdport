@@ -502,7 +502,7 @@ different context window, let me know."*
   parapet lamp's (u, yD + .95, sd * (W / 2 - .2)), its head toward the road (turn it pi on the -v side), in place of the post and
   the lamp box. In `buildFord`, `fd_stone` at each stone's (x, top, z), scaled by r / .65 and turned like the code's ico, in place of
   the ico, the cylinder and the weed (its stem runs to -2 below its top).
-- [ ] **T4u. Swap in the creek footbridge, the reeds and the lily pads** (`models/campaign/farm_waters.glb`; no collision -- keep the
+- [x] m673 **T4u. Swap in the creek footbridge, the reeds and the lily pads** (`models/campaign/farm_waters.glb`; no collision -- keep the
   deck and the two handrail boxes). In `buildFarmWaters`: `fw_footbridge` at (cu, top, cv) turned psi, its X across the creek (the
   code's (du, dv), the deck's length), in place of the deck, the handrails, the fourteen posts and the two trestles (they run to
   -2.5 under the deck; on deeper ground the code's own trestle can stay under them). The pond: `fw_lily` at each pad (scale by s2 /
