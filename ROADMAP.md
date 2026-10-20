@@ -279,6 +279,13 @@ different context window, let me know."*
   on y, X along the wall (turned -a + pi/2), in place of its five spheres; `mb_glyph` once per panel at (cos a, sin a) * (R - .3) on
   y, turned so its -X face looks into the room, in place of its three thin glow bars; `mb_tendril` per tendril at its ceiling root
   (y + S.H), Z scaled by L / 1.6, in place of the cylinder and its tip sphere. 1,408 / 254 / 134 faces.
+- [ ] **T3l. Swap in the farm props** (`models/campaign/farm_props.glb`, no collision file -- `buildFarmProps` keeps every collider,
+  the windpump's head group and tail, the tractor). Blender X = the farm frame's u, +Y = its v, on the ground. `fp_windpump` at
+  (wu, wv) in place of the four legs, the girts and the platform (it adds bracing, a ladder, the pump rod, a pump and a trough);
+  `fp_wheel` added to `wheel` at (0, 0, 0) in place of the 14 blade boxes and the torus -- it is built in Blender XZ with the axle
+  along -Y, which is three's XY with the axle on z, the wheel group's own frame; `fp_scarecrow` at (su, sv) in place of its post,
+  bar, shirt, sleeves, head, hat brim and crown; `fp_barrel` at each barrel (u, v); `fp_barrow` at the wheelbarrow, turned .4 (its
+  tray, straw and tyre). 486 / 410 / 466 / 224 / 134 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

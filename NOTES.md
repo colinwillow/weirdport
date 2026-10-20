@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m593 -- the farm props as art (scenery window; ROADMAP T3l)
+
+`models/campaign/farm_props.glb`, at buildFarmProps' numbers. The WINDPUMP: splayed legs on footings, girts and X-bracing at every
+level, a ladder, the platform, the pump rod down to a rusty pump and a trough; and its WHEEL as a separate root in the turning group's
+own frame -- fourteen pitched sails, spokes, the rim, a red hub. The SCARECROW: a patched red shirt, straw hands and feet, a sack head
+with stitched eyes and mouth, a wide straw hat, a crow on his arm. An oak BARREL with iron hoops. A red WHEELBARROW full of straw.
+Shipped unverified.
+
 ## m592 -- the Mothership belly's eggs, glyphs and tendrils as art (scenery window; ROADMAP T3k)
 
 `models/campaign/ship_belly.glb`, for the m507 belly. A CLUTCH of five leathery, veined eggs glowing green from inside, one split
