@@ -405,6 +405,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **DUMP TOWER'S HELIPAD, ROOF RAILS AND LIFT ARE HIS ART (m624, T3y, `tower_top.glb`, `?ttop=0`).** `dt_helipad` replaces the
+  pad, the H and the lamps; it adds a windsock. `dt_rail` runs along each roof edge, turned 0 / pi/2 by run and X-scaled to
+  the run's length; the gold collider stays. `dt_lift` on every floor replaces the posts, crown, carpet and panel; the three
+  glass walls stay as colliders with their drawing popped, and the open side is -u. `dtPut` gained a file and an X scale.
+
 - **DUMP TOWER'S FLOORS ARE FURNISHED WITH HIS ART (m623, T3x, `tower_floors.glb`, `?tfloors=0`, `dtPut`).** By floor:
   - lobby: the desk (with its name wall), two sofas and two urns
   - offices: nine desks, each with its chair
