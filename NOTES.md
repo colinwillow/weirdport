@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m629 -- the gorge dam's works as art (scenery window; ROADMAP T4b)
+
+`models/campaign/gorge_dam.glb`, for `buildGorgeDam`; the concrete wall stays the code's. The winch house at the code's 2.2 x 1.9 x
+2.4: corrugated tin on a concrete pad, steel corners, a sloping rust roof, its door to downstream under a yellow warning plate, a vent
+and a flue. The handwheel the gates turn on, yellow with four spokes and a knob, on its post over a striped grate. A sluice mouth with
+its gate rails, lintel and a stain. And the crest rail, two yellow rails to stretch, with its posts as a separate piece so a stretch
+never widens them (the first draft had them together). Shipped unverified.
+
 ## m627 -- the gorge's stilt houses as art (scenery window; ROADMAP T4a)
 
 `models/campaign/stilt_village.glb`, for the seven houses `buildGorgeVillage` builds out over the fjord. A planked platform on
