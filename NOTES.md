@@ -7,6 +7,7 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **CORE MARKERS WERE UNNAMED IN THE LEVEL JSON, AND THE LEVEL MAP (m444, `models/alien_plaza/`).** `write_level_json` spread each marker's `aw` dict AFTER `name`, and the cores carried `name: "Market Core"` -- so `core_1..5` came out of the JSON named after their titles (the GLB empties were always right). The field is `title` now. `storyboards/board_00_levelmap.jpg` is a labelled top-down map: every intended route, cores, glyphs, bells, generators, ziplines and the breadcrumb pickups.
 - **AFTER EVERY PLAZA RE-EXPORT, THE KTX2 TWIN HAS TO BE RE-BAKED OR THE PHONE PLAYS THE OLD LEVEL (m443).** `ktx2Twin` loads
   `alien_plaza_ktx2.glb` when it exists, so m442's re-export (shrine roof raised, light markers, intended-route pickups) was
   invisible behind m439's twin until `npm run ktx models/alien_plaza/alien_plaza.glb etc1s` (re-baked here, 69 MB resident ->

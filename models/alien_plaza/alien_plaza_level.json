@@ -95,53 +95,58 @@
    "yaw": 0
   },
   {
-   "name": "Market Core",
+   "name": "core_1",
    "pos": [
     0,
     0,
     2.2
    ],
    "core": 1,
+   "title": "Market Core",
    "hidden_until": "market_cleared"
   },
   {
-   "name": "Bell Core",
+   "name": "core_2",
    "pos": [
     -10,
     20,
     15.6
    ],
    "core": 2,
+   "title": "Bell Core",
    "hidden_until": "bells_rung"
   },
   {
-   "name": "Canal Core",
+   "name": "core_3",
    "pos": [
     0,
     105.5,
     -1.9
    ],
    "core": 3,
+   "title": "Canal Core",
    "hidden_until": "vault_entered"
   },
   {
-   "name": "Lighthouse Core",
+   "name": "core_4",
    "pos": [
     100,
     86,
     19.4
    ],
    "core": 4,
+   "title": "Lighthouse Core",
    "hidden_until": "lamp_broken"
   },
   {
-   "name": "Keep Core",
+   "name": "core_5",
    "pos": [
     67,
     -35,
     21.8
    ],
    "core": 5,
+   "title": "Keep Core",
    "hidden_until": "launched"
   },
   {

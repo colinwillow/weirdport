@@ -128,7 +128,7 @@ the game can use either one.
 | Name prefix | `aw` fields | Meaning |
 |---|---|---|
 | `spawn_player` | — | Start position and facing |
-| `core_N` | `core`, `name`, `hidden_until` | Core piece N, with the event that reveals it |
+| `core_N` | `core`, `title`, `hidden_until` | Core piece N, with the event that reveals it |
 | `glyph_N` | `glyph`, `needs` | A secret, and the tech it needs |
 | `enemy_N` | `wave`, `kind` | A plaza fight spawn point |
 | `npc_N` | `role`, `line` | Townsfolk, the launcher, guards |
