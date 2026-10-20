@@ -443,7 +443,9 @@ differ" table there, so no region feels like the last one.
   - [x] m496 **F1-HC2** Hollow Creek 2 -- **the race is winnable again** (`play ch3` COMPLETE, Rae beaten in 48 s): a gate run wide still counts (it voided the lap silently since m483), a spill into the creek puts him back ON THE TRACK where he left it, not 27 m back up the ridge; the bike keeps its pre-m483 grade window.
   - [x] m498 **F1-HC2b** Hollow Creek 2b -- the bike track dressed: two worn ruts down the racing line, flags on poles every 16 m, red-and-white spectator tape on stakes down every straight, a HOLLOW CREEK MX banner arch on tyre-stacked posts over the north straight. Nothing beside the track has a collider.
   - [x] m499 **F1-HC3** Hollow Creek 3 -- the mill (a grey box on the grass): corrugation ribs round all four walls, rust streaks off the eaves, a concrete plinth, a HOLLOW CREEK LUMBER sign over the big door; in the yard two lumber stacks on bearers, an offcut heap, a chopping stump with its axe, sawdust drifts.
-  - [ ] **F1-WF1..3** the Waterfront.
+  - [x] m500 **F1-WF1** the Waterfront 1 -- the quay floor (300 m of one grey): slab joints every 8 m, white container-bay lines and bay numbers in the yard, yellow-hatched strips, oil stains, puddles, manholes and drain grates. All flat, no colliders.
+  - [ ] **F1-WF2** the Waterfront 2 -- the ferry pontoon and pier 1.
+  - [ ] **F1-WF3** the Waterfront 3 -- the dry dock's head / Uplift's lot, whichever shoots worse.
   - [ ] **F1-IS1..3** the River Islands.
   - [ ] **F1-MS1..3** the Mothership.
   - [ ] **F1-RT** the routes between them.

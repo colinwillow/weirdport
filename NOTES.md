@@ -26,6 +26,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE QUAY FLOOR, PAINTED (F1-WF1, m500, `buildWaterfront`).** Six Waterfront shots (`npm run shot wfquay wfbots wfturret
+  wfdock wfferry wfsuper`, new entries): the containers already read; the floor under them was one 300 m grey. Added on
+  the three slabs: joints every 8 m, 24 white container bays with a few bay numbers (A1...), three yellow-hatched strips,
+  and 46 seeded marks -- oil stains, puddles (metal .7 / rough .08, so they catch the sky), manholes, drain grates. **All
+  flat and colliderless** (a few mm over Y, each stain a hair above the last so none z-fight), so no route or quest can
+  change. Split the rest: WF2 the ferry pontoon and pier 1 (a bare slab in the shot), WF3 the dock head or Uplift's lot.
+
 - **THE MILL, DRESSED (F1-HC3, m499, `buildMill`).** Shot (`npm run shot hcmill`): the shed was four flat grey walls. Added:
   corrugation ribs every .6 m on all four walls (the front round its door and slots, from the same span table the wall
   is built from), rust streaks under the eaves, a concrete plinth .45 m tall (drawn only: a collider there is a ledge
