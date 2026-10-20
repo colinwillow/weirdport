@@ -516,6 +516,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE GOOD ALIENS' KIOSKS ARE HIS ART (m657, T4m, `good_kiosk.glb`, `?gkiosk=0`, `gkPut`).** Each kiosk gets three pieces in
+  its own frame, mirrored in z so his +Y is the street:
+  - `gk_hut_paint`, with `GK_paint_white` tinted to the kiosk's colour
+  - `gk_hut_trim`
+  - its goods: `gk_papers`, `gk_keys` or `gk_clothes`
+  The hut, roof, counter and paper-stack colliders stay, their drawing popped. The window and the awning are not drawn. The
+  sign is still the code's canvas, on his board. A kiosk falls back to the code's drawing unless both hut pieces are found.
+
 - **SKYE'S LOOKOUT IS HIS TOWER (m655, T4l, `old_lookout.glb`, `?olook=0`).** `ol_tower` replaces the posts, braces, decks, rails,
   ladders, canopy and mast; it is mirrored in z, so his +Y is +v, out to sea. **`lbx` / `lgeo`** keep every collider with its
   drawing popped and skip the drawn-only pieces while the tower stands. The rail colliders keep their own `bx` + pop, so a
