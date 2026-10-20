@@ -5,6 +5,15 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m662 -- the city ring's warehouse and parked cars as art (scenery window; ROADMAP T4q)
+
+`models/campaign/city_ring.glb`, for `buildCityRing`. The ring's warehouse at the code's 26 x 14 x 6.5: ribbed cladding in two
+greys on a stone footing, the front cut exactly where the code cuts it -- the open doorway at lu -2..0 and the half-open roll-up
+door with its yellow jambs -- clerestory windows, a flat roof with its parapet and two roof units, the loading dock with bumpers and
+a yellow edge, the twelve-step outside stair with its rails, and the crates on the dock. A yellow forklift. And the lot's parked
+car, a sedan whose paint is one white material so each keeps the code's colour, with glass, wheels, bumpers and lamps. Shipped
+unverified.
+
 ## m660 -- the town edge's billboards and power poles as art (scenery window; ROADMAP T4p)
 
 `models/campaign/roadside2.glb`, for `buildTownEdge`. The billboard at the code's numbers: two timber legs to 8 with an X-brace and

@@ -477,6 +477,13 @@ different context window, let me know."*
   when Bd.face is -1 -- in place of the two legs, the catwalk and the dark board (the code's 'sb0' / 'sb1' plane stays on its face
   at 9.55; it adds braces, a catwalk rail, a ladder and three lamps). `rb_pole` at each power pole's top's (u, g, v) in place of
   the pole and its crossbar (insulators at +-.7 on the crossbar at 8.45, where the code's wires start; the wires stay the code's).
+- [ ] **T4q. Swap in the city ring's warehouse and parked cars** (`models/campaign/city_ring.glb`; no collision -- keep every box
+  that collides, the walk-on roof and the stair steps above all). In `buildCityRing`, the 'warehouse' row: `cr_warehouse` at
+  L(0, 0) on y0, turned psi, in the row's (lu, lv) frame (Blender X = lu, +Y = lv; the front with the roll-up door, the open
+  doorway at lu -2..0 and the dock is -Y), in place of the plinth, the walls, the door and its slats, the roof and parapet, the dock,
+  the twelve stair steps and the crates; `cr_forklift` at L(-12, -D2 - 4) in place of its two boxes. The 'lot' row:
+  `cr_car_paint` (ONE white material, tint car1 / car2 / car3) + `cr_car_trim` at each car's (u, g, v) turned p0, nose +X, in place
+  of the body, the glass box and the four tyres.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
