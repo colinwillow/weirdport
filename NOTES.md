@@ -17,6 +17,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE CART POD IS A PLACE (m488, F1 Old Town 1, `buildCarts`).** The shot (`npm run shot carts`): four carts in a row on bare lawn, three
+  white umbrellas over tables standing on grass -- flat and spaced out, the world rules' first sin. Now: a paved pad (a noisy
+  ellipse, polygon-offset over the grass) whose edge frays into loose pavers; a timber deck in two overlapping slabs turned a
+  few degrees apart, stepped up on the open side, colliders and all, with the tables ON it (`deckTop`); a shade sail on two
+  posts; crates and gas bottles behind the carts, potted plants along the deck's back, a napkin box per table, three umbrella
+  colours. **A transient in a shot is not a fault**: one take showed a tall pink wall filling the left -- the next, same
+  build, did not (something tall passing the lens). Re-shoot before blaming geometry. **The shade sail is a `geo` box, NOT
+  `F.quad`** -- `quad` writes walkable triangles, and he could have stood on the cloth. Ch1's first talk still passes (57 s,
+  the deck's edges cost the walk a little); `places` CAMP+CARTS ok.
+
 - **EVERY WORLD BOOTS, AND `npm run worlds:boot` SAYS SO (m487, F0c).** `tools/worlds.mjs --boot`: the shipped page through the real
   loader in headless Chromium, each world once, no places and no costs -- a note in `MISSING` (the chip's red list, `note()`)
   or a page error is a BAD row and exits 1. First run: tkit 50.8 s, kit 14.9, weirdport 7.1, test 10.9, plaza 6.7 clean;

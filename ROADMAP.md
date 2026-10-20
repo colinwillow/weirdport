@@ -424,6 +424,13 @@ differ" table there, so no region feels like the last one.
   Old Town, The Pearl, Hollow Creek, the Waterfront, the River Islands, the Mothership. Then the
   routes between them (the trestle, the ferry, the freight line, the bridges) as places in their own
   right, with something on every one.
+  - [x] m488 **F1-OT1** Old Town 1 -- the food-cart pod: the worst shot (four carts in a row on bare lawn, tables on grass). A
+    paved pad fraying into the grass, a timber deck in two skewed slabs with steps (the tables on it), a shade sail, crates,
+    gas bottles, plants, three umbrella colours.
+  - [ ] **F1-OT2** Old Town 2 -- the camp at the west edge (the next worst: tents and boxes spread over open lawn).
+  - [ ] **F1-OT3** Old Town 3 -- re-shoot `carts site camp footbridge topcity` and take the worst again.
+  - [ ] **F1-PE1..3** The Pearl. - [ ] **F1-HC1..3** Hollow Creek. - [ ] **F1-WF1..3** the Waterfront.
+  - [ ] **F1-IS1..3** the River Islands. - [ ] **F1-MS1..3** the Mothership. - [ ] **F1-RT** the routes between them.
 - [ ] **F2 The regions still missing from `REGIONS.md`**, each as land → places → people → the ways in
   (several, per the connective-tissue rules) → its quests and boss. Read the entry first.
   - [ ] **F2a The Underneath** (3): the tunnels under Old Town, the Pearl and the Waterfront, surfacing in
@@ -1319,4 +1326,6 @@ differ" table there, so no region feels like the last one.
   world is the other window's, and the note is how that reaches him -- quieting it would hide the data, not fix it. Every other
   world boots with nothing in the red list. The old toon city's island grass is white by construction (it has no grass
   material); that is said in the console now, not in red.
+- **m488: F1's shots are taken because the item says `npm run shot`** (the loop's "no screenshots unless asked" yields to an item
+  that names the tool). One worst-thing per build, region by region, as written.
 
