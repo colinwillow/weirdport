@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m583 -- the trestle kit as art (scenery window; ROADMAP T3g)
+
+`models/campaign/trestle_kit.glb`, at the m509 numbers. The SIGNAL MAST on its bracket with a black head, red and green lamps under
+hoods where the code's spheres are, a ladder and a step plate; the white MILEPOST with its number; and the REFUGE halfway over the
+water -- a plank deck on cross bearers and three raking braces, a railed three sides, the red tool chest, a cable drum, the
+fisherman's bucket, stool and rod with its line in the water, and two gulls on the rail. Shipped unverified.
+
 ## m581 -- the old car as art (scenery window; ROADMAP T3f)
 
 `models/campaign/old_car.glb`: the broken-down car on the road bridge into Hollow Creek at the m511 numbers, a faded teal sedan

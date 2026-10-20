@@ -46,6 +46,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `rue_field.glb` | Rue's field on the River Islands: canopy and table, wing rack, chalkboard, bench | Blender X = islands frame u, +Y = v, origins on the ground at the m504 spots | none | 48-267 per piece |
 | `dock_props.glb` | waterside furniture that repeats everywhere: bollard, rope coil, harbour lamp, life ring on a post, lobster pot, fish crate | each root on its own ground centre (the lamp's glass at 4.3, the bollard .55 high); instance them | none | 132-372 per piece |
 | `old_car.glb` | the broken-down car on the road bridge, and the same car shut for anywhere | origin at the car's centre on the road, X across (1.8), +Y its front (4.2 long) | none: the code keeps its collider | 765 / 575 |
+| `trestle_kit.glb` | the freight trestle's signal mast, milepost and the refuge halfway over | Blender X = line frame u, +Y = v; origins at the code's spots on the rail top yr (the refuge on ry); signal lamps face -Y | none | 36-616 per piece |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
