@@ -182,7 +182,10 @@ try {
     // chapter is done. A row per step as the key changes; a step over the budget is BAD and ends the chapter.
     for (;;) {
       const R = await page.evaluate(n => window.__drive(n), Math.round(FPS / 2));
-      if (R.err || R.crashes.length) { row(false, R, 'FRAME ERROR ' + (R.err || R.crashes[0])); bad++; code = 1; break; }
+      if (R.err || R.crashes.length) { row(false, R, 'FRAME ERROR ' + (R.err || R.crashes[0]).split('\n')[0]);
+        // m451: the whole trace to a file -- an intermittent NaN is only worth catching if its frames survive the print
+        try { fs.writeFileSync('play_fail.txt', (R.err || R.crashes.join('\n')) + '\n'); console.log('     trace -> play_fail.txt'); } catch (e) {}
+        bad++; code = 1; break; }
       if (R.key !== cur) {
         if (cur && cur !== '-' && lastR) { row(true, Object.assign({}, R, { key: cur, type: lastR.type, text: lastR.text, t: lastR.t, walked: lastR.walked, tele: lastR.tele, sides: lastR.sides, walls: lastR.walls }), lastR.log.filter(l => /TELEPORT|blow|talk/.test(l)).join(' ') || ''); steps++; }
         cur = R.key;

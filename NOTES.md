@@ -7,6 +7,26 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE HOVER PACK, BUILT TO THE ROUTE CHECKER; THE DOUBLE JUMP OFF IN GLOWTIDE (m451, `HOVER`, `hoverStep`, `hoverDraw`,
+  `#hover`, `AIR.dbl`, `mel.hover`, `mel.dbljump`).** LEVELS.md: hold jump in the air, 1.0 s of hover, +1.0 m of lift, refills on
+  the ground. His checker's header pins the model: jump apex 2.81 (the game's 10.6 / g 20), sprint gap 7.6, **hover gap 15.5,
+  hover rise 4.4**. A steady +1.0 m/s climb for 1.0 s from the TOP of the jump, then a fall from apex + 1, at 7.2 m/s, is
+  0.53 + 1.0 + 0.62 s = 15.46 m -- the checker's number, so that is the model. Gesture: in the air a thumb held still on the
+  RIGHT pad (inside `tapR`, past `tapT`, so a quick second tap is still a tap), dead-centre on the LEFT (`leftDead` .12: more is
+  steering), or Space. A cyan meter over the juice bar; cyan puffs under his feet while it runs.
+  **MEASURED IN THE REAL FRAME** (flat test floor, sprint, 60 fps): jump 7.56 m / apex 2.72; hover **15.72 m / apex 3.74**, 1.00 s.
+  **THE FIRST CUT FLOATED FOR 4 SECONDS**: the start condition (vy <= 0) was asked every frame, the hover sets vy = +1, so it
+  switched off, gravity took three frames to bring vy back to 0, and it switched on again -- one frame in four, the meter at a
+  quarter speed, 37.6 m across. The top-of-jump test now gates the START only (`H.on ||`). (The harness's own first run was
+  wrong too: a steering thumb with `far` left at 0 counts as a still one -- set `stick.L.far` like a real pad does.)
+  **THE DOUBLE JUMP BEATS EVERY HOVER GATE IN THE LEVEL**, computed: 5.19 m of reach and a 12.5 m sprint gap against the 11.7 /
+  10.4 m lighthouse gaps, the 3.8 m dome rim and the 4.2 m teaser ledge. The checker models ONE jump and the geometry is final
+  for it, so `AIR.dbl` is 0 in the plaza (1 elsewhere); both are GOD switches, remembered. The hover is on from the start in the
+  plaza until the vault event grants it (the events build). **`AIR` and `HOVER` sit ABOVE `WORLD`** -- the first cut read
+  `WORLD.now` in their tables and `check:boot` caught the blank page; the per-world defaults are set right after `WORLD`.
+  `npm run play`: 3 full runs, 2 clean; the third hit **`NaN in the player` in ch1.3** (the fight for Dee), the same rare NaN m430
+  saw before any of this -- intermittent even seeded, hover off in that world. `play` now writes the whole trace to
+  `play_fail.txt` (gitignored) so the next one keeps its frames.
 - **THE HOVER TEASER, A ROOF PATROL, AND LAMP POSTS THAT ARE NOT STEPPING STONES (m450, `models/alien_plaza/`).** Audit against the blueprint's own template (`LEVEL1_SPEC.md`, filled in). Rule 1 (Forest Temple): `teaser_hover` is a 4.2 m ledge on the keep's west face over the promenade with a glowing spore cache -- seen from the start, reachable only with the Hover Pack. The checker found two ways onto it without one, both fixed: dropping from the east wing roof (so it moved to the keep), and bench -> lamp-post top. **Lamp colliders stop at 0.6 m now** -- a 0.44 m post top was a stepping stone everywhere in the level. `enemy_roof_0/1` patrol the west wing's 9 m roof (they pressure the bell route's middle beat). The launch edge needs the hover too (the fuel cell does). 0 problems.
 - **IVY ON FOURTEEN WALLS AND PLANTING ALONG THE FOOT OF THE CLIFF (m449, `models/alien_plaza/`).** `IVY`: leaf cards creeping up one face of fourteen buildings, kept 1.5 m clear of every ladder. Bush domes and palms along the terrace at the cliff's foot (y ~99), gaps at the gate and the lift. Visual only (`PL_greenery`, nocol).
 - **SEA-WALL AND CANAL RAILINGS, FACADE BALCONIES (m448, `models/alien_plaza/`).** `rail_runs()`: 0.9 m railings along the promenade sea wall, the bastion arc (gap for the grand stairs) and both canal quays (gaps at every bridge and at the canal ladder), collided as `col_bld_dressing`. `BALCONIES`: 11 small walkable balconies with flower boxes. Route checker re-run: 0 problems (no railing or balcony opens a shortcut).
