@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m660 -- the town edge's billboards and power poles as art (scenery window; ROADMAP T4p)
+
+`models/campaign/roadside2.glb`, for `buildTownEdge`. The billboard at the code's numbers: two timber legs to 8 with an X-brace and
+kickers, a grated catwalk with a rail, a ladder up a leg, the 7.4 x 3.3 board with its steel edges and three lamps on arms leaning
+over its face (blank in the preview -- the code's canvas sits on it). The power pole: a tapered wood pole to 9, its crossbar at
+8.3 with glass insulators where the code's wires hang, a transformer and pole steps. Shipped unverified.
+
 ## m658 -- the town edge's houses, fences and fruit stand as art (scenery window; ROADMAP T4o)
 
 `models/campaign/town_edge.glb`, for `buildTownEdge`. The one-storey house at the code's numbers (7.2 x 6, eaves 2.8, ridge 4.7):

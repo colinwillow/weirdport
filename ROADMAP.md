@@ -472,6 +472,11 @@ different context window, let me know."*
   meets lower ground). The picket fence: `te_picket` (a 1 m section, four pickets and two rails) laid along each run every metre,
   turned by psi, in place of the pickets and the rail (keep the run's collider). `te_mailbox` at (mu, g, mv). `te_stand` at the
   fruit stand's (u, g, v) in place of the counter, the posts, the awning and the produce spheres.
+- [ ] **T4p. Swap in the town edge's billboards and power poles** (`models/campaign/roadside2.glb`; no collision -- keep the leg
+  and pole boxes). In `buildTownEdge`, Blender X = u, +Y = v: `rb_billboard` at each board's (u, g, v), its face -Y -- turn it pi
+  when Bd.face is -1 -- in place of the two legs, the catwalk and the dark board (the code's 'sb0' / 'sb1' plane stays on its face
+  at 9.55; it adds braces, a catwalk rail, a ladder and three lamps). `rb_pole` at each power pole's top's (u, g, v) in place of
+  the pole and its crossbar (insulators at +-.7 on the crossbar at 8.45, where the code's wires start; the wires stay the code's).
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
