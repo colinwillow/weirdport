@@ -525,6 +525,11 @@ different context window, let me know."*
   colour) + `rt_trim`, in place of the three boxes and the four wheel cylinders. It is built in the group's own frame (the nose at
   the group's +z, where the code's cab sits forward of the bed), 2.0 x 5.0 like the box, wheels where the code's are, a light bar
   and two flags.
+- [ ] **T4y. Swap in the orchard terrace's dry-stone walls and steps** (`models/campaign/orchard_terrace.glb`; no collision -- keep
+  every wall and step box). In `buildOrchardTerrace`: `ot_wall` at each wall segment's (u, y0, v) turned like its box (X along the
+  outline), scaled Z by y1 - y0 (built 2.1 x .7 x 1.0 from 0, the coping on top), in place of the stone box and the moss box (it has
+  its own moss); `ot_step` at each step's (u, base, v) turned like its box (X along the stair's run), scaled Z by its height (built
+  .55 x 2.0 x 1.0 from 0, a worn tread on top), in place of the stone box. Instance both: there are a lot of them.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

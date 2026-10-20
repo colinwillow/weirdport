@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m679 -- the orchard terrace's dry-stone walls and steps as art (scenery window; ROADMAP T4y)
+
+`models/campaign/orchard_terrace.glb`, for `buildOrchardTerrace`. A 2.1 m segment of dry-stone wall at the code's .7 thickness:
+five courses of rough face stones in four tones on both faces round a hearting, a coping of stones on edge, moss on its face; and
+a stone step at the code's .55 x 2.0 with a worn tread. Both are 1 m tall for the code to stretch to each segment's and step's own
+height. The wall came in at 2,026 faces with bevelled stones and is 486 without them, which matters at this count; and the step's
+first draft had two side slabs that rendered black, now gone. Shipped unverified.
+
 ## m677 -- the rally trucks as art (scenery window; ROADMAP T4x)
 
 `models/campaign/rally_truck.glb`, for the four pickups `buildRally` drives up the highway road and parks behind the gate. Built in
