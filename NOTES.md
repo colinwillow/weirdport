@@ -130,6 +130,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE WATERFRONT'S CRANES ARE HIS ART (m545, T2p, `WFRONT.stsG`, `?sts=0`).** One `wf_sts_crane` per `WCRANE.CRANES` entry at
+  (K.u, 0) on Y, mirrored in z (Blender +Y = +v; the bounds are symmetric in z, so this rests on the contract, not a measurement --
+  the machine house should be at +v 37.5, behind the quay). Inside `wfCranes`' per-crane block `bx` keeps every collider and drops
+  its drawing, drawn-only boxes are skipped, and `geo` / `pearlSeg` are no-ops (braces, struts, A-frame, stays, lights). The
+  ladders (`pearlLadder` draws through F), the crate stair, the box pad and the barge are drawn as before; `wfCraneParts` (trolley,
+  cab, spreader, box) is untouched. `places` CRANES ok. `CRANE GLB FAIL` in the chip if it does not load.
+
 - **THE GORGE HAS ITS LAND (m543, F2c-1, `GORGE`, `buildGorgeLand`, `gzHeight`, `gorgeStep`, GOD `gzfalls` / `gzriver`).** A sixth
   landmass on the island's recipe (the creek's loop copied: superellipse coast, beach, chunked meshes on `ISLE.lmat`, floor
   triangles through `isleAppend`), centred 560 m out on +z -- clear of the islands (z <= 384), Hollow Creek (x <= -105) and the
