@@ -644,6 +644,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m699 (T5f): THE MX TRACK'S START GATE AND HAY BALES ARE HIS** (`mx_extras.glb`, `HCBIKE.extG`, `?mxx=0`). `mx_gate` at at(-2.3, 0)
+  on g0 + h, its turn worked out FROM THE FRAME VECTORS: X along at(-2.3, -w)->at(-2.3, +w), r = atan2(-dv, du); then, if its +z
+  (mirrored Blender +Y, the plates' face) points against at(-1.3, 0) - at(-2.3, 0), r += PI. That way it does not matter whether
+  `fr` is a reflection. The posts and yellow bar are not drawn. `mx_hay` at each bale, turned like its box (`psi = atan2(-p2, p3)`),
+  with the hay collider kept and its draw popped.
+
 - **m697 (T5e): THE TRAILER PARK'S PORCHES AND AWNINGS ARE HIS** (`trailer_porch.glb`, `HCTRAIL.porchG`, `?tporch=0`). Per trailer,
   `tpc_porch` at (pu, py) and `tpc_awning` at (u - side * .9, yp), both at v - len * .1, `campPlace`d (mirrored in z) and ALSO
   mirrored in X on side +1 (`scale.x = -1`): his +X points from the trailer toward the walk, and on side +1 the walk is at -u.

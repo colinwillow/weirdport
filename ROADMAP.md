@@ -562,7 +562,7 @@ different context window, let me know."*
   away from the trailer toward the walk (so mirror X when R.side is +1, which puts the walk at -u), in place of the tin box and the
   two steel posts (it adds rust patches, a rail and a string of bulbs); `tpc_porch` at (pu, py, v - R.len * .1), its step on the +X
   side (mirror like the awning), in place of the plank box (posts to -1.2 under it).
-- [ ] **T5f. Swap in the MX track's start gate and hay bales** (`models/campaign/mx_extras.glb`; no collision -- keep the hay boxes).
+- [x] m699 **T5f. Swap in the MX track's start gate and hay bales** (`models/campaign/mx_extras.glb`; no collision -- keep the hay boxes).
   In `buildBikeTrack`: `mx_gate` at at(-2.3, 0) on g0 + h, turned so its X runs across the lanes (the code's at(-2.3, w) line) and
   its plates face down the track, in place of the seven steel posts and the yellow bar (six drop-plates with number boards between
   them, and the release lever off its end); `mx_hay` at each hay bale's (u, g, v) turned like its box, in place of the 'hay' box.
