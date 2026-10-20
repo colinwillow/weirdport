@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m638 -- the pirate radio as art (scenery window; ROADMAP T4f)
+
+`models/campaign/radio_kit.glb`, for `buildRadio`. The 14 m mast on the code's own three legs (r .7 tapering to .18, the same
+angles), a triangle brace every 2 m with zig braces between, foot plates, brackets for the code's two glowing red lights, a whip
+aerial and a dish; the broadcast desk with a sloped mixing desk of faders and LEDs, two monitors, the mic on its arm, a running
+order and a mug; a red swivel chair; and a wedge foam tile for the booth wall. Shipped unverified.
+
 ## m636 -- the long flume as art (scenery window; ROADMAP T4e)
 
 `models/campaign/gorge_flume.glb`, for `buildGorgeFlume`. A 2 m section of the trough at the code's numbers (hw .75, walls .6):
