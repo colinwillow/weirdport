@@ -612,6 +612,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m686 (T5a): THE SCAFFOLD UP THE COASTER'S WEST SIDE IS HIS** (`ship_scaffold.glb`, `WFRONT.scafG`, `?sscaf=0`). One `campPlace` at
+  (su, floor, 45), mirrored, Y scaled by (top - floor) / 10.95 (it is built for D.rise 2.2 + S.depth 9 - .25). The top deck's and the
+  guard rail's colliders stay (their draws pop); standards, lift boards and the rail's top bar are not drawn. The ladder is still
+  the code's `pearlLadder`.
+
 - **m684 (F2d-5): THE CURE** (`qcure`, `hothMother`, `hothMotherGone`, Fern `hh_fern`). Fern, at the foot of the heart's vine ladder,
   gives it. Steps: `hh:cut` (set in `hothCut` the moment a block flips from skin), `hh:mother` (a bolt landing within `motherR` 2.4 of
   the mother pod; she has a 1.9 x 2.7 collider now so a bolt STOPS in her instead of flying through), then talk to Fern (`say`).

@@ -536,7 +536,7 @@ different context window, let me know."*
   river's edge (its face -Y toward the water; turn it for the piers' sides and ends like their boxes) in place of the 'rubber' box;
   `wd_stairs` at (lu, Y, 50) in place of the landing, its four posts, the twenty steps and the two rails (built for deck - Y = 6.25,
   the code's 20 risers of .3125; scale Z by (deck - Y) / 6.25 if that ever moves).
-- [ ] **T5a. Swap in the scaffold up the coaster's side** (`models/campaign/ship_scaffold.glb`; no collision -- keep the working
+- [x] m686 **T5a. Swap in the scaffold up the coaster's side** (`models/campaign/ship_scaffold.glb`; no collision -- keep the working
   deck's box and the rail's collider; the ladder stays the code's `pearlLadder`). In `buildWaterfront`, Blender X = u, +Y = v:
   `ss_scaffold` at (su, floor, 45) in place of the 22 standards, the two lifts' boards, the top deck and the guard rail -- every
   standard where the code's are (v 30..60 every 3, u su +- 1.4, to top + 1.1), the lifts at 3.8 and 7.6, the deck at top
