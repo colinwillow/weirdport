@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m656 -- the town edge's gas station as art (scenery window; ROADMAP T4n)
+
+`models/campaign/gas_station.glb`, for `buildTownEdge`. The canopy at the code's 11 x 7.2 on four posts with footings and red
+bands, its red fascia and lights underneath; a pump island with two pumps, lit display heads, hoses, an air post and a bin; the
+shop at the code's 9 x 6: cream walls, the lit window with mullions, a glass door, a white roof with a red band, a sign over the
+window, two ice chests out front and a tank round the back; and the 11 m sign pole with the board the code's two 'GAS' canvases
+sit on. Shipped unverified.
+
 ## m654 -- the good aliens' kiosks as art (scenery window; ROADMAP T4m)
 
 `models/campaign/good_kiosk.glb`, for `buildGoodKiosks` (the three disguised good aliens' stands). The hut at the code's 2.2 x 1.6 x

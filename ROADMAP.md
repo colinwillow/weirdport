@@ -459,6 +459,12 @@ different context window, let me know."*
   material, tint it K.col) + `gk_hut_trim` in place of the hut box, the roof, the window, the counter and the awning (the code's
   canvas sign sits on the trim's board at 2.78); then the goods by `K.goods` -- `gk_papers` for 'papers', `gk_keys` for 'keys',
   `gk_clothes` for 'clothes' -- in place of that branch's boxes.
+- [ ] **T4n. Swap in the town edge's gas station** (`models/campaign/gas_station.glb`; no collision -- keep every box that collides).
+  In `buildTownEdge`'s gas station, Blender X = u, +Y = v (the town frame, after `UV`), origins on the ground: `gs_canopy` at
+  (u, g, v) in place of the four posts, the canopy box and its red band; `gs_pumps` at (u +- 2.2, g, v) in place of each island
+  and its two pumps; `gs_shop` at (su, gs, sv) in place of its plinth, walls, window, door and roof (its front, the window and the
+  door, faces -Y as the code's at sv - 3); `gs_pole` at (pu, gp, pv) in place of the pole and the dark sign box -- the code's two
+  'sgas' planes stay, on its board's faces at 11.6.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
