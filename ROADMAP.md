@@ -111,6 +111,14 @@ different context window, let me know."*
   skirt, handrails on the steps, bulbs over the backdrop and down two festoons to the ground). `ff_grandstand` at (gu 20, (v0+v1)/2
   = -2) on y: replaces the rows (seat plank + footboard each, same .9 x .34), the back wall, the side walls (stepped to the rows),
   the posts and the roof -- the roof slopes LOW AT THE FRONT (-u) and high at the back. 7,872 / 1,385 faces.
+- [ ] **T2l. Swap in the bike pits and the announcer's tower** (`models/campaign/bike_pits.glb`, no collision file --
+  `buildBikeTrack` keeps every collider and the tower's ladder). Blender X = the track frame's u, +Y = its +v, origins on the ground.
+  In `bike(u, v, g, r, col)`: draw `bk_bike_<red|blue|yellow>` at (u, v, g) turned r (its length is Blender Y, front wheel +Y,
+  exactly the code's q(0, b) axis) in place of the two tori, the segment, the tank, engine and bars. Each pit canopy:
+  `bk_canopy_<red|blue|yellow>` at (u, v) in place of the four legs and the roof slab; its chest `bk_chest` at (u+1.1, v-1), drum
+  `bk_drum` at (u+1.2, v+1.1); `bk_trailer` at (pu+14, pv+1) turned .1; `bk_generator` at (pu-15, pv); `bk_tower` at (tu, tv) --
+  replaces the legs, the deck, the three parapets, the corner posts and the roof (it adds X braces, a desk with the PA and mic, a
+  stool and two loudspeaker horns on the roof). Faces: bike 700, canopy 130, trailer 444, tower 398, chest 214, drum 70, generator 106.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

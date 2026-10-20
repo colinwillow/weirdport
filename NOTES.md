@@ -5,6 +5,15 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m531 -- the bike pits and the announcer's tower as art (scenery window; ROADMAP T2l)
+
+`models/campaign/bike_pits.glb`, at buildBikeTrack's numbers. An MX BIKE in the gang's three colours (knobbly tyres, spoked
+hubs, fork, bars with grips, tank and shrouds, seat, both fenders, a number plate, exhaust, and the stand it rests on) built
+along Blender Y so the code's own `bike()` turn applies to it unchanged; POP-UP CANOPIES in red, blue and yellow with a scalloped
+two-tone valance, struts and foot plates; the TRAILER with a stripe, axles, ramp door and side door; a rolling TOOL CHEST, a
+FUEL DRUM, a framed GENERATOR; and the ANNOUNCER'S TOWER -- braced legs on pads, a plank deck, slatted parapets with a blank
+sponsor banner, a red roof with two loudspeaker horns, and inside a desk, the PA, a mic and a stool. Shipped unverified.
+
 ## m527 -- the fair's stage and grandstand as art (scenery window; ROADMAP T2k)
 
 `models/campaign/fair_stage.glb`, at buildFairground's numbers so every step, row, the catwalk and the ladder stay where the code
