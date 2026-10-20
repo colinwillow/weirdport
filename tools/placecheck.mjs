@@ -933,16 +933,16 @@ const walkUp = (pts, y0) => { let y = y0; for (let i = 0; i < pts.length - 1; i+
 // (nobody until the worker leans on it and mends it, then the worker), the file (an activist), the rumble door (the biker
 // RIDING; on foot he is stopped), the lock (the engineer); a level flight up the shaft; the core round the shaft's mouth
 { const G = M.ISGAUNT, S = M.ISHIP, D = M.ISDECK; let r = 'NOT BUILT', why = '';
-  if (G.built && G.gates.length === 5) {
+  if (G.built && G.gates.length === 6) {   // m538: the board door is the sixth gate
     const [ax, az] = S.axis, C = D.CH, yC = S.floorY + C.y, cu = C.u, sea = M.ISLE.sea, F = M.SAVE.flags, p = M.player, dt = 1 / 30, Pl = G.plan;
     const keep = { pos: p.pos.clone(), vel: p.vel.clone(), K: p.mphK, R: p.mphRole, St: p.mphSt, w: p.wing, g: p.grounded, b: p.bike }, kf = {}; for (const g of G.gates) kf[g.id] = F['gate:' + g.id];
     const walked = +(walkUp([[cu - 8, 0], [cu - 2.5, 2.5], [cu, 8], [cu, Pl.v0], [cu, Pl.vC], [Pl.hall[0], Pl.hall[1]], [Pl.uD, Pl.hall[1]], [Pl.uL, Pl.hall[1]], [Pl.shaft[0], Pl.shaft[1]]].map(([u, v]) => [ax + u, az + v]), yC) - yC).toFixed(2);
     for (const g of G.gates) delete F['gate:' + g.id]; const T = G.gates.find(g => g.type === 'shiptear'); T.open = 0; T.planks.forEach(m => m.visible = false);
     const cross = Gt => { const nx = Math.sin(Gt.h), nz = Math.cos(Gt.h); p.pos.set(Gt.x - nx * 1.5, Gt.y, Gt.z - nz * 1.5); M.gatePush(dt); p.pos.set(Gt.x + nx * .1, Gt.y, Gt.z + nz * .1); M.gatePush(dt); return (p.pos.x - Gt.x) * nx + (p.pos.z - Gt.z) * nz > 0; };
     const Ke = (M.MARKS.find(m => m.id === 'wf_ivy') || {}).K;
-    const FORMS = { alien: [null, null, 0], farmer: [M.mkrKind('hick_skinny'), null, 0], worker: [M.mkrKind('contruction_worker'), null, 0], activist: [M.mkrKind('fat_activist_01'), null, 0], 'biker on foot': [M.mkrKind('fat_biker_02'), null, 0], 'biker riding': [M.mkrKind('fat_biker_02'), null, 1], engineer: [Ke, 'hacker', 0] };
+    const FORMS = { alien: [null, null, 0], farmer: [M.mkrKind('hick_skinny'), null, 0], worker: [M.mkrKind('contruction_worker'), null, 0], activist: [M.mkrKind('fat_activist_01'), null, 0], 'biker on foot': [M.mkrKind('fat_biker_02'), null, 0], 'biker riding': [M.mkrKind('fat_biker_02'), null, 1], engineer: [Ke, 'hacker', 0], suit: [M.mkrKind('fat_secret_service'), null, 0] };
     const as = nm => { const [K, R, b] = FORMS[nm]; Object.assign(p, { mphK: K, mphRole: R, mphSt: 0, bike: b }); };
-    const WANT = { shippen: 'farmer', shipmarch: 'activist', shiprumble: 'biker riding', shiplock: 'engineer' }, res = [], wrong = [];
+    const WANT = { shippen: 'farmer', shipmarch: 'activist', shiprumble: 'biker riding', shiplock: 'engineer', shipboard: 'suit' }, res = [], wrong = [];
     for (const g of G.gates) { if (g.type === 'shiptear') continue; const want = WANT[g.type], got = [];
       for (const nm of Object.keys(FORMS)) { as(nm); const thru = cross(g); if (thru) got.push(nm); if (thru !== (nm === want)) wrong.push(g.id + ':' + nm); }
       res.push(g.id.replace('ms_', '') + ' lets ' + (got.join('/') || 'NOBODY')); }

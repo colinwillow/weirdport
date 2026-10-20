@@ -113,6 +113,22 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE MOTHERSHIP HAS SEVEN LOCKS (m538, F2b-5b, `GATE_TYPES.shipboard`, gate `ms_board`, `ISGAUNT.sacAt`).** THE BOARD DOOR --
+  two brass leaves and a plate, MEMBERS OF THE BOARD -- in the west tube at uD - 10.5, between the rumble door and the lock room;
+  `groups: ['suit']`. Found on the way, and what must not be redone:
+  - **`SOCIAL.groups`' suit rule is `/secret.service|trump/`, not `secret_service`**: the save's form names are FOLDED ('FAT
+    SECRET SERVICE', a space), so the underscore never matched a worn form and the door read the suit as 'folk'.
+  - **JUICE: seven forms at `JUICE.cost` 20 is 140, over the 100 tank.** The SAC in the file's hall fills it once per visit
+    (walking through the room is enough).
+  - **`play.mjs`'s gate approach point is 7 m out on his side -- between two gates closer than that, it is THROUGH THE LAST GATE**,
+    shut to the form the next one wants, and he was stuck then teleported off the ship. A gate he is already square in front
+    of (|u| < 1.2) skips the approach. FORMS_BY gains [7, 'FAT SECRET SERVICE'].
+  - **The man in the suit can fall out of the ship** (seed 1: his after-body at y 200, the game's last talk unreachable): if
+    `ms_suit` drops 30 m under the core it is put back on the core's floor. The boss's body ALSO left the ship on that run (the
+    harness teleported to it at y 204) -- the fight is still won, but where it goes through the hull is not found yet.
+  Chapter 6 gains a `sample` step (a lobby guard) so the suit is always in hand. `places` exit 0 (GAUNTLET: board lets suit);
+  `play ch6` COMPLETE 2/2; `play ch7` COMPLETE 3/3, 16 steps, seeds 1 and 2.
+
 - **CHAPTER 6 IS DUMP TOWER; THE MOTHERSHIP IS CHAPTER 7 (m535, F2b-5a, quests `tower` / `towerb`).** Inserted after the
   islands (ch5c now ends "DUMP TOWER IS NEXT"): reach the plaza, then three `flag` steps at the three badges (`DTOWER.badges[i].at`
   -- the rank ladder of m532 gives them to a suit, or they are lifted off the desk/bench/table), then `towerb`: goto, `skin`

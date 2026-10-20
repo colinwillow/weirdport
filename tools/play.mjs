@@ -172,6 +172,9 @@ try {
           if (S.GATE_TYPES[G.type] && S.GATE_TYPES[G.type].pass === 'fix' && !G.open) { st.side = 0; if (!st.gateIn) { if (goTo(G.x + sn * 5 * side, G.z + cn * 5 * side, 1.2, true, true, G.y)) st.gateIn = 1; return ''; } walk(G.x, G.z, false); return ''; }
           // first the approach point 7 m out on his side, then straight through to 7 m past it; no teleport: a gate is walked
           const ax = G.x + sn * 7 * side, az = G.z + cn * 7 * side, bx = G.x - sn * 7 * side, bz = G.z - cn * 7 * side;
+          // m538: already square in front of it (|u| < 1.2) and on his side -- between two gates closer than 7 m, the approach
+          // point is through the LAST gate, which is shut to the form the next one wants
+          if (!st.gateIn && Math.abs(v) > .6 && Math.abs((P.x - G.x) * cn - (P.z - G.z) * sn) < 1.2 && Math.abs(P.y - G.y) < 2) st.gateIn = 1;
           if (!st.gateIn) { if (goTo(ax, az, 1.2, true, true, G.y)) st.gateIn = 1; return ''; }   // m486: at the gate's own level
           goTo(bx, bz, 1.0, false, false); return ''; }
         // m469: THE RACE (`raceStep`): on the bike (the biker form IS the bike), stopped at the gate for the countdown, then
@@ -365,7 +368,7 @@ try {
         // m466: AND WHAT THE CHAPTERS BEFORE IT GAVE HIM -- the forms their samples put on the wheel (a Chapter 2 start as
         // nobody but himself is an alien everybody runs from, which no player arriving there is), and their quests marked
         // done, so the kit found on the way (`GEAR`) is in his hands
-        const FORMS_BY = [[1, 'HICK SKINNY'], [2, 'CONTRUCTION WORKER'], [3, 'FAT HIPSTER'], [4, 'FAT BIKER'], [5, 'ENGINEER'], [6, 'JACK']];
+        const FORMS_BY = [[1, 'HICK SKINNY'], [2, 'CONTRUCTION WORKER'], [3, 'FAT HIPSTER'], [4, 'FAT BIKER'], [5, 'ENGINEER'], [6, 'JACK'], [7, 'FAT SECRET SERVICE']];
         for (const [c, nm] of FORMS_BY) if (n >= c) S.progForm(nm);
         for (const q of S.QUESTS) if (q.ch !== undefined && q.ch < n && !q.dormant) S.progFlag('qdone:' + q.id); if (n >= 1) mel.go('oldtown'); S.stick.L.x = S.stick.L.y = 0; }, N);
       console.log(`     ${CH}: the save moved to chapter ${N}` + (N >= 1 ? ' and him to the city spawn' : ''));
