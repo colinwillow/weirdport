@@ -5,6 +5,12 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m687 -- the counter-protest camp as art (scenery window; ROADMAP T5b)
+
+`models/campaign/rally_camp.glb`, for the Pearl's counter-protest camp `buildRally` pitches by Hollow Creek's road. The code's mint
+tarp at 4.4 x 3.4 on its four posts, sagging a little, with guy ropes to pegs; a string of bunting in the Pearl's five pastels along
+the front; the blue cooler and the pink folding chair where the code puts them; and two blank placards on sticks. Shipped unverified.
+
 ## m685 -- the scaffold up the coaster's side as art (scenery window; ROADMAP T5a)
 
 `models/campaign/ship_scaffold.glb`, for the repair scaffold `buildWaterfront` stands against the coaster in the dry dock. Tube and
