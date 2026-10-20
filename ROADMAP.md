@@ -428,7 +428,7 @@ differ" table there, so no region feels like the last one.
     paved pad fraying into the grass, a timber deck in two skewed slabs with steps (the tables on it), a shade sail, crates,
     gas bottles, plants, three umbrella colours.
   - [x] m489 **F1-OT2** Old Town 2 -- the camp at the west edge: a trampled-dirt floor, a patchwork tarp roof on four poles over the fire circle, junk fencing round the open sides with gaps to walk in, a shack with a stovepipe, tins of herbs.
-  - [ ] **F1-OT3** Old Town 3 -- re-shoot `carts site camp footbridge topcity` and take the worst again.
+  - [x] m490 **F1-OT3** Old Town 3 -- re-shot; the worst was the footbridge's foot (a stair in bare lawn, no way to it): a flagstone path from the street, a concrete apron, a works hut with its lamp, sandbags, a rope barrier, a CLOSED board, a lifebuoy, driftwood and stones on the tideline, a bench facing the water.
   - [ ] **F1-PE1..3** The Pearl. - [ ] **F1-HC1..3** Hollow Creek. - [ ] **F1-WF1..3** the Waterfront.
   - [ ] **F1-IS1..3** the River Islands. - [ ] **F1-MS1..3** the Mothership. - [ ] **F1-RT** the routes between them.
 - [ ] **F2 The regions still missing from `REGIONS.md`**, each as land → places → people → the ways in

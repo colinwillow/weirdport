@@ -17,6 +17,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE FOOTBRIDGE'S FOOT, AND A BUILDER'S MATERIAL SET IS ITS OWN (m490, F1 Old Town 3, `buildFootbridge`).** Re-shot Old Town: the
+  site reads dense and vertical; `topcity` from straight above is all fog (the lens over the fog's far plane -- a shot's limit,
+  not the game's); the worst was the footbridge's foot -- a staircase planted in bare lawn, no way to it. Now a wandering path
+  of flagstones from the street, a concrete apron round the stair's foot, a works hut with a lamp, two courses of sandbags, a
+  rope barrier on posts, a CLOSED board, a lifebuoy at the waterline, driftwood and stones along the tideline, a bench facing
+  the water. **The first try used a `'wood'` material that `buildFootbridge`'s MAT does not have: `bx` threw, and the footbridge,
+  The Pearl, its roofs and its plaza were all NOT BUILT** -- `check:boot` (the test site) cannot see it; `places` did, at once.
+  Every `farmFrame` builder has its OWN material table -- read it before naming one. The CLOSED board is coloured at build
+  (red until a reload after the mend).
+
 - **THE CAMP IS A ROOM (m489, F1 Old Town 2, `buildCamp`).** The shot: every piece it had (tents, barrel, sofa, carts, pallets,
   the washing line) spread over open lawn with nothing between them. Now a trampled-dirt floor (a noisy ellipse, polygon-offset
   over the grass); a patchwork tarp ROOF on four leaning poles over the barrel circle, the overhead layer it lacked; a junk
