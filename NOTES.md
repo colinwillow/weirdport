@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m612 -- the rest of the camp as art (scenery window; ROADMAP T3t)
+
+`models/campaign/camp_extras.glb`, for what `buildCamp` still draws as boxes after `camp_kit` (m563). A pallet stood on edge, slats
+and stringers; corrugated sheets, one rusted with patches and nail heads, one of blue fibreglass; the lean-to, two tarps on two
+poles with guy ropes over a stained mattress with a blanket and pillow; a slatted crate; a flattened, taped cardboard box; a green
+bottle; and one piece of laundry on two pegs (white, tinted per piece). At the code's numbers, origins on the ground. Shipped
+unverified.
+
 ## m610 -- the gang's road bridge as art (scenery window; ROADMAP T3s)
 
 `models/campaign/gang_road.glb`, for the bridge in `buildHighway`. The green distance sign, white-bordered on two galvanised posts
