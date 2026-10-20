@@ -26,6 +26,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE BIKE TRACK, DRESSED (F1-HC2b, m498, `buildBikeTrack`).** The shot: a flat brown ribbon through the pines. Added: two
+  dark ruts 1.25 m either side of the line (flat `pearlSeg`s on `meshH`, drawn only); a flag on a pole every 8th point,
+  alternating sides at hw + 1.6; red/white tape on stakes at hw + 2.4 down every straight (|turn| < .06 over 3 points);
+  a `HOLLOW CREEK MX` banner arch at s .45 (a canvas plane, yaw th + atan2(-dv, du) -- `bx`'s convention for local x).
+  **Nothing beside the track carries a collider**, on purpose: m496 showed a bike runs wide at every corner, and a pole
+  that stops it is the race lost again. `play ch3` COMPLETE, Rae beaten in 47.8 s.
+
 - **THE CRASH SITE IS HIS KIT (T2e, m497, `csKit`, `csFurrow`, `buildCrash`).** `models/campaign/crash_site_kit.glb` + its
   collision file, loaded beside the wreck (`?cskit=0` is the A/B; a failed load is the old code furrow, chip note `CSKIT GLB
   FAIL`). Every piece is INSTANCED per piece and material (`cskit:<piece>`). A piece is placed at frame (u, v) turned `psi`,

@@ -441,7 +441,7 @@ differ" table there, so no region feels like the last one.
   - [x] m493 **F1-PE3** The Pearl 3 -- dock 1, where Chapter 2 lands (painted cube pots, bare boards): round tapered pots with clumps and blooms, round bollards with rope, plank seams, a fish-crate stack and a sack by the bridge, the roastery's chalkboard, hanging baskets off the lamps, clumps and a pennant on the container garden.
   - [x] m494 **F1-HC1** Hollow Creek 1 -- the halt, the region's front door by train (a plank and a red roof): board seams and a yellow edge line, a bench and a timetable under the shelter, churns and mail sacks, lamps with hanging baskets; at the creek end's foot a gravel apron, a fenced dirt track, a water tank for the loco, wildflowers round the posts.
   - [x] m496 **F1-HC2** Hollow Creek 2 -- **the race is winnable again** (`play ch3` COMPLETE, Rae beaten in 48 s): a gate run wide still counts (it voided the lap silently since m483), a spill into the creek puts him back ON THE TRACK where he left it, not 27 m back up the ridge; the bike keeps its pre-m483 grade window.
-  - [ ] **F1-HC2b** Hollow Creek 2b -- dress the bike track (berms, tyre walls, hay bales, flags, the start gate).
+  - [x] m498 **F1-HC2b** Hollow Creek 2b -- the bike track dressed: two worn ruts down the racing line, flags on poles every 16 m, red-and-white spectator tape on stakes down every straight, a HOLLOW CREEK MX banner arch on tyre-stacked posts over the north straight. Nothing beside the track has a collider.
   - [ ] **F1-HC3** Hollow Creek 3 -- the mill or the trailer park, whichever shoots worse.
   - [ ] **F1-WF1..3** the Waterfront.
   - [ ] **F1-IS1..3** the River Islands.
