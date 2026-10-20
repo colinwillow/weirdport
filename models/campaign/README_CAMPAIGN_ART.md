@@ -38,6 +38,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `lighthouse.glb` | the River Islands' lighthouse and keeper's cottage | lighthouse: origin (K.u, K.v) on the rock top, its door on Blender +Y (turn to dA); cottage: origin (cu0, cv0), door on +Y, turned cps | none | 1,362 / 272 |
 | `site_kit.glb` | Old Town's building site: tower crane, site office, mixer, skip, a hoarding panel | Blender X = site frame u, +Y = v, origins on the ground at the code's centres; the crane's jib along +X (turn to ja); the hoarding panel's street face is -Y | none | 60-1,448 per piece |
 | `market_stall.glb` | the Pearl's plaza market stalls | origin at the stall's centre on the deck, X along the counter, turned `f`; `pm_stall_paint` one white material tinted per stall, `pm_stall_trim` the rest | none | 100 / 1,340 |
+| `camp_kit.glb` | Old Town's camp: tent (paint + trim), burn barrel, sofa, shopping cart, shack | Blender X = camp frame u, +Y = v, origins on the ground; the tent is 2.8 x 2.3 x 1.5 (scale per tent), its tarp one white material to tint | none | 55-614 per piece |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

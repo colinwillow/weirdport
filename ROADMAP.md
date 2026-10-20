@@ -199,6 +199,13 @@ different context window, let me know."*
   exactly as the counter box. Per stall: `pm_stall_paint` tinted with `cc[i % 5]` (one white material: clone or instance with
   setColorAt) and `pm_stall_trim`, in place of the counter's drawing, the canopy slab, the two poles and the plant icosahedron.
   100 / 1,340 faces.
+- [ ] **T2y. Swap in the camp kit** (`models/campaign/camp_kit.glb`, no collision file -- `buildCamp` keeps every collider, the
+  patchwork roof, the junk fence, the lean-to, the washing line, the lights, the smart spots and the fire). Blender X = the camp
+  frame's u, +Y = its v, origins on the ground. In `tent(u, v, rot, L, W, H, mat)`: `oc_tent_paint` (one white material, tinted with
+  `mat`'s colour) and `oc_tent_trim`, scaled (L/2.8, W/2.3, H/1.5) and turned `rot`, in place of the prism and its ridge pole;
+  `oc_barrel` at (0, 0) in place of the barrel cylinder (the fire point stays); `oc_sofa` at (3.6, -1.4) turned r in place of its
+  four boxes (its back is on Blender -Y: if it ends up facing away from the barrel, add pi); `oc_cart` at each cart in place of its
+  basket and legs; `oc_shack` at (u0, v0) in place of its three walls, roof, stovepipe. 55+120 / 614 / 198 / 386 / 304 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

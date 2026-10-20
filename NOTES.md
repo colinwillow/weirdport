@@ -5,6 +5,15 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m563 -- the camp's pieces as art (scenery window; ROADMAP T2y)
+
+`models/campaign/camp_kit.glb`, at buildCamp's numbers. A TENT whose tarp sags a little between its poles, a closed back, front
+flaps tied open, guy lines to pegs and a bedroll inside -- the tarp one white material so the code's three tarp colours tint it,
+one model scaled to each tent's L, W, H. The BURN BARREL with hoops, punched holes glowing and embers and sticks inside. The
+SOFA with a sunk cushion and a patch. A SHOPPING CART of wire with a red handle and junk in it. The SHACK: a corrugated rusted
+back with patches, an old door for a wall, planks, front posts, a tin roof held down with bricks, a stove and its pipe, a cot.
+Shipped unverified.
+
 ## m561 -- the Pearl's market stall as art (scenery window; ROADMAP T2x)
 
 `models/campaign/market_stall.glb`, at buildPearl's stall numbers. A peaked striped canopy with a scalloped valance, its coloured
