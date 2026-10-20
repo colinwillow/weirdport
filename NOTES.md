@@ -597,6 +597,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m681 (T4y): THE ORCHARD TERRACE'S WALLS AND STEPS ARE HIS DRY-STONE** (`orchard_terrace.glb`, `OTK`, `otPut`, `otBuild`,
+  `?oterr=0`). Instanced like the fence (m670): world matrix at `(F.wx, y0, F.wz)`, yaw `psi + F.th`, Y scale = the code's box height
+  (both pieces are built 0..1 m). Every wall and step collider stays; the stone draw pops. **The moss coping's two `rr()` rolls are
+  still spent with the file in**, so the seeded walls' jitter does not move. `places`: terrace row ok.
+
 - **m680 (F2d-4b): THE SPORE POD, THE HOTHOUSE'S WAY ON** (`HSPORE`, `hothSporeBuild`/`Path`/`Place`/`Step`). A skin disc (a `BDYN`
   box) under a glowing sac, berthed 4.6 m from the nursery's mother pod (`HHEART.sporeA`, the first heading round her whose disc is
   all roof). Stand on it ~1 s and it runs a 4-point path: straight up `climb` 30, a long rise to `over` 25 above the dock, straight
