@@ -323,7 +323,7 @@ different context window, let me know."*
   at (cu - 1.8, cv) and (cu + 1.6, cv) on the container's roof (yP + 2.6), in place of the two 'pot' boxes and the leaf clumps;
   `pd_crates` at (-dW + 2.6, vL0 + 1.6) in place of the three crate boxes and the sack sphere; `pd_chalkboard` at
   (dW - 2.4, vL0 + 1.4) turned by r = -.3 in place of its legs, board and chalk lines (its face is -Y).
-- [ ] **T3s. Swap in the gang's road bridge** (`models/campaign/gang_road.glb` plus pieces already shipped; no collision -- keep the
+- [x] m611 **T3s. Swap in the gang's road bridge** (`models/campaign/gang_road.glb` plus pieces already shipped; no collision -- keep the
   boxes). In `buildHighway`, Blender X = u, +Y = v, origins on the deck at yv(v): `gr_distsign` at each distance sign's (su, v)
   turned like its canvas plane (face +Y = the plane's front), in place of the two 'rail' posts -- keep the canvas plane, nudged
   .01 in front of the green board; `gr_gangsign` at (hw - .2, gv - .5) in place of the 'dark' post, the LOCALS ONLY plane sitting

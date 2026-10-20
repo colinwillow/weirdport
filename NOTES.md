@@ -359,6 +359,20 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE GANG'S ROAD BRIDGE IS DRESSED IN HIS ART (m611, T3s, `gang_road.glb`, `?groad=0`).** In `buildHighway`, through `grPut`
+  (mirrored in z; a `*_white` material is cloned and tinted):
+  - `gr_distsign` stands at both distance signs, turned 0 / pi like the canvas, which sits .01 in front of it.
+  - `gr_gangsign` replaces the post; LOCALS ONLY sits .05 in front.
+  - `gr_cooler` replaces the cans; the cans' rolls are still spent.
+  - `gr_pennant_paint` + `_string` stand at the 20 cones, tinted truck / line / dark.
+  Pieces reused from earlier files:
+  - `rp_pickup`, turned .3 - pi/2 so the cab end (-u) is its nose; **if it comes in backwards, it is that pi**.
+  - `rp_barrel` at the drum.
+  - `tp_chair`, turned pi to face away from its back (+v).
+  - `bk_bike_red` at the two bikes.
+  - `rx_tyres` at the tyre stack.
+  Every collider stays.
+
 - **THE GORGE GETS A LOOKOUT, A GLIDER PILOT AND ITS MAP REGION (m609, F2c-6a, `buildGorgeLook`, GOD `gzlook`).** A timber tower
   stands on the east plateau at the fjord's mouth (b -56, a = river + 22):
   - splayed legs, braces, and a railed deck 14 m up, open at the back for the ladder (`gz_lookout`);
