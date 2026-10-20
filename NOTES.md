@@ -5,6 +5,15 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m537 -- the mill's machines as art (scenery window; ROADMAP T2n)
+
+The mill SHED had its pass at m499; the machines round it were still primitives. `models/campaign/mill_kit.glb`: the TEEPEE
+BURNER (a rusted cone with darker panels, hoops and seams, a mesh spark-arrestor dome on top, a stoking door, the conveyor's inlet
+hood, an ash-strewn pad), the LOG CRANE (a braced yellow lattice tower on pads, a railed platform, a slew ring, a glazed cab, a
+lattice boom with a counterweight, and a grapple hanging on its cable), the LOG TRUCK (a red cab-over with stacks and mirrors,
+triple axles, bunks and yellow stakes for the code's logs, tail lamps), and the WATER TOWER (braced legs, a tank of separate
+staves with iron hoops, a cone roof, a ladder). Shipped unverified.
+
 ## m536 -- the trailer-park homes as art (scenery window; ROADMAP T2m)
 
 `models/campaign/trailer_park.glb`. Each single-wide was one box with a stripe; now it is a real one: a body swept from a
