@@ -258,6 +258,11 @@ different context window, let me know."*
   on yr -- replaces the post and its board; `tr_refuge` at (ru, vm) on ry -- replaces the deck, the three braces, the rails, the tool
   chest, the cable torus, the churn and the rod (it adds a stool, a cable drum, a line in the water and two gulls on the rail).
   148 / 36 / 616 faces.
+- [ ] **T3h. Swap in the swing bridge kit** (`models/campaign/swing_kit.glb`, no collision file -- the m510 block keeps the cool box's
+  collider, the lane paint and the canvas WAIT AT RED boards). Blender X = the frame's u, +Y = its v, on Y. `sw_pitch` at (fu, v) =
+  (U + hw - .35, vW + 6) in place of the two rod segments, the bucket, the stool and its legs, the cool box and its lid (it adds
+  reels, rod rests, lines to the water, a tackle box, a thermos, a paper); `sw_signpost` at each board's (su, v) in place of its post,
+  turned pi where the board is (its frame sits just behind the board's plane at 2.1; a red lamp on top). 246 / 66 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

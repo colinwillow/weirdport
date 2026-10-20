@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m585 -- the swing bridge kit as art (scenery window; ROADMAP T3h)
+
+`models/campaign/swing_kit.glb`, at the m510 spots. WALT'S PITCH: two rods with cork grips and reels leaning out over the rail on
+rests, their lines down to the water, a bait bucket, his three-legged stool with a folded paper, the red cool box, a tackle box and
+a thermos. The SIGNPOST: a post with a yellow-rimmed frame just behind the code's BRIDGE SWINGS / WAIT AT RED board, clamps, and a
+hooded red lamp on top. Shipped unverified.
+
 ## m583 -- the trestle kit as art (scenery window; ROADMAP T3g)
 
 `models/campaign/trestle_kit.glb`, at the m509 numbers. The SIGNAL MAST on its bracket with a black head, red and green lamps under
