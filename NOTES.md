@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m602 -- the Pearl's roof gardens as art (scenery window; ROADMAP T3p)
+
+`models/campaign/roof_garden.glb`, for `pearlGarden`. Two raised beds of lapped boards at 2.0 x 0.9 x 0.5 (the code stretches X to
+each bed's width): one of lettuces and tomatoes on canes, one of flowers in pink and yellow. The water tank: a pale blue drum with
+steel hoops, lid and ladder on a braced 2.2 m stand, a tap and a bucket. The pergola: four posts, beams and slats with a vine over
+the top and down one post, and the bench under it where the code puts its bench. Origins on the roof, in the warehouse's (a, b)
+frame. No collider; the code's boxes stay. Shipped unverified.
+
 ## m600 -- the trailer park's rim props as art (scenery window; ROADMAP T3o)
 
 `models/campaign/rim_props.glb`, for THE RIMS in `buildTrailerPark`. `rp_barrel`: a rusted 0.7 x 0.9 m drum with hoops, holes
