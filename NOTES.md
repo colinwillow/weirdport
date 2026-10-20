@@ -26,6 +26,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE SWING BRIDGE, A STREET (F1-RT2, m510, `buildSwing`).** Shots `wfswing` / `otswing` (new entries). On both fixed spans:
+  dashed centre line, a walking strip line each side, drain grates every 9 m (all flat); a canvas BRIDGE SWINGS / WAIT AT
+  RED board on a post at each swing gap, facing the traffic; at the island end, beside Walt (`wf_swing_walt`, at vW + 6),
+  two rods leaning out over the rail, a bucket, a stool, a cool box (solid) and a lifebuoy on the far rail. The moving span,
+  its barriers, lights and boxes are untouched. Still bare: the ramp's foot on the Old Town grass (`otswing`).
+
 - **THE TRESTLE, A PLACE ON THE WAY -- AND m502 HAD PUT A PLANTER ON A TURRET'S PANEL (F1-RT1, m509, `buildFreight`,
   `buildWaterfront`).** On the freight line: a signal mast every 45 m on the +u side (red/green lamps alternating, a 'beam'
   bracket off the trestle), a milepost every 30 m on the -u side, and halfway a railed refuge cantilevered off +u at rail

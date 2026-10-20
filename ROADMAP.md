@@ -453,7 +453,7 @@ differ" table there, so no region feels like the last one.
   - [x] m507 **F1-MS2** the Mothership 2 -- the belly (a purple drum): floor seams out from the glass, a glow ring at the wall's foot, veins snaking up the wall, clutches of eggs at its foot, glyph panels, tendrils hanging round the organ. Nothing near the doorway; nothing solid.
   - [x] m508 **F1-MS3** the Mothership 3 -- the core (an empty dome): two glow rings and 12 seams across the floor, ribs of light up the dome's inside, eight nerves arcing from the dome's wall down into the shaft's mouth, glow strips climbing the shaft. Nothing solid -- it is the last fight's floor.
   - [x] m509 **F1-RT1** the routes 1 -- the freight trestle (a bare line over the water): signal masts with lit lamps every 45 m, mileposts every 30, and halfway over a railed refuge off the side with a tool chest, cable, a fisherman's bucket and rod, gulls on the rail (GOD place `frrefuge`).
-  - [ ] **F1-RT2** the routes 2 -- the swing bridge (Old Town to the Waterfront).
+  - [x] m510 **F1-RT2** the routes 2 -- the swing bridge (a grey road): dashed lane lines and painted walking strips on both fixed spans, drain grates, a BRIDGE SWINGS / WAIT AT RED board facing each swing gap, and Walt's fishing pitch at the island end -- rods over the rail, a bucket, a stool, a cool box -- with a lifebuoy.
   - [ ] **F1-RT3** the routes 3 -- the highway shoulder into Hollow Creek, past the gang.
 - [ ] **F2 The regions still missing from `REGIONS.md`**, each as land → places → people → the ways in
   (several, per the connective-tissue rules) → its quests and boss. Read the entry first.
