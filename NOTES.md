@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m568 -- the floodlight mast as art (scenery window; ROADMAP T3a)
+
+`models/campaign/flood_mast.glb`: the Waterfront's 26 m mast at buildWaterfront's numbers. A tapered octagonal pole on a bolted
+flange and concrete pad, section joints, a service hatch and hazard bands at the foot, a caged ladder up the face the code's rungs
+were on, a railed grated service platform on brackets, the head frame, four floodlights tilted down and out with glowing glass
+where the code's lamp boxes were (the light cones are unchanged), an aircraft light on top. The T2 list ran out of letters at
+T2z, so the swaps go on as T3a. Shipped unverified.
+
 ## m566 -- the sentry turret as art (scenery window; ROADMAP T2z)
 
 `models/campaign/turret.glb`: Uplift's turret in the three pieces `wfTurretParts` moves -- the BASE (a flared drum with bolts and

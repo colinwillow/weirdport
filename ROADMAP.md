@@ -213,6 +213,12 @@ different context window, let me know."*
   where `gun` already sits at .45) in place of the gun box and both barrel cylinders -- its sensor hood sits over the code's lens at
   (0, .12, .62); `tu_panel` at each `T.panel` (pu, pv, Y + ph) in place of the panel box and its yellow top (its screen faces -Y:
   turn it to face the walkway). 136 / 166 / 170 / 100 faces.
+- [ ] **T3a. Swap in the floodlight mast** (`models/campaign/flood_mast.glb`, no collision file -- `buildWaterfront` keeps the pole's
+  collider and the light cones). One root, `fl_mast`, origin at each mast's foot on Y, Blender X = the frame's u, +Y = its v, at
+  every `W.MASTS` entry, in place of the pole box, the base pad, the head frame, the four lamp boxes and the ladder rungs. A tapered
+  octagonal pole on a bolted flange with section joints and a hatch, a caged ladder up its -Y face, a railed grated platform on
+  brackets under the head, the head frame, four floodlights tilted down and out with glowing glass at the code's lamp spots
+  (the cones still come from (u, v) at top - .7), an aircraft light. 1,582 faces (eight masts: ~12.7k).
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
