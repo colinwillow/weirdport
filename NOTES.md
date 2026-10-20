@@ -438,6 +438,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE FJORD'S GROTTO AND WRECK ARE HIS ART (m632, T4c, `gorge_deep.glb`, `?gdeep=0`, `gwPut`).** These are mirrored in z:
+  - `gw_wreck` replaces the keel, hulls, ribs, wheelhouse and stern. She is rolled and holed in the file; the bulk collider
+    and the mast stay.
+  - `gw_crystals` stands at every 4th of the sixteen crystal points, each clump turned by its point's yaw, in place of all
+    the cones.
+  - `gw_cache` replaces the crate, lid and gold drawings; both colliders stay.
+  - `gw_strongbox` replaces the box drawing and its band; the collider stays.
+  The roof, pillar, kelp and teal light are still the code's.
+
 - **THE GORGE DAM'S WORKS ARE HIS ART (m630, T4b, `gorge_dam.glb`, `?gdam=0`, `gdPut`).** These are mirrored in z, so his +Y is
   +b:
   - `gd_winch` replaces the hut's drawing (its tin collider stays) and the rust roof.

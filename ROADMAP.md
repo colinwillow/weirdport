@@ -397,7 +397,7 @@ different context window, let me know."*
   of the yellow torus, its post and the dark grate (the wheel is at -.3 Y, as the code has it); `gd_sluice` at each mouth's
   (U(ra +- 2.4), bed + .3, b0 - 1.12) in place of the dark mouth and the rust lintel; `gd_rail` (1 m, scale X by 2 hw) along both
   crest rails at b0 +- 1.05 in place of the two steel boxes each, plus `gd_post` every 2 m along each (never scaled).
-- [ ] **T4c. Swap in the fjord's grotto and wreck** (`models/campaign/gorge_deep.glb`; no collision -- keep the bulk box and the
+- [x] m632 **T4c. Swap in the fjord's grotto and wreck** (`models/campaign/gorge_deep.glb`; no collision -- keep the bulk box and the
   cache/strongbox boxes; the grotto's rock roof and pillar stay the code's). In `buildGorgeDeep`, Blender X = u, +Y = +b:
   `gw_wreck` at (U(ra), fy, b) in place of the keel, both hull sides, the five ribs, the wheelhouse and the stern -- she is
   already rolled (.9 about her keel, which runs along Y) and holed, kelp standing up off her; the mast cylinder stays. `gw_crystals`
