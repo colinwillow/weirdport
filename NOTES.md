@@ -554,6 +554,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE CITY RING'S WAREHOUSE AND PARKED CARS ARE HIS ART (m666, T4q, `city_ring.glb`, `?cring=0`).**
+  - `cr_warehouse` sits at L(0, 0), turned psi and mirrored in z. The row's `B` checks a `wa` flag: every collider (the
+    walk-on roof, the stair steps, the dock) is kept with its drawing popped, and the drawn-only pieces are skipped.
+  - `cr_forklift` sits at its spot.
+  - At each lot car, `cr_car_paint` (`*white*` tinted car1 / car2 / car3) + `cr_car_trim` are turned p0, nose +X. The body
+    collider stays; the glass and tyres are not drawn.
+
 - **THE TOWN EDGE'S BILLBOARDS AND POWER POLES ARE HIS ART (m663, T4p, `roadside2.glb`, `?rside2=0`).** These are mirrored in z:
   - `rb_billboard` faces -v, turned pi when `Bd.face` is -1. It replaces the catwalk and the dark board; the code's sign plane
     and the leg colliders stay.

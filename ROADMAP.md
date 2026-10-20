@@ -477,7 +477,7 @@ different context window, let me know."*
   when Bd.face is -1 -- in place of the two legs, the catwalk and the dark board (the code's 'sb0' / 'sb1' plane stays on its face
   at 9.55; it adds braces, a catwalk rail, a ladder and three lamps). `rb_pole` at each power pole's top's (u, g, v) in place of
   the pole and its crossbar (insulators at +-.7 on the crossbar at 8.45, where the code's wires start; the wires stay the code's).
-- [ ] **T4q. Swap in the city ring's warehouse and parked cars** (`models/campaign/city_ring.glb`; no collision -- keep every box
+- [x] m666 **T4q. Swap in the city ring's warehouse and parked cars** (`models/campaign/city_ring.glb`; no collision -- keep every box
   that collides, the walk-on roof and the stair steps above all). In `buildCityRing`, the 'warehouse' row: `cr_warehouse` at
   L(0, 0) on y0, turned psi, in the row's (lu, lv) frame (Blender X = lu, +Y = lv; the front with the roll-up door, the open
   doorway at lu -2..0 and the dock is -Y), in place of the plinth, the walls, the door and its slats, the roof and parapet, the dock,
