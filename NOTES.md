@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m614 -- the camp's roof and fence as art (scenery window; ROADMAP T3u)
+
+`models/campaign/camp_roof.glb`, for the m489 block of `buildCamp`. The patchwork roof over the barrel circle: four leaning posts
+at the code's P4 (the +u pair .3 higher, as the code has them) under four sagging tarps in blue, orange, light blue and grey, roped
+at the posts. For the junk fence, an old panelled door with peeling paint and a brass knob, and a panel of uneven boards on two
+rails; the corrugated sheets from camp_extras and the tyre stack from roof_extras fill its other kinds. A herb tin and a galvanised
+bucket with a handle. Shipped unverified.
+
 ## m612 -- the rest of the camp as art (scenery window; ROADMAP T3t)
 
 `models/campaign/camp_extras.glb`, for what `buildCamp` still draws as boxes after `camp_kit` (m563). A pallet stood on edge, slats
