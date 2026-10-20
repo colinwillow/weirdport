@@ -530,6 +530,12 @@ different context window, let me know."*
   outline), scaled Z by y1 - y0 (built 2.1 x .7 x 1.0 from 0, the coping on top), in place of the stone box and the moss box (it has
   its own moss); `ot_step` at each step's (u, base, v) turned like its box (X along the stair's run), scaled Z by its height (built
   .55 x 2.0 x 1.0 from 0, a worn tread on top), in place of the stone box. Instance both: there are a lot of them.
+- [ ] **T4z. Swap in the dry dock's blocks, the quay's fenders and the ship's stair tower** (`models/campaign/dry_dock.glb`; no
+  collision -- keep every box that collides). In `buildWaterfront`, Blender X = u, +Y = v: `wd_keelblock` at each keel and bilge
+  block's (u, floor, v), scaled Z by hb - floor, in place of the 'block' box; `wd_fender` at each fender's (u, Y, v + .18) on the
+  river's edge (its face -Y toward the water; turn it for the piers' sides and ends like their boxes) in place of the 'rubber' box;
+  `wd_stairs` at (lu, Y, 50) in place of the landing, its four posts, the twenty steps and the two rails (built for deck - Y = 6.25,
+  the code's 20 risers of .3125; scale Z by (deck - Y) / 6.25 if that ever moves).
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

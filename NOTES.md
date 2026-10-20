@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m682 -- the dry dock's blocks, the quay's fenders and the ship's stair tower as art (scenery window; ROADMAP T4z)
+
+`models/campaign/dry_dock.glb`, for `buildWaterfront`. A keel block at the code's 1.4 x 1: a concrete footing under cribbed timbers
+and an oak cap, 1 m tall for the code to stretch to the 2.2 m it leaves under the hull; a quay fender at the code's 1.3 x .36 hung
+on two chains, scuffed; and the stair tower beside the dock -- a grated landing on four braced posts at 6.25 (the code's 20 risers
+of .3125), the twenty grated steps down along +v exactly where the code's step boxes are, and yellow rails up the flight and round
+the landing. Shipped unverified.
+
 ## m679 -- the orchard terrace's dry-stone walls and steps as art (scenery window; ROADMAP T4y)
 
 `models/campaign/orchard_terrace.glb`, for `buildOrchardTerrace`. A 2.1 m segment of dry-stone wall at the code's .7 thickness:
