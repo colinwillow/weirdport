@@ -644,6 +644,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m700 (F2e-4): THE GRIP ON THE CORE** (`mcoreGrip`, `MCORE.beams` / `mems` / `winM` / `order`). A beam (one additive cylinder each)
+  from Dump Tower's crown (y0 + N*H + 4) to every tower's roof; a magenta membrane (drawn only) across every street-crossing gap;
+  each tower's windows on their OWN material (`win0..9`) so the grip can turn one magenta and dim. `mcoreGrip` frees
+  round(n * done/6) towers, done = clamp(SAVE.ch - 1, 0, 6), farthest first; it runs at build and once a second in `mcoreStep`.
+  **`fbKey` now refuses a material with `userData.noBatch`**: `farmBatch` buckets by emissive HEX and keeps one representative
+  material per bucket, so recolouring a batched material later recolours everything else that shared its glow (the farm's lamps
+  share 0xffd890). Anything that recolours at runtime has to opt out. `placecheck` CORE grip:
+  `ch0 0/10 beams 10, ch2 2/10 beams 8, ch4 5/10 beams 5, ch7 10/10 beams 0`.
+
 - **m699 (T5f): THE MX TRACK'S START GATE AND HAY BALES ARE HIS** (`mx_extras.glb`, `HCBIKE.extG`, `?mxx=0`). `mx_gate` at at(-2.3, 0)
   on g0 + h, its turn worked out FROM THE FRAME VECTORS: X along at(-2.3, -w)->at(-2.3, +w), r = atan2(-dv, du); then, if its +z
   (mirrored Blender +Y, the plates' face) points against at(-1.3, 0) - at(-2.3, 0), r += PI. That way it does not matter whether

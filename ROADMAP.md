@@ -999,7 +999,7 @@ differ" table there, so no region feels like the last one.
     - [x] m689 **F2e-1** the core's towers: a packed cluster of skyscrapers round Dump Tower on the west ring, solid to one shared terrace level (Dump Tower's sky-garden floor), set back above it, sky-bridges between facing terraces, a fire escape up from the street, lit windows, roof tanks. GOD `core`.
     - [x] m694 **F2e-2** the way across: a sky-bridge from the nearest terrace into Dump Tower's sky garden, and street life at the towers' feet (lobbies, kiosks, a crossing, traffic islands) so the streets between them are a place, not gaps.
     - [x] m696 **F2e-3** the workers who keep it running: window cleaners on cradles down the faces, a lift engineer, street sweepers, a doorman per lobby -- people with a beat and lines.
-    - [ ] **F2e-4** the alien grip: beams from Dump Tower's crown to the towers' roofs, the core dim and its streets fenced while they stand; each region cured (chapter done) cuts one beam and lights a tower back up, the last at Chapter 6.
+    - [x] m700 **F2e-4** the alien grip: beams from Dump Tower's crown to the towers' roofs, the core dim and its streets fenced while they stand; each region cured (chapter done) cuts one beam and lights a tower back up, the last at Chapter 6.
     - [ ] **F2e-5** the horizon agrees: the distant skyline (`SKYLINE`) re-aimed or retired so what you see from the farm is the core you can walk to.
 - [ ] **F3 The rest of the grid and the fail states** (`LORE.md`): the projector, poltergeist and relay
   orbs; the EM tell (lights flicker, cars stall, radios hiss near the grid); the Hum; black triangles at
@@ -1952,3 +1952,7 @@ differ" table there, so no region feels like the last one.
   Town's blocks plus a tall cluster round the tower. It is packed, not tabled: towers take the nearest free dry ground with a
   5 m street between them. All of them share one terrace level at Dump Tower's sky-garden floor, which is what the sky-bridges
   join. The distant SKYLINE scenery still stands for now (F2e-5).
+- **m700 (F2e-4), the grip on the core:** the "streets fenced" part is a translucent magenta membrane across each crossing, with no
+  collider. A blocking fence would close off the cradles, the bridges and the fire escape before Chapter 1 has even sent you here.
+  The towers are freed in even steps across chapters 1-6 (SAVE.ch 2..7), the farthest from Dump Tower first. All of them are freed
+  once Dump Tower falls.
