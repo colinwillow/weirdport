@@ -113,6 +113,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE TRAILER PARK'S HOMES ARE HIS ART (m539, T2m, `HCTRAIL.glb`, `?tpark=0`).** `trailer_park.glb`: four trailers (2.96 x 2.7 x
+  11.2 with the hitch, door and windows on Blender -X, lattice skirt to -.8) plus `tp_dish`, `tp_chair`, `tp_flamingo`. Each
+  trailer is mirrored in z (Blender +Y = +v) and scaled z by R.len/10; **a side -1 trailer is mirrored in x as well, not turned**,
+  so its door stays at v - len*.1 by the porch. The body box stays as the collider (drawing popped); roof, stripe, windows and
+  door boxes go. His dish sits on the v 1 trailer's roof in place of that home's drawn cone; his chair replaces the porch
+  chair's drawing (its collider stays); a flamingo on each of the first two porches. Chair facing is a guess. `TRAILERS GLB FAIL`.
+
 - **THE MOTHERSHIP HAS SEVEN LOCKS (m538, F2b-5b, `GATE_TYPES.shipboard`, gate `ms_board`, `ISGAUNT.sacAt`).** THE BOARD DOOR --
   two brass leaves and a plate, MEMBERS OF THE BOARD -- in the west tube at uD - 10.5, between the rumble door and the lock room;
   `groups: ['suit']`. Found on the way, and what must not be redone:

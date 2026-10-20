@@ -119,7 +119,7 @@ different context window, let me know."*
   `bk_drum` at (u+1.2, v+1.1); `bk_trailer` at (pu+14, pv+1) turned .1; `bk_generator` at (pu-15, pv); `bk_tower` at (tu, tv) --
   replaces the legs, the deck, the three parapets, the corner posts and the roof (it adds X braces, a desk with the PA and mic, a
   stool and two loudspeaker horns on the roof). Faces: bike 700, canopy 130, trailer 444, tower 398, chest 214, drum 70, generator 106.
-- [ ] **T2m. Swap in the trailer-park homes** (`models/campaign/trailer_park.glb`, no collision file -- `buildTrailerPark` keeps every
+- [x] m539 **T2m. Swap in the trailer-park homes** (`models/campaign/trailer_park.glb`, no collision file -- `buildTrailerPark` keeps every
   platform, post, the walk, porch, awning, ramps, ladder, laundry and every collider). In the TRAILERS loop: draw
   `tp_trailer_<cream|tin|rust|red>` (by `R.col`) at (u + R.side*.4, v) on yp, in place of the body box, the roof, the stripe, the
   three windows and the door. It is 2.6 x 10 x 2.7 with its door and windows on Blender -X: for `R.side` +1 the walk is at -u, so
@@ -1447,3 +1447,4 @@ differ" table there, so no region feels like the last one.
 - **m534 (F2b-4) The aerial tram runs from a station on the grass BEHIND the tower to the sky garden**, not from the hill REGIONS names: there is no hill in the kit city to stand on (the 'hill' is a skyline backdrop). It is the way in that skips the lobby's guards -- the sky garden is below the executive band, so it gets you to floors 0-7 by the stair without a badge. The glider out is Vee, a courier pilot on the helipad: wear her (the DNA gun) and jump.
 - **m535 (F2b-5a) Mr. Dump is fought in the PENTHOUSE, not the boardroom** -- he lives there and the CEO's badge is what opens it, so the last door is the climax. The Mothership's quests keep their ids (`ch6`, `ch6b`, `ch6c`) and only their `ch` moved to 7, so a save that finished the game still reads `qdone:ch6c`; the tower's quests are `tower` / `towerb`.
 - **m538 (F2b-5b) The seventh lock (THE BOARD DOOR, a suit's) is between the rumble door and the neural lock, not after the lock**, and the file's hall has a SAC that fills your juice tank as you walk through: seven locks is seven forms at 20 juice each, more than a 100 tank. Chapter 6 now has a step that takes a lobby guard's sample, so every player reaching the ship has the suit's face.
+- **m539 (T2m) A side -1 trailer is MIRRORED in x, not turned by pi** as T2m said: turned, its door (Blender Y -1) lands at v + len*.1, away from the porch, awning and steps the code builds at v - len*.1. Mirrored, the door stays where they are.
