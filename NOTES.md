@@ -218,6 +218,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **UPLIFT'S SENTRY TURRETS ARE HIS ART (m567, T2z, `WFRONT.turG`, `?turret=0`).** `tu_base` in `grp`, `tu_yoke` in `yoke`, `tu_gun` in
+  `gun` (its origin the trunnion, where `gun` sits at .45), each cloned unturned at its group's origin -- so the turning and pitching,
+  the lens and its glow, the laser, tracer and flash are untouched. `tu_panel` at each `T.panel`, mirrored in z and turned
+  atan2(-du, -dv) off the turret: its screen (Blender -Y, local -z) faces away from its gun. The posts' and the panel's colliders
+  stay. `TURRET GLB FAIL` in the chip if it does not load.
+
 - **OLD TOWN'S CAMP IS HIS KIT (m565, T2y, `OTCAMP.glb`, `?camp=0`).** In `tent`: `oc_tent_paint` (cloned, tinted the tent's own
   material) and `oc_tent_trim`, scaled (L/2.8, H/1.5, -W/2.3) -- the minus is the z mirror -- and turned `rot`; `oc_barrel` at the
   fire (the fire point unchanged), `oc_sofa` turned r (checked: its front, Blender +Y, points within ~40 deg of the barrel, so no

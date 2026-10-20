@@ -206,7 +206,7 @@ different context window, let me know."*
   `oc_barrel` at (0, 0) in place of the barrel cylinder (the fire point stays); `oc_sofa` at (3.6, -1.4) turned r in place of its
   four boxes (its back is on Blender -Y: if it ends up facing away from the barrel, add pi); `oc_cart` at each cart in place of its
   basket and legs; `oc_shack` at (u0, v0) in place of its three walls, roof, stovepipe. 55+120 / 614 / 198 / 386 / 304 faces.
-- [ ] **T2z. Swap in the sentry turret** (`models/campaign/turret.glb`, no collision file -- `wfTurrets` keeps the posts and the
+- [x] m567 **T2z. Swap in the sentry turret** (`models/campaign/turret.glb`, no collision file -- `wfTurrets` keeps the posts and the
   panel's collider; `wfTurretParts` keeps the lens and its glow, the laser, tracer, flash and all the aiming). Each root is built in
   its THREE.Group's own frame (three y up, the muzzle along +z), so add it at (0, 0, 0) in that group unturned: `tu_base` in `grp`
   in place of the base cylinder; `tu_yoke` in `yoke` in place of the yellow box; `tu_gun` in `gun` (its origin is the trunnion,
@@ -1538,3 +1538,4 @@ differ" table there, so no region feels like the last one.
 - **m543 (F2c-1) The Gorge is its OWN landmass past the River Islands (+z, centre ~(0, 560))**, not a cut through Hollow Creek's land: Hollow Creek already has its gorge (the trailer park, the mill's flume), and between the creek and the islands there is only ~45 m of water. Its falls drop straight into the sea, so the fjord below them is the sea's own water.
 - **m551 (F2c-2) The way into the cave behind the falls is DOWN a chimney from the upper river**, not along a ledge from the fjord: the fjord is sea water 28 m down between sheer walls and there is no swimming yet. The diver's underwater way in is F2c-5. No falls sound: there is no water recording in the repo.
 - **m556 (T2u) The shut cart keeps its awning up** for now: the awning is part of `fc_cart_paint`, so it cannot be hidden on its own. A separate `fc_cart_awning` root in `food_cart.glb` would let the shut cart drop it (one line in `buildCarts`).
+- **m567 (T2z) Each turret's control panel turns its screen AWAY from its own gun**, since nothing in `WTUR` says where the walkway is: you hack it from the side the gun is not on.
