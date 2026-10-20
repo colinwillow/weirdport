@@ -40,7 +40,7 @@ const server = http.createServer((q, r) => {
     // THE SHIPPED TEXT, with one handle spliced in beside the game's own: the things the driver reads and writes
     const s = body.toString(), k = 'window.melee = window.mel = {';
     if (!s.includes(k)) { console.error('play: no mel handle in index.html'); process.exit(1); }
-    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE }; ' + k);
+    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK }; ' + k);
   }
   r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
 });
@@ -53,7 +53,7 @@ const page = await browser.newPage({ viewport: { width: 640, height: 360 }, devi
 // row that differs between builds is the build's doing; `--seed=N` for another
 await page.addInitScript(seed => { let a = seed >>> 0; Math.random = () => { a = (a + 0x6D2B79F5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }, SEED);
 const errs = []; page.on('pageerror', e => errs.push(e.message.split('\n')[0]));
-page.on('console', m => { const t = m.text(); if (/\[melee\] (quest|frame|FRAME)/i.test(t)) errs.push(t.slice(0, 160)); });
+page.on('console', m => { const t = m.text(); if (process.env.PLAYLOG && (/warn|error/.test(m.type()) || /FAIL|spawn|wreck|vehicle/i.test(t))) console.log('   [page] ' + t.slice(0, 200)); if (/\[melee\] (quest|frame|FRAME)/i.test(t)) errs.push(t.slice(0, 160)); });
 let code = 0;
 try {
   // A FRESH SAVE: a new browser context has no `mel.*` keys, so `SAVE` is a new game, chapter 0, and the crash spawn takes him
@@ -66,7 +66,7 @@ try {
     if (!draw) S.renderer.render = () => {};
     window.__crash = m => { (window.__crashes = window.__crashes || []).push(String(m).split('\n').slice(0, 2).join(' | ')); };
     const P = S.player.pos, c = S.CRASH.at;
-    return { pos: [P.x, P.y, P.z].map(v => +v.toFixed(1)), ch: S.SAVE.ch, crash: c ? [c.x, c.z].map(v => +v.toFixed(1)).join(',') + (S.CRASH && S.CRASH.model_ok ? ' (his model)' : ' (code-built)') : null, bodies: S.DUMMIES.length, notes: (S.MISSING || []).join(', ') };
+    return { pos: [P.x, P.y, P.z].map(v => +v.toFixed(1)), ch: S.SAVE.ch, crash: c ? [c.x, c.z].map(v => +v.toFixed(1)).join(',') + (S.CRASH && S.CRASH.model_ok ? ' (his model)' : ' (code-built)') + ' | spawned ' + S.CRASH.spawned + ' inTK ' + S.inTK() + ' ch ' + S.SAVE.ch + ' inTown ' + S.SAVE.flags.inTown + ' | trucks ' + (S.FVEH ? JSON.stringify(S.FVEH.draws) : '?') : null, bodies: S.DUMMIES.length, notes: (S.MISSING || []).join(', ') };
   }, { draw: DRAW, fps: FPS });
   console.log(`== play  tkit, fresh save (chapter ${head.ch}), seed ${SEED}  spawn ${head.pos}  crash ${head.crash}  ${head.bodies} bodies  ${el()}` + (head.notes ? `  NOTE: ${head.notes}` : ''));
 

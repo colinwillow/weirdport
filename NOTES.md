@@ -17,6 +17,19 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **FRAMES RUN DURING `init`'S AWAITS, AND ONE OF THEM WOKE A NEW GAME IN THE CITY (m476, `CRASH.placed`).** T2b put two model
+  loads (the farm pickup and tractor, `vehModel`) after `buildCrash` -- and `crashStep` runs as soon as `CRASH.at` exists, with
+  him still at the city's origin (the spawn comes at the END of init). Its "walked into the city once" test marked `inTown`,
+  and `crashSpawn` then read a fresh save as a returning one: `spawn 0,0,0`, Chapter 0's first step passed by standing next to a
+  Clancy who was never moved to the wreck. That test now waits for `CRASH.placed`, set right after the spawn decision.
+  **On a phone, where a load takes seconds, this is the likelier case, not the rarer one.** `npm run play`'s header prints
+  `spawned` / `inTown` now, and `PLAYLOG=1` streams the page's warnings and errors. **ANY per-frame step that WRITES THE SAVE
+  must ask whether init has finished** -- a frame mid-init sees a half-built world and a player who has not been placed.
+- **T2b: his farm pickup and tractor** (`FVEH.files`, `vehModel`): each GLB loaded once in init, cloned per use, MERGED PER
+  MATERIAL (pickup 44 meshes -> 10 draws, tractor 36 -> 7), `FrontSide` but the glass, inside a `YXZ` group so `vehPlace`'s yaw
+  then pitch is unchanged. Same model space as the boxes (forward +z, origin on the ground), so `vehStep` and the push-out
+  (`hw` / `hl`) needed nothing. The boxes are the fallback.
+
 - **THE CRASH WRECK IS HIS MODEL (m474, T2a, `crashModel`, `CRASH.model`).** `models/campaign/crash_wreck.glb` (3,140 tris, 46
   meshes, draco + `KHR_materials_emissive_strength`) and `crash_wreck_collision.glb` (3 boxes: `col_bld_wreck_tail`, `_nose`,
   `_bow_wave`), loaded in `init()` just before `buildCrash`, which then skips its hull, rim, dome, glow, panels, bow wave and two

@@ -41,7 +41,7 @@ different context window, let me know."*
   nose ploughed in), drop the code-built hull / rim / dome / glow / torn panels / bow wave and the two wreck colliders, take
   colliders from the collision file, and read `CRASH.at` (fire, fire2, smoke, hatch, you) off its empties. Keep the furrow mounds,
   clods and scorch discs. The scenery window owns the art in `models/campaign/`; this is code only.
-- [ ] **T2b. Swap in the farm pickup and tractor** (`models/campaign/farm_pickup.glb`, `farm_tractor.glb`). In `buildVehicles`
+- [x] m476 **T2b. Swap in the farm pickup and tractor** (`models/campaign/farm_pickup.glb`, `farm_tractor.glb`). In `buildVehicles`
   (and wherever `vehTractor()` / `vehPickup()` are called, the parked barnyard tractor included): load each GLB once, clone it per
   use, and use the clone where the merged box mesh was -- same model space (forward +z, origin on the ground at the footprint
   centre), so `vehPlace`, `vehStep` and the hw/hl push-out keep working unchanged. Fall back to the boxes if the file fails.
@@ -1285,4 +1285,6 @@ differ" table there, so no region feels like the last one.
 - **m474: his wreck is loaded BEFORE `buildCrash` and the code-built hull is its fallback** (a failed load is the old wreck, not an
   empty field; `?wreck=0` is the A/B). His `scorch` mesh and the code's scorch discs both draw for now (the README keeps the
   code's); if they fight, the code's go. The core's glow pulse is scaled to his own emissive strength rather than overwritten.
+- **m476: his pickup and tractor are merged per material at load** (44 / 36 meshes -> 10 / 7 draws) and made single-sided but the
+  glass (every material came `doubleSided`). The boxes are the fallback; `?vehglb=0` is the A/B.
 
