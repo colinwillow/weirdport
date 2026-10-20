@@ -17,6 +17,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE WHOLE CAMPAIGN PLAYS THROUGH HEADLESS (m486, F0b done).** Chapter 6: the tether's pod (`shipPodStep`: he is put on its top while
+  it is down -- the thermal flight up to it is the one step not done with a thumb's inputs -- held still while it rises, off
+  to the hull's middle at its floor), Benny, the bridge, **the six locks each in the form its gate type names** (the gate driver
+  reads `GATE_TYPES[type]`: `ride` the biker on his bike, `groups` a form of that group, `crowd` the city's, `need` a stem or a
+  role's name -- and approaches at the gate's OWN level, 336 m up in the ship, not the ground), the shaft, the seven-down
+  boss in 47 s, the end card. Chapter starts carry the engineer's and Skye's forms (`FORMS_BY`). **Every chapter, 0 to 6,
+  passes `npm run play chN`**; run the ones a build touches. Soft spots: the islands' gap is wind-dependent on some seeds; big
+  bosses near water can take most of their 200 s. **A ROADMAP split once dropped an item that shared its line** (F0b-2b-5) --
+  split one item per line.
+
 - **CHAPTER 5 PLAYS THROUGH, AND A BODY NO LONGER WALKS INTO NOTHING (m485).** The keeper, cured, stood on the lighthouse rock's
   edge reading `y 3.6`, `y -1000`, `y 3.6` -- his idle walk stepped off into the sea's void and the m484 put-back fetched him
   back, every frame: there and not there, so `talk.near` never held him. **The one place a body is told to travel**
