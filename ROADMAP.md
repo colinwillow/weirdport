@@ -63,6 +63,15 @@ different context window, let me know."*
   dressing the style guide's Chapter 0 asks for: 3-4 `cs_plate` (torn hull plates) and 2 `cs_strut` along the last third of the
   furrow, ONE `cs_pod` (cracked cargo pod, purple glow -- a natural pickup spot) off to one side, 3 `cs_fence` on the crater rim
   where the furrow crossed the field's fence line, and `cs_grass` tufts round the edges. Colliders: berm, clod_a, plate, pod, fence.
+- [ ] **T2f. (m514) Swap in the barn and silo** (`models/campaign/farm_barn.glb`, no collision file -- `buildFarm` keeps every collider).
+  `fb_barn`: Blender X = the frame's u, Blender +Y = +v (the loft door), so the big doors face -v as now; origin at (bu, bv) on the
+  FLOOR y0 (its plinth runs down to -1.2, so it buries itself on a slope). It is drawn at buildFarm's exact numbers (10 x 14, eaves
+  5.0, ridge 7.4, walls .3, roof .6 overhang, front door 4 x 3.6 with the leaves open at +-4.0, loft door 3 wide 2.9..4.6, hook beam
+  over it for the rope at v D2+.75). So: in `buildFarm` keep every `bx` of the SHELL as a collider but stop DRAWING it (the plinth,
+  the walls, the door leaves and frames, the corner trims, the gables, the two roof planks and their `quad`s) and put the model there
+  instead. Keep drawn: the loft floor, the bale stair, the loft bales, the outside hay stack, the rope, the lean-to, the paddock.
+  `fb_silo`: origin at its foot centre (u bu+W2+3.4, v bv+D2+1.5), r 2.4/2.3, 11 m drum + red dome; replaces the drum, dome and
+  rings; its ladder, landing and rails stay code. 1,392 + 414 faces, one mesh each (11 and 5 materials).
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

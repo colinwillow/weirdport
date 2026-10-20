@@ -5,6 +5,17 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m514 -- the barn and silo as art (ROADMAP T2f)
+
+Gristle Farm's barn is the first building on the farm you see and it was red boxes. `models/campaign/farm_barn.glb` is the shell
+at `buildFarm`'s exact numbers -- so the loft, the bale stair, the rope and the roof he walks on all still line up with no
+collider moved: a stone plinth with proud stones, board-and-batten walls (a batten every .7 m, which is what makes it read as a
+barn from the field), white corner boards, eave band and a string course at the loft floor, the doors open with their X braces,
+the loft door with its leaf swung out and the hook beam the rope hangs from, a round gable vent, shingle courses with mossy ones,
+a ridge cap, a weathervane, gutters, a downpipe, a lamp and a patched board. The silo: hoops, rust streaks, a chute, a red dome.
+**The first roof came out flipped** -- built as boxes and then rotated about the ridge, and a mirror for the far side reversed the
+winding; the courses are laid from points on the slope now (`slab`), with no rotation anywhere. Shipped unverified.
+
 ## m495 -- the crash-site kit (scenery window, art only; the swap is ROADMAP T2e)
 
 The detail pass's crash site. The wreck itself went in at m474; what was left round it was code: faceted berm ellipsoids over
