@@ -133,6 +133,13 @@ different context window, let me know."*
   the bracing bars, the platform, the cab and the boom (it adds a slew ring, a railed platform, a counterweight and a grapple on its
   cable); `hm_logtruck` at (-21, 6) -- replaces the bed, cab and chassis boxes (the five logs stay); `hm_watertower` at (9, v0-4) --
   replaces the legs, the tank cylinder and the cone (staves, hoops, a ladder). 1,530 / 500 / 1,038 / 849 faces.
+- [ ] **T2o. Swap in the shipping container** (`models/campaign/container.glb`, no collision file -- `buildWaterfront` keeps the
+  column colliders, crate stairs and ladders). Two roots, origin at the BOTTOM CENTRE, Blender X = the block's u (CW 2.44), Y = its v
+  (CL 12.2), height CH 2.6; the doors are on +Y, so a box whose doors face `e` = -1 turns by pi. In the yard loop, instead of the
+  painted `bx` per container and its two door lines and two bars: ONE InstancedMesh of `wf_container_body` (a single white material:
+  `setColorAt` each instance with its c0..c8 paint) and ONE of `wf_container_trim` (corner posts, castings, rails, locking bars,
+  hinges -- dark steel, not tinted), each instance at (cu, cv, Y + l*CH) turned Bk.yaw + yj (+pi for e = -1). The three STRAYS use
+  it too. ~330 boxes x 598 faces in two draw calls.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

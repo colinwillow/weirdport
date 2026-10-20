@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m540 -- the shipping container as art (scenery window; ROADMAP T2o)
+
+The yard's ~330 containers were painted boxes with two door lines. `models/campaign/container.glb` is a real one at the code's
+2.44 x 12.2 x 2.6: trapezoid corrugation down both long sides and the blind end, two door leaves with swages, and in a separate
+root the unpainted steel -- corner posts, castings, top and bottom rails, four locking bars with cams and handles, hinges, a data
+plate. **Two roots on purpose**: the paint is ONE white material so a single InstancedMesh carries every colour through
+`setColorAt`, and the trim never takes the tint -- so the whole yard stays two draw calls however many boxes it has. Shipped unverified.
+
 ## m537 -- the mill's machines as art (scenery window; ROADMAP T2n)
 
 The mill SHED had its pass at m499; the machines round it were still primitives. `models/campaign/mill_kit.glb`: the TEEPEE
