@@ -625,6 +625,10 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m690 (T5b): THE COUNTER-PROTEST CAMP IS HIS** (`rally_camp.glb`, `HCRALLY.campG`, `?rcamp=0`). One `campPlace` of `rc_camp` at the
+  camp frame's origin (mirrored, turned `th` with the frame) in `buildRally`; the four posts and the tarp are not drawn, and the
+  cooler's and the chair's colliders stay with their draws popped. The placards are blank: nothing writes on them yet.
+
 - **m689 (F2e-1): THE CORE** (`MCORE`, `buildMetroCore`, GOD `core`). Towers round Dump Tower in ITS frame (`DTOWER.frame`), PACKED
   rather than tabled: centres on a 2 m lattice over u -90..90, v -34..34, nearest first (v weighted 1.6), each taking the first spot
   whose footprint is dry (> sea + .8 at its corners and middle), outside Old Town's rect, level within 3 m, clear of every non-dyn

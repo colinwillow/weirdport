@@ -541,7 +541,7 @@ different context window, let me know."*
   `ss_scaffold` at (su, floor, 45) in place of the 22 standards, the two lifts' boards, the top deck and the guard rail -- every
   standard where the code's are (v 30..60 every 3, u su +- 1.4, to top + 1.1), the lifts at 3.8 and 7.6, the deck at top
   (floor + 10.95), toe boards, X-braces on the outer face. Built for D.rise 2.2 and S.depth 9.
-- [ ] **T5b. Swap in the counter-protest camp** (`models/campaign/rally_camp.glb`; no collision -- keep the cooler's and the chair's
+- [x] m690 **T5b. Swap in the counter-protest camp** (`models/campaign/rally_camp.glb`; no collision -- keep the cooler's and the chair's
   boxes). In `buildRally`'s camp, Blender X = u, +Y = v in its frame (turned th like its boxes): `rc_camp` at (0, g0, 0) in place of
   the four posts, the tarp, the cooler and the chair -- all at the code's places, plus guy ropes and pegs, a string of bunting in
   the Pearl's pastels along the front and two placards on sticks (blank card for a canvas if the code wants to write on them).
