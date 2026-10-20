@@ -309,6 +309,13 @@ different context window, let me know."*
   place of the 'bed' and 'soil' boxes AND the ico plants -- the plants are in the model. `rg_tank` at the tank's corner (the 2.2 m
   stand, legs to 1.2, the drum to 3.0, lid to 3.1) in place of the four legs, the steel box and the 'tank' cylinder. `rg_pergola`
   at the pergola's (a, b, y) in place of its four posts, seven slats AND the bench box -- the bench is in it at +.4 in b.
+- [ ] **T3q. Swap in the kit town's roof extras** (`models/campaign/roof_extras.glb`, no collision -- these were never colliders). In
+  `kgenMake`'s `S.extra` block, through the same `add` (so they ride `Bm` and merge per material): Blender (x, y, z) is the block's
+  (u, -v, h). `garden`: `rx_bed` at (u, roofH, v) in place of the wood box, the soil box and the three ico leaves (the plants are in
+  it); `rx_solar` at (cu - .9 + k * 1.8, roofH, -D + 1.1) in place of the tilted 'solar' box and its post -- built tilted the same
+  way, the post .3 toward +v. `tank`: `rx_tank` at (W - 1.6, H, -D + 1.6) in place of the drum, the cone and the four legs.
+  `vents`: `rx_vent` at each vent's (u, roofH, cv) in place of the 'vent' box and its 'glow' lid. `scrap`: `rx_tyres` at
+  (W - 1.2, roofH, -1.2) in place of the four tori.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

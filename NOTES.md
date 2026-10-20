@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m604 -- the kit town's roof extras as art (scenery window; ROADMAP T3q)
+
+`models/campaign/roof_extras.glb`, for the `S.extra` dressing in `kgenMake`. The co-op's raised bed (1.1 x 2.2 x .45, three bushy
+plants) and its solar panel (1.6 x 1.0, four cells, aluminium frame, tilted as the code tilts it, on a braced post); the water
+tower's stave tank with three hoops and a cone roof on four braced legs; the factory's louvred vent with its glowing grille; and the
+garage's stack of four tyres. All at the code's numbers, origins on the roof. No collider. Shipped unverified.
+
 ## m602 -- the Pearl's roof gardens as art (scenery window; ROADMAP T3p)
 
 `models/campaign/roof_garden.glb`, for `pearlGarden`. Two raised beds of lapped boards at 2.0 x 0.9 x 0.5 (the code stretches X to
