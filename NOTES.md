@@ -466,6 +466,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE PIRATE RADIO'S MAST, DESK, CHAIR AND FOAM ARE HIS ART (m640, T4f, `radio_kit.glb`, `?rkit=0`).** These are mirrored in
+  z:
+  - `rd_mast` replaces the leg rods and braces; the foot colliders, red lights and guy wires stay.
+  - `rd_desk` is **turned pi, because his monitors are on +Y (+z) and the wall they belong against is at bz0 (-z)**. It
+    replaces the mixing desk, knobs and mic; the desk collider stays.
+  - `rd_chair` stands .85 in front of the desk.
+  - `rd_foam` stands at the nine tiles, unturned; his wedges are on +Y, into the room.
+  The booth walls, window and ON AIR sign are still the code's.
+
 - **THE LONG FLUME IS HIS TROUGH, INSTANCED (m637, T4e, `gorge_flume.glb`, `?gflume=0`).** `fl_trough` + `fl_water` are one
   InstancedMesh per material across every 2 m segment. Each matrix is the segment's midpoint, Euler(atan2(dy, L), psi + pi, 0,
   'YXZ') and z scaled by the segment's slope length / 2. **No mirror in an instance matrix**: his +Y is glTF -z, and the

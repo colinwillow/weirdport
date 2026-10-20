@@ -415,7 +415,7 @@ different context window, let me know."*
   width 1.5 = 2 hw, walls .6, a yoke every metre), in place of the two plank `pearlSeg`s, the water `pearlSeg` and the two wall
   `pearlSeg`s; the trestle posts and cross beams stay the code's. `fl_head` at (bu, y0, bv) with +Y down the flume (psi =
   atan2(ux, uz)), in place of the deck box, the side rails and the tank cylinder (the legs stay the code's).
-- [ ] **T4f. Swap in the pirate radio** (`models/campaign/radio_kit.glb`; no collision -- keep the booth's wall boxes and the three
+- [x] m640 **T4f. Swap in the pirate radio** (`models/campaign/radio_kit.glb`; no collision -- keep the booth's wall boxes and the three
   leg-foot boxes; the booth's plywood walls, its window and the ON AIR sign stay the code's). In `buildRadio`, Blender X = x,
   +Y = +z, origins on y: `rd_mast` at (mx, y, mz) in place of the three leg rods and the brace boxes (its legs are the code's
   `leg(k, h)`; the two red lights stay the code's spheres -- it has brackets for them at 7 and 14.15 -- plus a whip and a dish);
