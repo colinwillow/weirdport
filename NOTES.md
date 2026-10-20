@@ -351,6 +351,18 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE KIT TOWN'S ROOF EXTRAS ARE HIS ART (m607, T3q, `roof_extras.glb`, `?rx=0`).** In `kgenMake`'s `S.extra` block, these
+  replace the drawn ones:
+  - `rx_bed` (garden beds)
+  - `rx_solar` (solar panels)
+  - `rx_tank` (on the roof at H)
+  - `rx_vent` (vents)
+  - `rx_tyres` (scrap)
+  His (x, y, z) is the block's (u, -v, h), which is already glTF's own axes, so **nothing is mirrored**. Each piece goes through
+  `glbInto` per material with Bm times its offset into `artX`, and is merged by `farmMerge` like `extra`. **`farmMerge` keeps
+  only position and normal**, which is fine for his flat-coloured materials; a textured one would come out one colour. The
+  skipped garden leaves still spend their `r()` rolls. None of these were ever colliders. A missing file says `RX GLB FAIL`.
+
 - **THE PEARL'S ROOF GARDENS ARE HIS ART (m605, T3p, `roof_garden.glb`, `?rgarden=0`).** In `pearlGarden`, mirrored in z and
   turned `W.yaw` like the boxes:
   - `rg_tank` stands at the tank's corner.

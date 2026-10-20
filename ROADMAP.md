@@ -309,7 +309,7 @@ different context window, let me know."*
   place of the 'bed' and 'soil' boxes AND the ico plants -- the plants are in the model. `rg_tank` at the tank's corner (the 2.2 m
   stand, legs to 1.2, the drum to 3.0, lid to 3.1) in place of the four legs, the steel box and the 'tank' cylinder. `rg_pergola`
   at the pergola's (a, b, y) in place of its four posts, seven slats AND the bench box -- the bench is in it at +.4 in b.
-- [ ] **T3q. Swap in the kit town's roof extras** (`models/campaign/roof_extras.glb`, no collision -- these were never colliders). In
+- [x] m607 **T3q. Swap in the kit town's roof extras** (`models/campaign/roof_extras.glb`, no collision -- these were never colliders). In
   `kgenMake`'s `S.extra` block, through the same `add` (so they ride `Bm` and merge per material): Blender (x, y, z) is the block's
   (u, -v, h). `garden`: `rx_bed` at (u, roofH, v) in place of the wood box, the soil box and the three ico leaves (the plants are in
   it); `rx_solar` at (cu - .9 + k * 1.8, roofH, -D + 1.1) in place of the tilted 'solar' box and its post -- built tilted the same
