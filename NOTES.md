@@ -159,6 +159,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE CAVE BEHIND THE FALLS (m551, F2c-2, `buildGorgeFalls`, `GORGE.cave/caveY/slab`, GOD `gzcave`, flag `gz:cave`).** A
+  heightfield cannot make a cave, so the river's last 12 m before the lip run over a ROCK SLAB (10.5..13 m, its top the bed) and
+  `gzBed` drops to -.6 under it: the canyon's own walls are the cave's sides and the step back up to 13 is its back wall. **Every
+  reader of `gzBed` above the cave now wants `max(gzBed, upper)`** -- the river's ribbon and the falls' top went to y -.05 until
+  they did. A chimney (the slab cut in four round a 1.6 m hole, +a side, clear of the water) with `pearlLadder` down to the floor;
+  a cache at the back (crate, tin box, a lantern with a point light). Spray: 140 motes in one `Points` rising in a ring at the
+  foot (`gorgeStep`, only within 140 m), and a six-band torus rainbow in it facing the rim. The gorge features use a `farmFrame`
+  at the gorge's origin turned to its bearing, where the frame's u is -a. `places` gzcave ground -0.60.
+
 - **THE TRANSIT SHED AND THE TUG ARE HIS ART (m549, T2r, `WFRONT.shedG`, `?shed=0`).** `wf_shed` at (Sh.u, Sh.v) on Y and `wf_tug` at
   pier 2's (w/2 + 2.9, -2) on sea + .9 turned P.psi, both mirrored in z -- MEASURED off the shed: its canopy reaches glTF z +14.6
   (Blender -Y), so mirrored it is over the doors on the quay side (-v). `ks` keeps the body, roof and vent colliders and the tug's

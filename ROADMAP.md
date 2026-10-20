@@ -578,7 +578,7 @@ differ" table there, so no region feels like the last one.
   - [ ] **F2c The Gorge** (7): falls, the stilt village, the scuba diver; between Hollow Creek and the
     River Islands, down the log flume.
     - [x] m543 **F2c-1** the land: its own landmass past the islands (+z), a plateau ~24 m, the upper river in a canyon at 13 m, THE FALLS (15 m, straight into the sea), the fjord below them out to the coast, pines. GOD `gzfalls`, `gzriver`.
-    - [ ] **F2c-2** the caves behind the falls (a ledge path behind the sheet, a cave with a way up to the upper river), spray, rainbows in it, the falls' sound.
+    - [x] m551 **F2c-2** the caves behind the falls (a ledge path behind the sheet, a cave with a way up to the upper river), spray, rainbows in it, the falls' sound.
     - [ ] **F2c-3** the stilt village: houses on stilts along the fjord's wall, walkways and rope bridges between them and across, fishers and river guides.
     - [ ] **F2c-4** the dam gates upstream: shut them and the falls dry to a trickle and the cave mouth opens; open them and they roar.
     - [ ] **F2c-5** the scuba diver and the underwater caves under the fjord; the scuba form swims and breathes.
@@ -1488,3 +1488,4 @@ differ" table there, so no region feels like the last one.
 - **m539 (T2m) A side -1 trailer is MIRRORED in x, not turned by pi** as T2m said: turned, its door (Blender Y -1) lands at v + len*.1, away from the porch, awning and steps the code builds at v - len*.1. Mirrored, the door stays where they are.
 - **m542 (T2o) Containers whose doors face +v are TURNED by pi, never mirrored** -- a negative scale inside an InstancedMesh's matrix flips that instance's winding and the box draws inside out.
 - **m543 (F2c-1) The Gorge is its OWN landmass past the River Islands (+z, centre ~(0, 560))**, not a cut through Hollow Creek's land: Hollow Creek already has its gorge (the trailer park, the mill's flume), and between the creek and the islands there is only ~45 m of water. Its falls drop straight into the sea, so the fjord below them is the sea's own water.
+- **m551 (F2c-2) The way into the cave behind the falls is DOWN a chimney from the upper river**, not along a ledge from the fjord: the fjord is sea water 28 m down between sheer walls and there is no swimming yet. The diver's underwater way in is F2c-5. No falls sound: there is no water recording in the repo.
