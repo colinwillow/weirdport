@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m536 -- the trailer-park homes as art (scenery window; ROADMAP T2m)
+
+`models/campaign/trailer_park.glb`. Each single-wide was one box with a stripe; now it is a real one: a body swept from a
+profile with rounded roof edges, vertical siding ribs, two stripes, framed windows with tin awning lips at the code's own spots,
+a door with a window and a knob, a meter box, a roof AC unit and a vent, end windows and corner trims, lattice skirting down to the
+ground, the A-frame hitch on its jack and two propane tanks. Four paints (cream and tin with a red stripe, rust and red with
+cream). Yard props: a satellite dish, a striped lawn chair, a pink flamingo. Shipped unverified.
+
 ## m531 -- the bike pits and the announcer's tower as art (scenery window; ROADMAP T2l)
 
 `models/campaign/bike_pits.glb`, at buildBikeTrack's numbers. An MX BIKE in the gang's three colours (knobbly tyres, spoked

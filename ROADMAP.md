@@ -119,6 +119,13 @@ different context window, let me know."*
   `bk_drum` at (u+1.2, v+1.1); `bk_trailer` at (pu+14, pv+1) turned .1; `bk_generator` at (pu-15, pv); `bk_tower` at (tu, tv) --
   replaces the legs, the deck, the three parapets, the corner posts and the roof (it adds X braces, a desk with the PA and mic, a
   stool and two loudspeaker horns on the roof). Faces: bike 700, canopy 130, trailer 444, tower 398, chest 214, drum 70, generator 106.
+- [ ] **T2m. Swap in the trailer-park homes** (`models/campaign/trailer_park.glb`, no collision file -- `buildTrailerPark` keeps every
+  platform, post, the walk, porch, awning, ramps, ladder, laundry and every collider). In the TRAILERS loop: draw
+  `tp_trailer_<cream|tin|rust|red>` (by `R.col`) at (u + R.side*.4, v) on yp, in place of the body box, the roof, the stripe, the
+  three windows and the door. It is 2.6 x 10 x 2.7 with its door and windows on Blender -X: for `R.side` +1 the walk is at -u, so
+  place it unturned; for -1 turn it by pi. Scale its Y by R.len / 10. Door at Y -1.0 and windows at 0, +-3 -- the code's own
+  -len*.1 and k*len*.3 at len 10. Its lattice skirt runs to -.8 under the floor. Props: `tp_dish` on the dish-and-flag trailer
+  (v 1), `tp_chair` replacing the porch chair box, a `tp_flamingo` or two on the platforms. 1,222 per trailer; props 68-106.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
