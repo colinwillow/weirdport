@@ -638,6 +638,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m697 (T5e): THE TRAILER PARK'S PORCHES AND AWNINGS ARE HIS** (`trailer_porch.glb`, `HCTRAIL.porchG`, `?tporch=0`). Per trailer,
+  `tpc_porch` at (pu, py) and `tpc_awning` at (u - side * .9, yp), both at v - len * .1, `campPlace`d (mirrored in z) and ALSO
+  mirrored in X on side +1 (`scale.x = -1`): his +X points from the trailer toward the walk, and on side +1 the walk is at -u.
+  The porch's collider stays; the tin box and its two posts are not drawn.
+
 - **m696 (F2e-3): THE CORE'S WORKERS** (`MCORE.cradles`, `mcoreStep`, `MCORE.DOOR`). Two WINDOW-CLEANING CRADLES on the sea face (+v)
   of the two towers nearest Dump Tower, each a `BDYN` box (turned with the frame: `cs = cos th`, `sn = -sin th`, the ladder's
   convention) going street <-> terrace on its own at `cradleV` 1.1 m/s, `cradleWait` 7 s at each end; standing on one carries you
