@@ -26,6 +26,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE TRESTLE, A PLACE ON THE WAY -- AND m502 HAD PUT A PLANTER ON A TURRET'S PANEL (F1-RT1, m509, `buildFreight`,
+  `buildWaterfront`).** On the freight line: a signal mast every 45 m on the +u side (red/green lamps alternating, a 'beam'
+  bracket off the trestle), a milepost every 30 m on the -u side, and halfway a railed refuge cantilevered off +u at rail
+  height on three struts (solid, its inner edge .25 m off the cars' boxes) with a tool chest, a cable coil, a bucket and a
+  rod, three gulls on the rail. New GOD place `frrefuge`; `places` needs every non-farm place listed in `offLand`'s
+  exceptions (tools/placecheck.mjs) and refuses an `hc...` id off Hollow Creek's own land, so it is `fr...` and listed.
+  **`places` also caught `BAD TURRETS ... A PANEL OFF ITS FLOOR`**: m502's corner topiary planters (.3 kerbs) stood at
+  4 m in from the lot's corners, under the front-right turret's panel (0.3 up). Moved to 8 m in; TURRETS ok. **A build
+  that dresses a place with a turret, a panel or a marker in it runs `places`, not just `play`** -- `play ch4` had passed.
+  `play ch3` COMPLETE (the train ride over the trestle). `places` exit 0.
+
 - **THE CORE, LIT (F1-MS3, m508, `buildShipGauntlet`).** Chapter 6's last arena. Added, colliderless: two glow rings (6.2,
   8.4 m) and 12 seams on the floor, 12 quarter-arcs of light up the dome's inside, eight nerves arcing from the dome down
   into the shaft's mouth, glow strips up the shaft's wall (none by its door). **The dome is squashed (.75 high), so at
