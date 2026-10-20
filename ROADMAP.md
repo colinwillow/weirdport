@@ -1018,6 +1018,13 @@ differ" table there, so no region feels like the last one.
   orbs; the EM tell (lights flicker, cars stall, radios hiss near the grid); the Hum; black triangles at
   night and tic-tacs that chase flyers; **missing time** as the capture fail state and something at
   zero health (Colin's open question: propose one, build it switchable).
+  - [x] m705 **F3-1** the projector orb: a hologram police roadblock across Dump Tower's plaza approach, solid until its orb is shot down (it tears into static and goes). GOD `projector`.
+  - [ ] **F3-2** the poltergeist orb: one Old Town building haunted -- lights flicker, a door slams, furniture is thrown out of its windows at you; shoot the orb and it stops. Animals react first (a dog barks).
+  - [ ] **F3-3** the relay orb: links the others into the grid -- while it stands they take half damage and re-light if downed; shoot it and every orb it fed drops a hit.
+  - [ ] **F3-4** the EM tell: near any live orb or alien activity streetlights flicker, cars stall in the road, radios hiss.
+  - [ ] **F3-5** the Hum: an ambient drone whose loudness follows how much of the grid stands where you are; a freed district goes quiet.
+  - [ ] **F3-6** black triangles patrol at night and drop orbs; tic-tacs chase you when you are gliding or flying.
+  - [ ] **F3-7** missing time (captured: white-out, wake somewhere else minutes later, juice drained) and a zero-health state, switchable.
 - [ ] **F4 The forms still missing** from the forms table, each with the door it opens: cop (cordons,
   arrest), firefighter (fires, the truck ladder), hobo as stealth (guards ignore him), CEO (Dump Tower),
   scuba diver (the Gorge), cave miner (the Underneath), military (the base at high heat).
@@ -1973,3 +1980,7 @@ differ" table there, so no region feels like the last one.
   in front of the scenery, which now reads as the rest of the metropolis behind them (the Pearl's towers, the hill and mast, the
   waterfront strip). The skyline's own 640 m Dump Tower and its Old Town are no longer drawn, because the real ones are right
   there. It falls back to the old aim if the core did not build.
+- **m705 (F3-1), the projector's roadblock:** it stands across Dump Tower's plaza approach (13 m out from the tower's front, about
+  26 m wide) and is SOLID. That is the lore's "opening the way", but it is a soft block: you can walk round it on the grass. It is
+  not a quest gate: Chapter 6's "To Dump Tower" step still passes at the plaza. It is a dormant task (A ROADBLOCK THAT FLICKERS)
+  that wakes when you first see it.

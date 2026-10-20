@@ -658,6 +658,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m705 (F3-1): THE PROJECTOR ORB** (`OPROJ`, `buildProjector`, `projHit`, `projStep`, `projShow`, task `qproj`, GOD `projector`).
+  A hologram roadblock (MeshBasic, transparent, opacity flickering with an occasional sideways glitch) across Dump Tower's plaza
+  approach in the tower's frame (v = -D/2 - 13), with ONE `BDYN` box so it is solid; `_off` when down. Its orb (an `AIRT` target, like
+  the pacifier's) rides 12 m over it; three hits (a full charge counts twice) and it falls, the roadblock tears into static for
+  2.2 s and goes. `orb:projector` saved, Old Town +5. Built right after `buildDumpTower` (it reads `DTOWER.frame`).
+  **The first GOD spot (14 m toward the city) landed IN THE CITY** -- `places` caught it; it is beside the roadblock on the grass now.
+  Narrowed to 13.2 m half-width so it does not clip the core's two nearest towers. F3 split into F3-1..7 in ROADMAP.
+
 - **m703 (T5g): THE FAIR FIELD IS HIS** (`fair_field.glb`, `HCFAIR.fieldG`, `?ffield=0`, plus `mx_extras`, `rally_truck`, `rim_props`).
   `fg_pole` at the six bunting poles. The 105 PENNANTS are ONE InstancedMesh per material: its white material takes `setColorAt` per
   instance (bunt1/2/3) and its cord does not, yawed like the code's triangle. `mx_hay` at the five bales, scaled (1.07, 1.11, 1.06),
