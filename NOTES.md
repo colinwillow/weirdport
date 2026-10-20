@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m639 -- the BASE jumpers' shack as art (scenery window; ROADMAP T4g)
+
+`models/campaign/island_base.glb`, for the shack `buildIslandBase` puts behind the exit point on the mesa. A weatherboard hut in
+two blues at the code's 2.6 x 3.4 x 2.3, corner posts, a lean-to roof, its door and windows; the striped orange awning out toward
+the deck on two posts, the rail under it with the five packed rigs in the code's red, blue, pink, yellow and red, strapped; the
+bench; a drum and a crate round the back. Built in the frame the code's boxes use (+X toward the deck). Shipped unverified.
+
 ## m638 -- the pirate radio as art (scenery window; ROADMAP T4f)
 
 `models/campaign/radio_kit.glb`, for `buildRadio`. The 14 m mast on the code's own three legs (r .7 tapering to .18, the same

@@ -422,6 +422,12 @@ different context window, let me know."*
   `rd_desk` at ((bx0 + bx1) / 2 + .6, y, bz0 + .5) in place of the desk box, the mixing desk, the six knobs and the mic (its
   monitors and mic arm are on its +Y side, which is the booth's wall at bz0: turn it pi if it ends up facing out); `rd_chair` in front of it; `rd_foam` at each of the nine
   foam tiles in place of the box (wedges toward the room).
+- [ ] **T4g. Swap in the BASE jumpers' shack** (`models/campaign/island_base.glb`; no collision -- keep the hut box and the bench
+  box). In `buildIslandBase`, `ib_shack` at (hu, g, hv) turned by psi like the hut box, in a local frame where +Y = e (along the
+  exit deck) and +X = -n (toward the deck: the door, the awning and the rigs), in place of the hut box, its roof, the door, the
+  awning `pearlSeg`, the two awning posts, the rail, the five rigs and the bench (it adds a drum and a crate round the back).
+  Every number is the code's: hut 2.6 x 3.4 x 2.3, awning from x 1.3 at 2.4 to x 3.1 at 2.0, rigs on the rail at x 2.0,
+  (k - 2) * .62 along Y, bench at x 2.75.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
