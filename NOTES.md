@@ -96,6 +96,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE BIKE PITS AND THE ANNOUNCER'S TOWER ARE HIS ART (m533, T2l, `HCBIKE.glb`, `?bpits=0`).** `bike_pits.glb`: eleven roots,
+  each on the ground at the code's centre. Blender +Y = +v, so glTF z = -v and every piece is MIRRORED (campPlace's default) --
+  checked off the asymmetric pieces: the trailer's tongue (Blender +Y to 4.6, glTF z -4.6) and the tower's loudspeaker horns on
+  +Y. A bike's mirrored local +z is the code's q(0, b) axis, so `rotation.y = r` turns it exactly as its boxes; the trailer
+  takes psi .1 the same way. Every collider stays (the bike's 1.6 m block, chests, drums, trailer, generator, the tower's
+  legs, deck and parapets) and only its drawing goes; the canopies' legs and roofs, the trailer's roof and the tower's posts and
+  roof were drawn-only and are gone where the piece was placed. The ladder stays. `PITS GLB FAIL` in the chip if it fails.
+
 - **DUMP TOWER HAS ITS PEOPLE AND THE CORPORATE LADDER (m532, F2b-3, `DTOWER.PEOPLE`, `dtRank`).** Fifteen suits on ten floors
   -- two lobby guards and the receptionist, clerks/interns on the office floors, the VP in the gym, two executives in the sky
   garden, two board members and the CEO's assistant in the boardroom, and MR. DUMP (role `ceo`) in the penthouse -- each a

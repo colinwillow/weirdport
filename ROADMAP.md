@@ -111,7 +111,7 @@ different context window, let me know."*
   skirt, handrails on the steps, bulbs over the backdrop and down two festoons to the ground). `ff_grandstand` at (gu 20, (v0+v1)/2
   = -2) on y: replaces the rows (seat plank + footboard each, same .9 x .34), the back wall, the side walls (stepped to the rows),
   the posts and the roof -- the roof slopes LOW AT THE FRONT (-u) and high at the back. 7,872 / 1,385 faces.
-- [ ] **T2l. Swap in the bike pits and the announcer's tower** (`models/campaign/bike_pits.glb`, no collision file --
+- [x] m533 **T2l. Swap in the bike pits and the announcer's tower** (`models/campaign/bike_pits.glb`, no collision file --
   `buildBikeTrack` keeps every collider and the tower's ladder). Blender X = the track frame's u, +Y = its +v, origins on the ground.
   In `bike(u, v, g, r, col)`: draw `bk_bike_<red|blue|yellow>` at (u, v, g) turned r (its length is Blender Y, front wheel +Y,
   exactly the code's q(0, b) axis) in place of the two tori, the segment, the tank, engine and bars. Each pit canopy:
