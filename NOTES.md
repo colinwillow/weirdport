@@ -26,6 +26,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **LIGHTHOUSE ROCK, DRESSED (F1-IS1, m503, `buildIsles`).** Six island shots (`npm run shot islanding ismesa isskate isstrait
+  islight isbase`, new entries); the worst was the lighthouse -- a white tube, two bands. Added: the lantern's gallery
+  (a ring rail on 12 posts) and 8 mullions in the glass, a vent ball on the cap; a red door and a stone apron at the foot,
+  four windows climbing the tower; on the rock, opposite the ladder (angle -1.95 + pi), the keeper's cottage (3.2 x 2.6,
+  solid, a red pitched roof, a chimney, a door and two windows), an oil store with three drums, a flagpole, a washing line,
+  three lobster pots and a rope coil. **A flat piece on a round wall is turned by the TANGENT**: local x along
+  (cos psi, -sin psi) must equal (-sin a, cos a), so psi = atan2(-cos a, -sin a) -- the first cut used atan2(cos, sin) +
+  pi/2 and stood the door out radially like a fin. `play ch5` COMPLETE (3/3, 13 steps; the keeper's fight is on this rock).
+
 - **UPLIFT'S LOT, DRESSED (F1-WF3, m502, `buildWaterfront`'s factory block).** The lot inside the fence (`wfturret`) read as
   the same concrete as the public quay. Added in the front strip between the gate and the factory: a green walkway (the
   `glow` paint) with white edges and an UPLIFT stencil, eight parking bays with three company vans (white, a green band,
