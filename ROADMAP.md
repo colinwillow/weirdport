@@ -15,6 +15,14 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
+**FROM COLIN (Oct 20), OVER EVERYTHING BELOW: THE LOOP WORKS ON THE CAMPAIGN (STORY MODE, THE KIT CITY), NOT THE ALIEN LEVELS.**
+*"The campaign mode was quite a bit more promising... spending the rest of my next day and a half of tokens on the loop
+refining the main game is a good use of them."* He has played some of it: it needs a lot of development in how its dynamics
+work. So the loop takes **Phase F** in order (F0b-2b onward, then F1 polish, F2...), and favours anything that makes the story
+PLAY better (quests that hold together, fights, the feel of the systems) over new content. **The two alien STEER items below
+(Glowtide's events, the big alien map) are PAUSED for the loop**: another window is building the alien levels in parallel and
+owns them. Do not touch `models/alien_plaza/` or `models/alien_world/`. The levels will come together with the campaign later.
+
 **NEXT, AHEAD OF THE REST: LOAD THE ALIEN PLAZA AS ITS OWN LEVEL (`models/alien_plaza/`, pushed m436).** Colin is building
 the alien side as SMALL hand-made levels, one at a time; this is Level 1, "Glowtide". Read `models/alien_plaza/README_ALIEN_PLAZA.md`
 (the contract), `LEVELS.md` (cores, events, markers) and `ROUTES.txt` (every route, beat by beat). First build: a world key
