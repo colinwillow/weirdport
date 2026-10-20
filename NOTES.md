@@ -314,6 +314,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE MOTHERSHIP BELLY'S EGGS, GLYPHS AND TENDRILS ARE HIS ART (m596, T3k, `ship_belly.glb`, `?sbelly=0`).** `mb_eggs` per clutch
+  at r = R - 1.1, turned -a + pi/2 so his X runs along the wall. `mb_glyph` per panel at r = R - .3, turned -a so its -X face
+  looks into the room. `mb_tendril` per tendril at its ceiling root, its Y scaled by L / 1.6. All are mirrored in z.
+  **The skipped pictures still spend their `q()` rolls**, so the veins and the tendril lengths come out the same with the file
+  off. Nothing here is solid; the seams, glow ring and veins stay. A missing file says `SBELLY GLB FAIL`.
+
 - **THE GORGE GOES UNDER: A GROTTO, A WRECK AND A SWIM POSE (m594, F2c-5b, `buildGorgeDeep`, `GORGE.pits`, `swimPose`).** Two
   hollows are carved into the fjord floor in `gzHeight` itself, so they are ground and not boxes: the grotto (b -57, r 8.5, floor
   y -12.2, ten metres under the sea) and the wreck's hollow (b -69, r 7, floor -9.7). **`buildGorgeLand` only keeps a floor
