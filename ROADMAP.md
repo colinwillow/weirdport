@@ -432,7 +432,9 @@ differ" table there, so no region feels like the last one.
   - [x] m491 **F1-PE1** The Pearl 1 -- the plaza (a bare grey slab between the warehouses): bunting and bulbs criss-crossing it roof to roof, a painted floor (a sun before the stage, swirls, footprints), four corner community beds with sunflowers (.3 m kerbs, under his step).
   - [x] m492 **F1-PE2** The Pearl 2 -- the pier (grey slabs edged by bare rails): plank seams on every deck, a mooring line of bollards with rope coils, lamp posts and life rings along every rail, fisher's clutter (crates, pots, a drying net) at dock 1's corners; pots and three-blob clumps on the loading platforms, crowned trees down the dock street.
   - [x] m493 **F1-PE3** The Pearl 3 -- dock 1, where Chapter 2 lands (painted cube pots, bare boards): round tapered pots with clumps and blooms, round bollards with rope, plank seams, a fish-crate stack and a sack by the bridge, the roastery's chalkboard, hanging baskets off the lamps, clumps and a pennant on the container garden.
-  - [ ] **F1-HC1..3** Hollow Creek.
+  - [x] m494 **F1-HC1** Hollow Creek 1 -- the halt, the region's front door by train (a plank and a red roof): board seams and a yellow edge line, a bench and a timetable under the shelter, churns and mail sacks, lamps with hanging baskets; at the creek end's foot a gravel apron, a fenced dirt track, a water tank for the loco, wildflowers round the posts.
+  - [ ] **F1-HC2** Hollow Creek 2 -- **the race is lost again** (`play ch3`: ch3b.1 'Beat Big Rae' fails on the unchanged m493 too -- he falls behind at lap 1, once at -0.1 m height in the creek); find why and fix it, then dress the bike track.
+  - [ ] **F1-HC3** Hollow Creek 3 -- the mill or the trailer park, whichever shoots worse.
   - [ ] **F1-WF1..3** the Waterfront.
   - [ ] **F1-IS1..3** the River Islands.
   - [ ] **F1-MS1..3** the Mothership.

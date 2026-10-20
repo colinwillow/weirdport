@@ -17,6 +17,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE HALT, DRESSED -- AND THE RACE IS LOST AGAIN, NOT BY THIS (m494, F1-HC1, `buildFreight`).** Hollow Creek's five places
+  shot (`npm run shot hctrail hcmill hcfair hchalt hcbikes`, new entries; `SHOT_PRE` turns him round). The halt was the
+  barest: a plank deck and a red roof on stilts. Both platforms now get board seams, a yellow edge line, a bench (solid,
+  against the outer rail) and a timetable board under the shelter, churns and sacks at its ends, two lamps with hanging
+  baskets; the creek end's stair foot gets a gravel apron, a fenced dirt track, a water tank on legs (solid) and
+  wildflowers. **`play ch3` fails ch3b.1 'Beat Big Rae' -- and fails identically on m493 with this stashed** (lost at
+  lap 1, 1.8 and 1.1 laps to her 2; once he ended at y -0.1, in the creek). m470 won it in 51 s. So something between
+  m470 and m493 broke the bike's lap (candidates: m483-485's board grade / surface-follow, which `bikeOn` may share, or
+  the body/wet rules). HC2 takes it first.
+
 - **DOCK 1, DRESSED (m493, F1-PE3, `buildFootbridge`'s dock).** The landing Chapter 2 starts on (`pearldock`) had painted cube
   pots with one ico0 each, square bollards and bare boards. Now: tapered round pots with a rim, a clump of three ico1 and
   blooms (each keeps its old box collider, popped from the draw); round capped bollards (same), a rope coil on the near pair;
