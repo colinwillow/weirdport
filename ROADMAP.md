@@ -36,7 +36,7 @@ adjusting the line wrap. Which is weird. And it would be nice if we could styliz
 block the bridge you can just physically jump over the barricade. The truck could have better detail. Those bushes on the
 farmland. The crash. All of that could be developed further -- keep doing detail passes, and if you want to hand that off to a
 different context window, let me know."*
-- [ ] **T2a. Swap in the crash wreck** (`models/campaign/crash_wreck.glb`, `crash_wreck_collision.glb`; read `models/campaign/README_CAMPAIGN_ART.md`).
+- [x] m474 **T2a. Swap in the crash wreck** (`models/campaign/crash_wreck.glb`, `crash_wreck_collision.glb`; read `models/campaign/README_CAMPAIGN_ART.md`).
   In `buildCrash`: load the GLB, put its origin at `(wx(cu,cv), g0, wz(cu,cv))` with yaw `fpsi` (its +X is the travel direction,
   nose ploughed in), drop the code-built hull / rim / dome / glow / torn panels / bow wave and the two wreck colliders, take
   colliders from the collision file, and read `CRASH.at` (fire, fire2, smoke, hatch, you) off its empties. Keep the furrow mounds,
@@ -1276,4 +1276,7 @@ differ" table there, so no region feels like the last one.
   GLB in `models/campaign/`). It owns the ART there (headless Blender, GLBs pushed); this loop owns the CODE that loads and wires
   it (T2a, colliders, behaviour) and takes T2's code-side items itself (the roadblock that actually blocks). Neither edits the
   other's files.
+- **m474: his wreck is loaded BEFORE `buildCrash` and the code-built hull is its fallback** (a failed load is the old wreck, not an
+  empty field; `?wreck=0` is the A/B). His `scorch` mesh and the code's scorch discs both draw for now (the README keeps the
+  code's); if they fight, the code's go. The core's glow pulse is scaled to his own emissive strength rather than overwritten.
 

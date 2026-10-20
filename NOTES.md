@@ -7,6 +7,17 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
+- **THE CRASH WRECK IS HIS MODEL (m474, T2a, `crashModel`, `CRASH.model`).** `models/campaign/crash_wreck.glb` (3,140 tris, 46
+  meshes, draco + `KHR_materials_emissive_strength`) and `crash_wreck_collision.glb` (3 boxes: `col_bld_wreck_tail`, `_nose`,
+  `_bow_wave`), loaded in `init()` just before `buildCrash`, which then skips its hull, rim, dome, glow, panels, bow wave and two
+  wreck colliders. **Placement is two numbers off the contract**: origin at `wx(cu, cv), g0, wz(cu, cv)`, yaw `atan2(-fwz, fwx)`
+  -- +X onto the furrow's WORLD direction (`fwx, fwz`), which needs no knowledge of `geo`'s yaw convention. Colliders go into
+  `BOXES` before `F.commit()` (whose `boxGrid` takes them), each through `kitObb` (one exact turned box) with `solidColumns`
+  for anything rounder. **Every `CRASH.at` point is his empty now** (`fire_0`, `fire_1`, `smoke`, `hatch`, `you`) and Clancy
+  stands at his `clancy` empty. `crashHero` still runs off `CRASH.frame` / `hullY`; its pulse drives his `core` material,
+  scaled by `glowK` (his strength / 1.8). **`places` cannot see the model** (node does not load it, so it checks the fallback);
+  `npm run play`'s header says `(his model)` or `(code-built)`, and ch0 passes on his: spawn at his `you`, Clancy found in 1 s.
+
 - **CAMPAIGN DETAIL PASS, PIECE 3: THE ROADBLOCK KIT (m473, `models/campaign/`).** The police line was posts and two strips of tape (`cordon`) or striped blocks (`barricade`). Now six pieces in one GLB the gate code tiles across any width: a striped sawhorse with an amber lamp, a traffic cone, a jersey barrier, a crowd-control fence with a POLICE LINE sign, a tripod work light, and a retro black-and-white cruiser with a light bar and push bar. One exact collider box per piece (1.25 m, the car 1.5 m) so the line is solid and hopping it is a choice, not a leak. ROADMAP T2c has the layout rule. Preview: `roadblock_kit_preview.png`.
 - **CAMPAIGN DETAIL PASS, PIECE 2: THE FARM PICKUP AND TRACTOR AS MODELS (m472, `models/campaign/`).** *"There's a truck in the game, I don't know if it's supposed to be a tractor or what."* Both farm vehicles were boxes merged in code (`vehPickup`, `vehTractor`). Now: a retro 1950s pickup (rounded hood and cab, chrome grille and bumpers, round headlamps, running boards, curved fenders, a wooden bed with a hay bale and a spare tyre, cream hubs) and a classic red tractor (long hood with a chrome grille, exhaust stack, seat and wheel, big treaded rear tyres under curved fenders, small fronts, a three-disc plough). Bevelled and smooth-shaded, ~2,800 faces each, opaque except the glass. Same model space as `vehParts` (forward +z, origin on the ground) and the same footprints, so ROADMAP T2b is a load-and-swap with nothing else to change. Preview: `farm_vehicles_preview.png`. Not in the game until T2b.
 - **THE BALLOON STOPS RE-WRAPPING (m471, `talkShow`, `talkLetter`, `#talk.comic`).** *"Based on how you're looking at them it's

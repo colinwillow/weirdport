@@ -66,7 +66,7 @@ try {
     if (!draw) S.renderer.render = () => {};
     window.__crash = m => { (window.__crashes = window.__crashes || []).push(String(m).split('\n').slice(0, 2).join(' | ')); };
     const P = S.player.pos, c = S.CRASH.at;
-    return { pos: [P.x, P.y, P.z].map(v => +v.toFixed(1)), ch: S.SAVE.ch, crash: c ? [c.x, c.z].map(v => +v.toFixed(1)) : null, bodies: S.DUMMIES.length, notes: (S.MISSING || []).join(', ') };
+    return { pos: [P.x, P.y, P.z].map(v => +v.toFixed(1)), ch: S.SAVE.ch, crash: c ? [c.x, c.z].map(v => +v.toFixed(1)).join(',') + (S.CRASH && S.CRASH.model_ok ? ' (his model)' : ' (code-built)') : null, bodies: S.DUMMIES.length, notes: (S.MISSING || []).join(', ') };
   }, { draw: DRAW, fps: FPS });
   console.log(`== play  tkit, fresh save (chapter ${head.ch}), seed ${SEED}  spawn ${head.pos}  crash ${head.crash}  ${head.bodies} bodies  ${el()}` + (head.notes ? `  NOTE: ${head.notes}` : ''));
 
