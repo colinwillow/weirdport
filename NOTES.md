@@ -576,6 +576,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE CHANNEL BRIDGE'S CHECKPOINT AND LAMPS, AND THE FORD'S STONES, ARE HIS ART (m672, T4t, `bridge_bits.glb`, `?bbits=0`).**
+  - `cb_booth`, its arm built in, replaces the booth's drawing, roof, window and arm boxes; the booth collider and
+    `BRIDGE.gate` stay.
+  - `cb_lamp` stands on each parapet lamp, turned pi on the -v side so its head looks at the road; the post collider stays.
+  - `fd_stone` stands at each ford stone, scaled r / .65 and turned by the ico's own roll. The ford is a th = 0 frame at the
+    origin, so the clone goes straight into its group. Every `rr()` roll is spent in its old order (a no-op `geo` shadows the
+    frame's), and every stone's collider stays.
+
 - **THE FIELDS' POST-AND-RAIL FENCE IS HIS, INSTANCED (m670, T4s, `farm_fence.glb`, `?ffence=0`, `FFK`, `ffBuild`).** At every
   fence piece, `ff_post` (unscaled) and `ff_rails` (x scaled to `piece` + .25) get a world matrix: the frame's (u, v) taken to
   world, yaw psi + the frame's th, his X along the run. `ffBuild` runs after `fbBuild` at the end of `buildFieldBounds`, and
