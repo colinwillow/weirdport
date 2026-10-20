@@ -201,6 +201,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **OLD TOWN'S BUILDING SITE IS HIS KIT (m562, T2w, `OTSITE.glb`, `?site=0`).** `os_crane` (rotation -ja: a mirrored piece's local +x runs
+  along (cos r, -sin r), so the jib points along (cos ja, sin ja)), `os_office`, `os_mixer` (.5), `os_skip` (.1), and an
+  `os_hoarding` per hoarding panel: near run unturned, far run pi, the sides -pi/2 (+u) and +pi/2 (-u), so the street face (-Y,
+  local -z) faces out. All mirrored in z. `sk` keeps every collider (the pad, the mast's, the office, the mixer base, the skip,
+  each panel) and drops its drawing; the mast's legs and bars, the jib, cab, counterweights, A-frame and the drum are not built.
+  The frame, scaffold, ladders, hook line and its load, stacks and cones are as before. `SITE GLB FAIL` if it does not load.
+
 - **THE LIGHTHOUSE AND THE KEEPER'S COTTAGE ARE HIS ART (m559, T2v, `ISLES.lightG`, `?lhouse=0`).** Both mirrored in z (Blender +Y =
   the door = local +z). The tower is turned `atan2(cos dA, sin dA)`: under rotation r a mirrored object's local +z points along
   (sin r, cos r) in the islands' frame, so that puts the door along (cos dA, sin dA). The cottage takes `cps` like its body box.

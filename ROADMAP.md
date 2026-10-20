@@ -186,7 +186,7 @@ different context window, let me know."*
   lamp sphere (its lens glows at the same 12 m), the cap, the vent ball, the door, the apron and the four windows.
   `li_cottage` at (cu0, cv0) on the top, turned `cps` like its body box -- replaces the body, both roof planks, the chimney, the door
   and the two windows. 1,362 / 272 faces.
-- [ ] **T2w. Swap in the building-site kit** (`models/campaign/site_kit.glb`, no collision file -- `buildSite` keeps the frame, the
+- [x] m562 **T2w. Swap in the building-site kit** (`models/campaign/site_kit.glb`, no collision file -- `buildSite` keeps the frame, the
   scaffold, every ladder and collider, the hook line and load, the stacks and cones). Blender X = the site frame's u, +Y = its v.
   `os_crane` at (mu, mv) on gm, turned so its +X (the jib) points along (cos ja, sin ja) -- replaces the pad, the mast's four
   legs and its bars, the jib box, cab, counterweights and A-frame (a lattice mast and jib, a slewing ring, pendant ties, a trolley at
