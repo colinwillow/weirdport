@@ -50,7 +50,7 @@ different context window, let me know."*
   side, a work light at the other end; `barricade` is jersey barriers; `pbarricade` is the crowd fence. Their collider boxes make
   the line SOLID to 1.25 m (car 1.5), so with `GATE.hi` above that a jump over it is a deliberate act -- pair it with the cops'
   reaction (Colin: "when the cops block the bridge you can just physically jump over the barricade"). Keep the gate's own logic.
-- [ ] **T2d. Swap in the farm bushes** (`models/campaign/farm_bushes.glb`, no collision file). Four roots, origin on the ground at
+- [x] m478 **T2d. Swap in the farm bushes** (`models/campaign/farm_bushes.glb`, no collision file). Four roots, origin on the ground at
   the centre: `fb_hedge` (one 2.7 m hedge piece on its earth bank, Blender X = along the run = three x, 740 tris -- the same length
   as `FBOUND.piece`, so it replaces the bank ellipsoid + three ico0 clumps one for one; keep the hedge's own box collider and
   instance it), `fb_round` (1.6 m round bush), `fb_cypress` (2.6 m tall cone, 41 tris) and `fb_flower` (0.9 m mound with orange/red
@@ -1295,4 +1295,7 @@ differ" table there, so no region feels like the last one.
   sawhorse line right across the road would be walked through by every disguise it lets pass. Barricades are solid jersey
   lines. **Only the police car and the work light are solid colliders** -- a solid line would stop the bodies it must let
   through; the gate logic stops the wrong one. The car parks only on lines wider than 5 m (`RBK.carW`), so not on the bridge.
+- **m478: the farm's bushes are scattered beside the hedges (22% of pieces) and the fences (7%)** -- 104 of them; not yet by the
+  farmhouse or at field corners (the next pass on the farm can add spots there). Every hedge piece and bush is an INSTANCE
+  (`FBK`): 482 copies in 11 draws. `?bush=0` is the code-built mounds.
 

@@ -17,6 +17,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **HIS HEDGES AND BUSHES, INSTANCED (m478, T2d, `FBK`, `fbPut`, `fbBeside`, `fbBuild`).** `models/campaign/farm_bushes.glb`, loaded
+  before `buildFieldBounds`: each hedge piece (378) is his `fb_hedge` in place of the code's bank mound and three clumps, x along
+  the run's WORLD direction (the wreck's rule), its box collider kept; `fb_round` / `fb_cypress` / `fb_flower` beside 22% of
+  hedge pieces and 7% of fence posts, random yaw, 0.85-1.15. **All of it is InstancedMesh, one per piece per material** (his
+  pieces' sub-meshes merged per material first, `glbInto`): 482 copies in 11 draws, ~300k triangles -- the trade this repo
+  makes on purpose (draws cost, triangles do not). One bounding sphere per InstancedMesh, so no per-copy culling; if the farm
+  ever costs frames, split the matrices by cell. **A shared temporary name clashed** (`_fbQ` already existed at the fall
+  bone code): the rename caught the old declaration too and was put back by line -- grep a new `_tmp` name before using it.
+
 - **THE ROADBLOCK KIT, AND THE BRIDGE LINE THAT WAS WALKED ROUND (m477, T2c, `RBK`, `gateKitMesh`, `gateKitSolid`, `gateDress`,
   `G.span`).** *"When the cops block the bridge you can just physically jump over the barricade."* `gatePush` stops the wrong
   body anywhere from 0.5 m under the line to `GATE.hi` (4 m) over it -- higher than his 2.8 m apex -- so it was never over:

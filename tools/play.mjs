@@ -40,7 +40,7 @@ const server = http.createServer((q, r) => {
     // THE SHIPPED TEXT, with one handle spliced in beside the game's own: the things the driver reads and writes
     const s = body.toString(), k = 'window.melee = window.mel = {';
     if (!s.includes(k)) { console.error('play: no mel handle in index.html'); process.exit(1); }
-    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK }; ' + k);
+    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK }; ' + k);
   }
   r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
 });
@@ -66,7 +66,7 @@ try {
     if (!draw) S.renderer.render = () => {};
     window.__crash = m => { (window.__crashes = window.__crashes || []).push(String(m).split('\n').slice(0, 2).join(' | ')); };
     const P = S.player.pos, c = S.CRASH.at;
-    return { pos: [P.x, P.y, P.z].map(v => +v.toFixed(1)), ch: S.SAVE.ch, crash: c ? [c.x, c.z].map(v => +v.toFixed(1)).join(',') + (S.CRASH && S.CRASH.model_ok ? ' (his model)' : ' (code-built)') + ' | spawned ' + S.CRASH.spawned + ' inTK ' + S.inTK() + ' ch ' + S.SAVE.ch + ' inTown ' + S.SAVE.flags.inTown + ' | trucks ' + (S.FVEH ? JSON.stringify(S.FVEH.draws) : '?') + ' | roadblocks ' + (S.RBK ? S.RBK.n + ' dressed, ' + S.RBK.solid + ' solid' : '?') : null, bodies: S.DUMMIES.length, notes: (S.MISSING || []).join(', ') };
+    return { pos: [P.x, P.y, P.z].map(v => +v.toFixed(1)), ch: S.SAVE.ch, crash: c ? [c.x, c.z].map(v => +v.toFixed(1)).join(',') + (S.CRASH && S.CRASH.model_ok ? ' (his model)' : ' (code-built)') + ' | spawned ' + S.CRASH.spawned + ' inTK ' + S.inTK() + ' ch ' + S.SAVE.ch + ' inTown ' + S.SAVE.flags.inTown + ' | trucks ' + (S.FVEH ? JSON.stringify(S.FVEH.draws) : '?') + ' | bushes ' + (S.FBK ? S.FBK.n + ' in ' + S.FBK.draws + ' draws' : '?') + ' | roadblocks ' + (S.RBK ? S.RBK.n + ' dressed, ' + S.RBK.solid + ' solid' : '?') : null, bodies: S.DUMMIES.length, notes: (S.MISSING || []).join(', ') };
   }, { draw: DRAW, fps: FPS });
   console.log(`== play  tkit, fresh save (chapter ${head.ch}), seed ${SEED}  spawn ${head.pos}  crash ${head.crash}  ${head.bodies} bodies  ${el()}` + (head.notes ? `  NOTE: ${head.notes}` : ''));
 
