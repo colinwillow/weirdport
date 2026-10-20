@@ -66,6 +66,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE FARMHOUSE IS HIS, MIRRORED IN Z (T2g, m519, `buildFarmhouse`).** `farm_house.glb` (`fh_house`) loads after the barn
+  (`?house=0` A/B, `HOUSE GLB FAIL`). The shell's and porch's boxes go through `sx` (collider kept, drawing popped;
+  drawn-only boxes skipped), `win` returns at once, the gables are not made; the porch roof's `quad`, the steps, chairs,
+  table, barrel, logs, shed, coop and washing line stay code. **The README says Blender +Y = +v; the file says otherwise**:
+  the door is at glTF +z (3.64) and the porch runs out to +z 5.8 -- the -v side in the frame -- while the chimney is at
+  +x (5.7), the +u side where `FHOUSE.chim` puts the smoke. A half-turn would put the porch right and the chimney wrong, so
+  the model is MIRRORED in z (`scale.z = -1`; three flips the face winding itself when a world matrix's determinant is
+  negative). The shot (`npm run shot house2`, new) reads right: porch, door and steps at the front, the chimney over the
+  log pile. `play ch0` COMPLETE, `places` exit 0. **Measure every model's axes off its file before placing it.**
+
 - **THE BARN AND SILO ARE HIS (T2f, m516, `buildFarm`).** `models/campaign/farm_barn.glb` (`fb_barn`, `fb_silo`) loads before
   `buildFarm` (`?barn=0` A/B; `BARN GLB FAIL` and the code shell if it does not come). The shell's boxes go through `sx`:
   a collider box is made and its drawing popped, a drawn-only box (trims, door leaves, the roof planks) is skipped, the

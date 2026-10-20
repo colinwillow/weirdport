@@ -72,7 +72,7 @@ different context window, let me know."*
   instead. Keep drawn: the loft floor, the bale stair, the loft bales, the outside hay stack, the rope, the lean-to, the paddock.
   `fb_silo`: origin at its foot centre (u bu+W2+3.4, v bv+D2+1.5), r 2.4/2.3, 11 m drum + red dome; replaces the drum, dome and
   rings; its ladder, landing and rails stay code. 1,392 + 414 faces, one mesh each (11 and 5 materials).
-- [ ] **T2g. Swap in the farmhouse** (`models/campaign/farm_house.glb`, no collision file -- `buildFarmhouse` keeps every collider).
+- [x] m519 **T2g. Swap in the farmhouse** (`models/campaign/farm_house.glb`, no collision file -- `buildFarmhouse` keeps every collider).
   `fh_house`: Blender X = frame u, Blender +Y = frame +v, so the porch and door face -v as now; origin (hu, hv) at the house FLOOR
   y0 (plinth down to -1.6). Drawn at FHOUSE's exact numbers: W 9, D 7, E1 3.0, E2 5.8, ridge 8.1 along u, walls .25, roof .55
   overhang, chimney at (W2+.55, +.9) topping at RIDGE+1.25 (so `FHOUSE.chim` and the smoke stay put), the windows at the `win`

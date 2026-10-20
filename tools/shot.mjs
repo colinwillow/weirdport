@@ -103,6 +103,9 @@ const SHOTS = {
   undernear: { place: 'underneath', settle: 3, why: 'the Underneath, close behind him (inside a tunnel the wide cam is in the rock)',
     cam: `(() => { const p = mel.player.pos, h = (mel.player.heading || 0) + ${+process.env.SHOT_TURN || 0}, fx = Math.sin(h), fz = Math.cos(h);
       return [p.x - fx * 3, p.y + 2.2, p.z - fz * 3, p.x + fx * 6, p.y + .8, p.z + fz * 6]; })()` },
+  house2: { place: 'farmhouse', settle: 3, why: 'the farmhouse front, from the path at its porch',
+    cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
+      return [p.x - fx * 5 - fz * 3, p.y + 3.2, p.z - fz * 5 + fx * 3, p.x + fx * 6, p.y + 2.5, p.z + fz * 6]; })()` },
   wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
       return [C.x + sx * 16 - dx / L * 6, p.y + 7, C.z + sz * 16 - dz / L * 6, C.x, p.y + .5, C.z]; })()` },
