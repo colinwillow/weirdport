@@ -632,6 +632,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m693 (T5d): THE MILL'S SAW LINE, LOG PILES AND SAWDUST ARE HIS** (`mill_floor.glb`, `HCMILL.floorG`, `?mfloor=0`). `campPlace`
+  (mirrored) in `buildMill`: `ml_sawline` at (0, y, S.v + 3.5) for the rollers, the blade and the bed's drawing (its collider stays);
+  `ml_pile3` / `ml_pile4` at each pile by `P.n` (a pile of any other n keeps the code's logs) -- the pile collider, whose top is a
+  floor, is unchanged; `ml_dust` at each heap, scaled uniformly by its r.
+
 - **m691 (T5c): THE TRAILER PARK'S BOARDWALK IS HIS** (`trailer_walk.glb`, `TWK`, `twPut`, `twBuild`, `?twalk=0`). Walk segments, rails,
   trailer platforms and piles, INSTANCED (no mirror -- each piece is symmetric along its length), yaw `psi + F.th`, scaled along
   glTF Z (Blender Y: `(len + .3) / 4.3`, `len / 4`, `R.len + 1.6`) or, for a pile, glTF Y by its drop. Every collider stays; a tall

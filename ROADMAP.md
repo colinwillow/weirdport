@@ -551,7 +551,7 @@ different context window, let me know."*
   scaled Y by len / 4, in place of its two boxes and its post (posts every metre, a mid rail); `tw_platform` at each trailer's
   platform (u, yp, v), scaled Y by R.len + 1.6, in place of its plank box; `tw_pile` at each of `posts`' piles (pu, top - .2, pv),
   scaled Z by (top - .2) - (g - .4), in place of the post box and its brace.
-- [ ] **T5d. Swap in the mill's saw line, log piles and sawdust** (`models/campaign/mill_floor.glb`; no collision -- keep the saw
+- [x] m693 **T5d. Swap in the mill's saw line, log piles and sawdust** (`models/campaign/mill_floor.glb`; no collision -- keep the saw
   bed's box and each pile's collider, whose top is a floor). In `buildMill`, Blender X = u, +Y = v: `ml_sawline` at (0, y, S.v + 3.5)
   in place of the rollers, the bed and the blade (its blade where the code's is, under a yellow hood on four posts, a motor and a
   control box); `ml_pile4` / `ml_pile3` at each pile's (P.u, y, P.v) by P.n, in place of every log cylinder and cut-end circle (logs
