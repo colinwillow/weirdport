@@ -340,7 +340,7 @@ different context window, let me know."*
   X .55/.6, Y .45/.6 for those); `ce_cardboard` (1 x 1, scale X by w, Y by d) at the three cardboard boxes; `ce_bottle` at the six
   bottle cylinders (lying ones turned on their side); `ce_laundry` (ONE white material, tinted with cols[i]) hanging from the line
   at each of the five laundry boxes -- its origin is ON the line.
-- [ ] **T3u. Swap in the camp's roof and fence** (`models/campaign/camp_roof.glb`; no collision -- keep the boxes that collide). In
+- [x] m617 **T3u. Swap in the camp's roof and fence** (`models/campaign/camp_roof.glb`; no collision -- keep the boxes that collide). In
   `buildCamp`'s m489 block, Blender X = u, +Y = v: `cr_roof` ONCE at (0, gnd(0, 0), 0) in place of the four posts and the four
   patch sheets (its posts stand at the code's P4, the +u side .3 higher); the junk fence's panels by kind -- 'door' -> `cr_door`,
   'wood' -> `cr_planks` (both 1.0 wide from -.1: scale X by L / n * .95 and Z by (h + .1) / 2.0 for the door, / 1.8 for the

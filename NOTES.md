@@ -383,6 +383,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE CAMP'S ROOF, FENCE, HERBS AND BUCKET ARE HIS ART (m617, T3u, `camp_roof.glb`, `?croof=0`, `crPut`).** These are in
+  `buildCamp`'s m489 block:
+  - `cr_roof` stands once at the camp's centre; the four posts' colliders stay and the patch sheets are not drawn.
+  - The fence panels go by kind: `cr_door` / `cr_planks` (X by the panel's width, Y by (h + .1) / 2.0 or / 1.8), and
+    rust / tarp2 become `ce_sheet_*` (X by w / 1.2, Y by (h + .1) / 2.4). Each is turned and tilted like its box.
+  - `rx_tyres` replaces the three tori.
+  - `cr_herbs` stands at each tin; `cr_bucket` replaces the bucket.
+  **`crPut` is declared beside `cput` / `cePut`, at the top**, which is m615's lesson. All rolls are spent in their old order.
+
 - **THE LONG FLUME, HOLLOW CREEK TO THE GORGE (m615, F2c-6b, `GFLUME`, `buildGorgeFlume`, `gzFlumeStep`, GOD `gzflume`).** A
   2 m-step polyline in a th = 0 `farmFrame` (u = x, v = z). It starts at a head tower on the Hollow Creek land point nearest
   the fjord's mouth, chosen by a sweep of `hcEdge` in beach + 4..12. It runs down to (river + 2, b -88) at sea + 4.2, then up
