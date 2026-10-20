@@ -66,6 +66,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE SHED, THE COOP AND THE LONE HAY BARN ARE HIS (T2h, m520, `campPlace`).** `farm_outbuildings.glb` loads before
+  `buildNeighbours` (`?outb=0`, `OUTB GLB FAIL`). One helper now, `campPlace(F, G, name, u, y, v)`: clones a root into the
+  frame's group at (u, y, v), **mirrored in z by default** -- his campaign exports put the front at glTF +z (the farmhouse's
+  door, the shed's doorway dark at +z / x +.45 where the code's doorway is at +u) while the frames' fronts are -v; a mirror
+  keeps x = u. (The barn of T2f is the exception: its doors are at -z, placed unmirrored.) In each builder a local
+  `bx` keeps collider boxes as colliders with the drawing popped and drops drawn-only boxes; the hay barn's posts pop
+  their drawing, its eaves beams and DoubleSide roof are not made, its hay steps and round bales stay code. `play ch0`
+  COMPLETE, `places` exit 0.
+
 - **THE FARMHOUSE IS HIS, MIRRORED IN Z (T2g, m519, `buildFarmhouse`).** `farm_house.glb` (`fh_house`) loads after the barn
   (`?house=0` A/B, `HOUSE GLB FAIL`). The shell's and porch's boxes go through `sx` (collider kept, drawing popped;
   drawn-only boxes skipped), `win` returns at once, the gables are not made; the porch roof's `quad`, the steps, chairs,

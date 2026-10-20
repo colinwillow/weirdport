@@ -80,7 +80,7 @@ different context window, let me know."*
   the wall to 2.4 at the posts). So in `buildFarmhouse` keep the shell's and porch's boxes as colliders but stop drawing them (plinth,
   walls, bands, corner boards, gables, roof slabs and cap, chimney, every `win`, the door, the porch floor/posts/rails and its roof
   slab) and keep its walkable `quad`, the steps, chairs, table, barrel, log pile, shed and coop. 4,622 faces, one mesh, 15 materials.
-- [ ] **T2h. Swap in the shed, the coop and the lone hay barn** (`models/campaign/farm_outbuildings.glb`, no collision file -- the
+- [x] m520 **T2h. Swap in the shed, the coop and the lone hay barn** (`models/campaign/farm_outbuildings.glb`, no collision file -- the
   code keeps every collider). Three roots, Blender X = the frame's u, Blender +Y = +v, origin on the ground at each one's centre:
   `fo_shed` at buildFarmhouse's (su, sv) -- replaces the slab, walls, pent roof, the doorway's dark, the tools and the drum;
   `fo_coop` at (cu, cv) -- replaces the legs, hut, roof planks and ramp (the run's posts and wire stay code); `fo_haybarn` at the

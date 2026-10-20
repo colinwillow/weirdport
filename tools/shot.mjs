@@ -106,6 +106,12 @@ const SHOTS = {
   house2: { place: 'farmhouse', settle: 3, why: 'the farmhouse front, from the path at its porch',
     cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
       return [p.x - fx * 5 - fz * 3, p.y + 3.2, p.z - fz * 5 + fx * 3, p.x + fx * 6, p.y + 2.5, p.z + fz * 6]; })()` },
+  haybarn: { place: 'haybarn', settle: 3, why: 'the lone hay barn',
+    cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
+      return [p.x - fx * 8 + fz * 6, p.y + 5, p.z - fz * 8 - fx * 6, p.x + fx * 10, p.y + 2, p.z + fz * 10]; })()` },
+  shed: { place: 'farmhouse', settle: 3, pre: "mel.player.pos.x += 0", why: 'the farmhouse shed and coop, wide',
+    cam: `(() => { const p = mel.player.pos, h = mel.player.heading || 0, fx = Math.sin(h), fz = Math.cos(h);
+      return [p.x - fx * 18, p.y + 9, p.z - fz * 18, p.x + fx * 6, p.y + 1, p.z + fz * 6]; })()` },
   wreck: { place: 'crash', settle: 3, why: 'the wreck from above and to the side: the hero moment',
     cam: `(() => { const p = mel.player.pos, C = mel.CRASH.at, dx = C.x - p.x, dz = C.z - p.z, L = Math.hypot(dx, dz), sx = -dz / L, sz = dx / L;
       return [C.x + sx * 16 - dx / L * 6, p.y + 7, C.z + sz * 16 - dz / L * 6, C.x, p.y + .5, C.z]; })()` },
