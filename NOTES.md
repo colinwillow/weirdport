@@ -17,6 +17,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE PEARL'S PLAZA, DRESSED -- AND A BED .45 M TALL STALLED THE MARCH (m491, F1-PE1, `buildPearlPlaza`).** The shot: a
+  40 x 37 m grey floor, the sit-in and a few crates, nothing overhead. Added: four lines of pennants and bulbs at y+7.4 with
+  sag (the overhead layer), a painted floor (sun before the stage, three swirls, a footprint trail; flat `geo`, no
+  colliders), and four corner beds of three planters with sunflowers. **The first cut had the planters .45 m tall and
+  `npm run play ch2` failed ch2.3 ('inside the march') for 120 s** -- it passes in 4 s without them. A crowd member drifting
+  into a solid corner box stalls `OPLAZA`'s keep-up rule, so the leader never moves on. At .3 (under the .357 step) they
+  are kerbs a body steps up, and ch2 is COMPLETE again (3/3, 13 steps). **Anything solid in the plaza is in the march's
+  way: keep it under the step or out of the crowd's whole square, and run `play ch2`.**
+
 - **THE FOOTBRIDGE'S FOOT, AND A BUILDER'S MATERIAL SET IS ITS OWN (m490, F1 Old Town 3, `buildFootbridge`).** Re-shot Old Town: the
   site reads dense and vertical; `topcity` from straight above is all fog (the lens over the fog's far plane -- a shot's limit,
   not the game's); the worst was the footbridge's foot -- a staircase planted in bare lawn, no way to it. Now a wandering path

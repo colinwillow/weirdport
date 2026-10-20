@@ -429,8 +429,14 @@ differ" table there, so no region feels like the last one.
     gas bottles, plants, three umbrella colours.
   - [x] m489 **F1-OT2** Old Town 2 -- the camp at the west edge: a trampled-dirt floor, a patchwork tarp roof on four poles over the fire circle, junk fencing round the open sides with gaps to walk in, a shack with a stovepipe, tins of herbs.
   - [x] m490 **F1-OT3** Old Town 3 -- re-shot; the worst was the footbridge's foot (a stair in bare lawn, no way to it): a flagstone path from the street, a concrete apron, a works hut with its lamp, sandbags, a rope barrier, a CLOSED board, a lifebuoy, driftwood and stones on the tideline, a bench facing the water.
-  - [ ] **F1-PE1..3** The Pearl. - [ ] **F1-HC1..3** Hollow Creek. - [ ] **F1-WF1..3** the Waterfront.
-  - [ ] **F1-IS1..3** the River Islands. - [ ] **F1-MS1..3** the Mothership. - [ ] **F1-RT** the routes between them.
+  - [x] m491 **F1-PE1** The Pearl 1 -- the plaza (a bare grey slab between the warehouses): bunting and bulbs criss-crossing it roof to roof, a painted floor (a sun before the stage, swirls, footprints), four corner community beds with sunflowers (.3 m kerbs, under his step).
+  - [ ] **F1-PE2** The Pearl 2.
+  - [ ] **F1-PE3** The Pearl 3.
+  - [ ] **F1-HC1..3** Hollow Creek.
+  - [ ] **F1-WF1..3** the Waterfront.
+  - [ ] **F1-IS1..3** the River Islands.
+  - [ ] **F1-MS1..3** the Mothership.
+  - [ ] **F1-RT** the routes between them.
 - [ ] **F2 The regions still missing from `REGIONS.md`**, each as land → places → people → the ways in
   (several, per the connective-tissue rules) → its quests and boss. Read the entry first.
   - [ ] **F2a The Underneath** (3): the tunnels under Old Town, the Pearl and the Waterfront, surfacing in
