@@ -74,3 +74,22 @@ Evil aliens are taking over Earth. You are a good alien who crashed. People run 
 **The trust meter.** A per-world number. It rises when you do good in front of people (save someone, fix something, beat the evil aliens where they can see). Low trust: everyone runs, cops shoot, you live in bins and borrowed faces. Middle: civilians stare but stay, cops warn first. High: you walk the street as yourself, and the propaganda billboards flip from fear to welcome. The meter is the long arc of the whole game, and each world moves it a notch.
 
 **Propaganda and the retro-future dressing.** Giant screens and billboards with alien faces: FEAR THEM at first, then, as trust rises, the same frames carry WELCOME. Retro TV sets in shop windows playing the news. Roswell posters, UFO diner signs, a flying saucer as the lost ship. Men in black in black sedans, and it is never quite clear which agency is on your side: one of them helps, one of them hunts. Powers that fit the fiction and the catalogue above: telepathy (read a guard's patrol), psychokinesis (move the crate, throw the bin), mind control (a guard opens his own gate), hoverboards and the saucer itself as late tech. Each one is a world's unlock and a mechanism's key.
+
+## Hypnosis (a mechanism AND a disguise, written down for later)
+
+A pendulum, a pair of glasses, a gadget held up to the eyes: do it in front of an NPC and his eyes go swirly. He is yours. A hypnotised NPC:
+- **follows you**, at walking pace, and stops when you stop;
+- **takes one command** at a time: wait here, go there, press that, attack that alien;
+- **is a tool for puzzles**, which is the point: the button is at the bottom and you are at the top and the drop would kill you, so you send him; the beam is too narrow for your run but not for his walk; the plate needs a body on it while you go through the door; two levers must be thrown together.
+- **can be thrown**, because he is a ragdoll: launch him onto the button.
+- **wears off** on a timer, or when he is hit, with a shake of the head. Swirly eyes are the tell, and so is a little spiral over his head so you can see it from the roof.
+
+It stacks with the trust meter: hypnotising people in front of others LOWERS trust (they saw you do it). Using it on an evil alien's guard does not. So it is a temptation with a price, which is the kind of choice the game wants.
+
+Catalogue entries it unlocks: a button out of reach, a pressure plate, paired levers, a guard who opens his own gate, a door you cannot fit through. Level 3 or 4 tech, after the Hover Pack and before the saucer.
+
+## Security cameras (an alarm with a tell)
+
+A box camera on a bracket under a cornice, like the one on SW 17th. It sweeps slowly left and right. Its field of view is DRAWN: a faint cone of light on the ground (a spotlight at night, a translucent wedge by day), so you always know whether you are about to be seen. When it catches you it LURCHES: a little animated jolt, a red light, a sound, and then the alert: two guards run to the spot. You hide (a bin, a doorway), disguise (a borrowed face walks right past it), fight, or shoot the camera out (it sparks, hangs dead, and the cone goes out). A disguise fools it; a bin fools it; the alien does not.
+
+Data per camera (`cam_NN` markers in the level JSON, kind `security_cam`): position, mount yaw, sweep half-angle and period, field of view, range, what it alerts (the nearest `npc_guard_*` pair), and `shootable: true`. Glowtide has six: the nest door, both harbour checkpoints, the keep gate, the boathouse pier and the lighthouse stair. Each one covers a route beat where the disguise is the intended answer, so the camera is the thing that makes the disguise matter.

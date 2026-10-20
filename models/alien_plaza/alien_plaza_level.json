@@ -594,7 +594,7 @@
   {
    "name": "smoke_eq5_0",
    "pos": [
-    72.4,
+    74.36363636363636,
     52.44117647058823,
     11.9
    ],
@@ -1633,7 +1633,7 @@
   {
    "name": "gen_1",
    "pos": [
-    40.0,
+    37.4,
     33.3125,
     9
    ],
@@ -2316,6 +2316,126 @@
    "kind": "hide_bin",
    "color": "green",
    "note": "jump in = you are the bin; walk slowly, cops ignore you; jump to pop out"
+  },
+  {
+   "name": "cam_00",
+   "pos": [
+    -25.0,
+    37.2,
+    5.2
+   ],
+   "kind": "security_cam",
+   "yaw": 90,
+   "sweep_deg": 35,
+   "period_s": 6.0,
+   "fov_deg": 60,
+   "range_m": 14,
+   "tilt_deg": -25,
+   "alerts": "nearest npc_guard_*",
+   "shootable": true,
+   "hp": 10,
+   "where": "nest door",
+   "behaviour": "sweeps; draws its fov cone on the ground; on sight of the undisguised alien: lurch + red light + alert the guards; a disguise or a bin passes"
+  },
+  {
+   "name": "cam_01",
+   "pos": [
+    28.5,
+    67.5,
+    3.0
+   ],
+   "kind": "security_cam",
+   "yaw": 180,
+   "sweep_deg": 40,
+   "period_s": 6.0,
+   "fov_deg": 60,
+   "range_m": 16,
+   "tilt_deg": -25,
+   "alerts": "nearest npc_guard_*",
+   "shootable": true,
+   "hp": 10,
+   "where": "west checkpoint",
+   "behaviour": "sweeps; draws its fov cone on the ground; on sight of the undisguised alien: lurch + red light + alert the guards; a disguise or a bin passes"
+  },
+  {
+   "name": "cam_02",
+   "pos": [
+    64.5,
+    73.5,
+    3.0
+   ],
+   "kind": "security_cam",
+   "yaw": 0,
+   "sweep_deg": 40,
+   "period_s": 6.0,
+   "fov_deg": 60,
+   "range_m": 16,
+   "tilt_deg": -25,
+   "alerts": "nearest npc_guard_*",
+   "shootable": true,
+   "hp": 10,
+   "where": "east checkpoint",
+   "behaviour": "sweeps; draws its fov cone on the ground; on sight of the undisguised alien: lurch + red light + alert the guards; a disguise or a bin passes"
+  },
+  {
+   "name": "cam_03",
+   "pos": [
+    56.7,
+    -32.0,
+    9.0
+   ],
+   "kind": "security_cam",
+   "yaw": 90,
+   "sweep_deg": 30,
+   "period_s": 6.0,
+   "fov_deg": 50,
+   "range_m": 18,
+   "tilt_deg": -25,
+   "alerts": "nearest npc_guard_*",
+   "shootable": true,
+   "hp": 10,
+   "where": "keep gate",
+   "behaviour": "sweeps; draws its fov cone on the ground; on sight of the undisguised alien: lurch + red light + alert the guards; a disguise or a bin passes"
+  },
+  {
+   "name": "cam_04",
+   "pos": [
+    -80.5,
+    -18.0,
+    4.5
+   ],
+   "kind": "security_cam",
+   "yaw": 180,
+   "sweep_deg": 45,
+   "period_s": 6.0,
+   "fov_deg": 60,
+   "range_m": 16,
+   "tilt_deg": -25,
+   "alerts": "nearest npc_guard_*",
+   "shootable": true,
+   "hp": 10,
+   "where": "boathouse pier",
+   "behaviour": "sweeps; draws its fov cone on the ground; on sight of the undisguised alien: lurch + red light + alert the guards; a disguise or a bin passes"
+  },
+  {
+   "name": "cam_05",
+   "pos": [
+    87.5,
+    84.2,
+    6.5
+   ],
+   "kind": "security_cam",
+   "yaw": 270,
+   "sweep_deg": 40,
+   "period_s": 6.0,
+   "fov_deg": 60,
+   "range_m": 14,
+   "tilt_deg": -25,
+   "alerts": "nearest npc_guard_*",
+   "shootable": true,
+   "hp": 10,
+   "where": "lighthouse stair",
+   "behaviour": "sweeps; draws its fov cone on the ground; on sight of the undisguised alien: lurch + red light + alert the guards; a disguise or a bin passes"
   }
  ],
  "ladders": [
