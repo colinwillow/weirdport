@@ -17,6 +17,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **CHAPTER 5 PLAYS THROUGH, AND A BODY NO LONGER WALKS INTO NOTHING (m485).** The keeper, cured, stood on the lighthouse rock's
+  edge reading `y 3.6`, `y -1000`, `y 3.6` -- his idle walk stepped off into the sea's void and the m484 put-back fetched him
+  back, every frame: there and not there, so `talk.near` never held him. **The one place a body is told to travel**
+  (`d.root.position` in the walk step, by `resolveBoxes`) now refuses a step whose floor is under the world or, on the islands,
+  below the sea from above it; ordinary drops are untouched. **Harness:** the board is stepped off (`boardStepOff`, the left
+  pad's down-flick) for every step but the gap it was taken out for -- `talk.near` is null while riding (the keeper's talk
+  tapped 40 times into nothing) and the boss fought from the deck took 195 of its 200 s, 43 s on foot. Seed 3: all 13 steps
+  of ch5, ch5b, ch5c in 186 s. **The islands' put-back sends him to his last SAFE spot**, which after a teleport down off the
+  lighthouse is its top -- a harness artefact (a thumb walks the ladder, refreshing the spot on the way), not a game bug.
+
 - **THE ISLANDS MADE FAIR: FOUR GAME FIXES OFF ONE CHAPTER (m484).** (1) **The gap's landing was out of reach.** The trace past
   the lip (s | v | grade | g | dy | arm | y): `11.9 16.1 ... a 3.93 A0.8 0.1`, `13.5 ... a -1.61 A0.9 -1.0`, `16.7 ... g ... -2.5`
   -- he passed UNDER the landing's front edge (13 m out, y 0.7) and into the sea. The in-run tops out at ~16 m/s (ridden flat

@@ -40,7 +40,7 @@ const server = http.createServer((q, r) => {
     // THE SHIPPED TEXT, with one handle spliced in beside the game's own: the things the driver reads and writes
     const s = body.toString(), k = 'window.melee = window.mel = {';
     if (!s.includes(k)) { console.error('play: no mel handle in index.html'); process.exit(1); }
-    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK, OFERRY, socialGroup, socialOf, ROLEFORM, OORB, kitPick, WEAP, slotNow, IXING, islWorld, wingTapR, rosterOf, mphFold, IBASE, islLocal, boardMount, groundAt, boardGrade, SK8 }; ' + k);
+    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK, OFERRY, socialGroup, socialOf, ROLEFORM, OORB, kitPick, WEAP, slotNow, IXING, islWorld, wingTapR, rosterOf, mphFold, IBASE, islLocal, boardMount, groundAt, boardGrade, SK8, talk, TALK, boardStepOff }; ' + k);
   }
   r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
 });
@@ -116,17 +116,22 @@ try {
       // twice, on the building site's ladder, and looked like a game NaN). The step is named in the log instead.
       const T = T0 && Number.isFinite(T0.x) && Number.isFinite(T0.z) ? T0 : null;
       if (T0 && !T) { if (!st.nanT) { st.nanT = 1; st.log.push('NaN TARGET from the game at ' + stepKey() + ' ' + [T0.x, T0.y, T0.z].join(',')); } stickOff(); return 'the game gave a NaN target'; }
+      // m485: OFF THE BOARD for anything but the gap it was taken out for -- nobody talks to a man on a deck (`talk.near` is
+      // null while riding) and a boss fought from one took 195 of its 200 s. The left pad's down-flick, as a thumb does it.
+      if (S.player.riding && !(s.type === 'flag' && s.flag === 'isl:gap')) { if (!S.boardStepOff()) stickOff(); return ''; }
       switch (s.type) {
         case 'goto': { if (!T) return 'goto: no target yet'; goTo(T.x, T.z, (s.r || 3) * .6, true, true); return ''; }
         case 'reach': { if (!T) return 'reach: no target'; goTo(T.x, T.z, (s.r || 4) * .6, true, true, Number.isFinite(T.y) ? T.y : undefined); return ''; }
         case 'talk': { if (!T) return 'talk: nobody to talk to';
+
           // m452: a speaker who would not talk to him as he is (`socialOk` -- most flee an alien): put on a form they will,
           // through the shipped picker, the way a player does at the forms wheel
           { const d = bodyAt(T); if (d && d.talk && !S.socialOk(d) && !st.formT) { st.formT = 1;
               // m479: the form whose GROUP this speaker talks to (`socialOf` and `talks`), not merely the first that changes him
               const want = [S.socialOf(d), ...((d.talk.talks) || [])], grp = nm => (S.ROLEFORM[nm] && S.ROLEFORM[nm].group) || S.socialGroup(nm);
               const pick = S.SAVE.forms.find(nm => nm !== 'zap' && (want.includes('*') || want.includes(grp(nm)))) || S.SAVE.forms.find(nm => nm !== 'zap');
-              if (pick) { S.formPick(pick); st.log.push('form ' + pick + ' (' + grp(pick) + ' for ' + want.join('/') + ') @' + st.t.toFixed(1)); } } } if (goTo(T.x, T.z, 2.0, false, true, T.y) && st.t - st.talkT > .6) { st.talkT = st.t; S.talkTap(); st.log.push('talk @' + st.t.toFixed(1)); } return ''; }
+              if (pick) { S.formPick(pick); st.log.push('form ' + pick + ' (' + grp(pick) + ' for ' + want.join('/') + ') @' + st.t.toFixed(1)); } } } if (st.t - (st.tkLogT || -9) > 4) { st.tkLogT = st.t; const d2 = bodyAt(T); if (d2) { const R = d2.root.position; st.log.push(`spk ${d2.st} y${R.y.toFixed(1)} me${P.y.toFixed(1)} d${Math.hypot(R.x - P.x, R.z - P.z).toFixed(1)} v${[d2.vx || 0, d2.vy || 0].map(v => (+v).toFixed(1))} flee${(+d2.fleeT || 0).toFixed(1)} wasK${d2.wasK ? 1 : 0} talk${d2.talk ? 1 : 0} id ${d2.talk && d2.talk.id} | near ${S.talk.near ? (S.talk.near.markId || (S.talk.near.talk && S.talk.near.talk.id)) : '-'} cur ${S.talk.cur ? (S.talk.cur.talk && S.talk.cur.talk.id) : '-'} line ${S.talk.line} brush ${S.talk.brush ? 1 : 0} knock ${S.player.knock ? 1 : 0}`); } }
+          if (goTo(T.x, T.z, 2.0, false, true, T.y) && st.t - st.talkT > .6) { st.talkT = st.t; S.talkTap(); st.log.push('talk @' + st.t.toFixed(1)); } return ''; }
         case 'defeat': { if (!T) return 'defeat: nobody left to knock down'; const d = bodyAt(T); if (!d) return 'defeat: target is not a body';
           st.lastNpc = d.markId || null; if (goTo(T.x, T.z, 1.6, true, true, T.y) && st.t - st.blowT > .5) blow(d); return ''; }
         // the turn is the shipped test's own doing (it fires `virusGo` when he is within `r`): walk up and watch
