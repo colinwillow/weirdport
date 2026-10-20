@@ -110,10 +110,16 @@ rise of each one.
 - Bring the cell back. He launches you to the keep's summit, where the core is.
 - *Teaches:* chaining every verb together.
 
-**Finale.**
-- Five cores go into the beacon sockets on the gate. The beacon lights, the gate opens, and the
-  waterfall parts.
-- The mountain path climbs to the exit portal, which leads to Level 2.
+**Finale (Bob-omb Battlefield's summit you can see from the start).**
+- Five cores go into the beacon sockets on the gate terrace. The beacon eye lights and the waterfall
+  parts.
+- The vault's back door opens onto a lift, which rises up through the cliff shelf.
+- From the lift, a 238 m path spirals clockwise around the volcano at a 21% grade, through a gorge cut
+  into its steep lower face, up to the summit ring and the exit portal to Level 2.
+- Goo boulders roll down the path at you (`boulder_spawn_*`). Dodge-roll through them or step into the
+  gorge's lip.
+- The summit is visible from the spawn the whole game, so the last climb was promised from the first
+  second. A line of breadcrumb pickups marks the path.
 
 ## Glyph secrets (three per level, mostly for later tech)
 - **The twin tower** in the west quarter: hover onto its ledge, then hammer through the cracked wall.

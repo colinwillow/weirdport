@@ -37,6 +37,7 @@ its own world.
   | `PL_generators` | `gen_1..3` |
   | `PL_fuel_cell` | Carryable |
   | `PL_sluice` | Spins on each hit |
+| `PL_mover_lift` | Lift platform: -2.9 → the shelf top (`mover_lift`, on `beacon`) |
 
 - **Empties:** every gameplay marker (spawn, cores, glyphs, enemies, NPCs, bells, generators,
   triggers, movers, the launch pad, the portal). Each carries its data as JSON in the extra `aw`. The
@@ -73,6 +74,9 @@ They show the player where to jump.
 
 **`crate_spawn`** is breakable and sits beside the stage, so the first reward comes within 30 s.
 
+**The summit path** is a walkable deck (`col_deck_summit_path`). Its centreline is `summit_path` in
+`alien_plaza_level.json` (Blender axes, every 2 m), for the rolling goo boulders.
+
 ## Places, for GOD and for testing
 | Place | Blender (x, y, z) |
 |---|---|
@@ -84,6 +88,7 @@ They show the player where to jump.
 | Boathouse dome | (-92, -22, 11.4) |
 | North-west islet | (-125, 55, 1) |
 | Gate terrace | (0, 88, 3) |
+| Summit portal | (0, 144.5, 73) |
 
 ## Not built yet (the game decides these)
 - Hover Pack physics: hold jump in the air for about 1.5 s of hover with +1 m of lift, refilled on the
