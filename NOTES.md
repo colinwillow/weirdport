@@ -176,6 +176,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE FREIGHT TRAIN IS HIS ART (m555, T2t, `HCTRAIN.glb`, `?train=0`).** `ft_loco` / `ft_flat` / `ft_caboose` are cloned into each
+  car's group at (0, 0, 0), unturned (rail level, cab at three +z: the export already turned Blender Y into -z, per the contract
+  -- not measured, the bounds are symmetric). For a car with art, `box` is a no-op and the wheels and the stack are not built; the
+  five logs are, and every BDYN box is as before, so riding the cars is unchanged. Loaded just above `buildFreight()`. `TRAIN GLB
+  FAIL` in the chip if it does not load.
+
 - **THE FERRY IS HIS ART (m553, T2s, `OFERRY.glb`, `?ferryart=0`).** `fy_ferry` (7.4 x 19.2, -0.95..7.65 about its waterline) is cloned
   into `O.grp` at the origin -- the group sits at the sea's height and `ferryPlace` turns and moves it, so nothing about where it
   is changes. Double-ended: no turn, no mirror. The drawn hull, band, deck, rails, cabin, wheelhouse and benches are not built
