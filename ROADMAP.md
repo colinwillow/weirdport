@@ -492,7 +492,7 @@ differ" table there, so no region feels like the last one.
     cellars and drains; the hobo's and the miner's region; the safe-house portals.
     - [x] m512 **F2a-1** the land: a hatch on the footbridge's apron down to a shaft room 28 m under the sea's level; a brick tunnel to a junction, the CISTERN (black water, two catwalks, teal growth) off it, a second tunnel to a second shaft that surfaces at a manhole in Old Town. Lanterns, pipes, dark brick. GOD place `underneath`.
     - [x] m513 **F2a-2** its people: THE CAMP off the cistern's north ledge (bedrolls round a fire barrel, a tarp, candles in bottles, a cart, washing) and THE HIDDEN MARKET east of the junction (six tarp stalls of found goods under strung bulbs, a smuggler's counter with a scale); Rook, Aunt Mags, Tibbs, Fennick, Cass, June. (The hobo form's way in moves to F2a-5 with the miner's.)
-    - [ ] **F2a-3** the water level: a pump room whose wheel raises and lowers the cistern, flooding one route and opening another.
+    - [x] m522 **F2a-3** the water level: the PUMP ROOM off the cistern's west wall -- step on the grate by the wheel and the cistern drains (y -.3 to -2.6) or fills. LOW: down a stair off the west ledge, under the south ledge, into the SMUGGLERS' VAULT at the pit's floor; but the second tunnel's SLUICE GATE drops shut. HIGH: the vault is under black water, the way to the second shaft is open.
     - [ ] **F2a-4** the other surfacings: a drain into the Pearl and a cellar under the Waterfront; the good aliens' safe house and its portal pad.
     - [ ] **F2a-5** the cave miner (sees in the dark, digs through a collapse) and the Underneath's quest.
   - [ ] **F2b Dump Tower** (6): the vertical level, the Reptilians' seat. It goes BEFORE the Mothership in

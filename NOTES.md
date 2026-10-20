@@ -66,6 +66,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE UNDERNEATH'S WATER LEVEL (F2a-3, m522, `buildUnderneath`, `underStep`).** The cistern's water is its own mesh now
+  (`U.water`: hi y - .3, lo y - 2.6, moving .45 m/s), the pump room is off the cistern's west wall (a new gap through the
+  same wall loop), and the grate in front of its wheel toggles it (one press per step onto it, `Pm.armed`). The pit's floor
+  (y - 2.4) is walkable when low: a 7-step stair (.34 risers) off the west ledge, a passage UNDER the south ledge (1.9 m of
+  head room -- the rig is 1.25), and a door in the south wall at the PIT's height (its own wall case: a lintel from y - .1,
+  a fill under y - 2.4) into the vault (crates, a tunnel map on the wall). The water rule now reads the live level and a
+  rectangle in the cistern's frame (`underLocal`). **The sluice is a box of our own in BOXES** -- built after the frame's
+  commit, `boxGrid()` once, then only its miny/maxy move (the grid is x/z only), raised 6 m out of reach when open.
+  Probed headless: on the grate `want` goes lo and the gate's box drops to the floor; the water's travel was not seen (the
+  shot harness's clock does not run during `setTimeout`). `places` exit 0.
+
 - **THE NEIGHBOUR'S FARM IS HIS -- AND ITS SHOP SIGN HAD BEEN A BLANK RED BOARD SINCE m312 (T2i, m521, `buildNeighbours`).**
   `neighbour_farm.glb` (`nf_house`, `nf_shed`, `nf_tower`, `nf_shop`; `?nfarm=0`, `NFARM GLB FAIL`) through `campPlace`,
   mirrored in z like the rest of his campaign art (every front -- the house door, the shop's awning -- is at glTF +z). Each
