@@ -41,6 +41,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `camp_kit.glb` | Old Town's camp: tent (paint + trim), burn barrel, sofa, shopping cart, shack | Blender X = camp frame u, +Y = v, origins on the ground; the tent is 2.8 x 2.3 x 1.5 (scale per tent), its tarp one white material to tint | none | 55-614 per piece |
 | `turret.glb` | Uplift's sentry turret (base, yoke, gun) and its hack panel | the three turret roots are each in their moving THREE.Group's own frame (y up, muzzle +z, the gun's origin at the trunnion); the panel on its own centre, screen -Y | none: the code keeps the posts, lens, laser and aiming | 100-170 per piece |
 | `flood_mast.glb` | the Waterfront's floodlight masts | origin at the mast's foot on the quay top, Blender X = frame u, +Y = v; 26 m, lamps at (+-1.1, +-.4) | none | 1,582 |
+| `halt_kit.glb` | the freight line's halt shelter and the loco's water tank | Blender X = line frame u, +Y = v; shelter at (pu, vm) on the deck (outer edge -X), tank at (tu, tv) on the ground, spout +X | none | 313 / 809 |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

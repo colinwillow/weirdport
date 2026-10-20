@@ -5,6 +5,14 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m570 -- the halt's shelter and water tank as art (scenery window; ROADMAP T3b)
+
+`models/campaign/halt_kit.glb`. The halt had its m494 pass; the shelter was still a red slab on two sticks and the loco's tank a
+cylinder on legs. The SHELTER: green posts with brackets, a ribbed red canopy falling to the line, a fretted cream valance, a
+gutter, a boarded back screen on the outer side, a hanging clock. The TANK: braced timber legs on pads, a deck, separate staves
+with iron hoops, a red cone with a finial, the spout swung out over the line on its gallows and chain, a valve, a ladder.
+Shipped unverified.
+
 ## m568 -- the floodlight mast as art (scenery window; ROADMAP T3a)
 
 `models/campaign/flood_mast.glb`: the Waterfront's 26 m mast at buildWaterfront's numbers. A tapered octagonal pole on a bolted
