@@ -519,6 +519,59 @@
    "line": "Five cores, one beacon."
   },
   {
+   "name": "teaser_hover",
+   "pos": [
+    55.5,
+    -30,
+    4.6
+   ],
+   "reward": "spores_20",
+   "needs": "hover_pack",
+   "note": "Forest Temple rule: seen on the way past from the start, reachable only after the shrine"
+  },
+  {
+   "name": "enemy_roof_0",
+   "pos": [
+    -60,
+    -6,
+    9
+   ],
+   "wave": 0,
+   "kind": "goo_grunt",
+   "patrol": [
+    [
+     -62,
+     -10
+    ],
+    [
+     -54,
+     8
+    ]
+   ],
+   "reason": "pressures the bell route's middle beat; knock them off the roof"
+  },
+  {
+   "name": "enemy_roof_1",
+   "pos": [
+    -55,
+    6,
+    9
+   ],
+   "wave": 0,
+   "kind": "goo_grunt",
+   "patrol": [
+    [
+     -62,
+     -10
+    ],
+    [
+     -54,
+     8
+    ]
+   ],
+   "reason": "pressures the bell route's middle beat; knock them off the roof"
+  },
+  {
    "name": "crate_spawn",
    "pos": [
     7,

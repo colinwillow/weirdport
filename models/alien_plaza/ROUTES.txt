@@ -34,6 +34,8 @@ ROUTE CHECK  (jump apex 2.81 m, flat sprint gap 7.6 m, hover gap 15.5 m, hover r
   3. hover       vault#0 -> shrine#1   (12.5 across, +0.7 up)
   4. hover       shrine#1 -> shrine#2   (0.0 across, +3.8 up)
   5. jump        shrine#2 -> shrine#3   (4.0 across, +1.4 up)
+## hover teaser (keep west face)   (surface teaser#0, top 4.2)
+  1. hover       ground -> teaser#0   (up 4.2 from the ground)
 ## glyph 2 NW islet   (surface offshore#0, top 0.8)
   1. jump        ground -> docks#1   (up 0.5 from the ground)
   2. jump        docks#1 -> boats#0   (1.5 across, -1.3 up)
