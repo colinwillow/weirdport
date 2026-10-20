@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m590 -- the Mothership bridge's console, chair and holo pedestal as art (scenery window; ROADMAP T3j)
+
+`models/campaign/ship_bridge.glb`. A CONSOLE segment (five make the code's curve): a leaning organic desk with a glow strip at the
+knees, a work surface with keys of light in cyan, pink and green, a screen on two bone stalks. The COMMAND CHAIR: a lathed pedestal
+and seat, a high back with a glowing finial, arms with lit pads. The HOLO PEDESTAL under the code's turning globe: a ribbed, lathed
+column with two glowing rings, a pink emitter and three bone prongs. Shipped unverified.
+
 ## m586 -- the Mothership's pods and machine as art (scenery window; ROADMAP T3i)
 
 `models/campaign/ship_pods.glb`, in the purple-and-green of the m506-m508 passes. Each POD's frame -- a ribbed bulb base with glowing

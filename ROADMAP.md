@@ -268,6 +268,12 @@ different context window, let me know."*
   crown, the floor and walls). Origins on the chamber floor yC. `ms_pod` at each pod's (u, v) in place of the base box and the cap
   box only (its claws hold the code's glass, its cap's socket is where the code's cable starts at 2.95); `ms_machine` at (C.u, C.v)
   in place of the column cylinder -- it cradles the code's glow sphere at 3.2 in an open cage (keep the sphere). 564 / 1,188 faces.
+- [ ] **T3j. Swap in the Mothership bridge's console, chair and holo pedestal** (`models/campaign/ship_bridge.glb`, no collision file
+  -- `buildShipDecks` keeps every collider, the floor ring, the glow dots, and `D.holo`'s turning globe and band). `mb_console` at
+  each of the five desk segments' (u, v) on yB, turned -a + pi/2 like the desk box (its operator side and screen face its local +Y:
+  if the screens end up facing out over Old Town instead of at the chair, add pi), in place of the desk box and the screen box;
+  `mb_chair` at (B.u, B.v + .6) in place of the two shade boxes (it faces -Y, out over the console); `mb_holo` added to `D.holo`
+  at (0, 0, 0) in place of its base cylinder (the pedestal runs -1.3 to -.4 under the code's globe). 72 / 228 / 342 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

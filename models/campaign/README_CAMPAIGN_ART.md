@@ -49,6 +49,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `trestle_kit.glb` | the freight trestle's signal mast, milepost and the refuge halfway over | Blender X = line frame u, +Y = v; origins at the code's spots on the rail top yr (the refuge on ry); signal lamps face -Y | none | 36-616 per piece |
 | `swing_kit.glb` | the swing bridge: Walt's fishing pitch and the BRIDGE SWINGS signpost (frame + lamp behind the code's board) | Blender X = frame u (the rail on +X), +Y = v, origins on the deck | none | 246 / 66 |
 | `ship_pods.glb` | the Mothership chamber's pod frames and the machine column | origins on the chamber floor; the pod frame fits round the code's glass (r .62, .35..2.65); the column cradles the code's glow sphere at 3.2 | none: the code keeps the glass, sleepers, cables, crown | 564 / 1,188 |
+| `ship_bridge.glb` | the Mothership bridge's desk segment, command chair, holo-globe pedestal | the console on its own centre (operator +Y); the chair facing -Y; the pedestal in the `D.holo` group's frame under the code's globe | none | 72 / 228 / 342 |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
