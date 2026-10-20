@@ -26,6 +26,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE FERRY PONTOONS, DRESSED (F1-WF2, m501, `buildFerry`).** Both pontoons (8 m at Old Town, 10 m at the Waterfront) get
+  a yellow edge, seams, six tyres hung round the sides at the waterline and two cast bollards with a rope coil, at the
+  edges and corners away from the boat's side. The far one (Chapter 4's arrival, `wfferry`) also gets a lamp, a lifebuoy
+  on a post, three crates (two solid) and a canvas `THE WATERFRONT · UPLIFT CORP WELCOMES YOU` board on the lamp post.
+  **The board's yaw is `th`, not `th + pi`**: with th + pi it read MIRRORED from the pontoon (a DoubleSide plane shows its
+  back reversed); single-sided now, so a wrong turn would show nothing at all -- re-shot to check it reads. `play ch4`
+  COMPLETE (3/3, 13 steps). Pier 1 itself was not touched (its bollards and fenders were already there).
+
 - **THE QUAY FLOOR, PAINTED (F1-WF1, m500, `buildWaterfront`).** Six Waterfront shots (`npm run shot wfquay wfbots wfturret
   wfdock wfferry wfsuper`, new entries): the containers already read; the floor under them was one 300 m grey. Added on
   the three slabs: joints every 8 m, 24 white container bays with a few bay numbers (A1...), three yellow-hatched strips,
