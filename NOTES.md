@@ -26,6 +26,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE BELLY, ALIVE (F1-MS2, m507, `buildMothership`).** Where the tether's pod arrives (`isship`). Added, all colliderless
+  and nothing within 25 degrees of the doorway (+u): 19 seams from the glass ring to the wall, a glow ring at the wall's
+  foot, 9 veins (seeded random walks up the wall in the membrane's `mem`), clutches of five eggs at the foot of six wall
+  bays, glyph panels (three glowing bars each) at eye height, 14 tendrils hanging from the ceiling round the organ with
+  glowing tips. **The veins are lit, not animated** -- the first comment said they pulsed with the core and nothing does
+  that; the comment was corrected rather than leaving a behaviour asserted only in a comment. Not play-tested (nothing solid).
+
 - **THE MOTHERSHIP'S DECKS, LIT (F1-MS1, m506, `buildShipDecks`).** Four ship shots (`npm run shot isship isconv isbridge
   iscore`): everything one flat purple. Added, all drawn and colliderless: in the conversion chamber a glow ring where floor
   meets wall, 16 radial seams, a cable (a dark flat band) from every pod to the column, 8 conduits up the wall, a light
