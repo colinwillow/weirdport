@@ -5,6 +5,15 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m557 -- the lighthouse and the keeper's cottage as art (scenery window; ROADMAP T2v)
+
+The rock had its m503 pass; the tower itself was still a cylinder with two rings. `models/campaign/lighthouse.glb`: a TAPERED tower
+lathed at the code's 1.8 -> 1.4 over 11 m with its red bands, a stone plinth course and apron, a corbelled gallery on brackets
+under the deck, the rail, the lantern's base wall, glazing and mullions, a glowing LENS at the code's lamp height (12 m), the red
+cap with a ball and a vane, the door with its hood and step, windows with sills and heads climbing round. The COTTAGE: white
+walls on a stone footing, a slate roof from points, gables, the chimney with a pot, a red door, windows with shutters and a box
+of flowers (the first render put the box across the door), a gable window, a log box. Shipped unverified.
+
 ## m554 -- the food carts as art (scenery window; ROADMAP T2u)
 
 `models/campaign/food_cart.glb`, at buildCarts' numbers. Split the way the container is: the PAINT (a rounded body with panel

@@ -179,6 +179,13 @@ different context window, let me know."*
   `fc_cart_trim` in place of the roof, window, counter, wheels, hitch and sign board (the code's sign plane sits on its board's front
   at +.27, unchanged); and for `K.shut` add `fc_cart_shutter` (and skip the awning: the paint root's awning is part of it, so for
   the shut cart hide or scale it -- or say so and a separate awning root can be split out). 62 / 648 / 60 faces.
+- [ ] **T2v. Swap in the lighthouse and the keeper's cottage** (`models/campaign/lighthouse.glb`, no collision file -- `buildIslands`
+  keeps the tower's box, the cottage's, the ladder, the oil store, drums, flag, washing line, pots and rope, and IKEEP keeps its beam).
+  `li_lighthouse` at (K.u, K.v) on the rock top, turned so its Blender +Y (the door) points along (cos dA, sin dA) in the islands'
+  frame -- replaces the tower cylinder, both bands, the gallery deck and its torus and posts, the lantern glass and mullions, the
+  lamp sphere (its lens glows at the same 12 m), the cap, the vent ball, the door, the apron and the four windows.
+  `li_cottage` at (cu0, cv0) on the top, turned `cps` like its body box -- replaces the body, both roof planks, the chimney, the door
+  and the two windows. 1,362 / 272 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

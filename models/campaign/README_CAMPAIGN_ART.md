@@ -35,6 +35,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `ferry.glb` | the Old Town <-> Waterfront ferry boat | one root in the moving group's frame: origin at the waterline on the centre, X = beam 7, Y = length 18, deck at 1.25; double-ended | none: the code keeps its moving boxes | 1,904 |
 | `freight_train.glb` | Hollow Creek's freight train: loco, flatcar, caboose | three roots, each in its car group's own frame: origin at rail level on the centre, X across, Z up; Blender -Y = three +z (the loco's cab end) | none: the code keeps its moving boxes | 438-658 per car |
 | `food_cart.glb` | Old Town's four food carts | origin at the cart's centre on the ground, X along the cart (2.8), +Y its front; `fc_cart_paint` is one white material to tint per cart, `fc_cart_trim` the steel and fittings, `fc_cart_shutter` for the shut one | none | 62 / 648 / 60 |
+| `lighthouse.glb` | the River Islands' lighthouse and keeper's cottage | lighthouse: origin (K.u, K.v) on the rock top, its door on Blender +Y (turn to dA); cottage: origin (cu0, cv0), door on +Y, turned cps | none | 1,362 / 272 |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
