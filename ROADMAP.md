@@ -869,7 +869,8 @@ differ" table there, so no region feels like the last one.
     - [x] m633 **F2d-1** the growth: any Old Town block the Skinsuits hold (turf `skin`) is overgrown -- vine arches over the street, glowing fronds, pods, wet moss -- growing in as it falls and dying back as it is taken. GOD `hothouse`.
     - [x] m642 **F2d-2** the twilight and the spread: inside a held block the light goes to bioluminescent twilight; the Skinsuits push into the blocks next to theirs on a clock unless you cut it back (shoot or swing the pods and vines to take the block's share off them).
     - [x] m648 **F2d-3** its heart: one block fully grown -- walkable vine bridges between the roofs, a pod nursery with half-turned civilians in the pods, its own GOD place.
-    - [ ] **F2d-4** its people and the way on: Skinsuits patrol the held blocks; the heart's way up to the Mothership.
+    - [x] m650 **F2d-4a** its people: Skinsuits patrol the heart's block and their own on a beat round the block (the turf crowd adds more where they hold).
+    - [ ] **F2d-4b** the way on: a spore pod from the nursery's mother pod up to the Mothership's tether (a ride, like the tower's tram).
     - [ ] **F2d-5** the chapter's beat: cure the city's held blocks back, a quest that holds it together.
   - [ ] **F2e The metropolis hub**: the tall city in the middle of the map that the other regions ring,
     opened a part at a time as chapters complete; Dump Tower stands in it.

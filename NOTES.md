@@ -487,6 +487,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **SKINSUITS WALK THE HOTHOUSE (m650, F2d-4a).** `buildHothHeart` adds four `peopleMark`s: role `skinsuit` (the roster's
+  alien_warrior stand-in), group `alien`, `alien: 'talk'`. Two loop the heart's block and two loop their own block, each
+  on a `beat` 4 m in from the block's corners at street level, starting at different corners. The markers are pushed before
+  `mkrNpcPlace` runs (the heart builds right after the turf). Wherever the Skinsuits hold a block, the turf crowd already
+  draws more of them by share. The way up to the Mothership is F2d-4b.
+
 - **THE ROPE-BRIDGE CROSSING'S DECKS, CONES AND SIGN ARE HIS ART (m649, T4j, `island_xing.glb`, `?ixing=0`, `ixPut`).** These are
   mirrored in z:
   - `ix_deck` sits on each sea stack, turned ps; the deck collider stays and the corner posts are not drawn.
