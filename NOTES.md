@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m692 -- the mill's saw line, log piles and sawdust as art (scenery window; ROADMAP T5d)
+
+`models/campaign/mill_floor.glb`, for `buildMill`. The saw line at the code's 21 m: a bed with yellow edges and steel rollers every
+1.2, the head saw -- a toothed blade on its axle where the code puts it, under a yellow hood on four posts (the first draft boxed the
+blade in out of sight), a red motor and a control box. Log piles of four and three courses at the code's spacing, bark in two tones,
+cut ends with rings, on two bearers. And a sawdust heap to scale. Shipped unverified.
+
 ## m688 -- the trailer park's boardwalk as art (scenery window; ROADMAP T5c)
 
 `models/campaign/trailer_walk.glb`, for the walk `buildTrailerPark` runs along the creek. A segment at the code's 3.4 wide and 4.3 long:
