@@ -23,6 +23,33 @@ PLAY better (quests that hold together, fights, the feel of the systems) over ne
 (Glowtide's events, the big alien map) are PAUSED for the loop**: another window is building the alien levels in parallel and
 owns them. Do not touch `models/alien_plaza/` or `models/alien_world/`. The levels will come together with the campaign later.
 
+**GLOWTIDE MECHANICS BLOCK -- RUN ONLY WHEN COLIN SAYS "do the Glowtide block", then go back to Phase F.** (Written by the level
+window, Oct 20.) The level file already carries every one of these as markers with their numbers; nothing in the game reads them
+yet, which is why none of them do anything. One build each, in this order. Read `models/alien_plaza/README_ALIEN_PLAZA.md` and
+`MECHANISMS.md` (same folder) for the design. The level window keeps owning the GEOMETRY in `models/alien_plaza/`; these items
+are code only. Where a system already exists (portals, grind, hover, the marker loader), reuse it -- do not fork it.
+- [ ] **G1. Portals.** `portal_0..5` (kind `portal`, `lit`, `where`) through the existing PORTAL/marker system (MARKERS.md says
+  `portal_*` is live). `portal_0` lit at start; the others light when he walks between their posts; jump between lit ones.
+  *He sees:* the posts glow on arrival and the GOD/portal list offers them.
+- [ ] **G2. Grind rails.** `rails` in `alien_plaza_level.json` (`a`, `b`; ride a -> b downhill). Catch with the air tap like the
+  board's rail catch, ON FOOT as well as on the board; slide along the segment at a speed from the drop; hop off at b or with a
+  tap. Reuse the board's grind code. *He sees:* the bell-room rail drops him into the plaza's west corner.
+- [ ] **G3. Moving platforms.** `platforms` in the JSON (`name`, `size`, `path`, `speed`, `wait_s`). Move the visual
+  `PL_plat_<name>` and its collider `col_deck_mover_<name>` along the path, ping-pong with the wait; anything standing on it
+  rides it (add the platform's delta to the player). *He sees:* the bell lift beside the clock tower goes up and down.
+- [ ] **G4. Hide bins.** `hide_bin_00..11` (kind `hide_bin`, `color`; each has a box `col_bld_bins_NNN`). Jump into one within
+  1 m: he becomes the bin (hide his rig, draw the bin at his position, walk at half speed, cops/guards/cameras ignore him);
+  jump again to pop out with a hop. *He sees:* the orange bin on the promenade trundles about with him in it.
+- [ ] **G5. Security cameras.** `cam_00..05` (kind `security_cam`: `yaw`, `sweep_deg`, `period_s`, `fov_deg`, `range_m`,
+  `tilt_deg`, `shootable`, `hp`). Sweep; draw the fov as a faint cone/decal on the ground; on line of sight to the undisguised
+  alien (not in a bin, not disguised) lurch, red light, and send the nearest two `npc_guard_*` to the spot. A bolt kills it
+  (sparks, cone off). *He sees:* the nest-door camera sweeps, catches him, two guards come running.
+- [ ] **G6. Enemies.** `enemy_walker_NN` (`spore_walker`: walk the `patrol`, turn at the ends, a stomp or one hit pops it) and
+  `enemy_drone_NN` (`buzz_drone`: hover the patrol, a slow glowing shot every 2.5 s inside 18 m, two hits). Reuse the existing
+  foe/body plumbing; placeholder shapes are fine. *He sees:* walkers on the roofs and the canal ledge, drones over the hover gaps.
+- [ ] **G7. The events** (the older plaza list above, unchanged): bells in clock order -> shutter; sluice handle + 3 hits ->
+  canal water drops 1.4 m; generators -> slab breakable; five cores -> beacon (waterfall off, vault door, lift, boulders).
+
 **NEXT, AHEAD OF THE REST: LOAD THE ALIEN PLAZA AS ITS OWN LEVEL (`models/alien_plaza/`, pushed m436).** Colin is building
 the alien side as SMALL hand-made levels, one at a time; this is Level 1, "Glowtide". Read `models/alien_plaza/README_ALIEN_PLAZA.md`
 (the contract), `LEVELS.md` (cores, events, markers) and `ROUTES.txt` (every route, beat by beat). First build: a world key
