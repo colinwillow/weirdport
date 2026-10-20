@@ -96,6 +96,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **DUMP TOWER HAS ITS PEOPLE AND THE CORPORATE LADDER (m532, F2b-3, `DTOWER.PEOPLE`, `dtRank`).** Fifteen suits on ten floors
+  -- two lobby guards and the receptionist, clerks/interns on the office floors, the VP in the gym, two executives in the sky
+  garden, two board members and the CEO's assistant in the boardroom, and MR. DUMP (role `ceo`) in the penthouse -- each a
+  `peopleMark` on its own floor's y. **A new social group, 'suit'** (`/secret_service|trump/` in `SOCIAL.groups`, first, with its
+  own `BRUSH.suit`): they talk only to a suit. **`dtRank()`** = max(badges staff 1 / exec 2 / ceo 3, form: suit 1, fat_trump 3)
+  drives the lift and the vestibule doors (they read badges only, at m530). The ladder rides on finished talks:
+  `talk:mk_dt_recept` -> staff badge, `talk:mk_dt_vp` -> exec badge, `talk:mk_dt_pa` -> the CEO's badge ONLY if `formNow()` is
+  `fat_trump` -- otherwise the flag is deleted again (so she can be asked twice) and she says so. `places` exit 0.
+
 - **DUMP TOWER HAS A LIFT AND BADGES (m530, F2b-2, `DTOWER.lift` / `.vest` / `.badges`, `dtStep`).** A glass cab with a gold
   frame at (u 8, v 8) on every floor, open on its -u side; stand in it .8 s and it rides (a teleport with the camera shifted,
   the hatch's method): lobby -> the highest floor your badges reach, anywhere else -> the lobby. No staff badge, no ride, and
