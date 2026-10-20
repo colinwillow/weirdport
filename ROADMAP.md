@@ -376,7 +376,7 @@ different context window, let me know."*
   roof-edge rails, turned along its run, in place of the two gold boxes each; `dt_lift` at (LU, LV, f) on every floor in place of
   the three glass walls, the four posts, the crown, the carpet and the call panel (its open side is -X, the panel outside it at
   (-1.25, -1.6)). Keep the glass walls' colliders.
-- [ ] **T3z. Swap in the kit town's other roof extras** (`models/campaign/roof_extras2.glb`; no collision). In `kgenMake`'s
+- [x] m626 **T3z. Swap in the kit town's other roof extras** (`models/campaign/roof_extras2.glb`; no collision). In `kgenMake`'s
   `S.extra` block through `add`, Blender (x, y, z) = (u, -v, h): `pods` -> `rx_pod` at each pod's (u, roofH, v), scaled uniformly
   by s and turned by its random yaw, in place of the sphere (its origin is the roof; the code's sphere centre is .5 s up);
   `squat` -> `rx_tarp` at each tarp in place of the tilted box, and `rx_ply` at each boarded window in place of the 'ply' box

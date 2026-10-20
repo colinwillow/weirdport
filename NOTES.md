@@ -413,6 +413,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE KIT TOWN'S OTHER ROOF EXTRAS ARE HIS ART (m626, T3z, `roof_extras2.glb`, `?rx2=0`, `KGEN.rx2G`).** `kgenMake`'s `art`
+  now takes a turn (rx, ry, rz) and a scale, and picks the file by name. These replace the drawn ones:
+  - `rx_pod`: at the roof, uniform s, its own yaw.
+  - `rx_tarp`: at the roof, its roll's yaw; the art is draped already.
+  - `rx_ply`: on the front wall, its z tilt kept. Blender -Y is +v here, which is OUT of the front wall, so it is not turned.
+  - `rx_crownsign`: X by W * .7, **turned pi so its gold face looks out over the back edge (-v)**, where the code's gold
+    panel faced. If it reads backwards, that pi is the one to take back.
+  - `rx_mast`: on the crown and on the vents (the vents' sign board stays).
+  Rolls are spent in their old order. Nothing here collides.
+
 - **DUMP TOWER'S HELIPAD, ROOF RAILS AND LIFT ARE HIS ART (m624, T3y, `tower_top.glb`, `?ttop=0`).** `dt_helipad` replaces the
   pad, the H and the lamps; it adds a windsock. `dt_rail` runs along each roof edge, turned 0 / pi/2 by run and X-scaled to
   the run's length; the gold collider stays. `dt_lift` on every floor replaces the posts, crown, carpet and panel; the three
