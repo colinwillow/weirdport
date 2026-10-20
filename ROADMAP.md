@@ -557,6 +557,11 @@ different context window, let me know."*
   control box); `ml_pile4` / `ml_pile3` at each pile's (P.u, y, P.v) by P.n, in place of every log cylinder and cut-end circle (logs
   6 m along X, .72 apart, .62 up a layer, cut ends with rings, two bearers under); `ml_dust` at each heap's (u, y, v) scaled by r, in
   place of the cone.
+- [ ] **T5e. Swap in the trailer park's porches and awnings** (`models/campaign/trailer_porch.glb`; no collision -- keep the porch
+  box). In `buildTrailerPark`, Blender X = u, +Y = v, per trailer: `tpc_awning` at (u - R.side * .9, yp, v - R.len * .1), its +X
+  away from the trailer toward the walk (so mirror X when R.side is +1, which puts the walk at -u), in place of the tin box and the
+  two steel posts (it adds rust patches, a rail and a string of bulbs); `tpc_porch` at (pu, py, v - R.len * .1), its step on the +X
+  side (mirror like the awning), in place of the plank box (posts to -1.2 under it).
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

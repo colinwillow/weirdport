@@ -5,6 +5,12 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m695 -- the trailer park's porches and awnings as art (scenery window; ROADMAP T5e)
+
+`models/campaign/trailer_porch.glb`, for `buildTrailerPark`. The awning at the code's 2.2 x 3.2: a corrugated tin sheet falling
+away from the trailer, two rust patches, on its two steel posts with a rail back to the trailer and a string of five bulbs under it;
+and the porch deck at the code's 1.7 x 2.2 on four posts with a step down toward the walk. Shipped unverified.
+
 ## m692 -- the mill's saw line, log piles and sawdust as art (scenery window; ROADMAP T5d)
 
 `models/campaign/mill_floor.glb`, for `buildMill`. The saw line at the code's 21 m: a bed with yellow edges and steel rollers every
