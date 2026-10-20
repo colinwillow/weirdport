@@ -7,7 +7,11 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## Landmines
 
-- **EVERY CORE HAS AN INTENDED ROUTE, A STORYBOARD, AND A HEADROOM CHECK (m439, `models/alien_plaza/storyboards/`).**
+- **AFTER EVERY PLAZA RE-EXPORT, THE KTX2 TWIN HAS TO BE RE-BAKED OR THE PHONE PLAYS THE OLD LEVEL (m443).** `ktx2Twin` loads
+  `alien_plaza_ktx2.glb` when it exists, so m442's re-export (shrine roof raised, light markers, intended-route pickups) was
+  invisible behind m439's twin until `npm run ktx models/alien_plaza/alien_plaza.glb etc1s` (re-baked here, 69 MB resident ->
+  ~9). The Blender side bakes after each export from now on (it needs `npm install` first: `ktx2-encoder`).
+- **EVERY CORE HAS AN INTENDED ROUTE, A STORYBOARD, AND A HEADROOM CHECK (m442, `models/alien_plaza/storyboards/`).**
   `INTENDED` in aw_plaza.py lists each route's waypoints; the checker proves every leg and lays the 66 breadcrumb pickups along
   the INTENDED line (not the shortest, which was often a shortcut). `storyboards/board_*.jpg` are renders from each beat looking
   at the next -- the storyboard found what the checker could not: the shrine's roof was 1.0 m over its exit landing, and the
