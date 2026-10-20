@@ -33,6 +33,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `coaster.glb` | the coaster in the Waterfront's dry dock | Blender X = frame u, +Y = v, origin (D.u, 0) on the keel blocks' top; stern Y 14, bow 85.5, deck 9 | none: the code keeps its boxes | 1,813 |
 | `wf_shed_tug.glb` | the Waterfront's transit shed and the tug at pier 2 | Blender X = frame u, +Y = v; shed at (Sh.u, Sh.v) on the quay top, quay face -Y; tug in pier 2's frame, origin on its deck, bow +Y | none | 2,300 / 1,031 |
 | `ferry.glb` | the Old Town <-> Waterfront ferry boat | one root in the moving group's frame: origin at the waterline on the centre, X = beam 7, Y = length 18, deck at 1.25; double-ended | none: the code keeps its moving boxes | 1,904 |
+| `freight_train.glb` | Hollow Creek's freight train: loco, flatcar, caboose | three roots, each in its car group's own frame: origin at rail level on the centre, X across, Z up; Blender -Y = three +z (the loco's cab end) | none: the code keeps its moving boxes | 438-658 per car |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

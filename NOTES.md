@@ -5,6 +5,15 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m552 -- the freight train as art (scenery window; ROADMAP T2t)
+
+`models/campaign/freight_train.glb`, at buildFreight's car numbers so every moving box he rides still fits. The LOCOMOTIVE is a
+green-and-cream hood unit: running boards, a long hood with louvred doors and a cream band, the cab with side and end windows and
+a dark roof, a stack, roof vents and a horn, headlamps, yellow handrails and corner steps, a striped nose. The FLATCAR has deck
+planks across, stake pockets, stakes and chains up its log half (the code's logs stay) and a kick-board at the open end. The
+CABOOSE is red board-and-batten with windows, doors at both ends, a cupola, a stove pipe, porch rails and steps and a tail lamp.
+All three ride on two-axle trucks with couplers and striped end sills. Each is built in its car group's own frame. Shipped unverified.
+
 ## m550 -- the ferry as art (scenery window; ROADMAP T2s)
 
 `models/campaign/ferry.glb`: the double-ended passenger ferry at buildFerry's sizes, so every moving collider it rides on still

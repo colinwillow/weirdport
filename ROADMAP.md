@@ -165,6 +165,13 @@ different context window, let me know."*
   at (0, 0, 0) in place of the hull, the blue band, the deck, the rails and stanchions, the cabin and its window band, the
   wheelhouse and its glass, and the two bench boxes (it has all of those at the same sizes: deck 1.25, cabin 4 x 5 to +2.6,
   wheelhouse 2.4 sq to +4, benches at +-6), plus raised end ramps, fenders, life rings, a mast with lamps. 1,904 faces.
+- [ ] **T2t. Swap in the freight train** (`models/campaign/freight_train.glb`, no collision file -- `buildFreight` keeps every BDYN
+  box, `trainPlace` / `trainStep` move the groups as now). Three roots, one per car, each in its car group's OWN frame: origin at
+  rail level on the car's centre, X across, up = three y, and the export already turns Blender Y into three -z, so add each root to
+  its `car.g` at (0, 0, 0) unturned: `ft_loco` in place of the frame, hood, cab, roof, stack, yellow bar and the four wheels (cab at
+  three +z exactly as the code's); `ft_flat` in place of the frame, deck, two stakes and wheels (KEEP the five logs); `ft_caboose`
+  in place of the frame, deck, body, cupola, roof and the two yellow bars. Each has two-axle trucks, couplers and striped end sills.
+  658 / 438 / 656 faces.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
