@@ -454,6 +454,11 @@ different context window, let me know."*
   cross braces, the three decks (cut round each hatch at the code's lu, hv -hw .. -hw + 1.05), every rail, the three ladders, the
   canopy posts, the canopy and the windsock mast (its posts run to -1.0 under g0, so a post on lower ground still meets it; the
   windsock cone stays the code's). The ramp stays the code's.
+- [ ] **T4m. Swap in the good aliens' kiosks** (`models/campaign/good_kiosk.glb`; no collision -- keep the hut and counter boxes).
+  In `buildGoodKiosks`, per kiosk, Blender X = u, +Y = v (+v the street), origin at (0, g, 0): `gk_hut_paint` (ONE white
+  material, tint it K.col) + `gk_hut_trim` in place of the hut box, the roof, the window, the counter and the awning (the code's
+  canvas sign sits on the trim's board at 2.78); then the goods by `K.goods` -- `gk_papers` for 'papers', `gk_keys` for 'keys',
+  `gk_clothes` for 'clothes' -- in place of that branch's boxes.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

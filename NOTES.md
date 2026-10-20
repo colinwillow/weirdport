@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m654 -- the good aliens' kiosks as art (scenery window; ROADMAP T4m)
+
+`models/campaign/good_kiosk.glb`, for `buildGoodKiosks` (the three disguised good aliens' stands). The hut at the code's 2.2 x 1.6 x
+2.4 with a scalloped awning over the counter, in one white material so each keeps its own colour; its trim: a roof with a fascia,
+corner posts, the glazed serving window, the counter on brackets, a kick plate and the board the code's canvas sign hangs on. And
+the three kinds of goods: a newsstand of stacked papers, a key board of brass keys, a rail of clothes. Shipped unverified.
+
 ## m652 -- Skye's lookout as art (scenery window; ROADMAP T4l)
 
 `models/campaign/old_lookout.glb`, for `buildLookout`. The whole tower at the code's numbers: four posts to the canopy, bolted, an
