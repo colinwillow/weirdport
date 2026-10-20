@@ -297,7 +297,7 @@ different context window, let me know."*
   origin on the ground, scaled uniformly by `s` and turned by the same random yaw, in place of the trunk cylinder, the two limbs and
   the ico crown blobs. Both are built at s = 1 to the code's numbers: trunk to 3.4 m (willow 2.6), crown centred 1.9 m above it.
   Instance them (one InstancedMesh per piece) -- every farm and roadside tree shares this one builder.
-- [ ] **T3o. Swap in the trailer park's rim props** (`models/campaign/rim_props.glb`, no collision file -- keep the three code boxes as
+- [x] m603 **T3o. Swap in the trailer park's rim props** (`models/campaign/rim_props.glb`, no collision file -- keep the three code boxes as
   colliders, just hide them). In `buildTrailerPark`'s THE RIMS block: `rp_barrel` at the drum's (u, v, g) in place of the 'drum' box
   (the tame fire still starts at g + 1.0, which is just above its embers); `rp_pickup` at (pu, pv, pg), its nose along +v, in place
   of the two 'red' boxes and the 'post' box (it sits on four cinder blocks, no wheels -- they are in its bed); `rp_pole` + `rp_flag`

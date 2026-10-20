@@ -337,6 +337,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE TRAILER PARK'S RIM PROPS ARE HIS ART (m603, T3o, `rim_props.glb`, `?rim=0`).** These are mirrored in z:
+  - `rp_barrel` stands at the burn drum; its box stays as the collider and the tame fire still starts at g + 1.0.
+  - `rp_pickup` is turned .3 like its boxes. The body and the blocks stay as hidden colliders and the cab drawing is gone.
+  - `rp_pole` + `rp_flag` stand at (fu, 1). The flag's material is cloned and tinted `MAT.flag`. If either is missing, the
+    code's pole and plane come back.
+  The other burn barrels (gate, camp, gang bridge) still draw their own; T3o's "it also fits" is left for a later pass. A
+  missing file says `RIM GLB FAIL`.
+
 - **EVERY FARM TREE IS HIS ART, INSTANCED (m601, T3n, `farm_trees.glb`, `?ftree=0`, `FTK`, `ftBuild`).** `farmTree` pushes a world
   matrix for `ft_oak` / `ft_willow`: at (u, ground, v), scaled by `s`, turned by the trunk's own roll plus the frame's `th`. The
   matrix is not mirrored, because a negative scale in an instance matrix flips the winding.
