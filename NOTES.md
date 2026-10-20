@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m704 -- the halts' bench, churns and lamp posts as art (scenery window; ROADMAP T5h)
+
+`models/campaign/halt_extras.glb`, for the platforms `buildFreight` dresses at each end of the trestle. The bench under the shelter
+at the code's .45 x 2.4: slatted seat and back on cast-iron ends, with the green timetable board and its four lines beside it; a pair
+of steel milk churns with their bands and necks and two tied mail sacks; and the platform lamp post: a lantern under a hood, its
+bracket and a hanging basket of flowers. Shipped unverified.
+
 ## m701 -- the fair field's poles and bunting as art (scenery window; ROADMAP T5g)
 
 `models/campaign/fair_field.glb`, for the field `buildFairground` hangs its bunting over: the code's 6 m pole tapered, with a red cap,

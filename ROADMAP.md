@@ -573,6 +573,12 @@ different context window, let me know."*
   scaled (1.07, 1.11, 1.06), at each of the five hay bales; `rt_paint` + `rt_trim` (rally_truck, paint tinted 'truck') at each of
   the four trucks outside the gate, nose toward -v, in place of the three boxes; `rp_pole` + `rp_flag` (rim_props) scaled Z by 2 at
   the stage's flag, in place of the 12 m steel box and the plane.
+- [ ] **T5h. Swap in the halts' bench, churns and lamp posts** (`models/campaign/halt_extras.glb`; no collision -- keep the bench's
+  box). In `buildFreight`'s m494 block, per platform, Blender X = u, +Y = v, built for side = +1 (mirror X for side -1):
+  `hx_bench` at (pu + side * 1.25, deck, vm) in place of the seat, the back, the two iron ends, the timetable board and its four
+  lines (the board is in it at +2.0 along v); `hx_churns` at (pu + side * 1.1, deck, cv) for each end (k = +-1; mirror Y for
+  k = -1) in place of the four churn cylinders and the two sacks; `hx_lamp` at each lamp post's (lu, deck, vv) in place of the post,
+  the lamp sphere, its cone, the bracket, the basket and its flowers (its bracket runs toward -X, the platform's inside).
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
