@@ -226,6 +226,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE WATERFRONT'S FLOODLIGHT MASTS ARE HIS ART (m569, T3a, `WFRONT.mastG`, `?mast=0`).** `fl_mast` at every `W.MASTS` foot on Y,
+  mirrored in z (Blender +Y = +v, so its caged ladder is on -v where the code's rungs were). The pole's collider stays (drawing
+  popped); the pad, head frame, lamp boxes and rungs are not built; the light cones still start at (u, v), top - .7, so they
+  come out of his lamps. `MAST GLB FAIL` in the chip if it does not load.
+
 - **UPLIFT'S SENTRY TURRETS ARE HIS ART (m567, T2z, `WFRONT.turG`, `?turret=0`).** `tu_base` in `grp`, `tu_yoke` in `yoke`, `tu_gun` in
   `gun` (its origin the trunnion, where `gun` sits at .45), each cloned unturned at its group's origin -- so the turning and pitching,
   the lens and its glow, the laser, tracer and flash are untouched. `tu_panel` at each `T.panel`, mirrored in z and turned
