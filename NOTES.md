@@ -17,6 +17,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **TWO BOARD BUGS, AND THE ISLANDS' GAP IS CLEARABLE AT LAST (m483, `boardGrade`, `stepSkate`).** The playthrough's trace along the
+  gap ramp's line (s | speed along the deck | grade | grounded): `-14.8 4.2 +0.65 g`, then `-13.6 6.6 -1.00 g` and rolling back.
+  (1) **`boardGrade` read a steep DESCENT as a wall.** Each probe took floors only up to `MOVE.step * 2` (0.7 m) over his feet;
+  `SK8.probe` is 1.2 m, so on anything steeper than ~30 degrees the deck BEHIND him was out of the window, the probe fell
+  through to the ground under the ramp, and the grade clamped to -1 -- uphill, full brake. The window is now
+  `MOVE.step * 2 + probe * 1.2` (up to a 1:1.2 slope). (2) **The board launched every kicker LEVEL**: at the lip, 16.9 m/s
+  and vy -0.7 off a 25 degree kick, down 4 m past it in the sea (12 needed). Her skates had surface-following since m269
+  (`bladeSurfPre/Post`: velocity along the face, a lip left on its angle) and the board never did; it does now (not the bike).
+  **Both bugs were in every board ride in the game**, not just this ramp. With them fixed the driver clears the gap (102 s,
+  several runs), the needle, the lighthouse. **Still open:** the keeper's Skinsuit at y -1000 (F0b-2b-4c).
+
 - **THE FLIGHT DOWN ON RUE'S FIELD IS DRIVEN; THE GAP IS A FINDING (m482, `tools/play.mjs`).** Flight: Skye's form by the ordinary
   sample driver on his kind (`policy` takes a step override now), then from 7 m short of the cross, heading at it, the right
   pad double-tapped (`wingTapR` on two consecutive frames) and at once a full dive, the stick turning onto the cross (+x turns

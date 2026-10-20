@@ -40,7 +40,7 @@ const server = http.createServer((q, r) => {
     // THE SHIPPED TEXT, with one handle spliced in beside the game's own: the things the driver reads and writes
     const s = body.toString(), k = 'window.melee = window.mel = {';
     if (!s.includes(k)) { console.error('play: no mel handle in index.html'); process.exit(1); }
-    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK, OFERRY, socialGroup, socialOf, ROLEFORM, OORB, kitPick, WEAP, slotNow, IXING, islWorld, wingTapR, rosterOf, mphFold, IBASE, islLocal, boardMount, groundAt }; ' + k);
+    body = s.replace(k, 'window.__play = { frameBody, player, cam, stick, quest, QUESTS, SAVE, DUMMIES, dummyBlow, godTo, GATES, ISLE, mphName, talkTap, renderer, rig, GODPLACES, MISSING, SAMPLE, MOVE, CRASH, progFlag, GATE_TYPES, melPower, MELEE, FOE, mphFold, socialMe, socialOk, formPick, formNow, progForm, HCRACE, raceAt, HCBIKE, FVEH, inTK, RBK, FBK, OFERRY, socialGroup, socialOf, ROLEFORM, OORB, kitPick, WEAP, slotNow, IXING, islWorld, wingTapR, rosterOf, mphFold, IBASE, islLocal, boardMount, groundAt, boardGrade, SK8 }; ' + k);
   }
   r.writeHead(200, { 'content-type': MIME[path.extname(f)] || 'application/octet-stream' }); r.end(body);
 });
@@ -279,6 +279,13 @@ try {
           }
           // riding: flat out at the far end of the line; once he is down again past the lip and it did not count, back to the top
           const [u, v] = S.islLocal(P.x, P.z), [lu, lv] = Rp.R(Rp.sL, 0), sNow = (u - lu) * Rp.dir[0] + (v - lv) * Rp.dir[1];
+          // m483: THE TRACE -- every 0.2 s of the first 3 s of each run: where on the line, speed along it, the grade the board
+          // reads, grounded, height over the floor straight under him
+          if ((st.gTrN || 0) < 16 && st.t - (st.gTrT || 0) > .2) { st.gTrT = st.t; st.gTrN = (st.gTrN || 0) + 1;
+            (st.gTr = st.gTr || []).push(sNow.toFixed(1) + '|' + (p.vel.x * Math.sin(p.boardH) + p.vel.z * Math.cos(p.boardH)).toFixed(1) + '|' + S.boardGrade(p.boardH).toFixed(2) + '|' + (p.grounded ? 'g' : 'a') + '|' + (P.y - S.groundAt(P.x, P.z, P.y + .3, 2)).toFixed(2));
+            if (st.gTrN === 16) st.log.push('trace s|v|grade|g|dy ' + st.gTr.join(' ')); }
+          if (sNow >= -.3 && !st.gLip) { st.gLip = 1; st.log.push('lip v ' + Math.hypot(p.vel.x, p.vel.z).toFixed(1) + ' vy ' + p.vel.y.toFixed(1) + ' y ' + P.y.toFixed(1) + ' top ' + (S.SK8 ? S.SK8.top : '?')); }
+          if (sNow < -5) st.gLip = 0;
           if (p.grounded && sNow > 4 && !S.SAVE.flags['isl:gap']) { st.log.push('down at ' + sNow.toFixed(1) + ' m past the lip'); st.gRun = 0; S.godTo(G[0], G[1], G[2]); stickOff(); return ''; }
           if ((st.gLogN || 0) < 3 && (!st.gLogT || st.t - st.gLogT > 2)) { st.gLogT = st.t; st.gLogN = (st.gLogN || 0) + 1; const hl = Math.atan2(far[0] - P.x, far[1] - P.z); st.log.push('s ' + sNow.toFixed(1) + ' v ' + Math.hypot(p.vel.x, p.vel.z).toFixed(1) + ' y ' + P.y.toFixed(1) + (p.grounded ? ' g' : ' air') + ' bH ' + (+p.boardH).toFixed(2) + ' line ' + hl.toFixed(2) + ' near ' + S.DUMMIES.filter(d => d.root && Math.hypot(d.root.position.x - P.x, d.root.position.z - P.z) < 3).map(d => d.markId || S.mphName(d.K)).join('/')); }
           walk(far[0], far[1], true); return '';

@@ -413,8 +413,8 @@ differ" table there, so no region feels like the last one.
         - [x] m480 **F0b-2b-3b** the orb side-quest the picker takes next (`qorb`: shoot down the pacifier orb -- the blaster through the pads, the camera at it), then `ch4b` (the control room, the lever, the line freed) and `ch4c` (the supervisor).
         - [x] m481 **F0b-2b-4a** Chapter 5's first quest (`ch5`): the rope bridges walked span by span, Rue, Rollergirl, up the mesa, Teo. 5 steps.
         - [x] m482 **F0b-2b-4b-1** `ch5b.0`: Skye's form (his kind sampled) and a glide from 7 m short of the cross, a dive onto it: down inside the cones.
-        - [ ] **F0b-2b-4b-2** `ch5b.1` THE GAP -- a finding first: on the board down the in-run (3.6 m of drop, ~12 m/s expected at g 20 and `SKSPEED.slope` 11) he reaches the kick at 1-3 m/s and stalls there, every run. Find why (the grade on the deck's triangles? the kick's first quads?) and fix it in the game; then the needle (`ch5b.2`).
-        - [ ] **F0b-2b-4c** `ch5c`: out to the lighthouse, the keeper in his storm. - [ ] **F0b-2b-5** Chapter 6 (the Mothership).
+        - [x] m483 **F0b-2b-4b-2** `ch5b.1` THE GAP -- a finding first: on the board down the in-run (3.6 m of drop, ~12 m/s expected at g 20 and `SKSPEED.slope` 11) he reaches the kick at 1-3 m/s and stalls there, every run. Find why (the grade on the deck's triangles? the kick's first quads?) and fix it in the game; then the needle (`ch5b.2`).
+        - [ ] **F0b-2b-4c** `ch5c`: the keeper's Skinsuit ends up at y -1000 over and over (knocked or walked off the lighthouse rock over open sea; the m469 put-back is not holding it) -- trace its state and position, fix it in the game so a boss cannot leave its arena, then drive the five downs. - [ ] **F0b-2b-5** Chapter 6 (the Mothership).
   - [ ] **F0c Every world boots** through the real loader with no red toast, in `places`.
 - [ ] **F1 Polish passes, region by region, with `npm run shot`.** The farm had five; each of the others
   gets at least three, one build each, fixing the worst thing in the shots and checked against the
@@ -1305,4 +1305,7 @@ differ" table there, so no region feels like the last one.
   (`FBK`): 482 copies in 11 draws. `?bush=0` is the code-built mounds.
 - **m479: T2's four named pieces are done** (roadblock m477, truck m476, bushes m478, crash m474); its "onward, place by place" waits
   on the scenery window's next files, so the loop is back on Phase F until a new `models/campaign/` piece lands.
+- **m483: the SKATEBOARD now follows the surface like her skates** (`bladeSurfPre/Post`, `BLADE.surf`'s numbers): a kicker throws
+  him up at its own angle instead of rolling him off level. Every ramp and lip the board meets changes, the farm's and the
+  test site's included. The bike is left as it was (the race was tuned without it).
 
