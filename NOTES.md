@@ -26,6 +26,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **UPLIFT'S LOT, DRESSED (F1-WF3, m502, `buildWaterfront`'s factory block).** The lot inside the fence (`wfturret`) read as
+  the same concrete as the public quay. Added in the front strip between the gate and the factory: a green walkway (the
+  `glow` paint) with white edges and an UPLIFT stencil, eight parking bays with three company vans (white, a green band,
+  solid boxes -- cover from the turrets, which is a gift and is left in), four kerbed topiary planters at .3 m (under the
+  step), three flagpoles with green flags along the fence, and a billboard on the fence's inner face. The dry dock's head
+  was the other candidate and is left for the island pass. `play ch4` COMPLETE (3/3, 14 steps).
+
 - **THE FERRY PONTOONS, DRESSED (F1-WF2, m501, `buildFerry`).** Both pontoons (8 m at Old Town, 10 m at the Waterfront) get
   a yellow edge, seams, six tyres hung round the sides at the waterline and two cast bollards with a rope coil, at the
   edges and corners away from the boat's side. The far one (Chapter 4's arrival, `wfferry`) also gets a lamp, a lifebuoy
