@@ -487,6 +487,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE HOTHOUSE'S HEART: VINE BRIDGES AND THE NURSERY ON THE ROOFS (m648, F2d-3, `HHEART`, `buildHothHeart`, GOD `hothheart`).**
+  **Roofs are FOUND, not looked up:** a 2 m grid of `groundAt(x, z, 90, 90)` over a block, flood-filled into flat patches
+  over 3 m up (at least 6 cells). `KBLD` is empty in the harness, and the Skinsuits' own block (B3) has no buildings at all.
+  The heart is therefore the nearest block to theirs with three roofs or more (A4 in `places`). Its parts:
+  - up to 6 `pearlSpan` rope bridges in vine colours, each roof to its nearest one or two
+  - a `pearlLadder` up the lowest roof
+  - on the highest roof, six pods with a dark body and a teal head inside each, round a pulsing mother pod, with a magenta
+    PointLight
+  The heart is built once, after the turf, and is always there. **A placecheck row `HEART`** reports the block, roofs, bridges,
+  pods and the nursery's spot; `places` reads 3 roofs, 1 bridge, 6 pods, nursery at (85.9, 9.3, 21.8).
+
 - **THE ALIEN ORBS HAVE HIS SHELL (m646, T4i, `alien_orb.glb`, `?orb=0`, `orbShell`).** `ao_shell` is added to each orb's group at
   its centre: the amp and the watcher through `orbBody`, the trance orb in `buildOrbs`. The code's core keeps its colour and
   glow and shows through the gaps; the ring, halo, cones and beams are unchanged. The shell turns with its group. `ao_core` is

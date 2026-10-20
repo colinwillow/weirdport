@@ -868,7 +868,7 @@ differ" table there, so no region feels like the last one.
     grid stands and shrinks as you cure districts.
     - [x] m633 **F2d-1** the growth: any Old Town block the Skinsuits hold (turf `skin`) is overgrown -- vine arches over the street, glowing fronds, pods, wet moss -- growing in as it falls and dying back as it is taken. GOD `hothouse`.
     - [x] m642 **F2d-2** the twilight and the spread: inside a held block the light goes to bioluminescent twilight; the Skinsuits push into the blocks next to theirs on a clock unless you cut it back (shoot or swing the pods and vines to take the block's share off them).
-    - [ ] **F2d-3** its heart: one block fully grown -- walkable vine bridges between the roofs, a pod nursery with half-turned civilians in the pods, its own GOD place.
+    - [x] m648 **F2d-3** its heart: one block fully grown -- walkable vine bridges between the roofs, a pod nursery with half-turned civilians in the pods, its own GOD place.
     - [ ] **F2d-4** its people and the way on: Skinsuits patrol the held blocks; the heart's way up to the Mothership.
     - [ ] **F2d-5** the chapter's beat: cure the city's held blocks back, a quest that holds it together.
   - [ ] **F2e The metropolis hub**: the tall city in the middle of the map that the other regions ring,
@@ -1804,4 +1804,7 @@ differ" table there, so no region feels like the last one.
   "where did it land" point to hand over. It spreads every 40 s into one of a held block's four neighbours, by .1 share, and
   stops at 18 of the 36 blocks so it can't eat all of Old Town while nobody plays. Inside a grown block the fog goes teal and
   the sun drops to half. `mel.HOTH` has `every`, `push`, `cap`, `cut`, `twFog` and `twDim` to tune it.
+- **m648 (F2d-3): the Hothouse's heart is the block NEAREST the Skinsuits' own that has three roofs or more.** Their native
+  block, B3 (the watcher's pool), is open street, so the heart landed on A4. It is grown for good, whoever holds the block:
+  the vine bridges, the ladder and the nursery stay put. Only the jungle overlay comes and goes with the turf.
 
