@@ -23,6 +23,28 @@ PLAY better (quests that hold together, fights, the feel of the systems) over ne
 (Glowtide's events, the big alien map) are PAUSED for the loop**: another window is building the alien levels in parallel and
 owns them. Do not touch `models/alien_plaza/` or `models/alien_world/`. The levels will come together with the campaign later.
 
+**FROM COLIN (Oct 20, 2 am), relayed by the level window because the loop was mid-pass -- take these next, in the campaign:**
+*"The character text when they talk to you does this weird wrap feature: based on how you're looking at them it's always
+adjusting the line wrap. Which is weird. And it would be nice if we could stylize it to look more like toon writing, comic style."*
+- [ ] **T1. Speech text: wrap ONCE, then never re-wrap.** Lay the line out when the bubble opens (fixed width in screen px or a
+  fixed character count) and keep that layout while it is on screen, whatever the camera does; only the bubble's POSITION follows
+  the speaker. Then style it as a comic balloon: a white rounded balloon with a dark outline and a tail to the speaker, a
+  hand-lettered comic font (a Google Font such as Bangers / Comic Neue / Patrick Hand -- pick one, put it on a switch he can
+  reach), words appearing a few at a time.
+
+*"We should add to the task list to develop the game land: stylize the scenes, a details pass, actual better geometry. When the cops
+block the bridge you can just physically jump over the barricade. The truck could have better detail. Those bushes on the
+farmland. The crash. All of that could be developed further -- keep doing detail passes, and if you want to hand that off to a
+different context window, let me know."*
+- [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
+  block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
+  (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's
+  STYLE_GUIDES.md (`models/alien_plaza/`) apply: no box meets the ground in a straight line (a foot / dirt / rubble), curves are
+  smooth-shaded, every building has a plinth / floor bands / cornice, three of each prop kind, imperfections where the eye lands.
+  **Tell Colin in the NOTES entry whether you want this handed to a separate scenery window** (the level window can take it: it
+  builds in headless Blender and pushes GLBs, so a scenery window owning the campaign's art files while the loop owns the code
+  would not collide).
+
 **GLOWTIDE MECHANICS BLOCK -- RUN ONLY WHEN COLIN SAYS "do the Glowtide block", then go back to Phase F.** (Written by the level
 window, Oct 20.) The level file already carries every one of these as markers with their numbers; nothing in the game reads them
 yet, which is why none of them do anything. One build each, in this order. Read `models/alien_plaza/README_ALIEN_PLAZA.md` and
