@@ -605,6 +605,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m684 (F2d-5): THE CURE** (`qcure`, `hothMother`, `hothMotherGone`, Fern `hh_fern`). Fern, at the foot of the heart's vine ladder,
+  gives it. Steps: `hh:cut` (set in `hothCut` the moment a block flips from skin), `hh:mother` (a bolt landing within `motherR` 2.4 of
+  the mother pod; she has a 1.9 x 2.7 collider now so a bolt STOPS in her instead of flying through), then talk to Fern (`say`).
+  Bursting her: -`motherCure` (.45) skin share on every block that has any, the spread in `hothStep` checks `hh:mother` and stops, and
+  her mesh (found by material after commit) and light go dark on every load after. **`mkrNpcPlace` now skips a mark that already has
+  a K**, so it can run twice; `placecheck` runs it again after moving the HEART row ahead of the QUESTS check (THE CURE aims at the
+  heart's marks, which the old order built after the check -- `AT NOTHING` / `HAS NO KIND`). `places`: 0 BAD.
+
 - **m683 (T4z): THE DRY DOCK'S KEEL BLOCKS, THE QUAY FENDERS AND THE STAIR TOWER ARE HIS** (`dry_dock.glb`, `WDK`, `wdPut`, `wdBuild`,
   `?wdock=0`). Blocks and fenders are INSTANCED (no mirror): a fender's water face is Blender -Y = glTF +Z, so its yaw turns it out --
   PI on the river edge, `P.psi + s*PI/2` on a pier's sides, `P.psi + PI` on a pier's end (box rule: local +z -> (sin, cos)). Keel

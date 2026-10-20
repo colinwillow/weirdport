@@ -176,6 +176,13 @@ try { M.mkrNpcPlace(); } catch (e) { quiet('mkrNpcPlace throw', e.message); }
   if (why) globalThis.__cowBad = (globalThis.__cowBad || 0) + 1;
   quiet((why ? 'BAD ' : 'ok  ') + 'BRAWL', r); }
 quiet('LIFE', M.OTLIFE.n, 'routes:', M.OTLIFE.routes.map(r => r.id + ' ' + r.beat.length + 'pts ' + Math.round(r.beat.reduce((s2, q, i, B) => s2 + (i ? Math.hypot(q[0] - B[i - 1][0], q[1] - B[i - 1][1]) : 0), 0)) + 'm').join(' | '));
+// m647: THE HOTHOUSE'S HEART -- the Skinsuits' native block: its roofs, the vine bridges joining them, the nursery's pods
+{ const keepTurf = M.SAVE.turf; M.SAVE.turf = {}; M.turfBuild(); let r = '', bad = 0;
+  try { M.buildHothHeart(); const H = M.HHEART; r = H.blk ? 'block ' + H.blk.name + ' | ' + H.roofs + ' roofs, ' + H.bridges + ' vine bridges, ' + H.pods.length + ' pods' + (H.at ? ' | nursery at ' + H.at.slice(0, 3).map(v => v.toFixed(1)).join(',') : ' | NO NURSERY') : 'NO SKIN BLOCK';
+    bad = !H.blk || !H.at; } catch (e) { r = 'THREW ' + e.message; bad = 1; }
+  M.SAVE.turf = keepTurf; M.turfBuild(); console.log((bad ? 'BAD' : 'ok ') + ' HEART ' + r); }
+// (m684: the HEART row runs before the quests now -- THE CURE aims at its mother pod and its gardener)
+try { M.mkrNpcPlace(); } catch (e) { quiet('mkrNpcPlace throw', e.message); }   // m684: the heart's own marks (Fern) find their kinds
 // ---- EVERY LIVE QUEST STEP POINTS AT SOMETHING THAT EXISTS (m339): a place that resolves, a person whose mark found its
 // kind, a speaker who is a mark (or a script an earlier step hands over), a gate that was built. A step aimed at nothing
 // is a beam that never appears and an objective that never passes, and from the phone that is "the game stopped".
@@ -1026,11 +1033,6 @@ const walkUp = (pts, y0) => { let y = y0; for (let i = 0; i < pts.length - 1; i+
   } else why = 'NOT BUILT';
   if (why) bad++;
   quiet((why ? 'BAD ' : 'ok  ') + 'BOSS6', r, why); }
-// m647: THE HOTHOUSE'S HEART -- the Skinsuits' native block: its roofs, the vine bridges joining them, the nursery's pods
-{ const keepTurf = M.SAVE.turf; M.SAVE.turf = {}; M.turfBuild(); let r = '', bad = 0;
-  try { M.buildHothHeart(); const H = M.HHEART; r = H.blk ? 'block ' + H.blk.name + ' | ' + H.roofs + ' roofs, ' + H.bridges + ' vine bridges, ' + H.pods.length + ' pods' + (H.at ? ' | nursery at ' + H.at.slice(0, 3).map(v => v.toFixed(1)).join(',') : ' | NO NURSERY') : 'NO SKIN BLOCK';
-    bad = !H.blk || !H.at; } catch (e) { r = 'THREW ' + e.message; bad = 1; }
-  M.SAVE.turf = keepTurf; M.turfBuild(); console.log((bad ? 'BAD' : 'ok ') + ' HEART ' + r); }
 // ---- TURF (m407): Old Town's 6 x 6 blocks, each with a share for every faction that sums to one; the strong seeds (the camp,
 // the carts, the site, Uplift's office, the protest) each hold their own block; more than one faction holds ground; a push
 // moves a block's holder and is saved; nothing outside Old Town is a block

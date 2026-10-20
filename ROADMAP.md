@@ -963,7 +963,7 @@ differ" table there, so no region feels like the last one.
     - [x] m648 **F2d-3** its heart: one block fully grown -- walkable vine bridges between the roofs, a pod nursery with half-turned civilians in the pods, its own GOD place.
     - [x] m650 **F2d-4a** its people: Skinsuits patrol the heart's block and their own on a beat round the block (the turf crowd adds more where they hold).
     - [x] m680 **F2d-4b** the way on: a spore pod from the nursery's mother pod up to the Mothership's tether (a ride, like the tower's tram).
-    - [ ] **F2d-5** the chapter's beat: cure the city's held blocks back, a quest that holds it together.
+    - [x] m684 **F2d-5** the chapter's beat: cure the city's held blocks back, a quest that holds it together.
   - [ ] **F2e The metropolis hub**: the tall city in the middle of the map that the other regions ring,
     opened a part at a time as chapters complete; Dump Tower stands in it.
 - [ ] **F3 The rest of the grid and the fail states** (`LORE.md`): the projector, poltergeist and relay
@@ -1907,3 +1907,8 @@ differ" table there, so no region feels like the last one.
 - **m683 (T4z), the quay fenders:** each fender's centre is put where the code's rubber box was centred (v - .18, hanging off the
   face), not at v + .18 as the item says. At + .18 the 0.36 m-deep fender would sit inside the quay wall. They are instanced with
   no mirror, so each one's water face is turned outward by its yaw instead.
+- **m684 (F2d-5), the cure:** it is a side quest (`qcure`, THE CURE) from Fern, a gardener at the foot of the heart's vine ladder,
+  not a numbered chapter. The chapter order already runs the Tower and then the Mothership, so this hangs between them. Bursting
+  the mother pod (one bolt into her) takes .45 of the Skinsuits' share off every block that has any, which flips most held blocks
+  back, and it stops the spread for good. Blocks they still hold stay held until you cut them back. Melee still doesn't cut the
+  growth; only bolts do.
