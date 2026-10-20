@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m665 -- the fields' post-and-rail fence as art (scenery window; ROADMAP T4s)
+
+`models/campaign/farm_fence.glb`, for the 'fence' borders `buildFieldBounds` lays between pastures. An oak post with a weathered
+cap and nails, separate from the rails so a stretch never fattens it; the code's two rails at .55 and 1.0 as gently sagging split
+timber in two tones, 1 m long for the code to stretch to its 2.95 piece; and a five-bar field gate on its hanging post, braced, with
+hinges and a latch, for any gap the farm wants closed. Shipped unverified.
+
 ## m664 -- the city ring's houses as art (scenery window; ROADMAP T4r)
 
 `models/campaign/ring_house.glb`, for `ringHouse`. The town edge's house (m658) rebuilt at the ring's own numbers -- 6.8 x 5.8,
