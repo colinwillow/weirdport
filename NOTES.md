@@ -828,6 +828,21 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m815 (F5-5b) -- the Tall White who gets off the Phoenix Lights, and trades
+When the V comes down (`PHX.st` 'down'), a procedural tall pale figure (`phxTallWhite`) stands 1.5 m off the site and turns
+to face him.
+- **The trade:** being within `near` 2.6 m for `hold` 2 s makes the deal.
+  - It costs `price` 40 juice and buys the first of `SELL` (tank, seal, cheap, quick) that he lacks, through `goodGift`.
+  - With all four owned, it fills the tank for free.
+  - If he is short of juice, a card says so and he can retry 3 s later.
+- **After the deal:** `phx:deal` is set (the new second step of `qphoenix`), and the lights lift `after` 4 s later.
+- **Changed from m809:** reaching the site now sets `phx:seen` WITHOUT lifting the lights, so the trader has time.
+- **Not a talk body:** the figure is not in `DUMMIES`, so the deal is a stand-beside, not a talk.
+- **Checked:** `play ch1` passed. The first run timed out at the 240 s load wait (the page never finished loading in the
+  container), and the rerun passed.
+
+Shipped unverified.
+
 ### m812 (T6u) -- the swing bridge's fixed parts are his art
 `OSWING.brG` loads `models/campaign/swing_bridge.glb` (`?swbridge=0` leaves it out). In `buildSwing`, `br()` places a node and
 records it in `brArt`. Placements:
