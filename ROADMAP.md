@@ -15,6 +15,33 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
+- [ ] **STEER, FROM COLIN (Oct 20, 19:55) -- DO THIS NEXT, AHEAD OF EVERYTHING ELSE: A CHARACTER SELECT, ZAP OR THE ALIEN LIZARD.**
+  *"I just created a new hero character... a bit of an automated process using Claude through the Blender MCP and scripting... I want
+  to see if this workflow worked... I want to now have a character selection screen where you could choose the original character zap
+  or the new hero character."* **It is a test of his pipeline: what he wants to see is whether every animation came across.**
+  **THE FILE:** `models/alien_lizard.glb` (commit `0cb941e`, "added alien lizard"). It is at `models/`, NOT `models/characters/`.
+  Leave it where he put it or move it into `models/characters/`, and fix the `ASSETS` hash either way (it is already in `ASSETS`).
+  **MEASURED FROM THIS SIDE (read the JSON chunk; nothing decoded):**
+  - **61 clips, and every name zap has is there.** Zap has 62, and the only one missing is `CINEMA_4D_Main` (residue that is dropped
+    anyway). So every clip `RIG` / `MOVE` / the weapons / the board / the ledge / cover ask for by name should resolve with no
+    remapping. That is the claim the test is meant to check, so do not paper over a miss: if one fails to bind, the chip says so.
+  - **All four weapon mounts are present** (`weapon_root_left` / `weapon_tip` / `weapon_root_right` / `weapon_tip_2`), so the
+    blaster and the rest should parent by name with IDENTITY, as on zap. Verify with `npm run rig` if a mount looks off. Do not nudge.
+  - **51 joints against zap's 62.** Different rig. Anything typed against zap's bone list (a bone looked up by name for the spine,
+    the head, the hips (`rig.hipY`), the ragdoll, the weapon hand) must be looked up rather than assumed. Grep for bone names.
+  - **NOT compressed:** no `KHR_draco_mesh_compression`, no `EXT_texture_webp`, 4.6 MB raw (zap is 4.1 MB draco). Fine for a test.
+    Bake it with `npm run ktx` (and draco) only if he keeps it.
+  - **`doubleSided: true`, alphaMode default (OPAQUE).** It is the generated-asset habit. Force FrontSide the way the builders do, or
+    leave it for the test and say so.
+  - **Height and facing are MEASURED at load** (toes and shoulders, `RIG.height`), so a different authored size or axis lands
+    right with no edit. Do not type a scale for him.
+  **THE BUILD:** a **character select** before play (or on the boot card / a chip he can tap on the phone): two cards, **ZAP** and
+  **ALIEN LIZARD**. The choice is saved (`SAVE` or localStorage) and switches `RIG.file` (and its `_ktx2` twin where zap has one)
+  before the rig loads. A `?hero=lizard` / `?hero=zap` URL switch also works, so he can A/B with a link. Put the hero's name and a
+  **clip count bound / clips asked for** in the chip (e.g. `HERO lizard 58/58`), plus the names of any clip that did not bind.
+  That number is the answer to his test, so it has to be visible on the phone.
+  **Then tick this and go back to the campaign items below.** No other change to the hero, the controls or the camera.
+
 **FROM COLIN (Oct 20), OVER EVERYTHING BELOW: THE LOOP WORKS ON THE CAMPAIGN (STORY MODE, THE KIT CITY), NOT THE ALIEN LEVELS.**
 *"The campaign mode was quite a bit more promising... spending the rest of my next day and a half of tokens on the loop
 refining the main game is a good use of them."* He has played some of it: it needs a lot of development in how its dynamics
