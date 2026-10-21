@@ -808,6 +808,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m805 (F5-4b) -- Mothman's warnings on the map
+This is in `mapMarks`, so it shows on both the minimap and the full map, in tkit, once `moth:saved` is set (one omen
+defused):
+- **While he flies to an omen or hangs over it:** a pulsing pink moth with red eyes sits at `MOTH.tgt`, and the full map
+  shows the fuse's remaining seconds above it.
+- **While he perches or rests:** a dim moth sits at `mothSite()`, the next site in turn, labelled `NEXT` on the full map.
+
+Nothing in `mothStep` changed. Shipped unverified.
+
 ### m804 (T6r) -- the islands' BASE-jump exit point is his art
 `IBASE.exitG` loads `models/campaign/island_exit.glb` (`?iexit=0` leaves it out). Placements:
 - **`ib_deck`** goes at the deck's centre (cu, y, cv), turned psi. Measured: it is 9 m long, `B.len`. The centre sits at
