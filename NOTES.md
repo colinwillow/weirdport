@@ -712,6 +712,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m743 (F4-5b): THE SOLDIER FORM (`ROLEFORM.military` = SOLDIER/law, `GATE_TYPES.military`, `soldierToo`).** Sampling a downed
+  four-star soldier (whose `d.role` m740 set to 'military') now gives the SOLDIER form, worn as the officer kind with
+  `mphRole = 'military'`. `gateLets` lets SOLDIER through a gate whose `need` is SOLDIER, and through any gate type that has
+  `soldierToo` (only the police `cordon` so far). **No gate of type `military` is placed in the world yet**: F4-5c builds the base
+  and its cordon. `mel.gate('military')` drops one to test with.
+
 - **m742 (T5t): THE FACTORY'S INTAKE DOOR IS HIS ART (`factory_portal.glb`, `WFRONT.fpG`, `?fportal=0`).** `ff_portal` is placed
   by `campPlace` at (Fc.u, Y, v0), which mirrors z so his -Y front faces -v, out of the lot. It replaces the 9 lintel and 12 jamb
   chevron blocks, all of which were drawing only, so no collider changes. If the GLB fails, the blocks draw and the chip reads

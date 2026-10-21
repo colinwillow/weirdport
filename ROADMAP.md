@@ -1056,7 +1056,8 @@ differ" table there, so no region feels like the last one.
   - [x] m738 **F4-4** the cave miner (the Underneath): a miner to sample in the Underneath, whose lamp lights the dark tunnels and whose pick breaks the rubble walls that block them.
   - [ ] **F4-5** the military (the base at high heat): at four stars soldiers come instead of cops; a soldier's form walks through the military cordon round the base.
     - [x] m740 **F4-5a** at four stars the reinforcements are soldiers (the roster's olive officer in a helmet), and a soldier shoots further, faster and straighter than a cop.
-    - [ ] **F4-5b** the SOLDIER form (sample a downed soldier) and a military cordon round a base only that form walks through.
+    - [x] m743 **F4-5b** the SOLDIER form (sample a downed soldier) and the `military` gate type only that form walks through; a soldier passes a police cordon too.
+    - [ ] **F4-5c** the base: a National Guard post at Hollow Creek's far edge (the road out toward Area 15), walled in sandbags and wire, with a watchtower, tents, a motor pool and a supply cage inside, ringed by the `military` cordon. A soldier walks in; anyone else is turned round and noticed.
 - [ ] **F5 Side quests**, one build each, from the table in `LORE.md`, in this order: the Roswell diner,
   the tinfoil-hat bunker (the grid on the map), the Majestic Dozen, Mothman, the Phoenix Lights, the
   haunted ranch, the tic-tac pilot, Bigfoot, D.B. Cooper, Betty & Barney, Travis Walton, Area 15.
@@ -2058,3 +2059,6 @@ differ" table there, so no region feels like the last one.
 - **m740 (F4-5a): soldiers are the four-star EXTRAS only**; the cops already on the beat stay cops. A soldier reaches 1.5x as far, hits
   1.35x as often (capped at .95) and fires 1.5x as often. Until F4-5b, sampling a soldier gives you the cop's form. `mel.COPS.sol = 0`
   turns them back into cops.
+- **m743 (F4-5b): the SOLDIER's group is `law`**, the same as a cop's, so the police talk to him as one of theirs and a police
+  cordon waves him through (`soldierToo`). The base itself is split out as F4-5c, to be built as one finished place at Hollow
+  Creek's far edge rather than squeezed into this build.
