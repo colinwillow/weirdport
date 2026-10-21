@@ -736,6 +736,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m757 (T5y): THE FACTORY'S STATIONS ARE HIS ART (`factory_stations.glb`, `WFRONT.fstG`, `?fstat=0`, `fsPut`).** `arch()` places
+  two `fa_post` (scale.y = h) at u +- 1.7 and `fa_head` at y + h, then returns before its four boxes. In the strip-down cage, the
+  four steel posts keep their colliders and lose their drawing (the last four `steel` parts), and `fa_cage` goes at (-87, 86). The
+  7 hats are `fa_hat_paint` + `fa_hat_trim`, stacked Y + floor(k / 3) * .5, with the paint cloned once per colour from the frame's
+  yel / white. The six `fa_boots` pairs sit where the wood boxes were. If the GLB fails, everything draws as before.
+
 - **m756 (F5-1b): THE SAUCER'S PARTS (`SAUCERP`, `saucerPartsStep`, quest `qsaucer` from `hc_diner_joe`).** There are three
   pickups, and each spot is a function read the first frame it exists: `MILB.coilAt` (the watchtower deck, set in `buildMilBase`),
   `SAUCERP.lensAt()` (the strongbox at `UNDER.dig.box`, .9 up) and `WFRONT.gyroAt` (the outfeed tower's platform at L3, set in
