@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m842 -- T7h tower_shell.glb: Dump Tower's curtain wall, stairs and vestibules (art window)
+
+The floors' furniture (m623), the roof and the lift (m624) were already art. What was left was the shell, drawn as gold sticks: about 36 mullions and 4 bands a floor over ten floors, plus the stairs and the two vestibules. The new pieces are small tiles meant to be instanced. They come in at 12-30 faces each, except the flight at 246, the screen at 138 and the vestibule at 108. The glass is deliberately left in code, because it is the collider and the transparent material. The flight is built rising +Y from (L.u, L.v0), so lane B is turned pi. The screen is symmetric, so it needs no turn. Shipped unverified.
+
 ## m839 -- T7g town_trailer.glb: the town edge's trailers (art window)
 
 The rest of buildTownEdge already had art: the houses, pickets, mailboxes and stand (m661), the gas station (m659), and the billboards and poles (m663). The trailer park was the one block still drawn as boxes. `tv_trailer` is 1,796 faces, at the code's 12 x 3.4 body on its .55 footing, with the deck at (2, 2.6). `tv_chair` is 120 faces. The `tw_` prefix was already taken by the walks, so these pieces are `tv_`. The turn is the one open question: the code's length axis is (cos r, -sin r) in (u, v), and campPlace mirrors z, so ROADMAP says to flip the sign if the deck lands on the wrong side. Shipped unverified.

@@ -151,6 +151,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `ranch.glb` | `rn_gate`, `rn_house`, `rn_trailer`, `rn_tower`, `rn_corral` | buildRanch -- Shadowhide Ranch |
 | `farm_bits.glb` | `fp_tractor`, `fp_cupola`, `fp_hood` | buildFarmProps -- the tractor, the barn cupola, the hay hood |
 | `town_trailer.glb` | `tv_trailer`, `tv_chair` | buildTownEdge -- the town edge's trailer park (X along the trailer, deck on +Y, origin on the ground at its centre) |
+| `tower_shell.glb` | `dw_mullion`, `dw_bay`, `dw_band`, `dw_corner`, `dw_flight`, `dw_srail`, `dw_vest` | buildDumpTower -- the curtain wall's gold frame, slab edges, the marble stairs and their screens, the vestibules' frames (X = u, +Y = v; glass stays code) |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
