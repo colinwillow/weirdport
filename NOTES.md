@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m824 -- ship_hall.glb: the mothership's belly hall and pod (T7a)
+
+The hall was a BackSide open cylinder, two tori, a circle and a sphere around his eggs and glyphs (`ship_belly`). It is now one piece at the code's R 12.5 / H 6.5 / glassR 7.5, with the doorway gap at +X where nW leaves it. The pod rides the tether, so it is built in its group's frame like the diner saucer. Shipped unverified.
+
 ## m822 -- foot_dress.glb: the footbridge's foot on the beach (T6z)
 
 m490 made the foot a place: a flagstone path, a works hut, a CLOSED board, a lifebuoy, a tideline and a bench. Each now has a piece at the code's spot and yaw. The board's face is one white material, so the code's red-while-closed / white-once-fixed switch becomes a tint, as with every other `_paint` piece. Shipped unverified.
