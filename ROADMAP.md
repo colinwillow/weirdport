@@ -1176,6 +1176,9 @@ differ" table there, so no region feels like the last one.
   - [x] m805 **F5-4** Mothman. Split:
     - [x] m793 **F5-4a** the thing on the Hollow Creek bridge: walk up and it flies off to a place in Old Town and hangs over a glowing pod; stand on the pod before the fuse runs out or the place goes up in flames. It is back on the bridge four minutes later for the next one.
     - [x] m805 **F5-4b** warnings on your map: once you have saved one, every omen shows on the map (a moth over the place) from the moment he leaves the bridge, and the next site is marked while he waits.
+  - [ ] **F5-5** the Phoenix Lights. Split:
+    - [x] m809 **F5-5a** the V: every few minutes seven silent amber lights cross the city high and come down over one place (in turn) for a minute and a half; stand under it (`phx:seen`, quest `qphoenix`). It is on the map while it flies.
+    - [ ] **F5-5b** the Tall White trader who gets off: at the landing, a tall pale figure who deals (juice for one of the good aliens' upgrades, or a rare form), and goes when the lights lift.
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
   author; the turf's building swap in every region, not only Old Town.
@@ -2235,3 +2238,4 @@ differ" table there, so no region feels like the last one.
   plays, but the lizard still has no body lift in the flip (his clips have none). **That is a retarget gap for his pipeline:
   root/hips translation is being dropped.** On zap nothing changes, because his marks measure clean. The chip shows
   `FLIPfwd<left> t<time>/<len> w<weight>`, plus `FLAT` when the fallback is in use.
+- **m809 (F5-5a): there is no night, so the Phoenix Lights are a clock** -- first at 150 s, then every 7 minutes, landing at the hilltop, the mesa, the Gorge lookout, the helipad and the rally field in turn. They make no sound on purpose (the lore says silent). `PHX.every` / `PHX.stay` if the timing is wrong.

@@ -816,6 +816,22 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m809 (F5-5a) -- the Phoenix Lights: a silent V that crosses the city and comes down
+There is no night, so `PHX` runs on a clock. The first crossing is at `first` 150 s, then every `every` 420 s.
+- **The lights:** seven amber spheres with halos, in a V `span` 56 m wide with the tip leading (local +z is forward).
+- **The flight:** a quadratic Bezier from `far` 700 m out at `y` + 40, through Dump Tower's plaza (`dtplaza`) at `y` 160, down
+  to `low` 9 m over the site. The site is the next of `SITES` in turn, using GOD's places (`hchill`, `ismesa`, `gzlook`,
+  `dtroof`, `hcrally`). It shrinks to .55 on the way down.
+- **At the site:** it hangs there for `stay` s. Under it (`R` 14) sets `phx:seen`, which completes the dormant `qphoenix`,
+  gives juice and shows a card, and the lights lift at once. Otherwise they lift when the stay ends.
+- **The quest:** it switches on at the first crossing.
+- **On the map:** the V is drawn wherever it is, for everyone, not gated.
+- **Silent on purpose.**
+- **Checked:** `play ch1` passed with the first crossing inside the run, so `phxStep` ran in the frame without throwing.
+- **Still to do:** the trader is F5-5b.
+
+Shipped unverified.
+
 ### m807 (T6s) -- the barge under crane 1 is his art
 `WFRONT.bargeG` loads `models/campaign/wf_barge.glb` (`?barge=0` leaves it out). In `wfCranes`, `wb_barge` goes at
 (BARGE.u, sea, BARGE.v) through `campPlace`. A parts snapshot taken at the top of the barge block drops the drawn `dark`
