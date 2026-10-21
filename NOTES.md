@@ -788,6 +788,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m790 (T6m): THE UNDERNEATH'S TUNNELS AND ROOMS ARE HIS TILES (`underneath.glb`, `UNDER.unG`, `?under=0`, `unPut`, `unSnap` /
+  `unCut`).** `run()` snapshots `F.parts` at its start; at its end it cuts back and tiles n = round(L) pieces, each scaled st in z
+  (z carries the mirror). Each piece is `un_tunnel`, or `un_tunnel_open` where either wall has a gap, plus one `un_wall` (scale.x
+  st, scale.y h/4) on the side that is still closed. They are turned PI/2 for a run along u. `un_lamp` goes at each lamp, facing
+  into the tunnel (PI for a 'u' run, -PI/2 for a 'v' run), and none in the dark dig. `un_growth` is scattered off its OWN seed
+  (`unR`, 790), so the code's rolls are untouched. A room's wall segments are `un_wall` tiled per segment; its floor, ceiling,
+  lintels and corner lamps stay code. The dig's pit props are `un_prop`. The cistern, the market, the dig's cart, rails and
+  strongbox are next. Every collider stays; `places` 0 BAD.
+
 - **m788 (T6l): THE REST OF MERLE'S CAMP IS HIS ART (`bunker_camp.glb`, `BUNKER.bcG`, `?bcamp=0`, `bkSnap` / `bkCut`).** These are
   `bk_lookout`, `bk_mast`, `bk_solar`, `bk_barrels`, `bk_garden` and `bk_firepit`. Each code block takes a snapshot of `F.parts` at its
   start and is cut back to it once his piece is placed, so the colliders stay. The seeded rolls in the mast block still run. The
