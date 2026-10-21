@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m839 -- T7g town_trailer.glb: the town edge's trailers (art window)
+
+The rest of buildTownEdge already had art: the houses, pickets, mailboxes and stand (m661), the gas station (m659), and the billboards and poles (m663). The trailer park was the one block still drawn as boxes. `tv_trailer` is 1,796 faces, at the code's 12 x 3.4 body on its .55 footing, with the deck at (2, 2.6). `tv_chair` is 120 faces. The `tw_` prefix was already taken by the walks, so these pieces are `tv_`. The turn is the one open question: the code's length axis is (cos r, -sin r) in (u, v), and campPlace mirrors z, so ROADMAP says to flip the sign if the deck lands on the wrong side. Shipped unverified.
+
 ## m837 -- T7f farm_bits.glb: tractor, cupola, hay hood (art window)
 
 The farm's last pieces still drawn as code boxes are now art, at the code's own numbers. The tractor is 642 faces, the cupola 129 and the hood 126. The vane stays code because it turns, and the tractor's collider stays code. The prefix `fp_` is shared with farm_props.glb; the names were checked and none clash. Shipped unverified.
