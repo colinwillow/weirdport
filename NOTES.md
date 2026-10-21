@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m850 -- T7k freight_bits.glb: the halts' platforms, legs, wildflowers, the log load (art window)
+
+Most of buildFreight was already art: the trestle deck and bents (m709), the trestle kit (m587), the halt shelter and tank (m571), the extras (m706), the stairs (m728) and the train (m555). Its 28 drawn-only boxes were mostly fallbacks behind those. What was really left was the platform deck itself, its legs, the flowers, and the logs, which the code still builds even when `ft_flat` is art. The logs piece is in the car group's frame, where three +z is Blender -Y, so the load's centre (three z -2) is at Blender +Y 2. The platform's end fascias run up to the board tops: an earlier render with them stopping 5 cm short showed every board gap as a black slot. Shipped unverified.
+
 ## m847 -- T7j ready_room.glb: The Ready Room (art window)
 
 A re-run of the drawn-box scan found buildReadyRoom with 18 drawn-only boxes, about 25 geos and no art placement at all. It is now six pieces. The two big ones are `rr_shell` (866 faces) and `rr_inside` (1,396). A fresh `rr_pickup` was built rather than reusing `rp_pickup`, because that one sits on cinder blocks and this one is driven to the bar. The battens are modelled per face, not repeated in a tile, so they never read as a pattern. Shipped unverified.
