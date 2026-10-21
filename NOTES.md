@@ -892,6 +892,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE HILLS' HOUSE (m862, F5-10a, `HILLS`, `buildHills`, `hillsStep`, GOD `hchills`).** F5-10 split into a (the house), b (retrace
+  the night down the highway), c (the implant; Clancy sniffs). `HCREEK.FLATS[8]` (-135, -75), r 20: relief 6.5 m over 22 m (the flat
+  takes it; 0.00 m off level as built), 24 m from the coast. **The gables are two raw triangles** (`farmMerge` takes a non-indexed
+  geometry fine -- it writes 0..n-1 for one), built centred and facing -u, then turned PI for the +u side: a single-sided triangle that
+  faces in is invisible from the yard, which is what the first draft did. Betty's star map is its own canvas (`hillsStarMap`); the TV
+  flickers and the compass needle by the trunk's circles spins (`hillsStep`). Also: `missingStep`'s card read 'MTIME TIME' (a rename
+  that caught a string) and now reads MISSING TIME. places: `HILLS boxes 15 | off its flat by 0.00 m`, `ok hchills`, 0 BAD.
+
 - **COOPER'S PARACHUTE (m861, F5-9c, `CHUTE`, `chuteFall`, `chuteStep`, `#chute`).** `qcooper`'s `onDone` sets `cooper:chute` and fills the
   juice tank (`JUICE.cap`). The chute is the hover pack's shape: `chuteFall(p, dt)` sits in the player step's gravity line beside
   `swimStep` and `hoverStep` (`!swim && !hover && !chute -> gravity`), so `vel.y` keeps ONE writer -- it eases vy to -`sink` (2.4 m/s,
