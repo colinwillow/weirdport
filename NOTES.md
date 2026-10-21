@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m878 -- T8a mill_yard.glb: the first second-pass dressing (art window)
+
+The box-to-art scan finished at T7m, so this begins the second pass: lived-in props for the places he sees most, starting with the mill yard. The four props are 72-432 faces. They are new things, so they come with suggested colliders rather than replacing code boxes. Their spots were chosen against HCMILL's numbers (the lumber at (13, 5) and (17.5, 9.5), the stump at (10.5, 12), the flume at u 6, Hal at (2, 1.5), the burner at (21, -11)). Shipped unverified.
+
 ## m877 -- his splash screen art lands in images/ and a STEER asks for it (art window)
 
 Colin: "Got a splash / start screen." The art is his: the Zap 'n Clancy logo, the crew, and a painted TAP TO START button. It was a 3 MB PNG, and is now `images/splash_zap_n_clancy.webp` at 941 x 1672, q86, 412 KB. The STEER at the top of ROADMAP asks the game window to make it a tap-to-start layer in front of the m441 `#start` menu. Two points in it: the button is part of the painting, so no second button is drawn and the whole screen is the tap target; and the build number must stay visible over it. No index.html change was made here.

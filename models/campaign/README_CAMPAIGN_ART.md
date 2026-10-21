@@ -157,6 +157,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `freight_bits.glb` | `fq_platform`, `fq_leg`, `fq_flowers`, `fq_logs` | buildFreight -- a halt's whole platform (origin (pu, vm) on the deck, line at +X), its leg (1 m stretch), a wildflower clump, the flat car's log load (car frame like ft_flat) |
 | `mill_shed.glb` | `hm_shed`, `hm_loft`, `hm_lumber5`, `hm_lumber4`, `hm_stump` | buildMill -- the corrugated shed with its openings, roof and plinth, the upper floor with rail and stair (both at the frame origin), the lumber stacks, the chopping stump |
 | `pod_deck.glb` | `cp_deck`, `sk_lightpole` | buildCarts' timber deck (both skewed slabs and the steps, at the pod frame's origin) and buildIslandSkate's string-light pole |
+| `mill_yard.glb` | `hm_forklift`, `hm_drums`, `hm_pallets`, `hm_yardlight` | buildMill's yard, second pass: new lived-in props (origins on the ground; X = u, +Y = v) |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
