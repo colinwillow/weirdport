@@ -665,6 +665,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m709 (T5i): THE FREIGHT TRESTLE'S DECK AND BENTS ARE HIS** (`trestle_deck.glb`, `TDK`, `tdPut`, `tdBuild`, `?tdeck=0`). INSTANCED
+  in the line's frame (yaw `F.th`, no mirror): `td_deck` every 6 m at (0, yr, v + 3) for the beam, ties and rails (all drawn-only, so
+  nothing to keep), and `td_bent` at each bent (0, yr - .55, v), Y-scaled by its drop to g - .5. The two post colliders stay (draws
+  popped) and the brace segments are not drawn. `tdBuild` runs right after `buildFreight` in init. `places` FREIGHT unchanged, 0 BAD.
+
 - **m708 (F3-2): THE POLTERGEIST ORB** (`OPOLT`, `buildPolter`, `polterHit`, `polterThrow`, `polterStep`, task `qpolt`, GOD `polter`).
   It haunts the `KBLD` building nearest `at` with `top` > 5 (in the harness KBLD is empty, so it falls back to a `lifeSpot` and a 9 m
   "house"). Its orb is an `AIRT` target over the roof. While it is up and you are within `seeR`, a point light at the building's

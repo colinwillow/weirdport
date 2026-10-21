@@ -579,7 +579,7 @@ different context window, let me know."*
   lines (the board is in it at +2.0 along v); `hx_churns` at (pu + side * 1.1, deck, cv) for each end (k = +-1; mirror Y for
   k = -1) in place of the four churn cylinders and the two sacks; `hx_lamp` at each lamp post's (lu, deck, vv) in place of the post,
   the lamp sphere, its cone, the bracket, the basket and its flowers (its bracket runs toward -X, the platform's inside).
-- [ ] **T5i. Swap in the freight trestle's deck and bents** (`models/campaign/trestle_deck.glb`; no collision -- keep each bent's
+- [x] m709 **T5i. Swap in the freight trestle's deck and bents** (`models/campaign/trestle_deck.glb`; no collision -- keep each bent's
   post boxes and whatever the deck walks on). In `buildFreight`, the line's frame (Blender X = u across, +Y = v along): `td_deck` at
   (0, yr, v + 3) for each 6 m, in place of the beam box, the 7-8 ties in it and the two rails' share of it (the rails at the code's
   gauge 1.5, tie plates, outer guard timbers); `td_bent` at each bent's (0, yr - .55, v), scaled Z by (yr - .55) - (g - .5), in place
