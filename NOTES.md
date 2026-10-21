@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m769 -- hollis_yard.glb: Camp Hollis's trucks, net, mast and cage (T6f)
+
+The camo net is a 15 x 15 grid that sags with distance from the nearest of the code's four poles, with a two-tone patch pattern. The mast's guys run from 12 m out to the code's 6 m radius at its three angles. The beacon sphere stays code because it blinks. The cage's chain-link is double-sided ribbons, as on the factory fence. Shipped unverified.
+
 ## m768 -- hollis_camp.glb: Camp Hollis's watchtower and tents (T6e)
 
 The watchtower's parapet is laid in staggered sandbag courses with no bevels: bevels took it from 1,400 faces to 4,100. The parapet is open at +Y, where the code's two short runs leave the ladder gap. I first put the command tent's fly on the wrong side. The code's fly is at v -2.7, which is 4.3 m toward +Y from the tent's centre at -7, so it faces the gate. Shipped unverified.

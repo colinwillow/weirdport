@@ -123,6 +123,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `factory_walks.glb` | `fw_rail` (2 m tile), `fw_post`, `fw_leg` (stretch), `fw_step` | wfFactory -- walkway rails, legs, the west-wall stair |
 | `hollis_wall.glb` | `mb_hesco` (1.1 m basket tile), `mb_sandbag`, `mb_wire` (.9 m concertina tile), `mb_bastion` | buildMilBase -- Camp Hollis's HESCO ring and gate bastions |
 | `hollis_camp.glb` | `mt_tower` (watchtower), `mt_tent_cmd` (with fly and map table), `mt_tent_bar` | buildMilBase -- Camp Hollis's tower and tents |
+| `hollis_yard.glb` | `mt_truck`, `mt_net`, `mt_pole`, `mt_mast`, `mt_cage` | buildMilBase -- Camp Hollis's motor pool, mast and supply cage |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
