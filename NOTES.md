@@ -912,6 +912,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **TURF IN THE OTHER REGIONS (m887, F6e-1, `TURF.AREAS`, `TURF.xb`, `turfAreas`).** F6e split 1-3. Each area: a rect (`box()`, or its
+  GOD places' bounds + `pad`), an `n x n` grid, `SEEDS` by GOD id, blocks `'<key>:i:j'` saved in `SAVE.turf` like Old Town's. **They
+  live in `TURF.xb` and each `A.blocks`, never in `TURF.blocks`**: the pressure (`(A.i + di) * n + ...`), the Hothouse spread and the
+  rebuild all index Old Town's grid and must not see them. `turfAt` falls through to the areas when the point is off Old Town's rect,
+  so `turfStep` (the chip), `turfMove`/`turfPush` (what you do) and `turfMap` (it draws `[...blocks, ...xb]`) work there. **`turfAreas`
+  is its own init step AFTER `buildPearlRoofs`** -- `turfBuild` runs before the Pearl exists and its GOD places answer null.
+  places: `ok TURF AREAS pl 9 -286,-138,-152,-17 | wf 16 -35,265,-399,-120 | pearl P-C2 | wfquay W-C3 | wfcontrol W-A2`.
+  **play ch1: one run FAILED ch1b.1** -- the sample driver wandered down into the Underneath and knocked `un_miner` five times (forms
+  ended `... MINER`); the rerun passed 24/24 in 536 s. Nothing in this build touches the sample or the Underneath: a harness picker
+  that can choose a body 30 m below the street. Not chased here.
+
 - **SHOPS (m885, F6d, `smartShops`, `S.shop`, `d.inShop`, `CARRYK.bag`).** Candidates are `KPARTS` of kind door/rollup; the face normal
   is the PARENT's +Z (as `kitSide` says), the door's middle is its hinge + .5 m along the parent's +X; the street side is the one
   .7 m out that is street level with nothing over it (the inside has a floor above). Every k-th, up to `shopMax` 24. Arrival on a
