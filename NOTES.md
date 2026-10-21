@@ -892,6 +892,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **S-4 (m872, F5-12d, `S4`, `buildS4`, `s4Step`, `greyMesh`, `greyFollow`, GOD `a15s4`).** A room `depth` 30 m under `A15.BUTTES[0]`
+  (floor -24.5), its own farmFrame **taken out of `FBATCH.frames`** (m864 again: nothing underground belongs in the land's cells). In:
+  within 2.6 m of `S4.apron` (2.5 m out from the blast doors on their normal) with `gate:a15_gate`, GOD, or a face the gate takes;
+  out: the green pad, to `S4.out`. `S4.cool` stops the two teleports ping-ponging. One choice (`a15:115` | `a15:grey`), each +5 heat.
+  The Grey is a primitive figure (`greyMesh`: head, almond eyes, capsule, sticks) that eases to a point behind-left of him and
+  teleports if more than 30 m off. **placecheck's IN THE SEA test only exempts `underIn`** (the Underneath) -- `a15s4` is exempted
+  by id beside it. A diver in S-4 would swim, exactly as in the Underneath (`swimStep` asks only for y < sea). places `ok a15s4`
+  (ground -24.50), 0 BAD; play ch1 20 steps.
+
 - **AREA 15'S GATE (m871, F5-12c, `GATE_TYPES.area15`, `T.also`, `A15B.gate.G`, `A15B.GUARDS`).** A real `gateAdd` gate (id `a15_gate`,
   so crossing it sets `gate:a15_gate`), `bare` (the base draws its own boom), `heat` 1.6 per refusal. **`gateLets` grew `T.also`**: a
   list of extra form names, folded with `mphFold` like `need` -- the first gate that takes two faces (SOLDIER, or ENGINEER as the
