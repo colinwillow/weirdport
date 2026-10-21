@@ -138,6 +138,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `island_exit.glb` | `ib_deck` (the BASE-jump platform, braces, sign frame), `ib_step` | buildIslandBase -- the exit point on the mesa |
 | `wf_barge.glb` | `wb_barge` (flat barge, coaming, bollards, fenders) | wfCranes -- the barge under crane 1 |
 | `ferry_landing.glb` | `fy_stage`, `fy_jetty` (1 m tile), `fy_pile` (stretch), `fy_pontoon`, `fy_kiosk`, `fy_shelter`, `fy_lamp` | buildFerry -- the landing stage, jetty, pontoon |
+| `swing_bridge.glb` | `sw_span` (1 m tile), `sw_post`, `sw_pier` / `sw_pivot` (stretch), `sw_lamp`, `sw_gatepost` | buildSwing -- the swing bridge's fixed parts |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

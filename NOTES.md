@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m811 -- swing_bridge.glb: the swing bridge's fixed parts (T6u)
+
+The moving span is a group the code turns, and its barriers and warning lights animate, so they stay code. Everything that stands still is art: the two fixed spans as 1 m tiles, the piers and the pivot drum stretched to the river bed, the lamps and the red gate posts. Shipped unverified.
+
 ## m808 -- ferry_landing.glb: the ferry's landing stage (T6t)
 
 The jetty runs to wherever the island's ground meets the water (`vEnd` is computed), so it is a tile. The piles reach the seabed, so they are stretched. The pontoon's float drums first showed through its deck: their tops were above deck level, so they now sit below it. Shipped unverified.
