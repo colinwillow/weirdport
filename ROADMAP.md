@@ -14,6 +14,13 @@ between them. Design context lives in `GAME_DESIGN.md`.
 ## STEER
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
+- [ ] **STEER (Colin, 02:22): A SPLASH / TAP-TO-START SCREEN, his art: `images/splash_zap_n_clancy.webp`.** It is 941 x 1672 (portrait, about 9:16), 412 KB, and already in `images/`, which is in `DIRS`, so it is hashed: load it through `A()`. He made it; it is the first thing the game shows.
+  - **What it is:** a full-screen layer IN FRONT of the existing `#start` menu (m441), shown on load before anything heavy. The image is the whole screen, `object-fit: cover` centred, on a dark backdrop. The logo is in the top third and the "TAP TO START" button is painted into the art at the bottom, at about y 1495..1615 of 1672, x 225..715 of 941. **Do not draw a second start button over it.** Make the WHOLE splash tappable, and give the painted button a gentle pulse: an outline or glow div laid over that rectangle, positioned in image coordinates so that it tracks `cover` cropping.
+  - **The tap:** dismiss the splash (a short fade) and show the `#start` menu exactly as now. This is also the user gesture that unlocks audio, so start/resume the AudioContext here if it is not already.
+  - **Phone fit:** the art is 9:16, and taller phones (19.5:9) crop its sides a little under `cover`, which is fine because nothing important is at the edges. On a wide (desktop or landscape) screen, use `contain` over a blurred, darkened copy of the same image, so the logo is never cropped. Respect the safe-area insets for the glow only; the image runs edge to edge.
+  - **The build number** must still be readable over the splash (CLAUDE.md: "which build is he looking at" is half of every boot question). Keep the cyan figure top-left above the splash's z-index, or print it small on the splash itself.
+  - Do not let the splash wait on the world loading: it shows instantly, the boot can carry on behind it, and the menu appears on tap.
+
 
 - [x] m797 **STEER, FROM COLIN (Oct 20, 20:35) -- DO THIS NEXT: A THIRD HERO ON THE CHARACTER SELECT, THE ALIEN GREY.**
   *"I have another new hero character. We should add it to the character selection screen... I think it might be called alien gray,

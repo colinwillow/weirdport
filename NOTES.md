@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m877 -- his splash screen art lands in images/ and a STEER asks for it (art window)
+
+Colin: "Got a splash / start screen." The art is his: the Zap 'n Clancy logo, the crew, and a painted TAP TO START button. It was a 3 MB PNG, and is now `images/splash_zap_n_clancy.webp` at 941 x 1672, q86, 412 KB. The STEER at the top of ROADMAP asks the game window to make it a tap-to-start layer in front of the m441 `#start` menu. Two points in it: the button is part of the painting, so no second button is drawn and the whole screen is the tap target; and the build number must stay visible over it. No index.html change was made here.
+
 ## m856 -- T7m pod_deck.glb, and the drawn-box scan comes up empty (art window)
 
 This pass re-checked buildIslandSkate, buildIslandXing, buildCarts and buildIslandBase. Almost every drawn-only box left in them is a fallback behind an existing campPlace (it is built only when the art is missing), or a flat paint splash, or an effect. The two real leftovers were the cart pod's deck and the skate pier's light poles, and both are now art. For the turn: a code box turned ps has its length along (cos ps, -sin ps) in (u, v), which is a turn of -ps about Blender Z. The second slab's boards sit 5 mm proud so the overlap does not z-fight. With this, the campaign detail pass has art for every place still drawn as code boxes. What remains is ribbons that follow terrain (roads, decks, flumes), canvas signs and effects. Shipped unverified.
