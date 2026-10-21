@@ -884,6 +884,19 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m852 (T7k) -- the freight halts' platforms, legs and wildflowers, and the flat car's logs, are his art
+`HCTRAIN.fqG` loads `models/campaign/freight_bits.glb` (`?fbits2=0` leaves it out). Its loader sits before `buildFreight()`.
+Placements:
+- **`fq_platform`** goes at (pu, deck, vm) for both halts, unturned. Measured: it is 34 long (= `T.plat`), with the line's
+  yellow strip at +X and the rail at -X. It replaces the plank's drawing, the rail top, the seams and the yellow line.
+- **`fq_leg`** goes at each post, scale.y to the deck's underside.
+- **`fq_flowers`** goes at the 24 wildflower spots, turned k.
+- **The colliders stay**, and these three pieces go through `artMerge` into `HCTRAIN.artDraws`.
+- **`fq_logs`** is cloned UNMIRRORED into the flat car's group, like `ft_flat`, in place of the five log cylinders and the
+  two stakes. The dyn boxes stay.
+
+Shipped unverified.
+
 ### m851 (F5-8a) -- Bigfoot in the gorge's pines (`BIGF`, `bigfootStep`, `bigfPick`, `bigfOk`, dormant `qbigfoot`, GOD `gzbigfoot`)
 **Where he roams:** within `range` 26 of `home` (44, 32) on the gorge's east plateau. His spots are picked by `bigfOk`, the
 pines' own placement rule: off the beach + 10, clear of the canyon + 10, slope under .6.
