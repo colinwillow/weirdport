@@ -780,6 +780,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m783 (F5-3b): THE DOZEN'S ROOM (`DTOWER.dz`, `dozenStep`, mark `dt_twelfth`; `qmajestic` gains a talk step).** It is on floor
+  8 at u 5..10, v -9.8..-2.6, walled with `panel`. **The hidden door is a collider box built by hand, outside the frame** (the
+  frame's oriented-box maths copied), pushed into `BOXES` after `F.commit()`. That way `dozenStep` can open it by moving its `miny` to
+  1e5, the sluice's trick (m522), while its mesh slides along the frame's v. The room has a round table, eleven carpet chairs each
+  with a file and name card, and a black twelfth chair. Its red strip is a `redglow` material added to the tower's `MAT`
+  **before** `farmFrame` (parts are keyed from MAT at creation). `places` 0 BAD; `play` ch0 + ch1 pass.
+
 - **m780 (T6i): SAUCER JOE'S SIGN TOWER AND MUSEUM ARE HIS ART (`diner_site.glb`, `DINER.dsG`, `?dsite=0`, `dsSnap` / `dsCut`).**
   Same pattern as m779: snapshot `F.parts` at each block's start, then once `ds_tower` (-12, 7) or `ds_museum` (12.5, -6) is
   placed, splice every part drawn since. The tower's steel collider, the museum's slab colliders and the canvas EAT and museum

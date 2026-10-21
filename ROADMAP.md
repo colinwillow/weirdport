@@ -1112,9 +1112,9 @@ differ" table there, so no region feels like the last one.
   - [x] m770 **F5-2** the tinfoil-hat bunker. Split:
     - [x] m765 **F5-2a** Merle's bunker: a half-buried container in a clearing on Hollow Creek's hill (his wall of string inside, a radio desk, a cot, cans), a lookout on stilts with a telescope, a foil mast, solar panels, a garden, a fire pit, tin cans on strings round it, and Merle in his tinfoil hat.
     - [x] m770 **F5-2b** his evidence: bring him three things the orbs leave behind (a shard off a downed orb, a recording of the HUM, a photo of the triangle), and he maps the grid: every orb and the lines between them on your map.
-  - [ ] **F5-3** the Majestic Dozen. Split:
+  - [x] m783 **F5-3** the Majestic Dozen. Split:
     - [x] m778 **F5-3a** their twelve dossiers, one on each of twelve places across the map, each a card of what they have done; the first switches the quest on.
-    - [ ] **F5-3b** the boardroom at the top of Dump Tower, opened by all twelve (`mj:all`): the eleven chairs, the twelfth that is not a man, and what it says.
+    - [x] m783 **F5-3b** the boardroom at the top of Dump Tower, opened by all twelve (`mj:all`): the eleven chairs, the twelfth that is not a man, and what it says.
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
   author; the turf's building swap in every region, not only Old Town.
@@ -2143,3 +2143,8 @@ differ" table there, so no region feels like the last one.
   lookout, the Underneath junction, the mesa, crane 1's boom, the hilltop, the cave behind the falls, the farmhouse porch, the
   core, Mags's newsstand). Those spots are known to be standable, and between them they cover every region and several climbs.
   The quest has no giver: it switches on with the first file found, and its beam points at the nearest file left.
+- **m783 (F5-3b): the Dozen's room is a walled-off corner of the boardroom floor (8)**, its south-east, behind dark panelling,
+  not the penthouse. A door with no handle slides aside only once you hold all twelve files. The twelfth chair's occupant is a
+  Skinsuit, which talks to any form (it knows what you are), and talking to it finishes the quest. I did not use
+  `models/alien_lizard.glb`: it is not wired anywhere yet, and its rig and clips are unmeasured. It is the obvious thing to put in
+  that chair once it is.
