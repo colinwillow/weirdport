@@ -126,6 +126,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `hollis_yard.glb` | `mt_truck`, `mt_net`, `mt_pole`, `mt_mast`, `mt_cage` | buildMilBase -- Camp Hollis's motor pool, mast and supply cage |
 | `hollis_props.glb` | `mp_bags`, `mp_drum`, `mp_table`, `mp_john`, `mp_flag`, `mp_stack`, `mp_hoop` | buildMilBase -- Camp Hollis's firing positions and props |
 | `diner.glb` | `dn_shell` (the streamline body, bands, windows, roof, steps, awning), `dn_inside` (floor, counter, stools, booths) | buildDiner -- Saucer Joe's |
+| `diner_site.glb` | `ds_tower` (16 m saucer sign tower, EAT arrow), `ds_museum` (UFO museum quonset with its exhibits) | buildDiner -- the sign tower and the museum |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

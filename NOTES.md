@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m777 -- diner_site.glb: the sign tower and the UFO museum (T6i)
+
+The museum's clippings were first put at the code's own u (R - .45). At 2 m up, that is outside a quonset whose wall is only 2.75 m off centre there, so they poked through the shell. They now sit at R - .95. Worth checking in the code too: its paper boxes have the same problem. Shipped unverified.
+
 ## m776 -- diner.glb: Saucer Joe's, shell and inside (T6h)
 
 The diner was 51 boxes and open cylinders. It is now one shell and one interior, both at the code's origin and numbers, so they drop in with no transform. The round ends are smooth arcs, not the code's four facets, and the facets stay as colliders. The roof's round-end discs shared a top face with the slab and rendered as black wedges, so the discs now sit 5 mm inside. The neon frame and canvas signs stay code because they glow. Shipped unverified.
