@@ -892,6 +892,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE TUESDAY TRUCK (m873, F5-12e, `TRUCK15`, `truck15Step`, `truck15At`, `truck15Home`, `A15B.truckBack/truckIn`, GOD `a15truck`).**
+  The boarding spot is computed from `MILB.frame` with farmFrame's own formula (x = cx + u C + v S, z = cz - u S + v C) at 3.4 m
+  behind the plate-less truck (`truck(-6.5, 8, -.2, 0)` in `buildMilBase`) -- if that truck moves, move `truck15At`. A black div
+  (z 19) fades over 3 s; at 1.4 s in he is moved and, outbound, `gate:a15_gate` and `a15:truck` are set (so S-4's door takes him).
+  The twin is boxes in `buildA15Base`'s frame just inside the gate. `cool` 4 s after a ride stops the far tailgate catching him.
+  places: `truck in 5.4 | truck out [-297.4,4.7,404]`, `ok a15truck`, 0 BAD; play ch1 20 steps (one 240 s load timeout first).
+
 - **S-4 (m872, F5-12d, `S4`, `buildS4`, `s4Step`, `greyMesh`, `greyFollow`, GOD `a15s4`).** A room `depth` 30 m under `A15.BUTTES[0]`
   (floor -24.5), its own farmFrame **taken out of `FBATCH.frames`** (m864 again: nothing underground belongs in the land's cells). In:
   within 2.6 m of `S4.apron` (2.5 m out from the blast doors on their normal) with `gate:a15_gate`, GOD, or a face the gate takes;

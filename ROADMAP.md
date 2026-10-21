@@ -1179,7 +1179,7 @@ differ" table there, so no region feels like the last one.
     - [x] m740 **F4-5a** at four stars the reinforcements are soldiers (the roster's olive officer in a helmet), and a soldier shoots further, faster and straighter than a cop.
     - [x] m743 **F4-5b** the SOLDIER form (sample a downed soldier) and the `military` gate type only that form walks through; a soldier passes a police cordon too.
     - [x] m745 **F4-5c** the base: a National Guard post at Hollow Creek's far edge (the road out toward Area 15), walled in sandbags and wire, with a watchtower, tents, a motor pool and a supply cage inside, ringed by the `military` cordon. A soldier walks in; anyone else is turned round and noticed.
-- [ ] **F5 Side quests**, one build each, from the table in `LORE.md`, in this order: the Roswell diner,
+- [x] m873 **F5 Side quests**, one build each, from the table in `LORE.md`, in this order: the Roswell diner,
   the tinfoil-hat bunker (the grid on the map), the Majestic Dozen, Mothman, the Phoenix Lights, the
   haunted ranch, the tic-tac pilot, Bigfoot, D.B. Cooper, Betty & Barney, Travis Walton, Area 15.
   - [x] m761 **F5-1** the Roswell diner. Split:
@@ -1222,12 +1222,12 @@ differ" table there, so no region feels like the last one.
     - [x] m866 **F5-11a** the cut: the mill crew's logging cut at the hill's foot as they left it (felled logs, fresh stumps, a slash pile, the yellow skidder, the crew truck with its doors open and lights on, a saw and an axe in stumps), and the burned spot where the light took him, his hard hat and lunch pail in it. Mike and Dwayne tell it.
     - [x] m867 **F5-11b** the ship: a Grey ship hums over the hill; stand where he stood (the burned spot) and a beam takes you up into it -- a round room, Travis on a table, Greys at him; knock them down and he is free.
     - [x] m868 **F5-11c** home: walk him back to his crew at the cut, and sample him -- the logger form.
-  - [ ] **F5-12** Area 15 (LORE's Area 51 / S-4: a late, high-heat region). Split:
+  - [x] m873 **F5-12** Area 15 (LORE's Area 51 / S-4: a late, high-heat region). Split:
     - [x] m869 **F5-12a** the land: its own desert landmass far out on the city's empty side (between Hollow Creek's bearing and the Waterfront's), a low sand floor, a dead-level dry lake bed in the middle, three sheer rock buttes.
     - [x] m870 **F5-12b** the base: a perimeter fence and the gate with its guard shack and the "USE OF DEADLY FORCE AUTHORIZED" signs, the runway painted on the lake, hangars, a radar dish, barracks, and the S-4 doors in the biggest butte.
     - [x] m871 **F5-12c** getting in: the gate lets a soldier (or a contractor) through; anyone else is turned back and the guards open fire, the heat rising.
     - [x] m872 **F5-12d** inside S-4: the hangar under the butte -- a recovered saucer, the element 115 in its case, and a captured Grey in a cell who wants out. Steal the 115, or free the Grey (it comes with you).
-    - [ ] **F5-12e** the way there: the Tuesday truck from Camp Hollis drives out to Area 15 (ride in the back, as a soldier, through the gate).
+    - [x] m873 **F5-12e** the way there: the Tuesday truck from Camp Hollis drives out to Area 15 (ride in the back, as a soldier, through the gate).
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
   author; the turf's building swap in every region, not only Old Town.
@@ -2311,3 +2311,4 @@ differ" table there, so no region feels like the last one.
 - **m870 (F5-12b):** the fence is an ellipse round the lake (121 chain-link panels, each solid) that STOPS where the buttes rise: the cliffs are the wall there. That leaves a way in over the rocks for someone who climbs, on purpose. The gate faces the city. The jet on the runway is a white airliner with a red stripe (the 'Janet' flights). The S-4 doors are shut and solid until F5-12d. There are no guards yet (F5-12c). GOD `a15` (the runway) and `a15gate`.
 - **m871 (F5-12c):** the gate lets a SOLDIER or an ENGINEER through (the contractor is Uplift's engineer). The construction worker does NOT count: you have it from chapter 1, and Area 15 is meant to be late. Anyone else is stopped at the boom with a warning and 1.6 heat each time they push, so four stars and soldiers come fast. The boom lifts for whoever it lets through. The fence's gaps at the buttes are still a way in for a climber. Three guards (Pike, Vance and Ruiz) have lines.
 - **m872 (F5-12d):** S-4 is a room 30 m down under the big butte (the butte is solid ground and can't be hollowed), reached by walking up to the blast doors once you are through the gate, or while in uniform. It is ONE OR THE OTHER: taking the 115 gives a full tank and seals the cell; pulling the release frees the Grey and seals the case. Both set off the alarm (+5 heat). The Grey is a figure built from shapes that follows you, not a body (there is no Grey body kind). Dr. Halvorsen is fictional, a stand-in on the engineer's role.
+- **m873 (F5-12e):** the Tuesday truck is Camp Hollis's plate-less truck. Its tailgate takes a SOLDIER (Dyer turns anyone else away). There is no road over the water, so the forty miles are a fade to black: you are set down beside its twin just inside Area 15's gate, counted as through it. The twin's tailgate takes you back to the motor pool, whatever you're wearing. It runs every day, not only Tuesdays. GOD `a15truck`.
