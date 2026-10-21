@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m707 -- the freight trestle's deck and bents as art (scenery window; ROADMAP T5i)
+
+`models/campaign/trestle_deck.glb`, for the trestle `buildFreight` carries over the strait. A 6 m deck section at the code's
+numbers: two beams, eight ties (one in three creosote-dark) with tie plates, the two rails at the code's 1.5 m gauge with a head, web
+and foot, and outer guard timbers; and a bent with its posts at the code's +-1.1, a cap, a sill and X-braces on both faces, 1 m tall
+for the code to stretch to the ground or the seabed. Shipped unverified.
+
 ## m704 -- the halts' bench, churns and lamp posts as art (scenery window; ROADMAP T5h)
 
 `models/campaign/halt_extras.glb`, for the platforms `buildFreight` dresses at each end of the trestle. The bench under the shelter
