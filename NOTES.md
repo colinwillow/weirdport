@@ -708,6 +708,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m738 (F4-4): THE CAVE MINER AND THE OLD DIG** (`ROLEFORM.miner` 'MINER', `GATE_TYPES.rubble`, `buildUnderDig`, `UNDER.dig`, flag
+  `un:dig`). In `buildUnderneath`: the second shaft room got an east door; `run` takes a 9th `dark` argument (no lamps), and a
+  30 m dark tunnel with pit props and cart rails leads to an 8 x 7 dig room with a cart and a strongbox. `buildUnderDig` (after it):
+  a `rubble` gate (pass `fix`, need the MINER role form, heading `F.th + PI/2` across a u-tunnel) with its own rock pile, hidden
+  once `gate:un_rubble` is set; a head lamp (`PointLight`, intensity only in the dark rect AND as the miner); Old Seam
+  (`role: 'miner'`, a `contruction_worker` stand-in) to sample. **The roster ALREADY had a `miner` row** (helmet, lamp) -- my
+  second one tripped `places`' "TWO ROLES SHARE AN ID" and was taken out. `places`: 0 BAD.
+
 - **m736 (T5r): THE FACTORY LOT'S SECURITY FENCE IS HIS** (`security_fence.glb`, `SFK`, `sfPut`, `sfBuild`, `?sfence=0`). INSTANCED, no mirror:
   yaw = ps + PI (his +Y, glTF -Z, along the run), then + PI again if his -X (the outrigger side, along (cos ps, -sin ps)) points at the
   lot's middle -- so every outrigger leans OUT whichever way a run was drawn. A post at each of the code's posts; the mesh tiled
