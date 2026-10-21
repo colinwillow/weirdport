@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m767 -- hollis_wall.glb: Camp Hollis's HESCO ring (T6d)
+
+Camp Hollis (m745) was the largest builder with no art: 57 boxes. This covers its wall. A basket is a mesh cage, a liner bulging between the uprights and fill showing on top, tiled at the code's own 1.1 m cage pitch. The wire is real concertina coils turned along the run, not tori. As with the parts crates, the first render had black tops where the fill shared a face with the basket. The rest of the base (watchtower, tents, motor pool, mast, cage) is the next pass. Shipped unverified.
+
 ## m764 -- factory_walks.glb: the factory's rails, legs and stair treads (T6c)
 
 The code's `rail()` draws a top bar, a knee bar and a post every 2 m. The art is that as a 2 m tile, plus a last post. The west-wall stair's 33 solid `grate` blocks get open treads with yellow nosings; the blocks stay as colliders. The preview's stair first climbed the wrong way; the piece itself puts the nosing on +Y, matching the code, whose steps climb toward -v. Shipped unverified.
