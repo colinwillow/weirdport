@@ -796,6 +796,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m794 (STEER): A WEAPON'S FIT TO ITS WEARER IS MEASURED (`mountWeapon`, `weaponParts().tip`, `WEAP.fit`, chip `WSC`).** Identity
+  was only right because zap's mount pair and the weapon files' pair are the same vector, (-14.3102, 0, 0), in centimetres under an
+  Armature 0.01. The alien lizard's rig is in METRES, with its tip at (-0.140, 0, -0.072): 1/91 of the length and 27 degrees
+  off -X. His guns were ~91x too big. The weapon group now takes `scale = |wearer| / |weapon|` and `quaternion = fromUnitVectors(weapon
+  axis, wearer axis)`. **The muzzle is measured along the WEAPON's own axis in group space and then pushed through
+  `group.matrix`**, so `muzzleWorld` (host.matrixWorld x muzzle) stays right. On zap the scale is exactly 1, measured: blaster and
+  launcher tips -14.310176 against zap's -14.310177. This is not `weapFit` coming back: nothing is typed, both vectors are read off
+  the files.
+
 - **m793 (F5-4a): MOTHMAN (`MOTH`, `mothStep`, `mothAt`, `mothSite`, dormant quest `qmoth`).** He perches on the bridge's lamp
   arm half-way along it (`HCROAD.frame`: v on the lamp pitch, 24k + 12, u = hw - .9, the deck's `yv(v)` + 6.1). His states are
   perch -> fly (a smoothstep arc, `flyY` up at mid-flight, `flyV` m/s) -> omen (over the pod, the fuse running) -> rest

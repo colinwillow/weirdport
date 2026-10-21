@@ -2204,3 +2204,9 @@ differ" table there, so no region feels like the last one.
   wires it to the firefighter. So the save is getting there in time and standing on the pod, not fighting the fire. His
   sites are five of Old Town's GOD places in turn: the square, the Hothouse, Mags's newsstand, the foot of the lookout and the
   radio payphone. The 75 s fuse starts when he takes off.
+- **m794 (STEER bug 1, the lizard's guns): the weapon fit is MEASURED in `mountWeapon`.** It takes scale |wearer tip| / |weapon tip|
+  and the rotation from the weapon's tip axis onto the wearer's. Read from the files: zap's pair is (-14.3102, 0, 0) and so is
+  every weapon's, so zap comes out at exactly 1.00 and identity, with nothing changed for him. The lizard's is (-0.140, 0, -0.072),
+  so his guns come out at .011 scale, turned 27 degrees onto his axis. The chip says `WSC1.00` on zap and `WSC.011` on the lizard.
+  The muzzle is measured in the file's own frame and then carried through the fit, so shots leave the barrel. Bug 2 (the flip) is
+  the next build.
