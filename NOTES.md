@@ -764,6 +764,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m775 (T6g): THE LAST OF CAMP HOLLIS IS HIS ART (`hollis_props.glb`, `MILB.hpG`, `?hprops=0`, `mpPut`).** These are `mp_bags` at
+  each firing-position segment (turned a + PI/2), `mp_drum` x5, `mp_table`, `mp_john`, `mp_flag`, `mp_stack` and `mp_hoop`. The
+  colliders the code keeps (each bag segment, the drum block, the table, the john, the stack's bottom course) stay, with their
+  drawing popped. Every `r()` the drawn courses spent is still spent first. Camp Hollis is now entirely his art except the
+  beacon, the plate, the signs and the drop-arm. `places` 0 BAD.
+
 - **m774 (T6f): CAMP HOLLIS'S TRUCKS, NET, MAST AND CAGE ARE HIS ART (`hollis_yard.glb`, `MILB.hyG`, `?hyard=0`, `myPut`).** `truck()`
   places `mt_truck` turned psi and keeps its two `olive` colliders (drawing popped) and its plate. `mt_pole` goes at the four poles,
   and `mt_net` on y + 3.58. `mt_mast` replaces the lattice, rungs and guys; the generator's `drab` collider stays and the beacon stays
