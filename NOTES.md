@@ -892,6 +892,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m858 (T7m) -- the cart pod's deck and the skate pier's light poles are his art
+`OTCARTS.pdG` loads `models/campaign/pod_deck.glb` (`?pdeck=0` leaves it out). The loader sits before
+`buildIslandSkate()`, which runs before `buildCarts()`, so it covers both.
+- **`cp_deck`** goes at the pod frame's (0, gP, 0). It pops the last four `deck` parts (the two skewed slabs and the two
+  steps) and keeps their colliders. Measured: his deck runs Blender Y -.4..7.2, the code's slabs and steps' v span.
+- **`sk_lightpole`** goes at each m505 string-light pole, in place of the drawn `steel2` pole. The bulbs stay code.
+
+Shipped unverified.
+
 ### m857 (F5-8c) -- Bigfoot the friend, and the BIGFOOT form (`ROLEFORM.bigfoot`, roster `bigfoot`, `BIGF.formK`)
 **The friend:** once `bigfoot:safe`, while you are within range + `followR` 80 of his home, he no longer flees. Every frame his
 target is a point `trail` 3 m behind you. He walks at 1.3, trots at `trotV` 4.5 past 9 m, and runs (the flee speed) past
