@@ -912,6 +912,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **RURAL TURF (m890, F6e-3, `TURF.AREAS` hc/fm, `A.on`).** Two more areas on m887's machinery: Hollow Creek (`HCREEK.bbox`, 5 x 5) and
+  the farm (a box of `flWorld` at its four +/-A/+/-B corners, 5 x 5). **A rotated landmass's axis-aligned box takes in open sea next to
+  Old Town** -- the farm's reached x 95 while Old Town's rect ends at 91 -- so `turfAt` answered for points in the strait and two
+  places rows went BAD (`TURF ... OUTSIDE OLD TOWN`, `CROWD ... the spot off Old Town dealt`). Each rural area has `on(x, z)` (its own
+  `hcEdge` / `flEdgeAt` > 0) and `turfAt` asks it. places 0 BAD, `prop spots 60/75`; play ch1 18 steps. F6 is done.
+
 - **HELD BLOCKS SHOW IT IN THE OTHER REGIONS (m889, F6e-2, `TXD`, `txStep`, `txDress`, `txSpot`, `tx:<id>` flags, `mel.txGo(f)`).** For
   `TURF.xb` only: a non-current holder with `lead >= KSWAP.lead` for `KSWAP.hold` s (counted twice a second, the timer not saved) is
   SETTLED -- `progFlag('tx:<id>', faction)`, or the flag deleted when the NATIVE holder wins it back -- and `txDress` puts up one group

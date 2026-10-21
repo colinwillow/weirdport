@@ -1260,7 +1260,7 @@ differ" table there, so no region feels like the last one.
     - [x] m871 **F5-12c** getting in: the gate lets a soldier (or a contractor) through; anyone else is turned back and the guards open fire, the heat rising.
     - [x] m872 **F5-12d** inside S-4: the hangar under the butte -- a recovered saucer, the element 115 in its case, and a captured Grey in a cell who wants out. Steal the 115, or free the Grey (it comes with you).
     - [x] m873 **F5-12e** the way there: the Tuesday truck from Camp Hollis drives out to Area 15 (ride in the back, as a soldier, through the gate).
-- [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
+- [x] m890 **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
   author; the turf's building swap in every region, not only Old Town.
   Split:
@@ -1268,10 +1268,10 @@ differ" table there, so no region feels like the last one.
   - [x] m875 **F6b** queuing: a line at the food carts and the GOOD kiosks -- people join the back, shuffle forward as the front is served, and leave with something in hand.
   - [x] m876 **F6c** sitting: benches along Old Town's streets and the Pearl's plaza as SMART seats, so people stop, sit a while and get up again.
   - [x] m885 **F6d** shopping: shop doors as spots -- people go in (out of sight a while) and come out again, a few with a bag.
-  - [ ] **F6e** the turf's building swap in every region, not only Old Town. Split:
+  - [x] m890 **F6e** the turf's building swap in every region, not only Old Town. Split:
     - [x] m887 **F6e-1** the other regions have turf: the Pearl (3 x 3 blocks) and the Waterfront (4 x 4), seeded from what is there (the protest and the plaza for the activists, Uplift's gate and control room, the cranes for big business, the dock for the rednecks), saved, on the map, in the chip, and moved by what you do there.
     - [x] m889 **F6e-2** what a held block looks like there: a block of the Pearl or the Waterfront held for good by someone other than its native holder changes hands visibly (the holder's banners, stalls, tents or Uplift kiosks on its open ground, the old holder's taken down).
-    - [ ] **F6e-3** the rural regions (Hollow Creek, the farm): the same, by props rather than buildings (the rally's flags, the activists' camp, Uplift's survey stakes).
+    - [x] m890 **F6e-3** the rural regions (Hollow Creek, the farm): the same, by props rather than buildings (the rally's flags, the activists' camp, Uplift's survey stakes).
 
 ## Ongoing (fill gaps between items, never instead of them)
 
@@ -2363,3 +2363,4 @@ differ" table there, so no region feels like the last one.
 - **m887 (F6e-1):** the Pearl and the Waterfront get their own turf grids, not more of Old Town's. Old Town's pressure and the Hothouse find neighbours by grid position, and must not jump the water. The block names carry the region: `P-B2`, `W-C3`. Nothing in them is swapped yet; that's F6e-2. Their blocks are not part of the four-minute 'held for good' rebuild, which only knows his kit buildings.
 - **m888 (STEER black characters):** every character file is now KTX2 (ETC1S): the fifteen that weren't, including the grey and the lizard. **But measured, they were small**: one 512 or 1K map each, about 1 MB resident (the grey and the lizard 5 MB), so baking them frees roughly 25-30 MB, not hundreds. No 2K character maps were left, so the 1024 downscale had nothing to act on. Nothing clones a texture per body (bodies clone the MATERIAL, which shares its map). No gated region holds a light. **Please send the expanded chip from the phone**: `P a>b G T a>b/MB` (first frame > now) and `CTXLOST n R m`. If CTXLOST shows, the black is textures lost in a context loss and never re-uploaded, not a failed first upload, and the fix is different. The headless load also got faster (85 s to 57 s).
 - **m889 (F6e-2):** in the Pearl and the Waterfront a block flips the way Old Town's do: held by someone other than its native holder, by a clear lead, for four minutes. Its holder's things then go up on the nearest open ground to its middle: activist banners and a tent, a business billboard, a market stall, homeless tents and a fire barrel, an Uplift kiosk, a Skinsuit pod, the rednecks' flag and hay. They are drawn only, with no colliders, so nothing new can block a route. To see one without waiting four minutes: `mel.txGo('act')` (or red, big, small, home, upl, skin) dresses the block you stand in. 20 of the 25 blocks have open ground; the other 5 are water.
+- **m890 (F6e-3):** Hollow Creek and the farm have turf too (5 x 5 each, seeded from the rally and the fair for the rednecks, the mill for big business, the trailer park for the homeless, Camp Hollis for Uplift, the crash and the ranch for the Skinsuits). A block held for good there gets the same holder's dressing on open ground in a field or clearing. A block only counts on its region's own land, so the sea inside a rotated land's box is no one's.
