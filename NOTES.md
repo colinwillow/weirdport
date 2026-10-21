@@ -744,6 +744,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m763 (T6b): THE FACTORY LINE'S PEDESTALS, BOOTH AND LIFT SHAFT ARE HIS ART (`factory_line.glb`, `WFRONT.flG`, `?fline=0`, `flPut`).**
+  At each arm, `fl_column` is stretched (scale.y = L2 - .1 - Y) and `fl_pedestal` sits on it; the `yel` box keeps its collider and
+  loses its drawing. `fl_booth` at (-101, 92) on L2 replaces all of the booth's drawing-only boxes. `fl_shaft` is TILED from Y to
+  L3 + 3: n = round(height) copies, each `h` tall (scale.y = h). It replaces the four drawing-only steel posts; the lift platform is
+  untouched.
+
 - **m762 (T6a): THE FACTORY'S CRATES OF ARMS ARE HIS ART (`parts_stock.glb`, `WFRONT.fsStG`, `?fstock=0`).** Each of the 8 spots
   gets `fs_case` / `fs_crate15` / `fs_crate19` by k % 3, which matches the code's three heights (1.1 / 1.5 / 1.9). Each box keeps
   its collider and its drawing is popped from `c7` or `wood`, whichever it used.
