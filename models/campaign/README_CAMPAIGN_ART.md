@@ -146,6 +146,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `foot_dress.glb` | `ff_flag`, `ff_hut`, `ff_post` (tintable board), `ff_buoy`, `ff_drift`, `ff_bench` | buildFootbridge -- the beach at its foot |
 | `ship_hall.glb` | `ms_hall` (the round belly hall), `ms_pod` (the tether pod, in its group's frame) | buildMothership -- the belly and the pod |
 | `skate_park.glb` | `sk_qp`, `sk_funbox`, `sk_kicker`, `sk_ledge`, `sk_pad`, `sk_rail` | buildIslandSkate -- the pier skate park's obstacles |
+| `skate_pier.glb` | `kp_deck` (1.2 m tile), `kp_pile` (stretch), `kp_rail` (2 m tile) | buildIslandSkate -- the pier deck, piles and rails |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

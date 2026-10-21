@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m829 -- skate_pier.glb: the skate pier's deck, piles and rails (T7c)
+
+The pier under the park as tiles at the code's pitches: deck seams every 1.2, rail posts every 2, piles every 4.5. With T7b the pier skate park is all art apart from its string lights and paint splashes, which are code on purpose. The island thermal checked this pass is all effects (shimmer, cloud, gulls) and is skipped. Shipped unverified.
+
 ## m827 -- skate_park.glb: the pier skate park's obstacles (T7b)
 
 The park's hangout and graffiti wall were already his. The obstacles were still slabs under walk quads. The quarter pipe follows the code's own curve, 4 m to 55 degrees, and the kicker and funbox banks match their `strip()` points, so the art sits on the surface the board actually rides. Shipped unverified.
