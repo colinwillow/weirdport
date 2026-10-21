@@ -688,6 +688,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m724 (F3-6b): THE TIC-TACS** (`OTIC`, `buildTicTacs`, `ticHit`, `ticStep`, flags `seen:tictac` / `tictac:down`). A pool of 2 white
+  capsules (`CapsuleGeometry` turned along +Z so `lookAt` points the nose). After `after` 3 s of gliding (`p.wing && !p.grounded`),
+  each idle one has a .5/s chance to spawn 140 m off, 30-50 m above you. CHASE: aim at you + .5 s of your velocity + a jink (6 m,
+  shrinking inside 30 m) at 26 m/s, 16 inside 20 m. Inside `hitR` 2.2: `playerHurt(7, ..., 6, 2, .4)`, then PEEL away for 3 s and
+  come round again. On the ground for `lose` 4 s they all LEAVE upward and vanish 120 m above you. They are `AIRT` targets, so the
+  blaster's sky aim finds them. `places`: 0 BAD.
+
 - **m723 (T5n): THE STAIR DOWN INTO THE DRY DOCK IS HIS** (`dock_stair.glb`, `WFRONT.dstairG`, `?dstair=0`). `dk_stair` at (su, floor, v0
   70), mirrored, Y-scaled by (Y - floor) / 4.95; the 16 riser colliders stay, their draws popped. `dk_landing` at the landing's
   centre on Y, X-scaled by lw / 6.8; the steel slab's collider stays, its draw popped, and the rail's top bar is not drawn (its
