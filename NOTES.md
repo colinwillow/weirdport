@@ -720,6 +720,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m747 (T5u): THE TRANSIT SHED'S DUNNAGE IS HIS ART (`shed_yard.glb`, `WFRONT.syG`, `?syard=0`).** At each of the six spots,
+  `ws_pallet` is stacked k % 3 + 1 high at .15 a layer, alternate layers turned +-.06 rad. `ws_drum_paint` + `ws_drum_trim` stand
+  at the five drum spots, both turned k * 1.3. The paint is one cloned material per colour, copied from the frame's own c1 / c5
+  (`F.mats`), so it follows the waterfront's palette. That is safe under `farmBatch`: `fbKey` keys on kind, metal and emissive,
+  and merges colours into the vertex data. Everything here was drawing only, so no colliders changed.
+
 - **m745 (F4-5c): CAMP HOLLIS, THE MILITARY'S BASE (`MILB`, `buildMilBase`, `milBaseStep`, flat `HCREEK.FLATS[2]`, GOD `hcbase`).**
   The ring is eight HESCO runs. The radius wanders 19..23 m from a seeded roll, except the front run, which is held square to the
   gate. Each run has ONE collider 3.6 m high, which is the wire's height and above the 2.81 m jump; the 2-3 drawn tiers, cage
