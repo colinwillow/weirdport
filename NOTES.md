@@ -720,6 +720,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m748 (T5v): THE FACTORY'S GALLERY OVER THE FENCE IS HIS ART (`factory_gallery.glb`, `WFRONT.fgG`, `?fgal=0`).** `gl_bay` is
+  TILED, never stretched: n = round(len) copies, each scaled len / n along u, from the factory wall to -51 at v 109.5 on L3. The
+  `grate` floor and both `tin` walls keep their colliders and lose their drawing; the drawn roof goes. `gl_leg` is stretched from
+  the quay (Y) to L3 - .4 at the four legs. If the GLB fails, the boxes draw as before and the chip reads `FGAL GLB FAIL`.
+
 - **m747 (T5u): THE TRANSIT SHED'S DUNNAGE IS HIS ART (`shed_yard.glb`, `WFRONT.syG`, `?syard=0`).** At each of the six spots,
   `ws_pallet` is stacked k % 3 + 1 high at .15 a layer, alternate layers turned +-.06 rad. `ws_drum_paint` + `ws_drum_trim` stand
   at the five drum spots, both turned k * 1.3. The paint is one cloned material per colour, copied from the frame's own c1 / c5
