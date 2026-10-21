@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m813 -- swing_span.glb: the swing bridge's moving span (T6v)
+
+It is built in the group's own frame and parented under `O.grp`, so the existing swing turns it with no new code. The truss is the code's: nine verticals each side at k * half / 4, rising 3.2 + 2.6 (1 - |k| / 4) to the middle. Pairs with T6u's fixed parts. Shipped unverified.
+
 ## m811 -- swing_bridge.glb: the swing bridge's fixed parts (T6u)
 
 The moving span is a group the code turns, and its barriers and warning lights animate, so they stay code. Everything that stands still is art: the two fixed spans as 1 m tiles, the piers and the pivot drum stretched to the river bed, the lamps and the red gate posts. Shipped unverified.
