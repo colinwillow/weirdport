@@ -1189,10 +1189,10 @@ differ" table there, so no region feels like the last one.
   - [x] m815 **F5-5** the Phoenix Lights. Split:
     - [x] m809 **F5-5a** the V: every few minutes seven silent amber lights cross the city high and come down over one place (in turn) for a minute and a half; stand under it (`phx:seen`, quest `qphoenix`). It is on the map while it flies.
     - [x] m815 **F5-5b** the Tall White trader who gets off: at the landing, a tall pale figure who deals (juice for one of the good aliens' upgrades, or a rare form), and goes when the lights lift.
-  - [ ] **F5-6** the haunted ranch. Split:
+  - [x] m833 **F5-6** the haunted ranch. Split:
     - [x] m823 **F5-6a** Shadowhide Ranch: a weathered house with a porch, the Birch Institute's research trailer, a watchtower up a ladder, a corral with a ring of dead grass and three stones floating over it, cameras on poles blinking red, a dead tree, skulls, barbed wire and a gate. Tully keeps it.
     - [x] m830 **F5-6b** the night: stay inside the wire for a few minutes while the Ethereals act up (lights that chase you, things thrown, the stones leaving the ring, a shove), and you have survived it; leaving resets.
-    - [ ] **F5-6c** what you get: an Ethereal ability (a short blink in the direction you are moving, on a slot he can reach).
+    - [x] m833 **F5-6c** what you get: an Ethereal ability (a short blink in the direction you are moving, on a slot he can reach).
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
   author; the turf's building swap in every region, not only Old Town.
@@ -2256,3 +2256,4 @@ differ" table there, so no region feels like the last one.
 - **m815 (F5-5b): the Tall White sells, it does not give** -- 40 juice for the next of the good aliens' upgrades you lack (tank, seal, cheap, quick); with all four it fills your tank free. You deal by standing beside it for 2 s, not by talking (it is not a body in `DUMMIES`). Being under the lights no longer lifts them early: they stay their full minute and a half, or lift 4 s after the deal. `PHX.price` if 40 is wrong.
 - **m823 (F5-6a): the haunted ranch is SHADOWHIDE RANCH**, watched by the made-up Birch Institute, on a new farm flat at (160, 80) (63 m from the beach, 3.9 m up). I tried (172, 112) in the far hay first, but it sat in a hollow at y 0, 2.2 m under its own fence corners. Tully is a stand-in (the hick, tinted, in a black cap); the roster says so.
 - **m830 (F5-6b): the night at the ranch is two minutes, not a night.** There is no night in this game, so it is a timed stand inside the wire. Three Ethereal orbs drift at you, and a touch is a coin-flip between a shove (6 damage) and a blink to somewhere else inside the wire. The stones leave the ring and circle you, and lightning strikes every 9-16 s. Stepping out of the wire resets it. It starts only after Tully has talked to you. `RANCH.dur` / `orbV` if it is too easy or too hard.
+- **m833 (F5-6c): the Ethereal ability is a BLINK BUTTON, not a gesture.** The pads' free slots (a left hold-in-place, a second tap) collide with the walk and the double jump, so it is a round light-blue BLINK button over the right pad. It shows only once the ranch's night is survived, and only in the kit city. It throws you 7 m the way you are moving (your facing if you are still), stops short of walls, and recharges in 2.5 s. `BLINK.dist` / `BLINK.cool`.

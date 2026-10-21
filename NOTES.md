@@ -856,6 +856,25 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m833 (F5-6c) -- the Ethereal blink (`BLINK`, `blinkGo`, `blinkStep`, `#blink`)
+**What the ranch's night gives:** surviving it (`ranch:night`) shows a round BLINK button above the right pad, in tkit only.
+A card after dawn says so.
+
+**How the blink works:**
+- **Direction:** the way his horizontal velocity points, or his facing when he is still.
+- **Distance:** marched in .4 m steps up to `dist` 7. Each step tests `camHit` at knee (+.45) and chest (+1.3) with pad .35,
+  the same box test the bolt flies by, and the march stops at the first solid.
+- **Too short:** under .8 m of clear air is a refusal, with a `ping`.
+- **Effects:** sparks at both ends and a high swoosh.
+- **Recharge:** `cool` 2.5 s, during which the button dims.
+
+**Why a button:** the pads' unassigned gestures (left hold-in-place, a second tap) would fight the walk and the double jump.
+
+**Untested:** whether a blink can carry him through a TRI-only (no box) surface, such as a kit wall's triangles. If it can,
+the march wants a `groundAt` / SURF test too.
+
+`play ch1` passed. Shipped unverified.
+
 ### m831 (T7c) -- the skate pier itself is his art, as tiles
 `ISKATE.pierG` loads `models/campaign/skate_pier.glb` (`?skpier=0` leaves it out). In `buildIslandSkate`'s pier, `kp()` places
 a node and records it in `kpArt`. Placements:
