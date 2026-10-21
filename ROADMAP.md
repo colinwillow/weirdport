@@ -15,6 +15,42 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
+- [ ] **STEER, FROM COLIN (Oct 20, 20:22) -- TWO BUGS, AHEAD OF THE CAMPAIGN ITEMS: (1) GUNS ~100x TOO BIG ON THE ALIEN LIZARD, (2) THE DOUBLE-JUMP FLIP STUTTERS.**
+  *"Due to me using a different workflow... this new workflow has made the guy have a different scale, so now he's actually fine for the
+  game. He looks fine, he works fine, however when you load a rocket launcher or a blaster, the guns are about 100 times too big -- they
+  take up the whole screen. And we recently implemented a double jump, and double jump is supposed to be a flip, and when you double
+  jump it looks like it starts to do a flip but the animation never really fully goes, so it's like a stutter."*
+  **(1) THE GUNS -- MEASURED HERE, READ STRAIGHT OUT OF BOTH FILES' JSON:**
+  - **zap's armature carries `scale 0.01`** (`Armature` -> root -> hips -> ... -> `mixamorig_RightHand` -> `weapon_root_right`), so his
+    mount's local units are CENTIMETRES: `weapon_root_right` t = (3.86, 7.97, -1.55), `weapon_tip_2` t = (-14.31, 0, 0). Every weapon
+    file is built around exactly that pair (CLAUDE.md: "byte-identical to the character's own pair"), which is why weapons parent with
+    IDENTITY on zap.
+  - **the lizard's root (`lizard_export_rig`) has NO scale: his rig is in METRES.** His `weapon_root_right` t = (0.042, 0.088, -0.017)
+    and `weapon_tip_2` t = **(-0.140, 0, -0.072)**: the mount-to-tip length is **0.157** against zap's **14.31**, which is 1/91. A weapon
+    parented with identity is therefore ~91x too big, which is his "100 times".
+  - **AND THE AXIS DIFFERS TOO**: zap's tip is pure -X off the mount; the lizard's has a -Z part (-0.072), so even at the right size
+    the barrel would point ~27 degrees off. Identity is wrong on both counts for this rig.
+  - **THE FIX IS A MEASUREMENT, NOT A TYPED NUMBER:** at mount time, read the WEARER's own mount -> tip vector (from his GLB, in the
+    mount's local frame) and the WEAPON's own root -> tip vector (from the weapon file), and give the weapon the scale |wearer| / |weapon|
+    and the rotation that turns the weapon's axis onto the wearer's. On zap that comes out scale 1.0000 and identity rotation (check
+    it, and keep the chip honest), so nothing changes for him. Do NOT reintroduce a `weapFit`-style hand-typed nudge (CLAUDE.md forbids
+    it); this is the same fact measured instead of assumed. Do it in ONE place that every weapon (blaster, rapid, rocket launcher,
+    hammer, mace if worn) goes through, and do the left mount the same way.
+  - Put the measured weapon scale in the chip (e.g. `WSC 1.00` on zap, `WSC .011` on the lizard) so a phone can tell "fixed" from
+    "not loaded".
+  **(2) THE DOUBLE-JUMP FLIP STUTTERS** (he saw it on the lizard; check whether zap does it too, and say which). Not diagnosed here;
+  what is known from this side:
+  - both rigs' `front_flip` clips are **0.875 s** long in the file, while the m97/m100 notes at `AIR.fill` in index.html reason from a
+    `front_flip` of **0.667 s**. That number is stale, or it is measuring something else. Re-measure the clip and fit the air rate
+    from the measured length.
+  - "starts to flip and never fully goes" is the CLAUDE.md landmine shape: **a ONCE clip re-entered without rewinding, or a clip
+    asked about with `isRunning()` instead of its weight, or the double-jump state re-triggering the clip every frame, or `in_air`
+    taking the weight back before the flip is over.** Check where the double jump sets the flip (grep `flipAir`, `p.jumps`,
+    `front_flip`), confirm the action is reset ONCE on the jump and then left to play, and that the clip's weight holds until its end
+    or landing. Also confirm `front_flip` is in the clamp-when-finished list (line ~5171) for whichever rig is worn.
+  - Put the flip's state in the chip while it plays (clip time / clip length, weight) so he can see it run on the phone.
+  **Ship each as its own build, tick this, then go back to the items below.** Shipped unverified, as always.
+
 - [x] m785 **STEER, FROM COLIN (Oct 20, 19:55) -- DO THIS NEXT, AHEAD OF EVERYTHING ELSE: A CHARACTER SELECT, ZAP OR THE ALIEN LIZARD.**
   *"I just created a new hero character... a bit of an automated process using Claude through the Blender MCP and scripting... I want
   to see if this workflow worked... I want to now have a character selection screen where you could choose the original character zap
