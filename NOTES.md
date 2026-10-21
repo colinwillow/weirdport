@@ -816,6 +816,20 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m810 (T6t) -- the ferry landing's near end is his art
+`OFERRY.flG` loads `models/campaign/ferry_landing.glb` (`?flanding=0` leaves it out). In `buildFerry`, `fl()` places a node
+and records it in `flArt`. Placements:
+- **`fy_stage`** goes at (0, 5).
+- **`fy_jetty`** is TILED from v 10 to vEnd: `n = round(L)`, each scaled `L/n` along z.
+- **`fy_pile`** is STRETCHED from sea - 4 to dy - .4 (`scale.y`), one at each pile.
+- **`fy_pontoon`** goes at (0, vEnd + 4.8). The near pontoon's code dressing (yellow edge, seams, tyres, cleats, rope) is
+  skipped when the art is in.
+- **`fy_kiosk`**, **`fy_shelter`** (with its bench) and **`fy_lamp`** go at the six lamp posts.
+
+All colliders stay. The rails, the two steps, the canvas FERRY board and the whole far end stay code. After commit, the art
+goes through `artMerge` (m803), so ~25 piles and jetty tiles are one draw per material. The count is in `OFERRY.artDraws`.
+Shipped unverified.
+
 ### m809 (F5-5a) -- the Phoenix Lights: a silent V that crosses the city and comes down
 There is no night, so `PHX` runs on a clock. The first crossing is at `first` 150 s, then every `every` 420 s.
 - **The lights:** seven amber spheres with halos, in a V `span` 56 m wide with the tip leading (local +z is forward).
