@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m802 -- island_exit.glb: the BASE-jump exit point (T6r)
+
+The deck is the code's IBASE numbers: 3 wide and 9 long, 5 m of it over the edge. That puts the edge (dE) at local Y -.5 from the deck's centre, and the braces run from under the end down 4.35 m to land just behind it, as `pearlSeg` does. The way-on steps fit the ground, so they are one step piece placed per step. Shipped unverified.
+
 ## m798 -- metro_core.glb: the metro core's tower kit (T6q)
 
 The metro core's towers are rolled at load: size, height and one of four palette materials. A fixed tower model would fit none of them. What every tower shares is a lobby, a roof tank, sometimes a roof unit, and the sky-bridges between them, so that is the art. The window bands stay code because each tower's band material is its own (m700: the grip dims one). Shipped unverified.
