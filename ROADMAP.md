@@ -1064,6 +1064,10 @@ differ" table there, so no region feels like the last one.
 - [ ] **F5 Side quests**, one build each, from the table in `LORE.md`, in this order: the Roswell diner,
   the tinfoil-hat bunker (the grid on the map), the Majestic Dozen, Mothman, the Phoenix Lights, the
   haunted ranch, the tic-tac pilot, Bigfoot, D.B. Cooper, Betty & Barney, Travis Walton, Area 15.
+  - [ ] **F5-1** the Roswell diner. Split:
+    - [x] m750 **F5-1a** Saucer Joe's: the diner (walk in: counter, stools, booths, Joe), its roof up a ladder, the sign tower with a saucer on top, the quonset museum, the lot, and the fenced "replica" saucer that hums for the alien.
+    - [ ] **F5-1b** the three parts Joe names (a coil, a lens, a silver gyro), one hidden in each of three places across the map, and the quest (`qsaucer`) that tracks them.
+    - [ ] **F5-1c** the saucer fixed: bring the parts, it lifts off its plinth, and it is yours (a portal back to the diner, and a short hop you can ride).
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
   author; the turf's building swap in every region, not only Old Town.
@@ -2070,3 +2074,6 @@ differ" table there, so no region feels like the last one.
   knocking one down at the gate, which means a fight with heat on the doorstep. Trying the gate in any other form adds .8 heat
   each time it speaks. The prize in the supply cage is a full tank of juice plus the base's radio codes, which wipe your heat,
   and a manifest that points at Area 15. No road reaches it yet; a road sign by the gate points out to "AREA 15 40".
+- **m750 (F5-1a): Saucer Joe's sits on a new flat at Hollow Creek (-88, -100), just west of the highway** where it comes off the
+  bridge. That puts it inside the gang's turf, so you reach it as a local, a biker, or off the freight. Joe talks to the alien
+  (he knows what his saucer is). The saucer only reacts to the alien form, not to a disguise.

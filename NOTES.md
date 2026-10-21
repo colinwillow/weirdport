@@ -724,6 +724,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m750 (F5-1a): SAUCER JOE'S (`DINER`, `buildDiner`, `dinerStep`, flat `HCREEK.FLATS[3]`, GOD `hcdiner`).** The diner is a body
+  11 wide between two round ends of r 3.5. Each end is drawn as a half cylinder shell and collides as four faceted boxes turned
+  `-s * am`. You walk in through a 2 m door in the front. The museum is a quonset: a half-cylinder turned `rx = PI/2`, and its
+  `thetaStart` is **PI/2, not -PI/2**: Rx(+90) sends +z to -y, so the -PI/2 half would be buried. Its ends are `ShapeGeometry`
+  arches (the front one with the door notched out), colliding as boxes. The saucer is its own Group outside the frame. It bobs and
+  its dome pulses with `hum`, which rises only while `fearLooks()` and within 16 m. **The neon is one material with `noBatch`**
+  (m700), because `dinerStep` changes its intensity at runtime. Flatness is measured with `hcHeightAt`, not `F.gnd`. `places`
+  prints a `DINER` row: boxes 52, off its flat by 0.00 m, y 1.7, ladder yes, saucer yes, 0 BAD.
+
 - **m748 (T5v): THE FACTORY'S GALLERY OVER THE FENCE IS HIS ART (`factory_gallery.glb`, `WFRONT.fgG`, `?fgal=0`).** `gl_bay` is
   TILED, never stretched: n = round(len) copies, each scaled len / n along u, from the factory wall to -51 at v 109.5 on L3. The
   `grate` floor and both `tin` walls keep their colliders and lose their drawing; the drawn roof goes. `gl_leg` is stretched from
