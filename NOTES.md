@@ -684,6 +684,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m719 (T5m): THE DRY DOCK'S CAISSON IS HIS** (`caisson.glb`, `WFRONT.caisG`, `?caisson=0`). Through `cgP` (`campPlace`, mirrored):
+  `cg_deck` on the steel box's top (the box stays drawn and solid), `cg_rail` on each side at v = D.v0 / 2 +- 1.85 (the rail colliders
+  stay, their bars and posts are not drawn), `cg_pile` at each fender Y-stretched from sea - 1 to Y - .4, and `cg_face` on v = 0
+  Y-stretched from B0 to Y. **`buildWaterfront` already has a `cg` and a `CG`** -- the first two names were redeclarations and
+  `check:syntax` caught both: it is `cgP` / `CAI`. `places`: 0 BAD.
+
 - **m717 (F3-4): THE EM TELL** (`EMTELL`, `emAt`, `emSlow`, `emStep`). `emAt` = 1 - d / R (R 45, height counted at half) to the nearest
   `AIRT` target that is `on` (every orb), or .45 x the Hothouse twilight. `emStep` damps it to `EMTELL.k`. Above .05 it stutters
   every emissive material whose NAME says it is a light (collected once, base intensities kept, restored when it falls away), and
