@@ -684,6 +684,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m720 (F3-5): THE HUM** (`HUM`, `humLevel`, `humStep`). Built on the first frame `SFX.ctx` exists: oscillators 55 / 55.7 Hz saw (a
+  slow .7 Hz beat) and a 110.4 sine, through a 220 Hz low-pass, into `SFX.bus` (so it follows the master volume). Every .25 s the
+  gain targets `HUM.g` (.07) x level, with a .8 s time constant; level = (orbs up / all six) x nearness to Old Town's rect (smooth
+  to 0 over `fade` 160 m) + .35 x `EMTELL.k` + .3 x the Hothouse twilight, capped at 1. `SFX.on` false -> 0. Every orb's `st` is
+  'up' / 'falling' / 'down', so 'up' is the one test.
+
 - **m719 (T5m): THE DRY DOCK'S CAISSON IS HIS** (`caisson.glb`, `WFRONT.caisG`, `?caisson=0`). Through `cgP` (`campPlace`, mirrored):
   `cg_deck` on the steel box's top (the box stays drawn and solid), `cg_rail` on each side at v = D.v0 / 2 +- 1.85 (the rail colliders
   stay, their bars and posts are not drawn), `cg_pile` at each fender Y-stretched from sea - 1 to Y - .4, and `cg_face` on v = 0

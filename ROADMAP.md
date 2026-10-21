@@ -1036,7 +1036,7 @@ differ" table there, so no region feels like the last one.
   - [x] m708 **F3-2** the poltergeist orb: one Old Town building haunted -- lights flicker, a door slams, furniture is thrown out of its windows at you; shoot the orb and it stops. Animals react first (a dog barks).
   - [x] m711 **F3-3** the relay orb: links the others into the grid -- while it stands they take half damage and re-light if downed; shoot it and every orb it fed drops a hit.
   - [x] m717 **F3-4** the EM tell: near any live orb or alien activity streetlights flicker, cars stall in the road, radios hiss.
-  - [ ] **F3-5** the Hum: an ambient drone whose loudness follows how much of the grid stands where you are; a freed district goes quiet.
+  - [x] m720 **F3-5** the Hum: an ambient drone whose loudness follows how much of the grid stands where you are; a freed district goes quiet.
   - [ ] **F3-6** black triangles patrol at night and drop orbs; tic-tacs chase you when you are gliding or flying.
   - [ ] **F3-7** missing time (captured: white-out, wake somewhere else minutes later, juice drained) and a zero-health state, switchable.
 - [ ] **F4 The forms still missing** from the forms table, each with the door it opens: cop (cordons,
@@ -2009,3 +2009,7 @@ differ" table there, so no region feels like the last one.
   across the whole scene at once, while you are near an orb. No point light is added: m158 rules streetlights out as lights. Cars
   stall wherever there are cars: the farm's vehicles, and the Weirdport slice's traffic if it reads `emSlow` later. Old Town itself
   has no moving traffic to stall. The radio hiss is static in the air. The radio show's own voice is not touched.
+- **m720 (F3-5), the Hum:** it is synthesised (two detuned low saws and a sine through a low-pass) rather than a recording, because
+  the repo has no drone sample. Its "district" is Old Town, which is where every orb is: its level is the share of orbs still up,
+  full inside Old Town and fading out over 160 m. The EM tell and the Hothouse add to it. Other districts get their own grid when
+  they get orbs.
