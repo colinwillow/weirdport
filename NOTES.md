@@ -836,6 +836,18 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m821 (T6y) -- the footbridge's span, piers, stair and lamps are his art
+`FOOT.fbG` loads `models/campaign/footbridge.glb` (`?fbridge=0` leaves it out). In `buildFootbridge`, `fb()` places a node
+and records it in `fbArt`. Placements:
+- **`deck()`:** keeps the deck and rail colliders and tiles `fb_bay` (2 m) n = round(L / 2) times, scaled z by st / 2, with
+  `fb_post` at the run's far end. The chords, posts and diagonals are not drawn.
+- **`fb_pier`** is stretched from sea - 5 to yD - .6.
+- **`fb_step`** goes on each stair step's top. Measured: its yellow nosing sits on the -v side, the beach-facing edge.
+- **`fb_lamp`**: his arm reaches -X, inward for s = 1, so the s = -1 lamp is turned PI.
+
+The broken and mended spans, the stair's handrail posts and every collider stay. The art goes through `artMerge` into
+`FOOT.artDraws`. Shipped unverified.
+
 ### m819 (T6x) -- two shore leftovers are his art: the islands' cliff-ladder pads and the ferry's far stair
 `OFERRY.shG` loads `models/campaign/shore_steps.glb` (`?shore=0` leaves it out). It loads before `buildFerry` and
 `buildIslands`, which both read it.
