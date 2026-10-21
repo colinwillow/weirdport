@@ -120,6 +120,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `control_room.glb` | `fc_console` (desk, mimic panel, three monitors), `fc_lever` (the big red lever) | wfFactory -- the control room |
 | `parts_stock.glb` | `fs_case` (1.1), `fs_crate15`, `fs_crate19` | wfFactory -- the parts stock along the east wall |
 | `factory_line.glb` | `fl_pedestal`, `fl_column` (stretch), `fl_booth`, `fl_shaft` (1 m tile) | wfFactory -- arm pedestals, chrome booth, lift shaft |
+| `factory_walks.glb` | `fw_rail` (2 m tile), `fw_post`, `fw_leg` (stretch), `fw_step` | wfFactory -- walkway rails, legs, the west-wall stair |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
