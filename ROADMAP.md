@@ -1050,7 +1050,7 @@ differ" table there, so no region feels like the last one.
   scuba diver (the Gorge), cave miner (the Underneath), military (the base at high heat).
   - [x] m731 **F4-1** the hobo as stealth: Uplift's turrets and robots look straight through a man in the hobo's coat.
   - [x] m733 **F4-2** the cop's arrest: as a cop, hold the right pad on a Skinsuit you have knocked down to cuff it (it is taken away and the block's turf moves), and the cop's car at the cordon is yours to drive off.
-  - [ ] **F4-3** the firefighter's truck ladder: a fire engine parked by a burning building in Old Town whose ladder only a firefighter can raise -- up to a roof that has no other way on.
+  - [x] m735 **F4-3** the firefighter's truck ladder: a fire engine parked by a burning building in Old Town whose ladder only a firefighter can raise -- up to a roof that has no other way on.
   - [ ] **F4-4** the cave miner (the Underneath): a miner to sample in the Underneath, whose lamp lights the dark tunnels and whose pick breaks the rubble walls that block them.
   - [ ] **F4-5** the military (the base at high heat): at four stars soldiers come instead of cops; a soldier's form walks through the military cordon round the base.
 - [ ] **F5 Side quests**, one build each, from the table in `LORE.md`, in this order: the Roswell diner,
@@ -2043,3 +2043,7 @@ differ" table there, so no region feels like the last one.
 - **m733 (F4-2), the cop's arrest:** it is the cuffing only. The "cop's car to drive off" half is not built: no car in the game is
   drivable yet (CLAUDE.md: "The cars are not drivable"), and that is its own build. An arrest takes .08 of the Skinsuits' share off
   the block the body lay in, and the count is saved as `arrests`, the hook for anything that wants to reward it.
+- **m735 (F4-3), the fire engine:** the "burning building" is smoke rolling off the roof, not live fire: the fire system's flames
+  belong to the decay/fire chapters, and a permanent blaze in Old Town would spread through them. The ladder raises straight up
+  the wall from the street, beside the truck's tail, rather than swinging out at an angle, because a climb in this game is
+  vertical. Once raised it stays up (saved).

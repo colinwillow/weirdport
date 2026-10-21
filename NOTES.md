@@ -704,6 +704,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m735 (F4-3): THE FIRE ENGINE'S LADDER** (`FTRUCK`, `buildFireTruck`, `fireTruckClimb`, `fireTruckStep`, GOD `firetruck`, flag
+  `ff:ladder`). It picks the `KBLD` building nearest `at` that is square to the grid (|s| or |c| < .05), 9-24 m tall, with kit floor
+  at its base height 1.5 / 3 / 5 m outside a face. The truck parks along that face (yaw h = atan2(n): local x, its length, runs
+  along the wall -- **the first version turned it h + PI/2, nose into the wall**), with a `BDYN` collider. The ladder is its own
+  group at the tail, .45 m off the wall, Y-scaled 0 -> 1 over `raiseT` 3 s once a firefighter stands at the rear panel. Up:
+  `kitClimbAdd` (box cs/sn = cos h / -sin h, so its n is out of the wall) with the landing .8 m in on the roof. Smoke puffs off
+  the roof within 120 m. The harness has no KBLD, so there the GOD place falls back to the street spot (`lifeSpot(at)`).
+
 - **m733 (F4-2): THE COP'S ARREST** (`ARREST`, `copOn`, `arrestOk`, `arrestTake`). Folded into `sampleStep`'s own hold: wearing the
   officer (`dummy_officer`, settled), a downed Skinsuit (`role === 'skinsuit'` or the alien_warrior stem the roster stands Skinsuits
   in with -- which `sampOk` refuses as alien) is a target. The pad reads "hold = arrest" (`samp.lit` 2), the ring fills over
