@@ -808,6 +808,24 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m803 (T6q) -- the metro core's tower kit is his art, and the kit is MERGED by material (`artMerge`)
+`MCORE.mcG` loads `models/campaign/metro_core.glb` (`?mcore=0` leaves it out). In `buildMetroCore`, `mcPut` places a node and
+records it in `mcArt`. Placements:
+- **`mc_lobby`** goes at (u, g.hi, v - d/2) and replaces the door and awning. Measured: its face is at Blender Y 0 and its depth
+  runs to -Y, the street.
+- **`mc_tank`** goes at (tu, ry, tv) and replaces the legs, the drum and the cone. The `tank` collider stays.
+- **`mc_unit`** goes at the set-back roof unit. The `steel` collider stays.
+- **`mc_bridge`**, a 2.4 m wide by 1 m tile, is TILED by `mcSpan` over L + .6 on the tower-to-tower bridges and over L + .4 on
+  Dump Tower's links. It is turned PI/2 on a bridge along u, and the deck and rail colliders stay.
+
+**THE NEW PART IS `artMerge(grp, roots)`, beside `farmMerge`.** Up to 10 towers and ~8 bridges of ~12 tiles, at four primitives
+each, would be ~450 draw calls of cloned art. After `F.commit()`, every placed clone is baked into the frame's space and merged
+per material, which is ~9 draws. A mirrored placement (`campPlace`'s scale.z = -1, det < 0) has its index winding swapped as it
+is baked, because a merged mesh cannot flip its front face at draw time. Like `farmMerge`, it drops UVs, so it is only for
+untextured art; metro_core has 0 images. `MCORE.artDraws` holds the count. The window bands stay code.
+
+Shipped unverified.
+
 ### m801 (T6p) -- the Underneath's crossways ladders and the safe house are his art; buildUnderneath is finished
 `UNDER.usG` loads `models/campaign/under_safe.glb` (`?usafe=0` leaves it out). In `buildUnderneath`, `usPut` places a node and
 `usCut` drops the code drawing taken in an `umSnap` snapshot. The colliders stay. What is placed:
