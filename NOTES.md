@@ -820,6 +820,18 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m812 (T6u) -- the swing bridge's fixed parts are his art
+`OSWING.brG` loads `models/campaign/swing_bridge.glb` (`?swbridge=0` leaves it out). In `buildSwing`, `br()` places a node and
+records it in `brArt`. Placements:
+- **`span()`:** keeps the road collider and tiles `sw_span` a metre at a time. `rail()` keeps its collider and puts a
+  `sw_post` every 2 m each side, in place of the girder, top bars, posts and centre line.
+- **`sw_pier`** is stretched from sea - 4 to Y - 1.4.
+- **`sw_pivot`** is stretched from sea - 4 to Y - .9, and replaces the drum and the steel disc.
+- **`sw_lamp`** goes at the eight lamps, and **`sw_gatepost`** at the four red posts.
+
+The colliders are unchanged. The swing span, its barriers and lights, the fender piers, the m510 paint and the m588 kit stay
+code. `artMerge` runs after commit, and the draw count is in `OSWING.artDraws`. Shipped unverified.
+
 ### m810 (T6t) -- the ferry landing's near end is his art
 `OFERRY.flG` loads `models/campaign/ferry_landing.glb` (`?flanding=0` leaves it out). In `buildFerry`, `fl()` places a node
 and records it in `flArt`. Placements:
