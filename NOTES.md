@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m751 -- shed_vents.glb: the transit shed's roof vents (T5x)
+
+The shed itself is his `wf_shed`, but the three 2.2 m `steel` boxes on its roof are drawn outside that branch, so they stayed boxes. Each is now a louvred vent with a hipped cap and a turbine ventilator, at the box's own size. Shipped unverified.
+
 ## m749 -- factory_skin.glb: the factory's parapet and green screens (T5w)
 
 The parapet was four `panel` slabs and the screens were three flat `screen` boxes. Both are now one-metre tiles. The screen's bright dashes come from a seeded random per tile, so a run of tiles reads as text crawling along the wall rather than one stripe repeated. It does still repeat every metre if you look for it. The first preview faced the wrong way (+Y is OUT). Shipped unverified.
