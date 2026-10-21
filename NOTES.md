@@ -728,6 +728,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m753 (T5x): THE TRANSIT SHED'S ROOF VENTS ARE HIS ART (`shed_vents.glb`, `WFRONT.svG`, `?svent=0`).** `sv_vent` sits on the
+  roof at each of the three steel boxes. Where it is placed, the collider goes in through the frame's raw `F.bx` and its drawing is
+  popped. That is deliberate: the block's own `bx` is `ks(on)`'s wrapper, which already drops the drawing when his shed is placed,
+  so popping through the wrapper would remove the wrong entry. The turbine does not spin; nothing steps it.
+
 - **m752 (T5w): THE FACTORY'S PARAPET AND SCREEN BANDS ARE HIS ART (`factory_skin.glb`, `WFRONT.fsG`, `?fskin=0`, `fsTile`).** Each
   run is tiled: n = round(len) one-metre copies, each scaled len / n in x. Every copy is turned `psi` so his +Y (out of the wall)
   points out. `campPlace` mirrors z, so at psi 0 his +Y is +v; front PI, back 0, west -PI/2, east PI/2. The run's along-axis is
