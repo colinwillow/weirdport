@@ -7,7 +7,7 @@ landmine list, in the same shape: what he said, what was actually wrong, what wa
 
 ## m782 -- bunker.glb: Merle's bunker, container and inside (T6k)
 
-The container's corrugation is the code's own rib pitch (.3), and the door leaves stand open at the code's +-.25 spots. Inside, the string wall uses the code's seed (764), so the clippings and string land where `pins` puts them. The dirt mounds belong to the hill and stay code. Shipped unverified.
+The container's corrugation is the code's own rib pitch (.3), and the door leaves stand open at the code's +-.25 spots. Inside, the string wall is a fresh scatter of the same 16 clippings and 14 strings. It is NOT the code's `pins` positions: the code uses its own LCG and this uses Python's random, so the cork board's layout differs. The dirt mounds belong to the hill and stay code. Shipped unverified.
 
 ## m781 -- diner_saucer.glb: the replica saucer and its yard (T6j)
 
