@@ -812,6 +812,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m807 (T6s) -- the barge under crane 1 is his art
+`WFRONT.bargeG` loads `models/campaign/wf_barge.glb` (`?barge=0` leaves it out). In `wfCranes`, `wb_barge` goes at
+(BARGE.u, sea, BARGE.v) through `campPlace`. A parts snapshot taken at the top of the barge block drops the drawn `dark`
+hull, the `red` coaming and the two `iron` bollards; the hull and coaming colliders stay. Measured: his bollards and fenders
+sit at Blender Y -5.2..-3.7, the quay side (-v), where the code's cylinders were. Shipped unverified.
+
 ### m805 (F5-4b) -- Mothman's warnings on the map
 This is in `mapMarks`, so it shows on both the minimap and the full map, in tkit, once `moth:saved` is set (one omen
 defused):
