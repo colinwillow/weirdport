@@ -892,6 +892,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **QUEUES (m875, F6b, `smartQueue`, `smartCarry`, `SMART.queues`, `S.q`/`S.qi`).** A queue is ordinary SMART spots that share a `Q`.
+  Three changes to `smartStep`: the picker skips a queue spot unless it is the FIRST free one of its line (`findIndex(x => !x.d) ===
+  qi`) -- the back of the line; on arrival a spot with `qi > 0` gets `U.t = 1e9` (wait for ever) and slot 0 the serve time; and each
+  tick, before anything else, anyone whose slot has a free one in front is re-pointed at it (`S.d` moved, `st 'go'`, a one-point
+  route) -- so the step-up goes through the same arrival code and slot 0 starts its timer there. Served (timer out at qi 0) adds
+  `SMART.served` and a carry prop on `d.root` (a tray or a cup, `SMART.carry` 22 s, removed in the same tick loop). The carts' single
+  customer spot became a 4-line; each GOOD kiosk has a 3-line from v 1.9 (the keeper stands at .75). play ch1 18 steps.
+
 - **THE BUS STOP (m874, F6a, `OTBUS`, `busLine`, `buildBus`, `busStep`, `busStop`, GOD `otbus`).** F6 split a..e. `busLine` searches
   rings round the island rect's middle for an axis-aligned 80 m run where `kitStand` <= .5 and nothing is overhead at three lateral
   samples, plus a clear sidewalk spot 3.6 m to one side for the shelter (places: `street at 1.5,6.8 along z y 0.13 | spots 5`). The
