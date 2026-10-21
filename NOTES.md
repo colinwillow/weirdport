@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m795 -- under_safe.glb: the crossways ladders and the safe house (T6p)
+
+The last of the Underneath. The safe house is meant to be warm light at last after the tunnels (m524), so it is the one room in the kit with soft furnishings and crockery. The laid table's bowls sit at the code's own .7 + k * .55, staggered +-.25. Shipped unverified.
+
 ## m792 -- under_market.glb: the pump room, the hidden market, the camp (T6o)
 
 The pump wheel sits at the code's own `U.pump.wheelAt` and is built static, ready to spin on X. The market's tarps are one white material, so the code's `tarp` / `tarp2` alternation carries over as a tint. With T6m to T6o, the Underneath's tunnels, cistern, dig, vault, pumps, market and camp all have art waiting. The crossways and safe house are left. Shipped unverified.

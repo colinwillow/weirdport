@@ -133,6 +133,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `underneath.glb` | `un_tunnel` / `un_tunnel_open` (1 m tile), `un_wall` (1 m, scale Z), `un_lamp`, `un_prop`, `un_growth` (scatter) | buildUnderneath -- the tunnels and rooms |
 | `under_cistern.glb` | `uc_catwalk`, `uc_rail` (1 m tile), `uc_cart`, `uc_strongbox`, `uc_crate` (scale Z) | buildUnderneath -- cistern catwalks, the old dig, the vault |
 | `under_market.glb` | `up_pumps`, `um_stall_frame` + `um_stall_tarp` (tintable), `um_counter`, `uc_camp`, `uc_bedroll`, `uc_trolley` | buildUnderneath -- pump room, hidden market, the camp |
+| `under_safe.glb` | `us_ladder` (with growth puddle), `us_cot`, `us_table` (laid), `us_garden` (pots, grow lamp) | buildUnderneath -- the crossways and the safe house |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
