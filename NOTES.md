@@ -764,6 +764,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m773 (T6e): CAMP HOLLIS'S WATCHTOWER AND TENTS ARE HIS ART (`hollis_camp.glb`, `MILB.hcG`, `?hcamp=0`, `mtPut`).** `mt_tower` at
+  (-10, -10). The legs, deck and parapet keep their colliders. The parapet's collider-plus-three-courses becomes `splice(-4, 4)`
+  when the art is there, and the courses still roll `r()`, so the seed is spent identically. `tent()` returns early once its
+  wall collider is down and his tent is placed; the command tent's fly and table go with it. The ladder (`pearlLadder`) is
+  unchanged. `places` 0 BAD.
+
 - **m771 (T6d): CAMP HOLLIS'S HESCO IS HIS ART (`hollis_wall.glb`, `MILB.hwG`, `?hwall=0`, `hwPut`).** Each tier of each run is
   n = round(len / 1.1) `mb_hesco` baskets, scale.z multiplied by st / 1.1 (z carries the mirror) and upper tiers scale.x 1 / 1.2.
   The mesh cage posts are skipped. Each torus coil becomes an `mb_wire` and each top sand box an `mb_sandbag`, at the same spots
