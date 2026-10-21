@@ -844,6 +844,20 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m825 (T6z) -- the footbridge's foot on the beach is his art
+`FOOT.ffG` loads `models/campaign/foot_dress.glb` (`?ffoot=0` leaves it out). In m490's foot block, `ff()` places a node and
+pushes it into `fbArt`, so it is merged with the bridge.
+- **Same rolls, same order:** the flagstones and driftwood make the same `fr()` calls in the same order as before, so the
+  path and the tideline land where they always did.
+- **`ff_flag`:** scaled x by w and z by d / .76.
+- **`ff_hut`** (yaw .15): the hut collider stays.
+- **`ff_post`:** its `FF_board` material is cloned and painted red while the gap is open, white once `FT.fixed`.
+- **`ff_buoy`** goes at the lifebuoy post.
+- **`ff_drift`:** scaled x by the rolled length.
+- **`ff_bench`** (yaw .2): the seat collider stays.
+
+The stones, sandbags, rope posts and concrete apron stay code. Shipped unverified.
+
 ### m823 (F5-6a) -- SHADOWHIDE RANCH, the haunted ranch (`RANCH`, `buildRanch`, `ranchStep`, GOD `ranch`, roster `rancher`)
 **The site** is a new farmland flat, `FARMLAND.FLATS[2]` = (160, 80) with r 32. `fpOwner` keeps fields out to 22 m.
 - **(172, 112) was tried first and rejected:** `flBase` there is 0.0, a hollow by the shore, and `places` printed it 2.20 m
