@@ -892,6 +892,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **BENCHES (m876, F6c, `smartBenches`, `S.brk`, `SMART.benches`).** Every `BREAK` entry whose type matches /bench/ with a box: its
+  long axis and depth axis are read off `b.mat` (columns X and Z) and its box half sizes; the seat side is whichever of +/- depth has
+  `kitStand` within .4 of the box's bottom 0.5 m out; two spots 0.35 m in front at +/-.45 of the half length, facing out. `S.brk`
+  ties a spot to its bench: the picker skips a dead one and a sitter on one that dies leaves. Called once after `buildBus` in init.
+  The Pearl plaza's four corner benches are drawn in `buildPearlPlaza` (no colliders, deliberately) and seated after its `F.commit`.
+  places 0 BAD (PLAZA row unchanged: doors 0.00, routes intact); **play ch1 took 611 s this time** -- run it with a timeout of 1100
+  in the background; 590 killed one run mid-step.
+
 - **QUEUES (m875, F6b, `smartQueue`, `smartCarry`, `SMART.queues`, `S.q`/`S.qi`).** A queue is ordinary SMART spots that share a `Q`.
   Three changes to `smartStep`: the picker skips a queue spot unless it is the FIRST free one of its line (`findIndex(x => !x.d) ===
   qi`) -- the back of the line; on arrival a spot with `qi > 0` gets `U.t = 1e9` (wait for ever) and slot 0 the serve time; and each
