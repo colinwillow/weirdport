@@ -142,6 +142,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `swing_span.glb` | `ss_span` (the moving span with its trusses and keeper's house, in its group's frame) | buildSwing -- the span that swings |
 | `gap_ramp.glb` | `gr_seg` (1 m, stretch and pitch per segment), `gr_pile` (stretch), `gr_lip`, `gr_gate` | buildIslandBase -- the skate gap ramp and landing |
 | `shore_steps.glb` | `is_footpad` (cliff ladder foot pad), `fp_tread` + `fp_post` (the stair off pier 1 to the ferry) | buildIslands, buildFerry -- small leftovers |
+| `footbridge.glb` | `fb_bay` (2 m tile: deck + trusses), `fb_post`, `fb_pier` (stretch), `fb_step`, `fb_lamp` | buildFootbridge -- the span to The Pearl's dock |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
