@@ -676,6 +676,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m713 (T5j): THE MX TAPE, THE ROAD LITTER AND THE PATCHED POTHOLES ARE HIS** (`trackside.glb`, `HCBIKE.tsG`, `tsInst`, `?tside=0`).
+  The tape stakes and runs are INSTANCED through `tsInst` (a list of [root, world matrix, tint]): each tape is at the midpoint of
+  A -> B, yaw atan2(-dz, dx) + F.th, X scaled by |AB|. Its white material takes the red / white tint per instance. On the highway,
+  `ts_patch` replaces each pothole circle (uniform xz by r / .55, turned by its angle), and one `ts_litter` stands in for every
+  fourth gutter spot, with the other three dropped. **Every `q()` roll is spent in its old order** (r and the angle pulled out
+  into locals), so the seeded car, the signs and the rest keep their places.
+
 - **m711 (F3-3): THE RELAY ORB** (`ORELAY`, `buildRelay`, `relayHit`, `relayStep`, `relayFeeds`, task `qrelay`, GOD `relay`). 30 m over
   Old Town's middle, with crackling links (one `LineSegments`, 4 jittered segments per fed orb, rebuilt every frame, its draw range
   trimmed) to every other orb still up. **Each fed orb's `T.hit` is wrapped ONCE, lazily on the relay's first step** (the watcher

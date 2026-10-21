@@ -584,7 +584,7 @@ different context window, let me know."*
   (0, yr, v + 3) for each 6 m, in place of the beam box, the 7-8 ties in it and the two rails' share of it (the rails at the code's
   gauge 1.5, tie plates, outer guard timbers); `td_bent` at each bent's (0, yr - .55, v), scaled Z by (yr - .55) - (g - .5), in place
   of the two post boxes and the two brace segments (posts at +-1.1, a cap, a sill, X-braces both faces). Instance both.
-- [ ] **T5j. Swap in the MX tape, the road litter and the patched potholes** (`models/campaign/trackside.glb`; no collision -- the
+- [x] m713 **T5j. Swap in the MX tape, the road litter and the patched potholes** (`models/campaign/trackside.glb`; no collision -- the
   litter boxes the code makes solid stay). In `buildBikeTrack`'s m498 block: `ts_stake` at each tape stake (A) in place of the plank
   box, and `ts_tape` (ONE white material, tint red / white) from A to B -- at their midpoint, turned along A -> B, scaled X by |AB| --
   in place of the tape `pearlSeg`. In `buildHighway`'s m511 block: `ts_patch` at each pothole in place of the circle (scale by its r /
