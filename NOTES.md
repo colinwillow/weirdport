@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m782 -- bunker.glb: Merle's bunker, container and inside (T6k)
+
+The container's corrugation is the code's own rib pitch (.3), and the door leaves stand open at the code's +-.25 spots. Inside, the string wall uses the code's seed (764), so the clippings and string land where `pins` puts them. The dirt mounds belong to the hill and stay code. Shipped unverified.
+
 ## m781 -- diner_saucer.glb: the replica saucer and its yard (T6j)
 
 The saucer moves (m761: it can leave the yard), so its art is built in the group's own frame to be parented under `O.saucer`, not placed in the world. Its dome and green light stay code because they are animated. The yard's fence gets the code's missing corner post, at the gap's far side. Shipped unverified.
