@@ -748,6 +748,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m765 (F5-2a): MERLE'S BUNKER (`BUNKER`, `buildBunker`, `bunkerStep`, flat `HCREEK.FLATS[4]`, GOD `hcbunker`, roster `prepper`
+  with prop `foil`).** The container is 2.4 x 6, with walls you collide with and a 1 m door. Its "half-buried" look is drawn: dirt
+  hemispheres on its sides and roof, and sandbags. **It is not sunk: the island's terrain is a floor-only triangle store, so ground
+  you could stand below does not exist.** The string wall is 16 pinned papers and 14 `pearlSeg` strings. The radio dials are one
+  `noBatch` material that `bunkerStep` pulses. The lookout's ladder is a `pearlLadder` on its +v face, with a 0.9 m gap in the rail.
+  The foil prop is a cone with its x jittered per vertex. `places` prints a `BUNKER` row: boxes 28, off its flat by 0.00 m,
+  y 14.8, ladder yes, 0 BAD.
+
 - **m763 (T6b): THE FACTORY LINE'S PEDESTALS, BOOTH AND LIFT SHAFT ARE HIS ART (`factory_line.glb`, `WFRONT.flG`, `?fline=0`, `flPut`).**
   At each arm, `fl_column` is stretched (scale.y = L2 - .1 - Y) and `fl_pedestal` sits on it; the `yel` box keeps its collider and
   loses its drawing. `fl_booth` at (-101, 92) on L2 replaces all of the booth's drawing-only boxes. `fl_shaft` is TILED from Y to
