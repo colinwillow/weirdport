@@ -1054,6 +1054,8 @@ differ" table there, so no region feels like the last one.
   - [x] m735 **F4-3** the firefighter's truck ladder: a fire engine parked by a burning building in Old Town whose ladder only a firefighter can raise -- up to a roof that has no other way on.
   - [x] m738 **F4-4** the cave miner (the Underneath): a miner to sample in the Underneath, whose lamp lights the dark tunnels and whose pick breaks the rubble walls that block them.
   - [ ] **F4-5** the military (the base at high heat): at four stars soldiers come instead of cops; a soldier's form walks through the military cordon round the base.
+    - [x] m740 **F4-5a** at four stars the reinforcements are soldiers (the roster's olive officer in a helmet), and a soldier shoots further, faster and straighter than a cop.
+    - [ ] **F4-5b** the SOLDIER form (sample a downed soldier) and a military cordon round a base only that form walks through.
 - [ ] **F5 Side quests**, one build each, from the table in `LORE.md`, in this order: the Roswell diner,
   the tinfoil-hat bunker (the grid on the map), the Majestic Dozen, Mothman, the Phoenix Lights, the
   haunted ranch, the tic-tac pilot, Bigfoot, D.B. Cooper, Betty & Barney, Travis Walton, Area 15.
@@ -2052,3 +2054,6 @@ differ" table there, so no region feels like the last one.
   blocked by a roof fall that only the miner clears (lean on it with the pick, the gate system's `fix`). The dig's strongbox
   refills the tank. The miner's head lamp is one point light that is on only inside that tunnel, and only in his form. Old Seam,
   the miner to sample, sits in the second shaft room.
+- **m740 (F4-5a): soldiers are the four-star EXTRAS only**; the cops already on the beat stay cops. A soldier reaches 1.5x as far, hits
+  1.35x as often (capped at .95) and fires 1.5x as often. Until F4-5b, sampling a soldier gives you the cop's form. `mel.COPS.sol = 0`
+  turns them back into cops.

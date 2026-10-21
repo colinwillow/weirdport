@@ -708,6 +708,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m740 (F4-5a): AT FOUR STARS THE MILITARY COMES (`COPS.sol`, `d.soldier`, `copExtras`).** The four-star reinforcements spawn
+  as before (behind you, every `extraEvery`, at most `extra`), and each one now gets `rosterApply(rosterOf('military'))`, which
+  gives it the olive tint, the helmet and `d.role = 'military'`. It also gets `d.soldier`, which scales three things in
+  `copAI`/`copFire`: `shootR` by `solR` 1.5, the hit chance by `solAcc` 1.35 (capped at .95) and the gap between rounds by
+  `solFire` .65. They are taken away at calm exactly like the extras were. The chip's `+N` gains `mM`, the number of soldiers
+  spawned. **A soldier is still a `dummy_officer` kind**, so until F4-5b adds `ROLEFORM.military` the sampler gives the cop's form.
+
 - **m739 (T5s): THE FACTORY ROOF IS HIS ART (`factory_roof.glb`, `WFRONT.frG`, `?froof=0`).** Each of the four 6 x 4 steel
   boxes on the roof gets his `fr_unit` (louvres, fan wells, duct elbow), and the box drops its drawing but stays the collider.
   The two stacks at (Fc.u +- 13, Fc.v + 16) get `fr_stack` (bands, ring platform at 14, caged ladder on +X, soot) in place of the
