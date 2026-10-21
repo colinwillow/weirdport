@@ -704,6 +704,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m736 (T5r): THE FACTORY LOT'S SECURITY FENCE IS HIS** (`security_fence.glb`, `SFK`, `sfPut`, `sfBuild`, `?sfence=0`). INSTANCED, no mirror:
+  yaw = ps + PI (his +Y, glTF -Z, along the run), then + PI again if his -X (the outrigger side, along (cos ps, -sin ps)) points at the
+  lot's middle -- so every outrigger leans OUT whichever way a run was drawn. A post at each of the code's posts; the mesh tiled
+  ceil(l) times per segment, each tile Z-scaled l / ceil(l) and centred on its metre (never one stretched copy). The iron slab
+  stays the collider. `sfBuild` runs right after `buildWaterfront`. `places`: 0 BAD.
+
 - **m735 (F4-3): THE FIRE ENGINE'S LADDER** (`FTRUCK`, `buildFireTruck`, `fireTruckClimb`, `fireTruckStep`, GOD `firetruck`, flag
   `ff:ladder`). It picks the `KBLD` building nearest `at` that is square to the grid (|s| or |c| < .05), 9-24 m tall, with kit floor
   at its base height 1.5 / 3 / 5 m outside a face. The truck parks along that face (yaw h = atan2(n): local x, its length, runs
