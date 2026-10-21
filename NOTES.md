@@ -784,6 +784,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m788 (T6l): THE REST OF MERLE'S CAMP IS HIS ART (`bunker_camp.glb`, `BUNKER.bcG`, `?bcamp=0`, `bkSnap` / `bkCut`).** These are
+  `bk_lookout`, `bk_mast`, `bk_solar`, `bk_barrels`, `bk_garden` and `bk_firepit`. Each code block takes a snapshot of `F.parts` at its
+  start and is cut back to it once his piece is placed, so the colliders stay. The seeded rolls in the mast block still run. The
+  lookout's ladder is a `pearlLadder` made after the commit, so it stays. The tin-can line, the path sign and the tarp stay code.
+  `places` 0 BAD.
+
 - **m787 (T6k): MERLE'S CONTAINER AND ITS INSIDE ARE HIS ART (`bunker.glb`, `BUNKER.bkG`, `?bunker=0`).** `bk_box` + `bk_inside` sit
   at the frame's origin, and the container block's drawing is cut back to a snapshot except `dirt`, because his brief keeps the
   dirt mounds as code. Every `box` collider stays. **The code's dials go with the rest**, so `bunkerStep`'s pulse now drives a
