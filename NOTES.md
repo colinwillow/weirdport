@@ -784,6 +784,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m786 (T6j): SAUCER JOE'S REPLICA AND ITS YARD ARE HIS ART (`diner_saucer.glb`, `DINER.dsuG`, `?dsaucer=0`).** `ds_yard` goes
+  on the ground with the yard's drawing cut back to a snapshot (m779's way); the fence and plinth colliders stay. **`ds_saucer` is
+  a clone added INSIDE `O.saucer`** at identity with scale.z = -1 (campPlace's mirror), so it tilts, bobs, spins and flies with
+  the group. The code's hulls, bulbs, missing panel and legs are not built. The dome (`O.dome`) and its green light
+  (`O.domeLight`) stay code because `dinerStep` animates them, and the `BDYN` box rides as before. `places` 0 BAD.
+
 - **m785 (STEER): THE HERO SELECT (`HERO`, `HERO.stat`, the start screen's HERO row, `?hero=`).** `RIG.file` is set at module scope
   right after `RIG` (from `?hero=`, then `localStorage` `mel.hero`, then zap), and again when the start screen's card is tapped.
   That works because the start screen runs BEFORE `init`, so nothing has loaded yet. The chip's `HERO` token counts every unique
