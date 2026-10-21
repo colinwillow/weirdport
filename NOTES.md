@@ -680,6 +680,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m716 (T5l): EVERY `pearlSpan` IS HIS DECK, RAILS, ROPES AND POSTS** (`pearl_span.glb`, `PSK`, `psPut`, `psBuild`, `?pspan=0`). With the
+  file in, `pearlSpan` pushes world matrices: yaw `F.th + psi + PI` (his +Y along the span, glTF -Z, no mirror), then PITCHED about
+  local X by atan2(dy, horizontal) so the sag comes free. Each piece is stretched in glTF Z by the 3D segment length (rope planks by
+  .8 of it), decks are stretched in X by 2 * hw, rails and ropes sit at +-hw laterally, posts are yaw only (every 2nd k for steel,
+  3rd for rope), and endposts sit at A and B. The landings use the deck/planks at .8 m. The walk tris and side colliders are
+  untouched. `psBuild` runs after every builder (beside `plBuild`); the loader sits before `buildFarmland`. 11 callers. `places`: 0 BAD.
+  **Merge lesson (m715): after `git stash pop` CHECK FOR CONFLICT MARKERS** -- a ROADMAP conflict was committed and pushed once,
+  and fixed in the next commit.
+
 - **m715 (T5k): EVERY `pearlLadder` IS HIS RAILS, RUNGS AND CAP** (`pearl_ladder.glb`, `PLK`, `plBuild`, `?pladder=0`). With the file in,
   `pearlLadder` pushes world matrices instead of drawing: `pl_rail` at y0 Y-scaled to `top + 1 - y0`, a `pl_rung` at every code rung's
   bottom (y0 + .3 + r * .32), and `pl_cap` at top + 1. Yaw `F.th + psi + PI`: his +Y is out along psi, which is glTF -Z, and an
