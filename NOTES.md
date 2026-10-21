@@ -672,6 +672,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m711 (F3-3): THE RELAY ORB** (`ORELAY`, `buildRelay`, `relayHit`, `relayStep`, `relayFeeds`, task `qrelay`, GOD `relay`). 30 m over
+  Old Town's middle, with crackling links (one `LineSegments`, 4 jittered segments per fed orb, rebuilt every frame, its draw range
+  trimmed) to every other orb still up. **Each fed orb's `T.hit` is wrapped ONCE, lazily on the relay's first step** (the watcher
+  and the amplifier are built after it). While the relay stands, a fed orb's odd hits (`F.soak` toggles) spark and return. Down:
+  `orb:relay`, Old Town +5, and every fed orb still up with hp > 1 loses one. The projector and poltergeist are fed too.
+  `places`: relay ok, 0 BAD.
+
 - **m709 (T5i): THE FREIGHT TRESTLE'S DECK AND BENTS ARE HIS** (`trestle_deck.glb`, `TDK`, `tdPut`, `tdBuild`, `?tdeck=0`). INSTANCED
   in the line's frame (yaw `F.th`, no mirror): `td_deck` every 6 m at (0, yr, v + 3) for the beam, ties and rails (all drawn-only, so
   nothing to keep), and `td_bent` at each bent (0, yr - .55, v), Y-scaled by its drop to g - .5. The two post colliders stay (draws
