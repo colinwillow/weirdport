@@ -852,6 +852,24 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m830 (F5-6b) -- the night at Shadowhide (`ranchNight`, `ranchNightStart`, `ranchNightEnd`, quest `qranch` from Tully)
+**How it starts:** after `talk:fm_ranch_tully`, standing inside the wire starts the night. "Inside" is the player in the
+ranch frame (`RANCH.frame` keeps the frame's C/S): |u| < 15, -15 < v < 13, within 8 m of the flat.
+
+**What happens during it:**
+- **The orbs:** `orbs` 3 light orbs, plain meshes, drift at him at `orbV`, up to 2x as the night goes on. A touch inside
+  `orbR` (2.5 s cooldown) is either `playerHurt(6, ...)` or a BLINK to a random spot inside the wire, with sparks at both ends.
+- **The stones:** they leave the corral and orbit him.
+- **Lightning:** every 9-16 s, sparks and a `boom`.
+- **Countdown toasts:** at 90 / 60 / 30 / 10 s.
+
+**How it ends:**
+- **Stepping outside:** ends it, with no penalty, and it restarts on re-entry.
+- **Surviving `dur` 120 s:** sets `ranch:night` and gives 2x task juice and a card.
+- **Either way:** the orbs are disposed and the stones go back over the ring.
+
+`play ch1` passed (190 s). Shipped unverified. F5-6c, the Ethereal ability, is next.
+
 ### m828 (T7b) -- the pier skate park's features are his art
 `ISKATE.parkG` loads `models/campaign/skate_park.glb` (`?skpark=0` leaves it out). In `buildIslandSkate`, each feature block
 takes a parts snapshot at its start (`skSnap`). `skPut` places his node where the block builds and cuts the drawing back.
