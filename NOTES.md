@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m754 -- factory_stations.glb: the factory line's arches, cage, hats and boots (T5y)
+
+The two arches are 4.2 and 3.4 tall, so each one is split into stretched posts and a fixed head. Scaling one piece would have squashed the head beam with it. The hard hats taken off the line's workers were cylinders; they are now domes with brims, tinted the code's yellow / white. The boots were plank boxes. Shipped unverified.
+
 ## m751 -- shed_vents.glb: the transit shed's roof vents (T5x)
 
 The shed itself is his `wf_shed`, but the three 2.2 m `steel` boxes on its roof are drawn outside that branch, so they stayed boxes. Each is now a louvred vent with a hipped cap and a turbine ventilator, at the box's own size. Shipped unverified.
