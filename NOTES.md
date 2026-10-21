@@ -860,6 +860,19 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m835 (T7d) -- Dump Tower's Dozen's room and the aerial tram are his art
+`DTOWER.secretG` loads `models/campaign/tower_secret.glb` (`?tsecret=0` leaves it out).
+- **The Dozen's room:** in m783's block, a snapshot is taken at the block's start. `dz_room` and `dz_table` go at (cu 7.6, cv)
+  on floor 8, and the snapshot cuts all the drawing (panelling, floor, red strip, table, chairs, files, cards). Every `panel`
+  collider, the table's collider and the sliding door `O.dz` stay.
+- **The station:** a snapshot is taken before the marble. `tr_station` goes at (0, sv + 3.8) on `top`, `tr_pylon` is
+  stretched from g - .3 to top + cy + .6 at (0, sv + 6.6), and `tr_head` sits on it. The drawing is cut; the colliders and
+  the cable `pearlSeg` stay.
+- **The cabin:** `tr_cab` is cloned, mirrored in z and added under `T.cab` in place of its four boxes. `T.ends`, which show
+  only while it moves, and the BDYN boxes stay.
+
+Shipped unverified.
+
 ### m833 (F5-6c) -- the Ethereal blink (`BLINK`, `blinkGo`, `blinkStep`, `#blink`)
 **What the ranch's night gives:** surviving it (`ranch:night`) shows a round BLINK button above the right pad, in tkit only.
 A card after dawn says so.
