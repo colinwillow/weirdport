@@ -892,6 +892,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **AREA 15'S LAND (m869, F5-12a, `A15`, `a15Height`, `a15World`/`a15Local`, `buildA15Land`, GOD `a15`).** F5-12 split a..e (land,
+  base, gate, S-4 inside, the truck). A copy of `buildGorgeLand`'s chunk loop (minus the river) on its own height: superellipse coast,
+  beach, a floor rising to `floor` 5.5, the dry lake (`a15Lake` < 1) lerped dead level to `lake.y` 4.6, and three buttes (sheer:
+  `ss01(1.15, .85, d)` on `r`). Splat: lake (0,1,.05) bare sand; floor mostly sand with a little scrub; rock by slope. Floor tris through
+  `isleAppend` (so `groundAt` and the resolver see it). Placed by bearing 3.55 / dist 720 from `ISLE.rect`'s centre; places prints EVERY
+  land's bbox on one row to prove no overlap: `A15 bbox -767,-558,-405,-163 | HC -462,-105,126,491 | GORGE -83,79,486,636 | WF
+  -35,265,-399,-120 | ISLES -60,76,152,384` (FARM has no `bbox` field). 9 chunks, 6,867 floor tris. `ok a15` (ground 4.60), 0 BAD.
+  `'a15'` is in placecheck's `offLand` exemption list.
+
 - **TRAVIS HOME (m868, F5-11c, `cutHome`, `cutTravisTo`, `walton:home`, `ROLEFORM.logger`, roster `logger`).** The pad takes Travis's
   body with you (`cutTravisTo`: position, velocity, home and route in one place -- a body moved without its `hx/hz/route` walks straight
   back). He follows with the m338 beat (`d.route = [[x, z]]` to you when more than 3 m off), is put back beside you past 60 m, and back on
