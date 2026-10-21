@@ -892,6 +892,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE CUT (m866, F5-11a, `WALTON`, `buildCut`, GOD `hccut`).** F5-11 split into a (the cut), b (the ship over the hill, the beam from
+  the burned spot, free him) and c (walk him home; the logger form). `HCREEK.FLATS[10]` (78, 18), r 14: probed relief 3.75 m over 16 m.
+  +v faces the mill's flat. `WALTON.scorchAt` is the burned spot (world xyz) -- F5-11b's beam trigger. Logs have one turned box
+  collider each; stumps an upright one; the skidder and truck a body box each. places: `CUT boxes 13 | off its flat by 0.16 m`,
+  `ok hccut`, 0 BAD.
+
 - **THE IMPLANT AND CLANCY'S NOSE (m865, F5-10c, `HILLS.implant`, `clancy:sniff`, `mapMarks`).** A `MeshBasicMaterial` bead on the
   clearing's slab, its own mesh (the clearing is not batched either, m864); within 1.6 m after `hills:clear` it sets `hills:implant`, a
   new `qhills` step before "Tell Betty". `hillsNight`'s early-out moved from `hills:clear` to `hills:implant` so the pickup still runs.
