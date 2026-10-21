@@ -872,6 +872,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m843 (F5-7b) -- proving Dutch right: a tic-tac on camera (`OTICFILM`, quest `qdutch` from Dutch)
+**How the filming works:** after `talk:hc_ready_dutch`, `ticStep` runs the tape while any chasing or peeling tic-tac is within
+`filmR` 32 m of him and inside `filmCone` .5 rad of the CAMERA's own line of sight. That means framing it on the phone's
+screen, not facing it. `filmT` 3 s of tape in all, kept across gaps, sets `tictac:film`, with a `● REC n / 3 s` toast as it
+counts and a card at the end.
+
+**The quest:** `qdutch`'s second step is a talk to `hc_ready_dutch_after` (Merle's shape) with four lines. `onDone` sets
+`dutch:believed`, which is F5-7c's gate for the pilot form.
+
+**Checked:** `play ch1` passed. Shipped unverified.
+
 ### m841 (T7g) -- the town edge's trailer park is his art
 `FTOWN.trailG` loads `models/campaign/town_trailer.glb` (`?ttrail=0` leaves it out). Its loader sits right before
 `buildTownEdge()`.

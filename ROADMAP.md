@@ -1199,7 +1199,7 @@ differ" table there, so no region feels like the last one.
     - [x] m833 **F5-6c** what you get: an Ethereal ability (a short blink in the direction you are moving, on a slot he can reach).
   - [ ] **F5-7** the tic-tac pilot. Split:
     - [x] m838 **F5-7a** the Ready Room: a pilots' bar on Hollow Creek's highway (walk in: the bar and its bottles, stools, a pool table, a jukebox, a propeller; a porch, a neon sign, a drop tank on a stand by the road, a pickup), and Dutch at the bar with his story.
-    - [ ] **F5-7b** prove him right: fly, let a tic-tac chase you, and hold it close in front of you a few seconds (on camera); bring him the footage.
+    - [x] m843 **F5-7b** prove him right: fly, let a tic-tac chase you, and hold it close in front of you a few seconds (on camera); bring him the footage.
     - [ ] **F5-7c** the pilot form: Dutch, sampled once he is believed, flies (lift, not only a glide).
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
