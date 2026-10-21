@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m792 -- under_market.glb: the pump room, the hidden market, the camp (T6o)
+
+The pump wheel sits at the code's own `U.pump.wheelAt` and is built static, ready to spin on X. The market's tarps are one white material, so the code's `tarp` / `tarp2` alternation carries over as a tint. With T6m to T6o, the Underneath's tunnels, cistern, dig, vault, pumps, market and camp all have art waiting. The crossways and safe house are left. Shipped unverified.
+
 ## m791 -- under_cistern.glb: the cistern's catwalks, the dig's cart and strongbox (T6n)
 
 The catwalks are the code's 19.2 m span between the ledges, on legs down to the pit floor at y - 2.4. That is the depth the water drains to (m522), so the legs read as standing in the water when it is high and on dry stone when it is drained. Shipped unverified.
