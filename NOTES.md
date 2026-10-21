@@ -744,6 +744,10 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m762 (T6a): THE FACTORY'S CRATES OF ARMS ARE HIS ART (`parts_stock.glb`, `WFRONT.fsStG`, `?fstock=0`).** Each of the 8 spots
+  gets `fs_case` / `fs_crate15` / `fs_crate19` by k % 3, which matches the code's three heights (1.1 / 1.5 / 1.9). Each box keeps
+  its collider and its drawing is popped from `c7` or `wood`, whichever it used.
+
 - **m761 (F5-1c): THE SAUCER FLIES (`dinerRideStep`, `dinerRidePath`, `dinerRidePlace`, flags `saucer:fixed` / `saucer:flew`, portal
   `hc_diner`).** This is the spore pod's ride (m680), copied rather than shared, because each ride owns its path. **Her collider is
   now a `BDYN` box** (hx 2.6, top at the disc's top, y + .35), where m750 had a static farm box, so it travels with her. The path
