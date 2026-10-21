@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m834 -- ranch.glb: Shadowhide Ranch (T7e)
+
+The ranch (m822) had no art at all. These five pieces cover every drawn structure in it. The corral keeps the code's gap: post k 3 is skipped, which drops the rails k 2..4, so the opening faces the house exactly as the code's does. Shipped unverified.
+
 ## m832 -- tower_secret.glb: the Dozen's room and the aerial tram (T7d)
 
 The re-scan for drawn-only boxes put Dump Tower first (41), most of them in the newest rooms. The Dozen's room (m783) is the code's ring of twelve, eleven red and one black at k 0. The tram's cabin is built in its group's frame so the shuttle carries it. The chairs' bevels went from 2,680 faces to 760. Shipped unverified.
