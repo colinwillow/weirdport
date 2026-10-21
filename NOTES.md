@@ -832,6 +832,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m817 (T6v) -- the swing bridge's MOVING span is his art
+`OSWING.spanG` loads `models/campaign/swing_span.glb` (`?swspan=0` leaves it out).
+- **Placement:** in `buildSwing`, `ss_span` is cloned, mirrored in z (`scale.z = -1`, as `campPlace` does) and added under
+  `O.grp` unturned, so `swingPlace` swings it with the group.
+- **What it replaces:** every drawn `add()` (deck, girder, rails, both trusses, the portal and the house) and the m418
+  `mergeLeaves`.
+- **Measured:** his span is ±21.6 along Y, which is `OSWING.half` exactly.
+- **Unchanged:** the BDYN boxes stay the colliders, and the nose plates, barrier arms and warning lights stay code.
+
+Shipped unverified.
+
 ### m815 (F5-5b) -- the Tall White who gets off the Phoenix Lights, and trades
 When the V comes down (`PHX.st` 'down'), a procedural tall pale figure (`phxTallWhite`) stands 1.5 m off the site and turns
 to face him.
