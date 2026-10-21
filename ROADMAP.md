@@ -1204,6 +1204,10 @@ differ" table there, so no region feels like the last one.
     - [x] m838 **F5-7a** the Ready Room: a pilots' bar on Hollow Creek's highway (walk in: the bar and its bottles, stools, a pool table, a jukebox, a propeller; a porch, a neon sign, a drop tank on a stand by the road, a pickup), and Dutch at the bar with his story.
     - [x] m843 **F5-7b** prove him right: fly, let a tic-tac chase you, and hold it close in front of you a few seconds (on camera); bring him the footage.
     - [x] m848 **F5-7c** the pilot form: Dutch, sampled once he is believed, flies (lift, not only a glide).
+  - [ ] **F5-8** Bigfoot. Split:
+    - [x] m851 **F5-8a** a shy giant in the gorge's east pines: big prints that fade, a walk he can stand and a run he cannot; walk up slowly and he lets you close (`bigfoot:found`).
+    - [ ] **F5-8b** the hunters: once found, now and then two hunters come up the plateau after him; knock them down before they reach him (or he is "taken" and you start over).
+    - [ ] **F5-8c** the friend: kept safe, he follows you about the gorge and lets you take his sample -- the Bigfoot form (big, slow, shoves everything).
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
   author; the turf's building swap in every region, not only Old Town.
@@ -2270,3 +2274,4 @@ differ" table there, so no region feels like the last one.
 - **m833 (F5-6c): the Ethereal ability is a BLINK BUTTON, not a gesture.** The pads' free slots (a left hold-in-place, a second tap) collide with the walk and the double jump, so it is a round light-blue BLINK button over the right pad. It shows only once the ranch's night is survived, and only in the kit city. It throws you 7 m the way you are moving (your facing if you are still), stops short of walls, and recharges in 2.5 s. `BLINK.dist` / `BLINK.cool`.
 - **m838 (F5-7a): the tic-tac pilot's bar is THE READY ROOM, on the highway's WEST side** at Hollow Creek (-92, -58), between the fairground and Saucer Joe's. East of the road was tried first, but the gorge runs right through it (the land check read 8.66 m off level there). The pilot is "Dutch", a stand-in (the hick, tinted, in a navy cap).
 - **m848 (F5-7c): the pilot form flies the wing's own flight**, with the jets lit and real lift: 1.7x cruise, 1.5x thrust, and under half of gravity's pull on a climb (`WING.pilot`). It does not use a new flight model. Dutch can only be sampled once he is believed; before that he is not sampleable at all.
+- **m851 (F5-8a): Bigfoot is a procedural stand-in** (a 2.6 m hairy giant) until there is a model, roaming the gorge's east plateau pines. Walking is under 3.2 m/s and does not scare him; running within 22 m does. `BIGF.calmV` / `BIGF.spook` if that is too strict.

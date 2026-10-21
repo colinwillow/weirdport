@@ -884,6 +884,25 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m851 (F5-8a) -- Bigfoot in the gorge's pines (`BIGF`, `bigfootStep`, `bigfPick`, `bigfOk`, dormant `qbigfoot`, GOD `gzbigfoot`)
+**Where he roams:** within `range` 26 of `home` (44, 32) on the gorge's east plateau. His spots are picked by `bigfOk`, the
+pines' own placement rule: off the beach + 10, clear of the canyon + 10, slope under .6.
+
+**What he does:**
+- Walks at 1.3 m/s with 2-6 s pauses.
+- Leaves alternating prints, a 40-mesh pool of flat dark ellipses that fade over 70 s, every 1.4 m: the trail to follow.
+- **Running scares him:** inside `spook` 22 m, any speed over `calmV` 3.2 m/s sends him running at 7.5 to a far spot, with a
+  toast and a thump.
+- **Walking up lets you close:** inside `near` 6 m at a walk he stops and faces you, and after `still` 2 s sets
+  `bigfoot:found`.
+
+**The quest:** it switches on within range + 50 m of home, and its marker points at home, not at him.
+
+**The body:** procedural (fur capsule, head, brow, swinging arms and legs).
+
+**Checked:** `tools/placecheck.mjs` lists `gzbigfoot` with the gorge places that are exempt from the farmland test. `places`:
+`gzbigfoot` ok (ground 20.5), 0 BAD. `play ch1` passed. Shipped unverified.
+
 ### m849 (T7j) -- the Ready Room is his art
 `READY.artG` loads `models/campaign/ready_room.glb` (`?rroom=0` leaves it out). Its loader sits right before
 `buildReadyRoom()`. In `buildReadyRoom`, `rrSnap` / `rrPut` cut a block's drawing back to a snapshot taken at the block's
