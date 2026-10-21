@@ -908,6 +908,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **SHOPS (m885, F6d, `smartShops`, `S.shop`, `d.inShop`, `CARRYK.bag`).** Candidates are `KPARTS` of kind door/rollup; the face normal
+  is the PARENT's +Z (as `kitSide` says), the door's middle is its hinge + .5 m along the parent's +X; the street side is the one
+  .7 m out that is street level with nothing over it (the inside has a floor above). Every k-th, up to `shopMax` 24. Arrival on a
+  `shop` spot hides the body (`d.root.visible = false`, `d.inShop`); `smartLeave` shows it again first thing -- every leave path goes
+  through there -- and on a given-up spot (`give`) 45% get the bag carry (`CARRYK.bag`, shared, 1.5 x `SMART.carry`). A hidden body
+  still collides. play ch1: 4/4, 24 steps, 746 s (an incursion run; give it the 1100 s timeout).
+
 - **THE MILL YARD (m884, T8a, `HCMILL.yardG`, `mill_yard.glb`, `?myard=0`).** New props, not swaps: `hm_forklift` (17, 2), `hm_drums`
   (20.5, 5), `hm_pallets` (11, 2.8), `hm_yardlight` (19.5, -2) through `campPlace` on the mill's frame at the flat's y, each with the
   box his spec gave (3.5 x 1.3 x 2.2 / 1.4 x 1.4 x .9 / 1.3 x 1.2 x .8 / .3 x .3 x 6) as a `steel` collider with no drawing. Placed
