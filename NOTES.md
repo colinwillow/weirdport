@@ -744,6 +744,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m761 (F5-1c): THE SAUCER FLIES (`dinerRideStep`, `dinerRidePath`, `dinerRidePlace`, flags `saucer:fixed` / `saucer:flew`, portal
+  `hc_diner`).** This is the spore pod's ride (m680), copied rather than shared, because each ride owns its path. **Her collider is
+  now a `BDYN` box** (hx 2.6, top at the disc's top, y + .35), where m750 had a static farm box, so it travels with her. The path
+  has three legs: straight up 22, across to 18 above the hill's top (`HCREEK.hillAt` + 4 m), and down. The speed ramps by `acc`, and
+  whatever she moved this frame, the player and the lens move. `qsaucer.onDone` sets `saucer:fixed`. The pad is `progPortal` + `portalAdd` on the first frame after
+  that. `places`: DINER boxes 51 (one fewer, the hull's), 0 BAD.
+
 - **m758 (T5z): THE CONTROL ROOM'S CONSOLES AND LEVER ARE HIS ART (`control_room.glb`, `WFRONT.fcG`, `?fctrl=0`, `fcPut`).** Each of
   the three `fc_console`s is turned by the code's ry, and the `dark` colliders stay. `fc_lever` goes at (-104.6, 112.5) and is
   static; `L.leverAt` is unchanged. **His FC_screen material is replaced by ONE cloned, `noBatch` material (`W.fcScreen`)**, and

@@ -1069,10 +1069,10 @@ differ" table there, so no region feels like the last one.
 - [ ] **F5 Side quests**, one build each, from the table in `LORE.md`, in this order: the Roswell diner,
   the tinfoil-hat bunker (the grid on the map), the Majestic Dozen, Mothman, the Phoenix Lights, the
   haunted ranch, the tic-tac pilot, Bigfoot, D.B. Cooper, Betty & Barney, Travis Walton, Area 15.
-  - [ ] **F5-1** the Roswell diner. Split:
+  - [x] m761 **F5-1** the Roswell diner. Split:
     - [x] m750 **F5-1a** Saucer Joe's: the diner (walk in: counter, stools, booths, Joe), its roof up a ladder, the sign tower with a saucer on top, the quonset museum, the lot, and the fenced "replica" saucer that hums for the alien.
     - [x] m756 **F5-1b** the three parts Joe names (a coil, a lens, a silver gyro), one hidden in each of three places across the map, and the quest (`qsaucer`) that tracks them.
-    - [ ] **F5-1c** the saucer fixed: bring the parts, it lifts off its plinth, and it is yours (a portal back to the diner, and a short hop you can ride).
+    - [x] m761 **F5-1c** the saucer fixed: bring the parts, it lifts off its plinth, and it is yours (a portal back to the diner, and a short hop you can ride).
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
   author; the turf's building swap in every region, not only Old Town.
@@ -2086,3 +2086,6 @@ differ" table there, so no region feels like the last one.
   in, the lens by the old dig's strongbox needs the MINER (who clears the roof fall and carries the lamp), and the gyro on Uplift's
   outfeed tower is reachable from the quay by anyone. The parts can be picked up before Joe gives the quest, and a part found early
   counts.
+- **m761 (F5-1c): the fixed saucer's hop goes from Joe's yard to the top of Hollow Creek's hill and back.** You stand on her a
+  moment and she flies; she stays where she landed. The diner's portal pad (in the lot) is lit the moment she is fixed, with no visit
+  needed. Once fixed, she glows whatever form you are in, and the neon stops stuttering.
