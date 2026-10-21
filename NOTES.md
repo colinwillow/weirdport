@@ -880,6 +880,20 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m849 (T7j) -- the Ready Room is his art
+`READY.artG` loads `models/campaign/ready_room.glb` (`?rroom=0` leaves it out). Its loader sits right before
+`buildReadyRoom()`. In `buildReadyRoom`, `rrSnap` / `rrPut` cut a block's drawing back to a snapshot taken at the block's
+start. Placements:
+- **`rr_inside`** goes at (0, 0) WITHOUT cutting. **`rr_shell`** goes at (0, 0) after the porch and the neon's backer and cuts
+  the lot: walls, windows, roof slabs, every interior box and geo, the porch and the dark bar under the neon. Measured: his
+  walls run Blender Y -2.1..6.1, the code's v -2..6, and his porch is on -v.
+- **`rr_tank`** goes at (-6, -11) on its own gnd. Its OPEN plane stays.
+- **`rr_picnic`** at (7.5, -4.5) turned .3, **`rr_sock`** at (8.5, 8) and **`rr_pickup`** at (5, -7.5) turned .15, each on
+  its own gnd.
+
+Every collider (floor, walls, bar, pool table, tables, jukebox, deck, picnic table, pickup), the canvas signs and the string
+lights stay. Shipped unverified.
+
 ### m848 (F5-7c) -- the pilot form (`ROLEFORM.navypilot` = PILOT, `pilotOn`, `WING.pilot`)
 **Sampling Dutch:** he can only be sampled once `dutch:believed` (`sampOk`). Before that, knocking him down gets you nothing.
 His sample is the role form PILOT (group country), through m383's role-form path.
