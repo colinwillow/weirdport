@@ -110,6 +110,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `outfeed_tower.glb` | `ot_stair` (32 open treads, rails), `ot_platform` (deck, legs, bracing) | wfFactory -- the outfeed tower on the quay |
 | `gatehouse.glb` | `gh_hut`, `gh_barrier` | wfFactory -- the gate hut and boom at the fence |
 | `security_fence.glb` | `sf_post` (outrigger, barbed), `sf_mesh` (1 m tile: weave, top rail, 3 barbed strands) | wfFactory -- the lot's fence |
+| `factory_roof.glb` | `fr_unit` (air handler), `fr_stack` (22 m stack, platform, caged ladder) | wfFactory -- the factory's roof |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

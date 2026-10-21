@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m737 -- factory_roof.glb: the factory's roof units and stacks (T5s)
+
+The four roof units were plain `steel` boxes and the stacks were two cylinders. Both now have art at the code's sizes. The stack keeps the code's taper (1.6 to 1.4) and its red band height (20..21), so it reads the same from across the river. Shipped unverified.
+
 ## m734 -- security_fence.glb: the factory lot's fence (T5r)
 
 The fence round the factory lot is about 270 m, so its weave is a cost question first. The first build made the diamonds from boxes at 1,710 faces a metre: 460k for the lot. Flat double-sided ribbons in one mesh give 166 a metre, about 45k, and still read as chain-link. It is one metre TILED, not one copy stretched along a segment, because a stretched weave smears into zigzags. The outrigger leans outside, as real security fencing does. Shipped unverified.
