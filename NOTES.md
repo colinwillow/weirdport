@@ -832,6 +832,19 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m818 (T6w) -- the island gap ramp and its landing are his art
+`IBASE.gapG` loads `models/campaign/gap_ramp.glb` (`?gapramp=0` leaves it out). In `buildIslandBase`'s gap ramp:
+- **`grSeg` puts one `gr_seg` on each fitted segment** of `pts` (the in-run and kicker) and of `lp` (the landing, X scaled by
+  landW / 3.2). Each is at R(sA, 0) on yA, with rotation order YXZ: yaw `psR`, pitch `-atan2(dy, ds)`, and `scale.z` times
+  the slope length. The sign was derived, not measured: under the mirror, his +Y end lands at
+  `Ry(psR) * Rx(a) * (0, 0, len)`, which needs a = -atan2(dy, ds) to rise.
+- **`gr_pile`** is stretched from g - .2 to yy - .12.
+- **`gr_lip`** goes on the last point.
+- **`gr_gate`** goes at R(.3, 0) on y0. The gate posts keep their colliders.
+
+The quads (the ridden surface), the canvas sign and every collider stay. The art is merged through `artMerge` into
+`IBASE.artDraws`. If the segments tilt the wrong way, the sign of the pitch is the one line to flip. Shipped unverified.
+
 ### m817 (T6v) -- the swing bridge's MOVING span is his art
 `OSWING.spanG` loads `models/campaign/swing_span.glb` (`?swspan=0` leaves it out).
 - **Placement:** in `buildSwing`, `ss_span` is cloned, mirrored in z (`scale.z = -1`, as `campPlace` does) and added under
