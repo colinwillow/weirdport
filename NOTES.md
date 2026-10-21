@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m746 -- factory_gallery.glb: the gallery over the fence (T5v)
+
+The gallery was a grate, two tin slabs and a roof slab. It is now a one-metre bay, tiled: corrugated walls, a window ribbon lit faintly green like the factory's screens, and a portal frame every metre. It is tiled so the corrugation and mullions keep their pitch. The code's slabs stay the colliders. Shipped unverified.
+
 ## m744 -- shed_yard.glb: the transit shed's pallets and drums (T5u)
 
 The existing pallet (`ce_pallet`) is leaned on its end and the existing drums (`pp_drums`) come as a pair, so neither fits the shed's one-pallet-per-.15 stacks or its five single drums. These are a flat pallet to stack and one drum with a tintable body, so the code's c1 / c5 colours carry over. The lid is painted with the body, not left dark. Shipped unverified.
