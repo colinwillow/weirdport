@@ -764,6 +764,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m774 (T6f): CAMP HOLLIS'S TRUCKS, NET, MAST AND CAGE ARE HIS ART (`hollis_yard.glb`, `MILB.hyG`, `?hyard=0`, `myPut`).** `truck()`
+  places `mt_truck` turned psi and keeps its two `olive` colliders (drawing popped) and its plate. `mt_pole` goes at the four poles,
+  and `mt_net` on y + 3.58. `mt_mast` replaces the lattice, rungs and guys; the generator's `drab` collider stays and the beacon stays
+  code. `mt_cage` replaces the link panels, posts and drawn crates. The wire colliders, each stack's bottom-crate collider and the
+  prize box's `olive` collider stay. **Each crate's yaw roll is taken before the art check**, so the seed is spent identically.
+  `places` 0 BAD.
+
 - **m773 (T6e): CAMP HOLLIS'S WATCHTOWER AND TENTS ARE HIS ART (`hollis_camp.glb`, `MILB.hcG`, `?hcamp=0`, `mtPut`).** `mt_tower` at
   (-10, -10). The legs, deck and parapet keep their colliders. The parapet's collider-plus-three-courses becomes `splice(-4, 4)`
   when the art is there, and the courses still roll `r()`, so the seed is spent identically. `tent()` returns early once its
