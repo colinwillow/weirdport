@@ -800,6 +800,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m796 (STEER): FLAT HIPS ARE NOT A FLIP MEASUREMENT (`flipMarks`, `AIR.flatHips` .05, `AIR.flatAir` .81, `FLIP[*].flat`).** Read
+  offline from both files: zap's `front_flip` hips go 33.4 -> 59.3 -> 29.3 cm (crouch at 0, apex .333, landing .708 of .875),
+  while the alien lizard's are 0.00 at all 21 keys, and his `backflip` likewise. The argmin/argmax walk on a flat track returns
+  noise, so `air` was a fraction of the clip, `flipDur` ran out early and `in_air` took the weight back mid-rotation. A hips range
+  under 5% of their height now returns { from 0, air .81 x dur, off 0 }. The chip's flip token now carries the action's time,
+  the clip length and the weight, plus FLAT. **The lizard's missing hips translation is his retarget dropping root motion**; it is
+  reported to him, not patched over. `front_flip` is in `ONCE`.
+
 - **m794 (STEER): A WEAPON'S FIT TO ITS WEARER IS MEASURED (`mountWeapon`, `weaponParts().tip`, `WEAP.fit`, chip `WSC`).** Identity
   was only right because zap's mount pair and the weapon files' pair are the same vector, (-14.3102, 0, 0), in centimetres under an
   Armature 0.01. The alien lizard's rig is in METRES, with its tip at (-0.140, 0, -0.072): 1/91 of the length and 27 degrees

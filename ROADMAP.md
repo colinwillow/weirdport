@@ -28,7 +28,7 @@ between them. Design context lives in `GAME_DESIGN.md`.
   the m794 fit is not reaching this rig. Same `HERO <name> n/n` clip chip as the lizard.
   **Then tick this and go back to the items below.**
 
-- [ ] **STEER, FROM COLIN (Oct 20, 20:22) -- TWO BUGS, AHEAD OF THE CAMPAIGN ITEMS: (1) GUNS ~100x TOO BIG ON THE ALIEN LIZARD, (2) THE DOUBLE-JUMP FLIP STUTTERS.**
+- [x] m794 m796 **STEER, FROM COLIN (Oct 20, 20:22) -- TWO BUGS, AHEAD OF THE CAMPAIGN ITEMS: (1) GUNS ~100x TOO BIG ON THE ALIEN LIZARD, (2) THE DOUBLE-JUMP FLIP STUTTERS.**
   *"Due to me using a different workflow... this new workflow has made the guy have a different scale, so now he's actually fine for the
   game. He looks fine, he works fine, however when you load a rocket launcher or a blaster, the guns are about 100 times too big -- they
   take up the whole screen. And we recently implemented a double jump, and double jump is supposed to be a flip, and when you double
@@ -2224,3 +2224,10 @@ differ" table there, so no region feels like the last one.
   so his guns come out at .011 scale, turned 27 degrees onto his axis. The chip says `WSC1.00` on zap and `WSC.011` on the lizard.
   The muzzle is measured in the file's own frame and then carried through the fit, so shots leave the barrel. Bug 2 (the flip) is
   the next build.
+- **m796 (STEER bug 2, the flip stutter): it was the LIZARD's clips, not the code path, and zap does not do it.** His
+  retargeted `front_flip` and `backflip` carry no vertical hip motion: 0.00 at every key, where zap's hips arc 29 -> 59 -> 29 cm.
+  `flipMarks` was measuring the flip's timing off float noise, so the flip clock ran out partway through the rotation. Flat hips now
+  fall back to the clip's own length: airborne for .81 of it, which is zap's own measured ratio, with no wind-up. The whole turn
+  plays, but the lizard still has no body lift in the flip (his clips have none). **That is a retarget gap for his pipeline:
+  root/hips translation is being dropped.** On zap nothing changes, because his marks measure clean. The chip shows
+  `FLIPfwd<left> t<time>/<len> w<weight>`, plus `FLAT` when the fallback is in use.
