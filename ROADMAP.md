@@ -1206,10 +1206,10 @@ differ" table there, so no region feels like the last one.
     - [x] m838 **F5-7a** the Ready Room: a pilots' bar on Hollow Creek's highway (walk in: the bar and its bottles, stools, a pool table, a jukebox, a propeller; a porch, a neon sign, a drop tank on a stand by the road, a pickup), and Dutch at the bar with his story.
     - [x] m843 **F5-7b** prove him right: fly, let a tic-tac chase you, and hold it close in front of you a few seconds (on camera); bring him the footage.
     - [x] m848 **F5-7c** the pilot form: Dutch, sampled once he is believed, flies (lift, not only a glide).
-  - [ ] **F5-8** Bigfoot. Split:
+  - [x] m857 **F5-8** Bigfoot. Split:
     - [x] m851 **F5-8a** a shy giant in the gorge's east pines: big prints that fade, a walk he can stand and a run he cannot; walk up slowly and he lets you close (`bigfoot:found`).
     - [x] m855 **F5-8b** the hunters: once found, now and then two hunters come up the plateau after him; knock them down before they reach him (or he is "taken" and you start over).
-    - [ ] **F5-8c** the friend: kept safe, he follows you about the gorge and lets you take his sample -- the Bigfoot form (big, slow, shoves everything).
+    - [x] m857 **F5-8c** the friend: kept safe, he follows you about the gorge and lets you take his sample -- the Bigfoot form (big, slow, shoves everything).
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
   author; the turf's building swap in every region, not only Old Town.
@@ -2278,3 +2278,4 @@ differ" table there, so no region feels like the last one.
 - **m848 (F5-7c): the pilot form flies the wing's own flight**, with the jets lit and real lift: 1.7x cruise, 1.5x thrust, and under half of gravity's pull on a climb (`WING.pilot`). It does not use a new flight model. Dutch can only be sampled once he is believed; before that he is not sampleable at all.
 - **m851 (F5-8a): Bigfoot is a procedural stand-in** (a 2.6 m hairy giant) until there is a model, roaming the gorge's east plateau pines. Walking is under 3.2 m/s and does not scare him; running within 22 m does. `BIGF.calmV` / `BIGF.spook` if that is too strict.
 - **m855 (F5-8b): the hunters use the hick's body** (no hunter model yet). They walk at Bigfoot along the m338 route mechanism. If they flee from you the way the hick flees the alien, scaring them off also protects him; knocking both down is what finishes it. A net (one within 3.5 m of him on his feet) loses the round, and they come again after 2 minutes.
+- **m857 (F5-8c): the BIGFOOT form is the biker's body worn 1.35x and furred brown** until there is a Bigfoot model. Like every disguise, it keeps your own collider. It shoves anyone it walks into above 2 m/s. You get it by standing beside him for 2 s once he is safe (a tuft of hair), not by knocking him down. Knocking down a friend felt wrong.

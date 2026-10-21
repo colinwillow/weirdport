@@ -892,6 +892,21 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m857 (F5-8c) -- Bigfoot the friend, and the BIGFOOT form (`ROLEFORM.bigfoot`, roster `bigfoot`, `BIGF.formK`)
+**The friend:** once `bigfoot:safe`, while you are within range + `followR` 80 of his home, he no longer flees. Every frame his
+target is a point `trail` 3 m behind you. He walks at 1.3, trots at `trotV` 4.5 past 9 m, and runs (the flee speed) past
+25 m. Arriving, he holds for .3 s and re-aims. Outside that ring he goes back to roaming at 1.3 (`O.v` reset).
+
+**The form:**
+- **Getting it:** standing within 3 m of him at a walk for `hairT` 2 s (once) unlocks BIGFOOT. It goes through
+  `FORMK.BIGFOOT = rosterKind(rosterOf('bigfoot'))` and `progForm`, so it is a role form (m383) on the fat_biker_02 kind.
+- **The look:** at the morph's completion, the worn skin's model is scaled by `formK` 1.35 and its materials lerped .75 to
+  fur brown. Both are put back (`bf0`) when the role changes, because skins are cached per kind and a plain biker must be
+  himself again.
+- **The shove:** worn and moving over 2 m/s, any body within 1.3 m gets `dummyBlow(.45, 0 dmg)`, with a 1 s cooldown each.
+
+`play ch1` passed. Shipped unverified.
+
 ### m855 (F5-8b) -- Bigfoot's hunters (`bigfHunt`, `BIGF.hunt`, step `bigfoot:safe` in `qbigfoot`)
 **When they come:** `huntFirst` 40 s after `bigfoot:found`, and again `huntEvery` 120 s after a lost round.
 
