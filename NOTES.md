@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m853 -- T7l mill_shed.glb: Hollow Creek Lumber's shed (art window)
+
+The mill's machines (m541) and its floor (m693) were art already; the shed they stand in was still tin boxes with m499's ribs stuck on. It is now one shell at 1,726 faces and one loft at 786. While building it I found that the code's right wall has a .5 m full-height gap at v -10.5..-10. Its long segment is centred at S.v + 2.5 with length S.d - 5, so it ends at -10, while the slot ends at -10.5. The art closes the gap and the collider still has it; ROADMAP says so and leaves the fix to the game window. Shipped unverified.
+
 ## m850 -- T7k freight_bits.glb: the halts' platforms, legs, wildflowers, the log load (art window)
 
 Most of buildFreight was already art: the trestle deck and bents (m709), the trestle kit (m587), the halt shelter and tank (m571), the extras (m706), the stairs (m728) and the train (m555). Its 28 drawn-only boxes were mostly fallbacks behind those. What was really left was the platform deck itself, its legs, the flowers, and the logs, which the code still builds even when `ft_flat` is art. The logs piece is in the car group's frame, where three +z is Blender -Y, so the load's centre (three z -2) is at Blender +Y 2. The platform's end fascias run up to the board tops: an earlier render with them stopping 5 cm short showed every board gap as a black slot. Shipped unverified.

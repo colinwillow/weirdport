@@ -155,6 +155,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `highway_bits.glb` | `hw_rail`, `hw_lamp`, `hw_pier`, `hw_cap` | buildHighway -- W-beam guardrail (3 m tile), street lamp, pier column (1 m stretch) and hammerhead (X = u, +Y = v; +u side, turn pi for -u) |
 | `ready_room.glb` | `rr_shell`, `rr_inside`, `rr_tank`, `rr_picnic`, `rr_sock`, `rr_pickup` | buildReadyRoom -- Hollow Creek's pilots' bar inside and out (X = u, +Y = v away from the road; room origin at (0, 0) on the flat) |
 | `freight_bits.glb` | `fq_platform`, `fq_leg`, `fq_flowers`, `fq_logs` | buildFreight -- a halt's whole platform (origin (pu, vm) on the deck, line at +X), its leg (1 m stretch), a wildflower clump, the flat car's log load (car frame like ft_flat) |
+| `mill_shed.glb` | `hm_shed`, `hm_loft`, `hm_lumber5`, `hm_lumber4`, `hm_stump` | buildMill -- the corrugated shed with its openings, roof and plinth, the upper floor with rail and stair (both at the frame origin), the lumber stacks, the chopping stump |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
