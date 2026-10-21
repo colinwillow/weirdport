@@ -5,6 +5,13 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m710 -- the MX tape, the road litter and the patched potholes as art (scenery window; ROADMAP T5j)
+
+`models/campaign/trackside.glb`. For the MX track: the spectator tape's stake with its knot at the code's .9, and a 1 m length of
+tape that sags and twists a little, one white material for the code's red and white. For Hollow Creek's highway bridge: a clump of
+road litter (a crushed can, a green bottle, a coffee cup, a flattened box, a strip of tyre tread, scraps of paper) and a patched
+pothole, an irregular dark patch with a lighter edge and cracks running off it, drawn flat. Shipped unverified.
+
 ## m707 -- the freight trestle's deck and bents as art (scenery window; ROADMAP T5i)
 
 `models/campaign/trestle_deck.glb`, for the trestle `buildFreight` carries over the strait. A 6 m deck section at the code's
