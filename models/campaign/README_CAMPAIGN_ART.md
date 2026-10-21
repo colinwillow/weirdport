@@ -118,6 +118,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `shed_vents.glb` | `sv_vent` (louvred roof vent with turbine) | buildWaterfront -- the transit shed's roof |
 | `factory_stations.glb` | `fa_post` (stretch), `fa_head`, `fa_cage`, `fa_hat_paint` (tintable) + `fa_hat_trim`, `fa_boots` | wfFactory -- the line's stations |
 | `control_room.glb` | `fc_console` (desk, mimic panel, three monitors), `fc_lever` (the big red lever) | wfFactory -- the control room |
+| `parts_stock.glb` | `fs_case` (1.1), `fs_crate15`, `fs_crate19` | wfFactory -- the parts stock along the east wall |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
