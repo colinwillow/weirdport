@@ -908,6 +908,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE MILL YARD (m884, T8a, `HCMILL.yardG`, `mill_yard.glb`, `?myard=0`).** New props, not swaps: `hm_forklift` (17, 2), `hm_drums`
+  (20.5, 5), `hm_pallets` (11, 2.8), `hm_yardlight` (19.5, -2) through `campPlace` on the mill's frame at the flat's y, each with the
+  box his spec gave (3.5 x 1.3 x 2.2 / 1.4 x 1.4 x .9 / 1.3 x 1.2 x .8 / .3 x .3 x 6) as a `steel` collider with no drawing. Placed
+  just before `buildMill`'s commit; a missing node is a `MYARD <name> MISSING` note. All four nodes sit at the file's origin, as before.
+
 - **THE LOST CONTEXT (m883, STEER 02:30, `CTX`, `ctxHook`, `ctxRender`, `REGG`, `regGate`, `regGateStep`, `CARRYK`).** His FRAME card at
   m875 was `shaderSource` <- `acquireProgram` <- the render: WebKit throws there only on a null shader, i.e. a LOST context (iOS, out of
   GPU memory). Now: `webglcontextlost` is `preventDefault`ed (so it can be restored), `ctxRender` skips the render while lost and
