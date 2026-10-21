@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m808 -- ferry_landing.glb: the ferry's landing stage (T6t)
+
+The jetty runs to wherever the island's ground meets the water (`vEnd` is computed), so it is a tile. The piles reach the seabed, so they are stretched. The pontoon's float drums first showed through its deck: their tops were above deck level, so they now sit below it. Shipped unverified.
+
 ## m806 -- wf_barge.glb: the barge under crane 1 (T6s)
 
 The cranes are already his. The barge they work over was the last piece of `wfCranes` still drawn as boxes. Same lesson as the crates: the deck plate first rendered black because it shared the hull's top face, and lifting it 2 cm fixed it. Shipped unverified.
