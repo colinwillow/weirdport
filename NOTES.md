@@ -712,6 +712,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m742 (T5t): THE FACTORY'S INTAKE DOOR IS HIS ART (`factory_portal.glb`, `WFRONT.fpG`, `?fportal=0`).** `ff_portal` is placed
+  by `campPlace` at (Fc.u, Y, v0), which mirrors z so his -Y front faces -v, out of the lot. It replaces the 9 lintel and 12 jamb
+  chevron blocks, all of which were drawing only, so no collider changes. If the GLB fails, the blocks draw and the chip reads
+  `FPORTAL GLB FAIL`.
+
 - **m740 (F4-5a): AT FOUR STARS THE MILITARY COMES (`COPS.sol`, `d.soldier`, `copExtras`).** The four-star reinforcements spawn
   as before (behind you, every `extraEvery`, at most `extra`), and each one now gets `rosterApply(rosterOf('military'))`, which
   gives it the olive tint, the helmet and `d.role = 'military'`. It also gets `d.soldier`, which scales three things in
