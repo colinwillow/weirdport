@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m880 -- STEER: the hero picker becomes a 3D turntable (art window)
+
+Colin, 02:28: with three heroes the picker row is wider than the phone and the start screen scrolls sideways. The STEER at the top of ROADMAP replaces the row with one 3D stage. It shows the selected hero's real GLB playing its idle and turning, with arrows and swipe to switch. The models are framed by their measured height, because zap's armature is 0.01 while the lizard and the grey are in metres. The stage is disposed before the world loads. No index.html change was made here.
+
 ## m878 -- T8a mill_yard.glb: the first second-pass dressing (art window)
 
 The box-to-art scan finished at T7m, so this begins the second pass: lived-in props for the places he sees most, starting with the mill yard. The four props are 72-432 faces. They are new things, so they come with suggested colliders rather than replacing code boxes. Their spots were chosen against HCMILL's numbers (the lumber at (13, 5) and (17.5, 9.5), the stump at (10.5, 12), the flume at u 6, Hal at (2, 1.5), the burner at (21, -11)). Shipped unverified.
