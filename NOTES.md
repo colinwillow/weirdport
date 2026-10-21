@@ -696,6 +696,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m729 (T5p): THE FACTORY'S OUTFEED TOWER STAIR AND PLATFORM ARE HIS** (`outfeed_tower.glb`, `WFRONT.otG`, `?otower=0`). `ot_stair` at
+  (-45, 108) and `ot_platform` at (-48, 109.5), on Y, mirrored, both Y-scaled by (L3 - Y) / 10 (built for 10). The platform's and
+  the 32 treads' grate colliders stay (draws popped); the four legs and the two yellow rail pearlSegs are not drawn; the `rail()`
+  runs stay. `places` FACTORY: quay -> tower -> gallery -> hall 13.20, unchanged.
+
 - **m728 (T5o): THE FREIGHT HALTS' STAIRS AND THE YARD FENCE ARE HIS** (`halt_stairs.glb`, `HCTRAIN.stairG`, `?hstairs=0`). Per step,
   `hs_step` at (pu, tread top y, v - dn * .225), turned PI when dn is -1 (his nosing is on +Y = dn), plus `hs_leg` from
   min(g, y) - .5, Y-stretched to y - .3. The step's plank block stays the collider (draw popped). `hs_fence` at each even-k fence
