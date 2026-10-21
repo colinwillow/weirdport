@@ -1037,7 +1037,8 @@ differ" table there, so no region feels like the last one.
   - [x] m711 **F3-3** the relay orb: links the others into the grid -- while it stands they take half damage and re-light if downed; shoot it and every orb it fed drops a hit.
   - [x] m717 **F3-4** the EM tell: near any live orb or alien activity streetlights flicker, cars stall in the road, radios hiss.
   - [x] m720 **F3-5** the Hum: an ambient drone whose loudness follows how much of the grid stands where you are; a freed district goes quiet.
-  - [ ] **F3-6** black triangles patrol at night and drop orbs; tic-tacs chase you when you are gliding or flying.
+  - [x] m721 **F3-6a** a black triangle circles Old Town and the core high up and drops seeker orbs that follow you and call the Skinsuits if their light stays on you.
+  - [ ] **F3-6b** tic-tacs: white capsules that chase you when you are gliding or flying, fast and jinking; shoot one down or land to lose them.
   - [ ] **F3-7** missing time (captured: white-out, wake somewhere else minutes later, juice drained) and a zero-health state, switchable.
 - [ ] **F4 The forms still missing** from the forms table, each with the door it opens: cop (cordons,
   arrest), firefighter (fires, the truck ladder), hobo as stealth (guards ignore him), CEO (Dump Tower),
@@ -2013,3 +2014,6 @@ differ" table there, so no region feels like the last one.
   the repo has no drone sample. Its "district" is Old Town, which is where every orb is: its level is the share of orbs still up,
   full inside Old Town and fading out over 160 m. The EM tell and the Hothouse add to it. Other districts get their own grid when
   they get orbs.
+- **m721 (F3-6a), the triangle has no night:** the game has no day/night cycle (the city is a fixed neon dusk), so the black triangle
+  patrols all the time. It circles 80 m up, out of the blaster's reach, and only its seekers can be shot (two hits each). A seeker
+  that holds its light on you, as yourself, starts an incursion: the watcher's own call.

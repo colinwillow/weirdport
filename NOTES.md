@@ -684,6 +684,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m721 (F3-6a): THE BLACK TRIANGLE AND ITS SEEKERS** (`OTRI`, `buildTriangle`, `seekerHit`, `triStep`, GOD `triangle`, flag
+  `seen:triangle`). A three-sided `CylinderGeometry` 23 m in radius, three corner light sprites and a blinking red heart, circling
+  (130 m radius, 80 m up, 9 m/s) round a point 40 m west of Old Town's middle. Within `nearR` 260 m it drops a SEEKER every 55-85 s,
+  from a pool of 2: an `AIRT` target (2 hp) that falls at 18 m/s to `hover` 9 m over you, then circles you at 6 m/s with a cone of
+  light. While you are under it within 4 m, as yourself and out in the open (the watcher's `seenOk`), its alert fills at 22/s and
+  drains at 15/s. At 100 it calls an incursion (`incurStart(1)`) and leaves. After `life` 70 s it climbs away. A seeker shot down:
+  Old Town +1. `places`: triangle ok, 0 BAD.
+
 - **m720 (F3-5): THE HUM** (`HUM`, `humLevel`, `humStep`). Built on the first frame `SFX.ctx` exists: oscillators 55 / 55.7 Hz saw (a
   slow .7 Hz beat) and a 110.4 sine, through a 220 Hz low-pass, into `SFX.bus` (so it follows the master volume). Every .25 s the
   gain targets `HUM.g` (.07) x level, with a .8 s time constant; level = (orbs up / all six) x nearness to Old Town's rect (smooth
