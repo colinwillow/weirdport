@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m760 -- factory_line.glb: arm pedestals, the chrome booth, the lift shaft (T6b)
+
+Three more of the factory line's stand-ins. The arms' pedestals get a bolted base and a turntable. The chrome booth gets mirror-chrome sides, a glowing ceiling and strip curtains at both ends. The lift's four bare posts become a braced shaft, tiled a metre at a time to 13 m, with its platform face left open. Shipped unverified.
+
 ## m759 -- parts_stock.glb: the factory's crates of arms (T6a)
 
 There is one piece per height the code uses (1.1 / 1.5 / 1.9 by k % 3), with the 1.1 one in steel, because the code paints it `c7` grey metal. In the first preview the crate tops and corner posts rendered black: they shared faces exactly with the slats under them. Nudging each apart by a few millimetres fixed it. Watch for this on any slatted piece. Shipped unverified.
