@@ -864,6 +864,31 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m838 (F5-7a) -- THE READY ROOM, the tic-tac pilot's bar (`READY`, `buildReadyRoom`, `readyStep`, GOD `hcready`, roster `navypilot`)
+**The site:** `HCREEK.FLATS[5]` = (-92, -58), r 20. It is on the highway's west side, 31 m off its line, with +v facing away
+from the road and the front door on -v toward it. Measured with temporary `hcBase` / `hcEdge` probes in `places` (since removed):
+- **(-34, -20), east of the road, was tried first.** The gorge (`HCREEK.GORGE` passes (-28, -22)) cut through it, and HOLLOW
+  printed "flats level to ... 8.66 A FLAT THAT IS NOT".
+- **The chosen site:** relief 1.8 m over 22 m and 68 m from the shore. It is clear of the fairground's r 62 (69 m) and of
+  Saucer Joe's r 34 (42 m).
+
+**A GOD place on Hollow Creek has to start with `hc`:** `places` checks `^hc` ids against Hollow Creek's land and anything
+else against the farmland. `readyroom` failed as "OFF THE FARMLAND" for that reason, and `hcready` passes.
+
+**What is there:**
+- An 11 x 8 room you walk into: a 2 m door in the front, two windows with beer neons, a pitched tin roof (a box collider,
+  standable).
+- Inside: a bar along the back with a shelf of 22 bottles and a propeller, 5 stools, a pool table, two round tables, a
+  jukebox, three lamps.
+- Outside: a porch with a tin roof; a canvas neon sign on the roof (`readyStep` makes it stutter); an olive drop tank on a
+  stand by the road with its own sign; a picnic table, a windsock, string lights, a red pickup.
+- Dutch at the bar, `talk`.
+
+**Checked:** `places` printed `READY boxes 15 | off its flat by 0.21 m | y 5.8`, `hcready` ok, 0 BAD. `play ch1` passed.
+
+**Not done in passing:** `missingStep`'s card reads 'MTIME TIME'. That is a slip from an old rename, most likely meant to say
+MISSING TIME. It is user-visible and one string, and was not changed here.
+
 ### m836 (T7e) -- Shadowhide Ranch is his art
 `RANCH.artG` loads `models/campaign/ranch.glb` (`?ranchart=0` leaves it out). **Its loader sits right before
 `buildRanch()`**: it was first written next to the tower's loader, a hundred lines AFTER the build, which would have shipped
