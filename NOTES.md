@@ -900,6 +900,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE SPLASH (m879, STEER 02:22, `#splash`, the inline script after `#build`).** z-index 40 over `#start` (30) and the boot card (20).
+  Static markup + a classic inline script (not the module) so it paints at once; its img URL is `?b=<the build>` read off `#buildN`
+  (the bump keeps that current; `A()` is in the module and not yet defined). `cover` below a 3:4 aspect, `contain` over a blurred copy
+  above it (one media query and the same `W/H < .75` test in `fit`). The glow sits on the painted button's rectangle (225,1495)-(715,1615)
+  of 941x1672, mapped through the same scale and offset as the fit. It goes on `click` (not pointerdown, so the tap cannot land on a
+  start-menu button under it); `sfxWake`'s capture listener on the window takes the same touch for the audio. **`navigator.webdriver`
+  removes it**, so `check:boot`, `places` and `play` are unaffected; `?splash=0` does the same by hand.
+
 - **BENCHES (m876, F6c, `smartBenches`, `S.brk`, `SMART.benches`).** Every `BREAK` entry whose type matches /bench/ with a box: its
   long axis and depth axis are read off `b.mat` (columns X and Z) and its box half sizes; the seat side is whichever of +/- depth has
   `kitStand` within .4 of the box's bottom 0.5 m out; two spots 0.35 m in front at +/-.45 of the half length, facing out. `S.brk`
