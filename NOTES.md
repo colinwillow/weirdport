@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m814 -- gap_ramp.glb: the island gap ramp (T6w)
+
+The in-run, the kicker arc and the landing are all point lists the code fits so a board clears the ground (m484). The art is one segment, given each pair's length and pitch, so the curve stays the code's and the walk quads stay the surface. The landing reuses the segment, widened. The site builder (`buildSite`) turned out to be his `site_kit` already, so it was skipped. Shipped unverified.
+
 ## m813 -- swing_span.glb: the swing bridge's moving span (T6v)
 
 It is built in the group's own frame and parented under `O.grp`, so the existing swing turns it with no new code. The truss is the code's: nine verticals each side at k * half / 4, rising 3.2 + 2.6 (1 - |k| / 4) to the middle. Pairs with T6u's fixed parts. Shipped unverified.
