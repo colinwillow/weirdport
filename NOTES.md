@@ -772,6 +772,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m778 (F5-3a): THE MAJESTIC DOZEN'S DOSSIERS (`MJ12`, `mj12Step`, `mj12Next`, dormant quest `qmajestic`, flags `mj:1`..`mj:12`,
+  `mj:all`).** Each file sits at `GODPLACES.find(id).at()`, built lazily the first frame that place resolves, 0.7 m up and turning.
+  You pick one up within 1.3 m horizontally and 1.8 m vertically. The first sets `qon:qmajestic`, which is what wakes a
+  `dormant` quest (m293). Each shows a card with its line; twelve set `mj:all` for F5-3b. **If a GOD place moves, its file
+  moves with it**, because nothing is typed. `places` 0 BAD; `play` ch0 + ch1 pass.
+
 - **m775 (T6g): THE LAST OF CAMP HOLLIS IS HIS ART (`hollis_props.glb`, `MILB.hpG`, `?hprops=0`, `mpPut`).** These are `mp_bags` at
   each firing-position segment (turned a + PI/2), `mp_drum` x5, `mp_table`, `mp_john`, `mp_flag`, `mp_stack` and `mp_hoop`. The
   colliders the code keeps (each bag segment, the drum block, the table, the john, the stack's bottom course) stay, with their
