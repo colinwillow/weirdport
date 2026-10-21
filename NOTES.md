@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m784 -- bunker_camp.glb: the rest of Merle's camp (T6l)
+
+Six pieces at the code's spots. One thing caught on review: the mast's guys first ran to (cos a, -sin a). The code puts them at v = sin a * 3.5, and Blender +Y is +v, so it is +sin. Handedness again; check every angle written into a piece against the code's own u / v. Shipped unverified.
+
 ## m782 -- bunker.glb: Merle's bunker, container and inside (T6k)
 
 The container's corrugation is the code's own rib pitch (.3), and the door leaves stand open at the code's +-.25 spots. Inside, the string wall is a fresh scatter of the same 16 clippings and 14 strings. It is NOT the code's `pins` positions: the code uses its own LCG and this uses Python's random, so the cork board's layout differs. The dirt mounds belong to the hill and stay code. Shipped unverified.
