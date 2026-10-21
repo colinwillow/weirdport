@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m741 -- factory_portal.glb: the factory's intake door (T5t)
+
+The code striped the door with alternating yellow and black blocks. The art uses true 45-degree chevrons: each band is a parallelogram clipped to its jamb or lintel. The first version only kept bands that crossed the whole rectangle, which left the 0.5 m jambs plain yellow, so the clip is now Sutherland-Hodgman. The pieces it replaces were all drawing-only, so nothing about collision moves. Shipped unverified.
+
 ## m737 -- factory_roof.glb: the factory's roof units and stacks (T5s)
 
 The four roof units were plain `steel` boxes and the stacks were two cylinders. Both now have art at the code's sizes. The stack keeps the code's taper (1.6 to 1.4) and its red band height (20..21), so it reads the same from across the river. Shipped unverified.
