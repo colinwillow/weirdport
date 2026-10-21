@@ -688,6 +688,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m723 (T5n): THE STAIR DOWN INTO THE DRY DOCK IS HIS** (`dock_stair.glb`, `WFRONT.dstairG`, `?dstair=0`). `dk_stair` at (su, floor, v0
+  70), mirrored, Y-scaled by (Y - floor) / 4.95; the 16 riser colliders stay, their draws popped. `dk_landing` at the landing's
+  centre on Y, X-scaled by lw / 6.8; the steel slab's collider stays, its draw popped, and the rail's top bar is not drawn (its
+  collider was always collider-only). `places`: WATERFRONT head stair floor -> 3.20 (quay 3.2), unchanged.
+
 - **m721 (F3-6a): THE BLACK TRIANGLE AND ITS SEEKERS** (`OTRI`, `buildTriangle`, `seekerHit`, `triStep`, GOD `triangle`, flag
   `seen:triangle`). A three-sided `CylinderGeometry` 23 m in radius, three corner light sprites and a blinking red heart, circling
   (130 m radius, 80 m up, 9 m/s) round a point 40 m west of Old Town's middle. Within `nearR` 260 m it drops a SEEKER every 55-85 s,
