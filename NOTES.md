@@ -840,6 +840,32 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m823 (F5-6a) -- SHADOWHIDE RANCH, the haunted ranch (`RANCH`, `buildRanch`, `ranchStep`, GOD `ranch`, roster `rancher`)
+**The site** is a new farmland flat, `FARMLAND.FLATS[2]` = (160, 80) with r 32. `fpOwner` keeps fields out to 22 m.
+- **(172, 112) was tried first and rejected:** `flBase` there is 0.0, a hollow by the shore, and `places` printed it 2.20 m
+  off its own flat at the fence corners.
+- **At (160, 80):** y 3.9, 63 m from the beach, and the fence corners are 0.87 m off the flat.
+- **The frame:** +v is `FARMLAND.ub`'s bearing + .5.
+
+**What is there:**
+- A gate at v -15, two log posts with a canvas sign.
+- Barbed wire on three sides: posts that do not collide, and two `pearlSeg` strands.
+- The house at (-6, 5): 9 x 6, closed up, its windows boarded, a door, a tin roof as two tilted slabs, a chimney. The porch
+  deck is .35 high, under the .357 step, with posts, a tin porch roof, a bench, a crate and a bulb.
+- The Birch Institute's white trailer at (7.5, 5), on blocks, with a dish, a whip aerial, a generator and a cable.
+- The watchtower at (9, -8): a deck at 5, rails, a spotlight and a camera. Its `pearlLadder` is on its -v face (psi PI).
+- The corral at (-8, -8): a ring of 14 posts with two rails, a gap at k 3, a scorched `RingGeometry` inside, a trough, and
+  three stones that bob over the ring. The stones are their own meshes, moved by `ranchStep`.
+- Three skulls, a dead tree, a burn barrel.
+- Four camera poles. Their red lights are one `noBatch` material that `ranchStep` blinks.
+- Tully on the porch, `talk`.
+
+**Checked:** `tools/placecheck.mjs` runs `buildRanch` and prints a `RANCH` row:
+`RANCH boxes 37 | off its flat by 0.87 m | y 3.9 | from the beach 63.1 m | ladder yes`, with GOD `ranch` ok and 0 BAD.
+`play ch1` passed (263 s).
+
+**Still to do:** F5-6b (the night) and F5-6c (the ability).
+
 ### m821 (T6y) -- the footbridge's span, piers, stair and lamps are his art
 `FOOT.fbG` loads `models/campaign/footbridge.glb` (`?fbridge=0` leaves it out). In `buildFootbridge`, `fb()` places a node
 and records it in `fbArt`. Placements:
