@@ -892,6 +892,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE HILLS' NIGHT, RETRACED (m863, F5-10b, `HILLS.STOPS`, `hillsNight`, `hillsNext`, quest `qhills`, GOD `hchclear`).** Starts at
+  `talk:hc_hills_betty`; three highway stops in order (`hills:light`, `hills:stop`, `hills:blank`), then `hills:clear` in the clearing
+  (`HCREEK.FLATS[9]`, (-49, -44), r 9). **A farmFrame you mean to HIDE must come out of `FBATCH.frames`** -- `farmBatch` takes every
+  frame's meshes into world cells regardless of the group's `visible`, so a hidden reveal would be baked in and on show from the start.
+  The clearing's frame is filtered out right after it is made. The light is a `MeshBasicMaterial` sphere easing toward a point 22 m
+  east and 18 m up of him; the craft a lazy group (disc, dome, 14 lit windows) 32 m east of the second stop for `craftT` 11 s; the
+  white-out is a fixed div at z-index 19 (under the boot card), and 0.9 s in it moves him beside the clearing and shows it. places:
+  `stops 2.0,6.2,6.0 | clearing y 6.1 hidden`, `ok hchclear`, 0 BAD; play ch1 20 steps.
+
 - **THE HILLS' HOUSE (m862, F5-10a, `HILLS`, `buildHills`, `hillsStep`, GOD `hchills`).** F5-10 split into a (the house), b (retrace
   the night down the highway), c (the implant; Clancy sniffs). `HCREEK.FLATS[8]` (-135, -75), r 20: relief 6.5 m over 22 m (the flat
   takes it; 0.00 m off level as built), 24 m from the coast. **The gables are two raw triangles** (`farmMerge` takes a non-indexed
