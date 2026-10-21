@@ -760,6 +760,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m771 (T6d): CAMP HOLLIS'S HESCO IS HIS ART (`hollis_wall.glb`, `MILB.hwG`, `?hwall=0`, `hwPut`).** Each tier of each run is
+  n = round(len / 1.1) `mb_hesco` baskets, scale.z multiplied by st / 1.1 (z carries the mirror) and upper tiers scale.x 1 / 1.2.
+  The mesh cage posts are skipped. Each torus coil becomes an `mb_wire` and each top sand box an `mb_sandbag`, at the same spots
+  and yaws. **The seeded rolls are spent in the same order either way**, so the ring's shape is unchanged. The gate bastions are
+  `mb_bastion`, with their three drawn courses dropped (`splice(-3, 3)` after the collider's own `splice(-4, 1)`). Every `hesco`
+  collider stays, and `places` is 0 BAD.
+
 - **m770 (F5-2b): MERLE'S EVIDENCE AND THE GRID (`MERLEV`, `merleEvStep`, `merleOn`, quest `qmerle`, `orbGridMap`, flag `merle:grid`).**
   The three evidence flags `ev:shard` / `ev:hum` / `ev:tri` only set while `talk:hc_bunker_merle` is set and `qdone:qmerle` is not.
   **The hum reads `humLevel()`, not `HUM.k`**: `humStep` returns before computing `k` until the AudioContext exists, so on a muted
