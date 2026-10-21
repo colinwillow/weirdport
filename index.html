@@ -29230,7 +29230,7 @@ const QUESTS = [
                 "You flew close enough to film it and it let you. That means it wanted to be seen. That's worse.",
                 "I owe you. When you need a pilot -- a real one -- I'm your man. I still know how to fly."] } },
   ] },
-  { id: 'qhills', title: 'TWO HOURS', world: 'tkit', from: 'hc_hills_betty', onDone: () => toast('Betty holds Barney\'s hand and does not say anything for a long time.', 3.4), steps: [   // m863 (F5-10b)
+  { id: 'qhills', title: 'TWO HOURS', world: 'tkit', from: 'hc_hills_betty', onDone: () => toast('Betty holds Barney\'s hand and does not say anything for a long time.', 3.4), steps: [   // m864 (F5-10b)
     { type: 'flag', flag: 'hills:light', at: () => hillsNext(), text: 'Where the light found them', tip: 'Down the highway, toward the south shore past Saucer Joe\'s. Drive it the way they did.' },
     { type: 'flag', flag: 'hills:stop', at: () => hillsNext(), text: 'Where Barney stopped the car', tip: 'Back north up the highway, with the light keeping pace. Near the Ready Room.' },
     { type: 'flag', flag: 'hills:blank', at: () => hillsNext(), text: 'Where the road goes blank', tip: 'On north, before the fairground.' },
@@ -33581,7 +33581,7 @@ const HCREEK = {
     { a: 22, b: -76, r: 18, why: "COOPER'S DROP ZONE (m859, F5-9a): a clearing in the near-shore pines between the gorge (51 m west) and the bike track's west leg; measured relief 1.9 m over 22 m, 90 m from the shore. (-5, -122) was tried first and sat on the freight line's corridor (|a| < 10)" },
     { a: 26, b: -28, r: 12, why: "WHERE COOPER WENT UP (m860, F5-9b): the scorched ring at the end of the money trail, 48 m north of the drop zone; 12, so the forest leaves it a clearing" },
     { a: -135, b: -75, r: 20, why: "THE HILLS' HOUSE (m862, F5-10a): Betty and Barney's cottage on the lonely west shore, 75 m off the highway past the Ready Room; measured relief 6.5 m over 22 m (the flat takes it), 24 m from the coast, 19 m clear of the nearest flat" },
-    { a: -49, b: -44, r: 9, why: "WHERE THE HILLS WERE TAKEN (m863, F5-10b): a small clearing just east of the highway, 26 m from the gorge's line (the trailer park's porches reach about 12); relief 2.0 m. A flat so the forest leaves it open" },
+    { a: -49, b: -44, r: 9, why: "WHERE THE HILLS WERE TAKEN (m864, F5-10b): a small clearing just east of the highway, 26 m from the gorge's line (the trailer park's porches reach about 12); relief 2.0 m. A flat so the forest leaves it open" },
   ],
   forest: { step: 7.5, keep: .66, gorge: 7, beach: 6, slope: .75, flat: 1.1 },
   O: null, ua: null, ub: null, noise: null, tris: 0, chunks: 0, trees: 0, bbox: null,
@@ -34753,7 +34753,7 @@ function cooperStep(dt) {
 // retracing the night; F5-10c the implant and what Clancy learns from it.
 // ============================================================================================
 const HILLS = { on: 1, flat: 8, n: 0, at: null, y: 0, flatErr: 0, tv: null, needle: null, frame: null,
-  // m863 (F5-10b): THE NIGHT, RETRACED -- three places on the highway in order (HC a, b), then the clearing (`FLATS[9]`) off the road
+  // m864 (F5-10b): THE NIGHT, RETRACED -- three places on the highway in order (HC a, b), then the clearing (`FLATS[9]`) off the road
   STOPS: [ { a: -60, b: -128, flag: 'hills:light', r: 7, card: ['THE LIGHT', 'IT CAME DOWN THE MOUNTAIN AFTER THEM. IT IS FOLLOWING YOU NOW.'] },
            { a: -62, b: -76, flag: 'hills:stop', r: 7, card: ['WHERE BARNEY STOPPED', 'HE GOT OUT WITH THE BINOCULARS. THERE WERE FACES IN THE WINDOWS.'] },
            { a: -59, b: -50, flag: 'hills:blank', r: 6, card: ['TWO HOURS', 'THE ROAD GOES WHITE. AND THEN YOU ARE STANDING SOMEWHERE ELSE.'] } ],
@@ -34846,7 +34846,7 @@ function buildHills() {
     m.position.set(wx(u + .5, v - 1.8), g + 1.045, wz(u + .5, v - 1.8)); scene.add(m); O.needle = m;
     bx(u, 4, g - .02, g + .03, 3, 11, 'grass', 0, false); F.parts.grass.pop(); }
   O.n = F.commit().boxes;
-  // m863 (F5-10b): the binoculars on the shoulder at the second stop, and THE CLEARING -- hidden (its group) until the road goes white
+  // m864 (F5-10b): the binoculars on the shoulder at the second stop, and THE CLEARING -- hidden (its group) until the road goes white
   { const S2 = O.STOPS[1], [bxw, bzw] = hcWorld(S2.a + 4.5, S2.b), g = hcHeightAt(bxw, bzw); O.stopAt = O.STOPS.map(S => { const [x, z] = hcWorld(S.a, S.b); return [x, hcHeightAt(x, z) + .1, z]; });
     const m = new THREE.Group(), bm = new THREE.MeshStandardMaterial({ color: 0x24262b, roughness: .5 });
     for (const s of [-1, 1]) { const c = new THREE.Mesh(new THREE.CylinderGeometry(.045, .05, .16, 10), bm); c.rotation.z = Math.PI / 2; c.position.set(0, .05, s * .05); m.add(c); }
@@ -34872,7 +34872,7 @@ function buildHills() {
   return O.n;
 }
 const hillsNext = () => { const O = HILLS; if (!O.stopAt) return O.at; const k = O.STOPS.findIndex(S => !SAVE.flags[S.flag]); return k < 0 ? O.clearAt : O.stopAt[k]; };
-// m863 (F5-10b): the night, retraced -- the stops in order once Betty has told it (`talk:hc_hills_betty`); the light that follows you
+// m864 (F5-10b): the night, retraced -- the stops in order once Betty has told it (`talk:hc_hills_betty`); the light that follows you
 // between the first and the second; the craft over the trees at the second; the white-out at the third and the clearing it leaves you by
 function hillsNight(dt) {
   const O = HILLS, P = player.pos, F = SAVE.flags; if (!O.stopAt || !F['talk:hc_hills_betty'] || F['hills:clear']) { if (O.orb) O.orb.visible = false; return; }
@@ -46282,7 +46282,7 @@ const GODPLACES = [
   { id: 'gzdeep', world: 'tkit', name: 'THE GORGE · over the grotto and the wreck', at: () => GORGE.deepAt },   // m594
   { id: 'gzvillage', world: 'tkit', name: 'THE GORGE · the stilt village', at: () => GORGE.villageAt },   // m558
   { id: 'gzcave', world: 'tkit', name: 'THE GORGE · the cave behind the falls', at: () => GORGE.caveAt },   // m551
-  { id: 'hchclear', world: 'tkit', name: 'HOLLOW CREEK · the clearing off the highway where the Hills came to', at: () => HILLS.clearAt },   // m863
+  { id: 'hchclear', world: 'tkit', name: 'HOLLOW CREEK · the clearing off the highway where the Hills came to', at: () => HILLS.clearAt },   // m864
   { id: 'hchills', world: 'tkit', name: "HOLLOW CREEK · the Hills' house on the west shore (Betty and Barney)", at: () => HILLS.at },   // m862
   { id: 'hccring', world: 'tkit', name: 'HOLLOW CREEK · where the money stops, the scorched ring north of the drop zone', at: () => COOPER.ringAt },   // m860
   { id: 'hccooper', world: 'tkit', name: "HOLLOW CREEK · Cooper's drop zone, the chute in the fir (Hal)", at: () => COOPER.at },   // m859

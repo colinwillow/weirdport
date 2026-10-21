@@ -892,7 +892,7 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
-- **THE HILLS' NIGHT, RETRACED (m863, F5-10b, `HILLS.STOPS`, `hillsNight`, `hillsNext`, quest `qhills`, GOD `hchclear`).** Starts at
+- **THE HILLS' NIGHT, RETRACED (m864, F5-10b, `HILLS.STOPS`, `hillsNight`, `hillsNext`, quest `qhills`, GOD `hchclear`).** Starts at
   `talk:hc_hills_betty`; three highway stops in order (`hills:light`, `hills:stop`, `hills:blank`), then `hills:clear` in the clearing
   (`HCREEK.FLATS[9]`, (-49, -44), r 9). **A farmFrame you mean to HIDE must come out of `FBATCH.frames`** -- `farmBatch` takes every
   frame's meshes into world cells regardless of the group's `visible`, so a hidden reveal would be baked in and on show from the start.
