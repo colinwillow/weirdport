@@ -696,6 +696,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m728 (T5o): THE FREIGHT HALTS' STAIRS AND THE YARD FENCE ARE HIS** (`halt_stairs.glb`, `HCTRAIN.stairG`, `?hstairs=0`). Per step,
+  `hs_step` at (pu, tread top y, v - dn * .225), turned PI when dn is -1 (his nosing is on +Y = dn), plus `hs_leg` from
+  min(g, y) - .5, Y-stretched to y - .3. The step's plank block stays the collider (draw popped). `hs_fence` at each even-k fence
+  post (u +- 1.6) on its ground, replacing the post and both rails (drawn-only). `places` FREIGHT stairs unchanged, 0 BAD.
+
 - **m726 (F3-7): MISSING TIME, AND IT IS THE ZERO-HEALTH STATE** (`MTIME`, `missingStep`, `mel.MTIME`). `playerHurt` sets `MTIME.st =
   'white'` when hp reaches 0 (campaign map only, `on`). `missingStep`: a fixed white DIV (z 15, under the boot card's 20) fades in
   over .7 s and holds 1.6 s. Then `godTo` the nearest `WAKE` GOD place (camp / trailers / farmhouse) more than `away` 60 m off,
