@@ -149,6 +149,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `skate_pier.glb` | `kp_deck` (1.2 m tile), `kp_pile` (stretch), `kp_rail` (2 m tile) | buildIslandSkate -- the pier deck, piles and rails |
 | `tower_secret.glb` | `dz_table`, `dz_room` (the Dozen's room), `tr_station`, `tr_pylon` (stretch), `tr_head`, `tr_cab` (in its group's frame) | buildDumpTower -- the Dozen's room and the aerial tram |
 | `ranch.glb` | `rn_gate`, `rn_house`, `rn_trailer`, `rn_tower`, `rn_corral` | buildRanch -- Shadowhide Ranch |
+| `farm_bits.glb` | `fp_tractor`, `fp_cupola`, `fp_hood` | buildFarmProps -- the tractor, the barn cupola, the hay hood |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

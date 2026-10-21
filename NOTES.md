@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m837 -- T7f farm_bits.glb: tractor, cupola, hay hood (art window)
+
+The farm's last pieces still drawn as code boxes are now art, at the code's own numbers. The tractor is 642 faces, the cupola 129 and the hood 126. The vane stays code because it turns, and the tractor's collider stays code. The prefix `fp_` is shared with farm_props.glb; the names were checked and none clash. Shipped unverified.
+
 ## m834 -- ranch.glb: Shadowhide Ranch (T7e)
 
 The ranch (m822) had no art at all. These five pieces cover every drawn structure in it. The corral keeps the code's gap: post k 3 is skipped, which drops the rails k 2..4, so the opening faces the house exactly as the code's does. Shipped unverified.
