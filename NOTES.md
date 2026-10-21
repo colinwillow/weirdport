@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m856 -- T7m pod_deck.glb, and the drawn-box scan comes up empty (art window)
+
+This pass re-checked buildIslandSkate, buildIslandXing, buildCarts and buildIslandBase. Almost every drawn-only box left in them is a fallback behind an existing campPlace (it is built only when the art is missing), or a flat paint splash, or an effect. The two real leftovers were the cart pod's deck and the skate pier's light poles, and both are now art. For the turn: a code box turned ps has its length along (cos ps, -sin ps) in (u, v), which is a turn of -ps about Blender Z. The second slab's boards sit 5 mm proud so the overlap does not z-fight. With this, the campaign detail pass has art for every place still drawn as code boxes. What remains is ribbons that follow terrain (roads, decks, flumes), canvas signs and effects. Shipped unverified.
+
 ## m853 -- T7l mill_shed.glb: Hollow Creek Lumber's shed (art window)
 
 The mill's machines (m541) and its floor (m693) were art already; the shed they stand in was still tin boxes with m499's ribs stuck on. It is now one shell at 1,726 faces and one loft at 786. While building it I found that the code's right wall has a .5 m full-height gap at v -10.5..-10. Its long segment is centred at S.v + 2.5 with length S.d - 5, so it ends at -10, while the slot ends at -10.5. The art closes the gap and the collider still has it; ROADMAP says so and leaves the fix to the game window. Shipped unverified.
