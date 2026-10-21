@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m718 -- caisson.glb: the dry dock's gate (T5m)
+
+The caisson was one `steel` box, two `yel` bars with posts, and `iron` fender slabs. Now it has a dressed deck (seams, hatches, valve wheels, bollards), the rail as one 30 m piece at the code's own post spacing, fender piles, and a stiffened river face. The face and piles are stretched in height, so their rivets were taken out: a stretched sphere is an egg. Shipped unverified.
+
 ## m714 -- pearl_span.glb: the Pearl's roof links, steel and rope (T5l)
 
 `pearlSpan` draws each link as n segments of `pearlSeg` slabs plus `bx` posts. The art is the same unit: one 1 m segment per piece, stretched along the span and pitched per segment, so the rope bridge's sag is the code's own `pt(t)` and nothing is baked in. Everything that stretches carries detail only along its length (tread ribs, ropes, rails); the posts carry the knots and caps and are never stretched. Shipped unverified.
