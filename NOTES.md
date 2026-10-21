@@ -708,6 +708,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m739 (T5s): THE FACTORY ROOF IS HIS ART (`factory_roof.glb`, `WFRONT.frG`, `?froof=0`).** Each of the four 6 x 4 steel
+  boxes on the roof gets his `fr_unit` (louvres, fan wells, duct elbow), and the box drops its drawing but stays the collider.
+  The two stacks at (Fc.u +- 13, Fc.v + 16) get `fr_stack` (bands, ring platform at 14, caged ladder on +X, soot) in place of the
+  two cylinder draws; the 2.4 m `panel` collider is unchanged. Both go through `campPlace` (mirrored in z, Blender +Y = +v), so
+  the duct elbow on his -Y faces -v. The ladder and the ring platform are drawn only: there is no climb on them. If the GLB fails,
+  the old boxes and cylinders draw and the chip reads `FROOF GLB FAIL`.
+
 - **m738 (F4-4): THE CAVE MINER AND THE OLD DIG** (`ROLEFORM.miner` 'MINER', `GATE_TYPES.rubble`, `buildUnderDig`, `UNDER.dig`, flag
   `un:dig`). In `buildUnderneath`: the second shaft room got an east door; `run` takes a 9th `dark` argument (no lamps), and a
   30 m dark tunnel with pit props and cart rails leads to an 8 x 7 dig room with a cart and a strongbox. `buildUnderDig` (after it):
