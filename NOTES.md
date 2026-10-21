@@ -658,6 +658,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m706 (T5h): THE HALTS' BENCH, CHURNS AND LAMPS ARE HIS** (`halt_extras.glb`, `HCTRAIN.extG`, `?hextras=0`). In `buildFreight`'s m494
+  block via `hx` (campPlace, mirrored in z; built for side +1, so `scale.x = -1` on side -1; the churns at k = -1 also flip their
+  Y, i.e. `scale.z *= -1`). The bench keeps its seat collider (draw popped) and brings the timetable board with it. The churns
+  replace the cylinders and the sacks, and the lamp replaces the post, head, cone, bracket and basket. `places` FREIGHT unchanged.
+
 - **m705 (F3-1): THE PROJECTOR ORB** (`OPROJ`, `buildProjector`, `projHit`, `projStep`, `projShow`, task `qproj`, GOD `projector`).
   A hologram roadblock (MeshBasic, transparent, opacity flickering with an occasional sideways glitch) across Dump Tower's plaza
   approach in the tower's frame (v = -D/2 - 13), with ONE `BDYN` box so it is solid; `_off` when down. Its orb (an `AIRT` target, like
