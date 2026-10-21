@@ -1048,17 +1048,17 @@ differ" table there, so no region feels like the last one.
   - [x] m721 **F3-6a** a black triangle circles Old Town and the core high up and drops seeker orbs that follow you and call the Skinsuits if their light stays on you.
   - [x] m724 **F3-6b** tic-tacs: white capsules that chase you when you are gliding or flying, fast and jinking; shoot one down or land to lose them.
   - [x] m726 **F3-7** missing time (captured: white-out, wake somewhere else minutes later, juice drained) and a zero-health state, switchable.
-- [ ] **F4 The forms still missing** from the forms table, each with the door it opens: cop (cordons,
+- [x] m745 **F4 The forms still missing** from the forms table, each with the door it opens: cop (cordons,
   arrest), firefighter (fires, the truck ladder), hobo as stealth (guards ignore him), CEO (Dump Tower),
   scuba diver (the Gorge), cave miner (the Underneath), military (the base at high heat).
   - [x] m731 **F4-1** the hobo as stealth: Uplift's turrets and robots look straight through a man in the hobo's coat.
   - [x] m733 **F4-2** the cop's arrest: as a cop, hold the right pad on a Skinsuit you have knocked down to cuff it (it is taken away and the block's turf moves), and the cop's car at the cordon is yours to drive off.
   - [x] m735 **F4-3** the firefighter's truck ladder: a fire engine parked by a burning building in Old Town whose ladder only a firefighter can raise -- up to a roof that has no other way on.
   - [x] m738 **F4-4** the cave miner (the Underneath): a miner to sample in the Underneath, whose lamp lights the dark tunnels and whose pick breaks the rubble walls that block them.
-  - [ ] **F4-5** the military (the base at high heat): at four stars soldiers come instead of cops; a soldier's form walks through the military cordon round the base.
+  - [x] m745 **F4-5** the military (the base at high heat): at four stars soldiers come instead of cops; a soldier's form walks through the military cordon round the base.
     - [x] m740 **F4-5a** at four stars the reinforcements are soldiers (the roster's olive officer in a helmet), and a soldier shoots further, faster and straighter than a cop.
     - [x] m743 **F4-5b** the SOLDIER form (sample a downed soldier) and the `military` gate type only that form walks through; a soldier passes a police cordon too.
-    - [ ] **F4-5c** the base: a National Guard post at Hollow Creek's far edge (the road out toward Area 15), walled in sandbags and wire, with a watchtower, tents, a motor pool and a supply cage inside, ringed by the `military` cordon. A soldier walks in; anyone else is turned round and noticed.
+    - [x] m745 **F4-5c** the base: a National Guard post at Hollow Creek's far edge (the road out toward Area 15), walled in sandbags and wire, with a watchtower, tents, a motor pool and a supply cage inside, ringed by the `military` cordon. A soldier walks in; anyone else is turned round and noticed.
 - [ ] **F5 Side quests**, one build each, from the table in `LORE.md`, in this order: the Roswell diner,
   the tinfoil-hat bunker (the grid on the map), the Majestic Dozen, Mothman, the Phoenix Lights, the
   haunted ranch, the tic-tac pilot, Bigfoot, D.B. Cooper, Betty & Barney, Travis Walton, Area 15.
@@ -2063,3 +2063,8 @@ differ" table there, so no region feels like the last one.
 - **m743 (F4-5b): the SOLDIER's group is `law`**, the same as a cop's, so the police talk to him as one of theirs and a police
   cordon waves him through (`soldierToo`). The base itself is split out as F4-5c, to be built as one finished place at Hollow
   Creek's far edge rather than squeezed into this build.
+- **m745 (F4-5c): Camp Hollis sits on a new flat at Hollow Creek (-40, 88)**, the far shoulder between the fairground's hill
+  and the saddle, with its gate facing the fairground. Its two gate sentries ARE soldiers, so you get the form from them by
+  knocking one down at the gate, which means a fight with heat on the doorstep. Trying the gate in any other form adds .8 heat
+  each time it speaks. The prize in the supply cage is a full tank of juice plus the base's radio codes, which wipe your heat,
+  and a manifest that points at Area 15. No road reaches it yet; a road sign by the gate points out to "AREA 15 40".

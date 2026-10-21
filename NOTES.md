@@ -716,6 +716,18 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m745 (F4-5c): CAMP HOLLIS, THE MILITARY'S BASE (`MILB`, `buildMilBase`, `milBaseStep`, flat `HCREEK.FLATS[2]`, GOD `hcbase`).**
+  The ring is eight HESCO runs. The radius wanders 19..23 m from a seeded roll, except the front run, which is held square to the
+  gate. Each run has ONE collider 3.6 m high, which is the wire's height and above the 2.81 m jump; the 2-3 drawn tiers, cage
+  ribs, concertina and sandbags are drawing only. The gate is `military`, `bare` (the base draws its own bastions and drop-arm),
+  with heat .8. **The arm lifts on `gateLets`, the same test as the gate**, so it can never disagree with what blocks you. The
+  watchtower's ladder is a `pearlLadder` on its +v face that sets you down on the deck; the parapet is open there, 1.2 m wide.
+  **The layout was checked as rectangles against the chord, not the vertex radius**: the closest a run comes to the centre is
+  r * cos(22.5 deg) = 17.5 m at r = 19, so everything inside stays within 17.4 m. The cage, the mast and the command tent were
+  each moved once for that. `places` prints a `MILB` row: boxes 56, ring off its flat by 0.00 m, y 4.5, gate yes, ladder yes, 0 BAD.
+  The new flat also clears trees within 50 m, and because the forest's rolls run in grid order, the trees beyond it reshuffle
+  their sizes and turns.
+
 - **m743 (F4-5b): THE SOLDIER FORM (`ROLEFORM.military` = SOLDIER/law, `GATE_TYPES.military`, `soldierToo`).** Sampling a downed
   four-star soldier (whose `d.role` m740 set to 'military') now gives the SOLDIER form, worn as the officer kind with
   `mphRole = 'military'`. `gateLets` lets SOLDIER through a gate whose `need` is SOLDIER, and through any gate type that has
