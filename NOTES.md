@@ -852,6 +852,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m831 (T7c) -- the skate pier itself is his art, as tiles
+`ISKATE.pierG` loads `models/campaign/skate_pier.glb` (`?skpier=0` leaves it out). In `buildIslandSkate`'s pier, `kp()` places
+a node and records it in `kpArt`. Placements:
+- **`kp_deck`** (1.2 m along u, 18 across v) is laid round(L / 1.2) = 35 times from u 63 to 105, scaled to fit exactly. It
+  replaces the deck drawing and the seam planks.
+- **`kp_pile`** is stretched from sea - 4 to y - .45 at each pile.
+- **`kp_rail`** (2 m along his Y, the post at its -Y start) is tiled n = round(l / 2) along each `rail()` run, turned ps.
+  The run's last post stays a code box.
+
+The deck and rail colliders stay. The art goes through `artMerge` into `ISKATE.artDraws`. Shipped unverified.
+
 ### m830 (F5-6b) -- the night at Shadowhide (`ranchNight`, `ranchNightStart`, `ranchNightEnd`, quest `qranch` from Tully)
 **How it starts:** after `talk:fm_ranch_tully`, standing inside the wire starts the night. "Inside" is the player in the
 ranch frame (`RANCH.frame` keeps the frame's C/S): |u| < 15, -15 < v < 13, within 8 m of the flat.
