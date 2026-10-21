@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m772 -- hollis_props.glb: the last of Camp Hollis (T6g)
+
+The firing positions are one 0.8 m bag segment that the code places seven times per horseshoe, already yawed. The rest are single props at the code's spots. With T6d through T6g, every drawn box in `buildMilBase` has art waiting. Shipped unverified.
+
 ## m769 -- hollis_yard.glb: Camp Hollis's trucks, net, mast and cage (T6f)
 
 The camo net is a 15 x 15 grid that sags with distance from the nearest of the code's four poles, with a two-tone patch pattern. The mast's guys run from 12 m out to the code's 6 m radius at its three angles. The beacon sphere stays code because it blinks. The cage's chain-link is double-sided ribbons, as on the factory fence. Shipped unverified.
