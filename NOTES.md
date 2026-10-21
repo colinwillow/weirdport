@@ -888,6 +888,22 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m854 (T7l) -- the mill shed, its loft, the lumber stacks and the stump are his art
+`HCMILL.shedG` loads `models/campaign/mill_shed.glb` (`?mshed=0` leaves it out). Its loader sits before `buildMill()`.
+In `buildMill`, `msSnap` / `msPut` cut each block's drawing back to a snapshot taken at its start:
+- **`hm_shed`** at the frame origin cuts the walls, the roof slopes and the gables. Measured: his shed spans Blender Y
+  -15.1..-0.9, which is SHED v -15..-1. The m499 ribs, streaks, plinth and the sign's board are cut too, once the shed stood.
+  The canvas sign stays.
+- **`hm_loft`** at the origin cuts the upper floor, its rails and the 14 steps. Their colliders stay.
+- **`hm_lumber5`** at (13, 5) and **`hm_lumber4`** at (17.5, 9.5), one per stack.
+- **`hm_stump`** at (10.5, 12) cuts the offcut heap and the stump together.
+- **The drifts** are `ml_dust` from mill_floor.glb, scaled by r.
+
+**Not fixed:** the right wall's collider still has the .5 m gap at v -10.5..-10 that Colin pointed out. The art closes it
+visually.
+
+Shipped unverified.
+
 ### m852 (T7k) -- the freight halts' platforms, legs and wildflowers, and the flat car's logs, are his art
 `HCTRAIN.fqG` loads `models/campaign/freight_bits.glb` (`?fbits2=0` leaves it out). Its loader sits before `buildFreight()`.
 Placements:
