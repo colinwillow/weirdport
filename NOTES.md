@@ -784,6 +784,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m787 (T6k): MERLE'S CONTAINER AND ITS INSIDE ARE HIS ART (`bunker.glb`, `BUNKER.bkG`, `?bunker=0`).** `bk_box` + `bk_inside` sit
+  at the frame's origin, and the container block's drawing is cut back to a snapshot except `dirt`, because his brief keeps the
+  dirt mounds as code. Every `box` collider stays. **The code's dials go with the rest**, so `bunkerStep`'s pulse now drives a
+  material nothing draws: his dials are lit but static. `places` 0 BAD.
+
 - **m786 (T6j): SAUCER JOE'S REPLICA AND ITS YARD ARE HIS ART (`diner_saucer.glb`, `DINER.dsuG`, `?dsaucer=0`).** `ds_yard` goes
   on the ground with the yard's drawing cut back to a snapshot (m779's way); the fence and plinth colliders stay. **`ds_saucer` is
   a clone added INSIDE `O.saucer`** at identity with scale.z = -1 (campPlace's mirror), so it tilts, bobs, spins and flies with
