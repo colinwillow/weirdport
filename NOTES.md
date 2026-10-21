@@ -736,6 +736,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m758 (T5z): THE CONTROL ROOM'S CONSOLES AND LEVER ARE HIS ART (`control_room.glb`, `WFRONT.fcG`, `?fctrl=0`, `fcPut`).** Each of
+  the three `fc_console`s is turned by the code's ry, and the `dark` colliders stay. `fc_lever` goes at (-104.6, 112.5) and is
+  static; `L.leverAt` is unchanged. **His FC_screen material is replaced by ONE cloned, `noBatch` material (`W.fcScreen`)**, and
+  `wfLineStep` turns it red alongside `W.MAT.screen` when the line goes off. Without that, his mimic panels would stay green while
+  every other screen in the factory reads STOPPED. If the GLB fails, the old boxes, cylinder and sphere draw.
+
 - **m757 (T5y): THE FACTORY'S STATIONS ARE HIS ART (`factory_stations.glb`, `WFRONT.fstG`, `?fstat=0`, `fsPut`).** `arch()` places
   two `fa_post` (scale.y = h) at u +- 1.7 and `fa_head` at y + h, then returns before its four boxes. In the strip-down cage, the
   four steel posts keep their colliders and lose their drawing (the last four `steel` parts), and `fa_cage` goes at (-87, 86). The
