@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m822 -- foot_dress.glb: the footbridge's foot on the beach (T6z)
+
+m490 made the foot a place: a flagstone path, a works hut, a CLOSED board, a lifebuoy, a tideline and a bench. Each now has a piece at the code's spot and yaw. The board's face is one white material, so the code's red-while-closed / white-once-fixed switch becomes a tint, as with every other `_paint` piece. Shipped unverified.
+
 ## m820 -- footbridge.glb: the footbridge's span (T6y)
 
 The footbridge's dock end was already dressed (pearl_dock, the bollards), but its span was still chords, posts and rotated BoxGeometry diagonals. The art is the code's own 2 m panel as a tile, both trusses and the deck together. Each `deck()` run gets n = round(L / 2) of them, which is exactly the code's panel count, so the posts land where the code's do. Shipped unverified.
