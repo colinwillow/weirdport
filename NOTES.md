@@ -832,6 +832,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m819 (T6x) -- two shore leftovers are his art: the islands' cliff-ladder pads and the ferry's far stair
+`OFERRY.shG` loads `models/campaign/shore_steps.glb` (`?shore=0` leaves it out). It loads before `buildFerry` and
+`buildIslands`, which both read it.
+- **`is_footpad`** goes at every island ladder's foot pad, top on y0 + .05, turned psi. The `wood` drawing is popped.
+- **`fp_tread`** goes at each of the stair's 14 treads off pier 1's tip, on the tread top, turned ps. The `plank` drawing is
+  popped.
+- **`fp_post`** is two per tread, ±1.1 across (local X under rotation.y ps maps to (cos ps, -sin ps) in u, v), stretched
+  from the pontoon to .3 under the tread. A post is skipped where that is under .05 m.
+
+The treads and posts join the landing's `flArt`, which is merged after commit. Every collider stays. Shipped unverified.
+
 ### m818 (T6w) -- the island gap ramp and its landing are his art
 `IBASE.gapG` loads `models/campaign/gap_ramp.glb` (`?gapramp=0` leaves it out). In `buildIslandBase`'s gap ramp:
 - **`grSeg` puts one `gr_seg` on each fitted segment** of `pts` (the in-run and kicker) and of `lp` (the landing, X scaled by
