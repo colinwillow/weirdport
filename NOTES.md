@@ -796,6 +796,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m793 (F5-4a): MOTHMAN (`MOTH`, `mothStep`, `mothAt`, `mothSite`, dormant quest `qmoth`).** He perches on the bridge's lamp
+  arm half-way along it (`HCROAD.frame`: v on the lamp pitch, 24k + 12, u = hw - .9, the deck's `yv(v)` + 6.1). His states are
+  perch -> fly (a smoothstep arc, `flyY` up at mid-flight, `flyV` m/s) -> omen (over the pod, the fuse running) -> rest
+  (hidden for `rest` s). The pod is defused by standing within `r` for `hold` s; otherwise `fireStart` + `dhPushAt` -3. Being within
+  70 m sets `qon:qmoth`; take-off sets `moth:follow`; a save sets `moth:saved`. **The fire cannot be put out by the player**
+  (`fireDouse` has no caller but `mel.douse`). `places` 0 BAD; `play` ch0 and ch1 (run alone) pass.
+
 - **m790 (T6m): THE UNDERNEATH'S TUNNELS AND ROOMS ARE HIS TILES (`underneath.glb`, `UNDER.unG`, `?under=0`, `unPut`, `unSnap` /
   `unCut`).** `run()` snapshots `F.parts` at its start; at its end it cuts back and tiles n = round(L) pieces, each scaled st in z
   (z carries the mirror). Each piece is `un_tunnel`, or `un_tunnel_open` where either wall has a gap, plus one `un_wall` (scale.x

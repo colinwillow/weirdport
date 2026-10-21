@@ -1155,6 +1155,9 @@ differ" table there, so no region feels like the last one.
   - [x] m783 **F5-3** the Majestic Dozen. Split:
     - [x] m778 **F5-3a** their twelve dossiers, one on each of twelve places across the map, each a card of what they have done; the first switches the quest on.
     - [x] m783 **F5-3b** the boardroom at the top of Dump Tower, opened by all twelve (`mj:all`): the eleven chairs, the twelfth that is not a man, and what it says.
+  - [ ] **F5-4** Mothman. Split:
+    - [x] m793 **F5-4a** the thing on the Hollow Creek bridge: walk up and it flies off to a place in Old Town and hangs over a glowing pod; stand on the pod before the fuse runs out or the place goes up in flames. It is back on the bridge four minutes later for the next one.
+    - [ ] **F5-4b** warnings on your map: once you have saved one, every omen shows on the map (a moth over the place) from the moment he leaves the bridge, and the next site is marked while he waits.
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
   author; the turf's building swap in every region, not only Old Town.
@@ -2196,3 +2199,8 @@ differ" table there, so no region feels like the last one.
   model. Measured offline before the build: the lizard has every clip zap has except `CINEMA_4D_Main` (dropped anyway). Zap's
   clips animate 17 bones the lizard has not got (finger tips 1-4, toe ends, head top). Those only matter for zap's clips on the
   lizard; the lizard's own tracks should all bind.
+- **m793 (F5-4a): the "disaster" is a glowing pod Mothman hangs over, and the cost of being late is a building fire** (`fireStart`)
+  plus a dent in that district's health. The game has no way for the player to put a fire OUT yet: `fireDouse` exists but nothing
+  wires it to the firefighter. So the save is getting there in time and standing on the pod, not fighting the fire. His
+  sites are five of Old Town's GOD places in turn: the square, the Hothouse, Mags's newsstand, the foot of the lookout and the
+  radio payphone. The 75 s fuse starts when he takes off.
