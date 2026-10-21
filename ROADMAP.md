@@ -1044,7 +1044,7 @@ differ" table there, so no region feels like the last one.
 
 ## Phase F — what the docs call for that isn't built yet (after E; Colin has not seen m305-m415)
 
-- [ ] **F0 The phone pass and the whole-game check.** Before anything new:
+- [x] m487 **F0 The phone pass and the whole-game check.** Before anything new:
   - [x] m428 **F0a Measure every world** as it is now: draw calls, triangles, resident texture memory and
     boot time per world, printed in the chip and in NOTES. Set a budget per world for a phone (draw
     calls in the low hundreds, textures KTX2, nothing resident that isn't on screen) and cut the worst
@@ -1113,7 +1113,7 @@ differ" table there, so no region feels like the last one.
   - [x] m509 **F1-RT1** the routes 1 -- the freight trestle (a bare line over the water): signal masts with lit lamps every 45 m, mileposts every 30, and halfway over a railed refuge off the side with a tool chest, cable, a fisherman's bucket and rod, gulls on the rail (GOD place `frrefuge`).
   - [x] m510 **F1-RT2** the routes 2 -- the swing bridge (a grey road): dashed lane lines and painted walking strips on both fixed spans, drain grates, a BRIDGE SWINGS / WAIT AT RED board facing each swing gap, and Walt's fishing pitch at the island end -- rods over the rail, a bucket, a stool, a cool box -- with a lifebuoy.
   - [x] m511 **F1-RT3** the routes 3 -- the road bridge into Hollow Creek (a clean grey deck): potholes, gutter litter, a broken-down car with its hood up, green distance signs each end; at the gang's end two parked bikes, a tyre stack, a cooler and cans, pennants down both rails, spray tags.
-- [ ] **F2 The regions still missing from `REGIONS.md`**, each as land → places → people → the ways in
+- [x] m702 **F2 The regions still missing from `REGIONS.md`**, each as land → places → people → the ways in
   (several, per the connective-tissue rules) → its quests and boss. Read the entry first.
   - [x] m526 **F2a The Underneath** (3): the tunnels under Old Town, the Pearl and the Waterfront, surfacing in
     cellars and drains; the hobo's and the miner's region; the safe-house portals.
@@ -1231,6 +1231,12 @@ differ" table there, so no region feels like the last one.
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
   author; the turf's building swap in every region, not only Old Town.
+  Split:
+  - [x] m874 **F6a** the bus stop: a shelter on an Old Town street with five places to wait (three standing, two on the bench), and a bus that comes along every half minute or so, stops, takes whoever is waiting and lets one to three off.
+  - [ ] **F6b** queuing: a line at the food carts and the GOOD kiosks -- people join the back, shuffle forward as the front is served, and leave with something in hand.
+  - [ ] **F6c** sitting: benches along Old Town's streets and the Pearl's plaza as SMART seats, so people stop, sit a while and get up again.
+  - [ ] **F6d** shopping: shop doors as spots -- people go in (out of sight a while) and come out again, a few with a bag.
+  - [ ] **F6e** the turf's building swap in every region, not only Old Town.
 
 ## Ongoing (fill gaps between items, never instead of them)
 
@@ -2312,3 +2318,4 @@ differ" table there, so no region feels like the last one.
 - **m871 (F5-12c):** the gate lets a SOLDIER or an ENGINEER through (the contractor is Uplift's engineer). The construction worker does NOT count: you have it from chapter 1, and Area 15 is meant to be late. Anyone else is stopped at the boom with a warning and 1.6 heat each time they push, so four stars and soldiers come fast. The boom lifts for whoever it lets through. The fence's gaps at the buttes are still a way in for a climber. Three guards (Pike, Vance and Ruiz) have lines.
 - **m872 (F5-12d):** S-4 is a room 30 m down under the big butte (the butte is solid ground and can't be hollowed), reached by walking up to the blast doors once you are through the gate, or while in uniform. It is ONE OR THE OTHER: taking the 115 gives a full tank and seals the cell; pulling the release frees the Grey and seals the case. Both set off the alarm (+5 heat). The Grey is a figure built from shapes that follows you, not a body (there is no Grey body kind). Dr. Halvorsen is fictional, a stand-in on the engineer's role.
 - **m873 (F5-12e):** the Tuesday truck is Camp Hollis's plate-less truck. Its tailgate takes a SOLDIER (Dyer turns anyone else away). There is no road over the water, so the forty miles are a fade to black: you are set down beside its twin just inside Area 15's gate, counted as through it. The twin's tailgate takes you back to the motor pool, whatever you're wearing. It runs every day, not only Tuesdays. GOD `a15truck`.
+- **m874 (F6a):** the kit city has no road graph, so the bus's street is SEARCHED at load: the first straight, clear 80 m run near the middle (places found one along z through (1.5, 6.8)). The bus drives only that run, there and back, appearing and vanishing at its ends. Only nameless people use the stop, and boarding takes them away for good; the passengers who get off are new townsfolk, so the street keeps its numbers. The bus is solid but does not run anyone over. Missing clips (`wait_bus`, `check_phone`, `sit_bench`) show in the chip's SM list.

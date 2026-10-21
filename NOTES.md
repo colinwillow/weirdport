@@ -892,6 +892,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE BUS STOP (m874, F6a, `OTBUS`, `busLine`, `buildBus`, `busStep`, `busStop`, GOD `otbus`).** F6 split a..e. `busLine` searches
+  rings round the island rect's middle for an axis-aligned 80 m run where `kitStand` <= .5 and nothing is overhead at three lateral
+  samples, plus a clear sidewalk spot 3.6 m to one side for the shelter (places: `street at 1.5,6.8 along z y 0.13 | spots 5`). The
+  shelter is a farmFrame (`'bus'` tag); `a` is the sign of the frame's +u AWAY from the street. Five SMART spots with the new `who:
+  'anon'` (no `markId`, no `qTag`) -- the bus REMOVES riders (`bodyGone`), so a named walker or a quest body must never queue there.
+  The bus is a group plus one `BDYN` box (farmFrame's cs = cos h, sn = -sin h convention; `_off` while away). **The model's local +x is
+  -n when it heads +u**, so the door's x flips with `dir`. Alighting: 1-3 `bodySpawn`s of loaded `CIVILS`, sent 12-26 m along the
+  sidewalk. **placecheck has TWO lists a new city GOD id must join**: `CITYP` (IN THE CITY) and `offLand` (OFF THE FARMLAND).
+  places `ok otbus`, 0 BAD; play ch1 20 steps.
+
 - **THE TUESDAY TRUCK (m873, F5-12e, `TRUCK15`, `truck15Step`, `truck15At`, `truck15Home`, `A15B.truckBack/truckIn`, GOD `a15truck`).**
   The boarding spot is computed from `MILB.frame` with farmFrame's own formula (x = cx + u C + v S, z = cz - u S + v C) at 3.4 m
   behind the plate-less truck (`truck(-6.5, 8, -.2, 0)` in `buildMilBase`) -- if that truck moves, move `truck15At`. A black div
