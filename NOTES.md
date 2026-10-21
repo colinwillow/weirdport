@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m816 -- shore_steps.glb: the cliff ladder pads and the ferry stair's treads (T6x)
+
+A fresh scan of the builders shows the campaign is now mostly art. Of what is left: `buildSite` and `buildFarm` are his kits already (the count is high because their boxes stay as colliders), `buildBridge` is the m291 river and is skipped whenever the channel bridge is live, and `buildNeighbours` was checked before. This pass takes two small pieces that were still plain boxes. Shipped unverified.
+
 ## m814 -- gap_ramp.glb: the island gap ramp (T6w)
 
 The in-run, the kicker arc and the landing are all point lists the code fits so a board clears the ground (m484). The art is one segment, given each pair's length and pitch, so the curve stays the code's and the walk quads stay the surface. The landing reuses the segment, widened. The site builder (`buildSite`) turned out to be his `site_kit` already, so it was skipped. Shipped unverified.
