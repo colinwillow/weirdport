@@ -15,7 +15,7 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
-- [ ] **STEER, FROM COLIN (Oct 20, 19:55) -- DO THIS NEXT, AHEAD OF EVERYTHING ELSE: A CHARACTER SELECT, ZAP OR THE ALIEN LIZARD.**
+- [x] m785 **STEER, FROM COLIN (Oct 20, 19:55) -- DO THIS NEXT, AHEAD OF EVERYTHING ELSE: A CHARACTER SELECT, ZAP OR THE ALIEN LIZARD.**
   *"I just created a new hero character... a bit of an automated process using Claude through the Blender MCP and scripting... I want
   to see if this workflow worked... I want to now have a character selection screen where you could choose the original character zap
   or the new hero character."* **It is a test of his pipeline: what he wants to see is whether every animation came across.**
@@ -2149,3 +2149,11 @@ differ" table there, so no region feels like the last one.
   Skinsuit, which talks to any form (it knows what you are), and talking to it finishes the quest. I did not use
   `models/alien_lizard.glb`: it is not wired anywhere yet, and its rig and clips are unmeasured. It is the obvious thing to put in
   that chair once it is.
+- **m785 (STEER, hero select): the pick lives on the START SCREEN** (a HERO row at the top: ZAP / ALIEN LIZARD), is saved in
+  localStorage, and `?hero=lizard` / `?hero=zap` overrides it for a link. The world key reopens the start screen, so that is how
+  you switch on the phone. The lizard file stays where you put it (`models/alien_lizard.glb`) and loads as-is: not draco, no KTX2
+  twin, and `doubleSided` left on for the test. The chip reads `HERO <pick> <bound>/<asked>`, then `NO <names>` for any clip the
+  game asks for by name that did not bind, then `TRK<n>/<total> unbound` for any of the file's tracks whose bone is not in the
+  model. Measured offline before the build: the lizard has every clip zap has except `CINEMA_4D_Main` (dropped anyway). Zap's
+  clips animate 17 bones the lizard has not got (finger tips 1-4, toe ends, head top). Those only matter for zap's clips on the
+  lizard; the lizard's own tracks should all bind.

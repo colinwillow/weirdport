@@ -784,6 +784,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m785 (STEER): THE HERO SELECT (`HERO`, `HERO.stat`, the start screen's HERO row, `?hero=`).** `RIG.file` is set at module scope
+  right after `RIG` (from `?hero=`, then `localStorage` `mel.hero`, then zap), and again when the start screen's card is tapped.
+  That works because the start screen runs BEFORE `init`, so nothing has loaded yet. The chip's `HERO` token counts every unique
+  string in `CLIPS` that has an action in `rig.actions` after `deriveClips` (so derived poses count, as they would on zap), lists
+  the misses by name, and counts tracks in `g.animations` whose node is not in the model. **Nothing else about the hero changed**:
+  scale and facing are measured at load, weapons mount by name. If the lizard's mounts or bones are off, `npm run rig` is the tool,
+  and he decides.
+
 - **m783 (F5-3b): THE DOZEN'S ROOM (`DTOWER.dz`, `dozenStep`, mark `dt_twelfth`; `qmajestic` gains a talk step).** It is on floor
   8 at u 5..10, v -9.8..-2.6, walled with `panel`. **The hidden door is a collider box built by hand, outside the frame** (the
   frame's oriented-box maths copied), pushed into `BOXES` after `F.commit()`. That way `dozenStep` can open it by moving its `miny` to
