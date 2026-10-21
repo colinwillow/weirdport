@@ -130,6 +130,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `diner_saucer.glb` | `ds_saucer` (rides under O.saucer), `ds_yard` (plinth, fence ring) | buildDiner -- the replica saucer and its yard |
 | `bunker.glb` | `bk_box` (the half-buried container), `bk_inside` (string wall, cot, radio, cans, bulb) | buildBunker -- Merle's bunker |
 | `bunker_camp.glb` | `bk_lookout`, `bk_mast`, `bk_solar`, `bk_barrels`, `bk_garden`, `bk_firepit` | buildBunker -- Merle's lookout, foil mast, panels, barrels, garden, fire |
+| `underneath.glb` | `un_tunnel` / `un_tunnel_open` (1 m tile), `un_wall` (1 m, scale Z), `un_lamp`, `un_prop`, `un_growth` (scatter) | buildUnderneath -- the tunnels and rooms |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m789 -- underneath.glb: the Underneath's tunnel tiles (T6m)
+
+The tunnels are built by `run()` and `room()` at whatever length the plan asks, so this is a kit of one-metre tiles, not a map. The first preview baked a growth patch and a damp streak into every tile. Down a straight tunnel that read as a row of lit windows, a stripe per metre. Both came out: the growth is its own piece, to scatter. Anything in a tile repeats, so a tile should carry only what is really periodic (courses, joints, the pipe). Shipped unverified.
+
 ## m784 -- bunker_camp.glb: the rest of Merle's camp (T6l)
 
 Six pieces at the code's spots. One thing caught on review: the mast's guys first ran to (cos a, -sin a). The code puts them at v = sin a * 3.5, and Blender +Y is +v, so it is +sin. Handedness again; check every angle written into a piece against the code's own u / v. Shipped unverified.
