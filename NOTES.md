@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m725 -- halt_stairs.glb: the halts' platform stairs and the yard fence (T5o)
+
+The stair's step count depends on the ground (`gnd` per step, up to 40), so it can't be one baked flight. The art is one step and one leg pair per step: the step at the code's .28 / .45, the legs stretched down to each block's own foot. The fence is one bay at the code's spacing (a post every 3.6 m, rails .85 and .45). Shipped unverified.
+
 ## m722 -- dock_stair.glb: the stair down into the dry dock (T5n)
 
 Sixteen `quay` blocks, a `steel` slab and two `yel` bars. The rise was not typed: Y - floor is 4.95, read back from the m683 stair tower (deck - Y = 6.25, deck = floor + 2.2 + 9), so each riser is .309. In the preview part of the landing renders black. That is the stand-in quay's top being coplanar with it, not the model. Shipped unverified.
