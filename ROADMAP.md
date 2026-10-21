@@ -1034,7 +1034,7 @@ differ" table there, so no region feels like the last one.
   - [x] m705 **F3-1** the projector orb: a hologram police roadblock across Dump Tower's plaza approach, solid until its orb is shot down (it tears into static and goes). GOD `projector`.
   - [x] m708 **F3-2** the poltergeist orb: one Old Town building haunted -- lights flicker, a door slams, furniture is thrown out of its windows at you; shoot the orb and it stops. Animals react first (a dog barks).
   - [x] m711 **F3-3** the relay orb: links the others into the grid -- while it stands they take half damage and re-light if downed; shoot it and every orb it fed drops a hit.
-  - [ ] **F3-4** the EM tell: near any live orb or alien activity streetlights flicker, cars stall in the road, radios hiss.
+  - [x] m717 **F3-4** the EM tell: near any live orb or alien activity streetlights flicker, cars stall in the road, radios hiss.
   - [ ] **F3-5** the Hum: an ambient drone whose loudness follows how much of the grid stands where you are; a freed district goes quiet.
   - [ ] **F3-6** black triangles patrol at night and drop orbs; tic-tacs chase you when you are gliding or flying.
   - [ ] **F3-7** missing time (captured: white-out, wake somewhere else minutes later, juice drained) and a zero-health state, switchable.
@@ -2004,3 +2004,7 @@ differ" table there, so no region feels like the last one.
 - **m711 (F3-3), the relay:** "they take half damage" became "every other hit on them does nothing" (they spark blue: THE RELAY
   FEEDS IT). "They re-light if downed" is NOT built: a downed orb is saved as down, and bringing it back would undo progress you
   have made. Shooting the relay down takes one hit off every orb still up (never their last hit).
+- **m717 (F3-4), the EM tell:** the flicker acts on his own lit materials (any emissive material named lit/lamp/neon/light/glow/bulb),
+  across the whole scene at once, while you are near an orb. No point light is added: m158 rules streetlights out as lights. Cars
+  stall wherever there are cars: the farm's vehicles, and the Weirdport slice's traffic if it reads `emSlow` later. Old Town itself
+  has no moving traffic to stall. The radio hiss is static in the air. The radio show's own voice is not touched.

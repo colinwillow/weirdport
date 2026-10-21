@@ -680,6 +680,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m717 (F3-4): THE EM TELL** (`EMTELL`, `emAt`, `emSlow`, `emStep`). `emAt` = 1 - d / R (R 45, height counted at half) to the nearest
+  `AIRT` target that is `on` (every orb), or .45 x the Hothouse twilight. `emStep` damps it to `EMTELL.k`. Above .05 it stutters
+  every emissive material whose NAME says it is a light (collected once, base intensities kept, restored when it falls away), and
+  above .25 it plays short irregular `zap` static. `emSlow` is folded into the farm vehicles' wanted speed (`vehStep`); it is
+  exported for any traffic that wants it. **One writer**: nothing else writes those kit materials' `emissiveIntensity`; if a later
+  system does, it must go through `EMTELL`'s base values.
+
 - **m716 (T5l): EVERY `pearlSpan` IS HIS DECK, RAILS, ROPES AND POSTS** (`pearl_span.glb`, `PSK`, `psPut`, `psBuild`, `?pspan=0`). With the
   file in, `pearlSpan` pushes world matrices: yaw `F.th + psi + PI` (his +Y along the span, glTF -Z, no mirror), then PITCHED about
   local X by atan2(dy, horizontal) so the sag comes free. Each piece is stretched in glTF Z by the 3D segment length (rope planks by
