@@ -908,6 +908,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE HERO TURNTABLE (m882, STEER 02:28, `heroStage`, `HERO_SUB`, `#start .stage/.pick`).** The sideways scroll was the `.heroes` row:
+  three `.go` buttons, each `width: min(92vw, 420px)`, flexed in one row. Gone, with the icon tile. `heroStage(box, pick)` makes its own
+  `WebGLRenderer` (alpha, dpr <= 2) on a canvas in the stage, lights, a disc; `loadGLB` (the main loader, so the KTX2 twins work -- the
+  KTX2Loader's `detectSupport` already ran at module top) once per hero, cached until `dispose`. Height: raw geometry bounds of the
+  skinned meshes (`bodyProto`'s rule), scaled to 1.72, feet on the disc. Swipe = |dx| > 60 px inside 350 ms; a slower drag spins.
+  `enter()` calls `stage.dispose()` (cancels the frame, unhooks the window listeners, disposes geometries, materials, textures, the
+  renderer and forces a context loss) before the world loads. Headless never builds it (`startGate` skips under `navigator.webdriver`).
+  **m880 was pushed with `<<<<<<< ours` markers in ROADMAP.md** -- grep for them after any pull.
+
 - **THE SPLASH (m879, STEER 02:22, `#splash`, the inline script after `#build`).** z-index 40 over `#start` (30) and the boot card (20).
   Static markup + a classic inline script (not the module) so it paints at once; its img URL is `?b=<the build>` read off `#buildN`
   (the bump keeps that current; `A()` is in the module and not yet defined). `cover` below a 3:4 aspect, `contain` over a blurred copy
