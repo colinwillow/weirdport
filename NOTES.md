@@ -892,6 +892,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE IMPLANT AND CLANCY'S NOSE (m865, F5-10c, `HILLS.implant`, `clancy:sniff`, `mapMarks`).** A `MeshBasicMaterial` bead on the
+  clearing's slab, its own mesh (the clearing is not batched either, m864); within 1.6 m after `hills:clear` it sets `hills:implant`, a
+  new `qhills` step before "Tell Betty". `hillsNight`'s early-out moved from `hills:clear` to `hills:implant` so the pickup still runs.
+  `qhills.onDone` sets `clancy:sniff`; `mapMarks` then rings every Skinsuit (`d.role === 'skinsuit'` or an `alien_warrior` body -- the
+  `arrestOk` test, not down, not gone) within `HILLS.sniffR` 120 m of Clancy's body (`d.K === CLANCY`), or of him if Clancy is not out.
+  **`play ch1` ran 526 s this time** (a long incursion) -- a 450 s timeout killed the first run mid-step with "Target page ... closed",
+  which is the timeout, not a failure. Give it 590. play ch1: 4/4 quests, 22 steps.
+
 - **THE HILLS' NIGHT, RETRACED (m864, F5-10b, `HILLS.STOPS`, `hillsNight`, `hillsNext`, quest `qhills`, GOD `hchclear`).** Starts at
   `talk:hc_hills_betty`; three highway stops in order (`hills:light`, `hills:stop`, `hills:blank`), then `hills:clear` in the clearing
   (`HCREEK.FLATS[9]`, (-49, -44), r 9). **A farmFrame you mean to HIDE must come out of `FBATCH.frames`** -- `farmBatch` takes every
