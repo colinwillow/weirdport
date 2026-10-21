@@ -700,6 +700,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m733 (F4-2): THE COP'S ARREST** (`ARREST`, `copOn`, `arrestOk`, `arrestTake`). Folded into `sampleStep`'s own hold: wearing the
+  officer (`dummy_officer`, settled), a downed Skinsuit (`role === 'skinsuit'` or the alien_warrior stem the roster stands Skinsuits
+  in with -- which `sampOk` refuses as alien) is a target. The pad reads "hold = arrest" (`samp.lit` 2), the ring fills over
+  `ARREST.hold` 1.4 s, and the lie-clock clamp keeps him down while you hold. Taken: a blue burst, a lock clank, `turfPush(skin,
+  -.08)` where he lay, `bodyGone`, and `SAVE.flags.arrests`++.
+
 - **m732 (T5q): THE FACTORY GATEHOUSE AND BARRIER ARE HIS** (`gatehouse.glb`, `WFRONT.ghG`, `?ghouse=0`). `gh_hut` at (gm + 6, lv0 - 4)
   and `gh_barrier` at (gm, lv0 - 4) on Y, mirrored. The hut's white box and the barrier post's dark box stay colliders (draws
   popped); the roof, the glass, the red arm and the four stripes are not drawn. The barrier art is built for a 7 m gate
