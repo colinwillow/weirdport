@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m881 -- STEER: the main game dies on his phone at m875 (art window)
+
+Colin's screenshot shows the FRAME error card at m875: `shaderSource@[native code]`, under three's `acquireProgram`, under `frameBody`'s `renderer.render`. In WebKit, shaderSource throws only on a null shader, which `createShader` returns when the context is lost, so this reads as iOS dropping the WebGL context for GPU memory on the first frame. The STEER at the top of ROADMAP asks for three things: survive a lost context (`CTXLOST` in the chip); put programs, geometries, textures and MB in the chip; and stop building or uploading far regions until he goes toward them. The art window's dressing loop is paused so it does not add to the load. No index.html change was made here.
+
 ## m880 -- STEER: the hero picker becomes a 3D turntable (art window)
 
 Colin, 02:28: with three heroes the picker row is wider than the phone and the start screen scrolls sideways. The STEER at the top of ROADMAP replaces the row with one 3D stage. It shows the selected hero's real GLB playing its idle and turning, with arrows and swipe to switch. The models are framed by their measured height, because zap's armature is 0.01 while the lizard and the grey are in metres. The stage is disposed before the world loads. No index.html change was made here.

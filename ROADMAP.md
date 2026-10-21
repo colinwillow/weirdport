@@ -14,6 +14,15 @@ between them. Design context lives in `GAME_DESIGN.md`.
 ## STEER
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
+- [ ] **STEER (Colin, 02:30) -- FIRST, BEFORE ANYTHING ELSE: THE MAIN GAME DIES ON HIS PHONE AT BUILD m875.** *"Tried to play the main game."* His screenshot is the FRAME error card: `FRAME m875`, then `shaderSource@[native code]` <- three's `gi` / `Oi` / `acquireProgram` <- `$e` ... <- `frameBody` (the `renderer.render(scene, camera)` at the end of frameBody) <- `frame`. The boot card is behind it, so the game never got a frame up.
+  - **What that stack means:** WebKit's `gl.shaderSource` throws a TypeError only when it is handed a null shader, and `createShader` returns null when **the WebGL context is lost**. iOS Safari drops the context when the page runs out of GPU memory. So this is almost certainly not a shader bug: it is **the GPU running out of memory on the first render**, after the recent builds kept adding world. Area 15's land and base (m869-m873), the Grey ship and the Hills (m862-m868), the queues and the bus (m874-m875) and the campaign art all compile and upload on that first frame.
+  - **Do these, in order, as one build:**
+    1. **Survive a lost context instead of dying.** Listen for `webglcontextlost` on the canvas and `preventDefault()` it. Skip `renderer.render` while `renderer.getContext().isContextLost()`. Put `CTXLOST` and the count in the chip so he can see it, and on `webglcontextrestored` let three rebuild. A frame that throws inside render must never kill the loop.
+    2. **Measure it and put the number in the chip** (CLAUDE.md: put the number that tells the cases apart in the chip): `renderer.info.programs.length`, `renderer.info.memory.geometries` and `renderer.info.memory.textures` after the first render, plus an estimate of the resident texture MB. That tells "too many programs" apart from "too much texture" from the phone.
+    3. **Cut what the first frame has to hold:** do not build or upload regions he is nowhere near (Area 15, the Grey ship, far islands) until he travels toward them, or at least keep them `visible = false` until then so their programs and textures are not compiled and uploaded up front. Share materials wherever two are identical (every unique material/define set is another program). Use `renderer.compile` per region only when it is reached.
+  - **Then check the regression bisect:** if m874 runs and m875 does not, the queues' per-person meshes/materials are the straw; say which in the NOTES entry.
+  - The art window has PAUSED its dressing loop until this is fixed, so nothing new is added to the load meanwhile.
+
 <<<<<<< ours
 - [x] m879 **STEER (Colin, 02:22): A SPLASH / TAP-TO-START SCREEN, his art: `images/splash_zap_n_clancy.webp`.** It is 941 x 1672 (portrait, about 9:16), 412 KB, and already in `images/`, which is in `DIRS`, so it is hashed: load it through `A()`. He made it; it is the first thing the game shows.
 =======
