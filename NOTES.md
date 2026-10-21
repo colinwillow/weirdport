@@ -892,6 +892,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **COOPER'S DROP ZONE (m859, F5-9a, `COOPER`, `buildCooper`, `cooperStep`, GOD `hccooper`).** F5-9 split into a (the place), b (the
+  money trail, `cooper:taken`) and c (the money and the parachute). The site is `HCREEK.FLATS[6]` (22, -76), r 18: probed with temporary
+  `hcBase` rings in placecheck (relief 1.9 m over 22 m, 90 m from the shore, 76 m from the nearest flat). **The first pick, (-5, -122) by
+  the gorge's mouth, is INSIDE the freight line's corridor** (`rail`: |a| < 10 and b < -B + inland + 14) -- check that corridor before
+  putting anything near a = 0 on the near shore. Built: a fir snapped at 13 m with its top hanging, the canopy as ten of twelve sphere
+  wedges in two colours over the crown (two torn out), ten cut lines, fabric pooled at the roots, the money sack, seven twenties (one
+  shared emissive material; `cooperStep` glints it and flickers the fire), a 5 x 4 stake grid with string and flags, four dug holes and a
+  sifter, Hal's camp, the wanted poster and the aft-stair placard (`footSign` canvases), stumps and ferns, his truck. 11 colliders.
+  places: `COOPER boxes 11 | off its flat by 0.05 m | y 6.4 | bills 7`, `ok hccooper`, 0 BAD.
+
 ### m858 (T7m) -- the cart pod's deck and the skate pier's light poles are his art
 `OTCARTS.pdG` loads `models/campaign/pod_deck.glb` (`?pdeck=0` leaves it out). The loader sits before
 `buildIslandSkate()`, which runs before `buildCarts()`, so it covers both.
