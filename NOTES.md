@@ -908,6 +908,18 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE LOST CONTEXT (m883, STEER 02:30, `CTX`, `ctxHook`, `ctxRender`, `REGG`, `regGate`, `regGateStep`, `CARRYK`).** His FRAME card at
+  m875 was `shaderSource` <- `acquireProgram` <- the render: WebKit throws there only on a null shader, i.e. a LOST context (iOS, out of
+  GPU memory). Now: `webglcontextlost` is `preventDefault`ed (so it can be restored), `ctxRender` skips the render while lost and
+  swallows a throw that happens on a lost context (counted, `CTXLOST<n>` in the chip; any other throw still raises to the FRAME card).
+  `CTX.info` = programs / geometries / textures / texture MB after the first render (`P G T` in the chip). **Region gates**: the seven
+  far builds since m859 run through `regGate`, which reparents everything they added to `scene` into one group (their own `visible`
+  untouched -- the Hills' clearing and the bus rely on theirs) and drops their frames from `FBATCH.frames` (a batched mesh would ignore
+  the group); the group draws only within `pad` 220 m of the region's bounds. `S4.grey` is kept out (it follows him anywhere).
+  Colliders and bodies are untouched. **m875's queue carries LEAKED** a geometry and a material per served person; now `CARRYK` shares
+  one of each. That leak grows over minutes and cannot be a FIRST-frame crash, so the regions are the likelier straw.
+  play ch1 18 steps in 319 s (faster than m874-m876's 385-611).
+
 - **THE HERO TURNTABLE (m882, STEER 02:28, `heroStage`, `HERO_SUB`, `#start .stage/.pick`).** The sideways scroll was the `.heroes` row:
   three `.go` buttons, each `width: min(92vw, 420px)`, flexed in one row. Gone, with the icon tile. `heroStage(box, pick)` makes its own
   `WebGLRenderer` (alpha, dpr <= 2) on a canvas in the stage, lights, a disc; `loadGLB` (the main loader, so the KTX2 twins work -- the
