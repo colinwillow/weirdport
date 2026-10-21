@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m722 -- dock_stair.glb: the stair down into the dry dock (T5n)
+
+Sixteen `quay` blocks, a `steel` slab and two `yel` bars. The rise was not typed: Y - floor is 4.95, read back from the m683 stair tower (deck - Y = 6.25, deck = floor + 2.2 + 9), so each riser is .309. In the preview part of the landing renders black. That is the stand-in quay's top being coplanar with it, not the model. Shipped unverified.
+
 ## m718 -- caisson.glb: the dry dock's gate (T5m)
 
 The caisson was one `steel` box, two `yel` bars with posts, and `iron` fender slabs. Now it has a dressed deck (seams, hatches, valve wheels, bollards), the rail as one 30 m piece at the code's own post spacing, fender piles, and a stiffened river face. The face and piles are stretched in height, so their rivets were taken out: a stretched sphere is an egg. Shipped unverified.
