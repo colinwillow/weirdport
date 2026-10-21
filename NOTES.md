@@ -892,6 +892,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **AREA 15'S BASE (m870, F5-12b, `A15B`, `buildA15Base`, `a15Step`, GOD `a15gate`).** One `farmFrame` at the land's origin turned
+  `th = atan2(ub)`, so +v is +b but **+u is -a** -- `P(a, b)` gives (u, v), and the local `box(a, b, ...)` passes `-ps` because the
+  mirror flips a turn. The fence: posts every 4 m on an ellipse (ra 90, rb 64), a solid mesh panel between each pair, skipped where
+  `ground > floor + 2.5` (the buttes) and across `GATEW` on the -b side. `A15B.gate.boom` is its own mesh (12c raises it; it has no
+  collider yet). The hangars are open half cylinders: `CylinderGeometry(..., 0, PI)` with **rz PI/2 (lays the half up) then ry PI/2
+  (axis along b)** in `geo`'s (ry, rx, rz). The S-4 portal sits at 0.98 r of `BUTTES[0]` facing the lake; `A15B.doors` holds its
+  frame for 12d; its sign's yaw comes from two `a15World` points, not from frame arithmetic. places: `A15B boxes 143 | fence panels
+  121 | gate y 4.0 | doors yes`, `ok a15`, `ok a15gate`, 0 BAD.
+
 - **AREA 15'S LAND (m869, F5-12a, `A15`, `a15Height`, `a15World`/`a15Local`, `buildA15Land`, GOD `a15`).** F5-12 split a..e (land,
   base, gate, S-4 inside, the truck). A copy of `buildGorgeLand`'s chunk loop (minus the river) on its own height: superellipse coast,
   beach, a floor rising to `floor` 5.5, the dry lake (`a15Lake` < 1) lerped dead level to `lake.y` 4.6, and three buttes (sheer:
