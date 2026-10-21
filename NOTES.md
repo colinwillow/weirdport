@@ -848,6 +848,20 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m828 (T7b) -- the pier skate park's features are his art
+`ISKATE.parkG` loads `models/campaign/skate_park.glb` (`?skpark=0` leaves it out). In `buildIslandSkate`, each feature block
+takes a parts snapshot at its start (`skSnap`). `skPut` places his node where the block builds and cuts the drawing back.
+Placements:
+- **`sk_qp`** at (u0 = 99.5, 24).
+- **`sk_funbox`** at (84, 24).
+- **`sk_kicker`** at (70, 19.5) and (70, 28.5).
+- **`sk_ledge`** at (94.5, 31.4).
+- **`sk_pad`** at (78, 31.6).
+- **`sk_rail`** at (93, 17).
+
+`strip()`'s quads go to TRI, not parts, so the ridden surfaces survive the cut, and so does every collider. The pier deck,
+piles, rails, paint and the m573 hangout stay as they were. Shipped unverified.
+
 ### m826 (T7a) -- the mothership's belly hall and its pod are his art
 `ISHIP.hallG` loads `models/campaign/ship_hall.glb` (`?shall=0` leaves it out).
 - **The hall:** in `buildMothership`, a parts snapshot is taken right after the frame is made. Once the room is drawn (up to
