@@ -153,6 +153,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `town_trailer.glb` | `tv_trailer`, `tv_chair` | buildTownEdge -- the town edge's trailer park (X along the trailer, deck on +Y, origin on the ground at its centre) |
 | `tower_shell.glb` | `dw_mullion`, `dw_bay`, `dw_band`, `dw_corner`, `dw_flight`, `dw_srail`, `dw_vest` | buildDumpTower -- the curtain wall's gold frame, slab edges, the marble stairs and their screens, the vestibules' frames (X = u, +Y = v; glass stays code) |
 | `highway_bits.glb` | `hw_rail`, `hw_lamp`, `hw_pier`, `hw_cap` | buildHighway -- W-beam guardrail (3 m tile), street lamp, pier column (1 m stretch) and hammerhead (X = u, +Y = v; +u side, turn pi for -u) |
+| `ready_room.glb` | `rr_shell`, `rr_inside`, `rr_tank`, `rr_picnic`, `rr_sock`, `rr_pickup` | buildReadyRoom -- Hollow Creek's pilots' bar inside and out (X = u, +Y = v away from the road; room origin at (0, 0) on the flat) |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

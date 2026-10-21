@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m847 -- T7j ready_room.glb: The Ready Room (art window)
+
+A re-run of the drawn-box scan found buildReadyRoom with 18 drawn-only boxes, about 25 geos and no art placement at all. It is now six pieces. The two big ones are `rr_shell` (866 faces) and `rr_inside` (1,396). A fresh `rr_pickup` was built rather than reusing `rp_pickup`, because that one sits on cinder blocks and this one is driven to the bar. The battens are modelled per face, not repeated in a tile, so they never read as a pattern. Shipped unverified.
+
 ## m845 -- T7i highway_bits.glb: the road bridge's rails, lamps, piers (art window)
 
 The gang's end of the bridge was already art: gang_road, the pickup, the barrel, the chairs, the bikes, the trackside litter and the broken-down car. The long run of the bridge was still a pearlSeg rail ribbon, box lamps and box piers. That run is now four small pieces (18-78 faces). The rail is a 3 m tile with half-posts at its ends, so neighbouring tiles share a post. The game pitches it to the arch per piece rather than bending it. The pier is a 1 m stretch piece, so its rustication strip stretches with it; that is fine for a vertical strip. The deck ribbon, the shoulders and the centre line stay code, because they follow the arch. Shipped unverified.
