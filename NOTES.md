@@ -760,6 +760,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m770 (F5-2b): MERLE'S EVIDENCE AND THE GRID (`MERLEV`, `merleEvStep`, `merleOn`, quest `qmerle`, `orbGridMap`, flag `merle:grid`).**
+  The three evidence flags `ev:shard` / `ev:hum` / `ev:tri` only set while `talk:hc_bunker_merle` is set and `qdone:qmerle` is not.
+  **The hum reads `humLevel()`, not `HUM.k`**: `humStep` returns before computing `k` until the AudioContext exists, so on a muted
+  phone `HUM.k` stays 0 forever. `orbGridMap` draws in `mapFull` after `turfMap`.
+  **`npm run play` (all chapters, chained) failed ch2.3** ("into the plaza: inside the march", not passed in 120 s). **`npm run play
+  ch2` passed on its own both at m766 (in a worktree) and with this build.** Earlier full runs never reached ch2, because their
+  590 s timeout cut them off after ch1. So the chained ch2.3 failure predates this build and is not caused by it; it is worth a look
+  in the protest-march code if he sees the march misbehave.
+
 - **m766 (T6c): THE FACTORY'S WALKS ARE HIS ART (`factory_walks.glb`, `WFRONT.fwG`, `?fwalk=0`, `fwPut`).** Every `rail()` (the
   outfeed tower's six included) keeps its 1.05 `yel` collider. With the GLB loaded it is drawn as n = ceil(l / 2) `fw_rail` tiles
   turned `ps` along the run, each scaled w / 2 in z (his Y is 2 m; `scale.z` already carries the mirror's -1, so it is multiplied).

@@ -1077,9 +1077,9 @@ differ" table there, so no region feels like the last one.
     - [x] m750 **F5-1a** Saucer Joe's: the diner (walk in: counter, stools, booths, Joe), its roof up a ladder, the sign tower with a saucer on top, the quonset museum, the lot, and the fenced "replica" saucer that hums for the alien.
     - [x] m756 **F5-1b** the three parts Joe names (a coil, a lens, a silver gyro), one hidden in each of three places across the map, and the quest (`qsaucer`) that tracks them.
     - [x] m761 **F5-1c** the saucer fixed: bring the parts, it lifts off its plinth, and it is yours (a portal back to the diner, and a short hop you can ride).
-  - [ ] **F5-2** the tinfoil-hat bunker. Split:
+  - [x] m770 **F5-2** the tinfoil-hat bunker. Split:
     - [x] m765 **F5-2a** Merle's bunker: a half-buried container in a clearing on Hollow Creek's hill (his wall of string inside, a radio desk, a cot, cans), a lookout on stilts with a telescope, a foil mast, solar panels, a garden, a fire pit, tin cans on strings round it, and Merle in his tinfoil hat.
-    - [ ] **F5-2b** his evidence: bring him three things the orbs leave behind (a shard off a downed orb, a recording of the HUM, a photo of the triangle), and he maps the grid: every orb and the lines between them on your map.
+    - [x] m770 **F5-2b** his evidence: bring him three things the orbs leave behind (a shard off a downed orb, a recording of the HUM, a photo of the triangle), and he maps the grid: every orb and the lines between them on your map.
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
   author; the turf's building swap in every region, not only Old Town.
@@ -2100,3 +2100,7 @@ differ" table there, so no region feels like the last one.
   where the saucer lands. Its back is to the hill, and it is ringed by the pines. Merle is a new roster role, `prepper` (the hobo
   stem, a crumpled foil hat), and he talks to the alien. The container is ON the ground with dirt heaped over it rather than sunk
   into it, because the terrain is a floor the player cannot go below.
+- **m770 (F5-2b): Merle's evidence only counts after he has asked.** The shard lies where the pacifier orb fell. The hum records
+  wherever it is loud, and also under the black triangle, so a city with every orb already down can still finish the quest. The
+  photo needs you within 45 m of the triangle for 1.5 s. The grid goes on the FULL map only (the minimap stays clean): orbs are red
+  while they stand and grey once down, and lines join every pair within 140 m plus every orb to the relay.
