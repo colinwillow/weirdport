@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m744 -- shed_yard.glb: the transit shed's pallets and drums (T5u)
+
+The existing pallet (`ce_pallet`) is leaned on its end and the existing drums (`pp_drums`) come as a pair, so neither fits the shed's one-pallet-per-.15 stacks or its five single drums. These are a flat pallet to stack and one drum with a tintable body, so the code's c1 / c5 colours carry over. The lid is painted with the body, not left dark. Shipped unverified.
+
 ## m741 -- factory_portal.glb: the factory's intake door (T5t)
 
 The code striped the door with alternating yellow and black blocks. The art uses true 45-degree chevrons: each band is a parallelogram clipped to its jamb or lintel. The first version only kept bands that crossed the whole rectangle, which left the 0.5 m jambs plain yellow, so the clip is now Sutherland-Hodgman. The pieces it replaces were all drawing-only, so nothing about collision moves. Shipped unverified.
