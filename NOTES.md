@@ -892,6 +892,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **AREA 15'S GATE (m871, F5-12c, `GATE_TYPES.area15`, `T.also`, `A15B.gate.G`, `A15B.GUARDS`).** A real `gateAdd` gate (id `a15_gate`,
+  so crossing it sets `gate:a15_gate`), `bare` (the base draws its own boom), `heat` 1.6 per refusal. **`gateLets` grew `T.also`**: a
+  list of extra form names, folded with `mphFold` like `need` -- the first gate that takes two faces (SOLDIER, or ENGINEER as the
+  contractor; CONTRUCTION WORKER deliberately not, it is a chapter-1 form). The boom is now a pivot group hinged at the -a post
+  (local +x is +u), lifted by `rotation.z = -1.35 * boomK` in `a15Step` while he is within 10 m and `gateLets` says yes. Three
+  `military` sentries via `peopleMark`, as Camp Hollis does. places: the gate row `a15_gate area15 w8.4 y4.01`, 0 BAD; play ch1 20 steps.
+
 - **AREA 15'S BASE (m870, F5-12b, `A15B`, `buildA15Base`, `a15Step`, GOD `a15gate`).** One `farmFrame` at the land's origin turned
   `th = atan2(ub)`, so +v is +b but **+u is -a** -- `P(a, b)` gives (u, v), and the local `box(a, b, ...)` passes `-ps` because the
   mirror flips a turn. The fence: posts every 4 m on an ellipse (ra 90, rb 64), a solid mesh panel between each pair, skipped where
