@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m712 -- pearl_ladder.glb: one generic ladder for every `pearlLadder` (T5k)
+
+The 21 ladders were two `dark` rails and a stack of `dark` slabs. Now `pl_rail` (stretched in height, so it carries no detail that would smear), `pl_rung` (a round bar with welded ends and tread nicks -- instanced per rung, so the .32 pitch stays the code's), and `pl_cap` (the rails bending over to two wall plates). A rust band on the rail was taken out after the preview: on a stretched piece it smears to a metre. Shipped unverified.
+
 ## m710 -- the MX tape, the road litter and the patched potholes as art (scenery window; ROADMAP T5j)
 
 `models/campaign/trackside.glb`. For the MX track: the spectator tape's stake with its knot at the code's .9, and a 1 m length of

@@ -590,6 +590,7 @@ different context window, let me know."*
   in place of the tape `pearlSeg`. In `buildHighway`'s m511 block: `ts_patch` at each pothole in place of the circle (scale by its r /
   .55, turned by its angle); `ts_litter` at a few of the gutter litter spots in place of their boxes (one clump stands for three or
   four of the code's).
+- [ ] **T5k -- `pearlLadder`'s rails and rungs as art (`models/campaign/pearl_ladder.glb`).** Three roots, X = the code's lateral (cos psi, -sin psi), +Y = out along psi, yawed by psi like the code's `bx`: **`pl_rail`** both rails at +-.25, a 1 m section STRETCHED in height from `y0` to `top + 1.0`; **`pl_rung`** one rung, one instance per code rung at `y0 + .3 + r * .32` (never stretched); **`pl_cap`** the rails bent over to two wall plates, origin at `top + 1.0`. Every caller of `pearlLadder` (21) gets it; the climb volume and colliders stay code. Then drop the code's rail and rung `bx`.
 - [ ] **T2. The campaign detail pass** -- a standing item after T1, one place per build: (a) the bridge roadblock must actually
   block -- barricade + cars tall/solid enough that a jump does not clear it, or make clearing it the intended trick with a reaction;
   (b) the truck's model; (c) the farm's bushes; (d) the crash site; then onward place by place. Rules from the level window's

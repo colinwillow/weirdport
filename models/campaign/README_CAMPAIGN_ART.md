@@ -102,6 +102,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `halt_extras.glb` | the halts' `hx_bench` (slatted bench on iron ends, timetable board), `hx_churns` (two milk churns, two tied mail sacks), `hx_lamp` (lamp post, lantern, bracket, hanging basket) | origins on the deck; built for side +1, X outward | none | 138-372 per piece |
 | `trestle_deck.glb` | the freight trestle: `td_deck` (6 m: beams, ties, plates, rails at gauge 1.5, guard timbers) and `td_bent` (posts at +-1.1, cap, sill, X-braces; 1 m tall, scale Z) | deck origin at rail top on the line; bent origin under the beams | none | 48-204 per piece |
 | `trackside.glb` | `ts_stake` + `ts_tape` (the MX track's spectator tape: stake, and a 1 m tintable tape to stretch), `ts_litter` (can, bottle, cup, box, tread), `ts_patch` (patched pothole, flat) | origins on the ground | none | 8-102 per piece |
+| `pearl_ladder.glb` | `pl_rail` (1 m, stretch in height), `pl_rung` (one per rung), `pl_cap` (grab-over, at top + 1.0) | `pearlLadder` -- every ladder in the campaign |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
