@@ -692,6 +692,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m726 (F3-7): MISSING TIME, AND IT IS THE ZERO-HEALTH STATE** (`MTIME`, `missingStep`, `mel.MTIME`). `playerHurt` sets `MTIME.st =
+  'white'` when hp reaches 0 (campaign map only, `on`). `missingStep`: a fixed white DIV (z 15, under the boot card's 20) fades in
+  over .7 s and holds 1.6 s. Then `godTo` the nearest `WAKE` GOD place (camp / trailers / farmhouse) more than `away` 60 m off,
+  hp full, the wing folded, juice = min(juice, 25% of the cap). It fades out over 1.4 s, then a MISSING TIME card (11-50 minutes)
+  and a Clancy line. **`MISSING` was already a global** (placecheck exports it), so the first name was a redeclaration that
+  `check:syntax` caught; it is `MTIME`. The new orb/craft objects (`OTIC`, `OTRI`, `ORELAY`, `OPOLT`, `OPROJ`, `MCORE`, `EMTELL`, `HUM`)
+  are now on `mel` too. F3 is complete.
+
 - **m724 (F3-6b): THE TIC-TACS** (`OTIC`, `buildTicTacs`, `ticHit`, `ticStep`, flags `seen:tictac` / `tictac:down`). A pool of 2 white
   capsules (`CapsuleGeometry` turned along +Z so `lookAt` points the nose). After `after` 3 s of gliding (`p.wing && !p.grounded`),
   each idle one has a .5/s chance to spawn 140 m off, 30-50 m above you. CHASE: aim at you + .5 s of your velocity + a jink (6 m,

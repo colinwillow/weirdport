@@ -1030,7 +1030,7 @@ differ" table there, so no region feels like the last one.
     - [x] m696 **F2e-3** the workers who keep it running: window cleaners on cradles down the faces, a lift engineer, street sweepers, a doorman per lobby -- people with a beat and lines.
     - [x] m700 **F2e-4** the alien grip: beams from Dump Tower's crown to the towers' roofs, the core dim and its streets fenced while they stand; each region cured (chapter done) cuts one beam and lights a tower back up, the last at Chapter 6.
     - [x] m702 **F2e-5** the horizon agrees: the distant skyline (`SKYLINE`) re-aimed or retired so what you see from the farm is the core you can walk to.
-- [ ] **F3 The rest of the grid and the fail states** (`LORE.md`): the projector, poltergeist and relay
+- [x] m726 **F3 The rest of the grid and the fail states** (`LORE.md`): the projector, poltergeist and relay
   orbs; the EM tell (lights flicker, cars stall, radios hiss near the grid); the Hum; black triangles at
   night and tic-tacs that chase flyers; **missing time** as the capture fail state and something at
   zero health (Colin's open question: propose one, build it switchable).
@@ -1041,7 +1041,7 @@ differ" table there, so no region feels like the last one.
   - [x] m720 **F3-5** the Hum: an ambient drone whose loudness follows how much of the grid stands where you are; a freed district goes quiet.
   - [x] m721 **F3-6a** a black triangle circles Old Town and the core high up and drops seeker orbs that follow you and call the Skinsuits if their light stays on you.
   - [x] m724 **F3-6b** tic-tacs: white capsules that chase you when you are gliding or flying, fast and jinking; shoot one down or land to lose them.
-  - [ ] **F3-7** missing time (captured: white-out, wake somewhere else minutes later, juice drained) and a zero-health state, switchable.
+  - [x] m726 **F3-7** missing time (captured: white-out, wake somewhere else minutes later, juice drained) and a zero-health state, switchable.
 - [ ] **F4 The forms still missing** from the forms table, each with the door it opens: cop (cordons,
   arrest), firefighter (fires, the truck ladder), hobo as stealth (guards ignore him), CEO (Dump Tower),
   scuba diver (the Gorge), cave miner (the Underneath), military (the base at high heat).
@@ -2023,3 +2023,8 @@ differ" table there, so no region feels like the last one.
   the air. GOD's free-fly does not count. A hit is 7 damage and a hard shove; it does not fold your wings. Landing and staying
   down 4 s sends them away. Each one is two hits, and the first one you shoot down sets `tictac:down`: the hook for the tic-tac
   pilot's side quest.
+- **m726 (F3-7), what happens at zero health:** zero health IS being taken, so it plays as missing time. The screen whites out and
+  you wake at the camp, the trailer park or the farmhouse (the nearest of them more than 60 m from where you fell), health full,
+  juice cut to a quarter of the tank, and a card with the minutes you lost. `mel.MTIME.on = 0` restores the old behaviour, where
+  nothing happens and it regenerates. There is no separate tractor-beam capture yet: every way of being taken goes through
+  health.
