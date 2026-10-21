@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m806 -- wf_barge.glb: the barge under crane 1 (T6s)
+
+The cranes are already his. The barge they work over was the last piece of `wfCranes` still drawn as boxes. Same lesson as the crates: the deck plate first rendered black because it shared the hull's top face, and lifting it 2 cm fixed it. Shipped unverified.
+
 ## m802 -- island_exit.glb: the BASE-jump exit point (T6r)
 
 The deck is the code's IBASE numbers: 3 wide and 9 long, 5 m of it over the edge. That puts the edge (dE) at local Y -.5 from the deck's centre, and the braces run from under the end down 4.35 m to land just behind it, as `pearlSeg` does. The way-on steps fit the ground, so they are one step piece placed per step. Shipped unverified.
