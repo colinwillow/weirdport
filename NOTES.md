@@ -772,6 +772,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m779 (T6h): SAUCER JOE'S DINER IS HIS ART (`diner.glb`, `DINER.dnG`, `?diner=0`).** `dn_shell` + `dn_inside` sit at the frame's
+  origin. **Instead of guarding forty draw calls one by one, the block snapshots every `F.parts[k].length` before it and,
+  once his two pieces are placed, splices everything after the snapshot back out** (every material but `neon`). Colliders
+  live in the frame's `boxes`, not in `parts`, so all of them stay. The canvas signs (the name, the menu) are scene meshes,
+  not parts, so they stay too, and so does the neon frame. The sign's dark backing board goes with the rest. `places` DINER boxes
+  51, 0 BAD.
+
 - **m778 (F5-3a): THE MAJESTIC DOZEN'S DOSSIERS (`MJ12`, `mj12Step`, `mj12Next`, dormant quest `qmajestic`, flags `mj:1`..`mj:12`,
   `mj:all`).** Each file sits at `GODPLACES.find(id).at()`, built lazily the first frame that place resolves, 0.7 m up and turning.
   You pick one up within 1.3 m horizontally and 1.8 m vertically. The first sets `qon:qmajestic`, which is what wakes a
