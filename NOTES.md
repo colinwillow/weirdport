@@ -808,6 +808,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m804 (T6r) -- the islands' BASE-jump exit point is his art
+`IBASE.exitG` loads `models/campaign/island_exit.glb` (`?iexit=0` leaves it out). Placements:
+- **`ib_deck`** goes at the deck's centre (cu, y, cv), turned psi. Measured: it is 9 m long, `B.len`. The centre sits at
+  dE + .5, so dE falls at local -.5, where his struts meet the rock. The `xS` snapshot drops everything drawn from the deck
+  slab through the sign posts: planks, joists, rails, posts, stripes and braces. The deck, rail and step colliders stay, and
+  the canvas sign and the windsock stay code.
+- **`ib_step`** goes on each ground-fitted step's top. The tops are recorded in `IBASE.steps`.
+
+Shipped unverified.
+
 ### m803 (T6q) -- the metro core's tower kit is his art, and the kit is MERGED by material (`artMerge`)
 `MCORE.mcG` loads `models/campaign/metro_core.glb` (`?mcore=0` leaves it out). In `buildMetroCore`, `mcPut` places a node and
 records it in `mcArt`. Placements:
