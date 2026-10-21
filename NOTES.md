@@ -892,6 +892,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **COOPER'S PARACHUTE (m861, F5-9c, `CHUTE`, `chuteFall`, `chuteStep`, `#chute`).** `qcooper`'s `onDone` sets `cooper:chute` and fills the
+  juice tank (`JUICE.cap`). The chute is the hover pack's shape: `chuteFall(p, dt)` sits in the player step's gravity line beside
+  `swimStep` and `hoverStep` (`!swim && !hover && !chute -> gravity`), so `vel.y` keeps ONE writer -- it eases vy to -`sink` (2.4 m/s,
+  `k` 3.5, exp-damped). `chuteOk` drops it on landing, knock, climb, ledge, wall, wing, board, slam and GOD fly. The button is `#blink`'s
+  twin mirrored over the LEFT pad and only appears while vy < -1 (or while open). The canopy is twelve sphere wedges plus eight line
+  segments, built on the first open and parented to nothing (it copies his position). play ch1: 4/4 quests, 18 steps.
+
 - **THE MONEY TRAIL AND THE RING (m860, F5-9b, `COOPER.TRAIL`, `cooperStep`, `cooperNext`, quest `qcooper`, GOD `hccring`).** Six
   bundles at HC (a, b) points north from the fir, each its own little group (box + band) on one shared glinting material; walking within
   `pick` 1.7 m takes one (`cooper:b<k>`, so a reload keeps them gone), and all six set `cooper:bills`. The ring is `HCREEK.FLATS[7]`

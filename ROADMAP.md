@@ -1210,10 +1210,10 @@ differ" table there, so no region feels like the last one.
     - [x] m851 **F5-8a** a shy giant in the gorge's east pines: big prints that fade, a walk he can stand and a run he cannot; walk up slowly and he lets you close (`bigfoot:found`).
     - [x] m855 **F5-8b** the hunters: once found, now and then two hunters come up the plateau after him; knock them down before they reach him (or he is "taken" and you start over).
     - [x] m857 **F5-8c** the friend: kept safe, he follows you about the gorge and lets you take his sample -- the Bigfoot form (big, slow, shoves everything).
-  - [ ] **F5-9** D.B. Cooper. Split:
+  - [x] m861 **F5-9** D.B. Cooper. Split:
     - [x] m859 **F5-9a** the drop zone: a clearing in Hollow Creek's near-shore pines, a snapped fir still holding the torn canopy, its lines hanging, the rotted money sack and a few twenties at the roots; the search grid of stakes and string, dug holes and a sifter; Hal's camp (tent, map table, lantern, detector, fire, cooler), the wanted poster, the aft-stair placard and his truck. Hal, a retired agent, tells it.
     - [x] m860 **F5-9b** the money trail: bundles of twenties through the pines away from the fir (pick them up); they stop at a ring of snapped treetops and scorched ground with the empty harness hanging high in a fir -- he went UP, not down (`cooper:taken`); tell Hal.
-    - [ ] **F5-9c** what you get: the money (juice) and the parachute (open it when falling and drift down, on a slot he can reach).
+    - [x] m861 **F5-9c** what you get: the money (juice) and the parachute (open it when falling and drift down, on a slot he can reach).
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
   author; the turf's building swap in every region, not only Old Town.
@@ -2285,3 +2285,4 @@ differ" table there, so no region feels like the last one.
 - **m857 (F5-8c): the BIGFOOT form is the biker's body worn 1.35x and furred brown** until there is a Bigfoot model. Like every disguise, it keeps your own collider. It shoves anyone it walks into above 2 m/s. You get it by standing beside him for 2 s once he is safe (a tuft of hair), not by knocking him down. Knocking down a friend felt wrong.
 - **m859 (F5-9a):** Cooper's drop zone is a new Hollow Creek flat at (22, -76), r 18, in the near-shore pines between the gorge and the bike track (measured relief 1.9 m, 0.05 m off level as built). (-5, -122) by the creek's mouth was the first pick and sits on the freight line's corridor. The searcher is Hal Tenney, a FICTIONAL retired agent (not the real case agent), worn as a stand-in on `hobo_01` (roster `gman`). GOD `hccooper`.
 - **m860 (F5-9b):** the trail is six bundles ($2,000 each on the toast; the other $188,000 is the reward in F5-9c), north from the fir to a second new flat at (26, -28), r 12, so the forest leaves the ring a clearing. Picking them up is walking over them (1.7 m), saved per bundle. The ring counts the moment you walk into it, bundles or not, but the quest's first step still wants all six. GOD `hccring`.
+- **m861 (F5-9c):** telling Hal pays the money as a FULL juice tank (the money is the tank, there is no cash in this game) and the chute. The chute is a button over the LEFT pad (the body's side; the blink is over the right), shown only while falling; a press opens it, another cuts it, landing packs it. Sink 2.4 m/s (`CHUTE.sink`, live). No new gesture is spent on it.
