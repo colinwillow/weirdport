@@ -892,6 +892,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **TRAVIS HOME (m868, F5-11c, `cutHome`, `cutTravisTo`, `walton:home`, `ROLEFORM.logger`, roster `logger`).** The pad takes Travis's
+  body with you (`cutTravisTo`: position, velocity, home and route in one place -- a body moved without its `hx/hz/route` walks straight
+  back). He follows with the m338 beat (`d.route = [[x, z]]` to you when more than 3 m off), is put back beside you past 60 m, and back on
+  the hilltop if you leave him in the room. After a reload he is respawned (a HICK body, `role 'logger'`) on the hilltop -- or at the
+  cut once home -- whenever you are within 120 m of the ship. Within `homeR` 8 of `WALTON.at`: `walton:home`, juice, and the form as a
+  GIFT (`FORMK.LOGGER` + `progForm`, Bigfoot's m857 shape). play ch1: 4/4 quests, 20 steps.
+
 - **THE GREY SHIP (m867, F5-11b, `buildShip`, `cutShip`, quest `qwalton`, GOD `hcship`).** A farmFrame at yaw 0 centred over
   `HCREEK.HILLS[0]`, `WALTON.up` 22 m over its top (places: floor 53.4 over 31.4), **taken out of `FBATCH.frames`** (a room in the sky
   has no business in the ground's world cells -- the m864 rule). Floor and ceiling are one square collider each under a 24-gon drawing;
