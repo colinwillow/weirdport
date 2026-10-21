@@ -892,6 +892,15 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE GREY SHIP (m867, F5-11b, `buildShip`, `cutShip`, quest `qwalton`, GOD `hcship`).** A farmFrame at yaw 0 centred over
+  `HCREEK.HILLS[0]`, `WALTON.up` 22 m over its top (places: floor 53.4 over 31.4), **taken out of `FBATCH.frames`** (a room in the sky
+  has no business in the ground's world cells -- the m864 rule). Floor and ceiling are one square collider each under a 24-gon drawing;
+  twelve wall panels at `roomR` 7 are turned boxes. The hull is its own group (`WALTON.hull`), turned in `cutShip`. Beam: after
+  `talk:hc_cut_mike`, `beamT` 1.2 s inside `beamR` 1.6 of `scorchAt` -> into the room, `walton:aboard`; three bodies of `FOE` (fallback
+  HICK/HOBO) and Travis (a HICK body, `qTag 'travis'`, `WALTON.travis`) spawn there once; all three down (latched `downed`, as the
+  Bigfoot hunters) -> `walton:free`, the crew removed. The pad (`WALTON.pad`) puts him on the hilltop 9 m from the centre. **There is
+  no Grey body kind** -- `HERO.files.grey` is a player model only. play ch1 20 steps (the first try timed out on the 240 s load).
+
 - **THE CUT (m866, F5-11a, `WALTON`, `buildCut`, GOD `hccut`).** F5-11 split into a (the cut), b (the ship over the hill, the beam from
   the burned spot, free him) and c (walk him home; the logger form). `HCREEK.FLATS[10]` (78, 18), r 14: probed relief 3.75 m over 16 m.
   +v faces the mill's flat. `WALTON.scorchAt` is the burned spot (world xyz) -- F5-11b's beam trigger. Logs have one turned box
