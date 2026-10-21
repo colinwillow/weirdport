@@ -800,6 +800,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m797 (STEER): THE ALIEN GREY IS THE THIRD HERO (`HERO.files.grey` = `models/characters/alien_grey_medium.glb`, card ALIEN GREY,
+  `?hero=grey`).** One table entry; the start screen's row lays three cards out with flex. His file was already hashed in `ASSETS`.
+  Expect `WSC.011` with no turn: his tip is pure -X, 0.157 long. Expect the `HERO grey n/n` clip chip as on the lizard. He was
+  built by the same pipeline, so expect `FLAT` on his flips if his hips came over flat too (m796 handles it).
+
 - **m796 (STEER): FLAT HIPS ARE NOT A FLIP MEASUREMENT (`flipMarks`, `AIR.flatHips` .05, `AIR.flatAir` .81, `FLIP[*].flat`).** Read
   offline from both files: zap's `front_flip` hips go 33.4 -> 59.3 -> 29.3 cm (crouch at 0, apex .333, landing .708 of .875),
   while the alien lizard's are 0.00 at all 21 keys, and his `backflip` likewise. The argmin/argmax walk on a flat track returns

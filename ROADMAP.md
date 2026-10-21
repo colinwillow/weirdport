@@ -15,7 +15,7 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
-- [ ] **STEER, FROM COLIN (Oct 20, 20:35) -- DO THIS NEXT: A THIRD HERO ON THE CHARACTER SELECT, THE ALIEN GREY.**
+- [x] m797 **STEER, FROM COLIN (Oct 20, 20:35) -- DO THIS NEXT: A THIRD HERO ON THE CHARACTER SELECT, THE ALIEN GREY.**
   *"I have another new hero character. We should add it to the character selection screen... I think it might be called alien gray,
   medium."* **THE FILE:** `models/characters/alien_grey_medium.glb` (in `characters/` this time). The select is `HERO` (index.html ~917:
   `files` / `names`), so this should be one entry: `grey: 'models/characters/alien_grey_medium.glb'`, name **ALIEN GREY**, a third card,
