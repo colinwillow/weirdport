@@ -748,6 +748,12 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m766 (T6c): THE FACTORY'S WALKS ARE HIS ART (`factory_walks.glb`, `WFRONT.fwG`, `?fwalk=0`, `fwPut`).** Every `rail()` (the
+  outfeed tower's six included) keeps its 1.05 `yel` collider. With the GLB loaded it is drawn as n = ceil(l / 2) `fw_rail` tiles
+  turned `ps` along the run, each scaled w / 2 in z (his Y is 2 m; `scale.z` already carries the mirror's -1, so it is multiplied).
+  A `fw_post` stands at the far end. The 12 legs are `fw_leg` stretched to y - .3 - Y. Each of the 33 stair blocks gets an
+  `fw_step` on its top centre and loses its drawing, so the stair reads open while every block stays a collider.
+
 - **m765 (F5-2a): MERLE'S BUNKER (`BUNKER`, `buildBunker`, `bunkerStep`, flat `HCREEK.FLATS[4]`, GOD `hcbunker`, roster `prepper`
   with prop `foil`).** The container is 2.4 x 6, with walls you collide with and a 1 m door. Its "half-buried" look is drawn: dirt
   hemispheres on its sides and roof, and sandbags. **It is not sunk: the island's terrain is a floor-only triangle store, so ground
