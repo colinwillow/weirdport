@@ -804,6 +804,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m799 (T6n) -- the Underneath's cistern catwalks, the dig's track, cart and strongbox, and the vault's crates are his art
+`UNDER.ucG` loads `models/campaign/under_cistern.glb` (`?ucist=0` leaves it out). `ucPut` in `buildUnderneath`
+places a node through `campPlace` and turns it. The dig track is `uc_rail` TILED (`n = round(L)`, scaled `L/n`
+along Blender Y) in place of the two `iron` strips. `uc_cart` and `uc_strongbox` replace the drawn ones; their
+`bx` colliders stay and only the drawing is popped. `uc_catwalk` sits at (cu, cv +- 2.6); the plank and rail
+colliders stay, while the drawn top rails and legs are skipped. `uc_crate` is placed at each of the vault's five
+stacks with `scale.y = h`. `U.dig.box` is unchanged. Shipped unverified.
+
 - **m797 (STEER): THE ALIEN GREY IS THE THIRD HERO (`HERO.files.grey` = `models/characters/alien_grey_medium.glb`, card ALIEN GREY,
   `?hero=grey`).** One table entry; the start screen's row lays three cards out with flex. His file was already hashed in `ASSETS`.
   Expect `WSC.011` with no turn: his tip is pure -X, 0.157 long. Expect the `HERO grey n/n` clip chip as on the lizard. He was
