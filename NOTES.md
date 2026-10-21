@@ -876,6 +876,20 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m846 (T7i) -- the road bridge's guardrails, lamps, piers and hammerheads are his art
+`HCROAD.hwG` loads `models/campaign/highway_bits.glb` (`?hwbits=0` leaves it out). Its loader sits right before
+`buildHighway()`. In `buildHighway`, `hwp()` places a piece with rotation order YXZ and records it in `hwArt`. Placements:
+- **`hw_rail`:** one per deck piece at (s * (hw - .1), mid y, mid v), yaw PI for s = -1, scaled along z to the piece's
+  length.
+- **The rail's pitch is -s * atan2(dy, dv).** This was derived, not measured: under the mirror, a point at local z = ±L/2
+  rises by -z sin(a) (yaw 0) or +z sin(a) (yaw PI). If the rails tilt the wrong way, this sign is the one line to flip.
+- **`hw_lamp`** goes at each lamp's pole foot, yaw PI for s = -1, with its arm toward the road.
+- **`hw_pier`** goes at (0, g - 1, v), scale.y to yv - .3. Its collider stays.
+- **`hw_cap`** goes at (0, yv - .75, v), under the deck's underside slab.
+
+The `rail` pearlSeg ribbon, the lamp's pole, arm and globe, and the pier's drawing are not drawn; the guardrail and pier
+colliders stay. The art goes through `artMerge` into `HCROAD.artDraws`. Shipped unverified.
+
 ### m844 (T7h) -- Dump Tower's shell is his art (mullions, bays, bands, stair flights and rails, vestibule headers), merged
 `DTOWER.shellG` loads `models/campaign/tower_shell.glb` (`?tshell=0` leaves it out). In `buildDumpTower`, `dw()` places a
 piece and records it in `dwArt`. Placements:
