@@ -804,6 +804,17 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m801 (T6p) -- the Underneath's crossways ladders and the safe house are his art; buildUnderneath is finished
+`UNDER.usG` loads `models/campaign/under_safe.glb` (`?usafe=0` leaves it out). In `buildUnderneath`, `usPut` places a node and
+`usCut` drops the code drawing taken in an `umSnap` snapshot. The colliders stay. What is placed:
+- **`us_ladder`** goes at (cu, cv + b * 17.6) and is turned by PI for the south shaft. Measured: its puddle sits at Blender Y
+  -1.74..-.24, which is toward the room, where the code's `grow` circle was.
+- **`us_cot`** goes at the four cots, with no turn: both his cot and the code's run 1.9 along X.
+- **`us_table`** goes at (su + 1.5, sv + 2).
+- **`us_garden`** goes at (su - 4.2, sv + 3.9). His pots run +X at .5, as the code's did.
+
+The six wall lamps stay code. Shipped unverified.
+
 ### m800 (T6o) -- the Underneath's pump room, hidden market and camp props are his art
 `UNDER.umG` loads `models/campaign/under_market.glb` (`?umkt=0` leaves it out). In `buildUnderneath`, `umPut` places a node
 the way `ucPut` does, and the snapshot pair `umSnap`/`umCut` drops the code drawing while keeping every collider.
