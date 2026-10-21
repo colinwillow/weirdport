@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m832 -- tower_secret.glb: the Dozen's room and the aerial tram (T7d)
+
+The re-scan for drawn-only boxes put Dump Tower first (41), most of them in the newest rooms. The Dozen's room (m783) is the code's ring of twelve, eleven red and one black at k 0. The tram's cabin is built in its group's frame so the shuttle carries it. The chairs' bevels went from 2,680 faces to 760. Shipped unverified.
+
 ## m829 -- skate_pier.glb: the skate pier's deck, piles and rails (T7c)
 
 The pier under the park as tiles at the code's pitches: deck seams every 1.2, rail posts every 2, piles every 4.5. With T7b the pier skate park is all art apart from its string lights and paint splashes, which are code on purpose. The island thermal checked this pass is all effects (shimmer, cloud, gulls) and is skipped. Shipped unverified.
