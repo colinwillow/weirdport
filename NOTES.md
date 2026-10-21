@@ -728,6 +728,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m752 (T5w): THE FACTORY'S PARAPET AND SCREEN BANDS ARE HIS ART (`factory_skin.glb`, `WFRONT.fsG`, `?fskin=0`, `fsTile`).** Each
+  run is tiled: n = round(len) one-metre copies, each scaled len / n in x. Every copy is turned `psi` so his +Y (out of the wall)
+  points out. `campPlace` mirrors z, so at psi 0 his +Y is +v; front PI, back 0, west -PI/2, east PI/2. The run's along-axis is
+  (cos psi, -sin psi). The parapet tiles sit on each `panel` run's centre line at the roof, and the panels keep their colliders.
+  The screens sit on the wall FACE, which is the code's band centre moved .04 back in, replacing the three drawing-only `screen`
+  boxes. Both loads must succeed or neither is used; on failure the chip reads `FSKIN GLB FAIL` and the old boxes draw.
+
 - **m750 (F5-1a): SAUCER JOE'S (`DINER`, `buildDiner`, `dinerStep`, flat `HCREEK.FLATS[3]`, GOD `hcdiner`).** The diner is a body
   11 wide between two round ends of r 3.5. Each end is drawn as a half cylinder shell and collides as four faceted boxes turned
   `-s * am`. You walk in through a 2 m door in the front. The museum is a quonset: a half-cylinder turned `rx = PI/2`, and its
