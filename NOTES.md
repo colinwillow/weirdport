@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m755 -- control_room.glb: the factory control room's consoles and lever (T5z)
+
+The three consoles were dark boxes with a green slab on top. They now have a raked desk with the line drawn on it (one panel amber) and three monitors. The lever is a red-knobbed handle on a hazard-collared pedestal. Its knob sits where the code's sphere was, so `leverAt` and the prompt are unchanged. Shipped unverified.
+
 ## m754 -- factory_stations.glb: the factory line's arches, cage, hats and boots (T5y)
 
 The two arches are 4.2 and 3.4 tall, so each one is split into stretched posts and a fixed head. Scaling one piece would have squashed the head beam with it. The hard hats taken off the line's workers were cylinders; they are now domes with brims, tinted the code's yellow / white. The boots were plank boxes. Shipped unverified.
