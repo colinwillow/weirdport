@@ -1047,6 +1047,11 @@ differ" table there, so no region feels like the last one.
 - [ ] **F4 The forms still missing** from the forms table, each with the door it opens: cop (cordons,
   arrest), firefighter (fires, the truck ladder), hobo as stealth (guards ignore him), CEO (Dump Tower),
   scuba diver (the Gorge), cave miner (the Underneath), military (the base at high heat).
+  - [x] m731 **F4-1** the hobo as stealth: Uplift's turrets and robots look straight through a man in the hobo's coat.
+  - [ ] **F4-2** the cop's arrest: as a cop, hold the right pad on a Skinsuit you have knocked down to cuff it (it is taken away and the block's turf moves), and the cop's car at the cordon is yours to drive off.
+  - [ ] **F4-3** the firefighter's truck ladder: a fire engine parked by a burning building in Old Town whose ladder only a firefighter can raise -- up to a roof that has no other way on.
+  - [ ] **F4-4** the cave miner (the Underneath): a miner to sample in the Underneath, whose lamp lights the dark tunnels and whose pick breaks the rubble walls that block them.
+  - [ ] **F4-5** the military (the base at high heat): at four stars soldiers come instead of cops; a soldier's form walks through the military cordon round the base.
 - [ ] **F5 Side quests**, one build each, from the table in `LORE.md`, in this order: the Roswell diner,
   the tinfoil-hat bunker (the grid on the map), the Majestic Dozen, Mothman, the Phoenix Lights, the
   haunted ranch, the tic-tac pilot, Bigfoot, D.B. Cooper, Betty & Barney, Travis Walton, Area 15.
@@ -2030,3 +2035,7 @@ differ" table there, so no region feels like the last one.
   juice cut to a quarter of the tank, and a card with the minutes you lost. `mel.MTIME.on = 0` restores the old behaviour, where
   nothing happens and it regenerates. There is no separate tractor-beam capture yet: every way of being taken goes through
   health.
+- **m731 (F4-1), the hobo's stealth:** "guards" are read as Uplift's machines: the yard turrets and the patrol robots. The police
+  already only react to the alien, so any human form passes them. A hobo is not SEEN by the turrets or robots. He cannot stand
+  them down or take a turret over (that is still the engineer's), and once the yard's alarm is up, he is seen like anyone else.
+  F4 is split into F4-1..5. The CEO and the diver are already built (Dump Tower's badges, the Gorge).

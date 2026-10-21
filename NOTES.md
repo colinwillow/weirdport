@@ -700,6 +700,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m731 (F4-1): THE HOBO AS STEALTH** (`overlooked`). `overlooked()` = wearing `hobo_01`, settled. `wfTurretStep`'s `stranger` is now
+  `!engineerOn() && !overlooked()`, and the robots' `seen` is 0 for him unless the alarm is up (`wfBotStep`). **The first try folded
+  him into `eng`**, which made the robots stand down with "ENGINEER ON SITE" -- he is not seen, which is a different thing from
+  being authorised. F4 split into F4-1..5 in ROADMAP.
+
 - **m729 (T5p): THE FACTORY'S OUTFEED TOWER STAIR AND PLATFORM ARE HIS** (`outfeed_tower.glb`, `WFRONT.otG`, `?otower=0`). `ot_stair` at
   (-45, 108) and `ot_platform` at (-48, 109.5), on Y, mirrored, both Y-scaled by (L3 - Y) / 10 (built for 10). The platform's and
   the 32 treads' grate colliders stay (draws popped); the four legs and the two yellow rail pearlSegs are not drawn; the `rail()`
