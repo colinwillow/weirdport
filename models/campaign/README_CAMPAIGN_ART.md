@@ -114,6 +114,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `factory_portal.glb` | `ff_portal` (hazard-striped intake door) | wfFactory -- the factory's front |
 | `shed_yard.glb` | `ws_pallet` (flat, stack it), `ws_drum_paint` (tintable) + `ws_drum_trim` | buildWaterfront -- the transit shed's front |
 | `factory_gallery.glb` | `gl_bay` (1 m tile), `gl_leg` (stretch) | wfFactory -- the enclosed gallery to the outfeed tower |
+| `factory_skin.glb` | `fp_parapet` (1 m tile, coping, scupper), `fp_screen` (1 m tile, green LED band) | buildWaterfront -- the factory's parapet and screens |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.

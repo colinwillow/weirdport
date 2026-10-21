@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m749 -- factory_skin.glb: the factory's parapet and green screens (T5w)
+
+The parapet was four `panel` slabs and the screens were three flat `screen` boxes. Both are now one-metre tiles. The screen's bright dashes come from a seeded random per tile, so a run of tiles reads as text crawling along the wall rather than one stripe repeated. It does still repeat every metre if you look for it. The first preview faced the wrong way (+Y is OUT). Shipped unverified.
+
 ## m746 -- factory_gallery.glb: the gallery over the fence (T5v)
 
 The gallery was a grate, two tin slabs and a roof slab. It is now a one-metre bay, tiled: corrugated walls, a window ribbon lit faintly green like the factory's screens, and a portal frame every metre. It is tiled so the corrugation and mullions keep their pitch. The code's slabs stay the colliders. Shipped unverified.
