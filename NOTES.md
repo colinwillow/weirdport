@@ -872,6 +872,24 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m844 (T7h) -- Dump Tower's shell is his art (mullions, bays, bands, stair flights and rails, vestibule headers), merged
+`DTOWER.shellG` loads `models/campaign/tower_shell.glb` (`?tshell=0` leaves it out). In `buildDumpTower`, `dw()` places a
+piece and records it in `dwArt`. Placements:
+- **Per wall line:** `dw_mullion` goes where the code drew one (gaps respected), turned PI/2 on w/e. `dw_bay` goes at each bay
+  centre t + 1.25, skipping any bay whose centre lies within 1.2 of a door gap (the lobby's, the tram's, `skyDoor`).
+- **Per slab (k > 0):** `dw_band` on every bay and `dw_corner` at the four corners. The slab bands run across the gaps,
+  because the slab does.
+- **Each stair:** `dw_flight` at (L.u, L.v0), turned PI for dir -1. Measured: its run is Blender Y 0..5.85 = RN * td. The
+  treads keep their colliders. `dw_srail` goes at (L.u + 1.05, vm).
+- **The vestibules (floors 8, 9):** `dw_vest` at (L.u, mid), turned PI for dir -1. It replaces the gold header; the glass
+  stays.
+
+**Merged:** ~32 mullions + ~30 bays + 32 bands + 4 corners a floor over ten floors is about a thousand clones, so after commit
+`artMerge(F.grp, dwArt)` makes them one draw per material (`DTOWER.shellDraws`). The glass, every collider and the other
+`dtPut` furniture are untouched.
+
+Shipped unverified.
+
 ### m843 (F5-7b) -- proving Dutch right: a tic-tac on camera (`OTICFILM`, quest `qdutch` from Dutch)
 **How the filming works:** after `talk:hc_ready_dutch`, `ticStep` runs the tape while any chasing or peeling tic-tac is within
 `filmR` 32 m of him and inside `filmCone` .5 rad of the CAMERA's own line of sight. That means framing it on the phone's
