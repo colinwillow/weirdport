@@ -912,6 +912,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **HELD BLOCKS SHOW IT IN THE OTHER REGIONS (m889, F6e-2, `TXD`, `txStep`, `txDress`, `txSpot`, `tx:<id>` flags, `mel.txGo(f)`).** For
+  `TURF.xb` only: a non-current holder with `lead >= KSWAP.lead` for `KSWAP.hold` s (counted twice a second, the timer not saved) is
+  SETTLED -- `progFlag('tx:<id>', faction)`, or the flag deleted when the NATIVE holder wins it back -- and `txDress` puts up one group
+  of that faction's props (shared `txMats`, no colliders) at `txSpot`: the nearest point to the block's middle, on ground above the
+  sea, with no box within .3 m of five probes 2 m apart at chest height. Saved settlements are dressed on the first `txStep`. places:
+  `prop spots 20/25` (the five without are water). play ch1 20 steps.
+
 - **BLACK CHARACTERS (m888, STEER 03:04, `KTX2SWAP`, the chip's `P/G/T`).** Baked `npm run ktx <glb> etc1s` for the fifteen
   characters still on WebP (alien_grey_medium, beautiful_asian/blonde, clancy, the seven fat_*, firefighter, hick_skinny, hobo_01,
   models/alien_lizard.glb) and listed them in `KTX2SWAP`. **The tool's RESIDENT line says they were ~1 MB each (5 MB for the grey and
