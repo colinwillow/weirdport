@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m734 -- security_fence.glb: the factory lot's fence (T5r)
+
+The fence round the factory lot is about 270 m, so its weave is a cost question first. The first build made the diamonds from boxes at 1,710 faces a metre: 460k for the lot. Flat double-sided ribbons in one mesh give 166 a metre, about 45k, and still read as chain-link. It is one metre TILED, not one copy stretched along a segment, because a stretched weave smears into zigzags. The outrigger leans outside, as real security fencing does. Shipped unverified.
+
 ## m730 -- gatehouse.glb: the factory gate's hut and boom (T5q)
 
 This was a white box with a dark lid and a glass strip, and a red bar with four white stripe boxes laid on it. The art is the same hut at the same size: the window still faces the road (-v), plus a door, a lamp, a camera and a teal company band. The boom is striped in its own geometry, with a counterweight and a rest fork. The gate itself stays `GATES`' `uplift`. Shipped unverified.
