@@ -15,6 +15,19 @@ between them. Design context lives in `GAME_DESIGN.md`.
 
 <!-- write here; the loop reads this first and obeys it over everything below -->
 
+- [ ] **STEER, FROM COLIN (Oct 20, 20:35) -- DO THIS NEXT: A THIRD HERO ON THE CHARACTER SELECT, THE ALIEN GREY.**
+  *"I have another new hero character. We should add it to the character selection screen... I think it might be called alien gray,
+  medium."* **THE FILE:** `models/characters/alien_grey_medium.glb` (in `characters/` this time). The select is `HERO` (index.html ~917:
+  `files` / `names`), so this should be one entry: `grey: 'models/characters/alien_grey_medium.glb'`, name **ALIEN GREY**, a third card,
+  and `?hero=grey` working the same way as `?hero=lizard`. Run `npm run bump` so its hash is in `ASSETS`.
+  **MEASURED FROM THIS SIDE (JSON only):** the same pipeline as the lizard. **61 clips, every one of zap's names present** (only
+  `CINEMA_4D_Main` missing, which is dropped anyway); **all four weapon mounts**; **51 joints**; **no draco/webp** (4.6 MB raw);
+  `doubleSided: true`; root `grey_export_rig` with **no scale: a METRE rig like the lizard.** His `weapon_tip_2` is (-0.157, 0, 0), so
+  the mount-to-tip length is **0.157** against zap's 14.31, and the axis is pure -X like zap's (no -Z part, unlike the lizard). m794's
+  measured weapon fit should therefore give him **WSC ~.011** with no rotation. Check that the chip says so; if the guns come out huge,
+  the m794 fit is not reaching this rig. Same `HERO <name> n/n` clip chip as the lizard.
+  **Then tick this and go back to the items below.**
+
 - [ ] **STEER, FROM COLIN (Oct 20, 20:22) -- TWO BUGS, AHEAD OF THE CAMPAIGN ITEMS: (1) GUNS ~100x TOO BIG ON THE ALIEN LIZARD, (2) THE DOUBLE-JUMP FLIP STUTTERS.**
   *"Due to me using a different workflow... this new workflow has made the guy have a different scale, so now he's actually fine for the
   game. He looks fine, he works fine, however when you load a rocket launcher or a blaster, the guns are about 100 times too big -- they
