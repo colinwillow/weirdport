@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m776 -- diner.glb: Saucer Joe's, shell and inside (T6h)
+
+The diner was 51 boxes and open cylinders. It is now one shell and one interior, both at the code's origin and numbers, so they drop in with no transform. The round ends are smooth arcs, not the code's four facets, and the facets stay as colliders. The roof's round-end discs shared a top face with the slab and rendered as black wedges, so the discs now sit 5 mm inside. The neon frame and canvas signs stay code because they glow. Shipped unverified.
+
 ## m772 -- hollis_props.glb: the last of Camp Hollis (T6g)
 
 The firing positions are one 0.8 m bag segment that the code places seven times per horseshoe, already yawed. The rest are single props at the code's spots. With T6d through T6g, every drawn box in `buildMilBase` has art waiting. Shipped unverified.
