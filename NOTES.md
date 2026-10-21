@@ -772,6 +772,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m780 (T6i): SAUCER JOE'S SIGN TOWER AND MUSEUM ARE HIS ART (`diner_site.glb`, `DINER.dsG`, `?dsite=0`, `dsSnap` / `dsCut`).**
+  Same pattern as m779: snapshot `F.parts` at each block's start, then once `ds_tower` (-12, 7) or `ds_museum` (12.5, -6) is
+  placed, splice every part drawn since. The tower's steel collider, the museum's slab colliders and the canvas EAT and museum
+  signs stay. `places` 0 BAD.
+
 - **m779 (T6h): SAUCER JOE'S DINER IS HIS ART (`diner.glb`, `DINER.dnG`, `?diner=0`).** `dn_shell` + `dn_inside` sit at the frame's
   origin. **Instead of guarding forty draw calls one by one, the block snapshots every `F.parts[k].length` before it and,
   once his two pieces are placed, splices everything after the snapshot back out** (every material but `neon`). Colliders
