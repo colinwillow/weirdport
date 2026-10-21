@@ -892,6 +892,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **THE MONEY TRAIL AND THE RING (m860, F5-9b, `COOPER.TRAIL`, `cooperStep`, `cooperNext`, quest `qcooper`, GOD `hccring`).** Six
+  bundles at HC (a, b) points north from the fir, each its own little group (box + band) on one shared glinting material; walking within
+  `pick` 1.7 m takes one (`cooper:b<k>`, so a reload keeps them gone), and all six set `cooper:bills`. The ring is `HCREEK.FLATS[7]`
+  (26, -28), r 12 -- a FLAT because that is what clears the forest (trees skip `Fl.r * forest.flat`), not for the levelling. A second
+  `farmFrame` at yaw 0 inside `buildCooper` builds it: scorched disc, ash ring, ten trunks snapped with their tops thrown OUTWARD,
+  fused-glass lumps, twenties in the broken tops, and one standing fir with the harness 9 m up, lines burned at the ends. Inside `ring`
+  7 m sets `cooper:taken` (juice, card). The quest is `from: 'hc_cooper_hal'` (bills -> ring -> tell Hal). **`sfxPlay` does not exist**
+  -- I wrote one call by habit and it would have thrown on the first pickup; the check could not see it (the step only runs near the
+  bundles). places: `ring off its flat by 0.07 m`, `ok hccring`, 0 BAD; play ch1: 4/4 quests, 18 steps.
+
 - **COOPER'S DROP ZONE (m859, F5-9a, `COOPER`, `buildCooper`, `cooperStep`, GOD `hccooper`).** F5-9 split into a (the place), b (the
   money trail, `cooper:taken`) and c (the money and the parachute). The site is `HCREEK.FLATS[6]` (22, -76), r 18: probed with temporary
   `hcBase` rings in placecheck (relief 1.9 m over 22 m, 90 m from the shore, 76 m from the nearest flat). **The first pick, (-5, -122) by
