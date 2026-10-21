@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m798 -- metro_core.glb: the metro core's tower kit (T6q)
+
+The metro core's towers are rolled at load: size, height and one of four palette materials. A fixed tower model would fit none of them. What every tower shares is a lobby, a roof tank, sometimes a roof unit, and the sky-bridges between them, so that is the art. The window bands stay code because each tower's band material is its own (m700: the grip dims one). Shipped unverified.
+
 ## m795 -- under_safe.glb: the crossways ladders and the safe house (T6p)
 
 The last of the Underneath. The safe house is meant to be warm light at last after the tunnels (m524), so it is the one room in the kit with soft furnishings and crockery. The laid table's bowls sit at the code's own .7 + k * .55, staggered +-.25. Shipped unverified.
