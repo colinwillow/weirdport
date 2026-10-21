@@ -868,6 +868,18 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m841 (T7g) -- the town edge's trailer park is his art
+`FTOWN.trailG` loads `models/campaign/town_trailer.glb` (`?ttrail=0` leaves it out). Its loader sits right before
+`buildTownEdge()`.
+- **`tv_trailer`:** at each `[a, b, r]`, it goes on g at UV(a, b) with `rotation.y = r`. Derived: under campPlace's z mirror,
+  his X lands on (cos r, -sin r), the code box's length axis, and his +Y on (sin r, cos r), the code's deck side. So the
+  sign needed no flip.
+- **What it replaces:** the footing, body and deck drawings are popped and their colliders stay. The stripe, the three glow
+  windows and the dish with its pole are not drawn.
+- **`tv_chair`:** at the two chair spots on their own gnd, turned r + .4, in place of the stripe boxes.
+
+Shipped unverified.
+
 ### m840 (T7f) -- the farm's last drawn bits are his art: the tractor, the barn cupola, the hay hood
 `FPROPS.bitsG` loads `models/campaign/farm_bits.glb` (`?fbits=0` leaves it out). Its loader sits right before
 `buildFarmProps()`. In `buildFarmProps`, `fbitPut` places each piece and its drawing is skipped:
