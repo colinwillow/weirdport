@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m730 -- gatehouse.glb: the factory gate's hut and boom (T5q)
+
+This was a white box with a dark lid and a glass strip, and a red bar with four white stripe boxes laid on it. The art is the same hut at the same size: the window still faces the road (-v), plus a door, a lamp, a camera and a teal company band. The boom is striped in its own geometry, with a counterweight and a rest fork. The gate itself stays `GATES`' `uplift`. Shipped unverified.
+
 ## m727 -- outfeed_tower.glb: the outfeed tower's stair and platform (T5p)
 
 In code the tower is 32 solid `grate` blocks rising from the quay, so it reads as a wedge, plus a slab on four sticks. The art opens it up: treads at the code's exact positions on two stringers and three bents, and a braced four-leg frame under the platform. The blocks stay the colliders. A stair you can see through is the point, because the turret on the platform (`wfTurrets`) is the climber's problem. Shipped unverified.
