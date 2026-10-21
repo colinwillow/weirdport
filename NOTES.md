@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m791 -- under_cistern.glb: the cistern's catwalks, the dig's cart and strongbox (T6n)
+
+The catwalks are the code's 19.2 m span between the ledges, on legs down to the pit floor at y - 2.4. That is the depth the water drains to (m522), so the legs read as standing in the water when it is high and on dry stone when it is drained. Shipped unverified.
+
 ## m789 -- underneath.glb: the Underneath's tunnel tiles (T6m)
 
 The tunnels are built by `run()` and `room()` at whatever length the plan asks, so this is a kit of one-metre tiles, not a map. The first preview baked a growth patch and a damp streak into every tile. Down a straight tunnel that read as a row of lit windows, a stripe per metre. Both came out: the growth is its own piece, to scatter. Anything in a tile repeats, so a tile should carry only what is really periodic (courses, joints, the pipe). Shipped unverified.
