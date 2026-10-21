@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m727 -- outfeed_tower.glb: the outfeed tower's stair and platform (T5p)
+
+In code the tower is 32 solid `grate` blocks rising from the quay, so it reads as a wedge, plus a slab on four sticks. The art opens it up: treads at the code's exact positions on two stringers and three bents, and a braced four-leg frame under the platform. The blocks stay the colliders. A stair you can see through is the point, because the turret on the platform (`wfTurrets`) is the climber's problem. Shipped unverified.
+
 ## m725 -- halt_stairs.glb: the halts' platform stairs and the yard fence (T5o)
 
 The stair's step count depends on the ground (`gnd` per step, up to 40), so it can't be one baked flight. The art is one step and one leg pair per step: the step at the code's .28 / .45, the legs stretched down to each block's own foot. The fence is one bay at the code's spacing (a post every 3.6 m, rails .85 and .45). Shipped unverified.

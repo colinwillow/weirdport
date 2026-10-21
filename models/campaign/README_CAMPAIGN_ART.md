@@ -107,6 +107,7 @@ load the GLB at the spot the code already computes, drop the code-built version,
 | `caisson.glb` | `cg_deck`, `cg_rail`, `cg_pile` (stretch), `cg_face` (stretch) | buildWaterfront -- the dry dock's gate |
 | `dock_stair.glb` | `dk_stair` (16 risers, handrail), `dk_landing` (grated, railed) | buildWaterfront -- the stair down into the dry dock |
 | `halt_stairs.glb` | `hs_step` (per step), `hs_leg` (stretch), `hs_fence` (one bay) | buildFreight -- the platforms' stairs and the halt yard's fence |
+| `outfeed_tower.glb` | `ot_stair` (32 open treads, rails), `ot_platform` (deck, legs, bracing) | wfFactory -- the outfeed tower on the quay |
 | `crash_wreck.glb` + `_collision.glb` | `buildCrash`'s hull, rim, dome, glow, panels, bow wave, wreck colliders (the furrow mounds and scorch discs stay code) | origin = the wreck's centre on the ground (`CRASH.origin`); +X = the way it was travelling, nose ploughed in (the code's `fpsi`); the furrow runs along -X | `fire_0` `fire_1` `smoke` `hatch` `clancy` `you` | 3,140 |
 
 Next: the farm bushes (three kinds), then place by place.
