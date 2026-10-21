@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m781 -- diner_saucer.glb: the replica saucer and its yard (T6j)
+
+The saucer moves (m761: it can leave the yard), so its art is built in the group's own frame to be parented under `O.saucer`, not placed in the world. Its dome and green light stay code because they are animated. The yard's fence gets the code's missing corner post, at the gap's far side. Shipped unverified.
+
 ## m777 -- diner_site.glb: the sign tower and the UFO museum (T6i)
 
 The museum's clippings were first put at the code's own u (R - .45). At 2 m up, that is outside a quonset whose wall is only 2.75 m off centre there, so they poked through the shell. They now sit at R - .95. Worth checking in the code too: its paper boxes have the same problem. Shipped unverified.
