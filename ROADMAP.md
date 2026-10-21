@@ -1069,7 +1069,7 @@ differ" table there, so no region feels like the last one.
   haunted ranch, the tic-tac pilot, Bigfoot, D.B. Cooper, Betty & Barney, Travis Walton, Area 15.
   - [ ] **F5-1** the Roswell diner. Split:
     - [x] m750 **F5-1a** Saucer Joe's: the diner (walk in: counter, stools, booths, Joe), its roof up a ladder, the sign tower with a saucer on top, the quonset museum, the lot, and the fenced "replica" saucer that hums for the alien.
-    - [ ] **F5-1b** the three parts Joe names (a coil, a lens, a silver gyro), one hidden in each of three places across the map, and the quest (`qsaucer`) that tracks them.
+    - [x] m756 **F5-1b** the three parts Joe names (a coil, a lens, a silver gyro), one hidden in each of three places across the map, and the quest (`qsaucer`) that tracks them.
     - [ ] **F5-1c** the saucer fixed: bring the parts, it lifts off its plinth, and it is yours (a portal back to the diner, and a short hop you can ride).
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
@@ -2080,3 +2080,7 @@ differ" table there, so no region feels like the last one.
 - **m750 (F5-1a): Saucer Joe's sits on a new flat at Hollow Creek (-88, -100), just west of the highway** where it comes off the
   bridge. That puts it inside the gang's turf, so you reach it as a local, a biker, or off the freight. Joe talks to the alien
   (he knows what his saucer is). The saucer only reacts to the alien form, not to a disguise.
+- **m756 (F5-1b): each of the saucer's parts sits behind a form**: the coil on Camp Hollis' watchtower needs the SOLDIER to get
+  in, the lens by the old dig's strongbox needs the MINER (who clears the roof fall and carries the lamp), and the gyro on Uplift's
+  outfeed tower is reachable from the quay by anyone. The parts can be picked up before Joe gives the quest, and a part found early
+  counts.

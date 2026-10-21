@@ -736,6 +736,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m756 (F5-1b): THE SAUCER'S PARTS (`SAUCERP`, `saucerPartsStep`, quest `qsaucer` from `hc_diner_joe`).** There are three
+  pickups, and each spot is a function read the first frame it exists: `MILB.coilAt` (the watchtower deck, set in `buildMilBase`),
+  `SAUCERP.lensAt()` (the strongbox at `UNDER.dig.box`, .9 up) and `WFRONT.gyroAt` (the outfeed tower's platform at L3, set in
+  `wfFactory`). Walking within 1.3 m and 1.6 m up or down sets `saucer:<id>`. The quest's three `flag` steps read those same flags;
+  its talk step swaps Joe's lines for the story of the pilot. The lens shares its spot with the strongbox, so taking one takes both.
+  The quest's `onDone` toasts; F5-1c is the flight.
+
 - **m753 (T5x): THE TRANSIT SHED'S ROOF VENTS ARE HIS ART (`shed_vents.glb`, `WFRONT.svG`, `?svent=0`).** `sv_vent` sits on the
   roof at each of the three steel boxes. Where it is placed, the collider goes in through the frame's raw `F.bx` and its drawing is
   popped. That is deliberate: the block's own `bx` is `ks(on)`'s wrapper, which already drops the drawing when his shed is placed,
