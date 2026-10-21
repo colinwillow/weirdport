@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m845 -- T7i highway_bits.glb: the road bridge's rails, lamps, piers (art window)
+
+The gang's end of the bridge was already art: gang_road, the pickup, the barrel, the chairs, the bikes, the trackside litter and the broken-down car. The long run of the bridge was still a pearlSeg rail ribbon, box lamps and box piers. That run is now four small pieces (18-78 faces). The rail is a 3 m tile with half-posts at its ends, so neighbouring tiles share a post. The game pitches it to the arch per piece rather than bending it. The pier is a 1 m stretch piece, so its rustication strip stretches with it; that is fine for a vertical strip. The deck ribbon, the shoulders and the centre line stay code, because they follow the arch. Shipped unverified.
+
 ## m842 -- T7h tower_shell.glb: Dump Tower's curtain wall, stairs and vestibules (art window)
 
 The floors' furniture (m623), the roof and the lift (m624) were already art. What was left was the shell, drawn as gold sticks: about 36 mullions and 4 bands a floor over ten floors, plus the stairs and the two vestibules. The new pieces are small tiles meant to be instanced. They come in at 12-30 faces each, except the flight at 246, the screen at 138 and the vestibule at 108. The glass is deliberately left in code, because it is the collider and the transparent material. The flight is built rising +Y from (L.u, L.v0), so lane B is turned pi. The screen is symmetric, so it needs no turn. Shipped unverified.
