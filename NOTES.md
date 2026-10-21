@@ -868,6 +868,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m840 (T7f) -- the farm's last drawn bits are his art: the tractor, the barn cupola, the hay hood
+`FPROPS.bitsG` loads `models/campaign/farm_bits.glb` (`?fbits=0` leaves it out). Its loader sits right before
+`buildFarmProps()`. In `buildFarmProps`, `fbitPut` places each piece and its drawing is skipped:
+- **`fp_cupola`** goes on the ridge at (bu, top, bv). The weathervane's post goes with the code's cupola; the vane itself turns
+  and stays in the moving parts.
+- **`fp_hood`** goes at (bu, y0 + EAVE + .9, bv + D2). Measured: its hook is at Blender Y 1.85, the code's v + 1.85.
+- **`fp_tractor`** goes at (4.8, g, -9.4), unturned. The body's `tractor` collider stays and its drawing is popped.
+
+The helper is `fbitPut`, not `fbPut`, because `fbPut` is the farm bushes' instancer. Shipped unverified.
+
 ### m838 (F5-7a) -- THE READY ROOM, the tic-tac pilot's bar (`READY`, `buildReadyRoom`, `readyStep`, GOD `hcready`, roster `navypilot`)
 **The site:** `HCREEK.FLATS[5]` = (-92, -58), r 20. It is on the highway's west side, 31 m off its line, with +v facing away
 from the road and the front door on -v toward it. Measured with temporary `hcBase` / `hcEdge` probes in `places` (since removed):
