@@ -680,6 +680,13 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m715 (T5k): EVERY `pearlLadder` IS HIS RAILS, RUNGS AND CAP** (`pearl_ladder.glb`, `PLK`, `plBuild`, `?pladder=0`). With the file in,
+  `pearlLadder` pushes world matrices instead of drawing: `pl_rail` at y0 Y-scaled to `top + 1 - y0`, a `pl_rung` at every code rung's
+  bottom (y0 + .3 + r * .32), and `pl_cap` at top + 1. Yaw `F.th + psi + PI`: his +Y is out along psi, which is glTF -Z, and an
+  instance matrix takes no mirror. **`plBuild` runs after `buildFlora`, the last builder**, so every ladder from every place is in
+  ONE InstancedMesh per piece per material. The loader sits before `buildFarmland`, ahead of the first caller (the Gorge). The climb
+  volumes (`kitClimbAdd`) are unchanged. Without the file the old boxes are drawn.
+
 - **m713 (T5j): THE MX TAPE, THE ROAD LITTER AND THE PATCHED POTHOLES ARE HIS** (`trackside.glb`, `HCBIKE.tsG`, `tsInst`, `?tside=0`).
   The tape stakes and runs are INSTANCED through `tsInst` (a list of [root, world matrix, tint]): each tape is at the midpoint of
   A -> B, yaw atan2(-dz, dx) + F.th, X scaled by |AB|. Its white material takes the red / white tint per instance. On the highway,
