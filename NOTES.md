@@ -880,6 +880,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m848 (F5-7c) -- the pilot form (`ROLEFORM.navypilot` = PILOT, `pilotOn`, `WING.pilot`)
+**Sampling Dutch:** he can only be sampled once `dutch:believed` (`sampOk`). Before that, knocking him down gets you nothing.
+His sample is the role form PILOT (group country), through m383's role-form path.
+
+**The flight:** `wingOk` now takes `pilotOn()`, so the PILOT opens the same flight as the wingsuit and the glider, with the
+jets, not the glider look. In the integrator, `W.pilot` scales cruise x1.7 (34, under `vmax` 36), thrust x1.5 and climb
+gravity x.45, so he climbs and holds height. The glider and the wingsuit are untouched: the factors are 1 unless `pilotOn()`.
+
+`qdutch`'s onDone adds a toast pointing at the sample. `play ch1` passed. Shipped unverified.
+
 ### m846 (T7i) -- the road bridge's guardrails, lamps, piers and hammerheads are his art
 `HCROAD.hwG` loads `models/campaign/highway_bits.glb` (`?hwbits=0` leaves it out). Its loader sits right before
 `buildHighway()`. In `buildHighway`, `hwp()` places a piece with rotation order YXZ and records it in `hwArt`. Placements:
