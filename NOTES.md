@@ -912,6 +912,16 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **BLACK CHARACTERS (m888, STEER 03:04, `KTX2SWAP`, the chip's `P/G/T`).** Baked `npm run ktx <glb> etc1s` for the fifteen
+  characters still on WebP (alien_grey_medium, beautiful_asian/blonde, clancy, the seven fat_*, firefighter, hick_skinny, hobo_01,
+  models/alien_lizard.glb) and listed them in `KTX2SWAP`. **The tool's RESIDENT line says they were ~1 MB each (5 MB for the grey and
+  the lizard)**, so this is ~25-30 MB, not the hundreds the STEER feared; no character map is over 1024 any more. Checked and NOT
+  the cause: per-body texture clones (bodySpawn clones MATERIALS, `material.clone()` shares `map`; no `map.clone()` anywhere) and
+  lights in `regGate` groups (none in any of the seven builders). The chip now prints live numbers beside the first frame's:
+  `P<first>><now> G<now> T<first>><now>/<MB now>`, and `CTXLOST<n> R<restored>`. If he shows CTXLOST with R > 0 and black bodies,
+  suspect textures that did not come back after a restore rather than a failed first upload. play ch1 18 steps; the load took 57 s
+  headless (85 s before).
+
 - **TURF IN THE OTHER REGIONS (m887, F6e-1, `TURF.AREAS`, `TURF.xb`, `turfAreas`).** F6e split 1-3. Each area: a rect (`box()`, or its
   GOD places' bounds + `pad`), an `n x n` grid, `SEEDS` by GOD id, blocks `'<key>:i:j'` saved in `SAVE.turf` like Old Town's. **They
   live in `TURF.xb` and each `A.blocks`, never in `TURF.blocks`**: the pressure (`(A.i + di) * n + ...`), the Hothouse spread and the
