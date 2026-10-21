@@ -5,6 +5,10 @@ automatically — `grep -n` it for a symbol, a build number (`(m146`), or the wo
 report, and read the entry before touching that system. New notes go at the TOP of the
 landmine list, in the same shape: what he said, what was actually wrong, what was measured.
 
+## m886 -- STEER: black characters and a heavy game at m884 (art window)
+
+Colin's screenshots at m884 show the hero and most NPCs as black silhouettes, with the blonde protester fine. Her file and a black one (`fat_activist_01`) are the same kind of export, so this is runtime: most likely texture uploads failing out of memory on iOS, which samples black, from the same pressure as m875's context loss. The STEER asks for KTX2 twins or a 1024 cap on every character map, a check that bodies share their kind's texture, and lights kept out of the gated region groups so crossing a region edge does not recompile every program.
+
 ## m881 -- STEER: the main game dies on his phone at m875 (art window)
 
 Colin's screenshot shows the FRAME error card at m875: `shaderSource@[native code]`, under three's `acquireProgram`, under `frameBody`'s `renderer.render`. In WebKit, shaderSource throws only on a null shader, which `createShader` returns when the context is lost, so this reads as iOS dropping the WebGL context for GPU memory on the first frame. The STEER at the top of ROADMAP asks for three things: survive a lost context (`CTXLOST` in the chip); put programs, geometries, textures and MB in the chip; and stop building or uploading far regions until he goes toward them. The art window's dressing loop is paused so it does not add to the load. No index.html change was made here.
