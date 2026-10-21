@@ -700,6 +700,11 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m732 (T5q): THE FACTORY GATEHOUSE AND BARRIER ARE HIS** (`gatehouse.glb`, `WFRONT.ghG`, `?ghouse=0`). `gh_hut` at (gm + 6, lv0 - 4)
+  and `gh_barrier` at (gm, lv0 - 4) on Y, mirrored. The hut's white box and the barrier post's dark box stay colliders (draws
+  popped); the roof, the glass, the red arm and the four stripes are not drawn. The barrier art is built for a 7 m gate
+  (gw + 1 at gw 6). `places`: 0 BAD.
+
 - **m731 (F4-1): THE HOBO AS STEALTH** (`overlooked`). `overlooked()` = wearing `hobo_01`, settled. `wfTurretStep`'s `stranger` is now
   `!engineerOn() && !overlooked()`, and the robots' `seen` is 0 for him unless the alarm is up (`wfBotStep`). **The first try folded
   him into `eng`**, which made the robots stand down with "ENGINEER ON SITE" -- he is not seen, which is a different thing from
