@@ -860,6 +860,22 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m836 (T7e) -- Shadowhide Ranch is his art
+`RANCH.artG` loads `models/campaign/ranch.glb` (`?ranchart=0` leaves it out). **Its loader sits right before
+`buildRanch()`**: it was first written next to the tower's loader, a hundred lines AFTER the build, which would have shipped
+code that never saw the file.
+
+In `buildRanch`, each block takes a snapshot at its start (`rnSnap`). `rnPut` places his piece and cuts that block's drawing.
+Placements:
+- **`rn_gate`** at (0, -15).
+- **`rn_house`** at (-6, 5), with the porch on -v as in the code.
+- **`rn_trailer`** at (7.5, 5).
+- **`rn_tower`** at (9, -8), with its rail open at -Y for the ladder.
+- **`rn_corral`** at (-8, -8). Its cut is taken right after the scorched ring, so the trough, the skulls and the floating
+  stones stay.
+
+The colliders, the canvas sign, the wire runs, the cameras, the dead tree and the night stay code. Shipped unverified.
+
 ### m835 (T7d) -- Dump Tower's Dozen's room and the aerial tram are his art
 `DTOWER.secretG` loads `models/campaign/tower_secret.glb` (`?tsecret=0` leaves it out).
 - **The Dozen's room:** in m783's block, a snapshot is taken at the block's start. `dz_room` and `dz_table` go at (cu 7.6, cv)
