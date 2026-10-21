@@ -888,6 +888,24 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m855 (F5-8b) -- Bigfoot's hunters (`bigfHunt`, `BIGF.hunt`, step `bigfoot:safe` in `qbigfoot`)
+**When they come:** `huntFirst` 40 s after `bigfoot:found`, and again `huntEvery` 120 s after a lost round.
+
+**How they move:** two bodies are spawned 1.5 m apart, `huntR` 46 m off him on a plateau spot that passes `bigfOk`. The kind is
+the first of HICK or HOBO with a loaded `P`, through `bodySpawn` (which pushes into DUMMIES). They are tagged
+`qTag 'hunter'` and given `d.route = [[x, z]]`, the m338 beat re-aimed at him every frame (with `rx` / `rz` and `hx` / `hz` too).
+
+**How it ends:**
+- **A hunter goes down** (`st 'down'`): he is marked `downed` and his route is dropped, so he does not get up and resume.
+- **Both down:** `bigfoot:safe`, juice, and a card.
+- **One on his feet within `takeR` 3.5 of him:** a net. Both hunters are removed (`bodyGone` and the root taken out of the
+  scene), Bigfoot bolts, and the next round comes after `huntEvery`.
+
+**Unverified:** whether the wander AI walks them all the way in, or the hick's flee-from-the-alien pulls them away first. That
+needs a phone.
+
+`play ch1` passed. Shipped unverified.
+
 ### m854 (T7l) -- the mill shed, its loft, the lumber stacks and the stump are his art
 `HCMILL.shedG` loads `models/campaign/mill_shed.glb` (`?mshed=0` leaves it out). Its loader sits before `buildMill()`.
 In `buildMill`, `msSnap` / `msPut` cut each block's drawing back to a snapshot taken at its start:

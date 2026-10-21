@@ -1207,7 +1207,7 @@ differ" table there, so no region feels like the last one.
     - [x] m848 **F5-7c** the pilot form: Dutch, sampled once he is believed, flies (lift, not only a glide).
   - [ ] **F5-8** Bigfoot. Split:
     - [x] m851 **F5-8a** a shy giant in the gorge's east pines: big prints that fade, a walk he can stand and a run he cannot; walk up slowly and he lets you close (`bigfoot:found`).
-    - [ ] **F5-8b** the hunters: once found, now and then two hunters come up the plateau after him; knock them down before they reach him (or he is "taken" and you start over).
+    - [x] m855 **F5-8b** the hunters: once found, now and then two hunters come up the plateau after him; knock them down before they reach him (or he is "taken" and you start over).
     - [ ] **F5-8c** the friend: kept safe, he follows you about the gorge and lets you take his sample -- the Bigfoot form (big, slow, shoves everything).
 - [ ] **F6 Living-city depth**: more smart objects and the everyday life they make (sitting, waiting,
   queuing, shopping, the bus stop), named in the chip when a clip is missing so Colin knows what to
@@ -2276,3 +2276,4 @@ differ" table there, so no region feels like the last one.
 - **m838 (F5-7a): the tic-tac pilot's bar is THE READY ROOM, on the highway's WEST side** at Hollow Creek (-92, -58), between the fairground and Saucer Joe's. East of the road was tried first, but the gorge runs right through it (the land check read 8.66 m off level there). The pilot is "Dutch", a stand-in (the hick, tinted, in a navy cap).
 - **m848 (F5-7c): the pilot form flies the wing's own flight**, with the jets lit and real lift: 1.7x cruise, 1.5x thrust, and under half of gravity's pull on a climb (`WING.pilot`). It does not use a new flight model. Dutch can only be sampled once he is believed; before that he is not sampleable at all.
 - **m851 (F5-8a): Bigfoot is a procedural stand-in** (a 2.6 m hairy giant) until there is a model, roaming the gorge's east plateau pines. Walking is under 3.2 m/s and does not scare him; running within 22 m does. `BIGF.calmV` / `BIGF.spook` if that is too strict.
+- **m855 (F5-8b): the hunters use the hick's body** (no hunter model yet). They walk at Bigfoot along the m338 route mechanism. If they flee from you the way the hick flees the alien, scaring them off also protects him; knocking both down is what finishes it. A net (one within 3.5 m of him on his feet) loses the round, and they come again after 2 minutes.
