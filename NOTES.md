@@ -844,6 +844,18 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m826 (T7a) -- the mothership's belly hall and its pod are his art
+`ISHIP.hallG` loads `models/campaign/ship_hall.glb` (`?shall=0` leaves it out).
+- **The hall:** in `buildMothership`, a parts snapshot is taken right after the frame is made. Once the room is drawn (up to
+  the open membrane's fringes), `ms_hall` is placed at the axis on `S.floorY` and the snapshot cuts every drawing back. All
+  colliders stay (the floor quadrants, wall ribs, railing and alcove). The m507 seams, veins and glow ring and the m596 eggs,
+  glyphs and tendrils come after the cut and are untouched.
+- **Measured:** his R, glassR and pod match `ISHIP` (12.5 / 7.5 / 2.3), so nothing needed resizing.
+- **The pod:** `ms_pod` is cloned, mirrored in z and added under the pod's group, in place of its disc and rim. The `BDYN`
+  box stays.
+
+Shipped unverified.
+
 ### m825 (T6z) -- the footbridge's foot on the beach is his art
 `FOOT.ffG` loads `models/campaign/foot_dress.glb` (`?ffoot=0` leaves it out). In m490's foot block, `ff()` places a node and
 pushes it into `fbArt`, so it is merged with the bridge.
