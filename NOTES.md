@@ -665,6 +665,14 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+- **m708 (F3-2): THE POLTERGEIST ORB** (`OPOLT`, `buildPolter`, `polterHit`, `polterThrow`, `polterStep`, task `qpolt`, GOD `polter`).
+  It haunts the `KBLD` building nearest `at` with `top` > 5 (in the harness KBLD is empty, so it falls back to a `lifeSpot` and a 9 m
+  "house"). Its orb is an `AIRT` target over the roof. While it is up and you are within `seeR`, a point light at the building's
+  foot stutters and doors slam (`snd('lock')`). Within `reach` (and not flying), every 2.2-3.8 s it throws one of six pooled junk
+  meshes (chair, drawer, lamp, box) from its wall facing you, on a lobbed `fly` 1.35 s arc to where you will be (70% velocity lead,
+  g 20). If one passes within .95 m of your chest: `playerHurt(8, ...)`. A piece lies 5 s, then goes back in the pool. Three hits on
+  the orb: `orb:polter`, Old Town +5, quiet. `places`: polter ok, 0 BAD.
+
 - **m706 (T5h): THE HALTS' BENCH, CHURNS AND LAMPS ARE HIS** (`halt_extras.glb`, `HCTRAIN.extG`, `?hextras=0`). In `buildFreight`'s m494
   block via `hx` (campPlace, mirrored in z; built for side +1, so `scale.x = -1` on side -1; the churns at k = -1 also flip their
   Y, i.e. `scale.z *= -1`). The bench keeps its seat collider (draw popped) and brings the timetable board with it. The churns

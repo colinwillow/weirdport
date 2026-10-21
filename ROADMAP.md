@@ -1024,7 +1024,7 @@ differ" table there, so no region feels like the last one.
   night and tic-tacs that chase flyers; **missing time** as the capture fail state and something at
   zero health (Colin's open question: propose one, build it switchable).
   - [x] m705 **F3-1** the projector orb: a hologram police roadblock across Dump Tower's plaza approach, solid until its orb is shot down (it tears into static and goes). GOD `projector`.
-  - [ ] **F3-2** the poltergeist orb: one Old Town building haunted -- lights flicker, a door slams, furniture is thrown out of its windows at you; shoot the orb and it stops. Animals react first (a dog barks).
+  - [x] m708 **F3-2** the poltergeist orb: one Old Town building haunted -- lights flicker, a door slams, furniture is thrown out of its windows at you; shoot the orb and it stops. Animals react first (a dog barks).
   - [ ] **F3-3** the relay orb: links the others into the grid -- while it stands they take half damage and re-light if downed; shoot it and every orb it fed drops a hit.
   - [ ] **F3-4** the EM tell: near any live orb or alien activity streetlights flicker, cars stall in the road, radios hiss.
   - [ ] **F3-5** the Hum: an ambient drone whose loudness follows how much of the grid stands where you are; a freed district goes quiet.
@@ -1989,3 +1989,7 @@ differ" table there, so no region feels like the last one.
   26 m wide) and is SOLID. That is the lore's "opening the way", but it is a soft block: you can walk round it on the grass. It is
   not a quest gate: Chapter 6's "To Dump Tower" step still passes at the plaza. It is a dormant task (A ROADBLOCK THAT FLICKERS)
   that wakes when you first see it.
+- **m708 (F3-2), the poltergeist:** it haunts the kit building nearest Old Town's north-west (-40, 42). It throws a piece of junk
+  every 2-4 s while you are within 28 m: 8 damage and a shove if one reaches you. Nothing is thrown while you are flying. "Animals
+  react first" is not built: there is no dog in the game, and the farm's cows are far away. Its tells are the stuttering light at
+  the building's foot, the door slams and the throws.
