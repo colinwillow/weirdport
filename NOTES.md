@@ -804,6 +804,23 @@ Code untouched; the loop swaps it in (T2d). Shipped unverified.
 
 ## Landmines
 
+### m800 (T6o) -- the Underneath's pump room, hidden market and camp props are his art
+`UNDER.umG` loads `models/campaign/under_market.glb` (`?umkt=0` leaves it out). In `buildUnderneath`, `umPut` places a node
+the way `ucPut` does, and the snapshot pair `umSnap`/`umCut` drops the code drawing while keeping every collider.
+- **The pumps:** `up_pumps` sits at (pu, cv) and replaces the drums, the mains, the cabinet and the grate.
+- **The wheel:** his wheel is the pumps' `UM_red` primitive (measured at X -2.61..-2.52, centre y 1.725). It is lifted out of
+  the art and centred onto an outer pivot (rotation.y PI/2) with an inner group, so `U.pump.wheel.rotation.z` still spins it
+  about his X axis. The drawn torus wheel is removed from the scene.
+- **The stalls:** `um_stall_frame` and `um_stall_tarp` sit at each stall, turned by PI for the north row. The tarp's material
+  is cloned and given the code's `tarp`/`tarp2` colour.
+- **The counter:** `um_counter` sits at (cu + 6.2, cv).
+- **The camp:** `uc_camp` is the fire barrel, `uc_bedroll` goes at the four spots with the code's yaw, and `uc_trolley` sits
+  at (tu, tv) with yaw .3.
+- **Unchanged:** the bulb strings, the washing line and the strung tarp stay code.
+- **Unmeasured:** the bedroll yaw sign against `bx`'s.
+
+Shipped unverified.
+
 ### m799 (T6n) -- the Underneath's cistern catwalks, the dig's track, cart and strongbox, and the vault's crates are his art
 `UNDER.ucG` loads `models/campaign/under_cistern.glb` (`?ucist=0` leaves it out). `ucPut` in `buildUnderneath`
 places a node through `campPlace` and turns it. The dig track is `uc_rail` TILED (`n = round(L)`, scaled `L/n`
